@@ -1,0 +1,170 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Data Analytics & Business Intelligence | All Webbed Labs',
+  metaDescription: 'Custom data analytics, BI dashboards, data pipelines and predictive analytics for enterprises that need insight, not just reports. Built on your data, for your decisions.',
+  category: 'Analytics',
+  heroHeadline: 'Turn Your Data Into Your Most Valuable Competitive Asset',
+  heroTagline: 'Custom dashboards, data pipelines and predictive analytics that drive decisions, not just reports.',
+  description: [
+    'Most organisations are sitting on enormous reserves of untapped value. Operational databases, CRM systems, financial platforms, IoT sensors, third-party data feeds — together they contain patterns that could transform pricing strategy, forecast demand, identify churn before it happens or surface operational inefficiencies that cost millions annually. The gap between having data and making decisions with it is an engineering and design problem, and it is one we have solved for organisations across every major sector of the Australian economy.',
+    'We build the full analytics stack: data pipelines that move information from source systems into a central warehouse without losing fidelity, transformation layers that turn raw records into clean, consistent, analysis-ready models, and visualisation and reporting layers that put the right insight in front of the right person at the right time. We do not hand you a generic BI tool licence and walk away. We build bespoke solutions calibrated to your data, your questions and the decisions your leadership team actually needs to make.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+      title: 'Dashboards Built for Decisions',
+      description: 'We design analytics interfaces around the decisions they inform — not around the data that happens to be available. Every metric earns its place by answering a question that drives action, and every dashboard is user-tested with the people who will use it.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+      title: 'Real-Time & Streaming Analytics',
+      description: 'When batch processing is not fast enough, we build event-driven pipelines using Kafka, Kinesis or Pub/Sub that deliver sub-second insight into operational metrics, user behaviour and business events as they happen.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+      title: 'Reliable Data Pipelines',
+      description: 'Unreliable pipelines produce untrustworthy dashboards. We build ingestion and transformation pipelines with data quality checks, schema validation, lineage tracking and alerting so your analytics layer always reflects accurate, current data.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',
+      title: 'Predictive Analytics & ML Models',
+      description: 'Beyond historical reporting, we build predictive models that forecast demand, identify at-risk customers, optimise pricing or detect anomalies. We deploy models that are accurate, interpretable and integrated into your existing workflows.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
+      title: 'Data Governance & Lineage',
+      description: 'Knowing where a number came from is as important as the number itself. We implement data catalogues, column-level lineage tracking and governance policies that make your data trustworthy, auditable and compliant with privacy regulations.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+      title: 'Self-Service Analytics Enablement',
+      description: 'The best analytics infrastructure empowers your analysts to answer new questions without waiting for engineering. We build semantic layers and governed data models that let your team explore safely without breaking anything.',
+    },
+  ],
+  useCases: [
+    {
+      title: 'Churn Prediction Model for a Subscription Business',
+      description: 'A SaaS company was losing customers it did not know were at risk until it was too late. We built a churn prediction model trained on 18 months of behavioural data, integrated it into the customer success team\'s workflow and deployed automated early-warning alerts. Within two quarters, the client had reduced churn rate by 23% and significantly improved net revenue retention.',
+      industry: 'SaaS',
+    },
+    {
+      title: 'Unified Executive Dashboard Across 12 Source Systems',
+      description: 'A diversified enterprise was drawing board-level metrics from 12 different source systems — CRM, ERP, finance, operations, marketing — each with different definitions for the same KPIs. We built a centralised semantic layer that unified metric definitions and a single executive dashboard that gave leadership a consistent view of the business for the first time.',
+      industry: 'Enterprise',
+    },
+    {
+      title: 'Real-Time Logistics Operations Analytics',
+      description: 'A national logistics operator needed real-time visibility into fleet performance, delivery exceptions and depot throughput across 60 locations. We built a streaming analytics pipeline ingesting GPS telemetry and scan events, and an operations centre dashboard that reduced average exception response time from 4 hours to 11 minutes.',
+      industry: 'Logistics',
+    },
+    {
+      title: 'Demand Forecasting for a Retailer with 80,000 SKUs',
+      description: 'A major retailer was relying on manual category manager forecasts that were consistently over- or under-ordering at SKU level. We built a time-series forecasting system incorporating sales history, promotional calendars and external demand signals, reducing overstock by 18% and out-of-stock incidents by 31% in the first six months.',
+      industry: 'Retail',
+    },
+  ],
+  technologies: [
+    'dbt (data build tool)',
+    'Apache Airflow',
+    'Snowflake',
+    'Google BigQuery',
+    'AWS Redshift',
+    'Apache Kafka',
+    'Apache Spark',
+    'Looker / LookML',
+    'Tableau',
+    'Metabase',
+    'Python (pandas, scikit-learn)',
+    'Apache Superset',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Data Discovery & Requirements Workshop',
+      description: 'We begin by understanding the decisions your organisation needs to make and working backwards to the data required. We inventory your existing data sources, assess data quality and completeness, and document the priority questions your analytics platform needs to answer.',
+      duration: 'Week 1',
+    },
+    {
+      step: '02',
+      title: 'Architecture Design',
+      description: 'Based on your data volumes, latency requirements, team capabilities and budget, we design a stack: the warehouse or lakehouse, ingestion tooling, transformation layer and visualisation layer. We present options with trade-offs clearly explained and recommend the approach best suited to your context.',
+      duration: 'Week 1–2',
+    },
+    {
+      step: '03',
+      title: 'Data Pipeline Development',
+      description: 'We build and test ingestion pipelines from each source system into the warehouse. Pipelines are developed with data quality assertions, schema change handling, error alerting and idempotent design so they can safely re-run without duplicating data.',
+      duration: 'Week 2–4',
+    },
+    {
+      step: '04',
+      title: 'Transformation Layer & Semantic Modelling',
+      description: 'Raw ingested data is transformed into clean, consistent, documented data models using dbt or equivalent tooling. We define business metrics in the semantic layer — ensuring that "revenue" means the same thing in every report — and document every model for your team.',
+      duration: 'Week 3–5',
+    },
+    {
+      step: '05',
+      title: 'Dashboard & Report Development',
+      description: 'We build the prioritised set of dashboards and reports identified in the requirements workshop. Development is iterative: we show work-in-progress to end users early and incorporate feedback before finalising, so the delivered product actually reflects how people work.',
+      duration: 'Week 4–6',
+    },
+    {
+      step: '06',
+      title: 'Testing, Validation & User Acceptance',
+      description: 'Every metric is validated against source system data. We conduct user acceptance testing with the team members who will rely on the dashboards daily, address feedback and sign off on accuracy before go-live.',
+      duration: 'Week 6–7',
+    },
+    {
+      step: '07',
+      title: 'Training & Ongoing Support',
+      description: 'We train your team on the platform — both the analytics tools and the underlying data models — so they can build new reports and answer new questions independently. We offer ongoing support retainers for organisations that want continued access to our data engineering expertise.',
+      duration: 'Week 7–8',
+    },
+  ],
+  industries: [
+    'Retail & E-commerce',
+    'Financial Services',
+    'Healthcare & Life Sciences',
+    'Logistics & Supply Chain',
+    'SaaS & Technology',
+    'Government & Public Sector',
+    'Telecommunications',
+    'Manufacturing',
+  ],
+  faqs: [
+    {
+      question: 'How long does it take to get a working analytics platform in place?',
+      answer: 'For an organisation starting from scratch, a foundational analytics platform — covering ingestion from three to five core source systems, a basic transformation layer and a set of priority dashboards — typically takes eight to twelve weeks to deliver. More complex programmes involving many source systems, significant data quality remediation or advanced predictive modelling take longer. We phase delivery so you see working dashboards before the full platform is complete, typically within the first four weeks for the highest-priority use cases.',
+    },
+    {
+      question: 'Our data quality is poor. Can you still help?',
+      answer: 'Poor data quality is one of the most common issues we encounter, and it is addressable — but it needs to be confronted honestly. We conduct a data quality assessment early in every engagement to understand the nature and extent of quality issues: missing values, duplicate records, inconsistent formats, referential integrity violations and so on. Some issues can be handled in the transformation layer with imputation, deduplication or normalisation logic. Others require fixes at the source system level. We work with you to prioritise which issues to fix and help you implement data quality monitoring so problems are caught early rather than discovered months later in a dashboard.',
+    },
+    {
+      question: 'We already have a BI tool like Tableau or Power BI. Do we need to replace it?',
+      answer: 'Not necessarily. The BI visualisation layer is only one part of the analytics stack. If you already have Tableau or Power BI deployed, we can work within that environment — the more impactful work is often in building a reliable, well-modelled data warehouse underneath it. Unreliable or poorly structured data is usually the reason existing BI investments underdeliver, not the visualisation tool itself. We assess what you have, determine where the gaps are and recommend the minimum-change solution that gets you to the outcome you need.',
+    },
+    {
+      question: 'What is the difference between a data warehouse and a data lakehouse?',
+      answer: 'A data warehouse (Snowflake, Redshift, BigQuery) stores data in a structured, query-optimised format and is ideal for well-understood analytical workloads. A data lake stores data in its raw, native format (often in object storage like S3) and is better suited to unstructured or semi-structured data, or scenarios where the exact analytical questions are not yet known. A data lakehouse (Databricks, Apache Iceberg on S3) attempts to combine both: open-format storage with warehouse-like query performance and ACID transaction support. For most enterprise BI programmes, a cloud data warehouse is the right starting point — lakehouses add value when you have significant unstructured data or machine learning workloads alongside your reporting.',
+    },
+    {
+      question: 'Can you help us comply with Australian Privacy Act requirements in our analytics platform?',
+      answer: 'Yes. The Australian Privacy Act and the Privacy (Enhancing Privacy Protection) Bill impose obligations around the collection, use, storage and disclosure of personal information that directly affect analytics platforms. We help you implement data minimisation principles (collecting only what you need), purpose limitation controls, appropriate retention and deletion policies, access controls that limit personal data exposure to authorised users, and audit logging that satisfies regulatory scrutiny. We also advise on pseudonymisation and aggregation techniques that preserve analytical value while reducing privacy risk.',
+    },
+    {
+      question: 'Do you offer ongoing managed analytics services after the initial build?',
+      answer: 'Yes. We offer analytics managed service retainers that include pipeline monitoring and maintenance, data model updates as your source systems change, dashboard evolution as your business questions evolve, and access to our data engineering team for ad hoc analytical projects. Many clients find that a retainer provides better value than maintaining full-time data engineering headcount, particularly for organisations whose analytics needs are significant but not constant. Retainer arrangements are scoped around your specific ongoing needs.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
+    { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },
+    { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
+    { title: 'Legacy System Modernisation', href: '/services/legacy-modernisation' },
+  ],
+};
+---
+<ServicePageLayout {...data} />

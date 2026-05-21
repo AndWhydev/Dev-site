@@ -1,0 +1,121 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Restaurant Booking & Table Management System | All Webbed Labs Case Study",
+  metaDescription: "How a Sydney restaurant group with four venues eliminated double-bookings, reduced no-shows by 31%, and unified operations across all sites with a custom platform.",
+
+  industry: "Hospitality",
+  tags: ["Booking System", "POS Integration", "Multi-venue", "SMS Automation", "React"],
+
+  title: "Restaurant Booking & Table Management System",
+  summary: "A four-venue Sydney restaurant group unified bookings, waitlists and POS across all sites — eliminating double-bookings and reducing no-shows by 31%.",
+
+  heroImageDescription: "Restaurant manager reviewing booking dashboard on a tablet at a Sydney CBD restaurant, with a busy dining room visible behind the service counter",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "A restaurant group operating four venues across Sydney CBD and inner suburbs, with a combined capacity of 320 covers. The group spans two different dining concepts — a contemporary Australian dining room and a more casual bar-restaurant format — operating across the CBD, Newtown, Surry Hills, and Glebe. Founded in 2014 by two chef-partners, the group has grown to 64 staff and operates across seven days with strong weekend trade and significant corporate lunch bookings at the CBD venue.",
+  clientSize: "4 venues · 320 covers · 64 staff",
+  clientLocation: "Sydney, NSW",
+
+  pullQuote: "We used to get a phone call from one venue asking if we had space because they were overbooked, while another venue ten minutes away had empty tables. That was lost revenue every single night and we had no way to see it in real time. Now I can look at one screen and know exactly where we are across all four venues.",
+  pullQuoteAuthor: "Co-founder & Operations Director",
+  pullQuoteRole: "Operations, Restaurant Group",
+
+  challenge: [
+    "Each of the four venues had developed its own approach to managing reservations independently. Two venues were using a widely available commercial booking platform, one had built a crude system around a shared Google Sheet, and the fourth — the most recently opened Glebe venue — was managing bookings through a combination of phone calls and a paper diary. The result was four separate data silos with no consistent record structure, no cross-venue visibility, and no ability for head office to understand occupancy and demand patterns across the group without manually collecting information from each venue manager.",
+    "Double-bookings were a recurring problem despite each venue believing it had adequate internal controls. The most common cause was a reservation taken over the phone being recorded in one system and a simultaneous online booking arriving through a different channel, with no real-time synchronisation between them. Over a single quarter, the group's ops director had counted seven confirmed double-booking incidents across the group — each requiring a difficult conversation with a guest, and each carrying a real risk of social media damage in a competitive Sydney market where online reputation matters significantly.",
+    "No-show rates were running at approximately 22% across the group — a figure that the group had come to treat as normal but that represented a substantial amount of lost revenue. When a table of four doesn't show up on a Friday night without notice, that table typically can't be filled. The group had tried requiring deposits for larger bookings, but the manual process of collecting and reconciling deposits was operationally messy and staff found it uncomfortable to enforce consistently. There was no automated confirmation or reminder system, meaning guests could book weeks in advance and simply forget.",
+    "The Square POS systems at each venue held data that could have informed operational decisions — average spend by cover, peak service periods, popular menu items by venue — but that data was locked in each venue's Square account with no consolidated view. The group had started to think about a loyalty programme, but had no foundation of customer data to build on. They also had no waitlist management system: when a service was fully booked, callers were simply told there was no availability, with no mechanism to capture their interest and convert them if a cancellation came through."
+  ],
+
+  whyUs: [
+    "The group had investigated commercial booking platforms extensively before reaching out to us. The leading platforms in the Australian market were either priced at a per-cover fee model that, across 320 covers and 350+ service sessions per year, added up to a monthly cost the group considered difficult to justify, or offered multi-venue management as an enterprise tier with annual contract commitments and features the group didn't need. One platform's sales process had been particularly frustrating — the group had spent three weeks in conversations before discovering that the multi-venue dashboard they'd been shown required an add-on module not included in the quoted price.",
+    "All Webbed Labs was introduced through a contact at their Square account management team who had seen us integrate with Square POS for another hospitality client. The initial conversations focused heavily on the Square integration requirements, because the group was clear they did not want to replace their POS — the staff knew it, the accountant knew the exports, and it worked. Everything needed to sit alongside Square rather than replace it."
+  ],
+
+  approach: [
+    "We spent two weeks in discovery across all four venues — attending services, observing how floor staff took and managed reservations in the flow of a busy dinner service, and interviewing each venue manager separately. The separate manager interviews were particularly important because each had developed their own mental model of what 'a good booking system' meant based on their venue's specific service style and physical layout. Surfacing those differences early prevented us from designing a one-size-fits-all system that would have felt like a poor fit for at least two of the venues.",
+    "The table layout configuration was one of the most nuanced technical challenges. Each venue has a different physical arrangement — banquettes, shared tables, an outdoor terrace that opens seasonally — and any booking system needed to model these layouts accurately enough for managers to assign bookings to specific tables rather than just tracking covers. We used a polygon-based floor plan editor approach, with each venue's manager drawing their own layout digitally during the setup phase rather than us attempting to model it from architectural plans. This took more upfront effort but resulted in layouts the managers actually trusted.",
+    "The Square POS integration was handled via Square's Connect API, specifically the Orders and Customers endpoints. We pull transaction data from Square on a 15-minute cycle and attribute completed transactions to bookings where a table match can be established, enriching the booking record with spend data. This gives the dashboard a per-booking average spend view that the group had never had access to before. We were careful to design the integration as one-directional — we read from Square but never write to it — to avoid any risk of interfering with service operations at the point-of-sale.",
+    "Real-time synchronisation across four venues was handled by Redis as a message broker. When a booking is created, modified, or cancelled at any venue, a Redis pub/sub message triggers updates to the central database and pushes state changes to any active dashboard sessions. This meant the cross-venue occupancy view is genuinely live rather than a periodic refresh — a requirement that came directly from the ops director's frustration with looking at data that was five minutes out of date during a busy Saturday service."
+  ],
+
+  solution: [
+    "The platform has two primary interfaces: a venue-level dashboard used by floor managers and front-of-house staff during service, and a group-level dashboard used by the ops director and the two founding partners. Both are built in React, sharing a component library but with different information hierarchies suited to each use case. The venue dashboard focuses on the current and next service period — who's arriving, which tables are seated, which bookings have been confirmed — while the group dashboard shows occupancy trends, no-show rates, and revenue attribution across all venues on a rolling basis.",
+    "Bookings enter the system through three channels: a public-facing booking widget embeddable on each venue's website, a phone booking interface used by staff, and walk-in registration for waitlist management. All three channels write to the same booking record in the PostgreSQL database, and all three are subject to the same availability rules — availability is calculated in real time based on the venue's floor plan configuration, existing bookings, and configurable turn times per table type. Double-booking is architecturally impossible because the availability check and booking creation happen in a single database transaction.",
+    "The SMS confirmation and reminder system is built on Twilio. When a booking is created, an immediate confirmation SMS is sent with a booking reference. A reminder SMS goes out 48 hours before the reservation with a confirmation link — clicking the link updates the booking status and logs the confirmation timestamp. For bookings that remain unconfirmed 24 hours before service, a second reminder is sent automatically. Guests who don't confirm and don't show are logged as no-shows rather than cancellations, giving the group a genuine no-show rate metric rather than a figure inflated by late cancellations.",
+    "Waitlist management replaced the previous practice of simply turning callers away. When a service is fully booked, guests can join a digital waitlist from the booking widget or via phone. If a cancellation occurs or a booking status changes, the system evaluates the waitlist queue and sends an SMS to the next eligible guest offering the available slot with a 30-minute acceptance window. The acceptance window creates urgency without being unreasonable, and the automated notification means floor staff don't need to manually monitor the waitlist during a busy service.",
+    "The deposit collection feature, which the group had struggled to implement manually, is handled through a Stripe Payment Intent created at booking time for tables of six or more. The deposit amount is configurable per venue, and the Stripe integration handles the card capture, hold, and — if the guest doesn't show — automatic charge. Refunds for cancellations received with more than 24 hours notice are processed automatically. This removed the awkward staff conversation entirely because the policy is set at the booking engine level, not enforced by a person."
+  ],
+
+  techStack: [
+    { name: "React", reason: "Venue and group dashboards — complex state management across real-time booking data and floor plan views" },
+    { name: "Node.js", reason: "Backend API — booking logic, availability calculation, webhook handling for SMS and payment events" },
+    { name: "PostgreSQL", reason: "Core booking, table, venue, and customer data — transactional integrity critical for availability checks" },
+    { name: "Square POS Integration", reason: "Read-only transaction attribution to enrich booking records with per-cover spend data" },
+    { name: "Twilio SMS", reason: "Booking confirmations, reminders, and waitlist notifications — high open rates compared to email" },
+    { name: "Redis", reason: "Real-time pub/sub for cross-venue booking state synchronisation" },
+    { name: "Stripe", reason: "Deposit collection for large bookings — automatic charge on no-show, automatic refund on timely cancellation" },
+    { name: "AWS", reason: "EC2, RDS, ElastiCache — reliable, cost-predictable hosting for production workloads" }
+  ],
+
+  implementation: [
+    "We rolled out venue by venue over five weeks, starting with the CBD venue that had the most complex booking volume and the most to gain from immediate improvement. Each venue got two days of on-site support during their first week live — one day for setup and staff training, one day present during an actual service to handle any questions that only emerged in the real operational environment. The on-site support during live service was the single most valuable implementation decision we made: three issues that would have taken days of back-and-forth to diagnose remotely were resolved in minutes because we were physically present.",
+    "Staff training was designed around the specific role. Floor staff — who needed to take walk-ins, check availability, and seat guests from the venue dashboard — received a 90-minute session focused entirely on those three workflows. Venue managers received a three-hour session covering the full venue dashboard, configuration options, and how to read the reporting view. The ops director and founding partners received a separate two-hour session on the group dashboard. Segmenting training by role rather than running everyone through everything kept sessions focused and reduced the cognitive load on staff who were learning a new system while continuing to run a restaurant.",
+    "The legacy data migration varied significantly by venue. The venue using the commercial booking platform could export a contact list, which we imported as unverified customer records. The venue using Google Sheets required manual cleanup of approximately 340 historical customer records. The paper diary venue simply started fresh, which was operationally the cleanest option. Six weeks after the final venue went live, the ops director confirmed that no customer data issues had surfaced — a testament to the verification step built into the import flow."
+  ],
+
+  lessonsLearned: [
+    "The floor plan configuration step took significantly longer than we'd estimated for two of the four venues. We had anticipated that venue managers would find the polygon-based editor intuitive, but two managers were genuinely unfamiliar with any kind of diagrammatic software tool and needed considerably more support than a tutorial video could provide. We've since moved to an approach where we create the initial floor plan from a venue's architectural drawings or photos and then invite the manager to refine it — a two-step process that's more time-consuming on our side but produces a working floor plan in the first session rather than requiring multiple attempts.",
+    "The Square integration surfaced a data quality issue we hadn't anticipated: the Square Customers records across the four venues had significant duplication, with the same guest appearing as separate records at different venues because the group had never unified its customer database. Our system ingested these as distinct records, which meant the customer profile view was fragmented for frequent guests. We addressed this with a fuzzy-matching deduplication process, but it added a week of work that could have been avoided with better data discovery upfront. We now include a CRM data audit in our discovery process for any multi-venue hospitality project.",
+    "The 31% reduction in no-shows was achieved primarily by the SMS reminder system, but the deposit requirement for large bookings contributed disproportionately for that table type. Groups of six or more were previously no-showing at a rate nearly double the overall average — partly because larger group bookings are more complex to coordinate, and partly because the previous system had no deposit mechanism. The deposit feature required more careful communication at booking time than we'd initially designed for, and we added an explicit explanation of the cancellation policy to the confirmation SMS after the first month of operation."
+  ],
+
+  whatCameNext: [
+    "Four months after full rollout, the group commissioned an extension to add a loyalty programme using the unified customer database the new platform had created. This was the foundation they'd been unable to build previously — a single view of a guest's booking history across all four venues, enabling the group to recognise and reward genuinely frequent guests rather than just frequent visitors to a single venue.",
+    "The ops director has also begun using the cross-venue occupancy data to evaluate a fifth venue opportunity, with a clearer picture of demand patterns by suburb, day of week, and cover count than had ever been available from their previous fragmented systems. Whether that fifth venue proceeds is a business decision, but the data quality to inform it now exists."
+  ],
+
+  resultsNarrative: "Across the first four months of full operation, double-bookings were entirely eliminated, no-show rates fell from 22% to 15%, and each venue manager reported meaningful reductions in the administrative overhead of managing reservations across a service. The cross-venue visibility the ops director had wanted for years was available from day one, and the Square integration provided spend attribution data that changed how the group thought about its most valuable customer relationships.",
+
+  metrics: [
+    { value: "31%", label: "Reduction in no-shows", context: "Group-wide no-show rate fell from 22% to 15%" },
+    { value: "0", label: "Double-bookings since launch", context: "Down from 7 confirmed incidents in prior quarter" },
+    { value: "2.5 hrs", label: "Staff time saved per venue daily", context: "Across phone confirmations, waitlist management, reporting" },
+    { value: "18%", label: "Increase in table utilisation", context: "Improved by filling slots previously lost to no-shows and waitlist gaps" },
+    { value: "94%", label: "SMS confirmation open rate", context: "Across all four venues in first three months" },
+    { value: "First", label: "Cross-venue reporting ever available", context: "Group had no consolidated view prior to this project" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Hotel Staff Rostering & Operations App",
+      href: "/case-studies/hotel-staff-rostering-operations",
+      industry: "Hospitality",
+      summary: "A Queensland boutique hotel chain replaced spreadsheet rostering with a mobile-first platform that gave managers full visibility and cut scheduling time in half."
+    },
+    {
+      title: "Café Loyalty & Rewards App",
+      href: "/case-studies/cafe-loyalty-rewards-app",
+      industry: "Hospitality",
+      summary: "A 12-location café franchise launched a branded loyalty app that drove a 27% increase in repeat visits within the first six months."
+    },
+    {
+      title: "Property Management Platform",
+      href: "/case-studies/property-management-platform",
+      industry: "Property & Real Estate",
+      summary: "A boutique property management firm automated inspection scheduling, maintenance requests, and tenancy renewals — reducing manual administration by half."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "API Integration", href: "/services/api-integration" },
+    { title: "Dashboard Development", href: "/services/dashboard-development" },
+    { title: "SMS & Notification Automation", href: "/services/sms-notification-automation" },
+    { title: "Payment Integration", href: "/services/payment-integration" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

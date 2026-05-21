@@ -1,0 +1,569 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Contact All Webbed Labs — Book a Strategy Call | Enterprise Software"
+  description="Book a free 30-minute strategy call with All Webbed Labs. Enterprise software enquiries responded to within 2 business hours. Brisbane, Australia."
+>
+  <Header />
+  <main>
+    <section class="contact-section">
+      <div class="contact-inner">
+
+        <!-- Left: info + what happens next -->
+        <div class="contact-info reveal-left">
+          <span class="section-label">Get In Touch</span>
+          <h1 class="contact-title">
+            Let's Build Something<br />
+            <span class="gradient-text">Extraordinary.</span>
+          </h1>
+          <p class="contact-sub">Whether you have a detailed brief or an idea you're still exploring, we want to hear about it. Our team responds to all enterprise enquiries within 2 business hours.</p>
+
+          <div class="contact-details">
+            <a href="mailto:labs@allwebbedup.com.au" class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-val">labs@allwebbedup.com.au</div>
+              </div>
+            </a>
+            <!-- TODO: Add real phone number -->
+            <a href="tel:+61XXXXXXXXX" class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.16v.76z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-val">+61 X XXXX XXXX</div><!-- TODO: real number -->
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Response Time</div>
+                <div class="ci-val">Within 2 business hours</div>
+                <div class="ci-sub">Mon–Fri, 9am–6pm AEST</div>
+              </div>
+            </div>
+            <!-- TODO: Add real address -->
+            <div class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Office</div>
+                <div class="ci-val">Brisbane, Queensland, Australia</div>
+                <div class="ci-sub">TODO: Add street address</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What happens next -->
+          <div class="next-steps">
+            <h3>What Happens Next</h3>
+            <div class="next-step">
+              <div class="ns-num">1</div>
+              <div>
+                <strong>We review your submission</strong>
+                <p>A senior team member reviews your enquiry and assigns the right specialist within 2 business hours.</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">2</div>
+              <div>
+                <strong>Discovery call (30 min)</strong>
+                <p>We discuss your requirements, timeline and success criteria. No obligation — just an honest conversation.</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">3</div>
+              <div>
+                <strong>Proposal within 5 business days</strong>
+                <p>A detailed technical and commercial proposal, tailored to your specific situation and goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form + Calendly -->
+        <div class="contact-form-col reveal-right stagger-1">
+
+          <!-- Calendly Embed -->
+          <div class="calendly-card">
+            <div class="calendly-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <h3>Book a 30-Minute Call</h3>
+                <p>Select a time that works for you</p>
+              </div>
+            </div>
+            <!-- CALENDLY_PLACEHOLDER — add Calendly embed link here -->
+            <!-- Replace the div below with: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK" style="min-width:320px;height:450px;"></div><script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+            <div class="calendly-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <p>Calendar Booking</p>
+              <span>CALENDLY_PLACEHOLDER — add booking link here</span>
+              <a href="mailto:labs@allwebbedup.com.au" class="btn-primary" style="margin-top: 0.5rem; font-size: 0.875rem;">Email Us to Schedule</a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="form-card">
+            <h2>Send a Message</h2>
+            <p class="form-sub">Prefer to write it out? We'll respond within 2 business hours.</p>
+
+            <!-- TODO: Wire form to your backend — Netlify Forms, Formspree, or a custom API endpoint -->
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="firstName" required placeholder="Jane" autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="lastName" required placeholder="Smith" autocomplete="family-name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="company">Company / Organisation *</label>
+                <input type="text" id="company" name="company" required placeholder="Acme Corporation" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+61 4XX XXX XXX" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service...</option>
+                  <option>Custom App Development</option>
+                  <option>Flutter Mobile Development</option>
+                  <option>React / Next.js Development</option>
+                  <option>AI Tools & Automation</option>
+                  <option>Enterprise Software Solutions</option>
+                  <option>Cloud Infrastructure & DevOps</option>
+                  <option>Digital Transformation Consulting</option>
+                  <option>Web3 & Blockchain</option>
+                  <option>Data Analytics & BI</option>
+                  <option>Staff Augmentation</option>
+                  <option>Legacy System Modernisation</option>
+                  <option>Cybersecurity Consulting</option>
+                  <option>Not Sure — Need Advice</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Approximate Budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select range...</option>
+                  <option>Under $50K</option>
+                  <option>$50K – $150K</option>
+                  <option>$150K – $500K</option>
+                  <option>$500K – $1M</option>
+                  <option>$1M+</option>
+                  <option>Ongoing / Staff Augmentation</option>
+                  <option>Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="hear">How did you hear about us?</label>
+                <select id="hear" name="hear">
+                  <option value="">Select...</option>
+                  <option>Google Search</option>
+                  <option>LinkedIn</option>
+                  <option>Referral from another business</option>
+                  <option>All Webbed Up (our parent company)</option>
+                  <option>Industry event</option>
+                  <option>Social media</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Us About Your Project *</label>
+                <textarea id="message" name="message" required rows="5" placeholder="Describe what you're trying to build or the problem you need to solve. The more context you give, the better prepared we'll be for our call."></textarea>
+              </div>
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="nda" id="nda" />
+                  <span>I'd like to request an NDA before discussing details</span>
+                </label>
+              </div>
+              <button type="submit" class="btn-primary form-submit" id="submit-btn">
+                <span class="submit-label">Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+              <p class="form-privacy">Your data is kept strictly confidential. <a href="/privacy">Privacy Policy.</a></p>
+            </form>
+
+            <div id="form-success" class="form-success" hidden>
+              <div class="success-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3>Message Received!</h3>
+              <p>Thank you. A member of our team will respond within 2 business hours during Mon–Fri, 9am–6pm AEST.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .contact-section {
+    padding: 8rem 0;
+    background: #0a0f0e;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 30% 30%, rgba(13,147,115,0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .contact-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+  .contact-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .contact-details {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .ci-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ci-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4a6359;
+    margin-bottom: 0.2rem;
+  }
+  .ci-val {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: white;
+    line-height: 1.4;
+  }
+  .ci-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+    margin-top: 1px;
+  }
+  .next-steps h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1.25rem;
+  }
+  .next-step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .ns-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.25);
+    color: #0d9373;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .next-step strong {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+  .next-step p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Calendly card */
+  .calendly-card {
+    background: #0f1614;
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .calendly-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+  .calendly-header h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+  .calendly-header p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin: 0;
+  }
+  .calendly-placeholder {
+    aspect-ratio: 16/7;
+    background: #0a0f0e;
+    border: 2px dashed #1e2d28;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+  }
+  .calendly-placeholder p {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #4a6359;
+    margin: 0;
+  }
+  .calendly-placeholder span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #2a3d35;
+    font-style: italic;
+  }
+
+  /* Form card */
+  .form-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+  .form-card h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.375rem;
+  }
+  .form-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    margin: 0 0 2rem;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .form-group label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #8aa09a;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.6875rem 0.875rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: white;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6359' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem;
+  }
+  .form-group select option { background: #0f1614; color: white; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #4a6359; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #0d9373;
+    box-shadow: 0 0 0 3px rgba(13,147,115,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-check label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    cursor: pointer;
+  }
+  .form-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    accent-color: #0d9373;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9375rem;
+    font-size: 1rem;
+  }
+  .form-privacy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+    text-align: center;
+    margin: 0;
+  }
+  .form-privacy a { color: #0d9373; text-decoration: none; }
+  .form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  .form-success[hidden] { display: none; }
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.1);
+    border: 2px solid rgba(13,147,115,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-success h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+  .form-success p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    margin: 0;
+    max-width: 340px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 640px) {
+    .contact-section { padding: 6rem 0; }
+    .form-card, .calendly-card { padding: 1.75rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success') as HTMLElement | null;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+  // TODO: Replace with real form submission (Netlify Forms, Formspree, or custom API)
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (btn) { btn.disabled = true; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Sending…'; }
+    await new Promise((r) => setTimeout(r, 1000));
+    if (form && success) { form.hidden = true; success.hidden = false; }
+  });
+</script>

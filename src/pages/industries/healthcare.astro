@@ -1,0 +1,102 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Healthcare Software Development Australia | All Webbed Labs',
+  metaDescription: 'ADHA-compliant, HL7 FHIR-integrated clinical platforms for Australian hospitals, telehealth providers and allied health. Patient management systems, My Health Record integration and telehealth platforms built by specialists.',
+  industryName: 'Healthcare',
+  heroHeadline: 'Healthcare Technology That Improves Patient Outcomes',
+  heroTagline: 'ADHA-compliant, HL7/FHIR-integrated clinical platforms for hospitals, telehealth providers and allied health organisations.',
+  stats: [
+    { value: '1M+', label: 'patient records managed' },
+    { value: 'My Health Record', label: 'integrated' },
+    { value: 'HIPAA/ADHA', label: 'compliant' },
+    { value: '24/7', label: 'system uptime' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/><path d="M2 20h20"/></svg>',
+      title: 'Clinical Interoperability Gaps',
+      description: "Patient data is siloed across incompatible PMS platforms, hospital information systems, pathology providers and specialist EMRs. Without HL7 FHIR-based integration, clinicians make decisions with incomplete records — a patient safety risk and a workflow bottleneck that adds friction to every consultation.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+      title: 'Patient Data Privacy and Compliance',
+      description: "Health information is among the most sensitive personal data under the Australian Privacy Act and the My Health Records Act 2012. AHPRA-registered practitioners and healthcare organisations face serious consequences for data breaches. Security must be built into the architecture — not audited in after the fact — and that means role-based access, audit logging and encryption at rest and in transit from day one.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4v4H7z"/></svg>',
+      title: 'Outdated Practice Management Systems',
+      description: "Many clinics and hospital departments are still running PMS platforms built in the early 2000s — thick-client Windows applications with no mobile access, no patient-facing portals and expensive per-seat licensing. These systems can't integrate with Medicare DVA bulk billing APIs, telehealth platforms or modern pathology ordering systems without costly middleware.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',
+      title: 'Telehealth Platform Scalability',
+      description: "The COVID-19 pandemic permanently shifted patient expectations around remote consultations. Platforms stitched together quickly in 2020 are now showing their limitations: poor video quality at scale, inadequate clinical documentation workflows, no integration with prescription management or Medicare billing, and security architectures that weren't designed for sustained enterprise use.",
+    },
+  ],
+  solutions: [
+    'Patient management systems (PMS)',
+    'Telehealth and virtual care platforms',
+    'Clinical decision support tools',
+    'HL7 FHIR and My Health Record integrations',
+    'Online appointment booking and scheduling',
+    'Electronic prescription management',
+    'Pathology and radiology order integrations',
+    'Hospital workflow and bed management',
+  ],
+  useCases: [
+    {
+      title: 'FHIR-Native Patient Data Platform',
+      description: 'A state health network operating across fourteen hospitals needed to break down data silos between legacy Cerner and homegrown departmental systems. We designed and built an HL7 FHIR R4-compliant integration platform using Azure API for FHIR as the canonical data store, with custom adapters for each source system and a clinician-facing unified patient timeline. Clinicians now see a complete longitudinal record — including My Health Record pull — before every consultation, and the platform supports real-time clinical alerts that have already intercepted 47 potential adverse drug events in its first six months.',
+      techStack: 'Azure API for FHIR · .NET 8 · HL7 FHIR R4 · Azure Service Bus · React · SMART on FHIR',
+      videoNote: 'unified patient timeline view with My Health Record integration panel',
+    },
+    {
+      title: 'Enterprise Telehealth Platform',
+      description: 'A national allied health group with 200+ practitioners across physiotherapy, psychology and dietetics needed a purpose-built telehealth platform that could handle their clinical workflows — not a generic video tool. We built a platform with WebRTC-based video, integrated clinical note templates, automated Medicare and DVA billing, appointment reminders via SMS and email, and a patient self-service portal for rebooking and document upload. The platform went from concept to production in fourteen weeks and now handles 3,500 consultations per week.',
+      techStack: 'React · WebRTC · Twilio · Node.js · PostgreSQL · Tyro Health API · AWS ECS',
+      videoNote: 'practitioner consultation interface with integrated clinical notes and billing',
+    },
+    {
+      title: 'GP Clinic Online Booking and Patient Portal',
+      description: 'A group of twelve GP clinics was losing patients to competitors who offered same-day online booking. We built a patient portal integrated with their existing Best Practice PMS via the Best Practice API, providing real-time appointment availability, online check-in, secure message threads with practice staff, pathology result notification and automated recall reminders. Integrating with HotDoc was evaluated but ruled out given the practices\' preference for owning their patient data. New patient registration went from a 15-minute paper process to under three minutes.',
+      techStack: 'Next.js · Best Practice API · PostgreSQL · SendGrid · Twilio · Stripe · AWS',
+      videoNote: 'patient-facing booking flow with real-time GP availability calendar',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Database Architecture', href: '/services/database-architecture' },
+  ],
+  faqs: [
+    {
+      question: 'How do you handle My Health Record integration and ADHA conformance?',
+      answer: "My Health Record (MHR) integration requires conformance testing through the Australian Digital Health Agency (ADHA) and adherence to the National Clinical Terminology Service (NCTS) standards including SNOMED CT-AU and ICD-10-AM. We have experience with the ADHA's Vendor Trial Environment (VTE) testing process, the NASH PKI certificate requirements for system authentication, and the correct handling of access controls including healthcare provider access and emergency access flags. Our integrations produce CDA-compliant clinical documents using Australian-localised templates for discharge summaries, event summaries, specialist letters and prescription records.",
+    },
+    {
+      question: 'What HL7 standards do you work with?',
+      answer: "We work with both HL7 v2.x (still dominant in pathology and radiology orders in Australia) and the modern HL7 FHIR R4 standard used by the ADHA and increasingly by private platforms. For v2 we typically implement using Mirth Connect or custom message brokers; for FHIR we prefer native FHIR servers (Azure API for FHIR, HAPI FHIR) rather than translation layers. We understand Australian localisation requirements including AU Core FHIR Implementation Guide constraints, AU Base profiles and the specific terminology bindings required for Australian clinical data.",
+    },
+    {
+      question: 'Can your platforms connect to Medicare and DVA for bulk billing?',
+      answer: "Yes. We integrate with the Medicare Benefits Schedule (MBS) and DVA through Services Australia's Health Professional Online Services (HPOS) API and third-party claiming intermediaries such as Tyro Health (formerly Medipass), Hicaps and Health Engine's billing layer. We handle the full billing workflow including item number lookup, eligibility verification, claim submission, rejection handling and remittance reconciliation. For bulk billing we implement the required patient consent and assignment of benefit flows in compliance with the Health Insurance Act.",
+    },
+    {
+      question: 'How do you approach privacy under the Australian Privacy Act and the My Health Records Act?',
+      answer: "We design healthcare applications with a Privacy by Design framework: data minimisation (collect only what is clinically necessary), purpose limitation (data used only for the consented purpose), and strong access controls enforced at the API layer — not just the UI. All health information is encrypted in transit (TLS 1.3) and at rest (AES-256). Role-based access controls map to clinical roles defined in the Australian healthcare system. We produce a Privacy Impact Assessment (PIA) for new platforms and can assist with the notification obligations under the Notifiable Data Breaches scheme administered by the OAIC.",
+    },
+    {
+      question: 'Do you build for AHPRA-regulated practitioners specifically?',
+      answer: "Yes. We understand that AHPRA-registered practitioners across medicine, nursing, psychology, physiotherapy and other professions have distinct digital health obligations — including professional indemnity considerations, clinical documentation requirements for record-keeping, and the need for systems that support compliant telehealth delivery under the Medicare telehealth item number rules. Our clinical workflow design is informed by working closely with practitioners in these disciplines to ensure the software supports — rather than disrupts — safe clinical practice.",
+    },
+  ],
+  ctaHeadline: "Let's Build Healthcare Technology That Puts Patients First",
+  ctaDescription: "From FHIR integration platforms to telehealth systems and patient portals, we build clinical software that meets Australia's strict regulatory requirements without sacrificing usability. Talk to our healthcare technology team today.",
+};
+---
+<IndustryPageLayout {...data} />

@@ -1,0 +1,1017 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// PAGE: Staff Augmentation
+// TODO: Replace placeholder case studies with real client data when available
+---
+
+<Layout
+  title="Staff Augmentation — All Webbed Labs | Extend Your Tech Team"
+  description="Extend your development team with senior Australian engineers. Flutter, React, Node.js, AI/ML, DevOps and more. Flexible engagement, no lock-in."
+>
+  <Header />
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-hero">
+      <div class="sa-hero-bg" aria-hidden="true">
+        <div class="sa-glow-1"></div>
+        <div class="sa-glow-2"></div>
+        <div class="sa-grid"></div>
+      </div>
+      <div class="sa-hero-inner">
+        <div class="sa-hero-content reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><span>Staff Augmentation</span>
+          </nav>
+          <span class="section-label">Staff Augmentation</span>
+          <h1 class="sa-hero-title">
+            Extend Your Team With<br />
+            <span class="gradient-text">World-Class Developers</span>
+          </h1>
+          <p class="sa-hero-sub">
+            Senior engineers embedded into your team, working in your timezone, using your tools, aligned to your
+            engineering culture. No agency overhead. No offshore communication delays. No juniors billing at senior rates.
+            Engineers who show up on day one and deliver.
+          </p>
+          <div class="sa-hero-ctas">
+            <a href="/contact" class="btn-primary">
+              Brief Us on Your Needs
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#roles" class="btn-outline">View Available Roles</a>
+          </div>
+          <div class="hero-trust-row">
+            <div class="trust-item"><span class="trust-num">48hr</span><span class="trust-label">Match-to-Interview Time</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">Senior</span><span class="trust-label">Engineers Only</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">AEST</span><span class="trust-label">Timezone Aligned</span></div>
+          </div>
+        </div>
+        <div class="sa-hero-visual reveal-right stagger-2" aria-hidden="true">
+          <div class="team-card">
+            <div class="team-member-row">
+              {['Frontend', 'Backend', 'Flutter', 'AI/ML', 'DevOps'].map((role) => (
+                <div class="team-pill">{role}</div>
+              ))}
+            </div>
+            <div class="team-plus">+Your Team</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-surface">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">How It Works</span>
+          <h2 class="section-heading">Three Steps to Your Extended Team</h2>
+          <p class="section-subheading">
+            We've streamlined the process so you have a matched, vetted engineer ready to start within days — not weeks.
+          </p>
+        </div>
+        <div class="how-grid">
+          <div class="how-step reveal stagger-1">
+            <div class="how-num">01</div>
+            <div class="how-content">
+              <h3>Brief Us</h3>
+              <p>
+                Tell us what you need: the role, the tech stack, the team context, the engagement length and when you
+                want to start. We do not need a formal job description — a 30-minute call is enough.
+                We ask the questions other agencies don't: what does your team culture look like? What's the biggest
+                delivery challenge? What does failure look like in this role?
+              </p>
+            </div>
+          </div>
+          <div class="how-connector reveal stagger-2" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e2d28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="how-step reveal stagger-2">
+            <div class="how-num">02</div>
+            <div class="how-content">
+              <h3>Match Engineers</h3>
+              <p>
+                Within 48 hours, we present two to three pre-screened candidates from our pool — not CVs from a database,
+                but engineers we know personally, whose code we have reviewed and whose working style we can vouch for.
+                You interview them. If none are right, we keep looking. No fee until you say yes.
+              </p>
+            </div>
+          </div>
+          <div class="how-connector reveal stagger-3" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e2d28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="how-step reveal stagger-3">
+            <div class="how-num">03</div>
+            <div class="how-content">
+              <h3>Embed and Deliver</h3>
+              <p>
+                Your new engineer joins your Slack, your GitHub, your sprint ceremonies and your team calls. They
+                operate as a member of your team — not a contractor who disappears after a ticket is closed. We stay
+                in the background: monthly check-ins, performance oversight and rapid replacement if something is not working.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ROLES AVAILABLE
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-dark" id="roles">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Roles Available</span>
+          <h2 class="section-heading">Every Engineering Role You Need</h2>
+          <p class="section-subheading">
+            Senior practitioners across the full software development lifecycle. All with minimum five years commercial experience.
+          </p>
+        </div>
+        <div class="roles-grid">
+          {[
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`,
+              role: 'Frontend Engineer',
+              skills: 'React, Next.js, Vue, TypeScript, Tailwind, performance, accessibility'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+              role: 'Backend Engineer',
+              skills: 'Node.js, Python, Go, Java, PostgreSQL, Redis, API design, microservices'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
+              role: 'Mobile Engineer',
+              skills: 'React Native, Swift, Kotlin, iOS/Android, App Store deployment, offline-first'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+              role: 'Flutter Developer',
+              skills: 'Flutter, Dart, BLoC, Riverpod, Firebase, platform channels, CI/CD for mobile'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M20 12c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8 8-3.6 8-8z"/></svg>`,
+              role: 'AI / ML Engineer',
+              skills: 'Python, PyTorch, LLM fine-tuning, RAG, LangChain, MLOps, data pipelines'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+              role: 'DevOps / Platform Engineer',
+              skills: 'AWS, GCP, Terraform, Kubernetes, GitHub Actions, observability, security'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+              role: 'UI / UX Designer',
+              skills: 'Figma, design systems, user research, prototyping, accessibility, brand'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
+              role: 'QA / Test Engineer',
+              skills: 'Cypress, Playwright, Jest, API testing, load testing, test strategy, automation'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+              role: 'Solutions Architect',
+              skills: 'System design, cloud architecture, ADRs, technical due diligence, vendor evaluation'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+              role: 'Engineering Manager',
+              skills: 'Team leadership, delivery planning, 1:1s, hiring, technical roadmaps, stakeholder comms'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+              role: 'Technical Lead',
+              skills: 'Code review, architecture decisions, mentoring, sprint ownership, cross-functional delivery'
+            },
+          ].map((r, i) => (
+            <div class={`role-card card-hover reveal stagger-${Math.min((i % 6) + 1, 6)}`}>
+              <div class="role-icon" set:html={r.icon} />
+              <div class="role-details">
+                <div class="role-title">{r.role}</div>
+                <div class="role-skills">{r.skills}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         AUGMENT VS HIRE
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-surface">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">The Comparison</span>
+          <h2 class="section-heading">Staff Augmentation vs Direct Hire</h2>
+          <p class="section-subheading">
+            Neither is always right. Here is an honest comparison to help you decide what fits your situation.
+          </p>
+        </div>
+        <div class="comparison-table reveal stagger-1">
+          <div class="comp-header">
+            <div class="comp-dim">Dimension</div>
+            <div class="comp-aug">Staff Augmentation</div>
+            <div class="comp-hire">Direct Hire</div>
+          </div>
+          {[
+            { dim: 'Time to start', aug: '1–2 weeks', hire: '3–6 months (hiring cycle)' },
+            { dim: 'Upfront cost', aug: 'No recruiter fee, no equity dilution', hire: '$15K–$30K agency fee or equity' },
+            { dim: 'Flexibility', aug: 'Scale up, down or out with notice', hire: 'Fixed headcount, complex to unwind' },
+            { dim: 'Payroll overhead', aug: 'None — we handle employment, super, leave', hire: 'Employer of record obligations' },
+            { dim: 'Commitment risk', aug: 'Low — typically 3-month minimum', hire: 'High — cultural misfit is expensive' },
+            { dim: 'Deep team integration', aug: 'Good — works within your team fully', hire: 'Strongest — permanent member' },
+            { dim: 'Long-term cost', aug: 'Higher hourly rate than salary equivalent', hire: 'Lower total cost over 2+ years' },
+            { dim: 'Best suited for', aug: 'Surge capacity, skill gap, time-sensitive projects', hire: 'Core long-term roles, culture carriers' },
+          ].map((row, i) => (
+            <div class={`comp-row ${i % 2 === 0 ? 'comp-row-alt' : ''}`}>
+              <div class="comp-dim">{row.dim}</div>
+              <div class="comp-aug">{row.aug}</div>
+              <div class="comp-hire">{row.hire}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         VETTING PROCESS
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-dark">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Quality Assurance</span>
+          <h2 class="section-heading">Our 5-Step Engineer Vetting Process</h2>
+          <p class="section-subheading">
+            Every engineer in our pool has passed this process. We decline 85% of applicants.
+            You should never receive a candidate who is not genuinely senior.
+          </p>
+        </div>
+        <div class="vetting-steps">
+          {[
+            {
+              step: '01',
+              title: 'Application Screening',
+              desc: 'CV and portfolio review against senior engineer benchmarks. We filter on genuine commercial experience — not credentials. FAANG or startup, what matters is shipped production code in demanding environments.'
+            },
+            {
+              step: '02',
+              title: 'Technical Assessment',
+              desc: 'A take-home assessment calibrated to the role — not a whiteboard algorithm test. Frontend engineers build a real component. Backend engineers design a system. We assess code quality, decisions made and what was asked about edge cases.'
+            },
+            {
+              step: '03',
+              title: 'Live Code Review',
+              desc: 'A 60-minute live session: reviewing real production code they have written, discussing the decisions made and what they would change. This reveals far more about engineering judgment than any prepared exercise.'
+            },
+            {
+              step: '04',
+              title: 'Cultural Fit Interview',
+              desc: 'A structured conversation about how they work in teams: how they give feedback, handle technical disagreements, communicate blockers and approach ambiguous requirements. Senior engineers must communicate, not just code.'
+            },
+            {
+              step: '05',
+              title: 'Trial Project',
+              desc: 'For placement, a short paid trial project with our team before client placement. This validates performance under real conditions — not interview conditions — and ensures the engineer is ready to contribute from day one of your engagement.'
+            },
+          ].map((v, i) => (
+            <div class={`vetting-item reveal stagger-${Math.min(i + 1, 5)}`}>
+              <div class="vetting-step">{v.step}</div>
+              <div class="vetting-content">
+                <h3>{v.title}</h3>
+                <p>{v.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ENGAGEMENT MODELS
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-surface">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Engagement Models</span>
+          <h2 class="section-heading">Flexible Engagements Built Around Your Needs</h2>
+          <p class="section-subheading">
+            Three engagement models to fit different team structures and project types.
+          </p>
+        </div>
+        <div class="models-grid">
+          <div class="model-card reveal stagger-1">
+            <div class="model-header">
+              <div class="model-name">Part-Time</div>
+              <div class="model-hours">Minimum 20 hrs/week</div>
+            </div>
+            <p class="model-desc">
+              Ideal for augmenting your team with specialised expertise you need consistently but not full-time.
+              Common for: DevOps support, QA oversight, UI/UX design or AI/ML capability that doesn't warrant a full-time placement.
+            </p>
+            <ul class="model-features">
+              <li>Minimum 20 hours per week</li>
+              <li>Consistent weekly availability — not ad hoc</li>
+              <li>Participates in stand-ups and sprint ceremonies</li>
+              <li>3-month minimum engagement</li>
+            </ul>
+            <div class="model-price">Rate on application</div>
+            <a href="/contact?model=part-time" class="btn-outline model-cta">Enquire</a>
+          </div>
+
+          <div class="model-card model-featured reveal stagger-2">
+            <div class="model-featured-badge">Most Requested</div>
+            <div class="model-header">
+              <div class="model-name">Full-Time</div>
+              <div class="model-hours">40 hrs/week</div>
+            </div>
+            <p class="model-desc">
+              A dedicated engineer embedded fully into your team. Attends all team ceremonies, integrates with your
+              culture and operates as an equivalent member to your permanent staff. The most productive model
+              for sustained delivery velocity.
+            </p>
+            <ul class="model-features">
+              <li>Full 40-hour week, your core hours</li>
+              <li>AEST timezone, same-day response</li>
+              <li>Full sprint participation + ownership</li>
+              <li>Dedicated to one client only</li>
+              <li>3-month minimum, extend as needed</li>
+            </ul>
+            <div class="model-price">Rate on application</div>
+            <a href="/contact?model=full-time" class="btn-primary model-cta">
+              Enquire
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <div class="model-card reveal stagger-3">
+            <div class="model-header">
+              <div class="model-name">Project-Based</div>
+              <div class="model-hours">Fixed scope</div>
+            </div>
+            <p class="model-desc">
+              When you have a well-defined deliverable with a clear scope and timeline. We assemble a small, focused
+              team — typically two to four engineers — and deliver to the agreed spec. Best for migrations,
+              specific feature builds or legacy system replacements.
+            </p>
+            <ul class="model-features">
+              <li>Defined scope, timeline and acceptance criteria</li>
+              <li>Fixed or capped price available</li>
+              <li>Dedicated team for duration</li>
+              <li>Full handover and documentation</li>
+            </ul>
+            <div class="model-price">Quote-based</div>
+            <a href="/contact?model=project" class="btn-outline model-cta">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         TIMEZONE & COMMUNICATION
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-dark">
+      <div class="sa-inner">
+        <div class="tz-grid">
+          <div class="reveal-left">
+            <span class="section-label">Timezone and Communication</span>
+            <h2 class="section-heading">Australian-Based, Globally Connected</h2>
+            <p class="tz-para">
+              All Webbed Labs engineers operate on AEST (UTC+10) or AEDT (UTC+11). This places us in complete overlap
+              with Australian teams and provides workable overlap for UK and US-based clients.
+            </p>
+            <p class="tz-para">
+              UK teams (GMT) have 9–11 hours overlap during summer and roughly 8 hours during Australian standard time.
+              US West Coast teams (PST) can align start-of-day calls with Australian end-of-day for synchronous check-ins,
+              with async handoffs covering the gap.
+            </p>
+            <p class="tz-para">
+              We work in the tools your team already uses. If you use Jira, we use Jira. If you prefer Linear, we use Linear.
+              Communication happens in your Slack or Teams workspace — not ours.
+            </p>
+          </div>
+          <div class="tz-right reveal-right stagger-2">
+            <div class="tz-card">
+              <div class="tz-heading">Timezone Overlap</div>
+              {[
+                { region: 'Australia (AEST)', hours: 'Full overlap — same timezone', bar: 100 },
+                { region: 'Singapore / SEA', hours: '3 hrs difference — good overlap', bar: 88 },
+                { region: 'United Kingdom (GMT)', hours: '9–11 hrs ahead', bar: 55 },
+                { region: 'US East (EST)', hours: '14–15 hrs difference — async-first', bar: 28 },
+                { region: 'US West (PST)', hours: '17–18 hrs — daily sync possible', bar: 20 },
+              ].map((tz) => (
+                <div class="tz-row">
+                  <div class="tz-region">{tz.region}</div>
+                  <div class="tz-bar-wrap">
+                    <div class="tz-bar" style={`width: ${tz.bar}%`}></div>
+                  </div>
+                  <div class="tz-hours">{tz.hours}</div>
+                </div>
+              ))}
+            </div>
+            <div class="tools-card">
+              <div class="tools-heading">Tools We Work In</div>
+              <div class="tools-list">
+                {['Slack', 'Microsoft Teams', 'Jira', 'Linear', 'GitHub', 'GitLab', 'Notion', 'Confluence', 'Figma', 'Loom'].map((t) => (
+                  <span class="tool-badge">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CASE STUDIES PLACEHOLDER
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-surface">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Case Studies</span>
+          <h2 class="section-heading">Augmentation in Action</h2>
+        </div>
+        <div class="cs-grid">
+          {[1, 2].map((_, i) => (
+            <div class={`cs-card reveal stagger-${i + 1}`}>
+              <!-- CASE_STUDY_PLACEHOLDER — Replace when real case study is approved by client -->
+              <div class="cs-badge-sm">Case Study — TODO</div>
+              <h3>Client Engagement Name — TODO</h3>
+              <p>
+                Add real case study content here: the client context, the roles we filled, the duration, the delivery
+                outcomes and any measurable impact on the team's velocity or product quality.
+                Pending client approval before publishing.
+              </p>
+              <div class="cs-stats-row">
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Engineers placed</span></div>
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Engagement duration</span></div>
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Delivery metric</span></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════ -->
+    <section class="sa-section bg-dark">
+      <div class="sa-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-heading">Staff Augmentation — Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          {[
+            {
+              q: 'What are your day rates for augmented engineers?',
+              a: 'Rates vary by role seniority, technology specialisation and engagement length. As a guide: mid-level engineers start from $700 per day, senior engineers from $950 per day, and specialist roles (AI/ML, solutions architects, engineering managers) from $1,200 per day. Longer-term commitments attract discounted rates. We provide a fixed rate card at the start of every engagement — there are no hidden charges, no markup surprises, and super and insurance are included in the stated rate.'
+            },
+            {
+              q: 'Are your engineers genuinely senior — not just billed at senior rates?',
+              a: 'This is the most important question to ask any augmentation provider and most cannot answer it honestly. Our benchmark is clear: five or more years of commercial experience shipping production software, at least two years in a role with genuine technical ownership (not junior tasks), able to independently design and implement features end-to-end, and capable of reviewing code and mentoring others. We decline 85% of applicants. If we recommend an engineer, it is because we would put them on our own internal projects.'
+            },
+            {
+              q: 'What is the minimum engagement length?',
+              a: 'Three months for part-time and full-time placements. This minimum exists because the ramp-up time — learning your codebase, team conventions, domain context — means the first four to six weeks of any placement are below peak contribution. A three-month minimum protects both sides: it gives the engineer time to add genuine value and gives you enough of a run to assess fit and performance fairly.'
+            },
+            {
+              q: 'What happens if the engineer is not a good fit?',
+              a: 'We have a 30-day performance review built into every new placement. If, after a reasonable period, the engineer is not working out, we will replace them at no additional placement cost. We ask for honest, documented feedback so we can brief the replacement correctly. In practice, this is rare — our vetting process and the matching conversation before placement significantly reduces mismatches.'
+            },
+            {
+              q: 'How quickly can you place someone?',
+              a: 'For common roles (frontend, backend, React, Flutter) we can typically present matched candidates within 48 hours and have an engineer starting within two weeks. For specialist roles (AI/ML engineering, solutions architects, highly specific tech stacks) it may take one to two weeks to identify the right match. We will tell you honestly when we cannot move fast enough for your timeline rather than rushing a poor placement.'
+            },
+            {
+              q: 'Do your engineers work exclusively for us during the engagement?',
+              a: 'Yes. Full-time placements are dedicated to a single client. Part-time placements may have one other client engagement, but their committed hours are yours and we ensure there is no capacity conflict. We do not run engineers across multiple concurrent clients — it degrades performance and focus, and we would rather have fewer, more effective placements.'
+            },
+            {
+              q: 'What is your IP and confidentiality position?',
+              a: 'All work product created by our engineers during an engagement belongs to you. Engineers sign IP assignment agreements before starting. We also provide mutual NDAs for all engagements as standard — there is no additional negotiation required. Confidentiality extends to any proprietary code, business logic, data or product information the engineer encounters.'
+            },
+            {
+              q: 'Can you provide a team rather than individual engineers?',
+              a: 'Yes. Project-based engagements typically involve teams of two to six engineers, a tech lead and optionally a QA engineer, working together on a defined deliverable. We have also provided embedded squads to enterprises during large-scale programmes where multiple stream leads, engineers and architects were needed simultaneously. Brief us on the team shape you need and we will scope accordingly.'
+            },
+          ].map((faq, i) => (
+            <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>
+              <button class="faq-q" data-faq={`sa-${i}`} aria-expanded="false">
+                <span>{faq.q}</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" id={`faq-sa-${i}`} hidden>
+                <p>{faq.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .sa-hero {
+    padding: 9rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sa-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+
+  .sa-glow-1 {
+    position: absolute;
+    top: -10%;
+    right: 10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.1) 0%, transparent 65%);
+  }
+
+  .sa-glow-2 {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(13,147,115,0.05) 0%, transparent 70%);
+  }
+
+  .sa-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(13,147,115,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,147,115,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .sa-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #4a6359; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #4a6359; text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #0d9373; }
+
+  .sa-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .sa-hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .sa-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .hero-trust-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .trust-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .trust-num { font-family: 'Sora', sans-serif; font-size: 1.75rem; font-weight: 800; color: #0d9373; line-height: 1; }
+  .trust-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; }
+  .trust-divider { width: 1px; height: 40px; background: #1e2d28; }
+
+  /* Hero visual */
+  .sa-hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .team-member-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .team-pill {
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.25);
+    color: #0d9373;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+  }
+
+  .team-plus {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    padding-top: 0.75rem;
+    border-top: 1px solid #1e2d28;
+  }
+
+  /* Sections */
+  .sa-section { padding: 7rem 0; }
+  .bg-dark { background: #0a0f0e; }
+  .bg-surface { background: #0f1614; }
+  .sa-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { max-width: 700px; margin-bottom: 3.5rem; }
+
+  /* How it works */
+  .how-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .how-step {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 2rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+  }
+
+  .how-connector {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  .how-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(13,147,115,0.2);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    padding-top: 0.2rem;
+  }
+
+  .how-content h3 { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: white; margin: 0 0 0.75rem; }
+  .how-content p { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  /* Roles */
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .role-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .role-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    flex-shrink: 0;
+  }
+
+  .role-title { font-family: 'Sora', sans-serif; font-size: 0.9375rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+  .role-skills { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; line-height: 1.5; }
+
+  /* Comparison */
+  .comparison-table {
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comp-header, .comp-row {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr;
+    gap: 0;
+  }
+
+  .comp-header {
+    background: rgba(13,147,115,0.08);
+    border-bottom: 1px solid #1e2d28;
+  }
+
+  .comp-header .comp-dim, .comp-header .comp-aug, .comp-header .comp-hire {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: white;
+    padding: 1rem 1.25rem;
+    border-right: 1px solid #1e2d28;
+  }
+
+  .comp-header .comp-hire { border-right: none; }
+
+  .comp-row { border-bottom: 1px solid #1e2d28; }
+  .comp-row:last-child { border-bottom: none; }
+  .comp-row-alt { background: rgba(255,255,255,0.01); }
+
+  .comp-row .comp-dim, .comp-row .comp-aug, .comp-row .comp-hire {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    padding: 1rem 1.25rem;
+    border-right: 1px solid #1e2d28;
+    line-height: 1.5;
+  }
+
+  .comp-row .comp-dim { color: #8aa09a; font-weight: 500; }
+  .comp-row .comp-aug { color: #0d9373; }
+  .comp-row .comp-hire { border-right: none; }
+
+  /* Vetting */
+  .vetting-steps {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+  }
+
+  .vetting-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 2rem 0;
+    border-bottom: 1px solid #1e2d28;
+  }
+
+  .vetting-item:last-child { border-bottom: none; }
+
+  .vetting-step {
+    font-family: 'Sora', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(13,147,115,0.15);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    padding-top: 0.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .vetting-item:hover .vetting-step { color: rgba(13,147,115,0.4); }
+
+  .vetting-content h3 { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: white; margin: 0 0 0.625rem; }
+  .vetting-content p { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  /* Engagement models */
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .model-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+  }
+
+  .model-featured {
+    background: linear-gradient(135deg, rgba(13,147,115,0.07) 0%, #0a0f0e 60%);
+    border-color: rgba(13,147,115,0.4);
+    box-shadow: 0 0 40px rgba(13,147,115,0.1);
+  }
+
+  .model-featured-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d9373;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  .model-header { display: flex; flex-direction: column; gap: 0.375rem; }
+  .model-name { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; }
+  .model-hours { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #0d9373; font-weight: 600; }
+  .model-desc { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  .model-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .model-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.4;
+  }
+
+  .model-features li::before {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.15);
+    border: 1.5px solid rgba(13,147,115,0.35);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .model-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: white;
+    padding-top: 0.75rem;
+    border-top: 1px solid #1e2d28;
+  }
+
+  .model-cta { text-align: center; justify-content: center; }
+
+  /* Timezone */
+  .tz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .tz-para { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 1.25rem; }
+
+  .tz-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 5rem;
+  }
+
+  .tz-card, .tools-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tz-heading, .tools-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #8aa09a;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+  }
+
+  .tz-row { display: grid; grid-template-columns: 1fr 100px 1.2fr; gap: 0.75rem; align-items: center; }
+  .tz-region { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #8aa09a; font-weight: 500; }
+  .tz-bar-wrap { height: 4px; background: #1e2d28; border-radius: 4px; overflow: hidden; }
+  .tz-bar { height: 100%; background: linear-gradient(90deg, #0d9373, #10b88a); border-radius: 4px; }
+  .tz-hours { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; }
+
+  .tools-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tool-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #8aa09a;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+  }
+
+  /* Case studies */
+  .cs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+
+  .cs-card {
+    background: linear-gradient(135deg, rgba(13,147,115,0.04) 0%, #0f1614 60%);
+    border: 1px dashed rgba(13,147,115,0.25);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cs-badge-sm { display: inline-flex; align-self: flex-start; background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.2); color: #0d9373; font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.625rem; border-radius: 50px; }
+  .cs-card h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 0; }
+  .cs-card p { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #4a6359; line-height: 1.7; margin: 0; }
+  .cs-stats-row { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid rgba(13,147,115,0.15); }
+  .cs-mini-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .cs-mini-num { font-family: 'Sora', sans-serif; font-size: 1.375rem; font-weight: 700; color: #0d9373; }
+  .cs-mini-label { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; max-width: 900px; }
+  .faq-item { border-bottom: 1px solid #1e2d28; }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.375rem 0; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; transition: color 0.2s ease; }
+  .faq-q:hover { color: #0d9373; }
+  .faq-q[aria-expanded="true"] { color: #0d9373; }
+  .faq-chevron { flex-shrink: 0; transition: transform 0.3s ease; color: #4a6359; }
+  .faq-q[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); color: #0d9373; }
+  .faq-a { padding-bottom: 1.375rem; }
+  .faq-a p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .sa-hero-inner { grid-template-columns: 1fr; }
+    .sa-hero-visual { display: none; }
+    .how-grid { flex-direction: column; }
+    .how-connector { display: none; }
+    .roles-grid { grid-template-columns: repeat(2, 1fr); }
+    .models-grid { grid-template-columns: 1fr; max-width: 520px; }
+    .tz-grid { grid-template-columns: 1fr; }
+    .tz-right { margin-top: 0; }
+    .tz-row { grid-template-columns: 1fr; gap: 0.25rem; }
+    .tz-bar-wrap { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .roles-grid { grid-template-columns: 1fr; }
+    .comp-header, .comp-row { grid-template-columns: 1fr 1fr; }
+    .comp-header .comp-hire, .comp-row .comp-hire { display: none; }
+    .cs-grid { grid-template-columns: 1fr; }
+    .hero-trust-row { gap: 1.25rem; }
+    .trust-divider { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const idx = btn.dataset.faq;
+      const panel = document.getElementById(`faq-${idx}`);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (panel) panel.hidden = isOpen;
+    });
+  });
+</script>

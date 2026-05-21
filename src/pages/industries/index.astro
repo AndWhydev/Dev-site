@@ -1,0 +1,200 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const industries = [
+  { icon: '💰', name: 'Financial Services', desc: 'Banks, insurers, super funds and fintech companies', href: '/industries/finance-fintech', tags: ['APRA Compliant', 'Open Banking', 'AML/KYC'] },
+  { icon: '🏥', name: 'Healthcare', desc: 'Hospitals, telehealth providers and allied health', href: '/industries/healthcare', tags: ['ADHA', 'HL7 FHIR', 'My Health Record'] },
+  { icon: '🚚', name: 'Logistics & Transport', desc: 'Fleet management, warehousing and last-mile delivery', href: '/industries/logistics-transport', tags: ['Fleet Tracking', 'NHVL', 'WMS'] },
+  { icon: '🛒', name: 'Retail & E-Commerce', desc: 'Omnichannel retail, marketplace and D2C brands', href: '/industries/retail-ecommerce', tags: ['Omnichannel', 'POS', 'Loyalty'] },
+  { icon: '📚', name: 'Education', desc: 'Universities, RTOs and EdTech companies', href: '/industries/education', tags: ['AVETMISS', 'LMS', 'Student Portals'] },
+  { icon: '🏛️', name: 'Government', desc: 'Federal, state and local government agencies', href: '/industries/government-enterprise', tags: ['ISM', 'IRAP', 'Citizen Services'] },
+  { icon: '🏗️', name: 'Construction & Trades', desc: 'Builders, subcontractors and project managers', href: '/industries/construction-trades', tags: ['Job Mgmt', 'SOPA', 'Safety'] },
+  { icon: '🏠', name: 'Real Estate', desc: 'Agencies, property managers and developers', href: '/industries/real-estate', tags: ['PMS', 'Tenant Portals', 'PropTech'] },
+  { icon: '🏨', name: 'Hospitality & Tourism', desc: 'Hotels, restaurants and tourism operators', href: '/industries/hospitality', tags: ['Booking Engine', 'PMS', 'Guest Apps'] },
+  { icon: '⚽', name: 'Sports & Recreation', desc: 'Sporting organisations, clubs and venues', href: '/industries/sports-recreation', tags: ['Member Mgmt', 'PlayHQ', 'Fan Engagement'] },
+  { icon: '₿', name: 'Web3 & Crypto', desc: 'Exchanges, DeFi protocols and NFT platforms', href: '/industries/web3-crypto', tags: ['Smart Contracts', 'AUSTRAC', 'DeFi'] },
+  { icon: '🤖', name: 'AI & Automation', desc: 'Organisations deploying AI in production', href: '/industries/ai-automation', tags: ['Custom LLMs', 'RAG', 'ML Ops'] },
+];
+---
+
+<Layout
+  title="Industries We Serve — All Webbed Labs | Enterprise Software by Industry"
+  description="Deep domain expertise across 12 industries. Financial services, healthcare, logistics, retail, government, construction and more. All Webbed Labs builds software that understands your sector."
+>
+  <Header />
+  <main>
+    <section class="industries-hero">
+      <div class="ind-inner">
+        <div class="reveal">
+          <span class="section-label">Industries</span>
+          <h1 class="ind-title">
+            We Don't Just Write Code.<br />
+            <span class="gradient-text">We Understand Your Industry.</span>
+          </h1>
+          <p class="ind-sub">
+            Deep domain expertise across 12 sectors means fewer assumptions, faster delivery and software that actually fits how your business works.
+            We speak your language — regulatory requirements, industry workflows and all.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-grid-section">
+      <div class="ind-inner">
+        <div class="ind-grid">
+          {industries.map((ind, i) => (
+            <a href={ind.href} class={`ind-card card-hover reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
+              <div class="ind-card-top">
+                <div class="ind-card-icon">{ind.icon}</div>
+                <svg class="ind-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <h2 class="ind-card-name">{ind.name}</h2>
+              <p class="ind-card-desc">{ind.desc}</p>
+              <div class="ind-card-tags">
+                {ind.tags.map((t) => <span class="ind-card-tag">{t}</span>)}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why domain expertise matters -->
+    <section class="expertise-section">
+      <div class="ind-inner">
+        <div class="expertise-grid">
+          <div class="reveal-left">
+            <span class="section-label">Why It Matters</span>
+            <h2 class="section-heading">Domain Expertise Changes Everything</h2>
+            <p>A healthcare platform has fundamentally different requirements to a logistics system. Compliance obligations, data sensitivity, integration landscape, user personas, workflow patterns — all different. Generic software development produces generic outcomes.</p>
+            <p>Our teams have worked inside each industry we serve. We've spoken to APRA-regulated compliance officers, hospital IT departments, fleet operations managers and warehouse supervisors. We understand the constraints before we write the first line of code.</p>
+            <p>That domain depth translates into faster scoping, fewer back-and-forth cycles, fewer incorrect assumptions — and ultimately, software that works the way your people work.</p>
+          </div>
+          <div class="expertise-stats reveal-right stagger-2">
+            <div class="exp-stat">
+              <div class="exp-num">12</div>
+              <div class="exp-lbl">Industries with deep expertise</div>
+            </div>
+            <div class="exp-stat">
+              <div class="exp-num">150+</div>
+              <div class="exp-lbl">Industry-specific projects delivered</div>
+            </div>
+            <div class="exp-stat">
+              <div class="exp-num">40%</div>
+              <div class="exp-lbl">Faster average time-to-scope vs generalist agencies</div>
+            </div>
+            <div class="exp-stat">
+              <div class="exp-num">98%</div>
+              <div class="exp-lbl">Client retention across all industries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .industries-hero {
+    padding: 9rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .industries-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ind-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+  .ind-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.25rem, 5.5vw, 4rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 780px;
+  }
+  .ind-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 640px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .industries-grid-section { padding: 5rem 0 7rem; background: #0a0f0e; }
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .ind-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .ind-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ind-card-icon { font-size: 1.75rem; }
+  .ind-card-arrow { color: #4a6359; transition: color 0.2s ease, transform 0.2s ease; }
+  .ind-card:hover .ind-card-arrow { color: #0d9373; transform: translateX(3px); }
+  .ind-card-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .ind-card-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .ind-card-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .ind-card-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.18);
+    padding: 0.175rem 0.475rem;
+    border-radius: 4px;
+  }
+
+  .expertise-section { padding: 7rem 0; background: #0f1614; }
+  .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .expertise-section p { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #4a6359; line-height: 1.75; margin: 0 0 1.25rem; }
+  .expertise-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 4.5rem; }
+  .exp-stat { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 16px; padding: 1.5rem; text-align: center; }
+  .exp-num { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: #0d9373; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.5rem; }
+  .exp-lbl { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; line-height: 1.4; }
+
+  @media (max-width: 1100px) { .ind-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px) { .ind-grid { grid-template-columns: repeat(2, 1fr); } .expertise-grid { grid-template-columns: 1fr; } .expertise-stats { margin-top: 0; } }
+  @media (max-width: 560px) { .ind-grid { grid-template-columns: 1fr; } }
+</style>

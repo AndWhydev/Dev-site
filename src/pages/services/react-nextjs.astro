@@ -1,0 +1,55 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'React & Next.js Development — All Webbed Labs | Enterprise Web Applications',
+  metaDescription: 'Enterprise React and Next.js development for large Australian organisations. Server-side rendering, edge deployment, TypeScript and world-class performance.',
+  category: 'Frontend Development',
+  heroHeadline: 'Enterprise Web Applications Powered by React & Next.js',
+  heroTagline: 'Server-side rendering, edge deployment and TypeScript-first development for products that need to perform at scale.',
+  description: [
+    'React and Next.js have become the dominant platform for enterprise web applications — and for good reason. The combination of server-side rendering, static generation and client-side interactivity gives organisations the flexibility to build anything from marketing sites to complex SaaS dashboards without changing their technology foundation. We\'ve shipped dozens of production React and Next.js applications for enterprise clients across financial services, healthcare, logistics and government.',
+    'Our approach is TypeScript-first, test-driven and performance-obsessed. We architect for the long term: component libraries with Storybook, design system integration, feature-flagging, A/B testing hooks and analytics pipelines baked in from the start. The result is a codebase your team can own, extend and iterate on long after we hand it over.',
+  ],
+  benefits: [
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`, title: 'Server-Side Performance', description: 'SSR and SSG deliver sub-second page loads even on constrained connections. Critical for enterprise portals where users have high expectations and zero patience.' },
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, title: 'TypeScript Strictness', description: 'Every project uses TypeScript in strict mode. Compile-time type safety catches errors before they reach production and makes refactoring safe at scale.' },
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`, title: 'Edge Deployment Ready', description: 'Next.js Middleware and edge runtime support puts your application logic closer to users globally. Deploy to Vercel, Cloudflare Workers or your own infrastructure.' },
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`, title: 'Component Design Systems', description: 'Reusable component libraries with Storybook documentation, accessibility testing and visual regression coverage. Build once, use everywhere.' },
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`, title: 'Test Coverage From Day One', description: 'Unit tests with Vitest, integration tests with Testing Library, E2E with Playwright. CI pipeline blocks deploys that break tests.' },
+    { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`, title: 'Analytics & Observability', description: 'Core Web Vitals monitoring, error tracking with Sentry, analytics with Plausible or GA4 and custom business metrics dashboards built in.' },
+  ],
+  useCases: [
+    { title: 'Enterprise Customer Portals', description: 'Self-service portals for large customer bases requiring authentication, role-based access, real-time data and complex state management.', industry: 'Financial Services, Utilities' },
+    { title: 'Internal Operations Dashboards', description: 'Data-dense internal tools with complex tables, charts, filters and bulk actions. Typically replacing ageing Excel or legacy web systems.', industry: 'Logistics, Operations' },
+    { title: 'SaaS Product Frontends', description: 'Multi-tenant SaaS applications with subscription management, user administration, billing UI and feature-flag-driven release cycles.', industry: 'Technology, Professional Services' },
+    { title: 'High-Traffic Marketing Sites', description: 'Enterprise marketing platforms with CMS integration, A/B testing, personalisation and SEO-optimised static generation for sub-100ms page loads.', industry: 'Retail, Healthcare, Government' },
+  ],
+  technologies: ['React 19', 'Next.js 15', 'TypeScript 5', 'Tailwind CSS', 'Zustand / Redux Toolkit', 'React Query / SWR', 'Radix UI / shadcn', 'Storybook', 'Vitest', 'Playwright', 'Vercel / AWS', 'GraphQL / REST'],
+  process: [
+    { step: '01', title: 'Technical Discovery', description: 'Audit existing systems, define integration points, select the right Next.js rendering strategy (SSR, SSG, ISR or App Router) for each route and establish the component architecture.', duration: '1 week' },
+    { step: '02', title: 'Design System Foundation', description: 'Establish the component library, token system and Storybook documentation before writing a single application component. This prevents duplication and design drift.', duration: '1-2 weeks' },
+    { step: '03', title: 'Core Application Build', description: 'Iterative two-week sprints shipping working features to a staging environment. Daily builds via CI/CD. TypeScript errors and failing tests block deployment.', duration: '4-12 weeks' },
+    { step: '04', title: 'Performance Optimisation', description: 'Lighthouse auditing, bundle analysis, lazy loading strategy, image optimisation and Web Vitals tuning. We target Core Web Vitals scores in the green across all routes.', duration: '1 week' },
+    { step: '05', title: 'QA & Accessibility', description: 'Manual testing across browsers and devices, automated accessibility scanning with axe-core, keyboard navigation testing and screen reader validation.', duration: '1 week' },
+    { step: '06', title: 'Production Deployment', description: 'Zero-downtime deployment with staged rollout, monitoring setup and a post-launch hypercare period. Full runbook documentation included.', duration: '3-5 days' },
+  ],
+  industries: ['Financial Services', 'Healthcare', 'Government', 'Logistics', 'Retail', 'SaaS / Technology', 'Education'],
+  faqs: [
+    { question: 'Should we use the Next.js App Router or Pages Router?', answer: 'For new projects we recommend the App Router (introduced in Next.js 13+) for its superior data-fetching model, React Server Components support and improved caching. For existing Pages Router codebases, migration is possible but should be planned carefully. We assess your specific situation and recommend accordingly — there\'s no single right answer.' },
+    { question: 'How do you handle authentication in enterprise Next.js apps?', answer: 'We implement authentication using NextAuth.js (Auth.js) for most projects, with support for SAML/SSO, OAuth, OIDC and session-based auth. For enterprise SAML integrations with providers like Okta, Azure AD or Google Workspace, we have deep experience and standard implementations ready. All auth flows go through server-side validation.' },
+    { question: 'Can Next.js handle the traffic load of an enterprise product?', answer: 'Absolutely. Next.js deployed on Vercel or AWS handles tens of millions of requests per day. With the right caching strategy — ISR for relatively static content, SSR for personalised data, CDN edge caching for assets — a well-architected Next.js application can handle virtually any traffic load. We\'ve built platforms serving 100,000+ daily active users.' },
+    { question: 'What\'s the difference between your approach and using a CMS-based site builder?', answer: 'Site builders like Webflow or WordPress work well for primarily content-driven sites. What we build is application software — complex state management, real-time data, user authentication, business logic and deep API integrations. These requirements cannot be handled adequately by site builders and require proper engineering.' },
+    { question: 'Do you build component libraries for our team to use after handover?', answer: 'Yes, always. We build a documented Storybook component library as part of every project, with usage examples, prop documentation and visual regression tests. Your developers can extend it confidently because they understand every component. This is one of our standard deliverables, not an optional add-on.' },
+    { question: 'How do you approach state management for complex enterprise applications?', answer: 'We use Zustand for most new projects due to its minimal boilerplate and excellent TypeScript support. For projects with complex server-state synchronisation, we pair it with React Query or SWR. We avoid Redux for new projects unless the team already has deep expertise, as Zustand covers 95% of use cases with significantly less complexity.' },
+  ],
+  relatedServices: [
+    { title: 'Flutter Development', href: '/services/flutter-development' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'UI & UX Design', href: '/services/ui-ux-design' },
+    { title: 'Custom SaaS', href: '/services/saas-development' },
+  ],
+};
+---
+
+<ServicePageLayout {...data} />

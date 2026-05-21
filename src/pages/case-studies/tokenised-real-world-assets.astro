@@ -1,0 +1,126 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+const data = {
+  metaTitle: "Tokenised Real World Asset Platform | All Webbed Labs",
+  metaDescription: "How we built a tokenised fractional property investment platform for a Sydney property company, navigating ASIC managed investment scheme requirements, on-chain KYC and ERC-1400 security token standards.",
+
+  industry: "Web3 & Crypto",
+  tags: ["Security Tokens", "RWA", "Solidity", "ASIC Compliance", "Fractional Property"],
+
+  title: "Tokenised Real World Asset Platform",
+  summary: "A Sydney property investment company wanted to explore fractional property ownership via blockchain tokenisation — but the regulatory, legal and technical complexity of connecting on-chain tokens to real-world legal ownership is considerable. We built a compliant security token platform that navigated ASIC managed investment scheme guidance, integrated on-chain KYC, and delivered Australia's first tokenised residential property sale through the client's structure.",
+
+  heroImageDescription: "Property investment dashboard showing a tokenised property with fraction ownership breakdown, investor list with KYC status indicators, secondary market order book and settlement timeline",
+
+  clientOverview: "Placeholder Property Ventures is a Sydney-based property investment company with over 15 years of experience structuring property syndicates for high-net-worth investors. The founders had been watching the tokenised RWA space develop globally and believed the technology could address the core friction points in traditional property syndication — minimum investment thresholds, illiquidity, paper-based settlement and the difficulty of building a diversified small-scale property portfolio. They approached us with a specific first project already identified: a $1.2M residential property in Sydney to be tokenised into 100 fractions of $12,000 each.",
+  clientSize: "Boutique property investment firm, 8 staff",
+  clientLocation: "Sydney, NSW",
+
+  pullQuote: "The regulatory work was the hardest part — it had to be right before we could do anything else. Having a team that understood both the blockchain side and the compliance landscape meant we didn't have to translate between lawyers and developers at every step.",
+  pullQuoteAuthor: "James R.",
+  pullQuoteRole: "Managing Director, Placeholder Property Ventures",
+
+  challenge: [
+    "The primary challenge was regulatory, not technical. Under Australian law, a scheme where multiple investors pool funds to acquire property and share in returns is highly likely to constitute a Managed Investment Scheme (MIS) under Chapter 5C of the Corporations Act 2001, which requires an Australian Financial Services Licence (AFSL), a registered scheme, a responsible entity, and compliance with product disclosure statement (PDS) obligations. ASIC had issued guidance on digital assets and tokenisation, but the application of those frameworks to fractional property tokenisation specifically involved genuine legal complexity.",
+    "The technical challenge of connecting on-chain tokens to off-chain legal ownership is non-trivial. The token represents a beneficial interest in a property-owning trust structure — not direct title to the property. When a token is transferred on-chain, the off-chain legal records need to be updated to reflect the new beneficial owner. When the property generates rental income or is eventually sold, those proceeds need to flow to token holders in proportion to their holdings. Building a reliable, auditable bridge between on-chain token state and off-chain legal reality requires careful system design.",
+    "KYC and AML/CTF compliance for all token purchasers was a hard legal requirement, not optional. Every person acquiring a token needed to be verified before the transfer could be processed. This had to be integrated into the purchase flow without creating so much friction that it destroyed the user experience. The average completion time for identity verification in Australian financial services flows is well over 10 minutes — we needed to get this significantly lower.",
+    "Secondary market liquidity was a genuine investor concern. One of the stated advantages of tokenisation over traditional property syndicates is the theoretical ability to exit a position before the property is sold. But providing secondary market liquidity for a regulated security token requires either operating a licensed market or relying on a peer-to-peer matching model. The regulatory constraints here limited what we could build and required careful design of what the platform promised.",
+    "The investor audience — property professionals and their high-net-worth clients — needed to understand and trust a technology they had largely not encountered. The UI had to be clean, professional and immediately comprehensible to people who were expert in property investment but not in blockchain. Showing wallet addresses and transaction hashes prominently would have been a barrier; treating the blockchain layer as infrastructure rather than the product was essential.",
+  ],
+
+  whyUs: [
+    "The client was introduced to us by their commercial lawyer, who had been working with them on the regulatory structure. The lawyer had encountered us on a previous matter and felt our combination of smart contract technical depth and willingness to engage seriously with regulatory context was unusual in the market — most development firms either ignored compliance questions entirely or referred them out without engagement.",
+    "We were one of three parties the client considered. The differentiating factor was our approach to scoping: rather than proposing to start building immediately, we recommended a four-week regulatory and architecture review phase before any code was written. This involved working alongside the client's lawyers to understand the MIS structure, the trust deed design, and the specific obligations the platform would need to enforce technically. Some clients find this kind of upfront investment frustrating. This client found it exactly right.",
+    "Our previous experience with ERC-1400 security token standards was directly relevant. ERC-1400 is not a commonly implemented standard — most developers default to ERC-20 or ERC-721 for token issuance — but it is specifically designed for securities with transfer restrictions, investor eligibility requirements and forced transfers in certain circumstances. Its design assumptions align well with regulated security token use cases.",
+  ],
+
+  approach: [
+    "The four-week pre-development phase was spent working through the legal and architectural questions. The key legal determination was that the platform would operate within a Managed Investment Scheme registered with ASIC, with the client's entity as the responsible entity. The tokens would represent beneficial interests in a unit trust that held the property. This meant the platform was not issuing financial products directly — it was administering the membership register for a registered MIS. The practical implication for the smart contract was significant: token transfers needed to be restricted to verified investors and could only proceed after off-chain legal validation.",
+    "We chose ERC-1400 (the permissioned security token standard, developed by Polymath and now maintained by the community) as the token standard because it natively supports transfer restrictions, a list of valid investment partitions, forced transfers in cases such as court orders or inheritance, and operator roles that can enforce compliance rules at the contract level. ERC-20 and ERC-721 do not have these mechanisms natively and would have required more complex custom logic.",
+    "The KYC integration used GreenID, a widely-used Australian identity verification service already familiar to legal and financial services firms. GreenID verifies identity against Australian government data sources — driver's licences, Medicare, passport — and produces a verification result with a confidence score. Our system issued a whitelist credential on-chain (recorded as an investor eligibility status in the ERC-1400 contract) once GreenID returned a verified result. Token transfers were blocked at the contract level for any address without an active whitelist credential.",
+    "Polygon PoS was chosen over Ethereum mainnet for the same reasons as in our other token projects: gas costs for a platform issuing regulated securities to retail investors need to be predictable and low. ASIC's regulatory guidance on digital assets does not mandate any particular network, and the client's lawyers confirmed that the choice of network was a technical decision, not a regulatory one, provided the on-chain records were legally evidential. We documented the network's finality model and block confirmation characteristics for the legal team's records.",
+  ],
+
+  solution: [
+    "The platform consists of three interconnected layers: the legal structure (a registered MIS with a unit trust, managed by the client as responsible entity), the smart contract layer (an ERC-1400 security token contract on Polygon, with transfer restrictions enforced via on-chain investor whitelist), and the platform application (a React web app handling investor onboarding, KYC, document execution and portfolio management).",
+    "The ERC-1400 contract implements the full standard including partition support (allowing for different classes of tokens in future tranches), a transfer controller that checks the investor whitelist before approving any transfer, operator roles for the responsible entity to execute administrative functions including forced transfers and certificate issuance, and a full event log of all issuances, transfers and redemptions for regulatory audit purposes.",
+    "DocuSign integration handles the execution of the trust deed and investor declaration documents as part of the onboarding flow. A token can only be issued to an investor once GreenID verification is complete AND the DocuSign documents have been fully executed. This creates a reliable dual-gated issuance process: the smart contract cannot mint tokens to an investor who hasn't completed both steps, and the backend enforces this before submitting the mint transaction.",
+    "The secondary market mechanism was deliberately conservative given the regulatory constraints. The platform supports peer-to-peer transfer requests between verified investors, with a 2.5-business-day settlement window during which the responsible entity reviews the transfer for compliance, updates the off-chain unit register, and then triggers the on-chain token transfer via the contract's operator role. This is slower than a fully decentralised exchange model, but it is defensible within the regulatory framework and significantly faster than traditional property syndicate transfer processes.",
+    "The investor dashboard presents portfolio holdings, rental income distributions (processed quarterly and distributed to wallet addresses via a batch payout function), property documents, and governance voting rights for decisions that affect the trust. The blockchain layer is largely invisible — investors see property performance, distribution history and their holding, not transaction hashes or wallet mechanics.",
+  ],
+
+  implementation: [
+    "The project ran over 18 weeks from the start of the regulatory review phase to the first property's token issuance. The longer timeline than comparable non-regulated projects reflected the legal process: ASIC scheme registration, trust deed finalisation, PDS drafting and legal sign-off each had their own timelines that were outside our control.",
+    "Smart contract development occupied weeks five through eleven. The ERC-1400 implementation was based on the reference implementation but required significant customisation: the transfer controller logic, the GreenID whitelist integration, the DocuSign gate, the quarterly distribution batch payment function, and the off-chain register synchronisation event structure. We wrote 108 tests covering the full transfer restriction logic, partition management, operator functions, and distribution calculation.",
+    "The GreenID integration involved both a real-time verification API call during onboarding and a webhook callback for asynchronous verification completions (for cases where additional document review was required). We built a verification status state machine in the backend — pending, in-review, verified, rejected — with the on-chain whitelist credential only being issued on a confirmed verified status.",
+    "AML/CTF compliance documentation was prepared with reference to AUSTRAC's guidance for financial services businesses. The platform's KYC flow, transaction monitoring obligations, and suspicious transaction reporting procedures were documented in an AML/CTF programme that the client's legal advisors reviewed and the client adopted as their compliance framework. As a technology provider rather than a reporting entity, our role was to ensure the platform technically enabled the client's compliance obligations rather than to hold the compliance obligations ourselves.",
+    "The first property was tokenised and all 100 tokens issued to 12 investors over a two-week issuance window. KYC completion rate was 91% in the first week (ahead of typical industry completion rates for digital financial services onboarding), with the remaining tokens issued after follow-up to investors who had not completed identity verification. The token issuance transaction was recorded on Polygon with the full investor whitelist confirmed at the point of each mint.",
+  ],
+
+  lessonsLearned: [
+    "The off-chain/on-chain bridge is the hardest engineering problem in RWA tokenisation, not the smart contract itself. Maintaining reliable synchronisation between the on-chain token register and the off-chain legal unit register — particularly across transfer events, distribution events and corporate actions like property sales — requires more careful system design than most projects anticipate. Race conditions, retry logic for failed synchronisations, and audit trails for discrepancy resolution all need to be explicitly designed.",
+    "The secondary market liquidity promise of tokenisation needs to be communicated honestly to investors. A 2.5-day settlement window is better than a traditional property syndicate, but it is not the near-instant liquidity that some blockchain marketing implies. Investors who came in with unrealistic expectations about exit speed needed to have those expectations recalibrated. The platform materials now include explicit settlement timeline information prominently in the investor onboarding documents.",
+    "ERC-1400 is the right standard for regulated security tokens, but its complexity means developers unfamiliar with it will struggle with it. We found the transfer controller pattern — where every transfer goes through an on-chain validation call before executing — to be elegantly designed but not immediately intuitive. The standard also has some inconsistencies between different implementation versions that required careful resolution. Future projects using ERC-1400 should allocate extra time for the implementer to develop deep familiarity with the standard before writing production code.",
+    "ASIC registration timelines for a new MIS were longer than the client had initially hoped. This is not a criticism of ASIC — the process exists for legitimate consumer protection reasons — but it needs to be factored into project planning from the start. We now recommend clients begin the MIS registration process before engaging a technology team, so that the legal timeline and the technical timeline can run in parallel rather than sequentially.",
+  ],
+
+  whatCameNext: [
+    "The first successful tokenisation established the legal and technical template for the client's pipeline of subsequent properties. Within six months of the first property's launch, the client had prepared two additional properties for tokenisation using the same MIS structure and platform, with expanded investor capacity.",
+    "The secondary market mechanism was enhanced in a subsequent development phase to include a structured bid/ask board visible to all verified investors, rather than the initial direct peer-to-peer request model. This improved liquidity signalling without changing the fundamental settlement architecture.",
+    "The client was approached by two other property investment firms to licence the platform or white-label the technology. We are working with the client to assess the commercial model for this, as it would involve the platform operating as a technology provider to multiple responsible entities rather than a single one — a different and more complex compliance posture.",
+  ],
+
+  resultsNarrative: "The platform successfully tokenised and sold its first property — a $1.2M residential Sydney property divided into 100 tokens of $12,000 each — to 12 investors. KYC completion rate in the first week was 91%, significantly above industry average for digital financial services onboarding. The legal structure received a clean compliance review from the client's legal advisors against current ASIC guidance. Secondary market transfers have been executed with an average 2.5-business-day settlement time, compared to weeks or months for traditional property syndicate transfers. The investor dashboard received an NPS of 61, reflecting strong satisfaction from an audience that had been sceptical of blockchain-based investment platforms entering the process.",
+
+  metrics: [
+    { value: "100%", label: "First property successfully tokenised and sold", context: "$1.2M property, 100 tokens, 12 investors — first property through the full pipeline" },
+    { value: "91%", label: "KYC completion rate in first week", context: "Above industry average for digital financial services onboarding" },
+    { value: "2.5 days", label: "Average secondary market settlement", context: "vs weeks or months for traditional property syndicate transfers" },
+    { value: "0", label: "AML/CTF incidents", context: "Full GreenID identity verification on every investor pre-token issuance" },
+    { value: "NPS 61", label: "Investor dashboard satisfaction", context: "From an audience initially sceptical of blockchain investment platforms" },
+    { value: "Clean", label: "ASIC compliance review outcome", context: "Legal structure confirmed compliant with current MIS guidance" },
+  ],
+
+  techStack: [
+    { name: "Solidity (ERC-1400)", reason: "Security token standard with native transfer restrictions, investor eligibility enforcement, operator roles and forced transfer capability — essential for a regulated MIS" },
+    { name: "Polygon PoS", reason: "Low, predictable gas costs for a retail investor platform; ASIC guidance does not mandate a specific network and legal team confirmed network choice was a technical decision" },
+    { name: "Hardhat", reason: "Development and testing environment; 108 tests covering transfer restrictions, partition management, operator functions and distribution calculations" },
+    { name: "GreenID", reason: "Australian identity verification service checking driver's licence, Medicare and passport against government data sources; widely recognised in Australian financial services" },
+    { name: "React", reason: "Investor portal and dashboard — designed for property professionals unfamiliar with blockchain; blockchain layer abstracted away from primary UX" },
+    { name: "Node.js + PostgreSQL", reason: "Backend managing investor state, KYC status, off-chain unit register, on-chain sync events, and distribution calculations" },
+    { name: "DocuSign", reason: "Legally binding execution of trust deed and investor declarations as part of onboarding — token issuance gated on completed DocuSign workflow" },
+    { name: "Ethers.js", reason: "Smart contract interaction layer; handles whitelist credential issuance, token minting, transfer operator functions and event monitoring" },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "NFT Marketplace for Australian Artists",
+      href: "/case-studies/nft-marketplace-australian-artists",
+      industry: "Web3 & Crypto",
+      summary: "A Polygon-based NFT marketplace replacing 50% gallery commissions for an 85-member Melbourne arts collective, generating $340K in primary sales in 3 months.",
+    },
+    {
+      title: "DeFi Yield Aggregator",
+      href: "/case-studies/defi-yield-aggregator",
+      industry: "Web3 & Crypto",
+      summary: "Audited, gas-optimised smart contracts moving user funds between Aave, Compound and Curve, reaching $4.2M TVL within 60 days of mainnet launch.",
+    },
+    {
+      title: "Loan Application Assessment Platform",
+      href: "/case-studies/loan-application-assessment-platform",
+      industry: "AI & Automation",
+      summary: "AI-assisted loan application processing for a regional lender, reducing assessment time while maintaining regulatory compliance and credit risk standards.",
+    },
+  ],
+
+  relatedServices: [
+    { title: "Smart Contract Development", href: "/services/smart-contract-development" },
+    { title: "Blockchain Consulting", href: "/services/blockchain-consulting" },
+    { title: "Smart Contract Audit Support", href: "/services/smart-contract-audit-support" },
+    { title: "Web3 Frontend Development", href: "/services/web3-frontend-development" },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

@@ -1,0 +1,155 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Custom App Development | All Webbed Labs',
+  metaDescription: 'Enterprise-grade custom web and mobile application development for large Australian organisations. We build from the ground up — no templates, no compromises.',
+  category: 'Development',
+  heroHeadline: 'Enterprise Applications Built to Your Exact Specifications',
+  heroTagline: 'Stop retrofitting off-the-shelf software to workflows it was never designed for. We build from the ground up.',
+  description: [
+    'Off-the-shelf platforms are engineered for the broadest possible market — not your industry, not your compliance obligations, and certainly not the edge cases that define how your business actually operates. When you spend months configuring a SaaS product and still need to bolt on integrations, spreadsheets and manual workarounds, you have already paid more than a custom application would have cost. We design and build software that reflects your exact operational model, from data structures to user roles to approval workflows.',
+    'Our custom application practice spans full-stack web development, native and cross-platform mobile, and backend systems that connect into existing enterprise infrastructure. We work under structured engagement models — fixed-scope delivery for well-defined projects, and iterative sprints for discovery-heavy builds where requirements evolve. Every application we deliver is production-hardened: load-tested, security-audited, documented and handed over with source code, deployment runbooks and enough institutional knowledge for your internal team to own it independently.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+      title: 'Zero Compromise on Requirements',
+      description: 'Your business logic is encoded exactly — no workarounds, no "close enough." Complex approval chains, industry-specific calculations, and regulatory rules are first-class features, not afterthoughts bolted onto a generic platform.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Enterprise Security by Default',
+      description: 'Authentication via SAML 2.0 or OIDC, role-based access control, field-level encryption for sensitive data, full audit logging, and penetration testing before every major release. Security is architecture, not a final checklist item.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Built to Scale Under Load',
+      description: 'Architecture decisions are made with growth in mind from day one. Horizontal scaling, database partitioning strategies, background job queues, and CDN-served static assets mean the application performs at 10x the initial load without a rewrite.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>',
+      title: 'Deep System Integration',
+      description: 'Custom applications rarely stand alone. We integrate with your ERP, CRM, identity providers, payment gateways, government data services, and internal APIs using patterns that are observable, retryable and resilient to third-party downtime.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Designed for Your Users',
+      description: 'Internal tools and customer-facing applications both demand thoughtful UX. We conduct user research, build prototypes, run usability sessions, and measure adoption post-launch. High adoption rates are an explicit project deliverable.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      title: 'Full Source Code Ownership',
+      description: 'You own everything we build. Source code, CI/CD pipelines, infrastructure-as-code, database migrations, documentation. There are no vendor lock-in mechanisms, no proprietary runtimes, and no ongoing licensing dependency on us.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Financial Services',
+      title: 'Loan Origination & Credit Assessment Platform',
+      description: 'A non-bank lender replaced a patchwork of spreadsheets and a legacy system with a custom origination platform that automated credit scoring, document collection, compliance checks and broker commission calculations — cutting average approval time from 4 days to 6 hours.',
+    },
+    {
+      industry: 'Government',
+      title: 'Permit & Licensing Management System',
+      description: 'A state government agency consolidated seven separate permit workflows into a single application with a public-facing portal, case officer dashboard, automated renewal reminders and full integration with their identity management and payment systems.',
+    },
+    {
+      industry: 'Resources & Mining',
+      title: 'Field Operations & Compliance Tracking',
+      description: 'A mining services company deployed a custom mobile and web platform for field crews to log safety observations, equipment inspections and incident reports offline — syncing when connectivity was restored and feeding a real-time compliance dashboard for site managers.',
+    },
+    {
+      industry: 'Healthcare',
+      title: 'Patient Referral & Care Coordination Tool',
+      description: 'A specialist healthcare network built a referral management platform integrated with their practice management system, enabling GPs to submit structured referrals, specialists to accept and triage, and patients to receive updates — fully compliant with My Health Record requirements.',
+    },
+  ],
+  technologies: [
+    'React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis',
+    'React Native', 'Flutter', 'AWS', 'Docker', 'Kubernetes', 'Terraform',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Discovery & Requirements Definition',
+      duration: 'Weeks 1–3',
+      description: 'We run structured workshops with your stakeholders to map current workflows, identify pain points, document functional and non-functional requirements, and establish acceptance criteria. The output is a requirements specification and a high-level technical architecture proposal — not a vague Statement of Work.',
+    },
+    {
+      step: '02',
+      title: 'Architecture & Technical Design',
+      duration: 'Weeks 3–5',
+      description: 'Senior engineers design the system architecture, database schema, API contracts, integration patterns and security model. We produce architecture decision records (ADRs) that document trade-offs and rationale, giving your team a durable record of why decisions were made.',
+    },
+    {
+      step: '03',
+      title: 'UI/UX Design & Prototyping',
+      duration: 'Weeks 4–7',
+      description: 'Our designers produce wireframes, interactive prototypes and final high-fidelity UI specs. We validate with real users from your organisation before any code is written. Design tokens, accessibility annotations and responsive breakpoints are included as standard.',
+    },
+    {
+      step: '04',
+      title: 'Iterative Development & QA',
+      duration: 'Weeks 6–20+',
+      description: 'Two-week sprints with visible, demo-able progress at every cycle. Automated tests are written alongside production code, not after. A dedicated QA engineer tests each sprint\'s output against acceptance criteria before it moves to staging.',
+    },
+    {
+      step: '05',
+      title: 'Security Audit & Performance Testing',
+      duration: 'Final 2 weeks',
+      description: 'We conduct OWASP-aligned security reviews, penetration testing against the staging environment, and load testing to validate performance under peak traffic projections. Findings are remediated before any production deployment is scheduled.',
+    },
+    {
+      step: '06',
+      title: 'Deployment & Handover',
+      duration: 'Final week',
+      description: 'Production deployment via your CI/CD pipeline with zero-downtime strategies (blue-green or rolling). Full handover includes source code, infrastructure-as-code, runbooks, user documentation and a live knowledge-transfer session with your engineering team.',
+    },
+  ],
+  industries: [
+    'Financial Services',
+    'Government & Public Sector',
+    'Healthcare & Life Sciences',
+    'Resources & Energy',
+    'Insurance',
+    'Property & Construction',
+    'Professional Services',
+    'Education',
+  ],
+  faqs: [
+    {
+      question: 'How do you price custom application development projects?',
+      answer: 'We offer two commercial models depending on how well-defined the scope is. For projects where requirements are thoroughly documented upfront, we provide fixed-price delivery against a detailed specification. For projects that involve significant discovery or where requirements are expected to evolve, we work on a time-and-materials basis within a capped budget envelope, using fortnightly sprints with transparent progress reporting. We do not use opaque "value-based" pricing — you receive a detailed breakdown of estimated effort by component so you can make informed decisions about scope trade-offs.',
+    },
+    {
+      question: 'How long does it take to build a custom enterprise application?',
+      answer: 'A straightforward internal tool with well-defined requirements can be delivered in 8–14 weeks. A full enterprise platform with multiple user roles, complex integrations and mobile components typically takes 20–36 weeks from kick-off to production. The largest predictor of project duration is requirements clarity, not technical complexity — organisations that invest 3–4 weeks in proper discovery consistently see faster delivery and fewer change requests downstream. We will give you a realistic timeline estimate after a scoping session, not before.',
+    },
+    {
+      question: 'Do you work with our existing internal development team?',
+      answer: 'Yes — embedded team models are common for our larger engagements. We can act as a specialist delivery partner working alongside your internal engineers, supplying senior capacity in areas where your team has gaps (mobile, architecture, DevOps, QA). We use your tooling preferences where practical and follow your existing coding standards and branching conventions. We are equally comfortable owning an entire build independently where your team is not resourced for it.',
+    },
+    {
+      question: 'What happens to the application after launch?',
+      answer: 'We offer structured post-launch support arrangements including 24/7 on-call for critical applications, a monthly retainer for ongoing feature development, and a defined warranty period during which we remediate defects at no additional cost. Many clients transition the application to their internal team after launch using the documentation and runbooks we provide. We remain available for consultation, architecture reviews and new feature sprints on an as-needed basis.',
+    },
+    {
+      question: 'How do you handle data privacy and Australian regulatory requirements?',
+      answer: 'All applications we build are designed to comply with the Australian Privacy Act 1988 and the Australian Privacy Principles by default. For clients in regulated industries, we layer in sector-specific requirements — APRA CPS 234 for financial services, the My Health Records Act for healthcare, and relevant ISO 27001 controls where required. We implement data residency controls to ensure Australian data stays within Australian AWS or Azure regions, and we produce privacy impact assessments for applications handling sensitive personal information.',
+    },
+    {
+      question: 'Can you rescue a failed or stalled custom development project?',
+      answer: 'Rescue engagements are a meaningful part of our practice. We begin with a technical audit of the existing codebase, architecture and any documentation available — producing a frank assessment of what is salvageable, what needs to be rebuilt, and what the risks are going forward. We have successfully recovered projects that were 18 months in with nothing deployable, as well as projects that simply needed a senior architect to make a set of critical decisions that had been deferred. We will not tell you a rescue is viable if our assessment says otherwise.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Web & Mobile Applications', href: '/services/web-mobile-apps' },
+    { title: 'Flutter Development', href: '/services/flutter-development' },
+    { title: 'API Development & Integrations', href: '/services/api-development' },
+    { title: 'UI & UX Design', href: '/services/ui-ux-design' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="8 9 10 11 8 13"/><line x1="13" y1="13" x2="16" y2="13"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

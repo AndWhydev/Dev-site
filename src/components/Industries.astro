@@ -1,0 +1,195 @@
+---
+const industries = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+    name: 'Financial Services',
+    description: 'Trading platforms, wealth management portals, compliance automation and regulatory reporting systems.',
+    examples: ['Banking', 'Insurance', 'Fintech', 'Super Funds'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    name: 'Healthcare',
+    description: 'Patient management systems, telehealth platforms, clinical data analytics and HIPAA/ADHA-compliant infrastructure.',
+    examples: ['Hospitals', 'Telehealth', 'Clinics', 'Aged Care'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-7 14H17a2 2 0 002-2V9a2 2 0 00-2-2H9a2 2 0 00-2 2v11a2 2 0 002 2z"/><path d="M16 13h-5M16 17h-5M11 9H9"/></svg>`,
+    name: 'Logistics & Supply Chain',
+    description: 'Fleet management, warehouse automation, real-time tracking and last-mile delivery optimisation platforms.',
+    examples: ['Transport', 'Warehousing', 'E-Commerce', 'Cold Chain'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>`,
+    name: 'Retail & E-Commerce',
+    description: 'Omnichannel retail platforms, inventory management, loyalty programmes and AI-powered personalisation engines.',
+    examples: ['Retail', 'Wholesale', 'Marketplace', 'D2C'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>`,
+    name: 'Education',
+    description: 'Learning management systems, student engagement platforms, assessment tools and institutional analytics dashboards.',
+    examples: ['Universities', 'EdTech', 'RTO', 'K-12'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    name: 'Government',
+    description: 'Citizen-facing portals, grants management, compliance platforms and digital services that meet ISM and ASD standards.',
+    examples: ['Federal', 'State', 'Local Council', 'GovTech'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 3h-8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+    name: 'Construction & Property',
+    description: 'Project management platforms, safety compliance systems, BIM integrations and asset lifecycle management tools.',
+    examples: ['Builders', 'Property Mgmt', 'Engineering', 'Real Estate'],
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
+    name: 'Hospitality & Tourism',
+    description: 'Booking and reservation platforms, property management systems, loyalty programmes and F&B management solutions.',
+    examples: ['Hotels', 'Restaurants', 'Tourism', 'Events'],
+  },
+];
+---
+
+<section class="industries-section" id="industries">
+  <div class="industries-inner">
+    <div class="industries-header reveal">
+      <span class="section-label">Industries We Serve</span>
+      <h2 class="section-heading">Deep Domain Expertise</h2>
+      <p class="section-subheading">
+        We don't just write code — we understand your industry. Deep domain knowledge means faster delivery, fewer assumptions and better outcomes.
+      </p>
+    </div>
+
+    <div class="industries-grid">
+      {industries.map((industry, i) => (
+        <div class={`industry-card card-hover reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
+          <div class="industry-icon" set:html={industry.icon} />
+          <h3 class="industry-name">{industry.name}</h3>
+          <p class="industry-desc">{industry.description}</p>
+          <div class="industry-examples">
+            {industry.examples.map((ex) => (
+              <span class="industry-tag">{ex}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .industries-section {
+    padding: 8rem 0;
+    background: #0f1614;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .industries-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0a0f0e 0%, transparent 10%, transparent 90%, #0a0f0e 100%);
+    pointer-events: none;
+  }
+
+  .industries-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .industries-header {
+    margin-bottom: 4rem;
+    max-width: 620px;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .industry-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .industry-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    flex-shrink: 0;
+  }
+
+  .industry-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .industry-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+
+  .industry-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: auto;
+  }
+
+  .industry-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 1100px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .industries-section {
+      padding: 5rem 0;
+    }
+    .industries-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

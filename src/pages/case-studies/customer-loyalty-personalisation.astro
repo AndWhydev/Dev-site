@@ -1,0 +1,120 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+
+const data = {
+  metaTitle: 'Customer Loyalty & Personalisation Platform — All Webbed Labs',
+  metaDescription: 'How we helped a Melbourne online fashion retailer with 180,000 customers move from generic email blasts to AI-driven personalisation — lifting repeat purchase rate by 33% and email revenue by 41% in the first year.',
+  industry: 'Retail & E-Commerce',
+  tags: ['Next.js', 'Python', 'Machine Learning', 'Shopify', 'Klaviyo'],
+  title: 'Customer Loyalty & Personalisation Platform',
+  summary: 'A Melbourne online fashion retailer with 180,000 registered customers and $8M in annual revenue was spending heavily on customer acquisition while their repeat purchase rate sat below the industry average. The loyalty programme they had wasn\'t doing much loyalty work. We changed both.',
+  heroImageDescription: 'Customer-facing loyalty dashboard showing points balance and personalised product recommendations alongside the admin recommendation engine performance analytics view',
+
+  clientOverview: 'An online fashion retailer based in Melbourne, selling Australian and independent designer clothing and accessories. Founded in 2019, the business reached $8M in annual recurring revenue through strong initial growth driven by social media advertising and a distinctive product curation approach. The business has 180,000 registered customers and a team of 14, including marketing, buying, customer service and operations. Fulfilment is handled from a Melbourne warehouse.',
+  clientSize: '14 staff, 180,000 registered customers, $8M ARR',
+  clientLocation: 'Melbourne, VIC',
+
+  pullQuote: 'We were spending a fortune getting customers to buy once. The data was telling us we weren\'t doing nearly enough to get them to buy again. Building the personalisation layer was the most commercially important thing we\'ve done in three years.',
+  pullQuoteAuthor: 'Founder & CEO',
+  pullQuoteRole: 'Melbourne Online Fashion Retailer',
+
+  challenge: [
+    'The business had built its customer acquisition engine effectively. Paid social, influencer partnerships and a strong organic presence had driven steady growth in new customers. But the founder had become increasingly uncomfortable with a pattern in their data: a large proportion of acquired customers bought once and never returned. The repeat purchase rate — the percentage of customers who made more than one purchase in a twelve-month period — was sitting at 28%. Industry benchmarks for fashion e-commerce in Australia were closer to 38%.',
+    'The gap mattered enormously on unit economics. The cost of acquiring a customer through paid social had risen sharply over the two years prior to the project; a customer who only bought once was, in many cases, barely profitable. A customer who bought three or four times per year was highly profitable. The business needed to shift its mix — not necessarily reduce acquisition, but dramatically improve what happened after the first purchase.',
+    'The existing loyalty programme was, as the founder described it, "a digital stamp card." Customers earned points on purchases and could redeem them for discounts. The points multiplier and redemption rate were the same for every customer. The programme had no segmentation, no personalisation, and no mechanism for responding differently to customers in different states of engagement. A customer who had made five purchases in the last year received the same communication as a customer who had made one purchase eighteen months ago and hadn\'t been seen since.',
+    'Email marketing was the business\'s primary owned channel, but it was being underutilised in a specific way. The email list of 180,000 customers was treated largely as a single audience. Campaign emails went to everyone, with minor segmentation for things like "has purchased in last 90 days" versus "has not purchased." Product recommendations in emails were manually curated by the marketing team — a time-consuming process that meant the same featured products appeared across the full list, regardless of a customer\'s actual purchase history or browsing behaviour.',
+    'The technical infrastructure compounded the problem. Customer data was split across Shopify (purchase history), Klaviyo (email engagement history), and a basic loyalty points database that had been built by a previous developer. These three systems didn\'t talk to each other in any meaningful way. The marketing team\'s ability to act on customer data was constrained by what each system could do individually — and none of them could answer the question the founder most wanted answered: "What does this specific customer want to see next?"',
+  ],
+
+  whyUs: [
+    'The business had initially considered purchasing a commercial personalisation platform — there are several well-regarded SaaS products in this category. The economics didn\'t work out. The platforms that would have genuinely addressed the problem at their scale came with pricing that assumed a much larger business. The platforms at an accessible price point offered surface-level personalisation (browsed categories, basic collaborative filtering) that the marketing team felt was unlikely to move the needle meaningfully.',
+    'They contacted us after a recommendation from a mutual connection in the Australian e-commerce space. The engagement started with a data analysis session — we asked for a sample of their anonymised customer and order data and spent a week analysing it before our second meeting. Coming back with actual findings from their data, rather than generic pitch material, established the kind of credibility that was hard for an off-the-shelf product to match. We could see the purchase frequency patterns, the category affinities, the win-back window for lapsed customers. The commercial opportunity was clear in the data, and being able to demonstrate that early was critical to the project proceeding.',
+  ],
+
+  approach: [
+    'We structured the project in two parallel tracks. Track one was the loyalty programme redesign — the rules engine, the tier structure, the customer-facing experience. Track two was the recommendation engine — the machine learning layer that would drive personalised product suggestions in emails and on-site. The two tracks were designed to be independent of each other but to share the same customer data foundation.',
+    'The data foundation was the first thing we built. We created a unified customer data model that pulled from Shopify (purchase history, product attributes purchased, return history), Klaviyo (email open and click history, last engagement date), and the existing loyalty database (points balance, programme enrollment date). This unified view was updated nightly at first and then moved to near-real-time as we gained confidence in the pipeline. This was the architectural decision that made everything else possible: having one reliable source of truth for the customer profile.',
+    'For the recommendation engine, we chose Python with scikit-learn as the primary framework. We evaluated several approaches: collaborative filtering (recommending products that similar customers have bought), content-based filtering (recommending products similar to what a customer has previously purchased), and a hybrid approach. The hybrid performed best in our offline evaluation against historical data — it handled the cold start problem (new customers with little purchase history) better than pure collaborative filtering, and it captured cross-category affinity better than pure content-based filtering. The model was trained on two years of purchase history and retrained weekly.',
+    'The loyalty programme tier redesign was the part the marketing team was most involved in. We proposed a three-tier structure based on annual spend — entry, mid and top — with meaningfully different benefits at each level rather than just a points multiplier difference. The benefits were designed to have genuine perceived value: early access to new arrivals (which the business\'s buying team confirmed was genuinely something customers asked for), free returns at higher tiers, and personal styling call access at the top tier. The last of these was the founder\'s idea and turned out to be the tier benefit with the highest stated value in a small customer survey we ran before launch.',
+    'The Klaviyo integration was designed around a set of specific email flows that the recommendation engine would power. The most important were: post-purchase (sent 7 days after an order, recommending complementary products), win-back (sent to customers who hadn\'t purchased in 90 days, using their purchase history to surface relevant new arrivals), and weekly digest (a personalised edit of new arrivals for each customer, replacing the generic weekly newsletter). We built the logic in our system and delivered the personalised content to Klaviyo via API, using Klaviyo\'s existing deliverability infrastructure rather than replicating it.',
+  ],
+
+  solution: [
+    'The customer-facing loyalty portal is a Next.js application embedded in the Shopify storefront. Customers see their tier status, points balance, available rewards, and a personalised product recommendation section — currently titled "Picked for You" — on their account page. The recommendations update weekly based on the latest model run. The interface was designed to feel like part of the brand experience, not like a generic loyalty bolted-on — the design team was involved from the first mockup review.',
+    'The recommendation engine runs as a FastAPI service. It consumes customer profile data from the unified data model, runs inference for a given customer or batch of customers, and returns ranked product recommendations via an internal API. The same service powers the email personalisation (via Klaviyo API calls) and the on-site recommendations (via the Shopify storefront integration). Having a single recommendation service ensure consistency — a customer doesn\'t see different "recommended" products on-site versus in email.',
+    'The Shopify integration was built through Shopify\'s GraphQL Admin API. We pull product catalogue data — including inventory availability, pricing, category taxonomy and product attributes — in a nightly sync that feeds the recommendation model. We push customer tier and loyalty data back to Shopify customer metafields, which allows Shopify to surface tier-specific pricing and benefits without requiring the customer to leave the normal checkout flow.',
+    'The marketing team has a dedicated analytics dashboard — built as a separate React view within the admin system — that shows recommendation engine performance: click-through rate, conversion rate from recommended products, revenue attributable to personalised recommendations, and model drift indicators. The marketing team can also manually exclude specific products from recommendations (useful for products that are low-margin, returning high but misleading engagement, or simply not suitable for recommendation) without touching the model training.',
+    'The tier-specific email flows were designed with the marketing team writing the copy and us building the data logic and Klaviyo integration. The win-back flow in particular was carefully designed: it does not lead with a discount, which the founder was concerned would train customers to wait for discounts before buying again. Instead, it leads with "We thought you might like these" and surfaces new arrivals in categories the customer has purchased from before. A discount offer is the third email in the sequence, not the first.',
+  ],
+
+  implementation: [
+    'The data pipeline took three weeks longer than originally scoped, primarily because the Shopify data had more inconsistencies than we\'d expected. Several years of product catalogue changes, variant restructuring, and occasional manual imports had left some product category assignments and attribute data in poor shape. We built a data quality layer that flagged problematic records for the buying team to review rather than trying to automatically correct them — category assignments in fashion are subjective enough that automated correction would have been unreliable.',
+    'The recommendation model\'s first production run performed below our offline evaluation benchmarks in one specific way: it over-recommended from the business\'s top-selling category (casual dresses) to the point where recommendations were not meaningfully personalised for customers whose purchase history suggested different preferences. We introduced a category diversity constraint in the ranking step that limited how many recommendations from any single category could appear in a customer\'s personalised set. This brought the click-through rate in line with expectations within two weeks of launch.',
+    'The loyalty programme launch was treated as a marketing moment, not just a system cutover. The founder sent a personal email to the full customer list explaining the new programme, what tier each existing customer was automatically placed in based on their purchase history, and what their points balance was. This onboarding communication was written by the founder herself; we provided the data segmentation and the personalised tier and balance values that were inserted into each email via Klaviyo merge tags. 12,000 customers enrolled in the first 30 days.',
+  ],
+
+  lessonsLearned: [
+    'The category diversity constraint we added to the recommendation model was not something we\'d anticipated needing during the design phase. Our offline evaluation had looked at top-K accuracy and precision at K, which are standard recommendation system metrics, but we hadn\'t explicitly tested for category diversity. Adding that test to our standard recommendation model evaluation checklist is a direct outcome of this project. The lesson is that recommendation quality metrics and recommendation experience quality are not the same thing.',
+    'The decision to use Klaviyo as the email delivery layer — rather than building our own — was the right call for this business at this scale. Klaviyo\'s deliverability, template tooling and support for dynamic content via API are genuinely good, and the marketing team already knew how to use it. Our value-add was the personalisation data and the logic for deciding what each customer should see; Klaviyo handled the delivery and the opt-out compliance. Building email infrastructure from scratch would have added months and introduced deliverability risk.',
+    'The return on investment from personalisation in email is highly uneven across customer segments. The win-back flow for customers who had purchased 2–3 times and then lapsed showed conversion rates approximately four times higher than the same flow applied to customers who had only purchased once. This is an obvious finding in retrospect — customers with a stronger purchase history have a stronger signal to personalise against — but it changed how we prioritised the model development work in phase two.',
+  ],
+
+  whatCameNext: [
+    'The success of the weekly personalised digest prompted a request to personalise the homepage itself — specifically the "New Arrivals" and "Recommended for You" sections — for logged-in customers. This was built as a second phase, using the same recommendation service. It required a slightly different inference approach (the homepage serves many customers simultaneously and caches need to be warm before traffic peaks) but the core model was unchanged.',
+    'There is ongoing work on a "style profile" feature that would allow customers to explicitly indicate their style preferences at account creation — size, fit preference, colour palette, aesthetic keywords — which would be incorporated as explicit signals in the recommendation model alongside the inferred signals from purchase history. The founder believes that combining explicit preferences with implicit behaviour will further improve recommendation quality for new customers who haven\'t yet built up a purchase history.',
+  ],
+
+  resultsNarrative: 'The repeat purchase rate improvement from 28% to 37% represents thousands of additional purchases per year that would not have happened under the old model. The marketing team describes the change in their working dynamic as significant: they spend far less time manually curating email content and far more time thinking about customer segmentation strategy and product positioning. The system handles the mechanical personalisation; the team handles the creative and strategic work.',
+
+  metrics: [
+    { value: '37%', label: 'Repeat purchase rate', context: 'Up from 28% pre-launch; industry average ~38%' },
+    { value: '+41%', label: 'Email revenue increase', context: 'Revenue attributable to email campaigns after personalisation vs same period prior year' },
+    { value: '+$14', label: 'Average order value increase', context: 'Average basket size up $14 following recommendation engine launch' },
+    { value: '12,000', label: 'Loyalty programme enrolments', context: 'Customers enrolled in first 30 days of new programme launch' },
+    { value: '11%', label: 'Recommendation click-through rate', context: 'Vs 3% CTR on previously generic featured products' },
+    { value: '+22%', label: 'Customer LTV improvement', context: 'Estimated 12-month LTV increase for customers engaged with loyalty programme' },
+  ],
+
+  techStack: [
+    { name: 'Next.js', reason: 'Customer-facing loyalty portal embedded in Shopify storefront; SSR for performance' },
+    { name: 'Python / scikit-learn', reason: 'Hybrid collaborative + content-based recommendation model, retrained weekly' },
+    { name: 'FastAPI', reason: 'Recommendation inference service serving both on-site and email personalisation' },
+    { name: 'PostgreSQL', reason: 'Unified customer data model and recommendation output store' },
+    { name: 'Shopify GraphQL API', reason: 'Product catalogue sync, customer metafield updates for tier data' },
+    { name: 'Klaviyo API', reason: 'Personalised email flow delivery using our recommendation data as dynamic content' },
+    { name: 'AWS', reason: 'Model training infrastructure and API hosting; Sydney region for data residency' },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: 'Retail Inventory & POS System',
+      href: '/case-studies/retail-inventory-pos-system',
+      industry: 'Retail & E-Commerce',
+      summary: 'An 8-store Victorian outdoor retail chain replaced disconnected legacy systems with a unified inventory and POS platform, reducing stockouts by 52%.',
+    },
+    {
+      title: 'Wholesale Ordering Portal',
+      href: '/case-studies/wholesale-ordering-portal',
+      industry: 'Retail & E-Commerce',
+      summary: 'An Australian food manufacturer eliminated manual order processing with a B2B portal handling $2.3M in monthly orders with zero manual data entry.',
+    },
+    {
+      title: 'AI-Powered Content Generation Platform',
+      href: '/case-studies/ai-content-generation-platform',
+      industry: 'AI & Automation',
+      summary: 'A marketing agency cut content production time by 65% with a custom AI platform trained on brand guidelines and client voice profiles.',
+    },
+  ],
+
+  relatedServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'AI Tools & Chatbots', href: '/services/ai-tools-chatbots' },
+    { title: 'Data Analytics & BI', href: '/services/data-analytics' },
+    { title: 'API Development & Integration', href: '/services/api-development' },
+    { title: 'Retail Software', href: '/services/retail-software' },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

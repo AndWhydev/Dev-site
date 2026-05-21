@@ -1,0 +1,147 @@
+---
+const industries = [
+  { icon: '💰', name: 'Financial Services', href: '/industries/finance-fintech' },
+  { icon: '🏥', name: 'Healthcare', href: '/industries/healthcare' },
+  { icon: '🚚', name: 'Logistics', href: '/industries/logistics-transport' },
+  { icon: '🛒', name: 'Retail & E-Commerce', href: '/industries/retail-ecommerce' },
+  { icon: '📚', name: 'Education', href: '/industries/education' },
+  { icon: '🏛️', name: 'Government', href: '/industries/government-enterprise' },
+  { icon: '🏗️', name: 'Construction', href: '/industries/construction-trades' },
+  { icon: '🏠', name: 'Real Estate', href: '/industries/real-estate' },
+  { icon: '🏨', name: 'Hospitality', href: '/industries/hospitality' },
+  { icon: '⚽', name: 'Sports & Recreation', href: '/industries/sports-recreation' },
+  { icon: '₿', name: 'Web3 & Crypto', href: '/industries/web3-crypto' },
+  { icon: '🤖', name: 'AI & Automation', href: '/industries/ai-automation' },
+];
+---
+
+<section class="showcase-section">
+  <div class="showcase-header reveal">
+    <span class="section-label">Industries We Serve</span>
+    <h2 class="section-heading">Deep Domain Expertise Across Every Sector</h2>
+  </div>
+  <div class="showcase-track-wrap">
+    <div class="showcase-track">
+      {[...industries, ...industries].map((ind, i) => (
+        <a href={ind.href} class="showcase-card" key={i}>
+          <span class="showcase-icon">{ind.icon}</span>
+          <span class="showcase-name">{ind.name}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="showcase-cta reveal">
+    <a href="/services" class="btn-outline">
+      Explore All Industry Solutions
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  .showcase-section {
+    padding: 6rem 0 4rem;
+    background: #0a0f0e;
+    overflow: hidden;
+  }
+
+  .showcase-header {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .showcase-track-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .showcase-track-wrap::before,
+  .showcase-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    z-index: 2;
+  }
+
+  .showcase-track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #0a0f0e, transparent);
+  }
+
+  .showcase-track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #0a0f0e, transparent);
+  }
+
+  .showcase-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: showcase-scroll 40s linear infinite;
+  }
+
+  .showcase-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes showcase-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .showcase-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem 1.75rem;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    min-width: 140px;
+  }
+
+  .showcase-card:hover {
+    border-color: rgba(13,147,115,0.35);
+    background: rgba(13,147,115,0.04);
+    transform: translateY(-3px);
+  }
+
+  .showcase-icon {
+    font-size: 1.5rem;
+  }
+
+  .showcase-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #8aa09a;
+    text-align: center;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .showcase-cta {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .showcase-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+      justify-content: center;
+      padding: 0 2rem;
+    }
+  }
+</style>

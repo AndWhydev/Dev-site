@@ -1,0 +1,124 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Delivery & Proof of Delivery App | All Webbed Labs",
+  metaDescription: "How we helped a Brisbane furniture delivery company eliminate paper dockets, cut morning dispatch from 45 minutes to 8 minutes, and reduce disputed delivery claims from 18 per month to near zero.",
+
+  industry: "Logistics & Transport",
+  tags: ["Proof of Delivery", "Driver App", "Dispatch Automation", "Digital Signatures", "Customer Notifications"],
+
+  title: "Delivery & Proof of Delivery App",
+  summary: "A Brisbane furniture and white goods delivery company with 18 trucks was starting every morning 45 minutes late due to paper route sheets, ending every evening with a 90-minute docket reconciliation, and spending days resolving disputes with no photographic evidence to stand on. We built a driver app and digital proof-of-delivery system that transformed the operation end-to-end.",
+
+  heroImageDescription: "Driver and offsider in a furniture delivery truck cab, with the Flutter app showing the day's delivery route and an in-app photo capture screen capturing a delivered lounge suite in a customer's living room",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "Crestline Deliveries is a furniture and white goods delivery specialist based in Brisbane's northern suburbs, operating 18 heavy vehicles with a driver-plus-offsider crew model on each truck. The company services three major furniture retail chains as its primary clients, along with a smaller volume of direct consumer deliveries. Peak delivery volume runs to approximately 140 to 160 deliveries per day across the Brisbane metropolitan area and surrounds.",
+  clientSize: "18 trucks, 36 drivers and offsiders, 140–160 deliveries/day",
+  clientLocation: "Brisbane, QLD",
+
+  pullQuote: "The disputed claims were the thing that kept me up at night. A customer saying a table was damaged on delivery and us having absolutely nothing to counter it with except a driver's word. We'd just pay up. Now we have photos of every single delivery and we haven't lost a dispute since the pilot month.",
+  pullQuoteAuthor: "Tanya Sorensen",
+  pullQuoteRole: "Director, Crestline Deliveries",
+
+  challenge: [
+    "Every morning at 5:30am, the Crestline depot was a controlled scramble. The previous evening's bookings had been sorted into truck runs by the operations coordinator — a process that involved printing delivery addresses, customer names, and product codes onto route sheets, then sorting them into sequence by suburb, then stapling each truck's run together and placing it in the driver's pigeonhole. By the time drivers arrived at 6am, the sheets were ready, but any late booking that had come in overnight — and retail clients frequently added next-day deliveries until 8pm — required a re-sort and reprint. The average morning delay from planned start time to trucks rolling was 45 minutes.",
+    "The paper docket system created problems that compounded throughout the day. Each delivery required the customer to sign a paper docket confirming receipt — the top copy stayed with the customer, the carbonless duplicate returned to the depot with the driver at end of shift. Drivers carried a docket pad for each job in a folder; on a busy day, a crew might handle 12 to 14 deliveries. By mid-afternoon on a wet Brisbane summer day, paper dockets that had been handled at doorsteps, stuffed in cab pockets, and folded into clipboards were sometimes illegible. Occasional total losses of individual dockets were written off.",
+    "The dispute problem was the most commercially damaging consequence of the paper system. Furniture and white goods delivery involves a meaningful risk of delivery-condition disputes: a customer who claims a refrigerator arrived with a scratch on the door, a sofa that the customer says was damaged during staircase delivery, a washing machine with a dent that may or may not have been pre-existing. Without photographic evidence, Crestline had no way to dispute a claim. The company's approach had been to investigate, attempt to recall the specific delivery, and in most cases settle the claim — either by absorbing the cost or passing it to their retail clients, which strained those relationships.",
+    "The retail clients themselves had growing documentation requirements. Two of the three major chains had recently updated their delivery partner contracts to require photographic proof of delivery as a standard condition — meaning a photo of the item in the customer's home, at the point of delivery, as evidence of condition. The third chain was considering the same requirement. Crestline was at risk of losing contract renewals if they couldn't demonstrate compliance with these new standards.",
+    "The end-of-day debriefing was a daily operational tax. When drivers returned to the depot, the operations coordinator would collect their docket folders and spend 90 minutes cross-referencing completed deliveries against the day's manifest, marking off completions, flagging any missed deliveries or customer-not-home situations, and filing the dockets. Items that needed follow-up — a missed delivery that needed rescheduling, a damaged goods claim — went into a separate pile that was worked through the next morning. By the time an issue from a Tuesday delivery was actioned, it was often Thursday."
+  ],
+
+  whyUs: [
+    "The operations coordinator had researched delivery management apps and found two contenders — one a general-purpose field service app that could be adapted for deliveries, and one a purpose-built proof-of-delivery platform with an Australian client base. The general-purpose app lacked the driver-plus-offsider crew model in its data structure, which meant it would have tracked deliveries by driver rather than by vehicle crew, creating reconciliation problems. The purpose-built POD platform had the right structure but required a per-delivery transaction fee that, at 150 deliveries per day, would have added meaningful ongoing cost compared to a fixed-fee custom build.",
+    "The director's primary concern was the retail client relationship. She needed a solution she could demonstrate to the retail chain contract managers — showing them a real delivery record with timestamp, GPS location, photo evidence, and digital signature — and be confident it would satisfy their updated contract requirements. We prepared a sample delivery record in our proposed format during the sales process, mapped it against the specific language in the two chains' updated delivery contracts, and showed where each contractual requirement was satisfied. That specificity was the deciding factor."
+  ],
+
+  approach: [
+    "Furniture delivery has operational characteristics that distinguish it from parcel delivery, and we spent time understanding them before designing anything. A furniture delivery is not a one-minute doorstep transaction — it involves a two-person crew, items that need to be carried up stairs or through narrow hallways, old appliances that are sometimes taken away as a service, and customers who are at home specifically for the delivery and have strong opinions about where things should go. The app needed to support a longer, more complex interaction than a courier signature.",
+    "The crew model — driver and offsider operating as a unit — shaped the app architecture. We designed the app to be operated by one person (typically the offsider while the driver handles the vehicle) but to capture the vehicle run, not the individual. Deliveries are assigned to a truck number, and the crew logs in with their truck ID at the start of the day. This matched how the operations team thought about the day's work — by truck run — rather than by individual driver.",
+    "The route sheet replacement was a specific design challenge. The morning delay was caused by printing and sorting, not by route planning itself — the operations coordinator was already doing reasonable route sequencing, just using a slow paper process. We designed the app to receive the day's run from the operations system, display it in order, and allow the driver to resequence individual stops if they chose to (same capability as reviewing a paper sheet and deciding to do the corner stop first). The key was that this resequencing was visible to the operations coordinator in real time, so if a driver made a change, the depot knew about it.",
+    "Photo capture was the feature with the highest user experience stakes. Delivery crews would be taking hundreds of photos per day across the fleet — photos of items in customers' homes, photos of pre-existing damage, photos of access problems, and photos of items being left in agreed safe locations. If the photo capture flow had any friction, crews would find shortcuts or skip it. We tested three different photo flow designs with four crew members during the pilot and settled on one that required a minimum of two photos per delivery — one of the item in situ, one of the room context — with optional additional photos for damage or access notes."
+  ],
+
+  solution: [
+    "The driver app runs on a company-issued Android tablet mounted in each truck cab. At the start of the day, the driver taps their truck number and a PIN — no username and password to type in a warm cab with large fingers. The day's delivery run loads immediately from the operations server, showing stops in sequence with address, customer name, and product summary for each delivery. The navigation for each stop opens directly in Google Maps with the address pre-loaded; the crew doesn't type addresses.",
+    "Arriving at a delivery, the crew taps 'Start delivery' which records the arrival time and GPS coordinates. The delivery screen shows the items on the order — furniture descriptions, product codes, and any special instructions from the retailer (assemble, unwrap, take away old unit). When delivery is complete, the offsider opens the handover screen: two mandatory photos are captured with the in-app camera (the app won't progress without them), the customer signs with their finger on the tablet screen, and the customer's name is confirmed with a tap on the pre-populated field. The completed delivery is submitted and appears as confirmed on the operations dashboard within seconds.",
+    "For deliveries with complications — a customer who isn't home, an access problem, visible damage being photographed before entry, or a customer refusing delivery — the app has a structured exception flow. Each exception type has a specific photo requirement and note template, so the record produced by an 'access refused' exception is consistent and complete rather than a freeform note. The retailer clients can see their exception deliveries in their portal in real time, rather than learning about them the next day.",
+    "Customer notifications are sent by Twilio SMS at two points in the delivery process. The first message goes out the evening before delivery, confirming the delivery date and providing a four-hour arrival window based on the truck's scheduled run sequence. The second message goes out when the operations system marks the truck as en route to that specific delivery — typically 30 to 50 minutes before arrival — with the crew's current ETA. Customers who respond to the message (a simple reply system) can request a callback if there's an access issue, which routes to the operations coordinator rather than the driver.",
+    "End-of-day reconciliation now happens in real time rather than as an evening exercise. The operations dashboard shows every delivery's status — confirmed, exception, in progress — as the day runs. By the time trucks return to the depot, all confirmed deliveries are already reconciled. The operations coordinator's evening task is to review the exception queue — typically three to eight items per day across the fleet — and schedule any required follow-up. The 90-minute reconciliation became a 15-minute exception review.",
+    "Proof-of-delivery documents are generated automatically for each completed delivery: a PDF containing the delivery timestamp, GPS coordinates mapped to a street address, the customer's digital signature, the crew's identity, the items delivered, and the two (or more) photos. These PDFs are stored in AWS S3 and linked from the delivery record. The retail client portal allows client contract managers to search and download any delivery record by order number, date range, or customer name — giving them direct access to the documentation their contracts now require."
+  ],
+
+  implementation: [
+    "We ran a three-truck pilot for the first two weeks of live operation. The pilot trucks ran the app alongside the paper process — drivers completed paper dockets as usual but also used the app for each delivery. This parallel approach was important for two reasons: it let us validate that the digital records matched the paper records and catch any discrepancies, and it gave the pilot crews confidence in the system before the paper fallback was removed. After two weeks, the pilot trucks dropped the paper process. After four weeks, all 18 trucks had cut over.",
+    "The morning dispatch workflow change required more operations-side development than we had initially scoped. The operations coordinator's existing process for building truck runs used a combination of the retail clients' booking exports (two different formats) and a manual routing step in Google Maps. We built an import tool that handled both booking export formats and pre-populated the run list in the operations dashboard, reducing the coordinator's preparation time significantly. This wasn't in the original scope — it emerged from observing the actual morning process — but it was essential to achieving the dispatch time improvement the director was expecting.",
+    "Device management for 18 tablets required a straightforward MDM solution. We used a basic Android MDM profile to lock each device to the Crestline app, configure the company WiFi automatically on return to depot, and enable remote wipe if a tablet was lost or stolen. This was implemented in the first week of the pilot and applied to all 18 devices before full rollout. Remote device management cost approximately $12 per device per month — a minor ongoing cost that the director was happy to absorb given the risk of a lost device with customer data on it."
+  ],
+
+  lessonsLearned: [
+    "The mandatory photo requirement caused more friction with experienced crews than we had anticipated. Two of the long-tenure crews felt the two-photo requirement implied distrust — as if the company assumed they'd damage furniture and needed surveillance to prove otherwise. The director addressed this directly in the all-hands rollout meeting, framing the photos as protection for the crew (a photo proves the item arrived undamaged and was properly delivered) rather than monitoring of the crew. This reframing was important. By the second week, the same crews were voluntarily taking additional photos on deliveries where they anticipated potential disputes.",
+    "GPS coordinates at delivery locations were occasionally imprecise in apartment complexes and new estate developments where the street address mapped to the building entrance rather than the specific unit. For the purposes of the delivery record, we added a 'confirmed delivery location' step that showed the crew a map pin and asked them to confirm it was correct, with the option to adjust it manually. This added five seconds to the delivery completion flow but ensured that the GPS evidence in disputed cases accurately reflected where the delivery took place.",
+    "The customer notification timing needed calibration in the first month. Our initial implementation sent the 'driver is on the way' SMS when the previous stop was completed. For suburban routes with long distances between stops, this gave accurate 30-to-45-minute lead times. For inner-city routes where stops were 5 minutes apart, the notification sometimes arrived while the driver was already parking outside. We adjusted the trigger logic to use the Google Maps ETA from the current location rather than a fixed offset from the previous stop completion, which made the arrival window estimate consistently accurate across both urban and suburban run types."
+  ],
+
+  whatCameNext: [
+    "Three months after full rollout, one of the three retail chain clients formally renewed Crestline's delivery contract with a two-year term — the first long-term renewal Crestline had received from that client in four years. The contract manager explicitly cited the photo proof-of-delivery capability and the improved customer communication as factors in the renewal decision. The director considered this a direct commercial outcome of the platform investment.",
+    "Crestline is now exploring using the platform's delivery data to offer their retail clients an on-time delivery reporting dashboard — showing delivery-window adherence rates, average delivery completion times by suburb, and exception type breakdowns. This would give the retail clients visibility into delivery performance metrics they currently have to request manually. We've scoped this as a relatively minor extension of the existing client portal, and the data to power it has been accumulating in the platform since day one of operation."
+  ],
+
+  resultsNarrative: "The results below are drawn from Crestline's operational records for the six months following full fleet rollout, compared to the equivalent prior period. Dispute claim data comes from the director's records of formal claims received from retail clients and direct consumers. Morning dispatch time is based on GPS data from the trucks — specifically, the time between the first driver's arrival at the depot and the last truck departing the yard.",
+
+  metrics: [
+    { value: "< 2hrs", label: "Dispute resolution time", context: "Down from an average of 4 days with no photo evidence" },
+    { value: "8min", label: "Morning dispatch preparation", context: "Down from 45 minutes of printing and sorting" },
+    { value: "Real-time", label: "Delivery completion status", context: "Replaced 90-minute evening docket reconciliation" },
+    { value: "97%", label: "Customer satisfaction with notifications", context: "Measured via post-delivery SMS survey in months 3–6" },
+    { value: "100%", label: "Deliveries with photo evidence", context: "Two mandatory photos captured at every completion" },
+    { value: "3 vs 18", label: "Disputed claims resolved in pilot month", context: "3 in the pilot month; 18 in the equivalent prior month" }
+  ],
+
+  techStack: [
+    { name: "Flutter", reason: "Cross-platform driver app on Android tablets with offline data persistence and background sync" },
+    { name: "Node.js", reason: "Backend API handling delivery records, photo metadata, and operations dashboard data" },
+    { name: "PostgreSQL", reason: "Delivery records, crew assignments, and full exception audit trail" },
+    { name: "AWS S3", reason: "Photo storage with per-delivery folder structure and signed URL access for PDF generation" },
+    { name: "Google Maps (Directions API)", reason: "In-app navigation and ETA calculation for accurate customer notification timing" },
+    { name: "Digital Signature Capture", reason: "In-app finger signature on tablet screen, stored as SVG alongside delivery record" },
+    { name: "Twilio SMS", reason: "Evening pre-delivery window notification and day-of ETA update to customers" },
+    { name: "PDF Proof of Delivery", reason: "Auto-generated delivery certificate with timestamp, GPS, signature, and photos for client portal" },
+    { name: "AWS (ECS, RDS)", reason: "Containerised backend deployment and managed PostgreSQL database" },
+    { name: "Android MDM", reason: "Device management for 18 company tablets — app locking, WiFi config, and remote wipe" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Fleet Tracking & Job Dispatch System",
+      href: "/case-studies/fleet-tracking-job-dispatch",
+      industry: "Logistics & Transport",
+      summary: "Built a real-time dispatch dashboard and driver app for a Sydney courier company, tracking 45 vehicles and cutting dispatcher call volume by 64%."
+    },
+    {
+      title: "Warehouse Management System",
+      href: "/case-studies/warehouse-management-system",
+      industry: "Logistics & Transport",
+      summary: "Replaced a legacy WMS for a Melbourne 3PL provider, cutting pick error rates from 2.3% to 0.3% and reducing new client onboarding from 3 weeks to 4 days."
+    },
+    {
+      title: "Job Scheduling & Site Management",
+      href: "/case-studies/job-scheduling-site-management",
+      industry: "Field Services",
+      summary: "Replaced a whiteboard and phone-call scheduling system for a trade services company with a real-time job dispatch and site management platform."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Mobile App Development", href: "/services/mobile-app-development" },
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "API Integration & Automation", href: "/services/api-integration-automation" },
+    { title: "Cloud Infrastructure", href: "/services/cloud-infrastructure" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

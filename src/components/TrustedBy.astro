@@ -1,0 +1,142 @@
+---
+// TODO: Replace placeholder logos with real client logos
+// Recommended dimensions: SVG or 200×60px PNG with transparent background
+// Place client logo files in public/logos/ directory
+const logos = [
+  { name: 'Fortune Corp', placeholder: true },
+  { name: 'Pacific Group', placeholder: true },
+  { name: 'Meridian Finance', placeholder: true },
+  { name: 'Axiom Health', placeholder: true },
+  { name: 'TerraLogistics', placeholder: true },
+  { name: 'Apex Digital', placeholder: true },
+  { name: 'Synergy Systems', placeholder: true },
+  { name: 'CoreTech Solutions', placeholder: true },
+];
+---
+
+<section class="trusted-section">
+  <div class="trusted-inner">
+    <p class="trusted-label reveal">Trusted by leading organisations across Australia</p>
+
+    <div class="logos-track-wrap">
+      <div class="logos-track" aria-label="Client logos">
+        {[...logos, ...logos].map((logo) => (
+          <div class="logo-item" title={logo.name}>
+            <!-- TODO: Replace with <img src={`/logos/${logo.slug}.svg`} alt={logo.name} /> -->
+            <div class="logo-placeholder">
+              <span class="logo-name">{logo.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trusted-section {
+    padding: 4rem 0;
+    border-top: 1px solid #1e2d28;
+    border-bottom: 1px solid #1e2d28;
+    background: rgba(255,255,255,0.01);
+    overflow: hidden;
+  }
+
+  .trusted-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .trusted-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a6359;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .logos-track-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logos-track-wrap::before,
+  .logos-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+  }
+  .logos-track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #0a0f0e, transparent);
+  }
+  .logos-track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #0a0f0e, transparent);
+  }
+
+  .logos-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll-logos 35s linear infinite;
+  }
+
+  .logos-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-logos {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+    cursor: default;
+  }
+  .logo-item:hover {
+    opacity: 0.75;
+  }
+
+  .logo-placeholder {
+    border: 1px solid #1e2d28;
+    border-radius: 8px;
+    padding: 0.625rem 1.5rem;
+    background: rgba(255,255,255,0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #8aa09a;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logos-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: auto;
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Flutter Development | All Webbed Labs',
+  metaDescription: 'Expert Flutter development for Australian enterprises. Cross-platform iOS and Android applications with native performance, one codebase, and a faster path to production.',
+  category: 'Mobile',
+  heroHeadline: 'Cross-Platform Mobile Apps With Native Performance',
+  heroTagline: 'One codebase. iOS and Android. Zero performance compromise. Built by Flutter experts who\'ve shipped real products.',
+  description: [
+    'Flutter\'s proposition is compelling: a single Dart codebase that compiles to native ARM code on iOS and Android, renders via its own Skia/Impeller graphics engine rather than platform WebViews, and ships UI that is visually indistinguishable from native development. The practical result is that enterprises no longer have to choose between maintaining two separate codebases — and paying for two separate development teams — or accepting the sluggishness of hybrid frameworks that were never intended for production-grade mobile. Flutter is Google\'s fastest-growing UI framework and now powers applications at BMW, eBay, and the New York Times.',
+    'Our Flutter practice is run by engineers who have built and maintained Flutter applications in production — not developers who learned it from documentation. We have handled state management architecture at scale using Riverpod and BLoC, implemented complex custom animations and gesture handling, integrated with native platform APIs via platform channels, published to both the App Store and Google Play Store, and debugged performance regressions using DevTools\' performance profiler. When you engage us for Flutter development, you get engineers who have already encountered the edge cases that trip up teams new to the framework.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+      title: 'One Codebase, Two Platforms',
+      description: 'Maintaining separate iOS and Android codebases typically doubles mobile engineering cost. Flutter\'s single Dart codebase shares business logic, state management, navigation, and the majority of UI across both platforms — reducing mobile development cost by 40–60% compared to parallel native development.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+      title: '60fps Rendering on Real Hardware',
+      description: 'Flutter bypasses the platform\'s native UI layer entirely, rendering to a canvas via the Impeller engine. This eliminates the performance overhead that plagues React Native bridge-based architectures. The result is consistent 60fps (and 120fps on ProMotion devices) even for complex, animated interfaces.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
+      title: 'Hot Reload Accelerates Delivery',
+      description: 'Flutter\'s hot reload injects code changes into the running VM in under a second without losing application state. This compresses the iteration cycle during development dramatically — UI refinements that would take 30-second build cycles in native development happen in milliseconds, which compounds across a project into significantly faster delivery.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>',
+      title: 'Faster Time to Market',
+      description: 'Shipping to both App Store and Google Play from a single codebase, with a single QA cycle covering both platforms, compresses release timelines considerably. Our Flutter projects consistently reach initial App Store and Play Store approval 30–40% faster than comparable dual-native projects.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Native Platform Integration',
+      description: 'Flutter\'s platform channels provide direct, type-safe access to native iOS (Swift/Obj-C) and Android (Kotlin/Java) APIs. We use this for biometric authentication via Face ID and Fingerprint, Bluetooth LE device pairing, push notifications via APNs and FCM, camera with ML Kit processing, and platform-specific payment flows including Apple Pay and Google Pay.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+      title: 'Web & Desktop From the Same Codebase',
+      description: 'Flutter\'s multi-platform targets mean the same codebase can render to web and desktop (macOS, Windows, Linux) with platform-appropriate UI adaptations. For organisations deploying internal tools across both mobile field workers and desktop office staff, Flutter eliminates the need for entirely separate frontend codebases.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Insurance',
+      title: 'Claims Assessment & Photo Documentation App',
+      description: 'An insurance company deployed a Flutter application enabling assessors to conduct on-site inspections, photograph damage with structured annotation, run preliminary repair estimates against a pricing matrix, and submit claims — all offline-capable with background sync, replacing a paper-and-desktop workflow that added 3 days to every assessment cycle.',
+    },
+    {
+      industry: 'Utilities',
+      title: 'Field Technician Scheduling & Work Order App',
+      description: 'A utility provider replaced a Motorola Solutions MDT terminal system with a Flutter application running on Samsung Galaxy tablets, providing technicians with work orders, asset history, fault logging, safety checklists and GPS route navigation — integrating in real time with their Maximo asset management system.',
+    },
+    {
+      industry: 'Retail',
+      title: 'Loyalty & Personalised Offers Platform',
+      description: 'A national retailer launched a Flutter-based loyalty application for iOS and Android simultaneously, incorporating a custom animated rewards UI, BLE-triggered in-store personalisation, Apple Pay and Google Pay checkout, and real-time push notifications — with 99.4% feature parity across platforms from a single codebase.',
+    },
+    {
+      industry: 'Healthcare',
+      title: 'Allied Health Client Engagement App',
+      description: 'A physiotherapy network built a Flutter application for patients to book appointments, receive exercise programs with video guidance, log pain scores and track recovery progress — with a corresponding clinician dashboard sharing the same Dart backend models, reducing development time by 55% versus a native-per-platform approach.',
+    },
+  ],
+  technologies: [
+    'Flutter', 'Dart', 'Riverpod', 'BLoC', 'Firebase', 'Supabase',
+    'FastAPI', 'Node.js', 'PostgreSQL', 'SQLite (local)', 'Xcode', 'Android Studio',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Platform Strategy & Architecture',
+      duration: 'Week 1–2',
+      description: 'We define the platform target matrix (iOS, Android, web, desktop), minimum OS versions, offline requirements, and native integration points. State management architecture — Riverpod, BLoC, or a hybrid — is selected based on team ownership preferences and application complexity.',
+    },
+    {
+      step: '02',
+      title: 'Design System in Flutter',
+      duration: 'Weeks 2–4',
+      description: 'We translate your design system into Flutter widget code: custom themes, typography scales, spacing tokens, motion curves and platform-adaptive components. Building the design system first ensures visual consistency throughout development and dramatically accelerates screen assembly.',
+    },
+    {
+      step: '03',
+      title: 'Core Architecture Build',
+      duration: 'Weeks 3–6',
+      description: 'Navigation structure (GoRouter), API client layer with caching and retry logic, local persistence via Drift or Isar, authentication flows, and platform channel integrations are established. Offline-first data sync patterns are designed and prototyped before feature development begins.',
+    },
+    {
+      step: '04',
+      title: 'Feature Development Sprints',
+      duration: 'Weeks 5–18',
+      description: 'Two-week sprints delivering tested screens and features. Each sprint includes widget tests for UI components, unit tests for business logic, and integration tests for critical user flows. Performance profiling with Flutter DevTools is conducted at every sprint review.',
+    },
+    {
+      step: '05',
+      title: 'Device Testing & Store Compliance',
+      duration: 'Final 2 weeks',
+      description: 'Physical device testing on a matrix of iOS and Android hardware including older devices at your minimum OS version. App Store and Play Store submission preparation: metadata, screenshots, privacy manifests, App Tracking Transparency declarations, and review guideline compliance checks.',
+    },
+    {
+      step: '06',
+      title: 'Release & Post-Launch Monitoring',
+      duration: 'Launch + 2 weeks',
+      description: 'Staged rollout via TestFlight and Play Store internal track, then phased percentage rollout to catch regressions at scale. Firebase Crashlytics and Performance Monitoring are active from the first build. We remain on standby for rapid hotfix releases during the initial rollout window.',
+    },
+  ],
+  industries: [
+    'Insurance & Financial Services',
+    'Utilities & Energy',
+    'Healthcare & Allied Health',
+    'Retail & Hospitality',
+    'Field Services & Logistics',
+    'Property & Construction',
+    'Government Field Operations',
+    'Education & Training',
+  ],
+  faqs: [
+    {
+      question: 'Is Flutter mature enough for enterprise production applications?',
+      answer: 'Flutter reached stable 1.0 in December 2018 and has been used in production by enterprises including BMW, eBay, and Alibaba for several years. The framework is backed by Google, has a well-funded core team, and is one of the most starred repositories on GitHub. The ecosystem of packages on pub.dev has matured significantly — the major concerns about missing packages that existed in 2019 are no longer relevant for the functionality required by most enterprise applications. We have had Flutter applications running in production without incident for two years, and the upgrade path between Flutter versions has been stable.',
+    },
+    {
+      question: 'How does Flutter compare to React Native for our use case?',
+      answer: 'The primary technical difference is the rendering model: Flutter renders to its own canvas via the Impeller graphics engine, while React Native renders to platform-native widgets via a JavaScript bridge (or JSI in the new architecture). This gives Flutter more predictable, consistent performance across devices and significantly better support for complex custom animations. React Native\'s advantage is that JavaScript developers can be productive without learning Dart. For most enterprise applications, Flutter\'s superior performance profile and visual consistency win out — unless your existing engineering team has deep React expertise and limited time for onboarding onto Dart.',
+    },
+    {
+      question: 'What does app store submission and maintenance involve on an ongoing basis?',
+      answer: 'Apple and Google both release SDK updates and policy changes periodically that require application updates. Apple\'s annual requirement to update to the latest iOS SDK typically means one or two maintenance releases per year purely for compliance. Google Play\'s target API level policy similarly requires annual updates. We recommend clients budget for at least two maintenance releases per year beyond feature development, and we offer retainer packages that cover this with a guaranteed response SLA. We also handle App Store and Play Store listing management, including metadata updates and responding to user reviews for clients who prefer to outsource this.',
+    },
+    {
+      question: 'Can Flutter access the hardware features we need, like camera, Bluetooth, and biometrics?',
+      answer: 'Yes, via Flutter\'s platform channels, which allow the Dart layer to invoke native Swift or Kotlin code with type-safe data passing. The pub.dev ecosystem provides battle-tested packages for most hardware integrations: camera, BLE via flutter_blue_plus, biometrics via local_auth, NFC, GPS, push notifications, barcode scanning, and more. For custom hardware integrations not covered by existing packages, we write native platform channel plugins in Swift and Kotlin — we have done this for proprietary Bluetooth devices and custom SDK integrations. The integration point is clean and does not compromise performance of the rest of the application.',
+    },
+    {
+      question: 'How do you handle offline functionality for field-based applications?',
+      answer: 'Offline-first architecture in Flutter involves local database storage (we use Drift, which is a type-safe SQLite wrapper), a synchronisation layer that queues mutations when offline and replays them on reconnect, conflict resolution strategy for cases where data changes on both client and server while disconnected, and a connectivity observer that adapts the UI to accurately reflect the sync state. We design the sync architecture at project start, not as a bolt-on feature, because offline-first data models are fundamentally different from always-connected ones. This is a pattern we have implemented on multiple field operations applications and have documented internal playbooks for.',
+    },
+    {
+      question: 'Who owns the Flutter codebase and can our internal team maintain it after delivery?',
+      answer: 'You own the code completely. Every Flutter project we deliver includes documented architecture decisions, widget documentation, a developer onboarding guide, and an explanation of state management patterns used. We encourage clients to have at least one internal developer involved during the latter stages of development so knowledge transfer is gradual rather than a single handover event. Dart is a well-designed language that most experienced developers find approachable within a few weeks — the learning curve is far more manageable than the transition from React Native to native development. We also offer Dart and Flutter training workshops for internal teams as a separate engagement.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Web & Mobile Applications', href: '/services/web-mobile-apps' },
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'UI & UX Design', href: '/services/ui-ux-design' },
+    { title: 'API Development & Integrations', href: '/services/api-development' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/><path d="M9 7l2 2-2 2"/><line x1="13" y1="11" x2="15" y2="11"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

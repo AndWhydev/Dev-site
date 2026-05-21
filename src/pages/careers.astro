@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// TODO: Add real open roles when hiring. Each role should have: title, team, type (Full-time / Contract), location, description, requirements[], href
+const openRoles: never[] = [];
+// Example structure when roles are available:
+// const openRoles = [
+//   { title: 'Senior Flutter Engineer', team: 'Mobile', type: 'Full-time', location: 'Brisbane / Remote', description: '...', requirements: ['3+ years Flutter', 'Enterprise mobile experience', 'Strong Dart knowledge'], href: '/careers/senior-flutter-engineer' },
+// ];
+
+const values = [
+  { emoji: '🧑‍💻', title: 'Senior-only team', desc: 'We hire experienced engineers and give them autonomy to do great work. No micromanagement, no juniors dragging sprints.' },
+  { emoji: '💰', title: 'Competitive pay', desc: 'Market-leading salaries for the best engineers. We don\'t lowball and we don\'t do equity-instead-of-salary bait-and-switch.' },
+  { emoji: '🌏', title: 'Remote-first', desc: 'Work from anywhere in Australia. We care about output and quality, not location or hours at a desk.' },
+  { emoji: '📈', title: 'Real growth', desc: 'Work on genuinely complex enterprise problems across diverse industries. You\'ll grow faster here than at a single-product company.' },
+  { emoji: '🧪', title: 'R&D time', desc: '10% of your working time is yours to learn, build side projects and explore new technology. We invest in your curiosity.' },
+  { emoji: '🤝', title: 'Honest culture', desc: 'We say what we think. Clients hear the truth. Team members give real feedback. No corporate doublespeak.' },
+];
+
+const roles = [
+  'Senior Frontend Engineer (React / Next.js)',
+  'Senior Mobile Engineer (Flutter)',
+  'Backend Engineer (Node.js / Python)',
+  'AI / ML Engineer',
+  'Senior DevOps / Platform Engineer',
+  'UI / UX Designer',
+  'Technical Project Manager',
+  'Solutions Architect',
+];
+---
+
+<Layout
+  title="Careers — All Webbed Labs | Join Our Enterprise Engineering Team"
+  description="Join All Webbed Labs — a senior-only enterprise software team based in Australia. Remote-first, competitive pay and genuinely interesting problems to solve."
+>
+  <Header />
+  <main>
+
+    <section class="careers-hero">
+      <div class="careers-inner">
+        <div class="reveal">
+          <span class="section-label">Careers</span>
+          <h1 class="careers-title">
+            Build Enterprise Software<br />
+            <span class="gradient-text">That Actually Matters.</span>
+          </h1>
+          <p class="careers-sub">
+            We're a senior-only team of engineers, designers and strategists who care deeply about craft, honesty and building things that last.
+            If that sounds like you — we'd like to meet you.
+          </p>
+          <a href="mailto:careers@allwebbedup.com.au" class="btn-primary">
+            Send Us Your CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why work here -->
+    <section class="why-section">
+      <div class="careers-inner">
+        <div class="reveal">
+          <span class="section-label">Why All Webbed Labs</span>
+          <h2 class="section-heading">What Makes This Different</h2>
+        </div>
+        <div class="values-grid">
+          {values.map((v, i) => (
+            <div class={`value-card reveal stagger-${Math.min(i + 1, 6)}`}>
+              <div class="vc-emoji">{v.emoji}</div>
+              <h3>{v.title}</h3>
+              <p>{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Open roles -->
+    <section class="roles-section">
+      <div class="careers-inner">
+        <div class="reveal">
+          <span class="section-label">Open Positions</span>
+          <h2 class="section-heading">Current Openings</h2>
+        </div>
+
+        {openRoles.length === 0 ? (
+          <div class="no-roles reveal stagger-1">
+            <div class="nr-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>No Specific Roles Open Right Now</h3>
+            <p>We don't always advertise — we hire great people when we find them. If you're a senior engineer who does exceptional work, send us your CV and a note about what you're looking for.</p>
+            <a href="mailto:careers@allwebbedup.com.au" class="btn-primary">Send Your CV Anyway</a>
+            <!-- TODO: Add real open roles here when hiring -->
+          </div>
+        ) : (
+          <div class="roles-list">
+            {openRoles.map((role: never) => <div>{JSON.stringify(role)}</div>)}
+          </div>
+        )}
+
+        <div class="roles-types reveal stagger-2">
+          <h3>Roles We Typically Hire For</h3>
+          <div class="role-tags">
+            {roles.map((r) => <span class="role-tag">{r}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hiring process -->
+    <section class="process-section">
+      <div class="careers-inner">
+        <div class="reveal">
+          <span class="section-label">Our Hiring Process</span>
+          <h2 class="section-heading">Simple, Respectful, Fast</h2>
+        </div>
+        <div class="process-steps">
+          {[
+            { n: '01', title: 'Send your CV', desc: 'Email careers@allwebbedup.com.au with your CV and a short note about what you\'re looking for. No cover letter required — just be direct.' },
+            { n: '02', title: 'Initial call (30 min)', desc: 'A conversation about your background, what you\'re looking for and whether there\'s a fit. We\'ll tell you about the team and what we\'re building.' },
+            { n: '03', title: 'Technical review', desc: 'A focused technical assessment relevant to the role. We respect your time — no whiteboard theatrics or algorithmic trivia.' },
+            { n: '04', title: 'Meet the team', desc: 'A call with the people you\'d be working with directly. Ask anything. We\'re honest about what it\'s like to work here.' },
+            { n: '05', title: 'Offer', desc: 'If it\'s a fit, we move fast. You\'ll have an offer within 48 hours of your final interview.' },
+          ].map((step, i) => (
+            <div class={`proc-step reveal stagger-${i + 1}`}>
+              <div class="ps-num">{step.n}</div>
+              <div class="ps-content">
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .careers-hero {
+    padding: 9rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .careers-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .careers-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .careers-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 750px;
+  }
+  .careers-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .why-section { padding: 7rem 0; background: #0f1614; }
+  .why-section .section-heading { margin-bottom: 3rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .value-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s ease;
+  }
+  .value-card:hover { border-color: rgba(13,147,115,0.3); }
+  .vc-emoji { font-size: 1.5rem; }
+  .value-card h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; margin: 0; }
+  .value-card p { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.6; margin: 0; }
+
+  .roles-section { padding: 7rem 0; background: #0a0f0e; }
+  .roles-section .section-heading { margin-bottom: 2.5rem; }
+
+  .no-roles {
+    background: linear-gradient(135deg, rgba(13,147,115,0.06) 0%, #0f1614 60%);
+    border: 1px dashed rgba(13,147,115,0.3);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    max-width: 640px;
+    margin-bottom: 4rem;
+  }
+  .nr-icon { width: 60px; height: 60px; border-radius: 16px; background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.2); display: flex; align-items: center; justify-content: center; }
+  .no-roles h3 { font-family: 'Sora', sans-serif; font-size: 1.375rem; font-weight: 700; color: white; margin: 0; }
+  .no-roles p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  .roles-types { margin-top: 3rem; }
+  .roles-types h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: #4a6359; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; margin-bottom: 1rem; }
+  .role-tags { display: flex; flex-wrap: wrap; gap: 0.625rem; }
+  .role-tag { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; color: #8aa09a; background: #0f1614; border: 1px solid #1e2d28; padding: 0.5rem 1.125rem; border-radius: 50px; }
+
+  .process-section { padding: 7rem 0; background: #0f1614; }
+  .process-section .section-heading { margin-bottom: 3rem; }
+  .process-steps { display: flex; flex-direction: column; gap: 0; max-width: 800px; }
+  .proc-step { display: grid; grid-template-columns: 70px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid #1e2d28; }
+  .proc-step:last-child { border-bottom: none; }
+  .ps-num { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; color: rgba(13,147,115,0.2); letter-spacing: -0.05em; line-height: 1; }
+  .ps-content h3 { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: white; margin: 0 0 0.5rem; }
+  .ps-content p { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  @media (max-width: 900px) {
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .proc-step { grid-template-columns: 50px 1fr; }
+  }
+</style>

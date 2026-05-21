@@ -1,0 +1,121 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Café Loyalty & Rewards App | All Webbed Labs Case Study",
+  metaDescription: "How a 12-location Melbourne café franchise launched a branded loyalty app that drove a 27% increase in repeat visits and eliminated paper loyalty card fraud.",
+
+  industry: "Hospitality",
+  tags: ["Loyalty App", "Flutter", "Push Notifications", "Franchise Management", "Customer Retention"],
+
+  title: "Café Loyalty & Rewards App",
+  summary: "A 12-location café franchise launched a branded loyalty app that drove a 27% increase in repeat visits within the first six months.",
+
+  heroImageDescription: "Customer scanning a loyalty QR code at a Melbourne café counter, with barista preparing coffee and branded loyalty app visible on customer's phone screen",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "A café franchise with 12 locations across Melbourne, operating since 2017 across a mix of company-owned and independently franchised venues. The group spans inner-city suburbs including Fitzroy, Richmond, South Yarra, and St Kilda, with three locations in the CBD. Total network revenue exceeds $8M annually, with a customer base that skews toward daily commuter coffee purchasers and weekend café regulars.",
+  clientSize: "12 locations · Mix of company & franchisee owned · Est. 2017",
+  clientLocation: "Melbourne, VIC",
+
+  pullQuote: "Paper stamp cards were costing us money and telling us nothing. We had regulars who swore they'd been coming in for years but we had no way to verify anything or offer them something meaningful. Now when a customer's about to hit a free coffee milestone, we know it. That moment of recognition — that's what builds loyalty.",
+  pullQuoteAuthor: "Brand & Marketing Manager",
+  pullQuoteRole: "Marketing, Café Franchise Group",
+
+  challenge: [
+    "The franchise had been running a paper stamp card loyalty scheme since its second year of operation. The premise was simple: buy ten coffees, get one free. In practice, the programme was undermined by problems that accumulated gradually and were never properly quantified. Customers lost cards regularly and restarted from zero, creating frustration. Cards were being duplicated — physically photocopied or, in some cases, stamped fraudulently by customers using custom stamps purchased online. A kitchen hand at one venue had been found stamping cards for friends. The cost of these losses was hard to calculate precisely, but the group's operations manager estimated that fraudulent redemptions had added at least 4–5% to the programme's cost.",
+    "More fundamentally, the paper scheme generated no data whatsoever. The group had no idea how many unique loyalty customers it had, how frequently they visited, what they purchased, or how many cards were redeemed versus issued. Marketing decisions — whether to run a double-stamp promotion, when to send communications, which venues had the most loyal customer bases — were made on intuition. The franchise's marketing manager had wanted to launch personalised communications for years but had nothing to personalise against.",
+    "Franchisee relationships were complicated by the absence of data. Company-owned venues and franchisee-owned venues operated with different attitudes toward the loyalty scheme. Some franchisees had stopped distributing stamp cards entirely, viewing the redemption cost as an operational expense they preferred to avoid. Others had created their own venue-specific variations — double stamps on Tuesdays, stamps for pastry purchases as well as coffee — that created inconsistency in the customer experience and made the brand feel fragmented. With no central visibility, the franchisor had limited leverage to enforce consistency.",
+    "The competitive environment in Melbourne's café market was adding urgency. Several competitor groups and independent cafés had launched app-based loyalty programmes that received significant coverage in Melbourne's food media. The franchise was aware that its paper cards looked dated next to competitors who could send personalised offers, acknowledge birthdays, and reward customers in real time. Two franchisees had raised the issue formally at the annual network conference, citing customer comments about preferring competitors' apps. The group's leadership recognised that the gap between their loyalty experience and the market expectation was widening."
+  ],
+
+  whyUs: [
+    "The franchise's marketing manager had used a national loyalty platform in a previous role and found it inflexible for the specific mechanics the group wanted — particularly around franchisee-level reporting versus group-level reporting, and the ability to customise reward structures per venue without creating customer confusion. All Webbed Labs was introduced by a web design contact who had worked with us on an e-commerce project, and the initial conversation quickly focused on the franchise data structure problem rather than the technology itself.",
+    "We were also able to point to experience with Flutter for consumer-facing apps, which the marketing manager had specifically requested after reviewing other loyalty apps in the market. The group wanted an app that felt like a genuine consumer product — fast, polished, reliable — rather than a white-label platform wrapped in their branding. The distinction mattered to them because the app would be the franchise's most direct point of digital contact with customers, and they wanted it to reflect the quality of their coffee."
+  ],
+
+  approach: [
+    "Discovery spanned four weeks and involved the franchisor's marketing and operations team, three franchisee operators representing both high-traffic city locations and suburban venues, and a customer focus group of eight regular loyalty card holders recruited through an in-venue sign-up. The customer focus group was the most valuable input into the app's interaction design. We learned quickly that the core emotional need was recognition — customers didn't want to think about points accumulation mechanisms; they wanted to feel like the café knew them and rewarded their loyalty simply and visibly. This shaped the entire reward display design toward a progress indicator that feels satisfying rather than a points balance that requires calculation.",
+    "The franchisee data model was one of the most technically interesting aspects of the project. Each venue needed its own reporting dashboard so franchisee operators could see their own customers' behaviour. The franchisor needed a group-level view across all 12 venues. And crucially, the reward programme had to be consistent from the customer's perspective regardless of which venue they visited — a customer who visited the Fitzroy venue on Monday and the South Yarra venue on Thursday should accumulate stamps at both and see a single unified progress view. Building a data model that supported per-venue reporting while presenting a unified experience to customers required careful schema design and explicit test coverage.",
+    "Push notification strategy was discussed at length during the discovery phase. Everyone had seen notification fatigue from badly-run loyalty apps, and several franchisees were specifically concerned that aggressive notification frequency would create negative brand associations. We agreed on a philosophy of permission and value: every notification had to either be triggered by a meaningful event (a customer has just reached a milestone) or convey something the customer couldn't reasonably know on their own (a limited-time offer that was genuinely time-sensitive). Volume caps were built into the notification logic from the start.",
+    "The QR code stamping mechanism required a decision about how to prevent the fraud patterns that had afflicted the paper card scheme. We settled on a QR code that rotates every 60 seconds, displayed on a screen at the register rather than printed. Customers open the app, tap 'collect stamp', point their phone camera at the rotating QR code, and the stamp is recorded. The rotation means a photographed QR code is invalid within a minute. The server-side validation confirms the venue, timestamp, and that the same customer hasn't already collected a stamp in the last 30 minutes — a rate limit that prevents batching.",
+    "The project timeline was fifteen weeks from discovery completion to app store submission. App store submission introduced a delay we hadn't fully anticipated — Apple's review process required two resubmissions over three weeks due to guideline requirements around in-app purchase disclosure and location permission justification. We've since built Apple's typical review turnaround into our project templates for any consumer iOS app."
+  ],
+
+  solution: [
+    "The customer-facing app is built in Flutter, presenting a deliberately simple interface: a home screen showing the customer's current progress toward their next reward, a stamp collection screen accessed with a single tap, a rewards history view, and a notifications inbox. Onboarding is a three-step process — email, password, preferred venue — designed to be completable at the counter during a coffee order without holding up the queue. We A/B tested two onboarding flows with a small group of real customers before launch; the shorter flow converted at 34% versus 21% for the more detailed version.",
+    "Stamp collection uses the rotating QR code mechanism. Each venue has a QR code display application running on a small screen or tablet at the register, rotated by the backend server on a 60-second cycle. The customer scans with the loyalty app, and the backend validates the QR code's current rotation token, the venue identifier embedded in the token, and the per-customer rate limit. A successful scan returns a visual confirmation with a satisfying animation — a small detail that customers commented on specifically in post-launch feedback, noting it made the moment feel rewarding rather than transactional.",
+    "The rewards structure is configurable by the franchisor through the admin dashboard. The initial configuration was a classic buy-nine-get-one-free for any hot drink, but the admin interface supports tiered rewards, time-limited bonuses (double stamps on a specific day), and product-specific reward variations. The configuration UI was designed to be usable by the marketing manager without developer involvement — she can set up a double stamp promotion in under five minutes and it applies across all venues immediately. Franchisees can view but not modify the reward structure, maintaining the programme consistency the franchisor wanted.",
+    "The push notification system is built on Firebase Cloud Messaging and operates on event triggers rather than scheduled broadcasts. Milestone notifications — 'You're one coffee away from your free drink' — fire when a customer reaches eight stamps. Welcome-back notifications fire if a customer hasn't visited in 28 days. Birthday notifications fire with a bonus stamp on the customer's birthday, which requires nothing more than the customer providing their birth month and day during onboarding (no year required, for the same reason people don't tell strangers their age). All notifications can be opted out of granularly — customers who want milestone reminders but not welcome-back messages can configure that precisely.",
+    "The franchisee dashboard gives each venue operator a view of their location's active loyalty members, weekly stamp volume, redemption rate, and average visit frequency for their loyalty customer base. The group-level dashboard the franchisor accesses shows the same metrics aggregated across all 12 venues, with per-venue comparison. The most actively used group-level report compares loyalty member visit frequency against non-member visit frequency by venue — a metric the marketing team uses to evaluate which venues have the most headroom to grow their loyalty programme penetration."
+  ],
+
+  techStack: [
+    { name: "Flutter", reason: "Consumer-facing loyalty app for iOS and Android — polished native feel essential for customer-facing product quality" },
+    { name: "React", reason: "Franchisor admin dashboard and franchisee reporting dashboards" },
+    { name: "Node.js", reason: "Backend API — stamp collection, reward logic, notification triggers, franchisee data access" },
+    { name: "PostgreSQL", reason: "Customer, stamp, reward, and venue records with multi-venue data model" },
+    { name: "Stripe", reason: "In-app promotional credit handling — future phase for paid reward tier" },
+    { name: "Firebase Cloud Messaging", reason: "Event-driven push notifications with fine-grained per-customer opt-out controls" },
+    { name: "GCP", reason: "Cloud Run API, Cloud SQL, Firebase — unified billing, strong integration between services" }
+  ],
+
+  implementation: [
+    "Pre-launch rollout focused heavily on franchisee buy-in. Before any customer-facing announcement, the franchisor ran two in-person briefing sessions at a central Melbourne venue — one for franchisee operators, one for key staff at company-owned locations. The briefings covered not just how the app worked but why it had been built, what data franchisees would have access to, and specifically how the fraud prevention mechanisms worked. Franchisee confidence in the anti-fraud design was a prerequisite for their enthusiastic promotion of the app in-venue, and those who had been most vocal about the old scheme's costs became the strongest advocates.",
+    "The launch campaign was staged across three weeks. The first week was a soft launch at three company-owned venues only — an intentional pressure test of the QR rotation system under real-world conditions before full network rollout. No issues surfaced, and the three soft launch venues reported 140 app sign-ups in the first week without any promotional support beyond in-venue signage. Full network launch followed in week two, with the franchisor's social media channels promoting the app and in-venue table cards at all 12 locations directing customers to download it. In-app onboarding included a welcome bonus of three stamps to reduce the perceived cost of switching from any existing paper card.",
+    "The welcome bonus decision — giving new users three stamps toward their first free drink — was debated internally before launch. Some franchisees felt it was too generous. The marketing manager's view was that overcoming the inertia of switching from a familiar paper card required a tangible incentive, and three stamps represented less cost than one coffee per acquisition. Post-launch, 68% of new users who accepted the welcome bonus collected their fourth stamp within 14 days, demonstrating that the incentive was activating genuine behaviour rather than one-off sign-ups."
+  ],
+
+  lessonsLearned: [
+    "The Apple App Store review process added three weeks to our timeline — a delay that pushed the launch date back by almost a month from the marketing plan. The two rejection reasons (in-app purchase disclosure and location permission justification) were both addressable, but required going through the full review queue again each time. We've since built Apple's review process into every consumer app project timeline as a fixed buffer rather than an optimistic assumption, and we now prepare a detailed permission justification document alongside the app submission to reduce the likelihood of a first-pass rejection.",
+    "The franchisee NPS score improvement from 31 to 67 was one of the most unexpected outcomes of the project, and it pointed to something we hadn't fully appreciated at the outset: franchisees weren't just dissatisfied with the paper loyalty scheme — they were dissatisfied with feeling like their customer data was invisible to them. Giving each franchisee their own dashboard changed their relationship with the programme fundamentally. For future franchise technology projects, per-franchisee data visibility should be treated as a first-class requirement rather than a reporting add-on.",
+    "We initially resisted including the birthday notification feature, viewing it as a cliché that most loyalty apps already did. The customer focus group participants mentioned it unprompted as something they valued from other programmes, and post-launch data confirmed it — birthday notifications have the highest tap-through rate of any notification type in the app. Sometimes the cliché is a cliché because it works. Our instinct to differentiate through omission was wrong in this case, and the lesson is to validate assumptions about what customers value with actual customers rather than design sensibility."
+  ],
+
+  whatCameNext: [
+    "Six months after launch, the franchise began planning a paid premium tier — 'Reserve Member' — offering benefits including priority ordering during peak periods, access to a monthly limited-edition coffee available exclusively to loyalty members, and a fixed monthly stamp top-up. The Stripe integration built into the original platform had been included partly in anticipation of this, and the premium tier development is currently underway with a planned launch before the Melbourne summer season.",
+    "Two franchisees who had previously been the most sceptical about the technology investment have since approached the franchisor about using customer visit data to inform their staffing decisions — specifically, whether historical visit frequency data could help predict busy periods and justify additional barista hours. This wasn't a use case that was in scope for the original project, but the fact that franchisees are now thinking about data as a business tool rather than a compliance obligation is, the marketing manager told us, a cultural shift that matters as much as the metrics."
+  ],
+
+  resultsNarrative: "Within the first six months of launch, the programme had enrolled 8,400 active members, a customer base the franchise had never been able to measure let alone engage with under the paper card scheme. The spend differential between loyalty members and non-members — 23% higher average transaction value — validated the investment case that the marketing manager had been making internally for two years. Franchisee NPS improved from 31 to 67, driven primarily by franchisees finally having data about their own customers.",
+
+  metrics: [
+    { value: "27%", label: "Increase in repeat visits", context: "Among loyalty app members in first 6 months" },
+    { value: "8,400", label: "Active app users", context: "Across all 12 venues within 6 months of launch" },
+    { value: "0", label: "Paper loyalty fraud incidents", context: "Down from an estimated 4–5% fraud rate on paper cards" },
+    { value: "23%", label: "Higher avg spend per loyalty member", context: "Compared to non-loyalty customers across the network" },
+    { value: "34%", label: "Push notification open rate", context: "Across all event-triggered notifications" },
+    { value: "67", label: "Franchisee NPS", context: "Improved from 31 before the platform launched" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Restaurant Booking & Table Management System",
+      href: "/case-studies/restaurant-booking-table-management",
+      industry: "Hospitality",
+      summary: "A four-venue Sydney restaurant group unified bookings, waitlists and POS across all sites — eliminating double-bookings and reducing no-shows by 31%."
+    },
+    {
+      title: "Hotel Staff Rostering & Operations App",
+      href: "/case-studies/hotel-staff-rostering-operations",
+      industry: "Hospitality",
+      summary: "A Queensland boutique hotel chain replaced spreadsheet rostering with a mobile-first platform that gave managers full visibility and cut scheduling time in half."
+    },
+    {
+      title: "Customer Loyalty & Personalisation",
+      href: "/case-studies/customer-loyalty-personalisation",
+      industry: "Retail",
+      summary: "A national specialty retailer launched a personalised loyalty engine that increased repeat purchase rate by 34% through behavioural segmentation."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Mobile App Development", href: "/services/mobile-app-development" },
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "Push Notification Systems", href: "/services/push-notification-systems" },
+    { title: "Dashboard Development", href: "/services/dashboard-development" },
+    { title: "Franchise Technology", href: "/services/franchise-technology" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

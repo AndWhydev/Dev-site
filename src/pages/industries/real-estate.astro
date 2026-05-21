@@ -1,0 +1,110 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Real Estate & PropTech Software Development | All Webbed Labs',
+  metaDescription: 'Custom property management platforms, tenant portals, inspection apps and investment analytics for Australian real estate agencies, developers and property managers. Technology that cuts admin and scales your rent roll.',
+
+  industryName: 'Real Estate',
+  heroHeadline: 'PropTech That Powers Australia\'s Property Market',
+  heroTagline: 'Property management platforms, agent tools and investment analytics for real estate agencies, developers and property managers.',
+
+  stats: [
+    { value: '50K+', label: 'properties managed' },
+    { value: '40%', label: 'less admin per PM' },
+    { value: 'Automated', label: 'tenant comms' },
+    { value: 'Real-time', label: 'market data' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      title: 'Manual Leasing and Inspection Workflows',
+      description: "Routine inspections, lease renewals, entry notices and condition reports still managed through manual checklists and email chains create bottlenecks that scale badly as rent rolls grow. A property manager handling 150+ properties drowns in repetitive tasks rather than building client relationships.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+      title: 'Disconnected Agency Software',
+      description: 'CRMs, trust accounting systems, portals like Domain and REA, inspection apps and communication tools rarely talk to each other. Property managers re-key data across multiple platforms daily, introducing errors and consuming hours that could be spent on income-generating work.',
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+      title: 'Tenant Communication Friction',
+      description: "Tenants expect on-demand, digital-first communication — maintenance requests, rent receipts, lease documents and inspection booking all via their phone. Agencies still relying on phone and email struggle with response time expectations, leading to poor reviews, early lease terminations and growing vacancy rates.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+      title: 'Investment Performance Visibility',
+      description: 'Property investors increasingly expect real-time dashboards showing yield, occupancy, maintenance costs and portfolio performance. Agencies providing only monthly PDF statements risk losing management agreements to tech-forward competitors who give investors 24/7 data access.',
+    },
+  ],
+
+  solutions: [
+    'Property management platforms',
+    'Tenant self-service portals',
+    'Maintenance request and trade dispatch systems',
+    'Digital inspection report apps',
+    'Trust accounting integrations (PropertyMe, Palace, MRI)',
+    'Lease management and renewal automation',
+    'Investment analytics and owner dashboards',
+    'Buyer and seller property portals',
+  ],
+
+  useCases: [
+    {
+      title: 'Tenant Portal with Maintenance and Communication Hub',
+      description: "A white-labelled tenant-facing web and mobile app where renters log maintenance requests with photos, book inspection times, access lease documents, receive entry notices and communicate directly with their property manager. Integrates with the agency's existing property management software via API. Maintenance requests automatically dispatch to approved tradies based on trade type and suburb.",
+      techStack: 'React Native · Next.js · PropertyMe API · Twilio · Xero',
+      videoNote: 'tenant app showing maintenance request flow, document access and comms feed',
+    },
+    {
+      title: 'Investor Analytics Dashboard',
+      description: "A real-time portfolio performance platform for landlords managing 1–50 investment properties. Shows gross and net yield, vacancy days, maintenance cost trends, rent vs market benchmarks and upcoming lease expiry alerts. Data pulls live from the agency's trust accounting system. Landlords log in via a branded owner portal instead of waiting for monthly PDF statements.",
+      techStack: 'Next.js · Recharts · REST API sync · PostgreSQL · Auth0',
+      videoNote: 'investor dashboard showing portfolio yield, occupancy timeline and maintenance cost breakdown',
+    },
+    {
+      title: 'Automated Lease Renewal and Inspection Scheduling Platform',
+      description: "A workflow automation layer that sits above existing property management software and triggers lease renewal sequences at configurable intervals before expiry. Sends personalised renewal offers, collects tenant responses, escalates to property managers when negotiation is needed and books condition inspections automatically. Reduced lease lapse rates and freed 6+ hours per week per property manager in pilot deployments.",
+      techStack: 'Node.js · SendGrid · Temporal workflows · Webhooks · PostgreSQL',
+      videoNote: 'automated renewal workflow timeline, tenant response tracking and PM notification dashboard',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
+    { title: 'UI/UX Design', href: '/services/ui-ux-design' },
+  ],
+
+  faqs: [
+    {
+      question: 'Can you integrate with our existing property management software like PropertyMe, Palace or Console Cloud?',
+      answer: "Yes. Most major Australian property management platforms have REST APIs we can connect to. PropertyMe, Palace, Console Cloud and MRI Property Tree all offer API access that allows us to sync tenancy data, maintenance jobs, financial transactions and inspection records with custom tools we build for you. We assess API capabilities early in discovery so you know exactly what data is accessible before any code is written.",
+    },
+    {
+      question: 'Do your solutions comply with state tenancy legislation like the Residential Tenancies Act?',
+      answer: "Yes. We build compliance into the workflows from day one — entry notice periods, condition report requirements, rent increase notice periods and bond lodgement obligations vary by state (NSW RTA, VIC Residential Tenancies Act, QLD Residential Tenancies and Rooming Accommodation Act) and we design automation accordingly. We work closely with your property management team to map workflows against legislative requirements.",
+    },
+    {
+      question: 'Can a tenant portal be white-labelled to match our agency brand?',
+      answer: "Yes, and this is our default approach. Tenant portals are built as white-label products with your agency's logo, brand colours and domain name. Tenants interact with your brand throughout, not a generic third-party product. This is particularly important for agencies positioning on service quality or running multiple brands under a corporate group.",
+    },
+    {
+      question: 'How do you handle trust accounting data given its sensitivity?',
+      answer: "Trust accounting data is treated with the highest level of security. We use encrypted connections, role-based access controls and audit logging for all financial data access. We only read the data required for the feature being built — we never store raw trust accounting data in our systems beyond what's needed for display or reporting purposes. We can provide a data handling agreement as part of any engagement.",
+    },
+    {
+      question: 'We manage 2,000 properties across three states — can you build something at that scale?',
+      answer: "Yes. We design systems for enterprise-scale rent rolls from the ground up. That means multi-tenancy architecture so different office locations or brands see their own data, performance-optimised queries for large property databases and infrastructure that auto-scales during busy periods like end-of-month or EOFY. We'd scope this carefully in discovery to understand your specific data volumes and workflow requirements.",
+    },
+  ],
+
+  ctaHeadline: 'Let\'s Build Property Technology That Actually Gets Used',
+  ctaDescription: "The best PropTech is software property managers and tenants use every day without thinking about it. We understand the workflows, the legislation and the pressures of running a rent roll — and we build tools that make them easier. Start with a no-obligation discovery call.",
+};
+---
+<IndustryPageLayout {...data} />

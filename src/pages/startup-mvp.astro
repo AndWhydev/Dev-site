@@ -1,0 +1,923 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// PAGE: Startup MVP Development
+// TODO: Replace testimonial placeholders with real founder quotes
+// TODO: Replace case study placeholders with real project data
+---
+
+<Layout
+  title="Startup MVP Development — All Webbed Labs | From Idea to Launch in 90 Days"
+  description="Build your startup MVP in 90 days with All Webbed Labs. Validation to launch packages for Australian founders. Fixed price, full IP ownership."
+>
+  <Header />
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-hero">
+      <div class="mvp-hero-bg" aria-hidden="true">
+        <div class="mvp-glow"></div>
+        <div class="mvp-grid"></div>
+      </div>
+      <div class="mvp-hero-inner">
+        <div class="mvp-hero-content reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><span>Startup MVP</span>
+          </nav>
+          <span class="section-label">Startup MVP Development</span>
+          <h1 class="mvp-hero-title">
+            From Idea to Launch<br />
+            <span class="gradient-text">in 90 Days</span>
+          </h1>
+          <p class="mvp-hero-sub">
+            We build MVPs for Australian founders who need to move fast without building the wrong thing.
+            Fixed price. Full IP ownership. No equity taken. Real engineers who've shipped products, not agencies
+            who'll hand you a Figma file and disappear.
+          </p>
+          <div class="mvp-hero-ctas">
+            <a href="/contact" class="btn-primary">
+              Book a Free MVP Strategy Call
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#packages" class="btn-outline">View Packages</a>
+          </div>
+          <div class="hero-trust-row">
+            <div class="trust-item"><span class="trust-num">90</span><span class="trust-label">Days to Launch Package</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">100%</span><span class="trust-label">IP Ownership to You</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">Fixed</span><span class="trust-label">Price Engagements</span></div>
+          </div>
+        </div>
+        <div class="mvp-hero-timeline reveal-right stagger-2" aria-hidden="true">
+          {['Discovery', 'Design', 'Build', 'Test', 'Launch'].map((stage, i) => (
+            <div class="timeline-item-sm">
+              <div class="tl-dot"></div>
+              <div class="tl-label">{stage}</div>
+              {i < 4 && <div class="tl-line"></div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         WHAT IS AN MVP
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-surface">
+      <div class="mvp-inner">
+        <div class="mvp-what-grid">
+          <div class="reveal-left">
+            <span class="section-label">Foundations</span>
+            <h2 class="section-heading">What Is a Minimum Viable Product — Really?</h2>
+            <p class="mvp-para">
+              An MVP is not a half-finished product. It's a deliberately scoped product with just enough features to
+              deliver genuine value to your earliest adopters, validate your core assumptions and generate the feedback
+              needed to make confident investment decisions for the next stage.
+            </p>
+            <p class="mvp-para">
+              The word "minimum" is the hard part. Most founders, naturally, want to build everything. The discipline of an
+              MVP is ruthless prioritisation: identifying the one or two features that test your riskiest assumption and
+              deferring everything else. We help you draw that line correctly.
+            </p>
+            <p class="mvp-para">
+              The goal of an MVP is not to ship a product — it's to answer a question as quickly and cheaply as possible.
+              What's the question your first release needs to answer? That determines what you build.
+            </p>
+          </div>
+          <div class="mvp-what-points reveal-right stagger-2">
+            <h3 class="mvp-sub-heading">A good MVP is:</h3>
+            {[
+              { icon: '✓', label: 'Scoped to test one critical assumption' },
+              { icon: '✓', label: 'Usable by real customers, not just a demo' },
+              { icon: '✓', label: 'Built with production-quality foundations' },
+              { icon: '✓', label: 'Instrumented to capture real user behaviour' },
+              { icon: '✓', label: 'Designed to be extended, not rebuilt' },
+            ].map((p) => (
+              <div class="mvp-check-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{p.label}</span>
+              </div>
+            ))}
+            <h3 class="mvp-sub-heading" style="margin-top: 1.5rem;">Not to be confused with:</h3>
+            {[
+              { label: 'A landing page (that\'s a smoke test, not an MVP)' },
+              { label: 'A prototype or Figma demo' },
+              { label: 'A half-built product with core features missing' },
+              { label: 'A product built for investors, not users' },
+            ].map((p) => (
+              <div class="mvp-cross-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span>{p.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         PACKAGES
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-dark" id="packages">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Pricing</span>
+          <h2 class="section-heading">Three Packages for Every Stage of Founder</h2>
+          <p class="section-subheading">
+            All packages include full IP ownership, source code handover and a 30-day hypercare period post-launch.
+          </p>
+        </div>
+        <div class="packages-grid">
+
+          <!-- Validation Package -->
+          <div class="package-card reveal stagger-1">
+            <div class="pkg-header">
+              <div class="pkg-name">Validation</div>
+              <div class="pkg-price">$15K – $30K</div>
+              <div class="pkg-timeline">4–6 weeks</div>
+              <p class="pkg-desc">
+                De-risk your idea before committing to a full build. Perfect for founders still validating problem-solution fit
+                with early adopters.
+              </p>
+            </div>
+            <ul class="pkg-features">
+              <li>Branded landing page with waitlist</li>
+              <li>Interactive prototype (Figma or low-code)</li>
+              <li>Email capture + early-access onboarding flow</li>
+              <li>Analytics setup (GA4, Hotjar or Mixpanel)</li>
+              <li>Basic admin dashboard</li>
+              <li>1 feedback collection mechanism</li>
+              <li>Deployment to production environment</li>
+              <li>2 weeks post-launch support</li>
+            </ul>
+            <a href="/contact?pkg=validation" class="btn-outline pkg-cta">Discuss This Package</a>
+          </div>
+
+          <!-- Launch Package — Featured -->
+          <div class="package-card package-featured reveal stagger-2">
+            <div class="pkg-featured-badge">Most Popular</div>
+            <div class="pkg-header">
+              <div class="pkg-name">Launch</div>
+              <div class="pkg-price">$40K – $80K</div>
+              <div class="pkg-timeline">8–12 weeks</div>
+              <p class="pkg-desc">
+                A fully functional product with your core feature set, ready for real users. The complete end-to-end MVP —
+                from onboarding to the central value-delivering functionality.
+              </p>
+            </div>
+            <ul class="pkg-features">
+              <li>Full product UI/UX design</li>
+              <li>Core feature set (user-defined in discovery)</li>
+              <li>User authentication + roles</li>
+              <li>Backend API + database architecture</li>
+              <li>Mobile-responsive web or native app</li>
+              <li>Payment integration (Stripe)</li>
+              <li>Notifications (email + push)</li>
+              <li>Admin panel + basic reporting</li>
+              <li>Analytics and event tracking</li>
+              <li>Production deployment (AWS/GCP)</li>
+              <li>30 days post-launch hypercare</li>
+            </ul>
+            <a href="/contact?pkg=launch" class="btn-primary pkg-cta">
+              Start With This Package
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Scale Package -->
+          <div class="package-card reveal stagger-3">
+            <div class="pkg-header">
+              <div class="pkg-name">Scale</div>
+              <div class="pkg-price">$80K – $150K</div>
+              <div class="pkg-timeline">12–16 weeks</div>
+              <p class="pkg-desc">
+                MVP plus the analytics, monetisation infrastructure and technical foundations needed for investor conversations
+                and early growth. Ideal for pre-seed and seed-stage companies.
+              </p>
+            </div>
+            <ul class="pkg-features">
+              <li>Everything in Launch package</li>
+              <li>Multi-tier subscription monetisation</li>
+              <li>Advanced analytics dashboard</li>
+              <li>AI feature integration (1 LLM feature)</li>
+              <li>Multi-tenant architecture</li>
+              <li>API for third-party integrations</li>
+              <li>Full test coverage (unit + integration)</li>
+              <li>CI/CD pipeline setup</li>
+              <li>Investor metrics dashboard</li>
+              <li>Performance optimisation</li>
+              <li>Technical due diligence documentation</li>
+              <li>60 days post-launch hypercare</li>
+            </ul>
+            <a href="/contact?pkg=scale" class="btn-outline pkg-cta">Discuss This Package</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         TECHNOLOGY STACK
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-surface">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Technology</span>
+          <h2 class="section-heading">Stack Chosen for Speed Without Technical Debt</h2>
+          <p class="section-subheading">
+            We use battle-tested, widely-adopted technologies that move fast to build and easy to maintain — not whatever is
+            trending on Hacker News this week.
+          </p>
+        </div>
+        <div class="stack-grid">
+          {[
+            { category: 'Frontend', techs: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Flutter (mobile)'] },
+            { category: 'Backend', techs: ['Node.js', 'FastAPI (Python)', 'Supabase', 'PostgreSQL', 'Redis'] },
+            { category: 'AI / ML', techs: ['OpenAI API', 'Anthropic Claude', 'LangChain', 'Pinecone', 'Hugging Face'] },
+            { category: 'Cloud & DevOps', techs: ['AWS', 'Google Cloud', 'Vercel', 'Docker', 'GitHub Actions'] },
+            { category: 'Payments & Auth', techs: ['Stripe', 'Auth0 / Clerk', 'Firebase Auth', 'Supabase Auth', 'PayTo'] },
+            { category: 'Analytics', techs: ['Mixpanel', 'PostHog', 'Segment', 'Amplitude', 'GA4'] },
+          ].map((cat, i) => (
+            <div class={`stack-card reveal stagger-${Math.min(i + 1, 6)}`}>
+              <div class="stack-category">{cat.category}</div>
+              <div class="stack-techs">
+                {cat.techs.map((t) => (
+                  <span class="stack-badge">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         12-WEEK TIMELINE
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-dark">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Week by Week</span>
+          <h2 class="section-heading">The Launch Package: 12-Week Timeline</h2>
+          <p class="section-subheading">
+            Every week has a clear deliverable. You always know where we are and what's coming next.
+          </p>
+        </div>
+        <div class="timeline-grid">
+          {[
+            { weeks: 'Week 1–2', phase: 'Discovery', title: 'Problem Definition & Scope Lock', desc: 'Stakeholder workshops to define the core user problem, map user journeys, lock feature scope and produce a signed-off product spec. No building until the scope is clear.' },
+            { weeks: 'Week 2–3', phase: 'Design', title: 'Wireframes & High-Fidelity UI', desc: 'Information architecture, wireframes and full high-fidelity UI design in Figma. Includes your brand identity if not yet defined. Design is signed off before development begins.' },
+            { weeks: 'Week 3–4', phase: 'Architecture', title: 'Technical Architecture & Setup', desc: 'Database schema, API architecture, authentication flows, infrastructure setup, CI/CD pipeline, staging environment. The foundation for everything that follows.' },
+            { weeks: 'Week 4–7', phase: 'Core Build', title: 'Core Feature Development', desc: 'Sprint-based delivery of core features in priority order. Weekly builds deployed to staging. You review working software every Friday — not slide decks.' },
+            { weeks: 'Week 7–9', phase: 'Integration', title: 'Payments, Auth & Third-Party APIs', desc: 'Stripe payment flows, email/notification systems, analytics instrumentation and any third-party integrations (CRM, maps, communications APIs). Full end-to-end testing.' },
+            { weeks: 'Week 9–10', phase: 'Polish', title: 'UX Refinement & Performance', desc: 'Based on internal testing and your feedback from staging: UI/UX refinements, loading state improvements, error handling, mobile responsiveness and accessibility pass.' },
+            { weeks: 'Week 10–11', phase: 'QA', title: 'Testing & Bug Squashing', desc: 'Systematic test execution across all user flows, device testing, security review (OWASP Top 10), load testing for expected launch traffic and final stakeholder walkthrough.' },
+            { weeks: 'Week 11–12', phase: 'Launch', title: 'Production Deployment & Go-Live', desc: 'Production deployment with zero-downtime launch plan, DNS configuration, monitoring and alerting setup, documentation handover and your team onboarding session.' },
+          ].map((item, i) => (
+            <div class={`tl-item reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
+              <div class="tl-week-badge">{item.weeks}</div>
+              <div class="tl-phase">{item.phase}</div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         WHAT MAKES A GOOD MVP
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-surface">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">MVP Principles</span>
+          <h2 class="section-heading">The Principles Behind MVPs That Succeed</h2>
+          <p class="section-subheading">
+            After building dozens of MVPs, these are the principles that separate products that gain traction from those that stall.
+          </p>
+        </div>
+        <div class="principles-grid">
+          {[
+            {
+              num: '01',
+              title: 'One Core Value Proposition',
+              desc: 'The best MVPs do one thing brilliantly. Every feature you add to the MVP scope is a feature you haven\'t validated yet — and it\'s time and money spent on risk, not traction.'
+            },
+            {
+              num: '02',
+              title: 'Build for Desirability, Not Completeness',
+              desc: 'Users don\'t need your product to be feature-complete. They need it to solve their specific pain point better than the alternative they\'re using today. Start there.'
+            },
+            {
+              num: '03',
+              title: 'Instrument Everything',
+              desc: 'An untracked MVP is just expensive software. Every action that matters — signup, activation, core feature use, return visit, upgrade — must be instrumented before you launch.'
+            },
+            {
+              num: '04',
+              title: 'Quality Within Constraints',
+              desc: 'MVP doesn\'t mean low quality. It means right-sized. The parts of the codebase that will definitely scale deserve quality foundations. The experimental bits can be leaner.'
+            },
+            {
+              num: '05',
+              title: 'Design for Real Users, Not Investors',
+              desc: 'If your MVP is designed to impress investors rather than serve users, you\'ll optimise for the wrong outcomes. Investors fund traction — traction comes from solving user problems.'
+            },
+            {
+              num: '06',
+              title: 'Ship Early, Learn Fast',
+              desc: 'The most valuable thing an MVP can do is fail fast and cheaply. Don\'t polish it until it\'s too expensive to change course. Ship, measure, learn and iterate — that\'s the process.'
+            },
+          ].map((p, i) => (
+            <div class={`principle-card card-hover reveal stagger-${Math.min((i % 6) + 1, 6)}`}>
+              <div class="principle-num">{p.num}</div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         TESTIMONIALS PLACEHOLDER
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-dark">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Founder Stories</span>
+          <h2 class="section-heading">What Founders Say After Working With Us</h2>
+        </div>
+        <div class="testimonials-grid">
+          {[1, 2, 3].map((_, i) => (
+            <div class={`testimonial-card reveal stagger-${i + 1}`}>
+              <!-- TESTIMONIAL_PLACEHOLDER — Replace with real founder quotes when available -->
+              <div class="testimonial-placeholder-note">
+                <!-- PLACEHOLDER: Add real founder testimonial here -->
+              </div>
+              <div class="t-quote">
+                "TODO — Add real founder testimonial here. Should include specific outcomes (users, revenue, time-to-launch) and reflect their genuine experience working with our team."
+              </div>
+              <div class="t-author">
+                <div class="t-avatar-placeholder"></div>
+                <div class="t-info">
+                  <div class="t-name">Founder Name — TODO</div>
+                  <div class="t-role">Founder &amp; CEO, Company Name — TODO</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CASE STUDIES PLACEHOLDER
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-surface">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Case Studies</span>
+          <h2 class="section-heading">MVPs We've Shipped</h2>
+        </div>
+        <div class="cs-grid">
+          {[1, 2].map((_, i) => (
+            <div class={`cs-card reveal stagger-${i + 1}`}>
+              <!-- CASE_STUDY_PLACEHOLDER — Replace when real case study is approved -->
+              <div class="cs-badge-sm">Case Study — TODO</div>
+              <h3>Client Project Name — TODO</h3>
+              <p>Add real case study content here: problem, solution, technology used, timeline and measurable outcomes (users gained, revenue generated, funding raised). Pending client approval before publishing.</p>
+              <div class="cs-stats-row">
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Metric</span></div>
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Metric</span></div>
+                <div class="cs-mini-stat"><span class="cs-mini-num">TODO</span><span class="cs-mini-label">Metric</span></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════ -->
+    <section class="mvp-section bg-dark">
+      <div class="mvp-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-heading">Startup MVP — Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          {[
+            {
+              q: 'What\'s included in a fixed-price MVP engagement?',
+              a: 'Fixed-price engagements include everything scoped in the discovery phase: design, development, testing, deployment and a post-launch support period (2–60 days depending on package). Scope changes during the project are handled via a simple change order process — we document the change, its cost and timeline impact, and you approve it before we proceed. There are no surprise invoices.'
+            },
+            {
+              q: 'Do you take equity in the startups you work with?',
+              a: 'No. We work on a fee-for-service basis. We\'ve thought carefully about equity arrangements and consistently found that the conflicts of interest they create — around scope, speed and commercial focus — don\'t serve founders well. You get our full effort regardless of your cap table. If you genuinely cannot fund a build, we\'re happy to discuss deferred payment structures, but we don\'t take equity.'
+            },
+            {
+              q: 'Who owns the code and intellectual property?',
+              a: 'You do. All source code, design files, database schemas and associated IP is transferred to you in full upon final payment. We retain no ownership, licence rights or usage rights over anything we build for you. You\'ll receive a full repository handover with documentation.'
+            },
+            {
+              q: 'Can you work with a non-technical founder?',
+              a: 'Yes — and it\'s the majority of our MVP clients. We run structured discovery workshops specifically designed to bridge the gap between non-technical founders and engineering teams. We translate product vision into technical requirements, make technology decisions transparent and explain trade-offs in plain language. You don\'t need to understand React to have a view on whether a feature solves the user problem.'
+            },
+            {
+              q: 'What if the scope needs to change mid-project?',
+              a: 'Scope evolution is normal in product development — we expect it. We use a lightweight change order process: when a scope change is identified (by you or by us), we document what\'s changing, the cost and timeline impact, and get your sign-off before proceeding. We won\'t lock you into a scope that no longer reflects reality — but we will be transparent about what changes cost.'
+            },
+            {
+              q: 'What happens after the MVP launches?',
+              a: 'All packages include a post-launch hypercare period (2–60 days) where we fix any bugs, help you onboard early users and monitor for production issues. After hypercare, you can continue with us on a retainer for ongoing development, maintenance and feature expansion — or take the codebase to another team. We provide full handover documentation either way.'
+            },
+            {
+              q: 'Can you build mobile apps as an MVP?',
+              a: 'Yes. For most MVPs, we recommend a mobile-responsive web application (Next.js) as the fastest path to validation — it reaches iOS and Android without app store friction, and you can iterate without App Store review cycles. Where native mobile performance or device features (camera, GPS, push notifications) are essential to the core value proposition, we build with Flutter, which gives us a single codebase for both iOS and Android.'
+            },
+            {
+              q: 'How do you handle post-MVP scaling if we get traction?',
+              a: 'We build MVPs on production-quality foundations — no shortcuts that create expensive rewrites when you scale. The architecture is designed to extend, not replace. When you\'re ready to scale, we can continue as your development partner or hand off to an internal team. We document everything, including architecture decisions and the reasoning behind them, so whoever works on the product next isn\'t starting from scratch.'
+            },
+          ].map((faq, i) => (
+            <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>
+              <button class="faq-q" data-faq={`mvp-${i}`} aria-expanded="false">
+                <span>{faq.q}</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" id={`faq-mvp-${i}`} hidden>
+                <p>{faq.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .mvp-hero {
+    padding: 9rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mvp-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+
+  .mvp-glow {
+    position: absolute;
+    top: -10%;
+    left: 30%;
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.1) 0%, transparent 65%);
+  }
+
+  .mvp-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(13,147,115,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,147,115,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .mvp-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #4a6359; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #4a6359; text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #0d9373; }
+
+  .mvp-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .mvp-hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .mvp-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+  .hero-trust-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .trust-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .trust-num { font-family: 'Sora', sans-serif; font-size: 1.75rem; font-weight: 800; color: #0d9373; line-height: 1; }
+  .trust-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; }
+  .trust-divider { width: 1px; height: 40px; background: #1e2d28; }
+
+  /* Hero timeline visual */
+  .mvp-hero-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .timeline-item-sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0d9373;
+    border: 2px solid rgba(13,147,115,0.3);
+    flex-shrink: 0;
+  }
+
+  .tl-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+    margin: 0.25rem 0;
+  }
+
+  .tl-line {
+    width: 1px;
+    height: 24px;
+    background: linear-gradient(to bottom, #0d9373, rgba(13,147,115,0.2));
+  }
+
+  /* Sections */
+  .mvp-section { padding: 7rem 0; }
+  .bg-dark { background: #0a0f0e; }
+  .bg-surface { background: #0f1614; }
+
+  .mvp-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { max-width: 700px; margin-bottom: 3.5rem; }
+
+  /* What is MVP */
+  .mvp-what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .mvp-para { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 1.25rem; }
+
+  .mvp-what-points {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mvp-sub-heading { font-family: 'Sora', sans-serif; font-size: 0.875rem; font-weight: 700; color: #8aa09a; margin: 0; }
+
+  .mvp-check-item, .mvp-cross-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .mvp-check-item { color: #8aa09a; }
+  .mvp-cross-item { color: #4a6359; }
+
+  /* Packages */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .package-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .package-featured {
+    background: linear-gradient(135deg, rgba(13,147,115,0.07) 0%, #0f1614 60%);
+    border-color: rgba(13,147,115,0.4);
+    box-shadow: 0 0 40px rgba(13,147,115,0.1);
+  }
+
+  .pkg-featured-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d9373;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  .pkg-header { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .pkg-name { font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #0d9373; }
+
+  .pkg-price { font-family: 'Sora', sans-serif; font-size: 1.875rem; font-weight: 800; color: white; letter-spacing: -0.03em; }
+
+  .pkg-timeline {
+    display: inline-flex;
+    align-self: flex-start;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    color: #0d9373;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.2rem 0.75rem;
+    border-radius: 50px;
+  }
+
+  .pkg-desc { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; padding-top: 0.5rem; border-top: 1px solid #1e2d28; }
+
+  .pkg-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+  }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.45;
+  }
+
+  .pkg-features li::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.2);
+    border: 1.5px solid rgba(13,147,115,0.4);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .pkg-cta {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Stack */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .stack-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stack-category { font-family: 'Sora', sans-serif; font-size: 0.875rem; font-weight: 700; color: white; }
+
+  .stack-techs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .stack-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #8aa09a;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+  }
+
+  /* Timeline */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .tl-item {
+    padding: 2rem;
+    border: 1px solid #1e2d28;
+    margin: -1px 0 0 -1px;
+    transition: background 0.3s ease;
+  }
+
+  .tl-item:hover { background: rgba(13,147,115,0.03); }
+
+  .tl-week-badge {
+    display: inline-flex;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    color: #0d9373;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 0.2rem 0.625rem;
+    border-radius: 50px;
+    margin-bottom: 0.625rem;
+  }
+
+  .tl-phase { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a6359; margin-bottom: 0.375rem; }
+  .tl-item h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; margin: 0 0 0.625rem; }
+  .tl-item p { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  /* Principles */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .principle-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .principle-num { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; color: rgba(13,147,115,0.15); line-height: 1; letter-spacing: -0.04em; }
+  .principle-card h3 { font-family: 'Sora', sans-serif; font-size: 1.0625rem; font-weight: 600; color: white; margin: 0; }
+  .principle-card p { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .testimonial-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .testimonial-placeholder-note { display: none; }
+
+  .t-quote { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.7; font-style: italic; flex: 1; }
+
+  .t-author { display: flex; align-items: center; gap: 0.875rem; }
+
+  .t-avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1e2d28;
+    flex-shrink: 0;
+  }
+
+  .t-name { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 600; color: white; }
+  .t-role { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #4a6359; }
+
+  /* Case studies */
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .cs-card {
+    background: linear-gradient(135deg, rgba(13,147,115,0.04) 0%, #0a0f0e 60%);
+    border: 1px dashed rgba(13,147,115,0.25);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cs-badge-sm {
+    display: inline-flex;
+    align-self: flex-start;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    color: #0d9373;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.625rem;
+    border-radius: 50px;
+  }
+
+  .cs-card h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 0; }
+  .cs-card p { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #4a6359; line-height: 1.7; margin: 0; }
+
+  .cs-stats-row { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid rgba(13,147,115,0.15); }
+  .cs-mini-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .cs-mini-num { font-family: 'Sora', sans-serif; font-size: 1.375rem; font-weight: 700; color: #0d9373; }
+  .cs-mini-label { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; max-width: 900px; }
+  .faq-item { border-bottom: 1px solid #1e2d28; }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.375rem 0; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; transition: color 0.2s ease; }
+  .faq-q:hover { color: #0d9373; }
+  .faq-q[aria-expanded="true"] { color: #0d9373; }
+  .faq-chevron { flex-shrink: 0; transition: transform 0.3s ease; color: #4a6359; }
+  .faq-q[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); color: #0d9373; }
+  .faq-a { padding-bottom: 1.375rem; }
+  .faq-a p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .mvp-hero-inner { grid-template-columns: 1fr; }
+    .mvp-hero-timeline { display: none; }
+    .mvp-what-grid { grid-template-columns: 1fr; }
+    .mvp-what-points { margin-top: 0; }
+    .packages-grid { grid-template-columns: 1fr; max-width: 520px; }
+    .stack-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .cs-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .stack-grid,
+    .principles-grid { grid-template-columns: 1fr; }
+    .hero-trust-row { gap: 1.25rem; }
+    .trust-divider { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const idx = btn.dataset.faq;
+      const panel = document.getElementById(`faq-${idx}`);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (panel) panel.hidden = isOpen;
+    });
+  });
+</script>

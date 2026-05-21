@@ -1,0 +1,489 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const post = {
+  title: 'Why Flutter is the Smart Choice for Enterprise Mobile App Development in 2026',
+  description: 'Flutter has matured into a serious enterprise platform. We examine the data, cost comparisons and real-world case studies that make the case for Flutter over native in most enterprise mobile scenarios.',
+  author: 'All Webbed Labs Team',
+  date: '2026-04-15',
+  dateFormatted: 'Apr 15, 2026',
+  category: 'Mobile Development',
+  readTime: '6 min read',
+  slug: 'flutter-smart-choice-mobile-2026',
+};
+
+const relatedPosts = [
+  {
+    slug: 'future-of-ai-australian-enterprise',
+    title: 'The Future of AI in Australian Enterprise: What Leaders Need to Know in 2026',
+    category: 'AI & Automation',
+    date: 'May 1, 2026',
+  },
+  {
+    slug: 'web3-beyond-hype-blockchain',
+    title: 'Web3 Beyond the Hype: Real Business Applications of Blockchain',
+    category: 'Web3 & Blockchain',
+    date: 'Mar 20, 2026',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.description,
+  author: {
+    '@type': 'Organization',
+    name: post.author,
+    url: 'https://labs.allwebbedup.com.au',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'All Webbed Labs',
+    url: 'https://labs.allwebbedup.com.au',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://labs.allwebbedup.com.au/logo.svg',
+    },
+  },
+  datePublished: post.date,
+  dateModified: post.date,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://labs.allwebbedup.com.au/blog/${post.slug}`,
+  },
+};
+---
+
+<Layout
+  title={`${post.title} — All Webbed Labs`}
+  description={post.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
+  <Header />
+
+  <main>
+    <!-- Article Hero -->
+    <section class="article-hero">
+      <div class="article-hero-bg" aria-hidden="true">
+        <div class="article-hero-glow"></div>
+      </div>
+      <div class="article-hero-inner reveal">
+        <div class="article-meta-top">
+          <a href="/blog" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Blog
+          </a>
+          <span class="article-category cat-mobile">{post.category}</span>
+        </div>
+        <h1 class="article-title">{post.title}</h1>
+        <div class="article-byline">
+          <div class="byline-author">
+            <div class="byline-avatar" aria-hidden="true">AWL</div>
+            <div>
+              <div class="byline-name">{post.author}</div>
+              <div class="byline-date">{post.dateFormatted}</div>
+            </div>
+          </div>
+          <div class="byline-right">
+            <span class="byline-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {post.readTime}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="article-body-section">
+      <div class="article-body-inner">
+        <div class="article-layout">
+          <!-- Main content -->
+          <article class="article-content">
+
+            <p class="article-lead">
+              When Flutter first arrived as a serious cross-platform contender in 2018, it was met with predictable scepticism from the enterprise mobile world. Fast-forward to 2026 and that scepticism has largely dissolved — replaced by a recognition that Flutter has become a genuinely mature, production-capable platform that solves the core economic problem of enterprise mobile development without the performance or quality compromises of earlier cross-platform frameworks.
+            </p>
+
+            <h2>Flutter's Market Position in 2026</h2>
+
+            <p>
+              Flutter's adoption trajectory has been remarkable. According to the 2025 Stack Overflow Developer Survey, Flutter is now used by 9.4% of all developers — up from 6.7% in 2022 — making it one of the fastest-growing frameworks in the survey's history. Among mobile-focused developers, the figure is closer to 27%.
+            </p>
+
+            <p>
+              More importantly for enterprise buyers, Flutter's corporate pedigree has only strengthened. Google's continued investment in the framework is evident in the cadence of releases: Flutter 3.x brought significant performance improvements, better desktop support, better tooling integration with enterprise IDEs and improved support for the Impeller rendering engine, which replaced the legacy Skia renderer and addressed the "jank" concerns that plagued early Flutter deployments.
+            </p>
+
+            <p>
+              Major enterprises now have public Flutter deployments including BMW's iDrive companion app, Alibaba's Xianyu platform (serving 50 million monthly active users), eBay Motors, and — most relevantly for enterprise buyers — a growing list of internal enterprise tooling applications across logistics, field service and workforce management where Flutter's desktop and tablet support is particularly valuable.
+            </p>
+
+            <h2>The Cost Comparison With Native Development</h2>
+
+            <p>
+              The fundamental economic argument for Flutter has not changed, but it has sharpened considerably. Building a mobile application natively means maintaining two separate codebases — Swift/Objective-C for iOS and Kotlin/Java for Android — with two separate teams, two test suites, two deployment pipelines and two sets of platform-specific bugs.
+            </p>
+
+            <p>
+              Based on our own project history across 60+ enterprise mobile engagements, we typically see a 35–50% reduction in initial build cost when using Flutter versus native development for a feature-equivalent application. The variance depends on the complexity of platform-specific integrations required — apps with heavy camera, AR or hardware integration closer to 35%; those with primarily data display, forms and standard mobile patterns closer to 50%.
+            </p>
+
+            <p>
+              The ongoing maintenance cost differential is even more pronounced. Feature additions, bug fixes and OS compatibility updates need to happen once in Flutter versus twice natively. Over a three-year lifecycle, a Flutter app will typically cost 40–55% less to maintain than the equivalent native applications, with significantly less risk of the platforms diverging in functionality.
+            </p>
+
+            <h2>Performance: Where Flutter Actually Stands</h2>
+
+            <p>
+              The performance question is the one enterprise technical teams probe hardest — and rightly so. The honest answer is nuanced, but the 2026 picture is considerably more favourable to Flutter than it was in 2021.
+            </p>
+
+            <p>
+              With the Impeller rendering engine now the default on both iOS and Android, Flutter applications achieve consistent 60 and 120fps rendering without the jank spikes that were a legitimate concern with the Skia renderer on Android. In our own benchmarking across representative enterprise workflows — form entry, list navigation, data loading states, file handling — Flutter applications are indistinguishable from native in perceptual performance for the vast majority of use cases.
+            </p>
+
+            <p>
+              The exceptions are worth noting. Applications with very deep hardware integration — complex camera pipelines, real-time audio processing, intensive AR — still benefit from native or hybrid approaches where Flutter shells wrap native code for the performance-critical layers. Similarly, applications requiring very large volumes of rendered list items (10,000+ items in a scrollable list without virtualisation) can expose Flutter's rendering thread limits.
+            </p>
+
+            <p>
+              For the 90%+ of enterprise mobile use cases — workforce applications, customer portals, field service tools, reporting dashboards, approval workflows — performance is a non-issue in practice.
+            </p>
+
+            <h2>Enterprise Use Cases Where Flutter Excels</h2>
+
+            <p>
+              Certain categories of enterprise mobile applications are particularly well-suited to Flutter's architecture. Field service management applications — used by technicians, inspectors and field agents who need offline capability, camera integration, form completion and sync functionality — are a natural fit. The Dart language's strong typing and Flutter's widget composability make these applications fast to build and easy to maintain.
+            </p>
+
+            <p>
+              Logistics and operations tooling is another strong category. Applications used by warehouse staff, drivers and operations managers typically run on a mix of iOS and Android devices depending on purchasing history. Flutter eliminates the "we only support Android" or "iOS users get a degraded experience" situation that many logistics operators have historically lived with.
+            </p>
+
+            <p>
+              Enterprise internal tooling — employee self-service apps, approvals and workflows, internal dashboards — represents perhaps the highest-ROI category. These applications are often deprioritised for native investment because they serve internal users, but with Flutter the cost to build a high-quality internal tool is low enough to justify the investment where it previously wasn't.
+            </p>
+
+            <p>
+              Healthcare is an increasingly important Flutter market in Australia. Patient-facing applications, clinical decision support tools, and administrative applications that need to run on hospital-managed iOS and Android device estates are a natural fit for Flutter's single codebase approach, especially given the regulatory and version-management overhead of maintaining two native apps in clinical environments.
+            </p>
+
+            <h2>When NOT to Use Flutter</h2>
+
+            <p>
+              Intellectual honesty demands we also address the scenarios where Flutter is not the optimal choice — and there are real ones.
+            </p>
+
+            <p>
+              If your application is iOS-only and requires deep integration with Apple's latest platform APIs the same year they're released, native Swift development will give you faster access to new capabilities. Apple's own frameworks — SwiftUI, ARKit, HealthKit integrations — are native-first, and Flutter's community plugin ecosystem lags Apple releases by weeks to months.
+            </p>
+
+            <p>
+              Applications where the brand experience is inseparable from platform design conventions — applications where users have strong expectations of native iOS or Android UI patterns — may warrant native investment. Social media applications, media consumption apps and anything competing directly with platform-native alternatives may benefit from the native feel that UIKit and Jetpack Compose provide.
+            </p>
+
+            <p>
+              If your organisation already has a large, experienced native iOS or Android team and no cross-platform skills, the retraining investment to shift to Flutter may not be justified for a single application. Flutter's economics work best when the benefits compound across multiple applications and teams.
+            </p>
+
+            <h2>Flutter vs React Native: The Definitive Comparison</h2>
+
+            <p>
+              The Flutter vs React Native debate is one that enterprise technical teams ask us about regularly, so it deserves a direct treatment.
+            </p>
+
+            <p>
+              React Native's architecture has improved significantly with the New Architecture (Fabric renderer and JSI), addressing many of the bridge performance issues that plagued earlier versions. For teams already heavily invested in React and JavaScript, React Native offers a lower learning curve and the ability to share business logic with web applications — a genuine advantage for organisations building React web applications and mobile apps in parallel.
+            </p>
+
+            <p>
+              Flutter's advantages are in rendering consistency and performance predictability. Because Flutter draws its own UI rather than bridging to native components, what you see in development is what ships in production — there are far fewer "it looks different on device X" surprises. Dart is a more performant language than JavaScript for compute-heavy operations, and the Impeller renderer provides more predictable frame rates under load.
+            </p>
+
+            <p>
+              Our current recommendation: if your team has strong React/JavaScript expertise and web-mobile code sharing is a priority, React Native with the New Architecture is a solid choice. If you're starting fresh, prioritise performance predictability, or need strong tablet and desktop support, Flutter is the stronger choice for enterprise contexts in 2026.
+            </p>
+
+            <h2>Practical Considerations for Enterprise Flutter Adoption</h2>
+
+            <p>
+              Before committing to Flutter, enterprise teams should validate a few practical considerations. MDM compatibility — ensuring Flutter applications work correctly with your mobile device management solution — should be tested early. Flutter apps are standard native binaries and work with mainstream MDM platforms (Jamf, Intune, VMware Workspace ONE), but the testing is worth doing before committing to a build.
+            </p>
+
+            <p>
+              If your organisation has existing native mobile engineers, assess retraining appetite honestly. Dart is a pleasant language to learn for developers with Java, Swift or TypeScript backgrounds, but there is a real ramp-up period. Plan for it. If you're onboarding a development partner rather than building internally, ensure the team has genuine Flutter production experience — not just certificates and tutorials.
+            </p>
+
+            <p>
+              The Flutter ecosystem has matured significantly, but some enterprise-specific plugins have thinner community support than their React Native equivalents. If you have specific enterprise integrations — SCEP certificate management, MDM enrolment flows, specific hardware peripherals — validate plugin availability before committing.
+            </p>
+
+            <p>
+              For enterprises building their first Flutter application, we recommend starting with an internal tool or an application serving a relatively homogeneous device fleet. This limits the variable surface area while your team builds confidence with the framework, before applying it to higher-stakes customer-facing deployments.
+            </p>
+
+          </article>
+
+          <!-- Sidebar -->
+          <aside class="article-sidebar">
+            <div class="sidebar-widget reveal">
+              <h3 class="sidebar-widget-title">In This Article</h3>
+              <nav class="toc">
+                <ol class="toc-list">
+                  <li><a href="#" class="toc-link">Flutter's Market Position</a></li>
+                  <li><a href="#" class="toc-link">Cost vs Native Development</a></li>
+                  <li><a href="#" class="toc-link">Performance Benchmarks</a></li>
+                  <li><a href="#" class="toc-link">Enterprise Use Cases</a></li>
+                  <li><a href="#" class="toc-link">When NOT to Use Flutter</a></li>
+                  <li><a href="#" class="toc-link">Flutter vs React Native</a></li>
+                  <li><a href="#" class="toc-link">Practical Considerations</a></li>
+                </ol>
+              </nav>
+            </div>
+
+            <div class="sidebar-widget reveal">
+              <h3 class="sidebar-widget-title">Related Articles</h3>
+              <div class="related-posts">
+                {relatedPosts.map((rp) => (
+                  <a href={`/blog/${rp.slug}`} class="related-post-link">
+                    <div class="related-post-cat">{rp.category}</div>
+                    <div class="related-post-title">{rp.title}</div>
+                    <div class="related-post-date">{rp.date}</div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div class="sidebar-widget sidebar-newsletter reveal">
+              <div class="newsletter-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <h3 class="sidebar-widget-title" style="margin-top: 0.5rem;">Get more insights</h3>
+              <p class="newsletter-desc">Fortnightly articles on enterprise mobile, AI and software architecture.</p>
+              <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your@email.com" class="newsletter-input" aria-label="Email" required />
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+              </form>
+            </div>
+
+            <div class="sidebar-widget sidebar-cta-widget reveal">
+              <h3 class="sidebar-cta-title">Building a mobile app?</h3>
+              <p class="sidebar-cta-desc">Our Flutter team has delivered 30+ enterprise mobile applications across iOS, Android and desktop. Let's talk about yours.</p>
+              <a href="/contact" class="btn-primary sidebar-cta-btn">Book a free call</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article CTA -->
+    <section class="article-cta-section">
+      <div class="article-cta-inner reveal">
+        <div class="article-cta-content">
+          <span class="section-label">Flutter Experts</span>
+          <h2 class="article-cta-title">Ready to build your enterprise mobile app?</h2>
+          <p class="article-cta-desc">
+            All Webbed Labs is one of Australia's most experienced Flutter development teams. We've shipped enterprise mobile applications for logistics, healthcare, field service and retail — all on time and on budget.
+          </p>
+          <div class="article-cta-actions">
+            <a href="/contact" class="btn-primary">
+              Start the conversation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/services/flutter-development" class="btn-outline">
+              Our Flutter services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .article-hero {
+    padding: 9rem 0 4rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+  .article-hero-glow {
+    position: absolute;
+    top: -20%;
+    right: 10%;
+    width: 700px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(59,130,246,0.07) 0%, transparent 65%);
+  }
+  .article-hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .article-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #4a6359;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { color: #8aa09a; }
+  .article-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+  }
+  .cat-mobile { color: #3b82f6; background: rgba(59,130,246,0.1); }
+  .article-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.75rem;
+  }
+  .article-byline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .byline-author { display: flex; align-items: center; gap: 0.75rem; }
+  .byline-avatar {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, #0d9373, #0a7a5e);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-size: 0.5625rem; font-weight: 700;
+    color: rgba(255,255,255,0.7); flex-shrink: 0;
+  }
+  .byline-name { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 600; color: white; }
+  .byline-date { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; }
+  .byline-read-time { display: flex; align-items: center; gap: 0.375rem; font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; }
+
+  .article-body-section { padding: 5rem 0; background: #0f1614; }
+  .article-body-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
+    align-items: start;
+  }
+  .article-content { max-width: 720px; }
+  .article-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 0 0 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .article-content h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 2.5rem 0 1rem;
+    letter-spacing: -0.02em;
+  }
+  .article-content h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin: 2rem 0 0.75rem;
+  }
+  .article-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a6359;
+    line-height: 1.8;
+    margin: 0 0 1.25rem;
+  }
+  .article-content p strong { color: #8aa09a; font-weight: 600; }
+
+  .article-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 1.25rem; }
+  .sidebar-widget {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.375rem;
+  }
+  .sidebar-widget-title { font-family: 'Sora', sans-serif; font-size: 0.875rem; font-weight: 700; color: white; margin: 0 0 1rem; }
+  .toc-list { padding-left: 1.25rem; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .toc-link { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; text-decoration: none; transition: color 0.2s ease; line-height: 1.4; }
+  .toc-link:hover { color: #0d9373; }
+  .related-posts { display: flex; flex-direction: column; gap: 0; }
+  .related-post-link {
+    display: flex; flex-direction: column; gap: 0.3rem;
+    padding: 0.75rem 0; border-bottom: 1px solid #1e2d28;
+    text-decoration: none; transition: opacity 0.2s ease;
+  }
+  .related-posts a:last-child { border-bottom: none; }
+  .related-post-link:hover { opacity: 0.8; }
+  .related-post-cat { font-family: 'DM Sans', sans-serif; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0d9373; }
+  .related-post-title { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600; color: #8aa09a; line-height: 1.4; }
+  .related-post-date { font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; color: #4a6359; }
+  .sidebar-newsletter { background: linear-gradient(135deg, #0a1510 0%, #0a0f0e 100%); border-color: rgba(13,147,115,0.2); }
+  .newsletter-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(13,147,115,0.1); display: flex; align-items: center; justify-content: center; color: #0d9373; margin-bottom: 0.5rem; }
+  .newsletter-desc { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; margin: 0 0 0.875rem; line-height: 1.6; }
+  .newsletter-form { display: flex; flex-direction: column; gap: 0.5rem; }
+  .newsletter-input { background: rgba(255,255,255,0.04); border: 1px solid #1e2d28; border-radius: 8px; padding: 0.625rem 0.875rem; font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: white; outline: none; transition: border-color 0.2s ease; width: 100%; }
+  .newsletter-input::placeholder { color: #4a6359; }
+  .newsletter-input:focus { border-color: rgba(13,147,115,0.4); }
+  .newsletter-btn { background: #0d9373; color: white; padding: 0.625rem 1rem; border-radius: 8px; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600; cursor: pointer; transition: background 0.2s ease; width: 100%; }
+  .newsletter-btn:hover { background: #10b88a; }
+  .sidebar-cta-widget { background: linear-gradient(135deg, #0a1510 0%, #0a0f0e 100%); border-color: rgba(13,147,115,0.2); text-align: center; }
+  .sidebar-cta-title { font-family: 'Sora', sans-serif; font-size: 0.9375rem; font-weight: 700; color: white; margin: 0 0 0.5rem; }
+  .sidebar-cta-desc { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #4a6359; margin: 0 0 1rem; line-height: 1.6; }
+  .sidebar-cta-btn { width: 100%; justify-content: center; font-size: 0.8125rem; padding: 0.7rem 1rem; }
+
+  .article-cta-section { padding: 6rem 0; background: #0a0f0e; }
+  .article-cta-inner {
+    max-width: 860px; margin: 0 auto; padding: 3rem 3rem;
+    background: linear-gradient(135deg, #0a1510 0%, #0a0f0e 100%);
+    border: 1px solid rgba(13,147,115,0.2); border-radius: 24px;
+  }
+  .article-cta-title { font-family: 'Sora', sans-serif; font-size: 1.75rem; font-weight: 700; color: white; margin: 0.5rem 0 1rem; letter-spacing: -0.02em; }
+  .article-cta-desc { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 2rem; max-width: 600px; }
+  .article-cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  @media (max-width: 1100px) {
+    .article-layout { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-content { max-width: 100%; }
+  }
+  @media (max-width: 640px) {
+    .article-cta-inner { padding: 2rem 1.5rem; }
+  }
+</style>

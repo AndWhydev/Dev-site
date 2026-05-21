@@ -1,0 +1,125 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+const data = {
+  metaTitle: "DAO Governance Platform | All Webbed Labs",
+  metaDescription: "How we built on-chain governance infrastructure for an Australian DAO with 1,200 token holders managing an $800K treasury — increasing governance participation from 12% to 53% and cutting treasury transaction time from 6 days to 18 hours.",
+
+  industry: "Web3 & Crypto",
+  tags: ["DAO", "Governance", "Solidity", "Gnosis Safe", "Treasury Management"],
+
+  title: "DAO Governance Platform",
+  summary: "An Australian Web3 community DAO with 1,200 token holders and an $800K treasury was running governance through Discord polls with no on-chain enforcement, creating decision paralysis, treasury delays and an exclusionary process that silenced smaller token holders. We built them a complete on-chain governance system with proposal lifecycle management, Snapshot integration for gas-free signalling, Gnosis Safe treasury automation, and a transparent audit trail for every decision.",
+
+  heroImageDescription: "DAO governance dashboard showing active proposals with vote counts, quorum progress bars, treasury allocation charts, recent on-chain transactions with timelock countdown and community participation metrics",
+
+  clientOverview: "Placeholder DAO is an Australian Web3 community organisation that had grown organically from a small group of DeFi enthusiasts into a 1,200-member community managing a meaningful treasury through grants, protocol investments and community partnerships. The treasury had grown to approximately $800,000 in mixed assets (ETH, stablecoins, and native protocol tokens) through a combination of token sales, protocol fees and community fundraising. Despite this scale, the governance infrastructure had not evolved beyond the informal methods used when the community was a hundred people.",
+  clientSize: "1,200 token holders, $800K treasury",
+  clientLocation: "Australia-wide (decentralised community)",
+
+  pullQuote: "We had people making $50K decisions in Discord polls that expired in 24 hours with 40 votes. That was fine when we were small. At 1,200 members with a real treasury, it had become a liability — both practically and for the community's credibility. What we needed wasn't just better tools, it was a legitimate process.",
+  pullQuoteAuthor: "Alex W.",
+  pullQuoteRole: "Core Contributor, Placeholder DAO",
+
+  challenge: [
+    "Governance was conducted entirely through Discord polls, which had multiple fundamental problems. Discord polls have no quorum enforcement — a binding decision could be made by any fraction of the community that happened to see the message in time. There was no formal proposal process, meaning proposals were often poorly specified and debated without sufficient context. There was no historical record of governance decisions in any durable, verifiable form. And there was no mechanism to prevent a single large token holder from creating a poll and pushing it through with their own votes before the broader community engaged.",
+    "The treasury multi-sig was configured as a 3-of-5 arrangement using individual hardware wallets held by core contributors — a reasonable security model in principle, but one that was creating operational paralysis. Getting three of five signers to coordinate and sign a transaction was taking an average of six days. Grants approved by the community were being delayed by weeks. Community members who had been awarded grants were understandably frustrated. One contributor had publicly complained that the treasury process made them feel like the DAO's decisions were illusory.",
+    "Smaller token holders — those with under 1,000 tokens — had effectively no voice. The informal proposal process rewarded those with the social capital to post a well-timed Discord message and build fast momentum. Holders with 100 tokens had the same theoretical governance rights as holders with 10,000 tokens, but in practice the system favoured volume and visibility. This was creating a perception of centralisation that was corrosive to the community's stated values.",
+    "There were no treasury analytics. The $800K treasury was managed with no dashboard, no spending categorisation, no yield tracking on idle stablecoin balances, and no historical transaction record available to the broader membership. Core contributors knew what was in the treasury; most token holders did not. This opacity was increasingly a source of community tension.",
+  ],
+
+  whyUs: [
+    "The DAO core contributors had been researching governance solutions for several months before approaching us. They had evaluated Tally, Boardroom, and Aragon — all established governance platforms — and had found that each either didn't support their existing token contract, required significant token contract modifications, or locked them into a platform dependency they were uncomfortable with. They wanted a solution that was built on open standards (the OpenZeppelin Governor framework) and that they could modify and extend themselves.",
+    "Our approach to the initial scoping call was to spend the majority of the time understanding the community's specific governance culture, not pitching solutions. The right Governor configuration — voting delay, voting period, quorum thresholds, timelock duration — are deeply contextual decisions that should reflect the community's actual behaviour patterns, not generic best-practice templates. We came prepared with questions about the community's average participation rates, the typical urgency of decisions, the distribution of token holdings, and the community's risk tolerance for governance attacks.",
+    "We were also direct about the limitations of on-chain governance: it is not a solution for poor-quality proposals, community conflict or low engagement. Technology can enforce process; it cannot manufacture community health. This honesty resonated with a community that had grown sceptical of blockchain solutions being oversold.",
+  ],
+
+  approach: [
+    "We began with a two-week community research phase, running a survey with the broader token holder community and in-depth interviews with six core contributors. The survey surfaced that the single most common complaint was not the treasury speed issue (though that ranked second) but the feeling that 'decisions are made before the vote happens' — a perception of back-room consensus being rubber-stamped by the formal process. This shaped the proposal process design significantly: we needed to build in mandatory discussion periods before voting could begin.",
+    "The governance parameter decisions were made collaboratively with the core contributors through a series of structured workshops. Voting delay (time between proposal submission and voting opening): 48 hours — long enough for all time zones to see a proposal before voting begins. Voting period: 5 days — sufficient for asynchronous participation but not so long that decisions were perpetually deferred. Quorum: 8% of total token supply — above the historical Discord poll participation rate but achievable based on the community size. Timelock: 24 hours on all passed proposals before execution — a security and community-visibility mechanism.",
+    "Snapshot integration for off-chain signalling was an important design decision. Snapshot votes are gas-free (signatures are used instead of on-chain transactions), which removes a significant participation barrier for smaller token holders who might have $50 worth of governance tokens but not want to spend $10 in gas to vote. We designed a two-phase process: major decisions use Snapshot for community temperature checks and initial discussion, with the formal on-chain Governor vote for binding decisions. This meant gas costs were incurred only at the execution stage.",
+    "Proposal templates were designed as part of the project, not as an afterthought. A structured proposal format — background, motivation, specific changes requested, risks, voting options — was built into the proposal submission interface. The platform validates that required fields are populated before a proposal can be submitted, creating a minimum quality bar that the Discord system had never enforced.",
+  ],
+
+  solution: [
+    "The governance system is built on OpenZeppelin's Governor contract framework, customised with the DAO's specific parameters. The Governor contract handles the full proposal lifecycle: submission, voting delay, active voting period, queuing in the Timelock, and execution. The Timelock contract sits between the Governor and the Gnosis Safe, adding a 24-hour delay between a proposal passing and its execution becoming possible — during which the community can observe and, in extreme cases, react to any unexpected changes.",
+    "The Gnosis Safe integration was redesigned to make the multi-sig a technical redundancy mechanism rather than the primary governance interface. The Governor contract is set as an owner of the Gnosis Safe. When a governance proposal passes and clears the timelock, the execution transaction is submitted to the Safe and can be executed by any single authorised executor role — removing the coordination overhead that was causing six-day transaction delays. The multi-sig remains available as an emergency intervention mechanism, but the normal operational flow no longer requires coordinating three signers.",
+    "Proposal content is stored on IPFS, with the IPFS content hash recorded on-chain in the proposal creation transaction. This creates a permanent, tamper-evident record of every proposal's full specification — not just its outcome. Even if the frontend is eventually decommissioned, the governance history is recoverable from on-chain events and IPFS.",
+    "The Graph subgraph indexes all governance events — proposals created, votes cast, proposals queued, executed or defeated — and feeds the governance dashboard. The dashboard shows active proposals with real-time vote tallies, quorum progress indicators, voter participation history, and a treasury overview pulling from indexed Gnosis Safe transaction events. Treasury analytics include asset allocation, historical transaction categories, and a running total of grants disbursed by category.",
+    "The Snapshot space was set up with the governance token contract address for eligibility, and a custom voting strategy that applied a square root function to token holdings — reducing (though not eliminating) the voting power advantage of very large token holders relative to the community median. This was a deliberate design choice requested by the community to address the perception of whale dominance.",
+  ],
+
+  implementation: [
+    "The project ran over 11 weeks from kickoff to mainnet deployment. Smart contract development and testing occupied weeks one through six, with the Snapshot space and frontend built in parallel during weeks four through nine. We spent more time than typical on the governance parameter calibration — running simulations of historical Discord polls through the proposed quorum and voting period settings to validate that past decisions would have reached quorum under the new system.",
+    "The Governor contract test suite included 127 tests covering the full proposal lifecycle, including adversarial scenarios: proposals submitted with insufficient proposer threshold, votes cast after the voting period, execution attempted before the timelock cleared, and a simulated governance attack where a single holder with sufficient tokens attempted to pass a malicious proposal. The timelock provided the defensive window in that scenario.",
+    "Community education was a significant implementation workload, treated as a first-class deliverable. We produced written documentation for proposal creators, a video walkthrough of the voting process for token holders, and two community calls during the rollout phase where we walked through the system's design and answered questions. Governance systems only work if the community uses them — the technical deployment without community enablement would have been incomplete.",
+    "The initial rollout used a shadow governance period: for the first three weeks, Discord polls continued in parallel with on-chain governance, and outcomes were compared. This built community confidence in the system and surfaced one calibration issue — the 48-hour voting delay was extended from an initial 24-hour proposal to account for the DAO's international member base across Australian and European time zones.",
+    "IPFS proposal storage required attention to content addressing stability. We pinned all proposals via Pinata and added a secondary pin via a community-operated node to reduce single-provider dependency. Proposal hashes are emitted in contract events at creation time, providing a recoverable audit trail even if both pinning services failed.",
+  ],
+
+  lessonsLearned: [
+    "Governance parameter selection is more consequential than most clients expect and deserves serious time. An 8% quorum threshold that sounds reasonable can be either trivially achievable or consistently blocking depending on the community's actual participation behaviour. We now insist on reviewing historical participation data — even from informal polls — before setting quorum thresholds, and we simulate the parameters against that data before recommending them.",
+    "The square root voting strategy on Snapshot was effective at changing participation perception but less effective at actually changing outcomes. Because large token holders are also typically the most engaged community members, they participated at higher rates regardless of the voting weight formula. This is a governance design problem that technology can moderate but not solve — genuine decentralisation requires active distribution of tokens to engaged participants, not just a weighting formula.",
+    "On-chain governance introduces new attack surfaces that off-chain governance didn't have. A sufficiently large token holder can submit and pass governance proposals that the broader community might object to. The timelock is a necessary but not sufficient defence — communities need active monitoring of governance activity, notification systems, and clear escalation processes. We built an email/Telegram notification system for proposal submissions that proved to be more important than anticipated.",
+    "Treasury analytics are not a nice-to-have. The community's engagement with the treasury dashboard in the first month after launch was higher than engagement with any other platform feature. Understanding where the money goes, and being able to see it, turned out to be central to community trust in the governance process. Future projects should treat treasury transparency as a core feature from day one.",
+  ],
+
+  whatCameNext: [
+    "Following the successful deployment, participation rates stabilised at around 50–55% of eligible voters for major proposals — a sustained increase from the 12% baseline. The community ran 47 proposals in the first six months, covering grants to five community projects, two protocol partnerships, a treasury yield strategy for idle stablecoins, and several parameter changes to the community's own protocol.",
+    "The core contributors commissioned a delegate programme in a follow-up phase — a mechanism allowing token holders to assign their voting power to trusted community members, improving participation rates on proposals where many holders have low conviction but want representation. This was implemented using the Governor's built-in delegation mechanism.",
+    "The DAO published a governance transparency report at six months, which used the indexed governance data to provide a public account of all proposals, votes and treasury transactions. This was cited by several external parties as a model for Australian DAO transparency reporting.",
+  ],
+
+  resultsNarrative: "Governance participation increased from approximately 12% of eligible voters per decision to 53% — a 340% improvement — within the first three months of the system being live. Treasury transaction time collapsed from an average of six days to 18 hours as the Governor/Timelock integration eliminated the manual multi-sig coordination overhead. The 47 proposals submitted in the first six months compared to nine in the prior six-month period, reflecting not just increased tooling but a more accessible process. Quorum was achieved on 91% of proposals, compared to 34% under the Discord poll system. Community satisfaction scored 4.3 out of 5 in a post-launch survey.",
+
+  metrics: [
+    { value: "340%", label: "Increase in governance participation", context: "From 12% to 53% of eligible voters per proposal" },
+    { value: "18hrs", label: "Average treasury transaction time", context: "Down from 6 days under manual multi-sig coordination" },
+    { value: "47", label: "Proposals in first 6 months", context: "vs 9 in the prior 6-month period under Discord governance" },
+    { value: "91%", label: "Quorum achieved on proposals", context: "Up from 34% under Discord poll system" },
+    { value: "100%", label: "Treasury transactions with on-chain audit trail", context: "All governance decisions and treasury movements permanently recorded" },
+    { value: "4.3/5", label: "Community satisfaction post-launch", context: "From token holder survey 30 days after deployment" },
+  ],
+
+  techStack: [
+    { name: "Solidity (Governor + Timelock)", reason: "OpenZeppelin Governor contract framework with 24-hour Timelock; full proposal lifecycle with configurable voting delay, period and quorum" },
+    { name: "Gnosis Safe", reason: "Treasury multi-sig integrated as Governor execution target; eliminates manual signer coordination for normal operations while retaining emergency multi-sig capability" },
+    { name: "Snapshot", reason: "Gas-free off-chain voting for community temperature checks and signalling; square root voting weight strategy to moderate whale dominance" },
+    { name: "IPFS", reason: "Permanent, content-addressed storage for proposal specifications; IPFS hash recorded on-chain creating tamper-evident governance history" },
+    { name: "The Graph", reason: "Indexes all governance events (proposals, votes, executions) and treasury transactions for the dashboard; powers real-time vote tallies and participation analytics" },
+    { name: "React", reason: "Governance dashboard, proposal submission interface with structured templates, treasury analytics, and voting interface" },
+    { name: "Ethers.js", reason: "Smart contract interaction, wallet connection for voting and proposal submission, real-time event monitoring" },
+    { name: "Node.js", reason: "Backend API serving governance data, managing notification dispatch for new proposals and upcoming vote closures" },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "NFT Marketplace for Australian Artists",
+      href: "/case-studies/nft-marketplace-australian-artists",
+      industry: "Web3 & Crypto",
+      summary: "A Polygon-based NFT marketplace for an 85-member Melbourne arts collective, replacing 50% gallery commissions with a 2.5% platform fee.",
+    },
+    {
+      title: "DeFi Yield Aggregator",
+      href: "/case-studies/defi-yield-aggregator",
+      industry: "Web3 & Crypto",
+      summary: "Audited, gas-optimised yield aggregation protocol reaching $4.2M TVL within 60 days of mainnet launch with zero security incidents.",
+    },
+    {
+      title: "Tokenised Real World Asset Platform",
+      href: "/case-studies/tokenised-real-world-assets",
+      industry: "Web3 & Crypto",
+      summary: "Fractional property investment via ERC-1400 security tokens, navigating ASIC MIS requirements and on-chain KYC for Australian investors.",
+    },
+  ],
+
+  relatedServices: [
+    { title: "Smart Contract Development", href: "/services/smart-contract-development" },
+    { title: "DAO & Governance Tooling", href: "/services/dao-governance-tooling" },
+    { title: "Web3 Frontend Development", href: "/services/web3-frontend-development" },
+    { title: "Blockchain Consulting", href: "/services/blockchain-consulting" },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

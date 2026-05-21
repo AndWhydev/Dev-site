@@ -1,0 +1,125 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+const data = {
+  metaTitle: "DeFi Yield Aggregator | All Webbed Labs",
+  metaDescription: "How we built and helped launch an audited, gas-optimised DeFi yield aggregator for an Australian crypto startup — reaching $4.2M TVL within 60 days of Ethereum mainnet launch with zero security incidents.",
+
+  industry: "Web3 & Crypto",
+  tags: ["DeFi", "Smart Contracts", "Solidity", "Ethereum", "Yield Optimisation"],
+
+  title: "DeFi Yield Aggregator",
+  summary: "An Australian crypto startup built by two experienced DeFi developers needed audited, gas-optimised smart contracts to automatically move user funds between Aave, Compound and Curve for maximum yield. We built the protocol, supported the audit process, built a non-technical-friendly frontend, and helped navigate AUSTRAC AML/CTF obligations before mainnet launch.",
+
+  heroImageDescription: "DeFi dashboard showing yield positions across multiple protocols, gas-optimised rebalancing history, APY comparison charts and a user deposit interface with connected wallet address",
+
+  clientOverview: "Placeholder Yield Protocol is an Australian crypto startup founded by two DeFi developers with combined experience across multiple Ethereum protocols. The founders had each independently contributed to open-source DeFi projects before deciding to build their own product. They were seed-funded by an Australian crypto-focused angel syndicate and brought a clear technical vision: a yield aggregator that would automatically allocate user deposits to whichever of the major lending and liquidity protocols was offering the best risk-adjusted return at any given time.",
+  clientSize: "Seed-stage startup, 2 founders + engineering team",
+  clientLocation: "Sydney, NSW (with remote contributors)",
+
+  pullQuote: "We knew the smart contract work was high-stakes — a bug in this code isn't a bad user experience, it's lost user funds. We needed a team that treated security as a first-class concern, not a checkbox. The audit coming back with only two low-severity findings was the outcome we'd hoped for but honestly hadn't expected.",
+  pullQuoteAuthor: "Marcus T.",
+  pullQuoteRole: "Co-founder, Placeholder Yield Protocol",
+
+  challenge: [
+    "DeFi yield aggregation is one of the most technically demanding and highest-risk categories of smart contract development. The core mechanism — moving user funds between third-party protocols based on yield calculations — exposes the contract to a surface area of potential failures that goes far beyond what most smart contract work involves. Every integration point with Aave, Compound and Curve is a potential attack vector. Reentrancy, price manipulation, flash loan exploits, oracle manipulation and gas limit edge cases had all been used to drain funds from comparable protocols in well-documented incidents. The founders knew this and took it seriously.",
+    "Gas optimisation wasn't a nice-to-have — it was a core product requirement. Users would be comparing net APY returns against simply depositing directly into a single protocol, and excessive gas costs for rebalancing operations would erode the yield advantage the aggregator was supposed to create. The initial naive implementation of the rebalancing logic used approximately 34% more gas than the optimised version we ultimately delivered. That difference directly affected user economics.",
+    "AUSTRAC registration was a genuine compliance obligation the founders had correctly identified as required. A platform that accepts deposits, moves funds between protocols and distributes returns to depositors has characteristics that may classify it as a digital currency exchange business under the Anti-Money Laundering and Counter-Terrorism Financing Act 2006. The founders had sought legal advice and confirmed they needed to complete AUSTRAC registration before accepting deposits from Australian users. We needed to produce technical documentation supporting that registration process.",
+    "The frontend challenge was less technical than communication-focused. DeFi protocols typically attract crypto-native users comfortable with gas fees, wallet interactions and APY terminology. The founders wanted to extend their reach to users who understood yield in a banking context but had never interacted with DeFi directly. Designing a clean, reassuring interface for this audience without dumbing it down for experienced users required careful balance.",
+  ],
+
+  whyUs: [
+    "The founders came to us via a recommendation from a mutual contact in the Sydney Web3 community. Their primary selection criterion was demonstrated experience with Solidity security — specifically, a track record of having contracts audited successfully. They reviewed our previous smart contract work and the public audit reports we had supported before engaging us.",
+    "We were transparent about our scope in the engagement: we are not an audit firm and we do not provide audit services. What we do is write contracts that are designed to be audited — thorough natspec documentation, comprehensive test coverage, a clear threat model, and code structured to make an auditor's job tractable. We also have experience working with audit firms and can help interpret and respond to findings efficiently. This distinction was important to the founders, who had already selected their independent auditor.",
+    "We also had direct experience with AUSTRAC documentation requirements for blockchain-based financial services from previous projects, which meant we could produce the technical platform description needed for their AML/CTF compliance assessment without them having to translate between legal and technical terminology.",
+  ],
+
+  approach: [
+    "We began with a three-week architecture and threat modelling phase before writing production code. This involved mapping every external call the protocol would make — to Aave's lending pool, Compound's cToken contracts, and Curve's pool interfaces — and identifying the failure modes for each. We used a combination of Slither (static analysis) and manual review to assess the attack surface of each integration point.",
+    "The architecture decision to use a multi-sig deployment via Gnosis Safe was made early and was non-negotiable. No single private key should be able to upgrade or drain the protocol. We designed the access control model with a 3-of-5 multi-sig for all administrative functions, with a 48-hour timelock on any parameter changes. This meant that even in a worst-case scenario of a compromised signer, there would be a window for the team to identify and respond before a malicious transaction executed.",
+    "We used Foundry alongside Hardhat for the core testing suite. Foundry's fuzzing capabilities let us test the yield calculation and rebalancing logic against thousands of randomised input combinations, surfacing an edge case in the interest accrual calculation that would have caused rounding errors under specific deposit/withdrawal timing conditions. This would not have been caught by example-based unit tests alone.",
+    "The Graph subgraph was built in parallel with the smart contracts, indexing deposit events, rebalance events, yield accrual and withdrawal events. This gave the frontend a fast, queryable data layer without requiring direct RPC calls for every user interaction. Historical yield performance data — which became a key element of the user dashboard — was sourced entirely from indexed on-chain events.",
+  ],
+
+  solution: [
+    "The core smart contract is a vault contract (inspired by ERC-4626 vault standard concepts, though with customised logic for multi-protocol rebalancing) that accepts ERC-20 token deposits and issues yield-bearing vault shares in return. The rebalancing engine monitors yield rates across Aave, Compound and Curve at each deposit and withdrawal event, and reallocates funds to the highest-yielding protocol when the rebalancing threshold is exceeded. The threshold logic was designed to prevent thrashing — constant small reallocations that would generate more gas cost than yield benefit.",
+    "Gas optimisation was achieved through several targeted changes: packing storage variables to reduce SLOAD costs, using unchecked arithmetic in loops where overflow was provably impossible, caching storage reads into memory variables within functions, and restructuring the multi-protocol yield comparison to short-circuit when the current allocation was already optimal. The combined effect was a 34% reduction in gas consumption versus the initial implementation, measured across a representative set of simulated transaction scenarios.",
+    "The Gnosis Safe multi-sig integration covered all privileged functions: adding or removing supported protocols, adjusting the rebalancing threshold, pausing deposits in an emergency, and upgrading the contract via a transparent proxy pattern. All admin transactions were routed through a 48-hour timelock contract, giving the community visibility into pending changes and a window to respond if a transaction appeared malicious.",
+    "The React frontend was designed around three user personas: the DeFi-native user who wants raw numbers and full transparency, the finance-literate user who understands yield but not blockchain mechanics, and the institutional depositor who needs audit trails and documentation. The deposit flow was linear and explicit about every step — wallet connection, token approval, deposit amount, expected gas cost, and estimated yield based on current rates. We avoided confusing terminology wherever possible, using 'estimated annual return' instead of 'APY' in the simplified mode, with a toggle to full DeFi mode for experienced users.",
+  ],
+
+  implementation: [
+    "Smart contract development ran over ten weeks using a structured milestone cadence: architecture and interfaces (weeks 1–2), core vault implementation and unit tests (weeks 3–5), protocol integrations and integration tests (weeks 6–7), gas optimisation pass (week 8), and audit preparation (weeks 9–10). The audit was conducted concurrently with frontend development to avoid delaying the overall timeline.",
+    "We submitted 156 unit and integration tests to the audit alongside the codebase, with 97% line coverage and 89% branch coverage. The threat model document covered 14 identified attack vectors including flash loan-assisted price manipulation, reentrancy via the Curve pool callback mechanism, sandwich attacks on rebalancing transactions, and governance takeover scenarios. The auditors reviewed all 14 vectors and confirmed our mitigations.",
+    "The audit returned two low-severity findings. The first was a missing event emission on one administrative function, which would have made certain governance actions less transparent to event monitoring systems. The second was an input validation gap on the maximum deposit parameter that could theoretically allow a deposit above the intended limit if the parameter was misconfigured. Both findings were fixed within three days and the auditors confirmed the fixes in a follow-up review. There were zero medium, high or critical findings.",
+    "AUSTRAC technical documentation covered: a description of the platform's transaction flows, how user funds move between smart contracts, the nature of the protocol's interaction with other DeFi protocols, wallet address collection and storage, and the absence of any identity-verified user accounts (a relevant factor in the AML/CTF classification). We provided this as a structured technical document that the founders' legal advisors used directly in their registration submission.",
+    "The mainnet deployment used a staged approach: first to a Tenderly fork of mainnet for final pre-deployment validation, then an initial deployment with a $50,000 deposit cap for the first two weeks to allow monitoring under real conditions before removing the cap. No issues were identified during the capped period, and the cap was removed at the end of week two.",
+  ],
+
+  lessonsLearned: [
+    "Fuzzing is not optional for financial protocol logic. Our Foundry fuzz testing found an interest accrual rounding issue that 156 manually constructed test cases had missed. For any protocol that does arithmetic on user balances, property-based and fuzz testing should be considered a baseline requirement, not an enhancement.",
+    "The 48-hour timelock was questioned by the founders as slowing down operational agility. We pushed back: the timelock is one of the primary mechanisms that gives users reason to trust a new protocol, and removing it would have been a significant red flag to security-conscious depositors. This is a conversation worth having explicitly in the project scoping phase, because the operational implications of a timelock need to be understood and accepted before deployment.",
+    "TVL growth in the first 60 days was faster than anticipated — $4.2M exceeded the founders' projections by approximately 40%. This was a good problem to have, but it reinforced that deposit caps during a staged launch are sensible risk management, not excessive caution. If a critical bug had existed and been discovered at $4.2M TVL, the consequences would have been significantly worse than at the initial $50K cap.",
+    "AUSTRAC compliance added meaningful lead time to the project. For any Australian project operating in the DeFi space, we now recommend beginning the AUSTRAC assessment in parallel with development, not after, to avoid the registration timeline becoming a critical path blocker for launch.",
+  ],
+
+  whatCameNext: [
+    "Following the successful launch and the establishment of a $4.2M TVL base, the founders commissioned a second phase to add support for additional protocols — specifically Yearn Finance and GMX — and to implement a more sophisticated yield optimisation algorithm that could account for impermanent loss risk in liquidity provision positions, not just simple lending APY.",
+    "The protocol's subgraph data was opened to third-party developers via a public API, which led to the protocol being included in two DeFi aggregator platforms that track Australian-originated protocols. This drove a meaningful portion of new depositor discovery.",
+    "The founders also engaged us to help scope a governance token design for a potential future decentralisation of the protocol. This work is in the planning phase and has involved careful consideration of Australian financial product classification implications before any token issuance.",
+  ],
+
+  resultsNarrative: "The protocol reached $4.2M in total value locked within 60 days of mainnet launch — approximately 40% above the founders' projections. The audit passed with only two low-severity findings, both resolved pre-launch, giving the team a clean security posture to communicate to depositors. Gas optimisation reduced average user transaction costs by 34% versus the initial implementation, preserving the yield advantage that is the core product proposition. After two months of live operation, the protocol had 890 unique depositors and had outperformed direct single-protocol deposits on APY for 73% of tracked days.",
+
+  metrics: [
+    { value: "$4.2M", label: "Total Value Locked within 60 days", context: "~40% above founders' launch projections" },
+    { value: "0", label: "Security incidents post-launch", context: "Audit passed with 2 low-severity findings, both fixed pre-launch" },
+    { value: "34%", label: "Gas cost reduction", context: "Versus initial implementation — directly preserves user yield advantage" },
+    { value: "890", label: "Unique depositors in first 2 months", context: "Including users new to DeFi acquired via simplified onboarding" },
+    { value: "73%", label: "Days outperforming single-protocol benchmark APY", context: "Measured over first 60 days post-launch" },
+    { value: "2", label: "Low-severity audit findings", context: "Zero medium, high or critical findings — both lows resolved pre-launch" },
+  ],
+
+  techStack: [
+    { name: "Solidity (Foundry + Hardhat)", reason: "Hardhat for primary development and CI; Foundry for fuzz testing and invariant testing that found the interest accrual rounding issue" },
+    { name: "Ethereum Mainnet", reason: "Deployment network — the liquidity depth and protocol integrations available on Ethereum justified mainnet over L2 for this use case" },
+    { name: "Gnosis Safe (multi-sig)", reason: "3-of-5 multi-sig for all privileged admin functions; 48-hour timelock on all parameter changes for depositor-visible governance" },
+    { name: "The Graph (subgraph)", reason: "On-chain event indexing for deposit history, rebalance events and yield data — powers the user dashboard without slow RPC calls" },
+    { name: "Slither", reason: "Static analysis tool run against the codebase before audit submission; identified two minor issues resolved in the audit prep phase" },
+    { name: "React", reason: "Frontend dashboard with dual-mode UX for DeFi-native and non-technical users; deposit flow, yield history and multi-protocol allocation visualisation" },
+    { name: "Ethers.js", reason: "Smart contract interaction, wallet connection, transaction signing and event monitoring from the frontend" },
+    { name: "Node.js + AWS", reason: "Backend API serving the subgraph data and handling off-chain computation for yield comparison; deployed on AWS for reliability" },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "NFT Marketplace for Australian Artists",
+      href: "/case-studies/nft-marketplace-australian-artists",
+      industry: "Web3 & Crypto",
+      summary: "A Polygon-based NFT marketplace for an 85-member Melbourne arts collective, replacing 50% gallery commissions with a 2.5% platform fee and generating $340K in primary sales.",
+    },
+    {
+      title: "Tokenised Real World Asset Platform",
+      href: "/case-studies/tokenised-real-world-assets",
+      industry: "Web3 & Crypto",
+      summary: "Fractional property investment via security tokens for a Sydney property investment company, navigating ASIC MIS requirements and on-chain KYC obligations.",
+    },
+    {
+      title: "DAO Governance Platform",
+      href: "/case-studies/dao-governance-platform",
+      industry: "Web3 & Crypto",
+      summary: "On-chain governance and treasury management for an Australian DAO with 1,200 token holders, increasing participation from 12% to 53%.",
+    },
+  ],
+
+  relatedServices: [
+    { title: "Smart Contract Development", href: "/services/smart-contract-development" },
+    { title: "Smart Contract Audit Support", href: "/services/smart-contract-audit-support" },
+    { title: "DeFi Protocol Development", href: "/services/defi-protocol-development" },
+    { title: "Web3 Frontend Development", href: "/services/web3-frontend-development" },
+    { title: "Blockchain Consulting", href: "/services/blockchain-consulting" },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

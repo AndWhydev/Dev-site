@@ -1,0 +1,110 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Web3 & Crypto Development Australia | All Webbed Labs',
+  metaDescription: 'Smart contract development, DeFi protocol engineering, NFT marketplaces and Web3 infrastructure for Australian crypto founders, exchanges and blockchain-native organisations. Audited, gas-optimised contract code across 5 chains.',
+
+  industryName: 'Web3 & Crypto',
+  heroHeadline: 'Build the Next Generation of Decentralised Applications',
+  heroTagline: 'Smart contract development, DeFi platforms and NFT marketplaces for Web3 founders, crypto exchanges and blockchain-native organisations.',
+
+  stats: [
+    { value: '$500M+', label: 'TVL across deployments' },
+    { value: 'Audited', label: 'smart contracts' },
+    { value: '5 chains', label: 'supported' },
+    { value: 'Gas-optimised', label: 'contract code' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      title: 'Smart Contract Security Vulnerabilities',
+      description: "Re-entrancy attacks, integer overflow, access control flaws and oracle manipulation have collectively cost billions across the DeFi ecosystem. Unaudited or rushed contract deployments in production environments represent existential risk — code that is wrong, malicious or exploitable is immutable once on-chain.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>`,
+      title: 'Regulatory Uncertainty in Australia',
+      description: "ASIC's evolving treatment of digital assets as financial products, AUSTRAC's travel rule obligations for VASPs and potential crypto licensing requirements create a compliance landscape that changes faster than most legal advice. Building without a compliance-aware architecture means costly rework when regulatory positions crystallise.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`,
+      title: 'Cross-Chain Complexity',
+      description: "Building for a single chain is complex enough. Multi-chain deployments — Ethereum mainnet, Arbitrum, Base, Polygon, Solana — require bridge security expertise, consistent state management across chains, and testing matrices that grow exponentially. Most development teams underestimate this complexity until they're mid-build.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      title: 'User Onboarding Friction',
+      description: "Requiring new users to install MetaMask, understand gas, manage seed phrases and bridge assets before they can interact with your protocol is a massive adoption barrier. Web3 projects that haven't solved the onboarding problem for mainstream users cap their growth at the existing crypto-native audience.",
+    },
+  ],
+
+  solutions: [
+    'Smart contract development (Solidity, Rust/Anchor)',
+    'DeFi protocol engineering (AMMs, lending, yield)',
+    'NFT marketplace platforms',
+    'Crypto wallet integration (WalletConnect, Privy, Dynamic)',
+    'Token creation and tokenomics implementation',
+    'DAO tooling and governance frameworks',
+    'Blockchain analytics and on-chain data platforms',
+    'L2 solutions and gas optimisation',
+  ],
+
+  useCases: [
+    {
+      title: 'DeFi Lending Protocol on Ethereum and Arbitrum',
+      description: "Full-stack DeFi lending platform with custom ERC-20 collateral vaults, variable and fixed interest rate mechanisms, a Chainlink oracle integration for price feeds and a liquidation engine with keeper bot automation. Smart contracts written in Solidity with OpenZeppelin base, audited by an independent firm before mainnet deployment. Frontend built with wagmi and viem for type-safe contract interactions. Deployed simultaneously on Ethereum mainnet and Arbitrum One.",
+      techStack: 'Solidity · Hardhat · wagmi · viem · Chainlink · The Graph',
+      videoNote: 'DeFi lending interface showing collateral deposit, borrow flow and liquidation health indicator',
+    },
+    {
+      title: 'NFT Marketplace with Australian Creator Royalty Focus',
+      description: "A marketplace built for an Australian digital art collective with on-chain creator royalty enforcement via EIP-2981, curated collection drops with whitelist and Dutch auction mechanics, and a fiat on-ramp via Stripe for buyers who don't hold ETH. Lazy minting keeps gas costs off creators until sale. IPFS and Arweave storage ensures art permanence regardless of marketplace availability. Includes creator analytics dashboard and royalty payment history.",
+      techStack: 'Next.js · Solidity · EIP-2981 · IPFS · Stripe · Alchemy',
+      videoNote: 'marketplace drop page, purchase flow with fiat on-ramp and creator royalty dashboard',
+    },
+    {
+      title: 'Australian Crypto Exchange Backend and Compliance Infrastructure',
+      description: "Core exchange infrastructure for an Australian VASP including order book management, wallet custody integration, AML/CTF screening via ComplyAdvantage, AUSTRAC travel rule compliance for outgoing transfers and real-time position management. Includes an admin compliance dashboard for transaction monitoring, suspicious activity reporting and customer due diligence review queues. Designed around AUSTRAC's digital currency exchange registration requirements.",
+      techStack: 'Go · PostgreSQL · Redis · Fireblocks API · ComplyAdvantage · AWS',
+      videoNote: 'exchange order book, compliance monitoring dashboard and travel rule compliance workflow',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-devops' },
+    { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
+    { title: 'Security & Compliance Engineering', href: '/services/security' },
+  ],
+
+  faqs: [
+    {
+      question: 'Do your smart contracts get audited?',
+      answer: "Yes, and we strongly recommend third-party auditing for any contract holding user funds or operating core protocol mechanics. We write contracts with security in mind from the start — using established patterns like OpenZeppelin, avoiding re-entrancy, following checks-effects-interactions — and then we facilitate independent audits through firms like Sigma Prime (Australian), Trail of Bits or Certik before mainnet deployment. We don't consider a production launch ready without an audit for anything non-trivial.",
+    },
+    {
+      question: 'What chains do you build on?',
+      answer: "Our primary experience is with Ethereum and EVM-compatible chains — Arbitrum, Base, Optimism, Polygon and Avalanche. We also build on Solana using Anchor framework. Chain selection is a strategic decision we work through with you in discovery, taking into account your user base, gas economics, liquidity ecosystem and long-term roadmap.",
+    },
+    {
+      question: 'How do you approach Australian regulatory compliance for crypto projects?',
+      answer: "We work with legal partners who specialise in Australian digital asset regulation. From a technical standpoint we build systems that can support AML/CTF obligations (transaction monitoring, sanctions screening, travel rule compliance), hold configurable KYC gates at appropriate points in user flows, and maintain audit trails that satisfy AUSTRAC record-keeping requirements. We design for the regulatory environment as it exists today while building flexibility for how it evolves.",
+    },
+    {
+      question: 'Can you help with user onboarding for non-crypto-native audiences?',
+      answer: "Yes, and we consider this one of the most important product problems in Web3 right now. We implement embedded wallet solutions using Privy or Dynamic that allow users to sign up with email, Google or social accounts and get a self-custodied wallet without ever seeing a seed phrase. Combined with fiat on-ramps and gasless transactions via account abstraction (ERC-4337), we can build Web3 products that non-crypto users can adopt without any prior experience.",
+    },
+    {
+      question: 'What does a typical Web3 project engagement look like?',
+      answer: "We start with a technical discovery that covers tokenomics, on-chain vs off-chain architecture decisions, chain selection and regulatory considerations. From there we move into smart contract development and testing on testnet, followed by security review and third-party audit, then frontend integration and user testing. Mainnet deployment is staged — we often recommend a limited beta with capped TVL before full launch. Post-launch we provide ongoing monitoring and upgrade pathway management.",
+    },
+  ],
+
+  ctaHeadline: 'Build Web3 That\'s Secure, Compliant and Ready for Mainnet',
+  ctaDescription: "Web3 development requires a different standard of rigour than traditional software — bugs are permanent and exploits are public. We bring the technical depth, security discipline and Australian regulatory awareness to build protocols and products that launch safely and scale confidently.",
+};
+---
+<IndustryPageLayout {...data} />

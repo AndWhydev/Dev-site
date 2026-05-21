@@ -1,0 +1,104 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Financial Services & Fintech Software Development | All Webbed Labs',
+  metaDescription: 'APRA and ASIC-compliant software for Australian banks, insurers, super funds and fintech companies. Core banking integrations, KYC/AML automation, open banking APIs and fraud detection built by specialists.',
+  industryName: 'Financial Services & Fintech',
+  heroHeadline: 'Software That Meets the Demands of Financial Services',
+  heroTagline: 'Regulatory compliance, real-time processing and security-first architecture for banks, insurers, super funds and fintech companies.',
+  stats: [
+    { value: '$50B+', label: 'in transactions processed' },
+    { value: '99.99%', label: 'uptime SLA' },
+    { value: 'APRA', label: 'compliance ready' },
+    { value: 'Zero', label: 'data breaches' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2M7 12h5"/></svg>',
+      title: 'Legacy Core System Debt',
+      description: 'Decades-old mainframe and monolith architectures block innovation, slow time-to-market and create costly maintenance cycles. Modern API layers and strangler-fig migration strategies let you modernise incrementally without a big-bang rewrite that would terrify the board.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
+      title: 'Regulatory Compliance Complexity',
+      description: 'Navigating APRA CPS 234, ASIC RG 255, AML/CTF Act obligations and the evolving CDR framework simultaneously is a full-time burden. We build compliance into the data model and workflow from day one, not as an afterthought bolt-on that fails the next audit.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Real-Time Data Demands',
+      description: 'Customers and trading desks expect millisecond-level data freshness across payments, balances and risk positions. Batch-overnight pipelines no longer cut it when real-time rails like the NPP and open banking data-sharing are the competitive baseline.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+      title: 'Fraud and Security Threats',
+      description: 'Financial institutions are the most targeted sector for cyber attack in Australia. Sophisticated card-not-present fraud, authorised push payment scams and insider threats require layered defences — not just perimeter firewalls — woven directly into transaction workflows.',
+    },
+  ],
+  solutions: [
+    'Core banking system integrations',
+    'Regulatory compliance reporting platforms',
+    'Trading and portfolio management tools',
+    'Payment gateway and NPP integrations',
+    'KYC/AML automation and screening',
+    'Fraud detection with machine learning',
+    'Open banking and CDR APIs',
+    'Wealth management and adviser portals',
+    'Insurance claims processing systems',
+    'Superannuation administration platforms',
+  ],
+  useCases: [
+    {
+      title: 'Real-Time Fraud Detection Engine',
+      description: 'A mutual bank needed to move beyond rule-based fraud scoring that was generating too many false positives and missing sophisticated account-takeover patterns. We built an event-streaming fraud detection engine using Apache Kafka and a gradient-boosted ML model trained on three years of transaction history, reducing fraud losses by 62% while cutting manual review queues by half. The system processes 4,000 transactions per second and raises alerts within 80ms of a suspicious event — fast enough to intervene before NPP payments settle.',
+      techStack: 'Apache Kafka · Python · XGBoost · PostgreSQL · AWS Lambda · React dashboard',
+      videoNote: 'real-time transaction scoring dashboard with alert workflow',
+    },
+    {
+      title: 'CDR-Compliant Open Banking API Gateway',
+      description: "An AFSL-licensed fintech required a Consumer Data Right (CDR) data holder implementation that could pass ACCC conformance testing and go live within a compressed six-month timeline. We architected a standards-compliant API gateway covering the full banking sector obligations — account data, transaction history and consent management — with an admin console for consent lifecycle management. The gateway has maintained 100% conformance through two subsequent CDR rule amendments without a single breaking change to downstream consumers.",
+      techStack: 'Node.js · TypeScript · Kong Gateway · PostgreSQL · Redis · Azure AKS · ACCC DCR',
+      videoNote: 'consent management dashboard and CDR API explorer',
+    },
+    {
+      title: 'Superannuation Member Self-Service Portal',
+      description: "A mid-tier industry super fund was drowning in call-centre volume from members trying to update beneficiaries, check insurance cover and make binding nominations. We replaced a decade-old WebForms portal with a modern, accessible React application backed by a secure API layer connecting to their core administration system. The new portal deflected 38% of inbound calls in its first quarter, improved member satisfaction scores by 22 NPS points and passed APRA's prudential technology review on first submission.",
+      techStack: 'React · TypeScript · .NET 8 · Azure AD B2C · SQL Server · WCAG 2.1 AA',
+      videoNote: 'member portal benefit summary and beneficiary update flow',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+    { title: 'Legacy Modernisation', href: '/services/legacy-modernisation' },
+    { title: 'Database Architecture', href: '/services/database-architecture' },
+  ],
+  faqs: [
+    {
+      question: 'How do you ensure software meets APRA CPS 234 requirements?',
+      answer: "CPS 234 requires ADIs and other APRA-regulated entities to maintain information security capabilities commensurate with the size and extent of their threats. In practice, that means we design systems with a formal information asset register, clearly mapped control ownership, third-party assurance requirements (including us as a service provider), and tested incident response runbooks. We produce the artefacts APRA examiners actually ask for — information security policies, penetration test reports, vulnerability management evidence and control effectiveness attestations — rather than just checking a compliance checkbox.",
+    },
+    {
+      question: 'Can you integrate with core banking systems like Temenos, Silverlake and Sandstone?',
+      answer: "Yes. We have engineers with hands-on integration experience across Temenos T24/Transact, Silverlake BANKS, TCS BaNCS, and several Australian-built platforms including Sandstone and ultracs. Our preferred approach is API-first integration through the vendor's published integration layer, but we've also built robust ETL and messaging bridges where the core system predates modern APIs. We work closely with your vendor's professional services team to align on the integration architecture before writing a line of code.",
+    },
+    {
+      question: 'What does your AML/CTF compliance engineering look like in practice?',
+      answer: "Australian AML/CTF obligations under the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 require reporting entities to implement a risk-based compliance programme including customer identification procedures, ongoing due diligence, transaction monitoring and suspicious matter reporting to AUSTRAC. We build automated KYC onboarding workflows that connect to identity verification providers (such as Illion, Equifax or Green ID), sanctions screening APIs and PEP databases, with configurable risk-scoring rules and a case management interface for your compliance team to investigate and file SMRs.",
+    },
+    {
+      question: 'How do you handle data sovereignty and cloud placement for financial data?',
+      answer: "We default to Australian-region deployments (AWS Sydney/Melbourne, Azure Australia East/Southeast or GCP Sydney) for all production data unless there is a compelling reason to do otherwise. For APRA-regulated entities, we document the data residency position in the system architecture record and ensure any cross-border data flows are captured in the group's data governance register as required by CPS 234 and privacy obligations under the Privacy Act. We do not use US-only services for storage of account holder data without explicit approval and appropriate data processing agreements.",
+    },
+    {
+      question: 'Do you work with early-stage fintechs as well as established banks?',
+      answer: "Absolutely — and the needs are quite different. With early-stage fintechs we tend to focus on building a compliant, scalable foundation quickly: robust identity verification, a clean API contract, event-sourced data models that don't paint you into a corner, and an architecture that can absorb a Series A growth event without a rewrite. With established ADIs and insurers the focus is usually modernisation, compliance uplift or building net-new digital products alongside existing infrastructure. We've advised companies on their AFSL and ACL obligations, and we know when to refer you to specialist legal counsel.",
+    },
+  ],
+  ctaHeadline: "Ready to Build Financial Software That Passes Regulatory Scrutiny?",
+  ctaDescription: "Whether you're modernising a legacy core, building a CDR-compliant API layer or launching a new fintech product, our team understands the technical and regulatory landscape of Australian financial services. Let's start with a no-obligation discovery call.",
+};
+---
+<IndustryPageLayout {...data} />

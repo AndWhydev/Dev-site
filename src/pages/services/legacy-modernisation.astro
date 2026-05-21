@@ -1,0 +1,170 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Legacy System Modernisation | All Webbed Labs',
+  metaDescription: 'Phased legacy system modernisation that eliminates technical debt and unlocks new capabilities while maintaining full business continuity throughout the migration.',
+  category: 'Modernisation',
+  heroHeadline: 'Modernise Your Legacy Systems Without Disrupting Your Business',
+  heroTagline: 'Phased migration strategies that eliminate technical debt while maintaining business continuity throughout.',
+  description: [
+    'Legacy systems are a paradox: they are too important to touch and too costly to leave alone. A system built on end-of-life technology, maintained by an ageing pool of specialists and unable to integrate with the modern tooling your business needs is not just a technical problem — it is a strategic constraint. It slows feature development, accumulates security vulnerabilities, makes recruiting difficult and limits your ability to compete. But rewriting a system that has run your business for fifteen years in a single big-bang project is one of the highest-risk undertakings in enterprise technology. Our practice was built around resolving this dilemma.',
+    'We use the Strangler Fig pattern and other incremental modernisation strategies that replace legacy systems piece by piece, running old and new in parallel at every stage. This approach eliminates the need for a high-risk cutover event, allows you to validate the replacement against real production traffic before decommissioning anything, and delivers business value incrementally throughout the programme rather than at the end. We have guided organisations through modernisations involving COBOL mainframes, decade-old Java monoliths, unsupported PHP applications and custom-built ERP systems — always with the same commitment: your business keeps running throughout.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+      title: 'Incremental, Low-Risk Migration',
+      description: 'We replace legacy systems in vertical slices, not in a single high-risk cutover. Each slice is deployed to production and validated before the next is started, giving you a continuous series of small, reversible decisions rather than one enormous irreversible one.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Business Continuity Guaranteed',
+      description: 'We design migration programmes around your operational calendar. Critical business periods — year-end, peak trading, regulatory reporting windows — are respected. No cutover is scheduled without your explicit sign-off, and every stage has a tested rollback path.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>',
+      title: 'Technical Debt Elimination',
+      description: 'Modernisation is an opportunity to fix the architectural decisions that accumulated over years. We redesign data models, introduce proper separation of concerns, implement automated testing and establish engineering practices that prevent debt from accumulating again.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+      title: 'Modern Architecture Patterns',
+      description: 'Legacy monoliths are replaced with architectures suited to today\'s operational requirements: event-driven microservices, API-first design, cloud-native infrastructure, containerised deployments with CI/CD pipelines and automated testing at every layer.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Performance & Scalability Improvements',
+      description: 'Legacy systems are often severely constrained in scalability. Modern replacements are designed for horizontal scaling, cloud elasticity and the performance requirements of contemporary user expectations — typically delivering dramatic improvements in response times and throughput.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>',
+      title: 'Knowledge Capture & Tribal Knowledge Transfer',
+      description: 'Legacy systems are often the only home of undocumented business logic accumulated over decades. Our modernisation process systematically surfaces and documents this logic before migration, ensuring it is preserved in the replacement system and no longer locked in a codebase no one fully understands.',
+    },
+  ],
+  useCases: [
+    {
+      title: 'COBOL Mainframe Modernisation for a Financial Institution',
+      description: 'A regional bank was running core banking functions on COBOL code that dated to the 1980s. The specialist pool was shrinking, integration with modern channels was impossible and the compliance overhead was escalating. We extracted business logic into documented specifications, built a modern replacement service by service, and decommissioned the mainframe over 24 months without disrupting daily banking operations.',
+      industry: 'Financial Services',
+    },
+    {
+      title: 'PHP Monolith Decomposition for a SaaS Platform',
+      description: 'A SaaS business whose PHP application had grown over eight years to 800,000 lines of code was unable to deploy new features without risking regressions. We applied the Strangler Fig pattern to extract the highest-value modules into independently deployable services, introduced a comprehensive test suite and reduced deployment cycle time from monthly releases to continuous deployment.',
+      industry: 'SaaS',
+    },
+    {
+      title: 'On-Premises ERP Migration to Cloud-Native Platform',
+      description: 'A manufacturing company operating on a heavily customised on-premises ERP that was approaching end-of-support needed to migrate to a cloud-based platform. We mapped all customisations to standard functionality where possible, built replacement integrations for the remainder, and executed a data migration of 12 years of transactional history with full reconciliation against source records.',
+      industry: 'Manufacturing',
+    },
+    {
+      title: 'End-of-Life Java Application Replatforming',
+      description: 'A government agency was operating a public-facing service on Java 8 with a Struts 2 frontend — a framework with a history of critical security vulnerabilities. We rebuilt the application using modern Java and React, preserved all existing functionality, introduced automated security scanning in the CI pipeline and achieved a successful go-live with no public-facing downtime during the transition.',
+      industry: 'Government',
+    },
+  ],
+  technologies: [
+    'Java / Spring Boot',
+    'Node.js / TypeScript',
+    'Python',
+    'React / Next.js',
+    'PostgreSQL / MySQL',
+    'Docker & Kubernetes',
+    'AWS / GCP / Azure',
+    'Apache Kafka',
+    'GraphQL & REST APIs',
+    'Terraform (IaC)',
+    'GitHub Actions / Jenkins CI',
+    'OpenTelemetry',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Legacy System Assessment',
+      description: 'We perform a technical assessment of the existing system: codebase analysis, architecture documentation, dependency mapping, data model review and interviews with the engineers and business users who know it best. The output is a clear picture of what the system does, what business logic it encodes and what the migration risk profile looks like.',
+      duration: 'Week 1–3',
+    },
+    {
+      step: '02',
+      title: 'Migration Strategy & Roadmap Design',
+      description: 'Based on the assessment, we design the migration strategy: how the system will be decomposed, in what sequence, using which technical approach (strangler fig, parallel run, lift-and-shift to cloud, or full rewrite of specific modules). We produce a phased roadmap with milestones, dependencies and risk assessments that your leadership team can evaluate and approve.',
+      duration: 'Week 3–4',
+    },
+    {
+      step: '03',
+      title: 'Foundation & Infrastructure Setup',
+      description: 'Before migrating any functionality, we set up the target infrastructure: cloud environments, CI/CD pipelines, monitoring and observability tooling, and the integration layer (typically an API gateway or event bus) that allows the legacy system and new services to coexist and communicate during the transition period.',
+      duration: 'Week 4–6',
+    },
+    {
+      step: '04',
+      title: 'Iterative Service Extraction',
+      description: 'Functionality is migrated slice by slice. For each slice, we write specifications from the legacy code, build and test the replacement, deploy it behind the integration layer, validate it against production traffic and — once validated — cut traffic over. Each slice is an independent deliverable that can be reviewed and approved separately.',
+      duration: 'Ongoing sprints',
+    },
+    {
+      step: '05',
+      title: 'Data Migration & Validation',
+      description: 'Data migration is typically one of the highest-risk elements of any modernisation. We build migration scripts that transform data from the legacy schema to the new one, run them against copies of production data to identify transformation issues, and validate migrated data against source records at a statistical and record level before cutover.',
+      duration: 'Parallel with Step 4',
+    },
+    {
+      step: '06',
+      title: 'Parallel Running & Validation',
+      description: 'For business-critical functions, we run the new and legacy systems in parallel — both processing real transactions — and compare outputs. Discrepancies trigger investigation and resolution. This phase builds confidence before decommissioning the legacy system and is particularly important for financial and regulatory-facing functions.',
+      duration: 'Per-module, 2–4 weeks',
+    },
+    {
+      step: '07',
+      title: 'Legacy Decommission & Documentation Handover',
+      description: 'Once all functionality has been migrated and validated, the legacy system is decommissioned in a controlled manner. We hand over complete architecture documentation, data model documentation, operational runbooks and ADRs covering all significant design decisions made during the modernisation.',
+      duration: 'Final phase',
+    },
+  ],
+  industries: [
+    'Financial Services & Banking',
+    'Government & Public Sector',
+    'Healthcare & Life Sciences',
+    'Insurance',
+    'Manufacturing',
+    'SaaS & Technology',
+    'Utilities',
+    'Logistics & Supply Chain',
+  ],
+  faqs: [
+    {
+      question: 'How do you ensure business continuity throughout a modernisation programme?',
+      answer: 'Business continuity is built into the architecture of our approach, not bolted on as an afterthought. The Strangler Fig pattern means the legacy system remains the source of truth for each functional area until the replacement has been validated in production. We never decommission any legacy component until its replacement has processed real production traffic successfully over a defined validation period. We also respect your operational calendar — we identify periods where change freeze is appropriate (year-end, peak trading, regulatory deadlines) and plan migrations accordingly. Every stage has a documented, tested rollback procedure.',
+    },
+    {
+      question: 'What if the legacy system has no documentation and the original developers are gone?',
+      answer: 'This is the most common situation we encounter, and it is addressable. Our process for undocumented systems starts with systematic code analysis — reading the codebase to reconstruct business logic, tracing data flows, and identifying the actual rules encoded in conditionals and database procedures. We combine this with intensive workshops with the current users and operators who understand what the system does (if not why). The output of this phase is a business requirements specification that becomes the canonical reference for the replacement, and which also has value as standalone documentation regardless of whether the migration proceeds.',
+    },
+    {
+      question: 'How long does a typical legacy modernisation take?',
+      answer: 'Duration is highly dependent on system complexity, data volume, degree of business criticality and the pace at which your organisation can absorb change. A moderately complex application with a single primary function and a few integrations might be modernised in six to twelve months. A large monolith or mainframe environment that runs core business operations across multiple departments is more typically an eighteen to thirty-six month programme. We phase work to deliver early value — the first migration slices often deliver measurable improvement within the first quarter — so the programme pays for itself progressively rather than requiring full investment before any return.',
+    },
+    {
+      question: 'We have a system that is partially documented and partially modernised. Can you take over an existing modernisation?',
+      answer: 'Yes. We frequently take over modernisation programmes that have stalled, gone over budget or experienced quality issues. Our first step is an honest assessment of what has been built, what is still outstanding and what — if anything — needs to be rebuilt or redesigned. We document our findings without commercial pressure to tell you what you want to hear, and present options for how to proceed. Sometimes the right answer is to continue from where the programme stopped; sometimes significant rework is required. We will tell you which.',
+    },
+    {
+      question: 'Should we use microservices for our replacement system?',
+      answer: 'Not necessarily. Microservices offer real benefits — independent deployability, technology heterogeneity, team autonomy — but they also introduce significant operational complexity: distributed tracing, network latency, service discovery, and the challenge of maintaining data consistency across service boundaries. For many organisations replacing a legacy system, a well-structured modular monolith is a better starting point: simpler to operate, easier to refactor and deployable as a single unit. We recommend microservices when you have clear functional boundaries that benefit from independent deployment, and teams large enough to own and operate individual services. We are direct about this trade-off rather than defaulting to microservices because they are fashionable.',
+    },
+    {
+      question: 'What happens to the team who currently maintains the legacy system?',
+      answer: 'This is an important question that is often not asked early enough. Our modernisation programmes include structured knowledge transfer to the engineers who will own the replacement system. For organisations whose internal team maintained the legacy system, we work alongside them throughout the programme — they contribute domain knowledge, we contribute modern engineering practices, and the result is a team that is capable of owning the new system rather than dependent on external consultants. The mix of upskilling and knowledge transfer is a core part of our methodology, not an optional extra.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
+    { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
+    { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },
+    { title: 'Cybersecurity Consulting', href: '/services/cybersecurity' },
+  ],
+};
+---
+<ServicePageLayout {...data} />

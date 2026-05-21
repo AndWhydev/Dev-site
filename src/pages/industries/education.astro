@@ -1,0 +1,102 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'EdTech Software Development Australia | All Webbed Labs',
+  metaDescription: 'Custom LMS platforms, student portals, AVETMISS-compliant reporting and institutional analytics for Australian universities, RTOs and EdTech companies. Purpose-built education technology from specialists.',
+  industryName: 'Education',
+  heroHeadline: 'EdTech That Transforms How Institutions Teach and Learn',
+  heroTagline: 'Learning management systems, student engagement platforms and institutional analytics for universities, RTOs and EdTech companies.',
+  stats: [
+    { value: '200K+', label: 'students served' },
+    { value: '40%', label: 'increase in engagement' },
+    { value: 'AVETMISS', label: 'compliant' },
+    { value: '24/7', label: 'platform availability' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/></svg>',
+      title: 'Legacy LMS Limitations',
+      description: 'Moodle installations from 2015 and proprietary LMS platforms that pre-date mobile-first design are holding institutions back. They lack modern capabilities like adaptive learning paths, rich media streaming, micro-credentialling support, and the API surface needed to integrate with the broader edtech ecosystem. Maintaining and customising them is expensive, and the student experience suffers.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+      title: 'Student Engagement Decline',
+      description: "Online and blended learning cohorts struggle to stay engaged without the passive social reinforcement of campus life. Completion rates for online courses in Australian vocational and higher education remain well below face-to-face equivalents. The gap is partly content design — but it's also a technology problem: platforms that don't proactively surface the right content, flag at-risk students early or build community connections lose students to disengagement.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+      title: 'Compliance Reporting Burden',
+      description: "RTOs and providers receiving government funding face significant AVETMISS reporting obligations to NCVER, state training authorities and the Australian Skills Quality Authority (ASQA). Generating compliant NAT files from disparate student management systems, fixing validation errors before submission deadlines and maintaining the student records required for audit is a major administrative overhead that consumes resources that could be better spent on teaching.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+      title: 'Disconnected Student Data',
+      description: "Student information is fragmented across a student management system (SMS), LMS, library system, timetabling platform, pastoral care records and financial systems. Advisors, academics and administrators work from incomplete pictures of each student's progress and risk profile. The data needed for meaningful intervention — who is falling behind, who is at risk of not completing — exists in the organisation but can't be assembled quickly enough to act on.",
+    },
+  ],
+  solutions: [
+    'Custom learning management system (LMS) development',
+    'Student self-service portals',
+    'E-learning content delivery and SCORM/xAPI platforms',
+    'AVETMISS and HEIMS compliance reporting',
+    'Online assessment and moderation tools',
+    'Library and resource management integrations',
+    'Timetabling and room booking systems',
+    'Alumni engagement platforms',
+  ],
+  useCases: [
+    {
+      title: 'AVETMISS-Compliant Student Management System',
+      description: "A large national RTO with 15,000 enrolments per year across workplace health and safety, hospitality and business qualifications was submitting AVETMISS data files with 300–400 validation errors each reporting period, consuming weeks of staff time to diagnose and fix. We built a custom student management system with AVETMISS validation built into the data entry layer — errors are surfaced at the point of data entry, not three months later when the NAT file fails. The system generates AVETMISS 8 NAT files (NAT00010 through NAT00130) on demand and integrates with the NCVER Total VET Activity portal. The first submission post-implementation had zero validation errors.",
+      techStack: 'React · .NET 8 · SQL Server · AVETMISS 8 · Azure · NCVER TVA portal integration',
+      videoNote: 'student enrolment form with real-time AVETMISS validation and NAT file generation',
+    },
+    {
+      title: 'University Student Engagement and At-Risk Platform',
+      description: "A regional university was concerned about the completion rates of its growing online cohort. The analytics team had data across Canvas LMS, the student management system and library usage — but no way to combine it into an actionable at-risk model. We built a data integration layer connecting Canvas (via the API), Callista and the library system, trained a logistic regression model on two years of completion data, and built an advisor-facing dashboard that surfaces a weekly at-risk list with recommended interventions. In the first semester of operation, advisors intervened with 340 flagged students; 71% continued to completion compared to a historical withdrawal rate of 38% for similar cohorts.",
+      techStack: 'Python · scikit-learn · dbt · Snowflake · Canvas API · Callista · React · AWS',
+      videoNote: 'advisor dashboard showing at-risk student cohort with engagement signals',
+    },
+    {
+      title: 'Micro-Credential and Digital Badge Platform',
+      description: "An EdTech company delivering professional development programmes to corporate clients needed to issue verifiable digital credentials that employees could share on LinkedIn and that employers could verify independently. We built a micro-credentialling platform integrated with their existing content delivery system, issuing Open Badges 2.0-compliant credentials via Badgr's API with custom metadata for each qualification. The platform integrates with LinkedIn's certification feature so recipients can add credentials to their profile with one click. Corporate clients receive a dashboard showing aggregate completion data and can configure their own branded credential templates. The platform now issues over 2,000 credentials per month.",
+      techStack: 'React · Node.js · Badgr API · Open Badges 2.0 · LinkedIn API · PostgreSQL · AWS',
+      videoNote: 'credential issuance flow and employer verification portal',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'SaaS Development', href: '/services/saas-development' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+  ],
+  faqs: [
+    {
+      question: 'What AVETMISS version do you support and how do you keep up with rule changes?',
+      answer: "We implement AVETMISS 8, the current standard required for all VET activity reporting in Australia. NCVER updates the standard periodically — typically with 12 months' notice — and we treat compliance rule changes the same way we treat software dependencies: we track the NCVER release schedule, test against the updated validation rules in our staging environment before the effective date, and deploy updates ahead of compliance deadlines. Our AVETMISS validation engine is implemented as a separate module specifically so it can be updated independently of the rest of the application. We also support state training authority variations (including SVTS for Victoria, Skills Gateway for NSW and CAPP for Queensland) which have requirements layered on top of the national standard.",
+    },
+    {
+      question: 'Can you build on top of an existing Moodle or Canvas installation rather than replacing it?',
+      answer: "Yes, and this is often the right approach. Both Moodle and Canvas have robust plugin and API ecosystems that allow significant extension without replacing the core platform. We build Moodle plugins (in PHP) and Canvas LTI tools (which are platform-agnostic and work in any LTI 1.3-compliant LMS) that add capabilities like custom reporting, integration with student management systems, advanced assessment workflows and interactive content types. If a replacement is warranted, we typically run the new system in parallel during a transition period rather than a hard cutover, which is less disruptive for staff and students mid-semester.",
+    },
+    {
+      question: 'How do you integrate with HESA/HEIMS for higher education reporting?',
+      answer: "Higher Education Information Management System (HEIMS) reporting for Commonwealth-funded providers requires submission of student load, completions, staff and finance data to TEQSA and the Department of Education. We implement HEIMS data collections using the department's published data element specifications and submission formats, with validation against the HEIMS collection business rules. For universities using PeopleSoft Campus Solutions or Callista as their student management system, we build extraction and transformation layers that generate compliant submissions and reconciliation reports for the data custodian team.",
+    },
+    {
+      question: 'What experience do you have with Learning Tools Interoperability (LTI)?',
+      answer: "LTI 1.3 is the current standard for integrating third-party tools into LMS platforms. We implement both the Tool side (building applications that embed inside Moodle, Canvas, Blackboard or D2L) and the Platform side (building custom LMS platforms that can host external LTI tools). Our LTI implementations handle the full spec: Deep Linking for content item selection, Assignment and Grades Services for grade passback, Names and Role Provisioning Services for roster sync, and the security model using signed JWTs and JWKS key rotation. We also build SCORM 1.2 and SCORM 2004 content wrappers and xAPI (Tin Can) statement producers for content tracking in an LRS.",
+    },
+    {
+      question: 'Do you work with independent schools as well as universities and RTOs?',
+      answer: "Yes. Independent and Catholic schools often need custom technology that sits between their student management system (typically Edumate, TASS.web, Synergetic or Sentral) and the tools teachers and parents use daily. Common projects include parent portals with real-time academic progress and attendance data, custom reporting platforms that go beyond what the SMS generates natively, and integrations between the SMS and communication platforms like Schoolzine, Operoo (Care Monkey) or SchoolStream. We also help schools with data governance — ensuring student data handling complies with the Australian Privacy Principles and, for schools receiving Commonwealth funding, the National Schools Privacy Code.",
+    },
+  ],
+  ctaHeadline: "Ready to Build EdTech That Actually Moves the Needle?",
+  ctaDescription: "From AVETMISS-compliant student management systems to AI-powered engagement platforms and micro-credentialling tools, our team understands the compliance requirements and pedagogical realities of Australian education. Let's talk about your institution's challenges.",
+};
+---
+<IndustryPageLayout {...data} />

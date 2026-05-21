@@ -1,0 +1,657 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Metric {
+  value: string;
+  label: string;
+  context?: string;
+}
+
+export interface TechItem {
+  name: string;
+  reason: string;
+}
+
+export interface RelatedCS {
+  title: string;
+  href: string;
+  industry: string;
+  summary: string;
+}
+
+export interface RelatedService {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  metaTitle: string;
+  metaDescription: string;
+  industry: string;
+  tags: string[];
+  title: string;
+  summary: string;
+  heroImageDescription: string;
+  clientOverview: string;
+  clientSize: string;
+  clientLocation: string;
+  pullQuote: string;
+  pullQuoteAuthor: string;
+  pullQuoteRole: string;
+  challenge: string[];
+  whyUs: string[];
+  approach: string[];
+  solution: string[];
+  implementation: string[];
+  lessonsLearned: string[];
+  whatCameNext: string[];
+  resultsNarrative: string;
+  metrics: Metric[];
+  techStack: TechItem[];
+  relatedCaseStudies: RelatedCS[];
+  relatedServices: RelatedService[];
+}
+
+const p = Astro.props;
+---
+
+<Layout title={p.metaTitle} description={p.metaDescription}>
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="cs-hero">
+      <div class="cs-hero-bg" aria-hidden="true"></div>
+      <div class="cs-hero-inner">
+        <div class="reveal">
+          <nav class="cs-breadcrumb">
+            <a href="/">Home</a><span>/</span>
+            <a href="/case-studies">Case Studies</a><span>/</span>
+            <span>{p.industry}</span>
+          </nav>
+          <div class="cs-industry-pill">{p.industry}</div>
+          <h1 class="cs-title">{p.title}</h1>
+          <p class="cs-summary">{p.summary}</p>
+          <div class="cs-tags">
+            {p.tags.map((tag) => <span class="cs-tag">{tag}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero image placeholder -->
+    <div class="cs-hero-img">
+      <!-- IMAGE_PLACEHOLDER — {p.heroImageDescription} -->
+      <div class="cs-img-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1e2d28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <p>IMAGE_PLACEHOLDER</p>
+        <span>{p.heroImageDescription}</span>
+      </div>
+    </div>
+
+    <!-- Main content + sidebar -->
+    <section class="cs-body">
+      <div class="cs-body-inner">
+        <div class="cs-layout">
+
+          <!-- Main article -->
+          <article class="cs-article">
+
+            <!-- Client overview -->
+            <div class="cs-section reveal">
+              <div class="cs-client-card">
+                <!-- CASE_STUDY_PLACEHOLDER — replace placeholder company details with real client information when approved -->
+                <div class="cc-label">Client Overview</div>
+                <p class="cc-overview">{p.clientOverview}</p>
+                <div class="cc-meta">
+                  <div class="cc-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    {p.clientSize}
+                  </div>
+                  <div class="cc-meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {p.clientLocation}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Challenge -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">The Challenge</h2>
+              {p.challenge.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- Why us -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">Why They Chose All Webbed Labs</h2>
+              {p.whyUs.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- Pull quote -->
+            <blockquote class="cs-pullquote reveal">
+              <p>"{p.pullQuote}"</p>
+              <footer>
+                <strong>{p.pullQuoteAuthor}</strong>
+                <span>{p.pullQuoteRole}</span>
+              </footer>
+            </blockquote>
+
+            <!-- Approach -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">Our Approach</h2>
+              {p.approach.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- Solution -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">The Solution</h2>
+              {p.solution.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- Tech stack inline -->
+            <div class="cs-section reveal">
+              <h3 class="cs-subsection-title">Technologies Used</h3>
+              <div class="cs-tech-grid">
+                {p.techStack.map((t) => (
+                  <div class="cs-tech-item">
+                    <div class="cti-name">{t.name}</div>
+                    <div class="cti-reason">{t.reason}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Implementation -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">Implementation</h2>
+              {p.implementation.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- Results -->
+            <div class="cs-section cs-results reveal">
+              <h2 class="cs-section-title">The Results</h2>
+              <div class="cs-metrics">
+                {p.metrics.map((m, i) => (
+                  <div class={`cs-metric reveal stagger-${Math.min(i + 1, 6)}`}>
+                    <div class="cm-value">{m.value}</div>
+                    <div class="cm-label">{m.label}</div>
+                    {m.context && <div class="cm-context">{m.context}</div>}
+                  </div>
+                ))}
+              </div>
+              <p class="cs-para" style="margin-top: 2rem;">{p.resultsNarrative}</p>
+            </div>
+
+            <!-- Lessons learned -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">Lessons Learned</h2>
+              {p.lessonsLearned.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+            <!-- What came next -->
+            <div class="cs-section reveal">
+              <h2 class="cs-section-title">What Came Next</h2>
+              {p.whatCameNext.map((para) => <p class="cs-para">{para}</p>)}
+            </div>
+
+          </article>
+
+          <!-- Sidebar -->
+          <aside class="cs-sidebar">
+
+            <!-- Related services -->
+            <div class="cs-sidebar-card reveal stagger-1">
+              <h3 class="cs-sidebar-title">Services Used</h3>
+              <div class="cs-sidebar-links">
+                {p.relatedServices.map((s) => (
+                  <a href={s.href} class="cs-sidebar-link">
+                    {s.title}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <!-- Tech summary -->
+            <div class="cs-sidebar-card reveal stagger-2">
+              <h3 class="cs-sidebar-title">Tech Stack</h3>
+              <div class="cs-tech-tags">
+                {p.techStack.map((t) => <span class="cs-tech-tag">{t.name}</span>)}
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cs-sidebar-cta reveal stagger-3">
+              <h3>Have a similar challenge?</h3>
+              <p>We'd love to hear about it. Book a free 30-minute call.</p>
+              <a href="/contact" class="btn-primary cs-sidebar-btn">
+                Book a Call
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related case studies -->
+    {p.relatedCaseStudies.length > 0 && (
+      <section class="cs-related">
+        <div class="cs-related-inner">
+          <div class="reveal">
+            <span class="section-label">More Case Studies</span>
+            <h2 class="section-heading">Related Projects</h2>
+          </div>
+          <div class="cs-related-grid">
+            {p.relatedCaseStudies.map((cs, i) => (
+              <a href={cs.href} class={`cs-related-card card-hover reveal stagger-${i + 1}`}>
+                <div class="crc-industry">{cs.industry}</div>
+                <h3 class="crc-title">{cs.title}</h3>
+                <p class="crc-summary">{cs.summary}</p>
+                <span class="crc-link">
+                  Read case study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .cs-hero {
+    padding: 9rem 0 4rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cs-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cs-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin-bottom: 1.5rem;
+  }
+  .cs-breadcrumb a { color: #4a6359; text-decoration: none; transition: color 0.2s; }
+  .cs-breadcrumb a:hover { color: #0d9373; }
+  .cs-industry-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.3);
+    color: #0d9373;
+    padding: 0.375rem 0.875rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+  }
+  .cs-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+  .cs-summary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .cs-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .cs-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4a6359;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+  }
+
+  /* Hero image */
+  .cs-hero-img {
+    background: #0a0f0e;
+    padding: 0 2rem 0;
+  }
+  .cs-img-placeholder {
+    max-width: 1100px;
+    margin: 0 auto;
+    aspect-ratio: 21/9;
+    background: #0f1614;
+    border: 1px dashed #1e2d28;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .cs-img-placeholder p {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a6359;
+    margin: 0;
+  }
+  .cs-img-placeholder span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #2a3d35;
+    font-style: italic;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  /* Body */
+  .cs-body { padding: 5rem 0; background: #0a0f0e; }
+  .cs-body-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .cs-layout { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
+
+  /* Article */
+  .cs-section { margin-bottom: 3.5rem; }
+  .cs-section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.875rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .cs-subsection-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #8aa09a;
+    margin: 0 0 1.25rem;
+  }
+  .cs-para {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a6359;
+    line-height: 1.8;
+    margin: 0 0 1.25rem;
+  }
+  .cs-para:last-child { margin-bottom: 0; }
+
+  /* Client card */
+  .cs-client-card {
+    background: #0f1614;
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .cc-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin-bottom: 0.875rem;
+  }
+  .cc-overview {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+  .cc-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .cc-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+
+  /* Pull quote */
+  .cs-pullquote {
+    background: linear-gradient(135deg, rgba(13,147,115,0.07) 0%, #0f1614 80%);
+    border-left: 3px solid #0d9373;
+    border-radius: 0 12px 12px 0;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0 3rem;
+  }
+  .cs-pullquote p {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.55;
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+  .cs-pullquote footer { display: flex; flex-direction: column; gap: 0.2rem; }
+  .cs-pullquote strong {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0d9373;
+  }
+  .cs-pullquote span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+
+  /* Tech grid */
+  .cs-tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .cs-tech-item {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 10px;
+    padding: 0.875rem 1rem;
+  }
+  .cti-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+  .cti-reason {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+    line-height: 1.4;
+  }
+
+  /* Metrics */
+  .cs-results { background: #0f1614; border: 1px solid #1e2d28; border-radius: 20px; padding: 2.5rem; }
+  .cs-results .cs-section-title { border-color: #1e2d28; }
+  .cs-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .cs-metric {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .cm-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: #0d9373;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.375rem;
+  }
+  .cm-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+  }
+  .cm-context {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+    line-height: 1.4;
+  }
+
+  /* Sidebar */
+  .cs-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 1.25rem; }
+  .cs-sidebar-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .cs-sidebar-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1rem;
+  }
+  .cs-sidebar-links { display: flex; flex-direction: column; gap: 0.375rem; }
+  .cs-sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1e2d28;
+    transition: color 0.2s ease;
+  }
+  .cs-sidebar-link:last-child { border-bottom: none; }
+  .cs-sidebar-link:hover { color: #0d9373; }
+  .cs-tech-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .cs-tech-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .cs-sidebar-cta {
+    background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0f1614 70%);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .cs-sidebar-cta h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+  .cs-sidebar-cta p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .cs-sidebar-btn { justify-content: center; font-size: 0.875rem; padding: 0.625rem 1.25rem; }
+
+  /* Related */
+  .cs-related { padding: 6rem 0; background: #0f1614; }
+  .cs-related-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .cs-related-inner .section-heading { margin-bottom: 2.5rem; }
+  .cs-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .cs-related-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .crc-industry {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d9373;
+  }
+  .crc-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .crc-summary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+  .crc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    transition: gap 0.2s ease;
+  }
+  .cs-related-card:hover .crc-link { gap: 0.625rem; }
+
+  @media (max-width: 1024px) {
+    .cs-layout { grid-template-columns: 1fr; }
+    .cs-sidebar { position: static; }
+    .cs-metrics { grid-template-columns: repeat(2, 1fr); }
+    .cs-related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .cs-metrics { grid-template-columns: repeat(2, 1fr); }
+    .cs-related-grid { grid-template-columns: 1fr; }
+    .cs-tech-grid { grid-template-columns: 1fr; }
+  }
+</style>

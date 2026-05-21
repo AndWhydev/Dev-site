@@ -1,0 +1,155 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'API Development & Third-Party Integrations | All Webbed Labs',
+  metaDescription: 'RESTful, GraphQL and event-driven API development for Australian enterprises. Reliable, secure and developer-friendly APIs that connect your systems and power your digital products.',
+  category: 'Backend',
+  heroHeadline: 'APIs That Connect Your Business to Everything It Needs',
+  heroTagline: 'RESTful, GraphQL and event-driven APIs designed for reliability, security and developer experience.',
+  description: [
+    'Every modern enterprise runs on APIs — whether you are exposing capabilities to partners, connecting internal systems, or powering digital products consumed by thousands of users. The quality of those APIs determines whether your platform becomes a competitive asset or a maintenance liability. Poorly designed APIs produce brittle integrations, inconsistent error handling, and developer experiences so poor that partners avoid building against them. We design and build APIs that are consistent, well-documented, observable, and built to evolve without breaking consumers.',
+    'Our API practice covers the full spectrum: RESTful APIs following OpenAPI 3.1 specifications, GraphQL schemas for client-driven data fetching, and event-driven architectures using message brokers like AWS SQS, SNS, and Kafka for systems that need to communicate asynchronously at scale. We also handle the integration work: connecting your systems to third-party platforms, managing authentication and credential rotation, implementing retry logic and circuit breakers, and building the middleware that makes heterogeneous enterprise systems talk to each other reliably. Every API we deliver ships with comprehensive documentation, an interactive sandbox, and the monitoring instrumentation your team needs to operate it confidently.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+      title: 'OpenAPI-First Design',
+      description: 'Every API is designed spec-first using OpenAPI 3.1. The specification is the single source of truth for endpoint contracts, request/response schemas, authentication models and error formats. This enables automatic SDK generation, mock server creation, and interactive documentation from the same artifact.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Security Engineered In',
+      description: 'OAuth 2.0 with PKCE, API key rotation policies, JWT validation with short expiry windows, rate limiting per consumer, IP allowlisting for partner integrations, and mTLS for service-to-service communication in zero-trust environments. OWASP API Security Top 10 is the baseline, not the ceiling.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Observable by Default',
+      description: 'Every API response includes a correlation ID traceable through distributed systems. Structured JSON logs, request latency histograms, error rate dashboards and alert thresholds are configured before the first consumer connects. You know what your API is doing at every moment.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
+      title: 'Versioning Without Breaking Consumers',
+      description: 'We implement API versioning strategies (URI versioning or content negotiation) and use additive change policies to evolve APIs without breaking existing consumers. Deprecation notices, sunset headers and migration guides are provided with adequate notice periods — not overnight surprises.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
+      title: 'Built for High Concurrency',
+      description: 'Node.js and Go-based API layers handle tens of thousands of concurrent connections without thread pool exhaustion. Connection pooling, async I/O, and database query optimisation ensure that API latency remains flat as load increases — not degrading gradually until a 2am incident reveals the ceiling.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+      title: 'Developer Experience That Drives Adoption',
+      description: 'APIs consumed by developers need to be a pleasure to work with. We produce comprehensive Stoplight or Redoc documentation, Postman collection exports, code examples in multiple languages, and sandbox environments with realistic test data. Internal developer portals are available for organisations managing multiple API consumers.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Financial Services',
+      title: 'Open Banking Data API Layer',
+      description: 'A challenger bank built a CDR-compliant Open Banking API layer exposing account, transaction and product data to accredited third parties — meeting the ACCC\'s Consumer Data Right technical standards for response times, consent management, and error format requirements, while integrating with their core banking system via an internal middleware layer.',
+    },
+    {
+      industry: 'Property Technology',
+      title: 'Real Estate Platform Integration Hub',
+      description: 'A property technology company built an integration hub connecting 14 data sources — REA Group, Domain, CoreLogic, PEXA, state land title registries, and council rates databases — into a single normalised GraphQL API consumed by their valuation and portfolio analysis tools, replacing point-to-point integrations that required individual maintenance.',
+    },
+    {
+      industry: 'Retail & eCommerce',
+      title: 'Omnichannel Order Management API',
+      description: 'A national retailer exposed an event-driven API layer over their existing SAP commerce system, allowing their mobile app, web storefront, in-store kiosks and third-party marketplace channels to share a single source of truth for inventory, pricing and order state — using Kafka topics and consumer groups to handle 15,000 order events per hour at peak.',
+    },
+    {
+      industry: 'Government',
+      title: 'Interoperability API for Cross-Agency Data Sharing',
+      description: 'A federal agency built a federated API gateway enabling controlled data sharing between state and federal government systems — with fine-grained consent-based access controls, full audit logging to an immutable log store, and a self-service developer portal for approved agency consumers to discover and test available endpoints.',
+    },
+  ],
+  technologies: [
+    'Node.js', 'Go', 'FastAPI (Python)', 'GraphQL', 'REST / OpenAPI 3.1',
+    'AWS API Gateway', 'Kong', 'Kafka', 'AWS SQS / SNS', 'PostgreSQL', 'Redis', 'Terraform',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'API Design & Contract Definition',
+      duration: 'Weeks 1–3',
+      description: 'We run design workshops to map the capabilities the API needs to expose, the consumers that will use them, and the data models involved. API contracts are written as OpenAPI 3.1 specifications before any code is written — this surfaces design issues early and gives consumers a document to work against in parallel.',
+    },
+    {
+      step: '02',
+      title: 'Authentication & Security Architecture',
+      duration: 'Weeks 2–3',
+      description: 'We design the authentication and authorisation model appropriate for the consumer type — OAuth 2.0 PKCE for user-context APIs, client credentials for machine-to-machine, API keys with rotation policies for partner integrations. Security requirements are documented in the API spec itself as OpenAPI security schemes.',
+    },
+    {
+      step: '03',
+      title: 'Core API Development',
+      duration: 'Weeks 3–12',
+      description: 'Implementation of API endpoints against the agreed specification, with contract tests validating that responses always match the OpenAPI schema. Integration work with underlying data stores and upstream systems happens in parallel. We do not move ahead of the agreed spec without a change control process.',
+    },
+    {
+      step: '04',
+      title: 'Integration & Third-Party Connections',
+      duration: 'Weeks 5–14',
+      description: 'Third-party integrations are built with resilience patterns: exponential backoff retry, circuit breakers (Resilience4j or custom), dead-letter queues for failed async events, and timeouts configured to prevent cascading failures. We test integration failure modes explicitly, not just happy paths.',
+    },
+    {
+      step: '05',
+      title: 'Load Testing & Performance Baseline',
+      duration: 'Week 13–14',
+      description: 'We run load tests using k6 or Gatling against the staging API with realistic traffic shapes — gradual ramp-up, spike tests, and sustained load at peak projections. Performance baselines are documented so regressions in future deployments are detectable against a known good state.',
+    },
+    {
+      step: '06',
+      title: 'Documentation, Monitoring & Handover',
+      duration: 'Final week',
+      description: 'Published interactive documentation via Redoc or Stoplight, Postman collection with environment configs, a monitoring runbook, alert thresholds in your observability stack, and a live handover session with your engineering team. APIs go to production observable and documented.',
+    },
+  ],
+  industries: [
+    'Financial Services & Banking',
+    'Government & Agencies',
+    'Property Technology',
+    'Retail & eCommerce',
+    'Healthcare & Life Sciences',
+    'Logistics & Supply Chain',
+    'Insurance',
+    'Telecommunications',
+  ],
+  faqs: [
+    {
+      question: 'When should we use REST versus GraphQL versus event-driven APIs?',
+      answer: 'The choice depends on the primary consumer pattern and data access requirements. REST is the right default for most public-facing and partner-facing APIs: it is widely understood, tooling is mature, and caching at the HTTP layer is straightforward. GraphQL is valuable when you have multiple clients with substantially different data requirements — for example, a mobile app, a web app and a data analytics consumer all consuming the same backend — as it eliminates over-fetching and under-fetching without requiring multiple REST endpoints. Event-driven APIs using Kafka or SNS/SQS are the right choice when systems need to communicate asynchronously without tight coupling — typically for high-volume data pipelines, system integration between legacy applications, or any scenario where a synchronous request-response model would create unacceptable latency.',
+    },
+    {
+      question: 'How do you handle integrations with systems that have poor or no APIs?',
+      answer: 'Legacy enterprise systems — particularly on-premises ERP and mainframe applications — frequently expose data only through database connections, file exports, or screen-scraping interfaces. We build ETL pipelines and middleware adapters that translate legacy data access patterns into well-structured API responses, insulating downstream consumers from the messiness of the source system. For file-based integrations (SFTP, EDI, flat files), we build ingestion pipelines with validation, error quarantine, and processing confirmation. The goal is always to give consuming systems a clean, consistent API contract regardless of what sits behind it.',
+    },
+    {
+      question: 'What security standards do your APIs meet for regulated industries?',
+      answer: 'For financial services APIs, we design against APRA CPS 234 information security requirements and can implement Consumer Data Right (CDR) technical standards as specified by the ACCC and Data Standards Body. For healthcare APIs, we implement the HL7 FHIR standard and consider the Australian Digital Health Agency\'s integration standards. For government APIs, we follow the Digital Service Standard and the Australian Government API Design Guide. In all cases, our baseline security posture exceeds typical enterprise requirements: all traffic over TLS 1.2+, token expiry policies, request signing for sensitive operations, and comprehensive audit logging.',
+    },
+    {
+      question: 'How do you manage API versioning and backwards compatibility?',
+      answer: 'We implement a formal versioning policy at project start. For most REST APIs, URI versioning (/v1/, /v2/) is the clearest approach for consumers. We follow an additive change policy: new optional fields and endpoints can be added to an existing version, but breaking changes (removing fields, changing data types, altering required parameters) require a new version. Deprecated endpoints serve sunset headers with a removal date, and we provide migration documentation with at least 6 months notice before breaking changes take effect. This gives your API consumers and integration partners predictability they can plan against.',
+    },
+    {
+      question: 'How do you ensure API reliability when upstream systems are unavailable?',
+      answer: 'Resilience patterns are a non-negotiable component of our API development. We implement circuit breakers that open when an upstream dependency starts failing, preventing cascading failures from propagating through your system. Async operations are queued in durable message stores (SQS, Kafka) rather than relying on synchronous calls that can time out. Retry logic uses exponential backoff with jitter to avoid thundering herd conditions. We build degraded-mode responses where partial functionality can be served even when non-critical dependencies are unavailable. These patterns are tested explicitly with chaos engineering techniques — simulating upstream failures in staging before launch.',
+    },
+    {
+      question: 'Can you build an internal developer portal for our organisation\'s APIs?',
+      answer: 'Yes. For organisations managing multiple APIs consumed by internal teams or external partners, a developer portal significantly reduces the friction and support burden associated with API onboarding. We build portals using Backstage (Spotify\'s open-source developer portal framework) or Stoplight Workspace, depending on your scale and requirements. The portal provides interactive API documentation, self-service API key issuance, usage analytics per consumer, and a changelog for tracking API evolution. For organisations with complex B2B partner integration programs, a developer portal can reduce integration time for new partners from weeks to days.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'Web & Mobile Applications', href: '/services/web-mobile-apps' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/><line x1="6" y1="9" x2="6" y2="15"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

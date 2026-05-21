@@ -1,0 +1,121 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Athlete Performance Tracking Platform | All Webbed Labs Case Study",
+  metaDescription: "How a Brisbane swimming academy reduced preventable injuries by 44% and freed 15 coaching hours per week with a custom wearable data integration platform.",
+
+  industry: "Sports & Recreation",
+  tags: ["Coach Dashboard", "Wearable Integration", "Data Analytics", "React", "Python"],
+
+  title: "Athlete Performance Tracking Platform",
+  summary: "A state-level swimming academy gained real-time wearable data integration and coach dashboards that transformed how training decisions were made.",
+
+  heroImageDescription: "Coach reviewing athlete performance charts on a large wall-mounted monitor in a Brisbane swimming facility, with a competition pool in the background",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "A state-level swimming academy based in Brisbane, Queensland, working with 120 elite and pathway athletes across age groups from 13 to 25. The academy operates eight full-time coaches and feeds into Swimming Australia's national selection pathway, meaning performance data has genuine career implications for the athletes involved. Funded through a mix of state government sport grants, membership fees, and high-performance scholarships.",
+  clientSize: "120 athletes · 8 coaches · Est. 2007",
+  clientLocation: "Brisbane, QLD",
+
+  pullQuote: "We were making training load decisions based on how athletes looked in the water. Now we have eight weeks of objective data behind every decision. We caught two overuse patterns last season before they became injuries. In this pathway, that's not just a welfare issue — it's a selection issue.",
+  pullQuoteAuthor: "Head Coach",
+  pullQuoteRole: "Performance, Swimming Academy",
+
+  challenge: [
+    "Elite swimming performance is as much about training load management as raw talent, but the academy had no systematic way to track what was actually happening to each athlete's body across a season. Lap times were recorded on paper by a lane coach during sessions, then transcribed into individual spreadsheets at the end of the day — a process that routinely lost nuance. A fast split might represent genuine improvement, or it might represent an athlete pushing through fatigue in a way that would cost them three sessions later. Without longitudinal data, coaches were working largely on intuition.",
+    "The academy had been aware of wearable technology for several years. Several athletes had their own Garmin and Polar devices and were already capturing heart rate, stroke count, and stroke rate data during training. But there was no centralised way to access that data. Some athletes shared exports manually; most didn't. The coaching staff were using three different spreadsheet systems across eight coaches, with no agreed data format and no ability to compare trends across athletes or identify squad-wide patterns.",
+    "Injury management was the most acute operational problem. The academy had experienced three significant shoulder injuries and one knee injury in the two seasons prior to engaging us, each of which had required extended recovery periods and disrupted selection plans at critical points in the season. The coaching staff had a strong suspicion that training load spikes — particularly in the six weeks following major competition blocks when athletes returned highly motivated and sometimes over-trained — were contributing to the injury rate, but they had no data to confirm or act on that hypothesis.",
+    "National selection pathways add a layer of complexity that community sport doesn't face. Every performance data point carries potential significance not just for the athlete's own development plan but for their competitive standing relative to peers across Australia. The coaching staff needed a system that handled data with appropriate sensitivity — athletes should see their own performance data easily, but comparative visibility across the squad needed to be managed carefully to avoid unhealthy competitive dynamics during development phases."
+  ],
+
+  whyUs: [
+    "The academy's performance director had attended a QAS (Queensland Academy of Sport) technology forum where a presentation touched on custom data integration approaches for high-performance sport. All Webbed Labs was introduced through a QAS contact who had consulted on a previous project. The initial conversations were as much about our comfort working with technically sophisticated end users — the coaching staff had very specific ideas about what they wanted to see — as they were about our technical capability.",
+    "We were also able to point to prior work involving external API integrations and data visualisation, which gave the coaching staff confidence that we understood the difference between a dashboard that looked impressive and one that actually answered the questions they needed answered. We agreed on a prototyping phase before any commitment to a full build, which allowed us to test the Garmin and Polar API integrations and validate the data model before the project scope was finalised."
+  ],
+
+  approach: [
+    "The discovery phase for this project was more technically intensive than most. Before we could design anything useful, we needed to understand exactly what data the wearable devices could reliably produce in a pool environment, what the coaching staff actually wanted to know, and where those two things overlapped. We spent a week at the facility — observing sessions, reviewing the existing spreadsheets, and conducting structured interviews with each of the eight coaches about how they currently made training load decisions and what would change their practice if they had better information.",
+    "The Garmin Connect IQ and Polar Accesslink APIs turned out to have meaningfully different data structures, refresh rates, and reliability characteristics. Garmin's API was more mature and provided richer per-stroke data; Polar's required more normalisation but was reliable for heart rate variability data that the coaches were particularly interested in. We built a data ingestion layer that abstracted these differences and stored normalised records in PostgreSQL, so the dashboard layer never needed to care about which device an athlete was wearing.",
+    "A significant design challenge was agreeing on what 'performance' meant in a way that the dashboard could surface usefully. Coaches use concepts like training load, acute-to-chronic workload ratio, and rate of perceived exertion, but these terms are used inconsistently in the industry and different coaches on the staff had different views. We facilitated two workshops with the coaching team specifically to define a shared data vocabulary before beginning UI design — a step that added two weeks to the schedule but prevented significant rework later.",
+    "The dashboard was designed iteratively. We produced three progressively detailed prototypes over five weeks, presenting each to the full coaching team and then to a group of five athlete representatives to validate that the data presentation would be interpreted as intended. The athlete-facing view went through the most iterations — athletes wanted to understand their own data without feeling like they were being surveilled, and the balance between transparency and coaching discretion required careful consideration.",
+    "Total project timeline from initial discovery to production deployment was twenty-two weeks. The extended timeline relative to a simpler project reflected the complexity of the API integrations, the data modelling workshops, and the multiple rounds of prototype validation. The coaching staff were accommodating of the pace because they understood that a dashboard built on poorly defined concepts would have been worse than no dashboard at all."
+  ],
+
+  solution: [
+    "The backend is built on Python with FastAPI, chosen for its excellent support for data-heavy workloads, the availability of high-quality libraries for statistical calculations, and the coaching staff's familiarity with Python's data ecosystem if they ever wanted to extend the analysis themselves. PostgreSQL stores all athlete performance records in a normalised time-series structure, with a separate schema for training plans and session targets that coaches maintain through the dashboard.",
+    "The Garmin and Polar API integration runs as a scheduled ingestion service that polls for new session data every four hours during training days. When new data arrives, it's validated against expected ranges — stroke rates outside of physiologically plausible bounds, for example, are flagged for manual review rather than ingested silently. The ingestion service maintains a per-athlete, per-device sync log so that connectivity gaps are visible rather than hidden, which matters in a high-performance context where missing data can be as informative as the data that's present.",
+    "The coach-facing React dashboard provides four primary views: a squad overview showing all athletes' current training load status relative to their season plan; an individual athlete drill-down with session-by-session trends across key metrics; a comparative view that allows coaches to surface patterns across athletes in the same event group; and a flag view that automatically highlights athletes whose acute-to-chronic workload ratio has exceeded a configurable threshold. That threshold view, displayed prominently on the main dashboard, was the feature that generated the most immediate behavioural change in how coaches planned training weeks.",
+    "Injury pattern detection is handled by a rule-based analysis layer rather than machine learning — a deliberate choice made after the coaching staff expressed scepticism about opaque algorithmic outputs. The rules are transparent, editable by the head coach via a configuration interface, and display their reasoning alongside each flag. When the system identifies that an athlete's stroke rate efficiency has declined for three consecutive sessions while training load has increased, it says exactly that, rather than producing a risk score that coaches would have difficulty explaining to the athlete or their parents.",
+    "The athlete-facing view is a simplified read-only portal that shows each athlete their own session data, training load trend, and any flags that have been explicitly shared by their coach. Comparative data is not visible in the athlete portal. Coaches can annotate any data point with a note — 'athlete reported shoulder tightness' or 'travel fatigue from nationals' — and those annotations appear in the drill-down view as context alongside the data. This annotation system ended up being one of the most actively used features, because it gave qualitative coaching observations the same persistent, searchable record as the quantitative wearable data."
+  ],
+
+  techStack: [
+    { name: "React", reason: "Coach dashboard — component-based UI suited to the complex, data-dense interface requirements" },
+    { name: "Python / FastAPI", reason: "Backend API and data processing — excellent data library ecosystem, familiar to technically inclined coaching staff" },
+    { name: "PostgreSQL", reason: "Time-series athlete performance records with strong relational data for training plans and squad structure" },
+    { name: "Garmin Connect IQ API", reason: "Primary wearable data source — richer per-stroke data for most athletes in the squad" },
+    { name: "Polar Accesslink API", reason: "Secondary wearable integration — used by several athletes, strong HRV data quality" },
+    { name: "Chart.js", reason: "Data visualisation in the dashboard — lightweight, highly customisable for sports-specific chart types" },
+    { name: "AWS", reason: "EC2 for API, RDS for database, S3 for session data archives — reliable, well-documented, cost-predictable" },
+    { name: "Celery + Redis", reason: "Background task queue for API ingestion jobs and scheduled data processing" }
+  ],
+
+  implementation: [
+    "Deployment followed a phased rollout. In the first four weeks after production release, only the three most experienced coaches used the live dashboard, feeding back issues and calibration questions before the full coaching team transitioned. This gave us the opportunity to address two data normalisation issues with one athlete's Polar device configuration before they became trust-eroding surprises for coaches who were newer to the system.",
+    "Athlete onboarding was handled in one-on-one sessions between each athlete and their lane coach, rather than a group briefing. This was the academy's preference, based on their experience that elite athletes respond better to technology introductions framed around their individual development rather than squad-wide processes. Each athlete received a one-page guide covering how to ensure their device synced after each session and how to access their own portal. Uptake of the athlete portal reached 89% within the first three weeks.",
+    "We built a formal review checkpoint at week twelve post-launch: a half-day session with the full coaching staff where we examined which dashboard features were being used, which were being ignored, and what questions coaches were trying to answer that the system wasn't yet addressing. That review resulted in one new feature — a season comparison view that overlays the current season's load curve against the previous season's — and the deprecation of one chart type that no coach had used in three months. Both changes were shipped within a fortnight of the review."
+  ],
+
+  lessonsLearned: [
+    "The data vocabulary workshops at the start of the project were initially treated as a scheduling inconvenience by some of the coaching staff, who felt they already understood what they meant by 'training load'. By the end of the second workshop it was clear that there were genuine conceptual differences within the team, and that if we'd started building without resolving them, different coaches would have interpreted the same dashboard numbers differently. We now treat a shared data vocabulary session as non-negotiable for any analytics project involving multiple expert users.",
+    "We initially underweighted the athlete privacy and trust dimension of the project. High-performance athletes are acutely aware that their performance data has career implications, and several athletes raised concerns during the prototype review about who could see their data and in what context. We addressed this by building a clear data access policy into the platform itself — visible to athletes through the portal — rather than relying on a separate PDF document that would quickly become out of date. Trust in the system, we learned, requires the system itself to demonstrate trustworthiness rather than asking users to take a policy document on faith.",
+    "The rule-based approach to injury pattern detection was the right call at this stage of the platform's maturity, but it does mean the detection logic requires ongoing maintenance as the coaching staff's understanding develops. We've scheduled a quarterly review of the rule set with the head coach as part of the ongoing support arrangement, which keeps the system honest without requiring a new development engagement every time a rule needs adjustment."
+  ],
+
+  whatCameNext: [
+    "Following the first full season, the academy requested integration with Swimming Australia's Athlete Management System to allow performance data to flow directly into national selection profiles without manual data entry. That integration is currently in development and is expected to reduce the head coach's pre-selection administrative workload by approximately four hours per selection event.",
+    "Two other Brisbane-based high-performance academies — one athletics, one rowing — have been introduced to the platform through word of mouth within the QAS network. We are exploring whether a multi-tenant version of the architecture would allow the platform to serve multiple sports without requiring per-sport custom builds, while still accommodating the genuinely different performance metrics that matter in each discipline."
+  ],
+
+  resultsNarrative: "A full season on the platform gave the coaching staff their first complete, longitudinal picture of how training load, device performance data, and injury events related across the squad. Two overuse patterns were identified and addressed before they became injuries that would have required extended recovery. Three athletes progressed to national squad consideration during the season — a cohort the coaches attribute in part to more precise management of their training peaks in the six weeks before national trials.",
+
+  metrics: [
+    { value: "44%", label: "Reduction in preventable injuries", context: "Compared to the two-season average before the platform" },
+    { value: "23%", label: "Improvement in target session compliance", context: "Athletes hitting prescribed session goals more consistently" },
+    { value: "120", label: "Athletes with full performance profiles", context: "All squad members onboarded within four weeks" },
+    { value: "15 hrs", label: "Saved per week across coaching staff", context: "Time previously spent on manual data collation" },
+    { value: "3", label: "Athletes progressed to national squad", context: "In the platform's first full season" },
+    { value: "98%", label: "Session data capture rate", context: "Up from an estimated 60% with manual recording" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Rugby Club Management App",
+      href: "/case-studies/rugby-club-management-app",
+      industry: "Sports & Recreation",
+      summary: "A NSW rugby union club replaced paper-based rosters and manual fee collection with a full member management platform — cutting admin time by 60%."
+    },
+    {
+      title: "Sports Venue Ticketing & Membership System",
+      href: "/case-studies/sports-venue-ticketing",
+      industry: "Sports & Recreation",
+      summary: "A regional football stadium moved from phone bookings to a fully automated ticketing and season pass system, increasing sales by 38%."
+    },
+    {
+      title: "Sales Forecasting & Demand Planning",
+      href: "/case-studies/sales-forecasting-demand-planning",
+      industry: "Retail & Distribution",
+      summary: "A national distributor replaced gut-feel inventory planning with a machine-learning-assisted forecasting tool, reducing overstock by 31%."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "Data & Analytics", href: "/services/data-analytics" },
+    { title: "API Integration", href: "/services/api-integration" },
+    { title: "Dashboard Development", href: "/services/dashboard-development" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

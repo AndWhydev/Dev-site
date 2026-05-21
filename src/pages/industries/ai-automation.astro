@@ -1,0 +1,111 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'AI & Automation Development Australia | All Webbed Labs',
+  metaDescription: 'Custom LLM applications, RAG systems, AI chatbots, ML pipelines and intelligent automation for Australian enterprises ready to move from AI pilot to production deployment. 100% Australian data sovereignty.',
+
+  industryName: 'AI & Automation',
+  heroHeadline: 'Enterprise AI That Delivers Real Operational Value',
+  heroTagline: 'Custom AI tools, intelligent automation and ML pipelines for organisations ready to move beyond AI experimentation into production deployment.',
+
+  stats: [
+    { value: '60%', label: 'reduction in manual tasks' },
+    { value: '$2M+', label: 'savings delivered' },
+    { value: '3x', label: 'faster decisions' },
+    { value: '100%', label: 'Australian data sovereignty' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+      title: 'Stuck in AI Pilot Purgatory',
+      description: "Most Australian enterprises have run an AI pilot. Very few have taken it to production. The gap between a promising proof-of-concept and a reliable, scalable system that colleagues actually use daily is wider than expected — requiring proper data pipelines, evaluation frameworks, guardrails, integrations and change management that pilot projects rarely address.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+      title: 'Data Quality and Governance Issues',
+      description: "AI models are only as good as the data they're trained on or retrieve from. Organisations with data siloed across legacy systems, inconsistent formats and poor metadata find that building AI on top of that foundation produces unreliable, often embarrassing outputs. Fixing the data problem is unglamorous but essential.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+      title: 'Off-the-Shelf AI Limitations',
+      description: "Generic AI tools like Copilot and ChatGPT are broad but shallow. They have no knowledge of your specific products, internal processes, compliance requirements or institutional knowledge. Organisations that need AI to answer questions specific to their business, apply their own policies or reason over their own data quickly hit the ceiling of what general-purpose tools can do.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+      title: 'AI Safety and Compliance Concerns',
+      description: "Australian privacy law (Privacy Act 1988), sector-specific regulation in financial services (ASIC), healthcare (My Health Records Act, TGA) and government (ISM) creates real compliance obligations around how AI systems handle personal and sensitive data. Sending data to US-hosted AI APIs raises data residency questions that can block procurement and deployment entirely.",
+    },
+  ],
+
+  solutions: [
+    'Custom LLM application development',
+    'Retrieval-Augmented Generation (RAG) systems',
+    'AI chatbot and virtual assistant platforms',
+    'Document intelligence and extraction',
+    'Predictive analytics and forecasting models',
+    'ML model training, fine-tuning and deployment',
+    'AI governance and safety frameworks',
+    'Workflow automation with AI decision points',
+    'Computer vision and image processing applications',
+  ],
+
+  useCases: [
+    {
+      title: 'Enterprise Knowledge Base with RAG and Access Controls',
+      description: "A production RAG system for a professional services firm with 800 staff and 15 years of proprietary methodology documents, project archives and client work product. The system answers natural language queries over this corpus with source citations and confidence indicators. Documents are chunked, embedded and stored in a vector database. Access controls ensure staff only retrieve documents from projects and practice groups they're authorised to access. Deployed entirely on Australian AWS infrastructure with no data leaving the country.",
+      techStack: 'Python · LangChain · OpenSearch · Claude API · AWS Bedrock · React',
+      videoNote: 'knowledge base query flow showing semantic search, source attribution and access control enforcement',
+    },
+    {
+      title: 'Intelligent Document Processing Pipeline',
+      description: "An AI-powered document processing system for a financial services organisation receiving 3,000+ unstructured documents daily — contracts, invoices, bank statements, identity documents and compliance forms. The pipeline classifies documents on ingest, extracts structured fields using fine-tuned extraction models, validates extracted data against business rules and routes exceptions to human review queues. Replaced a team of 12 manual data entry staff with a system processing documents in under 30 seconds each with 97%+ extraction accuracy.",
+      techStack: 'Python · AWS Textract · Claude API · Temporal · PostgreSQL · FastAPI',
+      videoNote: 'document ingestion pipeline showing classification, field extraction, validation and exception routing',
+    },
+    {
+      title: 'AI-Augmented Customer Service Platform',
+      description: "A conversational AI layer deployed across web chat, email and internal ticketing for a utilities company handling 50,000+ customer contacts per month. The AI resolves routine enquiries — billing, outage status, meter readings, payment plans — autonomously, with clean handoff to human agents for complex issues. The system surfaces relevant account context and suggested responses to agents for assisted interactions. Built with full audit logging for ACCC and industry ombudsman compliance. Deflection rate of 58% from human agents.",
+      techStack: 'Node.js · React · Claude API · Twilio · PostgreSQL · Elastic',
+      videoNote: 'customer service chat interface showing AI resolution flow and human handoff with context transfer',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'AI & Machine Learning Development', href: '/services/ai-ml' },
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-devops' },
+    { title: 'Security & Compliance Engineering', href: '/services/security' },
+  ],
+
+  faqs: [
+    {
+      question: 'Can you build AI systems that keep our data in Australia?',
+      answer: "Yes, and this is a common requirement. We have multiple architectures for Australian data sovereignty. AWS Bedrock in Sydney region gives you access to Claude, Llama and other frontier models without data leaving Australia. We also deploy open-weight models (Llama, Mistral, Qwen) on your own AWS or Azure infrastructure in Australian regions. For organisations with the strictest requirements, we can deploy fully on-premises or in air-gapped environments. We assess the right architecture for your sensitivity profile and performance requirements in discovery.",
+    },
+    {
+      question: 'What\'s the difference between a RAG system and fine-tuning a model?',
+      answer: "RAG (Retrieval-Augmented Generation) retrieves relevant documents from your knowledge base at query time and passes them to the model as context. It's fast to deploy, keeps knowledge current without retraining, and provides source attribution. Fine-tuning trains a model on your data to change its behaviour or encode domain-specific knowledge into the weights. RAG is usually the right starting point for knowledge-base and Q&A use cases. Fine-tuning makes sense for specialised generation tasks, consistent tone/format requirements or where latency and cost from large context windows is a concern. Often the best systems use both.",
+    },
+    {
+      question: 'How do you evaluate AI system quality before production?',
+      answer: "We build evaluation frameworks as part of every AI project — not as an afterthought. This means defining ground-truth test sets before building, running automated evaluation across key quality dimensions (accuracy, groundedness, safety, helpfulness), and establishing human review workflows for ongoing quality monitoring. For RAG systems we specifically measure retrieval precision and recall, answer faithfulness and citation accuracy. We set quality gates that must be met before production deployment and instrument production systems to catch degradation.",
+    },
+    {
+      question: 'We\'ve already run an AI pilot that didn\'t go to production — can you help rescue it?',
+      answer: "Yes, and this is a common engagement type for us. We start with a candid assessment of why the pilot stalled — usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
+    },
+    {
+      question: 'How do you handle hallucinations in production AI systems?',
+      answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface low-confidence or user-rejected responses for review and improvement. No AI system is hallucination-free — the goal is catching and containing errors before they cause downstream harm.",
+    },
+  ],
+
+  ctaHeadline: 'Move Your AI From Experiment to Production',
+  ctaDescription: "The organisations getting real value from AI in 2025 are the ones that treated it as an engineering problem, not a vendor selection exercise. We build the data pipelines, evaluation frameworks, guardrails and integrations that turn promising AI prototypes into reliable production systems. Let's talk about where you are and where you need to be.",
+};
+---
+<IndustryPageLayout {...data} />

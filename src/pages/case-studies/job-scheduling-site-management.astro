@@ -1,0 +1,124 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Job Scheduling & Site Management App | All Webbed Labs Case Study",
+  metaDescription: "How a Melbourne plumbing and electrical company eliminated whiteboard scheduling, reduced office call volume by 58%, and cut Xero reconciliation from 6 hours to 45 minutes per week.",
+
+  industry: "Construction & Trades",
+  tags: ["Mobile App", "Job Management", "Xero Integration", "Flutter", "Field Operations"],
+
+  title: "Job Scheduling & Site Management App",
+  summary: "A Melbourne plumbing and electrical services company replaced whiteboards, phone calls, and paper job cards with a purpose-built field app and office dashboard — delivering a 41% improvement in on-time job completion and making job profitability visible for the first time.",
+
+  heroImageDescription: "Tradesperson using a mobile app on a tablet to view job details and parts checklist at a residential worksite, with tools and pipe fittings visible in the background",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "Meridian Trade Services is a Melbourne-based plumbing and electrical company providing residential and commercial services across the inner north, eastern suburbs, and CBD fringe. Operating for eleven years with a fleet of 30 field technicians and five office staff, the business handles approximately 180 jobs per week ranging from emergency residential callouts to multi-day commercial fitouts and planned maintenance contracts.",
+  clientSize: "35 staff · ~180 jobs/week",
+  clientLocation: "Melbourne, VIC",
+
+  pullQuote: "I used to spend the first two hours of every morning rescheduling jobs that had fallen over overnight and fielding calls from technicians who hadn't got the right parts. Now I open the dashboard and the day is actually running before I've had my coffee. The difference to how we operate is hard to overstate.",
+  pullQuoteAuthor: "Operations Manager",
+  pullQuoteRole: "Meridian Trade Services",
+
+  challenge: [
+    "Meridian's scheduling operation revolved around a whiteboard on the office wall — a 1.8 by 1.2 metre grid with technician names down one side and time slots across the top, filled in with magnetic tiles and whiteboard markers. It worked well enough when the company had 12 technicians and two office staff who could see it from their desks. At 30 technicians and 180 jobs per week, it had become a single point of failure. When a job ran long, a technician called sick, or a client rescheduled at short notice, the flow-on effects required a full manual rescheduling exercise that could take 30 to 45 minutes and pulled the office coordinator away from everything else.",
+    "Communication with field technicians happened almost entirely by phone. Technicians would call in the morning to confirm their first job, call again if they needed a part, call to say they were running late, and call when they finished to find out what was next. The office fielded upwards of 80 inbound calls on a typical day just to manage job flow. Calls during busy periods went unanswered, technicians waited in their vans, and jobs started late. The company was spending approximately $2,400 per week in unproductive technician time waiting for instructions or parts that should have been prepared in advance.",
+    "Job cards were paper-based and handwritten on site. Technicians filled in the work performed, materials used, and time on site, then either dropped the card at the office or posted it. Handwriting varied from precise to borderline illegible, and cards often arrived days after the job was completed. The bookkeeper had to decode each card, match it against a job entry created by the office when the booking was taken, and manually key everything into Xero. The process consumed roughly six hours every week and introduced frequent errors — particularly in materials costs, where the bookkeeper was sometimes guessing at what a scrawled product name referred to.",
+    "Parts availability was a chronic frustration. Technicians arrived at jobs without the correct parts roughly 29% of the time, based on the operations manager's own estimate — a figure that turned out to be conservative when we looked more carefully at call logs and job notes. Each instance typically resulted in a trip to the nearest trade supplier, adding 45 minutes to an hour to the job and often requiring the client to either wait or book a return visit. On commercial contracts where Meridian was working against a schedule, parts shortfalls created genuine tension with clients and sometimes triggered liquidated damages clauses.",
+    "Client sign-off was handled by asking the client to sign the paper job card before the technician left site. Cards were sometimes forgotten, clients were sometimes not present, and the signed document took days to arrive at the office. Disputed invoices — where a client claimed work hadn't been done or hadn't been done correctly — were difficult to resolve without a timestamped digital record. Insurance claims and warranty disputes required the office to locate paper job cards going back months, a process that consumed significant time and occasionally produced nothing when cards had been mislaid."
+  ],
+
+  whyUs: [
+    "Meridian's general manager had seen a competitor using what appeared to be a proprietary field management app and asked around in industry circles. The trail led to a conversation with a business owner in a non-competing trade who had worked with All Webbed Labs on a simpler job dispatch tool eighteen months earlier. That referral carried weight — the business owner could speak to what the experience of working with us was actually like, not just the end result.",
+    "We were brought in alongside two other potential partners. The other two proposals came from SaaS platforms — ServiceM8 and a competitor — rather than custom builders. The general manager's concern with both SaaS options was legitimate: the off-the-shelf platforms handled residential service work well but struggled to model the commercial contract side of the business, where Meridian's jobs had multiple stages, staged invoicing tied to construction milestones, and subcontract labour components that didn't fit cleanly into the platforms' job type models. A custom build meant the data model could reflect how Meridian actually operated, not how a generic trade software company thought trades businesses operated.",
+    "We were also candid about timeline and cost. The initial scoping conversation produced a clear picture that a full build with Xero integration, mobile app, and office dashboard would take five to six months and represented a meaningful investment. We suggested an approach where we could deliver a functional MVP — scheduling, job cards, and push notifications — in twelve weeks, let the team use it in production, and then build the Xero integration and reporting layer once we had validated that the core workflows were right. That phased approach reduced the risk of building something elaborate on top of assumptions that turned out to be wrong."
+  ],
+
+  approach: [
+    "The discovery phase ran for three weeks. We spent one full day on-site with the operations coordinator, one morning riding along with two different technicians through their working day, and half a day in the office with the bookkeeper working through the Xero reconciliation process step by step. The ride-alongs were particularly valuable — we saw that technicians used their phones heavily for navigation and client contact but had no standardised way of documenting what they did on site. One technician used voice memos. Another photographed the job card with his phone camera and emailed it. A third just relied on the paper card.",
+    "We also did something that proved important: we asked to review six months of job logs, the call register from the office phone system, and the Xero transaction records for the same period. Cross-referencing these three data sets revealed that the parts arrival problem was more concentrated than anyone had realised — it affected particular job types almost predictably. Hot water system replacements had a 34% parts shortfall rate; smoke alarm compliance checks had a 2% rate. That kind of specificity changed the design brief from 'show technicians the parts list' to 'build a parts pre-confirmation workflow that triggers 24 hours before high-risk job types and requires warehouse sign-off before the technician is dispatched.'",
+    "The architecture decision was Flutter for the field app, React for the office dashboard, Node.js for the API, and PostgreSQL for the database. Flutter was the right call for the field app because the technician workforce used a mix of iOS and Android — some company-supplied Samsung devices, some personal iPhones — and we needed native performance for the camera features used in job documentation. React gave the office coordinator a fast, keyboard-navigable interface suited to drag-and-drop rescheduling. Node.js and PostgreSQL are our standard backend stack for operational systems with complex relational data, and they integrate cleanly with the Xero API through well-maintained Node.js libraries.",
+    "We made one significant scope decision mid-project that the client team felt strongly about and that we pushed back on initially: integrating Google Maps routing to show technicians the optimal order for their daily job sequence and live traffic-adjusted estimated arrival times. Our concern was that this feature would add five to six weeks of development and testing, and wasn't in the original brief. We reached a compromise: we built a basic job sequence view with address display and a single-tap 'navigate' button that launched Google Maps in the native app, deferring the in-app routing optimisation to a post-launch phase. That decision kept the first release on schedule."
+  ],
+
+  solution: [
+    "The office dashboard is a React application that gives the scheduling coordinator a live grid view of all technicians and their job assignments for the current and next two days. Jobs are dragged between technicians and time slots with immediate visual feedback; the system checks for conflicts, travel time feasibility, and technician skill certification against the job type before confirming a change. When a job is moved, the affected technician receives a push notification within seconds. There are no phone calls required for routine scheduling changes.",
+    "Each job record in the system holds the full job specification: client details, site address, job type, required parts list (populated from a product catalogue maintained by the operations team), special access requirements, photos from previous visits, and any notes from the client. When a technician is assigned to a job, they see all of this on their phone before they leave for the site. The parts list includes a pre-departure checklist — for job types flagged as high-risk for parts shortfalls, the system requires a warehouse staff member to tick off each item before the job can be marked as 'technician dispatched.'",
+    "Digital job cards replaced paper entirely. On arrival, the technician taps 'on site' which records the GPS-stamped arrival time. They document the work performed through a structured form — not a free-text field, but a series of task selections appropriate to the job type, with free text available for notes. Materials used are selected from the catalogue (with a manual entry fallback for items not yet in the catalogue), and the quantities are recorded. Photos can be attached at any stage. On completion, the client signs directly on the technician's phone screen, and the signed job record is immediately available in the office dashboard.",
+    "The Xero integration was built using Xero's OAuth 2.0 API and runs as a background sync process. When a job card is marked as complete and client-signed, the system automatically creates a draft invoice in Xero with line items drawn directly from the recorded materials and labour time. The bookkeeper reviews and approves the draft — a process that now takes seconds per job rather than minutes — and sends it to the client. Supplier invoices for parts are still entered manually by the bookkeeper, but the system now reconciles them against job-level materials records so discrepancies are flagged automatically rather than discovered during the next audit.",
+    "Push notifications are delivered through AWS Simple Notification Service, which handles both iOS APNs and Android FCM in a single API call. The notification strategy is deliberate: technicians receive notifications for new job assignments, scheduling changes, client messages, and approaching job start times (30 minutes before, with a maps link). They do not receive promotional content, general announcements, or anything not directly relevant to their working day. Keeping notifications relevant meant the opt-out rate stayed at zero — not a single technician had disabled notifications by the six-month review."
+  ],
+
+  techStack: [
+    { name: "Flutter", reason: "Single codebase for iOS and Android field app; native camera and GPS performance essential for job documentation" },
+    { name: "React", reason: "Office dashboard — fast, keyboard-navigable, suited to drag-and-drop scheduling interface" },
+    { name: "Node.js", reason: "REST API backend; clean Xero API library support and familiar stack for future maintainability" },
+    { name: "PostgreSQL", reason: "Complex relational data model for jobs, technicians, parts, clients, and invoicing history" },
+    { name: "Xero API", reason: "Automated invoice creation and reconciliation, eliminating manual Xero data entry" },
+    { name: "Google Maps", reason: "Single-tap navigation from job card; technicians navigate without leaving the app context" },
+    { name: "AWS SNS", reason: "Push notifications to iOS and Android in a single API call, without maintaining a separate notification infrastructure" },
+    { name: "AWS (EC2 + RDS + S3)", reason: "Production hosting, managed PostgreSQL with automated backups, and S3 for job photo storage" }
+  ],
+
+  implementation: [
+    "We ran a two-stage rollout. In week one, five volunteer technicians — all early adopters who'd been involved in the app testing — used the system for their jobs while the rest of the company continued on the old system. This wasn't just a technical test; it was a social proof exercise. We knew that if the initial five technicians came back to the office saying the app made their day easier, the remaining 25 would come aboard with significantly less resistance than if the system was simply mandated from the top.",
+    "The training approach was deliberately minimal. We produced a six-minute video walkthrough and a single laminated quick-reference card for each technician's van. The goal was an app that didn't require training beyond those two resources. When the full team went live in week three, we had one of our developers available by phone for the first two days. There were twelve support calls on day one, four on day two, and zero by day three. The most common question on day one was how to add a part that wasn't in the catalogue — a workflow we'd built but hadn't covered prominently enough in the video.",
+    "The Xero integration was activated in month two, after the first stage had been running smoothly for four weeks. The bookkeeper was involved throughout the integration development — we built a test environment pointed at Meridian's Xero sandbox account and ran three weeks of simulated job completions through it before activating against the live account. The bookkeeper identified two edge cases during that testing: jobs split across two invoice periods, and warranty recall jobs that should generate zero-value invoices. Both were handled before go-live. On the first Monday the integration was live, she reviewed and approved 23 draft invoices in 18 minutes — a task that had previously taken most of her Thursday.",
+    "There was one significant implementation challenge we hadn't fully anticipated: technicians who had developed personal workarounds over years were reluctant to abandon them even when the app offered a better path. One long-serving technician had a private system of client notes stored in his phone's contacts app that he considered essential. We spent time with him individually to understand what those notes contained and built a persistent 'client notes' field into the job card that he could populate and reference on future visits to the same client. That conversation was more important than any technical decision we made on the project."
+  ],
+
+  lessonsLearned: [
+    "The parts pre-confirmation workflow — requiring warehouse sign-off on high-risk job types before dispatch — was the single feature that generated the most measurable ROI and also the most internal resistance during development. The warehouse team felt it was adding a step to their process and questioned whether it was their responsibility. Getting buy-in required the operations manager to have a direct conversation about the cost of parts shortfalls and to frame it as a system improvement rather than a performance check. The lesson: features that cross departmental boundaries need champions in each department, not just sign-off at management level.",
+    "We initially designed the scheduling drag-and-drop interface to be highly visual and animated, with smooth transitions and colour coding for different job types, skill levels, and urgency tiers. It looked impressive in demos. In production, the coordinator found the visual complexity distracting and asked for a denser, simpler list view as an option. We built the list view in sprint six as an unplanned addition. The takeaway was to be more disciplined about validating interface concepts with the actual user before building them out — a prototype shown to the coordinator in week two would have caught this.",
+    "The six-month project had a four-week delay in the middle caused by the Xero API behaving differently to its documentation in one specific scenario: contacts with duplicate email addresses. Xero's API allows this in certain historical data configurations that shouldn't theoretically exist but sometimes do in older accounts. We hit it with Meridian's contact database and lost time diagnosing what appeared to be intermittent authentication failures. The fix was a deduplication pass on the Meridian contact data and a matching rule change on our end. Third-party API integrations of this kind need a dedicated integration testing phase against the actual production data, not just synthetic test data."
+  ],
+
+  whatCameNext: [
+    "Three months after full go-live, Meridian requested the in-app routing optimisation that we'd deferred from the initial scope. With six months of real job data — actual job durations, real traffic patterns by suburb and time of day, actual technician performance differences — we could build an optimisation model grounded in reality rather than assumptions. The feature launched in month nine and reduced average daily driving time per technician by approximately 22 minutes.",
+    "The job profitability data that emerged from the Xero integration produced a result nobody had anticipated: certain commercial maintenance contract jobs were being completed at a loss because the contract price had been set based on estimated rather than actual labour and parts costs. The new data made this visible for the first time. Meridian used it to renegotiate two commercial contracts at renewal and to decline a renewal on a third where the margin couldn't be recovered. The operations manager described this as the most commercially significant outcome of the entire project.",
+    "Meridian has since asked us to extend the platform to cover subcontractor management — the ability to assign jobs to trusted subcontract trades, share job cards with them, and collect their sign-offs and invoices through the same system. That work is currently underway and is expected to go live in the next quarter."
+  ],
+
+  resultsNarrative: "Across the first six months of full operation, Meridian's operations team documented a 41% improvement in on-time job completion, a 58% reduction in inbound office calls from field technicians, and the complete elimination of paper job cards and manual Xero entry. The bookkeeper's weekly reconciliation time dropped from six hours to 45 minutes, parts arrived ready for 96% of jobs versus 71% previously, and job profitability became visible at the individual job level for the first time in the company's history.",
+
+  metrics: [
+    { value: "41%", label: "Improvement in on-time completion", context: "Measured over first 6 months post-launch" },
+    { value: "58%", label: "Reduction in field-to-office calls", context: "From ~80 calls/day to under 34" },
+    { value: "45 min", label: "Weekly Xero reconciliation", context: "Down from 6 hours per week" },
+    { value: "96%", label: "Parts ready on arrival", context: "Up from 71% — pre-departure checklist workflow" },
+    { value: "100%", label: "Digital client sign-off", context: "Zero paper job cards since go-live" },
+    { value: "First time", label: "Job-level profitability visible", context: "Revealed unprofitable commercial contracts" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Safety Compliance & Incident Reporting Platform",
+      href: "/case-studies/safety-compliance-incident-reporting",
+      industry: "Construction & Trades",
+      summary: "A Brisbane commercial construction company replaced paper-based SWMS and inductions with a digital platform, cutting induction time from 45 minutes to 12 minutes and achieving zero documentation findings at their next SafeWork audit."
+    },
+    {
+      title: "Quoting & Estimating Tool",
+      href: "/case-studies/quoting-estimating-tool",
+      industry: "Construction & Trades",
+      summary: "An Adelaide custom home builder cut quote preparation time from 3 days to 4 hours with a client portal, live material price feeds, and Xero integration."
+    },
+    {
+      title: "Fleet Tracking & Job Dispatch",
+      href: "/case-studies/fleet-tracking-job-dispatch",
+      industry: "Construction & Trades",
+      summary: "A civil contracting business gained real-time fleet visibility and automated job dispatch, reducing idle vehicle time by 31% across a 22-vehicle fleet."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Mobile App Development", href: "/services/mobile-app-development" },
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "Xero Integration", href: "/services/xero-integration" },
+    { title: "Field Operations Software", href: "/services/field-operations-software" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

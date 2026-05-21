@@ -1,0 +1,125 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+const data = {
+  metaTitle: "AI Content Generation Platform for Marketing Agency | All Webbed Labs",
+  metaDescription: "How we built a brand-voice-consistent AI content generation platform for a Melbourne independent marketing agency — cutting first draft time from 4 hours to 35 minutes and increasing agency capacity 40% without additional headcount.",
+
+  industry: "AI & Automation",
+  tags: ["AI Content", "GPT-4", "LangChain", "Brand Voice", "Marketing Automation"],
+
+  title: "AI-Powered Content Generation Platform",
+  summary: "A 22-person Melbourne marketing agency producing content for 35 ongoing clients was constrained by the economics of first-draft writing — junior writers spending 4 hours on drafts requiring significant rework, inconsistent brand voice across writers and clients, and no capacity to grow without growing headcount. We built a brand-voice-consistent content generation platform with GPT-4, few-shot brand voice calibration, a structured briefing system and an approval workflow, cutting first draft time to 35 minutes and increasing agency capacity by 40%.",
+
+  heroImageDescription: "Content generation platform showing brief intake form with client brand voice settings, AI-generated social media post alongside human-edited version, approval workflow status tracker and brand voice consistency score panel",
+
+  clientOverview: "Placeholder Creative Agency is an independent Melbourne marketing agency specialising in mid-market consumer brands. They employ 22 staff including account managers, strategists, designers and a writing team of eight. Their client portfolio of 35 ongoing retainer clients spans retail, food and beverage, health and wellness, and professional services sectors — each with distinct brand voices, audience profiles and content channel requirements. Monthly content output includes approximately 400 social media posts, 70 email campaigns, 45 blog posts and 60 ad copy variants across all clients.",
+  clientSize: "22 staff, 35 ongoing clients",
+  clientLocation: "Melbourne, VIC",
+
+  pullQuote: "We weren't trying to replace our writers — our writers are what make the work good. We were trying to stop spending their talent on first drafts when they should be spending it on strategy, editing and the things that actually require a human. The platform gave us that.",
+  pullQuoteAuthor: "Sophie L.",
+  pullQuoteRole: "Creative Director, Placeholder Creative Agency",
+
+  challenge: [
+    "The four-hour first draft time was the agency's primary capacity constraint. Junior writers — typically 1–3 years experience — spent the majority of this time on two tasks: research (understanding the client's product, the brief context, the competitive environment and the audience) and generating options (producing multiple directions before committing to the draft direction). Both tasks are genuinely important, but both could be partially automated without reducing the quality of the final output.",
+    "Brand voice inconsistency across writers and across time was affecting client satisfaction in ways that were hard to measure but easy to observe. A client who had worked with the same senior writer for 12 months would notice the shift in tone when a different writer covered for maternity leave. A client whose brand voice was 'warm, expert, slightly irreverent' would sometimes receive copy that read as either too formal or trying too hard to be funny. The agency's style guides were inconsistently applied — writers absorbed brand voice differently, and the style guides were static documents that couldn't adapt to the specific context of each piece.",
+    "The briefing process was informal and incomplete. Writers started drafts with whatever information the account manager had captured in a brief — which ranged from detailed and useful to a single line. Insufficient briefing led to first drafts that missed the mark, which led to revision cycles that consumed more time than the initial draft. The agency had tried to standardise briefing with templates but adoption was inconsistent and the templates weren't enforced.",
+    "The approval workflow was entirely email-based, creating version control chaos. Draft documents were emailed to account managers, who emailed feedback, which writers incorporated into a new version, which was emailed back. Content that should have had a two-step review process (writer, then account manager, then client) often accumulated five or six email threads. Content sometimes went to clients without an account manager review because someone had forwarded the wrong version. Senior team time was consumed resolving confusion about which version was current.",
+    "Australian Privacy Act considerations applied to client data stored in the platform. Client brand guidelines, audience research, campaign strategy documents and even draft content can constitute confidential business information about the client, and in some cases (client contact lists, audience personas based on real customer data) may involve personal information. Data handling, storage and the use of client data in AI model context needed to comply with the APPs and the agency's own contractual obligations to clients, many of whom had data handling clauses in their retainer agreements.",
+  ],
+
+  whyUs: [
+    "The Creative Director had been researching AI writing tools for approximately six months and had tried several off-the-shelf options including Jasper, Copy.ai and direct GPT-4 use. Her conclusion from this testing was consistent: the generic AI tools produced content that was either obviously AI-generated (lacking the specific voice of the client's brand), required as much editing to fix as starting from scratch, or could not be constrained to the specific parameters of a brief. What she wanted was not a generic content generator — it was a content generation system calibrated to each client's specific brand voice and constrained by the information in a structured brief.",
+    "We were introduced through a mutual contact in the Melbourne creative community. The differentiating factor in our initial meeting was our proposed approach to brand voice calibration. Rather than fine-tuning (which is expensive, requires large data sets and can't be updated without retraining), we proposed a few-shot prompting approach using LangChain where each client's brand voice was captured in a prompt template populated with curated examples of approved content. This could be updated by an account manager without any technical knowledge, and could be A/B tested against new examples immediately.",
+    "We were also honest about the limits of the approach. GPT-4 with few-shot brand voice calibration can produce first drafts that maintain brand voice consistency for well-defined voice characteristics. It struggles with brands that have highly idiosyncratic or avant-garde voices, with content types that rely heavily on cultural references or local knowledge, and with content where the value is in the originality of the concept rather than the execution. For a mid-market agency with mainly consumer and professional services clients, this honest assessment of where the technology performed well was a better fit than a vendor claiming universal applicability.",
+  ],
+
+  approach: [
+    "We started with a two-week research phase embedded in the agency's existing workflow. We reviewed 180 content pieces across 10 clients — approved final versions alongside the drafts, revisions and feedback cycles that produced them — to understand what patterns of editing recurred and what the most common brief gaps were. This analysis shaped both the brief template system and the brand voice calibration approach.",
+    "The brief template analysis revealed six consistently missing or underspecified elements in the agency's current briefing: content objective (what action should this content drive), audience specificity (who exactly within the client's audience is this piece for), competitive context (what is the client's competitive positioning relevant to this piece), channel constraints (character limits, tone adjustments for different platforms), current news or events context (anything in the client's business or their category that should inform the content), and explicit tone indicators for this specific piece (even if the overall brand voice is consistent, individual pieces have their own tonal requirements). The brief template system enforced all six.",
+    "Brand voice calibration used a structured approach for each of the 35 clients. Account managers were guided through a brand voice calibration session for each client: selecting 8–12 approved content pieces that best represented the client's voice, rating each on five dimensions (formal/informal, serious/playful, expert/accessible, bold/conservative, emotional/rational), and writing plain-language descriptors for each dimension. This profile was used to construct the few-shot brand voice prompt template for each client — a structured prompt block containing the dimension ratings, the plain-language descriptors and three to five example content excerpts.",
+    "We evaluated whether fine-tuning was worth considering for any clients. Our assessment was no, for three reasons specific to this context: the agency's approved content corpus per client was too small for reliable fine-tuning (typically under 200 pieces per client), the content requirements changed frequently enough that a static fine-tuned model would become outdated, and the cost and turnaround time of fine-tuning each client's model was impractical for a 35-client portfolio. Few-shot prompting with a well-structured brand voice profile outperformed fine-tuning on this problem type and was far more maintainable.",
+  ],
+
+  solution: [
+    "The platform is a React web application backed by a FastAPI Python API, with GPT-4 as the generation model and LangChain for prompt management and orchestration. The core user flow has three stages: brief creation, content generation and review, and approval and publication.",
+    "The brief creation stage presents a structured form with the six required elements identified in the research phase, pre-populated with any standing context for the client (brand positioning, audience description, competitive notes) that account managers have stored in the client profile. Each brief field has guidance text explaining what information is needed and why it affects the output. Briefs are validated for completeness before generation can be initiated — the system will not generate from an incomplete brief, a design decision that was contentious during development but proved correct in production.",
+    "The generation stage uses a LangChain chain that combines the brief content, the client's brand voice profile (stored as a reusable prompt template in the client configuration), the content type template (social post, email subject line, blog introduction, ad copy — each has a different structural prompt), and the output format specification. The chain makes two GPT-4 calls: the first generates three distinct direction options with brief rationales, the second expands the selected direction (selected by the writer) into a full draft. This two-step approach was deliberately included to preserve the creative decision point — writers choose the direction, AI executes it.",
+    "Brand voice consistency is assessed on each generated draft using a scoring system: a separate GPT-4 evaluation call assesses the draft against the brand voice profile dimensions and returns a consistency score with specific flagged deviations. This score is displayed to the writer alongside the draft. Scores below the threshold trigger a warning prompt suggesting the writer review specific brand voice dimensions before proceeding to the approval stage. The scorer is not perfect — it shares the model's limitations — but in testing against manual review panels it achieved 79% agreement on pass/fail classifications.",
+    "The approval workflow routes each piece through a configurable review chain: writer generates and self-reviews, submits to account manager review, account manager approves or returns with structured feedback (not free-form comments — a categorised feedback form that makes revisions actionable), and client delivery is managed via the platform's client portal or a direct email export. Every version, every piece of feedback and every approval action is recorded in the platform with timestamps and user attribution. No more email chain version confusion.",
+    "Data privacy was handled at the architecture and operational level. The platform stores client content, briefs and brand profiles on AWS ap-southeast-2 infrastructure. Content processed via the OpenAI API uses OpenAI's enterprise API tier with data processing terms that confirm data is not used for model training — an important contractual protection given that client brand information is commercially sensitive. The agency updated their client retainer agreements to include a data processing addendum disclosing the use of AI tools in content production — a transparency measure we recommended strongly, both for privacy compliance and client relationship management.",
+  ],
+
+  implementation: [
+    "The project ran over 13 weeks from discovery to production launch. Brief template design and brand voice calibration for the pilot cohort of eight clients occupied weeks one through four. Platform development ran from weeks three through ten. A three-week pilot period with the eight pilot clients followed before full rollout to all 35 clients.",
+    "The pilot period with eight clients was structured to measure three things: first draft time against the 4-hour baseline, brand voice consistency score compared to the agency's manual review panel rating, and revision rounds required before approval. All three metrics improved meaningfully on the pilot clients relative to baseline, with the most significant improvement in first draft time (from 4 hours to 38 minutes on average during the pilot) and the smallest improvement in revision rounds (from 2.8 to 1.4, compared to the eventual 1.1 in full production as account managers became more skilled at writing effective briefs).",
+    "Full rollout to all 35 clients required brand voice calibration sessions for the remaining 27 clients. These ran over two weeks with account managers completing sessions in groups of four or five clients per session. The calibration quality varied — some account managers had very clear, well-articulated brand voices for their clients; others struggled to describe a brand voice beyond generic adjectives. We built a guided calibration wizard with examples and comparators to help account managers who found the abstract description task difficult.",
+    "Writer adoption was managed carefully. A small number of writers were initially resistant, fearing the platform was intended to replace them rather than assist them. The Creative Director was clear and consistent in framing: the platform generates first drafts, writers are the final decision-makers and editors, and the quality of output depends on the quality of the brief and the writer's editing judgement. Early examples where AI-generated drafts were substantially improved by writer editing were shared explicitly to demonstrate the ongoing importance of human creative contribution.",
+    "Australian Privacy Act compliance was addressed through a combination of platform architecture (no storage of personal information beyond what was necessary, data in Australian region), contractual updates (data processing addendum added to client retainer agreements), and operational practice (the agency's privacy officer reviewed the platform's data handling before launch and confirmed it was consistent with their existing privacy policy). One client — a professional services firm with particularly strict data handling requirements in their retainer — opted out of AI-generated content for their account and continued with fully manual production. This was the right outcome; their retainer terms had not anticipated AI tool usage.",
+  ],
+
+  lessonsLearned: [
+    "Brief quality is the primary determinant of output quality — more so than the model, the prompt or the brand voice calibration. A thorough, specific brief with clear objective, audience, context and tone indicators produces first drafts that require minimal editing. A thin, vague brief produces generic output that requires either a full rewrite or a new brief. The mandatory brief completeness validation was the right design decision even though it was resisted during development — it shifted quality accountability to the brief stage where it belongs.",
+    "Few-shot brand voice calibration works well for consistent, describable brand voices and less well for idiosyncratic or heavily cultural ones. Two clients in the pilot had brand voices that relied heavily on specific cultural references, humour styles or niche community knowledge that the model couldn't reliably reproduce from examples alone. For these clients, the platform's value was primarily in the brief structure and workflow, not in AI-generated content quality. Being honest about this distinction when presenting to clients is important.",
+    "The two-step generation flow (direction options then full draft) was initially seen as adding friction but proved to be the most important trust-building feature. Writers who could choose a direction from three options before seeing the full draft felt like creative directors, not typesetters. Writers who received a full draft directly felt like they were being asked to accept or reject work they hadn't been part of. The perception of creative ownership mattered enormously to adoption.",
+    "Transparency with clients about AI use in content production is both an ethical obligation and a practical advantage. Clients who were told before the platform launched that the agency was introducing AI-assisted first drafts responded positively — they appreciated the transparency and in several cases asked about the platform themselves. One client signed off on a retainer renewal citing the agency's technology investment as a positive factor. Attempting to use AI tools covertly in a client relationship is both ethically wrong and strategically short-sighted.",
+  ],
+
+  whatCameNext: [
+    "Following a successful first six months in production, the agency used the capacity freed by reduced first-draft time to pitch and win five new client retainers without adding headcount. The 40% capacity increase enabled revenue growth that the agency's previous operational model had been unable to support.",
+    "The platform was extended to include a content performance feedback loop: when clients report performance data for published content (social engagement rates, email open rates, ad conversion rates), this data is recorded against the specific content piece and brief. Over time, this creates a dataset of brief-to-performance relationships that the agency intends to use to improve brief quality guidance and identify which content approaches perform best for each client's audience.",
+    "The Creative Director has been invited to speak at two Australian marketing industry events about the agency's AI content adoption experience, specifically on the topic of transparency with clients and the creative director's role in an AI-assisted workflow. The agency has positioned AI content capability as a competitive differentiator rather than a cost-cutting measure.",
+  ],
+
+  resultsNarrative: "First draft production time reduced from an average of 4 hours to 35 minutes — an 85% reduction — enabling the writing team to produce substantially more content per working day without additional headcount. Brand voice consistency, assessed by a manual review panel on a monthly sample, improved by 67% on panel ratings. The average number of revision rounds required before client approval dropped from 2.8 to 1.1, reducing the revision cycle workload that had been consuming account manager time. Overall agency content capacity increased by 40%, directly enabling the acquisition of five new client retainers without headcount addition. Client first-submission approval rate improved from 31% to 68%, reflecting the combined effect of better briefs, better brand voice calibration and fewer rounds of revision.",
+
+  metrics: [
+    { value: "35 min", label: "Average first draft production time", context: "Down from 4 hours — an 85% reduction in first draft time" },
+    { value: "+67%", label: "Brand voice consistency score improvement", context: "Manual review panel assessment on monthly content sample" },
+    { value: "1.1", label: "Average revision rounds before approval", context: "Down from 2.8 — reducing account manager revision cycle workload" },
+    { value: "+40%", label: "Agency content capacity increase", context: "Without additional headcount — enabled 5 new client retainer wins" },
+    { value: "68%", label: "Client approval rate on first submission", context: "Up from 31% — better briefs + brand calibration + fewer revision cycles" },
+    { value: "79%", label: "Brand voice scorer agreement with human review", context: "Automated consistency scoring calibrated against manual review panel" },
+  ],
+
+  techStack: [
+    { name: "OpenAI GPT-4", reason: "Core generation model; two-step chain (direction options then full draft) preserves writer creative decision-making while automating execution" },
+    { name: "LangChain", reason: "Prompt template management and orchestration; brand voice profiles stored as reusable prompt components that account managers can update without technical knowledge" },
+    { name: "React (platform frontend)", reason: "Brief intake form, generation interface with direction selection, approval workflow, client portal and brand voice calibration wizard" },
+    { name: "FastAPI", reason: "Backend API handling brief validation, generation requests, brand voice scoring, approval workflow state and content history" },
+    { name: "PostgreSQL", reason: "Client profiles, brand voice configurations, brief history, generated content versions, approval workflow state and performance feedback data" },
+    { name: "AWS (ap-southeast-2)", reason: "All infrastructure in Sydney region; data processing addendum compliance with clients' contractual data handling requirements" },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Customer Service AI Chatbot",
+      href: "/case-studies/customer-service-ai-chatbot",
+      industry: "AI & Automation",
+      summary: "GPT-4 powered chatbot resolving 71% of enquiries without human escalation for a Queensland regional telco, cutting wait times from 18 minutes to under 2 minutes.",
+    },
+    {
+      title: "Document Processing & Data Extraction",
+      href: "/case-studies/document-processing-data-extraction",
+      industry: "AI & Automation",
+      summary: "AI-powered invoice processing pipeline for a national logistics company, reducing manual data entry by 89% and tripling daily processing capacity.",
+    },
+    {
+      title: "Sales Forecasting & Demand Planning Tool",
+      href: "/case-studies/sales-forecasting-demand-planning",
+      industry: "AI & Automation",
+      summary: "ML-powered demand forecasting for a national FMCG distributor, cutting overstock write-downs by 23% and improving forecast accuracy from 31% to 14% MAPE.",
+    },
+  ],
+
+  relatedServices: [
+    { title: "AI Integration & Automation", href: "/services/ai-integration-automation" },
+    { title: "AI Chatbot Development", href: "/services/ai-chatbot-development" },
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "Workflow Automation", href: "/services/workflow-automation" },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

@@ -1,0 +1,164 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Cybersecurity Consulting | All Webbed Labs',
+  metaDescription: 'Enterprise cybersecurity consulting: penetration testing, security audits, vulnerability assessments and compliance frameworks. Protect your systems before attackers find the gaps.',
+  category: 'Security',
+  heroHeadline: 'Enterprise Cybersecurity That Protects What Matters Most',
+  heroTagline: 'Penetration testing, security audits and compliance frameworks for organisations that can\'t afford a breach.',
+  description: [
+    'The cost of a significant data breach now averages in the millions — and that figure excludes reputational damage, regulatory penalties and the engineering hours required to clean up. Most breaches are not the result of exotic zero-day exploits; they exploit misconfigurations, unpatched vulnerabilities, weak access controls and predictable human behaviour. Our security engineers approach your systems the way an attacker would: methodically, creatively and with the goal of finding the gaps before someone with worse intentions does.',
+    'We provide a full spectrum of offensive and defensive security services: penetration testing across network, application and cloud infrastructure layers; security architecture reviews for new systems before they go live; compliance gap assessments against NIST, ISO 27001, SOC 2, PCI-DSS and the Australian Privacy Act; and ongoing security advisory retainers for organisations that want a senior security perspective embedded in their engineering process. Every engagement produces actionable findings, prioritised by business risk, with clear remediation guidance your team can act on immediately.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Real Attacker Methodology',
+      description: 'Our penetration testers use the same tools and techniques as threat actors — OSINT, credential stuffing, chained exploits, privilege escalation — so you understand your actual exposure, not just what automated scanners surface.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+      title: 'Actionable, Prioritised Reports',
+      description: 'We do not deliver 400-page reports that end up unread. Every finding includes a risk rating, a plain-English explanation of the business impact, a proof-of-concept demonstrating exploitability and concrete remediation steps.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: 'Compliance Framework Alignment',
+      description: 'Whether you need to achieve SOC 2 Type II, pass a PCI-DSS QSA assessment or satisfy your largest client\'s vendor security questionnaire, we map your current controls to the framework requirements and guide remediation efficiently.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
+      title: 'Cloud & Infrastructure Security',
+      description: 'Misconfigured S3 buckets, over-permissioned IAM roles and exposed management interfaces are among the most common causes of cloud breaches. We audit AWS, GCP and Azure environments against CIS benchmarks and cloud-provider security frameworks.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Security Culture & Training',
+      description: 'Technical controls only go so far. We run targeted security awareness training and simulated phishing campaigns that measurably improve your organisation\'s human-layer defences — the most frequently exploited attack vector in enterprise breaches.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Incident Response Preparedness',
+      description: 'Most organisations discover they are unprepared for an incident only when one occurs. We review and stress-test your incident response plan, run tabletop exercises with leadership, and ensure your teams know exactly what to do when — not if — an incident happens.',
+    },
+  ],
+  useCases: [
+    {
+      title: 'Pre-Launch Application Penetration Test for a FinTech Platform',
+      description: 'A digital bank engaged us for a comprehensive application penetration test before their public launch. Our testers identified seven critical vulnerabilities — including an authentication bypass, an IDOR in the account management API and a stored XSS in the customer portal. All issues were remediated before launch, and the client achieved clean results in their subsequent regulatory security assessment.',
+      industry: 'FinTech',
+    },
+    {
+      title: 'SOC 2 Type II Readiness for a SaaS Business',
+      description: 'A fast-growing B2B SaaS company needed SOC 2 Type II certification to close enterprise deals. We conducted a gap assessment against the Trust Service Criteria, produced a prioritised remediation roadmap, helped implement the required controls and policies, and provided evidence collection support throughout the 12-month observation period. The audit passed first time.',
+      industry: 'SaaS',
+    },
+    {
+      title: 'Red Team Exercise for a Critical Infrastructure Operator',
+      description: 'A national infrastructure operator wanted to test whether a sophisticated adversary could reach operational technology (OT) networks from the corporate IT environment. Our red team achieved IT network access, pivoted through a VPN misalignment, and demonstrated a path to the OT boundary — findings that led to a complete network segmentation project.',
+      industry: 'Critical Infrastructure',
+    },
+    {
+      title: 'AWS Cloud Security Audit for a Healthcare Provider',
+      description: 'A private healthcare provider with a large AWS footprint suspected their environment had grown beyond what their internal team could audit effectively. We identified 43 high-severity findings including publicly accessible EC2 instances, wildcard IAM policies and unencrypted S3 buckets containing patient-adjacent data. All were remediated within four weeks.',
+      industry: 'Healthcare',
+    },
+  ],
+  technologies: [
+    'Burp Suite Pro',
+    'Metasploit',
+    'Nmap / Nessus',
+    'OWASP ZAP',
+    'AWS Security Hub',
+    'Terraform (hardened IaC)',
+    'HashiCorp Vault',
+    'CrowdStrike Falcon',
+    'Splunk SIEM',
+    'Wazuh',
+    'Trivy / Grype (container scanning)',
+    'Nuclei',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Scope Definition & Rules of Engagement',
+      description: 'Every security engagement begins with a precise scope definition: what systems are in scope, what testing activities are authorised, what constitutes a safe stopping point if a critical vulnerability is found, and who to contact for emergency coordination. Clear rules of engagement protect both parties and ensure testing does not inadvertently impact production systems.',
+      duration: 'Day 1–2',
+    },
+    {
+      step: '02',
+      title: 'Reconnaissance & Attack Surface Mapping',
+      description: 'We conduct passive and active reconnaissance to map your attack surface: subdomains, exposed APIs, internet-facing services, technology fingerprinting and analysis of publicly available information that an attacker could use for social engineering or targeted attacks.',
+      duration: 'Day 3–5',
+    },
+    {
+      step: '03',
+      title: 'Vulnerability Discovery & Exploitation',
+      description: 'Using a combination of automated scanning and manual testing techniques, we identify and attempt to exploit vulnerabilities. Manual testing is critical: automated tools miss business-logic flaws, chained vulnerabilities and context-dependent issues that require human judgement to discover.',
+      duration: 'Week 2–3',
+    },
+    {
+      step: '04',
+      title: 'Privilege Escalation & Lateral Movement',
+      description: 'Where initial access is achieved, we attempt to escalate privileges and move laterally to understand the full blast radius of a successful attack. This phase answers the question that matters most to your board: if an attacker gets in, how far can they go?',
+      duration: 'Week 3',
+    },
+    {
+      step: '05',
+      title: 'Reporting & Evidence Package',
+      description: 'We compile a findings report structured for two audiences: an executive summary for leadership that explains business impact in non-technical terms, and a technical appendix for your engineering team with reproduction steps, evidence screenshots and specific remediation guidance for each finding.',
+      duration: 'Week 4',
+    },
+    {
+      step: '06',
+      title: 'Remediation Review & Retest',
+      description: 'Once your team has addressed findings, we conduct a focused retest to verify that vulnerabilities have been fully resolved and that remediation has not introduced new issues. We issue a remediation letter suitable for sharing with clients, auditors or regulators.',
+      duration: 'Week 5–6',
+    },
+  ],
+  industries: [
+    'Financial Services & FinTech',
+    'Healthcare & Life Sciences',
+    'Government & Public Sector',
+    'Critical Infrastructure',
+    'SaaS & Cloud Platforms',
+    'Legal & Professional Services',
+    'Retail & E-commerce',
+    'Defence & Aerospace',
+  ],
+  faqs: [
+    {
+      question: 'What is the difference between a vulnerability assessment and a penetration test?',
+      answer: 'A vulnerability assessment is a systematic scan and review of your environment to identify known weaknesses — it catalogues what is potentially exploitable. A penetration test goes further: testers actively attempt to exploit discovered vulnerabilities, chain them together, escalate privileges and demonstrate real-world impact. Penetration tests answer the question "can an attacker actually use this to cause harm?" rather than simply "does this weakness exist?" For most enterprise security programmes, both are valuable: regular vulnerability assessments catch new issues quickly, while periodic penetration tests validate that your defences hold against a motivated adversary.',
+    },
+    {
+      question: 'Will penetration testing disrupt our production systems?',
+      answer: 'Professional penetration testing is conducted carefully to minimise production impact. We agree on authorised testing windows, use techniques calibrated to avoid service disruption, and have clear escalation procedures if we believe a test activity poses availability risk. Certain tests — such as denial-of-service testing or destructive payload testing — are only conducted against isolated test environments unless you explicitly request otherwise. Our testers are experienced enough to distinguish between demonstrating exploitability and actually causing harm.',
+    },
+    {
+      question: 'How often should we conduct penetration testing?',
+      answer: 'The right cadence depends on your risk profile and rate of change. For most organisations, an annual comprehensive penetration test is a minimum — many compliance frameworks require it. Organisations deploying significant application changes, undergoing infrastructure migrations or operating in high-risk sectors (finance, healthcare, critical infrastructure) should consider testing more frequently: quarterly application tests and continuous automated scanning with periodic manual review are increasingly common in mature security programmes. We help you design a testing cadence that matches your threat model and budget.',
+    },
+    {
+      question: 'Do you provide security services for cloud environments?',
+      answer: 'Yes. Cloud environments introduce a distinct set of security concerns compared to traditional on-premises infrastructure: identity and access management complexity, misconfiguration at scale, shared responsibility model misunderstandings and the velocity of infrastructure change. We conduct cloud security posture management (CSPM) reviews across AWS, GCP and Azure, assess infrastructure-as-code for security anti-patterns, and review cloud-native architectures against CIS benchmarks and cloud provider security frameworks. We also help implement detective controls — AWS Security Hub, GuardDuty, GCP Security Command Center — so misconfigurations are caught automatically going forward.',
+    },
+    {
+      question: 'We have never done a security assessment before. Where do we start?',
+      answer: 'For organisations new to formal security testing, we recommend starting with a security posture assessment: a structured review of your security controls, policies, access management, network architecture and software development practices against a recognised framework. This gives you a clear, prioritised baseline of where you are and where the highest-risk gaps lie. From there, we typically recommend a scoped web application penetration test — since applications are the most common attack vector — followed by a broader infrastructure assessment. We can design a multi-phase programme that fits your budget and gets you to a demonstrably improved security posture within a defined timeframe.',
+    },
+    {
+      question: 'Can you help us respond to an active security incident?',
+      answer: 'Yes. If you believe you are experiencing an active intrusion, data breach or ransomware attack, contact us immediately. Our incident response team provides triage, containment and forensic investigation support. In the first hours, the priorities are: stopping the spread, preserving forensic evidence, assessing data exposure and restoring critical services. Post-incident, we conduct a root-cause analysis and help you remediate the vulnerabilities that were exploited. We also assist with breach notification obligations under the Australian Notifiable Data Breaches scheme and other applicable regulations.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
+    { title: 'Legacy System Modernisation', href: '/services/legacy-modernisation' },
+    { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
+    { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },
+  ],
+};
+---
+<ServicePageLayout {...data} />

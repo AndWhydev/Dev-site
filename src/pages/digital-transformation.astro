@@ -1,0 +1,775 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+// PAGE: Digital Transformation Consulting
+// TODO: Replace placeholder case studies with real client data when available
+---
+
+<Layout
+  title="Digital Transformation Consulting — All Webbed Labs | Australia"
+  description="End-to-end digital transformation for Australian enterprises. Legacy modernisation, cloud migration, process automation and change management."
+>
+  <Header />
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-hero">
+      <div class="dt-hero-bg" aria-hidden="true">
+        <div class="dt-glow-1"></div>
+        <div class="dt-glow-2"></div>
+        <div class="dt-grid"></div>
+      </div>
+      <div class="dt-hero-inner">
+        <div class="dt-hero-content reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><span>Digital Transformation</span>
+          </nav>
+          <span class="section-label">Digital Transformation</span>
+          <h1 class="dt-hero-title">
+            Modernise Your Business<br />
+            <span class="gradient-text">For the Digital Age</span>
+          </h1>
+          <p class="dt-hero-sub">
+            Digital transformation is not about buying new software. It's about rebuilding how your business creates and
+            delivers value — changing systems, processes, data flows and the ways people work together.
+            We do the hard yards: legacy decommissioning, cloud migration, process re-engineering and the change
+            management that makes it stick.
+          </p>
+          <div class="dt-hero-ctas">
+            <a href="/contact" class="btn-primary">
+              Book a Transformation Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#assessment" class="btn-outline">Take the Assessment</a>
+          </div>
+          <div class="hero-trust-row">
+            <div class="trust-item"><span class="trust-num">$40M+</span><span class="trust-label">Legacy Costs Eliminated</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">200+</span><span class="trust-label">Enterprise Stakeholders</span></div>
+            <div class="trust-divider"></div>
+            <div class="trust-item"><span class="trust-num">18mo</span><span class="trust-label">Avg Transformation Window</span></div>
+          </div>
+        </div>
+        <div class="dt-hero-visual reveal-right stagger-2" aria-hidden="true">
+          <div class="dt-vis-legacy">
+            <div class="legacy-box">Legacy</div>
+            <div class="legacy-box">Monolith</div>
+            <div class="legacy-box">Siloed</div>
+          </div>
+          <div class="dt-vis-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="dt-vis-modern">
+            <div class="modern-box">Cloud-Native</div>
+            <div class="modern-box">Microservices</div>
+            <div class="modern-box">API-First</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         WHAT IS DT
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-surface">
+      <div class="dt-inner">
+        <div class="dt-what-grid">
+          <div class="reveal-left">
+            <span class="section-label">What It Actually Is</span>
+            <h2 class="section-heading">Digital Transformation Is a Business Problem, Not a Technology Problem</h2>
+            <p class="dt-para">
+              Most failed digital transformation programmes fail for non-technical reasons: unclear ownership, resistance to
+              process change, inadequate data governance, insufficient executive sponsorship or the classic mistake of
+              digitising a broken process rather than fixing it first.
+            </p>
+            <p class="dt-para">
+              Real transformation means changing how value flows through your organisation. It means replacing the
+              20-year-old ERP that everyone works around, automating the three manual handoffs that create 80% of your
+              compliance risk, and giving your analysts access to data in hours rather than weeks.
+            </p>
+            <p class="dt-para">
+              It's not glamorous. It's painstaking, political and technically demanding. But the organisations that get it
+              right create genuine, lasting competitive advantages — faster time-to-market, lower operational costs and
+              the ability to respond to change without a six-month project.
+            </p>
+          </div>
+          <div class="dt-what-stats reveal-right stagger-2">
+            {[
+              { stat: '73%', desc: 'of digital transformations fail to achieve their stated goals — McKinsey Global Survey 2023' },
+              { stat: '3×', desc: 'more likely to succeed when technical and organisational change happen concurrently' },
+              { stat: '6–24mo', desc: 'realistic timeline for meaningful transformation of a mid-market enterprise' },
+              { stat: 'Day 1', desc: 'when change management should start — not after the technology is deployed' },
+            ].map((s, i) => (
+              <div class={`what-stat-item reveal stagger-${i + 1}`}>
+                <div class="wsi-num">{s.stat}</div>
+                <div class="wsi-desc">{s.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-dark">
+      <div class="dt-inner">
+        <div class="section-header reveal">
+          <span class="section-label">What We Deliver</span>
+          <h2 class="section-heading">Transformation Services</h2>
+          <p class="section-subheading">
+            End-to-end capability across every layer of enterprise transformation — technology, architecture, process and people.
+          </p>
+        </div>
+        <div class="dt-services-grid">
+          {[
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>`,
+              title: 'Legacy System Modernisation',
+              desc: 'Systematic decommissioning of aging technology — mainframes, on-premise ERP, custom COBOL systems, Access databases. We use strangler fig, re-platforming and selective rewrite strategies to migrate without business interruption.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+              title: 'Cloud Migration',
+              desc: 'Lift-shift-optimise migration of workloads to AWS, Azure or GCP. We assess your portfolio against the 6Rs (Rehost, Replatform, Repurchase, Refactor, Retire, Retain) and execute migrations with zero unplanned downtime targets.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>`,
+              title: 'Process Automation',
+              desc: 'Intelligent automation of manual, rule-based processes: document workflows, approval chains, data entry, reporting cycles and inter-system data movement. RPA where appropriate, custom automation where it is not.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+              title: 'Data Digitisation and Governance',
+              desc: 'Structured programmes to migrate paper-based and spreadsheet-managed data into governed, accessible systems — with data quality frameworks, lineage tracking and access controls built from the start.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>`,
+              title: 'API-First Architecture',
+              desc: 'Redesigning your integration architecture around clean APIs and an event-driven backbone. Unlocks ecosystem integrations, reduces system coupling and enables your IT team to add capability without rebuilding existing systems.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+              title: 'Microservices Decomposition',
+              desc: 'Breaking down monolithic applications into independently deployable services — increasing development velocity, enabling team autonomy and eliminating the single-point-of-failure architecture that causes your biggest outages.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+              title: 'DevOps and Platform Engineering',
+              desc: 'CI/CD pipeline implementation, infrastructure-as-code, automated testing, security scanning, observability platforms and internal developer platforms. Cuts deployment cycle from months to hours and dramatically reduces production incidents.'
+            },
+            {
+              icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+              title: 'Change Management',
+              desc: 'Stakeholder engagement, communications planning, training programme design, adoption metrics and the sustained leadership involvement needed to make new ways of working stick. Technology without change management is infrastructure that nobody uses.'
+            },
+          ].map((svc, i) => (
+            <div class={`dt-svc-card card-hover reveal stagger-${Math.min((i % 6) + 1, 6)}`}>
+              <div class="dt-svc-icon" set:html={svc.icon} />
+              <h3>{svc.title}</h3>
+              <p>{svc.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         INDUSTRIES
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-surface">
+      <div class="dt-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Sectors</span>
+          <h2 class="section-heading">Industries We Transform</h2>
+          <p class="section-subheading">Deep domain understanding is what separates transformation that fits from transformation that fights your business model.</p>
+        </div>
+        <div class="industries-grid">
+          {[
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`, name: 'Financial Services' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`, name: 'Healthcare' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`, name: 'Logistics and Supply Chain' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`, name: 'Retail and E-Commerce' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`, name: 'Government' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`, name: 'Education' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`, name: 'Professional Services' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>`, name: 'Real Estate' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`, name: 'Insurance' },
+            { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>`, name: 'Manufacturing' },
+          ].map((ind, i) => (
+            <div class={`industry-card reveal stagger-${Math.min((i % 6) + 1, 6)}`}>
+              <div class="ind-icon" set:html={ind.icon} />
+              <div class="ind-name">{ind.name}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         MATURITY ASSESSMENT (Interactive JS Quiz)
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-dark" id="assessment">
+      <div class="dt-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Self-Assessment</span>
+          <h2 class="section-heading">Where Does Your Organisation Stand?</h2>
+          <p class="section-subheading">
+            Five questions. Two minutes. An honest read on your digital maturity and a clear next step.
+          </p>
+        </div>
+
+        <div class="assessment-container reveal stagger-1" id="assessment-quiz">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 0%"></div></div>
+            <span class="quiz-progress-label" id="quiz-progress-label">Question 1 of 5</span>
+          </div>
+
+          <div class="quiz-questions" id="quiz-questions">
+
+            <div class="quiz-question active" data-q="0">
+              <h3 class="quiz-q-text">How old is your primary business software (ERP, CRM, core platform)?</h3>
+              <div class="quiz-options">
+                <button class="quiz-option" data-value="1">More than 10 years old — significant customisations, hard to change</button>
+                <button class="quiz-option" data-value="2">5–10 years old — mostly functional but showing its age</button>
+                <button class="quiz-option" data-value="3">Less than 5 years old — modern platform, actively maintained</button>
+              </div>
+            </div>
+
+            <div class="quiz-question" data-q="1">
+              <h3 class="quiz-q-text">How much of your infrastructure runs in the cloud?</h3>
+              <div class="quiz-options">
+                <button class="quiz-option" data-value="1">Mostly on-premise — cloud is minimal or exploratory</button>
+                <button class="quiz-option" data-value="2">Hybrid — some workloads in cloud, others still on-premise</button>
+                <button class="quiz-option" data-value="3">Cloud-first — most new workloads are cloud-native</button>
+              </div>
+            </div>
+
+            <div class="quiz-question" data-q="2">
+              <h3 class="quiz-q-text">How much of your manual, repetitive work has been automated?</h3>
+              <div class="quiz-options">
+                <button class="quiz-option" data-value="1">Very little — most reporting, data entry and handoffs are manual</button>
+                <button class="quiz-option" data-value="2">Some — we have automated individual tasks but not end-to-end processes</button>
+                <button class="quiz-option" data-value="3">Significant — core workflows are automated with exception-handling only</button>
+              </div>
+            </div>
+
+            <div class="quiz-question" data-q="3">
+              <h3 class="quiz-q-text">How does your organisation use data to make decisions?</h3>
+              <div class="quiz-options">
+                <button class="quiz-option" data-value="1">Reports take days — decisions rely on experience and gut feel</button>
+                <button class="quiz-option" data-value="2">We have dashboards but they are often stale or incomplete</button>
+                <button class="quiz-option" data-value="3">Near-real-time data — decision-makers have trusted, accessible insights</button>
+              </div>
+            </div>
+
+            <div class="quiz-question" data-q="4">
+              <h3 class="quiz-q-text">How does your development team ship software updates?</h3>
+              <div class="quiz-options">
+                <button class="quiz-option" data-value="1">Releases are infrequent, manual and stressful — multiple weeks between deployments</button>
+                <button class="quiz-option" data-value="2">Monthly or fortnightly releases — some automation but still significant manual steps</button>
+                <button class="quiz-option" data-value="3">Continuous delivery — multiple safe deployments per week with automated pipelines</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="quiz-result" id="quiz-result" hidden>
+            <div class="result-score-area">
+              <div class="result-badge" id="result-badge">Beginner</div>
+              <div class="result-score" id="result-score">5</div>
+            </div>
+            <div class="result-content" id="result-content"></div>
+            <button class="btn-outline quiz-restart" id="quiz-restart">Retake Assessment</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ROI STATS
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-surface">
+      <div class="dt-inner">
+        <div class="section-header reveal">
+          <span class="section-label">The Business Case</span>
+          <h2 class="section-heading">What Successful Digital Transformation Returns</h2>
+        </div>
+        <div class="roi-grid">
+          <div class="roi-card reveal stagger-1">
+            <div class="roi-num gradient-text-green">40%</div>
+            <div class="roi-title">Reduction in Operational Cost</div>
+            <div class="roi-desc">
+              Enterprises that complete cloud migration and process automation programmes achieve an average 40%
+              reduction in operational IT spend — primarily from decommissioning legacy hardware and reducing manual processing through natural attrition.
+            </div>
+          </div>
+          <div class="roi-card reveal stagger-2">
+            <div class="roi-num gradient-text-green">5x</div>
+            <div class="roi-title">Faster Time to Market</div>
+            <div class="roi-desc">
+              Organisations that move from quarterly release cycles to continuous delivery see an average 5x improvement
+              in the speed at which new features reach customers — compounding into meaningful competitive advantage within 12 months.
+            </div>
+          </div>
+          <div class="roi-card reveal stagger-3">
+            <div class="roi-num gradient-text-green">62%</div>
+            <div class="roi-title">Improvement in Employee Productivity</div>
+            <div class="roi-desc">
+              Knowledge workers in organisations that have modernised their data and tooling stack report a 62% reduction
+              in time spent on manual data gathering and reconciliation — time redirected to analysis, strategy and customer-facing work.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CASE STUDY PLACEHOLDER
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-dark">
+      <div class="dt-inner">
+        <div class="casestudy-block reveal">
+          <!-- CASE_STUDY_PLACEHOLDER — Replace with real client case study when signed off -->
+          <div class="cs-badge">Case Study</div>
+          <h3>Financial Services Group: Legacy Decommission and Cloud Migration</h3>
+          <p>
+            We are finalising a detailed case study on a 14-month engagement with a Queensland-based financial services
+            group — decommissioning a 15-year-old on-premise platform, migrating 40TB of data to AWS and rebuilding
+            the core customer portal as a cloud-native microservices architecture. Final metrics pending client approval.
+          </p>
+          <p style="font-size: 0.85rem; color: #2a3d35; font-style: italic;">
+            <!-- PLACEHOLDER: Insert real cost saving, performance improvement and team velocity metrics -->
+          </p>
+          <div class="cs-stats">
+            <div class="cs-stat"><span class="cs-num">TODO</span><span class="cs-label">Infrastructure cost saving</span></div>
+            <div class="cs-stat"><span class="cs-num">TODO</span><span class="cs-label">Deployment frequency increase</span></div>
+            <div class="cs-stat"><span class="cs-num">TODO</span><span class="cs-label">Legacy systems decommissioned</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════ -->
+    <section class="dt-section bg-surface">
+      <div class="dt-inner">
+        <div class="section-header reveal">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-heading">Digital Transformation — Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          {[
+            {
+              q: 'How long does a digital transformation engagement take?',
+              a: 'There is no honest single answer. A focused cloud migration of a single application can take 3 to 6 months. An enterprise-wide programme covering legacy decommissioning, cloud migration, process automation and cultural change realistically takes 18 to 36 months. We work in clearly defined phases with measurable outcomes at each stage, so you are never funding work without knowing what done looks like for the next milestone.'
+            },
+            {
+              q: 'Where do you start — with technology or with process?',
+              a: 'Process first, always. Automating or migrating a broken process makes it faster and cheaper to be wrong. Before touching any technology, we conduct process discovery workshops to map current state, identify waste and redesign the process for how it should work — then we build the technology that supports the redesigned process. This is the discipline that separates transformations that deliver ROI from those that do not.'
+            },
+            {
+              q: 'Can you modernise our legacy systems without shutting them down?',
+              a: 'Yes. The strangler fig pattern — gradually replacing legacy components by building a modern system alongside the old one and cutting over functionality piece by piece — allows modernisation without a big bang cutover. This approach reduces risk significantly and allows the business to continue operating normally throughout the transformation. We have used this pattern on mainframes, AS/400 systems and legacy .NET monoliths.'
+            },
+            {
+              q: 'How do you handle the people and culture side of transformation?',
+              a: 'Technology adoption fails when people are treated as an afterthought. Our transformation engagements include structured change management: stakeholder mapping and engagement plans, communication strategies, training programme design, super-user identification, adoption KPIs and ongoing feedback loops. We also work closely with your leadership team because without visible executive sponsorship, transformation programmes stall at middle management resistance.'
+            },
+            {
+              q: 'What is your approach to data migration?',
+              a: 'Data migration is the highest-risk phase of most transformation programmes. Our approach: data profiling and quality assessment before migration begins; migration of a representative data sample to staging first; automated reconciliation to verify data integrity; a parallel-running period where old and new systems operate simultaneously; and a clearly defined cutover plan with rollback capability. We have migrated hundreds of millions of records without data loss.'
+            },
+            {
+              q: 'How do you quantify ROI on a digital transformation programme?',
+              a: 'We establish baseline metrics at the start of every engagement: current infrastructure cost, manual FTE hours by process, deployment frequency, mean time to recovery, customer satisfaction scores and any other relevant KPIs. These become the benchmark against which transformation outcomes are measured. We do not proceed to each phase without agreeing what success looks like in measurable terms — not aspirational ones.'
+            },
+            {
+              q: 'Can you work alongside our existing IT team?',
+              a: 'Yes — and this is our preferred mode. Transformation that bypasses your internal IT team creates a dependency on external consultants rather than building organisational capability. We work as an integrated team with your engineers and architects, transferring knowledge throughout the engagement so that your team can operate and extend the new systems independently when we finish.'
+            },
+            {
+              q: 'What cloud provider do you recommend?',
+              a: 'We are genuinely vendor-neutral at the hyperscaler level — we have deep experience with AWS, Azure and GCP and will recommend based on your existing skills, data residency requirements, industry-specific services needed and commercial terms. For most Australian enterprises without an existing cloud commitment, AWS Sydney remains the default recommendation based on service breadth, ecosystem and regional support — but this is not a religious position.'
+            },
+          ].map((faq, i) => (
+            <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>
+              <button class="faq-q" data-faq={`dt-${i}`} aria-expanded="false">
+                <span>{faq.q}</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" id={`faq-dt-${i}`} hidden>
+                <p>{faq.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .dt-hero {
+    padding: 9rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dt-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+
+  .dt-glow-1 {
+    position: absolute;
+    top: -10%;
+    right: 5%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.1) 0%, transparent 65%);
+  }
+
+  .dt-glow-2 {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(13,147,115,0.05) 0%, transparent 70%);
+  }
+
+  .dt-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(13,147,115,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,147,115,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .dt-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #4a6359; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #4a6359; text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #0d9373; }
+
+  .dt-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .dt-hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .dt-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .hero-trust-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .trust-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .trust-num { font-family: 'Sora', sans-serif; font-size: 1.75rem; font-weight: 800; color: #0d9373; line-height: 1; }
+  .trust-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; }
+  .trust-divider { width: 1px; height: 40px; background: #1e2d28; }
+
+  /* Hero visual */
+  .dt-hero-visual { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+  .dt-vis-legacy, .dt-vis-modern { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .legacy-box, .modern-box {
+    padding: 0.5rem 0.875rem;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .legacy-box { background: rgba(255,255,255,0.03); border: 1px solid #1e2d28; color: #4a6359; }
+  .modern-box { background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.3); color: #0d9373; }
+  .dt-vis-arrow { flex-shrink: 0; }
+
+  /* Sections */
+  .dt-section { padding: 7rem 0; }
+  .bg-dark { background: #0a0f0e; }
+  .bg-surface { background: #0f1614; }
+  .dt-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { max-width: 700px; margin-bottom: 3.5rem; }
+
+  /* What is DT */
+  .dt-what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .dt-para { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 1.25rem; }
+
+  .dt-what-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 5rem; }
+
+  .what-stat-item { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.375rem; }
+  .wsi-num { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: #0d9373; line-height: 1; }
+  .wsi-desc { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; line-height: 1.5; }
+
+  /* Services */
+  .dt-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+  .dt-svc-card { background: #0f1614; border: 1px solid #1e2d28; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.875rem; }
+  .dt-svc-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.15); display: flex; align-items: center; justify-content: center; color: #0d9373; flex-shrink: 0; }
+  .dt-svc-card h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; margin: 0; }
+  .dt-svc-card p { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.65; margin: 0; }
+
+  /* Industries */
+  .industries-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+
+  .industry-card { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 14px; padding: 1.5rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; text-align: center; transition: border-color 0.3s ease, background 0.3s ease; }
+  .industry-card:hover { border-color: rgba(13,147,115,0.3); background: rgba(13,147,115,0.03); }
+  .ind-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #0d9373; }
+  .ind-name { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600; color: #8aa09a; }
+
+  /* Assessment */
+  .assessment-container { background: #0f1614; border: 1px solid #1e2d28; border-radius: 24px; padding: 2.5rem; max-width: 780px; }
+
+  .quiz-progress { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .quiz-progress-bar { flex: 1; height: 4px; background: #1e2d28; border-radius: 4px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: #0d9373; border-radius: 4px; transition: width 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .quiz-progress-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; white-space: nowrap; }
+
+  .quiz-question { display: none; flex-direction: column; gap: 1.5rem; }
+  .quiz-question.active { display: flex; }
+  .quiz-q-text { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 600; color: white; line-height: 1.4; margin: 0; }
+  .quiz-options { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .quiz-option {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+
+  .quiz-option:hover { border-color: rgba(13,147,115,0.5); color: white; background: rgba(13,147,115,0.04); }
+  .quiz-option.selected { border-color: #0d9373; color: white; background: rgba(13,147,115,0.08); }
+
+  .quiz-result { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .result-score-area { display: flex; align-items: center; gap: 1.5rem; }
+  .result-badge { font-family: 'Sora', sans-serif; font-size: 0.875rem; font-weight: 700; color: white; background: #0d9373; padding: 0.375rem 1rem; border-radius: 50px; }
+  .result-score { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; color: #0d9373; line-height: 1; letter-spacing: -0.04em; }
+  .result-content h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 0 0 0.75rem; }
+  .result-content p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.7; margin: 0 0 1rem; }
+  .result-content ul { margin: 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.375rem; }
+  .result-content li { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #8aa09a; line-height: 1.5; }
+  .quiz-restart { align-self: flex-start; padding: 0.75rem 1.5rem; font-size: 0.875rem; }
+
+  /* ROI */
+  .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .roi-card { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 20px; padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 0.875rem; }
+  .roi-num { font-family: 'Sora', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+  .roi-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; }
+  .roi-desc { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; line-height: 1.7; }
+
+  /* Case study */
+  .casestudy-block { background: linear-gradient(135deg, rgba(13,147,115,0.06) 0%, #0f1614 60%); border: 1px dashed rgba(13,147,115,0.3); border-radius: 24px; padding: 3rem; max-width: 800px; display: flex; flex-direction: column; gap: 1.25rem; }
+  .cs-badge { display: inline-flex; align-self: flex-start; background: rgba(13,147,115,0.1); border: 1px solid rgba(13,147,115,0.25); color: #0d9373; font-family: 'DM Sans', sans-serif; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 50px; }
+  .casestudy-block h3 { font-family: 'Sora', sans-serif; font-size: 1.375rem; font-weight: 700; color: white; margin: 0; }
+  .casestudy-block p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.7; margin: 0; }
+  .cs-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.25rem; border-top: 1px solid rgba(13,147,115,0.15); }
+  .cs-stat { display: flex; flex-direction: column; gap: 0.25rem; }
+  .cs-num { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: #0d9373; }
+  .cs-label { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; max-width: 900px; }
+  .faq-item { border-bottom: 1px solid #1e2d28; }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.375rem 0; background: none; border: none; cursor: pointer; text-align: left; font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 600; color: white; transition: color 0.2s ease; }
+  .faq-q:hover { color: #0d9373; }
+  .faq-q[aria-expanded="true"] { color: #0d9373; }
+  .faq-chevron { flex-shrink: 0; transition: transform 0.3s ease; color: #4a6359; }
+  .faq-q[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); color: #0d9373; }
+  .faq-a { padding-bottom: 1.375rem; }
+  .faq-a p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .dt-hero-inner { grid-template-columns: 1fr; }
+    .dt-hero-visual { display: none; }
+    .dt-what-grid { grid-template-columns: 1fr; }
+    .dt-what-stats { margin-top: 0; }
+    .dt-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .industries-grid { grid-template-columns: repeat(3, 1fr); }
+    .roi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .dt-services-grid, .roi-grid { grid-template-columns: 1fr; }
+    .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .dt-what-stats { grid-template-columns: 1fr; }
+    .hero-trust-row { gap: 1.25rem; }
+    .trust-divider { display: none; }
+  }
+</style>
+
+<script>
+  // ─── FAQ accordion ─────────────────────────────
+  document.querySelectorAll<HTMLButtonElement>('.faq-q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const idx = btn.dataset.faq;
+      const panel = document.getElementById(`faq-${idx}`);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (panel) panel.hidden = isOpen;
+    });
+  });
+
+  // ─── Maturity Assessment Quiz ──────────────────
+  const scores: number[] = [];
+  let currentQ = 0;
+  const totalQ = 5;
+
+  const questions = document.querySelectorAll<HTMLElement>('.quiz-question');
+  const progressFill = document.getElementById('quiz-progress-fill') as HTMLElement;
+  const progressLabel = document.getElementById('quiz-progress-label') as HTMLElement;
+  const quizResult = document.getElementById('quiz-result') as HTMLElement;
+  const resultBadge = document.getElementById('result-badge') as HTMLElement;
+  const resultScore = document.getElementById('result-score') as HTMLElement;
+  const resultContent = document.getElementById('result-content') as HTMLElement;
+  const restartBtn = document.getElementById('quiz-restart') as HTMLButtonElement;
+  const questionsContainer = document.getElementById('quiz-questions') as HTMLElement;
+
+  const results = {
+    beginner: {
+      label: 'Beginner',
+      title: 'Early-Stage: Significant Transformation Opportunity',
+      desc: 'Your organisation is in the early stages of digital maturity. The gap between your current systems and what is possible is large — which means the ROI from a structured transformation programme is also large. The risk: doing too much at once and creating disruption without momentum.',
+      steps: [
+        'Conduct an IT portfolio audit to understand what you own and what it costs',
+        'Identify one or two high-pain, high-volume manual processes for quick-win automation',
+        'Begin cloud readiness assessment for non-critical workloads',
+        'Establish a data governance baseline covering naming, ownership and quality',
+        'Book a discovery engagement to build a prioritised 12-month roadmap',
+      ],
+    },
+    developing: {
+      label: 'Developing',
+      title: 'Developing: Mid-Transformation Inflection Point',
+      desc: 'You have made meaningful progress — some cloud adoption, some automation, improving tooling. But the organisation is likely operating in hybrid mode: modern tools in some areas, legacy drag in others. This creates complexity and prevents full productivity gains from becoming visible.',
+      steps: [
+        'Map remaining legacy dependencies and build a decommissioning sequencing plan',
+        'Standardise your data stack — data warehouse, BI tooling, data catalogue',
+        'Move CI/CD from some teams to standard practice across engineering',
+        'Expand process automation to end-to-end workflows rather than individual tasks',
+        'Build or engage an internal platform team — developer experience now compounds',
+      ],
+    },
+    advanced: {
+      label: 'Advanced',
+      title: 'Advanced: Optimise and Differentiate',
+      desc: 'Your digital foundations are solid. Cloud-native, automated, data-driven and deploying continuously — you are in the top quartile of Australian enterprise digital maturity. The focus now shifts from foundational transformation to competitive differentiation through AI, personalisation and next-generation customer experience.',
+      steps: [
+        'Invest in AI/ML capabilities layered onto your clean data foundation',
+        'Platform engineering: build the internal developer platform that compounds productivity',
+        'Explore real-time data architecture for customer-facing personalisation',
+        'Extend automation into supplier and customer-facing workflows',
+        'Conduct a security posture review — maturity in other dimensions often reveals security gaps',
+      ],
+    },
+  } as const;
+
+  type ResultKey = keyof typeof results;
+
+  function updateProgress(): void {
+    const pct = (currentQ / totalQ) * 100;
+    progressFill.style.width = `${pct}%`;
+    progressLabel.textContent = currentQ < totalQ
+      ? `Question ${currentQ + 1} of ${totalQ}`
+      : 'Complete';
+  }
+
+  function showQuestion(idx: number): void {
+    questions.forEach((q) => q.classList.remove('active'));
+    if (questions[idx]) questions[idx].classList.add('active');
+    updateProgress();
+  }
+
+  function showResult(): void {
+    const total = scores.reduce((a, b) => a + b, 0);
+    let key: ResultKey;
+    if (total <= 8) key = 'beginner';
+    else if (total <= 12) key = 'developing';
+    else key = 'advanced';
+
+    const r = results[key];
+    resultBadge.textContent = r.label;
+    resultScore.textContent = `${total}/15`;
+    resultContent.innerHTML = `
+      <h3>${r.title}</h3>
+      <p>${r.desc}</p>
+      <p><strong style="color:#8aa09a;font-family:'Sora',sans-serif;font-size:0.875rem;">Recommended next steps:</strong></p>
+      <ul>${r.steps.map((s) => `<li>${s}</li>`).join('')}</ul>
+      <a href="/contact" class="btn-primary" style="display:inline-flex;margin-top:1.5rem;">
+        Book a Transformation Consultation
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    `;
+    questionsContainer.hidden = true;
+    progressFill.style.width = '100%';
+    progressLabel.textContent = 'Complete';
+    quizResult.hidden = false;
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.quiz-option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const qEl = btn.closest<HTMLElement>('.quiz-question');
+      const val = parseInt(btn.dataset.value ?? '1', 10);
+      qEl?.querySelectorAll('.quiz-option').forEach((b) => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      setTimeout(() => {
+        scores[currentQ] = val;
+        currentQ++;
+        if (currentQ < totalQ) {
+          showQuestion(currentQ);
+        } else {
+          showResult();
+        }
+      }, 280);
+    });
+  });
+
+  restartBtn.addEventListener('click', () => {
+    scores.length = 0;
+    currentQ = 0;
+    questionsContainer.hidden = false;
+    quizResult.hidden = true;
+    document.querySelectorAll('.quiz-option').forEach((b) => b.classList.remove('selected'));
+    showQuestion(0);
+  });
+
+  showQuestion(0);
+</script>

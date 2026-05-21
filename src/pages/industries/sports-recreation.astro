@@ -1,0 +1,110 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Sports & Recreation Software Development | All Webbed Labs',
+  metaDescription: 'Member management platforms, performance analytics apps, fan engagement technology and facility booking systems for Australian sporting organisations, fitness venues and recreation providers.',
+
+  industryName: 'Sports & Recreation',
+  heroHeadline: 'Sports Technology That Connects Athletes, Clubs and Fans',
+  heroTagline: 'Member management, performance analytics and fan engagement platforms for sporting organisations, fitness venues and recreation providers.',
+
+  stats: [
+    { value: '500K+', label: 'members managed' },
+    { value: '60%', label: 'increase in renewals' },
+    { value: 'Real-time', label: 'performance data' },
+    { value: 'Mobile-first', label: 'athlete experience' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>`,
+      title: 'Paper-Based Membership Management',
+      description: "Spreadsheets, paper registration forms and manual renewal reminders are still common across community sport clubs and fitness venues in Australia. Registration season creates administrative chaos, membership data is inconsistently captured and renewal rates suffer when there's no automated follow-up system.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
+      title: 'Fragmented Player Data',
+      description: "Athlete performance data, medical records, training loads, injury history and squad selection information are scattered across coach notebooks, separate apps and spreadsheets with no single source of truth. High-performance programs can't make evidence-based decisions without consolidated, longitudinal athlete data.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      title: 'Low Digital Fan Engagement',
+      description: "Sports organisations investing heavily in elite performance see minimal return on that investment in fan engagement, merchandise revenue and broadcast value. Without a digital touchpoint — a club app, live scoring, social content integration — fans consume their sport through third-party platforms rather than the club's own channels.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      title: 'Facility Booking Friction',
+      description: "Council leisure centres, club facilities and commercial gyms relying on phone bookings or basic online forms create unnecessary friction for members. Double-bookings, peak-time overloads and no-shows cost revenue and damage member satisfaction. Modern members expect instant, real-time booking from their phone.",
+    },
+  ],
+
+  solutions: [
+    'Member registration and management platforms',
+    'Performance analytics and athlete tracking apps',
+    'Facility and court booking systems',
+    'Fan engagement and club apps',
+    'Online coaching and training plan platforms',
+    'Live scoring and results publication',
+    'Merchandise and event ticketing integrations',
+    'Coaching and squad management apps',
+  ],
+
+  useCases: [
+    {
+      title: 'State Sporting Association Member Registration and Management Platform',
+      description: "A full-stack membership platform for a state sporting association managing 40,000+ registered participants across clubs, schools and development programs. Handles online registration with graded fee structures, working with children check verification, insurance collection, club affiliation, and sends automated renewal campaigns. National body data sync via Sport Australia's registration APIs where applicable. Administration time during registration season reduced by over 60%.",
+      techStack: 'Next.js · PostgreSQL · Stripe · SendGrid · REST API sync',
+      videoNote: 'member registration flow, club admin dashboard and renewal automation campaign results',
+    },
+    {
+      title: 'Athlete Performance Analytics Platform',
+      description: "A high-performance athlete data platform used by professional and semi-professional sports programs. Coaches log session data, GPS metrics (integrated via wearable APIs), subjective wellness scores and video assessment notes per athlete per session. The platform surfaces training load trends, flags at-risk athletes based on configurable thresholds and generates squad selection reports. Built with strict data access controls — medical staff, coaches and athletes each see appropriate data subsets.",
+      techStack: 'React · Python · FastAPI · TimescaleDB · Garmin/Catapult API',
+      videoNote: 'athlete dashboard showing training load trends, wellness monitoring and session comparison',
+    },
+    {
+      title: 'Multi-Sport Facility Booking and Member Portal',
+      description: "A real-time booking system for a multi-sport complex managing courts, lanes, pitches and group class schedules. Members book and pay via the app, receive automated reminders and can manage their own bookings. Administrators see live facility utilisation, manage peak-period pricing and push communications to all members or specific cohorts. Integrates with turnstile access control systems to automate entry on confirmed bookings.",
+      techStack: 'React Native · Node.js · Stripe · WebSockets · Access control API',
+      videoNote: 'facility booking app showing court selection, real-time availability and access control integration',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'UI/UX Design', href: '/services/ui-ux-design' },
+  ],
+
+  faqs: [
+    {
+      question: 'Can you integrate with national sporting body registration systems like PlayHQ or Dribl?',
+      answer: "Yes where APIs exist. PlayHQ (Cricket Australia, Football Australia) has published APIs that allow us to sync registration data, results and ladder standings with custom club or association platforms. Other national body systems vary in API maturity — we assess this in discovery and design integration architecture accordingly, including middleware approaches where direct API access is limited.",
+    },
+    {
+      question: 'We\'re a community club with limited budget — is custom software realistic for us?',
+      answer: "Possibly, depending on what you need. For a community club with 500 members, a purpose-built platform is likely overkill — we'd recommend off-the-shelf tools like TeamApp, SportsTG or ClubRunner. But if you're a state body, a large fitness group, a professional club or an organisation with specific workflows that packaged software can't address, custom development often delivers strong ROI within 18 months. We're happy to give you an honest assessment before you commit to anything.",
+    },
+    {
+      question: 'How do you handle athlete data privacy, particularly for junior members?',
+      answer: "Junior athlete data is handled with heightened care. We build consent collection for parents and guardians into registration workflows, restrict data visibility to authorised staff only, and ensure systems are designed to comply with the Australian Privacy Act 1988 and state-specific working with children legislation. Medical and performance data is kept separate from general member data with additional access controls.",
+    },
+    {
+      question: 'Can performance analytics platforms integrate with wearables and GPS trackers we already use?',
+      answer: "Yes. We have experience integrating with Catapult, Garmin, Polar and Whoop APIs for wearable data, as well as video platforms like Hudl and Sportscode for tagging and analysis data. Where a wearable device doesn't have a formal API, we can work with data exports and build automated ingestion pipelines. The goal is to bring your existing data sources into a single platform rather than asking athletes and coaches to change what they already use.",
+    },
+    {
+      question: 'How do fan engagement apps generate revenue for the club?',
+      answer: "Several ways. In-app merchandise sales with Shopify integration. Digital membership and ticketing with Stripe. Sponsored content placements. Premium membership tiers with exclusive content access. Push notification campaigns for events and merchandise drops. The more engaged your fans are in your owned channels, the more revenue you capture directly rather than through third-party platforms taking a margin.",
+    },
+  ],
+
+  ctaHeadline: 'Build Technology That Brings Your Sport to Life',
+  ctaDescription: "From grassroots membership management to elite performance analytics, we build sports technology that understands the game — the community relationships, the data demands and the mobile-first expectations of modern athletes and fans. Let's talk about what you're trying to achieve.",
+};
+---
+<IndustryPageLayout {...data} />

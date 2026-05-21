@@ -1,0 +1,334 @@
+---
+const capabilities = [
+  {
+    title: 'Custom GPT & AI Assistants',
+    description: 'Build proprietary AI assistants trained on your data, connected to your systems and embedded directly into your workflows. Not generic — your AI, your rules.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
+  },
+  {
+    title: 'RAG & Knowledge Base Systems',
+    description: 'Retrieval-Augmented Generation systems that connect LLMs to your documents, databases and internal knowledge bases — accurate, auditable and enterprise-ready.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>`,
+  },
+  {
+    title: 'Intelligent Process Automation',
+    description: 'Replace manual, repetitive workflows with AI-driven automation. Document processing, data extraction, approval routing and exception handling — all automated.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`,
+  },
+  {
+    title: 'Predictive Analytics & ML',
+    description: 'Custom machine learning models for demand forecasting, churn prediction, fraud detection and business intelligence. Trained on your data, deployed in your environment.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+  },
+  {
+    title: 'LLM Integration & Fine-Tuning',
+    description: 'Integrate GPT-4, Claude, Llama and Mistral into your products. Fine-tune open-source models on proprietary datasets for domain-specific performance that generic APIs can\'t match.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2z"/></svg>`,
+  },
+  {
+    title: 'AI Safety & Governance',
+    description: 'Responsible AI deployment with bias testing, output monitoring, audit trails and human-in-the-loop controls. Enterprise AI that meets regulatory expectations and internal governance.',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+];
+---
+
+<section class="ai-section" id="ai">
+  <div class="ai-inner">
+    <div class="ai-layout">
+      <!-- Left column - content -->
+      <div class="ai-content">
+        <div class="reveal">
+          <span class="section-label">AI & Automation</span>
+          <h2 class="section-heading">
+            The AI Advantage
+            <br /><span class="gradient-text-green">Your Competitors Don't Have Yet</span>
+          </h2>
+          <p class="section-subheading" style="margin-bottom: 2rem;">
+            AI is no longer optional. We help enterprise organisations move from AI curiosity to AI implementation — with production-grade tools that deliver real operational value.
+          </p>
+        </div>
+
+        <div class="ai-stats reveal stagger-2">
+          <div class="ai-stat">
+            <div class="ai-stat-num">60%</div>
+            <div class="ai-stat-label">Average reduction in manual processing time</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">3x</div>
+            <div class="ai-stat-label">Faster insights from enterprise data</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">$2M+</div>
+            <div class="ai-stat-label">In operational savings delivered for clients</div>
+          </div>
+        </div>
+
+        <div class="ai-ctas reveal stagger-3">
+          <a href="/contact" class="btn-primary">
+            Explore AI Solutions
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/services" class="btn-outline">
+            View AI Services
+          </a>
+        </div>
+      </div>
+
+      <!-- Right column - capabilities grid -->
+      <div class="ai-capabilities">
+        {capabilities.map((cap, i) => (
+          <div class={`ai-cap reveal-right stagger-${Math.min(i + 1, 6)}`}>
+            <div class="ai-cap-icon" set:html={cap.icon} />
+            <div class="ai-cap-content">
+              <h4 class="ai-cap-title">{cap.title}</h4>
+              <p class="ai-cap-desc">{cap.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom banner -->
+    <div class="ai-banner reveal stagger-6">
+      <div class="ai-banner-glow" aria-hidden="true"></div>
+      <div class="ai-banner-content">
+        <div class="ai-banner-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2z"/><path d="M12 22V12M3 6.9l9 5.1 9-5.1"/></svg>
+        </div>
+        <div>
+          <h3>Free AI Opportunity Assessment</h3>
+          <p>Book a 45-minute session with our AI team. We'll identify your top three automation opportunities and estimate the ROI.</p>
+        </div>
+        <a href="/contact" class="btn-primary ai-banner-cta">Book Free Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ai-section {
+    padding: 8rem 0;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 0% 50%, rgba(13,147,115,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 100% 20%, rgba(0,232,122,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .ai-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 4rem;
+  }
+
+  /* AI stats */
+  .ai-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    padding: 1.75rem;
+    background: rgba(13,147,115,0.05);
+    border: 1px solid rgba(13,147,115,0.15);
+    border-radius: 16px;
+  }
+
+  .ai-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ai-stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0d9373;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+    min-width: 80px;
+  }
+
+  .ai-stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #8aa09a;
+    line-height: 1.4;
+  }
+
+  .ai-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Capabilities */
+  .ai-capabilities {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ai-cap {
+    display: flex;
+    gap: 1.125rem;
+    padding: 1.375rem 0;
+    border-bottom: 1px solid #1e2d28;
+    align-items: flex-start;
+    transition: background 0.2s ease;
+  }
+
+  .ai-cap:last-child {
+    border-bottom: none;
+  }
+
+  .ai-cap:hover {
+    background: rgba(13,147,115,0.02);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ai-cap-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ai-cap-content {
+    flex: 1;
+  }
+
+  .ai-cap-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.375rem;
+    line-height: 1.2;
+  }
+
+  .ai-cap-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Bottom banner */
+  .ai-banner {
+    background: linear-gradient(135deg, rgba(13,147,115,0.12) 0%, rgba(13,147,115,0.06) 100%);
+    border: 1px solid rgba(13,147,115,0.25);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-banner-glow {
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(13,147,115,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ai-banner-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .ai-banner-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ai-banner-content > div:nth-child(2) {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .ai-banner-content h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem;
+  }
+
+  .ai-banner-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .ai-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ai-section {
+      padding: 5rem 0;
+    }
+    .ai-banner {
+      padding: 2rem 1.5rem;
+    }
+    .ai-banner-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .ai-stats {
+      padding: 1.25rem;
+    }
+    .ai-stat-num {
+      font-size: 1.5rem;
+      min-width: 64px;
+    }
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Loan Application & Assessment Platform | All Webbed Labs",
+  metaDescription: "How we helped a Melbourne non-bank SME lender cut loan assessment time from 5 days to 4 hours, improve application completion rates from 61% to 84%, and achieve 100% ASIC documentation compliance.",
+
+  industry: "Financial Services",
+  tags: ["Lending Platform", "Credit Assessment", "AFSL Compliance", "Document Automation", "API Integration"],
+
+  title: "Loan Application & Assessment Platform",
+  summary: "A Melbourne-based non-bank lender processing 80 SME loan applications per month was losing deals to faster competitors while credit analysts spent their days chasing faxed documents and manually pulling bureau data. We replaced their paper-and-email process with an end-to-end digital lending platform that cut average assessment time from five days to four hours.",
+
+  heroImageDescription: "Loan application portal showing a multi-step applicant submission form alongside an internal credit analyst dashboard with bureau data, document status, and automated policy rule results",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "Meridian Business Finance is a non-bank lender based in Melbourne, holding an Australian Financial Services Licence (AFSL) and offering secured and unsecured business loans to Australian SMEs in the $50,000 to $2 million range. The firm processes approximately 80 applications per month, with a target approval rate of around 55% subject to credit policy, and manages an active loan book across manufacturing, retail, and services sectors.",
+  clientSize: "Non-bank lender, ~80 applications/month, AFSL holder",
+  clientLocation: "Melbourne, VIC",
+
+  pullQuote: "We were losing deals we should have won just because we couldn't move fast enough. A business owner would apply with us and with two other lenders on the same day, and we'd still be waiting for their faxed documents when a competitor rang them with an approval. The platform changed that completely.",
+  pullQuoteAuthor: "James Whitfield",
+  pullQuoteRole: "Head of Credit, Meridian Business Finance",
+
+  challenge: [
+    "Non-bank lending is a competitive market in Australia, and the product differentiation between lenders at the SME end of the market is often narrow. Meridian's rates were competitive and their credit policy was not unusually conservative — but their process was slow in ways that were entirely self-imposed. Applications arrived via a PDF form that applicants filled out by hand (or typed into) and returned by fax, email, or in a handful of cases, post. The average application arrived incomplete, requiring at least one follow-up call before a credit analyst could begin assessment.",
+    "The document collection process was entirely unstructured. Applicants were told they needed to provide financial statements, tax returns, ATO portal screenshots, and identification, but there was no system for tracking which documents had been received, which were still outstanding, and whether what had been received matched what had been requested. Documents arrived via email to a shared inbox — some as attachments, some as links to Dropbox folders, some as photos taken on a phone. Credit analysts spent significant time each morning just sorting their document inboxes and working out what state each application was in.",
+    "The bureau data pull was entirely manual. When a credit analyst was ready to assess an application, they would log into the Equifax portal, enter the applicant's details, wait for the report, download it as a PDF, and save it to the application folder. For applications involving company directors, this meant pulling a report for each director individually. On a busy day with ten active applications, a credit analyst might spend 90 minutes on nothing but bureau pulls — high-cost time on low-complexity work.",
+    "ASIC compliance documentation was inconsistent in ways that created real risk. Under the responsible lending obligations in the National Consumer Credit Protection Act (though Meridian's SME products were business loans not consumer credit, their AFSL conditions imposed analogous obligations), the firm needed to document why each credit decision was made, what information it was based on, and how it aligned with their credit policy. This documentation was created manually in a Word template after the decision, with no systematic link between the documentation and the underlying data that informed it. Different analysts documented decisions differently, and a compliance review the year before the project had flagged the inconsistency as a moderate-risk finding.",
+    "The applicant experience was generating inbound call volume that was genuinely damaging operations. Because there was no applicant-facing status system, business owners waiting on a loan decision had no way to know whether their application was at the top of someone's queue or hadn't been opened yet. The firm received an average of 35 status inquiry calls per day. These calls consumed an analyst or administrator for three to five minutes each, interrupted assessment work, and often couldn't actually be answered meaningfully because no one had a clear picture of where any given application stood."
+  ],
+
+  whyUs: [
+    "Meridian had initially approached a fintech-specialist consultancy that had pitched a full rebuild on a modern lending platform-as-a-service product. The platform-as-a-service approach was attractive in principle, but the vendor's AFSL and responsible lending documentation module was designed for consumer credit, not business lending, and customising it to Meridian's specific credit policy and compliance framework would have required significant bespoke development on top of an expensive per-application licence fee. The economics didn't work at their volume.",
+    "We were introduced through a referral from another Melbourne financial services firm we'd worked with. Our approach was to scope the problem from the compliance obligations outward — understanding what ASIC and the AFSL conditions actually required to be documented, and designing the system so that documentation was a natural output of the assessment process rather than a separate manual step. This resonated with the Head of Credit, who had been the one to receive the compliance review finding and was looking for a structural solution rather than a policy memo telling analysts to be more thorough."
+  ],
+
+  approach: [
+    "Discovery started with two days reviewing Meridian's credit policy document, their existing AFSL conditions documentation, and the prior year's compliance review findings. We also sat with three credit analysts during active assessment sessions to understand how they actually worked — which was meaningfully different from the documented process in several respects. Analysts had developed informal shortcuts and workarounds that we needed to understand before designing a system, because some of those workarounds were load-bearing and some were compliance risks.",
+    "We identified four distinct user journeys that needed to work seamlessly: the applicant submitting their application and documents, the credit analyst assessing the application and pulling bureau data, the credit decision maker reviewing the assessment package and making a formal decision, and the compliance officer running periodic reviews of decision documentation. Each journey had different data needs, different time pressures, and different failure modes if the system didn't support them properly.",
+    "The credit policy rules engine was a key architectural decision. Meridian's credit policy contained a set of automatic decline criteria — certain debt serviceability ratios, adverse bureau events within the past two years, industries the firm did not lend into — as well as a set of conditions that required additional documentation or escalated review. We modelled these as a configurable rules engine rather than hardcoded logic, so that when the credit team updated their policy (which they did twice a year) they could update the rules without a code change. The rules engine outputs a structured assessment summary that forms the basis of the compliance documentation.",
+    "DocuSign was chosen for the loan offer and facility agreement execution. The firm had been using wet-ink signatures on mailed documents, with a 2.4-day average from document dispatch to signed return. DocuSign integration meant documents could be sent and returned the same day in most cases, and the execution metadata — who signed, when, from which device and IP address — became part of the compliance record automatically."
+  ],
+
+  solution: [
+    "The applicant portal is a multi-step web application that walks loan applicants through the application form section by section, with inline validation and explanatory tooltips for fields that applicants commonly get wrong. The form structure was designed around the data fields Meridian's credit policy actually required, not around the old PDF form — which had accumulated legacy fields over the years that analysts never used. Application completion rates improved substantially from the old PDF form, partly because the digital form was easier to complete and partly because it wouldn't let applicants submit an incomplete form without flagging what was missing.",
+    "Document collection is handled through a structured document portal attached to each application. Applicants see a checklist of required documents based on their loan type and structure (sole trader requirements differ from company requirements with multiple directors), with a status indicator for each item. They can upload documents directly, and the system runs a basic OCR check to confirm that uploaded files are the right document type — an uploaded bank statement is checked for transaction data; a tax return upload is checked for ATO header content. Documents that fail the basic check are flagged immediately rather than accepted and rejected later by an analyst.",
+    "The credit analyst experience centres on a structured assessment workspace. When an analyst opens an application, they see the complete application data, a document status panel showing verified and outstanding items, and a bureau pull interface that queries the Equifax and illion APIs and structures the returned data into a standardised credit summary. The bureau pull is triggered with a single click and typically completes in under 30 seconds — compared to the five to eight minutes of manual work the previous process required per bureau.",
+    "The policy rules engine runs automatically when the analyst marks an application as ready for assessment. It checks the application data and bureau results against Meridian's current policy rules and produces a structured output: automatic declines are flagged with the specific policy rule triggered, conditions for approval are listed with documentation requirements, and marginal applications are escalated to the credit decision maker with a summary of the borderline factors. This output, along with the analyst's own notes and the supporting documents, becomes the compliance package that travels with the application through to decision.",
+    "Applicants receive automated status notifications at each stage: application received, document review in progress, assessment underway, decision pending, and outcome — with separate flows for approved, declined with reason (in ASIC-compliant language), and requests for additional information. These notifications are delivered by email and SMS. The status call volume dropped sharply within the first month of operation, before the full platform was even optimised, simply because applicants had a channel for information that hadn't existed before."
+  ],
+
+  implementation: [
+    "We delivered in six two-week sprints over twelve weeks. The first sprint focused entirely on the applicant portal and document submission flow, with no analyst-facing features. We put this in front of three Meridian staff who role-played as applicants — including a deliberately difficult scenario where the 'applicant' uploaded the wrong documents — to identify UX problems before any real applicant touched the system. The insights from that session reshaped the document upload interface significantly.",
+    "The bureau integrations required security review before we could connect to the Equifax and illion APIs in production. Both providers require a formal onboarding process and a security questionnaire review; we prepared the documentation for this in parallel with development so that by the time the integration code was tested in the sandbox environment, the production API credentials were ready to be issued. Planning this process in advance saved approximately three weeks compared to starting the provider onboarding after development was complete.",
+    "Go-live was a phased cutover over two weeks. For the first week, new applications were processed through the new platform while two legacy applications were completed through the old process. The second week ran all new applications through the platform. The existing application backlog — twelve applications in various stages of assessment — was migrated manually by analysts using a data entry interface we built specifically for the transition period, which was then decommissioned after the backlog cleared."
+  ],
+
+  lessonsLearned: [
+    "The credit policy rules engine required far more rules than we had anticipated. The initial credit policy document ran to 22 pages, but the actual policy as applied by experienced analysts contained a substantial body of undocumented institutional knowledge — adjustments made for particular industries, informal thresholds on certain ratios, escalation judgements that weren't in the written policy but were consistent across the analyst team. Capturing this required a facilitated workshop with the three senior analysts and the Head of Credit, working through historical applications to surface the unwritten rules. We'd recommend budgeting for this kind of policy elicitation explicitly in any lending technology project.",
+    "The DocuSign integration surfaced an edge case we hadn't anticipated: some of Meridian's business loan applicants were overseas directors of Australian companies who needed to sign loan documents while outside Australia. DocuSign handles this technically, but Meridian's existing facility agreement templates contained witnessing requirements that assumed the signatory was in Australia. We flagged this to the Head of Credit early and they engaged their solicitors to prepare a separate overseas-execution template. The lesson is that document execution technology reveals legal assumptions in document templates that haven't been tested in a digital context.",
+    "Notification fatigue was a real risk with the applicant status update system. Our initial design sent a status update at every workflow stage transition — which for a straightforward application meant six separate notifications over two days. Feedback from the first week of live operation was that applicants appreciated the updates but found six emails in two days excessive. We consolidated the mid-process notifications into a single 'application is being assessed' message with a tracking link, reserving individual notifications for the request for information and final decision stages. Complaints about notification volume dropped to zero after the change."
+  ],
+
+  whatCameNext: [
+    "Six months post-launch, Meridian approached us to build an introducer portal — a separate interface for mortgage brokers and financial advisers who refer clients to Meridian. Introducers wanted the ability to submit applications on behalf of clients, track the status of their submitted deals, and receive commission confirmation notifications. We built this as a separate authentication domain sitting on top of the same application data model, with an introducer-specific view that showed only their submitted applications and excluded internal credit notes.",
+    "The firm is also evaluating the use of open banking data — via the Consumer Data Right — as an additional data source for cash flow analysis, particularly for applicants whose accounting software data doesn't present a complete picture of business cash flow. We've provided a technical scoping document on CDR accreditation requirements and the additional infrastructure this would require. The CDR accreditation process for a non-bank lender is non-trivial, but the credit quality benefit from real-time bank transaction analysis is significant enough that the board is seriously considering it."
+  ],
+
+  resultsNarrative: "The metrics below are drawn from Meridian's internal application tracking data, measured over the six months following full platform launch. Assessment time is the median time from application submission to formal credit decision, excluding applications that required additional information from the applicant (which are tracked separately). The analyst capacity figure is based on comparing applications processed per analyst per month before and after launch.",
+
+  metrics: [
+    { value: "4hrs", label: "Average assessment time", context: "Down from 5-day average under the previous process" },
+    { value: "84%", label: "Application completion rate", context: "Up from 61% — fewer incomplete applications abandoning the process" },
+    { value: "+40%", label: "Analyst capacity increase", context: "More applications processed without additional headcount" },
+    { value: "100%", label: "ASIC documentation compliance", context: "Structured outputs replaced inconsistent manual documentation" },
+    { value: "−73%", label: "Applicant status call volume", context: "Automated notifications replaced manual inquiry calls" },
+    { value: "$4.2M", label: "Additional loans in first quarter", context: "From capacity gain — applications that previously missed the assessment window" }
+  ],
+
+  techStack: [
+    { name: "React", reason: "Multi-step applicant portal and internal analyst dashboard with complex form state management" },
+    { name: "FastAPI (Python)", reason: "Backend API serving both portals, with business logic for policy rules engine and workflow management" },
+    { name: "PostgreSQL", reason: "Application data, document records, and full audit trail of assessment actions" },
+    { name: "Equifax API", reason: "Commercial credit bureau data pull for company and director credit history" },
+    { name: "illion API", reason: "Secondary bureau integration for cross-verification of adverse events" },
+    { name: "DocuSign", reason: "Digital execution of loan facility agreements with compliance-grade audit trail" },
+    { name: "AWS Textract", reason: "Document type verification and OCR for financial statements and tax returns" },
+    { name: "AWS (RDS, S3, Lambda)", reason: "Managed infrastructure, secure document storage, and async processing jobs" },
+    { name: "Credit Policy Rules Engine", reason: "Configurable rules model that maps credit policy to structured assessment outputs without code changes" },
+    { name: "Twilio (SMS)", reason: "Applicant status notifications alongside email delivery for time-sensitive updates" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Financial Reporting & Analytics Dashboard",
+      href: "/case-studies/financial-reporting-analytics-dashboard",
+      industry: "Financial Services",
+      summary: "Automated multi-platform financial reporting for a Sydney accounting firm, connecting Xero, MYOB, and QuickBooks to save 14 hours per accountant per month."
+    },
+    {
+      title: "Expense Management & Approval Workflow",
+      href: "/case-studies/expense-management-approval-workflow",
+      industry: "Financial Services",
+      summary: "Replaced paper expense forms for a Brisbane construction company, cutting approval cycles from 21 days to 3.2 days and eliminating receipt loss entirely."
+    },
+    {
+      title: "Document Management & Approval Workflow",
+      href: "/case-studies/document-management-approval-workflow",
+      industry: "Professional Services",
+      summary: "Built a structured document lifecycle system with version control, role-based approvals, and audit trail for a multi-site professional services firm."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "API Integration & Automation", href: "/services/api-integration-automation" },
+    { title: "Compliance & Regulated Industry Software", href: "/services/compliance-regulated-software" },
+    { title: "Workflow Automation", href: "/services/workflow-automation" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

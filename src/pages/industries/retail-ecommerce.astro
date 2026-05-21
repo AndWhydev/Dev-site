@@ -1,0 +1,102 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Retail & E-Commerce Software Development Australia | All Webbed Labs',
+  metaDescription: "Custom e-commerce platforms, POS integrations, loyalty programmes and AI-powered personalisation for Australia's leading retailers. Omnichannel commerce technology built for scale.",
+  industryName: 'Retail & E-Commerce',
+  heroHeadline: 'Retail Technology That Drives Revenue and Loyalty',
+  heroTagline: "Omnichannel commerce platforms, inventory management and AI-powered personalisation for Australia's leading retailers.",
+  stats: [
+    { value: '$100M+', label: 'in GMV processed' },
+    { value: '3x', label: 'conversion improvement' },
+    { value: '150ms', label: 'average page load' },
+    { value: '99.9%', label: 'platform uptime' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9M17 13l2 9M9 22h6"/></svg>',
+      title: 'Disconnected Online and Offline Channels',
+      description: "Australian retail customers switch between website, app, social commerce and physical store without a second thought. When your inventory, loyalty points, pricing and order history don't follow them seamlessly across channels, you lose sales to competitors who've invested in genuine omnichannel infrastructure — not just a bolt-on click-and-collect feature.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+      title: 'Inventory Visibility and Accuracy',
+      description: "Stock discrepancies between ERP, e-commerce platform and physical stores are a revenue and customer experience killer. Overselling drives refunds and negative reviews; underselling leaves money on the table. The root cause is almost always inventory data being updated in batch cycles rather than in real time, with no single system of record.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+      title: 'Rising Customer Acquisition Costs',
+      description: "Meta and Google advertising CPMs in Australia have climbed steadily since iOS 14 decimated third-party tracking. Retailers dependent on paid acquisition with no strong owned-channel strategy — email, SMS, loyalty, personalisation — are watching CAC erode their unit economics quarter by quarter. Retention and lifetime value engineering is now a technology problem as much as a marketing one.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15L3 9l6-6"/><path d="M3 9h12a6 6 0 010 12h-3"/></svg>',
+      title: 'Returns Management Complexity',
+      description: "Australia's consumer law (ACL) gives customers broad rights to refund, repair or replace — and Australian shoppers exercise them. E-commerce return rates above 20% in fashion and electronics are normal. Without an automated, self-service returns platform integrated with your WMS and carrier network, returns processing becomes a manual, expensive operation that also destroys customer satisfaction.",
+    },
+  ],
+  solutions: [
+    'Custom e-commerce platform development',
+    'POS and in-store system integrations',
+    'Real-time inventory management',
+    'Customer loyalty programme platforms',
+    'AI-powered personalisation engines',
+    'Marketplace integrations (eBay, Amazon AU, Catch)',
+    'Subscription and recurring commerce',
+    'Warehouse and fulfilment automation',
+  ],
+  useCases: [
+    {
+      title: 'Headless Commerce Platform for National Retailer',
+      description: "A fashion retailer with 80 physical stores and a rapidly growing online channel needed to replace a slow, customisation-heavy Magento 2 installation that was costing them sales on mobile. We rebuilt their e-commerce front end as a headless Next.js application connected to a Shopify Plus backend via the Storefront API, with a custom middleware layer integrating real-time inventory from their Netsuite ERP. Page load times dropped from 4.2 seconds to under 200ms on mobile. Conversion rate improved 2.8x on mobile within 90 days of launch. The decoupled architecture now lets the marketing team deploy landing pages and campaign microsites independently — without engineering involvement.",
+      techStack: 'Next.js · TypeScript · Shopify Plus Storefront API · NetSuite REST · Redis · Vercel · Algolia',
+      videoNote: 'mobile storefront with real-time inventory and fast checkout flow',
+    },
+    {
+      title: 'Omnichannel Loyalty and Personalisation Platform',
+      description: "A specialty grocery chain operating 45 stores and an online channel wanted a loyalty programme that worked identically in-store (via their POS) and online, with personalised product recommendations and targeted email campaigns driven by purchase history. We built a loyalty engine backed by a customer data platform (CDP) that unifies in-store POS transactions, online order history, browse behaviour and email engagement into a single customer profile. The recommendation engine uses collaborative filtering to surface relevant products. In the first six months, loyalty members spent 34% more per transaction than non-members, and the personalised email programme achieved a 4.1x revenue per send compared to batch-and-blast newsletters.",
+      techStack: 'React · Node.js · PostgreSQL · Redis · Segment CDP · Klaviyo API · Lightspeed POS API · AWS',
+      videoNote: 'customer loyalty dashboard and personalised product recommendation engine',
+    },
+    {
+      title: 'Self-Service Returns Management Portal',
+      description: "An online homewares retailer processing 800 returns per week had no self-service returns capability — every return was initiated by email to a customer service team, triaged manually and then had a prepaid label emailed back. We built a self-service returns portal that allows customers to initiate a return in under two minutes, choose between refund, exchange or store credit, generate their own prepaid Australia Post or Sendle label, and track the return in real time. The portal integrates with their Shopify store, WMS and finance system to automate the refund trigger when the return is receipted. Customer service handling time for returns fell by 71% and return-related NPS scores improved dramatically.",
+      techStack: 'React · Node.js · Shopify Admin API · Australia Post API · Sendle API · Xero · PostgreSQL',
+      videoNote: 'customer returns initiation flow and operations returns dashboard',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'SaaS Development', href: '/services/saas-development' },
+  ],
+  faqs: [
+    {
+      question: 'Should we build a custom e-commerce platform or extend a platform like Shopify or BigCommerce?',
+      answer: "For the vast majority of Australian retailers, starting with Shopify Plus or BigCommerce Enterprise and building custom extensions is faster, cheaper and lower-risk than a ground-up build. The decision to go fully custom usually only makes sense when you have highly differentiated requirements that are genuinely incompatible with SaaS platform architectures — for example, complex B2B pricing matrix logic, industry-specific compliance needs, or a need to own the entire data model for machine learning at scale. We're happy to have an honest conversation about which path is right for your situation rather than defaulting to a custom build because it's more billable.",
+    },
+    {
+      question: 'How do you handle the complexity of integrating with Australian carriers like Australia Post and StarTrack?',
+      answer: "We have deep experience with the Australia Post eParcel, MyPost Business and StarTrack APIs — including the quirks that aren't well documented, such as the service availability matrix for different product codes, the manifest and lodgement workflows, and the handling of signature on delivery and authority to leave options. We build carrier integrations with graceful fallback logic, rate-shopping rules, and automatic label regeneration for address correction scenarios. We also integrate with aggregator platforms like Shippit and Transdirect where multi-carrier rate shopping is a priority.",
+    },
+    {
+      question: 'What do you know about Australian consumer law compliance for e-commerce?',
+      answer: "Australian Consumer Law (ACL) imposes mandatory obligations on online retailers that go beyond typical e-commerce platform defaults. These include: mandatory refund and returns policies that cannot disclaim statutory guarantees; cooling-off rights for telemarketing and door-to-door sales; unsolicited selling rules; and specific requirements around gift card expiry (minimum three years under the ACL). We build compliance into the checkout flow, terms and conditions, and returns workflows — and we flag the common mistakes we see, like stores using US-centric Shopify themes with legally incorrect returns policy language.",
+    },
+    {
+      question: 'Can you integrate with our existing ERP like MYOB, Netsuite or SAP?',
+      answer: "Yes. We integrate e-commerce platforms with MYOB AccountRight and Advanced, Netsuite (via SuiteScript and REST API), SAP Business One, Microsoft Dynamics 365 Business Central and a range of other Australian-common ERPs. Our integration approach prioritises real-time or near-real-time data flows for inventory and order status, with batch reconciliation for financial data where real-time isn't warranted. We build idempotent integration layers that handle the inevitable duplicate events and out-of-order messages gracefully.",
+    },
+    {
+      question: 'How do you approach performance optimisation for high-traffic retail events like Click Frenzy or EOFY sales?',
+      answer: "Peak traffic events require both architectural preparation and operational readiness. On the architecture side, we design for horizontal scalability using managed container platforms (ECS, GKE) with auto-scaling policies, CDN-heavy static asset delivery, aggressive edge caching strategies for product catalogue data, and queue-based order processing to absorb traffic spikes without overwhelming downstream systems. Operationally, we run load tests simulating two to three times the expected peak traffic before major events, implement feature flags to disable non-essential features under load, and set up real-time monitoring dashboards so your team can see what's happening during the event window.",
+    },
+  ],
+  ctaHeadline: "Ready to Build Retail Technology That Scales With Your Ambitions?",
+  ctaDescription: "From headless commerce rebuilds and loyalty platforms to inventory automation and personalisation engines, our retail technology team has the depth to tackle the complexity that comes with scale. Let's talk about where you want to take your retail business.",
+};
+---
+<IndustryPageLayout {...data} />

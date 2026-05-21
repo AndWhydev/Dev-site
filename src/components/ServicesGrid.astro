@@ -1,0 +1,354 @@
+---
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  tags: string[];
+  featured?: boolean;
+}
+
+const services: Service[] = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 8h6M9 12h4"/></svg>`,
+    title: 'Custom App Development',
+    description: 'End-to-end web and mobile applications built to enterprise specifications. From concept to production, we own every layer of the stack.',
+    tags: ['Web', 'Mobile', 'Full-Stack'],
+    featured: true,
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>`,
+    title: 'Flutter Development',
+    description: 'Cross-platform mobile apps for iOS and Android from a single codebase — without compromising on native performance or user experience.',
+    tags: ['iOS', 'Android', 'Flutter'],
+    featured: true,
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`,
+    title: 'React & Next.js Development',
+    description: 'Modern web platforms with server-side rendering, edge deployment and best-in-class performance. The go-to choice for enterprise web products.',
+    tags: ['React', 'Next.js', 'TypeScript'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+    title: 'Node.js & Python Backends',
+    description: 'Scalable, high-performance APIs and microservices architectures that power your most critical business workflows at any scale.',
+    tags: ['Node.js', 'Python', 'FastAPI'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h8M8 14h5"/></svg>`,
+    title: 'AI Tools & Custom Chatbots',
+    description: 'Proprietary AI assistants, intelligent chat interfaces and automation tools trained on your data and embedded into your existing workflows.',
+    tags: ['OpenAI', 'LangChain', 'NLP'],
+    featured: true,
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2z"/><path d="M12 22V12M3 6.9l9 5.1 9-5.1"/></svg>`,
+    title: 'LLM Integration & Fine-Tuning',
+    description: 'Integrate GPT-4, Claude, Gemini and open-source LLMs into your products. Fine-tune models on your proprietary data for superior accuracy.',
+    tags: ['GPT-4', 'Claude', 'RAG'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`,
+    title: 'Workflow Automation',
+    description: 'Eliminate manual processes with intelligent automation. Connect your systems, automate approval flows and integrate third-party platforms seamlessly.',
+    tags: ['RPA', 'Zapier', 'n8n'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>`,
+    title: 'API Development & Integrations',
+    description: 'RESTful and GraphQL APIs built for reliability. Deep integration expertise across Salesforce, SAP, Xero, Stripe and hundreds more enterprise platforms.',
+    tags: ['REST', 'GraphQL', 'Webhooks'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    title: 'Custom SaaS Development',
+    description: 'Launch your own software-as-a-service product with multi-tenancy, subscription billing, usage analytics and full white-labelling capabilities.',
+    tags: ['SaaS', 'Multi-tenant', 'Stripe'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.56 2.75 4 6 4.5 9"/><polyline points="15.44 2.75 20 6 19.5 9"/><path d="M9 12a3 3 0 006 0"/></svg>`,
+    title: 'UI & UX Design',
+    description: 'Design systems, wireframes, prototypes and pixel-perfect interfaces that convert. We apply cognitive science and user research to every design decision.',
+    tags: ['Figma', 'Design Systems', 'Research'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    title: 'Cloud Infrastructure & DevOps',
+    description: 'AWS, GCP and Azure architecture, containerisation, CI/CD pipelines and infrastructure-as-code. Your infrastructure, fully automated and resilient.',
+    tags: ['AWS', 'Kubernetes', 'Terraform'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M12 12v4"/></svg>`,
+    title: 'Database Architecture',
+    description: 'Schema design, query optimisation, sharding strategies and migration management for PostgreSQL, MongoDB, Redis and enterprise data warehouses.',
+    tags: ['PostgreSQL', 'MongoDB', 'Redis'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+    title: 'Web3 & Blockchain',
+    description: 'Smart contract development, NFT platforms, DeFi protocols and enterprise blockchain solutions on Ethereum, Solana and Polygon.',
+    tags: ['Ethereum', 'Solidity', 'Web3.js'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+    title: 'Digital Transformation',
+    description: 'Strategic consulting to modernise your technology stack, processes and culture. We map your transformation roadmap and lead execution from day one.',
+    tags: ['Strategy', 'Change Mgmt', 'Roadmap'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
+    title: 'Enterprise Software Solutions',
+    description: 'Large-scale ERP, CRM and HRIS integrations. Custom enterprise platforms that handle complex business logic, compliance and multi-region deployments.',
+    tags: ['ERP', 'CRM', 'Enterprise'],
+    featured: true,
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+    title: 'Staff Augmentation',
+    description: 'Embed senior engineers directly into your team. Flexible engagement models from individual contributors to full dedicated development squads.',
+    tags: ['Dedicated Teams', 'On-demand', 'Senior Devs'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>`,
+    title: 'Legacy System Modernisation',
+    description: 'Migrate ageing monoliths to cloud-native microservices. Phased migration strategies that maintain business continuity throughout the transformation.',
+    tags: ['Migration', 'Refactoring', 'Cloud-Native'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    title: 'Cybersecurity Consulting',
+    description: 'Penetration testing, security audits, ISO 27001 advisory and incident response planning. Protect your systems before a breach becomes a headline.',
+    tags: ['PenTest', 'ISO 27001', 'SIEM'],
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M4 2l4 4-4 4"/></svg>`,
+    title: 'Data Analytics & BI',
+    description: 'Turn raw data into strategic advantage. Custom dashboards, data pipelines, predictive models and reporting platforms that drive informed decision-making.',
+    tags: ['Power BI', 'Looker', 'Python'],
+  },
+];
+---
+
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <span class="section-label">Our Capabilities</span>
+      <h2 class="section-heading">Everything Your Enterprise Needs</h2>
+      <p class="section-subheading">
+        Twenty specialisations. One trusted partner. We cover the full technology spectrum so you can focus on running your business.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      {services.map((service, i) => (
+        <div class={`service-card card-hover reveal stagger-${Math.min((i % 4) + 1, 6)} ${service.featured ? 'service-card--featured' : ''}`}>
+          <div class="service-icon" set:html={service.icon} />
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-desc">{service.description}</p>
+          <div class="service-tags">
+            {service.tags.map((tag) => (
+              <span class="service-tag">{tag}</span>
+            ))}
+          </div>
+          <a href="/services" class="service-cta">
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="services-footer reveal">
+      <p>Not sure which service you need? <a href="/contact">Let's have a conversation.</a></p>
+      <a href="/services" class="btn-outline">
+        View All Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    padding: 8rem 0;
+    background: #0a0f0e;
+  }
+
+  .services-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .services-header {
+    margin-bottom: 4rem;
+    max-width: 700px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .service-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13,147,115,0.03) 0%, transparent 60%);
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .service-card--featured {
+    border-color: rgba(13,147,115,0.25);
+    background: linear-gradient(135deg, rgba(13,147,115,0.05) 0%, #0f1614 60%);
+  }
+  .service-card--featured::after {
+    content: 'Popular';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(13,147,115,0.15);
+    border: 1px solid rgba(13,147,115,0.3);
+    color: #0d9373;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.2rem 0.625rem;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    flex-shrink: 0;
+  }
+
+  .service-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .service-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .service-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #4a6359;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .service-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: gap 0.2s ease, color 0.2s ease;
+  }
+  .service-cta:hover {
+    gap: 0.625rem;
+    color: #10b88a;
+  }
+
+  .services-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3rem;
+    border-top: 1px solid #1e2d28;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .services-footer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    margin: 0;
+  }
+
+  .services-footer p a {
+    color: #0d9373;
+    text-decoration: none;
+  }
+  .services-footer p a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .services-section {
+      padding: 5rem 0;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .services-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

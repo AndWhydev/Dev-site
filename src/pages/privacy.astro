@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy — All Webbed Labs"
+  description="All Webbed Labs privacy policy. How we collect, use and protect your personal information in accordance with the Australian Privacy Act 1988."
+  noindex={true}
+>
+  <Header />
+  <main>
+    <section class="policy-section">
+      <div class="policy-inner">
+        <div class="policy-header reveal">
+          <span class="section-label">Legal</span>
+          <h1>Privacy Policy</h1>
+          <p class="policy-meta">Last updated: January 2026 — TODO: Update with real date and have reviewed by legal counsel</p>
+        </div>
+
+        <div class="policy-content reveal stagger-1">
+          <!-- TODO: Replace with real privacy policy reviewed by an Australian legal practitioner -->
+          <!-- This is a placeholder only and must not be used as a real privacy policy -->
+
+          <div class="policy-notice">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <p><strong>PLACEHOLDER CONTENT:</strong> This privacy policy must be replaced with a legally reviewed document before the site goes live. Engage an Australian privacy lawyer to draft a compliant policy under the Privacy Act 1988 (Cth).</p>
+          </div>
+
+          <h2>1. Introduction</h2>
+          <p>All Webbed Labs (a division of All Webbed Up Pty Ltd, ABN: XX XXX XXX XXX) ("we", "us", "our") is committed to protecting your personal information in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).</p>
+
+          <h2>2. Information We Collect</h2>
+          <p>We collect personal information that you voluntarily provide to us, including your name, email address, phone number, company name and project details when you contact us through our website or other channels.</p>
+
+          <h2>3. How We Use Your Information</h2>
+          <p>We use your personal information to respond to enquiries, provide our services, send relevant communications and improve our website. We do not sell your personal information to third parties.</p>
+
+          <h2>4. Data Storage and Security</h2>
+          <p>Your data is stored securely in Australia. We implement industry-standard security measures to protect against unauthorised access, disclosure or destruction.</p>
+
+          <h2>5. Your Rights</h2>
+          <p>You have the right to access, correct or request deletion of your personal information. Contact us at <a href="mailto:privacy@allwebbedup.com.au">privacy@allwebbedup.com.au</a> to exercise these rights.</p>
+
+          <h2>6. Cookies</h2>
+          <p>Our website may use cookies to improve your browsing experience. You can control cookie settings through your browser preferences.</p>
+
+          <h2>7. Contact Us</h2>
+          <p>For privacy enquiries: <a href="mailto:privacy@allwebbedup.com.au">privacy@allwebbedup.com.au</a></p>
+          <p>TODO: Add full mailing address for privacy enquiries.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .policy-section { padding: 9rem 0 6rem; background: #0a0f0e; min-height: 80vh; }
+  .policy-inner { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+  .policy-header { margin-bottom: 3rem; }
+  .policy-header h1 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; color: white; margin: 0.75rem 0 0.5rem; }
+  .policy-meta { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; margin: 0; }
+  .policy-content h2 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 2rem 0 0.75rem; }
+  .policy-content p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 1rem; }
+  .policy-content a { color: #0d9373; text-decoration: none; }
+  .policy-notice {
+    display: flex;
+    gap: 0.875rem;
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: #f87171;
+    align-items: flex-start;
+  }
+  .policy-notice svg { flex-shrink: 0; margin-top: 2px; }
+  .policy-notice p { color: #f87171; margin: 0; font-size: 0.875rem; line-height: 1.5; }
+</style>

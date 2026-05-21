@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<Layout
+  title="Portfolio — All Webbed Labs | Enterprise Software Projects"
+  description="Enterprise software portfolio coming soon. All Webbed Labs has delivered 150+ projects for large Australian and global organisations. Sign up to be notified when case studies are published."
+>
+  <Header />
+
+  <main>
+    <section class="portfolio-hero">
+      <div class="portfolio-inner">
+        <div class="reveal">
+          <span class="section-label">Portfolio</span>
+          <h1 class="portfolio-title">
+            Our Work Speaks<br />
+            <span class="gradient-text">For Itself.</span>
+          </h1>
+          <p class="portfolio-sub">
+            We've delivered 150+ enterprise projects across finance, healthcare, logistics, retail and government.
+            Detailed case studies are currently being prepared — sign up below to be notified when they go live.
+          </p>
+        </div>
+
+        <!-- Coming soon card -->
+        <div class="coming-soon-card reveal stagger-2">
+          <div class="cs-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+          </div>
+          <h2>Case Studies Coming Soon</h2>
+          <p>
+            We're currently documenting our most significant enterprise projects with full metrics, architecture breakdowns and client outcomes.
+            Enter your email to be notified the moment they go live.
+          </p>
+
+          <!-- TODO: Connect email capture to your preferred email marketing platform (Mailchimp, Klaviyo, ConvertKit, etc.) -->
+          <form class="email-capture" id="portfolio-email-form">
+            <input type="email" placeholder="your@company.com.au" required aria-label="Your email address" name="email" />
+            <button type="submit" class="btn-primary">
+              Notify Me
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+          <p class="cs-privacy">No spam. Unsubscribe any time.</p>
+
+          <div id="email-success" hidden class="email-success-msg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            You're on the list! We'll notify you when case studies are published.
+          </div>
+        </div>
+
+        <!-- Preview teasers -->
+        <div class="teasers-header reveal stagger-3">
+          <h2 class="section-heading">Projects Across Every Industry</h2>
+          <p class="section-subheading">A preview of the case studies being prepared:</p>
+        </div>
+
+        <div class="teasers-grid reveal stagger-4">
+          {[
+            { industry: 'Financial Services', type: 'Trading Platform', stack: 'React · Node.js · PostgreSQL', status: 'Coming soon' },
+            { industry: 'Healthcare', type: 'Patient Management System', stack: 'Flutter · FastAPI · PostgreSQL', status: 'Coming soon' },
+            { industry: 'Logistics', type: 'Fleet Management Platform', stack: 'React Native · Node.js · MongoDB', status: 'Coming soon' },
+            { industry: 'Government', type: 'Citizen Portal', stack: 'Next.js · Python · AWS', status: 'Coming soon' },
+            { industry: 'Retail', type: 'E-Commerce Platform', stack: 'Next.js · Node.js · Stripe', status: 'Coming soon' },
+            { industry: 'Education', type: 'Learning Management System', stack: 'React · FastAPI · Supabase', status: 'Coming soon' },
+          ].map((teaser) => (
+            <div class="teaser-card">
+              <div class="teaser-badge">{teaser.status}</div>
+              <div class="teaser-industry">{teaser.industry}</div>
+              <h3 class="teaser-type">{teaser.type}</h3>
+              <div class="teaser-stack">{teaser.stack}</div>
+            </div>
+          ))}
+        </div>
+        <!-- TODO: Replace teasers with real project cards once case studies are written -->
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .portfolio-hero {
+    padding: 9rem 0 7rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portfolio-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(13,147,115,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .portfolio-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .portfolio-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+
+  .portfolio-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+  }
+
+  .coming-soon-card {
+    background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0f1614 60%);
+    border: 1px solid rgba(13,147,115,0.25);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 680px;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cs-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coming-soon-card h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  .coming-soon-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .email-capture {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .email-capture input {
+    flex: 1;
+    min-width: 240px;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 50px;
+    padding: 0.75rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .email-capture input::placeholder {
+    color: #4a6359;
+  }
+
+  .email-capture input:focus {
+    border-color: #0d9373;
+  }
+
+  .cs-privacy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin: 0;
+  }
+
+  .email-success-msg {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.875rem 1.25rem;
+    border-radius: 10px;
+  }
+
+  .email-success-msg[hidden] {
+    display: none;
+  }
+
+  .teasers-header {
+    margin-bottom: 2rem;
+  }
+
+  .teasers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 5rem;
+  }
+
+  .teaser-card {
+    background: #0f1614;
+    border: 1px dashed #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+  }
+
+  .teaser-card:hover {
+    opacity: 1;
+    border-color: rgba(13,147,115,0.3);
+    border-style: solid;
+  }
+
+  .teaser-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #4a6359;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.2rem 0.625rem;
+    border-radius: 50px;
+    align-self: flex-start;
+  }
+
+  .teaser-industry {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d9373;
+  }
+
+  .teaser-type {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .teaser-stack {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+
+  @media (max-width: 900px) {
+    .teasers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .teasers-grid {
+      grid-template-columns: 1fr;
+    }
+    .coming-soon-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('portfolio-email-form') as HTMLFormElement | null;
+  const successMsg = document.getElementById('email-success') as HTMLElement | null;
+
+  // TODO: Replace with real email capture (Mailchimp API, ConvertKit, etc.)
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await new Promise((r) => setTimeout(r, 800));
+    if (form && successMsg) {
+      form.hidden = true;
+      successMsg.hidden = false;
+    }
+  });
+</script>

@@ -1,0 +1,102 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Logistics & Transport Software Development Australia | All Webbed Labs',
+  metaDescription: 'Real-time fleet management, route optimisation, warehouse automation and last-mile tracking platforms for Australian logistics and transport operators. Purpose-built supply chain technology from specialists.',
+  industryName: 'Logistics & Transport',
+  heroHeadline: 'Technology That Keeps Your Supply Chain Moving',
+  heroTagline: "Real-time tracking, fleet management and warehouse automation for Australia's leading logistics and transport companies.",
+  stats: [
+    { value: '50K+', label: 'deliveries tracked daily' },
+    { value: '30%', label: 'fuel cost reduction' },
+    { value: '99.5%', label: 'delivery accuracy' },
+    { value: 'Real-time', label: 'visibility' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+      title: 'Visibility Gaps Across the Supply Chain',
+      description: "Australia's vast geography makes supply chain visibility uniquely challenging. Freight moves across multiple carriers, warehouses and transport modes — rail, road and sea — with handoff data locked in disconnected TMS platforms, spreadsheets and carrier portals. Customers expect Amazon-level tracking transparency; most operators can't deliver it with their current technology stack.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+      title: 'Manual and Inefficient Dispatch',
+      description: 'Dispatch teams still rely on whiteboards, phone calls and desktop spreadsheets to assign runs, communicate with drivers and track job status. The result is long call-centre queues, high driver idle time, missed delivery windows and a complete lack of real-time data for operations managers who need it most.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
+      title: 'Fleet Compliance Complexity',
+      description: "Heavy vehicle operators in Australia must manage NHVL chain of responsibility obligations, HVNL mass, dimension and loading requirements, driver fatigue rules under the NHVR framework and vehicle maintenance records — all with significant liability exposure. Compliance managed via paper-based systems and manual spreadsheet reconciliation is both unreliable and expensive to defend when something goes wrong.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      title: 'Last-Mile Inefficiency',
+      description: "Last-mile delivery in Australian metro and regional markets is the most expensive segment of the supply chain — often representing over 50% of total delivery cost. Dense urban routes, traffic unpredictability and failed delivery attempts (Australia's flat rate of missed deliveries sits above the global average) eat into margins on every consignment.",
+    },
+  ],
+  solutions: [
+    'Fleet management and telematics systems',
+    'Route optimisation and dynamic dispatch',
+    'Warehouse management systems (WMS)',
+    'Last-mile tracking and customer notification',
+    'Driver mobile applications',
+    'Proof of delivery (POD) capture',
+    'Cold chain monitoring and alerting',
+    'Customs and border compliance tools',
+  ],
+  useCases: [
+    {
+      title: 'Intelligent Route Optimisation Platform',
+      description: "A national courier network with 600 drivers across six states needed to reduce deadhead kilometres and improve on-time delivery rates. We built a route optimisation engine using Google OR-Tools with custom constraints for vehicle capacity, time windows, driver fatigue rules and traffic data from the HERE Maps API. The planning engine generates optimised run sheets overnight and allows dispatchers to make real-time adjustments via a drag-and-drop web interface. Drivers receive updated routes on a purpose-built Android application with offline capability for regional areas. Fuel costs dropped 28% in the first quarter post-launch and failed delivery attempts fell by 41%.",
+      techStack: 'Python · Google OR-Tools · HERE Maps API · React · FastAPI · Android (Kotlin) · PostgreSQL · AWS',
+      videoNote: 'dispatch console with optimised route visualisation and live driver tracking',
+    },
+    {
+      title: 'Warehouse Management System with RF and Pick-by-Voice',
+      description: "A third-party logistics (3PL) provider handling ambient and chilled FMCG needed to replace a 15-year-old WMS that couldn't support their new client's inbound EDI 856 ASNs or wave-pick workflows. We designed and built a cloud-native WMS with receiving, putaway, directed picking (RF scanner and pick-by-voice via Honeywell Vocollect integration), replenishment, despatch and inventory reconciliation modules. The system integrates with the client's ERP via REST APIs and produces carrier-compliant despatch labels and packing slips. Picking accuracy improved from 98.1% to 99.7% and throughput increased by 35% with the same headcount.",
+      techStack: 'React · .NET 8 · SQL Server · Zebra RFID · Vocollect · Azure Service Bus · EDI 856/856',
+      videoNote: 'warehouse floor picking workflow and inventory dashboard',
+    },
+    {
+      title: 'Cold Chain Compliance Monitoring',
+      description: "A pharmaceutical distributor required real-time temperature monitoring across their fleet of 80 refrigerated vehicles to meet TGA Good Distribution Practice (GDP) requirements and maintain their wholesale dealer licence. We integrated IoT temperature sensors (Sensitech TempTale 4) with a cloud monitoring platform that streams data every two minutes, raises SMS and email alerts for excursions within configurable thresholds, and produces GDP-compliant temperature excursion reports automatically. The platform maintains a full audit trail for each consignment — critical during TGA inspections — and has eliminated the paper-based manual temperature logging that previously consumed two hours of warehouse staff time per shift.",
+      techStack: 'AWS IoT Core · Node.js · InfluxDB · Grafana · React · Twilio · Sensitech API',
+      videoNote: 'live fleet temperature map with excursion alerting and TGA report generation',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'Database Architecture', href: '/services/database-architecture' },
+  ],
+  faqs: [
+    {
+      question: 'Can your systems integrate with existing TMS and ERP platforms like SAP, Oracle and CargoWise?',
+      answer: "Yes. We have integration experience with CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and a range of Australian-specific platforms including Microlistics, Paperless and Freight2020. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
+    },
+    {
+      question: 'How do you handle NHVL chain of responsibility compliance in your fleet systems?',
+      answer: "Chain of responsibility (CoR) under the Heavy Vehicle National Law means that every party in the supply chain — not just the driver — can be liable for HVNL breaches. Our fleet systems capture the data needed to demonstrate due diligence: pre-departure safety checks with photo evidence, mass and dimension declarations linked to consignment records, driver fatigue and work diary data cross-referenced against scheduled departure times, and vehicle maintenance records with service due alerts. We can produce CoR compliance reports on demand and integrate with NHVR's Intelligent Access Programme (IAP) transponder data where required.",
+    },
+    {
+      question: 'What does a driver mobile app built by your team typically include?',
+      answer: "Our driver apps are built natively for Android (the dominant platform in Australian fleet operations) with offline-first architecture for regional areas with poor connectivity. Standard features include GPS tracking, job card management, digital proof of delivery with photo and signature capture, barcode/QR scanning, real-time messaging with dispatch, pre-start safety checklists, fatigue status tracking, and dangerous goods acknowledgement workflows. The app syncs with the dispatch platform over low-bandwidth connections and queues data locally when offline, flushing to the server on reconnection.",
+    },
+    {
+      question: 'Can your tracking platforms provide customer-facing consignment tracking?',
+      answer: "Yes — and it's one of the most impactful features for reducing inbound customer service calls. We build branded tracking portals and SMS/email notification workflows that give consignees live visibility of their freight status, estimated delivery windows, driver ETA based on real-time GPS, and the ability to redirect deliveries or authorise safe drop. These portals integrate with the carrier's internal TMS data via a thin API layer and are typically deployable as a white-labelled subdomain (e.g. track.yourcompany.com.au) within two to three weeks.",
+    },
+    {
+      question: 'Do you have experience with last-mile platforms for retail and e-commerce fulfilment?',
+      answer: "Yes. We've built last-mile platforms specifically for Australian e-commerce fulfilment, including multi-carrier rate shopping (integrating with Australia Post, Sendle, CouriersPlease, StarTrack and DHL), automated despatch manifesting, carrier label printing, delivery exception management and returns processing. We understand the nuances of Australia Post's eParcel and MyPost Business platforms, including the API quirks that catch teams out at scale. For high-volume operations we implement intelligent carrier selection rules based on zone, weight, service level and negotiated rate tables.",
+    },
+  ],
+  ctaHeadline: "Ready to Build a Smarter Supply Chain?",
+  ctaDescription: "Whether you're modernising a legacy TMS, building a driver app or deploying a full warehouse management system, our logistics technology team understands the operational realities of Australian freight. Let's talk about your project.",
+};
+---
+<IndustryPageLayout {...data} />

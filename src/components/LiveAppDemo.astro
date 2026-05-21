@@ -1,0 +1,833 @@
+---
+---
+
+<section class="demo-section" id="demo">
+  <div class="demo-inner">
+    <div class="demo-header reveal">
+      <span class="section-label">Live App Demo</span>
+      <h2 class="section-heading">See What We Build</h2>
+      <p class="section-subheading">
+        Real applications. Real results. Every product we deliver is built to enterprise standards —
+        performant, secure and scalable from day one.
+      </p>
+    </div>
+
+    <div class="demo-showcase">
+      <!-- iPhone mockup with video -->
+      <div class="phone-wrap reveal-left stagger-1">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div class="iphone">
+          <!-- Side buttons -->
+          <div class="btn-silent" aria-hidden="true"></div>
+          <div class="btn-vol-up" aria-hidden="true"></div>
+          <div class="btn-vol-down" aria-hidden="true"></div>
+          <div class="btn-power" aria-hidden="true"></div>
+
+          <div class="iphone-body">
+            <div class="iphone-screen">
+              <div class="dynamic-island" aria-hidden="true"></div>
+              <video
+                id="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                aria-label="App demo video"
+              >
+                <source src="/videos/kite-export.mp4" type="video/mp4" />
+              </video>
+              <div class="screen-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-caption">
+          <div class="phone-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0d9373"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            <span>Live Application</span>
+          </div>
+          <p>Flutter mobile app — delivered to production</p>
+        </div>
+      </div>
+
+      <!-- Desktop browser mockup -->
+      <div class="browser-wrap reveal-right stagger-2">
+        <div class="browser">
+          <div class="browser-chrome">
+            <div class="browser-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="browser-tabs">
+              <div class="browser-tab active">Dashboard</div>
+              <div class="browser-tab">Analytics</div>
+              <div class="browser-tab">Reports</div>
+            </div>
+            <div class="browser-bar">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>app.enterprise-dashboard.io/overview</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <div class="browser-content">
+            <div class="dashboard">
+              <!-- Sidebar -->
+              <div class="dash-sidebar">
+                <div class="dash-logo-mark">
+                  <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#0d9373"/><path d="M8 27L18 9L28 27" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 21.5H24.5" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg>
+                </div>
+                <nav class="dash-nav">
+                  <a class="dash-nav-item active" aria-label="Dashboard">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                  </a>
+                  <a class="dash-nav-item" aria-label="Analytics">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  </a>
+                  <a class="dash-nav-item" aria-label="Projects">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                  </a>
+                  <a class="dash-nav-item" aria-label="Team">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                  </a>
+                  <a class="dash-nav-item" aria-label="Settings">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                  </a>
+                </nav>
+              </div>
+
+              <!-- Main content -->
+              <div class="dash-main">
+                <div class="dash-topbar">
+                  <div>
+                    <div class="dash-title">Overview</div>
+                    <div class="dash-date">May 2026</div>
+                  </div>
+                  <div class="dash-topbar-right">
+                    <div class="dash-search">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                      <span>Search...</span>
+                    </div>
+                    <div class="dash-avatar">AW</div>
+                  </div>
+                </div>
+
+                <!-- Stat cards -->
+                <div class="stat-cards">
+                  <div class="stat-card">
+                    <div class="stat-icon rev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+                    <div class="stat-val">$2.4M</div>
+                    <div class="stat-lbl">Revenue</div>
+                    <div class="stat-delta up">+18.2%</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon usr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                    <div class="stat-val">14,832</div>
+                    <div class="stat-lbl">Active Users</div>
+                    <div class="stat-delta up">+4.7%</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon prj"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="stat-val">98.7%</div>
+                    <div class="stat-lbl">Uptime</div>
+                    <div class="stat-delta up">+0.3%</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon rat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <div class="stat-val">4.9 / 5</div>
+                    <div class="stat-lbl">Rating</div>
+                    <div class="stat-delta up">+0.1</div>
+                  </div>
+                </div>
+
+                <!-- Mini chart -->
+                <div class="dash-chart-row">
+                  <div class="dash-chart">
+                    <div class="chart-header">
+                      <span class="chart-title">Revenue Trend</span>
+                      <span class="chart-period">Last 7 months</span>
+                    </div>
+                    <svg class="line-chart" viewBox="0 0 320 80" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#0d9373" stop-opacity="0.3"/>
+                          <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,65 C30,60 50,45 80,40 C110,35 130,25 160,20 C190,15 210,22 240,18 C270,14 290,10 320,8" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M0,65 C30,60 50,45 80,40 C110,35 130,25 160,20 C190,15 210,22 240,18 C270,14 290,10 320,8 L320,80 L0,80Z" fill="url(#chartGrad)"/>
+                    </svg>
+                  </div>
+
+                  <!-- Recent projects list -->
+                  <div class="dash-projects">
+                    <div class="chart-header">
+                      <span class="chart-title">Recent Deployments</span>
+                    </div>
+                    <div class="project-list">
+                      <div class="project-row">
+                        <div class="proj-dot green"></div>
+                        <div class="proj-info">
+                          <div class="proj-name">Auth Service v2.1</div>
+                          <div class="proj-time">2m ago</div>
+                        </div>
+                        <div class="proj-status success">Live</div>
+                      </div>
+                      <div class="project-row">
+                        <div class="proj-dot green"></div>
+                        <div class="proj-info">
+                          <div class="proj-name">API Gateway</div>
+                          <div class="proj-time">1h ago</div>
+                        </div>
+                        <div class="proj-status success">Live</div>
+                      </div>
+                      <div class="project-row">
+                        <div class="proj-dot yellow"></div>
+                        <div class="proj-info">
+                          <div class="proj-name">ML Pipeline</div>
+                          <div class="proj-time">3h ago</div>
+                        </div>
+                        <div class="proj-status pending">Building</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="browser-caption">
+          <div class="phone-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Enterprise Dashboard</span>
+          </div>
+          <p>React / Next.js — custom SaaS platform</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supporting points -->
+    <div class="demo-points reveal stagger-3">
+      <div class="demo-point">
+        <div class="demo-point-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 13 9 20 9"/><path d="M20 14.66V20a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
+        </div>
+        <div>
+          <strong>Production-Ready Code</strong>
+          <p>Every line of code is written to enterprise standards with full test coverage, documentation and CI/CD pipelines.</p>
+        </div>
+      </div>
+      <div class="demo-point">
+        <div class="demo-point-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <strong>Security First</strong>
+          <p>Built with OWASP standards, end-to-end encryption, role-based access control and penetration testing as standard.</p>
+        </div>
+      </div>
+      <div class="demo-point">
+        <div class="demo-point-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <strong>Built to Scale</strong>
+          <p>Architected for millions of users. Cloud-native, containerised and auto-scaling from the ground up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .demo-section {
+    padding: 8rem 0;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .demo-section::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13,147,115,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .demo-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .demo-header {
+    margin-bottom: 4rem;
+  }
+
+  .demo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  /* ---- iPhone ---- */
+  .phone-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+  }
+
+  .phone-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .iphone {
+    position: relative;
+    width: 280px;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .iphone-body {
+    background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 30%, #242426 60%, #3a3a3c 100%);
+    border-radius: 48px;
+    padding: 13px;
+    box-shadow:
+      0 0 0 1px #4a4a4c,
+      0 0 0 2.5px #0a0f0e,
+      0 30px 100px rgba(0,0,0,0.9),
+      0 0 60px rgba(13,147,115,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+  }
+
+  .btn-silent {
+    position: absolute;
+    left: -3.5px;
+    top: 88px;
+    width: 3.5px;
+    height: 28px;
+    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
+    border-radius: 3px 0 0 3px;
+  }
+  .btn-vol-up {
+    position: absolute;
+    left: -3.5px;
+    top: 135px;
+    width: 3.5px;
+    height: 52px;
+    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
+    border-radius: 3px 0 0 3px;
+  }
+  .btn-vol-down {
+    position: absolute;
+    left: -3.5px;
+    top: 200px;
+    width: 3.5px;
+    height: 52px;
+    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
+    border-radius: 3px 0 0 3px;
+  }
+  .btn-power {
+    position: absolute;
+    right: -3.5px;
+    top: 155px;
+    width: 3.5px;
+    height: 68px;
+    background: linear-gradient(to left, #2a2a2c, #3c3c3e);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .iphone-screen {
+    background: #000;
+    border-radius: 37px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 9/19.5;
+  }
+
+  .dynamic-island {
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 34px;
+    background: #000;
+    border-radius: 50px;
+    z-index: 10;
+  }
+
+  .iphone-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .screen-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 37px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    pointer-events: none;
+  }
+
+  .phone-caption,
+  .browser-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    text-align: center;
+  }
+  .phone-caption p,
+  .browser-caption p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin: 0;
+  }
+
+  .phone-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.25);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+  }
+
+  /* ---- Browser ---- */
+  .browser-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .browser {
+    width: 100%;
+    max-width: 620px;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 20px 80px rgba(0,0,0,0.6),
+      0 0 40px rgba(13,147,115,0.08);
+  }
+
+  .browser-chrome {
+    background: #0a0f0e;
+    border-bottom: 1px solid #1e2d28;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .browser-dots {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #febc2e; }
+  .dot.green { background: #28c840; }
+
+  .browser-tabs {
+    display: flex;
+    gap: 2px;
+  }
+  .browser-tab {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    cursor: default;
+    white-space: nowrap;
+  }
+  .browser-tab.active {
+    background: #0f1614;
+    color: #8aa09a;
+    border: 1px solid #1e2d28;
+    border-bottom: none;
+  }
+
+  .browser-bar {
+    flex: 1;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 6px;
+    padding: 0.2rem 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    overflow: hidden;
+  }
+  .browser-bar span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+
+  .browser-content {
+    height: 340px;
+    overflow: hidden;
+  }
+
+  /* Dashboard */
+  .dashboard {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    height: 100%;
+  }
+
+  .dash-sidebar {
+    background: #080d0c;
+    border-right: 1px solid #1e2d28;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625rem 0;
+    gap: 0.5rem;
+  }
+
+  .dash-logo-mark {
+    padding: 0.375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dash-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .dash-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: #4a6359;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .dash-nav-item.active {
+    background: rgba(13,147,115,0.15);
+    color: #0d9373;
+  }
+
+  .dash-main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .dash-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid #1e2d28;
+    flex-shrink: 0;
+  }
+
+  .dash-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: white;
+  }
+  .dash-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+    margin-top: 1px;
+  }
+
+  .dash-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .dash-search {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 6px;
+    padding: 0.2rem 0.625rem;
+  }
+  .dash-search span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+  }
+
+  .dash-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d9373, #0a7a5e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .stat-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 8px;
+    padding: 0.5rem 0.625rem;
+  }
+
+  .stat-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.375rem;
+  }
+  .stat-icon.rev { background: rgba(13,147,115,0.15); color: #0d9373; }
+  .stat-icon.usr { background: rgba(99,102,241,0.15); color: #818cf8; }
+  .stat-icon.prj { background: rgba(245,158,11,0.15); color: #fbbf24; }
+  .stat-icon.rat { background: rgba(239,68,68,0.12); color: #f87171; }
+
+  .stat-val {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5625rem;
+    color: #4a6359;
+    margin: 2px 0;
+  }
+  .stat-delta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5625rem;
+    font-weight: 600;
+  }
+  .stat-delta.up { color: #0d9373; }
+  .stat-delta.down { color: #f87171; }
+
+  .dash-chart-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0.5rem;
+    padding: 0 0.875rem 0.625rem;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .dash-chart,
+  .dash-projects {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 8px;
+    padding: 0.625rem;
+    overflow: hidden;
+  }
+
+  .chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  .chart-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #8aa09a;
+  }
+  .chart-period {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5625rem;
+    color: #4a6359;
+  }
+
+  .line-chart {
+    width: 100%;
+    height: 60px;
+    display: block;
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .project-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .proj-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .proj-dot.green { background: #0d9373; box-shadow: 0 0 4px rgba(13,147,115,0.6); }
+  .proj-dot.yellow { background: #fbbf24; }
+
+  .proj-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .proj-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5625rem;
+    font-weight: 500;
+    color: #8aa09a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .proj-time {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5rem;
+    color: #4a6359;
+  }
+
+  .proj-status {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+  .proj-status.success { background: rgba(13,147,115,0.15); color: #0d9373; }
+  .proj-status.pending { background: rgba(251,191,36,0.12); color: #fbbf24; }
+
+  /* Demo points */
+  .demo-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    border-top: 1px solid #1e2d28;
+    padding-top: 3rem;
+  }
+
+  .demo-point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .demo-point-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demo-point strong {
+    display: block;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.375rem;
+  }
+
+  .demo-point p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .demo-showcase {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .phone-wrap {
+      order: 2;
+    }
+    .browser-wrap {
+      order: 1;
+    }
+    .demo-points {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .demo-section {
+      padding: 5rem 0;
+    }
+    .stat-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://labs.allwebbedup.com.au/sitemap-index.xml

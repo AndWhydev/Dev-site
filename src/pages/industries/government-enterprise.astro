@@ -1,0 +1,102 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Government & Public Sector Software Development Australia | All Webbed Labs',
+  metaDescription: 'PROTECTED-compliant platforms, citizen service portals, grants management and open data solutions for Australian federal, state and local government. ISM-aligned digital transformation from specialists.',
+  industryName: 'Government & Public Sector',
+  heroHeadline: 'Digital Government Solutions That Serve Citizens Better',
+  heroTagline: 'PROTECTED-compliant platforms, open data portals and digital transformation programmes for federal, state and local government.',
+  stats: [
+    { value: 'IRAP', label: 'assessed platforms' },
+    { value: 'ISM', label: 'compliant' },
+    { value: 'Millions', label: 'citizens served' },
+    { value: '5x', label: 'faster processing' },
+  ],
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h2v2H7zM11 7h6M7 11h4M13 11h4"/></svg>',
+      title: 'Legacy Monolithic Systems',
+      description: "Federal and state government agencies are burdened by decades of technology debt: COBOL mainframes handling welfare payments, Oracle Forms applications managing licences and permits, and PeopleSoft installations running on unsupported versions. These systems are expensive to maintain, impossible to modernise incrementally and create single points of failure that have already caused high-profile service outages affecting millions of Australians.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
+      title: 'Citizen Experience Expectations',
+      description: "Citizens benchmark their interactions with government against consumer digital services — banking apps, e-commerce platforms, streaming services. The contrast with most government digital channels is stark: forms that timeout, 10-step processes requiring physical documents, no status visibility after submission and contact centres with hour-long wait times. The pressure to meet community expectations while navigating procurement rules and policy constraints is intense.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg>',
+      title: 'Whole-of-Government Interoperability',
+      description: "Citizens shouldn't need to prove their identity to seven different agencies or re-enter address details every time they interact with a new service. But achieving genuine interoperability requires agencies to adopt common standards (GovPass, myGovID, the National API Design Standard), modernise point-to-point integrations into event-driven architectures, and navigate governance structures that don't naturally incentivise cross-agency collaboration.",
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
+      title: 'Procurement and Compliance Complexity',
+      description: "Government ICT procurement through DITESA (formerly DTA) panels, state government standing offer arrangements and council tender processes adds significant lead time and administrative overhead. Mandatory security requirements including IRAP assessment, Essential Eight compliance and ISM control mapping create real complexity — but agencies that shortcut these controls face the prospect of a data breach affecting citizens' most sensitive personal information.",
+    },
+  ],
+  solutions: [
+    'Citizen self-service portals',
+    'Grants management systems',
+    'Regulatory compliance platforms',
+    'Freedom of Information (FOI/GIPA) request management',
+    'GIS and spatial data integrations',
+    'Open data portals and APIs',
+    'Case management systems',
+    'Government API gateway platforms',
+  ],
+  useCases: [
+    {
+      title: 'Digital Grants Management Platform',
+      description: "A federal government agency administering $400M per year in competitive grants across three programmes was managing the entire lifecycle — EOI, full application, assessment, recommendation, deed of grant, acquittal — through a combination of PDF forms, SharePoint document libraries and Excel-based assessment scoresheets. We built a purpose-built grants management platform with a public applicant portal (integrated with myGovID for identity verification), a structured online application form engine with save-and-resume, an internal assessment workflow with configurable scoring matrices and conflict of interest declarations, and a reporting suite for the Minister's office. Processing time per application dropped from 14 days to under three days.",
+      techStack: 'React · .NET 8 · SQL Server · myGovID (OIDC) · Azure Government · Power BI Embedded',
+      videoNote: 'grant application portal and internal assessment workflow dashboard',
+    },
+    {
+      title: 'Open Data Portal and API Gateway',
+      description: "A state government data agency needed to replace a legacy CKAN instance that was difficult to maintain and lacked the API management capabilities needed for their whole-of-government API strategy. We built a modern open data portal with a CKAN-compatible metadata API (preserving existing integrations with data.gov.au), a developer portal for API registration and key management via Kong Gateway, comprehensive dataset discovery with full-text search powered by Elasticsearch, and an automated data quality reporting pipeline. The portal now serves 2.4 million API calls per month and has reduced dataset publication time from five days to under four hours through a self-service publishing workflow.",
+      techStack: 'Next.js · Python · FastAPI · Kong Gateway · Elasticsearch · PostgreSQL · Azure · CKAN API',
+      videoNote: 'open data portal with dataset search and developer API key management',
+    },
+    {
+      title: 'Local Government Permit and Licence Platform',
+      description: "A metropolitan council was processing development applications, business licences and food safety registrations through a mix of paper forms, email and a legacy system that couldn't support online payment. Citizens had no visibility of where their application was in the queue. We replaced the legacy system with a citizen-facing portal (integrated with council's existing CRM via REST APIs) supporting 23 different application types with conditional form logic, integrated payment processing via BPoint, automated acknowledgement and status notification emails, and an internal workflow platform for officers to assess, request further information and issue determinations. The council reduced walk-in traffic to their service centres by 58% in the first year.",
+      techStack: 'React · Node.js · PostgreSQL · BPoint Payment Gateway · Civica API · SendGrid · Azure',
+      videoNote: 'citizen permit application portal and internal officer assessment workflow',
+    },
+  ],
+  relevantServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Legacy Modernisation', href: '/services/legacy-modernisation' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Database Architecture', href: '/services/database-architecture' },
+  ],
+  faqs: [
+    {
+      question: 'How do you approach IRAP assessment and Essential Eight compliance for government systems?',
+      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an ASD-certified assessor — that's not us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We've worked alongside multiple IRAP assessors across federal and state government engagements.",
+    },
+    {
+      question: 'Are you on any government ICT procurement panels?',
+      answer: "We are registered on the Digital Marketplace (now the DITESA ICT Procurement Panel) under relevant categories including software development and cloud services. We can also be engaged via state government standing offer arrangements including the NSW Government ICT Services Scheme, the Victorian Government Technology Products and Services panel, and Queensland Government QAssure. For smaller local government engagements below the mandatory tender threshold, we can be engaged directly. If your agency requires engagement via a specific panel arrangement that we're not currently on, talk to us — panel registration processes are straightforward and we can usually be onboarded within four to six weeks.",
+    },
+    {
+      question: 'What is your approach to myGovID and Digital Identity integration?',
+      answer: "The Australian Government's Digital Identity system (built on the Trusted Digital Identity Framework) provides a federated identity layer that lets citizens authenticate once using their myGovID credential and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the TDIF technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms — a significant citizen experience improvement.",
+    },
+    {
+      question: 'How do you handle OFFICIAL:Sensitive and PROTECTED data classifications?',
+      answer: "Australia's Protective Security Policy Framework (PSPF) defines the handling requirements for OFFICIAL, OFFICIAL:Sensitive and PROTECTED data. For OFFICIAL and OFFICIAL:Sensitive systems, we typically deploy to commercial Azure Government or AWS GovCloud (Sydney) regions with appropriate encryption, access controls and audit logging. For PROTECTED systems, the PSPF requires storage on infrastructure with explicit PROTECTED authorisation — currently a small number of certified providers including Microsoft Azure (with PROTECTED assessment), AWS and some on-premises managed environments. We design systems with data classification in mind from the start, including appropriate labelling, handling procedures for API consumers, and the access control architecture needed to enforce classification boundaries.",
+    },
+    {
+      question: 'Can you work within agile delivery frameworks required by DTA and state digital strategies?',
+      answer: "Yes. The DTA's Digital Service Standard (and equivalent state frameworks like the NSW Digital Design System and the Victorian Digital Service Standard) require a user-centred, iterative delivery approach. We're comfortable operating in the delivery model these frameworks prescribe: discovery phases producing validated problem statements and user research insights; alpha phases producing low-fidelity prototypes tested with real users; beta phases delivering progressively complete services; and live phases with ongoing continuous improvement. We use Jira and Confluence for delivery transparency (standard across most government ICT environments), and our delivery leads are familiar with the reporting cadences and governance artefacts required by government programme management offices.",
+    },
+  ],
+  ctaHeadline: "Let's Build Digital Government That Citizens Actually Use",
+  ctaDescription: "Whether you're modernising a legacy permit system, launching a new grants management platform or implementing a whole-of-government API gateway, our team understands the compliance, procurement and political realities of Australian government ICT. Book a confidential discovery conversation today.",
+};
+---
+<IndustryPageLayout {...data} />

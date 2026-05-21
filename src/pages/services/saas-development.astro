@@ -1,0 +1,155 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Custom SaaS Product Development | All Webbed Labs',
+  metaDescription: 'End-to-end SaaS product development for Australian founders and enterprises. Multi-tenant architecture, subscription billing, analytics and the scalability to win market share.',
+  category: 'Product',
+  heroHeadline: 'Launch Your SaaS Product With the Architecture to Scale',
+  heroTagline: 'Multi-tenant, subscription-ready and analytics-wired from day one. We build SaaS products that win market share.',
+  description: [
+    'Building a SaaS product is categorically different from building a bespoke internal application. The architecture decisions made in the first three months — multi-tenancy model, billing system design, onboarding flow, permission model, trial conversion logic — will either constrain or enable your growth for the next five years. Getting them wrong is expensive: rebuilding a single-tenant architecture into a proper multi-tenant system after you have paying customers is one of the most painful and risky engineering projects a company can undertake. We have done it on behalf of clients who inherited the problem from a previous vendor. The cost is always larger than the original build would have been.',
+    'Our SaaS practice covers product strategy, architecture design, full-stack implementation, and go-to-market readiness. We work with founder-led companies building their first commercial product, and with enterprises launching new product lines into market. In both cases, we bring the same discipline: a multi-tenant data model from day one, Stripe-integrated billing with plan management and usage metering from day one, an instrumented analytics layer that tracks funnel performance and feature adoption from day one, and an administrative layer that lets you manage customers without engineering involvement. These are not features we add later — they are part of the initial architecture.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Proper Multi-Tenancy Architecture',
+      description: 'Row-level security in PostgreSQL using tenant-scoped policies, schema isolation where compliance requires it, and an application layer that enforces tenancy at every data access point. Customer data is cryptographically isolated — not just filtered by a tenant_id column without database-level enforcement.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
+      title: 'Stripe Billing, Done Properly',
+      description: 'Subscription lifecycle management covering trials, plan upgrades and downgrades, prorated billing, usage-based metering, seat-based pricing, coupon and discount management, invoice generation, dunning email sequences, and webhook handling with idempotency guarantees. We have implemented Stripe Billing for over a dozen SaaS products.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+      title: 'Product Analytics From Launch',
+      description: 'Funnel analytics tracking signup, activation, feature adoption, expansion and churn signals. Integration with Mixpanel or PostHog, plus a custom internal analytics dashboard so your product and growth team can answer questions about user behaviour without submitting data analysis tickets to engineering.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+      title: 'Self-Serve Onboarding That Converts',
+      description: 'Activation rate is the most important early metric for a SaaS product. We design onboarding flows that guide new users to the "aha moment" as quickly as possible — with progressive disclosure, contextual tooltips, empty state guidance and in-app checklists — then measure completion rates and iterate.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Enterprise-Ready Security & Compliance',
+      description: 'SAML 2.0 SSO and SCIM provisioning for enterprise customers who mandate single sign-on. Audit log trails per tenant. Data export and deletion APIs for GDPR/Privacy Act compliance. Role-based access control with permission hierarchies. SOC 2 Type II readiness as a design consideration from the start.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      title: 'Public API & Webhook Infrastructure',
+      description: 'Most successful SaaS products eventually need a public API and webhook system that enables customers to integrate with their own tools. We build this as a first-class platform capability — not a bolted-on afterthought — with API key management, usage-based rate limiting, webhook delivery with retry logic, and a developer portal.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Legal Technology',
+      title: 'Matter Management SaaS Platform',
+      description: 'A legal technology startup launched a multi-tenant matter management platform for boutique law firms — with document assembly, billing time capture, trust accounting integration, and a client portal — handling 320 firms in its first year with zero architectural refactoring, because the tenancy model was designed to scale from the beginning.',
+    },
+    {
+      industry: 'Human Resources',
+      title: 'Workforce Compliance & Credentialing Platform',
+      description: 'An HR technology company built a SaaS platform for managing contractor credential verification — licences, police checks, insurance certificates and induction completions — for enterprise customers in the resources and healthcare sectors, with automated expiry alerts, workflow approvals and a public API consumed by major HRIS platforms.',
+    },
+    {
+      industry: 'Construction Technology',
+      title: 'Subcontractor Prequalification & Risk Platform',
+      description: 'A construction software company launched a B2B SaaS product enabling head contractors to manage subcontractor prequalification, WHS compliance documentation and insurance verification at scale — replacing a manual process that took a compliance team of eight people months of annual effort with an automated workflow serving 50 enterprise clients.',
+    },
+    {
+      industry: 'Financial Services',
+      title: 'SME Cash Flow Forecasting Tool',
+      description: 'A fintech launched a subscription-based cash flow forecasting and scenario planning tool for SME owners — integrating with Xero and MYOB via open APIs, providing 13-week rolling cash flow projections, scenario modelling, and automated alerts for projected covenant breaches — reaching product-market fit within 6 months of launch.',
+    },
+  ],
+  technologies: [
+    'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis',
+    'Stripe', 'Supabase', 'PostHog', 'AWS', 'Terraform', 'Docker',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Product Strategy & Architecture Blueprint',
+      duration: 'Weeks 1–3',
+      description: 'We run structured sessions to define ICP, core value proposition, must-have features for v1, pricing model, and competitive differentiation. The output is a product architecture blueprint covering multi-tenancy model, billing system design, identity architecture, integration strategy and a phased feature roadmap aligned to your go-to-market timeline.',
+    },
+    {
+      step: '02',
+      title: 'Design System & Onboarding Flow',
+      duration: 'Weeks 3–6',
+      description: 'We design the brand design system, key product screens, and — most critically — the entire onboarding sequence from signup to activation. Onboarding is prototyped and user-tested before development begins. The activation metric (whatever action defines an "activated" user for your product) is agreed upfront and measured from day one.',
+    },
+    {
+      step: '03',
+      title: 'Core Platform Development',
+      duration: 'Weeks 4–14',
+      description: 'Authentication, multi-tenant data layer, billing integration, user and organisation management, permissions model, email notification system, and admin panel are built as the platform foundation before feature development begins. These are not glamorous, but they are the difference between a product you can grow and one you have to rebuild.',
+    },
+    {
+      step: '04',
+      title: 'Feature Development Sprints',
+      duration: 'Weeks 10–24',
+      description: 'Two-week product sprints building the differentiated features that drive your value proposition. Each sprint is prioritised against your ICP\'s most important jobs-to-be-done and measured against activation and retention hypotheses. We treat every sprint as an opportunity to validate product decisions, not just execute them.',
+    },
+    {
+      step: '05',
+      title: 'Beta Program & Instrumentation',
+      duration: 'Weeks 20–26',
+      description: 'A closed beta with 10–30 target customers, with usage analytics active from day one of beta. We review activation funnel data weekly, identify drop-off points, and make targeted UX adjustments before public launch. Billing is live in beta — even if customers are on extended trials — to validate the payment flow.',
+    },
+    {
+      step: '06',
+      title: 'Public Launch & Growth Infrastructure',
+      duration: 'Week 26+',
+      description: 'Production launch with zero-downtime deployment, status page, customer support tooling (Intercom or Crisp), SEO foundations, referral program mechanics, and a documented growth experimentation process. We remain available as a sprint delivery partner for ongoing feature development and growth experiments.',
+    },
+  ],
+  industries: [
+    'Legal & Professional Services Technology',
+    'Human Resources & Workforce Tech',
+    'Construction & Property Technology',
+    'Financial Services & Fintech',
+    'Healthcare & Health Tech',
+    'Education Technology',
+    'Logistics & Operations Tech',
+    'Compliance & Risk Technology',
+  ],
+  faqs: [
+    {
+      question: 'What is the minimum viable architecture for a SaaS product at launch?',
+      answer: 'The minimum viable architecture for a SaaS product includes: a multi-tenant data model with proper tenant isolation (not just filtered queries), an authentication system supporting email/password and at minimum Google OAuth, a billing integration with Stripe covering subscription creation, payment failure handling and plan management, a transactional email system for onboarding and notifications, and a basic administrative panel for managing customers. Products that launch without these foundations — particularly billing and admin tooling — create immediate operational problems at the point where you most want to focus on growth. We scope and deliver this foundation as a non-negotiable first phase.',
+    },
+    {
+      question: 'How do you approach multi-tenancy — and why does the model chosen at the start matter so much?',
+      answer: 'Multi-tenancy can be implemented at three levels: shared schema with row-level security (all tenants\' data in the same tables, filtered by tenant ID), schema isolation (separate PostgreSQL schemas per tenant within the same database), or database isolation (completely separate database instances per tenant). Row-level security with PostgreSQL\'s built-in RLS policies is our default for most SaaS products: it scales to thousands of tenants, enforces isolation at the database level rather than just the application layer, and keeps operational complexity manageable. Schema isolation is appropriate for regulated industries where data separation requirements mandate it. Migrating between these models after launch is one of the most disruptive refactoring efforts in SaaS engineering — which is why the decision needs to be made correctly at the start.',
+    },
+    {
+      question: 'How should we think about the build vs buy decision for billing infrastructure?',
+      answer: 'Billing is a domain where off-the-shelf solutions (Stripe Billing, Chargebee, Paddle) are almost always preferable to building your own. The complexity of handling trials, upgrades, downgrades, prorations, failed payments, dunning, tax calculation across jurisdictions, and invoice compliance is genuinely substantial — and getting it wrong has direct revenue and compliance consequences. We integrate with Stripe Billing for most of our SaaS engagements, occasionally Paddle for products where seller-of-record arrangement (handling GST/VAT compliance globally) is valuable. The engineering effort we save by not rebuilding billing infrastructure is redirected into your product\'s differentiated features.',
+    },
+    {
+      question: 'What does it cost to build a SaaS product, and how should we stage investment?',
+      answer: 'A properly architected SaaS product with the core platform (auth, billing, multi-tenancy, admin) plus enough product features to validate with your first customers typically requires 20–30 weeks of senior engineering effort. We strongly recommend staging investment: a discovery and architecture phase first (4 weeks, fixed cost), which produces a specification detailed enough to give you a reliable estimate for the build. This approach eliminates the most common source of cost overruns — starting development before requirements are understood well enough to estimate accurately. We provide detailed line-item estimates so you can make informed decisions about what to include in the first version.',
+    },
+    {
+      question: 'How do you handle data privacy obligations for a SaaS product with Australian customers?',
+      answer: 'Any SaaS product holding personal information about Australian individuals is subject to the Privacy Act 1988 and the Australian Privacy Principles. Practical obligations include: a compliant privacy policy, collection notices at the point of data capture, data retention and deletion policies, a data breach response procedure, and the ability to respond to access requests from individuals within 30 days. We build data export and deletion APIs as standard components of the platform, making individual rights requests operationally straightforward. For products in sensitive sectors (health, finance), additional obligations apply and we scope compliance requirements explicitly during the architecture phase.',
+    },
+    {
+      question: 'Can you take over a SaaS product that was started by another development team?',
+      answer: 'Yes, and we do this regularly. We begin with a technical audit covering code quality, architecture, security posture, test coverage, deployment processes and documentation. The audit produces a frank assessment of what is well-built, what carries technical debt, and what represents immediate risk — along with a prioritised remediation plan. We have taken over SaaS products ranging from well-structured codebases that simply needed a more senior team to evolve them, to products where the first priority was fixing critical security vulnerabilities before the next customer was onboarded. We will not agree to take over a codebase without first completing the audit, because we need to understand what we are committing to deliver.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'API Development & Integrations', href: '/services/api-development' },
+    { title: 'UI & UX Design', href: '/services/ui-ux-design' },
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

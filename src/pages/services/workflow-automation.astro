@@ -1,0 +1,170 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Workflow Automation & System Integration | All Webbed Labs',
+  metaDescription: 'Intelligent workflow automation and enterprise system integration. Eliminate manual processes, connect your platforms end to end and scale operations without headcount.',
+  category: 'Automation',
+  heroHeadline: 'Automate the Work That Shouldn\'t Need Humans',
+  heroTagline: 'Intelligent workflow automation that eliminates manual processes and connects your systems end to end.',
+  description: [
+    'Manual processes do not just slow you down — they introduce errors, create compliance risk and consume the time of skilled people who should be doing higher-value work. Whether it is finance teams re-entering data between systems, operations staff manually triaging support tickets, HR coordinators hand-crafting onboarding sequences or procurement teams emailing approval chains, every manual step is a bottleneck, a point of failure and an opportunity for automation. We have eliminated hundreds of thousands of manual process steps for Australian enterprises across every industry sector.',
+    'Our approach to automation starts with process analysis rather than technology. We map the process as it actually runs — not as the policy documents describe it — identify the steps that can be automated versus the steps that genuinely require human judgement, and design automation solutions that are reliable, auditable and maintainable. We do not use fragile no-code tools for business-critical workflows. We build proper, version-controlled, tested automation that your engineering team can own and extend. And we integrate systems properly — using stable APIs and event-driven architectures — rather than screen scraping and point-to-point file transfers that break whenever anything changes.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+      title: 'Process Speed & Consistency',
+      description: 'Automated workflows execute in seconds what takes humans minutes or hours, and they do so identically every time. Removing variability from routine processes dramatically reduces error rates and the cost of downstream correction.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
+      title: 'End-to-End System Integration',
+      description: 'Data siloed in disconnected systems is a productivity tax. We integrate your CRM, ERP, HRIS, financial platforms and custom applications so information flows automatically, eliminating manual re-entry and keeping every system in sync.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Audit Trails & Compliance',
+      description: 'Every automated action is logged with a timestamp, actor and outcome. This creates audit trails that satisfy compliance requirements and make it straightforward to investigate any exception after the fact — something manually executed processes rarely achieve.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Scale Without Headcount',
+      description: 'Automated processes scale with volume without a linear increase in headcount. A finance team that processes 1,000 invoices per month can process 10,000 with the same staff once the process is automated — a direct impact on operating leverage.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Resilient, Monitored Pipelines',
+      description: 'Automation that runs silently and fails silently is worse than no automation. We build monitoring, alerting and automatic retry logic into every workflow so failures surface immediately and are resolved before they affect downstream systems.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+      title: 'Human-in-the-Loop Design',
+      description: 'Not every step should be automated. We design workflows that route exceptions, edge cases and high-risk decisions to human reviewers, with clear context and a structured decision interface — combining automation speed with human judgement where it matters.',
+    },
+  ],
+  useCases: [
+    {
+      title: 'Invoice Processing Automation for a National Retailer',
+      description: 'A national retailer was processing 15,000 supplier invoices per month manually — a team of six finance staff spending most of their time on data entry, matching and exception handling. We built an automated pipeline that extracted invoice data using OCR, matched against purchase orders, flagged discrepancies for human review and posted approved invoices to the ERP. Processing time per invoice dropped from 12 minutes to under 30 seconds for 87% of invoices.',
+      industry: 'Retail',
+    },
+    {
+      title: 'Customer Onboarding Automation Across Five Platforms',
+      description: 'A financial services firm was onboarding new clients across CRM, KYC platform, document management system, billing platform and internal servicing portal — five separate steps, each manual, prone to delays and errors. We built an integration layer that automated the end-to-end onboarding flow from a single trigger, reducing average onboarding time from 3 days to 4 hours and eliminating a class of data inconsistency errors that had required a weekly reconciliation run.',
+      industry: 'Financial Services',
+    },
+    {
+      title: 'IT Service Desk Automation for a Government Agency',
+      description: 'A government agency\'s IT service desk was handling 2,000 tickets per week, with staff spending the majority of their time on ticket classification, routing and resolution of common issues that followed predictable resolution paths. We built an automation layer that classified incoming tickets, auto-resolved 34% of them using documented runbooks, and routed the remainder to the correct team with pre-populated context. Agent productive time on complex issues increased by 60%.',
+      industry: 'Government',
+    },
+    {
+      title: 'Procurement Approval Workflow Automation',
+      description: 'A professional services firm was running purchase approvals via email chains that were lost, delayed and impossible to audit. We replaced the process with a structured workflow automation that routed requests based on spend threshold and category rules, enforced approval SLAs, escalated stale requests automatically and produced a complete audit trail for each purchase. Policy compliance improved from 71% to 99% within three months.',
+      industry: 'Professional Services',
+    },
+  ],
+  technologies: [
+    'Apache Airflow',
+    'Temporal.io',
+    'n8n',
+    'Zapier (enterprise)',
+    'AWS Step Functions',
+    'Azure Logic Apps',
+    'MuleSoft',
+    'REST & GraphQL APIs',
+    'Apache Kafka',
+    'Webhooks & Event Bridges',
+    'Python (automation scripts)',
+    'Robotic Process Automation (RPA)',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Process Discovery & Mapping',
+      description: 'We shadow your team and map processes as they actually run — capturing every step, decision point, exception path and system touchpoint. This is distinct from reading policy documentation: real processes almost always differ from documented ones, and automation must reflect reality.',
+      duration: 'Week 1',
+    },
+    {
+      step: '02',
+      title: 'Automation Opportunity Assessment',
+      description: 'Not every step in a process is worth automating. We score each step on automation feasibility, business impact and implementation risk, and present a prioritised automation roadmap. High-volume, rule-based, error-prone steps are always the first candidates.',
+      duration: 'Week 1–2',
+    },
+    {
+      step: '03',
+      title: 'Integration Architecture Design',
+      description: 'For processes that span multiple systems, we design the integration architecture: what connects to what, via which mechanism (API, webhook, event stream, database trigger), and how data is transformed between systems. We document the design and validate it with your technical stakeholders before building.',
+      duration: 'Week 2',
+    },
+    {
+      step: '04',
+      title: 'Development & Unit Testing',
+      description: 'Automation is built iteratively, starting with the highest-priority workflows. Every component is unit-tested with edge cases and error scenarios, not just the happy path. We use version control, code review and CI/CD pipelines for automation development just as we would for any production software.',
+      duration: 'Week 2–5',
+    },
+    {
+      step: '05',
+      title: 'Integration & End-to-End Testing',
+      description: 'We test the full workflow end to end in a staging environment that mirrors production, including failure scenarios: what happens when a downstream API is unavailable, when data arrives in an unexpected format, when an approval is not received within the SLA window.',
+      duration: 'Week 5–6',
+    },
+    {
+      step: '06',
+      title: 'Parallel Running & Go-Live',
+      description: 'For business-critical processes, we run automated and manual processes in parallel for a period to validate that automated outputs match manual ones before cutting over. This builds team confidence and catches edge cases that testing missed.',
+      duration: 'Week 6–7',
+    },
+    {
+      step: '07',
+      title: 'Monitoring Setup & Handover',
+      description: 'We configure monitoring, alerting and dashboards for every automation in production, hand over operational runbooks and train your team on how to manage, troubleshoot and extend the automations. Automation should be a durable business asset, not a black box.',
+      duration: 'Week 7–8',
+    },
+  ],
+  industries: [
+    'Financial Services',
+    'Healthcare & Life Sciences',
+    'Government & Public Sector',
+    'Retail & E-commerce',
+    'Logistics & Supply Chain',
+    'Professional Services',
+    'Manufacturing',
+    'SaaS & Technology',
+  ],
+  faqs: [
+    {
+      question: 'How do you decide which processes are worth automating?',
+      answer: 'We use a structured prioritisation framework that scores processes on four dimensions: volume (how many times per month does this happen?), time cost per instance (how long does it take a human to do?), error rate and downstream cost of errors, and automation feasibility (is the process rule-based, or does it require too much contextual judgement to automate safely?). Processes that score highly on all four dimensions — high volume, time-consuming, error-prone and rule-based — are the obvious starting points. We present this analysis transparently so you can validate the prioritisation against your own knowledge of business impact.',
+    },
+    {
+      question: 'What is the difference between workflow automation and RPA?',
+      answer: 'Robotic Process Automation (RPA) simulates a human user interacting with existing software interfaces — clicking, typing, reading screen elements. It is useful when no API or integration point exists and screen interaction is the only available mechanism. However, RPA is fragile: it breaks whenever the UI changes, and it is hard to test and maintain. Workflow automation using APIs and event-driven integration is more robust and is our preferred approach wherever a proper integration point is available. We use RPA selectively for legacy systems where no alternative exists, and we are transparent about the maintenance overhead this implies.',
+    },
+    {
+      question: 'We have legacy systems with no APIs. Can they still be integrated?',
+      answer: 'Yes, but the approach depends on the system. Options include: RPA (as above) where UI interaction is the only entry point; database-level integration where we read from or write to the database directly (suitable for some systems but requires care around data integrity); file-based integration using structured exports that many legacy systems support; and, in some cases, wrapping the legacy system with a custom API layer. We assess the available integration options for each system and recommend the approach that balances feasibility, reliability and maintenance cost for your specific context.',
+    },
+    {
+      question: 'What happens when an automated workflow fails?',
+      answer: 'Resilient automation handles failures gracefully. Every workflow we build has defined failure handling: retry logic for transient failures (network timeouts, temporary API unavailability), dead-letter queues for items that cannot be processed after retries, alerting that notifies your team immediately when a failure requires human intervention, and structured error state that provides clear context for investigation. We also build operational dashboards that give your team visibility into workflow throughput, error rates and queue depths in real time.',
+    },
+    {
+      question: 'How do you handle sensitive data in automated workflows?',
+      answer: 'Data security is a first-class concern in automation design. We avoid persisting sensitive data (personal information, financial records, credentials) in intermediate workflow states wherever possible. Where sensitive data must be handled, it is encrypted at rest and in transit, access is restricted to the minimum required, and we follow the principle of data minimisation — passing only the specific fields each step of the workflow requires rather than entire records. We also ensure that audit logs, which are necessary for compliance, do not inadvertently persist sensitive field values.',
+    },
+    {
+      question: 'Can your automations integrate with our existing ERP or CRM platform?',
+      answer: 'In most cases, yes. We have built integrations with SAP, Oracle ERP, Microsoft Dynamics, Salesforce, HubSpot, Workday, ServiceNow and dozens of other enterprise platforms. Each platform has its own integration patterns and limitations: some offer comprehensive REST APIs, others rely on batch file exports, and some (particularly older ERP systems) require careful handling of their concurrency and locking behaviour. We assess integration options early in the engagement and are clear about any constraints or limitations of the integration approach we recommend.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Data Analytics & Business Intelligence', href: '/services/data-analytics' },
+    { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
+    { title: 'Legacy System Modernisation', href: '/services/legacy-modernisation' },
+    { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
+  ],
+};
+---
+<ServicePageLayout {...data} />

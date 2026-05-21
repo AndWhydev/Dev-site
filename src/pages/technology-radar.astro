@@ -1,0 +1,606 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+type Proficiency = 'Expert' | 'Advanced' | 'Proficient';
+
+interface Tech {
+  name: string;
+  category: string;
+  proficiency: Proficiency;
+}
+
+const technologies: Tech[] = [
+  // Frontend
+  { name: 'React', category: 'Frontend', proficiency: 'Expert' },
+  { name: 'Next.js', category: 'Frontend', proficiency: 'Expert' },
+  { name: 'Astro', category: 'Frontend', proficiency: 'Expert' },
+  { name: 'Vue', category: 'Frontend', proficiency: 'Advanced' },
+  { name: 'Angular', category: 'Frontend', proficiency: 'Proficient' },
+  { name: 'Svelte', category: 'Frontend', proficiency: 'Advanced' },
+  { name: 'TypeScript', category: 'Frontend', proficiency: 'Expert' },
+  { name: 'Tailwind CSS', category: 'Frontend', proficiency: 'Expert' },
+  // Backend
+  { name: 'Node.js', category: 'Backend', proficiency: 'Expert' },
+  { name: 'Python', category: 'Backend', proficiency: 'Expert' },
+  { name: 'FastAPI', category: 'Backend', proficiency: 'Expert' },
+  { name: 'Django', category: 'Backend', proficiency: 'Advanced' },
+  { name: 'Laravel', category: 'Backend', proficiency: 'Advanced' },
+  { name: 'Go', category: 'Backend', proficiency: 'Proficient' },
+  { name: 'Rust', category: 'Backend', proficiency: 'Proficient' },
+  { name: 'Java', category: 'Backend', proficiency: 'Advanced' },
+  // Mobile
+  { name: 'Flutter', category: 'Mobile', proficiency: 'Expert' },
+  { name: 'React Native', category: 'Mobile', proficiency: 'Expert' },
+  { name: 'Swift', category: 'Mobile', proficiency: 'Advanced' },
+  { name: 'Kotlin', category: 'Mobile', proficiency: 'Advanced' },
+  // AI & ML
+  { name: 'OpenAI', category: 'AI & ML', proficiency: 'Expert' },
+  { name: 'LangChain', category: 'AI & ML', proficiency: 'Expert' },
+  { name: 'HuggingFace', category: 'AI & ML', proficiency: 'Advanced' },
+  { name: 'TensorFlow', category: 'AI & ML', proficiency: 'Advanced' },
+  { name: 'PyTorch', category: 'AI & ML', proficiency: 'Advanced' },
+  { name: 'Scikit-learn', category: 'AI & ML', proficiency: 'Advanced' },
+  { name: 'Anthropic Claude', category: 'AI & ML', proficiency: 'Expert' },
+  { name: 'Llama', category: 'AI & ML', proficiency: 'Advanced' },
+  // Database
+  { name: 'PostgreSQL', category: 'Database', proficiency: 'Expert' },
+  { name: 'MongoDB', category: 'Database', proficiency: 'Expert' },
+  { name: 'MySQL', category: 'Database', proficiency: 'Advanced' },
+  { name: 'Redis', category: 'Database', proficiency: 'Expert' },
+  { name: 'Supabase', category: 'Database', proficiency: 'Expert' },
+  { name: 'Firebase', category: 'Database', proficiency: 'Advanced' },
+  { name: 'DynamoDB', category: 'Database', proficiency: 'Advanced' },
+  { name: 'Elasticsearch', category: 'Database', proficiency: 'Advanced' },
+  // Cloud
+  { name: 'AWS', category: 'Cloud', proficiency: 'Expert' },
+  { name: 'Google Cloud', category: 'Cloud', proficiency: 'Expert' },
+  { name: 'Azure', category: 'Cloud', proficiency: 'Advanced' },
+  { name: 'Vercel', category: 'Cloud', proficiency: 'Expert' },
+  { name: 'Cloudflare', category: 'Cloud', proficiency: 'Advanced' },
+  { name: 'DigitalOcean', category: 'Cloud', proficiency: 'Advanced' },
+  // Web3
+  { name: 'Solidity', category: 'Web3', proficiency: 'Expert' },
+  { name: 'Rust/Anchor', category: 'Web3', proficiency: 'Advanced' },
+  { name: 'Ethers.js', category: 'Web3', proficiency: 'Expert' },
+  { name: 'Web3.js', category: 'Web3', proficiency: 'Expert' },
+  { name: 'Hardhat', category: 'Web3', proficiency: 'Expert' },
+  { name: 'Foundry', category: 'Web3', proficiency: 'Advanced' },
+  { name: 'Wagmi', category: 'Web3', proficiency: 'Advanced' },
+  // DevOps
+  { name: 'Docker', category: 'DevOps', proficiency: 'Expert' },
+  { name: 'Kubernetes', category: 'DevOps', proficiency: 'Advanced' },
+  { name: 'GitHub Actions', category: 'DevOps', proficiency: 'Expert' },
+  { name: 'Terraform', category: 'DevOps', proficiency: 'Advanced' },
+  { name: 'Nginx', category: 'DevOps', proficiency: 'Expert' },
+  { name: 'Prometheus', category: 'DevOps', proficiency: 'Advanced' },
+  // Payments
+  { name: 'Stripe', category: 'Payments', proficiency: 'Expert' },
+  { name: 'PayPal', category: 'Payments', proficiency: 'Advanced' },
+  { name: 'Square', category: 'Payments', proficiency: 'Proficient' },
+  { name: 'Crypto Payments', category: 'Payments', proficiency: 'Proficient' },
+];
+
+const categories = ['All', 'Frontend', 'Backend', 'Mobile', 'AI & ML', 'Database', 'Cloud', 'Web3', 'DevOps', 'Payments'];
+
+const principles = [
+  {
+    num: '01',
+    title: 'Stability Over Novelty',
+    desc: 'Enterprise software must still be maintainable five years from now. We favour technologies with proven track records, strong community support and long-term vendor commitment.',
+  },
+  {
+    num: '02',
+    title: 'Pragmatic Performance',
+    desc: 'We choose the right tool for the job — not the most technically interesting one. Performance, developer experience and operational simplicity are all weighed together.',
+  },
+  {
+    num: '03',
+    title: 'Continuous Evaluation',
+    desc: 'Our team dedicates time each quarter to R&D, evaluating emerging tools against our existing stack. Technologies graduate from evaluation to adoption through real project experience.',
+  },
+  {
+    num: '04',
+    title: 'Client Ownership',
+    desc: 'We prefer widely adopted, open technologies that your internal team can own and extend. Niche or proprietary tools create dependency — we avoid that wherever possible.',
+  },
+];
+---
+
+<Layout
+  title="Technology Radar — All Webbed Labs | Our Tech Stack"
+  description="The complete technology stack used by All Webbed Labs. Grouped by category with proficiency levels. Frontend, backend, mobile, AI, cloud, Web3 and more."
+>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="radar-hero">
+      <div class="radar-hero-bg" aria-hidden="true">
+        <div class="radar-glow"></div>
+        <div class="radar-grid-bg"></div>
+      </div>
+      <div class="radar-hero-inner">
+        <div class="reveal">
+          <span class="section-label">Technology Radar</span>
+          <h1 class="radar-title">
+            The Tools<br />
+            <span class="gradient-text">We Build With</span>
+          </h1>
+          <p class="radar-sub">
+            We choose stability over trends, depth over breadth. Every technology in our stack has been battle-tested across real enterprise projects — and maintained by engineers who understand it deeply.
+          </p>
+          <div class="radar-legend">
+            <div class="legend-item">
+              <span class="legend-dot legend-expert"></span>
+              <span>Expert — Daily production use, deep internal expertise</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot legend-advanced"></span>
+              <span>Advanced — Regular use across multiple projects</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot legend-proficient"></span>
+              <span>Proficient — Solid working knowledge, selective use</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter + Grid -->
+    <section class="tech-grid-section">
+      <div class="tech-grid-inner">
+        <!-- Filter buttons -->
+        <div class="filter-bar reveal" role="group" aria-label="Filter technologies by category">
+          {categories.map((cat) => (
+            <button
+              class={`filter-btn ${cat === 'All' ? 'filter-btn--active' : ''}`}
+              data-category={cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <!-- Count display -->
+        <div class="tech-count reveal" id="tech-count">
+          Showing <strong>{technologies.length}</strong> technologies
+        </div>
+
+        <!-- Tech cards -->
+        <div class="tech-grid" id="tech-grid">
+          {technologies.map((tech) => (
+            <div
+              class="tech-card card-hover reveal"
+              data-category={tech.category}
+            >
+              <div class="tech-cat-label">{tech.category}</div>
+              <div class="tech-name">{tech.name}</div>
+              <div class={`tech-badge tech-badge--${tech.proficiency.toLowerCase()}`}>
+                {tech.proficiency}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- No results message -->
+        <div class="no-results" id="no-results" hidden>
+          <p>No technologies found in this category.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section">
+      <div class="philosophy-inner">
+        <div class="philosophy-grid">
+          <div class="phil-content reveal-left">
+            <span class="section-label">Technology Philosophy</span>
+            <h2 class="section-heading">We Don't Chase Trends. We Chase Outcomes.</h2>
+            <p>
+              The best technology decision isn't always the newest one. Our philosophy is built on the idea that
+              enterprise software needs to last — to be maintained, extended and understood by teams that weren't
+              part of the original build.
+            </p>
+            <p>
+              We stay deeply current with the technology landscape but apply a rigorous filter before anything
+              enters our production stack: does it solve a real problem better than what we already use? Does it
+              have the community, documentation and longevity to warrant adoption?
+            </p>
+            <a href="/about" class="btn-outline phil-cta">
+              Read about our engineering values
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="phil-stats reveal-right">
+            <div class="phil-stat">
+              <div class="phil-stat-num gradient-text-green">60+</div>
+              <div class="phil-stat-label">Technologies in active production use</div>
+            </div>
+            <div class="phil-stat">
+              <div class="phil-stat-num gradient-text-green">9</div>
+              <div class="phil-stat-label">Technology categories covered</div>
+            </div>
+            <div class="phil-stat">
+              <div class="phil-stat-num gradient-text-green">8+</div>
+              <div class="phil-stat-label">Years of enterprise stack refinement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="principles-section">
+      <div class="principles-inner">
+        <div class="principles-header reveal">
+          <span class="section-label">How We Choose</span>
+          <h2 class="section-heading">Four Principles for Technology Selection</h2>
+          <p class="section-subheading">
+            Every technology in our radar passes these four tests before we recommend it for an enterprise project.
+          </p>
+        </div>
+        <div class="principles-grid">
+          {principles.map((p, i) => (
+            <div class={`principle-card reveal stagger-${i + 1}`}>
+              <div class="principle-num">{p.num}</div>
+              <h3 class="principle-title">{p.title}</h3>
+              <p class="principle-desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .radar-hero {
+    padding: 10rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .radar-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .radar-glow {
+    position: absolute;
+    top: -10%;
+    right: 5%;
+    width: 700px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.09) 0%, transparent 65%);
+  }
+  .radar-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(13,147,115,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,147,115,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .radar-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .radar-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+  .radar-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 620px;
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
+  }
+  .radar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-expert { background: #0d9373; }
+  .legend-advanced { background: #3b82f6; }
+  .legend-proficient { background: #4a6359; }
+
+  /* Tech grid section */
+  .tech-grid-section {
+    padding: 6rem 0;
+    background: #0f1614;
+  }
+  .tech-grid-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .filter-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a6359;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #1e2d28;
+    padding: 0.5rem 1.125rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+  .filter-btn:hover {
+    color: #8aa09a;
+    border-color: rgba(13,147,115,0.2);
+  }
+  .filter-btn--active {
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border-color: rgba(13,147,115,0.3);
+  }
+
+  .tech-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin-bottom: 1.5rem;
+  }
+  .tech-count strong {
+    color: #0d9373;
+  }
+
+  /* Tech cards grid */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .tech-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: default;
+  }
+  .tech-card.hidden {
+    display: none;
+  }
+  .tech-cat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2a3d35;
+  }
+  .tech-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+  }
+  .tech-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+  .tech-badge--expert {
+    color: #0d9373;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.2);
+  }
+  .tech-badge--advanced {
+    color: #3b82f6;
+    background: rgba(59,130,246,0.1);
+    border: 1px solid rgba(59,130,246,0.2);
+  }
+  .tech-badge--proficient {
+    color: #8aa09a;
+    background: rgba(138,160,154,0.08);
+    border: 1px solid rgba(138,160,154,0.15);
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 4rem 0;
+    font-family: 'DM Sans', sans-serif;
+    color: #4a6359;
+    font-size: 1rem;
+  }
+
+  /* Philosophy */
+  .philosophy-section {
+    padding: 7rem 0;
+    background: #0a0f0e;
+  }
+  .philosophy-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .phil-content p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a6359;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+  .phil-cta {
+    margin-top: 0.5rem;
+  }
+  .phil-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .phil-stat {}
+  .phil-stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.375rem;
+  }
+  .phil-stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #4a6359;
+  }
+
+  /* Principles */
+  .principles-section {
+    padding: 7rem 0;
+    background: #0f1614;
+  }
+  .principles-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .principles-header {
+    max-width: 640px;
+    margin-bottom: 4rem;
+  }
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .principle-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+  }
+  .principle-card:hover {
+    border-color: rgba(13,147,115,0.25);
+  }
+  .principle-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .principle-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+  }
+  .principle-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .principles-grid { grid-template-columns: repeat(2, 1fr); }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 640px) {
+    .principles-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const techCards = document.querySelectorAll<HTMLElement>('.tech-card');
+  const countEl = document.getElementById('tech-count');
+  const noResults = document.getElementById('no-results');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category ?? 'All';
+
+      // Update active state
+      filterBtns.forEach((b) => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+
+      // Filter cards
+      let visible = 0;
+      techCards.forEach((card) => {
+        const match = category === 'All' || card.dataset.category === category;
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      // Update count
+      if (countEl) {
+        countEl.innerHTML = `Showing <strong>${visible}</strong> ${category === 'All' ? 'technologies' : `${category} technologies`}`;
+      }
+
+      // No results
+      if (noResults) {
+        noResults.hidden = visible > 0;
+      }
+    });
+  });
+</script>

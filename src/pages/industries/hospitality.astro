@@ -1,0 +1,110 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Hospitality & Tourism Software Development | All Webbed Labs',
+  metaDescription: 'Direct booking engines, PMS integrations, guest experience apps and revenue management tools for Australian hotels, restaurants, tourism operators and venue groups. Technology that fills rooms, tables and experiences.',
+
+  industryName: 'Hospitality & Tourism',
+  heroHeadline: 'Hospitality Technology That Fills Rooms and Tables',
+  heroTagline: 'Booking platforms, PMS integrations and guest experience tools for hotels, restaurants, tourism operators and venue groups.',
+
+  stats: [
+    { value: '30%', label: 'increase in direct bookings' },
+    { value: '99.9%', label: 'booking system uptime' },
+    { value: 'Zero', label: 'double bookings' },
+    { value: '24/7', label: 'guest self-service' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+      title: 'OTA Dependency and Margin Erosion',
+      description: "Booking.com and Expedia commissions running at 15–25% of revenue represent hundreds of thousands of dollars annually for mid-market hotels. Tourism operators paying OTA commissions on experiences worth $80–$300 per person feel the margin squeeze on every single booking.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+      title: 'Disconnected PMS and POS Systems',
+      description: 'Hotel property management systems, restaurant point-of-sale, spa booking and activities scheduling rarely share data. Front desk staff manually reconcile charges, maintenance requests fall through the gaps and guest spend data lives in silos that make upselling and personalisation nearly impossible.',
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      title: 'Poor Guest Experience Data',
+      description: "Modern guests expect personalised experiences — a returning guest who mentioned their anniversary at check-in last time expects to be recognised. Without a unified guest profile that captures preferences, spend history and communications across stays, delivering genuine personalisation at scale is impossible.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+      title: 'Manual Rate Management',
+      description: "Setting room rates manually, without live data on competitor pricing, local events, seasonal demand and channel performance, leaves significant revenue on the table. Hotels that rely on static seasonal rate cards consistently underperform against properties using dynamic pricing strategies.",
+    },
+  ],
+
+  solutions: [
+    'Direct booking engines',
+    'Channel manager integrations',
+    'Guest experience and loyalty apps',
+    'Loyalty programme platforms',
+    'F&B digital ordering systems (QR menus, tableside ordering)',
+    'PMS custom development and third-party integrations',
+    'Revenue management and dynamic pricing tools',
+    'Review and reputation management platforms',
+  ],
+
+  useCases: [
+    {
+      title: 'Direct Booking Engine with Rate Parity and Upsell Flows',
+      description: "A conversion-optimised direct booking widget and standalone booking page for hotel groups and boutique properties. Connects in real time to the PMS for live availability and rates. Includes room comparison, photo galleries, upsell prompts for upgrades, packages and F&B credits, and a returning guest recognition flow. Directly integrated with the property's payment gateway and sends automated pre-arrival and post-stay email sequences.",
+      techStack: 'React · Stripe · PMS webhooks · SendGrid · Cloudflare',
+      videoNote: 'direct booking flow from room selection through upsell to confirmation and pre-arrival email',
+    },
+    {
+      title: 'Guest Experience App for Resort Properties',
+      description: "A white-labelled progressive web app that guests access via a QR code at check-in. Covers digital room key (where hardware supports it), F&B menu browsing and ordering, in-room service requests, activity bookings, concierge chat and late checkout requests. All requests flow through to the appropriate department in real time. Captured preference data builds a guest profile used for personalised future-stay communications.",
+      techStack: 'Next.js PWA · WebSockets · POS API · Push notifications · Twilio',
+      videoNote: 'guest app showing F&B ordering, service requests and activity booking flows',
+    },
+    {
+      title: 'Tourism Operator Booking Platform with Channel Management',
+      description: "A purpose-built booking platform for tour operators and experience providers offering multiple products across multiple departure times. Manages capacity across direct bookings, Viator, GetYourGuide and ATDW simultaneously via a central inventory layer that prevents double bookings. Includes guide assignment, manifest generation, pre-tour communication sequences and post-tour review request automation. Built for operators running 10–500 departures per month.",
+      techStack: 'Node.js · React · Viator API · GetYourGuide API · Stripe · SendGrid',
+      videoNote: 'operator dashboard showing departure manifests, channel distribution and booking analytics',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'UI/UX Design', href: '/services/ui-ux-design' },
+    { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
+  ],
+
+  faqs: [
+    {
+      question: 'Which property management systems can you integrate with?',
+      answer: "We have experience integrating with RMS Cloud, Opera Cloud (Oracle Hospitality), Mews, Cloudbeds, Preno and Little Hotelier — all of which have published APIs. We can also work with older PMS systems via database-level integration or middleware where APIs are not available. Early discovery always includes a PMS API assessment so there are no surprises mid-build.",
+    },
+    {
+      question: 'Can a direct booking engine genuinely compete with OTAs on conversion?',
+      answer: "Yes, with the right design. The key is removing friction — a direct booking should be completable in under 90 seconds on mobile. We build engines with saved payment methods, Apple Pay and Google Pay support, progressive profiling so returning guests don't re-enter details, and rate match guarantees you can expose prominently. Properties that invest in an optimised direct booking experience typically see 20–40% shifts in channel mix within 12 months.",
+    },
+    {
+      question: 'Do you build for tourism businesses outside the main capital cities?',
+      answer: "Yes, and regional and remote tourism operators are a particular strength. We understand that technology for a wildlife tour operator in the Kimberley has different constraints than a Sydney CBD hotel — offline capability matters, bandwidth is limited and staff may not be highly technical. We design accordingly.",
+    },
+    {
+      question: 'How do you handle the real-time nature of booking systems — preventing double bookings across channels?',
+      answer: "Through a centralised inventory management layer that acts as the single source of truth for availability. All channels — your direct booking engine, OTAs, front desk walk-ins — write to and read from this central store with optimistic locking to prevent race conditions. Channel updates are pushed outbound in under 2 seconds when inventory changes. This is non-negotiable architecture for any multi-channel booking system we build.",
+    },
+    {
+      question: 'Can you build something that integrates with our existing loyalty programme?',
+      answer: "Yes. If you have an existing loyalty programme with an API (or even a database we can connect to), we can surface points balances, redemption options and tier status inside booking flows and guest apps. We've also built loyalty programmes from scratch for hospitality groups who want to own their points liability and customer data rather than relying on third-party schemes.",
+    },
+  ],
+
+  ctaHeadline: 'Build the Technology That Makes Guests Choose You Directly',
+  ctaDescription: "Every booking that comes through an OTA is a guest relationship you don't fully own. We build the direct channels, the guest experience tools and the data infrastructure that let you compete on hospitality rather than commission rates. Let's talk.",
+};
+---
+<IndustryPageLayout {...data} />

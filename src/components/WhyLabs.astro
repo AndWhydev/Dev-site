@@ -1,0 +1,260 @@
+---
+const pillars = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
+    label: 'Enterprise-Grade Security',
+    heading: 'Security Is Not An Afterthought',
+    body: 'Every application we build is architected with security from line one. OWASP standards, penetration testing, SOC 2 readiness, end-to-end encryption and RBAC are built-in — not bolted on.',
+    stat: 'ISO 27001 Advisory',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M16 4.93A9 9 0 0121 12"/></svg>`,
+    label: 'On-Time Delivery',
+    heading: 'We Deliver. Every Time.',
+    body: 'Our agile delivery framework and transparent project management mean no surprises. You get a clear roadmap, weekly updates and milestones that we hit — because our reputation depends on yours.',
+    stat: '96% On-Time',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+    label: 'Australian-Based Team',
+    heading: 'Local Expertise. Global Standards.',
+    body: 'Our engineers are based in Australia with deep knowledge of local compliance, data sovereignty and business context. You speak to real people in your time zone — no offshore miscommunication.',
+    stat: '100% Australian',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    label: 'Post-Launch Support',
+    heading: 'We Grow With You',
+    body: 'Launch is the beginning, not the end. Every engagement includes a structured hypercare period, SLA-backed support, proactive monitoring and a dedicated account team for ongoing evolution.',
+    stat: '24/7 Monitoring',
+  },
+];
+---
+
+<section class="why-section" id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <span class="section-label">Why All Webbed Labs</span>
+      <h2 class="section-heading">The Enterprise Partner You Can Rely On</h2>
+      <p class="section-subheading">
+        We're not a traditional agency. We're a technology partner built to operate at the pace and complexity of enterprise.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      {pillars.map((pillar, i) => (
+        <div class={`pillar reveal stagger-${i + 1}`}>
+          <div class="pillar-top">
+            <div class="pillar-icon" set:html={pillar.icon} />
+            <span class="pillar-stat">{pillar.stat}</span>
+          </div>
+          <div class="pillar-label">{pillar.label}</div>
+          <h3 class="pillar-heading">{pillar.heading}</h3>
+          <p class="pillar-body">{pillar.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom proof row -->
+    <div class="proof-row reveal stagger-5">
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Senior engineers only — no juniors on client projects</span>
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Fixed-price and time-and-materials engagement models</span>
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Full IP ownership transferred to you on completion</span>
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Comprehensive documentation and knowledge transfer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    padding: 8rem 0;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-section::after {
+    content: '';
+    position: absolute;
+    right: -200px;
+    top: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13,147,115,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .why-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-header {
+    margin-bottom: 4rem;
+    max-width: 680px;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .pillar {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(13,147,115,0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .pillar:hover {
+    border-color: rgba(13,147,115,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 30px rgba(13,147,115,0.08);
+  }
+
+  .pillar:hover::before {
+    opacity: 1;
+  }
+
+  .pillar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pillar-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+  }
+
+  .pillar-stat {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.25rem 0.625rem;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .pillar-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4a6359;
+  }
+
+  .pillar-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .pillar-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #4a6359;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .proof-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+
+  .proof-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .proof-item span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1100px) {
+    .pillars-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .proof-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .why-section {
+      padding: 5rem 0;
+    }
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+    .proof-row {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const data = {
+  metaTitle: "Expense Management & Approval Workflow | All Webbed Labs",
+  metaDescription: "How we helped a Brisbane construction company cut expense approval cycles from 21 days to 3.2 days, eliminate receipt loss, and free their finance team from 34 hours of monthly reconciliation.",
+
+  industry: "Financial Services",
+  tags: ["Expense Management", "Workflow Automation", "OCR & Document Processing", "ERP Integration", "Mobile App"],
+
+  title: "Expense Management & Approval Workflow",
+  summary: "A commercial construction company with sites across Queensland and New South Wales was running expense management on paper forms and goodwill — receipts mailed between sites, approved by managers who'd forgotten the context, and re-keyed into MYOB weeks later. We replaced the entire workflow with a mobile-first platform that cut approval cycles from three weeks to three days.",
+
+  heroImageDescription: "Mobile expense submission screen with OCR receipt capture alongside a web-based manager approval dashboard showing pending items categorised by project code and cost centre",
+
+  // CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+  clientOverview: "Bridgepoint Civil is a commercial construction company headquartered in Brisbane, operating active project sites across Queensland and New South Wales. The company employs approximately 200 staff — project managers, site supervisors, estimators, and administrative staff — and turns over around $80 million annually across civil and commercial construction contracts.",
+  clientSize: "200 staff, ~$80M annual revenue",
+  clientLocation: "Brisbane, QLD (sites across QLD and NSW)",
+
+  pullQuote: "Month-end used to mean the finance team going into lockdown. Now they're done with expense reconciliation before lunch on the second day. That's not a small thing when you're trying to get accurate project cost reports to clients on time.",
+  pullQuoteAuthor: "Rachel Nguyen",
+  pullQuoteRole: "CFO, Bridgepoint Civil",
+
+  challenge: [
+    "Construction sites are logistically demanding environments, and expense management reflects that complexity. A site supervisor purchasing consumables, a project manager taking a subcontractor to lunch, an estimator filling the hire car on the way to a site inspection — these transactions happened dozens of times a week across multiple active sites, each one generating a paper receipt that needed to make its way back to Brisbane. The official process was to collect receipts in a provided envelope, complete a paper form with the project code and description, and post or courier the envelope to the Brisbane office by the end of the week.",
+    "In practice, the process worked loosely at best. Receipts arrived in batches, sometimes weeks after the transaction. Some never arrived at all — lost in site offices, left in vehicles, or simply discarded by staff who couldn't face the paperwork after a ten-hour day. About 12% of submitted expense claims arrived with missing or damaged receipts, which meant the finance team either processed them without documentation (a compliance problem) or chased down the staff member to get a replacement (often impossible if the original was gone). The firm estimated it was writing off around $40,000 a year in unrecoverable undocumented expenses.",
+    "Project code errors were a separate and persistent problem. The firm operated 15 to 20 active project codes at any given time, and staff completing paper forms frequently wrote the wrong code — either the previous project they'd been working on, an approximation, or in some cases a made-up number. At month end, the finance team would identify miscoded expenses and reallocate them manually, a process that typically consumed two full days and regularly surfaced disagreements with project managers about which costs belonged where. These allocation errors affected project profitability reporting and, on fixed-price contracts, could affect progress claim calculations.",
+    "The ERP integration problem was the one that most frustrated the finance team. Approved expenses had to be manually keyed into MYOB against the appropriate project and cost codes — line by line, transaction by transaction. For 200 staff submitting a combined average of 800 expense items per month, this was close to a full-time task. Two finance team members spent a combined 40 hours per month on expense entry alone. Given that MYOB already contained all the project and supplier data the expense system needed, the redundancy felt particularly galling to a team that knew what was possible."
+  ],
+
+  whyUs: [
+    "Bridgepoint had looked at two off-the-shelf expense management tools — one well-known US platform and a local alternative. The US platform had strong OCR and approval workflow features, but its MYOB integration was limited to a CSV export rather than a live API connection, meaning the double-entry problem would persist. The local alternative had better MYOB support but no mobile app to speak of, which was a dealbreaker for a workforce where most staff were on-site without desktop access.",
+    "The conversation that led to the project was straightforward. The CFO wanted a single platform that handled OCR receipt capture on mobile, routed approvals through a configurable workflow that reflected the firm's actual approval hierarchy (site supervisor to project manager to finance for items above $500), pushed approved expenses directly into MYOB without human intervention, and gave project managers a real-time view of costs against budget. We confirmed that all four requirements were achievable, scoped the work into phases so the mobile submission and OCR features came first, and began discovery."
+  ],
+
+  approach: [
+    "The first decision was whether to build a native mobile app or a progressive web app. Given that construction sites have variable internet connectivity — some remote NSW sites ran on 4G hotspots — we chose a native-approach via React on web for the desktop approval interface and a companion mobile-optimised PWA for field staff, with local storage and background sync so that receipts captured offline would queue and submit when connectivity returned. Field staff could capture a receipt, assign a project code, and submit it in under two minutes regardless of signal quality.",
+    "For OCR, we evaluated AWS Textract against Google Document AI for this use case. Textract's pre-trained receipt model performed better on the specific formats common in Australian construction contexts — hardware store receipts, fuel receipts, and restaurant receipts with ABN lines — and the AWS infrastructure fit neatly with the rest of the stack. We set a confidence threshold for automated field extraction: items where Textract's confidence on the total amount or date fell below 85% would be flagged for manual review rather than auto-populated, giving the finance team a clear triage queue.",
+    "The approval workflow engine required careful design because Bridgepoint's actual approval hierarchy was more complex than a simple chain. The firm had different approval thresholds by expense category — travel costs over $250 required project manager sign-off but could be approved by a site supervisor below that amount; equipment hire always required project manager approval regardless of amount; anything above $2,000 required CFO review. We modelled this as a rules engine where approval paths were configurable by category and amount band, not hardcoded, so the firm's admin could adjust thresholds without a code change.",
+    "The MYOB integration was built using MYOB's AccountRight API. When an expense item is fully approved, the system automatically creates a spend money transaction in MYOB against the correct supplier, project, and cost code. We added a reconciliation check that runs nightly: it queries MYOB for all expense transactions created by the integration and compares them to the platform's approved items list, flagging any discrepancies. This gave the finance team a verifiable audit trail and meant any API failures were caught the next morning rather than discovered at month end."
+  ],
+
+  solution: [
+    "The field submission experience is deliberately simple. Staff open the app, tap 'New Expense', and photograph the receipt. Textract extracts the vendor name, date, and total amount within a few seconds. The staff member confirms or corrects the extracted values, selects a project from a dropdown that only shows their currently assigned projects, picks a category from a short list, adds a brief description, and submits. The whole process takes under two minutes for a straightforward receipt.",
+    "Managers receive push notifications when items are queued for their approval. The approval interface shows the receipt image alongside the extracted details, the submitted description, and the project budget status — so a project manager approving a $400 materials purchase can immediately see whether the project's materials budget has headroom. Approvals can be done in bulk for small items (under $100) or individually for larger claims. A rejection sends the item back to the submitter with a mandatory comment explaining why.",
+    "For the finance team, the platform provides a live expense register that shows every item in the system by status: submitted, pending approval, approved, synced to MYOB, or requiring attention. The attention queue captures items where Textract confidence was low, where the submitted amount doesn't match the extracted amount, or where the MYOB sync check has flagged a discrepancy. In practice, this queue typically contains fewer than ten items per day across the whole company — a fraction of the time the previous manual process consumed.",
+    "Project managers gained something they hadn't had before: a real-time project cost dashboard. The platform aggregates approved expenses by project and displays running totals against budget by category. This was not a formal requirement in the original scope — it emerged from a conversation with two project managers during UAT who pointed out that they were already in the system approving expenses and it would take very little extra to show them the running total. We built it in a single sprint and it became one of the most-used features of the platform.",
+    "Onboarding 200 staff to the mobile platform was handled through a phased rollout by site. We started with the Brisbane office and the company's two largest active sites, trained two champion users at each location, and let word of mouth do most of the remaining work. The iOS and Android PWA install flow was built to be as frictionless as possible — a QR code on a laminated card in each site office pointed staff to the install URL, with a four-step onboarding walkthrough that took under three minutes."
+  ],
+
+  implementation: [
+    "We delivered in five two-week sprints over ten weeks from kick-off to production launch. The first sprint produced a working mobile receipt capture flow with Textract integration — no approval workflow, no MYOB sync, just the ability for a field staff member to photograph a receipt and have it appear in a web dashboard. This gave us something tangible to test at the Brisbane office before we built the more complex pieces, and it gave Bridgepoint confidence that the OCR accuracy would meet their needs.",
+    "The MYOB integration took longer than anticipated. MYOB's AccountRight API has rate limiting behaviour that isn't fully documented, and we encountered throttling during our load test when simulating the end-of-month backlog submission scenario. We resolved this by implementing an exponential backoff queue for MYOB write operations and batching sync jobs to run outside business hours for bulk items. This added a week to the MYOB stream but meant the production system handled month-end volume without errors from day one.",
+    "Full company rollout was completed over three weeks following the Brisbane pilot. The parallel-run period — where both the paper process and the digital platform were active simultaneously — lasted four weeks at the request of the CFO, who wanted to run the first full month-end reconciliation using both systems to verify that the MYOB sync was producing correct results. The comparison showed 99.3% agreement between the two systems on dollar amounts; the 0.7% discrepancy was traced to six items where field staff had submitted under the wrong project code in the paper system and the digital system had correctly prompted them to select from their assigned projects."
+  ],
+
+  lessonsLearned: [
+    "Project code selection was the UX challenge we underestimated most. Our initial design showed staff a searchable dropdown of all active project codes — about 18 at any given time — which was technically correct but cognitively demanding for someone standing on a worksite with muddy hands. The insight from field testing was that staff knew their projects by name, not by code number. We redesigned the selector to show project names first and filter by the staff member's current assignments, reducing the list to typically three or four options. Submission errors dropped by about 60% after this change.",
+    "OCR accuracy on thermal receipts from smaller hardware suppliers was lower than we'd hoped. Bunnings and large fuel chains produce clean, high-contrast receipts that Textract handles very well. Smaller trade suppliers often use low-quality thermal printers, and receipts that had been in a worksite shirt pocket for a day were sometimes partially faded. We tuned the capture interface to prompt staff to photograph receipts in good light and retake if the preview showed low contrast, and we lowered our auto-populate threshold for total amounts on receipts where the image quality score was below a certain level. Post-tuning, the manual review queue for OCR items settled at about 4% of submissions.",
+    "The approval notification cadence needed calibration. Our initial implementation sent a push notification for every item submitted for approval, which meant active project managers were receiving 15 to 20 notifications on busy days — enough to start ignoring them. We added a digest mode that batches notifications: one notification per approval session maximum, with a summary of how many items are pending rather than one per item. Managers could still opt into per-item notifications if they preferred, but the digest mode became the default and approval lag dropped as a result."
+  ],
+
+  whatCameNext: [
+    "Three months after launch, Bridgepoint asked us to extend the platform to handle subcontractor invoices as well as employee expenses. The invoicing workflow has different approval requirements — two-way matching against purchase orders, progress claim validation — and sits in a distinct regulatory space. We scoped this as a separate but integrated module, reusing the approval workflow engine and MYOB integration from the expense system while building a separate data model for invoice lifecycle management.",
+    "The CFO is also exploring using the platform's aggregated project cost data to feed into the company's project financial forecasting model, replacing a manual process where accountants extracted MYOB data into Excel for variance analysis. This would bring the platform closer to a full job costing system, which is a meaningful expansion of scope. We've recommended a discovery phase to assess whether building further on the existing platform makes sense versus integrating with a purpose-built construction ERP."
+  ],
+
+  resultsNarrative: "The results below are drawn from Bridgepoint's internal reporting, measured over the first six months of operation. The approval cycle time is a median across all expense items; complex items requiring CFO review take longer and are excluded from the average. The finance team reconciliation hours are self-reported from timesheet records before and after the platform launch.",
+
+  metrics: [
+    { value: "3.2 days", label: "Average approval cycle", context: "Down from 21 days under the paper process" },
+    { value: "Zero", label: "Receipt loss rate", context: "Was approximately 12% of submissions under paper process" },
+    { value: "6hrs/mo", label: "Finance reconciliation time", context: "Down from 40 hours per month" },
+    { value: "Real-time", label: "Project cost visibility", context: "Project managers see live cost vs. budget for the first time" },
+    { value: "−94%", label: "ERP entry errors", context: "Automated MYOB sync replaced manual re-keying" },
+    { value: "3 weeks", label: "Full staff onboarding", context: "200 staff across multiple sites" }
+  ],
+
+  techStack: [
+    { name: "React (PWA)", reason: "Mobile-first progressive web app with offline support and background sync for low-connectivity sites" },
+    { name: "Python / FastAPI", reason: "Backend API layer handling expense logic, approval routing, and MYOB integration" },
+    { name: "AWS Textract", reason: "OCR receipt processing with pre-trained receipt model for Australian receipt formats" },
+    { name: "PostgreSQL", reason: "Primary data store for expense records, approval history, and audit trail" },
+    { name: "MYOB AccountRight API", reason: "Live integration for automated transaction creation and reconciliation checks" },
+    { name: "Approval Workflow Engine", reason: "Custom rules-based engine supporting configurable thresholds by category and amount" },
+    { name: "AWS S3", reason: "Receipt image storage with per-client folder isolation and lifecycle policies" },
+    { name: "AWS SNS / FCM", reason: "Push notification delivery for approval alerts and digest summaries" },
+    { name: "AWS Lambda", reason: "Nightly MYOB reconciliation check and OCR confidence reprocessing jobs" },
+    { name: "Docker / ECS", reason: "Containerised deployment for consistent environments and zero-downtime deploys" }
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: "Financial Reporting & Analytics Dashboard",
+      href: "/case-studies/financial-reporting-analytics-dashboard",
+      industry: "Financial Services",
+      summary: "Automated multi-platform financial reporting for a Sydney accounting firm, connecting Xero, MYOB, and QuickBooks to save 14 hours per accountant per month."
+    },
+    {
+      title: "Loan Application & Assessment Platform",
+      href: "/case-studies/loan-application-assessment-platform",
+      industry: "Financial Services",
+      summary: "Transformed a paper-and-fax loan application process for a Melbourne non-bank lender, reducing average assessment time from 5 days to 4 hours."
+    },
+    {
+      title: "Job Scheduling & Site Management",
+      href: "/case-studies/job-scheduling-site-management",
+      industry: "Field Services",
+      summary: "Replaced a whiteboard and phone-call scheduling system for a trade services company with a real-time job dispatch and site management platform."
+    }
+  ],
+
+  relatedServices: [
+    { title: "Custom Software Development", href: "/services/custom-software-development" },
+    { title: "API Integration & Automation", href: "/services/api-integration-automation" },
+    { title: "Workflow Automation", href: "/services/workflow-automation" },
+    { title: "Mobile App Development", href: "/services/mobile-app-development" },
+    { title: "Cloud Infrastructure", href: "/services/cloud-infrastructure" }
+  ]
+};
+---
+<CaseStudyLayout {...data} />

@@ -1,0 +1,431 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+interface ServiceDetail {
+  id: string;
+  icon: string;
+  title: string;
+  headline: string;
+  description: string;
+  useCases: string[];
+  deliverables: string[];
+  category: string;
+}
+
+const serviceDetails: ServiceDetail[] = [
+  {
+    id: 'custom-app-development',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    category: 'Core Development',
+    title: 'Custom App Development',
+    headline: 'Software built for your exact requirements, not retrofitted from a template.',
+    description: 'Enterprise applications are complex. Generic SaaS solutions can\'t handle your unique workflows, compliance requirements or integration landscape. We design and build software from the ground up — web apps, mobile apps and backend systems that fit your business precisely.',
+    useCases: ['Internal workflow and operations platforms', 'Customer-facing portals and self-service tools', 'Industry-specific compliance management systems', 'Multi-tenant enterprise SaaS products', 'Data-heavy reporting and analytics platforms'],
+    deliverables: ['Technical architecture document', 'UI/UX prototypes in Figma', 'Fully tested production application', 'API documentation', 'Deployment runbook', 'Source code with full IP transfer'],
+  },
+  {
+    id: 'flutter-development',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>`,
+    category: 'Mobile',
+    title: 'Flutter Development',
+    headline: 'One codebase. Two platforms. Native performance on iOS and Android.',
+    description: 'Flutter is Google\'s premier cross-platform framework — and our mobile development platform of choice for enterprise. Write once, deploy to both iOS and Android with near-native performance, beautiful UIs and a single codebase that reduces maintenance overhead by 40%.',
+    useCases: ['Field service and workforce management apps', 'Customer-facing mobile applications', 'Internal operations and reporting apps', 'IoT device management interfaces', 'Secure enterprise mobile portals'],
+    deliverables: ['iOS App Store and Google Play deployments', 'Push notification infrastructure', 'Offline-capable data synchronisation', 'Biometric authentication integration', 'CI/CD pipeline for mobile builds'],
+  },
+  {
+    id: 'ai-automation',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
+    category: 'AI & Automation',
+    title: 'AI Tools & Custom Chatbots',
+    headline: 'Your own AI — trained on your data, integrated into your systems.',
+    description: 'Off-the-shelf AI tools give generic answers from generic data. Your enterprise needs AI that understands your processes, terminology, compliance context and customer base. We build proprietary AI tools and chatbots that deliver genuine operational value from day one.',
+    useCases: ['Customer support automation', 'Internal HR and IT helpdesks', 'Document analysis and data extraction', 'Sales enablement and lead qualification', 'Compliance checking and policy Q&A'],
+    deliverables: ['Custom LLM integration or fine-tuned model', 'RAG pipeline for document knowledge base', 'Web and API integration', 'Admin dashboard for content management', 'Usage analytics and conversation monitoring'],
+  },
+  {
+    id: 'enterprise-solutions',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
+    category: 'Enterprise',
+    title: 'Enterprise Software Solutions',
+    headline: 'Large-scale platforms that operate at the complexity your business demands.',
+    description: 'Enterprise software isn\'t just bigger software — it requires different architecture, different security models and different delivery approaches. Our enterprise practice handles the full lifecycle of large-scale platform builds, from initial scoping through to post-launch operations.',
+    useCases: ['ERP and CRM implementations and customisations', 'Multi-region, multi-currency platforms', 'Complex approval workflow systems', 'Regulatory reporting and compliance platforms', 'High-availability transaction processing systems'],
+    deliverables: ['Enterprise architecture design', 'Security and compliance documentation', 'Disaster recovery and BCP planning', 'Load testing and performance validation', 'Runbook and operational procedures'],
+  },
+  {
+    id: 'cloud-devops',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    category: 'Infrastructure',
+    title: 'Cloud Infrastructure & DevOps',
+    headline: 'Your infrastructure, fully automated, resilient and optimised for cost.',
+    description: 'Cloud infrastructure is only as good as the engineering behind it. We architect, build and manage cloud environments on AWS, GCP and Azure that are secure, auto-scaling, cost-optimised and fully automated. Infrastructure-as-code means every change is tracked, tested and repeatable.',
+    useCases: ['Cloud migration from on-premise', 'Multi-cloud and hybrid architectures', 'Kubernetes orchestration at scale', 'CI/CD pipeline implementation', 'Cost optimisation and FinOps'],
+    deliverables: ['Infrastructure-as-code (Terraform/CDK)', 'CI/CD pipeline with automated testing', 'Security hardening and compliance baseline', 'Monitoring and alerting stack', 'Runbook documentation'],
+  },
+  {
+    id: 'digital-transformation',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+    category: 'Strategy',
+    title: 'Digital Transformation Consulting',
+    headline: 'A roadmap that translates technology investment into measurable business outcomes.',
+    description: 'Digital transformation fails when it\'s treated as a technology project rather than a business change programme. We provide end-to-end transformation consulting — from opportunity assessment and business case development through to delivery governance and change management.',
+    useCases: ['Legacy modernisation strategy and roadmap', 'Technology stack assessment and rationalisation', 'Digital product strategy and prioritisation', 'Vendor evaluation and selection support', 'Agile and DevOps transformation coaching'],
+    deliverables: ['Current state technology assessment', 'Future state architecture vision', 'Phased transformation roadmap', 'Business case with ROI modelling', 'Governance framework and KPIs'],
+  },
+];
+---
+
+<Layout
+  title="Services — All Webbed Labs | Enterprise Software Development"
+  description="Twenty enterprise software services including custom app development, AI tools, Flutter, React, cloud infrastructure, cybersecurity and digital transformation. Trusted by leading Australian organisations."
+>
+  <Header />
+
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div class="reveal">
+          <span class="section-label">Our Services</span>
+          <h1 class="page-hero-title">
+            Everything Your Enterprise<br />
+            <span class="gradient-text">Needs to Scale.</span>
+          </h1>
+          <p class="page-hero-sub">
+            Twenty specialisations delivered by senior engineers with deep enterprise experience.
+            From custom applications to AI transformation — one trusted partner, end to end.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured service details -->
+    <section class="service-details-section">
+      <div class="service-details-inner">
+        <div class="details-header reveal">
+          <span class="section-label">Featured Services</span>
+          <h2 class="section-heading">Deep-Dive: Our Core Capabilities</h2>
+        </div>
+
+        <div class="service-details-list">
+          {serviceDetails.map((service, i) => (
+            <div id={service.id} class={`service-detail reveal ${i % 2 === 1 ? 'reveal-right' : ''}`}>
+              <div class="service-detail-header">
+                <div class="sd-icon" set:html={service.icon} />
+                <div>
+                  <div class="sd-category">{service.category}</div>
+                  <h3 class="sd-title">{service.title}</h3>
+                </div>
+              </div>
+
+              <p class="sd-headline">{service.headline}</p>
+              <p class="sd-description">{service.description}</p>
+
+              <div class="sd-grid">
+                <div class="sd-col">
+                  <h4 class="sd-col-title">Use Cases</h4>
+                  <ul class="sd-list">
+                    {service.useCases.map((uc) => (
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        {uc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="sd-col">
+                  <h4 class="sd-col-title">What You Receive</h4>
+                  <ul class="sd-list">
+                    {service.deliverables.map((d) => (
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <a href="/contact" class="btn-primary sd-cta">
+                Discuss This Service
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- All services compact list -->
+    <section class="all-services-section">
+      <div class="all-services-inner">
+        <div class="reveal">
+          <span class="section-label">Full Capability List</span>
+          <h2 class="section-heading">All Twenty Services</h2>
+        </div>
+        <div class="all-services-grid reveal stagger-1">
+          {[
+            'Custom App Development', 'Web & Mobile Applications', 'Flutter Development',
+            'React & Next.js Development', 'Node.js & Python Backends', 'AI Tools & Custom Chatbots',
+            'LLM Integration & Fine-Tuning', 'Workflow Automation', 'API Development & Integrations',
+            'Custom SaaS Development', 'UI & UX Design', 'Cloud Infrastructure & DevOps',
+            'Database Architecture', 'Web3 & Blockchain', 'Digital Transformation Consulting',
+            'Enterprise Software Solutions', 'Staff Augmentation', 'Legacy Modernisation',
+            'Cybersecurity Consulting', 'Data Analytics & BI'
+          ].map((s) => (
+            <div class="all-service-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>{s}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 10rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+  }
+
+  .page-hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 640px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .service-details-section {
+    padding: 7rem 0;
+    background: #0a0f0e;
+  }
+
+  .service-details-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .details-header {
+    margin-bottom: 4rem;
+  }
+
+  .service-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .service-detail {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 24px;
+    padding: 3rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .service-detail:hover {
+    border-color: rgba(13,147,115,0.3);
+  }
+
+  .service-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sd-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    flex-shrink: 0;
+  }
+
+  .sd-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin-bottom: 0.25rem;
+  }
+
+  .sd-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  .sd-headline {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #8aa09a;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .sd-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a6359;
+    line-height: 1.7;
+    margin: 0 0 2rem;
+    max-width: 800px;
+  }
+
+  .sd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .sd-col-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+
+  .sd-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .sd-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #8aa09a;
+    line-height: 1.5;
+  }
+
+  .sd-list li svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .sd-cta {
+    align-self: flex-start;
+  }
+
+  .all-services-section {
+    padding: 6rem 0;
+    background: #0f1614;
+  }
+
+  .all-services-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .all-services-inner .section-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .all-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+  }
+
+  .all-service-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 10px;
+    padding: 0.875rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .all-service-item:hover {
+    border-color: rgba(13,147,115,0.3);
+    color: white;
+  }
+
+  @media (max-width: 900px) {
+    .sd-grid {
+      grid-template-columns: 1fr;
+    }
+    .all-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .service-detail {
+      padding: 2rem 1.5rem;
+    }
+    .all-services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

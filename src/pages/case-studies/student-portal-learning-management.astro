@@ -1,0 +1,126 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+
+const data = {
+  metaTitle: 'Student Portal & Learning Management System — All Webbed Labs',
+  metaDescription: 'How we helped a Brisbane independent school replace six disconnected systems with a unified student portal — cutting teacher admin time by 3.1 hours per week and compressing the report writing period from two weeks to five days.',
+  industry: 'Education',
+  tags: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Google Classroom API'],
+  title: 'Student Portal & Learning Management System',
+  summary: 'A Brisbane K–12 independent school was running six separate systems — timetabling, gradebook, parent communications, resource sharing, attendance alerts and report generation — none of which talked to each other. Teachers were spending four hours every week doing data entry rather than teaching. We brought it all together into a single platform and gave them that time back.',
+  heroImageDescription: 'Dashboard view of the student portal showing a parent\'s overview of their child\'s upcoming classes, recent grades and attendance record alongside the teacher gradebook and report card generation interface',
+
+  clientOverview: 'An independent private school in Brisbane serving students from Prep through Year 12, with 820 students enrolled and 68 teaching staff supported by 12 administrative staff. The school has been operating for 31 years and has a strong community reputation, but like many independent schools of its size, its operational technology had grown by accretion — each new system added to solve an immediate problem without consideration for how it would interact with what was already there.',
+  clientSize: '820 students, 68 teaching staff, 12 admin staff',
+  clientLocation: 'Brisbane, QLD',
+
+  pullQuote: 'Report writing used to mean two weeks of teachers hunting through spreadsheets, gradebooks and folders before they could write a single comment. This term we were done in five days and the data was just there waiting for us.',
+  pullQuoteAuthor: 'Deputy Principal',
+  pullQuoteRole: 'Brisbane Independent School',
+
+  challenge: [
+    'When the school\'s deputy principal contacted us, she described the situation with characteristic precision: "We have six systems, and they share exactly zero data." Timetabler handled the timetable. A separate gradebook application — purchased on a per-teacher licence — stored assessment results. Report cards were written in Word templates and assembled manually. Parent communications went through a combination of email and an SMS broadcast service. Teaching resources lived in SharePoint, which most parents could not access and which teachers had given up organising. Attendance alerts went out as SMS messages from a standalone system that had no connection to the student record.',
+    'The consequence of this fragmentation was that any task requiring information from more than one system became a significant manual exercise. Report writing was the most visible symptom. Twice a year, the school\'s 68 teachers spent the better part of two weeks producing reports. Before they could write a single comment, each teacher had to gather results from the gradebook, check attendance figures from the SMS system\'s export, cross-reference timetable data to confirm which students were in which class, and transfer it all into Word templates. The school estimated that data gathering accounted for roughly 40% of total report writing time — time being spent moving information between systems rather than writing meaningful observations about students.',
+    'For parents, the experience was confusing. There was no single place to see their child\'s academic progress, attendance record and upcoming assessments. If they had a question about grades, they emailed the classroom teacher directly. If they wanted to know about an upcoming assignment, they emailed the classroom teacher. Teacher inboxes were full of administrative queries that a well-designed portal would have answered without requiring a reply. The school had received feedback in its annual parent satisfaction survey for three consecutive years noting the lack of a coherent parent-facing digital presence — the kind of thing that competitors in the independent school market had been offering for some time.',
+    'There was also a staff welfare dimension that the leadership team was frank about. Four hours per week of administrative overhead per teacher represented roughly 10% of a full-time teacher\'s contracted hours going to tasks that had nothing to do with teaching or student relationships. In a sector facing retention challenges, that friction mattered. Several teachers had raised it directly with leadership during performance reviews. The systems weren\'t just inefficient — they were a source of genuine frustration.',
+  ],
+
+  whyUs: [
+    'The school had explored off-the-shelf school management platforms, and two vendors had made it to presentation stage. Both presented feature-complete solutions — timetabling, gradebook, parent portal, reporting, all in one. The problem was integration. The school had 31 years of student history in its existing systems, a timetabling tool that the administration genuinely valued and did not want to replace, and a Google Classroom deployment that teachers had been using for three years and were comfortable with. The off-the-shelf platforms either required full migration away from existing tools or offered integrations that were vague about their limitations.',
+    'We were introduced through a referral from another Brisbane school we had worked with on a smaller project. What the deputy principal appreciated in our initial conversations was that we asked about what the school wanted to keep, not just what it wanted to replace. We were not trying to sell a platform — we were trying to understand the problem. When we proposed keeping the existing timetabling software and Google Classroom in place and building the portal around them via API integration rather than replacing them, the school\'s leadership felt that was the right instinct. We understood that the technology existed to serve the school\'s teachers and families, not the other way around.',
+  ],
+
+  approach: [
+    'We began with three weeks of discovery before writing a proposal. We ran structured interviews with teachers across different year levels and subject areas, with the administrative team, with the deputy principal and business manager, and with a group of ten parent representatives assembled by the P&C. We wanted to understand what information each group needed, when they needed it, and what their current experience of the existing systems was.',
+    'The parent interviews were particularly informative. What parents said they wanted was not sophisticated — they wanted to be able to see their child\'s upcoming assessment dates, recent results, and attendance in one place without having to log into anything complicated. They did not want notifications for every small event. They wanted a reliable, calm overview that reduced their need to contact teachers. That framing helped us resist the temptation to over-engineer the parent-facing interface.',
+    'Teacher interviews surfaced a range of workflows that we had not anticipated. Several teachers had built elaborate personal spreadsheet systems to manage their gradebooks because the licensed gradebook tool did not support the weighting structures their subjects required. A few had created their own Google Forms to collect parent responses to communications, because the email broadcast system had no reply management. These workarounds represented genuine ingenuity — and they were a signal that the existing tools were not serving the people using them.',
+    'From this discovery phase, we produced a detailed requirements document and a proposed information architecture. We presented it back to the whole staff at a Thursday afternoon professional development session — not to show them what we were going to build, but to check that we had understood correctly. The feedback session generated about 50 comments and questions. We reviewed all of them, prioritised the responses, and documented our decisions — including where we had decided not to change something and why. Transparency about trade-offs, we\'ve found, builds more trust than pretending every request can be accommodated.',
+    'We scoped the project into three phases: Phase 1 being the teacher-facing gradebook, assessment scheduling and Google Classroom integration. Phase 2 being the parent portal and notification system. Phase 3 being report card generation and timetable import pipeline. This sequencing meant teachers were getting value within the first few months, and parent-facing features were only released once the underlying data was reliable.',
+  ],
+
+  solution: [
+    'The platform is a React application with a Node.js backend and PostgreSQL database, hosted on AWS in the Sydney region. Access control is role-based — teachers see their classes and students, year-level coordinators see their year cohort, the admin team has full administrative access, and parents see only their own children.',
+    'The gradebook module replaced the patchwork of licensed tools and personal spreadsheets that teachers had been using. Assessment items are created against the school\'s existing curriculum framework, with configurable weighting structures that handle the complexity that had previously driven teachers to spreadsheets. Results are entered directly in the gradebook, synced with Google Classroom for any assessments assigned there, and flow automatically into the student record. Heads of department can see aggregate performance across their subject area. Year-level coordinators can see any student who is flagging across multiple subjects.',
+    'The Google Classroom API integration was one of the more technically nuanced parts of the project. Google Classroom holds assignment data — what was assigned, when it was due, which students submitted. Our integration pulls that data continuously and maps it against the school\'s student and class records. When a student submits an assignment in Google Classroom, the gradebook record is updated. When a teacher marks in Google Classroom, the result appears in the portal. Teachers do not have to enter data twice. The sync is not instantaneous — it runs on a five-minute polling cycle — but for the school\'s purposes that is entirely adequate.',
+    'The timetable import pipeline connects to the school\'s existing Timetabler export format. Each Sunday evening, the pipeline pulls the current week\'s timetable, reconciles it against the student and teacher records, and updates the system. Changes made mid-week in Timetabler propagate within the hour. Parents and students see an accurate timetable in the portal at all times, and the system knows which teacher is responsible for which class on which day — which is the foundation for routing parent communications correctly rather than requiring parents to remember which teacher teaches which subject.',
+    'The parent portal is a clean, intentionally simple interface. The home screen shows each enrolled child with their next assessment due, most recent results, attendance percentage for the current term, and any announcements relevant to their year level. Parents can send a message to a teacher through the portal — the message routes to the teacher\'s notification queue, not to their personal email, and can be replied to within the platform. This was the change most directly responsible for reducing the volume of direct teacher emails. Teachers with notification preferences set appropriately are not disturbed by portal messages outside school hours.',
+    'Report card generation was built as a structured workflow. When the reporting period opens, the system pre-populates each report template with the student\'s name, class, teacher, attendance data and all assessed results — data that previously had to be manually gathered. The teacher\'s task is to write the narrative comment and review the auto-populated data for accuracy. Completed drafts go to the head of department for review, then to the deputy principal for approval. The PDF is generated automatically on final approval and becomes available to parents through the portal. The whole process is tracked — the admin team can see at any time how many reports are at each stage, without having to chase teachers individually.',
+    'Push notifications are delivered to a companion mobile web app for parents. The notification system is deliberately conservative — parents receive alerts for report releases, attendance anomalies (more than two consecutive absences), and direct replies to messages they have sent. We explicitly did not implement notifications for every assessment result or every piece of communication, after the parent focus group was clear that notification fatigue was a concern.',
+  ],
+
+  implementation: [
+    'The rollout was phased across a school year, timed to avoid disrupting the reporting and examination calendar. Phase 1 went live at the start of Term 2, which gave teachers a full term to use the gradebook before it would feed the end-of-year report cycle. Phase 2 — the parent portal — launched at the start of Term 3, two weeks before the Term 3 parent-teacher evening, which gave parents a natural prompt to explore it. Phase 3 — report generation — was first used for the Term 3 reports, meaning the first full report cycle ran on the new system with the end-of-year reports as backup.',
+    'Training was structured differently for different groups. For teachers, we ran four 45-minute sessions in small groups by subject department, focusing on the gradebook workflows most relevant to their assessment patterns. The admin team had a separate full-day session covering the back-end management interfaces. Parents received a getting-started guide and a short explainer video linked from the first notification they received. We were realistic about the fact that not all parents would engage with training materials — the interface had to be intuitive enough that they did not need to.',
+    'The data migration from the existing gradebook tools was handled carefully. We did not attempt to migrate historical assessment data from the disparate systems — attempting to reconcile years of data from different tools with different structures and inconsistent naming conventions would have introduced more errors than it resolved. Instead, we established a clean baseline: historical data was archived in its existing formats, and the new system started from Term 2 of the rollout year. Teachers were informed of this decision in advance, with a clear explanation of why, and most appreciated the honesty.',
+    'We remained embedded with the school through the first full reporting cycle. One developer was available on-site for the final two days of the Phase 3 report generation workflow. This was partly practical — being physically present makes it easier to triage issues quickly — and partly symbolic. The reporting period is a stressful time in any school, and having the development team present sent a signal that we understood what was at stake and were not going to hand over a system and disappear.',
+  ],
+
+  lessonsLearned: [
+    'The Google Classroom integration was more complex than our initial estimate suggested, primarily because Google Classroom\'s data model does not map cleanly onto a traditional school gradebook structure. Google Classroom is built around individual teacher-created courses, not the school\'s concept of classes, subjects and year levels. Reconciling those two models required a mapping layer that we had underestimated in both complexity and ongoing maintenance cost. This was a scoping lesson: integrations with consumer-oriented platforms often require more data translation work than integrations with purpose-built enterprise tools.',
+    'We initially tried to build a single gradebook weighting engine that would be configurable to handle all the different assessment structures across different subjects and year levels. In practice, the variation was too great — senior school science assessed differently from junior school humanities, IB Diploma subjects had entirely different structures from QCE subjects. We ended up building subject-type templates that teachers could select from and then customise. This was the right outcome, but it took us a revision cycle longer than it should have because we had tried to be too general in the first pass.',
+    'The parent notification system required more stakeholder input than we had anticipated. Our initial proposal for notification triggers was technically reasonable but pedagogically naive — we had not fully appreciated the school\'s philosophy around how and when parents should be informed about their child\'s academic progress. The deputy principal and a group of teachers reviewed our proposed trigger list and made significant changes. We should have included that review as a formal stage in the discovery process rather than treating notification design as an implementation detail.',
+    'Timetable import edge cases — split classes, team-teaching arrangements, classes that span two rooms, year-level electives with fluctuating enrolments — took considerably longer to handle correctly than the straightforward 95% of cases. We learned to ask more specifically about edge cases in discovery rather than assuming standard structures. Independent schools in particular tend to have genuinely unusual timetabling arrangements as a result of their curriculum flexibility.',
+  ],
+
+  whatCameNext: [
+    'Following the successful first full year on the platform, the school asked us to add a wellbeing check-in module — a short weekly form that students complete allowing year-level coordinators to identify students who might need pastoral support. This was a natural extension of the existing student record structure and was built in a single sprint.',
+    'The school\'s board approved funding for an alumni module in the following financial year. The idea is to build a lightweight alumni directory and event communication system connected to the student records — so that when a student graduates, their record transitions to an alumni profile rather than being archived. The school has 31 years of graduates and has not previously had a systematic way to stay connected with them.',
+    'The platform has attracted interest from two other independent schools in the Brisbane area through word-of-mouth. The school has been open to those schools contacting us, and we are currently in early conversations about whether a multi-tenanted version of the platform — shared infrastructure with school-specific configuration — would be technically and commercially viable.',
+  ],
+
+  resultsNarrative: 'The metric that matters most to the school\'s leadership is the one that is hardest to quantify: teachers are less frustrated. The four hours per week of administrative overhead that teachers had been absorbing did not disappear entirely — data still needs to be entered, reports still need to be written — but it has been organised into purposeful tasks with clear interfaces rather than the disorganised friction of moving information between systems that did not know about each other. The measurable results back this up, but the staff feedback in the end-of-year review was the real validation.',
+
+  metrics: [
+    { value: '67%', label: 'Increase in parent portal logins', context: 'Measured against previous parent engagement with any digital communication channel' },
+    { value: '3.1 hrs/wk', label: 'Teacher admin time saved', context: 'Per teacher, per week — aggregate across 68 staff represents approximately 210 hrs/week school-wide' },
+    { value: '5 days', label: 'Report writing period', context: 'Down from two weeks; first measured on the Term 3 reporting cycle in year one' },
+    { value: '58%', label: 'Reduction in direct parent emails to teachers', context: 'Queries redirected to the portal messaging system within one term of parent portal launch' },
+    { value: '820', label: 'Students with complete digital profiles', context: '100% of enrolled students — first time the school had a single source of truth for student data' },
+    { value: '99.97%', label: 'System uptime', context: 'Measured across the first two full school terms of operation' },
+  ],
+
+  techStack: [
+    { name: 'React', reason: 'Complex role-based UI with significantly different views for teachers, parents, administrators and students' },
+    { name: 'Node.js', reason: 'Backend API server with real-time event handling for notifications and synchronisation tasks' },
+    { name: 'PostgreSQL', reason: 'Relational structure suited to the complex relationships between students, classes, teachers, assessments and results' },
+    { name: 'AWS (RDS + EC2 + S3)', reason: 'Sydney-region hosting for data sovereignty; S3 for report PDF storage and resource file delivery' },
+    { name: 'Google Classroom API', reason: 'Bidirectional sync of assignments, submissions and marks with the school\'s existing Google Classroom deployment' },
+    { name: 'Timetabler import pipeline', reason: 'Automated weekly timetable ingestion from the school\'s existing timetabling software via structured export format' },
+    { name: 'Web Push Notifications', reason: 'Mobile-friendly push alerts to parents without requiring native app installation' },
+    { name: 'Puppeteer / PDF generation', reason: 'Automated report card PDF generation from structured template data on approval' },
+    { name: 'Redis', reason: 'Session caching and queue management for notification dispatch and Classroom sync jobs' },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: 'Online Tutoring Marketplace',
+      href: '/case-studies/online-tutoring-marketplace',
+      industry: 'Education',
+      summary: 'A Sydney EdTech startup needed a two-sided marketplace — tutor profiles, booking, video sessions, payouts — built from zero to launch in time to secure their next funding round.',
+    },
+    {
+      title: 'Corporate Training & Compliance Platform',
+      href: '/case-studies/corporate-training-compliance-platform',
+      industry: 'Education',
+      summary: 'A national retail chain lifted mandatory compliance training completion rates from 61% to 94% and eliminated 200 hours per month of in-person manager delivery with a purpose-built LMS.',
+    },
+    {
+      title: 'Document Management & Approval Workflow System',
+      href: '/case-studies/document-management-approval-workflow',
+      industry: 'Government',
+      summary: 'A Queensland state government department cut average document approval time from 11 days to 2.5 days with a fully digital workflow, digital signatures and complete audit trail.',
+    },
+  ],
+
+  relatedServices: [
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'API Development & Integration', href: '/services/api-development' },
+    { title: 'Education Technology', href: '/services/education-technology' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'SaaS Development', href: '/services/saas-development' },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

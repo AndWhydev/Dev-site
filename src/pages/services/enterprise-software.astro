@@ -1,0 +1,170 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Enterprise Software Solutions | All Webbed Labs',
+  metaDescription: 'Large-scale enterprise software development: custom platforms, ERP integrations, mission-critical systems and complex multi-tenant SaaS built for compliance, scale and longevity.',
+  category: 'Enterprise',
+  heroHeadline: 'Enterprise Software That Operates at the Scale You Need',
+  heroTagline: 'Large-scale platforms, ERP integrations and mission-critical systems built for complexity and compliance.',
+  description: [
+    'Enterprise software has unique demands that consumer and SMB applications do not. It must handle concurrency at scale without data corruption. It must integrate with the patchwork of existing systems every organisation has accumulated. It must satisfy compliance and audit requirements that add complexity at every layer. It must be operable by a team who will maintain it long after the engineers who built it have moved on. And it must remain performant and reliable even as requirements change and data volumes grow tenfold. Off-the-shelf solutions almost never fit these requirements precisely, and the gap between "almost fits" and "fits" is where significant engineering effort lives.',
+    'We specialise in the class of problems that off-the-shelf software cannot solve and that require bespoke engineering at enterprise quality. Our team has deep experience with the specific challenges of enterprise-scale systems: distributed transaction management, complex role-based access control, multi-tenancy with strong data isolation, regulatory reporting pipelines, event-sourced architectures for complete audit trails, and the integration challenges of connecting new systems to existing ERP, HRIS and CRM platforms. We are not generalist software developers; we are engineers who have spent careers building systems that run businesses.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',
+      title: 'Built for Complexity',
+      description: 'Enterprise requirements are genuinely complex. We do not simplify problems away — we design systems that handle the full complexity of your domain, including the edge cases, exception flows and regulatory requirements that simplified systems ignore.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: 'Compliance-First Architecture',
+      description: 'APRA, ASIC, HIPAA, PCI-DSS, SOC 2 — compliance requirements must be designed in from the start, not added later. We have built systems satisfying each of these frameworks and understand how compliance requirements translate to specific architectural decisions.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
+      title: 'Deep ERP & Platform Integration',
+      description: 'Enterprise software rarely operates in isolation. We have deep experience integrating custom-built systems with SAP, Oracle, Microsoft Dynamics, Salesforce, Workday and dozens of other enterprise platforms — using their APIs properly, not fragile workarounds.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Horizontal Scalability',
+      description: 'Enterprise systems must scale with the business. We design stateless services, event-driven architectures and cloud-native deployment patterns that allow your system to handle ten times the load without architectural redesign.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+      title: 'Comprehensive Documentation',
+      description: 'Enterprise systems must be maintainable by teams who did not build them. We produce architecture decision records, data model documentation, API specifications, operational runbooks and deployment guides as integral deliverables — not afterthoughts.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Multi-Tenant Security Architecture',
+      description: 'Multi-tenant SaaS for enterprise clients requires demonstrable, auditable data isolation between tenants. We implement row-level security, tenant-aware infrastructure and regular security validation so each customer\'s data is protected and you can prove it.',
+    },
+  ],
+  useCases: [
+    {
+      title: 'Regulatory Reporting Platform for a Fund Manager',
+      description: 'An Australian fund manager needed a system to automate the generation and submission of APRA reporting obligations across multiple regulated entities. We built a platform that ingested data from their portfolio management and custody systems, applied the regulatory calculation rules, produced compliant report files and maintained a complete audit trail of every submission, including the data inputs and calculation steps for each reported figure.',
+      industry: 'Financial Services',
+    },
+    {
+      title: 'Multi-Tenant Enterprise SaaS Platform',
+      description: 'A B2B software company needed to move from a bespoke system built for single-client deployments to a multi-tenant SaaS platform that could onboard enterprise clients at scale. We designed and built the multi-tenancy architecture, implemented row-level security, designed the tenant onboarding and provisioning workflows, and built the administrative controls that enterprise procurement teams require.',
+      industry: 'SaaS',
+    },
+    {
+      title: 'National Supply Chain Management System',
+      description: 'A national distributor needed a central system to manage inventory, orders and logistics across 40 distribution centres, integrating with their 3PL providers\' systems, their retail clients\' ordering platforms and their own ERP. We built an event-sourced order management system that provided a complete, immutable history of every inventory movement and integrated cleanly with all 12 external systems in scope.',
+      industry: 'Logistics',
+    },
+    {
+      title: 'Clinical Data Management Platform for a Research Network',
+      description: 'A network of clinical research sites needed a platform to manage patient consent, trial data collection and regulatory submission for multi-site clinical trials. We built a platform meeting 21 CFR Part 11 electronic records requirements, with electronic signatures, audit trails, role-based access and integration with existing clinical data management systems.',
+      industry: 'Healthcare',
+    },
+  ],
+  technologies: [
+    'Java / Spring Boot',
+    'Node.js / TypeScript',
+    'Python / Django',
+    '.NET Core',
+    'React / Next.js',
+    'PostgreSQL / Oracle',
+    'Apache Kafka',
+    'Kubernetes / Docker',
+    'AWS / Azure / GCP',
+    'Terraform',
+    'GraphQL & REST APIs',
+    'OpenTelemetry',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Discovery & Requirements Definition',
+      description: 'Enterprise software projects fail most often from unclear or unstated requirements. We run structured discovery workshops with stakeholders across all affected business functions, produce a requirements specification covering functional, non-functional and compliance requirements, and validate it with sign-off before design begins.',
+      duration: 'Week 1–3',
+    },
+    {
+      step: '02',
+      title: 'Architecture Design & Review',
+      description: 'We design the system architecture to meet the defined requirements: technology stack selection, component decomposition, data model design, integration architecture, security architecture and infrastructure topology. The architecture is documented and reviewed with your technical leadership and any relevant compliance stakeholders before development begins.',
+      duration: 'Week 3–5',
+    },
+    {
+      step: '03',
+      title: 'Proof of Concept on Highest-Risk Elements',
+      description: 'For any element of the design that carries significant technical risk or uncertainty — complex integration with a legacy system, a performance-critical algorithm, an unfamiliar regulatory requirement — we build a time-boxed proof of concept before committing to full implementation. This surfaces risks early when they are cheapest to address.',
+      duration: 'Week 4–6',
+    },
+    {
+      step: '04',
+      title: 'Iterative Development',
+      description: 'Development proceeds in two-week sprints. Each sprint has a demonstrable output: working software, deployed to a staging environment, tested by your team. We prioritise the most valuable functionality first so you see working software quickly and can provide feedback that improves the product throughout development rather than only at the end.',
+      duration: 'Ongoing',
+    },
+    {
+      step: '05',
+      title: 'Integration Development & Testing',
+      description: 'Enterprise systems must integrate reliably with existing platforms. Integration development is a distinct workstream with its own test suite — covering the happy path, error responses, rate limiting, authentication edge cases and schema evolution. We test against real integration environments wherever possible.',
+      duration: 'Parallel with Step 4',
+    },
+    {
+      step: '06',
+      title: 'Performance, Security & Compliance Testing',
+      description: 'Before go-live, the system undergoes load testing to validate it meets performance requirements at projected peak load; penetration testing to identify security vulnerabilities; and compliance review to verify it satisfies all regulatory obligations. Issues identified are remediated before production deployment.',
+      duration: 'Final 3–4 weeks',
+    },
+    {
+      step: '07',
+      title: 'Deployment, Handover & Support',
+      description: 'Production deployment is executed against a detailed runbook with a rollback plan. We provide a hypercare support period immediately post-launch, train your team on operating and extending the system, and hand over the full documentation suite. Ongoing support and retainer arrangements are available.',
+      duration: 'Go-live + 4 weeks',
+    },
+  ],
+  industries: [
+    'Financial Services & Banking',
+    'Healthcare & Life Sciences',
+    'Government & Public Sector',
+    'Insurance',
+    'Logistics & Supply Chain',
+    'SaaS & Technology',
+    'Defence & Aerospace',
+    'Energy & Utilities',
+  ],
+  faqs: [
+    {
+      question: 'How do you manage scope on large enterprise software projects?',
+      answer: 'Scope management is one of the most important disciplines in enterprise software delivery. We use a combination of fixed-scope phases (requirements and architecture) followed by agile delivery sprints, with a formal change control process for scope additions. All scope changes are documented, estimated and approved before work begins. We maintain a living product backlog that is prioritised collaboratively with your product owner, and we flag scope risks proactively rather than absorbing them silently. We do not have commercial incentives to expand scope without your knowledge — our business model is built on long-term relationships, not inflated project costs.',
+    },
+    {
+      question: 'We have tried to build this internally and failed. How will your approach be different?',
+      answer: 'Internal projects fail for a small number of predictable reasons: unclear requirements, wrong technology choices for the problem, insufficient engineering seniority for the complexity involved, poor project governance, or underestimating the integration complexity with existing systems. We start every engagement by understanding what was attempted and why it did not succeed — that history is valuable information. We bring senior engineers who have solved similar problems before, a methodology designed for the complexity of enterprise software, and the discipline to escalate problems rather than hide them. We also involve your team throughout rather than building in isolation, which means problems surface sooner and the delivered system is one your team can maintain.',
+    },
+    {
+      question: 'How do you handle the integration with our existing SAP / Oracle / Dynamics environment?',
+      answer: 'ERP integration is a specialised discipline with a significant learning curve for each platform. We have engineers with deep, hands-on experience with SAP BAPI and IDoc integration, Oracle REST APIs and database-level integration, Microsoft Dynamics web APIs and Power Platform connectors, and Salesforce platform event and API integration. For each platform, we understand the data model, the transaction management constraints and the performance characteristics of the available integration mechanisms. We design integrations that are reliable, maintainable and tolerant of the API version changes and scheduled maintenance windows that ERP platforms impose.',
+    },
+    {
+      question: 'What level of ongoing support do you provide after delivery?',
+      answer: 'We offer several post-delivery engagement models. A hypercare support period (typically 30–60 days post-launch) is included in every project, providing rapid-response support for production issues during the period when new systems are most likely to encounter unexpected edge cases. Beyond that, we offer managed service retainers covering ongoing maintenance, minor feature development and incident response with defined SLAs. We can also act in a technical advisory capacity for your internal team. The right model depends on your internal capabilities and the criticality of the system — we help you evaluate the options honestly rather than defaulting to the most expensive arrangement.',
+    },
+    {
+      question: 'We need the system to comply with APRA CPS 234 / other Australian financial services regulations. Can you address this?',
+      answer: 'Yes. APRA CPS 234 (Information Security), CPS 231 (Outsourcing) and related prudential standards impose specific requirements on information security management, third-party risk management, incident response and testing that directly affect enterprise software design and the engagement model with a technology partner. We are familiar with these standards and design systems and engagement structures that satisfy them. We work with your legal and compliance teams to ensure our approach, including our contractual arrangements, satisfies APRA\'s requirements for material service provider oversight.',
+    },
+    {
+      question: 'Do you offer fixed-price or time-and-materials engagements?',
+      answer: 'Both, and we advise on which is appropriate based on scope certainty. Fixed-price engagements are appropriate when requirements are well-defined and stable — typically the implementation phase of a project where requirements and architecture have already been locked down. Time-and-materials is more appropriate for discovery, architecture and the early phases of complex projects where scope inevitably evolves as understanding deepens. Hybrid arrangements — fixed-price per sprint with defined deliverables — are often the best of both worlds for larger programmes. We are transparent about the trade-offs of each model and help you choose the structure that best manages risk for your specific situation.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Legacy System Modernisation', href: '/services/legacy-modernisation' },
+    { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
+    { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },
+    { title: 'Cybersecurity Consulting', href: '/services/cybersecurity' },
+  ],
+};
+---
+<ServicePageLayout {...data} />

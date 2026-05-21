@@ -1,0 +1,123 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+// CASE_STUDY_PLACEHOLDER — replace with real client details when approved
+
+const data = {
+  metaTitle: 'Online Tutoring Marketplace — All Webbed Labs',
+  metaDescription: 'How we helped a Sydney EdTech startup build a two-sided tutoring marketplace from zero — tutor verification, booking, video sessions, Stripe Connect payouts — and launch an MVP that closed a funding round four weeks after going live.',
+  industry: 'Education',
+  tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe Connect', 'Daily.co'],
+  title: 'Online Tutoring Marketplace',
+  summary: 'A Sydney EdTech startup had a strong idea — connect K–12 and university students with verified tutors for on-demand and scheduled sessions — but no product, no revenue and a funding timeline that required a live platform within months. We built the marketplace from scratch and they closed their next round four weeks after launch.',
+  heroImageDescription: 'Tutor profile page showing subject specialisations, availability calendar and review score alongside the student booking flow and an in-progress video tutoring session',
+
+  clientOverview: 'An EdTech startup founded in Sydney in 2022 with a small founding team that included a former high school teacher, a university academic and an entrepreneur with a background in consumer marketplaces. The concept was validated through manual matching — the founders were connecting students and tutors themselves via spreadsheet and WhatsApp — but they needed a real platform to scale and to satisfy investors that the model was technically feasible.',
+  clientSize: 'Founding team of 4, pre-revenue at engagement',
+  clientLocation: 'Sydney, NSW',
+
+  pullQuote: 'We\'d been doing everything manually just to prove the concept worked. All Webbed Labs built us a platform that made it look like we\'d been running for years — and we closed our round four weeks later.',
+  pullQuoteAuthor: 'Co-Founder & CEO',
+  pullQuoteRole: 'Sydney EdTech Startup',
+
+  challenge: [
+    'Two-sided marketplaces are technically and operationally complex, and the founders knew it. Their investor pitch acknowledged the build risk directly. They were not naive about what they were asking for — they had done enough research to understand the components involved. What they needed was a team that could execute quickly without cutting corners on the parts that mattered most: tutor verification, payment handling and the video session experience.',
+    'The tutor side of the marketplace required more than a profile page. The founders had identified trust and quality as their primary differentiators — they wanted to be the marketplace where parents could be confident that every tutor listed had been properly vetted. That meant identity verification, qualification checking, a working-with-children check status field (each Australian state handles this differently, which added complexity), and a review system that reflected real session outcomes rather than just satisfaction ratings.',
+    'The student side needed a booking experience that was frictionless enough that a time-poor parent could complete it in under five minutes. Payment had to happen at booking — no invoices, no bank transfers, no awkward money conversations between families and tutors. Sessions needed to happen inside the platform, not via a third-party video link the tutor emailed over. And tutors needed to receive their earnings reliably, on a predictable schedule, with transparent fee deduction — which meant the payment architecture had to handle marketplace payouts correctly from day one, not as a later addition.',
+    'The funding timeline was the most acute pressure. The startup had a term sheet from an early-stage investor that was contingent on a working product being live with real users by a specific date. The founders were honest about this from the first conversation. It shaped the entire engagement: we had to be ruthless about MVP scope, disciplined about deferring complexity, and confident that what we launched could handle real traffic without embarrassing failures. Missing the launch date was not an option with a business consequence attached to it.',
+    'There was also a regulatory consideration that the founders had not fully worked through. The platform would be facilitating tutoring services involving minors, which brought obligations under the relevant Australian state child safety frameworks. The marketplace\'s terms of service, the tutor verification process, and the session recording and storage policy all needed to be considered in that context. We raised this early in discovery and helped the founders think through the policy requirements before we built anything, rather than retrofitting compliance onto a finished product.',
+  ],
+
+  whyUs: [
+    'The founders had received proposals from two other development firms. One was cheaper but proposed a longer timeline and a less experienced team. The other was similarly priced but proposed a technology stack — a low-code platform for the front-end with a custom back-end — that the founders were uncomfortable with. They had been advised by their investors that the platform needed to be built on conventional, well-supported technology that a future CTO hire would be able to take over.',
+    'We were recommended by one of the investor\'s portfolio companies, which had used us for a different type of marketplace project. What the founders valued in our initial conversations was that we had built payment-splitting architectures before, had worked with video API providers, and could speak directly to the trade-offs in two-sided marketplace data modelling. We were not learning on their project. We also proposed a scope that the founders initially thought was too conservative — fewer features than they had in their brief — and explained why. That willingness to push back on scope, and to defend the reasoning, gave them confidence.',
+  ],
+
+  approach: [
+    'The first thing we did was run a two-day scope workshop with the founding team. We went through every feature in their original brief and assigned it to one of three categories: MVP-critical (platform cannot function without it), MVP-valuable (adds meaningful differentiation but can be added post-launch), and post-funding (genuinely non-urgent). This exercise was sometimes uncomfortable — features the founders were attached to moved into the third category — but it produced a shared understanding of what the launch product actually needed to be.',
+    'The MVP-critical list was tighter than the founders had initially imagined: tutor onboarding and profile management, student registration and search, session booking with payment, video session delivery, and a basic review system. No referral programme. No group sessions. No mobile app. No AI-powered matching. All of those went to the post-funding list with explicit design notes about how they could be added later without requiring the core to be rebuilt.',
+    'We designed the database schema and API contracts before writing application code. For a two-sided marketplace, the data model is foundational — getting the relationships between users (who can be both students and tutors), bookings, sessions, payments and payouts wrong early means expensive refactoring later. We spent three days on this alone and walked the founders through it. They did not need to understand every technical detail, but they needed to understand the key design decisions — particularly around how the platform handles a tutor who is also a student, and how the payment flow relates to session completion.',
+    'We made technology choices oriented towards the team who would take this over after launch. Next.js over a separate React app and API layer because it reduces deployment complexity and is well-understood by most front-end developers. Supabase Auth rather than a custom authentication implementation because tutor onboarding would involve email verification and password recovery workflows that are not worth building from scratch. PostgreSQL rather than a NoSQL option because marketplace data is relational and the query patterns are predictable.',
+  ],
+
+  solution: [
+    'The tutor onboarding flow is a multi-step verification process that handles identity confirmation, qualification upload, Working With Children Check number entry (with state-specific validation logic), and a short video introduction. We integrated with a third-party identity verification provider for the document check step — building this ourselves would have been expensive and slow. Tutors are listed on the platform as "Pending Verification" immediately after application, so their profile is visible but not bookable, and become "Verified" once the check is complete. This gives tutors an incentive to complete verification quickly because their profile is already public.',
+    'The student booking flow is designed around the parent use case. Search filters by subject, year level, availability and price range. Each tutor profile shows their qualifications, subjects, hourly rate, availability calendar and verified review score. Booking is a three-step process: select session time, confirm student details, pay. Payment is handled entirely through Stripe — card details are collected by Stripe, not our servers. The booking confirmation includes a calendar invite for both parties and a link to the session room.',
+    'Video sessions run through Daily.co, which provides a WebRTC-based video API that handles the browser compatibility and network quality complexity that comes with building video from scratch. We built a custom session room interface on top of Daily.co — with a shared whiteboard, file sharing, session timer, and a post-session feedback prompt — rather than simply embedding the default Daily.co room. The session experience is entirely within the platform; there are no external links or third-party branding.',
+    'The payout architecture was the most technically demanding part of the payment implementation. We used Stripe Connect\'s destination charges model, which means the platform charges the student\'s card, takes the platform fee, and pays out the remainder to the tutor\'s connected Stripe account. Tutors onboard to Stripe Express during their verification flow — this handles their identity for financial purposes (which has its own KYC requirements distinct from the working-with-children checks) and allows weekly automatic payouts. The platform\'s fee structure is transparent: tutors set their own hourly rate, and a fixed percentage is displayed to both parties at the point of booking.',
+    'The review system is triggered after session completion. Both student and tutor receive a prompt 30 minutes after the session ends. Reviews are two-part: a rating (1–5 stars) and a short freeform comment. Only students who have completed a session with a tutor can leave a review for that tutor. Reviews are not anonymous — tutor profiles show which student year level left each review, which the founders felt was important for building trust. Tutors can respond publicly to reviews. Negative reviews are not moderated before publication, but the platform has a dispute process for reviews the tutor believes are factually incorrect.',
+    'The administration panel gives the founding team visibility over the full marketplace: new tutor applications awaiting verification, flagged sessions, payment disputes, and key operational metrics. Email automation handles all transactional communications — booking confirmations, reminder emails 24 hours and 1 hour before sessions, post-session review prompts, payout notifications and weekly tutor earnings summaries. We used Resend for email delivery, which provides delivery analytics that the team uses to monitor communication health.',
+  ],
+
+  implementation: [
+    'We worked in two-week sprints with a weekly check-in call with the founding team. The co-founders were deeply involved in the build — particularly the founder with the teaching background, who reviewed every user-facing copy string and pushed back on anything that felt transactional rather than educational. This involvement was valuable; the product feels more considered as a result. It also required us to manage scope carefully, because a founder who cares about the product is also a founder who will generate feature requests throughout development.',
+    'We ran a private beta with 20 tutors and 15 student families in the six weeks before public launch. Participants were recruited by the founding team from their personal networks. The beta surfaced a number of issues we were able to fix before launch: a timezone handling bug that caused booking confirmations to show incorrect session times for tutors based in different states, a video session connectivity issue for users on certain corporate networks, and a payment failure edge case when a student\'s card was declined after the booking was confirmed. All three were significant enough that we were glad they appeared in beta rather than at launch.',
+    'The public launch was deliberately quiet — a soft launch to the startup\'s waitlist and social following rather than a press push. This was intentional. The founders wanted real usage data before any media coverage, so that if a journalist looked the platform up after a story ran, they would see a functioning marketplace with real tutors and real reviews rather than a launch-week ghost town. By the time the first press coverage ran, the platform had 180 tutors onboarded and had processed its first 400 sessions.',
+    'The investor milestone review happened five weeks after public launch. The key metrics the investor had been looking for were tutor supply, booking volume, and evidence of repeat usage. All three were tracking ahead of the projections in the term sheet. The round closed within the month. The founding team\'s first hire with the new funding was a Head of Growth, which tells you where their priorities were post-platform.',
+  ],
+
+  lessonsLearned: [
+    'The Stripe Connect onboarding flow for tutors had a higher drop-off rate than we expected. Tutors who made it through the identity verification and qualification upload steps were abandoning at the Stripe Express onboarding, which requires personal financial details and a bank account. In retrospect, we should have sequenced this differently — the financial onboarding should have happened earlier in the tutor journey when motivation is highest, not as the final step after they had already spent time building their profile. We addressed this post-launch with a save-and-resume flow and a direct explainer about why the financial information was needed.',
+    'We built the initial session whiteboard using a third-party library that was well-reviewed but turned out to have performance issues on lower-powered devices — which are exactly the devices many high school students use. We replaced it with a simpler canvas implementation that was less feature-rich but far more reliable across device types. The lesson: for features used in live, synchronous sessions where failure is highly visible, simpler and more reliable beats more capable and less predictable.',
+    'The Working With Children Check validation logic was more complex than we had scoped. Each Australian state and territory has a different check name (Blue Card in Queensland, Working with Children Check in Victoria and New South Wales, etc.), different number formats, different expiry rules, and different online verification portals — some of which have APIs and some of which do not. We ended up building a manual review step for states without an API-accessible verification system, which added operational overhead for the founding team that we had not anticipated. A dedicated child-safety verification service provider would have been the cleaner solution, but the cost was not in the startup\'s budget.',
+    'Our initial approach to search and matching — a straightforward filter-based search — worked fine at MVP scale but would not scale to a large tutor supply without relevance ranking. We flagged this to the founders post-launch and have since added a basic relevance scoring layer that accounts for tutor response rate, session completion rate, and review score in addition to the filter criteria. The architecture supported this addition without major changes, which validated the decision to design the data model carefully before building the application.',
+  ],
+
+  whatCameNext: [
+    'With the Series A funding secured, the startup\'s roadmap expanded significantly. Our next engagement was building a mobile app — native iOS and Android using React Native, sharing the existing API layer — which the founders had correctly identified as important for the tutors who were operating the platform as their primary income source and wanted a professional mobile experience.',
+    'Group sessions were the first major feature addition post-launch. The data model had been designed to support this from the beginning — a session can have multiple student participants — so the implementation was mostly front-end work: multi-participant booking flows, split-payment logic between student families, and updated video room configuration for group sizes. Group sessions now represent approximately 18% of platform bookings.',
+    'The founding team also engaged us to build a parent dashboard that sits alongside the student portal — giving parents visibility over their child\'s session history, tutor ratings, and payment history in a single view. This was straightforward given the existing data structure and took one sprint to deliver.',
+  ],
+
+  resultsNarrative: 'The platform reached $180K in monthly bookings by month six — a number that had seemed optimistic when the founders put it in their investor deck. The metric the founding team is most proud of is the tutor earnings figure: the average active tutor on the platform was earning $1,840 per month by the six-month mark. Building a marketplace is only worthwhile if it creates genuine economic value for the supply side. That number suggests it does.',
+
+  metrics: [
+    { value: '400+', label: 'Tutors onboarded', context: 'In the first three months of public launch, all verified through the platform\'s multi-step process' },
+    { value: '$180K', label: 'Monthly bookings', context: 'Gross booking value by month six of operation' },
+    { value: '4.8/5', label: 'Average platform rating', context: 'Based on verified post-session reviews from students and parents' },
+    { value: '73%', label: 'Session completion rate', context: 'Sessions attended as booked; industry benchmark for comparable platforms is approximately 65%' },
+    { value: '4 weeks', label: 'Funding round closed after launch', context: 'Investor milestone met; next funding round closed within a month of public launch' },
+    { value: '$1,840/mo', label: 'Average tutor earnings', context: 'For active tutors (3+ sessions/week) at the six-month mark' },
+  ],
+
+  techStack: [
+    { name: 'Next.js', reason: 'Full-stack framework for the marketplace UI with server-side rendering for tutor profile SEO and simplified deployment' },
+    { name: 'Node.js', reason: 'API layer and background job processing for session lifecycle events, payouts and email triggers' },
+    { name: 'PostgreSQL', reason: 'Relational structure for complex marketplace entities — users, bookings, sessions, reviews and payment records' },
+    { name: 'Supabase Auth', reason: 'Email/password and social sign-in with built-in session management, avoiding custom auth implementation' },
+    { name: 'Stripe Connect', reason: 'Marketplace payment architecture supporting destination charges, automatic tutor payouts and platform fee collection' },
+    { name: 'Daily.co', reason: 'WebRTC video API for in-platform tutoring sessions with reliable cross-browser support and recording capability' },
+    { name: 'AWS (EC2 + RDS + S3)', reason: 'Sydney-region hosting; S3 for session recording storage and file sharing between tutors and students' },
+    { name: 'Resend', reason: 'Transactional email delivery with delivery analytics for booking confirmations, reminders and payout notifications' },
+  ],
+
+  relatedCaseStudies: [
+    {
+      title: 'Student Portal & Learning Management System',
+      href: '/case-studies/student-portal-learning-management',
+      industry: 'Education',
+      summary: 'A Brisbane independent school replaced six disconnected systems with a unified platform that cut teacher admin time by 3.1 hours per week and compressed the report writing period from two weeks to five days.',
+    },
+    {
+      title: 'Corporate Training & Compliance Platform',
+      href: '/case-studies/corporate-training-compliance-platform',
+      industry: 'Education',
+      summary: 'A national retail chain lifted compliance training completion rates from 61% to 94% and replaced six weeks of store-by-store delivery with a platform that rolls out training in three days.',
+    },
+    {
+      title: 'SaaS Development',
+      href: '/services/saas-development',
+      industry: 'Service',
+      summary: 'We build multi-tenant SaaS products and two-sided marketplace platforms from concept to launch, with a focus on the payment architecture, onboarding flows and growth infrastructure that early-stage products need.',
+    },
+  ],
+
+  relatedServices: [
+    { title: 'SaaS Development', href: '/services/saas-development' },
+    { title: 'Custom App Development', href: '/services/custom-app-development' },
+    { title: 'API Development & Integration', href: '/services/api-development' },
+    { title: 'Education Technology', href: '/services/education-technology' },
+  ],
+};
+---
+<CaseStudyLayout {...data} />

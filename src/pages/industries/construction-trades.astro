@@ -1,0 +1,110 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Construction & Trades Software Development | All Webbed Labs',
+  metaDescription: 'Custom job management platforms, compliance tools, subcontractor portals and site management apps for Australian builders, trades and construction companies. Purpose-built technology that keeps projects on time and on budget.',
+
+  industryName: 'Construction & Trades',
+  heroHeadline: 'Construction Technology That Keeps Projects On Time and On Budget',
+  heroTagline: 'Site management platforms, compliance tools and job management systems for builders, trades and construction companies.',
+
+  stats: [
+    { value: '35%', label: 'reduction in admin time' },
+    { value: '100%', label: 'compliance tracking' },
+    { value: 'Real-time', label: 'site visibility' },
+    { value: 'Mobile-first', label: 'for site workers' },
+  ],
+
+  painPoints: [
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+      title: 'Paper-Based Site Management',
+      description: 'Site diaries, variation orders, material dockets and RFIs still running on paper or disconnected spreadsheets create delays, disputes and lost documentation that cost money and credibility.',
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+      title: 'Subcontractor Coordination Chaos',
+      description: 'Managing 20+ subcontractors across active sites via phone calls, WhatsApp and email threads leads to scheduling conflicts, missed compliance obligations and costly delays that compound across the programme.',
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      title: 'Compliance Documentation Burden',
+      description: "Safe Work Method Statements, induction records, licence checks and WHS documentation demanded by SafeWork NSW, WorkSafe Victoria and Queensland's WHS regulator create enormous administrative overhead, particularly on larger commercial sites.",
+    },
+    {
+      icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+      title: 'Financial Visibility Gaps',
+      description: "Project cost tracking, retention management, progress claims under the Security of Payment Act and subcontractor payment schedules are poorly visible in real time, making it near-impossible to spot margin erosion before it becomes a financial crisis.",
+    },
+  ],
+
+  solutions: [
+    'Job management platforms',
+    'Subcontractor portals',
+    'Compliance and safety management systems',
+    'Quote-to-invoice workflow systems',
+    'Digital site diary apps',
+    'Variation management and approval workflows',
+    'SWMS automation and digital sign-off',
+    'Project cost tracking dashboards',
+  ],
+
+  useCases: [
+    {
+      title: 'End-to-End Job Management for Residential Builders',
+      description: "A purpose-built platform covering lead intake, quoting, contract execution, site scheduling, subcontractor management and progress invoicing. Integrates with Xero for accounts and sends automated payment reminders under the Building and Construction Industry Security of Payment Act 2002. Built for volume residential builders managing 30–200 active projects.",
+      techStack: 'React · Node.js · PostgreSQL · Xero API · AWS',
+      videoNote: 'job management dashboard showing active projects, subcontractor schedule and payment status',
+    },
+    {
+      title: 'Digital SWMS and Safety Compliance Platform',
+      description: "Replaces paper-based SWMS workflows with a mobile-first system where workers complete digital safe work method statements, toolbox talks and induction records on site. Supervisors get real-time visibility of compliance status across trades. Generates audit-ready reports for principal contractors, insurers and SafeWork inspectors.",
+      techStack: 'React Native · Supabase · PDF generation · Push notifications',
+      videoNote: 'mobile SWMS completion flow with signature capture and real-time compliance dashboard',
+    },
+    {
+      title: 'Subcontractor Portal with Licence and Insurance Verification',
+      description: 'A self-service onboarding and management portal where subcontractors upload trade licences, public liability certificates, SWMS documents and tax details. Automated expiry alerts prompt renewals before compliance lapses. Integrated scheduling lets subbies confirm availability and receive job briefs directly, cutting coordination phone calls by over 70%.',
+      techStack: 'Next.js · Prisma · SendGrid · Document OCR · Stripe Connect',
+      videoNote: 'subcontractor onboarding flow, document verification and scheduling calendar',
+    },
+  ],
+
+  relevantServices: [
+    { title: 'Custom Web Application Development', href: '/services/web-application-development' },
+    { title: 'Mobile App Development', href: '/services/mobile-app-development' },
+    { title: 'API Development & Integrations', href: '/services/api-integrations' },
+    { title: 'SaaS Product Development', href: '/services/saas-development' },
+    { title: 'UI/UX Design', href: '/services/ui-ux-design' },
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-devops' },
+  ],
+
+  faqs: [
+    {
+      question: 'Can you integrate with existing accounting software like Xero or MYOB?',
+      answer: "Yes. Most construction job management platforms we build integrate directly with Xero, MYOB AccountRight or QuickBooks Online via their official APIs. This keeps your accounts team working in familiar software while project managers and site supervisors work in a purpose-built tool. We handle job costing, progress claim generation, supplier invoice matching and subcontractor payment scheduling as part of the integration.",
+    },
+    {
+      question: 'How do you handle offline functionality for on-site workers with poor connectivity?',
+      answer: "Mobile apps we build for site use are designed offline-first. Workers can complete forms, capture photos, log time and update job status without a data connection. Everything syncs automatically when connectivity is restored. This is critical for remote sites, basement levels and rural projects where 4G coverage is unreliable.",
+    },
+    {
+      question: 'Do your platforms support compliance with Australia\'s Security of Payment legislation?',
+      answer: "Yes. We build payment claim and schedule workflows that align with each state's SOPA requirements — including the Building and Construction Industry Security of Payment Act 1999 (NSW), the Building Industry Fairness (Security of Payment) Act 2017 (QLD) and equivalent legislation in other states. This includes statutory timeframes, reference date tracking, payment schedule generation and adjudication document management.",
+    },
+    {
+      question: 'Can the software scale from a small trade business to a large construction company?',
+      answer: "Absolutely. We typically design systems with a modular architecture — a small plumbing company with 8 staff might start with job management and invoicing, then add the subcontractor portal and compliance module as they grow. Pricing and feature sets scale accordingly. We've built systems used by sole traders all the way up to Tier 2 commercial contractors managing 500+ concurrent jobs.",
+    },
+    {
+      question: 'How long does it take to build a custom job management platform?',
+      answer: "A focused MVP with job creation, scheduling, subcontractor assignment and basic invoicing typically takes 10–16 weeks from kick-off to production. More complex platforms with SWMS automation, financial reporting and subcontractor portals run 20–32 weeks. We work in two-week sprints and release working software continuously, so you start getting value well before the final build is complete.",
+    },
+  ],
+
+  ctaHeadline: 'Ready to Digitise Your Construction Business?',
+  ctaDescription: "Whether you're a sole trader wanting to ditch the clipboard or a project builder needing enterprise job management, we build software that fits the way construction actually works. Let's map out what you need.",
+};
+---
+<IndustryPageLayout {...data} />

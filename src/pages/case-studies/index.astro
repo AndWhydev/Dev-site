@@ -1,0 +1,508 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+interface CaseStudyMeta {
+  slug: string;
+  title: string;
+  industry: string;
+  summary: string;
+  tags: string[];
+  services: string[];
+  techs: string[];
+}
+
+const caseStudies: CaseStudyMeta[] = [
+  // Sports & Recreation
+  { slug: 'rugby-club-management-app', title: 'Rugby Club Management App', industry: 'Sports & Recreation', summary: 'A NSW rugby union club replaced paper-based rosters and manual fee collection with a full member management platform — cutting admin time by 60%.', tags: ['Flutter','Node.js','Stripe','Push Notifications'], services: ['Flutter Development','Custom App Development'], techs: ['Flutter','Node.js','PostgreSQL','Stripe'] },
+  { slug: 'athlete-performance-tracking', title: 'Athlete Performance Tracking Platform', industry: 'Sports & Recreation', summary: 'A state-level swimming academy gained real-time wearable data integration and coach dashboards that transformed how training decisions were made.', tags: ['React','Python','Wearables','ML'], services: ['Custom App Development','Data Analytics & BI'], techs: ['React','Python','FastAPI','PostgreSQL'] },
+  { slug: 'sports-venue-ticketing', title: 'Sports Venue Ticketing & Membership System', industry: 'Sports & Recreation', summary: 'A regional football stadium moved from phone bookings to a fully automated ticketing and season pass system, increasing sales by 38%.', tags: ['Next.js','Stripe','QR Scanning','PostgreSQL'], services: ['Web & Mobile Apps','API Development'], techs: ['Next.js','Stripe','PostgreSQL','Supabase'] },
+  // Hospitality
+  { slug: 'restaurant-booking-table-management', title: 'Restaurant Booking & Table Management System', industry: 'Hospitality', summary: 'A four-venue Sydney restaurant group unified bookings, waitlists and POS across all sites — eliminating double-bookings and reducing no-shows by 31%.', tags: ['React','Node.js','POS Integration','Realtime'], services: ['Custom App Development','API Development'], techs: ['React','Node.js','PostgreSQL','Stripe'] },
+  { slug: 'hotel-staff-rostering-operations', title: 'Hotel Staff Rostering & Operations App', industry: 'Hospitality', summary: 'A Queensland boutique hotel chain replaced spreadsheet rostering with a mobile-first platform that gave managers full visibility and cut scheduling time in half.', tags: ['Flutter','Firebase','Push Notifications','Cloud'], services: ['Flutter Development','Custom App Development'], techs: ['Flutter','Firebase','Node.js','GCP'] },
+  { slug: 'cafe-loyalty-rewards-app', title: 'Café Loyalty & Rewards App', industry: 'Hospitality', summary: 'A 12-location café franchise launched a branded loyalty app that drove a 27% increase in repeat visits within the first six months.', tags: ['Flutter','Stripe','Push Notifications','Analytics'], services: ['Flutter Development','Custom App Development'], techs: ['Flutter','Node.js','PostgreSQL','Stripe'] },
+  // Healthcare
+  { slug: 'patient-management-appointment-system', title: 'Patient Management & Appointment System', industry: 'Healthcare', summary: 'A Melbourne specialist clinic replaced a fragmented paper-and-spreadsheet system with a fully integrated digital practice management platform.', tags: ['React','FastAPI','HL7','ADHA'], services: ['Custom App Development','API Development'], techs: ['React','FastAPI','PostgreSQL','AWS'] },
+  { slug: 'telehealth-platform-gp', title: 'Telehealth Platform for GP Practice', industry: 'Healthcare', summary: 'A Queensland GP practice extended its reach to regional patients through a ADHA-compliant telehealth platform handling 300+ consultations per week.', tags: ['React','WebRTC','Medicare','AWS'], services: ['Custom App Development','Cloud Infrastructure'], techs: ['React','Node.js','WebRTC','AWS'] },
+  { slug: 'prescription-tracker-medication-app', title: 'Prescription Tracker & Medication Reminder App', industry: 'Healthcare', summary: 'A compounding pharmacy built a patient-facing mobile app with medication reminders and pharmacy integration that improved adherence rates by 44%.', tags: ['Flutter','FastAPI','Push Notifications','Healthcare'], services: ['Flutter Development','Custom App Development'], techs: ['Flutter','FastAPI','PostgreSQL','Firebase'] },
+  // Retail & E-Commerce
+  { slug: 'retail-inventory-pos-system', title: 'Retail Inventory & POS System', industry: 'Retail & E-Commerce', summary: 'An 8-store Victorian retail chain replaced disconnected legacy systems with a unified inventory and POS platform, reducing stockouts by 52%.', tags: ['React','Node.js','Barcode Scanning','Xero'], services: ['Custom App Development','API Development'], techs: ['React','Node.js','PostgreSQL','Xero API'] },
+  { slug: 'customer-loyalty-personalisation', title: 'Customer Loyalty & Personalisation Platform', industry: 'Retail & E-Commerce', summary: 'An Australian online fashion retailer deployed an AI-driven loyalty platform that increased repeat purchase rate by 33% in the first quarter.', tags: ['Next.js','Python','ML','Shopify'], services: ['Custom App Development','AI Tools & Chatbots'], techs: ['Next.js','Python','PostgreSQL','Shopify API'] },
+  { slug: 'wholesale-ordering-portal', title: 'Wholesale Ordering Portal', industry: 'Retail & E-Commerce', summary: 'An Australian food manufacturer eliminated manual order processing with a B2B portal handling $2.3M in monthly orders with zero manual intervention.', tags: ['Next.js','Node.js','Xero','B2B'], services: ['Custom App Development','API Development'], techs: ['Next.js','Node.js','PostgreSQL','Xero API'] },
+  // Finance & Fintech
+  { slug: 'financial-reporting-analytics-dashboard', title: 'Financial Reporting & Analytics Dashboard', industry: 'Financial Services', summary: 'A mid-sized accounting firm automated board reporting by pulling from multiple accounting platforms into a single dashboard — saving 14 hours per month.', tags: ['React','Python','Xero','Power BI'], services: ['Data Analytics & BI','Custom App Development'], techs: ['React','Python','PostgreSQL','Xero API'] },
+  { slug: 'expense-management-approval-workflow', title: 'Expense Management & Approval Workflow', industry: 'Financial Services', summary: 'A 200-person construction company replaced paper expense forms with OCR-powered digital submission and multi-level approvals integrated with their ERP.', tags: ['React','OCR','ERP Integration','Workflow'], services: ['Custom App Development','Workflow Automation'], techs: ['React','Python','FastAPI','AWS Textract'] },
+  { slug: 'loan-application-assessment-platform', title: 'Loan Application & Assessment Platform', industry: 'Financial Services', summary: 'A non-bank lender reduced their average application assessment time from 5 days to 4 hours with a fully digital end-to-end loan workflow.', tags: ['React','FastAPI','ID Verification','ASIC'], services: ['Custom App Development','Cybersecurity'], techs: ['React','FastAPI','PostgreSQL','AWS'] },
+  // Logistics & Transport
+  { slug: 'fleet-tracking-job-dispatch', title: 'Fleet Tracking & Job Dispatch System', industry: 'Logistics & Transport', summary: 'A 45-vehicle courier company gained real-time GPS tracking, automated dispatch and customer ETAs — cutting average delivery time by 18%.', tags: ['React','Flutter','GPS','Google Maps'], services: ['Custom App Development','Flutter Development'], techs: ['React','Flutter','Node.js','PostgreSQL','Google Maps API'] },
+  { slug: 'warehouse-management-system', title: 'Warehouse Management System', industry: 'Logistics & Transport', summary: 'A 3PL provider processing 1,200 orders daily replaced a legacy WMS with a barcode-driven system that reduced pick errors by 78%.', tags: ['React','Node.js','Barcode','PostgreSQL'], services: ['Custom App Development','Database Architecture'], techs: ['React','Node.js','PostgreSQL','Docker'] },
+  { slug: 'delivery-proof-of-delivery-app', title: 'Delivery & Proof of Delivery App', industry: 'Logistics & Transport', summary: 'A furniture delivery company reduced dispute resolution time from days to minutes with digital signatures and photo capture on every delivery.', tags: ['Flutter','Node.js','Digital Signatures','GPS'], services: ['Flutter Development','API Development'], techs: ['Flutter','Node.js','PostgreSQL','AWS S3'] },
+  // Construction & Trades
+  { slug: 'job-scheduling-site-management', title: 'Job Scheduling & Site Management App', industry: 'Construction & Trades', summary: 'A 30-person plumbing and electrical business moved from phone calls and whiteboards to a job management platform that improved on-time completion by 41%.', tags: ['Flutter','Node.js','Job Management','Xero'], services: ['Flutter Development','Custom App Development'], techs: ['Flutter','Node.js','PostgreSQL','Xero API'] },
+  { slug: 'safety-compliance-incident-reporting', title: 'Safety Compliance & Incident Reporting Platform', industry: 'Construction & Trades', summary: 'A commercial construction company achieved full digital compliance with SafeWork requirements, reducing induction time by 65%.', tags: ['React','Node.js','Digital Forms','Compliance'], services: ['Custom App Development','Workflow Automation'], techs: ['React','Node.js','PostgreSQL','AWS'] },
+  { slug: 'quoting-estimating-tool', title: 'Quoting & Estimating Tool', industry: 'Construction & Trades', summary: 'A custom home builder reduced quote preparation time from 3 days to 4 hours with a digital estimating tool that generated branded PDF proposals automatically.', tags: ['React','Node.js','PDF Generation','Client Portal'], services: ['Custom App Development','UI & UX Design'], techs: ['React','Node.js','PostgreSQL','PDF generation'] },
+  // Real Estate
+  { slug: 'property-management-platform', title: 'Property Management Platform', industry: 'Real Estate', summary: 'A property management company with 400 properties replaced four disconnected tools with a single platform, reducing maintenance response time by 58%.', tags: ['React','Flutter','Node.js','Xero'], services: ['Custom App Development','Flutter Development'], techs: ['React','Flutter','Node.js','PostgreSQL','Xero API'] },
+  { slug: 'commercial-property-listing-crm', title: 'Commercial Property Listing & CRM', industry: 'Real Estate', summary: 'A commercial real estate agency built a bespoke listing platform with integrated CRM that reduced lead response time from 48 hours to under 2 hours.', tags: ['Next.js','Node.js','CRM','Search'], services: ['Custom App Development','UI & UX Design'], techs: ['Next.js','Node.js','PostgreSQL','Elasticsearch'] },
+  { slug: 'rental-application-background-check', title: 'Rental Application & Background Check Platform', industry: 'Real Estate', summary: 'A large residential property manager reduced rental application processing from 5 days to same-day with digital applications and automated verification.', tags: ['React','FastAPI','ID Verification','Document OCR'], services: ['Custom App Development','API Development'], techs: ['React','FastAPI','PostgreSQL','AWS Textract'] },
+  // Education
+  { slug: 'student-portal-learning-management', title: 'Student Portal & Learning Management System', industry: 'Education', summary: 'A Brisbane private school replaced a fragmented collection of tools with a unified portal that increased parent engagement by 67%.', tags: ['React','Node.js','LMS','Parent Portal'], services: ['Custom App Development','UI & UX Design'], techs: ['React','Node.js','PostgreSQL','AWS'] },
+  { slug: 'online-tutoring-marketplace', title: 'Online Tutoring Marketplace', industry: 'Education', summary: 'An EdTech startup launched a tutor marketplace connecting 400+ tutors with students, processing $180K in monthly bookings within six months.', tags: ['Next.js','Stripe','Video','Marketplace'], services: ['Custom App Development','Custom SaaS Development'], techs: ['Next.js','Node.js','PostgreSQL','Stripe','Daily.co'] },
+  { slug: 'corporate-training-compliance-platform', title: 'Corporate Training & Compliance Platform', industry: 'Education', summary: 'A national retail chain automated compliance training for 500 employees, achieving 94% completion rate versus 61% with their previous system.', tags: ['React','Node.js','SCORM','Certificates'], services: ['Custom App Development','Workflow Automation'], techs: ['React','Node.js','PostgreSQL','AWS'] },
+  // Government & Enterprise
+  { slug: 'document-management-approval-workflow', title: 'Document Management & Approval Workflow System', industry: 'Government', summary: 'A state government department reduced average document approval time from 11 days to 2.5 days with a fully digital workflow and audit trail.', tags: ['React','Node.js','Digital Signatures','ISM'], services: ['Custom App Development','Cybersecurity','Workflow Automation'], techs: ['React','Node.js','PostgreSQL','AWS','DocuSign API'] },
+  { slug: 'asset-management-maintenance-scheduling', title: 'Asset Management & Maintenance Scheduling Platform', industry: 'Government', summary: 'A large local council gained complete visibility over 3,800 assets with predictive maintenance alerts that reduced emergency repair costs by 34%.', tags: ['React','Node.js','IoT','GIS'], services: ['Custom App Development','Data Analytics & BI'], techs: ['React','Node.js','PostgreSQL','AWS IoT','Mapbox'] },
+  { slug: 'grants-management-portal', title: 'Grants Management Portal', industry: 'Government', summary: 'A federal grants programme moved from email submissions to a digital portal, processing 40% more applications with the same team in the first year.', tags: ['React','FastAPI','Document Management','Workflow'], services: ['Custom App Development','Workflow Automation'], techs: ['React','FastAPI','PostgreSQL','AWS','DocuSign API'] },
+  // Web3 & Crypto
+  { slug: 'nft-marketplace-australian-artists', title: 'NFT Marketplace for Australian Artists', industry: 'Web3 & Crypto', summary: 'An arts collective launched an Ethereum-based NFT marketplace with on-chain royalties, facilitating $340K in primary sales in the first three months.', tags: ['Solidity','React','Ethereum','IPFS'], services: ['Blockchain Development','Custom App Development'], techs: ['Solidity','React','Ethers.js','IPFS','Hardhat'] },
+  { slug: 'defi-yield-aggregator', title: 'DeFi Yield Aggregator', industry: 'Web3 & Crypto', summary: 'A crypto startup launched an audited yield aggregator on Ethereum, reaching $4.2M TVL within 60 days of mainnet deployment.', tags: ['Solidity','React','DeFi','Smart Contracts'], services: ['Blockchain Development','Cybersecurity'], techs: ['Solidity','React','Ethers.js','Hardhat','Foundry'] },
+  { slug: 'tokenised-real-world-assets', title: 'Tokenised Real World Asset Platform', industry: 'Web3 & Crypto', summary: 'A property investment company built a compliant RWA tokenisation platform, enabling fractional property ownership across Polygon with full ASIC consideration.', tags: ['Solidity','React','Polygon','Compliance'], services: ['Blockchain Development','Cybersecurity'], techs: ['Solidity','React','Polygon','Hardhat','Node.js'] },
+  { slug: 'dao-governance-platform', title: 'DAO Governance Platform', industry: 'Web3 & Crypto', summary: 'A Web3 community launched an on-chain governance platform handling 1,200+ token holders and $800K in treasury management.', tags: ['Solidity','React','Ethereum','Governance'], services: ['Blockchain Development','Custom App Development'], techs: ['Solidity','React','Snapshot','Ethers.js','IPFS'] },
+  // AI & Automation
+  { slug: 'customer-service-ai-chatbot', title: 'Customer Service AI Chatbot', industry: 'AI & Automation', summary: 'A telecommunications company deployed a custom GPT-powered chatbot that resolved 71% of customer enquiries without human intervention.', tags: ['OpenAI','LangChain','RAG','Node.js'], services: ['AI Tools & Chatbots','LLM Integration'], techs: ['OpenAI GPT-4','LangChain','Node.js','PostgreSQL','Supabase'] },
+  { slug: 'document-processing-data-extraction', title: 'Document Processing & Data Extraction', industry: 'AI & Automation', summary: 'A logistics company processing 500 invoices per day reduced data entry time by 89% with an AI pipeline that automatically extracts and validates invoice data.', tags: ['Python','OCR','FastAPI','LLMs'], services: ['Workflow Automation','AI Tools & Chatbots'], techs: ['Python','FastAPI','AWS Textract','GPT-4','PostgreSQL'] },
+  { slug: 'sales-forecasting-demand-planning', title: 'Sales Forecasting & Demand Planning Tool', industry: 'AI & Automation', summary: 'A national distributor reduced overstock by 23% and stockouts by 31% with an ML model trained on five years of historical sales data.', tags: ['Python','ML','FastAPI','React'], services: ['Data Analytics & BI','Custom App Development'], techs: ['Python','scikit-learn','FastAPI','React','PostgreSQL'] },
+  { slug: 'ai-content-generation-platform', title: 'AI-Powered Content Generation Platform', industry: 'AI & Automation', summary: 'A marketing agency cut content production time by 65% with a custom AI platform trained on brand guidelines and client voice profiles.', tags: ['OpenAI','LangChain','React','FastAPI'], services: ['AI Tools & Chatbots','Custom App Development'], techs: ['React','FastAPI','OpenAI GPT-4','LangChain','PostgreSQL'] },
+];
+
+const industries = [...new Set(caseStudies.map(cs => cs.industry))].sort();
+const allServices = [...new Set(caseStudies.flatMap(cs => cs.services))].sort();
+const allTechs = [...new Set(caseStudies.flatMap(cs => cs.techs))].sort();
+---
+
+<Layout
+  title="Case Studies — All Webbed Labs | Enterprise Software Projects"
+  description="34 real-world case studies across every industry. See how All Webbed Labs has solved genuine enterprise software challenges for Australian businesses."
+>
+  <Header />
+  <main>
+
+    <section class="cs-index-hero">
+      <div class="csi-inner">
+        <div class="reveal">
+          <span class="section-label">Case Studies</span>
+          <h1 class="csi-title">
+            Real Projects.<br />
+            <span class="gradient-text">Real Outcomes.</span>
+          </h1>
+          <p class="csi-sub">
+            {caseStudies.length} case studies across {industries.length} industries.
+            Honest stories about genuine problems solved — written with the specificity enterprise buyers need to make confident decisions.
+          </p>
+        </div>
+
+        <div class="csi-stats reveal stagger-2">
+          <div class="csi-stat"><span class="csi-stat-num">{caseStudies.length}</span><span class="csi-stat-lbl">Case Studies</span></div>
+          <div class="csi-stat"><span class="csi-stat-num">{industries.length}</span><span class="csi-stat-lbl">Industries</span></div>
+          <div class="csi-stat"><span class="csi-stat-num">100%</span><span class="csi-stat-lbl">Australian Context</span></div>
+          <div class="csi-stat"><span class="csi-stat-num">All</span><span class="csi-stat-lbl">Placeholder — add real clients</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters + Grid -->
+    <section class="cs-index-body">
+      <div class="csi-inner">
+
+        <!-- Filter controls -->
+        <div class="cs-filters reveal">
+          <div class="cs-filter-row">
+            <div class="cs-search-wrap">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" id="cs-search" placeholder="Search case studies..." autocomplete="off" />
+            </div>
+            <select id="cs-industry-filter" aria-label="Filter by industry">
+              <option value="">All Industries</option>
+              {industries.map(ind => <option value={ind}>{ind}</option>)}
+            </select>
+            <select id="cs-service-filter" aria-label="Filter by service">
+              <option value="">All Services</option>
+              {allServices.map(s => <option value={s}>{s}</option>)}
+            </select>
+            <select id="cs-tech-filter" aria-label="Filter by technology">
+              <option value="">All Technologies</option>
+              {allTechs.map(t => <option value={t}>{t}</option>)}
+            </select>
+            <button class="cs-clear-btn" id="cs-clear" aria-label="Clear filters">Clear</button>
+          </div>
+          <div class="cs-results-count">
+            Showing <span id="cs-count">{caseStudies.length}</span> of {caseStudies.length} case studies
+          </div>
+        </div>
+
+        <!-- Card grid -->
+        <div class="cs-card-grid" id="cs-grid">
+          {caseStudies.map((cs) => (
+            <a
+              href={`/case-studies/${cs.slug}`}
+              class="cs-card card-hover"
+              data-industry={cs.industry}
+              data-services={cs.services.join('|')}
+              data-techs={cs.techs.join('|')}
+              data-title={cs.title.toLowerCase()}
+            >
+              <!-- IMAGE_PLACEHOLDER — add real screenshot for {cs.title} -->
+              <div class="cs-card-img">
+                <div class="cs-card-industry">{cs.industry}</div>
+              </div>
+              <div class="cs-card-body">
+                <h2 class="cs-card-title">{cs.title}</h2>
+                <p class="cs-card-summary">{cs.summary}</p>
+                <div class="cs-card-tags">
+                  {cs.tags.slice(0, 3).map(tag => <span class="cs-card-tag">{tag}</span>)}
+                </div>
+                <span class="cs-card-link">
+                  Read case study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div id="cs-no-results" class="cs-no-results" hidden>
+          <p>No case studies match your filters. <button id="cs-clear-2">Clear all filters</button></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cs-index-cta">
+      <div class="csi-inner">
+        <div class="cta-block reveal">
+          <h2>Don't see your industry?</h2>
+          <p>We've worked across many sectors not listed here. Tell us your challenge and we'll share the most relevant experience we have.</p>
+          <a href="/contact" class="btn-primary">
+            Start a Conversation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .cs-index-hero {
+    padding: 9rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-index-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(13,147,115,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .csi-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .csi-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+  }
+  .csi-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .csi-stats {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .csi-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .csi-stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0d9373;
+    letter-spacing: -0.04em;
+  }
+  .csi-stat-lbl {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+
+  .cs-index-body { padding: 5rem 0 6rem; background: #0a0f0e; }
+
+  /* Filters */
+  .cs-filters { margin-bottom: 2.5rem; }
+  .cs-filter-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .cs-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.625rem 0.875rem;
+    flex: 1;
+    min-width: 220px;
+  }
+  .cs-search-wrap input {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    width: 100%;
+  }
+  .cs-search-wrap input::placeholder { color: #4a6359; }
+  .cs-filters select {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.625rem 2rem 0.625rem 0.875rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6359' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.625rem center;
+    transition: border-color 0.2s ease;
+  }
+  .cs-filters select:focus { border-color: #0d9373; }
+  .cs-filters select option { background: #0f1614; }
+  .cs-clear-btn {
+    background: none;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.625rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+  .cs-clear-btn:hover { border-color: rgba(13,147,115,0.35); color: #0d9373; }
+  .cs-results-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+  }
+  .cs-results-count span { color: #0d9373; font-weight: 600; }
+
+  /* Card grid */
+  .cs-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .cs-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-card[hidden] { display: none; }
+  .cs-card-img {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #141c1a, #0f1614);
+    border-bottom: 1px solid #1e2d28;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    position: relative;
+  }
+  .cs-card-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(13,147,115,0.12) 0%, transparent 60%);
+  }
+  .cs-card-industry {
+    position: relative;
+    z-index: 1;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0d9373;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.25);
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+  }
+  .cs-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+  .cs-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+  }
+  .cs-card:hover .cs-card-title { color: #0d9373; }
+  .cs-card-summary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .cs-card-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .cs-card-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #4a6359;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2d28;
+    padding: 0.175rem 0.45rem;
+    border-radius: 4px;
+  }
+  .cs-card-link {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    transition: gap 0.2s ease;
+  }
+  .cs-card:hover .cs-card-link { gap: 0.625rem; }
+
+  .cs-no-results {
+    padding: 3rem 0;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a6359;
+  }
+  .cs-no-results[hidden] { display: none !important; }
+  .cs-no-results button {
+    background: none;
+    border: none;
+    color: #0d9373;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+
+  .cs-index-cta { padding: 5rem 0 6rem; background: #0a0f0e; }
+  .cta-block {
+    background: linear-gradient(135deg, rgba(13,147,115,0.07) 0%, #0f1614 60%);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta-block h2 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 700; color: white; margin: 0; flex: 0 0 auto; }
+  .cta-block p { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #8aa09a; margin: 0; flex: 1; min-width: 250px; line-height: 1.6; }
+
+  @media (max-width: 1100px) { .cs-card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .cs-card-grid { grid-template-columns: 1fr; }
+    .cs-filter-row { flex-direction: column; }
+    .cs-search-wrap { min-width: 0; width: 100%; }
+    .cs-filters select { width: 100%; }
+    .cta-block { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('cs-search') as HTMLInputElement;
+  const industryFilter = document.getElementById('cs-industry-filter') as HTMLSelectElement;
+  const serviceFilter = document.getElementById('cs-service-filter') as HTMLSelectElement;
+  const techFilter = document.getElementById('cs-tech-filter') as HTMLSelectElement;
+  const cards = document.querySelectorAll<HTMLElement>('.cs-card');
+  const countEl = document.getElementById('cs-count')!;
+  const noResults = document.getElementById('cs-no-results')!;
+
+  function filterCards() {
+    const q = searchInput.value.toLowerCase();
+    const ind = industryFilter.value;
+    const svc = serviceFilter.value;
+    const tech = techFilter.value;
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const matchQ = !q || card.dataset.title?.includes(q) || card.dataset.industry?.toLowerCase().includes(q);
+      const matchInd = !ind || card.dataset.industry === ind;
+      const matchSvc = !svc || card.dataset.services?.includes(svc);
+      const matchTech = !tech || card.dataset.techs?.includes(tech);
+
+      if (matchQ && matchInd && matchSvc && matchTech) {
+        card.hidden = false;
+        visible++;
+      } else {
+        card.hidden = true;
+      }
+    });
+
+    countEl.textContent = String(visible);
+    noResults.hidden = visible > 0;
+  }
+
+  function clearFilters() {
+    searchInput.value = '';
+    industryFilter.value = '';
+    serviceFilter.value = '';
+    techFilter.value = '';
+    filterCards();
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  industryFilter.addEventListener('change', filterCards);
+  serviceFilter.addEventListener('change', filterCards);
+  techFilter.addEventListener('change', filterCards);
+  document.getElementById('cs-clear')?.addEventListener('click', clearFilters);
+  document.getElementById('cs-clear-2')?.addEventListener('click', clearFilters);
+</script>

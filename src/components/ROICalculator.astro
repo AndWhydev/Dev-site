@@ -1,0 +1,363 @@
+---
+---
+
+<section class="roi-section" id="roi-calculator">
+  <div class="roi-inner">
+    <div class="roi-header reveal">
+      <span class="section-label">ROI Calculator</span>
+      <h2 class="section-heading">Calculate Your Automation ROI</h2>
+      <p class="section-subheading">
+        See how much time and money you could save by automating your manual processes. Adjust the sliders to match your situation.
+      </p>
+    </div>
+
+    <div class="roi-grid">
+      <!-- Inputs -->
+      <div class="roi-inputs reveal-left stagger-1">
+        <div class="roi-input-group">
+          <label for="roi-employees">
+            <span>Employees Affected</span>
+            <span class="roi-input-val" id="employees-val">10</span>
+          </label>
+          <input type="range" id="roi-employees" min="1" max="500" value="10" step="1" />
+          <div class="roi-range-labels"><span>1</span><span>500</span></div>
+        </div>
+
+        <div class="roi-input-group">
+          <label for="roi-hours">
+            <span>Hours/week on manual tasks</span>
+            <span class="roi-input-val" id="hours-val">10</span>
+          </label>
+          <input type="range" id="roi-hours" min="1" max="40" value="10" step="1" />
+          <div class="roi-range-labels"><span>1</span><span>40</span></div>
+        </div>
+
+        <div class="roi-input-group">
+          <label for="roi-rate">
+            <span>Average hourly rate (AUD)</span>
+            <span class="roi-input-val" id="rate-val">$65</span>
+          </label>
+          <input type="range" id="roi-rate" min="30" max="200" value="65" step="5" />
+          <div class="roi-range-labels"><span>$30</span><span>$200</span></div>
+        </div>
+
+        <div class="roi-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          Calculations assume 70% automation efficiency and a 24-month amortisation period.
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="roi-outputs reveal-right stagger-2">
+        <div class="roi-output-card primary">
+          <div class="roi-output-label">Hours Saved Per Year</div>
+          <div class="roi-output-val" id="hours-saved">18,200</div>
+          <div class="roi-output-sub">hours returned to your business</div>
+        </div>
+
+        <div class="roi-output-card">
+          <div class="roi-output-label">Money Saved Per Year</div>
+          <div class="roi-output-val green" id="money-saved">$1,183,000</div>
+        </div>
+
+        <div class="roi-output-card">
+          <div class="roi-output-label">Est. Development Cost</div>
+          <div class="roi-output-val" id="dev-cost">$150K–$250K</div>
+          <div class="roi-output-sub">one-time investment</div>
+        </div>
+
+        <div class="roi-output-card">
+          <div class="roi-output-label">Return on Investment</div>
+          <div class="roi-output-val green" id="roi-pct">472%</div>
+        </div>
+
+        <div class="roi-output-card">
+          <div class="roi-output-label">Payback Period</div>
+          <div class="roi-output-val" id="payback">2.5 months</div>
+        </div>
+
+        <div class="roi-cta">
+          <a href="/contact" class="btn-primary">
+            Get a Custom Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p>Based on your numbers, automation could pay itself back in months.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .roi-section {
+    padding: 8rem 0;
+    background: #0f1614;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roi-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0a0f0e 0%, transparent 10%, transparent 90%, #0a0f0e 100%);
+    pointer-events: none;
+  }
+
+  .roi-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .roi-header {
+    margin-bottom: 4rem;
+    max-width: 640px;
+  }
+
+  .roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Inputs */
+  .roi-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .roi-input-group label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #8aa09a;
+  }
+
+  .roi-input-val {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #0d9373;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #1e2d28;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #0d9373;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(13,147,115,0.15);
+    transition: box-shadow 0.2s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 6px rgba(13,147,115,0.2);
+  }
+
+  .roi-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #4a6359;
+  }
+
+  .roi-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    background: rgba(13,147,115,0.04);
+    border: 1px solid rgba(13,147,115,0.1);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+
+  /* Outputs */
+  .roi-outputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .roi-output-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .roi-output-card:hover {
+    border-color: rgba(13,147,115,0.25);
+  }
+
+  .roi-output-card.primary {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0a0f0e 60%);
+    border-color: rgba(13,147,115,0.2);
+  }
+
+  .roi-output-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4a6359;
+  }
+
+  .roi-output-val {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+  }
+
+  .roi-output-card.primary .roi-output-val {
+    font-size: 2rem;
+  }
+
+  .roi-output-val.green {
+    color: #0d9373;
+  }
+
+  .roi-output-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+  }
+
+  .roi-cta {
+    grid-column: 1 / -1;
+    background: rgba(13,147,115,0.05);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .roi-cta p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  @media (max-width: 900px) {
+    .roi-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .roi-section {
+      padding: 5rem 0;
+    }
+    .roi-outputs {
+      grid-template-columns: 1fr;
+    }
+    .roi-output-card.primary {
+      grid-column: 1;
+    }
+    .roi-cta {
+      grid-column: 1;
+    }
+  }
+</style>
+
+<script>
+  const employees = document.getElementById('roi-employees') as HTMLInputElement;
+  const hours = document.getElementById('roi-hours') as HTMLInputElement;
+  const rate = document.getElementById('roi-rate') as HTMLInputElement;
+
+  const employeesVal = document.getElementById('employees-val')!;
+  const hoursVal = document.getElementById('hours-val')!;
+  const rateVal = document.getElementById('rate-val')!;
+
+  const hoursSavedEl = document.getElementById('hours-saved')!;
+  const moneySavedEl = document.getElementById('money-saved')!;
+  const devCostEl = document.getElementById('dev-cost')!;
+  const roiPctEl = document.getElementById('roi-pct')!;
+  const paybackEl = document.getElementById('payback')!;
+
+  function fmt(n: number): string {
+    if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+    if (n >= 1000) return `$${Math.round(n / 1000)}K`;
+    return `$${Math.round(n)}`;
+  }
+
+  function calc() {
+    const e = parseInt(employees.value);
+    const h = parseInt(hours.value);
+    const r = parseInt(rate.value);
+
+    employeesVal.textContent = String(e);
+    hoursVal.textContent = String(h);
+    rateVal.textContent = `$${r}`;
+
+    const hoursSaved = Math.round(e * h * 52 * 0.7);
+    const moneySaved = Math.round(hoursSaved * r);
+
+    // Dev cost estimate based on scope
+    let devLow = 50000, devHigh = 100000;
+    const scope = e * h;
+    if (scope > 200) { devLow = 200000; devHigh = 500000; }
+    else if (scope > 80) { devLow = 100000; devHigh = 250000; }
+    else if (scope > 30) { devLow = 50000; devHigh = 150000; }
+
+    const devMid = (devLow + devHigh) / 2;
+    const roi = Math.round(((moneySaved - devMid) / devMid) * 100);
+    const paybackMonths = devMid / (moneySaved / 12);
+
+    hoursSavedEl.textContent = hoursSaved.toLocaleString();
+    moneySavedEl.textContent = fmt(moneySaved) + '/yr';
+    devCostEl.textContent = `${fmt(devLow)}–${fmt(devHigh)}`;
+    roiPctEl.textContent = roi > 0 ? `${roi}%` : 'Evaluating…';
+    paybackEl.textContent = paybackMonths < 1
+      ? `< 1 month`
+      : paybackMonths < 12
+      ? `${paybackMonths.toFixed(1)} months`
+      : `${(paybackMonths / 12).toFixed(1)} years`;
+  }
+
+  [employees, hours, rate].forEach((inp) => inp.addEventListener('input', calc));
+  calc();
+</script>
