@@ -29,12 +29,14 @@ const schema = {
   logo: `${siteUrl}/logo.svg`,
   description: 'Enterprise software development and technology solutions for large corporations and enterprises across Australia and globally.',
   email: 'labs@allwebbedup.com.au',
-  telephone: '+61-7-XXXX-XXXX', // TODO: Add real phone number
+  telephone: '1800714148',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '204 Birdwood Rd',
+    addressLocality: 'Georges Hall',
+    addressRegion: 'NSW',
+    postalCode: '2198',
     addressCountry: 'AU',
-    addressRegion: 'QLD',
-    addressLocality: 'Brisbane', // TODO: Confirm office location
   },
   parentOrganization: {
     '@type': 'Organization',
@@ -42,8 +44,9 @@ const schema = {
     url: 'https://allwebbedup.com.au',
   },
   sameAs: [
-    'https://www.linkedin.com/company/all-webbed-labs', // TODO: Add real social links
-    'https://twitter.com/allwebbedlabs',
+    'https://linkedin.com/company/allwebbedup',
+    'https://facebook.com/allwebbedup',
+    'https://instagram.com/allwebbedup',
   ],
 };
 ---
