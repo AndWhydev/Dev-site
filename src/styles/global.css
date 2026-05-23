@@ -215,4 +215,42 @@
     max-width: 600px;
     line-height: 1.7;
   }
+
+  /* Dot grid background utility */
+  .dot-grid {
+    background-image: radial-gradient(rgba(13,147,115,0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Glowing card border utility */
+  .glow-card {
+    box-shadow: 0 0 0 1px rgba(13,147,115,0.2), 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(13,147,115,0.05);
+  }
+
+  /* Number gradient */
+  .num-gradient {
+    background: linear-gradient(135deg, white 0%, #10b88a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated underline on links */
+  .animated-link {
+    position: relative;
+    text-decoration: none;
+  }
+  .animated-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #0d9373;
+    transition: width 0.3s ease;
+  }
+  .animated-link:hover::after {
+    width: 100%;
+  }
 }

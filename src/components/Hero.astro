@@ -9,16 +9,29 @@ const rotatingPhrases = [
 ---
 
 <section class="hero hero-grain" id="hero">
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
-  <div class="hero-mesh" aria-hidden="true"></div>
+
+  <!-- Aurora background blobs -->
+  <div class="aurora" aria-hidden="true">
+    <div class="a-blob a1"></div>
+    <div class="a-blob a2"></div>
+    <div class="a-blob a3"></div>
+    <div class="a-blob a4"></div>
+  </div>
+
+  <!-- Dot grid -->
+  <div class="hero-dots" aria-hidden="true"></div>
+
+  <!-- Central glow orb -->
+  <div class="hero-orb" aria-hidden="true"></div>
 
   <div class="hero-inner">
+
     <div class="hero-badge reveal stagger-1">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
       <span>Australia's Premier Enterprise Software Partner</span>
     </div>
 
-    <h1 class="hero-headline reveal stagger-2">
+    <h1 class="hero-headline" id="hero-headline">
       We Build The Software<br />
       <span class="hero-headline-accent shimmer-text">That Runs Your Business.</span>
     </h1>
@@ -43,11 +56,10 @@ const rotatingPhrases = [
       </a>
       <a href="/portfolio" class="btn-outline hero-cta-secondary">
         View Our Work
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
       </a>
     </div>
 
-    <!-- Floating stats bar -->
+    <!-- Glassmorphism stats -->
     <div class="hero-stats reveal stagger-5">
       <div class="hero-stat">
         <span class="hero-stat-num">150+</span>
@@ -55,7 +67,7 @@ const rotatingPhrases = [
       </div>
       <div class="hero-stat-divider" aria-hidden="true"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">8</span>
+        <span class="hero-stat-num">8+</span>
         <span class="hero-stat-lbl">Years Experience</span>
       </div>
       <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -72,7 +84,6 @@ const rotatingPhrases = [
 
     <!-- Google Reviews badge -->
     <div class="hero-reviews reveal stagger-6">
-      <!-- TODO: Replace with real Google Reviews badge once account is set up -->
       <div class="reviews-badge">
         <div class="google-logo">
           <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
@@ -112,29 +123,106 @@ const rotatingPhrases = [
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: #0a0f0e;
+    background: #050a09;
     padding-top: 90px;
   }
 
-  #particle-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.55;
-  }
-
-  .hero-mesh {
+  /* ── Aurora blobs ────────────────── */
+  .aurora {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(13,147,115,0.11) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(13,147,115,0.05) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(0,232,122,0.04) 0%, transparent 60%);
+    overflow: hidden;
   }
 
+  .a-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0;
+    animation: blob-appear 2s ease forwards, blob-drift linear infinite;
+  }
+
+  .a1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(13,147,115,0.25), rgba(13,147,115,0.05));
+    top: -20%;
+    left: 30%;
+    animation-duration: 2s, 22s;
+    animation-delay: 0s, 0s;
+  }
+  .a2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,200,140,0.15), transparent);
+    bottom: -10%;
+    right: 5%;
+    animation-duration: 2s, 28s;
+    animation-delay: 0.3s, -8s;
+  }
+  .a3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(5,80,60,0.2), transparent);
+    top: 40%;
+    left: -5%;
+    animation-duration: 2s, 35s;
+    animation-delay: 0.6s, -15s;
+  }
+  .a4 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0,232,122,0.1), transparent);
+    top: 20%;
+    right: 20%;
+    animation-duration: 2s, 20s;
+    animation-delay: 0.9s, -5s;
+  }
+
+  @keyframes blob-appear {
+    to { opacity: 1; }
+  }
+
+  @keyframes blob-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -30px) scale(1.04); }
+    50% { transform: translate(-20px, 40px) scale(0.96); }
+    75% { transform: translate(-40px, -15px) scale(1.02); }
+  }
+
+  /* ── Dot grid ────────────────────── */
+  .hero-dots {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(rgba(13,147,115,0.18) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    opacity: 0.4;
+  }
+
+  /* ── Central glow orb ────────────── */
+  .hero-orb {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13,147,115,0.12) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: orb-pulse 6s ease-in-out infinite;
+  }
+
+  @keyframes orb-pulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  /* ── Content ─────────────────────── */
   .hero-inner {
     position: relative;
     z-index: 1;
@@ -148,8 +236,8 @@ const rotatingPhrases = [
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(13,147,115,0.1);
-    border: 1px solid rgba(13,147,115,0.3);
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.25);
     color: #0d9373;
     padding: 0.5rem 1rem;
     border-radius: 50px;
@@ -158,27 +246,44 @@ const rotatingPhrases = [
     font-weight: 600;
     letter-spacing: 0.02em;
     margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    animation: float-badge 3s ease-in-out infinite;
   }
 
+  @keyframes float-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* ── Word-by-word reveal headline ── */
   .hero-headline {
     font-family: 'Sora', sans-serif;
-    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-size: clamp(3rem, 7.5vw, 6.5rem);
     font-weight: 800;
     color: white;
     line-height: 1.04;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
-    max-width: 900px;
+    max-width: 980px;
+  }
+
+  .hero-headline .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .hero-headline.words-visible .word {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .hero-headline-accent {
-    background: linear-gradient(135deg, #10b88a 0%, #0d9373 60%, #0a7a5e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: block;
   }
 
-  /* Rotating subheadline */
+  /* ── Rotating subheadline ─────────── */
   .hero-rotating {
     position: relative;
     height: 2em;
@@ -194,7 +299,7 @@ const rotatingPhrases = [
     font-family: 'Sora', sans-serif;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 500;
-    color: #8aa09a;
+    color: rgba(138,160,154,0.8);
     letter-spacing: -0.01em;
     opacity: 0;
     transform: translateY(20px);
@@ -203,21 +308,14 @@ const rotatingPhrases = [
     white-space: nowrap;
   }
 
-  .rotating-phrase.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .rotating-phrase.exit {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
+  .rotating-phrase.active { opacity: 1; transform: translateY(0); }
+  .rotating-phrase.exit { opacity: 0; transform: translateY(-20px); }
 
   .hero-desc {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.125rem;
-    color: #8aa09a;
-    max-width: 660px;
+    color: rgba(138,160,154,0.75);
+    max-width: 600px;
     line-height: 1.7;
     margin-bottom: 2.5rem;
   }
@@ -232,39 +330,38 @@ const rotatingPhrases = [
   .hero-cta-primary {
     padding: 1rem 2.25rem;
     font-size: 1rem;
-    box-shadow: 0 8px 30px rgba(13,147,115,0.35);
+    box-shadow: 0 0 40px rgba(13,147,115,0.35), 0 8px 30px rgba(13,147,115,0.2);
   }
 
-  .hero-cta-secondary {
-    padding: 1rem 2.25rem;
-    font-size: 1rem;
-  }
+  .hero-cta-secondary { padding: 1rem 2.25rem; font-size: 1rem; }
 
-  /* Floating stats bar */
+  /* ── Glassmorphism stats ─────────── */
   .hero-stats {
     display: flex;
     align-items: center;
     gap: 0;
-    background: rgba(15,22,20,0.8);
-    border: 1px solid #1e2d28;
-    border-radius: 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
     padding: 0;
     margin-bottom: 2rem;
     width: fit-content;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .hero-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.875rem 2rem;
+    padding: 1rem 2rem;
     gap: 0.2rem;
   }
 
   .hero-stat-num {
     font-family: 'Sora', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 800;
     color: white;
     letter-spacing: -0.02em;
@@ -281,11 +378,11 @@ const rotatingPhrases = [
   .hero-stat-divider {
     width: 1px;
     height: 36px;
-    background: #1e2d28;
+    background: rgba(255,255,255,0.07);
     flex-shrink: 0;
   }
 
-  /* Reviews */
+  /* ── Reviews ─────────────────────── */
   .hero-reviews {
     display: flex;
     flex-wrap: wrap;
@@ -297,10 +394,11 @@ const rotatingPhrases = [
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid #1e2d28;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px;
     padding: 0.75rem 1rem;
+    backdrop-filter: blur(10px);
   }
 
   .google-logo {
@@ -313,28 +411,16 @@ const rotatingPhrases = [
     color: #8aa09a;
   }
 
-  .reviews-stars {
-    color: #FBBC05;
-    font-size: 0.8125rem;
-    letter-spacing: 1px;
-  }
+  .reviews-stars { color: #FBBC05; font-size: 0.8125rem; letter-spacing: 1px; }
 
   .reviews-text {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.75rem;
     color: #8aa09a;
   }
+  .reviews-text strong { color: white; font-weight: 600; }
 
-  .reviews-text strong {
-    color: white;
-    font-weight: 600;
-  }
-
-  .trust-indicators {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.875rem;
-  }
+  .trust-indicators { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
   .trust-item {
     display: flex;
@@ -345,7 +431,7 @@ const rotatingPhrases = [
     color: #4a6359;
   }
 
-  /* Scroll cue */
+  /* ── Scroll cue ──────────────────── */
   .hero-scroll-cue {
     position: absolute;
     bottom: 2.5rem;
@@ -364,7 +450,7 @@ const rotatingPhrases = [
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #4a6359;
+    color: #2a3d35;
   }
 
   .scroll-line {
@@ -375,109 +461,83 @@ const rotatingPhrases = [
   }
 
   @keyframes scroll-pulse {
-    0%, 100% { opacity: 0.3; transform-origin: top; }
+    0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
   }
 
   @media (max-width: 768px) {
-    .hero-inner {
-      padding: 4rem 1.5rem 5rem;
-    }
-    .hero-ctas {
-      flex-direction: column;
-    }
-    .hero-cta-primary,
-    .hero-cta-secondary {
-      width: fit-content;
-    }
-    .hero-reviews {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .hero-scroll-cue {
-      display: none;
-    }
-    .hero-stats {
-      flex-wrap: wrap;
-      width: auto;
-    }
-    .hero-stat-divider {
-      display: none;
-    }
+    .hero-inner { padding: 4rem 1.5rem 5rem; }
+    .hero-ctas { flex-direction: column; }
+    .hero-cta-primary, .hero-cta-secondary { width: fit-content; }
+    .hero-reviews { flex-direction: column; align-items: flex-start; }
+    .hero-scroll-cue { display: none; }
+    .hero-stats { flex-wrap: wrap; width: auto; }
+    .hero-stat-divider { display: none; }
   }
 </style>
 
 <script>
-  // Particle canvas
-  const canvas = document.getElementById('particle-canvas') as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d')!;
+  // Word-by-word headline animation
+  function initHeadline() {
+    const headline = document.getElementById('hero-headline');
+    if (!headline) return;
 
-  interface Particle { x: number; y: number; vx: number; vy: number; r: number; o: number; }
-  let particles: Particle[] = [];
+    // Split both text nodes into word spans, preserving the inner accent span
+    const accentSpan = headline.querySelector('.hero-headline-accent');
+    if (!accentSpan) return;
 
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  function init() {
-    particles = [];
-    const n = Math.min(Math.floor((canvas.width * canvas.height) / 14000), 80);
-    for (let i = 0; i < n; i++) {
-      particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, r: Math.random() * 1.6 + 0.4, o: Math.random() * 0.5 + 0.15 });
+    // Wrap first line words
+    const firstLineText = headline.childNodes[0];
+    if (firstLineText && firstLineText.nodeType === Node.TEXT_NODE) {
+      const words = firstLineText.textContent?.trim().split(' ') ?? [];
+      const fragment = document.createDocumentFragment();
+      words.forEach((w, i) => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.style.transitionDelay = `${i * 0.07}s`;
+        span.textContent = w + ' ';
+        fragment.appendChild(span);
+      });
+      headline.insertBefore(fragment, firstLineText);
+      firstLineText.remove();
     }
-  }
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const p of particles) {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-    }
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-        const d = Math.sqrt(dx*dx + dy*dy);
-        if (d < 140) {
-          ctx.strokeStyle = `rgba(13,147,115,${(1 - d/140) * 0.15})`;
-          ctx.lineWidth = 0.7;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
+    // Wrap accent span words
+    const accentText = accentSpan.textContent ?? '';
+    const accentWords = accentText.trim().split(' ');
+    accentSpan.innerHTML = accentWords.map((w, i) =>
+      `<span class="word" style="transition-delay:${(3 + i) * 0.08}s">${w} </span>`
+    ).join('');
+
+    // Trigger on scroll-into-view
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          headline.classList.add('words-visible');
+          obs.unobserve(headline);
         }
-      }
-    }
-    for (const p of particles) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(13,147,115,${p.o})`;
-      ctx.fill();
-    }
-    requestAnimationFrame(draw);
+      });
+    }, { threshold: 0.1 });
+    obs.observe(headline);
   }
 
-  resize();
-  init();
-  draw();
-  new ResizeObserver(() => { resize(); init(); }).observe(canvas);
-
-  // Rotating subheadline (smooth fade)
-  const phrases = document.querySelectorAll<HTMLElement>('.rotating-phrase');
-  let current = 0;
-
-  function rotate() {
-    const prev = current;
-    current = (current + 1) % phrases.length;
-    phrases[prev].classList.add('exit');
-    phrases[prev].setAttribute('aria-hidden', 'true');
-    setTimeout(() => {
-      phrases[prev].classList.remove('active', 'exit');
-    }, 600);
-    phrases[current].classList.add('active');
-    phrases[current].setAttribute('aria-hidden', 'false');
+  // Rotating subheadline
+  function initRotating() {
+    const phrases = document.querySelectorAll<HTMLElement>('.rotating-phrase');
+    let current = 0;
+    function rotate() {
+      const prev = current;
+      current = (current + 1) % phrases.length;
+      phrases[prev].classList.add('exit');
+      phrases[prev].setAttribute('aria-hidden', 'true');
+      setTimeout(() => phrases[prev].classList.remove('active', 'exit'), 600);
+      phrases[current].classList.add('active');
+      phrases[current].setAttribute('aria-hidden', 'false');
+    }
+    setInterval(rotate, 3000);
   }
 
-  setInterval(rotate, 3000);
+  initHeadline();
+  initRotating();
+  document.addEventListener('astro:after-swap', () => { initHeadline(); initRotating(); });
 </script>

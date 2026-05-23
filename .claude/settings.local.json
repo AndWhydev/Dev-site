@@ -13,7 +13,9 @@
       "Bash(git push *)",
       "Bash(gh workflow *)",
       "WebFetch(domain:phpstack-1568832-6255883.cloudwaysapps.com)",
-      "Bash(git commit -m 'Add premium effects: custom cursor, spotlight cards, tilt, magnetic buttons, shimmer, scroll progress, marquee strip *)"
+      "Bash(git commit -m 'Add premium effects: custom cursor, spotlight cards, tilt, magnetic buttons, shimmer, scroll progress, marquee strip *)",
+      "WebFetch(domain:kling.ai)",
+      "Bash(git commit -m 'Major visual upgrade: aurora hero, bento services grid, premium effects system *)"
     ]
   }
 }

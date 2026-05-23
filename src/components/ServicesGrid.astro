@@ -1,245 +1,324 @@
 ---
-interface Service {
-  icon: string;
-  title: string;
-  description: string;
-  tags: string[];
-  featured?: boolean;
-}
-
-const services: Service[] = [
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 8h6M9 12h4"/></svg>`,
-    title: 'Custom App Development',
-    description: 'End-to-end web and mobile applications built to enterprise specifications. From concept to production, we own every layer of the stack.',
-    tags: ['Web', 'Mobile', 'Full-Stack'],
-    featured: true,
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>`,
-    title: 'Flutter Development',
-    description: 'Cross-platform mobile apps for iOS and Android from a single codebase — without compromising on native performance or user experience.',
-    tags: ['iOS', 'Android', 'Flutter'],
-    featured: true,
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>`,
-    title: 'React & Next.js Development',
-    description: 'Modern web platforms with server-side rendering, edge deployment and best-in-class performance. The go-to choice for enterprise web products.',
-    tags: ['React', 'Next.js', 'TypeScript'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
-    title: 'Node.js & Python Backends',
-    description: 'Scalable, high-performance APIs and microservices architectures that power your most critical business workflows at any scale.',
-    tags: ['Node.js', 'Python', 'FastAPI'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h8M8 14h5"/></svg>`,
-    title: 'AI Tools & Custom Chatbots',
-    description: 'Proprietary AI assistants, intelligent chat interfaces and automation tools trained on your data and embedded into your existing workflows.',
-    tags: ['OpenAI', 'LangChain', 'NLP'],
-    featured: true,
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2z"/><path d="M12 22V12M3 6.9l9 5.1 9-5.1"/></svg>`,
-    title: 'LLM Integration & Fine-Tuning',
-    description: 'Integrate GPT-4, Claude, Gemini and open-source LLMs into your products. Fine-tune models on your proprietary data for superior accuracy.',
-    tags: ['GPT-4', 'Claude', 'RAG'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`,
-    title: 'Workflow Automation',
-    description: 'Eliminate manual processes with intelligent automation. Connect your systems, automate approval flows and integrate third-party platforms seamlessly.',
-    tags: ['RPA', 'Zapier', 'n8n'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>`,
-    title: 'API Development & Integrations',
-    description: 'RESTful and GraphQL APIs built for reliability. Deep integration expertise across Salesforce, SAP, Xero, Stripe and hundreds more enterprise platforms.',
-    tags: ['REST', 'GraphQL', 'Webhooks'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-    title: 'Custom SaaS Development',
-    description: 'Launch your own software-as-a-service product with multi-tenancy, subscription billing, usage analytics and full white-labelling capabilities.',
-    tags: ['SaaS', 'Multi-tenant', 'Stripe'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.56 2.75 4 6 4.5 9"/><polyline points="15.44 2.75 20 6 19.5 9"/><path d="M9 12a3 3 0 006 0"/></svg>`,
-    title: 'UI & UX Design',
-    description: 'Design systems, wireframes, prototypes and pixel-perfect interfaces that convert. We apply cognitive science and user research to every design decision.',
-    tags: ['Figma', 'Design Systems', 'Research'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
-    title: 'Cloud Infrastructure & DevOps',
-    description: 'AWS, GCP and Azure architecture, containerisation, CI/CD pipelines and infrastructure-as-code. Your infrastructure, fully automated and resilient.',
-    tags: ['AWS', 'Kubernetes', 'Terraform'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M12 12v4"/></svg>`,
-    title: 'Database Architecture',
-    description: 'Schema design, query optimisation, sharding strategies and migration management for PostgreSQL, MongoDB, Redis and enterprise data warehouses.',
-    tags: ['PostgreSQL', 'MongoDB', 'Redis'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
-    title: 'Web3 & Blockchain',
-    description: 'Smart contract development, NFT platforms, DeFi protocols and enterprise blockchain solutions on Ethereum, Solana and Polygon.',
-    tags: ['Ethereum', 'Solidity', 'Web3.js'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
-    title: 'Digital Transformation',
-    description: 'Strategic consulting to modernise your technology stack, processes and culture. We map your transformation roadmap and lead execution from day one.',
-    tags: ['Strategy', 'Change Mgmt', 'Roadmap'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
-    title: 'Enterprise Software Solutions',
-    description: 'Large-scale ERP, CRM and HRIS integrations. Custom enterprise platforms that handle complex business logic, compliance and multi-region deployments.',
-    tags: ['ERP', 'CRM', 'Enterprise'],
-    featured: true,
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
-    title: 'Staff Augmentation',
-    description: 'Embed senior engineers directly into your team. Flexible engagement models from individual contributors to full dedicated development squads.',
-    tags: ['Dedicated Teams', 'On-demand', 'Senior Devs'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>`,
-    title: 'Legacy System Modernisation',
-    description: 'Migrate ageing monoliths to cloud-native microservices. Phased migration strategies that maintain business continuity throughout the transformation.',
-    tags: ['Migration', 'Refactoring', 'Cloud-Native'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-    title: 'Cybersecurity Consulting',
-    description: 'Penetration testing, security audits, ISO 27001 advisory and incident response planning. Protect your systems before a breach becomes a headline.',
-    tags: ['PenTest', 'ISO 27001', 'SIEM'],
-  },
-  {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M4 2l4 4-4 4"/></svg>`,
-    title: 'Data Analytics & BI',
-    description: 'Turn raw data into strategic advantage. Custom dashboards, data pipelines, predictive models and reporting platforms that drive informed decision-making.',
-    tags: ['Power BI', 'Looker', 'Python'],
-  },
-];
 ---
 
-<section class="services-section" id="services">
-  <div class="services-inner">
-    <div class="services-header reveal">
+<section class="bento-section" id="services">
+  <div class="bento-inner">
+    <div class="bento-header reveal">
       <span class="section-label">Our Capabilities</span>
       <h2 class="section-heading">Everything Your Enterprise Needs</h2>
-      <p class="section-subheading">
-        Twenty specialisations. One trusted partner. We cover the full technology spectrum so you can focus on running your business.
-      </p>
+      <p class="section-subheading">Twenty specialisations. One trusted partner. We cover the full technology spectrum.</p>
     </div>
 
-    <div class="services-grid">
-      {services.map((service, i) => (
-        <div class={`service-card card-hover spotlight-card tilt-card reveal stagger-${Math.min((i % 4) + 1, 6)} ${service.featured ? 'service-card--featured gradient-border' : ''}`}>
-          <div class="service-icon" set:html={service.icon} />
-          <h3 class="service-title">{service.title}</h3>
-          <p class="service-desc">{service.description}</p>
-          <div class="service-tags">
-            {service.tags.map((tag) => (
-              <span class="service-tag">{tag}</span>
-            ))}
+    <div class="bento-grid">
+
+      <!-- HERO CARD: Custom App Development -->
+      <div class="bento-card bento-hero spotlight-card reveal stagger-1">
+        <div class="bento-card-bg-code" aria-hidden="true">
+          <pre><code>const app = await build(<span class="c-green">&#123;</span>
+  client: <span class="c-str">"Enterprise Co."</span>,
+  stack: [<span class="c-str">"React"</span>, <span class="c-str">"Node"</span>, <span class="c-str">"AWS"</span>],
+  security: <span class="c-green">&#123; grade: "A+"</span> <span class="c-green">&#125;</span>,
+  timeline: <span class="c-str">"12 weeks"</span>,
+<span class="c-green">&#125;</span>);
+
+await app.deploy(<span class="c-str">"production"</span>);
+<span class="c-comment">// ✓ 99.97% uptime · zero incidents</span></code></pre>
+        </div>
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <a href="/services" class="service-cta">
-            Learn more
+          <h3>Custom App Development</h3>
+          <p>End-to-end web and mobile applications built to enterprise specifications. We own every layer of the stack from architecture to deployment.</p>
+          <div class="bento-tags">
+            <span>Web</span><span>Mobile</span><span>Full-Stack</span>
+          </div>
+          <a href="/services/custom-app-development" class="bento-link">
+            Explore
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-      ))}
-    </div>
+      </div>
 
-    <div class="services-footer reveal">
-      <p>Not sure which service you need? <a href="/contact">Let's have a conversation.</a></p>
-      <a href="/services" class="btn-outline">
-        View All Services
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <!-- TALL CARD: Flutter -->
+      <div class="bento-card bento-tall spotlight-card tilt-card reveal stagger-2">
+        <div class="bento-card-visual flutter-visual" aria-hidden="true">
+          <div class="phone-mini">
+            <div class="phone-mini-screen">
+              <div class="app-bar"></div>
+              <div class="app-content">
+                <div class="app-card"></div>
+                <div class="app-card sm"></div>
+                <div class="app-card sm"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>
+          </div>
+          <h3>Flutter Development</h3>
+          <p>One codebase. iOS and Android. Zero performance compromise.</p>
+          <a href="/services/flutter-development" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: AI Tools -->
+      <div class="bento-card bento-featured spotlight-card tilt-card reveal stagger-3">
+        <div class="ai-pulse" aria-hidden="true">
+          <div class="ai-ring r1"></div>
+          <div class="ai-ring r2"></div>
+          <div class="ai-ring r3"></div>
+          <div class="ai-core">AI</div>
+        </div>
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>AI Tools & Chatbots</h3>
+          <p>Proprietary AI trained on your data, embedded into your workflows.</p>
+          <a href="/ai-consulting" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: Cloud & DevOps -->
+      <div class="bento-card spotlight-card tilt-card reveal stagger-4">
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, GCP and Azure infrastructure. Fully automated, resilient and cost-optimised.</p>
+          <div class="bento-tags"><span>AWS</span><span>K8s</span><span>Terraform</span></div>
+          <a href="/services/cloud-infrastructure" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: React & Next.js -->
+      <div class="bento-card spotlight-card tilt-card reveal stagger-1">
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>React & Next.js</h3>
+          <p>Server-side rendering, edge deployment and TypeScript-first development.</p>
+          <div class="bento-tags"><span>React</span><span>Next.js</span></div>
+          <a href="/services/react-nextjs" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- WIDE CARD: Enterprise Software -->
+      <div class="bento-card bento-wide spotlight-card reveal stagger-2">
+        <div class="enterprise-bg" aria-hidden="true">
+          <div class="e-node n1"></div>
+          <div class="e-node n2"></div>
+          <div class="e-node n3"></div>
+          <div class="e-line l1"></div>
+          <div class="e-line l2"></div>
+        </div>
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <h3>Enterprise Software Solutions</h3>
+          <p>Large-scale platforms, ERP integrations and mission-critical systems built for complexity and compliance. From scoping to hypercare support.</p>
+          <div class="bento-tags"><span>ERP</span><span>CRM</span><span>Compliance</span><span>Multi-region</span></div>
+          <a href="/services/enterprise-software" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: API Development -->
+      <div class="bento-card spotlight-card tilt-card reveal stagger-3">
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>API Development</h3>
+          <p>RESTful and GraphQL APIs built for reliability, security and developer experience.</p>
+          <a href="/services/api-development" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- SMALL CARDS ROW -->
+      <div class="bento-card bento-sm spotlight-card tilt-card reveal stagger-1">
+        <div class="bento-card-content">
+          <div class="bento-icon sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Custom SaaS</h3>
+          <p>Multi-tenant, subscription-ready products.</p>
+          <a href="/services/saas-development" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="bento-card bento-sm spotlight-card tilt-card reveal stagger-2">
+        <div class="bento-card-content">
+          <div class="bento-icon sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.56 2.75L4 6l.5 3"/></svg>
+          </div>
+          <h3>UI & UX Design</h3>
+          <p>Interfaces that convert and retain.</p>
+          <a href="/services/ui-ux-design" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="bento-card bento-sm spotlight-card tilt-card reveal stagger-3">
+        <div class="bento-card-content">
+          <div class="bento-icon sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>Pen testing and compliance frameworks.</p>
+          <a href="/services/cybersecurity" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="bento-card bento-sm spotlight-card tilt-card reveal stagger-4">
+        <div class="bento-card-content">
+          <div class="bento-icon sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          </div>
+          <h3>Legacy Modernisation</h3>
+          <p>Phased migration with zero downtime.</p>
+          <a href="/services/legacy-modernisation" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- WIDE CARD: Data Analytics -->
+      <div class="bento-card bento-wide spotlight-card reveal stagger-1">
+        <div class="chart-bg" aria-hidden="true">
+          <svg viewBox="0 0 300 80" preserveAspectRatio="none" class="chart-svg">
+            <defs>
+              <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0d9373" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,70 C40,65 60,45 90,35 C120,25 140,15 170,12 C200,9 220,18 250,14 C275,11 290,8 300,5" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M0,70 C40,65 60,45 90,35 C120,25 140,15 170,12 C200,9 220,18 250,14 C275,11 290,8 300,5 L300,80 L0,80Z" fill="url(#chartFill)"/>
+          </svg>
+        </div>
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Data Analytics & BI</h3>
+          <p>Turn raw data into strategic advantage with custom dashboards, pipelines and predictive models.</p>
+          <div class="bento-tags"><span>Power BI</span><span>Python</span><span>ML</span></div>
+          <a href="/services/data-analytics" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: Web3 -->
+      <div class="bento-card spotlight-card tilt-card reveal stagger-2">
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9V17L12 22 3 17V6.9L12 2z"/></svg>
+          </div>
+          <h3>Web3 & Blockchain</h3>
+          <p>Smart contracts, DeFi and NFT platforms on Ethereum, Solana and Polygon.</p>
+          <div class="bento-tags"><span>Solidity</span><span>Ethereum</span></div>
+          <a href="/services/blockchain-development" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- CARD: Workflow Automation -->
+      <div class="bento-card spotlight-card tilt-card reveal stagger-3">
+        <div class="bento-card-content">
+          <div class="bento-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/></svg>
+          </div>
+          <h3>Workflow Automation</h3>
+          <p>Eliminate manual processes and connect your systems end to end.</p>
+          <a href="/services/workflow-automation" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- FULL-WIDTH CTA CARD -->
+      <div class="bento-card bento-full bento-cta-card reveal stagger-1">
+        <div class="bento-cta-glow" aria-hidden="true"></div>
+        <div class="bento-cta-content">
+          <div>
+            <p class="bento-cta-label">And 8 more services</p>
+            <h3 class="bento-cta-heading">Database Architecture · Staff Augmentation · Digital Transformation · LLM Integration · Web & Mobile Apps · UI/UX Design · Database Architecture · More</h3>
+          </div>
+          <a href="/services" class="btn-primary bento-cta-btn">
+            View All 20 Services
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  .services-section {
+  .bento-section {
     padding: 8rem 0;
     background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
   }
 
-  .services-inner {
+  .bento-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .services-header {
-    margin-bottom: 4rem;
+  .bento-header {
+    margin-bottom: 3.5rem;
     max-width: 700px;
   }
 
-  .services-grid {
+  /* ── Grid ───────────────────────────── */
+  .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 4rem;
+    grid-auto-rows: minmax(180px, auto);
+    gap: 1rem;
   }
 
-  .service-card {
+  /* ── Cards ──────────────────────────── */
+  .bento-card {
     background: #0f1614;
     border: 1px solid #1e2d28;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     position: relative;
     overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .service-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(13,147,115,0.03) 0%, transparent 60%);
-    border-radius: 16px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .service-card:hover::before {
-    opacity: 1;
+  .bento-card:hover {
+    border-color: rgba(13,147,115,0.3);
   }
 
-  .service-card--featured {
-    border-color: rgba(13,147,115,0.25);
-    background: linear-gradient(135deg, rgba(13,147,115,0.05) 0%, #0f1614 60%);
-  }
-  .service-card--featured::after {
-    content: 'Popular';
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(13,147,115,0.15);
-    border: 1px solid rgba(13,147,115,0.3);
-    color: #0d9373;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    padding: 0.2rem 0.625rem;
-    border-radius: 50px;
-    letter-spacing: 0.04em;
+  /* Size variants */
+  .bento-hero { grid-column: span 2; grid-row: span 2; padding: 2.5rem; }
+  .bento-tall { grid-row: span 2; }
+  .bento-wide { grid-column: span 2; }
+  .bento-full { grid-column: span 4; }
+  .bento-featured { background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0f1614 60%); }
+  .bento-sm { min-height: 160px; }
+
+  /* ── Card content ───────────────────── */
+  .bento-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 100%;
   }
 
-  .service-icon {
-    width: 48px;
-    height: 48px;
+  .bento-icon {
+    width: 44px;
+    height: 44px;
     border-radius: 12px;
     background: rgba(13,147,115,0.08);
     border: 1px solid rgba(13,147,115,0.15);
@@ -250,31 +329,40 @@ const services: Service[] = [
     flex-shrink: 0;
   }
 
-  .service-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    color: white;
-    line-height: 1.2;
-    margin: 0;
+  .bento-icon.sm {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
   }
 
-  .service-desc {
+  .bento-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .bento-hero h3 { font-size: 1.375rem; }
+
+  .bento-card p {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.875rem;
     color: #4a6359;
-    line-height: 1.65;
+    line-height: 1.6;
     margin: 0;
     flex: 1;
   }
 
-  .service-tags {
+  .bento-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
+    margin-top: auto;
   }
 
-  .service-tag {
+  .bento-tags span {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.6875rem;
     font-weight: 500;
@@ -285,7 +373,7 @@ const services: Service[] = [
     border-radius: 4px;
   }
 
-  .service-cta {
+  .bento-link {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
@@ -294,61 +382,252 @@ const services: Service[] = [
     font-weight: 600;
     color: #0d9373;
     text-decoration: none;
-    margin-top: 0.5rem;
-    transition: gap 0.2s ease, color 0.2s ease;
+    margin-top: auto;
+    transition: gap 0.2s ease;
   }
-  .service-cta:hover {
-    gap: 0.625rem;
-    color: #10b88a;
+  .bento-link:hover { gap: 0.625rem; color: #10b88a; }
+
+  /* ── Hero card code bg ──────────────── */
+  .bento-card-bg-code {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0.5;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: #4a6359;
+    overflow: hidden;
   }
 
-  .services-footer {
+  .bento-card-bg-code pre {
+    margin: 0;
+    white-space: pre;
+  }
+
+  .c-green { color: #0d9373; }
+  .c-str { color: #10b88a; }
+  .c-comment { color: #2a3d35; font-style: italic; }
+
+  /* ── Flutter phone visual ────────────── */
+  .flutter-visual {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 0.5rem;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .phone-mini {
+    width: 80px;
+    background: #1a1a1c;
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #2a2a2c;
+  }
+
+  .phone-mini-screen {
+    background: #0a0f0e;
+    border-radius: 9px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+  }
+
+  .app-bar {
+    height: 14px;
+    background: rgba(13,147,115,0.4);
+    border-radius: 0;
+  }
+
+  .app-content {
+    padding: 6px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .app-card {
+    height: 24px;
+    background: #1e2d28;
+    border-radius: 4px;
+    animation: card-shimmer 2s ease-in-out infinite;
+  }
+
+  .app-card.sm { height: 14px; }
+
+  @keyframes card-shimmer {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* ── AI pulse ────────────────────────── */
+  .ai-pulse {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .ai-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(13,147,115,0.3);
+    animation: ai-ripple 3s ease-out infinite;
+  }
+
+  .r1 { width: 60px; height: 60px; animation-delay: 0s; }
+  .r2 { width: 60px; height: 60px; animation-delay: 0.8s; }
+  .r3 { width: 60px; height: 60px; animation-delay: 1.6s; }
+
+  @keyframes ai-ripple {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+
+  .ai-core {
+    position: relative;
+    z-index: 2;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.3);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Enterprise bg ────────────────────── */
+  .enterprise-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .e-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0d9373;
+    box-shadow: 0 0 8px rgba(13,147,115,0.8);
+  }
+
+  .n1 { bottom: 40%; right: 20%; }
+  .n2 { bottom: 25%; right: 40%; }
+  .n3 { bottom: 55%; right: 35%; }
+
+  .e-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0d9373, transparent);
+    transform-origin: left center;
+  }
+
+  .l1 { width: 80px; bottom: 43%; right: 22%; transform: rotate(-25deg); }
+  .l2 { width: 60px; bottom: 30%; right: 38%; transform: rotate(35deg); }
+
+  /* ── Chart bg ─────────────────────────── */
+  .chart-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .chart-svg { width: 100%; height: 100%; }
+
+  /* ── Full-width CTA card ──────────────── */
+  .bento-cta-card {
+    background: linear-gradient(135deg, #0d1f1a 0%, #0f2318 50%, #0a1d18 100%);
+    border-color: rgba(13,147,115,0.2);
+    min-height: auto;
+  }
+
+  .bento-cta-glow {
+    position: absolute;
+    top: -50%;
+    left: 20%;
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .bento-cta-content {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 3rem;
-    border-top: 1px solid #1e2d28;
+    gap: 2rem;
     flex-wrap: wrap;
-    gap: 1.5rem;
   }
 
-  .services-footer p {
+  .bento-cta-label {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    color: #8aa09a;
-    margin: 0;
-  }
-
-  .services-footer p a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: #0d9373;
-    text-decoration: none;
-  }
-  .services-footer p a:hover {
-    text-decoration: underline;
+    margin-bottom: 0.5rem;
   }
 
-  @media (max-width: 1200px) {
-    .services-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .bento-cta-heading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #4a6359;
+    margin: 0;
+    max-width: 700px;
+    line-height: 1.6;
   }
 
-  @media (max-width: 900px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .bento-cta-btn { flex-shrink: 0; }
+
+  /* ── Responsive ────────────────────── */
+  @media (max-width: 1100px) {
+    .bento-grid { grid-template-columns: repeat(3, 1fr); }
+    .bento-hero { grid-column: span 2; }
+    .bento-full { grid-column: span 3; }
+    .bento-card-bg-code { display: none; }
   }
 
-  @media (max-width: 560px) {
-    .services-section {
-      padding: 5rem 0;
-    }
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-    .services-footer {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  @media (max-width: 768px) {
+    .bento-section { padding: 5rem 0; }
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-hero { grid-column: span 2; grid-row: span 1; }
+    .bento-tall { grid-row: span 1; }
+    .bento-wide { grid-column: span 2; }
+    .bento-full { grid-column: span 2; }
+  }
+
+  @media (max-width: 540px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-hero, .bento-wide, .bento-full, .bento-tall { grid-column: span 1; grid-row: span 1; }
   }
 </style>
