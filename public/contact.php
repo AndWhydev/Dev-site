@@ -36,7 +36,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Build email
-$to      = 'labs@allwebbedup.com.au';
+$to      = 'andy@allwebbedup.com.au';
 $subject = "New Enquiry from $firstName $lastName — $company";
 
 $body = "
