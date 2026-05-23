@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://labs.allwebbedup.com.au',
+  site: 'https://aibusinesssolutions.au',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

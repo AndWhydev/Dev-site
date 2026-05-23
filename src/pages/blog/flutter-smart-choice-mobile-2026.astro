@@ -38,22 +38,22 @@ const schema = {
   author: {
     '@type': 'Organization',
     name: post.author,
-    url: 'https://labs.allwebbedup.com.au',
+    url: 'https://aibusinesssolutions.au',
   },
   publisher: {
     '@type': 'Organization',
     name: 'All Webbed Labs',
-    url: 'https://labs.allwebbedup.com.au',
+    url: 'https://aibusinesssolutions.au',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://labs.allwebbedup.com.au/logo.svg',
+      url: 'https://aibusinesssolutions.au/logo.svg',
     },
   },
   datePublished: post.date,
   dateModified: post.date,
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `https://labs.allwebbedup.com.au/blog/${post.slug}`,
+    '@id': `https://aibusinesssolutions.au/blog/${post.slug}`,
   },
 };
 ---
