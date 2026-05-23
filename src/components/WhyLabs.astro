@@ -43,7 +43,7 @@ const pillars = [
 
     <div class="pillars-grid">
       {pillars.map((pillar, i) => (
-        <div class={`pillar reveal stagger-${i + 1}`}>
+        <div class={`pillar spotlight-card tilt-card reveal stagger-${i + 1}`}>
           <div class="pillar-top">
             <div class="pillar-icon" set:html={pillar.icon} />
             <span class="pillar-stat">{pillar.stat}</span>

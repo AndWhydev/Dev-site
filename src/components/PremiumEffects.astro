@@ -1,0 +1,430 @@
+---
+// Premium visual effects — all vanilla JS/CSS, no dependencies
+// Disable on touch/mobile devices automatically
+---
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom cursor (desktop only) -->
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<style is:global>
+  /* ── Scroll progress ───────────────────────── */
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, #0d9373, #10b88a, #00e87a);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px rgba(13,147,115,0.6);
+  }
+
+  /* ── Custom cursor ─────────────────────────── */
+  #cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: #0d9373;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease, opacity 0.2s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+    will-change: transform;
+  }
+
+  #cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgba(13,147,115,0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
+  }
+
+  /* Cursor states */
+  body.cursor-hover #cursor-dot {
+    width: 10px;
+    height: 10px;
+    background: #10b88a;
+  }
+  body.cursor-hover #cursor-ring {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(13,147,115,0.3);
+  }
+  body.cursor-click #cursor-dot {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  body.cursor-text #cursor-ring {
+    width: 3px;
+    height: 24px;
+    border-radius: 2px;
+    border-width: 0;
+    background: rgba(13,147,115,0.7);
+  }
+  body.cursor-hidden #cursor-dot,
+  body.cursor-hidden #cursor-ring {
+    opacity: 0;
+  }
+
+  /* Hide default cursor on desktop */
+  @media (pointer: fine) {
+    body { cursor: none; }
+    a, button, [role="button"], input, select, textarea, label {
+      cursor: none;
+    }
+  }
+
+  /* ── Spotlight card effect ─────────────────── */
+  .spotlight-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, -200px) var(--mouse-y, -200px),
+      rgba(13,147,115,0.08),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+  }
+
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+
+  /* ── Animated gradient borders ─────────────── */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      var(--border-angle, 0deg),
+      rgba(13,147,115,0.6),
+      rgba(13,147,115,0.1) 30%,
+      transparent 50%,
+      rgba(13,147,115,0.1) 70%,
+      rgba(13,147,115,0.6)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-spin 4s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes border-spin {
+    to { --border-angle: 360deg; }
+  }
+
+  @property --border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  /* ── Hero grain texture ────────────────────── */
+  .hero-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+  }
+
+  /* ── Text shimmer ──────────────────────────── */
+  .shimmer-text {
+    background: linear-gradient(
+      105deg,
+      #10b88a 0%,
+      #0d9373 25%,
+      #00e87a 50%,
+      #0d9373 75%,
+      #10b88a 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-move 4s linear infinite;
+  }
+
+  @keyframes shimmer-move {
+    from { background-position: 0% center; }
+    to { background-position: 300% center; }
+  }
+
+  /* ── 3D card tilt ──────────────────────────── */
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  .tilt-card:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(13,147,115,0.12) !important;
+  }
+
+  .tilt-card-inner {
+    transform: translateZ(20px);
+  }
+
+  /* ── Magnetic button ───────────────────────── */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  }
+
+  /* ── Glow pulse on primary CTAs ────────────── */
+  .btn-primary {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
+  }
+
+  /* Ripple on click */
+  .btn-primary .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: scale(0);
+    animation: ripple-effect 0.5s linear;
+    pointer-events: none;
+  }
+
+  @keyframes ripple-effect {
+    to { transform: scale(4); opacity: 0; }
+  }
+
+  /* ── Floating animation on hero badge ─────── */
+  .hero-badge {
+    animation: float-badge 3s ease-in-out infinite;
+  }
+
+  @keyframes float-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  /* ── Section divider glow lines ───────────── */
+  .glow-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(13,147,115,0.5), transparent);
+  }
+
+  /* ── Scrolling text strip ──────────────────── */
+  .marquee-strip {
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(13,147,115,0.04);
+    border-top: 1px solid rgba(13,147,115,0.1);
+    border-bottom: 1px solid rgba(13,147,115,0.1);
+    padding: 0.625rem 0;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    gap: 3rem;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  .marquee-item {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(13,147,115,0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-item::before {
+    content: '◆';
+    font-size: 0.4rem;
+    color: rgba(13,147,115,0.4);
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+</style>
+
+<script>
+  // Only run on desktop (pointer: fine = mouse/trackpad)
+  const isFine = window.matchMedia('(pointer: fine)').matches;
+
+  // ── Scroll progress ────────────────────────────────
+  const progressBar = document.getElementById('scroll-progress')!;
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }, { passive: true });
+
+  // ── Custom cursor ──────────────────────────────────
+  if (isFine) {
+    const dot = document.getElementById('cursor-dot')!;
+    const ring = document.getElementById('cursor-ring')!;
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let raf: number;
+
+    const moveCursor = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+    };
+
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      raf = requestAnimationFrame(animateRing);
+    };
+
+    document.addEventListener('mousemove', moveCursor, { passive: true });
+    raf = requestAnimationFrame(animateRing);
+
+    // Cursor states
+    const hoverEls = 'a, button, [role="button"], .card-hover, .mega-link, label, select';
+    document.querySelectorAll(hoverEls).forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    document.querySelectorAll('input, textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-text'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-text'));
+    });
+
+    document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
+    document.addEventListener('mouseleave', () => document.body.classList.add('cursor-hidden'));
+    document.addEventListener('mouseenter', () => document.body.classList.remove('cursor-hidden'));
+  } else {
+    // Hide cursor elements on touch
+    document.getElementById('cursor-dot')!.style.display = 'none';
+    document.getElementById('cursor-ring')!.style.display = 'none';
+  }
+
+  // ── Spotlight card effect ──────────────────────────
+  function initSpotlight() {
+    document.querySelectorAll<HTMLElement>('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+      });
+    });
+  }
+
+  // ── 3D card tilt ───────────────────────────────────
+  function initTilt() {
+    document.querySelectorAll<HTMLElement>('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(800px) rotateX(${-y * 10}deg) rotateY(${x * 10}deg) translateZ(8px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+      });
+    });
+  }
+
+  // ── Magnetic buttons ───────────────────────────────
+  function initMagnetic() {
+    if (!isFine) return;
+    document.querySelectorAll<HTMLElement>('.magnetic, .btn-primary, .btn-outline').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  // ── Button ripple ──────────────────────────────────
+  function initRipple() {
+    document.querySelectorAll<HTMLElement>('.btn-primary').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size/2}px;top:${e.clientY - rect.top - size/2}px`;
+        btn.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+      });
+    });
+  }
+
+  // Init all effects on load and after view transitions
+  function initAllEffects() {
+    initSpotlight();
+    if (isFine) {
+      initTilt();
+      initMagnetic();
+    }
+    initRipple();
+  }
+
+  initAllEffects();
+  document.addEventListener('astro:after-swap', initAllEffects);
+</script>

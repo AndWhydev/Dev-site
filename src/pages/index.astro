@@ -27,6 +27,16 @@ import CTABanner from '../components/CTABanner.astro';
   <Header />
   <main>
     <Hero />
+
+    <!-- Premium marquee strip -->
+    <div class="marquee-strip">
+      <div class="marquee-inner">
+        {['Enterprise Software', 'AI & Automation', 'Flutter Development', 'Cloud Infrastructure', 'Web3 & Blockchain', 'Digital Transformation', 'Custom SaaS', 'API Development', 'Cybersecurity', 'Data Analytics', 'Legacy Modernisation', 'Staff Augmentation', 'Enterprise Software', 'AI & Automation', 'Flutter Development', 'Cloud Infrastructure', 'Web3 & Blockchain', 'Digital Transformation', 'Custom SaaS', 'API Development', 'Cybersecurity', 'Data Analytics', 'Legacy Modernisation', 'Staff Augmentation'].map(item => (
+          <span class="marquee-item">{item}</span>
+        ))}
+      </div>
+    </div>
+
     <TrustedBy />
     <LiveAppDemo />
     <ServicesGrid />

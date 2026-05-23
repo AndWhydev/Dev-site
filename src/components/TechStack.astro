@@ -47,7 +47,7 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
     <div class="tech-grid">
       {techs.map((tech, i) => (
         <div
-          class={`tech-item reveal stagger-${Math.min((i % 6) + 1, 6)}`}
+          class={`tech-item spotlight-card reveal stagger-${Math.min((i % 6) + 1, 6)}`}
           title={`${tech.name} — ${tech.category}`}
         >
           <div class="tech-icon" style={`color: ${tech.color};`} set:html={tech.icon} />

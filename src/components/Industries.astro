@@ -63,7 +63,7 @@ const industries = [
 
     <div class="industries-grid">
       {industries.map((industry, i) => (
-        <div class={`industry-card card-hover reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
+        <div class={`industry-card card-hover spotlight-card tilt-card reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
           <div class="industry-icon" set:html={industry.icon} />
           <h3 class="industry-name">{industry.name}</h3>
           <p class="industry-desc">{industry.description}</p>

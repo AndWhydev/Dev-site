@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import PremiumEffects from '../components/PremiumEffects.astro';
 
 interface Props {
   title: string;
@@ -118,6 +119,8 @@ const schema = {
         to   { opacity: 1; transform: translateY(0); }
       }
     </style>
+
+    <PremiumEffects />
 
     <!-- Loading screen -->
     <div id="page-loader">
