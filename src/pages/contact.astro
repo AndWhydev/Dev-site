@@ -555,12 +555,29 @@ import Footer from '../components/Footer.astro';
   const success = document.getElementById('form-success') as HTMLElement | null;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
 
-  // TODO: Replace with real form submission (Netlify Forms, Formspree, or custom API)
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (btn) { btn.disabled = true; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Sending…'; }
-    await new Promise((r) => setTimeout(r, 1000));
-    if (form && success) { form.hidden = true; success.hidden = false; }
+
+    if (btn) {
+      btn.disabled = true;
+      const l = btn.querySelector('.submit-label');
+      if (l) l.textContent = 'Sending…';
+    }
+
+    try {
+      const res = await fetch('/contact.php', { method: 'POST', body: new FormData(form) });
+      const json = await res.json();
+
+      if (json.success) {
+        if (form && success) { form.hidden = true; success.hidden = false; }
+      } else {
+        alert(json.message || 'Something went wrong. Please email labs@allwebbedup.com.au');
+        if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+      }
+    } catch {
+      alert('Unable to send. Please email us directly at labs@allwebbedup.com.au');
+      if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+    }
   });
 </script>
