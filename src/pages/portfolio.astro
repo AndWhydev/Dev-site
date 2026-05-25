@@ -3,80 +3,171 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+
+interface Project {
+  industry: string;
+  service: string;
+  title: string;
+  result: string;
+  stack: string[];
+  href: string;
+}
+
+// Illustrative, anonymised projects — each links to the matching de-identified case study.
+const projects: Project[] = [
+  {
+    industry: 'Financial Services',
+    service: 'Custom SaaS',
+    title: 'Loan Application & Assessment Platform',
+    result: 'Assessment time reduced from 5 days to about 4 hours',
+    stack: ['React', 'FastAPI', 'PostgreSQL', 'AWS'],
+    href: '/case-studies/loan-application-assessment-platform',
+  },
+  {
+    industry: 'Healthcare',
+    service: 'Custom App Development',
+    title: 'Telehealth Platform for a GP Practice',
+    result: '300+ consultations per week, aligned to ADHA standards',
+    stack: ['React', 'Node.js', 'WebRTC', 'AWS'],
+    href: '/case-studies/telehealth-platform-gp',
+  },
+  {
+    industry: 'Logistics & Transport',
+    service: 'Flutter Mobile Apps',
+    title: 'Delivery & Proof of Delivery App',
+    result: 'Disputed delivery claims reduced to near zero',
+    stack: ['Flutter', 'Node.js', 'PostgreSQL', 'AWS S3'],
+    href: '/case-studies/delivery-proof-of-delivery-app',
+  },
+  {
+    industry: 'Retail & E-Commerce',
+    service: 'Workflow Automation',
+    title: 'Wholesale B2B Ordering Portal',
+    result: '$2.3M in monthly orders with no manual data entry',
+    stack: ['Next.js', 'Node.js', 'PostgreSQL', 'Xero API'],
+    href: '/case-studies/wholesale-ordering-portal',
+  },
+  {
+    industry: 'Government',
+    service: 'Workflow Automation',
+    title: 'Document Management & Approval Workflow',
+    result: 'Approval cycle reduced from 11 days to 2.5 days',
+    stack: ['React', 'Node.js', 'PostgreSQL', 'DocuSign API'],
+    href: '/case-studies/document-management-approval-workflow',
+  },
+  {
+    industry: 'AI & Automation',
+    service: 'AI Chatbot',
+    title: 'Customer Service AI Chatbot',
+    result: '71% of enquiries resolved without human intervention',
+    stack: ['GPT-4', 'LangChain', 'RAG', 'Node.js'],
+    href: '/case-studies/customer-service-ai-chatbot',
+  },
+  {
+    industry: 'Web3 & Crypto',
+    service: 'NFT Marketplace',
+    title: 'NFT Marketplace for an Artist Collective',
+    result: 'On-chain royalties enforced on every secondary sale',
+    stack: ['Solidity', 'React', 'Ethers.js', 'IPFS'],
+    href: '/case-studies/nft-marketplace-australian-artists',
+  },
+  {
+    industry: 'Education',
+    service: 'Custom SaaS',
+    title: 'Online Tutoring Marketplace',
+    result: '$180K in monthly bookings within six months',
+    stack: ['Next.js', 'Node.js', 'Stripe', 'Daily.co'],
+    href: '/case-studies/online-tutoring-marketplace',
+  },
+];
+
+const industries = [...new Set(projects.map((p) => p.industry))].sort();
+const services = [...new Set(projects.map((p) => p.service))].sort();
+
+const entitySentence = 'All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.';
 ---
 
 <Layout
   title="Portfolio — All Webbed Labs | Enterprise Software Projects"
-  description="Enterprise software portfolio coming soon. All Webbed Labs has delivered 150+ projects for large Australian and global organisations. Sign up to be notified when case studies are published."
+  description="A portfolio of anonymised enterprise software projects across finance, healthcare, logistics, government, retail and Web3 — filterable by service and industry."
 >
   <Header />
 
   <main>
-    <section class="portfolio-hero">
-      <div class="portfolio-inner">
+    <section class="pf-hero">
+      <div class="pf-inner">
         <div class="reveal">
           <span class="section-label">Portfolio</span>
-          <h1 class="portfolio-title">
-            Our Work Speaks<br />
-            <span class="gradient-text">For Itself.</span>
+          <h1 class="pf-title">
+            Selected Work<br />
+            <span class="gradient-text">Across Every Industry.</span>
           </h1>
-          <p class="portfolio-sub">
-            We've delivered 150+ enterprise projects across finance, healthcare, logistics, retail and government.
-            Detailed case studies are currently being prepared — sign up below to be notified when they go live.
+          <p class="pf-sub">
+            A representative sample of the software All Webbed Labs builds for Australian organisations.
+            Filter by service or industry to find work closest to your own situation.
           </p>
+          <p class="pf-entity">{entitySentence}</p>
         </div>
+      </div>
+    </section>
 
-        <!-- Coming soon card -->
-        <div class="coming-soon-card reveal stagger-2">
-          <div class="cs-icon" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-          </div>
-          <h2>Case Studies Coming Soon</h2>
-          <p>
-            We're currently documenting our most significant enterprise projects with full metrics, architecture breakdowns and client outcomes.
-            Enter your email to be notified the moment they go live.
-          </p>
-
-          <!-- TODO: Connect email capture to your preferred email marketing platform (Mailchimp, Klaviyo, ConvertKit, etc.) -->
-          <form class="email-capture" id="portfolio-email-form">
-            <input type="email" placeholder="your@company.com.au" required aria-label="Your email address" name="email" />
-            <button type="submit" class="btn-primary">
-              Notify Me
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </form>
-          <p class="cs-privacy">No spam. Unsubscribe any time.</p>
-
-          <div id="email-success" hidden class="email-success-msg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            You're on the list! We'll notify you when case studies are published.
-          </div>
-        </div>
-
-        <!-- Preview teasers -->
-        <div class="teasers-header reveal stagger-3">
-          <h2 class="section-heading">Projects Across Every Industry</h2>
-          <p class="section-subheading">A preview of the case studies being prepared:</p>
-        </div>
-
-        <div class="teasers-grid reveal stagger-4">
-          {[
-            { industry: 'Financial Services', type: 'Trading Platform', stack: 'React · Node.js · PostgreSQL', status: 'Coming soon' },
-            { industry: 'Healthcare', type: 'Patient Management System', stack: 'Flutter · FastAPI · PostgreSQL', status: 'Coming soon' },
-            { industry: 'Logistics', type: 'Fleet Management Platform', stack: 'React Native · Node.js · MongoDB', status: 'Coming soon' },
-            { industry: 'Government', type: 'Citizen Portal', stack: 'Next.js · Python · AWS', status: 'Coming soon' },
-            { industry: 'Retail', type: 'E-Commerce Platform', stack: 'Next.js · Node.js · Stripe', status: 'Coming soon' },
-            { industry: 'Education', type: 'Learning Management System', stack: 'React · FastAPI · Supabase', status: 'Coming soon' },
-          ].map((teaser) => (
-            <div class="teaser-card">
-              <div class="teaser-badge">{teaser.status}</div>
-              <div class="teaser-industry">{teaser.industry}</div>
-              <h3 class="teaser-type">{teaser.type}</h3>
-              <div class="teaser-stack">{teaser.stack}</div>
+    <section class="pf-body">
+      <div class="pf-inner">
+        <!-- Filters -->
+        <div class="pf-filters reveal">
+          <div class="pf-filter-row">
+            <select id="pf-service-filter" aria-label="Filter by service">
+              <option value="">All Services</option>
+              {services.map((s) => <option value={s}>{s}</option>)}
+            </select>
+            <select id="pf-industry-filter" aria-label="Filter by industry">
+              <option value="">All Industries</option>
+              {industries.map((ind) => <option value={ind}>{ind}</option>)}
+            </select>
+            <button class="pf-clear-btn" id="pf-clear">Clear</button>
+            <div class="pf-results-count">
+              Showing <span id="pf-count">{projects.length}</span> of {projects.length} projects
             </div>
+          </div>
+          <p class="pf-disclaimer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>Anonymised, illustrative examples. These represent the type of work we deliver and do not name specific clients.</span>
+          </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="pf-grid" id="pf-grid">
+          {projects.map((p) => (
+            <a
+              href={p.href}
+              class="pf-card card-hover"
+              data-industry={p.industry}
+              data-service={p.service}
+            >
+              <!-- IMAGE_PLACEHOLDER — add a real (de-identified) screenshot for {p.title} -->
+              <div class="pf-card-img">
+                <div class="pf-card-service">{p.service}</div>
+                <svg class="pf-card-img-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1e2d28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+              <div class="pf-card-body">
+                <div class="pf-card-industry">{p.industry}</div>
+                <h2 class="pf-card-title">{p.title}</h2>
+                <p class="pf-card-result">{p.result}</p>
+                <div class="pf-card-stack">
+                  {p.stack.map((t) => <span class="pf-stack-tag">{t}</span>)}
+                </div>
+                <span class="pf-card-link">
+                  View case study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
-        <!-- TODO: Replace teasers with real project cards once case studies are written -->
+
+        <div id="pf-no-results" class="pf-no-results" hidden>
+          <p>No projects match your filters. <button id="pf-clear-2">Clear filters</button></p>
+        </div>
       </div>
     </section>
 
@@ -87,30 +178,27 @@ import CTABanner from '../components/CTABanner.astro';
 </Layout>
 
 <style>
-  .portfolio-hero {
-    padding: 9rem 0 7rem;
+  .pf-hero {
+    padding: 9rem 0 4rem;
     background: #0a0f0e;
     position: relative;
     overflow: hidden;
   }
-
-  .portfolio-hero::before {
+  .pf-hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(13,147,115,0.07) 0%, transparent 70%);
     pointer-events: none;
   }
-
-  .portfolio-inner {
+  .pf-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
     z-index: 1;
   }
-
-  .portfolio-title {
+  .pf-title {
     font-family: 'Sora', sans-serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 800;
@@ -118,206 +206,253 @@ import CTABanner from '../components/CTABanner.astro';
     line-height: 1.08;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
-    max-width: 700px;
+    max-width: 760px;
   }
-
-  .portfolio-sub {
+  .pf-sub {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.125rem;
     color: #8aa09a;
     max-width: 640px;
     line-height: 1.7;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
   }
-
-  .coming-soon-card {
-    background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0f1614 60%);
-    border: 1px solid rgba(13,147,115,0.25);
-    border-radius: 24px;
-    padding: 3rem;
-    max-width: 680px;
-    margin-bottom: 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .cs-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
-    background: rgba(13,147,115,0.08);
-    border: 1px solid rgba(13,147,115,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .coming-soon-card h2 {
-    font-family: 'Sora', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-  }
-
-  .coming-soon-card p {
+  .pf-entity {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     color: #8aa09a;
     line-height: 1.7;
+    max-width: 640px;
     margin: 0;
+    padding: 1rem 1.25rem;
+    border-left: 2px solid #0d9373;
+    background: rgba(13,147,115,0.05);
+    border-radius: 0 10px 10px 0;
   }
 
-  .email-capture {
+  .pf-body { padding: 3.5rem 0 6rem; background: #0a0f0e; }
+
+  /* Filters */
+  .pf-filters { margin-bottom: 2.5rem; }
+  .pf-filter-row {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
   }
-
-  .email-capture input {
-    flex: 1;
-    min-width: 240px;
-    background: #0a0f0e;
+  .pf-filters select {
+    background: #0f1614;
     border: 1px solid #1e2d28;
-    border-radius: 50px;
-    padding: 0.75rem 1.25rem;
+    border-radius: 9px;
+    padding: 0.625rem 2rem 0.625rem 0.875rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
-    color: white;
+    font-size: 0.875rem;
+    color: #8aa09a;
     outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6359' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.625rem center;
     transition: border-color 0.2s ease;
   }
-
-  .email-capture input::placeholder {
+  .pf-filters select:focus { border-color: #0d9373; }
+  .pf-filters select option { background: #0f1614; }
+  .pf-clear-btn {
+    background: none;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.625rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
     color: #4a6359;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
   }
-
-  .email-capture input:focus {
-    border-color: #0d9373;
+  .pf-clear-btn:hover { border-color: rgba(13,147,115,0.35); color: #0d9373; }
+  .pf-results-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin-left: auto;
   }
-
-  .cs-privacy {
+  .pf-results-count span { color: #0d9373; font-weight: 600; }
+  .pf-disclaimer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
     color: #4a6359;
     margin: 0;
   }
+  .pf-disclaimer svg { flex-shrink: 0; }
 
-  .email-success-msg {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
-    color: #0d9373;
-    background: rgba(13,147,115,0.08);
-    border: 1px solid rgba(13,147,115,0.2);
-    padding: 0.875rem 1.25rem;
-    border-radius: 10px;
-  }
-
-  .email-success-msg[hidden] {
-    display: none;
-  }
-
-  .teasers-header {
-    margin-bottom: 2rem;
-  }
-
-  .teasers-grid {
+  /* Grid */
+  .pf-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 5rem;
+    gap: 1.5rem;
   }
-
-  .teaser-card {
+  .pf-card {
     background: #0f1614;
-    border: 1px dashed #1e2d28;
-    border-radius: 16px;
-    padding: 1.75rem;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+  }
+  .pf-card[hidden] { display: none; }
+  .pf-card-img {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #141c1a, #0f1614);
+    border-bottom: 1px solid #1e2d28;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1rem;
     position: relative;
-    overflow: hidden;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, border-color 0.2s ease;
   }
-
-  .teaser-card:hover {
-    opacity: 1;
-    border-color: rgba(13,147,115,0.3);
-    border-style: solid;
+  .pf-card-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(13,147,115,0.12) 0%, transparent 60%);
   }
-
-  .teaser-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+  .pf-card-service {
+    position: relative;
+    z-index: 1;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0d9373;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.25);
+    padding: 0.25rem 0.625rem;
+    border-radius: 4px;
+  }
+  .pf-card-img-icon { position: relative; z-index: 1; opacity: 0.6; }
+  .pf-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+  }
+  .pf-card-industry {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a6359;
+  }
+  .pf-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.25;
+    transition: color 0.2s ease;
+  }
+  .pf-card:hover .pf-card-title { color: #0d9373; }
+  .pf-card-result {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+  .pf-card-stack { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .pf-stack-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
     font-weight: 600;
     color: #4a6359;
     background: rgba(255,255,255,0.04);
     border: 1px solid #1e2d28;
-    padding: 0.2rem 0.625rem;
-    border-radius: 50px;
-    align-self: flex-start;
+    padding: 0.175rem 0.45rem;
+    border-radius: 4px;
   }
-
-  .teaser-industry {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #0d9373;
-  }
-
-  .teaser-type {
-    font-family: 'Sora', sans-serif;
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-    line-height: 1.2;
-  }
-
-  .teaser-stack {
+  .pf-card-link {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    transition: gap 0.2s ease;
+  }
+  .pf-card:hover .pf-card-link { gap: 0.625rem; }
+
+  .pf-no-results {
+    padding: 3rem 0;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
     color: #4a6359;
   }
-
-  @media (max-width: 900px) {
-    .teasers-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .pf-no-results[hidden] { display: none !important; }
+  .pf-no-results button {
+    background: none;
+    border: none;
+    color: #0d9373;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    text-decoration: underline;
   }
 
-  @media (max-width: 560px) {
-    .teasers-grid {
-      grid-template-columns: 1fr;
-    }
-    .coming-soon-card {
-      padding: 2rem 1.5rem;
-    }
+  @media (max-width: 1100px) { .pf-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .pf-grid { grid-template-columns: 1fr; }
+    .pf-filter-row { flex-direction: column; align-items: stretch; }
+    .pf-filters select { width: 100%; }
+    .pf-results-count { margin-left: 0; }
   }
 </style>
 
 <script>
-  const form = document.getElementById('portfolio-email-form') as HTMLFormElement | null;
-  const successMsg = document.getElementById('email-success') as HTMLElement | null;
+  const serviceFilter = document.getElementById('pf-service-filter') as HTMLSelectElement;
+  const industryFilter = document.getElementById('pf-industry-filter') as HTMLSelectElement;
+  const cards = document.querySelectorAll<HTMLElement>('.pf-card');
+  const countEl = document.getElementById('pf-count')!;
+  const noResults = document.getElementById('pf-no-results')!;
 
-  // TODO: Replace with real email capture (Mailchimp API, ConvertKit, etc.)
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    await new Promise((r) => setTimeout(r, 800));
-    if (form && successMsg) {
-      form.hidden = true;
-      successMsg.hidden = false;
-    }
-  });
+  function filterCards() {
+    const svc = serviceFilter.value;
+    const ind = industryFilter.value;
+    let visible = 0;
+    cards.forEach((card) => {
+      const matchSvc = !svc || card.dataset.service === svc;
+      const matchInd = !ind || card.dataset.industry === ind;
+      if (matchSvc && matchInd) {
+        card.hidden = false;
+        visible++;
+      } else {
+        card.hidden = true;
+      }
+    });
+    countEl.textContent = String(visible);
+    noResults.hidden = visible > 0;
+  }
+
+  function clearFilters() {
+    serviceFilter.value = '';
+    industryFilter.value = '';
+    filterCards();
+  }
+
+  serviceFilter.addEventListener('change', filterCards);
+  industryFilter.addEventListener('change', filterCards);
+  document.getElementById('pf-clear')?.addEventListener('click', clearFilters);
+  document.getElementById('pf-clear-2')?.addEventListener('click', clearFilters);
 </script>
