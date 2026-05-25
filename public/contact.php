@@ -1,4 +1,14 @@
 <?php
+// ─────────────────────────────────────────────────────────────────────────
+// CRM webhook forwarding.
+// Set this to the real CRM/automation webhook URL when available (Andy to
+// provide). When empty, submissions are emailed only. When set, each
+// submission is also POSTed as JSON to this endpoint on a best-effort basis
+// (a webhook failure never blocks the email or the user's success response).
+// You can also set it via an environment variable named CRM_WEBHOOK_URL.
+// ─────────────────────────────────────────────────────────────────────────
+$CRM_WEBHOOK_URL = getenv('CRM_WEBHOOK_URL') ?: ''; // TODO: paste real CRM webhook URL here
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
@@ -65,6 +75,50 @@ $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 $sent = mail($to, $subject, $body, $headers);
+
+// ── Best-effort CRM webhook forward ───────────────────────────────────────
+// Posts the lead as JSON to the configured webhook. Any failure here is
+// swallowed so it never affects the email result or the user's response.
+if (!empty($CRM_WEBHOOK_URL)) {
+    $payload = json_encode([
+        'source'      => 'aibusinesssolutions.au',
+        'firstName'   => $firstName,
+        'lastName'    => $lastName,
+        'email'       => $email,
+        'company'     => $company,
+        'phone'       => $phone,
+        'service'     => $service,
+        'budget'      => $budget,
+        'heardFrom'   => $hearAbout,
+        'nda'         => $nda,
+        'message'     => $message,
+        'submittedAt' => date('c'),
+    ]);
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($CRM_WEBHOOK_URL);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 5,
+        ]);
+        curl_exec($ch);
+        curl_close($ch);
+    } else {
+        // Fallback when cURL is unavailable on the host.
+        @file_get_contents($CRM_WEBHOOK_URL, false, stream_context_create([
+            'http' => [
+                'method'        => 'POST',
+                'header'        => "Content-Type: application/json\r\n",
+                'content'       => $payload,
+                'timeout'       => 5,
+                'ignore_errors' => true,
+            ],
+        ]));
+    }
+}
 
 if ($sent) {
     echo json_encode(['success' => true, 'message' => 'Message sent successfully.']);

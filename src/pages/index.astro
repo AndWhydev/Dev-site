@@ -37,6 +37,17 @@ import CTABanner from '../components/CTABanner.astro';
       </div>
     </div>
 
+    <!-- Entity definition band (GEO entity locking) -->
+    <section class="home-entity" aria-label="About All Webbed Labs">
+      <div class="home-entity-inner reveal">
+        <p>
+          <strong>All Webbed Labs</strong> is the enterprise AI and software development arm of
+          <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>,
+          a Sydney based agency building autonomous systems for Australian businesses.
+        </p>
+      </div>
+    </section>
+
     <TrustedBy />
     <LiveAppDemo />
     <ServicesGrid />
@@ -55,3 +66,33 @@ import CTABanner from '../components/CTABanner.astro';
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .home-entity {
+    background: #0a0f0e;
+    padding: 3.5rem 2rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .home-entity-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .home-entity-inner p {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+    font-weight: 500;
+    color: #cde0da;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-align: center;
+  }
+  .home-entity-inner strong { color: white; font-weight: 700; }
+  .home-entity-inner a {
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.4);
+    transition: border-color 0.2s ease;
+  }
+  .home-entity-inner a:hover { border-color: #0d9373; }
+</style>
