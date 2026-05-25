@@ -70,11 +70,43 @@ const caseStudies: CaseStudyMeta[] = [
 const industries = [...new Set(caseStudies.map(cs => cs.industry))].sort();
 const allServices = [...new Set(caseStudies.flatMap(cs => cs.services))].sort();
 const allTechs = [...new Set(caseStudies.flatMap(cs => cs.techs))].sort();
+
+const entitySentence = 'All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.';
+
+const csFaqs = [
+  {
+    q: 'Are these case studies based on real projects?',
+    a: 'Yes. Each case study describes the type of work All Webbed Labs delivers and the engineering decisions involved. To protect client confidentiality, the studies are anonymised and de-identified — they do not name a specific customer and figures are generalised. They are illustrative examples, not testimonials.',
+  },
+  {
+    q: 'How do I find case studies relevant to my industry?',
+    a: `Use the industry, service and technology filters above. The library spans ${industries.length} industries including financial services, healthcare, logistics, government, retail and Web3, so you can narrow to work closest to your own situation.`,
+  },
+  {
+    q: 'Can All Webbed Labs share more detail under an NDA?',
+    a: 'Yes. Where a prospective client needs deeper technical or commercial detail, we can discuss specific reference projects under a mutual non-disclosure agreement. Request this when you book a discovery call.',
+  },
+  {
+    q: 'What does a typical engagement look like?',
+    a: 'Most engagements begin with a discovery call and a fixed-scope proposal within five business days. Delivery is handled by senior Australian-based engineers, with full intellectual property transferred to the client on completion.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: csFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <Layout
   title="Case Studies — All Webbed Labs | Enterprise Software Projects"
-  description="34 real-world case studies across every industry. See how All Webbed Labs has solved genuine enterprise software challenges for Australian businesses."
+  description="Anonymised case studies across every industry, showing how All Webbed Labs solves genuine enterprise software challenges for Australian businesses."
+  extraSchema={[faqSchema]}
 >
   <Header />
   <main>
@@ -91,13 +123,14 @@ const allTechs = [...new Set(caseStudies.flatMap(cs => cs.techs))].sort();
             {caseStudies.length} case studies across {industries.length} industries.
             Honest stories about genuine problems solved — written with the specificity enterprise buyers need to make confident decisions.
           </p>
+          <p class="csi-entity">{entitySentence}</p>
         </div>
 
         <div class="csi-stats reveal stagger-2">
           <div class="csi-stat"><span class="csi-stat-num">{caseStudies.length}</span><span class="csi-stat-lbl">Case Studies</span></div>
           <div class="csi-stat"><span class="csi-stat-num">{industries.length}</span><span class="csi-stat-lbl">Industries</span></div>
           <div class="csi-stat"><span class="csi-stat-num">100%</span><span class="csi-stat-lbl">Australian Context</span></div>
-          <div class="csi-stat"><span class="csi-stat-num">All</span><span class="csi-stat-lbl">Placeholder — add real clients</span></div>
+          <div class="csi-stat"><span class="csi-stat-num">Anon.</span><span class="csi-stat-lbl">Illustrative, de-identified examples</span></div>
         </div>
       </div>
     </section>
@@ -166,6 +199,24 @@ const allTechs = [...new Set(caseStudies.flatMap(cs => cs.techs))].sort();
           <p>No case studies match your filters. <button id="cs-clear-2">Clear all filters</button></p>
         </div>
 
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="cs-index-faq">
+      <div class="csi-inner">
+        <div class="reveal">
+          <span class="section-label">Common Questions</span>
+          <h2 class="section-heading">What should you know about these case studies?</h2>
+        </div>
+        <div class="csi-faq-list reveal stagger-1">
+          {csFaqs.map((f) => (
+            <details class="csi-faq-item">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -431,6 +482,57 @@ const allTechs = [...new Set(caseStudies.flatMap(cs => cs.techs))].sort();
     font-family: 'DM Sans', sans-serif;
     font-size: 1rem;
     text-decoration: underline;
+  }
+
+  .csi-entity {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.25rem;
+    border-left: 2px solid #0d9373;
+    background: rgba(13,147,115,0.05);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .cs-index-faq { padding: 2rem 0 5rem; background: #0a0f0e; }
+  .cs-index-faq .section-heading { margin-bottom: 2rem; }
+  .csi-faq-list { display: flex; flex-direction: column; max-width: 880px; }
+  .csi-faq-item {
+    border-bottom: 1px solid #1e2d28;
+    padding: 1.25rem 0;
+  }
+  .csi-faq-item summary {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .csi-faq-item summary::-webkit-details-marker { display: none; }
+  .csi-faq-item summary::after {
+    content: '+';
+    color: #0d9373;
+    font-size: 1.25rem;
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+  .csi-faq-item[open] summary::after { content: '−'; }
+  .csi-faq-item summary:hover { color: #0d9373; }
+  .csi-faq-item p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #4a6359;
+    line-height: 1.7;
+    margin: 1rem 0 0;
+    max-width: 760px;
   }
 
   .cs-index-cta { padding: 5rem 0 6rem; background: #0a0f0e; }

@@ -55,9 +55,30 @@ interface Props {
 }
 
 const p = Astro.props;
+
+const siteUrl = 'https://aibusinesssolutions.au';
+const csUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+// Semantic schema (GEO): each case study is an anonymised illustrative Article.
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: p.title,
+  description: p.summary,
+  about: p.industry,
+  url: csUrl,
+  inLanguage: 'en-AU',
+  isAccessibleForFree: true,
+  // Made explicit for both readers and AI search: these are representative, de-identified examples.
+  disambiguatingDescription:
+    'Anonymised, illustrative case study representing the type of work All Webbed Labs delivers. Client identity and exact figures are generalised and do not name a specific customer.',
+  author: { '@id': `${siteUrl}/#organization` },
+  publisher: { '@id': `${siteUrl}/#organization` },
+  keywords: p.tags.join(', '),
+};
 ---
 
-<Layout title={p.metaTitle} description={p.metaDescription}>
+<Layout title={p.metaTitle} description={p.metaDescription} extraSchema={[articleSchema]}>
   <Header />
   <main>
 
@@ -89,6 +110,14 @@ const p = Astro.props;
         <p>IMAGE_PLACEHOLDER</p>
         <span>{p.heroImageDescription}</span>
       </div>
+    </div>
+
+    <!-- Anonymity disclaimer -->
+    <div class="cs-disclaimer-wrap">
+      <p class="cs-disclaimer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Illustrative example. This is an anonymised, representative case study showing the type of work All Webbed Labs delivers. It does not name a specific client, and figures are generalised — it is not a testimonial.</span>
+      </p>
     </div>
 
     <!-- Main content + sidebar -->
@@ -373,6 +402,28 @@ const p = Astro.props;
     max-width: 500px;
     text-align: center;
   }
+
+  /* Anonymity disclaimer */
+  .cs-disclaimer-wrap {
+    background: #0a0f0e;
+    padding: 1.75rem 2rem 0;
+  }
+  .cs-disclaimer {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    background: rgba(13,147,115,0.05);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 10px;
+    padding: 0.875rem 1.125rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #8aa09a;
+    line-height: 1.55;
+  }
+  .cs-disclaimer svg { flex-shrink: 0; margin-top: 2px; }
 
   /* Body */
   .cs-body { padding: 5rem 0; background: #0a0f0e; }
