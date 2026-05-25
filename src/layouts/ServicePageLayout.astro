@@ -1,5 +1,5 @@
 ---
-import Layout from './Layout.astro';
+import Layout, { BRAND_DEFINITION } from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
@@ -33,6 +33,22 @@ export interface RelatedService {
   href: string;
 }
 
+export interface PricingTier {
+  name: string;
+  range: string;
+  detail: string;
+}
+
+export interface Comparison {
+  rightFor: string[];
+  notRightFor: string[];
+}
+
+export interface Definition {
+  term: string;
+  definition: string;
+}
+
 interface Props {
   metaTitle: string;
   metaDescription: string;
@@ -48,6 +64,18 @@ interface Props {
   faqs: FAQ[];
   relatedServices: RelatedService[];
   heroIcon?: string;
+  /** Short service name used in question-based headings and Service schema, e.g. "API Development". Falls back to category. */
+  serviceName?: string;
+  /** Slug for schema @id/url, e.g. "api-development". Falls back to the current pathname. */
+  slug?: string;
+  /** One-sentence, third-person liftable summary of this service. */
+  summaryStatement?: string;
+  /** Pricing tiers (placeholder ranges, AUD). */
+  pricing?: PricingTier[];
+  /** When this IS / is NOT the right solution — also carries the negative qualifiers. */
+  comparison?: Comparison;
+  /** Definition blocks for technical terms used on this page. */
+  definitions?: Definition[];
 }
 
 const {
@@ -65,10 +93,60 @@ const {
   faqs,
   relatedServices,
   heroIcon,
+  serviceName,
+  slug,
+  summaryStatement,
+  pricing,
+  comparison,
+  definitions,
 } = Astro.props;
+
+const siteUrl = 'https://aibusinesssolutions.au';
+const name = serviceName ?? category;
+const pageSlug = slug ?? Astro.url.pathname.replace(/\/+$/, '').split('/').pop() ?? '';
+const canonicalUrl = `${siteUrl}/services/${pageSlug}`;
+
+// ── Semantic schema for AI search (GEO): Service + FAQPage + BreadcrumbList ──
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${canonicalUrl}#service`,
+  name: name,
+  serviceType: name,
+  category: category,
+  description: metaDescription,
+  url: canonicalUrl,
+  provider: { '@id': `${siteUrl}/#organization` },
+  areaServed: { '@type': 'Country', name: 'Australia' },
+  audience: { '@type': 'BusinessAudience', name: 'Australian enterprises and scale-ups' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${canonicalUrl}#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+    { '@type': 'ListItem', position: 3, name: name, item: canonicalUrl },
+  ],
+};
+
+const extraSchema = [serviceSchema, faqSchema, breadcrumbSchema];
+const entitySentence = BRAND_DEFINITION;
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
+<Layout title={metaTitle} description={metaDescription} canonical={canonicalUrl} extraSchema={extraSchema}>
   <Header />
   <main>
     <!-- Hero -->
@@ -106,8 +184,10 @@ const {
         <div class="svc-what-grid">
           <div class="reveal-left">
             <span class="section-label">Overview</span>
-            <h2 class="section-heading">What This Service Delivers</h2>
+            <h2 class="section-heading">What does {name} involve?</h2>
+            {summaryStatement && <p class="svc-liftable">{summaryStatement}</p>}
             {description.map((para) => <p class="svc-para">{para}</p>)}
+            <p class="svc-entity-note">{entitySentence}</p>
           </div>
           <div class="svc-what-highlights reveal-right stagger-2">
             <div class="highlight-item">
@@ -144,7 +224,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Key Benefits</span>
-          <h2 class="section-heading">Why Work With Us On This</h2>
+          <h2 class="section-heading">Why choose All Webbed Labs for {name}?</h2>
         </div>
         <div class="benefits-grid">
           {benefits.map((b, i) => (
@@ -179,7 +259,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Real-World Applications</span>
-          <h2 class="section-heading">How Our Clients Use This Service</h2>
+          <h2 class="section-heading">How do Australian businesses use {name}?</h2>
         </div>
         <div class="usecases-grid">
           {useCases.map((uc, i) => (
@@ -198,7 +278,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Technology Stack</span>
-          <h2 class="section-heading">Technologies We Use For This Service</h2>
+          <h2 class="section-heading">What technologies does All Webbed Labs use for {name}?</h2>
         </div>
         <div class="tech-tags reveal stagger-1">
           {technologies.map((tech) => (
@@ -213,7 +293,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Our Process</span>
-          <h2 class="section-heading">How We Deliver This Service</h2>
+          <h2 class="section-heading">What does the {name} process look like?</h2>
         </div>
         <div class="svc-process-list">
           {process.map((step, i) => (
@@ -240,7 +320,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Industries Served</span>
-          <h2 class="section-heading">Who We Build This For</h2>
+          <h2 class="section-heading">Who is {name} for?</h2>
         </div>
         <div class="svc-industry-tags reveal stagger-1">
           {industries.map((ind) => (
@@ -249,6 +329,86 @@ const {
         </div>
       </div>
     </section>
+
+    <!-- Comparison: right fit vs not the right fit (negative qualifiers) -->
+    {comparison && (
+      <section class="svc-fit">
+        <div class="svc-inner">
+          <div class="reveal">
+            <span class="section-label">Honest Fit Assessment</span>
+            <h2 class="section-heading">Is {name} the right solution for you?</h2>
+          </div>
+          <div class="fit-grid">
+            <div class="fit-col fit-yes reveal stagger-1">
+              <div class="fit-col-head">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <h3>When {name} is the right fit</h3>
+              </div>
+              <ul>
+                {comparison.rightFor.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+            <div class="fit-col fit-no reveal stagger-2">
+              <div class="fit-col-head">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b4604f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <h3>When it is not the right fit</h3>
+              </div>
+              <ul>
+                {comparison.notRightFor.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Pricing -->
+    {pricing && pricing.length > 0 && (
+      <section class="svc-pricing">
+        <div class="svc-inner">
+          <div class="reveal">
+            <span class="section-label">Indicative Pricing</span>
+            <h2 class="section-heading">How much does {name} cost?</h2>
+            <p class="svc-pricing-note">Indicative ranges in AUD to help you budget. Every engagement is scoped individually — book a discovery call for a fixed quote tailored to your requirements.</p>
+          </div>
+          <div class="pricing-grid">
+            {pricing.map((tier, i) => (
+              <div class={`pricing-card reveal stagger-${Math.min(i + 1, 4)}`}>
+                <div class="pricing-tier">{tier.name}</div>
+                <div class="pricing-range">{tier.range}</div>
+                <p class="pricing-detail">{tier.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div class="pricing-cta reveal">
+            <a href="/contact" class="btn-primary">
+              Book a Discovery Call
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Definitions -->
+    {definitions && definitions.length > 0 && (
+      <section class="svc-definitions">
+        <div class="svc-inner">
+          <div class="reveal">
+            <span class="section-label">Key Terms, Defined</span>
+            <h2 class="section-heading">{name}: a quick glossary</h2>
+          </div>
+          <dl class="definitions-list">
+            {definitions.map((d, i) => (
+              <div class={`definition-item reveal stagger-${Math.min(i + 1, 6)}`}>
+                <dt>{d.term}</dt>
+                <dd>{d.definition}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    )}
 
     <!-- Case Study Placeholder -->
     <section class="svc-casestudy">
@@ -281,7 +441,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Common Questions</span>
-          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <h2 class="section-heading">Common questions about {name}</h2>
         </div>
         <div class="faq-list">
           {faqs.map((faq, i) => (
@@ -304,7 +464,7 @@ const {
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Explore Further</span>
-          <h2 class="section-heading">Related Services</h2>
+          <h2 class="section-heading">What should you explore next?</h2>
         </div>
         <div class="related-grid">
           {relatedServices.map((rs, i) => (
@@ -739,6 +899,203 @@ const {
     border-radius: 50px;
   }
 
+  /* Liftable summary + entity sentence */
+  .svc-liftable {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1875rem;
+    color: #cde0da;
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    font-weight: 500;
+  }
+
+  .svc-entity-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 1.75rem 0 0;
+    padding: 1.125rem 1.25rem;
+    border-left: 2px solid #0d9373;
+    background: rgba(13,147,115,0.05);
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* Fit / comparison */
+  .svc-fit {
+    padding: 7rem 0;
+    background: #0f1614;
+  }
+  .svc-fit .section-heading { margin-bottom: 3rem; }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .fit-col {
+    border-radius: 18px;
+    padding: 2rem;
+    border: 1px solid #1e2d28;
+  }
+
+  .fit-yes {
+    background: rgba(13,147,115,0.05);
+    border-color: rgba(13,147,115,0.25);
+  }
+
+  .fit-no {
+    background: rgba(180,96,79,0.04);
+    border-color: rgba(180,96,79,0.22);
+  }
+
+  .fit-col-head {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .fit-col-head svg { flex-shrink: 0; }
+
+  .fit-col-head h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+  }
+
+  .fit-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .fit-col li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.55;
+    padding-left: 1.125rem;
+    position: relative;
+  }
+
+  .fit-col li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  .fit-yes li::before { background: #0d9373; }
+  .fit-no li::before { background: #b4604f; }
+
+  /* Pricing */
+  .svc-pricing {
+    padding: 7rem 0;
+    background: #0a0f0e;
+  }
+  .svc-pricing .section-heading { margin-bottom: 1rem; }
+
+  .svc-pricing-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #4a6359;
+    line-height: 1.65;
+    max-width: 620px;
+    margin: 0 0 3rem;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .pricing-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    transition: border-color 0.3s ease;
+  }
+  .pricing-card:hover { border-color: rgba(13,147,115,0.3); }
+
+  .pricing-tier {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d9373;
+  }
+
+  .pricing-range {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .pricing-detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #4a6359;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .pricing-cta { margin-top: 2.5rem; }
+
+  /* Definitions */
+  .svc-definitions {
+    padding: 7rem 0;
+    background: #0f1614;
+  }
+  .svc-definitions .section-heading { margin-bottom: 3rem; }
+
+  .definitions-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin: 0;
+  }
+
+  .definition-item {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+
+  .definition-item dt {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.5rem;
+  }
+
+  .definition-item dd {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #4a6359;
+    line-height: 1.65;
+    margin: 0;
+  }
+
   /* Case Study Placeholder */
   .svc-casestudy {
     padding: 6rem 0;
@@ -943,11 +1300,16 @@ const {
     .related-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 640px) {
     .benefits-grid,
-    .usecases-grid {
+    .usecases-grid,
+    .fit-grid,
+    .definitions-list {
       grid-template-columns: 1fr;
     }
     .related-grid {

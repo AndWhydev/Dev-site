@@ -9,6 +9,8 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noindex?: boolean;
+  /** Additional JSON-LD objects to emit alongside the Organization schema (Service, FAQPage, BreadcrumbList, etc.) */
+  extraSchema?: Record<string, unknown>[];
 }
 
 const {
@@ -17,20 +19,47 @@ const {
   ogImage = '/og-image.jpg',
   canonical,
   noindex = false,
+  extraSchema = [],
 } = Astro.props;
 
 const siteUrl = 'https://aibusinesssolutions.au';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 
+// Canonical brand definition — entity-locking sentence used site-wide for AI search (GEO).
+// Keep this string identical wherever it appears across the site.
+export const BRAND_DEFINITION =
+  'All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.';
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: 'All Webbed Labs',
+  alternateName: 'AWL',
   url: siteUrl,
   logo: `${siteUrl}/logo.svg`,
-  description: 'Enterprise software development and technology solutions for large corporations and enterprises across Australia and globally.',
+  description: BRAND_DEFINITION,
   email: 'labs@allwebbedup.com.au',
   telephone: '1800714148',
+  founder: {
+    '@type': 'Person',
+    name: 'Andy',
+    jobTitle: 'Founder',
+    worksFor: { '@type': 'Organization', name: 'All Webbed Labs' },
+  },
+  areaServed: { '@type': 'Country', name: 'Australia' },
+  knowsAbout: [
+    'Custom software development',
+    'Enterprise application development',
+    'Artificial intelligence integration',
+    'Large language model integration',
+    'Retrieval-augmented generation',
+    'Cloud infrastructure and DevOps',
+    'Cybersecurity',
+    'Blockchain and smart contract development',
+    'Data analytics',
+    'Workflow automation',
+  ],
   address: {
     '@type': 'PostalAddress',
     streetAddress: '204 Birdwood Rd',
@@ -96,6 +125,9 @@ const schema = {
 
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {extraSchema.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
 
     <!-- View Transitions -->
     <ClientRouter />
