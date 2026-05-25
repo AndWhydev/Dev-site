@@ -143,6 +143,38 @@ const data = {
       answer: 'Rescue engagements are a meaningful part of our practice. We begin with a technical audit of the existing codebase, architecture and any documentation available — producing a frank assessment of what is salvageable, what needs to be rebuilt, and what the risks are going forward. We have successfully recovered projects that were 18 months in with nothing deployable, as well as projects that simply needed a senior architect to make a set of critical decisions that had been deferred. We will not tell you a rescue is viable if our assessment says otherwise.',
     },
   ],
+  serviceName: 'Custom App Development',
+  slug: 'custom-app-development',
+  summaryStatement: 'Custom app development is the design and engineering of bespoke web and mobile software built from the ground up to match an organisation\'s exact operational model, rather than configuring an off-the-shelf platform to fit workflows it was not designed for.',
+  comparison: {
+    rightFor: [
+      'Your operational workflows, compliance rules or industry-specific logic cannot be expressed without extensive workarounds in an off-the-shelf platform.',
+      'You are already paying for a SaaS product plus the spreadsheets, integrations and manual steps needed to make it usable.',
+      'You need deep integration with existing enterprise systems (ERP, CRM, identity, government data services) under your own control.',
+      'You require full source code ownership and freedom from per-seat licensing or vendor lock-in over a long horizon.',
+      'A failed or stalled internal build needs an honest technical audit and a senior team to recover or rebuild it.',
+    ],
+    notRightFor: [
+      'A well-established SaaS product already covers 90% of your needs — configuring it is almost always cheaper than building from scratch.',
+      'Your requirements are genuinely standard (basic CRM, accounting, email marketing) and well served by mature commercial tools.',
+      'You need something live in a few weeks with a small budget — a no-code or template-based approach will get you there faster.',
+      'Requirements are still undefined and changing weekly; invest in discovery or a prototype before committing to a full custom build.',
+      'The application is a short-lived experiment you expect to discard once you have validated the idea.',
+    ],
+  },
+  pricing: [
+    { name: 'Focused Tool', range: '$40k–$90k', detail: 'A single-purpose internal application or customer-facing tool with well-defined requirements, a small number of user roles and limited integrations.' },
+    { name: 'Enterprise Platform', range: '$90k–$250k', detail: 'A multi-role application with complex business logic, several system integrations, a mobile component and a structured discovery, design and QA programme.' },
+    { name: 'Large-Scale Programme', range: '$250k+', detail: 'A mission-critical platform spanning multiple modules, regulated-industry compliance, high-availability infrastructure and embedded delivery alongside your internal team.' },
+  ],
+  definitions: [
+    { term: 'Off-the-shelf software', definition: 'A pre-built commercial product (typically SaaS) designed for a broad market, which you configure rather than build — fast to adopt but constrained to the workflows the vendor anticipated.' },
+    { term: 'Full-stack development', definition: 'Building every layer of an application: the user interface, the server-side business logic, and the database — so the whole system is designed to work together.' },
+    { term: 'Role-based access control (RBAC)', definition: 'A security model where what a user can see and do is governed by the role assigned to them, rather than granting permissions to each person individually.' },
+    { term: 'Architecture decision record (ADR)', definition: 'A short written record of a significant technical decision, the options considered and why one was chosen — giving your team a durable explanation long after the project ends.' },
+    { term: 'Infrastructure-as-code', definition: 'Defining servers, databases and networking in version-controlled configuration files rather than by hand, so environments can be recreated reliably and audited.' },
+    { term: 'CI/CD pipeline', definition: 'Automated steps that test code and deploy it to production whenever changes are made, reducing manual error and making releases routine rather than risky.' },
+  ],
   relatedServices: [
     { title: 'Web & Mobile Applications', href: '/services/web-mobile-apps' },
     { title: 'Flutter Development', href: '/services/flutter-development' },

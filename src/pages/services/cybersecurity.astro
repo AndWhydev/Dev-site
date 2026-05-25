@@ -153,6 +153,68 @@ const data = {
       answer: 'Yes. If you believe you are experiencing an active intrusion, data breach or ransomware attack, contact us immediately. Our incident response team provides triage, containment and forensic investigation support. In the first hours, the priorities are: stopping the spread, preserving forensic evidence, assessing data exposure and restoring critical services. Post-incident, we conduct a root-cause analysis and help you remediate the vulnerabilities that were exploited. We also assist with breach notification obligations under the Australian Notifiable Data Breaches scheme and other applicable regulations.',
     },
   ],
+  serviceName: 'Cybersecurity',
+  slug: 'cybersecurity',
+  summaryStatement: 'Cybersecurity consulting is the practice of finding and helping fix the weaknesses in an organisation\'s systems before attackers do — through penetration testing, security architecture review, compliance gap assessment and incident response — with findings prioritised by real business risk.',
+  comparison: {
+    rightFor: [
+      'You are about to launch a system that handles sensitive or regulated data and want it tested before it goes live.',
+      'You need to satisfy a framework or client requirement — SOC 2, PCI DSS, ISO 27001, the ACSC Essential Eight or APRA CPS 234.',
+      'You suspect your cloud environment has grown beyond what your internal team can audit confidently.',
+      'You want an honest, attacker\'s-eye view of how far an intruder could actually get, not just a scanner report.',
+      'You are responding to, or want to be prepared for, an active security incident or breach notification obligation.',
+    ],
+    notRightFor: [
+      'You have not yet implemented basic hygiene — patching, MFA, backups — where a guided uplift programme delivers more than a penetration test.',
+      'You only need an automated vulnerability scan, which a CSPM or scanning tool can provide far more cheaply on a continuous basis.',
+      'Your system is a low-risk static site with no sensitive data or user accounts.',
+      'You want a compliance certificate stamped without doing the underlying remediation — we will not sign off controls that are not real.',
+      'You need full-time, in-house security staffing rather than a scoped engagement or advisory retainer.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Penetration Test',
+      range: 'A$12,000 – A$40,000',
+      detail: 'A scoped web application, network or cloud penetration test with a prioritised findings report and a remediation retest.',
+    },
+    {
+      name: 'Compliance Readiness',
+      range: 'A$30,000 – A$80,000',
+      detail: 'Gap assessment against SOC 2, ISO 27001, PCI DSS or the Essential Eight, with a remediation roadmap and control implementation support.',
+    },
+    {
+      name: 'Security Advisory Retainer',
+      range: 'From A$4,500 / month',
+      detail: 'An embedded senior security perspective covering architecture review, continuous testing and incident response readiness.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'Essential Eight',
+      definition: 'A set of eight baseline mitigation strategies published by the Australian Cyber Security Centre (ACSC) — covering patching, application control, multi-factor authentication, backups and more — used to measure and improve an organisation\'s cyber resilience.',
+    },
+    {
+      term: 'Penetration test',
+      definition: 'An authorised, simulated attack in which testers actively attempt to exploit vulnerabilities, chain them together and escalate privileges to demonstrate the real-world impact an adversary could achieve.',
+    },
+    {
+      term: 'SIEM',
+      definition: 'Security Information and Event Management — a platform that aggregates logs and security events from across an environment, correlates them and raises alerts so threats can be detected and investigated centrally.',
+    },
+    {
+      term: 'Zero trust',
+      definition: 'A security model that assumes no user, device or network is inherently trusted, requiring every request to be authenticated, authorised and continuously verified regardless of where it originates.',
+    },
+    {
+      term: 'APRA CPS 234',
+      definition: 'An Australian prudential standard requiring regulated financial entities to protect their information assets with security controls commensurate with the threat, and to maintain tested incident response and audit capabilities.',
+    },
+    {
+      term: 'Notifiable Data Breaches scheme',
+      definition: 'The Australian regime, under the Privacy Act 1988, that obliges affected organisations to notify the regulator and impacted individuals when a data breach is likely to result in serious harm.',
+    },
+  ],
   relatedServices: [
     { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
     { title: 'Legacy System Modernisation', href: '/services/legacy-modernisation' },

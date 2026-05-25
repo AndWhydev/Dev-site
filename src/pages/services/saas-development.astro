@@ -143,6 +143,38 @@ const data = {
       answer: 'Yes, and we do this regularly. We begin with a technical audit covering code quality, architecture, security posture, test coverage, deployment processes and documentation. The audit produces a frank assessment of what is well-built, what carries technical debt, and what represents immediate risk — along with a prioritised remediation plan. We have taken over SaaS products ranging from well-structured codebases that simply needed a more senior team to evolve them, to products where the first priority was fixing critical security vulnerabilities before the next customer was onboarded. We will not agree to take over a codebase without first completing the audit, because we need to understand what we are committing to deliver.',
     },
   ],
+  serviceName: 'Custom SaaS',
+  slug: 'saas-development',
+  summaryStatement: 'Custom SaaS development is the end-to-end building of a multi-tenant subscription software product — covering tenancy model, billing, onboarding, analytics and an administrative layer — architected from day one to scale with paying customers rather than to be rebuilt once they arrive.',
+  comparison: {
+    rightFor: [
+      'You are building a commercial software product that many customers will subscribe to, and the early architecture decisions will shape the next five years.',
+      'You need proper multi-tenancy, Stripe-integrated billing and product analytics designed in from the start, not retrofitted later.',
+      'You want activation and onboarding treated as first-class product concerns with measured conversion, not an afterthought.',
+      'You anticipate enterprise customers who will mandate SSO, audit logs and data export for compliance.',
+      'You have inherited a SaaS codebase that needs an honest audit and a senior team to evolve or stabilise it.',
+    ],
+    notRightFor: [
+      'You need an internal tool for one organisation — a bespoke single-tenant application avoids the cost of multi-tenancy you will never use.',
+      'You are validating an idea and a no-code prototype or landing-page test would answer your question faster and cheaper.',
+      'Your billing is a single fixed price with no trials, tiers or metering, where a much simpler payment setup suffices.',
+      'An existing SaaS product already serves your market well; competing on a near-identical feature set rarely justifies a fresh build.',
+      'You require a native mobile app as the core product rather than a subscription web platform.',
+    ],
+  },
+  pricing: [
+    { name: 'MVP Platform', range: '$60k–$120k', detail: 'A multi-tenant foundation with authentication, Stripe billing, admin panel and enough product features to validate with your first customers.' },
+    { name: 'Market-Ready Product', range: '$120k–$280k', detail: 'A full product with differentiated features, instrumented analytics, a closed beta programme and the onboarding flow tuned for activation.' },
+    { name: 'Scaling Platform', range: '$280k+', detail: 'An enterprise-ready SaaS with SSO and SCIM, a public API and webhooks, SOC 2 readiness and ongoing sprint delivery for growth.' },
+  ],
+  definitions: [
+    { term: 'Multi-tenancy', definition: 'An architecture where one running application securely serves many customer organisations (tenants) while keeping each tenant\'s data isolated from the others.' },
+    { term: 'Row-level security (RLS)', definition: 'A database feature that enforces which rows each tenant can access at the database itself, rather than relying only on the application to filter data correctly.' },
+    { term: 'Subscription billing', definition: 'The systems handling recurring payments — trials, plan upgrades and downgrades, prorations, failed-payment recovery and invoicing — typically built on Stripe rather than from scratch.' },
+    { term: 'Activation', definition: 'The point at which a new user first experiences the product\'s core value; the activation rate is the most important early signal of whether a SaaS product will retain customers.' },
+    { term: 'Usage-based metering', definition: 'Measuring how much of a product a customer consumes (such as API calls or seats) so billing can be tied to actual usage rather than a flat fee.' },
+    { term: 'SCIM provisioning', definition: 'A standard that lets enterprise customers automatically create, update and deactivate user accounts in your product from their own identity system.' },
+  ],
   relatedServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'API Development & Integrations', href: '/services/api-development' },

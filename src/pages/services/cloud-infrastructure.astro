@@ -144,6 +144,68 @@ const data = {
       answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. For organisations running business-critical applications 24/7 with strict SLAs, an internal or outsourced SRE function is necessary. We offer managed infrastructure operations as a service — covering 24/7 monitoring with defined response SLAs, incident management, capacity planning, security patch management, and regular architecture reviews. This is typically more cost-effective than building an internal SRE capability for organisations with fewer than 20 engineers. For organisations building internal capability, we offer a transition model: we operate the infrastructure while mentoring your internal team, then hand over operations with a defined competency milestone as the transfer condition.',
     },
   ],
+  serviceName: 'Cloud & DevOps',
+  slug: 'cloud-infrastructure',
+  summaryStatement: 'Cloud and DevOps is the practice of designing, codifying and operating cloud infrastructure on AWS, GCP or Azure so that it is secure, highly available and cost-efficient — with every resource defined as infrastructure-as-code and released through automated, tested pipelines.',
+  comparison: {
+    rightFor: [
+      'You run workloads where downtime has direct financial or reputational consequences and need genuine high availability.',
+      'Your infrastructure is configured by hand in the console and you cannot confidently say what is running or reproduce it.',
+      'You face regulatory obligations — APRA CPS 234, IRAP, ISO 27001, PCI DSS — that demand auditable controls and logging.',
+      'Your cloud bill is growing faster than your usage and you need disciplined cost optimisation.',
+      'You want CI/CD pipelines and observability that let you deploy more often without increasing risk.',
+    ],
+    notRightFor: [
+      'You run a simple static site or low-traffic app — a managed platform (Vercel, Netlify, App Service) is cheaper and lower-overhead.',
+      'A single small server with managed backups already meets your availability and compliance needs.',
+      'You have an in-house SRE team that already operates mature infrastructure-as-code; you may only need a one-off review.',
+      'Your workload is genuinely short-lived or experimental, where the cost of full IaC and pipelines outweighs the benefit.',
+      'You are not prepared to adopt version control and code review for infrastructure — the model only pays off if you do.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Architecture & Setup',
+      range: 'A$30,000 – A$90,000',
+      detail: 'Well-Architected design, infrastructure-as-code implementation, security baseline and CI/CD pipeline for a single environment.',
+    },
+    {
+      name: 'Regulated / Multi-Region',
+      range: 'A$100,000 – A$250,000',
+      detail: 'Multi-AZ or multi-region high availability, compliance controls for APRA CPS 234 or IRAP, full observability and tested disaster recovery.',
+    },
+    {
+      name: 'Managed Operations',
+      range: 'From A$6,000 / month',
+      detail: '24/7 monitoring with response SLAs, incident management, patching, capacity planning and regular architecture reviews.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'IaC (Infrastructure as Code)',
+      definition: 'Defining cloud resources in version-controlled configuration files — using Terraform or AWS CDK — rather than clicking through a console, so infrastructure is reproducible, reviewable and auditable.',
+    },
+    {
+      term: 'Blue-green deployment',
+      definition: 'Running two identical production environments and switching all traffic from the old (blue) to the new (green) at once, allowing instant rollback if the new version misbehaves.',
+    },
+    {
+      term: 'Canary deployment',
+      definition: 'Releasing a new version to a small fraction of traffic first and widening the rollout only if error rates and latency stay healthy, limiting the blast radius of a bad release.',
+    },
+    {
+      term: 'Autoscaling',
+      definition: 'Automatically adding or removing compute capacity in response to demand — reactively to live load or predictively ahead of known peaks — so the system stays performant without paying for idle capacity.',
+    },
+    {
+      term: 'RTO / RPO',
+      definition: 'Recovery Time Objective (how quickly a system must be restored after a failure) and Recovery Point Objective (how much recent data loss is tolerable). Both are agreed upfront and validated through tested disaster recovery.',
+    },
+    {
+      term: 'Observability',
+      definition: 'The combination of metrics, logs and distributed traces that lets a team understand what a system is doing internally and diagnose the root cause of an incident in minutes rather than hours.',
+    },
+  ],
   relatedServices: [
     { title: 'API Development & Integrations', href: '/services/api-development' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },

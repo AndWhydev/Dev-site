@@ -159,6 +159,68 @@ const data = {
       answer: 'In most cases, yes. We have built integrations with SAP, Oracle ERP, Microsoft Dynamics, Salesforce, HubSpot, Workday, ServiceNow and dozens of other enterprise platforms. Each platform has its own integration patterns and limitations: some offer comprehensive REST APIs, others rely on batch file exports, and some (particularly older ERP systems) require careful handling of their concurrency and locking behaviour. We assess integration options early in the engagement and are clear about any constraints or limitations of the integration approach we recommend.',
     },
   ],
+  serviceName: 'Workflow Automation',
+  slug: 'workflow-automation',
+  summaryStatement: 'Workflow automation is the practice of replacing manual, repetitive business processes with reliable, auditable software that connects systems via stable APIs and event-driven integration, routing only genuine edge cases to human reviewers.',
+  comparison: {
+    rightFor: [
+      'You have high-volume, rule-based processes — invoice handling, onboarding, ticket triage, approvals — that consume skilled people\'s time.',
+      'Data is being manually re-entered between systems, introducing errors and reconciliation overhead.',
+      'You need a complete, timestamped audit trail of who did what and when for compliance.',
+      'You want automation built as version-controlled, tested software your team can own and extend, not a fragile no-code script.',
+      'Your processes span several platforms (CRM, ERP, HRIS, finance) that need to stay in sync automatically.',
+    ],
+    notRightFor: [
+      'The process is low-volume or runs only a few times a month — the build cost may never pay back.',
+      'The process genuinely requires human judgement at most steps; automating it would only add brittleness.',
+      'The process is still changing weekly — stabilise and document it before automating, or you will automate a moving target.',
+      'A single off-the-shelf SaaS feature or a native integration already does the job; buying beats building here.',
+      'You only need a one-off data migration rather than a recurring workflow — a script or ETL job is the simpler answer.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Single Workflow',
+      range: 'A$15,000 – A$35,000',
+      detail: 'Automating one high-value process end to end, including integration, error handling, monitoring and handover.',
+    },
+    {
+      name: 'Integration Programme',
+      range: 'A$45,000 – A$120,000',
+      detail: 'Connecting multiple systems and automating a related set of workflows with a shared integration architecture and audit trail.',
+    },
+    {
+      name: 'Automation Retainer',
+      range: 'From A$3,500 / month',
+      detail: 'Ongoing monitoring, maintenance and incremental automation of new processes as your operations evolve.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'Idempotency',
+      definition: 'A property of an operation that produces the same result whether it runs once or many times, so re-running a failed workflow step never duplicates an action such as creating a record or sending a payment.',
+    },
+    {
+      term: 'Webhook',
+      definition: 'An automated message one system sends to another the moment an event happens — for example, a payment platform notifying your workflow that an invoice was paid — enabling real-time, event-driven automation.',
+    },
+    {
+      term: 'Orchestration',
+      definition: 'Coordinating multiple automated steps, across multiple systems, into a single reliable workflow — managing order, dependencies, retries and failure handling. Tools include Apache Airflow, Temporal and AWS Step Functions.',
+    },
+    {
+      term: 'RPA',
+      definition: 'Robotic Process Automation — software that mimics a human clicking and typing in an application\'s user interface. Useful for legacy systems with no API, but fragile because it breaks when the interface changes.',
+    },
+    {
+      term: 'Dead-letter queue',
+      definition: 'A holding area for workflow items that could not be processed after all retries, so failures are captured and visible for investigation rather than silently lost.',
+    },
+    {
+      term: 'Human-in-the-loop',
+      definition: 'A workflow design that automatically routes exceptions, edge cases and high-risk decisions to a person for review, combining the speed of automation with human judgement where it matters.',
+    },
+  ],
   relatedServices: [
     { title: 'Data Analytics & Business Intelligence', href: '/services/data-analytics' },
     { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },

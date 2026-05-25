@@ -143,6 +143,38 @@ const data = {
       answer: 'Yes. For organisations managing multiple APIs consumed by internal teams or external partners, a developer portal significantly reduces the friction and support burden associated with API onboarding. We build portals using Backstage (Spotify\'s open-source developer portal framework) or Stoplight Workspace, depending on your scale and requirements. The portal provides interactive API documentation, self-service API key issuance, usage analytics per consumer, and a changelog for tracking API evolution. For organisations with complex B2B partner integration programs, a developer portal can reduce integration time for new partners from weeks to days.',
     },
   ],
+  serviceName: 'API Development',
+  slug: 'api-development',
+  summaryStatement: 'API development is the design and engineering of the interfaces that let software systems exchange data reliably — RESTful, GraphQL and event-driven APIs that are consistent, secure, documented and able to evolve without breaking the systems that depend on them.',
+  comparison: {
+    rightFor: [
+      'You need to expose capabilities to partners or external developers and want an API that is a pleasure to integrate against.',
+      'Multiple internal systems must communicate reliably, and point-to-point integrations have become a maintenance liability.',
+      'You operate in a regulated space (CDR/Open Banking, HL7 FHIR, government standards) with specific API technical requirements.',
+      'You need high-concurrency, observable APIs with resilience patterns so an upstream outage does not cascade into your platform.',
+      'You are connecting to legacy systems with poor or no APIs and need a clean, consistent contract in front of them.',
+    ],
+    notRightFor: [
+      'A vendor already provides a well-supported API that meets your needs — integrate with it rather than building your own layer.',
+      'You have a single application talking to a single database with no external consumers; a separate API layer adds needless overhead.',
+      'A one-off data export or import is required — a scheduled file transfer or script is simpler than a maintained API.',
+      'Your integration is low-volume and internal, where a managed integration platform (iPaaS) may be more cost-effective than custom work.',
+      'You have not yet decided what capabilities the API should expose; design discovery should come before engineering.',
+    ],
+  },
+  pricing: [
+    { name: 'Single API', range: '$25k–$60k', detail: 'A well-scoped REST or GraphQL API over a single system, with OpenAPI specification, authentication, documentation and monitoring.' },
+    { name: 'Integration Layer', range: '$60k–$140k', detail: 'Multiple APIs plus third-party integrations with resilience patterns, an event-driven component and a contract-tested delivery process.' },
+    { name: 'API Platform', range: '$140k+', detail: 'A federated gateway or integration hub serving many consumers, with a developer portal, consent and access controls, and regulated-industry compliance.' },
+  ],
+  definitions: [
+    { term: 'REST API', definition: 'A widely used style of API that exposes data and actions as addressable resources over standard HTTP, making it easy to consume, cache and reason about.' },
+    { term: 'GraphQL', definition: 'A query language for APIs that lets each client request exactly the data it needs in a single call, avoiding the over- and under-fetching common with fixed REST endpoints.' },
+    { term: 'OpenAPI specification', definition: 'A machine-readable contract describing every endpoint, request and response of an API, used to generate documentation, client libraries and mock servers from one source of truth.' },
+    { term: 'Event-driven architecture', definition: 'A pattern where systems communicate asynchronously by publishing and consuming events through a message broker, decoupling them so neither has to wait on the other.' },
+    { term: 'Circuit breaker', definition: 'A resilience mechanism that stops calling a failing dependency for a period, preventing one struggling system from dragging down everything connected to it.' },
+    { term: 'Idempotency', definition: 'Designing an operation so that repeating the same request produces the same result, which is essential for safely retrying calls without duplicating actions like payments.' },
+  ],
   relatedServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },

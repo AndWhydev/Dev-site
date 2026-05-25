@@ -159,6 +159,68 @@ const data = {
       answer: 'Yes, and it is something we incorporate from the outset rather than treating as an afterthought. Compliance frameworks impose specific requirements on data encryption (at rest and in transit), access control, audit logging, backup retention and data residency. We are familiar with HIPAA, PCI-DSS, SOC 2, ISO 27001 and the Australian Privacy Act requirements as they relate to database infrastructure, and we design solutions that satisfy your compliance obligations without unnecessary complexity.',
     },
   ],
+  serviceName: 'Database Architecture',
+  slug: 'database-architecture',
+  summaryStatement: 'Database architecture is the engineering discipline of designing schemas, indexing and storage topologies — and optimising queries and migrations — so that a database performs reliably at enterprise scale and remains maintainable as data volumes grow into the billions of records.',
+  comparison: {
+    rightFor: [
+      'Query times are creeping from milliseconds into seconds, or writes are slowing as indexes bloat.',
+      'A schema that worked at thousands of rows is becoming a liability at hundreds of millions or billions.',
+      'You need a zero-downtime migration — between engines, or onto a partitioned or replicated topology — on a live production system.',
+      'You require replication, failover and high availability to meet uptime commitments.',
+      'You have compliance obligations (PCI DSS, ISO 27001, the Privacy Act 1988) that shape encryption, access control and audit logging at the data layer.',
+    ],
+    notRightFor: [
+      'Your dataset is small and your queries are already fast — adding indexes yourself or upgrading the instance size is the cheaper fix.',
+      'The real bottleneck is application code or N+1 query patterns rather than the database itself.',
+      'You need analytical reporting and dashboards rather than transactional performance — data analytics is the better-fitted service.',
+      'A fully managed service with default settings already meets your performance and availability needs.',
+      'You are early-stage and still changing the data model weekly; premature optimisation will be wasted effort.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Performance Optimisation',
+      range: 'A$18,000 – A$45,000',
+      detail: 'Audit of an existing system with a set of indexing, query and configuration improvements, typically over four to six weeks.',
+    },
+    {
+      name: 'Architecture Redesign',
+      range: 'A$60,000 – A$160,000',
+      detail: 'Schema redesign, partitioning or sharding, replication topology and a tested zero-downtime migration for a complex production system.',
+    },
+    {
+      name: 'Ongoing DBA Retainer',
+      range: 'From A$4,000 / month',
+      detail: 'Continued performance monitoring, capacity planning, migration support and senior database advisory for your team.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'Normalisation',
+      definition: 'Organising a relational schema to eliminate redundant data and enforce integrity, so each fact is stored once. Selective denormalisation is sometimes applied afterwards to optimise specific read-heavy access patterns.',
+    },
+    {
+      term: 'Sharding',
+      definition: 'Splitting a single large dataset horizontally across multiple database servers, so each holds a portion of the rows, allowing the system to scale beyond the capacity of one machine.',
+    },
+    {
+      term: 'Index',
+      definition: 'A data structure that lets the database find rows matching a query without scanning the whole table. Well-chosen indexes speed reads dramatically but add overhead to writes, so they must be balanced against access patterns.',
+    },
+    {
+      term: 'Replication',
+      definition: 'Maintaining synchronised copies of a database across multiple servers or regions to provide high availability, automatic failover and read scaling.',
+    },
+    {
+      term: 'Execution plan',
+      definition: 'The step-by-step strategy the database chooses to satisfy a query. Analysing it (via EXPLAIN ANALYZE and similar tools) reveals why a query is slow and where an index or rewrite will help.',
+    },
+    {
+      term: 'Polyglot persistence',
+      definition: 'Using more than one type of data store — relational, document, graph, time-series or columnar — each chosen for the workload it handles best, rather than forcing everything into a single engine.',
+    },
+  ],
   relatedServices: [
     { title: 'Data Analytics & Business Intelligence', href: '/services/data-analytics' },
     { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },

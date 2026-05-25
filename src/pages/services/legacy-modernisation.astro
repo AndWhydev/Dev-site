@@ -159,6 +159,38 @@ const data = {
       answer: 'This is an important question that is often not asked early enough. Our modernisation programmes include structured knowledge transfer to the engineers who will own the replacement system. For organisations whose internal team maintained the legacy system, we work alongside them throughout the programme — they contribute domain knowledge, we contribute modern engineering practices, and the result is a team that is capable of owning the new system rather than dependent on external consultants. The mix of upskilling and knowledge transfer is a core part of our methodology, not an optional extra.',
     },
   ],
+  serviceName: 'Legacy Modernisation',
+  slug: 'legacy-modernisation',
+  summaryStatement: 'Legacy modernisation is the phased replacement of ageing business-critical systems using incremental patterns such as the Strangler Fig, running old and new in parallel so technical debt is eliminated and capabilities are unlocked without a high-risk big-bang cutover.',
+  comparison: {
+    rightFor: [
+      'A core system runs on end-of-life technology, is hard to recruit for, and now constrains your ability to ship features or stay compliant.',
+      'You cannot tolerate a big-bang cutover and need old and new running in parallel with a tested rollback at every stage.',
+      'Critical business logic is undocumented and locked in code only a shrinking pool of specialists understands.',
+      'You need to migrate years of transactional data with full reconciliation against source records.',
+      'A previous modernisation has stalled or gone over budget and needs an honest assessment and a credible path forward.',
+    ],
+    notRightFor: [
+      'The legacy system still meets your needs well and modernisation would be change for its own sake — leave a working system alone.',
+      'A vendor-supported upgrade path or a like-for-like SaaS replacement exists and is genuinely cheaper than a custom rebuild.',
+      'The system is small and self-contained enough that a straightforward rewrite carries less risk than an incremental migration.',
+      'You are seeking a lift-and-shift to the cloud only, with no need to address the underlying architecture or technical debt.',
+      'The application is scheduled for retirement soon, where continued maintenance is more sensible than investment in modernising it.',
+    ],
+  },
+  pricing: [
+    { name: 'Assessment & Roadmap', range: '$25k–$60k', detail: 'A technical assessment of the legacy system, business-logic extraction and a phased migration roadmap your leadership can evaluate and approve.' },
+    { name: 'Phased Migration', range: '$150k–$500k', detail: 'Incremental service extraction with parallel running, data migration and validation, delivered as independent slices over a multi-month programme.' },
+    { name: 'Enterprise Programme', range: '$500k+', detail: 'A multi-year modernisation of a mainframe or large monolith across departments, with regulated-industry validation and structured knowledge transfer.' },
+  ],
+  definitions: [
+    { term: 'Strangler Fig pattern', definition: 'An incremental approach where a new system gradually takes over functions from the old one piece by piece, until the legacy system can be safely switched off — avoiding a single risky cutover.' },
+    { term: 'Technical debt', definition: 'The accumulated cost of past shortcuts and ageing design decisions that make a system slower and riskier to change than it should be.' },
+    { term: 'Parallel running', definition: 'Operating the legacy and replacement systems side by side on real transactions and comparing their outputs, to build confidence before decommissioning the old one.' },
+    { term: 'Big-bang cutover', definition: 'Switching entirely from an old system to a new one in a single event — fast but high-risk, with no easy way back if something fails.' },
+    { term: 'Modular monolith', definition: 'A single deployable application organised into well-separated internal modules; often simpler to operate than microservices while still being maintainable.' },
+    { term: 'Data reconciliation', definition: 'Systematically checking that migrated data matches the original source, at both a record level and a statistical level, before the legacy system is retired.' },
+  ],
   relatedServices: [
     { title: 'Enterprise Software Solutions', href: '/services/enterprise-software' },
     { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },

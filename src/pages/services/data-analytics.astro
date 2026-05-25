@@ -159,6 +159,68 @@ const data = {
       answer: 'Yes. We offer analytics managed service retainers that include pipeline monitoring and maintenance, data model updates as your source systems change, dashboard evolution as your business questions evolve, and access to our data engineering team for ad hoc analytical projects. Many clients find that a retainer provides better value than maintaining full-time data engineering headcount, particularly for organisations whose analytics needs are significant but not constant. Retainer arrangements are scoped around your specific ongoing needs.',
     },
   ],
+  serviceName: 'Data Analytics',
+  slug: 'data-analytics',
+  summaryStatement: 'Data analytics is the engineering practice of moving data from source systems into a central warehouse, transforming it into clean, consistent models, and presenting it through dashboards and predictive models so an organisation can make decisions from evidence rather than instinct.',
+  comparison: {
+    rightFor: [
+      'You have data spread across multiple source systems and no single, trusted view of your business metrics.',
+      'Leadership is making material decisions on gut feel because the reporting is slow, inconsistent or untrusted.',
+      'You want predictive capability — demand forecasting, churn prediction, anomaly detection — built on your own historical data.',
+      'Your existing BI tool underdelivers because the data underneath it is unreliable or poorly modelled.',
+      'You need analytics that comply with the Privacy Act 1988 around personal information.',
+    ],
+    notRightFor: [
+      'You have a single application database and a handful of reports — a few well-written SQL views or your application\'s built-in reporting will be cheaper and simpler.',
+      'Your core need is operational transactional performance, in which case database architecture work is the better starting point.',
+      'Your data quality at source is so poor that fixing the source systems must come first — a warehouse will only surface the problems faster.',
+      'You want a generic off-the-shelf dashboard tool deployed with no custom modelling; a vendor licence and a contractor will suit better.',
+      'The volume and frequency of questions is genuinely low — a part-time analyst with a spreadsheet may meet the need.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Foundation',
+      range: 'From A$25,000',
+      detail: 'Ingestion from three to five core sources, a basic transformation layer and a set of priority dashboards, typically delivered over eight to twelve weeks.',
+    },
+    {
+      name: 'Scale',
+      range: 'A$60,000 – A$150,000',
+      detail: 'A full warehouse with many source systems, a governed semantic layer, data quality monitoring and self-service enablement for your analysts.',
+    },
+    {
+      name: 'Managed Analytics',
+      range: 'From A$4,000 / month',
+      detail: 'Ongoing pipeline monitoring, data model maintenance, dashboard evolution and access to our data engineering team on a retainer.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'ETL / ELT',
+      definition: 'Extract, Transform, Load (or Extract, Load, Transform) — the process of moving data out of source systems, reshaping it into a usable form, and loading it into a warehouse. Modern stacks often load raw data first and transform it in the warehouse (ELT).',
+    },
+    {
+      term: 'Data warehouse',
+      definition: 'A central database optimised for analytical queries rather than transactions, where data from many systems is consolidated into a structured, query-ready form. Examples include Snowflake, BigQuery and Redshift.',
+    },
+    {
+      term: 'Dimensional model',
+      definition: 'A way of structuring warehouse data into fact tables (measurable events such as sales) and dimension tables (descriptive context such as customer or product), designed to make analytical queries fast and intuitive.',
+    },
+    {
+      term: 'Semantic layer',
+      definition: 'A governed definition layer that fixes the meaning of business metrics — so that "revenue" or "active customer" means exactly the same thing in every dashboard and report across the organisation.',
+    },
+    {
+      term: 'Data lineage',
+      definition: 'A traceable record of where each value in a report came from and how it was transformed along the way, making numbers auditable and trustworthy.',
+    },
+    {
+      term: 'Idempotent pipeline',
+      definition: 'A data pipeline that produces the same correct result no matter how many times it is re-run, so a retry after a failure never duplicates or corrupts data.',
+    },
+  ],
   relatedServices: [
     { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
     { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },

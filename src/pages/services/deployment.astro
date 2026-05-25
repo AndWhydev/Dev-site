@@ -1,0 +1,211 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'Deployment & Release Engineering | CI/CD & DevOps | All Webbed Labs',
+  metaDescription: 'CI/CD pipelines, containerisation, infrastructure as code, zero-downtime and canary releases, rollback and observability. Release engineering that makes deploying to production routine, not risky.',
+  category: 'Delivery',
+  serviceName: 'Deployment',
+  slug: 'deployment',
+  heroHeadline: 'Make Shipping to Production Boring',
+  heroTagline: 'CI/CD pipelines, containerisation, infrastructure as code and zero-downtime release strategies that turn deployments from high-stakes events into routine, reversible operations.',
+  summaryStatement: 'Deployment and release engineering is the practice of automating how software moves from a code change into production safely, repeatably and with the ability to roll back if something goes wrong.',
+  description: [
+    'The most dangerous moment in a software product is the deploy. When releases are manual, infrequent and poorly understood, every one becomes a tense event performed by the one person who knows the runbook, usually late at night to minimise the blast radius. The irony is that this caution makes things worse: large, infrequent releases bundle dozens of changes together, so when something breaks it is hard to tell which change caused it and harder still to undo. Good release engineering inverts this. By automating the entire path from commit to production and making deploys small, frequent and reversible, we make shipping so routine that it stops being an event at all — which is exactly the point.',
+    'Our deployment practice builds the full delivery chain. We containerise applications with Docker so they run identically on a developer laptop and in production, and orchestrate them on Kubernetes or AWS ECS depending on your scale and operational appetite. Infrastructure is defined as code in Terraform, so your entire environment is version-controlled, reviewable and reproducible rather than a hand-assembled configuration nobody fully understands. CI/CD pipelines in GitHub Actions or GitLab CI build, test and deploy automatically, with progressive rollout strategies — blue-green and canary releases — that expose new versions to a fraction of traffic before committing fully, and automated rollback when health checks fail. We integrate observability through Sentry, Datadog and structured logging so you see the impact of a release in real time, and manage secrets properly so credentials never live in code or chat. The result is a delivery system your team can operate with confidence, where deploying ten times a day is safer than deploying once a month. We also right-size the architecture to your actual needs rather than reaching for the most fashionable tooling: not every team needs Kubernetes, and a simpler platform that your engineers can confidently operate often beats a sophisticated one they cannot. This work pairs naturally with our cloud infrastructure practice, which provisions and hardens the platforms these pipelines deploy onto, and with our QA and testing practice, which supplies the automated quality gates these pipelines depend on to deploy safely.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+      title: 'Fully Automated Pipelines',
+      description: 'Every commit flows through an automated pipeline that builds, tests and deploys without manual steps. Removing the human from the deploy path removes the single largest source of release errors — the forgotten step, the wrong environment, the untested hotfix — and makes every deployment identical and auditable.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>',
+      title: 'Containerised & Reproducible',
+      description: 'Docker containers package your application with its exact dependencies so it behaves the same everywhere. The "works on my machine" class of problem disappears, and environments from local development through to production become reproducible artifacts rather than carefully tended, divergent snowflakes.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      title: 'Infrastructure as Code',
+      description: 'We define your infrastructure in Terraform so environments are version-controlled, peer-reviewed and reproducible. You can stand up an identical staging environment in minutes, recover from disaster predictably, and review infrastructure changes in the same pull-request workflow you use for application code.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>',
+      title: 'Zero-Downtime Releases',
+      description: 'Blue-green and rolling deployments mean new versions go live without a maintenance window or dropped requests. Users never see an outage during a deploy, which removes the pressure to batch changes and lets you release whenever a change is ready rather than waiting for an off-hours slot.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 0 3-3m-3 3L9 5"/><path d="M5 12H2m20 0h-3"/><path d="M12 22v-6m0 0 3 3m-3-3-3 3"/><circle cx="12" cy="12" r="3"/></svg>',
+      title: 'Canary Releases & Safe Rollback',
+      description: 'Canary deployments route a small slice of traffic to the new version first, watching error rates and latency before a full rollout. If health checks degrade, the pipeline rolls back automatically. A bad release becomes a non-event measured in seconds rather than a multi-hour incident.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: 'Observability From Day One',
+      description: 'We wire in error tracking with Sentry, metrics and tracing with Datadog, and structured logging so the impact of every release is visible immediately. Deploy markers correlate code changes with shifts in error rates and latency, so when something moves you know which release moved it.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'SaaS & Technology',
+      title: 'From Monthly Manual Releases to Continuous Delivery',
+      description: 'A product team stuck with risky monthly deploys wants to ship continuously. The work involves containerising the application, building a GitHub Actions pipeline with automated test gates, and introducing blue-green deployment with automated rollback — so small changes can go to production daily with each release small enough to reason about and reverse instantly.',
+    },
+    {
+      industry: 'Financial Services & Fintech',
+      title: 'Auditable, Reproducible Environments for Compliance',
+      description: 'A regulated business needs every infrastructure and deployment change to be reviewable and reproducible. The approach is to codify all infrastructure in Terraform, route every change through peer-reviewed pull requests with full audit trails, and manage secrets through a dedicated vault — giving auditors a clear record of who changed what, when and why.',
+    },
+    {
+      industry: 'eCommerce & Retail',
+      title: 'Canary Releases to De-Risk Peak Trading',
+      description: 'A retailer cannot afford a bad deploy during a high-traffic sale period. The solution is canary releases on Kubernetes that expose new versions to a small traffic slice while observability watches error and latency thresholds, automatically rolling back on degradation — so the team can keep shipping improvements right up to peak without betting the sale on each release.',
+    },
+  ],
+  technologies: [
+    'GitHub Actions', 'GitLab CI', 'Docker', 'Kubernetes', 'AWS ECS', 'Terraform',
+    'ArgoCD', 'Helm', 'AWS / GCP / Azure', 'Sentry', 'Datadog', 'HashiCorp Vault',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Delivery Assessment & Target State',
+      duration: 'Weeks 1–2',
+      description: 'We map how code currently reaches production, identify the manual steps, bottlenecks and failure points, and define a target delivery model appropriate to your team, compliance needs and operational maturity. Not everyone needs Kubernetes — we right-size the architecture to your reality.',
+    },
+    {
+      step: '02',
+      title: 'Containerisation & Build Pipeline',
+      duration: 'Weeks 2–4',
+      description: 'We containerise applications with Docker, establish reproducible build steps and a container registry, and create the foundational CI pipeline in GitHub Actions or GitLab CI that builds and tests every change automatically.',
+    },
+    {
+      step: '03',
+      title: 'Infrastructure as Code',
+      duration: 'Weeks 3–6',
+      description: 'We codify your environments in Terraform, bringing networking, compute, databases and orchestration under version control. Secrets are moved into a managed store such as HashiCorp Vault or a cloud secrets manager, out of code and configuration files.',
+    },
+    {
+      step: '04',
+      title: 'Deployment Strategy & Rollback',
+      duration: 'Weeks 5–8',
+      description: 'We implement the deployment strategy that fits — rolling, blue-green or canary — orchestrated through Kubernetes, ECS or ArgoCD, with health checks gating promotion and automated rollback on failure. Zero-downtime releases become the default behaviour, not a special case.',
+    },
+    {
+      step: '05',
+      title: 'Observability & Alerting',
+      duration: 'Week 7–9',
+      description: 'We integrate error tracking, metrics, distributed tracing and structured logging through Sentry and Datadog, with deploy markers and alert thresholds. You gain real-time visibility into the effect of each release and early warning before users feel a problem.',
+    },
+    {
+      step: '06',
+      title: 'Runbooks, Handover & Coaching',
+      duration: 'Final week',
+      description: 'We document the pipeline, incident-response runbooks and rollback procedures, then coach your team to operate and extend the system confidently. The objective is an autonomous team, not an ongoing dependency on us.',
+    },
+  ],
+  industries: [
+    'SaaS & Technology',
+    'Financial Services & Fintech',
+    'eCommerce & Retail',
+    'Government & Public Sector',
+    'Healthcare & Health Tech',
+    'Media & Streaming',
+    'Logistics & Supply Chain',
+    'Education & EdTech',
+  ],
+  faqs: [
+    {
+      question: 'What is the difference between continuous integration, delivery and deployment?',
+      answer: 'Continuous integration means every code change is automatically built and tested as it merges, catching conflicts and regressions early. Continuous delivery extends that so every change is automatically prepared for release and could be deployed at the push of a button, with a human making the final call. Continuous deployment goes one step further: every change that passes the pipeline is released to production automatically, with no manual gate. Most teams benefit from continuous integration and delivery first, adopting full continuous deployment once their test coverage and observability are strong enough to trust it.',
+    },
+    {
+      question: 'Do we really need Kubernetes?',
+      answer: 'Often not. Kubernetes is powerful but carries significant operational complexity, and many teams are better served by simpler platforms like AWS ECS, managed container services, or even a well-configured set of virtual machines. We recommend Kubernetes when you genuinely need its capabilities — complex multi-service orchestration, fine-grained scaling, or a platform team to operate it — and steer you away from it when it would be an expensive distraction. Choosing the right level of complexity is part of the job.',
+    },
+    {
+      question: 'What does a zero-downtime deployment actually involve?',
+      answer: 'Zero-downtime deployment means rolling out a new version without dropping requests or showing users an outage. Practically, this involves running old and new versions side by side, draining connections gracefully from the old version, and only routing traffic to the new version once health checks confirm it is ready. Blue-green deployment keeps two complete environments and switches traffic between them; rolling deployment replaces instances gradually. Both require the application to handle running two versions briefly, which we account for in the deployment design and database migration strategy.',
+    },
+    {
+      question: 'How do canary releases and rollback work together?',
+      answer: 'A canary release sends a small percentage of production traffic to the new version while the majority stays on the proven one. Observability watches the canary\'s error rates, latency and key metrics against the baseline. If the canary looks healthy, traffic shifts to it progressively; if metrics degrade, the pipeline automatically rolls traffic back to the previous version before most users are affected. Together these turn a risky all-or-nothing deploy into a controlled, observable and reversible process.',
+    },
+    {
+      question: 'How do you handle secrets and credentials securely?',
+      answer: 'Secrets never belong in code, configuration files or chat. We move credentials into a managed secrets store — HashiCorp Vault or a cloud-native service such as AWS Secrets Manager — where they are encrypted, access-controlled and auditable, and injected into applications at runtime rather than baked into images. We also set up automated rotation where the platform supports it and integrate secret scanning into CI to catch any credential accidentally committed before it reaches a repository history.',
+    },
+    {
+      question: 'Can you improve our existing pipeline rather than rebuild it?',
+      answer: 'Yes, and that is frequently the right call. We start by assessing what you already have, identifying the specific weak points — flaky builds, manual deploy steps, missing rollback, poor observability — and improving them incrementally. A full rebuild is only warranted when the existing setup is fundamentally unsuited to your needs. Wherever possible we deliver value through targeted improvements that your team can absorb without a disruptive migration.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'Teams whose deployments are manual, infrequent and stressful events',
+      'Products that need to ship frequently without taking maintenance windows',
+      'Organisations with compliance needs requiring auditable, reproducible infrastructure',
+      'Engineering teams scaling beyond what hand-managed servers can sustain',
+      'Companies that have suffered a bad release and want safe, reversible deploys',
+    ],
+    notRightFor: [
+      'Static brochure sites where a simple host or CDN deploy is entirely sufficient',
+      'Very early prototypes where investing in delivery automation is premature',
+      'Teams seeking Kubernetes for its own sake without the scale or staff to justify it',
+      'Organisations unwilling to maintain the pipeline or adopt new release practices',
+      'Situations needing application features built, where no deployment problem yet exists',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Delivery Assessment',
+      range: 'From $7,000 AUD',
+      detail: 'A review of your current build, test and deploy process delivered as a prioritised improvement roadmap and target-state architecture you can act on independently.',
+    },
+    {
+      name: 'Pipeline & IaC Build',
+      range: '$25,000 – $90,000 AUD',
+      detail: 'End-to-end delivery setup — containerisation, CI/CD pipelines, Terraform infrastructure, deployment strategy and observability — scoped to your stack and scale.',
+    },
+    {
+      name: 'DevOps Retainer',
+      range: 'From $8,000 AUD / month',
+      detail: 'Ongoing release engineering and platform support — maintaining pipelines, improving observability, and on-hand for incident response. Scoped to your release cadence and reliability targets.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'CI/CD',
+      definition: 'Continuous Integration and Continuous Delivery/Deployment — the automated practice of building, testing and releasing code changes through a pipeline, so software reaches production frequently and reliably.',
+    },
+    {
+      term: 'Containerisation',
+      definition: 'Packaging an application together with its dependencies into a portable, isolated unit (a container) that runs identically across environments, typically using Docker.',
+    },
+    {
+      term: 'Infrastructure as Code (IaC)',
+      definition: 'Defining and provisioning infrastructure — servers, networks, databases — through version-controlled configuration files such as Terraform, rather than manual setup, making environments reproducible and auditable.',
+    },
+    {
+      term: 'Blue-Green Deployment',
+      definition: 'A release strategy running two identical production environments. New code goes live on the idle environment, and traffic is switched over only once it is verified healthy, enabling instant rollback.',
+    },
+    {
+      term: 'Canary Release',
+      definition: 'Gradually exposing a new version to a small subset of users or traffic while monitoring its behaviour, before rolling it out fully or rolling it back automatically if problems appear.',
+    },
+    {
+      term: 'Observability',
+      definition: 'The ability to understand a system\'s internal state from its outputs — logs, metrics and traces — so issues can be detected, diagnosed and correlated with specific deployments.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },
+    { title: 'QA & Testing', href: '/services/qa-testing' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8"/><polyline points="2 8 12 13 22 8"/><circle cx="18" cy="18" r="3"/><path d="m21 21-1.5-1.5"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

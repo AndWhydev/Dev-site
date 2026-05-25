@@ -1,0 +1,221 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'DeFi Platform Development | Lending, Staking & AMM | All Webbed Labs',
+  metaDescription: 'Decentralised finance platform development: lending, staking, yield and AMM/DEX components with Chainlink oracle integration, economic security review and audited Solidity contracts.',
+  category: 'Web3 & Blockchain',
+  serviceName: 'DeFi Platform',
+  slug: 'defi-platform',
+  heroHeadline: 'DeFi Platforms Built With Economics and Security Taken Seriously',
+  heroTagline: 'Lending, staking, yield and AMM components — designed with explicit attack modelling, oracle integration and audit-readiness, not optimism.',
+  summaryStatement: 'DeFi platform development is the design and engineering of decentralised finance protocols — such as lending markets, staking systems, yield strategies and automated market makers — where smart contracts hold pooled user funds and execute financial logic autonomously, making economic security as critical as code correctness.',
+  description: [
+    'Decentralised finance replaces trusted intermediaries with smart contracts that hold pooled capital and execute financial logic — lending and borrowing against collateral, providing liquidity to automated market makers, staking assets for yield, or routing value through composable strategies. The appeal is real: open access, transparent rules and programmable settlement without a counterparty deciding whether to honour the contract. The danger is equally real. A DeFi protocol is a public, value-bearing system that attackers probe continuously, and the failure modes are not only ordinary code bugs but economic ones — oracle manipulation, flash-loan-funded attacks, liquidity drain, interest-rate or collateral-ratio assumptions that hold until a market move proves them wrong. The losses across the ecosystem from these attacks run into the billions. We build DeFi platforms for clients who want the upside without pretending the risk away.',
+    'Our DeFi practice spans the whole stack. On-chain, we design protocol mechanics and token economics, model the attack surface explicitly — flash loans, oracle manipulation, governance capture, sandwiching and reentrancy — and implement contracts in Solidity using OpenZeppelin primitives with comprehensive Foundry test suites including fuzz and invariant testing of accounting and solvency properties. We integrate price data through Chainlink and other decentralised oracle networks rather than single-source feeds, because a manipulable price is the most common root cause of DeFi exploits. Off-chain, we build the front end with wagmi and viem, index protocol state through The Graph, and connect wallet flows that are clear about what a user is signing. We coordinate independent security audits and treat their findings as blocking. Above all we are candid about the Australian regulatory context: a DeFi product touching the public may engage ASIC oversight under the Corporations Act and AUSTRAC obligations around AML/CTF, and these are questions for specialist legal counsel that should be answered before launch, not after. We build the system; we work alongside your lawyers; and we will tell you directly when the prudent answer is to slow down.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: 'Economic Attack Modelling',
+      description: 'Before implementation we model the economic attack surface: flash-loan-funded price manipulation, oracle staleness, collateral-ratio assumptions under volatility, governance capture and sandwich attacks. Sound protocol economics are designed deliberately, not discovered through an incident.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      title: 'Robust Oracle Integration',
+      description: 'A manipulable price feed is the single most common root cause of DeFi exploits. We integrate decentralised oracles such as Chainlink, use time-weighted average prices where appropriate, add staleness and deviation checks, and avoid spot prices from a single pool that a flash loan can move.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+      title: 'Solvency Invariants Under Test',
+      description: 'We express the protocol\'s core financial guarantees as invariants — total deposits always cover liabilities, no path mints value from nothing — and assert them with Foundry fuzz and invariant testing across thousands of randomised call sequences, not just hand-picked scenarios.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Audit-Coordinated Deployment',
+      description: 'No DeFi protocol of ours reaches mainnet without an independent audit. We prepare contracts to be audit-efficient, coordinate the engagement, treat findings as blocking, and remediate every issue before deployment behind multi-signature and timelock controls.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+      title: 'Front End That Tells the Truth',
+      description: 'Built with wagmi and viem, our interfaces make wallet connection, network switching, approvals and transaction state legible — showing users exactly what they are signing, what it will cost and what can go wrong, rather than hiding risk behind a single confirm button.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Regulatory-Aware Architecture',
+      description: 'We design systems that can accommodate the controls your legal advisers identify — KYC gating at the application layer, allowlisting, geofencing, pause functions — so ASIC and AUSTRAC considerations can be implemented as the product evolves rather than retrofitted under pressure.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Fintech',
+      title: 'Over-Collateralised Lending Market',
+      description: 'A fintech building a lending market for a defined set of assets needs deposit, borrow, repay and liquidation logic backed by reliable pricing. An over-collateralised design with Chainlink price feeds, conservative collateral factors, a liquidation incentive and an interest-rate model tested against volatility scenarios provides the core mechanics while keeping the protocol solvent through market moves.',
+    },
+    {
+      industry: 'Web3 & DAOs',
+      title: 'Staking and Reward Distribution',
+      description: 'A token issuer wanting to reward long-term holders can deploy a staking system where users lock tokens and accrue rewards over time. Carefully designed reward accounting, claim logic and exit handling — tested for the accounting edge cases that have broken many staking contracts — let the issuer distribute incentives without inadvertently allowing reward draining or double-claims.',
+    },
+    {
+      industry: 'Digital Asset Platforms',
+      title: 'AMM/DEX Liquidity Component',
+      description: 'A platform that needs on-chain swap functionality can integrate an automated market maker with liquidity pools, swap routing and fee accrual for liquidity providers. Slippage protection, deadline checks and protection against sandwich attacks are built into the swap path, and the pool accounting is fuzz-tested to confirm value is conserved across arbitrary trade sequences.',
+    },
+  ],
+  technologies: [
+    'Solidity',
+    'Foundry',
+    'Hardhat',
+    'OpenZeppelin Contracts',
+    'Chainlink Oracles',
+    'viem',
+    'wagmi',
+    'Ethers.js',
+    'The Graph',
+    'Slither',
+    'Echidna',
+    'Ethereum / Polygon / Base / Arbitrum',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Protocol Design & Economic Modelling',
+      duration: 'Weeks 1–3',
+      description: 'We define the protocol mechanics — how value enters, accrues and exits — and model the economics before any implementation. This includes mapping the attack surface explicitly: flash-loan scenarios, oracle manipulation, governance attacks, interest-rate and collateral-ratio behaviour under volatility. We also confirm whether the product genuinely needs to be decentralised at this stage, or whether a phased approach reduces risk.',
+    },
+    {
+      step: '02',
+      title: 'Oracle & Data Architecture',
+      duration: 'Weeks 3–4',
+      description: 'Pricing is the foundation of most DeFi safety, so we design the oracle architecture early: which feeds, what staleness and deviation thresholds, time-weighted averaging where spot prices are manipulable, and fallback behaviour when an oracle is unavailable. We integrate Chainlink or equivalent decentralised oracle networks rather than single-source feeds.',
+    },
+    {
+      step: '03',
+      title: 'Contract Implementation & Invariant Testing',
+      duration: 'Weeks 4–10',
+      description: 'Contracts are implemented in Solidity on OpenZeppelin foundations, with the protocol\'s solvency and accounting guarantees expressed as invariants. We use Foundry fuzz and invariant testing to assert those properties hold across thousands of randomised sequences, alongside unit and integration tests and static analysis with Slither and Echidna.',
+    },
+    {
+      step: '04',
+      title: 'Front End, Indexing & Integration',
+      duration: 'Weeks 7–12',
+      description: 'We build the user-facing application with wagmi and viem, index protocol state through The Graph for fast reads, and implement wallet connection, approval flows and transaction-state handling that are explicit about cost and risk. The interface is built in parallel with the contracts against a shared specification.',
+    },
+    {
+      step: '05',
+      title: 'Internal Security Review & Audit Coordination',
+      duration: 'Weeks 12–15',
+      description: 'We conduct a thorough internal review against the threat model, resolve all findings, then coordinate one or more independent audits — economic and code review are sometimes separate engagements for DeFi. Findings are blocking. We remediate every issue and, where warranted, recommend a guarded mainnet rollout with deposit caps and a public bug bounty.',
+    },
+    {
+      step: '06',
+      title: 'Guarded Launch & Monitoring',
+      duration: 'Weeks 15–18',
+      description: 'We deploy behind multi-signature and timelock controls, often with conservative initial caps that are raised as confidence grows. We set up on-chain monitoring and alerting for anomalous activity — large withdrawals, oracle deviations, unexpected state — and hand over runbooks and the monitoring stack so your team can respond quickly if something looks wrong.',
+    },
+  ],
+  industries: [
+    'Fintech & Digital Lending',
+    'Digital Asset Platforms & Exchanges',
+    'Web3 & DAOs',
+    'Asset Management & Tokenisation',
+    'Payments & Stablecoins',
+    'Gaming & In-Game Economies',
+    'Treasury & Corporate Finance',
+    'Financial Services Innovation Labs',
+  ],
+  faqs: [
+    {
+      question: 'What are the biggest risks in building a DeFi platform?',
+      answer: 'The most damaging DeFi failures are usually economic rather than ordinary coding bugs. The largest category is oracle manipulation — an attacker uses a flash loan to temporarily distort a price the protocol relies on, then exploits the wrong price to borrow, mint or drain value. Other major risks include reentrancy, flawed accounting that lets value be minted from nothing, governance attacks where an attacker acquires enough voting power to change protocol parameters maliciously, and assumptions about collateral ratios or interest rates that hold in calm markets but break under volatility. We address these by modelling the attack surface before implementation, integrating manipulation-resistant oracles, expressing solvency as tested invariants, and gating launch behind audits, conservative caps and timelocked governance. None of this makes a protocol unhackable — it materially reduces the probability and blast radius.',
+    },
+    {
+      question: 'Why do you place so much emphasis on oracles and audits?',
+      answer: 'Because the public record of DeFi exploits points squarely at both. A large share of the billions lost across the ecosystem trace back to manipulable price feeds or to unaudited or insufficiently audited contracts. A protocol that takes a spot price from a single liquidity pool can be attacked by anyone with access to a flash loan, which on a public chain is everyone. So we integrate decentralised oracle networks like Chainlink, add staleness and deviation checks, and use time-weighted prices where appropriate. And because contracts are immutable and hold pooled funds, an independent audit is non-negotiable — sometimes more than one, since economic review and code review are distinct skills. We treat audit findings as blocking and remediate them all before launch.',
+    },
+    {
+      question: 'What are the Australian regulatory considerations for a DeFi product?',
+      answer: 'They can be significant, and they are questions for specialist legal counsel rather than engineers. ASIC regulates financial products and services under the Corporations Act, and depending on design a DeFi product — particularly anything resembling lending, a managed investment scheme, a derivative or a token that is a financial product — may engage licensing, disclosure and conduct obligations. Separately, AUSTRAC administers Australia\'s AML/CTF regime, and activities such as exchanging tokens for fiat, providing custody, or operating as a designated service can trigger registration and reporting duties. We do not provide legal advice. What we do is build architecture that can accommodate the controls your lawyers require — application-layer KYC, allowlisting, geofencing, configurable parameters and pause functions — so that compliance can be implemented as your legal position is clarified. We strongly recommend resolving the regulatory questions before, not after, exposing the product to the public.',
+    },
+    {
+      question: 'Who pays the gas, and how do gas costs affect a DeFi platform?',
+      answer: 'In DeFi the user typically pays gas for their own transactions — depositing, borrowing, swapping, claiming rewards — because each is a state-changing call they initiate. On Ethereum mainnet this can make small interactions uneconomic during periods of congestion, which is a genuine product constraint, not a detail. We address it two ways. First, we optimise the contracts so common operations are as cheap as the design allows. Second, we usually recommend deploying to an L2 such as Base, Arbitrum or Polygon, where transaction costs are a small fraction of mainnet while preserving EVM compatibility and, in the case of rollups, strong security guarantees. For some flows, meta-transactions or sponsored gas can shift the cost to the operator, though that introduces its own trade-offs we would discuss explicitly.',
+    },
+    {
+      question: 'Does a DeFi platform hold custody of user funds?',
+      answer: 'In a genuinely decentralised, non-custodial design, the protocol\'s smart contracts hold pooled funds according to transparent rules, but no operator can unilaterally take or freeze a user\'s assets — users interact directly from their own wallets and retain control of their keys. This is the model most associated with DeFi and the one we generally build toward, because it minimises the custody and trust obligations on the operator. However, many real products sit on a spectrum: admin keys that can pause the protocol, upgrade contracts or adjust parameters are a form of control, and how those keys are held (multi-signature, timelock, eventual renouncement) materially changes the trust and, potentially, the regulatory picture. We design the custody model deliberately and document exactly what powers exist and who holds them, because vague custody arrangements are both a security and a compliance liability.',
+    },
+    {
+      question: 'Can you launch in stages to reduce risk?',
+      answer: 'Yes, and we usually recommend it. A guarded rollout limits the blast radius of any issue that the audits missed. Common measures include deposit and total-value caps that start conservative and are raised as confidence and on-chain history accumulate, an initial allowlist of users, a public bug bounty that incentivises white-hat disclosure before launch, and timelocked governance so any parameter change is visible before it takes effect. We pair this with active monitoring for anomalous activity — unusual withdrawals, oracle deviations, unexpected state transitions — and runbooks that let your team respond quickly. A phased launch trades a slower ramp for a far better risk profile, which for a system holding pooled funds is almost always the right trade.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'You are building a financial primitive — lending, staking, yield, swaps — that benefits from transparent, non-custodial, programmable rules.',
+      'You can fund independent security audits and a phased, guarded launch as core costs rather than optional extras.',
+      'You have engaged, or will engage, specialist legal counsel on ASIC and AUSTRAC questions before going live.',
+      'Composability with the wider on-chain ecosystem is a genuine product advantage for you.',
+      'You accept that economic security and monitoring are ongoing operational commitments, not one-off tasks.',
+    ],
+    notRightFor: [
+      'A licensed, custodial fintech model would serve your users better — a conventional ledger and regulated infrastructure is then the right call.',
+      'You need to move fast and change rules frequently; immutable contracts and timelocked governance make that slow by design.',
+      'The product is essentially a centralised service rebranded as DeFi, where users gain no real trust-minimisation benefit.',
+      'You cannot fund audits or a guarded launch — deploying an unaudited protocol that holds pooled funds is a risk we will not take on.',
+      'The regulatory position is unresolved and you intend to launch to the public anyway before clarifying it.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Single Primitive',
+      range: '$80k–$180k',
+      detail: 'One core mechanism — a staking system, a single-asset vault, or a focused lending pool — with oracle integration, invariant testing, a front end and internal security review. Independent audit budgeted separately.',
+    },
+    {
+      name: 'Multi-Component Protocol',
+      range: '$180k–$450k',
+      detail: 'Several interacting components — for example lending plus liquidations plus a governance layer — with full economic modelling, The Graph indexing, wagmi/viem front end and audit coordination across code and economics.',
+    },
+    {
+      name: 'Full Platform & Launch',
+      range: '$450k–$900k+',
+      detail: 'A complete DeFi platform with multiple audited contracts, oracle architecture, monitoring, a phased guarded launch, bug bounty coordination and ongoing economic-security support. Audit and bounty costs on top.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'DeFi',
+      definition: 'Decentralised finance — financial services such as lending, trading and yield delivered through smart contracts that hold and move value autonomously, without a traditional intermediary holding the funds.',
+    },
+    {
+      term: 'Liquidity pool',
+      definition: 'A smart contract holding a reserve of two or more tokens that traders swap against and that liquidity providers deposit into in exchange for a share of fees. Pools underpin automated market makers.',
+    },
+    {
+      term: 'AMM',
+      definition: 'An automated market maker — a contract that prices and executes swaps algorithmically against a liquidity pool using a formula, rather than matching individual buy and sell orders on an order book.',
+    },
+    {
+      term: 'Oracle',
+      definition: 'A service that brings off-chain data, most often asset prices, on-chain for contracts to use. A manipulable or stale oracle is a leading cause of DeFi exploits, so decentralised, deviation-checked oracles are preferred.',
+    },
+    {
+      term: 'Flash loan',
+      definition: 'An uncollateralised loan that must be borrowed and repaid within a single transaction. Legitimate for arbitrage, it is also the funding mechanism for many attacks because it gives anyone temporary access to large capital.',
+    },
+    {
+      term: 'Total value locked (TVL)',
+      definition: 'The aggregate value of assets deposited in a protocol\'s contracts. Commonly used as a size and trust signal, though it does not by itself indicate that a protocol is secure.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Smart Contract Development', href: '/services/smart-contracts' },
+    { title: 'NFT Marketplace Development', href: '/services/nft-marketplace' },
+    { title: 'Cybersecurity Consulting', href: '/services/cybersecurity' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5a2.5 2.5 0 0 0-2.5-1.5c-1.4 0-2.5.9-2.5 2s1.1 2 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2a2.5 2.5 0 0 1-2.5-1.5"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

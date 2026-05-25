@@ -143,6 +143,38 @@ const data = {
       answer: 'You own the code completely. Every Flutter project we deliver includes documented architecture decisions, widget documentation, a developer onboarding guide, and an explanation of state management patterns used. We encourage clients to have at least one internal developer involved during the latter stages of development so knowledge transfer is gradual rather than a single handover event. Dart is a well-designed language that most experienced developers find approachable within a few weeks — the learning curve is far more manageable than the transition from React Native to native development. We also offer Dart and Flutter training workshops for internal teams as a separate engagement.',
     },
   ],
+  serviceName: 'Flutter Mobile Apps',
+  slug: 'flutter-development',
+  summaryStatement: 'Flutter mobile app development is the building of iOS and Android applications from a single Dart codebase that compiles to native machine code and renders through its own graphics engine, giving near-native performance without maintaining two separate native codebases.',
+  comparison: {
+    rightFor: [
+      'You need iOS and Android apps with shared business logic and a single QA cycle, rather than funding two parallel native teams.',
+      'Your interface relies on custom animations, branded UI and pixel-consistent presentation across both platforms.',
+      'You want a faster path to launching on both stores from one codebase without sacrificing 60fps performance.',
+      'You have field or customer apps that benefit from offline-first behaviour and clean native integrations (camera, BLE, biometrics).',
+      'You may later extend the same codebase to web or desktop for internal tooling.',
+    ],
+    notRightFor: [
+      'You only need one platform (e.g. iOS-only) and the app makes heavy use of the latest platform-specific APIs — fully native may serve you better.',
+      'Your existing team has deep React expertise and no time to learn Dart; React Native may have a lower onboarding cost.',
+      'The product is genuinely just a wrapper around a website — a progressive web app or responsive site could be sufficient and cheaper.',
+      'You need bleeding-edge access to a brand-new OS feature on launch day, where native SDKs are available before Flutter plugins.',
+      'The app is a throwaway prototype where store distribution and performance do not matter.',
+    ],
+  },
+  pricing: [
+    { name: 'Focused App', range: '$35k–$80k', detail: 'A single-purpose iOS and Android app with a defined feature set, standard integrations and a single backend, shipped to both stores from one codebase.' },
+    { name: 'Production App', range: '$80k–$180k', detail: 'A multi-feature app with offline support, native integrations, custom UI and animation, full device-matrix testing and store compliance handling.' },
+    { name: 'Platform App', range: '$180k+', detail: 'A complex field or consumer platform with offline-first sync, multiple native plugins, a companion backend and ongoing maintenance releases.' },
+  ],
+  definitions: [
+    { term: 'Cross-platform development', definition: 'Writing one codebase that runs on both iOS and Android, rather than building and maintaining a separate app for each operating system.' },
+    { term: 'Dart', definition: 'The programming language Flutter uses; it compiles to native machine code for fast performance and is generally approachable for experienced developers within a few weeks.' },
+    { term: 'Platform channel', definition: 'Flutter\'s mechanism for calling native iOS (Swift) or Android (Kotlin) code, used to access hardware features like biometrics, Bluetooth or platform payment flows.' },
+    { term: 'Hot reload', definition: 'A development feature that applies code changes to a running app in under a second without losing its current state, dramatically speeding up UI iteration.' },
+    { term: 'Offline-first architecture', definition: 'Designing an app to work fully without connectivity by storing data locally and syncing changes back to the server when a connection returns.' },
+    { term: 'Impeller engine', definition: 'Flutter\'s graphics rendering engine that draws the interface directly to a canvas, enabling consistent smooth performance independent of the platform\'s native UI layer.' },
+  ],
   relatedServices: [
     { title: 'Web & Mobile Applications', href: '/services/web-mobile-apps' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },

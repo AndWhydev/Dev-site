@@ -1,0 +1,221 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'NFT Marketplace Development | Minting, Royalties & Listings | All Webbed Labs',
+  metaDescription: 'NFT marketplace development: gas-efficient minting, listings, creator royalties, IPFS metadata, wallet connect and marketplace contracts — built with honesty about royalty enforcement and custody.',
+  category: 'Web3 & Blockchain',
+  serviceName: 'NFT Marketplace',
+  slug: 'nft-marketplace',
+  heroHeadline: 'NFT Marketplaces Built on Gas-Efficient Standards and Honest Trade-Offs',
+  heroTagline: 'Minting, listings, royalties, IPFS metadata and wallet connect — with frank advice on royalty enforcement, custody and what NFTs actually guarantee.',
+  summaryStatement: 'NFT marketplace development is the design and engineering of platforms where unique on-chain tokens can be minted, listed, bought, sold and traded — combining token and marketplace smart contracts, decentralised metadata storage, wallet integration and a front end that handles ownership, royalties and listings.',
+  description: [
+    'An NFT is a unique, individually owned token on a blockchain — most commonly an ERC-721 or ERC-1155 token on an EVM chain — whose ownership and transfer history are public and verifiable. A marketplace is the layer that lets people mint those tokens, list them for sale, make offers, buy, and trade, while a creator can attach metadata and, ideally, earn a royalty on secondary sales. Building one well means getting several things right at once: gas-efficient token contracts so minting and trading do not cost users more than the items are worth; marketplace contracts that escrow and settle trades safely; reliable, permanent metadata and media storage; wallet connection that is clear about what a user is signing; and a front end that makes ownership and provenance legible. We build all of these — but we also tell clients the parts the marketing tends to skip.',
+    'The candour matters because NFTs carry genuine subtleties that affect product decisions. Creator royalties, for instance, are not enforceable at the protocol level on most chains: a royalty is a request that a marketplace chooses to honour, and the well-publicised royalty wars between marketplaces showed that on-chain enforcement is partial at best. We design royalty handling using standards like ERC-2981 and are honest about where it holds and where it does not. Likewise, an NFT typically points to media stored off-chain — if that media lives on a centralised server it can disappear, which is why we default to content-addressed storage on IPFS or Arweave so the token references something durable. Custody is another real choice: a non-custodial marketplace lets users trade directly from their own wallets and retain control of their assets, while a custodial model is simpler for mainstream users but makes you responsible for holding their items, with the security and potentially regulatory weight that implies. We build on gas-efficient standards such as ERC-721A for batch minting, integrate wallet flows with wagmi and viem, index activity through The Graph, and coordinate a security audit for the marketplace contracts that move value. And as with any value-bearing on-chain product, we work alongside your legal counsel on the ASIC and AUSTRAC questions that some NFT models raise, rather than waving them away.',
+  ],
+  benefits: [
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: 'Gas-Efficient Minting',
+      description: 'Minting is where users feel gas most acutely. We use efficient standards such as ERC-721A for batch mints, lazy minting where the buyer pays the mint cost at purchase, and L2 deployment to keep per-token costs low — so a collection drop does not price out the people it is meant for.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>',
+      title: 'Honest Royalty Design',
+      description: 'We implement creator royalties via ERC-2981 and design enforcement realistically. We will not promise protocol-level royalty enforcement that does not exist on most chains; instead we explain where royalties hold, where they leak, and what mechanisms (allowlisted transfers, marketplace-level enforcement) genuinely help.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+      title: 'Durable Metadata Storage',
+      description: 'A token that points to media on a server you might one day switch off is a fragile asset. We store metadata and media on content-addressed networks — IPFS and Arweave — so the hash in the token resolves to durable, tamper-evident content rather than a link that can rot.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+      title: 'Clear Wallet & Transaction UX',
+      description: 'Built with wagmi and viem, our wallet flows make connection, network switching, approvals, listings and purchases legible — showing users exactly what they are signing and what it will cost, so an approval is a deliberate act rather than a blind click.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: 'Audited Marketplace Contracts',
+      description: 'The contracts that escrow listings and settle trades move real value and are prime exploit targets. We implement them carefully, fuzz-test the trade lifecycle, and coordinate an independent audit before mainnet — because a marketplace bug can lose users their assets, not just their patience.',
+    },
+    {
+      icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>',
+      title: 'Custodial vs Non-Custodial by Design',
+      description: 'We help you choose deliberately between non-custodial trading, where users keep control of their assets, and a custodial model that is friendlier to mainstream users but makes you responsible for safekeeping. The choice shapes security, UX and potentially regulatory obligations.',
+    },
+  ],
+  useCases: [
+    {
+      industry: 'Arts & Culture',
+      title: 'Curated Digital Art Marketplace',
+      description: 'A gallery or collective launching a curated marketplace for digital artists needs minting, listings, offers and secondary trading with creator royalties built in. An allowlisted, curated minting flow with ERC-2981 royalties, IPFS-stored artwork and a non-custodial trading model lets artists retain control of their work while the platform sets the curatorial standard and earns a transparent platform fee.',
+    },
+    {
+      industry: 'Sports & Entertainment',
+      title: 'Membership and Collectible Drops',
+      description: 'A club or brand issuing collectible passes that double as membership tokens can run timed drops where supporters mint directly from their wallets. Batch-efficient minting keeps gas affordable during a high-demand drop, token-gating logic unlocks holder benefits, and a clear front end shows supply, ownership and provenance — turning a collectible into a verifiable membership credential.',
+    },
+    {
+      industry: 'Gaming',
+      title: 'In-Game Item Marketplace',
+      description: 'A game studio wanting players to own and trade in-game items can represent them as ERC-1155 tokens and provide a marketplace for listing and trading between players. Semi-fungible standards keep minting efficient for items that exist in quantity, and on-chain ownership lets items move with the player rather than being locked to a single account on a central server.',
+    },
+  ],
+  technologies: [
+    'Solidity',
+    'Foundry',
+    'Hardhat',
+    'OpenZeppelin Contracts',
+    'ERC-721 / ERC-721A / ERC-1155 / ERC-2981',
+    'IPFS / Arweave',
+    'viem',
+    'wagmi',
+    'Ethers.js',
+    'The Graph',
+    'Slither',
+    'Polygon / Base / Arbitrum',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Discovery, Standards & Custody Model',
+      duration: 'Weeks 1–2',
+      description: 'We work through the decisions that shape everything downstream: which token standard fits (ERC-721, ERC-721A, ERC-1155), whether minting is upfront or lazy, how royalties are handled and how realistic enforcement is, custodial versus non-custodial trading, and which chain balances cost and reach. We are explicit about the trade-offs so the choices are informed.',
+    },
+    {
+      step: '02',
+      title: 'Token & Marketplace Contract Design',
+      duration: 'Weeks 2–4',
+      description: 'We design the token contract and the marketplace contracts that handle listings, offers, escrow and settlement, with ERC-2981 royalty support and clear access control. We decide how trades are settled safely — minimising the window where assets or funds are at risk — and how platform fees and royalty splits are computed and paid.',
+    },
+    {
+      step: '03',
+      title: 'Metadata, Media & Storage Pipeline',
+      duration: 'Weeks 3–5',
+      description: 'We build the metadata and media pipeline: generating standards-compliant metadata, pinning media to IPFS or storing it permanently on Arweave, and ensuring the token references content-addressed storage so it cannot silently break. For generative or large collections we automate the upload and pinning workflow.',
+    },
+    {
+      step: '04',
+      title: 'Front End, Wallet Connect & Indexing',
+      duration: 'Weeks 5–11',
+      description: 'We build the marketplace front end with wagmi and viem — browsing, minting, listing, buying, offers and a user\'s portfolio — and index on-chain activity through The Graph so listings and ownership load quickly. Wallet connection, approvals and transaction states are made explicit so users always know what they are signing.',
+    },
+    {
+      step: '05',
+      title: 'Testing, Security Review & Audit',
+      duration: 'Weeks 11–14',
+      description: 'We fuzz-test the full trade lifecycle, run static analysis with Slither, conduct an internal security review focused on the value-moving marketplace contracts, and coordinate an independent audit. Findings are blocking and remediated before mainnet. Approval and escrow flows get particular scrutiny, since they are where marketplaces most often leak value.',
+    },
+    {
+      step: '06',
+      title: 'Deployment, Monitoring & Handover',
+      duration: 'Weeks 14–16',
+      description: 'We deploy behind multi-signature admin controls, verify contract source on the block explorer, and set up monitoring for the marketplace contracts and storage gateways. We hand over deployment scripts, documentation, the test suite and operational runbooks so your team can run drops, manage fees and respond to incidents confidently.',
+    },
+  ],
+  industries: [
+    'Arts & Culture',
+    'Sports & Entertainment',
+    'Gaming & Interactive Media',
+    'Music & Media',
+    'Brands & Consumer Loyalty',
+    'Ticketing & Events',
+    'Collectibles & Memorabilia',
+    'Creator Platforms',
+  ],
+  faqs: [
+    {
+      question: 'Can you guarantee creators get royalties on every secondary sale?',
+      answer: 'No, and any agency that promises this is not being straight with you. On most EVM chains, creator royalties are not enforced at the protocol level. The ERC-2981 standard provides a way for a token to declare what royalty it expects and to whom, but it is up to the marketplace executing a sale to read that and actually pay it. When marketplaces compete on fees, some choose to make royalties optional or skip them entirely — the public royalty disputes between major marketplaces made this very visible. There are partial technical mitigations: restricting transfers to an allowlist of marketplaces that honour royalties, or enforcing royalties within your own marketplace contract where you control settlement. Each has trade-offs around composability and user freedom. We implement ERC-2981 correctly, enforce royalties within the platform you control, and explain honestly where royalties will and will not be collected once tokens trade elsewhere.',
+    },
+    {
+      question: 'Where is the actual artwork or media stored?',
+      answer: 'Almost always off-chain, because storing images or video directly on a blockchain is prohibitively expensive. The token holds a small piece of metadata that points to the media. The critical question is where that media lives. If it sits on a normal web server, it can be moved, changed or switched off — at which point the NFT points at nothing, which has happened to real collections. We default to content-addressed storage: IPFS, where the link is a hash of the content so it cannot be silently altered (paired with reliable pinning so it stays available), or Arweave, which is designed for permanent, pay-once storage. This means the token references durable, tamper-evident content. We are clear that even IPFS requires the content to remain pinned somewhere, and we set up that pinning rather than assuming it.',
+    },
+    {
+      question: 'Should our marketplace be custodial or non-custodial?',
+      answer: 'It depends on who your users are and what obligations you want to carry. In a non-custodial marketplace, users connect their own wallets and trade directly; assets and funds move between their wallets and the marketplace contract, and you never hold their items. This minimises your security burden and is the model most aligned with how NFTs work, but it requires users to manage a wallet, which can be a barrier for mainstream audiences. In a custodial model, you hold users\' assets on their behalf — often with email logins and managed wallets — which is far friendlier for newcomers but makes you responsible for safekeeping, with the security weight and potentially regulatory and AUSTRAC implications that custody carries. There are hybrids, such as managed wallets that users can export. We help you choose deliberately and design the security model to match, rather than drifting into custody by accident.',
+    },
+    {
+      question: 'How do you keep minting affordable for users?',
+      answer: 'Gas on minting is one of the most common reasons a drop disappoints, so we attack it from several angles. We use gas-efficient token standards — ERC-721A, for example, makes minting several tokens in one transaction dramatically cheaper than minting them one by one, which matters in a high-demand drop. We can use lazy minting, where the token is not written on-chain until it is bought, so the buyer pays the mint cost at purchase rather than the creator funding a whole collection upfront. And most importantly, we typically recommend deploying to an L2 such as Base, Polygon or Arbitrum, where transaction costs are a small fraction of Ethereum mainnet. The right combination depends on your collection size, drop mechanics and where your audience already holds assets, and we model the expected costs before committing to an approach.',
+    },
+    {
+      question: 'Do NFT marketplaces face regulatory considerations in Australia?',
+      answer: 'They can, and the answer depends heavily on what the NFTs represent and how the marketplace operates — which makes this a question for specialist legal counsel rather than engineers. A purely artistic or collectible NFT is usually treated differently from one that confers financial rights, profit expectations or functions like an investment product, which could engage ASIC oversight under the Corporations Act. If your platform exchanges crypto for fiat, holds customer assets in custody, or operates as a designated service, AUSTRAC\'s AML/CTF regime — including registration and reporting duties — may apply. We do not give legal advice. We build the marketplace so that controls your lawyers identify can be implemented — KYC at the application layer, allowlisting, geofencing, custody arrangements with appropriate safeguards — and we recommend resolving the regulatory position before launching to the public.',
+    },
+    {
+      question: 'Can you build on top of existing marketplace infrastructure rather than from scratch?',
+      answer: 'Often, yes, and it can be the pragmatic choice. There are well-established, audited protocols — such as the Seaport protocol that underpins several major marketplaces — that handle the hard, security-critical parts of order settlement. Building on a proven, audited base for the trade-execution layer reduces both your audit surface and your risk, while we focus effort on the parts that differentiate your product: the token contracts, the minting and drop mechanics, the metadata pipeline, the curation logic and the front end. The alternative — bespoke marketplace contracts — gives you full control and is the right call when your trading model is genuinely novel, but it means more contract code to audit and maintain. We will recommend the approach that fits your requirements and risk appetite rather than defaulting to building everything ourselves.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'You want verifiable, transferable ownership of unique digital items that users can hold in their own wallets and trade.',
+      'Provenance and a public ownership history add real value for your creators, collectors or community.',
+      'You can fund an independent audit of the value-moving marketplace contracts before launch.',
+      'You accept that creator royalties are not fully protocol-enforceable and want them designed honestly.',
+      'Your audience is comfortable with wallets, or you have deliberately chosen a custodial model and its obligations.',
+    ],
+    notRightFor: [
+      'You need a conventional digital storefront with logins and card payments — a standard Web2 e-commerce build is simpler and cheaper.',
+      'The "items" are interchangeable and have no need for unique on-chain identity; a database record is the right tool.',
+      'Guaranteed, unavoidable royalty enforcement on every future sale is a hard requirement — that does not exist on most chains.',
+      'You cannot fund an audit of the contracts that escrow and settle trades.',
+      'The NFT framing is purely for marketing and adds friction for users without giving them anything they actually need.',
+    ],
+  },
+  pricing: [
+    {
+      name: 'Collection & Mint',
+      range: '$30k–$80k',
+      detail: 'A gas-efficient token contract with a minting front end and drop mechanics, ERC-2981 royalties and an IPFS/Arweave metadata pipeline — ideal for a collection launch without a full secondary marketplace.',
+    },
+    {
+      name: 'Marketplace Build',
+      range: '$80k–$200k',
+      detail: 'Token plus marketplace contracts for listings, offers, escrow and settlement, a full browsing and trading front end, The Graph indexing, wallet integration and internal security review. Audit budgeted separately.',
+    },
+    {
+      name: 'Full Platform',
+      range: '$200k–$450k+',
+      detail: 'A complete marketplace with custodial or non-custodial trading, curation, token-gating, audited contracts, monitoring and ongoing support — including coordination of an independent audit and storage-availability operations.',
+    },
+  ],
+  definitions: [
+    {
+      term: 'NFT',
+      definition: 'A non-fungible token — a unique, individually owned token on a blockchain whose ownership and transfer history are public and verifiable, as distinct from fungible tokens where every unit is interchangeable.',
+    },
+    {
+      term: 'ERC-721',
+      definition: 'The standard interface for non-fungible tokens on EVM chains, where each token has a distinct identifier and a single owner. ERC-721A is a gas-optimised variant that makes minting multiple tokens in one transaction much cheaper.',
+    },
+    {
+      term: 'ERC-1155',
+      definition: 'A multi-token standard that supports both fungible and non-fungible tokens in a single contract, efficient for use cases like in-game items where many copies of an item may exist.',
+    },
+    {
+      term: 'ERC-2981',
+      definition: 'The royalty standard that lets a token declare a royalty amount and recipient for secondary sales. It signals the intended royalty, but payment depends on the marketplace choosing to honour it rather than being enforced by the chain.',
+    },
+    {
+      term: 'IPFS',
+      definition: 'The InterPlanetary File System — a content-addressed storage network where a file is referenced by a hash of its contents, so the link cannot point to altered data. Content must be pinned somewhere to remain available.',
+    },
+    {
+      term: 'Minting',
+      definition: 'The act of creating a new token on-chain. Costs gas, and the technique used — upfront, batch (ERC-721A) or lazy minting at purchase — directly affects how much a creator or buyer pays.',
+    },
+  ],
+  relatedServices: [
+    { title: 'Smart Contract Development', href: '/services/smart-contracts' },
+    { title: 'Web3 & Blockchain Development', href: '/services/blockchain-development' },
+    { title: 'API Development & Integrations', href: '/services/api-development' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

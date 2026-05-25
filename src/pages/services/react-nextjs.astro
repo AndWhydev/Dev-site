@@ -43,6 +43,38 @@ const data = {
     { question: 'Do you build component libraries for our team to use after handover?', answer: 'Yes, always. We build a documented Storybook component library as part of every project, with usage examples, prop documentation and visual regression tests. Your developers can extend it confidently because they understand every component. This is one of our standard deliverables, not an optional add-on.' },
     { question: 'How do you approach state management for complex enterprise applications?', answer: 'We use Zustand for most new projects due to its minimal boilerplate and excellent TypeScript support. For projects with complex server-state synchronisation, we pair it with React Query or SWR. We avoid Redux for new projects unless the team already has deep expertise, as Zustand covers 95% of use cases with significantly less complexity.' },
   ],
+  serviceName: 'React & Next.js',
+  slug: 'react-nextjs',
+  summaryStatement: 'React and Next.js development is the building of enterprise web applications on the React framework with Next.js, combining server-side rendering, static generation and client-side interactivity in a single TypeScript codebase that performs at scale.',
+  comparison: {
+    rightFor: [
+      'You are building application software — authentication, complex state, real-time data and business logic — not a primarily content-driven brochure site.',
+      'Performance matters: you need server-side rendering or static generation for fast page loads and strong SEO across many routes.',
+      'You want a documented component library your own developers can confidently extend and own after handover.',
+      'You expect high or spiky traffic and need a rendering and caching strategy that holds latency flat under load.',
+      'You are standardising a frontend technology your team can hire for and maintain over years.',
+    ],
+    notRightFor: [
+      'Your site is mostly marketing content with occasional updates — a CMS like WordPress or a builder like Webflow is cheaper and faster.',
+      'You need a native mobile app as the primary product; reach for Flutter or React Native rather than a web framework.',
+      'A simple static landing page with no application logic does not justify the overhead of a Next.js build pipeline.',
+      'Your team has deep expertise in another mature framework (e.g. Angular, Vue) and no business reason to switch.',
+      'You require a heavy desktop application with offline-first OS integration better served by a native or Electron approach.',
+    ],
+  },
+  pricing: [
+    { name: 'Frontend Build', range: '$30k–$70k', detail: 'A focused React or Next.js application or product frontend with a defined component set, design system foundation and a single backend integration.' },
+    { name: 'Enterprise Application', range: '$70k–$180k', detail: 'A multi-route application with authentication, complex state, several API integrations, full test coverage and performance optimisation across all routes.' },
+    { name: 'Platform Programme', range: '$180k+', detail: 'A large multi-team frontend platform with a shared design system, edge deployment, advanced caching strategy and ongoing iteration alongside your engineers.' },
+  ],
+  definitions: [
+    { term: 'Server-side rendering (SSR)', definition: 'Generating a page\'s HTML on the server for each request, so users and search engines receive fully formed content immediately rather than waiting for the browser to build it.' },
+    { term: 'Static site generation (SSG)', definition: 'Building pages into static HTML at deploy time, so they are served instantly from a CDN with no per-request computation — ideal for content that changes infrequently.' },
+    { term: 'Incremental static regeneration (ISR)', definition: 'A Next.js feature that regenerates individual static pages in the background after deployment, combining the speed of static pages with the freshness of dynamic ones.' },
+    { term: 'App Router', definition: 'The current Next.js routing model built around React Server Components, offering a more capable data-fetching and caching approach than the older Pages Router.' },
+    { term: 'Edge deployment', definition: 'Running application code in data centres physically close to users worldwide, reducing the round-trip time for requests and improving perceived speed.' },
+    { term: 'Core Web Vitals', definition: 'Google\'s measurable thresholds for loading speed, interactivity and visual stability that affect both user experience and search ranking.' },
+  ],
   relatedServices: [
     { title: 'Flutter Development', href: '/services/flutter-development' },
     { title: 'API Development', href: '/services/api-development' },
