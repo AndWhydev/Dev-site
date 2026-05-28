@@ -52,7 +52,9 @@
     min-height: 100svh;
     width: 100%;
     overflow: hidden;
-    background: #0a0a0a;
+    /* Solid fallback colour painted by the browser before any JS/WebGL runs —
+       guarantees no flash of unstyled blackness even if Three.js fails to load. */
+    background: #0a0f0e;
     display: flex;
     align-items: center;
     isolation: isolate;
@@ -76,16 +78,17 @@
   }
 
   #awl-hero-canvas {
+    /* No initial opacity:0 — the canvas is transparent until WebGL paints into it,
+       so the mesh underneath stays visible during init. Removing the fade avoids
+       the "black screen until I move the mouse" perception. */
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0;
-    transition: opacity 1.1s cubic-bezier(.22,.61,.36,1);
+    opacity: 1;
     display: block;
   }
-  #awl-hero-canvas.ready { opacity: 1; }
 
   /* Subtle scrim under the text so the heading stays legible over busy particle areas. */
   .awl-hero__scrim {
@@ -179,35 +182,44 @@
     animation: awl-rise 0.9s 0.75s cubic-bezier(.19,1,.22,1) forwards;
   }
 
-  /* btn-fill (verbatim pattern from ANIMATIONS.md, scoped here so the hero is self-contained). */
+  /* Primary CTA — solid filled at rest, darker fill slides in left→right on hover.
+     btn-fill from ANIMATIONS.md, switched from ghost to solid as the hero's
+     dominant action surface. */
   .btn-fill {
     position: relative;
     overflow: hidden;
     z-index: 0;
     display: inline-block;
-    padding: 16px 34px;
-    border: 1.5px solid var(--color-accent);
-    color: var(--color-accent);
+    padding: 16px 40px;
+    border: none;
+    background: var(--color-accent);
+    color: #ffffff;
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    border-radius: 3px;
+    border-radius: 4px;
     text-decoration: none;
-    transition: color 0.35s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -8px rgba(13, 147, 115, 0.55);
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
   }
   .btn-fill::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--color-accent);
+    background: rgba(0, 0, 0, 0.28);
     transform: translateX(-101%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
   }
-  .btn-fill:hover { color: var(--color-bg); }
+  .btn-fill:hover { box-shadow: 0 14px 32px -8px rgba(13, 147, 115, 0.75); }
   .btn-fill:hover::before { transform: translateX(0); }
+  .btn-fill:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
 
   .awl-hero__link {
     display: inline-flex;
@@ -533,7 +545,6 @@
 
     // initial paint, then either loop (normal) or stop (reduced motion → single static frame).
     step();
-    canvas.classList.add('ready');
   }
 
   function awlBoot() {
