@@ -11,6 +11,11 @@
   <!-- CSS gradient mesh shown until WebGL takes over (and used as fallback if WebGL fails). -->
   <div class="awl-hero__mesh" aria-hidden="true"></div>
   <canvas id="awl-hero-canvas" aria-hidden="true"></canvas>
+  <!-- FIX 12 — soft accent-coloured radial glow that follows the cursor.
+       Position is updated via CSS variables in the mousemove handler; pure CSS,
+       no per-frame layout. Sits above the WebGL canvas with mix-blend-mode:screen
+       so it brightens rather than tints. -->
+  <div class="awl-hero__cursor-glow" id="awl-cursor-glow" aria-hidden="true"></div>
   <div class="awl-hero__scrim" aria-hidden="true"></div>
 
   <div class="awl-hero__inner">
@@ -118,6 +123,25 @@
     opacity: 1;
     display: block;
   }
+
+  /* FIX 12 — cursor-following radial glow. CSS-only, driven by --x/--y variables
+     set in JS. mix-blend-mode: screen so it brightens whatever is underneath. */
+  .awl-hero__cursor-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      circle 340px at var(--x, 50%) var(--y, 50%),
+      rgba(13, 147, 115, 0.20) 0%,
+      rgba(13, 147, 115, 0.10) 30%,
+      transparent 70%
+    );
+    mix-blend-mode: screen;
+  }
+  .awl-hero__cursor-glow.is-live { opacity: 1; }
 
   /* Subtle scrim under the text so the heading stays legible over busy particle areas. */
   .awl-hero__scrim {
@@ -499,14 +523,14 @@
     }
     const dotTex = makeDotTexture();
 
-    /* ---------- ambient cloud (3000 points, no connections — visual depth) ---------- */
-    const AMB_COUNT = 3000;
+    /* ---------- ambient cloud (6000 points — FIX 12 doubled density) ---------- */
+    const AMB_COUNT = 6000;
     const ambPositions = new Float32Array(AMB_COUNT * 3);
     const ambVel = new Float32Array(AMB_COUNT * 3);
     for (let i = 0; i < AMB_COUNT; i++) {
-      ambPositions[i * 3 + 0] = (Math.random() - 0.5) * 1100;
-      ambPositions[i * 3 + 1] = (Math.random() - 0.5) * 700;
-      ambPositions[i * 3 + 2] = (Math.random() - 0.5) * 600;
+      ambPositions[i * 3 + 0] = (Math.random() - 0.5) * 1300;
+      ambPositions[i * 3 + 1] = (Math.random() - 0.5) * 800;
+      ambPositions[i * 3 + 2] = (Math.random() - 0.5) * 700;
       ambVel[i * 3 + 0] = (Math.random() - 0.5) * 0.04;
       ambVel[i * 3 + 1] = (Math.random() - 0.5) * 0.04;
       ambVel[i * 3 + 2] = (Math.random() - 0.5) * 0.04;
@@ -514,11 +538,11 @@
     const ambGeom = new THREE.BufferGeometry();
     ambGeom.setAttribute('position', new THREE.BufferAttribute(ambPositions, 3));
     const ambMat = new THREE.PointsMaterial({
-      size: 2.6,
+      size: 2.3,
       map: dotTex,
       color: 0x0d9373,
       transparent: true,
-      opacity: 0.78,
+      opacity: 0.70,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       sizeAttenuation: true,
@@ -554,6 +578,54 @@
     const nodePoints = new THREE.Points(nodeGeom, nodeMat);
     scene.add(nodePoints);
 
+    /* ---------- FIX 12 — 10 BIG hero nodes that pulse slowly. A separate Points
+       cloud with a custom per-vertex size attribute driven by a sin wave. Brighter
+       (white core) and bigger (4–6px nominal, scaled by sizeAttenuation). ---------- */
+    const BIG_NODE_COUNT = 10;
+    const bigPos = new Float32Array(BIG_NODE_COUNT * 3);
+    const bigVel = new Float32Array(BIG_NODE_COUNT * 3);
+    const bigPhase = new Float32Array(BIG_NODE_COUNT);
+    const bigSize = new Float32Array(BIG_NODE_COUNT);
+    for (let i = 0; i < BIG_NODE_COUNT; i++) {
+      bigPos[i * 3 + 0] = (Math.random() - 0.5) * 720;
+      bigPos[i * 3 + 1] = (Math.random() - 0.5) * 440;
+      bigPos[i * 3 + 2] = (Math.random() - 0.5) * 280;
+      bigVel[i * 3 + 0] = (Math.random() - 0.5) * 0.05;
+      bigVel[i * 3 + 1] = (Math.random() - 0.5) * 0.05;
+      bigVel[i * 3 + 2] = (Math.random() - 0.5) * 0.04;
+      bigPhase[i] = Math.random() * Math.PI * 2;
+      bigSize[i] = 14; // base value — overwritten every frame by the pulse
+    }
+    const bigGeom = new THREE.BufferGeometry();
+    bigGeom.setAttribute('position', new THREE.BufferAttribute(bigPos, 3));
+    bigGeom.setAttribute('size', new THREE.BufferAttribute(bigSize, 1));
+    // Custom shader to read per-vertex size — PointsMaterial only supports a single uniform size.
+    const bigMat = new THREE.ShaderMaterial({
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      uniforms: { uTex: { value: dotTex } },
+      vertexShader: `
+        attribute float size;
+        varying float vSize;
+        void main() {
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = size * (300.0 / -mv.z);
+          gl_Position = projectionMatrix * mv;
+          vSize = size;
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D uTex;
+        void main() {
+          vec4 t = texture2D(uTex, gl_PointCoord);
+          gl_FragColor = vec4(1.0, 1.0, 0.95, t.a * 0.95);
+        }
+      `,
+    });
+    const bigPoints = new THREE.Points(bigGeom, bigMat);
+    scene.add(bigPoints);
+
     /* lines connecting nearby nodes (rebuilt each frame from a flat segment buffer) */
     const MAX_SEGMENTS = NODE_COUNT * 10; // generous cap; truncated as needed
     const segPositions = new Float32Array(MAX_SEGMENTS * 6);
@@ -584,10 +656,24 @@
       raycaster.ray.intersectPlane(repelPlane, repelTarget);
       repulse.copy(repelTarget);
     }
+    /* FIX 12 — combined handler: feed Three.js raycaster AND drive the
+       CSS cursor-glow div via CSS variables. One mousemove listener for both. */
+    const cursorGlow = document.getElementById('awl-cursor-glow');
+    let glowLive = false;
     window.addEventListener('mousemove', (e) => {
       const r = section.getBoundingClientRect();
       pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1;
       pointer.y = -(((e.clientY - r.top) / r.height) * 2 - 1);
+      if (cursorGlow) {
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        cursorGlow.style.setProperty('--x', x + 'px');
+        cursorGlow.style.setProperty('--y', y + 'px');
+        if (!glowLive) { cursorGlow.classList.add('is-live'); glowLive = true; }
+      }
+    });
+    section.addEventListener('mouseleave', () => {
+      if (cursorGlow) { cursorGlow.classList.remove('is-live'); glowLive = false; }
     });
 
     /* ---------- resize ---------- */
@@ -605,8 +691,17 @@
     const ambPos = ambGeom.attributes.position.array;
     const nodePos = nodeGeom.attributes.position.array;
 
+    // FIX 12 — repulsion tuning. Much stronger forces + larger reach so the
+    // whole field visibly reacts to cursor motion (was 0.6/22000 + 1.8/34000).
+    const AMB_REPEL_R2 = 55000;
+    const AMB_REPEL_F  = 3.4;
+    const NODE_REPEL_R2 = 75000;
+    const NODE_REPEL_F  = 7.5;
+
+    const bigSizeAttr = bigGeom.attributes.size.array;
+
     function step() {
-      // ambient drift + soft mouse push
+      // ambient drift + strong mouse push
       updateRepulse();
       const rx = repulse.x, ry = repulse.y;
       for (let i = 0; i < AMB_COUNT; i++) {
@@ -618,11 +713,11 @@
         if (ambPos[ix]     >  BOUND_X || ambPos[ix]     < -BOUND_X) ambVel[ix]     *= -1;
         if (ambPos[ix + 1] >  BOUND_Y || ambPos[ix + 1] < -BOUND_Y) ambVel[ix + 1] *= -1;
         if (ambPos[ix + 2] >  BOUND_Z || ambPos[ix + 2] < -BOUND_Z) ambVel[ix + 2] *= -1;
-        // mouse repulsion (subtle on ambient cloud)
+        // mouse repulsion — strong + wide so the field visibly scatters
         const dx = ambPos[ix] - rx, dy = ambPos[ix + 1] - ry;
         const d2 = dx * dx + dy * dy;
-        if (d2 < 22000) {
-          const f = (1 - d2 / 22000) * 0.6;
+        if (d2 < AMB_REPEL_R2) {
+          const f = (1 - d2 / AMB_REPEL_R2) * AMB_REPEL_F;
           const inv = 1 / Math.max(Math.sqrt(d2), 0.001);
           ambPos[ix]     += dx * inv * f;
           ambPos[ix + 1] += dy * inv * f;
@@ -630,7 +725,7 @@
       }
       ambGeom.attributes.position.needsUpdate = true;
 
-      // nodes — same physics, a touch stronger repulsion
+      // nodes — much stronger repulsion + wider reach for a fluid scatter feel
       for (let i = 0; i < NODE_COUNT; i++) {
         const ix = i * 3;
         nodePos[ix]     += nodeVel[ix];
@@ -641,8 +736,8 @@
         if (nodePos[ix + 2] >  BOUND_Z * 0.85 || nodePos[ix + 2] < -BOUND_Z * 0.85) nodeVel[ix + 2] *= -1;
         const dx = nodePos[ix] - rx, dy = nodePos[ix + 1] - ry;
         const d2 = dx * dx + dy * dy;
-        if (d2 < 34000) {
-          const f = (1 - d2 / 34000) * 1.8;
+        if (d2 < NODE_REPEL_R2) {
+          const f = (1 - d2 / NODE_REPEL_R2) * NODE_REPEL_F;
           const inv = 1 / Math.max(Math.sqrt(d2), 0.001);
           nodePos[ix]     += dx * inv * f;
           nodePos[ix + 1] += dy * inv * f;
@@ -650,7 +745,34 @@
       }
       nodeGeom.attributes.position.needsUpdate = true;
 
-      // connections (O(n²) on the 260 nodes — fine)
+      // FIX 12 — big nodes: gentle drift + slow individual pulse (size oscillates
+      // 12 → 22 over ~3s per node, each with its own phase offset for life).
+      const tNow = performance.now() * 0.001;
+      for (let i = 0; i < BIG_NODE_COUNT; i++) {
+        const ix = i * 3;
+        bigPos[ix]     += bigVel[ix];
+        bigPos[ix + 1] += bigVel[ix + 1];
+        bigPos[ix + 2] += bigVel[ix + 2];
+        if (bigPos[ix]     >  BOUND_X * 0.75 || bigPos[ix]     < -BOUND_X * 0.75) bigVel[ix]     *= -1;
+        if (bigPos[ix + 1] >  BOUND_Y * 0.75 || bigPos[ix + 1] < -BOUND_Y * 0.75) bigVel[ix + 1] *= -1;
+        if (bigPos[ix + 2] >  BOUND_Z * 0.75 || bigPos[ix + 2] < -BOUND_Z * 0.75) bigVel[ix + 2] *= -1;
+        // Big nodes feel the cursor too, just lazily
+        const dx = bigPos[ix] - rx, dy = bigPos[ix + 1] - ry;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < NODE_REPEL_R2 * 1.2) {
+          const f = (1 - d2 / (NODE_REPEL_R2 * 1.2)) * 4.0;
+          const inv = 1 / Math.max(Math.sqrt(d2), 0.001);
+          bigPos[ix]     += dx * inv * f;
+          bigPos[ix + 1] += dy * inv * f;
+        }
+        // Per-vertex size pulse — sin wave around 17, ±5
+        bigSizeAttr[i] = 17 + Math.sin(tNow * 2.0 + bigPhase[i]) * 5;
+      }
+      bigGeom.attributes.position.needsUpdate = true;
+      bigGeom.attributes.size.needsUpdate = true;
+
+      // connections (O(n²) on the 260 nodes — fine). FIX 12: stronger near-far
+      // brightness ramp so the web visibly throbs as nodes scatter & re-collapse.
       let segIdx = 0;
       const t2 = CONNECT_THRESH * CONNECT_THRESH;
       for (let i = 0; i < NODE_COUNT && segIdx < MAX_SEGMENTS; i++) {
@@ -662,13 +784,17 @@
           const dx = ax - bx, dy = ay - by, dz = az - bz;
           const d2 = dx * dx + dy * dy + dz * dz;
           if (d2 < t2) {
-            const a = 1 - Math.sqrt(d2) / CONNECT_THRESH; // 0..1 closer = brighter
+            // Quadratic falloff = more contrast between near + far connections.
+            const lin = 1 - Math.sqrt(d2) / CONNECT_THRESH; // 0..1
+            const a = lin * lin; // closer pairs glow much brighter
             const s6 = segIdx * 6;
             segPositions[s6 + 0] = ax; segPositions[s6 + 1] = ay; segPositions[s6 + 2] = az;
             segPositions[s6 + 3] = bx; segPositions[s6 + 4] = by; segPositions[s6 + 5] = bz;
-            // colour: AWL green tinted brighter when near
-            segColors[s6 + 0] = 0.05; segColors[s6 + 1] = 0.58 * a + 0.10; segColors[s6 + 2] = 0.45 * a + 0.10;
-            segColors[s6 + 3] = 0.05; segColors[s6 + 4] = 0.58 * a + 0.10; segColors[s6 + 5] = 0.45 * a + 0.10;
+            // colour: AWL green, drives from dim → bright cyan-green as a → 1
+            const g = 0.85 * a + 0.05;
+            const b = 0.65 * a + 0.05;
+            segColors[s6 + 0] = 0.05; segColors[s6 + 1] = g; segColors[s6 + 2] = b;
+            segColors[s6 + 3] = 0.05; segColors[s6 + 4] = g; segColors[s6 + 5] = b;
             segIdx++;
           }
         }
