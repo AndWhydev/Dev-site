@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const lastReviewed = '28 May 2026';
 ---
 
 <Layout
   title="Privacy Policy — All Webbed Labs"
-  description="All Webbed Labs privacy policy. How we collect, use and protect your personal information in accordance with the Australian Privacy Act 1988."
-  noindex={true}
+  description="How All Webbed Labs collects, uses, stores and protects your personal information, in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles."
 >
   <Header />
   <main>
@@ -16,39 +17,226 @@ import Footer from '../components/Footer.astro';
         <div class="policy-header reveal">
           <span class="section-label">Legal</span>
           <h1>Privacy Policy</h1>
-          <p class="policy-meta">Last updated: January 2026 — TODO: Update with real date and have reviewed by legal counsel</p>
+          <p class="policy-meta">Last reviewed: {lastReviewed}</p>
         </div>
 
         <div class="policy-content reveal stagger-1">
-          <!-- TODO: Replace with real privacy policy reviewed by an Australian legal practitioner -->
-          <!-- This is a placeholder only and must not be used as a real privacy policy -->
 
-          <div class="policy-notice">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-            <p><strong>PLACEHOLDER CONTENT:</strong> This privacy policy must be replaced with a legally reviewed document before the site goes live. Engage an Australian privacy lawyer to draft a compliant policy under the Privacy Act 1988 (Cth).</p>
-          </div>
+          <p class="policy-lead">
+            All Webbed Labs is committed to handling your personal information responsibly and in
+            accordance with Australian law. This policy explains what information we collect, why
+            we collect it, who we share it with, how we keep it secure, and how you can access,
+            correct or complain about it.
+          </p>
 
-          <h2>1. Introduction</h2>
-          <p>All Webbed Labs (a division of All Webbed Up Pty Ltd, ABN: XX XXX XXX XXX) ("we", "us", "our") is committed to protecting your personal information in accordance with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs).</p>
+          <h2>1. Who we are</h2>
+          <p>
+            All Webbed Labs is a trading division of <strong>All Webbed Up Pty Ltd</strong>
+            (ABN: <em>to be inserted</em>) ("we", "us", "our"). We are an Australian company
+            based in Sydney, NSW, providing custom software, AI, automation, cloud infrastructure
+            and digital transformation services to Australian businesses.
+          </p>
+          <p>
+            This policy is governed by the <strong>Privacy Act 1988 (Cth)</strong> ("the Act")
+            and the <strong>Australian Privacy Principles</strong> ("APPs") contained in
+            Schedule 1 of the Act. References to "personal information" and "sensitive
+            information" carry the meanings given to those terms in section 6 of the Act.
+          </p>
+          <p>This policy applies to:</p>
+          <ul>
+            <li>this website (aibusinesssolutions.au) and any related sub-sites or staging environments we operate;</li>
+            <li>communications with us by phone, email, video conference or messaging;</li>
+            <li>project, consulting and support engagements; and</li>
+            <li>recruitment enquiries and candidate communications.</li>
+          </ul>
 
-          <h2>2. Information We Collect</h2>
-          <p>We collect personal information that you voluntarily provide to us, including your name, email address, phone number, company name and project details when you contact us through our website or other channels.</p>
+          <h2>2. What information we collect</h2>
+          <ul>
+            <li><strong>Identification &amp; contact details</strong> — your name, business name, position or title, email address, phone number and postal address.</li>
+            <li><strong>Project information</strong> — details you share about your business, technical requirements, goals, budgets, timelines and source materials supplied to us.</li>
+            <li><strong>Account &amp; access data</strong> — where we provision dashboards, repositories or staging environments for you, the usernames and authentication metadata required to give you access.</li>
+            <li><strong>Communications</strong> — copies of emails, messages, call notes, meeting summaries and (where applicable, and only with your knowledge) video conference recordings.</li>
+            <li><strong>Billing information</strong> — entity name, ABN and billing address. We do <strong>not</strong> store full credit card numbers; payments are processed by third-party providers (Stripe, bank transfer, etc.) under their own privacy terms.</li>
+            <li><strong>Technical data automatically collected when you visit our website</strong> — IP address, browser type and version, device type, operating system, referrer URL, pages visited, time on page and similar diagnostic information.</li>
+            <li><strong>Cookies and similar technologies</strong> — see Section 7 below.</li>
+          </ul>
+          <p>
+            We do <strong>not</strong> intentionally collect sensitive information (such as health
+            information, racial or ethnic origin, political opinions, religious beliefs, sexual
+            orientation, criminal record or biometric information). If you provide sensitive
+            information to us inadvertently, we will only use it for the purpose for which you
+            provided it and will treat it under the higher protections required by APP 3.3.
+          </p>
 
-          <h2>3. How We Use Your Information</h2>
-          <p>We use your personal information to respond to enquiries, provide our services, send relevant communications and improve our website. We do not sell your personal information to third parties.</p>
+          <h2>3. How we collect your information</h2>
+          <ul>
+            <li>Directly from you — when you contact us, complete a form on our website, sign an engagement, attend a meeting or send us materials.</li>
+            <li>From people authorised to provide it on your behalf — for example, your colleagues, accountants, lawyers or other vendors involved in a project.</li>
+            <li>Automatically — when you use our website (see Section 7).</li>
+            <li>From publicly available sources — for example, your organisation's website, ABN Lookup, LinkedIn and public business registries.</li>
+          </ul>
+          <p>
+            If we collect information about you from a third party rather than directly from you,
+            we will, where reasonable and practicable, take the steps required by APP 5 to
+            notify you of the collection.
+          </p>
 
-          <h2>4. Data Storage and Security</h2>
-          <p>Your data is stored securely in Australia. We implement industry-standard security measures to protect against unauthorised access, disclosure or destruction.</p>
+          <h2>4. Why we collect and use your information</h2>
+          <p><strong>Primary purposes.</strong> We collect and use personal information to:</p>
+          <ul>
+            <li>respond to enquiries and prepare quotes;</li>
+            <li>perform services under an engagement (planning, designing, building, testing and supporting software);</li>
+            <li>communicate with you about ongoing projects, schedules, billing and support;</li>
+            <li>send operational notices, including security advisories, scheduled maintenance and contract renewals; and</li>
+            <li>maintain records as required by Australian tax, corporate, employment and contract law.</li>
+          </ul>
+          <p>
+            <strong>Secondary purposes.</strong> We may also use your information for a related
+            secondary purpose where you would reasonably expect us to do so, or where you have
+            consented — for example, marketing our services to you (subject to your right to
+            unsubscribe; see Section 9), improving our products, benchmarking service delivery,
+            and producing case studies or testimonials. Externally visible case studies and
+            testimonials are only published with your <strong>prior written consent</strong>.
+          </p>
 
-          <h2>5. Your Rights</h2>
-          <p>You have the right to access, correct or request deletion of your personal information. Contact us at <a href="mailto:privacy@allwebbedup.com.au">privacy@allwebbedup.com.au</a> to exercise these rights.</p>
+          <h2>5. Disclosure to third parties (including overseas recipients)</h2>
+          <p>We disclose personal information only where reasonably necessary to deliver our services. Categories of recipients include:</p>
+          <ul>
+            <li><strong>Cloud infrastructure &amp; hosting</strong> — for example Amazon Web Services, Cloudflare, Cloudways, Vercel and Netlify. Data may be stored in Australia, the United States, the European Union or Singapore.</li>
+            <li><strong>Email, calendar &amp; messaging</strong> — for example Google Workspace, Microsoft 365 and Slack.</li>
+            <li><strong>AI &amp; developer tools</strong> — for example Anthropic, OpenAI, GitHub and similar providers, used to build, deploy and operate the systems we deliver. We do not voluntarily upload identifiable client material to public model training endpoints, and we will agree project-specific data-handling rules with you on request.</li>
+            <li><strong>Payments &amp; finance</strong> — Stripe, Xero, our bank and our accountant.</li>
+            <li><strong>Professional advisors</strong> — legal, accounting and insurance providers, where their advice is required in connection with our business.</li>
+            <li><strong>Government and regulators</strong> — where required by Australian law, including the ATO, ASIC, the OAIC, courts and law enforcement under a valid notice or warrant.</li>
+            <li><strong>Acquirers</strong> — in connection with a sale, merger or restructure of our business; any acquirer will be required to honour the commitments in this policy.</li>
+          </ul>
+          <p>
+            Several of these providers store data outside Australia (most commonly the United
+            States, the European Union or Singapore). By providing us with your personal
+            information, you acknowledge that we may transfer that information overseas as
+            described above, and you consent under APP 8.2(b) to that disclosure. We take
+            reasonable steps to ensure overseas recipients handle your information consistently
+            with the APPs, including by selecting reputable providers with established
+            data-protection frameworks.
+          </p>
+          <p>We do <strong>not</strong> sell your personal information.</p>
 
-          <h2>6. Cookies</h2>
-          <p>Our website may use cookies to improve your browsing experience. You can control cookie settings through your browser preferences.</p>
+          <h2>6. Data quality, storage and security (APPs 10 &amp; 11)</h2>
+          <p>
+            We take reasonable steps to keep your information accurate, complete and up to date.
+            Please tell us if your details change so we can correct our records.
+          </p>
+          <p>
+            We store information in secured cloud services that use industry-standard encryption
+            (TLS in transit; AES-256 or equivalent at rest) and access controls (multi-factor
+            authentication, role-based permissions and audit logging). We restrict internal
+            access to those who need it to do their job.
+          </p>
+          <p>
+            No system is perfectly secure. If we become aware of an <em>eligible data breach</em>
+            under Part IIIC of the Privacy Act, we will notify affected individuals and the
+            Office of the Australian Information Commissioner (OAIC) as required by the
+            Notifiable Data Breaches scheme.
+          </p>
+          <p>
+            We retain personal information only for as long as we need it for the purpose for
+            which it was collected, or as required by law. Typical retention periods include
+            <strong>at least 7 years</strong> for business and accounting records (as required by
+            the <em>Income Tax Assessment Act 1997</em> and the <em>Corporations Act 2001</em>),
+            and longer for employment-related records as required by the <em>Fair Work Act 2009</em>.
+            When we no longer need information, we destroy or de-identify it.
+          </p>
 
-          <h2>7. Contact Us</h2>
-          <p>For privacy enquiries: <a href="mailto:privacy@allwebbedup.com.au">privacy@allwebbedup.com.au</a></p>
-          <p>TODO: Add full mailing address for privacy enquiries.</p>
+          <h2>7. Cookies, analytics &amp; tracking</h2>
+          <p>Our website uses cookies and similar technologies for:</p>
+          <ul>
+            <li><strong>Essential operation</strong> — keeping you signed in to admin areas, remembering form input and providing security tokens;</li>
+            <li><strong>Analytics</strong> — measuring traffic, page performance and aggregate user behaviour. We may use providers such as Google Analytics, Plausible, Cloudflare Analytics or similar;</li>
+            <li><strong>Functional &amp; preference</strong> — remembering settings such as theme or previously accepted notifications.</li>
+          </ul>
+          <p>
+            We do not currently run advertising or remarketing pixels on this site. If that
+            changes, we will update this policy and surface a cookie-consent mechanism where
+            required by law. You can refuse or delete cookies through your browser settings;
+            doing so may stop some site features from working.
+          </p>
+
+          <h2>8. Access, correction, anonymity and pseudonymity (APPs 2, 12, 13)</h2>
+          <p>You may, at any time:</p>
+          <ul>
+            <li>request access to the personal information we hold about you (APP 12);</li>
+            <li>ask us to correct it if it is inaccurate, out of date, incomplete, irrelevant or misleading (APP 13); and</li>
+            <li>withdraw consent to non-essential uses (such as marketing).</li>
+          </ul>
+          <p>
+            We will respond to access and correction requests within a reasonable period —
+            normally within 30 days. We may charge a reasonable fee for the cost of providing
+            access where the request is large or labour-intensive; we will tell you the fee
+            before any work is undertaken. We will not charge for <em>making</em> a correction.
+          </p>
+          <p>
+            Where lawful and practical, you may interact with us anonymously or under a
+            pseudonym. For service delivery, billing and legal compliance, however, we usually
+            need to know who you are.
+          </p>
+
+          <h2>9. Direct marketing &amp; Spam Act 2003 (Cth)</h2>
+          <p>
+            We may send you commercial electronic messages (email or SMS) about our services
+            where you have given express or inferred consent under the <em>Spam Act 2003 (Cth)</em>.
+            Every commercial message we send will:
+          </p>
+          <ul>
+            <li>identify us as the sender;</li>
+            <li>contain accurate contact details; and</li>
+            <li>include a functional unsubscribe mechanism, honoured within 5 business days.</li>
+          </ul>
+          <p>You can opt out at any time using the unsubscribe link in a message or by emailing us at the address in Section 12.</p>
+
+          <h2>10. Children's privacy</h2>
+          <p>
+            Our services are intended for businesses and adult users. We do not knowingly
+            collect personal information from children under 16. If you believe we hold
+            information about a child, please contact us and we will delete it.
+          </p>
+
+          <h2>11. Changes to this policy</h2>
+          <p>
+            We may update this policy from time to time to reflect changes in our practices or
+            the law. The "Last reviewed" date at the top of this page shows when it was last
+            updated, and we encourage you to review this page periodically. Where changes are
+            material, we will take additional steps to bring them to your attention — for
+            example, a notice on the website or an email to current clients.
+          </p>
+
+          <h2>12. Contact us &amp; complaints</h2>
+          <p>
+            <strong>Privacy Officer</strong><br />
+            All Webbed Up Pty Ltd (trading as All Webbed Labs)<br />
+            Email: <a href="mailto:privacy@allwebbedup.com.au">privacy@allwebbedup.com.au</a><br />
+            Postal address available on request.
+          </p>
+          <p>
+            If you have a complaint about how we have handled your personal information, please
+            contact our Privacy Officer first. We will acknowledge your complaint within 5
+            business days and aim to provide a substantive response within 30 days.
+          </p>
+          <p>If you are not satisfied with our response, you may refer your complaint to the Office of the Australian Information Commissioner (OAIC):</p>
+          <ul>
+            <li><strong>Web:</strong> <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer">oaic.gov.au</a></li>
+            <li><strong>Phone:</strong> 1300 363 992</li>
+            <li><strong>Post:</strong> GPO Box 5288, Sydney NSW 2001</li>
+          </ul>
+
+          <hr class="policy-rule" />
+
+          <p class="policy-foot">
+            This policy is provided in plain English to help you understand your rights and our
+            obligations. It is intended to comply with the Privacy Act 1988 (Cth) and the
+            Australian Privacy Principles, but it is not legal advice. If you have specific
+            questions about how it applies to your situation, please contact us using the
+            details above.
+          </p>
         </div>
       </div>
     </section>
@@ -58,24 +246,46 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .policy-section { padding: 9rem 0 6rem; background: #0a0f0e; min-height: 80vh; }
-  .policy-inner { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+  .policy-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
   .policy-header { margin-bottom: 3rem; }
-  .policy-header h1 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; color: white; margin: 0.75rem 0 0.5rem; }
-  .policy-meta { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #4a6359; margin: 0; }
-  .policy-content h2 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 2rem 0 0.75rem; }
-  .policy-content p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.75; margin: 0 0 1rem; }
-  .policy-content a { color: #0d9373; text-decoration: none; }
-  .policy-notice {
-    display: flex;
-    gap: 0.875rem;
-    background: rgba(239,68,68,0.06);
-    border: 1px solid rgba(239,68,68,0.2);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-bottom: 2.5rem;
-    color: #f87171;
-    align-items: flex-start;
+  .policy-header h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: white; margin: 0.75rem 0 0.5rem; letter-spacing: -0.015em; }
+  .policy-meta { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; color: #6b8478; margin: 0; }
+
+  .policy-content h2 { font-family: 'Sora', sans-serif; font-size: 1.375rem; font-weight: 700; color: white; margin: 2.75rem 0 0.85rem; letter-spacing: -0.01em; }
+  .policy-content p,
+  .policy-content li { font-family: 'DM Sans', sans-serif; font-size: 0.9625rem; color: #cde0da; line-height: 1.75; }
+  .policy-content p { margin: 0 0 1rem; }
+  .policy-content ul { margin: 0.5rem 0 1.5rem 1.25rem; padding: 0; }
+  .policy-content ul li { margin-bottom: 0.5rem; }
+  .policy-content strong { color: white; font-weight: 600; }
+  .policy-content em { font-style: italic; color: rgba(205, 224, 218, 0.8); }
+  .policy-content a {
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13, 147, 115, 0.4);
+    transition: border-color 0.2s ease, color 0.2s ease;
   }
-  .policy-notice svg { flex-shrink: 0; margin-top: 2px; }
-  .policy-notice p { color: #f87171; margin: 0; font-size: 0.875rem; line-height: 1.5; }
+  .policy-content a:hover { border-color: #0d9373; color: #14b58e; }
+
+  .policy-lead {
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+    color: #e1eee9 !important;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid #0d9373;
+    background: rgba(13, 147, 115, 0.06);
+    margin: 0 0 2.5rem 0 !important;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .policy-rule {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 3rem 0 1.5rem 0;
+  }
+  .policy-foot {
+    font-size: 0.875rem !important;
+    color: rgba(205, 224, 218, 0.65) !important;
+    font-style: italic;
+  }
 </style>
