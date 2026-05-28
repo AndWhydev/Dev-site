@@ -1,0 +1,552 @@
+---
+/**
+ * AWL — WebGL particle-network hero (Lusion-inspired).
+ * Three.js point cloud + connected node graph that responds to cursor.
+ * Graceful fallback to a CSS gradient mesh when WebGL is unavailable.
+ * Reduced motion: single static frame (no animation loop).
+ */
+---
+
+<section class="awl-hero" id="awl-hero" aria-label="All Webbed Labs hero">
+  <!-- CSS gradient mesh shown until WebGL takes over (and used as fallback if WebGL fails). -->
+  <div class="awl-hero__mesh" aria-hidden="true"></div>
+  <canvas id="awl-hero-canvas" aria-hidden="true"></canvas>
+  <div class="awl-hero__scrim" aria-hidden="true"></div>
+
+  <div class="awl-hero__inner">
+    <p class="awl-hero__eyebrow">AI-POWERED DEVELOPMENT AGENCY</p>
+    <h1 id="awl-hero-heading" class="hero-heading">We build software that runs itself.</h1>
+    <p class="awl-hero__sub">Autonomous AI systems for Australian businesses. From websites to enterprise software — built faster, operated smarter.</p>
+    <div class="awl-hero__ctas">
+      <a href="/portfolio" class="btn-fill btn-magnetic" data-hover>See our work</a>
+      <a href="/contact" class="awl-hero__link" data-hover>Book a call <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+
+  <div class="awl-hero__hint" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="down"></span>
+  </div>
+</section>
+
+<style is:global>
+  /* New homepage tokens (scoped to pages that include this component via :root cascade). */
+  :root {
+    --color-bg: #0a0a0a;
+    --color-bg-raised: #111111;
+    --color-surface: #1a1a1a;
+    --color-border: rgba(255,255,255,0.06);
+    --color-border-strong: rgba(255,255,255,0.12);
+    --color-text: #ededed;
+    --color-muted: #888888;
+    --color-accent: #0d9373;
+    --color-accent-hover: #0fb888;
+    --color-accent-muted: rgba(13,147,115,0.15);
+    --accent-rgb: 13,147,115;
+  }
+</style>
+
+<style>
+  .awl-hero {
+    position: relative;
+    min-height: 100svh;
+    width: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+  }
+
+  /* CSS gradient mesh — fallback + initial paint before WebGL boots. */
+  .awl-hero__mesh {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 15% 50%, rgba(13,147,115,0.22) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 45% at 85% 35%, rgba(13,147,115,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 70% at 50% 100%, rgba(13,147,115,0.06) 0%, transparent 70%),
+      #0a0a0a;
+    animation: awl-mesh-drift 32s ease-in-out infinite alternate;
+  }
+  @keyframes awl-mesh-drift {
+    0%   { background-position: 0% 50%, 100% 35%, 50% 100%; }
+    100% { background-position: 8% 55%, 92% 30%, 55% 105%; }
+  }
+
+  #awl-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.1s cubic-bezier(.22,.61,.36,1);
+    display: block;
+  }
+  #awl-hero-canvas.ready { opacity: 1; }
+
+  /* Subtle scrim under the text so the heading stays legible over busy particle areas. */
+  .awl-hero__scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.15) 45%, rgba(10,10,10,0.40) 100%);
+  }
+
+  .awl-hero__inner {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8rem 6vw 7rem;
+  }
+
+  .awl-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 32px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+  }
+  .awl-hero__eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--color-accent);
+    display: inline-block;
+  }
+
+  .hero-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(52px, 7vw, 110px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 28px;
+    max-width: 14ch;
+    overflow: hidden;
+  }
+  .hero-heading .w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+  .hero-heading .w > span {
+    display: inline-block;
+    transform: translateY(110%) rotate(3deg);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .hero-heading.is-in .w > span {
+    animation: awl-word-up 0.95s cubic-bezier(.19,1,.22,1) forwards;
+  }
+  @keyframes awl-word-up {
+    to { transform: translateY(0) rotate(0); opacity: 1; }
+  }
+
+  .awl-hero__sub {
+    margin: 0 0 44px;
+    font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.65;
+    color: #cfd5d3;
+    max-width: 56ch;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: awl-rise 0.9s 0.55s cubic-bezier(.19,1,.22,1) forwards;
+  }
+  @keyframes awl-rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .awl-hero__ctas {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: awl-rise 0.9s 0.75s cubic-bezier(.19,1,.22,1) forwards;
+  }
+
+  /* btn-fill (verbatim pattern from ANIMATIONS.md, scoped here so the hero is self-contained). */
+  .btn-fill {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    display: inline-block;
+    padding: 16px 34px;
+    border: 1.5px solid var(--color-accent);
+    color: var(--color-accent);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: color 0.35s ease;
+  }
+  .btn-fill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-accent);
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+  .btn-fill:hover { color: var(--color-bg); }
+  .btn-fill:hover::before { transform: translateX(0); }
+
+  .awl-hero__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ededed;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.3s ease, color 0.3s ease;
+  }
+  .awl-hero__link:hover { gap: 16px; color: var(--color-accent); }
+  .awl-hero__link .arrow { transition: transform 0.3s ease; }
+  .awl-hero__link:hover .arrow { transform: translateX(3px); }
+
+  .awl-hero__hint {
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.55);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .awl-hero__hint .down {
+    width: 14px;
+    height: 14px;
+    border-right: 1.5px solid rgba(255,255,255,0.55);
+    border-bottom: 1.5px solid rgba(255,255,255,0.55);
+    transform: rotate(45deg);
+    animation: awl-bounce 1.8s cubic-bezier(.22,.61,.36,1) infinite;
+  }
+  @keyframes awl-bounce {
+    0%,100% { transform: rotate(45deg) translate(0,0); opacity: 0.4; }
+    50%     { transform: rotate(45deg) translate(4px,4px); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .awl-hero__mesh { animation: none; }
+    .hero-heading.is-in .w > span,
+    .awl-hero__sub,
+    .awl-hero__ctas { animation-duration: 0.001s; }
+    .awl-hero__hint .down { animation: none; opacity: 0.55; }
+  }
+
+  @media (max-width: 720px) {
+    .awl-hero__inner { padding: 7rem 24px 6rem; }
+    .awl-hero__ctas { gap: 20px; }
+  }
+</style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script is:inline>
+  /* Hero boot — split the heading, play intro, init Three.js. Re-runs on Astro view transitions.
+     is:inline so Astro doesn't bundle this as a module — we need direct access to the global THREE. */
+  function awlSplitHeading() {
+    const h = document.getElementById('awl-hero-heading');
+    if (!h || h.dataset.split === '1') return;
+    const text = h.textContent ? h.textContent.trim() : '';
+    const words = text.split(/\s+/);
+    h.innerHTML = words.map(w => `<span class="w"><span>${w}</span></span>`).join(' ');
+    h.dataset.split = '1';
+  }
+
+  function awlPlayIntro() {
+    const h = document.getElementById('awl-hero-heading');
+    if (h) requestAnimationFrame(() => h.classList.add('is-in'));
+    // Magnetic button(s) inside the hero.
+    document.querySelectorAll('#awl-hero .btn-magnetic').forEach(btn => {
+      if (btn.dataset.mag === '1') return;
+      btn.dataset.mag = '1';
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) * 0.28;
+        const dy = (e.clientY - r.top - r.height / 2) * 0.28;
+        btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  function awlInitWebGL() {
+    const canvas = document.getElementById('awl-hero-canvas');
+    const section = document.getElementById('awl-hero');
+    if (!canvas || !section) return;
+    if (typeof THREE === 'undefined') {
+      // CDN script hasn't arrived yet — try again shortly.
+      return setTimeout(awlInitWebGL, 200);
+    }
+    if (canvas.dataset.booted === '1') return;
+    canvas.dataset.booted = '1';
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+    } catch (e) {
+      console.warn('[AWL hero] WebGL unavailable — using CSS mesh fallback.', e);
+      return;
+    }
+    if (!renderer.getContext()) { console.warn('[AWL hero] no WebGL context — fallback.'); return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, section.clientWidth / section.clientHeight, 1, 2000);
+    camera.position.set(0, 0, 420);
+
+    /* ---------- soft circular sprite (additive blending = bloom-like glow without postprocessing) ---------- */
+    function makeDotTexture() {
+      const c = document.createElement('canvas');
+      c.width = c.height = 64;
+      const g = c.getContext('2d');
+      const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+      grad.addColorStop(0.0, 'rgba(255,255,255,1)');
+      grad.addColorStop(0.35, 'rgba(255,255,255,0.65)');
+      grad.addColorStop(1.0, 'rgba(255,255,255,0)');
+      g.fillStyle = grad;
+      g.fillRect(0, 0, 64, 64);
+      const tex = new THREE.CanvasTexture(c);
+      tex.minFilter = THREE.LinearFilter;
+      return tex;
+    }
+    const dotTex = makeDotTexture();
+
+    /* ---------- ambient cloud (3000 points, no connections — visual depth) ---------- */
+    const AMB_COUNT = 3000;
+    const ambPositions = new Float32Array(AMB_COUNT * 3);
+    const ambVel = new Float32Array(AMB_COUNT * 3);
+    for (let i = 0; i < AMB_COUNT; i++) {
+      ambPositions[i * 3 + 0] = (Math.random() - 0.5) * 1100;
+      ambPositions[i * 3 + 1] = (Math.random() - 0.5) * 700;
+      ambPositions[i * 3 + 2] = (Math.random() - 0.5) * 600;
+      ambVel[i * 3 + 0] = (Math.random() - 0.5) * 0.04;
+      ambVel[i * 3 + 1] = (Math.random() - 0.5) * 0.04;
+      ambVel[i * 3 + 2] = (Math.random() - 0.5) * 0.04;
+    }
+    const ambGeom = new THREE.BufferGeometry();
+    ambGeom.setAttribute('position', new THREE.BufferAttribute(ambPositions, 3));
+    const ambMat = new THREE.PointsMaterial({
+      size: 2.6,
+      map: dotTex,
+      color: 0x0d9373,
+      transparent: true,
+      opacity: 0.78,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true,
+    });
+    const ambPoints = new THREE.Points(ambGeom, ambMat);
+    scene.add(ambPoints);
+
+    /* ---------- node graph (260 brighter particles connected by lines — the "network thinking") ---------- */
+    const NODE_COUNT = 260;
+    const CONNECT_THRESH = 95;
+    const nodePositions = new Float32Array(NODE_COUNT * 3);
+    const nodeVel = new Float32Array(NODE_COUNT * 3);
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodePositions[i * 3 + 0] = (Math.random() - 0.5) * 700;
+      nodePositions[i * 3 + 1] = (Math.random() - 0.5) * 460;
+      nodePositions[i * 3 + 2] = (Math.random() - 0.5) * 380;
+      nodeVel[i * 3 + 0] = (Math.random() - 0.5) * 0.08;
+      nodeVel[i * 3 + 1] = (Math.random() - 0.5) * 0.08;
+      nodeVel[i * 3 + 2] = (Math.random() - 0.5) * 0.06;
+    }
+    const nodeGeom = new THREE.BufferGeometry();
+    nodeGeom.setAttribute('position', new THREE.BufferAttribute(nodePositions, 3));
+    const nodeMat = new THREE.PointsMaterial({
+      size: 5.2,
+      map: dotTex,
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.95,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true,
+    });
+    const nodePoints = new THREE.Points(nodeGeom, nodeMat);
+    scene.add(nodePoints);
+
+    /* lines connecting nearby nodes (rebuilt each frame from a flat segment buffer) */
+    const MAX_SEGMENTS = NODE_COUNT * 10; // generous cap; truncated as needed
+    const segPositions = new Float32Array(MAX_SEGMENTS * 6);
+    const segColors = new Float32Array(MAX_SEGMENTS * 6);
+    const segGeom = new THREE.BufferGeometry();
+    segGeom.setAttribute('position', new THREE.BufferAttribute(segPositions, 3).setUsage(THREE.DynamicDrawUsage));
+    segGeom.setAttribute('color', new THREE.BufferAttribute(segColors, 3).setUsage(THREE.DynamicDrawUsage));
+    const segMat = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.55,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+    const segments = new THREE.LineSegments(segGeom, segMat);
+    scene.add(segments);
+
+    /* ---------- pointer projected onto z=0 plane for repulsion ---------- */
+    const pointer = new THREE.Vector2(-2, -2); // off-screen until first move
+    const repulse = new THREE.Vector3();
+    const ndc = new THREE.Vector2();
+    const raycaster = new THREE.Raycaster();
+    const repelPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+    const repelTarget = new THREE.Vector3();
+    function updateRepulse() {
+      ndc.set(pointer.x, pointer.y);
+      raycaster.setFromCamera(ndc, camera);
+      raycaster.ray.intersectPlane(repelPlane, repelTarget);
+      repulse.copy(repelTarget);
+    }
+    window.addEventListener('mousemove', (e) => {
+      const r = section.getBoundingClientRect();
+      pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+      pointer.y = -(((e.clientY - r.top) / r.height) * 2 - 1);
+    });
+
+    /* ---------- resize ---------- */
+    function resize() {
+      const w = section.clientWidth, h = section.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    /* ---------- frame ---------- */
+    const BOUND_X = 600, BOUND_Y = 380, BOUND_Z = 320;
+    const ambPos = ambGeom.attributes.position.array;
+    const nodePos = nodeGeom.attributes.position.array;
+
+    function step() {
+      // ambient drift + soft mouse push
+      updateRepulse();
+      const rx = repulse.x, ry = repulse.y;
+      for (let i = 0; i < AMB_COUNT; i++) {
+        const ix = i * 3;
+        ambPos[ix]     += ambVel[ix];
+        ambPos[ix + 1] += ambVel[ix + 1];
+        ambPos[ix + 2] += ambVel[ix + 2];
+        // gentle bounds
+        if (ambPos[ix]     >  BOUND_X || ambPos[ix]     < -BOUND_X) ambVel[ix]     *= -1;
+        if (ambPos[ix + 1] >  BOUND_Y || ambPos[ix + 1] < -BOUND_Y) ambVel[ix + 1] *= -1;
+        if (ambPos[ix + 2] >  BOUND_Z || ambPos[ix + 2] < -BOUND_Z) ambVel[ix + 2] *= -1;
+        // mouse repulsion (subtle on ambient cloud)
+        const dx = ambPos[ix] - rx, dy = ambPos[ix + 1] - ry;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 22000) {
+          const f = (1 - d2 / 22000) * 0.6;
+          const inv = 1 / Math.max(Math.sqrt(d2), 0.001);
+          ambPos[ix]     += dx * inv * f;
+          ambPos[ix + 1] += dy * inv * f;
+        }
+      }
+      ambGeom.attributes.position.needsUpdate = true;
+
+      // nodes — same physics, a touch stronger repulsion
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const ix = i * 3;
+        nodePos[ix]     += nodeVel[ix];
+        nodePos[ix + 1] += nodeVel[ix + 1];
+        nodePos[ix + 2] += nodeVel[ix + 2];
+        if (nodePos[ix]     >  BOUND_X * 0.85 || nodePos[ix]     < -BOUND_X * 0.85) nodeVel[ix]     *= -1;
+        if (nodePos[ix + 1] >  BOUND_Y * 0.85 || nodePos[ix + 1] < -BOUND_Y * 0.85) nodeVel[ix + 1] *= -1;
+        if (nodePos[ix + 2] >  BOUND_Z * 0.85 || nodePos[ix + 2] < -BOUND_Z * 0.85) nodeVel[ix + 2] *= -1;
+        const dx = nodePos[ix] - rx, dy = nodePos[ix + 1] - ry;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 34000) {
+          const f = (1 - d2 / 34000) * 1.8;
+          const inv = 1 / Math.max(Math.sqrt(d2), 0.001);
+          nodePos[ix]     += dx * inv * f;
+          nodePos[ix + 1] += dy * inv * f;
+        }
+      }
+      nodeGeom.attributes.position.needsUpdate = true;
+
+      // connections (O(n²) on the 260 nodes — fine)
+      let segIdx = 0;
+      const t2 = CONNECT_THRESH * CONNECT_THRESH;
+      for (let i = 0; i < NODE_COUNT && segIdx < MAX_SEGMENTS; i++) {
+        const ix = i * 3;
+        const ax = nodePos[ix], ay = nodePos[ix + 1], az = nodePos[ix + 2];
+        for (let j = i + 1; j < NODE_COUNT && segIdx < MAX_SEGMENTS; j++) {
+          const jx = j * 3;
+          const bx = nodePos[jx], by = nodePos[jx + 1], bz = nodePos[jx + 2];
+          const dx = ax - bx, dy = ay - by, dz = az - bz;
+          const d2 = dx * dx + dy * dy + dz * dz;
+          if (d2 < t2) {
+            const a = 1 - Math.sqrt(d2) / CONNECT_THRESH; // 0..1 closer = brighter
+            const s6 = segIdx * 6;
+            segPositions[s6 + 0] = ax; segPositions[s6 + 1] = ay; segPositions[s6 + 2] = az;
+            segPositions[s6 + 3] = bx; segPositions[s6 + 4] = by; segPositions[s6 + 5] = bz;
+            // colour: AWL green tinted brighter when near
+            segColors[s6 + 0] = 0.05; segColors[s6 + 1] = 0.58 * a + 0.10; segColors[s6 + 2] = 0.45 * a + 0.10;
+            segColors[s6 + 3] = 0.05; segColors[s6 + 4] = 0.58 * a + 0.10; segColors[s6 + 5] = 0.45 * a + 0.10;
+            segIdx++;
+          }
+        }
+      }
+      segGeom.setDrawRange(0, segIdx * 2);
+      segGeom.attributes.position.needsUpdate = true;
+      segGeom.attributes.color.needsUpdate = true;
+
+      // slow camera sway
+      const t = performance.now() * 0.0001;
+      camera.position.x = Math.sin(t) * 28;
+      camera.position.y = Math.cos(t * 0.8) * 14;
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+      if (!reduced) requestAnimationFrame(step);
+    }
+
+    // initial paint, then either loop (normal) or stop (reduced motion → single static frame).
+    step();
+    canvas.classList.add('ready');
+  }
+
+  function awlBoot() {
+    awlSplitHeading();
+    awlPlayIntro();
+    awlInitWebGL();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', awlBoot);
+  } else {
+    awlBoot();
+  }
+  // Astro view transitions: re-run when the homepage swaps in.
+  document.addEventListener('astro:after-swap', awlBoot);
+</script>
