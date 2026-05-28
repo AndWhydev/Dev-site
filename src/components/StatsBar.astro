@@ -209,18 +209,37 @@ const stats = [
   }
 
   const counterEls = document.querySelectorAll<HTMLElement>('.stat-counter');
+  const animated = new WeakSet<HTMLElement>();
 
+  function runOnce(el: HTMLElement): void {
+    if (animated.has(el)) return;
+    animated.add(el);
+    animateCounter(el);
+  }
+
+  // Primary path — animate as each stat scrolls into view.
   const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          animateCounter(entry.target as HTMLElement);
+          runOnce(entry.target as HTMLElement);
           obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.25 },
   );
 
   counterEls.forEach((el) => obs.observe(el));
+
+  // Fallback — if a stat is already visible at page load and the observer
+  // hasn't fired (some browsers + above-the-fold sections), animate after 1s.
+  // Belt-and-braces so counters never stay stuck at 0.
+  window.setTimeout(() => {
+    counterEls.forEach((el) => {
+      if (animated.has(el)) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) runOnce(el);
+    });
+  }, 1000);
 </script>
