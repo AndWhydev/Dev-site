@@ -500,7 +500,15 @@
       return;
     }
     if (!renderer.getContext()) { console.warn('[AWL hero] no WebGL context — fallback.'); return; }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    /* Mobile performance budget. Phones / small tablets get a third of the
+       particles + a lower pixel ratio so the hero stays at 60fps on mid-tier
+       Android. Desktop keeps the full density. Re-evaluated only at boot —
+       window resize after that doesn't change the budget (rebooting the
+       scene mid-session would be more disruptive than a slightly suboptimal
+       resize). */
+    const isMobile = window.innerWidth < 768;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(60, section.clientWidth / section.clientHeight, 1, 2000);
@@ -523,8 +531,8 @@
     }
     const dotTex = makeDotTexture();
 
-    /* ---------- ambient cloud (6000 points — FIX 12 doubled density) ---------- */
-    const AMB_COUNT = 6000;
+    /* ---------- ambient cloud (6000 points desktop, 2000 mobile) ---------- */
+    const AMB_COUNT = isMobile ? 2000 : 6000;
     const ambPositions = new Float32Array(AMB_COUNT * 3);
     const ambVel = new Float32Array(AMB_COUNT * 3);
     for (let i = 0; i < AMB_COUNT; i++) {
@@ -550,8 +558,9 @@
     const ambPoints = new THREE.Points(ambGeom, ambMat);
     scene.add(ambPoints);
 
-    /* ---------- node graph (260 brighter particles connected by lines — the "network thinking") ---------- */
-    const NODE_COUNT = 260;
+    /* ---------- node graph (260 desktop, 140 mobile — O(n²) connection
+         pass on this cohort, so cutting count gives quadratic perf win) ---------- */
+    const NODE_COUNT = isMobile ? 140 : 260;
     const CONNECT_THRESH = 95;
     const nodePositions = new Float32Array(NODE_COUNT * 3);
     const nodeVel = new Float32Array(NODE_COUNT * 3);
@@ -581,7 +590,7 @@
     /* ---------- FIX 12 — 10 BIG hero nodes that pulse slowly. A separate Points
        cloud with a custom per-vertex size attribute driven by a sin wave. Brighter
        (white core) and bigger (4–6px nominal, scaled by sizeAttenuation). ---------- */
-    const BIG_NODE_COUNT = 10;
+    const BIG_NODE_COUNT = isMobile ? 6 : 10;
     const bigPos = new Float32Array(BIG_NODE_COUNT * 3);
     const bigVel = new Float32Array(BIG_NODE_COUNT * 3);
     const bigPhase = new Float32Array(BIG_NODE_COUNT);
