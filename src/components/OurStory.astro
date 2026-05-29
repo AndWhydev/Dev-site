@@ -1,0 +1,322 @@
+---
+/**
+ * Origin-story section — explains the AWL split from All Webbed Up.
+ * Sits between home-entity (one-line tech-arm strapline) and TrustedBy
+ * (client logos). Establishes brand context before social proof.
+ *
+ * Layout: two side-by-side brand cards joined by a vertical accent rule
+ * + a centered "+" marker. Below: a single narrative paragraph.
+ */
+---
+
+<section class="story-section" id="our-story" aria-labelledby="our-story-heading">
+  <div class="story-inner">
+    <div class="story-header reveal">
+      <span class="story-eyebrow">Our story</span>
+      <h2 id="our-story-heading" class="story-heading">
+        Born from years of building.
+      </h2>
+    </div>
+
+    <div class="story-grid reveal">
+      <!-- Parent brand -->
+      <article class="story-card story-card--parent">
+        <div class="story-card__mark" aria-hidden="true">
+          <span class="story-card__letter">AWU</span>
+        </div>
+        <h3 class="story-card__name">All Webbed Up</h3>
+        <p class="story-card__role">Marketing &amp; growth</p>
+        <p class="story-card__body">
+          Brands, campaigns, content and storytelling for Australian
+          businesses. The parent company, still going.
+        </p>
+        <a class="story-card__link" href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">
+          allwebbedup.com.au
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <!-- Connector -->
+      <div class="story-connector" aria-hidden="true">
+        <span class="story-connector__rule"></span>
+        <span class="story-connector__plus">+</span>
+        <span class="story-connector__rule"></span>
+      </div>
+
+      <!-- This brand -->
+      <article class="story-card story-card--labs">
+        <div class="story-card__mark story-card__mark--accent" aria-hidden="true">
+          <span class="story-card__letter">AWL</span>
+        </div>
+        <h3 class="story-card__name">All Webbed Labs</h3>
+        <p class="story-card__role">Technology &amp; AI</p>
+        <p class="story-card__body">
+          Custom software, autonomous AI agents, automation and Web3 for
+          the same calibre of clients. The tech arm.
+        </p>
+        <span class="story-card__here">
+          <span class="story-card__pulse" aria-hidden="true"></span>
+          You're here
+        </span>
+      </article>
+    </div>
+
+    <p class="story-narrative reveal stagger-1">
+      After dozens of products built inside All Webbed Up, we knew the tech
+      deserved its own room. So we branched off. <strong>All Webbed Labs</strong>
+      now focuses purely on software, AI and automation; <strong>All Webbed Up</strong>
+      continues as the marketing arm. Same team, two specialised crafts.
+    </p>
+  </div>
+</section>
+
+<style>
+  .story-section {
+    position: relative;
+    padding: 6rem 0;
+    background: #0a0a0a;
+    overflow: hidden;
+  }
+  .story-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(13,147,115,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(13,147,115,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .story-inner {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .story-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: #0d9373;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .story-eyebrow::before,
+  .story-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: rgba(13, 147, 115, 0.55);
+  }
+
+  .story-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 3rem;
+  }
+
+  .story-card {
+    background: linear-gradient(180deg, rgba(20, 24, 23, 0.6) 0%, rgba(10, 14, 13, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 2.25rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .story-card:hover {
+    border-color: rgba(13, 147, 115, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 30px 60px -30px rgba(13, 147, 115, 0.35);
+  }
+  .story-card--labs {
+    border-color: rgba(13, 147, 115, 0.35);
+    box-shadow: 0 0 0 1px rgba(13, 147, 115, 0.15) inset;
+  }
+
+  .story-card__mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.75rem;
+  }
+  .story-card__mark--accent {
+    background: linear-gradient(135deg, #0d9373 0%, #0a6f57 100%);
+    border-color: transparent;
+    box-shadow: 0 12px 28px -10px rgba(13, 147, 115, 0.6);
+  }
+  .story-card__letter {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+
+  .story-card__name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+  .story-card__role {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0d9373;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 0.35rem;
+  }
+  .story-card__body {
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(205, 224, 218, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .story-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13, 147, 115, 0.35);
+    padding-bottom: 2px;
+    width: max-content;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+  .story-card__link:hover {
+    color: #14b58e;
+    border-color: #14b58e;
+  }
+
+  .story-card__here {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(205, 224, 218, 0.85);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: max-content;
+  }
+  .story-card__pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0d9373;
+    box-shadow: 0 0 0 0 rgba(13, 147, 115, 0.7);
+    animation: story-pulse 1.8s ease-out infinite;
+  }
+  @keyframes story-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(13, 147, 115, 0.65); }
+    70%  { box-shadow: 0 0 0 10px rgba(13, 147, 115, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 147, 115, 0); }
+  }
+
+  /* Connector between the two cards */
+  .story-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 1.5rem;
+    color: rgba(13, 147, 115, 0.6);
+  }
+  .story-connector__rule {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(180deg, transparent, rgba(13, 147, 115, 0.4), transparent);
+    min-height: 40px;
+  }
+  .story-connector__plus {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #0d9373;
+    line-height: 1;
+  }
+
+  .story-narrative {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    font-family: 'DM Sans', 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    line-height: 1.7;
+    color: rgba(205, 224, 218, 0.88);
+  }
+  .story-narrative strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* Tablet — collapse connector to horizontal */
+  @media (max-width: 860px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .story-connector {
+      flex-direction: row;
+      padding: 0.5rem 0;
+    }
+    .story-connector__rule {
+      width: auto;
+      height: 1px;
+      min-height: 0;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(13, 147, 115, 0.4), transparent);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .story-section { padding: 4rem 0; }
+    .story-header { margin-bottom: 2.5rem; }
+    .story-card { padding: 1.75rem 1.5rem 1.5rem; }
+  }
+</style>
