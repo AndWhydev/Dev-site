@@ -1,0 +1,69 @@
+# All Webbed Labs — Apache rewrite rules
+# Lives in dist/.htaccess after build (Astro copies public/ verbatim).
+# Cloudways serves under Apache, so these rules take effect immediately on deploy.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ─────────────────────────────────────────────────────────────────
+  # 1. Old domain → new domain (301 permanent)
+  #    Any request to aibusinesssolutions.au (with or without www, http or https)
+  #    is permanently redirected to https://awlabs.com.au, preserving the path
+  #    and any query string. 301 lets Google transfer link equity.
+  # ─────────────────────────────────────────────────────────────────
+  RewriteCond %{HTTP_HOST} ^(www\.)?aibusinesssolutions\.au$ [NC]
+  RewriteRule ^(.*)$ https://awlabs.com.au/$1 [R=301,L,QSA]
+
+  # ─────────────────────────────────────────────────────────────────
+  # 2. www → apex (canonicalise to https://awlabs.com.au)
+  #    Keeps a single canonical host for SEO. If you prefer www as
+  #    canonical, swap the rules so www is the target instead.
+  # ─────────────────────────────────────────────────────────────────
+  RewriteCond %{HTTP_HOST} ^www\.awlabs\.com\.au$ [NC]
+  RewriteRule ^(.*)$ https://awlabs.com.au/$1 [R=301,L,QSA]
+
+  # ─────────────────────────────────────────────────────────────────
+  # 3. Force HTTPS on awlabs.com.au
+  #    (Cloudways usually adds this at the platform layer, but cheap to belt-and-braces.)
+  # ─────────────────────────────────────────────────────────────────
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^awlabs\.com\.au$ [NC]
+  RewriteRule ^(.*)$ https://awlabs.com.au/$1 [R=301,L,QSA]
+</IfModule>
+
+# ─────────────────────────────────────────────────────────────────
+# 4. Browser caching for Astro's hashed assets (immutable — cache 1 year).
+#    Astro fingerprints /_astro/*.css and *.js with a hash, so they're safe
+#    to cache aggressively. HTML files are NOT cached so content updates
+#    are seen immediately.
+# ─────────────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Hashed bundles — 1 year, immutable
+  ExpiresByType text/css                          "access plus 1 year"
+  ExpiresByType application/javascript            "access plus 1 year"
+  ExpiresByType image/svg+xml                     "access plus 1 month"
+  ExpiresByType image/png                         "access plus 1 month"
+  ExpiresByType image/jpeg                        "access plus 1 month"
+  ExpiresByType image/webp                        "access plus 1 month"
+  ExpiresByType font/woff2                        "access plus 1 year"
+
+  # HTML — no cache (so content updates show immediately)
+  ExpiresByType text/html                         "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Hashed assets get the immutable hint so browsers skip revalidation
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Basic security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
