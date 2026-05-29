@@ -50,7 +50,7 @@ $to      = 'andy@allwebbedup.com.au';
 $subject = "New Enquiry from $firstName $lastName — $company";
 
 $body = "
-New contact form submission from aibusinesssolutions.au
+New contact form submission from awlabs.com.au
 
 ---
 
@@ -70,7 +70,7 @@ $message
 Submitted: " . date('d M Y, H:i:s') . " AEST
 ";
 
-$headers  = "From: noreply@aibusinesssolutions.au\r\n";
+$headers  = "From: noreply@awlabs.com.au\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
@@ -81,7 +81,7 @@ $sent = mail($to, $subject, $body, $headers);
 // swallowed so it never affects the email result or the user's response.
 if (!empty($CRM_WEBHOOK_URL)) {
     $payload = json_encode([
-        'source'      => 'aibusinesssolutions.au',
+        'source'      => 'awlabs.com.au',
         'firstName'   => $firstName,
         'lastName'    => $lastName,
         'email'       => $email,
