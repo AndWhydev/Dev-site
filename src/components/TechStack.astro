@@ -36,12 +36,43 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
 
 <section class="tech-section" id="tech">
   <div class="tech-inner">
-    <div class="tech-header reveal">
-      <span class="section-label">Technology Stack</span>
-      <h2 class="section-heading">Built With The Best Tools</h2>
-      <p class="section-subheading">
-        We work with the world's leading technologies. Every technology in our stack is chosen for performance, reliability and enterprise suitability.
-      </p>
+    <div class="tech-header-row">
+      <div class="tech-header reveal">
+        <span class="section-label">Technology Stack</span>
+        <h2 class="section-heading">Built With The Best Tools</h2>
+        <p class="section-subheading">
+          We work with the world's leading technologies. Every technology in our stack is chosen for performance, reliability and enterprise suitability.
+        </p>
+      </div>
+
+      <!-- In-code API request terminal — pure HTML/CSS, scroll-triggered -->
+      <div class="tech-term reveal-right stagger-2" data-tech-term aria-hidden="true">
+        <div class="tech-term-head">
+          <span class="tech-term-dots">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="tech-term-title">api · sample request</span>
+          <span class="tech-term-method">200 OK</span>
+        </div>
+        <div class="tech-term-body">
+          <div class="tech-term-line">
+            <span class="tech-term-prompt">$</span>
+            <span class="tech-term-cmd">curl https://api.example/v1/orders</span>
+          </div>
+          <pre class="tech-term-out"><span class="t-brace">&#123;</span>
+  <span class="t-key">"status"</span>: <span class="t-str">"ok"</span>,
+  <span class="t-key">"latency_ms"</span>: <span class="t-num">42</span>,
+  <span class="t-key">"orders"</span>: [
+    <span class="t-brace">&#123;</span> <span class="t-key">"id"</span>: <span class="t-str">"ord_a8…"</span>, <span class="t-key">"total"</span>: <span class="t-num">128.40</span> <span class="t-brace">&#125;</span>,
+    <span class="t-brace">&#123;</span> <span class="t-key">"id"</span>: <span class="t-str">"ord_b4…"</span>, <span class="t-key">"total"</span>: <span class="t-num">62.00</span>  <span class="t-brace">&#125;</span>
+  ]
+<span class="t-brace">&#125;</span></pre>
+          <div class="tech-term-line tech-term-cursor-line">
+            <span class="tech-term-prompt">$</span>
+            <span class="tech-term-cursor"></span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="tech-grid">
@@ -82,9 +113,175 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
     z-index: 1;
   }
 
-  .tech-header {
+  .tech-header-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+    gap: 3rem;
+    align-items: end;
     margin-bottom: 4rem;
+  }
+
+  .tech-header {
     max-width: 600px;
+  }
+
+  /* ── API terminal mockup ─────────────── */
+  .tech-term {
+    width: 100%;
+    background: #06100d;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 18px 50px rgba(0,0,0,0.45),
+      0 0 30px rgba(13,147,115,0.05);
+    font-family: 'Courier New', monospace;
+  }
+  .tech-term-head {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0.75rem;
+    background: #0a0a0a;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .tech-term-dots {
+    display: flex;
+    gap: 4px;
+  }
+  .tech-term-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2a3d35;
+  }
+  .tech-term-dots span:nth-child(1) { background: #ff5f57; }
+  .tech-term-dots span:nth-child(2) { background: #febc2e; }
+  .tech-term-dots span:nth-child(3) { background: #28c840; }
+  .tech-term-title {
+    flex: 1;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    color: #6b8079;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tech-term-method {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.3);
+    padding: 0.15rem 0.45rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tech-term-body {
+    padding: 0.75rem 0.875rem 0.875rem;
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    color: #cde0da;
+  }
+  .tech-term-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .tech-term-prompt {
+    color: #0d9373;
+    font-weight: 700;
+  }
+  .tech-term-cmd {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+    border-right: 1px solid transparent;
+  }
+  .tech-term.in-view .tech-term-cmd {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    animation: techType 2.4s steps(36, end) 0.2s forwards;
+  }
+  @keyframes techType {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .tech-term-out {
+    font-family: 'Courier New', monospace;
+    font-size: 0.6875rem;
+    line-height: 1.55;
+    color: #8aa09a;
+    margin: 0.5rem 0 0.4rem;
+    white-space: pre;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  .tech-term.in-view .tech-term-out {
+    animation: techOut 0.4s ease 2.8s forwards;
+  }
+  @keyframes techOut {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .t-brace { color: #6b8079; }
+  .t-key { color: #10b88a; }
+  .t-str { color: #cde0da; }
+  .t-num { color: #f0b97d; }
+
+  .tech-term-cursor-line {
+    margin-top: 0.4rem;
+    opacity: 0;
+  }
+  .tech-term.in-view .tech-term-cursor-line {
+    animation: techOut 0.3s ease 3.2s forwards;
+  }
+  .tech-term-cursor {
+    display: inline-block;
+    width: 7px;
+    height: 12px;
+    background: #0d9373;
+    vertical-align: middle;
+  }
+  .tech-term.in-view .tech-term-cursor {
+    animation: techBlink 1s steps(2, end) infinite 3.2s;
+  }
+  @keyframes techBlink {
+    50% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tech-term .tech-term-cmd,
+    .tech-term .tech-term-out,
+    .tech-term .tech-term-cursor-line,
+    .tech-term .tech-term-cursor {
+      animation: none !important;
+      opacity: 1 !important;
+      width: 100% !important;
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .tech-header-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+    .tech-term {
+      max-width: 480px;
+    }
   }
 
   .tech-grid {
@@ -174,5 +371,33 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
     .tech-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .tech-term-body {
+      font-size: 0.625rem;
+      padding: 0.625rem;
+    }
+    .tech-term-out {
+      font-size: 0.625rem;
+    }
   }
 </style>
+
+<script>
+  function initTechTerm() {
+    const nodes = document.querySelectorAll<HTMLElement>('[data-tech-term]');
+    if (!nodes.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          el.classList.add('in-view');
+        } else {
+          el.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    nodes.forEach((n) => obs.observe(n));
+    document.addEventListener('astro:before-swap', () => obs.disconnect(), { once: true });
+  }
+  initTechTerm();
+  document.addEventListener('astro:after-swap', initTechTerm);
+</script>

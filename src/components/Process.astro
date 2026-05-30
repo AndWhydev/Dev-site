@@ -72,6 +72,71 @@ const steps = [
       ))}
     </div>
 
+    <!-- In-code CI/CD pipeline mockup — animates only when in view -->
+    <div class="process-pipeline reveal stagger-5" data-pipeline aria-hidden="true">
+      <div class="pp-head">
+        <div class="pp-head-left">
+          <span class="pp-head-label">Sample · CI/CD pipeline</span>
+          <span class="pp-head-title">Build, test, deploy — without breaking production</span>
+        </div>
+        <div class="pp-head-status">
+          <span class="pp-head-dot"></span>
+          <span class="pp-head-status-text">Pipeline running</span>
+        </div>
+      </div>
+
+      <div class="pp-track">
+        <div class="pp-rail"></div>
+        <div class="pp-progress"></div>
+
+        <div class="pp-step" data-step="0">
+          <div class="pp-step-node">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="pp-step-text">
+            <div class="pp-step-name">Build</div>
+            <div class="pp-step-meta">22s</div>
+          </div>
+        </div>
+        <div class="pp-step" data-step="1">
+          <div class="pp-step-node">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <div class="pp-step-text">
+            <div class="pp-step-name">Test</div>
+            <div class="pp-step-meta">412 passing</div>
+          </div>
+        </div>
+        <div class="pp-step" data-step="2">
+          <div class="pp-step-node">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="pp-step-text">
+            <div class="pp-step-name">Security scan</div>
+            <div class="pp-step-meta">0 issues</div>
+          </div>
+        </div>
+        <div class="pp-step" data-step="3">
+          <div class="pp-step-node">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </div>
+          <div class="pp-step-text">
+            <div class="pp-step-name">Deploy</div>
+            <div class="pp-step-meta">3 regions</div>
+          </div>
+        </div>
+        <div class="pp-step" data-step="4">
+          <div class="pp-step-node">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="pp-step-text">
+            <div class="pp-step-name">Live</div>
+            <div class="pp-step-meta">zero downtime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="process-cta reveal stagger-6">
       <div class="process-cta-text">
         <h3>Ready to start your project?</h3>
@@ -278,4 +343,277 @@ const steps = [
       font-size: 1.25rem;
     }
   }
+
+  /* ============================================================
+     CI/CD pipeline mockup
+     ============================================================ */
+  .process-pipeline {
+    background:
+      radial-gradient(120% 60% at 50% 0%, rgba(13,147,115,0.08) 0%, transparent 70%),
+      linear-gradient(180deg, #0f1614 0%, #0a0f0e 100%);
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .pp-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .pp-head-left { min-width: 0; }
+  .pp-head-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin-bottom: 0.375rem;
+  }
+  .pp-head-title {
+    display: block;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+  }
+  .pp-head-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.3);
+    padding: 0.3rem 0.65rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pp-head-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0d9373;
+    box-shadow: 0 0 6px rgba(13,147,115,0.7);
+  }
+  .process-pipeline.in-view .pp-head-dot {
+    animation: ppPulse 1.6s ease-in-out infinite;
+  }
+  @keyframes ppPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.7); }
+  }
+
+  .pp-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    position: relative;
+    padding-top: 0.5rem;
+  }
+  .pp-rail {
+    position: absolute;
+    top: calc(0.5rem + 14px);
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+  }
+  .pp-progress {
+    position: absolute;
+    top: calc(0.5rem + 14px);
+    left: 8%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0d9373, #10b88a);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(13,147,115,0.4);
+    max-width: 84%;
+  }
+  .process-pipeline.in-view .pp-progress {
+    animation: ppProgress 6s cubic-bezier(0.4,0,0.2,1) infinite;
+  }
+  @keyframes ppProgress {
+    0% { width: 0; }
+    20% { width: 17%; }
+    40% { width: 38%; }
+    60% { width: 59%; }
+    80% { width: 80%; }
+    92%, 100% { width: 84%; }
+  }
+
+  .pp-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    position: relative;
+    min-width: 0;
+  }
+  .pp-step-node {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0a0f0e;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    color: #4a6359;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: background 0.4s, border-color 0.4s, color 0.4s, box-shadow 0.4s;
+  }
+  .process-pipeline.in-view .pp-step[data-step="0"] .pp-step-node {
+    animation: ppNode 6s cubic-bezier(0.4,0,0.2,1) 0s infinite;
+  }
+  .process-pipeline.in-view .pp-step[data-step="1"] .pp-step-node {
+    animation: ppNode 6s cubic-bezier(0.4,0,0.2,1) 1.2s infinite;
+  }
+  .process-pipeline.in-view .pp-step[data-step="2"] .pp-step-node {
+    animation: ppNode 6s cubic-bezier(0.4,0,0.2,1) 2.4s infinite;
+  }
+  .process-pipeline.in-view .pp-step[data-step="3"] .pp-step-node {
+    animation: ppNode 6s cubic-bezier(0.4,0,0.2,1) 3.6s infinite;
+  }
+  .process-pipeline.in-view .pp-step[data-step="4"] .pp-step-node {
+    animation: ppNode 6s cubic-bezier(0.4,0,0.2,1) 4.8s infinite;
+  }
+  @keyframes ppNode {
+    0%, 12% {
+      background: #0a0f0e;
+      border-color: rgba(255,255,255,0.1);
+      color: #4a6359;
+      box-shadow: none;
+    }
+    18%, 92% {
+      background: rgba(13,147,115,0.18);
+      border-color: rgba(13,147,115,0.6);
+      color: #0d9373;
+      box-shadow: 0 0 0 4px rgba(13,147,115,0.12), 0 0 14px rgba(13,147,115,0.3);
+    }
+    100% {
+      background: #0a0f0e;
+      border-color: rgba(255,255,255,0.1);
+      color: #4a6359;
+      box-shadow: none;
+    }
+  }
+
+  .pp-step-text {
+    min-width: 0;
+  }
+  .pp-step-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .pp-step-meta {
+    font-size: 0.625rem;
+    color: #6b8079;
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .process-pipeline .pp-head-dot,
+    .process-pipeline .pp-progress,
+    .process-pipeline .pp-step-node {
+      animation: none !important;
+    }
+    .process-pipeline .pp-progress {
+      width: 84%;
+    }
+    .process-pipeline .pp-step-node {
+      background: rgba(13,147,115,0.18);
+      border-color: rgba(13,147,115,0.6);
+      color: #0d9373;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .process-pipeline {
+      padding: 1.5rem 1.25rem;
+    }
+    .pp-step-name { font-size: 0.6875rem; }
+    .pp-step-meta { font-size: 0.5625rem; }
+    .pp-track {
+      gap: 0.375rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .process-pipeline {
+      padding: 1.25rem 1rem;
+    }
+    .pp-head-title {
+      font-size: 0.875rem;
+    }
+    .pp-track {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.25rem;
+    }
+    .pp-step {
+      gap: 0.375rem;
+    }
+    .pp-step-node {
+      width: 26px;
+      height: 26px;
+    }
+    .pp-rail,
+    .pp-progress {
+      top: calc(0.5rem + 12px);
+    }
+    .pp-step-name {
+      font-size: 0.625rem;
+    }
+    .pp-step-meta {
+      display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .pp-step-text {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  function initPipeline() {
+    const nodes = document.querySelectorAll<HTMLElement>('[data-pipeline]');
+    if (!nodes.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          el.classList.add('in-view');
+        } else {
+          el.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    nodes.forEach((n) => obs.observe(n));
+    document.addEventListener('astro:before-swap', () => obs.disconnect(), { once: true });
+  }
+  initPipeline();
+  document.addEventListener('astro:after-swap', initPipeline);
+</script>

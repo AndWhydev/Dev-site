@@ -33,12 +33,66 @@ const pillars = [
 
 <section class="why-section" id="why">
   <div class="why-inner">
-    <div class="why-header reveal">
-      <span class="section-label">Why All Webbed Labs</span>
-      <h2 class="section-heading">The Enterprise Partner You Can Rely On</h2>
-      <p class="section-subheading">
-        We're not a traditional agency. We're a technology partner built to operate at the pace and complexity of enterprise.
-      </p>
+    <div class="why-header-row">
+      <div class="why-header reveal">
+        <span class="section-label">Why All Webbed Labs</span>
+        <h2 class="section-heading">The Enterprise Partner You Can Rely On</h2>
+        <p class="section-subheading">
+          We're not a traditional agency. We're a technology partner built to operate at the pace and complexity of enterprise.
+        </p>
+      </div>
+
+      <!-- In-code mini reliability widget — animates only when in view -->
+      <div class="why-widget reveal-right stagger-2" data-why-widget aria-hidden="true">
+        <div class="why-widget-head">
+          <div>
+            <div class="why-widget-title">Platform health</div>
+            <div class="why-widget-sub">Sample · last 24h</div>
+          </div>
+          <span class="why-widget-pill"><span class="why-widget-dot"></span>Operational</span>
+        </div>
+
+        <div class="why-widget-stats">
+          <div class="why-widget-stat">
+            <div class="why-widget-stat-label">Uptime</div>
+            <div class="why-widget-stat-val">99.98<span>%</span></div>
+          </div>
+          <div class="why-widget-stat">
+            <div class="why-widget-stat-label">p95 latency</div>
+            <div class="why-widget-stat-val">142<span>ms</span></div>
+          </div>
+          <div class="why-widget-stat">
+            <div class="why-widget-stat-label">Incidents</div>
+            <div class="why-widget-stat-val">0</div>
+          </div>
+        </div>
+
+        <div class="why-widget-chart">
+          <svg viewBox="0 0 240 60" preserveAspectRatio="none" class="why-widget-svg">
+            <defs>
+              <linearGradient id="whyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0d9373" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="why-widget-fill" d="M0,48 C20,40 35,35 55,32 C80,28 95,30 120,22 C145,16 165,20 185,14 C205,9 225,6 240,8 L240,60 L0,60Z" fill="url(#whyGrad)"/>
+            <path class="why-widget-line" d="M0,48 C20,40 35,35 55,32 C80,28 95,30 120,22 C145,16 165,20 185,14 C205,9 225,6 240,8" fill="none" stroke="#0d9373" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="why-widget-log">
+          <div class="why-widget-log-row">
+            <span class="why-widget-tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="why-widget-log-text">API · all regions healthy</span>
+            <span class="why-widget-log-time">just now</span>
+          </div>
+          <div class="why-widget-log-row">
+            <span class="why-widget-tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="why-widget-log-text">Backup · completed</span>
+            <span class="why-widget-log-time">2 h</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="pillars-grid">
@@ -104,9 +158,200 @@ const pillars = [
     z-index: 1;
   }
 
-  .why-header {
+  .why-header-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+    gap: 3rem;
+    align-items: end;
     margin-bottom: 4rem;
+  }
+
+  .why-header {
     max-width: 680px;
+  }
+
+  /* ── Mini reliability widget ─────────── */
+  .why-widget {
+    width: 100%;
+    background:
+      radial-gradient(110% 60% at 50% -20%, rgba(13,147,115,0.1) 0%, transparent 60%),
+      linear-gradient(180deg, #0f1614 0%, #0a0f0e 100%);
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1rem 1.125rem 1.125rem;
+    box-shadow:
+      0 18px 50px rgba(0,0,0,0.4),
+      0 0 30px rgba(13,147,115,0.05);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .why-widget-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+  }
+  .why-widget-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+  }
+  .why-widget-sub {
+    font-size: 0.6875rem;
+    color: #6b8079;
+    margin-top: 2px;
+  }
+  .why-widget-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #0d9373;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.3);
+    padding: 0.2rem 0.55rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .why-widget-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0d9373;
+    box-shadow: 0 0 6px rgba(13,147,115,0.7);
+  }
+  .why-widget.in-view .why-widget-dot {
+    animation: whyPulse 1.8s ease-in-out infinite;
+  }
+  @keyframes whyPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.7); }
+  }
+
+  .why-widget-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.875rem;
+  }
+  .why-widget-stat {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 0.5rem 0.6rem;
+  }
+  .why-widget-stat-label {
+    font-size: 0.625rem;
+    color: #6b8079;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .why-widget-stat-val {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 3px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .why-widget-stat-val span {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    margin-left: 1px;
+  }
+
+  .why-widget-chart {
+    height: 56px;
+    margin-bottom: 0.75rem;
+  }
+  .why-widget-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .why-widget-line {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+  }
+  .why-widget-fill { opacity: 0; }
+  .why-widget.in-view .why-widget-line {
+    animation: whyDraw 7s ease-in-out infinite;
+  }
+  .why-widget.in-view .why-widget-fill {
+    animation: whyFill 7s ease-in-out infinite;
+  }
+  @keyframes whyDraw {
+    0% { stroke-dashoffset: 260; }
+    35% { stroke-dashoffset: 0; }
+    90% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 260; }
+  }
+  @keyframes whyFill {
+    0%, 12% { opacity: 0; }
+    45%, 88% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .why-widget-log {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .why-widget-log-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.55rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px;
+    font-size: 0.6875rem;
+    color: #cde0da;
+  }
+  .why-widget-tick {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.18);
+    color: #0d9373;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .why-widget-log-text {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .why-widget-log-time {
+    font-size: 0.625rem;
+    color: #6b8079;
+    flex-shrink: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .why-widget .why-widget-dot,
+    .why-widget .why-widget-line,
+    .why-widget .why-widget-fill {
+      animation: none !important;
+    }
+    .why-widget .why-widget-line {
+      stroke-dashoffset: 0;
+    }
+    .why-widget .why-widget-fill {
+      opacity: 1;
+    }
   }
 
   .pillars-grid {
@@ -237,6 +482,14 @@ const pillars = [
   }
 
   @media (max-width: 1100px) {
+    .why-header-row {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+    .why-widget {
+      max-width: 480px;
+    }
     .pillars-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -249,6 +502,27 @@ const pillars = [
     .why-section {
       padding: 5rem 0;
     }
+    .why-header-row {
+      gap: 2rem;
+    }
+    .why-widget {
+      padding: 0.875rem;
+    }
+    .why-widget-stats {
+      gap: 0.375rem;
+    }
+    .why-widget-stat {
+      padding: 0.375rem 0.45rem;
+    }
+    .why-widget-stat-label {
+      font-size: 0.5625rem;
+    }
+    .why-widget-stat-val {
+      font-size: 0.875rem;
+    }
+    .why-widget-stat-val span {
+      font-size: 0.625rem;
+    }
     .pillars-grid {
       grid-template-columns: 1fr;
     }
@@ -258,3 +532,24 @@ const pillars = [
     }
   }
 </style>
+
+<script>
+  function initWhyWidget() {
+    const nodes = document.querySelectorAll<HTMLElement>('[data-why-widget]');
+    if (!nodes.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          el.classList.add('in-view');
+        } else {
+          el.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    nodes.forEach((n) => obs.observe(n));
+    document.addEventListener('astro:before-swap', () => obs.disconnect(), { once: true });
+  }
+  initWhyWidget();
+  document.addEventListener('astro:after-swap', initWhyWidget);
+</script>

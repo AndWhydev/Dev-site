@@ -22,6 +22,39 @@
           <span class="chain-tag">Avalanche</span>
           <span class="chain-tag">BNB Chain</span>
         </div>
+
+        <!-- In-code transaction confirmation mockup — pure CSS animation, scroll-triggered -->
+        <div class="w3-tx reveal stagger-3" data-w3-tx aria-hidden="true">
+          <div class="w3-tx-head">
+            <div class="w3-tx-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="w3-tx-icon-ring"></span>
+            </div>
+            <div class="w3-tx-meta">
+              <div class="w3-tx-title">Transaction confirmed</div>
+              <div class="w3-tx-sub">Sample · Ethereum mainnet</div>
+            </div>
+            <span class="w3-tx-tag">Demo</span>
+          </div>
+          <div class="w3-tx-body">
+            <div class="w3-tx-row">
+              <span class="w3-tx-label">Hash</span>
+              <span class="w3-tx-value mono">0x4f2a…c81b</span>
+            </div>
+            <div class="w3-tx-row">
+              <span class="w3-tx-label">Block</span>
+              <span class="w3-tx-value">19,842,007</span>
+            </div>
+            <div class="w3-tx-row">
+              <span class="w3-tx-label">Confirmations</span>
+              <span class="w3-tx-value w3-tx-conf">
+                <span class="w3-tx-conf-num">12</span>
+                <span class="w3-tx-conf-bar"><span class="w3-tx-conf-fill"></span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+
         <a href="/web3-crypto" class="btn-primary" style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.5rem;">
           Explore Web3 Services
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -163,4 +196,186 @@
     .web3-section { padding: 5rem 0; }
     .web3-cards { grid-template-columns: 1fr; }
   }
+
+  /* ============================================================
+     Transaction confirmation mockup
+     ============================================================ */
+  .w3-tx {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 1.5rem;
+    background:
+      radial-gradient(110% 80% at 0% 0%, rgba(99,91,255,0.1) 0%, transparent 60%),
+      linear-gradient(180deg, #0f1614 0%, #0a0f0e 100%);
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow:
+      0 16px 50px rgba(0,0,0,0.45),
+      0 0 28px rgba(99,91,255,0.05);
+  }
+
+  .w3-tx-head {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 0.875rem;
+    border-bottom: 1px solid #1e2d28;
+    background: rgba(8,12,11,0.6);
+  }
+  .w3-tx-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.18);
+    color: #0d9373;
+    border: 1px solid rgba(13,147,115,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .w3-tx-icon-ring {
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(13,147,115,0.4);
+    opacity: 0;
+  }
+  .w3-tx.in-view .w3-tx-icon-ring {
+    animation: w3TxRing 2.4s ease-out infinite;
+  }
+  @keyframes w3TxRing {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.7); opacity: 0; }
+  }
+  .w3-tx-meta { flex: 1; min-width: 0; }
+  .w3-tx-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+  }
+  .w3-tx-sub {
+    font-size: 0.6875rem;
+    color: #6b8079;
+    margin-top: 2px;
+  }
+  .w3-tx-tag {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #635bff;
+    background: rgba(99,91,255,0.1);
+    border: 1px solid rgba(99,91,255,0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 50px;
+    flex-shrink: 0;
+  }
+
+  .w3-tx-body {
+    padding: 0.75rem 0.875rem 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .w3-tx-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+  }
+  .w3-tx-label {
+    color: #6b8079;
+  }
+  .w3-tx-value {
+    color: white;
+    font-weight: 600;
+    text-align: right;
+  }
+  .w3-tx-value.mono {
+    font-family: 'Courier New', monospace;
+    font-size: 0.6875rem;
+    color: #cde0da;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+  }
+  .w3-tx-conf {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .w3-tx-conf-num {
+    font-family: 'Sora', sans-serif;
+    color: #0d9373;
+    font-weight: 700;
+    min-width: 16px;
+    text-align: right;
+  }
+  .w3-tx-conf-bar {
+    width: 88px;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+  .w3-tx-conf-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #0d9373, #10b88a);
+    border-radius: 50px;
+  }
+  .w3-tx.in-view .w3-tx-conf-fill {
+    animation: w3TxFill 5s cubic-bezier(0.4,0,0.2,1) infinite;
+  }
+  @keyframes w3TxFill {
+    0% { width: 0; }
+    50%, 90% { width: 100%; }
+    100% { width: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .w3-tx .w3-tx-icon-ring,
+    .w3-tx .w3-tx-conf-fill {
+      animation: none !important;
+    }
+    .w3-tx .w3-tx-conf-fill {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .w3-tx { max-width: 100%; }
+    .w3-tx-conf-bar { width: 64px; }
+  }
 </style>
+
+<script>
+  function initW3Tx() {
+    const nodes = document.querySelectorAll<HTMLElement>('[data-w3-tx]');
+    if (!nodes.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          el.classList.add('in-view');
+        } else {
+          el.classList.remove('in-view');
+        }
+      });
+    }, { threshold: 0.25 });
+    nodes.forEach((n) => obs.observe(n));
+    document.addEventListener('astro:before-swap', () => obs.disconnect(), { once: true });
+  }
+  initW3Tx();
+  document.addEventListener('astro:after-swap', initW3Tx);
+</script>
