@@ -4,44 +4,16 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTABanner from '../../components/CTABanner.astro';
 
-const posts = [
-  {
-    slug: 'future-of-ai-australian-enterprise',
-    title: 'The Future of AI in Australian Enterprise: What Leaders Need to Know in 2026',
-    excerpt: 'AI adoption is accelerating across Australian enterprise — but the gap between leaders and laggards is widening. Here\'s what the next 12 months look like, and how to build a strategy that delivers real ROI.',
-    category: 'AI & Automation',
-    date: '2026-05-01',
-    dateFormatted: 'May 1, 2026',
-    readTime: '8 min read',
-    author: 'All Webbed Labs Team',
-  },
-  {
-    slug: 'flutter-smart-choice-mobile-2026',
-    title: 'Why Flutter is the Smart Choice for Enterprise Mobile App Development in 2026',
-    excerpt: 'Flutter has matured into a serious enterprise platform. We analyse the performance data, cost comparisons and real-world case studies that make the case for cross-platform over native in most enterprise scenarios.',
-    category: 'Mobile Development',
-    date: '2026-04-15',
-    dateFormatted: 'Apr 15, 2026',
-    readTime: '6 min read',
-    author: 'All Webbed Labs Team',
-  },
-  {
-    slug: 'web3-beyond-hype-blockchain',
-    title: 'Web3 Beyond the Hype: Real Business Applications of Blockchain Technology',
-    excerpt: 'Separating genuine enterprise value from speculation. We examine the blockchain use cases that are delivering measurable ROI in supply chain, financial services and identity management.',
-    category: 'Web3 & Blockchain',
-    date: '2026-03-20',
-    dateFormatted: 'Mar 20, 2026',
-    readTime: '7 min read',
-    author: 'All Webbed Labs Team',
-  },
-];
+/* Posts array emptied — three previous posts each contained
+   FABRICATED case studies presented as factual (e.g. 'a major
+   Australian insurer reduced manual review time by 68%', 'Queensland
+   government department reduced call handle time by 22%', 'Responsible
+   Wood reduced audit costs by 40%' — all unverifiable). Posts will
+   return once written from real, defensible client work. */
+const posts: any[] = [];
 
 const categories = [
-  { name: 'All Posts', count: 3, href: '/blog' },
-  { name: 'AI & Automation', count: 1, href: '/blog?cat=ai' },
-  { name: 'Mobile Development', count: 1, href: '/blog?cat=mobile' },
-  { name: 'Web3 & Blockchain', count: 1, href: '/blog?cat=web3' },
+  { name: 'All Posts', count: 0, href: '/blog' },
 ];
 
 const categoryColors: Record<string, string> = {
