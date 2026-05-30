@@ -10,20 +10,23 @@ import ServicesGrid from '../components/ServicesGrid.astro';
 import TechStack from '../components/TechStack.astro';
 import WhyLabs from '../components/WhyLabs.astro';
 import Process from '../components/Process.astro';
-import StatsBar from '../components/StatsBar.astro';
-import Testimonials from '../components/Testimonials.astro';
 import IndustryShowcase from '../components/IndustryShowcase.astro';
 import AISpotlight from '../components/AISpotlight.astro';
 import Web3Spotlight from '../components/Web3Spotlight.astro';
 import ROICalculator from '../components/ROICalculator.astro';
 import BlogPreview from '../components/BlogPreview.astro';
-import FeaturedCaseStudies from '../components/FeaturedCaseStudies.astro';
 import CTABanner from '../components/CTABanner.astro';
+/* Removed for credibility — these components contain fabricated client
+   names, fabricated stats, or fabricated case-study outcomes. Add back
+   only when replaced with real, defensible content:
+   - StatsBar           (150+ Projects / 98% Retention / 4.49 Rating — unverifiable)
+   - Testimonials       (Sarah Mitchell / James Okafor / Marcus Chen — fictional)
+   - FeaturedCaseStudies (Qld telco / Melbourne lender / Sydney courier — fictional) */
 ---
 
 <Layout
   title="All Webbed Labs — Enterprise Software Development Australia"
-  description="Australia's premier enterprise software development partner. Custom apps, AI tools, Web3, cloud infrastructure and digital transformation for large corporations. 150+ projects delivered. Based in Australia."
+  description="Australian software development partner. Custom apps, AI tools, Web3, cloud infrastructure and digital transformation. The tech arm of All Webbed Up."
 >
   <Header />
   <main>
@@ -57,12 +60,9 @@ import CTABanner from '../components/CTABanner.astro';
     <TechStack />
     <WhyLabs />
     <Process />
-    <StatsBar />
     <AISpotlight />
     <Web3Spotlight />
     <ROICalculator />
-    <Testimonials />
-    <FeaturedCaseStudies />
     <BlogPreview />
     <CTABanner />
   </main>
