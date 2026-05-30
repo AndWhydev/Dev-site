@@ -130,7 +130,7 @@ const principles = [
             <span class="gradient-text">We Build With</span>
           </h1>
           <p class="radar-sub">
-            We choose stability over trends, depth over breadth. Every technology in our stack has been battle-tested across real enterprise projects — and maintained by engineers who understand it deeply.
+            We choose stability over trends, depth over breadth. Every technology on this radar earned its place by clearing a deliberate test — would we trust it in production for software that has to be maintained by your team for years?
           </p>
           <div class="radar-legend">
             <div class="legend-item">
@@ -215,20 +215,24 @@ const principles = [
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <div class="phil-stats reveal-right">
-            <div class="phil-stat">
-              <div class="phil-stat-num gradient-text-green">60+</div>
-              <div class="phil-stat-label">Technologies in active production use</div>
-            </div>
-            <div class="phil-stat">
-              <div class="phil-stat-num gradient-text-green">9</div>
-              <div class="phil-stat-label">Technology categories covered</div>
-            </div>
-            <div class="phil-stat">
-              <div class="phil-stat-num gradient-text-green">8+</div>
-              <div class="phil-stat-label">Years of enterprise stack refinement</div>
-            </div>
-          </div>
+          <ul class="phil-principles reveal-right">
+            <li>
+              <span class="phil-principle-tick" aria-hidden="true">→</span>
+              <span><strong>Open source first.</strong> If a mature open source option exists, that is our default.</span>
+            </li>
+            <li>
+              <span class="phil-principle-tick" aria-hidden="true">→</span>
+              <span><strong>Stability over novelty.</strong> Boring technology for anything business-critical.</span>
+            </li>
+            <li>
+              <span class="phil-principle-tick" aria-hidden="true">→</span>
+              <span><strong>Owned by your team.</strong> The stack must be one your engineers can maintain after we step back.</span>
+            </li>
+            <li>
+              <span class="phil-principle-tick" aria-hidden="true">→</span>
+              <span><strong>AI-augmented, not AI-dependent.</strong> We use AI to accelerate work, not to obscure how it was built.</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -484,24 +488,37 @@ const principles = [
   .phil-cta {
     margin-top: 0.5rem;
   }
-  .phil-stats {
+  .phil-principles {
+    list-style: none;
+    margin: 0;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.25rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
   }
-  .phil-stat {}
-  .phil-stat-num {
-    font-family: 'Sora', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    margin-bottom: 0.375rem;
-  }
-  .phil-stat-label {
+  .phil-principles li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.9375rem;
-    color: #4a6359;
+    color: #8aa09a;
+    line-height: 1.6;
+  }
+  .phil-principles strong {
+    font-family: 'Sora', sans-serif;
+    color: white;
+    font-weight: 600;
+    margin-right: 0.25rem;
+  }
+  .phil-principle-tick {
+    color: #0d9373;
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.5;
   }
 
   /* Principles */

@@ -48,18 +48,18 @@ import CTABanner from '../components/CTABanner.astro';
           </div>
           <div class="hero-trust-row">
             <div class="trust-item">
-              <span class="trust-num">150+</span>
-              <span class="trust-label">AI Projects Delivered</span>
+              <span class="trust-label-strong">Australian data sovereignty by default</span>
+              <span class="trust-label">Local hosting, AU regions, no offshore data flows</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-              <span class="trust-num">6</span>
-              <span class="trust-label">LLM Platforms Certified</span>
+              <span class="trust-label-strong">Multi-model by design</span>
+              <span class="trust-label">OpenAI, Claude, Gemini, Llama — picked per use case</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
-              <span class="trust-num">100%</span>
-              <span class="trust-label">Australian Data Sovereignty</span>
+              <span class="trust-label-strong">Production-grade, not demos</span>
+              <span class="trust-label">Evaluation, guardrails and observability from day one</span>
             </div>
           </div>
         </div>
@@ -195,7 +195,7 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">Use Cases</span>
           <h2 class="section-heading">AI That Solves Real Business Problems</h2>
           <p class="section-subheading">
-            These aren't theoretical applications. They're production systems running in Australian enterprises today.
+            These aren't theoretical applications. They're the production-grade systems we build and operate.
           </p>
         </div>
         <div class="usecases-grid">
@@ -255,7 +255,7 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">The Business Case</span>
           <h2 class="section-heading">What AI Implementation Typically Returns</h2>
           <p class="section-subheading">
-            Based on McKinsey Global Institute research and our own client outcomes across 150+ AI projects.
+            Industry benchmarks drawn from McKinsey Global Institute and BCG research on enterprise AI deployment — the ranges we design and budget against.
           </p>
         </div>
         <div class="roi-grid">
@@ -537,18 +537,20 @@ import CTABanner from '../components/CTABanner.astro';
     gap: 0.2rem;
   }
 
-  .trust-num {
+  .trust-label-strong {
     font-family: 'Sora', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: #0d9373;
-    line-height: 1;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #cde0da;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
   }
 
   .trust-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
     color: #4a6359;
+    line-height: 1.4;
   }
 
   .trust-divider {

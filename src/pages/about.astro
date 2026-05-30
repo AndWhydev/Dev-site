@@ -5,65 +5,6 @@ import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TechStack from '../components/TechStack.astro';
 
-// TODO: Replace ALL placeholder team members with real bios, photos and LinkedIn URLs
-// Photos: 400x400px, square crop, professional. Place in public/team/[slug].jpg
-const team = [
-  {
-    name: 'Team Member Name',  // TEAM_PLACEHOLDER — add real name
-    role: 'Founder & CEO',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Focus on enterprise experience, technical background and what drives them to build world-class software. 2-3 sentences.',
-    linkedin: '#',  // TEAM_PLACEHOLDER — add real LinkedIn URL
-    initials: 'FC',
-    specialties: ['Strategy', 'Enterprise', 'Architecture'],
-    photo: null,  // TEAM_PLACEHOLDER — add: '/team/founder-name.jpg'
-  },
-  {
-    name: 'Team Member Name',
-    role: 'Chief Technology Officer',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Focus on technical leadership, architecture decisions and what makes their approach to engineering unique.',
-    linkedin: '#',
-    initials: 'CT',
-    specialties: ['Full-Stack', 'Cloud', 'AI/ML'],
-    photo: null,
-  },
-  {
-    name: 'Team Member Name',
-    role: 'Head of Delivery',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Focus on delivery methodology, number of projects managed and how they keep enterprise projects on track.',
-    linkedin: '#',
-    initials: 'HD',
-    specialties: ['Agile', 'Delivery', 'Client Success'],
-    photo: null,
-  },
-  {
-    name: 'Team Member Name',
-    role: 'Lead Mobile Engineer',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Flutter specialist. Include apps shipped, industries worked in and technical depth.',
-    linkedin: '#',
-    initials: 'LM',
-    specialties: ['Flutter', 'iOS', 'Android'],
-    photo: null,
-  },
-  {
-    name: 'Team Member Name',
-    role: 'AI & ML Engineer',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Focus on AI/ML specialisation, models worked with and production AI systems delivered.',
-    linkedin: '#',
-    initials: 'AI',
-    specialties: ['LLMs', 'Python', 'ML Ops'],
-    photo: null,
-  },
-  {
-    name: 'Team Member Name',
-    role: 'Senior DevOps Engineer',
-    bio: 'TEAM_PLACEHOLDER — add real bio. Cloud infrastructure expertise, certifications and the scale of systems managed.',
-    linkedin: '#',
-    initials: 'DO',
-    specialties: ['AWS', 'Kubernetes', 'Terraform'],
-    photo: null,
-  },
-];
-
 const values = [
   {
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
@@ -87,18 +28,11 @@ const values = [
   },
 ];
 
-const awards = [
-  // LOGO_PLACEHOLDER — add real awards and recognition here
-  { name: 'Google Partner', placeholder: true },
-  { name: 'AWS Partner', placeholder: true },
-  { name: 'Microsoft Partner', placeholder: true },
-  { name: 'Flutter Certified', placeholder: true },
-];
 ---
 
 <Layout
-  title="About All Webbed Labs — Our Team, Story & Values | Enterprise Software Australia"
-  description="All Webbed Labs is Australia's premier enterprise software partner. Learn about our team, values, technology philosophy and why leading corporations trust us with their most critical software projects."
+  title="About All Webbed Labs — Our Story & Values | Australian AI Software Agency"
+  description="All Webbed Labs is the AI and software development arm of All Webbed Up — a Sydney based agency building autonomous systems for Australian businesses. Read our story and values."
 >
   <Header />
   <main>
@@ -116,27 +50,9 @@ const awards = [
             All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.
           </p>
           <p class="about-sub">
-            Enterprise software engineers, AI specialists and technology strategists — built around a single belief:
-            that Australian businesses deserve world-class technology partners who understand enterprise as deeply as they understand code.
+            Software engineers, AI specialists and technology strategists — built around a single belief:
+            that Australian businesses deserve technology partners who understand enterprise as deeply as they understand code.
           </p>
-        </div>
-        <div class="hero-stats-row reveal stagger-2">
-          <div class="hs">
-            <span class="hs-num">150+</span>
-            <span class="hs-lbl">Projects Delivered</span>
-          </div>
-          <div class="hs">
-            <span class="hs-num">8+</span>
-            <span class="hs-lbl">Years Experience</span>
-          </div>
-          <div class="hs">
-            <span class="hs-num">100%</span>
-            <span class="hs-lbl">Australian Team</span>
-          </div>
-          <div class="hs">
-            <span class="hs-num">98%</span>
-            <span class="hs-lbl">Client Retention</span>
-          </div>
         </div>
       </div>
     </section>
@@ -144,33 +60,12 @@ const awards = [
     <!-- Story -->
     <section class="story-section">
       <div class="story-inner">
-        <div class="story-grid">
-          <div class="reveal-left">
-            <span class="section-label">Our Story</span>
-            <h2 class="section-heading">Why We Built All Webbed Labs</h2>
-            <p>All Webbed Labs is the enterprise software division of <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> — an Australian digital agency with a decade of experience delivering technology for clients across every industry.</p>
-            <p>We created Labs to focus specifically on what large organisations need: enterprise security standards, deep integration expertise, complex architecture decisions and engineering teams who've seen what production systems at scale actually require.</p>
-            <p>Today we work with some of Australia's most demanding organisations — delivering software that processes millions of transactions, serves tens of thousands of users and runs business-critical operations around the clock. Our clients trust us because we operate like a senior part of their team, not an external vendor.</p>
-            <!-- TODO: Add the real founding story, key milestones, client wins and growth narrative -->
-          </div>
-          <div class="story-right reveal-right stagger-2">
-            <div class="story-card">
-              <div class="story-year">Founded</div>
-              <div class="story-val">2016</div><!-- TODO: Update with real founding year -->
-            </div>
-            <div class="story-card">
-              <div class="story-year">Projects</div>
-              <div class="story-val">150+</div>
-            </div>
-            <div class="story-card">
-              <div class="story-year">Engineers</div>
-              <div class="story-val">20+</div><!-- TODO: Update headcount -->
-            </div>
-            <div class="story-card">
-              <div class="story-year">Industries</div>
-              <div class="story-val">12+</div>
-            </div>
-          </div>
+        <div class="story-narrative reveal-left">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-heading">Why We Built All Webbed Labs</h2>
+          <p>All Webbed Labs is the AI and enterprise software arm of <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> — a Sydney based agency. Labs was created to focus on a single question: what happens when an agency runs itself on autonomous AI workers instead of selling them by the hour.</p>
+          <p>We are a new operation. We have built and are running the systems on which we plan to deliver client work — Overseer, the multi-agent build pipeline, and the internal apps that triage briefs, plan projects and ship code. The software you see across this site is the same software we use day to day.</p>
+          <p>We will not invent a client list to look bigger than we are. As real engagements ship and clients agree to be named, this page will become a record of that work. Until then, the most honest thing we can show you is the product itself, the people behind it and how to talk to us directly.</p>
         </div>
       </div>
     </section>
@@ -225,7 +120,7 @@ const awards = [
             <div class="culture-card">
               <div class="cc-icon">📖</div>
               <div class="cc-label">Continuous learning</div>
-              <div class="cc-desc">10% of working hours dedicated to R&D and skill development.</div>
+              <div class="cc-desc">Structured R&D time every week — when something transformative arrives, we're already using it.</div>
             </div>
           </div>
         </div>
@@ -291,27 +186,6 @@ const awards = [
       </div>
     </section>
 
-    <!-- Awards & Partners -->
-    <section class="awards-section">
-      <div class="awards-inner">
-        <div class="awards-header reveal">
-          <span class="section-label">Recognition & Partnerships</span>
-          <h2 class="section-heading">Awards & Technology Partners</h2>
-        </div>
-        <div class="awards-grid reveal stagger-1">
-          {awards.map((award) => (
-            <div class="award-card">
-              <!-- LOGO_PLACEHOLDER — replace with real partner/award badge image -->
-              <div class="award-placeholder">
-                <span>{award.name}</span>
-                <div class="award-placeholder-note">LOGO_PLACEHOLDER</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- Office / Location -->
     <section class="location-section">
       <div class="location-inner">
@@ -343,11 +217,12 @@ const awards = [
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <!-- MAP_PLACEHOLDER — add Google Maps embed here -->
-          <div class="map-placeholder reveal-right stagger-2">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>MAP_PLACEHOLDER</p>
-            <span>Add Google Maps embed here</span>
+          <div class="location-mark reveal-right stagger-2" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="location-mark-text">
+              <strong>Sydney · New South Wales</strong>
+              <span>Working with Australian clients in every time zone.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -434,53 +309,21 @@ const awards = [
     color: #8aa09a;
     max-width: 640px;
     line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-  .hero-stats-row {
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .hs {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  .hs-num {
-    font-family: 'Sora', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0d9373;
-    letter-spacing: -0.04em;
-  }
-  .hs-lbl {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    color: #4a6359;
+    margin-bottom: 0;
   }
 
   /* Story */
   .story-section { padding: 7rem 0; background: #0f1614; }
   .story-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .story-narrative { max-width: 780px; }
   .story-section p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    color: #4a6359;
+    font-size: 1.0625rem;
+    color: #8aa09a;
     line-height: 1.75;
     margin: 0 0 1.25rem;
   }
   .story-section p a { color: #0d9373; text-decoration: none; }
-  .story-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4.5rem; }
-  .story-card {
-    background: #0a0f0e;
-    border: 1px solid #1e2d28;
-    border-radius: 16px;
-    padding: 1.5rem;
-    text-align: center;
-  }
-  .story-year { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; color: #4a6359; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .story-val { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: #0d9373; letter-spacing: -0.04em; }
 
   /* Values */
   .values-section { padding: 7rem 0; background: #0a0f0e; }
@@ -533,47 +376,24 @@ const awards = [
   /* Team */
   .team-section { padding: 7rem 0; background: #0f1614; }
   .team-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .team-header { margin-bottom: 3rem; max-width: 640px; }
+  .team-header { max-width: 640px; margin: 0 auto 2rem; text-align: center; }
   .team-header .section-subheading { margin-bottom: 0; }
-  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
-  .team-card { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 20px; overflow: hidden; transition: border-color 0.3s ease, transform 0.3s ease; }
-  .team-card:hover { border-color: rgba(13,147,115,0.3); transform: translateY(-4px); }
-  .team-photo { aspect-ratio: 1; background: #141c1a; overflow: hidden; }
-  .team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .team-initials { width: 100%; height: 100%; background: linear-gradient(135deg, #0d9373, #0a7a5e); display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: rgba(255,255,255,0.25); }
-  .team-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .team-name { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: white; margin: 0; }
-  .team-role { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; font-weight: 600; color: #0d9373; }
-  .team-bio { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; line-height: 1.6; margin: 0; }
-  .team-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
-  .team-tag { font-family: 'DM Sans', sans-serif; font-size: 0.625rem; font-weight: 600; color: #4a6359; background: rgba(255,255,255,0.04); border: 1px solid #1e2d28; padding: 0.175rem 0.45rem; border-radius: 4px; }
-  .team-li { display: inline-flex; align-items: center; gap: 0.35rem; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; color: #4a6359; text-decoration: none; margin-top: 0.25rem; transition: color 0.2s ease; }
-  .team-li:hover { color: #0d9373; }
-  .team-join { background: rgba(255,255,255,0.02); border: 1px dashed #1e2d28; border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .team-join { background: rgba(255,255,255,0.02); border: 1px dashed #1e2d28; border-radius: 12px; padding: 1.5rem; text-align: center; max-width: 640px; margin: 0 auto; }
   .team-join p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; margin: 0; }
   .team-join p a { color: #0d9373; text-decoration: none; }
-
-  /* Awards */
-  .awards-section { padding: 5rem 0; background: #0a0f0e; }
-  .awards-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .awards-header { margin-bottom: 2.5rem; }
-  .awards-grid { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-  .award-card { background: #0f1614; border: 1px solid #1e2d28; border-radius: 14px; padding: 1.5rem 2rem; }
-  .award-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.375rem; }
-  .award-placeholder span { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 600; color: #4a6359; }
-  .award-placeholder-note { font-family: 'DM Sans', sans-serif; font-size: 0.625rem; color: #2a3d35; font-style: italic; }
 
   /* Location */
   .location-section { padding: 7rem 0; background: #0f1614; }
   .location-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .location-section p { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #4a6359; line-height: 1.75; margin: 0 0 1.5rem; }
   .location-details { display: flex; flex-direction: column; gap: 0.875rem; }
   .loc-item { display: flex; align-items: flex-start; gap: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #8aa09a; line-height: 1.5; }
   .loc-item svg { flex-shrink: 0; margin-top: 2px; }
-  .map-placeholder { aspect-ratio: 4/3; background: #0a0f0e; border: 2px dashed #1e2d28; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
-  .map-placeholder p { font-family: 'Sora', sans-serif; font-size: 0.9375rem; font-weight: 600; color: #4a6359; margin: 0; }
-  .map-placeholder span { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #2a3d35; font-style: italic; }
+  .location-mark { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 20px; padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .location-mark-text { display: flex; flex-direction: column; gap: 0.375rem; }
+  .location-mark-text strong { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 700; color: white; }
+  .location-mark-text span { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #8aa09a; line-height: 1.55; }
 
   /* About CTA */
   .about-cta { padding: 7rem 0; background: #0a0f0e; }
@@ -585,15 +405,10 @@ const awards = [
   .engage-card p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #4a6359; line-height: 1.6; margin: 0; }
 
   @media (max-width: 1024px) {
-    .story-grid, .culture-grid, .phil-grid, .location-grid { grid-template-columns: 1fr; }
-    .story-right, .culture-cards { margin-top: 0; }
+    .culture-grid, .phil-grid, .location-grid { grid-template-columns: 1fr; }
+    .culture-cards { margin-top: 0; }
     .phil-layers { margin-top: 0; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
     .values-grid { grid-template-columns: 1fr; }
     .engage-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 640px) {
-    .team-grid { grid-template-columns: 1fr; }
-    .hero-stats-row { gap: 1.5rem; }
   }
 </style>

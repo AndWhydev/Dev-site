@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroWebGL from '../components/HeroWebGL.astro';
 import OurStory from '../components/OurStory.astro';
-import TrustedBy from '../components/TrustedBy.astro';
 import LiveAppDemo from '../components/LiveAppDemo.astro';
 import RealAppEmbed from '../components/RealAppEmbed.astro';
 import ProductShowcase from '../components/ProductShowcase.astro';
@@ -17,15 +16,10 @@ import AISpotlight from '../components/AISpotlight.astro';
 import Web3Spotlight from '../components/Web3Spotlight.astro';
 import ROICalculator from '../components/ROICalculator.astro';
 import CTABanner from '../components/CTABanner.astro';
-/* BlogPreview removed — its 3 hardcoded links target blog posts
-   that were deleted (each contained fabricated case studies). Will
-   return once new posts written from real client work. */
-/* Removed for credibility — these components contain fabricated client
-   names, fabricated stats, or fabricated case-study outcomes. Add back
-   only when replaced with real, defensible content:
-   - StatsBar           (150+ Projects / 98% Retention / 4.49 Rating — unverifiable)
-   - Testimonials       (Sarah Mitchell / James Okafor / Marcus Chen — fictional)
-   - FeaturedCaseStudies (Qld telco / Melbourne lender / Sydney courier — fictional) */
+/* BlogPreview, StatsBar, Testimonials, and FeaturedCaseStudies all
+   removed and deleted from the codebase — each contained fabricated
+   client names, invented case-study metrics, or unverifiable stats.
+   They will only return alongside real, signed-off client work. */
 ---
 
 <Layout
@@ -57,7 +51,6 @@ import CTABanner from '../components/CTABanner.astro';
     </section>
 
     <OurStory />
-    <TrustedBy />
     <LiveAppDemo />
     <RealAppEmbed />
     <ProductShowcase />
