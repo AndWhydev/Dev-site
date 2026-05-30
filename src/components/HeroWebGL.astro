@@ -492,10 +492,15 @@
   }
 </style>
 
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script is:inline>
-  /* Hero boot — split the heading, play intro, init Three.js. Re-runs on Astro view transitions.
-     is:inline so Astro doesn't bundle this as a module — we need direct access to the global THREE. */
+  /* Hero boot — split the heading, play intro, lazy-load + init Three.js.
+     Re-runs on Astro view transitions. is:inline so Astro doesn't bundle this
+     as a module — we need direct access to the global THREE.
+
+     Three.js (~118KB) is NOT preloaded — it is injected on idle after the page
+     has reached `load`, which keeps it off the critical path. The CSS gradient
+     mesh underneath the canvas is the static fallback that paints first and is
+     also the final state on reduced-motion, save-data, and WebGL-failure paths. */
   function awlSplitHeading() {
     const h = document.getElementById('awl-hero-heading');
     if (!h || h.dataset.split === '1') return;
@@ -522,12 +527,28 @@
     });
   }
 
+  /* Lazy-load three.min.js exactly once. Resolves immediately if already loaded. */
+  let awlThreePromise = null;
+  function awlLoadThree() {
+    if (typeof THREE !== 'undefined') return Promise.resolve();
+    if (awlThreePromise) return awlThreePromise;
+    awlThreePromise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      s.async = true;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('three.js failed to load'));
+      document.head.appendChild(s);
+    });
+    return awlThreePromise;
+  }
+
   function awlInitWebGL() {
     const canvas = document.getElementById('awl-hero-canvas');
     const section = document.getElementById('awl-hero');
     if (!canvas || !section) return;
     if (typeof THREE === 'undefined') {
-      // CDN script hasn't arrived yet — try again shortly.
+      // Three.js hasn't arrived yet — try again shortly.
       return setTimeout(awlInitWebGL, 200);
     }
     if (canvas.dataset.booted === '1') return;
@@ -869,10 +890,35 @@
     step();
   }
 
+  /* Defer Three.js to idle so the CDN fetch + parse never blocks first paint
+     or LCP. The CSS gradient mesh is the static fallback shown until WebGL
+     boots — and the only state shown to reduced-motion / save-data users. */
+  function awlScheduleWebGL() {
+    if (typeof window === 'undefined') return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const conn = navigator.connection;
+    const saveData = conn && (conn.saveData || /^(slow-2g|2g)$/.test(conn.effectiveType || ''));
+    if (reduced || saveData) return; // keep the static CSS mesh — no JS load
+    const start = () => {
+      awlLoadThree().then(awlInitWebGL).catch((e) => {
+        console.warn('[AWL hero] three.js load failed — using CSS mesh fallback.', e);
+      });
+    };
+    const kick = () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(start, { timeout: 2500 });
+      } else {
+        setTimeout(start, 600);
+      }
+    };
+    if (document.readyState === 'complete') kick();
+    else window.addEventListener('load', kick, { once: true });
+  }
+
   function awlBoot() {
     awlSplitHeading();
     awlPlayIntro();
-    awlInitWebGL();
+    awlScheduleWebGL();
   }
 
   if (document.readyState === 'loading') {

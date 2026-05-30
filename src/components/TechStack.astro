@@ -209,13 +209,14 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
   .tech-term.in-view .tech-term-cmd {
     white-space: nowrap;
     overflow: hidden;
-    width: 0;
-    display: inline-block;
+    /* clip-path is composited, so the per-character reveal never re-layouts
+       the terminal block. Width-based typing rebuilt flex sizing each step. */
+    clip-path: inset(0 100% 0 0);
     animation: techType 2.4s steps(36, end) 0.2s forwards;
   }
   @keyframes techType {
-    from { width: 0; }
-    to { width: 100%; }
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
   }
 
   .tech-term-out {
@@ -270,6 +271,7 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
       opacity: 1 !important;
       width: 100% !important;
       transform: none !important;
+      clip-path: none !important;
     }
   }
 

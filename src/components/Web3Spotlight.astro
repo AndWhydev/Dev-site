@@ -329,18 +329,23 @@
   }
   .w3-tx-conf-fill {
     display: block;
-    width: 0;
+    /* Rest at full width; animate with transform: scaleX so the running fill
+       stays on the compositor and never re-layouts the surrounding card. */
+    width: 100%;
     height: 100%;
     background: linear-gradient(90deg, #0d9373, #10b88a);
     border-radius: 50px;
+    transform: scaleX(0);
+    transform-origin: left center;
   }
   .w3-tx.in-view .w3-tx-conf-fill {
     animation: w3TxFill 5s cubic-bezier(0.4,0,0.2,1) infinite;
+    will-change: transform;
   }
   @keyframes w3TxFill {
-    0% { width: 0; }
-    50%, 90% { width: 100%; }
-    100% { width: 0; }
+    0% { transform: scaleX(0); }
+    50%, 90% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -350,6 +355,7 @@
     }
     .w3-tx .w3-tx-conf-fill {
       width: 100%;
+      transform: none;
     }
   }
 

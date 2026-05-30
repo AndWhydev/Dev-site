@@ -1286,11 +1286,16 @@
   .ps-ana-bar {
     background: linear-gradient(180deg, #0d9373 0%, rgba(13,147,115,0.4) 100%);
     border-radius: 4px 4px 2px 2px;
-    height: 0;
+    /* Rest at full target height — animate the visual with transform: scaleY
+       (GPU-compositable) rather than `height` (re-layouts the grid every frame). */
+    height: var(--h);
+    transform: scaleY(0);
+    transform-origin: bottom;
   }
   .ps-item.in-view .ps-ana-bar {
     animation: psBarGrow 5.6s ease-in-out infinite;
     animation-delay: var(--d, 0s);
+    will-change: transform;
   }
   .ps-ana-bar:nth-child(1) { --d: 0s; }
   .ps-ana-bar:nth-child(2) { --d: 0.08s; }
@@ -1300,10 +1305,10 @@
   .ps-ana-bar:nth-child(6) { --d: 0.4s; }
   .ps-ana-bar:nth-child(7) { --d: 0.48s; }
   @keyframes psBarGrow {
-    0% { height: 0; }
-    20% { height: var(--h); }
-    80% { height: var(--h); }
-    100% { height: 0; }
+    0% { transform: scaleY(0); }
+    20% { transform: scaleY(1); }
+    80% { transform: scaleY(1); }
+    100% { transform: scaleY(0); }
   }
   .ps-ana-bars-axis {
     display: grid;
@@ -1880,7 +1885,7 @@
     .ps-item.in-view .ps-crm-stage {
       animation: none !important;
     }
-    .ps-ana-bar { height: var(--h); }
+    .ps-ana-bar { height: var(--h); transform: none; }
     .ps-bk-new-appt { opacity: 1; transform: scale(1); }
     .ps-bk-toast { opacity: 1; transform: translateX(-50%) translateY(0); }
     .ps-fl-vehicle { offset-distance: 100%; }

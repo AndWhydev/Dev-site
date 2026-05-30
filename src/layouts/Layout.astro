@@ -114,10 +114,18 @@ const schema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
 
-    <!-- Fonts -->
+    <!-- Fonts — non-render-blocking. Preconnect warms TLS to the font CDNs,
+         the print-media trick lets the browser fetch the stylesheet without
+         delaying first paint, and `display=swap` shows fallback text until
+         the webfont arrives. Weights are subset to the ones actually used
+         site-wide (Sora 300-800, DM Sans 300-700). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" />
+    </noscript>
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0a0f0e" />
@@ -209,9 +217,12 @@ const schema = {
         overflow: hidden;
       }
       .loader-fill {
+        width: 100%;
         height: 100%;
         background: #0d9373;
         border-radius: 2px;
+        transform: scaleX(0);
+        transform-origin: left center;
         animation: loader-fill 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
       @keyframes loader-pulse {
@@ -219,8 +230,8 @@ const schema = {
         50% { transform: scale(1.05); }
       }
       @keyframes loader-fill {
-        from { width: 0%; }
-        to { width: 100%; }
+        from { transform: scaleX(0); }
+        to   { transform: scaleX(1); }
       }
     </style>
 
