@@ -26,17 +26,111 @@
           <div class="iphone-body">
             <div class="iphone-screen">
               <div class="dynamic-island" aria-hidden="true"></div>
-              <video
-                id="hero-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                aria-label="App demo video"
-              >
-                <source src="/videos/kite-export.mp4" type="video/mp4" />
-              </video>
+              <div class="mock-app" role="img" aria-label="Animated mobile application interface mockup">
+                <div class="mock-status">
+                  <span class="mock-time">9:41</span>
+                  <div class="mock-status-icons">
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="white" aria-hidden="true"><rect x="0" y="6" width="2.5" height="4" rx="0.5"/><rect x="3.5" y="4" width="2.5" height="6" rx="0.5"/><rect x="7" y="2" width="2.5" height="8" rx="0.5"/><rect x="10.5" y="0" width="2.5" height="10" rx="0.5"/></svg>
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="white" aria-hidden="true"><path d="M6.5 0C4 0 1.7 1 0 2.5l1.2 1.2C2.6 2.5 4.5 1.8 6.5 1.8s3.9.7 5.3 1.9L13 2.5C11.3 1 9 0 6.5 0zm0 3.6C5 3.6 3.7 4.2 2.7 5l1.2 1.2c.7-.5 1.6-.9 2.6-.9s1.9.3 2.6.9L10.3 5C9.3 4.2 8 3.6 6.5 3.6zm0 3.4c-.8 0-1.5.3-2 .8L6.5 10l2-2.2c-.5-.5-1.2-.8-2-.8z"/></svg>
+                    <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="white" stroke-opacity="0.5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="white"/><rect x="20" y="3.5" width="1.5" height="3" rx="0.5" fill="white" fill-opacity="0.5"/></svg>
+                  </div>
+                </div>
+
+                <div class="mock-header">
+                  <div>
+                    <div class="mock-greeting">Good morning</div>
+                    <div class="mock-name">Welcome back</div>
+                  </div>
+                  <div class="mock-avatar" aria-hidden="true">A</div>
+                </div>
+
+                <div class="mock-balance">
+                  <div class="mock-balance-top">
+                    <span class="mock-balance-label">Total balance</span>
+                    <span class="mock-balance-trend">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>
+                      2.4%
+                    </span>
+                  </div>
+                  <div class="mock-balance-value">
+                    <span class="mock-currency">$</span><span class="mock-count" data-start="12200" data-target="12847">12,847</span><span class="mock-decimals">.50</span>
+                  </div>
+                  <svg class="mock-chart" viewBox="0 0 220 64" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="mockChartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#0d9373" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="mock-chart-fill" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5 L220,64 L0,64Z" fill="url(#mockChartGrad)"/>
+                    <path class="mock-chart-line" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5" fill="none" stroke="#0d9373" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <div class="mock-range">
+                    <span class="mock-range-pill active">7D</span>
+                    <span class="mock-range-pill">1M</span>
+                    <span class="mock-range-pill">3M</span>
+                    <span class="mock-range-pill">1Y</span>
+                  </div>
+                </div>
+
+                <div class="mock-section-title">
+                  <span>Recent activity</span>
+                  <span class="mock-link">View all</span>
+                </div>
+
+                <div class="mock-activity">
+                  <div class="mock-act-row">
+                    <div class="mock-act-icon green" aria-hidden="true">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="mock-act-info">
+                      <div class="mock-act-name">Deposit</div>
+                      <div class="mock-act-meta">Today · 09:32</div>
+                    </div>
+                    <div class="mock-act-amt up">+$420.00</div>
+                  </div>
+                  <div class="mock-act-row">
+                    <div class="mock-act-icon blue" aria-hidden="true">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M7 7h10v10"/></svg>
+                    </div>
+                    <div class="mock-act-info">
+                      <div class="mock-act-name">Transfer</div>
+                      <div class="mock-act-meta">Yesterday</div>
+                    </div>
+                    <div class="mock-act-amt">−$84.50</div>
+                  </div>
+                  <div class="mock-act-row">
+                    <div class="mock-act-icon amber" aria-hidden="true">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/></svg>
+                    </div>
+                    <div class="mock-act-info">
+                      <div class="mock-act-name">Payment</div>
+                      <div class="mock-act-meta">2 days ago</div>
+                    </div>
+                    <div class="mock-act-amt">−$32.00</div>
+                  </div>
+                </div>
+
+                <div class="mock-tabbar" role="tablist" aria-label="App navigation">
+                  <button class="mock-tab" data-i="0" type="button" aria-label="Home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4v-7h-6v7H5a2 2 0 01-2-2z"/></svg>
+                    <span>Home</span>
+                  </button>
+                  <button class="mock-tab" data-i="1" type="button" aria-label="Overview">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+                    <span>Overview</span>
+                  </button>
+                  <button class="mock-tab" data-i="2" type="button" aria-label="Activity">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    <span>Activity</span>
+                  </button>
+                  <button class="mock-tab" data-i="3" type="button" aria-label="Reports">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span>Reports</span>
+                  </button>
+                  <div class="mock-home-indicator" aria-hidden="true"></div>
+                </div>
+              </div>
               <div class="screen-overlay" aria-hidden="true"></div>
             </div>
           </div>
@@ -45,9 +139,9 @@
         <div class="phone-caption">
           <div class="phone-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#0d9373"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-            <span>Live Application</span>
+            <span>Product demo</span>
           </div>
-          <p>Flutter mobile app — delivered to production</p>
+          <p>Mobile app — built with our platform</p>
         </div>
       </div>
 
@@ -376,11 +470,336 @@
     z-index: 10;
   }
 
-  .iphone-screen video {
+  /* ---- Mock app inside phone ---- */
+  .mock-app {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(13,147,115,0.18) 0%, transparent 60%),
+      linear-gradient(180deg, #0a0f0e 0%, #050807 100%);
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 37px;
+  }
+
+  .mock-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px 0;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .mock-time {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+  .mock-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .mock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 12px;
+    flex-shrink: 0;
+  }
+  .mock-greeting {
+    font-size: 10px;
+    color: #6b8079;
+    font-weight: 500;
+  }
+  .mock-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+  .mock-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d9373 0%, #0a6e57 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 0 0 2px rgba(13,147,115,0.15);
+  }
+
+  .mock-balance {
+    margin: 0 14px;
+    background: linear-gradient(155deg, rgba(13,147,115,0.18) 0%, rgba(13,147,115,0.04) 60%, rgba(255,255,255,0.02) 100%);
+    border: 1px solid rgba(13,147,115,0.22);
+    border-radius: 18px;
+    padding: 14px 14px 10px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .mock-balance::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -30%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(13,147,115,0.25) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .mock-balance-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .mock-balance-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #8aa09a;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .mock-balance-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #0d9373;
+    background: rgba(13,147,115,0.15);
+    border-radius: 50px;
+    padding: 2px 7px;
+  }
+  .mock-balance-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-top: 6px;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+  }
+  .mock-currency {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    margin-right: 1px;
+  }
+  .mock-decimals {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    margin-left: 1px;
+  }
+  .mock-chart {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 50px;
+    margin-top: 8px;
     display: block;
+    position: relative;
+  }
+  .mock-chart-line {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    animation: mockChartDraw 6s ease-in-out infinite;
+  }
+  .mock-chart-fill {
+    opacity: 0;
+    animation: mockChartFill 6s ease-in-out infinite;
+  }
+  @keyframes mockChartDraw {
+    0% { stroke-dashoffset: 280; }
+    35% { stroke-dashoffset: 0; }
+    85% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 280; }
+  }
+  @keyframes mockChartFill {
+    0%, 10% { opacity: 0; }
+    45%, 85% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .mock-range {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+    position: relative;
+  }
+  .mock-range-pill {
+    font-size: 9px;
+    font-weight: 600;
+    color: #6b8079;
+    padding: 3px 8px;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+  }
+  .mock-range-pill.active {
+    color: white;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .mock-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 8px;
+    flex-shrink: 0;
+  }
+  .mock-section-title > span:first-child {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+  }
+  .mock-link {
+    font-size: 10px;
+    font-weight: 500;
+    color: #0d9373;
+  }
+
+  .mock-activity {
+    padding: 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+  }
+  .mock-act-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 9px 10px;
+  }
+  .mock-act-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mock-act-icon.green { background: rgba(13,147,115,0.18); color: #0d9373; }
+  .mock-act-icon.blue { background: rgba(99,102,241,0.18); color: #a5b4fc; }
+  .mock-act-icon.amber { background: rgba(251,191,36,0.15); color: #fbbf24; }
+  .mock-act-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .mock-act-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+  }
+  .mock-act-meta {
+    font-size: 9px;
+    color: #6b8079;
+    margin-top: 1px;
+  }
+  .mock-act-amt {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    white-space: nowrap;
+  }
+  .mock-act-amt.up { color: #0d9373; }
+
+  .mock-tabbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: 8px 6px 6px;
+    background: rgba(8,12,11,0.85);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .mock-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 6px 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: rgba(255,255,255,0.32);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    cursor: default;
+    transition: color 0.5s ease;
+    position: relative;
+  }
+  .mock-tab svg {
+    transition: transform 0.5s ease;
+  }
+  .mock-tab.mock-tab-active {
+    color: #0d9373;
+  }
+  .mock-tab.mock-tab-active svg {
+    transform: translateY(-1px);
+  }
+  .mock-tab.mock-tab-active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 2px;
+    background: #0d9373;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(13,147,115,0.6);
+  }
+
+  .mock-home-indicator {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 4px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mock-chart-line {
+      stroke-dasharray: none;
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+    .mock-chart-fill {
+      opacity: 1;
+      animation: none;
+    }
   }
 
   .screen-overlay {
@@ -831,3 +1250,62 @@
     }
   }
 </style>
+
+<script>
+  function initMockApp() {
+    const app = document.querySelector<HTMLElement>('.mock-app');
+    if (!app || app.dataset.mockInit === '1') return;
+    app.dataset.mockInit = '1';
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const tabs = Array.from(app.querySelectorAll<HTMLButtonElement>('.mock-tab'));
+    if (tabs.length) {
+      tabs[0].classList.add('mock-tab-active');
+    }
+
+    const counter = app.querySelector<HTMLElement>('.mock-count');
+    const start = counter ? parseFloat(counter.dataset.start || '0') : 0;
+    const target = counter ? parseFloat(counter.dataset.target || '0') : 0;
+    const formatter = new Intl.NumberFormat('en-AU');
+
+    function runCount() {
+      if (!counter) return;
+      const duration = 2200;
+      const t0 = performance.now();
+      function step(t: number) {
+        const p = Math.min((t - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = Math.round(start + (target - start) * eased);
+        counter!.textContent = formatter.format(v);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    if (reduce) {
+      if (counter) counter.textContent = formatter.format(target);
+      return;
+    }
+
+    runCount();
+    let i = 0;
+    const cycleMs = 3000;
+    const tabTimer = window.setInterval(() => {
+      if (!tabs.length) return;
+      tabs[i].classList.remove('mock-tab-active');
+      i = (i + 1) % tabs.length;
+      tabs[i].classList.add('mock-tab-active');
+    }, cycleMs);
+
+    const countTimer = window.setInterval(runCount, 6000);
+
+    document.addEventListener('astro:before-swap', () => {
+      window.clearInterval(tabTimer);
+      window.clearInterval(countTimer);
+    }, { once: true });
+  }
+
+  initMockApp();
+  document.addEventListener('astro:after-swap', initMockApp);
+</script>
