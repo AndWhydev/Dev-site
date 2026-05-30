@@ -46,23 +46,9 @@ const data = {
       description: 'We evaluate retrieval and answer quality against a curated test set, tuning chunking, embeddings, hybrid search and re-ranking based on evidence. Improvements are measured rather than guessed, so the system gets better in a controlled, repeatable way.',
     },
   ],
-  useCases: [
-    {
-      industry: 'Professional & Legal Services',
-      title: 'Internal Knowledge Assistant Over Policy and Precedent',
-      description: 'A firm could index its policies, templates and historical advice into a RAG knowledge base so staff can ask questions and receive answers grounded in the firm\'s own material, each with a citation to the source document. Access control ensures matter-confidential content is only retrievable by the people authorised to see it.',
-    },
-    {
-      industry: 'Financial Services',
-      title: 'Compliance and Product Q&A for Frontline Staff',
-      description: 'A financial institution could ground an assistant in its product disclosure statements, compliance manuals and internal procedures, so frontline staff get accurate, cited answers instead of guessing or escalating. Because every answer links to the source, compliance teams can audit what the system is telling people.',
-    },
-    {
-      industry: 'Healthcare & Life Sciences',
-      title: 'Clinical Procedure and Guideline Retrieval',
-      description: 'A healthcare provider could build a RAG system over its clinical guidelines and standard operating procedures, hosted within an Australian region to meet data residency and Privacy Act 1988 obligations. Citations let clinicians verify the source before acting, and the system declines to answer when the guideline does not cover the question.',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+
+  useCases: [],
   technologies: [
     'pgvector', 'Pinecone', 'Weaviate', 'Qdrant', 'OpenAI Embeddings',
     'Cohere Rerank', 'LlamaIndex', 'LangChain', 'Anthropic Claude', 'OpenAI GPT-4o',

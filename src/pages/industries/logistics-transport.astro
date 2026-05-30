@@ -45,26 +45,8 @@ const data = {
     'Cold chain monitoring and alerting',
     'Customs and border compliance tools',
   ],
-  useCases: [
-    {
-      title: 'Intelligent Route Optimisation Platform',
-      description: "A national courier network with 600 drivers across six states needed to reduce deadhead kilometres and improve on-time delivery rates. We built a route optimisation engine using Google OR-Tools with custom constraints for vehicle capacity, time windows, driver fatigue rules and traffic data from the HERE Maps API. The planning engine generates optimised run sheets overnight and allows dispatchers to make real-time adjustments via a drag-and-drop web interface. Drivers receive updated routes on a purpose-built Android application with offline capability for regional areas. Fuel costs dropped 28% in the first quarter post-launch and failed delivery attempts fell by 41%.",
-      techStack: 'Python · Google OR-Tools · HERE Maps API · React · FastAPI · Android (Kotlin) · PostgreSQL · AWS',
-      videoNote: 'dispatch console with optimised route visualisation and live driver tracking',
-    },
-    {
-      title: 'Warehouse Management System with RF and Pick-by-Voice',
-      description: "A third-party logistics (3PL) provider handling ambient and chilled FMCG needed to replace a 15-year-old WMS that couldn't support their new client's inbound EDI 856 ASNs or wave-pick workflows. We designed and built a cloud-native WMS with receiving, putaway, directed picking (RF scanner and pick-by-voice via Honeywell Vocollect integration), replenishment, despatch and inventory reconciliation modules. The system integrates with the client's ERP via REST APIs and produces carrier-compliant despatch labels and packing slips. Picking accuracy improved from 98.1% to 99.7% and throughput increased by 35% with the same headcount.",
-      techStack: 'React · .NET 8 · SQL Server · Zebra RFID · Vocollect · Azure Service Bus · EDI 856/856',
-      videoNote: 'warehouse floor picking workflow and inventory dashboard',
-    },
-    {
-      title: 'Cold Chain Compliance Monitoring',
-      description: "A pharmaceutical distributor required real-time temperature monitoring across their fleet of 80 refrigerated vehicles to meet TGA Good Distribution Practice (GDP) requirements and maintain their wholesale dealer licence. We integrated IoT temperature sensors (Sensitech TempTale 4) with a cloud monitoring platform that streams data every two minutes, raises SMS and email alerts for excursions within configurable thresholds, and produces GDP-compliant temperature excursion reports automatically. The platform maintains a full audit trail for each consignment — critical during TGA inspections — and has eliminated the paper-based manual temperature logging that previously consumed two hours of warehouse staff time per shift.",
-      techStack: 'AWS IoT Core · Node.js · InfluxDB · Grafana · React · Twilio · Sensitech API',
-      videoNote: 'live fleet temperature map with excursion alerting and TGA report generation',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   relevantServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },

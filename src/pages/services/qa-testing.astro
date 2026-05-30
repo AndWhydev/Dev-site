@@ -46,23 +46,8 @@ const data = {
       description: 'Automation only checks what you thought to script. Our manual exploratory sessions follow structured charters to probe edge cases, unusual workflows and the rough corners real users hit. We log reproducible defects with evidence, not vague "it feels off" reports, so developers can act immediately.',
     },
   ],
-  useCases: [
-    {
-      industry: 'eCommerce',
-      title: 'Hardening a Checkout Before a Sale Event',
-      description: 'A retail team preparing for a major sale period needs assurance their checkout will hold up. The work involves end-to-end Playwright coverage of the cart-to-payment journey across browsers, k6 load tests simulating the expected peak concurrency, and a performance baseline so any future regression is detectable — turning "we think it will cope" into a measured capacity figure.',
-    },
-    {
-      industry: 'Government & Public Sector',
-      title: 'Accessibility Conformance for a Public Service',
-      description: 'A public-facing digital service must meet accessibility obligations before launch. This involves a WCAG 2.2 AA audit combining automated Axe and Lighthouse scans with manual keyboard and screen-reader testing, a prioritised remediation list mapped to specific success criteria, and a regression suite so conformance does not silently erode with future releases.',
-    },
-    {
-      industry: 'SaaS & Technology',
-      title: 'Adding a Test Safety Net to a Legacy Codebase',
-      description: 'A scale-up with an untested codebase is afraid to refactor. The approach is to wrap the highest-risk revenue paths in end-to-end and integration tests first, establish CI quality gates that block merges on failure, then progressively grow unit coverage as code is touched — giving the team the confidence to modernise without a big-bang rewrite.',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   technologies: [
     'Playwright', 'Cypress', 'Jest', 'Vitest', 'Pytest', 'k6',
     'Axe', 'Lighthouse CI', 'BrowserStack', 'GitHub Actions', 'Testing Library', 'Postman / Newman',

@@ -43,28 +43,8 @@ const data = {
       description: 'GitHub Actions, GitLab CI, or AWS CodePipeline configured to run automated tests, security scanning (SAST, container image scanning, dependency checks), build artefacts, deploy to staging, and await approval before production. Release frequency increases from weeks to days without increasing deployment risk.',
     },
   ],
-  useCases: [
-    {
-      industry: 'Financial Services',
-      title: 'Multi-Region Trading Platform Infrastructure',
-      description: 'A financial services firm required infrastructure for a trading platform with a 99.99% availability SLA, sub-100ms API latency requirements, and APRA CPS 234 compliance. We designed a multi-region AWS architecture with active-active failover, RDS Aurora Global Database, ElastiCache Global Datastore, and a full CI/CD pipeline with automated compliance controls — achieving 99.996% availability in the first year of operation.',
-    },
-    {
-      industry: 'Government',
-      title: 'IRAP-Assessed Cloud Environment',
-      description: 'A federal agency migrated a heritage application hosting sensitive citizen data to AWS GovCloud with an IRAP assessment-aligned security architecture — including Private Connectivity via AWS Direct Connect, AWS PrivateLink for all service endpoints, GuardDuty, Security Hub, and CloudTrail to a separate, policy-protected log account — passing the security assessment with no critical findings.',
-    },
-    {
-      industry: 'Healthcare',
-      title: 'Patient Data Platform with DR Capability',
-      description: 'A health technology company migrated a patient-facing application to a fully documented, tested disaster recovery architecture on AWS — with automated failover to a warm standby in ap-southeast-2 (Sydney) with a 15-minute RTO and 5-minute RPO, meeting the requirements of their health fund contracts and the data residency requirements of the Australian Digital Health Agency.',
-    },
-    {
-      industry: 'eCommerce',
-      title: 'Auto-Scaling Flash Sale Infrastructure',
-      description: 'A national retailer\'s peak traffic events (flash sales, Click Frenzy) were causing 503 errors and revenue loss. We re-architected their workload onto ECS Fargate with predictive and reactive auto-scaling, implemented CloudFront with edge caching for catalogue data, moved session state to ElastiCache, and introduced a queue-based order processing system — sustaining 40,000 concurrent users at launch without degradation.',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   technologies: [
     'AWS', 'Google Cloud Platform', 'Microsoft Azure', 'Terraform', 'AWS CDK',
     'Kubernetes (EKS)', 'Docker', 'GitHub Actions', 'Datadog', 'OpenTelemetry',

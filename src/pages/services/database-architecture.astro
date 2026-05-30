@@ -43,28 +43,9 @@ const data = {
       description: 'Relational, document, graph, time-series, columnar — each storage engine has a domain where it excels. We help you pick the right store for each workload and integrate them cleanly.',
     },
   ],
-  useCases: [
-    {
-      title: 'Financial Platform Scaling from 50M to 5B Transactions',
-      description: 'A payments processor whose PostgreSQL cluster was struggling under transaction volume retained us to redesign their schema partitioning strategy, introduce read replicas for reporting workloads, and rewrite a set of critical queries that had grown to take over 30 seconds. Query times dropped to under 200ms and the platform scaled through the next two years without further architectural intervention.',
-      industry: 'FinTech',
-    },
-    {
-      title: 'Healthcare Data Warehouse Migration to Columnar Store',
-      description: 'A national health network needed to move 11 years of patient records from a normalised OLTP schema into an analytics-optimised columnar warehouse without disrupting clinical operations. We designed a dual-write migration pattern, validated record-level data integrity and executed the cutover during a planned maintenance window with zero data loss.',
-      industry: 'Healthcare',
-    },
-    {
-      title: 'E-commerce Catalogue with 200M SKU Records',
-      description: 'A major retailer\'s product catalogue had grown to a scale where full-text search and faceted filtering became unusable. We introduced a hybrid architecture combining PostgreSQL for transactional writes with Elasticsearch for search, designed the synchronisation pipeline and reduced median search latency from 4.2 seconds to 85 milliseconds.',
-      industry: 'Retail',
-    },
-    {
-      title: 'SaaS Multi-Tenant Schema Redesign',
-      description: 'A B2B SaaS platform had grown from a single-tenant prototype into a 3,000-tenant production system using a naive shared-schema approach. We migrated them to a row-level security model that maintained data isolation, dramatically simplified their application-layer tenancy logic and halved their infrastructure cost.',
-      industry: 'SaaS',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+
+  useCases: [],
   technologies: [
     'PostgreSQL',
     'MySQL / MariaDB',

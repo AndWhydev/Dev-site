@@ -46,23 +46,8 @@ const data = {
       description: 'For data governed by the Privacy Act 1988 or internal residency rules, we deploy open-weight models within Australian regions, use zero-retention API configurations, and keep regulated data out of any provider training pipeline. Compliance constraints shape the architecture from day one.',
     },
   ],
-  useCases: [
-    {
-      industry: 'Professional Services',
-      title: 'Document Drafting and Summarisation Inside Existing Tools',
-      description: 'A professional services firm could embed an LLM into its document management system to draft first-pass client correspondence and summarise long matter files, with every output reviewed by a fee-earner before it is sent. Structured prompts keep the tone and format consistent, and an evaluation set guards against quality drift when the underlying model is upgraded.',
-    },
-    {
-      industry: 'Insurance',
-      title: 'Claims Triage With Tool Calling',
-      description: 'An insurer could use function calling to let a model read an incoming claim, extract the structured fields its policy engine needs, and call internal APIs to check coverage — returning a triage recommendation rather than a decision. Guardrails ensure the model never approves or declines a claim itself; it prepares the case for a human assessor.',
-    },
-    {
-      industry: 'Software & SaaS',
-      title: 'Natural-Language Features in an Existing Product',
-      description: 'A SaaS company could add a natural-language query or assistant feature to its product without rebuilding the backend, using structured output so the model translates a user request into a validated query against existing APIs. Cost routing keeps per-user economics viable at scale, and the evaluation harness protects the feature against regressions on each model update.',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   technologies: [
     'OpenAI GPT-4o', 'Anthropic Claude', 'Azure OpenAI Service', 'Amazon Bedrock',
     'Meta Llama', 'Mistral', 'vLLM', 'LangChain', 'LangGraph', 'Instructor',

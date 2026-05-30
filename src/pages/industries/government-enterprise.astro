@@ -45,26 +45,9 @@ const data = {
     'Case management systems',
     'Government API gateway platforms',
   ],
-  useCases: [
-    {
-      title: 'Digital Grants Management Platform',
-      description: "A federal government agency administering $400M per year in competitive grants across three programmes was managing the entire lifecycle — EOI, full application, assessment, recommendation, deed of grant, acquittal — through a combination of PDF forms, SharePoint document libraries and Excel-based assessment scoresheets. We built a purpose-built grants management platform with a public applicant portal (integrated with myGovID for identity verification), a structured online application form engine with save-and-resume, an internal assessment workflow with configurable scoring matrices and conflict of interest declarations, and a reporting suite for the Minister's office. Processing time per application dropped from 14 days to under three days.",
-      techStack: 'React · .NET 8 · SQL Server · myGovID (OIDC) · Azure Government · Power BI Embedded',
-      videoNote: 'grant application portal and internal assessment workflow dashboard',
-    },
-    {
-      title: 'Open Data Portal and API Gateway',
-      description: "A state government data agency needed to replace a legacy CKAN instance that was difficult to maintain and lacked the API management capabilities needed for their whole-of-government API strategy. We built a modern open data portal with a CKAN-compatible metadata API (preserving existing integrations with data.gov.au), a developer portal for API registration and key management via Kong Gateway, comprehensive dataset discovery with full-text search powered by Elasticsearch, and an automated data quality reporting pipeline. The portal now serves 2.4 million API calls per month and has reduced dataset publication time from five days to under four hours through a self-service publishing workflow.",
-      techStack: 'Next.js · Python · FastAPI · Kong Gateway · Elasticsearch · PostgreSQL · Azure · CKAN API',
-      videoNote: 'open data portal with dataset search and developer API key management',
-    },
-    {
-      title: 'Local Government Permit and Licence Platform',
-      description: "A metropolitan council was processing development applications, business licences and food safety registrations through a mix of paper forms, email and a legacy system that couldn't support online payment. Citizens had no visibility of where their application was in the queue. We replaced the legacy system with a citizen-facing portal (integrated with council's existing CRM via REST APIs) supporting 23 different application types with conditional form logic, integrated payment processing via BPoint, automated acknowledgement and status notification emails, and an internal workflow platform for officers to assess, request further information and issue determinations. The council reduced walk-in traffic to their service centres by 58% in the first year.",
-      techStack: 'React · Node.js · PostgreSQL · BPoint Payment Gateway · Civica API · SendGrid · Azure',
-      videoNote: 'citizen permit application portal and internal officer assessment workflow',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+
+  useCases: [],
   relevantServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Cybersecurity', href: '/services/cybersecurity' },

@@ -47,26 +47,8 @@ const data = {
     'Insurance claims processing systems',
     'Superannuation administration platforms',
   ],
-  useCases: [
-    {
-      title: 'Real-Time Fraud Detection Engine',
-      description: 'A mutual bank needed to move beyond rule-based fraud scoring that was generating too many false positives and missing sophisticated account-takeover patterns. We built an event-streaming fraud detection engine using Apache Kafka and a gradient-boosted ML model trained on three years of transaction history, reducing fraud losses by 62% while cutting manual review queues by half. The system processes 4,000 transactions per second and raises alerts within 80ms of a suspicious event — fast enough to intervene before NPP payments settle.',
-      techStack: 'Apache Kafka · Python · XGBoost · PostgreSQL · AWS Lambda · React dashboard',
-      videoNote: 'real-time transaction scoring dashboard with alert workflow',
-    },
-    {
-      title: 'CDR-Compliant Open Banking API Gateway',
-      description: "An AFSL-licensed fintech required a Consumer Data Right (CDR) data holder implementation that could pass ACCC conformance testing and go live within a compressed six-month timeline. We architected a standards-compliant API gateway covering the full banking sector obligations — account data, transaction history and consent management — with an admin console for consent lifecycle management. The gateway has maintained 100% conformance through two subsequent CDR rule amendments without a single breaking change to downstream consumers.",
-      techStack: 'Node.js · TypeScript · Kong Gateway · PostgreSQL · Redis · Azure AKS · ACCC DCR',
-      videoNote: 'consent management dashboard and CDR API explorer',
-    },
-    {
-      title: 'Superannuation Member Self-Service Portal',
-      description: "A mid-tier industry super fund was drowning in call-centre volume from members trying to update beneficiaries, check insurance cover and make binding nominations. We replaced a decade-old WebForms portal with a modern, accessible React application backed by a secure API layer connecting to their core administration system. The new portal deflected 38% of inbound calls in its first quarter, improved member satisfaction scores by 22 NPS points and passed APRA's prudential technology review on first submission.",
-      techStack: 'React · TypeScript · .NET 8 · Azure AD B2C · SQL Server · WCAG 2.1 AA',
-      videoNote: 'member portal benefit summary and beneficiary update flow',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   relevantServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'API Development', href: '/services/api-development' },

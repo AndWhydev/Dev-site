@@ -45,26 +45,8 @@ const data = {
     'Timetabling and room booking systems',
     'Alumni engagement platforms',
   ],
-  useCases: [
-    {
-      title: 'AVETMISS-Compliant Student Management System',
-      description: "A large national RTO with 15,000 enrolments per year across workplace health and safety, hospitality and business qualifications was submitting AVETMISS data files with 300–400 validation errors each reporting period, consuming weeks of staff time to diagnose and fix. We built a custom student management system with AVETMISS validation built into the data entry layer — errors are surfaced at the point of data entry, not three months later when the NAT file fails. The system generates AVETMISS 8 NAT files (NAT00010 through NAT00130) on demand and integrates with the NCVER Total VET Activity portal. The first submission post-implementation had zero validation errors.",
-      techStack: 'React · .NET 8 · SQL Server · AVETMISS 8 · Azure · NCVER TVA portal integration',
-      videoNote: 'student enrolment form with real-time AVETMISS validation and NAT file generation',
-    },
-    {
-      title: 'University Student Engagement and At-Risk Platform',
-      description: "A regional university was concerned about the completion rates of its growing online cohort. The analytics team had data across Canvas LMS, the student management system and library usage — but no way to combine it into an actionable at-risk model. We built a data integration layer connecting Canvas (via the API), Callista and the library system, trained a logistic regression model on two years of completion data, and built an advisor-facing dashboard that surfaces a weekly at-risk list with recommended interventions. In the first semester of operation, advisors intervened with 340 flagged students; 71% continued to completion compared to a historical withdrawal rate of 38% for similar cohorts.",
-      techStack: 'Python · scikit-learn · dbt · Snowflake · Canvas API · Callista · React · AWS',
-      videoNote: 'advisor dashboard showing at-risk student cohort with engagement signals',
-    },
-    {
-      title: 'Micro-Credential and Digital Badge Platform',
-      description: "An EdTech company delivering professional development programmes to corporate clients needed to issue verifiable digital credentials that employees could share on LinkedIn and that employers could verify independently. We built a micro-credentialling platform integrated with their existing content delivery system, issuing Open Badges 2.0-compliant credentials via Badgr's API with custom metadata for each qualification. The platform integrates with LinkedIn's certification feature so recipients can add credentials to their profile with one click. Corporate clients receive a dashboard showing aggregate completion data and can configure their own branded credential templates. The platform now issues over 2,000 credentials per month.",
-      techStack: 'React · Node.js · Badgr API · Open Badges 2.0 · LinkedIn API · PostgreSQL · AWS',
-      videoNote: 'credential issuance flow and employer verification portal',
-    },
-  ],
+  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  useCases: [],
   relevantServices: [
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'SaaS Development', href: '/services/saas-development' },
