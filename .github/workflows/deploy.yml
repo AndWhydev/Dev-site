@@ -6,11 +6,11 @@ on:
   workflow_dispatch: # allows manual trigger from GitHub UI
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-permissions:
+    build:
+      runs-on: ubuntu-latest
+      permissions:
         contents: write
-    steps:
+      steps:
       - name: Checkout source
         uses: actions/checkout@v4
 
