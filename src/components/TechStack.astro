@@ -362,7 +362,10 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
 
   @media (max-width: 640px) {
     .tech-section {
-      padding: 5rem 0;
+      padding: 4rem 0;
+    }
+    .tech-inner {
+      padding: 0 1.25rem;
     }
     .tech-grid {
       grid-template-columns: repeat(3, 1fr);
@@ -372,6 +375,10 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
   @media (max-width: 440px) {
     .tech-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 0.625rem;
+    }
+    .tech-item {
+      padding: 1.125rem 0.75rem;
     }
     .tech-term-body {
       font-size: 0.625rem;

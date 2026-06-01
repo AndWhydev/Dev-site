@@ -5,24 +5,28 @@ const pillars = [
     label: 'Enterprise-Grade Security',
     heading: 'Security Is Not An Afterthought',
     body: 'Every application we build is architected with security from line one. OWASP standards, penetration testing, end-to-end encryption and role-based access control are built-in — not bolted on.',
+    visual: 'lock',
   },
   {
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M16 4.93A9 9 0 0121 12"/></svg>`,
     label: 'Transparent Delivery',
     heading: 'No Surprises. Ever.',
     body: 'A clear roadmap, weekly updates and milestones agreed in writing. If something is at risk, you hear it from us first — not when the deadline arrives.',
+    visual: 'milestones',
   },
   {
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     label: 'Australian-Based Team',
     heading: 'Local Expertise. Global Standards.',
     body: 'Our team is based in Australia with deep knowledge of local compliance, data sovereignty and business context. You speak to real people in your time zone — no offshore miscommunication.',
+    visual: 'map',
   },
   {
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
     label: 'Post-Launch Support',
     heading: 'We Grow With You',
     body: 'Launch is the beginning, not the end. Every engagement includes a structured hypercare period, SLA-backed support and a dedicated account team for ongoing evolution.',
+    visual: 'sla',
   },
 ];
 ---
@@ -39,7 +43,65 @@ const pillars = [
 
     <div class="pillars-grid">
       {pillars.map((pillar, i) => (
-        <div class={`pillar spotlight-card tilt-card reveal stagger-${i + 1}`}>
+        <div class={`pillar pillar--${pillar.visual} spotlight-card tilt-card reveal stagger-${i + 1}`}>
+          {/* Per-pillar background visual — each one unique to the section. */}
+          <div class="pillar-visual" aria-hidden="true">
+            {pillar.visual === 'lock' && (
+              <svg viewBox="0 0 120 120" class="pv-svg">
+                {[0,1,2,3,4,5].map((j) => (
+                  <circle cx="60" cy="60" r={18 + j * 8} fill="none" stroke="currentColor" stroke-opacity={0.18 - j * 0.025} stroke-width="1" />
+                ))}
+                <rect x="46" y="54" width="28" height="22" rx="4" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.4" />
+                <path d="M52 54v-6a8 8 0 0116 0v6" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.4" stroke-linecap="round" />
+              </svg>
+            )}
+            {pillar.visual === 'milestones' && (
+              <svg viewBox="0 0 120 120" class="pv-svg">
+                <line x1="14" y1="60" x2="106" y2="60" stroke="currentColor" stroke-opacity="0.25" stroke-width="1.2" stroke-dasharray="3 4" />
+                {[20, 45, 70, 95].map((x, j) => (
+                  <g>
+                    <circle cx={x} cy="60" r="5" fill="currentColor" fill-opacity={0.18 + j * 0.07} />
+                    <circle cx={x} cy="60" r="9" fill="none" stroke="currentColor" stroke-opacity={0.25 - j * 0.04} />
+                  </g>
+                ))}
+              </svg>
+            )}
+            {pillar.visual === 'map' && (
+              <svg viewBox="0 0 120 120" class="pv-svg">
+                {/* Stylised Australia silhouette */}
+                <path
+                  d="M22 70 Q15 55 26 48 Q38 42 50 46 Q58 39 70 41 Q82 40 92 50 Q104 56 100 70 Q98 82 86 88 Q72 96 58 92 Q44 92 32 86 Q24 80 22 70 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.5"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+                <circle cx="74" cy="70" r="3" fill="currentColor" />
+                <circle cx="74" cy="70" r="9" fill="none" stroke="currentColor" stroke-opacity="0.4" />
+                <circle cx="74" cy="70" r="14" fill="none" stroke="currentColor" stroke-opacity="0.15" />
+              </svg>
+            )}
+            {pillar.visual === 'sla' && (
+              <svg viewBox="0 0 120 120" class="pv-svg">
+                <polyline
+                  points="14,84 32,72 50,76 68,54 86,46 106,30"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-opacity="0.55"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                {[
+                  [14,84],[32,72],[50,76],[68,54],[86,46],[106,30],
+                ].map(([x,y]) => (
+                  <circle cx={x} cy={y} r="2.6" fill="currentColor" fill-opacity="0.85" />
+                ))}
+                <line x1="14" y1="100" x2="106" y2="100" stroke="currentColor" stroke-opacity="0.18" stroke-width="1" />
+              </svg>
+            )}
+          </div>
           <div class="pillar-top">
             <div class="pillar-icon" set:html={pillar.icon} />
           </div>
@@ -146,10 +208,48 @@ const pillars = [
     opacity: 1;
   }
 
+  .pillar-visual {
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+    width: 110px;
+    height: 110px;
+    color: #0d9373;
+    opacity: 0.32;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .pillar-visual .pv-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .pillar:hover .pillar-visual {
+    opacity: 0.55;
+    transform: translateY(-50%) scale(1.04);
+  }
+  .pillar--lock .pillar-visual { animation: pv-lock-pulse 6s ease-in-out infinite; }
+  .pillar--sla .pillar-visual { animation: pv-sla-drift 6s ease-in-out infinite; }
+  @keyframes pv-lock-pulse {
+    0%, 100% { opacity: 0.28; }
+    50% { opacity: 0.42; }
+  }
+  @keyframes pv-sla-drift {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pillar--lock .pillar-visual,
+    .pillar--sla .pillar-visual { animation: none; }
+  }
+
   .pillar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
   }
 
   .pillar-icon {
@@ -171,6 +271,8 @@ const pillars = [
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #4a6359;
+    position: relative;
+    z-index: 1;
   }
 
   .pillar-heading {
@@ -180,6 +282,8 @@ const pillars = [
     color: white;
     line-height: 1.2;
     margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .pillar-body {
@@ -188,6 +292,8 @@ const pillars = [
     color: #4a6359;
     line-height: 1.65;
     margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .proof-row {
@@ -228,15 +334,19 @@ const pillars = [
   }
 
   @media (max-width: 640px) {
-    .why-section {
-      padding: 5rem 0;
-    }
+    .why-section { padding: 4rem 0; }
+    .why-inner { padding: 0 1.25rem; }
+    .why-header { margin-bottom: 2.5rem; }
     .pillars-grid {
       grid-template-columns: 1fr;
+      gap: 1rem;
     }
+    .pillar { padding: 1.75rem 1.5rem; }
+    .pillar-visual { width: 90px; height: 90px; right: -4px; }
     .proof-row {
       grid-template-columns: 1fr;
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      gap: 1rem;
     }
   }
 </style>

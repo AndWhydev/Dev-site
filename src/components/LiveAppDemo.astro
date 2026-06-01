@@ -1,334 +1,208 @@
 ---
+const liveUrl = 'https://golf-app-demo.vercel.app';
 ---
 
-<section class="demo-section" id="demo">
-  <div class="demo-inner">
-    <div class="demo-header reveal">
-      <span class="section-label">Live App Demo</span>
-      <h2 class="section-heading">See What We Build</h2>
+<section class="ship-section" id="we-ship">
+  <div class="ship-inner">
+    <div class="ship-header reveal">
+      <span class="section-label">What we actually ship</span>
+      <h2 class="section-heading">Real interfaces, not decks.</h2>
       <p class="section-subheading">
-        Real applications. Real results. Every product we deliver is built to enterprise standards —
-        performant, secure and scalable from day one.
+        On the left, an animated in-code finance mockup — every pixel is HTML and CSS,
+        no screenshots. On the right, a real app we built and deployed. Open it in a
+        new tab and have a play.
       </p>
     </div>
 
-    <div class="demo-showcase">
-      <!-- iPhone mockup with video -->
-      <div class="phone-wrap reveal-left stagger-1">
-        <div class="phone-glow" aria-hidden="true"></div>
-        <div class="iphone">
-          <!-- Side buttons -->
-          <div class="btn-silent" aria-hidden="true"></div>
-          <div class="btn-vol-up" aria-hidden="true"></div>
-          <div class="btn-vol-down" aria-hidden="true"></div>
-          <div class="btn-power" aria-hidden="true"></div>
+    <div class="ship-row">
+      {/* ── LEFT: animated in-code phone mockup ─────────────────────── */}
+      <div class="ship-phone-col reveal-left stagger-1">
+        <div class="phone-wrap">
+          <div class="phone-glow" aria-hidden="true"></div>
+          <div class="iphone">
+            <div class="btn-silent" aria-hidden="true"></div>
+            <div class="btn-vol-up" aria-hidden="true"></div>
+            <div class="btn-vol-down" aria-hidden="true"></div>
+            <div class="btn-power" aria-hidden="true"></div>
 
-          <div class="iphone-body">
-            <div class="iphone-screen">
-              <div class="dynamic-island" aria-hidden="true"></div>
-              <div class="mock-app" role="img" aria-label="Animated mobile application interface mockup">
-                <div class="mock-status">
-                  <span class="mock-time">9:41</span>
-                  <div class="mock-status-icons">
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="white" aria-hidden="true"><rect x="0" y="6" width="2.5" height="4" rx="0.5"/><rect x="3.5" y="4" width="2.5" height="6" rx="0.5"/><rect x="7" y="2" width="2.5" height="8" rx="0.5"/><rect x="10.5" y="0" width="2.5" height="10" rx="0.5"/></svg>
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="white" aria-hidden="true"><path d="M6.5 0C4 0 1.7 1 0 2.5l1.2 1.2C2.6 2.5 4.5 1.8 6.5 1.8s3.9.7 5.3 1.9L13 2.5C11.3 1 9 0 6.5 0zm0 3.6C5 3.6 3.7 4.2 2.7 5l1.2 1.2c.7-.5 1.6-.9 2.6-.9s1.9.3 2.6.9L10.3 5C9.3 4.2 8 3.6 6.5 3.6zm0 3.4c-.8 0-1.5.3-2 .8L6.5 10l2-2.2c-.5-.5-1.2-.8-2-.8z"/></svg>
-                    <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="white" stroke-opacity="0.5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="white"/><rect x="20" y="3.5" width="1.5" height="3" rx="0.5" fill="white" fill-opacity="0.5"/></svg>
+            <div class="iphone-body">
+              <div class="iphone-screen">
+                <div class="dynamic-island" aria-hidden="true"></div>
+                <div class="mock-app" role="img" aria-label="Animated mobile finance interface mockup">
+                  <div class="mock-status">
+                    <span class="mock-time">9:41</span>
+                    <div class="mock-status-icons">
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="white" aria-hidden="true"><rect x="0" y="6" width="2.5" height="4" rx="0.5"/><rect x="3.5" y="4" width="2.5" height="6" rx="0.5"/><rect x="7" y="2" width="2.5" height="8" rx="0.5"/><rect x="10.5" y="0" width="2.5" height="10" rx="0.5"/></svg>
+                      <svg width="13" height="10" viewBox="0 0 13 10" fill="white" aria-hidden="true"><path d="M6.5 0C4 0 1.7 1 0 2.5l1.2 1.2C2.6 2.5 4.5 1.8 6.5 1.8s3.9.7 5.3 1.9L13 2.5C11.3 1 9 0 6.5 0zm0 3.6C5 3.6 3.7 4.2 2.7 5l1.2 1.2c.7-.5 1.6-.9 2.6-.9s1.9.3 2.6.9L10.3 5C9.3 4.2 8 3.6 6.5 3.6zm0 3.4c-.8 0-1.5.3-2 .8L6.5 10l2-2.2c-.5-.5-1.2-.8-2-.8z"/></svg>
+                      <svg width="22" height="10" viewBox="0 0 22 10" fill="none" aria-hidden="true"><rect x="0.5" y="0.5" width="18" height="9" rx="2" stroke="white" stroke-opacity="0.5"/><rect x="2" y="2" width="14" height="6" rx="1" fill="white"/><rect x="20" y="3.5" width="1.5" height="3" rx="0.5" fill="white" fill-opacity="0.5"/></svg>
+                    </div>
+                  </div>
+
+                  <div class="mock-header">
+                    <div>
+                      <div class="mock-greeting">Good morning</div>
+                      <div class="mock-name">Welcome back</div>
+                    </div>
+                    <div class="mock-avatar" aria-hidden="true">A</div>
+                  </div>
+
+                  <div class="mock-balance">
+                    <div class="mock-balance-top">
+                      <span class="mock-balance-label">Total balance</span>
+                      <span class="mock-balance-trend">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>
+                        2.4%
+                      </span>
+                    </div>
+                    <div class="mock-balance-value">
+                      <span class="mock-currency">$</span><span class="mock-count" data-start="12200" data-target="12847">12,847</span><span class="mock-decimals">.50</span>
+                    </div>
+                    <svg class="mock-chart" viewBox="0 0 220 64" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="mockChartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#0d9373" stop-opacity="0.45"/>
+                          <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path class="mock-chart-fill" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5 L220,64 L0,64Z" fill="url(#mockChartGrad)"/>
+                      <path class="mock-chart-line" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5" fill="none" stroke="#0d9373" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <div class="mock-range">
+                      <span class="mock-range-pill active">7D</span>
+                      <span class="mock-range-pill">1M</span>
+                      <span class="mock-range-pill">3M</span>
+                      <span class="mock-range-pill">1Y</span>
+                    </div>
+                  </div>
+
+                  <div class="mock-section-title">
+                    <span>Recent activity</span>
+                    <span class="mock-link">View all</span>
+                  </div>
+
+                  <div class="mock-activity">
+                    <div class="mock-act-row">
+                      <div class="mock-act-icon green" aria-hidden="true">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                      </div>
+                      <div class="mock-act-info">
+                        <div class="mock-act-name">Deposit</div>
+                        <div class="mock-act-meta">Today · 09:32</div>
+                      </div>
+                      <div class="mock-act-amt up">+$420.00</div>
+                    </div>
+                    <div class="mock-act-row">
+                      <div class="mock-act-icon blue" aria-hidden="true">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M7 7h10v10"/></svg>
+                      </div>
+                      <div class="mock-act-info">
+                        <div class="mock-act-name">Transfer</div>
+                        <div class="mock-act-meta">Yesterday</div>
+                      </div>
+                      <div class="mock-act-amt">−$84.50</div>
+                    </div>
+                    <div class="mock-act-row">
+                      <div class="mock-act-icon amber" aria-hidden="true">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/></svg>
+                      </div>
+                      <div class="mock-act-info">
+                        <div class="mock-act-name">Payment</div>
+                        <div class="mock-act-meta">2 days ago</div>
+                      </div>
+                      <div class="mock-act-amt">−$32.00</div>
+                    </div>
+                  </div>
+
+                  <div class="mock-tabbar" role="tablist" aria-label="App navigation">
+                    <button class="mock-tab" data-i="0" type="button" aria-label="Home">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4v-7h-6v7H5a2 2 0 01-2-2z"/></svg>
+                      <span>Home</span>
+                    </button>
+                    <button class="mock-tab" data-i="1" type="button" aria-label="Overview">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+                      <span>Overview</span>
+                    </button>
+                    <button class="mock-tab" data-i="2" type="button" aria-label="Activity">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                      <span>Activity</span>
+                    </button>
+                    <button class="mock-tab" data-i="3" type="button" aria-label="Reports">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                      <span>Reports</span>
+                    </button>
+                    <div class="mock-home-indicator" aria-hidden="true"></div>
                   </div>
                 </div>
-
-                <div class="mock-header">
-                  <div>
-                    <div class="mock-greeting">Good morning</div>
-                    <div class="mock-name">Welcome back</div>
-                  </div>
-                  <div class="mock-avatar" aria-hidden="true">A</div>
-                </div>
-
-                <div class="mock-balance">
-                  <div class="mock-balance-top">
-                    <span class="mock-balance-label">Total balance</span>
-                    <span class="mock-balance-trend">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>
-                      2.4%
-                    </span>
-                  </div>
-                  <div class="mock-balance-value">
-                    <span class="mock-currency">$</span><span class="mock-count" data-start="12200" data-target="12847">12,847</span><span class="mock-decimals">.50</span>
-                  </div>
-                  <svg class="mock-chart" viewBox="0 0 220 64" preserveAspectRatio="none" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="mockChartGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#0d9373" stop-opacity="0.45"/>
-                        <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
-                      </linearGradient>
-                    </defs>
-                    <path class="mock-chart-fill" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5 L220,64 L0,64Z" fill="url(#mockChartGrad)"/>
-                    <path class="mock-chart-line" d="M0,48 C25,44 40,38 65,32 C90,26 105,30 130,22 C155,15 170,10 195,8 C205,7 215,6 220,5" fill="none" stroke="#0d9373" stroke-width="1.8" stroke-linecap="round"/>
-                  </svg>
-                  <div class="mock-range">
-                    <span class="mock-range-pill active">7D</span>
-                    <span class="mock-range-pill">1M</span>
-                    <span class="mock-range-pill">3M</span>
-                    <span class="mock-range-pill">1Y</span>
-                  </div>
-                </div>
-
-                <div class="mock-section-title">
-                  <span>Recent activity</span>
-                  <span class="mock-link">View all</span>
-                </div>
-
-                <div class="mock-activity">
-                  <div class="mock-act-row">
-                    <div class="mock-act-icon green" aria-hidden="true">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </div>
-                    <div class="mock-act-info">
-                      <div class="mock-act-name">Deposit</div>
-                      <div class="mock-act-meta">Today · 09:32</div>
-                    </div>
-                    <div class="mock-act-amt up">+$420.00</div>
-                  </div>
-                  <div class="mock-act-row">
-                    <div class="mock-act-icon blue" aria-hidden="true">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M7 7h10v10"/></svg>
-                    </div>
-                    <div class="mock-act-info">
-                      <div class="mock-act-name">Transfer</div>
-                      <div class="mock-act-meta">Yesterday</div>
-                    </div>
-                    <div class="mock-act-amt">−$84.50</div>
-                  </div>
-                  <div class="mock-act-row">
-                    <div class="mock-act-icon amber" aria-hidden="true">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12h6"/></svg>
-                    </div>
-                    <div class="mock-act-info">
-                      <div class="mock-act-name">Payment</div>
-                      <div class="mock-act-meta">2 days ago</div>
-                    </div>
-                    <div class="mock-act-amt">−$32.00</div>
-                  </div>
-                </div>
-
-                <div class="mock-tabbar" role="tablist" aria-label="App navigation">
-                  <button class="mock-tab" data-i="0" type="button" aria-label="Home">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4v-7h-6v7H5a2 2 0 01-2-2z"/></svg>
-                    <span>Home</span>
-                  </button>
-                  <button class="mock-tab" data-i="1" type="button" aria-label="Overview">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
-                    <span>Overview</span>
-                  </button>
-                  <button class="mock-tab" data-i="2" type="button" aria-label="Activity">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    <span>Activity</span>
-                  </button>
-                  <button class="mock-tab" data-i="3" type="button" aria-label="Reports">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    <span>Reports</span>
-                  </button>
-                  <div class="mock-home-indicator" aria-hidden="true"></div>
-                </div>
+                <div class="screen-overlay" aria-hidden="true"></div>
               </div>
-              <div class="screen-overlay" aria-hidden="true"></div>
             </div>
           </div>
-        </div>
 
-        <div class="phone-caption">
-          <div class="phone-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0d9373"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-            <span>Product demo</span>
+          <div class="phone-caption">
+            <div class="phone-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#0d9373"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+              <span>In-code finance mockup</span>
+            </div>
+            <p>Animated entirely in HTML/CSS — no screenshot, no embed</p>
           </div>
-          <p>Mobile app — built with our platform</p>
         </div>
       </div>
 
-      <!-- Desktop browser mockup -->
-      <div class="browser-wrap reveal-right stagger-2">
-        <div class="browser">
-          <div class="browser-chrome">
-            <div class="browser-dots">
+      {/* ── RIGHT: real shipped app preview ─────────────────────────── */}
+      <div class="ship-app-col reveal-right stagger-2">
+        <div class="app-frame">
+          <div class="app-frame-chrome">
+            <div class="app-frame-dots">
               <span class="dot red"></span>
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <div class="browser-tabs">
-              <div class="browser-tab active">Dashboard</div>
-              <div class="browser-tab">Analytics</div>
-              <div class="browser-tab">Reports</div>
+            <div class="app-frame-bar">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg>
+              <span>golf-app-demo.vercel.app</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="browser-bar">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <span>app.enterprise-dashboard.io/overview</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <a class="app-frame-open" href={liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Open in new tab">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M9 7h8v8"/></svg>
+            </a>
           </div>
-          <div class="browser-content">
-            <div class="dashboard">
-              <!-- Sidebar -->
-              <div class="dash-sidebar">
-                <div class="dash-logo-mark">
-                  <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="9" fill="#0d9373"/><path d="M8 27L18 9L28 27" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 21.5H24.5" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg>
-                </div>
-                <nav class="dash-nav">
-                  <a class="dash-nav-item active" aria-label="Dashboard">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-                  </a>
-                  <a class="dash-nav-item" aria-label="Analytics">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                  </a>
-                  <a class="dash-nav-item" aria-label="Projects">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-                  </a>
-                  <a class="dash-nav-item" aria-label="Team">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                  </a>
-                  <a class="dash-nav-item" aria-label="Settings">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                  </a>
-                </nav>
-              </div>
-
-              <!-- Main content -->
-              <div class="dash-main">
-                <div class="dash-topbar">
-                  <div>
-                    <div class="dash-title">Overview</div>
-                    <div class="dash-date">May 2026</div>
-                  </div>
-                  <div class="dash-topbar-right">
-                    <div class="dash-search">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                      <span>Search...</span>
-                    </div>
-                    <div class="dash-avatar">AW</div>
-                  </div>
-                </div>
-
-                <!-- Stat cards -->
-                <div class="stat-cards">
-                  <div class="stat-card">
-                    <div class="stat-icon rev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-                    <div class="stat-val">$2.4M</div>
-                    <div class="stat-lbl">Revenue</div>
-                    <div class="stat-delta up">+18.2%</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon usr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-                    <div class="stat-val">14,832</div>
-                    <div class="stat-lbl">Active Users</div>
-                    <div class="stat-delta up">+4.7%</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon prj"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-                    <div class="stat-val">98.7%</div>
-                    <div class="stat-lbl">Uptime</div>
-                    <div class="stat-delta up">+0.3%</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon rat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                    <div class="stat-val">4.9 / 5</div>
-                    <div class="stat-lbl">Rating</div>
-                    <div class="stat-delta up">+0.1</div>
-                  </div>
-                </div>
-
-                <!-- Mini chart -->
-                <div class="dash-chart-row">
-                  <div class="dash-chart">
-                    <div class="chart-header">
-                      <span class="chart-title">Revenue Trend</span>
-                      <span class="chart-period">Last 7 months</span>
-                    </div>
-                    <svg class="line-chart" viewBox="0 0 320 80" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="#0d9373" stop-opacity="0.3"/>
-                          <stop offset="100%" stop-color="#0d9373" stop-opacity="0"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,65 C30,60 50,45 80,40 C110,35 130,25 160,20 C190,15 210,22 240,18 C270,14 290,10 320,8" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round"/>
-                      <path d="M0,65 C30,60 50,45 80,40 C110,35 130,25 160,20 C190,15 210,22 240,18 C270,14 290,10 320,8 L320,80 L0,80Z" fill="url(#chartGrad)"/>
-                    </svg>
-                  </div>
-
-                  <!-- Recent projects list -->
-                  <div class="dash-projects">
-                    <div class="chart-header">
-                      <span class="chart-title">Recent Deployments</span>
-                    </div>
-                    <div class="project-list">
-                      <div class="project-row">
-                        <div class="proj-dot green"></div>
-                        <div class="proj-info">
-                          <div class="proj-name">Auth Service v2.1</div>
-                          <div class="proj-time">2m ago</div>
-                        </div>
-                        <div class="proj-status success">Live</div>
-                      </div>
-                      <div class="project-row">
-                        <div class="proj-dot green"></div>
-                        <div class="proj-info">
-                          <div class="proj-name">API Gateway</div>
-                          <div class="proj-time">1h ago</div>
-                        </div>
-                        <div class="proj-status success">Live</div>
-                      </div>
-                      <div class="project-row">
-                        <div class="proj-dot yellow"></div>
-                        <div class="proj-info">
-                          <div class="proj-name">ML Pipeline</div>
-                          <div class="proj-time">3h ago</div>
-                        </div>
-                        <div class="proj-status pending">Building</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="app-frame-stage">
+            {/* Live embed of a shipped client-grade app. Sandboxed and lazy
+                so it never blocks the main thread; if it fails to load,
+                the fallback poster underneath is what the visitor sees. */}
+            <div class="app-frame-poster" aria-hidden="true">
+              <div class="poster-eyebrow">Live preview</div>
+              <div class="poster-title">Golf scoring app</div>
+              <div class="poster-meta">React · Vercel · production</div>
             </div>
+            <iframe
+              class="app-frame-iframe"
+              src={liveUrl}
+              title="Golf app — a real product we shipped"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-popups"
+            ></iframe>
           </div>
         </div>
 
-        <div class="browser-caption">
-          <div class="phone-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>Enterprise Dashboard</span>
-          </div>
-          <p>React / Next.js — custom SaaS platform</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Supporting points -->
-    <div class="demo-points reveal stagger-3">
-      <div class="demo-point">
-        <div class="demo-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 13 9 20 9"/><path d="M20 14.66V20a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
-        </div>
-        <div>
-          <strong>Production-Ready Code</strong>
-          <p>Every line of code is written to enterprise standards with full test coverage, documentation and CI/CD pipelines.</p>
-        </div>
-      </div>
-      <div class="demo-point">
-        <div class="demo-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <strong>Security First</strong>
-          <p>Built with OWASP standards, end-to-end encryption, role-based access control and penetration testing as standard.</p>
-        </div>
-      </div>
-      <div class="demo-point">
-        <div class="demo-point-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div>
-          <strong>Built to Scale</strong>
-          <p>Architected for millions of users. Cloud-native, containerised and auto-scaling from the ground up.</p>
+        <div class="ship-text">
+          <span class="ship-tag">Shipped · live in production</span>
+          <h3 class="ship-h3">A real app, embedded right here.</h3>
+          <p class="ship-p">
+            We designed, built and deployed this golf scoring app end-to-end — every
+            screen, every interaction, every line of code. Click through the embed
+            above, or open the full thing in a new tab.
+          </p>
+          <ul class="ship-bullets">
+            <li>Designed and built end-to-end by our team</li>
+            <li>Deployed to production on Vercel</li>
+            <li>Real product — not a demo, not a mockup</li>
+          </ul>
+          <a class="ship-cta" href={liveUrl} target="_blank" rel="noopener noreferrer">
+            <span>Open in new tab</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l10-10M9 7h8v8"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -336,43 +210,60 @@
 </section>
 
 <style>
-  .demo-section {
+  .ship-section {
     padding: 6rem 0;
     background: #0a0a0a;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid #1e2d28;
+    border-bottom: 1px solid #1e2d28;
   }
-
-  .demo-section::before {
+  .ship-section::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: -20%;
+    top: 8%;
+    left: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(13,147,115,0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(13,147,115,0.06) 0%, transparent 65%);
     pointer-events: none;
   }
-
-  .demo-inner {
+  .ship-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13,147,115,0.045) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ship-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+  }
+  .ship-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 4rem;
   }
 
-  .demo-header {
-    margin-bottom: 4rem;
-  }
-
-  .demo-showcase {
+  .ship-row {
     display: grid;
-    grid-template-columns: 1fr 1.7fr;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     gap: 5rem;
     align-items: center;
-    margin-bottom: 5rem;
+  }
+  .ship-phone-col { display: flex; justify-content: center; }
+  .ship-app-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
-  /* ---- iPhone ---- */
+  /* ── LEFT: phone mockup (carried over from original LiveAppDemo) ── */
   .phone-wrap {
     display: flex;
     flex-direction: column;
@@ -380,10 +271,9 @@
     gap: 1.25rem;
     position: relative;
   }
-
   .phone-glow {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 340px;
@@ -392,14 +282,12 @@
     pointer-events: none;
     z-index: 0;
   }
-
   .iphone {
     position: relative;
     width: 280px;
     z-index: 1;
     flex-shrink: 0;
   }
-
   .iphone-body {
     background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 30%, #242426 60%, #3a3a3c 100%);
     border-radius: 48px;
@@ -413,42 +301,10 @@
     position: relative;
   }
 
-  .btn-silent {
-    position: absolute;
-    left: -3.5px;
-    top: 88px;
-    width: 3.5px;
-    height: 28px;
-    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
-    border-radius: 3px 0 0 3px;
-  }
-  .btn-vol-up {
-    position: absolute;
-    left: -3.5px;
-    top: 135px;
-    width: 3.5px;
-    height: 52px;
-    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
-    border-radius: 3px 0 0 3px;
-  }
-  .btn-vol-down {
-    position: absolute;
-    left: -3.5px;
-    top: 200px;
-    width: 3.5px;
-    height: 52px;
-    background: linear-gradient(to right, #2a2a2c, #3c3c3e);
-    border-radius: 3px 0 0 3px;
-  }
-  .btn-power {
-    position: absolute;
-    right: -3.5px;
-    top: 155px;
-    width: 3.5px;
-    height: 68px;
-    background: linear-gradient(to left, #2a2a2c, #3c3c3e);
-    border-radius: 0 3px 3px 0;
-  }
+  .btn-silent { position: absolute; left: -3.5px; top: 88px; width: 3.5px; height: 28px; background: linear-gradient(to right, #2a2a2c, #3c3c3e); border-radius: 3px 0 0 3px; }
+  .btn-vol-up { position: absolute; left: -3.5px; top: 135px; width: 3.5px; height: 52px; background: linear-gradient(to right, #2a2a2c, #3c3c3e); border-radius: 3px 0 0 3px; }
+  .btn-vol-down { position: absolute; left: -3.5px; top: 200px; width: 3.5px; height: 52px; background: linear-gradient(to right, #2a2a2c, #3c3c3e); border-radius: 3px 0 0 3px; }
+  .btn-power { position: absolute; right: -3.5px; top: 155px; width: 3.5px; height: 68px; background: linear-gradient(to left, #2a2a2c, #3c3c3e); border-radius: 0 3px 3px 0; }
 
   .iphone-screen {
     background: #000;
@@ -457,88 +313,39 @@
     position: relative;
     aspect-ratio: 9/19.5;
   }
-
   .dynamic-island {
     position: absolute;
-    top: 11px;
-    left: 50%;
+    top: 11px; left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 34px;
+    width: 110px; height: 34px;
     background: #000;
     border-radius: 50px;
     z-index: 10;
   }
 
-  /* ---- Mock app inside phone ---- */
   .mock-app {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background:
       radial-gradient(120% 80% at 50% -10%, rgba(13,147,115,0.18) 0%, transparent 60%),
       linear-gradient(180deg, #0a0f0e 0%, #050807 100%);
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
     font-family: 'DM Sans', sans-serif;
-    color: white;
-    z-index: 2;
+    color: white; z-index: 2;
     overflow: hidden;
     border-radius: 37px;
   }
+  .mock-status { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px 0; height: 48px; flex-shrink: 0; }
+  .mock-time { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: white; letter-spacing: -0.01em; }
+  .mock-status-icons { display: flex; align-items: center; gap: 5px; }
 
-  .mock-status {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 28px 0;
-    height: 48px;
-    flex-shrink: 0;
-  }
-  .mock-time {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.01em;
-  }
-  .mock-status-icons {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .mock-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 18px 12px;
-    flex-shrink: 0;
-  }
-  .mock-greeting {
-    font-size: 10px;
-    color: #6b8079;
-    font-weight: 500;
-  }
-  .mock-name {
-    font-family: 'Sora', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: white;
-    line-height: 1.2;
-    margin-top: 2px;
-  }
+  .mock-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px 12px; flex-shrink: 0; }
+  .mock-greeting { font-size: 10px; color: #6b8079; font-weight: 500; }
+  .mock-name { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; color: white; line-height: 1.2; margin-top: 2px; }
   .mock-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: 32px; height: 32px; border-radius: 50%;
     background: linear-gradient(135deg, #0d9373 0%, #0a6e57 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sora', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; color: white;
     box-shadow: 0 0 0 2px rgba(13,147,115,0.15);
   }
 
@@ -552,280 +359,55 @@
     overflow: hidden;
     flex-shrink: 0;
   }
-  .mock-balance::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -30%;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(13,147,115,0.25) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .mock-balance-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-  .mock-balance-label {
-    font-size: 10px;
-    font-weight: 500;
-    color: #8aa09a;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-  .mock-balance-trend {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #0d9373;
-    background: rgba(13,147,115,0.15);
-    border-radius: 50px;
-    padding: 2px 7px;
-  }
-  .mock-balance-value {
-    font-family: 'Sora', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-    margin-top: 6px;
-    letter-spacing: -0.02em;
-    position: relative;
-    display: flex;
-    align-items: baseline;
-  }
-  .mock-currency {
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.65);
-    margin-right: 1px;
-  }
-  .mock-decimals {
-    font-size: 14px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.45);
-    margin-left: 1px;
-  }
-  .mock-chart {
-    width: 100%;
-    height: 50px;
-    margin-top: 8px;
-    display: block;
-    position: relative;
-  }
-  .mock-chart-line {
-    stroke-dasharray: 280;
-    stroke-dashoffset: 280;
-    animation: mockChartDraw 6s ease-in-out infinite;
-  }
-  .mock-chart-fill {
-    opacity: 0;
-    animation: mockChartFill 6s ease-in-out infinite;
-  }
-  @keyframes mockChartDraw {
-    0% { stroke-dashoffset: 280; }
-    35% { stroke-dashoffset: 0; }
-    85% { stroke-dashoffset: 0; }
-    100% { stroke-dashoffset: 280; }
-  }
-  @keyframes mockChartFill {
-    0%, 10% { opacity: 0; }
-    45%, 85% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  .mock-range {
-    display: flex;
-    gap: 4px;
-    margin-top: 6px;
-    position: relative;
-  }
-  .mock-range-pill {
-    font-size: 9px;
-    font-weight: 600;
-    color: #6b8079;
-    padding: 3px 8px;
-    border-radius: 50px;
-    letter-spacing: 0.02em;
-  }
-  .mock-range-pill.active {
-    color: white;
-    background: rgba(255,255,255,0.08);
-  }
+  .mock-balance::before { content: ''; position: absolute; top: -40%; right: -30%; width: 160px; height: 160px; background: radial-gradient(circle, rgba(13,147,115,0.25) 0%, transparent 60%); pointer-events: none; }
+  .mock-balance-top { display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .mock-balance-label { font-size: 10px; font-weight: 500; color: #8aa09a; letter-spacing: 0.02em; text-transform: uppercase; }
+  .mock-balance-trend { display: inline-flex; align-items: center; gap: 2px; font-size: 10px; font-weight: 600; color: #0d9373; background: rgba(13,147,115,0.15); border-radius: 50px; padding: 2px 7px; }
+  .mock-balance-value { font-family: 'Sora', sans-serif; font-size: 26px; font-weight: 700; color: white; line-height: 1; margin-top: 6px; letter-spacing: -0.02em; position: relative; display: flex; align-items: baseline; }
+  .mock-currency { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.65); margin-right: 1px; }
+  .mock-decimals { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); margin-left: 1px; }
+  .mock-chart { width: 100%; height: 50px; margin-top: 8px; display: block; position: relative; }
+  .mock-chart-line { stroke-dasharray: 280; stroke-dashoffset: 280; animation: mockChartDraw 6s ease-in-out infinite; }
+  .mock-chart-fill { opacity: 0; animation: mockChartFill 6s ease-in-out infinite; }
+  @keyframes mockChartDraw { 0% { stroke-dashoffset: 280; } 35% { stroke-dashoffset: 0; } 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 280; } }
+  @keyframes mockChartFill { 0%, 10% { opacity: 0; } 45%, 85% { opacity: 1; } 100% { opacity: 0; } }
+  .mock-range { display: flex; gap: 4px; margin-top: 6px; position: relative; }
+  .mock-range-pill { font-size: 9px; font-weight: 600; color: #6b8079; padding: 3px 8px; border-radius: 50px; letter-spacing: 0.02em; }
+  .mock-range-pill.active { color: white; background: rgba(255,255,255,0.08); }
 
-  .mock-section-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 18px 8px;
-    flex-shrink: 0;
-  }
-  .mock-section-title > span:first-child {
-    font-family: 'Sora', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
-  }
-  .mock-link {
-    font-size: 10px;
-    font-weight: 500;
-    color: #0d9373;
-  }
+  .mock-section-title { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px 8px; flex-shrink: 0; }
+  .mock-section-title > span:first-child { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; color: white; }
+  .mock-link { font-size: 10px; font-weight: 500; color: #0d9373; }
 
-  .mock-activity {
-    padding: 0 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1;
-    min-height: 0;
-  }
-  .mock-act-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.04);
-    border-radius: 12px;
-    padding: 9px 10px;
-  }
-  .mock-act-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
+  .mock-activity { padding: 0 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; min-height: 0; }
+  .mock-act-row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.04); border-radius: 12px; padding: 9px 10px; }
+  .mock-act-icon { width: 28px; height: 28px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .mock-act-icon.green { background: rgba(13,147,115,0.18); color: #0d9373; }
   .mock-act-icon.blue { background: rgba(99,102,241,0.18); color: #a5b4fc; }
   .mock-act-icon.amber { background: rgba(251,191,36,0.15); color: #fbbf24; }
-  .mock-act-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .mock-act-name {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: white;
-    line-height: 1.2;
-  }
-  .mock-act-meta {
-    font-size: 9px;
-    color: #6b8079;
-    margin-top: 1px;
-  }
-  .mock-act-amt {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.7);
-    white-space: nowrap;
-  }
+  .mock-act-info { flex: 1; min-width: 0; }
+  .mock-act-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; color: white; line-height: 1.2; }
+  .mock-act-meta { font-size: 9px; color: #6b8079; margin-top: 1px; }
+  .mock-act-amt { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.7); white-space: nowrap; }
   .mock-act-amt.up { color: #0d9373; }
 
-  .mock-tabbar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    padding: 8px 6px 6px;
-    background: rgba(8,12,11,0.85);
-    border-top: 1px solid rgba(255,255,255,0.04);
-    backdrop-filter: blur(8px);
-    flex-shrink: 0;
-    position: relative;
-  }
-  .mock-tab {
-    appearance: none;
-    background: transparent;
-    border: 0;
-    padding: 6px 0 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    color: rgba(255,255,255,0.32);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    font-weight: 500;
-    cursor: default;
-    transition: color 0.5s ease;
-    position: relative;
-  }
-  .mock-tab svg {
-    transition: transform 0.5s ease;
-  }
-  .mock-tab.mock-tab-active {
-    color: #0d9373;
-  }
-  .mock-tab.mock-tab-active svg {
-    transform: translateY(-1px);
-  }
-  .mock-tab.mock-tab-active::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22px;
-    height: 2px;
-    background: #0d9373;
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(13,147,115,0.6);
-  }
-
-  .mock-home-indicator {
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 96px;
-    height: 4px;
-    background: rgba(255,255,255,0.4);
-    border-radius: 4px;
-  }
+  .mock-tabbar { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; padding: 8px 6px 6px; background: rgba(8,12,11,0.85); border-top: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(8px); flex-shrink: 0; position: relative; }
+  .mock-tab { appearance: none; background: transparent; border: 0; padding: 6px 0 4px; display: flex; flex-direction: column; align-items: center; gap: 3px; color: rgba(255,255,255,0.32); font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; cursor: default; transition: color 0.5s ease; position: relative; }
+  .mock-tab svg { transition: transform 0.5s ease; }
+  .mock-tab.mock-tab-active { color: #0d9373; }
+  .mock-tab.mock-tab-active svg { transform: translateY(-1px); }
+  .mock-tab.mock-tab-active::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 22px; height: 2px; background: #0d9373; border-radius: 2px; box-shadow: 0 0 8px rgba(13,147,115,0.6); }
+  .mock-home-indicator { position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); width: 96px; height: 4px; background: rgba(255,255,255,0.4); border-radius: 4px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .mock-chart-line {
-      stroke-dasharray: none;
-      stroke-dashoffset: 0;
-      animation: none;
-    }
-    .mock-chart-fill {
-      opacity: 1;
-      animation: none;
-    }
+    .mock-chart-line { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+    .mock-chart-fill { opacity: 1; animation: none; }
   }
 
-  .screen-overlay {
-    position: absolute;
-    inset: 0;
-    border-radius: 37px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
-    pointer-events: none;
-  }
+  .screen-overlay { position: absolute; inset: 0; border-radius: 37px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05); pointer-events: none; }
 
-  .phone-caption,
-  .browser-caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.375rem;
-    text-align: center;
-  }
-  .phone-caption p,
-  .browser-caption p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    color: #4a6359;
-    margin: 0;
-  }
-
+  .phone-caption { display: flex; flex-direction: column; align-items: center; gap: 0.375rem; text-align: center; }
+  .phone-caption p { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; margin: 0; }
   .phone-badge {
     display: inline-flex;
     align-items: center;
@@ -840,420 +422,243 @@
     border-radius: 50px;
   }
 
-  /* ---- Browser ---- */
-  .browser-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    align-items: center;
-  }
-
-  .browser {
+  /* ── RIGHT: real-app embed frame ─────────────────────────────── */
+  .app-frame {
     width: 100%;
-    max-width: 620px;
+    max-width: 640px;
+    margin: 0 auto;
     background: #0f1614;
     border: 1px solid #1e2d28;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow:
-      0 20px 80px rgba(0,0,0,0.6),
+      0 24px 80px rgba(0,0,0,0.55),
       0 0 40px rgba(13,147,115,0.08);
   }
-
-  .browser-chrome {
-    background: #0a0a0a;
-    border-bottom: 1px solid #1e2d28;
-    padding: 0.5rem 0.75rem;
+  .app-frame-chrome {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    padding: 0.55rem 0.75rem;
+    background: #0a0a0a;
+    border-bottom: 1px solid #1e2d28;
   }
-
-  .browser-dots {
-    display: flex;
-    gap: 5px;
-    flex-shrink: 0;
-  }
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-  .dot.red { background: #ff5f57; }
-  .dot.yellow { background: #febc2e; }
-  .dot.green { background: #28c840; }
-
-  .browser-tabs {
-    display: flex;
-    gap: 2px;
-  }
-  .browser-tab {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    color: #4a6359;
-    padding: 0.25rem 0.75rem;
-    border-radius: 5px;
-    cursor: default;
-    white-space: nowrap;
-  }
-  .browser-tab.active {
-    background: #0f1614;
-    color: #8aa09a;
-    border: 1px solid #1e2d28;
-    border-bottom: none;
-  }
-
-  .browser-bar {
+  .app-frame-dots { display: flex; gap: 5px; flex-shrink: 0; }
+  .app-frame-dots .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .app-frame-dots .red { background: #ff5f57; }
+  .app-frame-dots .yellow { background: #febc2e; }
+  .app-frame-dots .green { background: #28c840; }
+  .app-frame-bar {
     flex: 1;
     background: #0f1614;
     border: 1px solid #1e2d28;
     border-radius: 6px;
-    padding: 0.2rem 0.625rem;
+    padding: 0.25rem 0.625rem;
     display: flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 0.4rem;
     overflow: hidden;
+    min-width: 0;
   }
-  .browser-bar span {
+  .app-frame-bar span {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.6875rem;
-    color: #4a6359;
+    color: #8aa09a;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;
   }
-
-  .browser-content {
-    height: 340px;
-    overflow: hidden;
-  }
-
-  /* Dashboard */
-  .dashboard {
-    display: grid;
-    grid-template-columns: 44px 1fr;
-    height: 100%;
-  }
-
-  .dash-sidebar {
-    background: #080d0c;
-    border-right: 1px solid #1e2d28;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.625rem 0;
-    gap: 0.5rem;
-  }
-
-  .dash-logo-mark {
-    padding: 0.375rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .dash-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-  }
-
-  .dash-nav-item {
-    display: flex;
+  .app-frame-open {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    color: #4a6359;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(13,147,115,0.12);
+    border: 1px solid rgba(13,147,115,0.3);
+    color: #0d9373;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
   }
-  .dash-nav-item.active {
-    background: rgba(13,147,115,0.15);
+  .app-frame-open:hover {
+    background: rgba(13,147,115,0.22);
+    color: #10b88a;
+  }
+
+  .app-frame-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #0a0f0e;
+    overflow: hidden;
+  }
+  .app-frame-poster {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(80% 60% at 50% 30%, rgba(13,147,115,0.18) 0%, transparent 70%),
+      linear-gradient(180deg, #0a0f0e 0%, #050807 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.5rem;
+    pointer-events: none;
+  }
+  .poster-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: #0d9373;
   }
-
-  .dash-main {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .dash-topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.625rem 0.875rem;
-    border-bottom: 1px solid #1e2d28;
-    flex-shrink: 0;
-  }
-
-  .dash-title {
+  .poster-title {
     font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+  .poster-meta {
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
-    font-weight: 600;
-    color: white;
+    color: #6b8079;
   }
-  .dash-date {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    color: #4a6359;
-    margin-top: 1px;
-  }
-
-  .dash-topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-  }
-
-  .dash-search {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    background: #0a0a0a;
-    border: 1px solid #1e2d28;
-    border-radius: 6px;
-    padding: 0.2rem 0.625rem;
-  }
-  .dash-search span {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    color: #4a6359;
-  }
-
-  .dash-avatar {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #0d9373, #0a7a5e);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Sora', sans-serif;
-    font-size: 0.5625rem;
-    font-weight: 700;
-    color: white;
-  }
-
-  .stat-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    padding: 0.625rem 0.875rem 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .stat-card {
-    background: #0a0a0a;
-    border: 1px solid #1e2d28;
-    border-radius: 8px;
-    padding: 0.5rem 0.625rem;
-  }
-
-  .stat-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.375rem;
-  }
-  .stat-icon.rev { background: rgba(13,147,115,0.15); color: #0d9373; }
-  .stat-icon.usr { background: rgba(99,102,241,0.15); color: #818cf8; }
-  .stat-icon.prj { background: rgba(245,158,11,0.15); color: #fbbf24; }
-  .stat-icon.rat { background: rgba(239,68,68,0.12); color: #f87171; }
-
-  .stat-val {
-    font-family: 'Sora', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-  }
-  .stat-lbl {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5625rem;
-    color: #4a6359;
-    margin: 2px 0;
-  }
-  .stat-delta {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5625rem;
-    font-weight: 600;
-  }
-  .stat-delta.up { color: #0d9373; }
-  .stat-delta.down { color: #f87171; }
-
-  .dash-chart-row {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 0.5rem;
-    padding: 0 0.875rem 0.625rem;
-    flex: 1;
-    min-height: 0;
-  }
-
-  .dash-chart,
-  .dash-projects {
-    background: #0a0a0a;
-    border: 1px solid #1e2d28;
-    border-radius: 8px;
-    padding: 0.625rem;
-    overflow: hidden;
-  }
-
-  .chart-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-  }
-  .chart-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 0.625rem;
-    font-weight: 600;
-    color: #8aa09a;
-  }
-  .chart-period {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5625rem;
-    color: #4a6359;
-  }
-
-  .line-chart {
+  .app-frame-iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 60px;
-    display: block;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    z-index: 1;
   }
 
-  .project-list {
+  /* ── Right-side text panel ──────────────────────────────────── */
+  .ship-text {
     display: flex;
     flex-direction: column;
-    gap: 0.375rem;
+    gap: 1rem;
+    max-width: 580px;
+    margin: 0 auto;
   }
-
-  .project-row {
-    display: flex;
+  .ship-tag {
+    display: inline-flex;
+    align-self: flex-start;
     align-items: center;
-    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.22);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
   }
-
-  .proj-dot {
+  .ship-h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .ship-p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #8aa09a;
+    margin: 0;
+  }
+  .ship-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .ship-bullets li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #cde0da;
+    padding-left: 1.4rem;
+    position: relative;
+  }
+  .ship-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    flex-shrink: 0;
+    background: #0d9373;
+    box-shadow: 0 0 0 3px rgba(13,147,115,0.18);
   }
-  .proj-dot.green { background: #0d9373; box-shadow: 0 0 4px rgba(13,147,115,0.6); }
-  .proj-dot.yellow { background: #fbbf24; }
-
-  .proj-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .proj-name {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5625rem;
-    font-weight: 500;
-    color: #8aa09a;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .proj-time {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5rem;
-    color: #4a6359;
-  }
-
-  .proj-status {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.5rem;
-    font-weight: 600;
-    padding: 2px 6px;
-    border-radius: 50px;
-    white-space: nowrap;
-  }
-  .proj-status.success { background: rgba(13,147,115,0.15); color: #0d9373; }
-  .proj-status.pending { background: rgba(251,191,36,0.12); color: #fbbf24; }
-
-  /* Demo points */
-  .demo-points {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    border-top: 1px solid #1e2d28;
-    padding-top: 3rem;
-  }
-
-  .demo-point {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .demo-point-icon {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: rgba(13,147,115,0.1);
-    border: 1px solid rgba(13,147,115,0.2);
-    display: flex;
+  .ship-cta {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-self: flex-start;
     align-items: center;
-    justify-content: center;
-  }
-
-  .demo-point strong {
-    display: block;
+    gap: 0.5rem;
     font-family: 'Sora', sans-serif;
     font-size: 0.9375rem;
     font-weight: 600;
     color: white;
-    margin-bottom: 0.375rem;
+    background: linear-gradient(135deg, #0d9373 0%, #0a7559 100%);
+    border-radius: 999px;
+    padding: 0.9rem 1.4rem;
+    text-decoration: none;
+    min-height: 44px;
+    box-shadow: 0 10px 28px rgba(13,147,115,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .ship-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 34px rgba(13,147,115,0.4);
   }
 
-  .demo-point p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    color: #4a6359;
-    line-height: 1.6;
-    margin: 0;
-  }
-
+  /* ── Responsive ─────────────────────────────────────────────── */
   @media (max-width: 1024px) {
-    .demo-showcase {
+    .ship-row {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
-    .phone-wrap {
-      order: 2;
+    .ship-text {
+      text-align: center;
+      align-items: center;
+      max-width: 560px;
     }
-    .browser-wrap {
-      order: 1;
-    }
-    .demo-points {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+    .ship-tag, .ship-cta { align-self: center; }
+    .ship-bullets li { text-align: left; }
   }
-
   @media (max-width: 640px) {
-    .demo-section {
-      padding: 5rem 0;
-    }
-    .stat-cards {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .ship-section { padding: 4rem 0; }
+    .ship-inner { padding: 0 1.25rem; }
+    .ship-header { margin-bottom: 2.5rem; }
+    .iphone { width: 240px; }
+    .iphone-body { padding: 11px; border-radius: 42px; }
+    .iphone-screen { border-radius: 32px; }
+    .dynamic-island { top: 9px; width: 96px; height: 28px; }
+    .app-frame-stage { aspect-ratio: 4 / 5; }
+    .app-frame-chrome { padding: 0.5rem 0.5rem; gap: 0.5rem; }
+    .app-frame-bar span { font-size: 0.625rem; }
   }
 </style>
 
 <script>
-  function initMockApp() {
-    const app = document.querySelector<HTMLElement>('.mock-app');
+  function initShipMockApp() {
+    const app = document.querySelector<HTMLElement>('.ship-section .mock-app');
     if (!app || app.dataset.mockInit === '1') return;
     app.dataset.mockInit = '1';
 
@@ -1306,6 +711,6 @@
     }, { once: true });
   }
 
-  initMockApp();
-  document.addEventListener('astro:after-swap', initMockApp);
+  initShipMockApp();
+  document.addEventListener('astro:after-swap', initShipMockApp);
 </script>

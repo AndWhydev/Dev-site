@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import HeroWebGL from '../components/HeroWebGL.astro';
 import OurStory from '../components/OurStory.astro';
 import LiveAppDemo from '../components/LiveAppDemo.astro';
-import RealAppEmbed from '../components/RealAppEmbed.astro';
 import ProductShowcase from '../components/ProductShowcase.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import TechStack from '../components/TechStack.astro';
@@ -30,12 +29,28 @@ import CTABanner from '../components/CTABanner.astro';
   <main>
     <HeroWebGL />
 
-    <!-- Premium marquee strip -->
+    {/* Premium marquee strip — AWL-specific capability phrases. The list is
+        repeated once via the spread because translateX(-50%) infinite-scroll
+        needs the second copy to seam without a gap. */}
     <div class="marquee-strip">
       <div class="marquee-inner">
-        {['Enterprise Software', 'AI & Automation', 'Flutter Development', 'Cloud Infrastructure', 'Web3 & Blockchain', 'Digital Transformation', 'Custom SaaS', 'API Development', 'Cybersecurity', 'Data Analytics', 'Legacy Modernisation', 'Staff Augmentation', 'Enterprise Software', 'AI & Automation', 'Flutter Development', 'Cloud Infrastructure', 'Web3 & Blockchain', 'Digital Transformation', 'Custom SaaS', 'API Development', 'Cybersecurity', 'Data Analytics', 'Legacy Modernisation', 'Staff Augmentation'].map(item => (
-          <span class="marquee-item">{item}</span>
-        ))}
+        {(() => {
+          const phrases = [
+            'Autonomous AI delivery',
+            'Zero-touch deployment',
+            'Claude-powered builds',
+            'Sub-$2 site cost',
+            'Hallmark quality gates',
+            'fal.ai asset generation',
+            '30-minute approvals',
+            'Max subscription workers',
+            'Playwright visual testing',
+            'Multi-worker dispatch',
+          ];
+          return [...phrases, ...phrases].map(item => (
+            <span class="marquee-item">{item}</span>
+          ));
+        })()}
       </div>
     </div>
 
@@ -52,7 +67,6 @@ import CTABanner from '../components/CTABanner.astro';
 
     <OurStory />
     <LiveAppDemo />
-    <RealAppEmbed />
     <ProductShowcase />
     <ServicesGrid />
     <IndustryShowcase />

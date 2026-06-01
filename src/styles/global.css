@@ -31,6 +31,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
+    /* Defensive: guarantees no horizontal scroll even if a child accidentally
+       overflows the viewport on small screens. */
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -137,6 +140,7 @@
     background: #0d9373;
     color: white;
     padding: 0.875rem 2rem;
+    min-height: 44px;
     border-radius: 50px;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
@@ -162,6 +166,7 @@
     background: transparent;
     color: white;
     padding: 0.875rem 2rem;
+    min-height: 44px;
     border-radius: 50px;
     border: 1.5px solid rgba(255,255,255,0.25);
     font-family: 'DM Sans', sans-serif;

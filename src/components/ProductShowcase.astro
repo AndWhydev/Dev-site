@@ -1920,10 +1920,30 @@
 
   @media (max-width: 640px) {
     .ps-section { padding: 4rem 0 3rem; }
+    .ps-inner { padding: 0 1.25rem; }
     .ps-list { gap: 4rem; }
     .ps-header { margin-bottom: 3rem; }
-    .ps-phone { width: 230px; }
-    .ps-browser-body { height: 320px; }
+    .ps-text-col { padding: 0 0.25rem; }
+    .ps-phone { width: 220px; }
+    .ps-browser,
+    .ps-tablet { max-width: 100%; }
+    .ps-browser-body { height: 280px; }
+    .ps-tablet-screen { aspect-ratio: 5 / 4; }
+    .ps-fl { grid-template-columns: 110px 1fr; }
+    .ps-fl-side { padding: 8px; }
+    .ps-fl-veh-id { font-size: 10px; }
+    .ps-fl-veh-status { font-size: 8px; padding: 1px 5px; }
+    .ps-fl-veh-meta { font-size: 8px; }
+    .ps-crm-board { grid-template-columns: repeat(3, 1fr); }
+    .ps-crm-col:nth-child(n+4) { display: none; }
+    .ps-ana-kpis { grid-template-columns: repeat(2, 1fr); }
+    .ps-ana-row { grid-template-columns: 1fr; }
+    .ps-bk-grid { grid-template-columns: 18px repeat(3, 1fr); }
+    .ps-bk-col:nth-child(n+5) { display: none; }
+    .ps-h3 { font-size: 1.4rem; }
+  }
+  @media (max-width: 400px) {
+    .ps-phone { width: 200px; }
   }
 </style>
 

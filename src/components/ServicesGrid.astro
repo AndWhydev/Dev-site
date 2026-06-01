@@ -241,7 +241,7 @@ await app.deploy(<span class="c-str">"production"</span>);
         <div class="bento-cta-content">
           <div>
             <p class="bento-cta-label">And 8 more services</p>
-            <h3 class="bento-cta-heading">Database Architecture · Staff Augmentation · Digital Transformation · LLM Integration · Web & Mobile Apps · UI/UX Design · Database Architecture · More</h3>
+            <h3 class="bento-cta-heading">Database Architecture · Staff Augmentation · Digital Transformation · LLM Integration · Web & Mobile Apps · QA & Testing · Performance Optimisation · Deployment</h3>
           </div>
           <a href="/services" class="btn-primary bento-cta-btn">
             View All 20 Services
@@ -627,7 +627,20 @@ await app.deploy(<span class="c-str">"production"</span>);
   }
 
   @media (max-width: 540px) {
+    .bento-section { padding: 4rem 0; }
+    .bento-inner { padding: 0 1.25rem; }
     .bento-grid { grid-template-columns: 1fr; }
     .bento-hero, .bento-wide, .bento-full, .bento-tall { grid-column: span 1; grid-row: span 1; }
+    .bento-card { padding: 1.5rem; }
+    .bento-hero { padding: 1.75rem; }
+    .bento-cta-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .bento-cta-btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

@@ -29,30 +29,30 @@
       </div>
     </div>
 
-    <!-- FIX 6 — Overseer terminal mock fills the right-hand dead zone and
-         visualises what AWL actually does. Decorative only — aria-hidden. -->
+    {/* Overseer terminal mock — a stylised log of an autonomous build run so
+        visitors immediately see what AWL actually does. Decorative only. */}
     <aside class="awl-hero__terminal" aria-hidden="true">
       <div class="awl-term__head">
         <span class="awl-term__pulse"></span>
         <span class="awl-term__title">Overseer running</span>
-        <span class="awl-term__path">~/projects</span>
+        <span class="awl-term__path">fintech-ai-platform</span>
       </div>
       <div class="awl-term__rule"></div>
       <div class="awl-term__log">
-        <div class="awl-term__line"><span class="ts">[09:14]</span> Email received from client</div>
-        <div class="awl-term__line"><span class="ts">[09:14]</span> Classified: website scope</div>
-        <div class="awl-term__line"><span class="ts">[09:14]</span> Project created: dental-website</div>
-        <div class="awl-term__line"><span class="ts">[09:15]</span> Worker dispatched</div>
-        <div class="awl-term__line"><span class="ts">[09:16]</span> Research complete</div>
-        <div class="awl-term__line"><span class="ts">[09:17]</span> Build started…</div>
-        <div class="awl-term__line"><span class="ts">[09:23]</span> Build complete <span class="awl-term__ok">✓</span></div>
-        <div class="awl-term__line"><span class="ts">[09:23]</span> Approval email sent to Andy</div>
+        <div class="awl-term__line"><span class="ts">[09:14]</span> Brief received <span class="awl-term__tag">fintech</span></div>
+        <div class="awl-term__line"><span class="ts">[09:14]</span> Scope locked · 12 surfaces, 4 integrations</div>
+        <div class="awl-term__line"><span class="ts">[09:15]</span> Dispatched 4 workers <span class="awl-term__ok">×4</span></div>
+        <div class="awl-term__line"><span class="ts">[09:18]</span> Schema · Plaid · Stripe wired</div>
+        <div class="awl-term__line"><span class="ts">[09:22]</span> fal.ai · 38 assets generated</div>
+        <div class="awl-term__line"><span class="ts">[09:31]</span> Hallmark gate passed <span class="awl-term__ok">✓</span></div>
+        <div class="awl-term__line"><span class="ts">[09:34]</span> Playwright · 142/142 green</div>
+        <div class="awl-term__line"><span class="ts">[09:35]</span> Deployed · awaiting approval</div>
       </div>
       <div class="awl-term__rule"></div>
       <div class="awl-term__foot">
-        <span>24h spend: <strong>$1.24</strong></span>
-        <span>Tasks: <strong>6</strong></span>
-        <span>Success: <strong>83%</strong></span>
+        <span>Run spend: <strong>$1.87</strong></span>
+        <span>Workers: <strong>4</strong></span>
+        <span>Gates: <strong>8/8</strong></span>
       </div>
     </aside>
   </div>
@@ -255,6 +255,18 @@
   .awl-term__ok {
     color: #20d3a3;
     font-weight: 700;
+  }
+  .awl-term__tag {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(13,147,115,0.18);
+    border: 1px solid rgba(13,147,115,0.35);
+    color: #20d3a3;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
   .awl-term__foot {
     display: flex;

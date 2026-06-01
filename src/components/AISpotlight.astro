@@ -343,14 +343,18 @@ const capabilities = [
 
   @media (max-width: 640px) {
     .ai-section {
-      padding: 5rem 0;
+      padding: 4rem 0;
     }
     .ai-banner {
-      padding: 2rem 1.5rem;
+      padding: 1.75rem 1.5rem;
     }
     .ai-banner-content {
       flex-direction: column;
       align-items: flex-start;
+    }
+    .ai-banner-content .btn-primary {
+      width: 100%;
+      justify-content: center;
     }
     .ai-stats {
       padding: 1.25rem;
@@ -358,6 +362,12 @@ const capabilities = [
     .ai-stat-num {
       font-size: 1.5rem;
       min-width: 64px;
+    }
+    .ai-cap { padding: 1.125rem 0; gap: 0.875rem; }
+    .ai-cap:hover {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

@@ -219,15 +219,32 @@
 
   @media (max-width: 640px) {
     .cta-banner {
-      padding: 5rem 0;
+      padding: 4rem 0;
+    }
+    .cta-inner {
+      padding: 0 1.25rem;
+    }
+    .cta-heading {
+      font-size: clamp(1.75rem, 8vw, 2.25rem);
+    }
+    .cta-sub {
+      font-size: 1rem;
     }
     .cta-actions {
       flex-direction: column;
+      width: 100%;
     }
     .cta-btn-primary,
     .cta-btn-secondary {
       width: 100%;
       justify-content: center;
+      min-height: 48px;
+    }
+    .cta-proof {
+      gap: 0.625rem 1rem;
+    }
+    .cta-proof-item span {
+      font-size: 0.8125rem;
     }
   }
 </style>
