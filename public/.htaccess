@@ -66,4 +66,10 @@
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Content Security Policy — explicitly whitelist the live-app demo iframe
+  # origin so Chrome treats it as an expected embed and stops attributing
+  # the iframe's internal TLS state to the parent page's security indicator.
+  # Only frame-src is set; other resource types remain unrestricted.
+  Header set Content-Security-Policy "frame-src 'self' https://golf-app-demo.vercel.app;"
 </IfModule>
