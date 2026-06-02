@@ -5,7 +5,11 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://awlabs.com.au',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/welcome'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

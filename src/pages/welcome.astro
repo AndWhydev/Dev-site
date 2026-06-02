@@ -1,0 +1,271 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const documents = [
+  {
+    title: 'How This Works',
+    description: 'Our process from first contact to launch day — six steps, no surprises.',
+    file: '/docs/how-this-works.pdf',
+  },
+  {
+    title: 'Case Study Portfolio',
+    description: 'A cross-section of past builds across different industries, platforms and technology stacks.',
+    file: '/docs/case-study-portfolio.pdf',
+  },
+  {
+    title: 'Mutual NDA',
+    description: 'Our standard Non-Disclosure Agreement. Accepted by email reply — no wet signature needed.',
+    file: '/docs/mutual-nda.pdf',
+  },
+];
+---
+
+<Layout
+  title="Welcome — All Webbed Labs"
+  description="Private resource page for new leads."
+  noindex={true}
+>
+  <main class="welcome">
+    <div class="container">
+      <header class="intro">
+        <div class="mark" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#0d9373" />
+            <path d="M12 36L24 12L36 36" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.5 28.5H32.5" stroke="white" stroke-width="3.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <h1>Welcome — here's everything you need before our call</h1>
+        <p>Please review the following documents before our strategy session so we can make the most of our time together.</p>
+      </header>
+
+      <ul class="cards">
+        {documents.map((doc) => (
+          <li class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+                <line x1="8" y1="17" x2="16" y2="17" />
+                <line x1="8" y1="9" x2="10" y2="9" />
+              </svg>
+            </div>
+            <h2>{doc.title}</h2>
+            <p>{doc.description}</p>
+            <div class="actions">
+              <a class="btn view" href={doc.file} target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>View</span>
+              </a>
+              <a class="btn download" href={doc.file} download>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <footer class="confidential">
+        All Webbed Labs · Confidential
+      </footer>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .welcome {
+    min-height: 100vh;
+    background: #0a0a0c;
+    color: #ffffff;
+    padding: clamp(3rem, 8vw, 6rem) 1.25rem 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    flex: 1;
+  }
+
+  /* Intro */
+  .intro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro h1 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.625rem, 4vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin: 0;
+    max-width: 36ch;
+  }
+
+  .intro p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #8aa09a;
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* Cards */
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(13, 147, 115, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(13, 147, 115, 0.08);
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(13, 147, 115, 0.12);
+    color: #0d9373;
+    margin-bottom: 0.25rem;
+  }
+
+  .card h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #8aa09a;
+    margin: 0;
+  }
+
+  /* Actions */
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn.view {
+    background: transparent;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+  }
+  .btn.view:hover {
+    border-color: rgba(13, 147, 115, 0.6);
+    color: #10b88a;
+    background: rgba(13, 147, 115, 0.06);
+  }
+
+  .btn.download {
+    background: #0d9373;
+    color: #ffffff;
+    border: 1.5px solid #0d9373;
+  }
+  .btn.download:hover {
+    background: #0a7a5e;
+    border-color: #0a7a5e;
+    transform: translateY(-1px);
+  }
+
+  /* Confidential footer */
+  .confidential {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #4a6359;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 560px) {
+    .card {
+      padding: 1.5rem;
+    }
+    .actions {
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+    .btn {
+      width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+</style>
