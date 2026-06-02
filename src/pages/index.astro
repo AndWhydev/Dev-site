@@ -15,6 +15,7 @@ import AISpotlight from '../components/AISpotlight.astro';
 import Web3Spotlight from '../components/Web3Spotlight.astro';
 import ROICalculator from '../components/ROICalculator.astro';
 import CTABanner from '../components/CTABanner.astro';
+import AutonomousAISection from '../components/sections/AutonomousAISection.astro';
 /* BlogPreview, StatsBar, Testimonials, and FeaturedCaseStudies all
    removed and deleted from the codebase — each contained fabricated
    client names, invented case-study metrics, or unverifiable stats.
@@ -28,6 +29,8 @@ import CTABanner from '../components/CTABanner.astro';
   <Header />
   <main>
     <HeroWebGL />
+
+    <AutonomousAISection />
 
     {/* Premium marquee strip — AWL-specific capability phrases. The list is
         repeated once via the spread because translateX(-50%) infinite-scroll
