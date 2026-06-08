@@ -4,10 +4,10 @@
 <section class="roi-section" id="roi-calculator">
   <div class="roi-inner">
     <div class="roi-header reveal">
-      <span class="section-label">ROI Calculator</span>
-      <h2 class="section-heading">Calculate Your Automation ROI</h2>
+      <span class="section-label">Savings Estimate</span>
+      <h2 class="section-heading">What Could Automation Save You?</h2>
       <p class="section-subheading">
-        See how much time and money you could save by automating your manual processes. Adjust the sliders to match your situation.
+        A simple order-of-magnitude estimate of hours and payroll cost you could redirect by automating repetitive manual work. Build cost depends on integrations and data complexity — we'll quote it after a discovery call.
       </p>
     </div>
 
@@ -16,7 +16,7 @@
       <div class="roi-inputs reveal-left stagger-1">
         <div class="roi-input-group">
           <label for="roi-employees">
-            <span>Employees Affected</span>
+            <span>Employees affected</span>
             <span class="roi-input-val" id="employees-val">10</span>
           </label>
           <input type="range" id="roi-employees" min="1" max="500" value="10" step="1" />
@@ -25,7 +25,7 @@
 
         <div class="roi-input-group">
           <label for="roi-hours">
-            <span>Hours/week on manual tasks</span>
+            <span>Hours/week each spends on the task</span>
             <span class="roi-input-val" id="hours-val">10</span>
           </label>
           <input type="range" id="roi-hours" min="1" max="40" value="10" step="1" />
@@ -34,54 +34,54 @@
 
         <div class="roi-input-group">
           <label for="roi-rate">
-            <span>Average hourly rate (AUD)</span>
+            <span>Average loaded hourly cost (AUD)</span>
             <span class="roi-input-val" id="rate-val">$65</span>
           </label>
           <input type="range" id="roi-rate" min="30" max="200" value="65" step="5" />
           <div class="roi-range-labels"><span>$30</span><span>$200</span></div>
         </div>
 
+        <div class="roi-input-group">
+          <label for="roi-automation">
+            <span>How much of the task is automatable</span>
+            <span class="roi-input-val" id="automation-val">50%</span>
+          </label>
+          <input type="range" id="roi-automation" min="10" max="90" value="50" step="5" />
+          <div class="roi-range-labels"><span>10%</span><span>90%</span></div>
+        </div>
+
         <div class="roi-note">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-          Calculations assume 70% automation efficiency and a 24-month amortisation period.
+          Indicative only. Real savings depend on workflow complexity, exception handling and adoption. We do not quote build cost or payback from a calculator — only from a scoping call.
         </div>
       </div>
 
       <!-- Outputs -->
       <div class="roi-outputs reveal-right stagger-2">
         <div class="roi-output-card primary">
-          <div class="roi-output-label">Hours Saved Per Year</div>
-          <div class="roi-output-val" id="hours-saved">18,200</div>
-          <div class="roi-output-sub">hours returned to your business</div>
+          <div class="roi-output-label">Hours redirected per year</div>
+          <div class="roi-output-val" id="hours-saved">13,000</div>
+          <div class="roi-output-sub">time your team gets back from this one task</div>
         </div>
 
         <div class="roi-output-card">
-          <div class="roi-output-label">Money Saved Per Year</div>
-          <div class="roi-output-val green" id="money-saved">$1,183,000</div>
+          <div class="roi-output-label">Annual payroll cost recovered</div>
+          <div class="roi-output-val green" id="money-saved">$845K</div>
+          <div class="roi-output-sub">at the loaded hourly cost you entered</div>
         </div>
 
         <div class="roi-output-card">
-          <div class="roi-output-label">Est. Development Cost</div>
-          <div class="roi-output-val" id="dev-cost">$150K–$250K</div>
-          <div class="roi-output-sub">one-time investment</div>
-        </div>
-
-        <div class="roi-output-card">
-          <div class="roi-output-label">Return on Investment</div>
-          <div class="roi-output-val green" id="roi-pct">472%</div>
-        </div>
-
-        <div class="roi-output-card">
-          <div class="roi-output-label">Payback Period</div>
-          <div class="roi-output-val" id="payback">2.5 months</div>
+          <div class="roi-output-label">Per-employee hours back</div>
+          <div class="roi-output-val" id="hours-per-employee">1,300</div>
+          <div class="roi-output-sub">hours/year, per affected employee</div>
         </div>
 
         <div class="roi-cta">
           <a href="/contact" class="btn-primary">
-            Get a Custom Quote
+            Get a real quote
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <p>Based on your numbers, automation could pay itself back in months.</p>
+          <p>We'll scope the build, the integrations and the realistic adoption curve — then quote a fixed price.</p>
         </div>
       </div>
     </div>
@@ -353,16 +353,16 @@
   const employees = document.getElementById('roi-employees') as HTMLInputElement;
   const hours = document.getElementById('roi-hours') as HTMLInputElement;
   const rate = document.getElementById('roi-rate') as HTMLInputElement;
+  const automation = document.getElementById('roi-automation') as HTMLInputElement;
 
   const employeesVal = document.getElementById('employees-val')!;
   const hoursVal = document.getElementById('hours-val')!;
   const rateVal = document.getElementById('rate-val')!;
+  const automationVal = document.getElementById('automation-val')!;
 
   const hoursSavedEl = document.getElementById('hours-saved')!;
   const moneySavedEl = document.getElementById('money-saved')!;
-  const devCostEl = document.getElementById('dev-cost')!;
-  const roiPctEl = document.getElementById('roi-pct')!;
-  const paybackEl = document.getElementById('payback')!;
+  const hoursPerEmployeeEl = document.getElementById('hours-per-employee')!;
 
   function fmt(n: number): string {
     if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -374,36 +374,23 @@
     const e = parseInt(employees.value);
     const h = parseInt(hours.value);
     const r = parseInt(rate.value);
+    const a = parseInt(automation.value);
 
     employeesVal.textContent = String(e);
     hoursVal.textContent = String(h);
     rateVal.textContent = `$${r}`;
+    automationVal.textContent = `${a}%`;
 
-    const hoursSaved = Math.round(e * h * 52 * 0.7);
+    const factor = a / 100;
+    const hoursSaved = Math.round(e * h * 52 * factor);
     const moneySaved = Math.round(hoursSaved * r);
-
-    // Dev cost estimate based on scope
-    let devLow = 50000, devHigh = 100000;
-    const scope = e * h;
-    if (scope > 200) { devLow = 200000; devHigh = 500000; }
-    else if (scope > 80) { devLow = 100000; devHigh = 250000; }
-    else if (scope > 30) { devLow = 50000; devHigh = 150000; }
-
-    const devMid = (devLow + devHigh) / 2;
-    const roi = Math.round(((moneySaved - devMid) / devMid) * 100);
-    const paybackMonths = devMid / (moneySaved / 12);
+    const hoursPerEmployee = Math.round(h * 52 * factor);
 
     hoursSavedEl.textContent = hoursSaved.toLocaleString();
     moneySavedEl.textContent = fmt(moneySaved) + '/yr';
-    devCostEl.textContent = `${fmt(devLow)}–${fmt(devHigh)}`;
-    roiPctEl.textContent = roi > 0 ? `${roi}%` : 'Evaluating…';
-    paybackEl.textContent = paybackMonths < 1
-      ? `< 1 month`
-      : paybackMonths < 12
-      ? `${paybackMonths.toFixed(1)} months`
-      : `${(paybackMonths / 12).toFixed(1)} years`;
+    hoursPerEmployeeEl.textContent = hoursPerEmployee.toLocaleString();
   }
 
-  [employees, hours, rate].forEach((inp) => inp.addEventListener('input', calc));
+  [employees, hours, rate, automation].forEach((inp) => inp.addEventListener('input', calc));
   calc();
 </script>

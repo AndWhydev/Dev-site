@@ -1,0 +1,492 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+/**
+ * Trust page — the page every serious buyer needs before signing. Concrete
+ * facts (company registration, address, hours), the security posture we
+ * actually hold ourselves to, the IP-transfer language we put in every
+ * engagement contract, and a downloadable mutual NDA they can run past
+ * their lawyer before the first commercial conversation.
+ *
+ * Nothing on this page is a claim about who we work with. It is only a
+ * claim about how we work — every line of which is provable from the
+ * contract or from public record (ASIC, ABR).
+ */
+
+const facts = [
+  { label: 'Legal entity', value: 'All Webbed Up Pty Ltd', detail: 'Trading as All Webbed Labs for the technology arm' },
+  { label: 'ABN', value: '86 666 254 771', detail: 'Australian Business Number — verifiable on abr.business.gov.au' },
+  { label: 'Registered office', value: '204 Birdwood Rd, Georges Hall NSW 2198', detail: 'Greater Sydney, Australia' },
+  { label: 'Operating hours', value: 'Mon–Fri, 9am–6pm AEST', detail: 'Real humans on the other end of every message' },
+  { label: 'Ownership', value: '100% Australian-owned', detail: 'No offshore parent, no overseas subcontracting without your written consent' },
+  { label: 'Insurance', value: 'Professional indemnity + public liability', detail: 'Certificates available on request before contract signing' },
+];
+
+const ipClauses = [
+  {
+    title: 'Pre-existing IP stays with its owner',
+    body: 'Anything we bring to the engagement that already existed before the project starts — internal libraries, methodology, templates, third-party open source — remains owned by the original owner. We list these explicitly in the contract as Background IP. Open source remains under its existing licence.',
+  },
+  {
+    title: 'New IP created in the project is yours',
+    body: 'On final payment, all source code, designs, schemas, infrastructure-as-code, runbooks and documentation created specifically for your project transfer to you in full. We retain no licence, no usage rights and no ability to resell.',
+  },
+  {
+    title: 'We do not embed silent dependencies on us',
+    body: 'No phone-home telemetry to our infrastructure. No hard-coded API keys that route through us. No "you can only deploy this if we host it" architecture. You can fire us and run the system on day one without our involvement.',
+  },
+  {
+    title: 'You receive the keys',
+    body: 'Source repository, DNS, hosting account, secret store, third-party service accounts — every credential is in your control before final invoice. We are removed from every system within five business days of project closeout.',
+  },
+];
+
+const security = [
+  {
+    pillar: 'Authentication',
+    bullets: [
+      'Multi-factor required on every internal account and every system that touches client data',
+      'Single sign-on (SSO) where the client provides an identity provider',
+      'Session tokens rotated; refresh tokens revoked on suspicious activity',
+    ],
+  },
+  {
+    pillar: 'Authorisation',
+    bullets: [
+      'Least-privilege by default — engineers get access only to the projects they are staffed on',
+      'Audit log on every access to client production data, retained for the contracted period',
+      'Just-in-time elevation for production changes; no standing admin credentials',
+    ],
+  },
+  {
+    pillar: 'Data handling',
+    bullets: [
+      'Production data does not leave the production environment except via an audited export with client sign-off',
+      'PII redaction layer on any logs that may capture user input',
+      'Encryption at rest (AES-256) and in transit (TLS 1.2+) on every layer',
+    ],
+  },
+  {
+    pillar: 'Code & dependencies',
+    bullets: [
+      'OWASP Top 10 as the floor of what we test for, not the ceiling',
+      'Dependency vulnerability scanning on every PR; high/critical CVEs block merge',
+      'Secret scanning on every commit; secret leaks rotate the affected credential immediately',
+    ],
+  },
+  {
+    pillar: 'Incident response',
+    bullets: [
+      'Roll back first, investigate second — uptime takes priority over root cause',
+      'Postmortem within five business days; action items tracked to closure',
+      'Client notified of incidents that affect their data or service within the contracted SLA',
+    ],
+  },
+];
+
+const compliance = [
+  {
+    label: 'Australian Privacy Principles',
+    body: 'Engagements handling personal information of Australian individuals are designed to the Australian Privacy Principles (APPs) under the Privacy Act 1988. We can advise on whether your specific use case triggers APP entity status.',
+  },
+  {
+    label: 'Data sovereignty',
+    body: 'Default hosting region for Australian engagements is Australia (AWS ap-southeast-2 / GCP australia-southeast1). Cross-border data flows are documented and signed off in the architecture phase, not retrofitted later.',
+  },
+  {
+    label: 'R&D Tax Incentive eligibility',
+    body: 'The portion of a software build conducted in Australia is generally eligible for consideration under the AU R&D Tax Incentive (RDTI). We structure our project documentation — technical uncertainty registers, experiment logs, time tracking — to support your eventual claim. This is a structural advantage of working with an Australian agency, not a claim only we can make.',
+  },
+  {
+    label: 'GDPR-adjacent obligations',
+    body: 'For clients with European users, we implement data subject request handling, consent management and the right-to-erasure machinery as standard. Designed to GDPR principles even where the strict legal obligation is local.',
+  },
+];
+---
+
+<Layout
+  title="Trust, Compliance & IP — All Webbed Labs"
+  description="Company registration, IP transfer terms, security posture, compliance position and a downloadable mutual NDA. The page every serious buyer should read before scoping."
+>
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="trust-hero">
+      <div class="trust-hero-inner">
+        <div class="reveal">
+          <span class="section-label">Trust &amp; compliance</span>
+          <h1 class="trust-title">
+            Read this before you brief us.
+          </h1>
+          <p class="trust-lead">
+            Every line on this page is verifiable — from public record, from the engagement contract or from a downloadable document. We have written it down so you do not have to ask, and so your legal and security people can pre-clear us before the first commercial conversation.
+          </p>
+          <div class="trust-actions">
+            <a href="/docs/mutual-nda.pdf" class="btn-primary" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download mutual NDA
+            </a>
+            <a href="/docs/how-this-works.pdf" class="btn-outline" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              How we engage (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company facts -->
+    <section class="trust-facts">
+      <div class="trust-facts-inner">
+        <div class="reveal" style="max-width: 720px;">
+          <span class="section-label">Company on the record</span>
+          <h2 class="section-heading">The verifiable facts.</h2>
+          <p class="section-subheading">
+            Every item below can be confirmed independently. We are not asking you to take our word for it.
+          </p>
+        </div>
+
+        <div class="facts-grid">
+          {facts.map((f) => (
+            <div class="fact-card reveal">
+              <div class="fact-label">{f.label}</div>
+              <div class="fact-value">{f.value}</div>
+              <div class="fact-detail">{f.detail}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- IP transfer -->
+    <section class="trust-ip">
+      <div class="trust-ip-inner">
+        <div class="reveal" style="max-width: 760px;">
+          <span class="section-label">Intellectual property</span>
+          <h2 class="section-heading">You own everything we build for you.</h2>
+          <p class="section-subheading">
+            Plain-English summary of the IP clauses we put in every contract. The contract itself is reviewed against your legal team's amendments before signing.
+          </p>
+        </div>
+
+        <div class="ip-list">
+          {ipClauses.map((clause) => (
+            <article class="ip-card reveal">
+              <h3>{clause.title}</h3>
+              <p>{clause.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="trust-security">
+      <div class="trust-security-inner">
+        <div class="reveal" style="max-width: 760px;">
+          <span class="section-label">Security posture</span>
+          <h2 class="section-heading">What our security looks like in practice.</h2>
+          <p class="section-subheading">
+            The specific operational practices we hold ourselves to on every engagement. Independent audit and formal certification can be scoped into enterprise engagements on request.
+          </p>
+        </div>
+
+        <div class="sec-grid">
+          {security.map((s) => (
+            <div class="sec-card reveal">
+              <h3 class="sec-card-pillar">{s.pillar}</h3>
+              <ul>
+                {s.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class="trust-compliance">
+      <div class="trust-compliance-inner">
+        <div class="reveal" style="max-width: 760px;">
+          <span class="section-label">Compliance position</span>
+          <h2 class="section-heading">How we treat Australian and adjacent regulation.</h2>
+        </div>
+
+        <div class="comp-list">
+          {compliance.map((c) => (
+            <article class="comp-card reveal">
+              <h3>{c.label}</h3>
+              <p>{c.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="trust-disclaimer">
+      <div class="trust-disclaimer-inner">
+        <div class="reveal">
+          <p>
+            <strong>An honest note.</strong> All Webbed Labs is a new operation within an established parent (All Webbed Up). We have deliberately not stamped this site with certifications we have not earned, badges we cannot produce on request, or client logos we cannot show under NDA. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:labs@allwebbedup.com.au">labs@allwebbedup.com.au</a> — we will tell you yes, no or "not yet" without dressing it up.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .trust-hero {
+    padding: 10rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .trust-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .trust-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .trust-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+    max-width: 760px;
+  }
+  .trust-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0 0 2rem;
+  }
+  .trust-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .trust-actions .btn-primary, .trust-actions .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Sections */
+  .trust-facts, .trust-ip, .trust-security, .trust-compliance, .trust-disclaimer {
+    padding: 6.5rem 0;
+  }
+  .trust-facts { background: #0f1614; }
+  .trust-ip { background: #0a0f0e; }
+  .trust-security { background: #0f1614; }
+  .trust-compliance { background: #0a0f0e; }
+  .trust-disclaimer { background: #0f1614; padding: 4.5rem 0; }
+
+  .trust-facts-inner, .trust-ip-inner, .trust-security-inner, .trust-compliance-inner, .trust-disclaimer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Facts */
+  .facts-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .fact-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.3s ease;
+  }
+  .fact-card:hover { border-color: rgba(13,147,115,0.3); }
+  .fact-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a6359;
+    margin-bottom: 0.625rem;
+  }
+  .fact-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .fact-detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    line-height: 1.5;
+  }
+
+  /* IP */
+  .ip-list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .ip-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    transition: border-color 0.3s ease;
+  }
+  .ip-card:hover { border-color: rgba(13,147,115,0.3); }
+  .ip-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.875rem;
+  }
+  .ip-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Security */
+  .sec-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .sec-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+  }
+  .sec-card-pillar {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0d9373;
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #1e2d28;
+    letter-spacing: 0.02em;
+  }
+  .sec-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .sec-card li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.55;
+    padding-left: 1.125rem;
+    position: relative;
+  }
+  .sec-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    background: #0d9373;
+    border-radius: 50%;
+  }
+
+  /* Compliance */
+  .comp-list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .comp-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+  }
+  .comp-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem;
+  }
+  .comp-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Disclaimer */
+  .trust-disclaimer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 0;
+    max-width: 880px;
+    background: rgba(13,147,115,0.04);
+    border: 1px solid rgba(13,147,115,0.15);
+    border-left: 3px solid #0d9373;
+    padding: 1.75rem 2rem;
+    border-radius: 0 12px 12px 0;
+  }
+  .trust-disclaimer p strong { color: white; font-weight: 700; }
+  .trust-disclaimer p a { color: #0d9373; text-decoration: none; border-bottom: 1px solid rgba(13,147,115,0.4); }
+  .trust-disclaimer p a:hover { border-color: #0d9373; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .facts-grid { grid-template-columns: repeat(2, 1fr); }
+    .ip-list, .sec-grid, .comp-list { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .trust-hero { padding: 8rem 0 4rem; }
+    .trust-facts, .trust-ip, .trust-security, .trust-compliance { padding: 4rem 0; }
+    .trust-disclaimer { padding: 3rem 0; }
+    .trust-facts-inner, .trust-ip-inner, .trust-security-inner, .trust-compliance-inner, .trust-disclaimer-inner { padding: 0 1.25rem; }
+    .facts-grid { grid-template-columns: 1fr; }
+    .ip-card, .sec-card, .comp-card { padding: 1.5rem 1.5rem; }
+  }
+</style>

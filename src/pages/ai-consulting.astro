@@ -247,43 +247,43 @@ import CTABanner from '../components/CTABanner.astro';
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-         ROI STATS
+         WHERE AI ACTUALLY EARNS ITS KEEP
     ═══════════════════════════════════════════════════ -->
     <section class="ai-section bg-dark">
       <div class="ai-inner">
         <div class="section-header reveal">
-          <span class="section-label">The Business Case</span>
-          <h2 class="section-heading">What AI Implementation Typically Returns</h2>
+          <span class="section-label">Where it earns its keep</span>
+          <h2 class="section-heading">Three patterns that consistently justify the spend.</h2>
           <p class="section-subheading">
-            Industry benchmarks drawn from McKinsey Global Institute and BCG research on enterprise AI deployment — the ranges we design and budget against.
+            We will not quote you a ROI multiplier from someone else's research. What we can describe is the shape of AI work that has proven economically defensible — and the shape that has not.
           </p>
         </div>
         <div class="roi-grid">
           <div class="roi-card reveal stagger-1">
-            <div class="roi-num gradient-text-green">3.5×</div>
-            <div class="roi-title">Average ROI Within 18 Months</div>
+            <div class="roi-num gradient-text-green">01</div>
+            <div class="roi-title">High-volume document work</div>
             <div class="roi-desc">
-              Enterprises that deploy AI across at least three business functions see an average return of 3.5x their total
-              implementation investment within 18 months, driven primarily by labour automation and error reduction.
+              Accounts payable, claims intake, compliance reviews, contract triage — anywhere a human reads a structured-ish document and routes it. Modern LLMs extract, classify and route with high enough accuracy that the human role shifts from processor to exception handler. The economics are unambiguous when volume is high.
             </div>
           </div>
           <div class="roi-card reveal stagger-2">
-            <div class="roi-num gradient-text-green">68%</div>
-            <div class="roi-title">Reduction in Manual Processing Costs</div>
+            <div class="roi-num gradient-text-green">02</div>
+            <div class="roi-title">Internal knowledge retrieval</div>
             <div class="roi-desc">
-              Document-intensive processes — accounts payable, claims handling, compliance reporting — see an average
-              68% reduction in per-unit processing cost when AI is applied to extraction, validation and routing tasks.
+              The team's collective know-how is locked in old emails, Confluence pages, PDFs and one engineer's head. A well-scoped RAG system answers "how did we handle X last time" in seconds instead of half a day of Slack archaeology — and is one of the highest-leverage AI projects available to most enterprises.
             </div>
           </div>
           <div class="roi-card reveal stagger-3">
-            <div class="roi-num gradient-text-green">4.2hrs</div>
-            <div class="roi-title">Saved Per Knowledge Worker Per Day</div>
+            <div class="roi-num gradient-text-green">03</div>
+            <div class="roi-title">Tier-one customer support</div>
             <div class="roi-desc">
-              Knowledge workers using AI copilots and automation recover an average of 4.2 hours per day previously
-              spent on search, synthesis and routine correspondence — redirecting that time to high-value work.
+              A grounded chatbot that resolves the common 80% of customer questions — and confidently hands the long-tail 20% to a human — reshapes the support cost curve. The work is in the guardrails, the escalation logic and the evaluation harness, not in the model itself.
             </div>
           </div>
         </div>
+        <p class="ai-section-honest">
+          What we will <em>not</em> promise: a specific multiplier, a fixed time-to-value, or that every AI initiative pays back. Some don't. We will tell you the cases where we think the economics are weak before you spend anything.
+        </p>
       </div>
     </section>
 
@@ -752,6 +752,25 @@ import CTABanner from '../components/CTABanner.astro';
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+
+  .ai-section-honest {
+    margin: 2.5rem auto 0;
+    max-width: 760px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    background: rgba(13,147,115,0.04);
+    border: 1px dashed rgba(13,147,115,0.2);
+    border-radius: 12px;
+  }
+  .ai-section-honest em {
+    color: #0d9373;
+    font-style: normal;
+    font-weight: 600;
   }
 
   .roi-card {

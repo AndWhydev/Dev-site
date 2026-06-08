@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroWebGL from '../components/HeroWebGL.astro';
+import TrustBar from '../components/TrustBar.astro';
 import OurStory from '../components/OurStory.astro';
 import LiveAppDemo from '../components/LiveAppDemo.astro';
 import ProductShowcase from '../components/ProductShowcase.astro';
@@ -30,25 +31,27 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
   <main>
     <HeroWebGL />
 
+    <TrustBar />
+
     <AutonomousAISection />
 
-    {/* Premium marquee strip — AWL-specific capability phrases. The list is
-        repeated once via the spread because translateX(-50%) infinite-scroll
-        needs the second copy to seam without a gap. */}
+    {/* Capability marquee — client-facing language only. Avoid internal tool
+        names that read as boasting; favour the outcomes a buyer cares about.
+        Doubled via spread so translateX(-50%) infinite-scroll seams cleanly. */}
     <div class="marquee-strip">
       <div class="marquee-inner">
         {(() => {
           const phrases = [
-            'Autonomous AI delivery',
-            'Zero-touch deployment',
-            'Claude-powered builds',
-            'Sub-$2 site cost',
-            'Hallmark quality gates',
-            'fal.ai asset generation',
-            '30-minute approvals',
-            'Max subscription workers',
-            'Playwright visual testing',
-            'Multi-worker dispatch',
+            'Australian-owned',
+            'Full IP transferred to you',
+            'Fixed-price or time-and-materials',
+            'AEST delivery, no offshore handoffs',
+            'Source code, not a black box',
+            'NDA-first engagements',
+            'R&D tax incentive eligible',
+            'Production-grade from day one',
+            'Quality gates before deploy',
+            'Human review on every release',
           ];
           return [...phrases, ...phrases].map(item => (
             <span class="marquee-item">{item}</span>

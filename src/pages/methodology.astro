@@ -1,0 +1,720 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+/**
+ * Methodology page — the credibility load-bearer. Every section here is
+ * derived from how AWL actually delivers work. No client names, no
+ * fabricated metrics, no aspirational claims about scale we don't have.
+ * Specificity over generality: name the tool, name the gate, name the
+ * artefact. A sophisticated buyer should finish this page and think
+ * "they've clearly done this before."
+ */
+
+const phases = [
+  {
+    num: '01',
+    title: 'Discovery',
+    duration: '3–10 days',
+    purpose: 'Turn an idea or RFP into a scoped, costed, signable engagement.',
+    deliverables: [
+      'Problem statement and success criteria',
+      'Surface map — every screen, integration and data model',
+      'Risk register with mitigation owners',
+      'Fixed price or time-and-materials proposal',
+      'Mutual NDA executed before any commercial data changes hands',
+    ],
+  },
+  {
+    num: '02',
+    title: 'Architecture',
+    duration: '1–2 weeks',
+    purpose: 'Decide every technical question that would cost more to undo than to debate.',
+    deliverables: [
+      'C4-model system diagrams (context, container, component)',
+      'Data model and migration strategy',
+      'API contracts and integration sequence diagrams',
+      'Authentication, authorisation and audit-log design',
+      'Hosting and infrastructure-as-code plan (Terraform or Pulumi)',
+    ],
+  },
+  {
+    num: '03',
+    title: 'Build',
+    duration: 'sprint-by-sprint',
+    purpose: 'Ship working software in vertical slices, behind quality gates, with weekly reviews.',
+    deliverables: [
+      'One-week sprints with a public progress board',
+      'Trunk-based development with preview deploys per branch',
+      'Daily standup notes published to your project portal',
+      'A working build at the end of every sprint — never a "wait until launch" gap',
+      'Source code in your GitHub organisation from day one, not handed over at the end',
+    ],
+  },
+  {
+    num: '04',
+    title: 'Quality gates',
+    duration: 'every deploy',
+    purpose: 'Refuse to release anything that has not passed an explicit, automated check.',
+    deliverables: [
+      'TypeScript strict + lint must pass — non-negotiable',
+      'Unit + integration tests must pass at coverage thresholds set at architecture',
+      'Playwright visual regression suite must be green',
+      'Hallmark design gate — no AI-slop layouts, no placeholder copy reaches prod',
+      'Human review on every release, no matter how small',
+      'Security scan (dependency audit + SAST) on every PR',
+    ],
+  },
+  {
+    num: '05',
+    title: 'Release',
+    duration: 'continuous',
+    purpose: 'Get changes to your users frequently and reversibly.',
+    deliverables: [
+      'Staging environment that mirrors production exactly',
+      'Feature flags for any change that affects user-visible behaviour',
+      'One-click rollback to the previous deploy',
+      'Release notes generated from PRs, sent to your team',
+      'Synthetic monitoring on the critical user journey',
+    ],
+  },
+  {
+    num: '06',
+    title: 'Handover and operate',
+    duration: 'from day one',
+    purpose: 'Make sure the project survives our involvement.',
+    deliverables: [
+      'Architecture decision records — every non-obvious choice documented',
+      'Runbook for every operational scenario (incident, scale, backup, restore)',
+      'Knowledge-transfer sessions recorded and indexed',
+      'Source code, secrets and infrastructure ownership transferred to you',
+      'Optional retained-engineering arrangement for ongoing evolution',
+    ],
+  },
+];
+
+const gates = [
+  {
+    name: 'Type safety',
+    check: 'TypeScript strict mode, no `any`, no implicit-any escapes',
+    why: 'Catches a class of runtime bugs at edit time. Cheaper than tests for what it covers.',
+  },
+  {
+    name: 'Lint and format',
+    check: 'ESLint with project rules; Prettier on every commit',
+    why: 'Style debate is a waste of senior time. Tools decide, nobody argues.',
+  },
+  {
+    name: 'Unit + integration',
+    check: 'Vitest / Jest on logic; real-database integration tests on the data layer',
+    why: 'Mocked database tests passed and prod broke. We learnt. Integration tests hit a real DB.',
+  },
+  {
+    name: 'Playwright visual',
+    check: 'Per-route screenshot diff against a baseline approved by a human',
+    why: 'Catches the regression that "the test passes but the page is broken" can hide.',
+  },
+  {
+    name: 'Hallmark design gate',
+    check: 'Layout, typography, spacing, motion, content density — graded against a rubric',
+    why: 'The bar for "is this AI slop" should be enforced by a checklist, not by hope.',
+  },
+  {
+    name: 'Dependency audit',
+    check: 'npm audit (high/critical fail the build); SBOM generated per release',
+    why: 'Known vulnerabilities are not allowed into prod, even transitively.',
+  },
+  {
+    name: 'Static analysis',
+    check: 'Semgrep + project-specific rules; secret scanning on every commit',
+    why: 'A leaked API key in commit history is a Friday-night incident. Stop it at the gate.',
+  },
+  {
+    name: 'Human review',
+    check: 'A named engineer approves every PR. No auto-merge on any branch that touches prod.',
+    why: 'Automation accelerates engineering; it does not replace accountability.',
+  },
+];
+
+const weekly = [
+  { day: 'Mon', what: 'Sprint kick-off + commitments published to portal' },
+  { day: 'Tue–Thu', what: 'Build · async by default · standup notes posted daily' },
+  { day: 'Fri AM', what: 'Demo of working software (recorded if you can\'t attend live)' },
+  { day: 'Fri PM', what: 'Retrospective + next sprint planned · written summary sent' },
+];
+---
+
+<Layout
+  title="How We Deliver — Methodology | All Webbed Labs"
+  description="The exact process All Webbed Labs uses to deliver software: discovery, architecture, build, quality gates, release and handover. No fluff, no slogans — the artefacts, gates and weekly cadence."
+>
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="meth-hero">
+      <div class="meth-hero-inner">
+        <div class="reveal">
+          <span class="section-label">Methodology</span>
+          <h1 class="meth-title">
+            How we actually deliver.
+          </h1>
+          <p class="meth-lead">
+            This page is the operating manual. Every phase below produces specific, named artefacts; every release passes specific, named gates; every week has a specific, named cadence. Nothing here is aspirational — it is the floor, not the ceiling, of how we run an engagement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phases -->
+    <section class="meth-phases">
+      <div class="meth-phases-inner">
+        <div class="reveal" style="max-width: 720px;">
+          <span class="section-label">The six phases</span>
+          <h2 class="section-heading">Discovery to handover — every engagement, every time.</h2>
+          <p class="section-subheading">
+            We do not invent process per project. The same six phases run every time, sequenced and resourced to the engagement. What changes is depth, not structure.
+          </p>
+        </div>
+
+        <div class="phase-list">
+          {phases.map((phase) => (
+            <article class="phase-card reveal">
+              <header class="phase-card-head">
+                <div class="phase-card-num">{phase.num}</div>
+                <div>
+                  <h3 class="phase-card-title">{phase.title}</h3>
+                  <div class="phase-card-meta">
+                    <span>{phase.duration}</span>
+                  </div>
+                </div>
+              </header>
+              <p class="phase-card-purpose">{phase.purpose}</p>
+              <div class="phase-card-deliverables">
+                <div class="phase-card-deliverables-label">Artefacts you receive</div>
+                <ul>
+                  {phase.deliverables.map((d) => <li>{d}</li>)}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality gates -->
+    <section class="meth-gates">
+      <div class="meth-gates-inner">
+        <div class="reveal" style="max-width: 720px;">
+          <span class="section-label">Quality gates</span>
+          <h2 class="section-heading">Eight automated checks. No deploy passes without them.</h2>
+          <p class="section-subheading">
+            Every PR runs the full gate sequence. A failure on any one of them blocks merge. There is no manual override on gates that touch production.
+          </p>
+        </div>
+
+        <div class="gate-grid">
+          {gates.map((gate, i) => (
+            <div class="gate-card reveal">
+              <div class="gate-card-num">G{String(i + 1).padStart(2, '0')}</div>
+              <h3 class="gate-card-name">{gate.name}</h3>
+              <p class="gate-card-check"><strong>Check:</strong> {gate.check}</p>
+              <p class="gate-card-why"><strong>Why:</strong> {gate.why}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly cadence -->
+    <section class="meth-week">
+      <div class="meth-week-inner">
+        <div class="reveal" style="max-width: 720px;">
+          <span class="section-label">Weekly cadence</span>
+          <h2 class="section-heading">What a week with us looks like.</h2>
+          <p class="section-subheading">
+            Async by default; synchronous when it matters. You always know what was done yesterday, what is shipping this week and what is at risk.
+          </p>
+        </div>
+
+        <div class="week-grid">
+          {weekly.map((w) => (
+            <div class="week-row reveal">
+              <div class="week-day">{w.day}</div>
+              <div class="week-what">{w.what}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="week-promise reveal">
+          <div class="week-promise-label">The promise</div>
+          <p>If a sprint commitment is at risk, you hear it from us by Wednesday at the latest. We do not save bad news for the Friday demo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autonomous tooling -->
+    <section class="meth-overseer">
+      <div class="meth-overseer-inner">
+        <div class="meth-overseer-grid">
+          <div class="reveal-left">
+            <span class="section-label">Autonomous tooling</span>
+            <h2 class="section-heading">Where the speed comes from.</h2>
+            <p>
+              We build with the same Claude-powered orchestration system — internally called <strong>Overseer</strong> — that runs our own infrastructure. Multi-worker dispatch, automated governance (rate limiting, anomaly detection, PII redaction), and Telegram escalation for decisions that need a human.
+            </p>
+            <p>
+              The honest version of what it does: it compresses the parts of software delivery that are pattern work — scaffolding, integration wiring, asset generation, test authoring — so the senior engineering hours go into judgement, architecture and review. Every gate still runs. Every release still has a named human approver.
+            </p>
+            <p>
+              What it does <em>not</em> do: replace a senior engineer's read of a tricky PR, decide an architecture trade-off, or sign off on a release. Those stay human.
+            </p>
+          </div>
+          <div class="reveal-right meth-overseer-stack">
+            <div class="meth-stack-label">Pipeline composition</div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Dispatch</div>
+              <div class="meth-stack-val">Overseer · multi-worker Claude Code</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Governance</div>
+              <div class="meth-stack-val">Kill switch · rate limiter · anomaly detector · PII redactor</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Build</div>
+              <div class="meth-stack-val">Trunk-based · preview deploy per branch</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Visual QA</div>
+              <div class="meth-stack-val">Playwright · per-route screenshot diff</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Design gate</div>
+              <div class="meth-stack-val">Hallmark · rubric-graded layout review</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Escalation</div>
+              <div class="meth-stack-val">Telegram · CTO-level decisions surfaced live</div>
+            </div>
+            <div class="meth-stack-row">
+              <div class="meth-stack-key">Final sign-off</div>
+              <div class="meth-stack-val">Named human engineer · on every release</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Escalation -->
+    <section class="meth-escalation">
+      <div class="meth-escalation-inner">
+        <div class="reveal" style="max-width: 760px;">
+          <span class="section-label">When things go wrong</span>
+          <h2 class="section-heading">Escalation path, written down before you need it.</h2>
+        </div>
+
+        <div class="esc-list">
+          <div class="esc-row reveal">
+            <div class="esc-row-tier">Tier 1</div>
+            <div class="esc-row-body">
+              <strong>Sprint risk surfaced.</strong> Engineer-to-engineer. Logged in the portal and discussed at the next standup. Mitigation drafted same day.
+            </div>
+          </div>
+          <div class="esc-row reveal">
+            <div class="esc-row-tier">Tier 2</div>
+            <div class="esc-row-body">
+              <strong>Sprint commitment at risk.</strong> Delivery lead writes you a same-week summary: what slipped, why, options to recover, recommended path.
+            </div>
+          </div>
+          <div class="esc-row reveal">
+            <div class="esc-row-tier">Tier 3</div>
+            <div class="esc-row-body">
+              <strong>Material scope, cost or timeline change.</strong> Founder-to-founder. Written change order with revised cost and date before we touch the work.
+            </div>
+          </div>
+          <div class="esc-row reveal">
+            <div class="esc-row-tier">Tier 4</div>
+            <div class="esc-row-body">
+              <strong>Production incident.</strong> Roll back first, investigate second. Postmortem within 5 business days, action items tracked to closure.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .meth-hero {
+    padding: 10rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .meth-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .meth-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .meth-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+    max-width: 720px;
+  }
+  .meth-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 740px;
+    margin: 0;
+  }
+
+  /* Section base */
+  .meth-phases, .meth-gates, .meth-week, .meth-overseer, .meth-escalation {
+    padding: 6.5rem 0;
+  }
+  .meth-phases { background: #0f1614; }
+  .meth-gates { background: #0a0f0e; }
+  .meth-week { background: #0f1614; }
+  .meth-overseer { background: #0a0f0e; }
+  .meth-escalation { background: #0f1614; }
+
+  .meth-phases-inner, .meth-gates-inner, .meth-week-inner, .meth-overseer-inner, .meth-escalation-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Phases */
+  .phase-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .phase-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    padding: 2rem 2.25rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .phase-card:hover {
+    border-color: rgba(13,147,115,0.3);
+    transform: translateY(-2px);
+  }
+  .phase-card-head {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .phase-card-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.4rem 0.875rem;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+  }
+  .phase-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .phase-card-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    margin-top: 0.125rem;
+  }
+  .phase-card-purpose {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #cde0da;
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+  }
+  .phase-card-deliverables-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a6359;
+    margin-bottom: 0.75rem;
+  }
+  .phase-card-deliverables ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.625rem 1.5rem;
+  }
+  .phase-card-deliverables li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.55;
+    padding-left: 1.125rem;
+    position: relative;
+  }
+  .phase-card-deliverables li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    background: #0d9373;
+    border-radius: 50%;
+  }
+
+  /* Gates */
+  .gate-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .gate-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.3s ease;
+  }
+  .gate-card:hover { border-color: rgba(13,147,115,0.3); }
+  .gate-card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 0.625rem;
+  }
+  .gate-card-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem;
+  }
+  .gate-card-check, .gate-card-why {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    line-height: 1.6;
+    margin: 0 0 0.5rem;
+  }
+  .gate-card-check strong, .gate-card-why strong {
+    color: #cde0da;
+    font-weight: 700;
+  }
+
+  /* Weekly cadence */
+  .week-grid {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .week-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid #1e2d28;
+    background: #0a0f0e;
+  }
+  .week-row:last-child { border-bottom: none; }
+  .week-day {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #0d9373;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .week-what {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #cde0da;
+    line-height: 1.55;
+  }
+  .week-promise {
+    margin-top: 2rem;
+    background: rgba(13,147,115,0.05);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-left: 3px solid #0d9373;
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.75rem;
+  }
+  .week-promise-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin-bottom: 0.5rem;
+  }
+  .week-promise p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #cde0da;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Overseer / autonomous tooling */
+  .meth-overseer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .meth-overseer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+  .meth-overseer p strong { color: #cde0da; }
+  .meth-overseer p em { color: #0d9373; font-style: normal; font-weight: 600; }
+  .meth-overseer-stack {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 1.75rem;
+  }
+  .meth-stack-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a6359;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .meth-stack-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    padding: 0.625rem 0;
+    border-bottom: 1px dashed #1e2d28;
+  }
+  .meth-stack-row:last-child { border-bottom: none; }
+  .meth-stack-key {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4a6359;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .meth-stack-val {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #cde0da;
+    line-height: 1.5;
+  }
+
+  /* Escalation */
+  .esc-list {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .esc-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    align-items: start;
+  }
+  .esc-row-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    padding: 0.3rem 0.625rem;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(13,147,115,0.2);
+  }
+  .esc-row-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.65;
+  }
+  .esc-row-body strong {
+    color: #cde0da;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .meth-overseer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .phase-card-deliverables ul { grid-template-columns: 1fr; }
+    .gate-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .meth-hero { padding: 8rem 0 4rem; }
+    .meth-phases, .meth-gates, .meth-week, .meth-overseer, .meth-escalation { padding: 4rem 0; }
+    .meth-phases-inner, .meth-gates-inner, .meth-week-inner, .meth-overseer-inner, .meth-escalation-inner {
+      padding: 0 1.25rem;
+    }
+    .phase-card { padding: 1.5rem 1.5rem; }
+    .week-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 1rem 1.25rem; }
+    .esc-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    .esc-row-tier { justify-self: start; }
+  }
+</style>
