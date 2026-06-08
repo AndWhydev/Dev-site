@@ -1,0 +1,5 @@
+{
+  "buildCommand": "echo 'Pre-built by GitHub Actions — no build step.'",
+  "installCommand": "echo 'No install needed.'",
+  "outputDirectory": "."
+}
