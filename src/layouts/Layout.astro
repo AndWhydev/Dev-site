@@ -252,19 +252,42 @@ const schema = {
     </style>
 
     <script>
-      // Page loader — only on first visit, not on view transitions
+      // Page loader close logic.
+      //
+      // The loader is rendered into the layout, so it appears on every page —
+      // including pages swapped in by Astro's ClientRouter. Two distinct paths
+      // need to close it:
+      //
+      //   1. Initial hard load: wait for window.load, then add .hidden (with a
+      //      600ms delay so the loader animation doesn't snap shut mid-frame).
+      //   2. ClientRouter swap: window.load never refires after a transition,
+      //      so the layout's freshly-painted loader would stay visible forever.
+      //      The astro:after-swap listener kills it on every navigation.
+      //
+      // Returning sessions skip the splash entirely (display:none, no animation).
       const isFirstVisit = !sessionStorage.getItem('awl_visited');
+      sessionStorage.setItem('awl_visited', '1');
+
       if (!isFirstVisit) {
         const loader = document.getElementById('page-loader');
         if (loader) loader.style.display = 'none';
+      } else {
+        const closeLoader = () => {
+          setTimeout(() => {
+            const loader = document.getElementById('page-loader');
+            if (loader) loader.classList.add('hidden');
+          }, 600);
+        };
+        if (document.readyState === 'complete') closeLoader();
+        else window.addEventListener('load', closeLoader, { once: true });
       }
-      sessionStorage.setItem('awl_visited', '1');
 
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const loader = document.getElementById('page-loader');
-          if (loader) loader.classList.add('hidden');
-        }, 600);
+      // ClientRouter navigations swap a fresh layout (including a fresh
+      // loader DOM node) into the page. window.load won't fire again, so
+      // hide the new node immediately on every swap.
+      document.addEventListener('astro:after-swap', () => {
+        const loader = document.getElementById('page-loader');
+        if (loader) loader.style.display = 'none';
       });
 
       // Scroll reveal — runs on initial load and after every view transition
