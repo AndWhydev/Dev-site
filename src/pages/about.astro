@@ -270,17 +270,19 @@ const values = [
   }
   .about-title {
     font-family: 'Sora', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    /* Min lowered so "All Webbed Labs." fits a 360px phone without clipping. */
+    font-size: clamp(1.875rem, 6.5vw, 4.5rem);
     font-weight: 800;
     color: white;
-    line-height: 1.08;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
     max-width: 700px;
+    overflow-wrap: break-word;
   }
   .about-lead {
     font-family: 'Sora', sans-serif;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 500;
     color: #cde0da;
     max-width: 720px;
@@ -291,14 +293,16 @@ const values = [
     border-left: 2px solid #0d9373;
     background: rgba(13,147,115,0.05);
     border-radius: 0 10px 10px 0;
+    overflow-wrap: break-word;
   }
   .about-sub {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.125rem;
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
     color: #8aa09a;
     max-width: 640px;
     line-height: 1.7;
     margin-bottom: 0;
+    overflow-wrap: break-word;
   }
 
   /* Story */

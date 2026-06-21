@@ -22,6 +22,9 @@
 
   html {
     scroll-behavior: smooth;
+    /* Pair with body overflow-x: hidden so neither root element can scroll
+       horizontally. Some browsers honour body, some honour html — set both. */
+    overflow-x: hidden;
   }
 
   body {
@@ -34,11 +37,27 @@
     /* Defensive: guarantees no horizontal scroll even if a child accidentally
        overflows the viewport on small screens. */
     overflow-x: hidden;
+    /* Hard cap on width so an over-wide child never enables a sideways viewport. */
+    max-width: 100vw;
   }
 
+  /* Universal break-word safety on long-form text containers. Stops large
+     hero headings, code-style strings (ABNs, URLs) and long unbroken words
+     from pushing past the viewport on narrow phones. */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', sans-serif;
     line-height: 1.1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  p, li, a, span, td, th {
+    overflow-wrap: break-word;
+  }
+
+  /* Lock down media + iframes to their container width on mobile — by default
+     these can carry intrinsic widths that exceed the parent. */
+  img, video, iframe, svg {
+    max-width: 100%;
   }
 
   ::-webkit-scrollbar {
@@ -206,16 +225,20 @@
 
   .section-heading {
     font-family: 'Sora', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    /* Min lowered from 2rem → 1.5rem so headings comfortably fit a 360px
+       phone viewport without truncating or pushing horizontal overflow. */
+    font-size: clamp(1.5rem, 5vw, 3rem);
     font-weight: 700;
     color: white;
     margin-bottom: 1.25rem;
-    line-height: 1.1;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    overflow-wrap: break-word;
   }
 
   .section-subheading {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     color: #8aa09a;
     max-width: 600px;
     line-height: 1.7;
