@@ -4,34 +4,32 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroWebGL from '../components/HeroWebGL.astro';
 import TrustBar from '../components/TrustBar.astro';
-import OurStory from '../components/OurStory.astro';
+import DemosShowcase from '../components/DemosShowcase.astro';
 import LiveAppDemo from '../components/LiveAppDemo.astro';
-import ProductShowcase from '../components/ProductShowcase.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
-import TechStack from '../components/TechStack.astro';
-import WhyLabs from '../components/WhyLabs.astro';
 import Process from '../components/Process.astro';
-import IndustryShowcase from '../components/IndustryShowcase.astro';
-import AISpotlight from '../components/AISpotlight.astro';
-import Web3Spotlight from '../components/Web3Spotlight.astro';
-import ROICalculator from '../components/ROICalculator.astro';
+import TeamCallout from '../components/TeamCallout.astro';
 import CTABanner from '../components/CTABanner.astro';
 import AutonomousAISection from '../components/sections/AutonomousAISection.astro';
-/* BlogPreview, StatsBar, Testimonials, and FeaturedCaseStudies all
-   removed and deleted from the codebase — each contained fabricated
-   client names, invented case-study metrics, or unverifiable stats.
-   They will only return alongside real, signed-off client work. */
+/* Home page trimmed to the credibility spine: hero → trust → autonomy
+   pitch → live craft (demos) → real shipped app → services → process → CTA.
+   OurStory, IndustryShowcase, TechStack, WhyLabs, AISpotlight,
+   Web3Spotlight, ProductShowcase and ROICalculator all live on their own
+   pages and are reachable via the header nav — duplicating them on home
+   diluted every other proof signal. */
 ---
 
 <Layout
   title="All Webbed Labs — Enterprise Software Development Australia"
-  description="Australian software development partner. Custom apps, AI tools, Web3, cloud infrastructure and digital transformation. The tech arm of All Webbed Up."
+  description="Australian software development partner. Custom apps, AI tools, Web3, cloud infrastructure and digital transformation. Sister company to All Webbed Up."
 >
   <Header />
   <main>
     <HeroWebGL />
 
     <TrustBar />
+
+    <TeamCallout />
 
     <AutonomousAISection />
 
@@ -64,24 +62,17 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
     <section class="home-entity" aria-label="About All Webbed Labs">
       <div class="home-entity-inner reveal">
         <p>
-          <strong>All Webbed Labs</strong> is the enterprise AI and software development arm of
-          <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>,
-          a Sydney based agency building autonomous systems for Australian businesses.
+          <strong>All Webbed Labs</strong> is a Sydney based enterprise AI and software development company.
+          Sister company to <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>,
+          the branding and marketing agency we deliver client work alongside.
         </p>
       </div>
     </section>
 
-    <OurStory />
+    <DemosShowcase />
     <LiveAppDemo />
-    <ProductShowcase />
     <ServicesGrid />
-    <IndustryShowcase />
-    <TechStack />
-    <WhyLabs />
     <Process />
-    <AISpotlight />
-    <Web3Spotlight />
-    <ROICalculator />
     <CTABanner />
   </main>
   <Footer />

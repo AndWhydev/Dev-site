@@ -1,0 +1,537 @@
+---
+/**
+ * Team + partner network.
+ *
+ * Honesty constraint (load-bearing for the /trust page promise):
+ *   - Every bio states only what is independently verifiable or what the
+ *     person has personally signed off on. No invented years of experience,
+ *     no invented past clients, no invented credentials.
+ *   - Partners (the bottom strip) are listed only with their consent and
+ *     framed as specialist affiliates, not employees.
+ *
+ * Photos: each member is responsible for the photo we display. We do not
+ * AI-generate likenesses of real people.
+ */
+
+type Person = {
+  name: string;
+  role: string;
+  bio: string;
+  photo?: string;     // path under /public, e.g. /team/andy-taleb.webp
+  silhouette?: boolean; // render the stylised developer silhouette instead of a photo or initials
+  initials: string;   // fallback when no photo/silhouette
+  accent?: 'green' | 'violet' | 'amber';
+  links?: { label: string; href: string }[];
+};
+
+const team: Person[] = [
+  {
+    name: 'Andy Taleb',
+    role: 'Founder & Developer',
+    bio: 'Andy founded All Webbed Labs to focus purely on enterprise software and AI, working alongside its sister company All Webbed Up on client engagements. He is hands-on across architecture, code review and every commercial conversation — the person you brief is the person who builds.',
+    photo: '/team/andy-taleb.webp',
+    initials: 'AT',
+    accent: 'green',
+  },
+  {
+    name: 'Jack Stacey',
+    role: 'Senior Developer',
+    bio: 'Jack is the senior developer on the Labs delivery team. He works across the full stack we use to build client systems and helps lead the engineering work day to day, with Andy on the harder architecture calls.',
+    silhouette: true,
+    initials: 'JS',
+    accent: 'violet',
+  },
+  {
+    name: 'Hyacinth Soriano',
+    role: 'Brand & Design',
+    bio: 'Hyacinth leads brand and design at the Labs. She brings more than a decade in branding to client work — brand systems, visual identity and the interface design that goes on top of what we build.',
+    photo: '/team/hyacinth-soriano.png',
+    initials: 'HS',
+    accent: 'amber',
+  },
+];
+
+const partners: Person[] = [
+  {
+    name: 'Jared Bachman',
+    role: 'Servers & IT Installation',
+    bio: 'Owner of Commercial Electrical Services Sydney. We bring Jared in when a client engagement needs on-site server, rack or network installation work delivered alongside the software.',
+    photo: '/team/jared-bachman.png',
+    initials: 'JB',
+    accent: 'green',
+    links: [{ label: 'Commercial Electrical Services', href: 'https://commercialelectrician.net.au' }],
+  },
+  {
+    name: 'Troy Schoenfisch',
+    role: 'R&D Tax & Innovation Rebates',
+    bio: 'Accountant and financial mentor at Crescendo Strategy. We refer clients to Troy when they want to claim the Australian R&D Tax Incentive on a software build we deliver — he comes in early enough to structure the project documentation for an eventual claim.',
+    photo: '/team/troy-schoenfisch.png',
+    initials: 'TS',
+    accent: 'violet',
+    links: [{ label: 'troyschoenfisch.com', href: 'https://troyschoenfisch.com/' }],
+  },
+  {
+    name: 'Elena Nelyubina',
+    role: 'Commercial & IT Law',
+    bio: 'Director and Principal Lawyer at Square Legal. Elena handles the commercial side of software engagements — client contracts, IT licensing, privacy and the IP assignment clauses inside our delivery agreements. She came to law from an IT contracts management background.',
+    photo: '/team/elena-nelyubina.png',
+    initials: 'EN',
+    accent: 'amber',
+    links: [
+      { label: 'Square Legal', href: 'https://squarelegal.com.au/our-people/' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/elena-nelyubina/' },
+    ],
+  },
+];
+---
+
+<section class="team-section" id="team">
+  <div class="team-inner">
+
+    <!-- Header -->
+    <div class="team-header reveal">
+      <span class="section-label">The team</span>
+      <h2 class="section-heading">A small core team, backed by specialist partners.</h2>
+      <p class="section-subheading">
+        Labs runs as a senior-only delivery team. For the specialist work around a software engagement — server installation, R&amp;D tax structuring, IP — we bring in named partners we have worked with personally.
+      </p>
+    </div>
+
+    <!-- Core team -->
+    <div class="team-grid">
+      {team.map((p, i) => (
+        <article class={`team-card reveal stagger-${i + 1}`}>
+          <div class={`team-photo accent-${p.accent ?? 'green'}`}>
+            {p.photo ? (
+              <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" />
+            ) : p.silhouette ? (
+              <div class="team-silhouette" role="img" aria-label={`Stylised silhouette representing ${p.name}`}>
+                <svg viewBox="0 0 132 132" width="100%" height="100%" aria-hidden="true">
+                  <defs>
+                    <radialGradient id={`silbg-${p.initials}`} cx="50%" cy="40%" r="65%">
+                      <stop offset="0%" stop-color="rgba(139,92,246,0.32)"/>
+                      <stop offset="60%" stop-color="rgba(139,92,246,0.06)"/>
+                      <stop offset="100%" stop-color="rgba(10,15,14,0)"/>
+                    </radialGradient>
+                    <linearGradient id={`silfig-${p.initials}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#b9a4ff"/>
+                      <stop offset="100%" stop-color="#5b3fbf"/>
+                    </linearGradient>
+                  </defs>
+                  {/* Soft glow disc behind the figure */}
+                  <circle cx="66" cy="58" r="58" fill={`url(#silbg-${p.initials})`}/>
+                  {/* Bust silhouette — head + shoulders, no facial features */}
+                  <g fill={`url(#silfig-${p.initials})`}>
+                    <circle cx="66" cy="50" r="20"/>
+                    <path d="M22,132 C22,98 40,80 66,80 C92,80 110,98 110,132 Z"/>
+                  </g>
+                  {/* Tiny code-bracket mark embedded in the chest — signals 'developer' */}
+                  <g stroke="rgba(255,255,255,0.65)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M56 108 L50 114 L56 120"/>
+                    <path d="M76 108 L82 114 L76 120"/>
+                    <path d="M62 122 L70 106"/>
+                  </g>
+                </svg>
+              </div>
+            ) : (
+              <span class="team-initials" aria-hidden="true">{p.initials}</span>
+            )}
+          </div>
+          <h3 class="team-name">{p.name}</h3>
+          <p class="team-role">{p.role}</p>
+          <p class="team-bio">{p.bio}</p>
+          {p.links && p.links.length > 0 && (
+            <div class="team-links">
+              {p.links.map((l) => (
+                <a href={l.href} target="_blank" rel="noopener noreferrer">
+                  {l.label}
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M9 7h8v8"/></svg>
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <!-- Partner network -->
+    <div class="partners-block">
+      <div class="partners-head reveal">
+        <span class="section-label small">Specialist partner network</span>
+        <h3 class="partners-heading">Named specialists we bring in by engagement need.</h3>
+      </div>
+
+      <div class="partners-grid">
+        {partners.map((p, i) => (
+          <article class={`partner-card reveal stagger-${i + 1}`}>
+            <div class="partner-card-head">
+              <div class={`partner-photo accent-${p.accent ?? 'green'}`}>
+                {p.photo ? (
+                  <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" />
+                ) : (
+                  <span class="partner-initials" aria-hidden="true">{p.initials}</span>
+                )}
+              </div>
+              <div class="partner-card-text">
+                <h4 class="partner-name">{p.name}</h4>
+                <p class="partner-role">{p.role}</p>
+              </div>
+              <span class="partner-pill">Partner</span>
+            </div>
+            <p class="partner-bio">{p.bio}</p>
+            {p.links && p.links.length > 0 && (
+              <div class="partner-links">
+                {p.links.map((l) => (
+                  <a href={l.href} target="_blank" rel="noopener noreferrer">
+                    {l.label}
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M9 7h8v8"/></svg>
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Hiring footer -->
+    <div class="team-join reveal">
+      <p>Looking to join us? We hire experienced engineers who care about honest client work. <a href="/careers">See open roles →</a></p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding: 7rem 0;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .team-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1100px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(13,147,115,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .team-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  /* Header */
+  .team-header {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  /* ── Core team grid ─────────────────────── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem 2rem;
+    transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s ease;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  }
+  .team-card:hover {
+    border-color: rgba(13,147,115,0.4);
+    transform: translateY(-3px);
+    box-shadow:
+      0 26px 60px rgba(0,0,0,0.5),
+      0 0 30px rgba(13,147,115,0.15);
+  }
+
+  /* Photo / initial avatar */
+  .team-photo {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(155deg, #1a2620 0%, #0a0f0e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .team-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .team-photo.accent-green   { box-shadow: 0 0 0 2px rgba(13,147,115,0.35), 0 0 28px rgba(13,147,115,0.18); }
+  .team-photo.accent-violet  { box-shadow: 0 0 0 2px rgba(139,92,246,0.32), 0 0 28px rgba(139,92,246,0.15); }
+  .team-photo.accent-amber   { box-shadow: 0 0 0 2px rgba(245,158,11,0.32), 0 0 28px rgba(245,158,11,0.15); }
+
+  .team-initials {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Stylised developer silhouette — used when a real engineer prefers not to
+     show their face. Clearly illustrated, not a photo, never a stand-in face. */
+  .team-silhouette {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background:
+      radial-gradient(ellipse at 50% 35%, rgba(139,92,246,0.08), transparent 65%),
+      linear-gradient(160deg, #14101f 0%, #0a0810 100%);
+  }
+  .team-silhouette svg { display: block; }
+
+  /* Text */
+  .team-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .team-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin: 0 0 1rem;
+  }
+  .team-bio {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #8aa09a;
+    margin: 0;
+  }
+  .team-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.35);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .team-links a:hover { color: #10b88a; border-color: #10b88a; }
+
+  /* ── Partners block ───────────────────── */
+  .partners-block {
+    margin-top: 5rem;
+    padding-top: 3.5rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .partners-head {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+  .section-label.small {
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+  }
+  .partners-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.015em;
+    margin: 0.625rem 0 0;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .partner-card {
+    background: #0c1310;
+    border: 1px solid #1a2620;
+    border-radius: 14px;
+    padding: 1.5rem 1.5rem 1.625rem;
+    transition: border-color 0.3s ease;
+  }
+  .partner-card:hover { border-color: rgba(13,147,115,0.3); }
+
+  .partner-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 0.875rem;
+  }
+  .partner-photo {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(155deg, #1a2620 0%, #0a0f0e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .partner-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .partner-photo.accent-green   { box-shadow: 0 0 0 1.5px rgba(13,147,115,0.35); }
+  .partner-photo.accent-violet  { box-shadow: 0 0 0 1.5px rgba(139,92,246,0.35); }
+  .partner-photo.accent-amber   { box-shadow: 0 0 0 1.5px rgba(245,158,11,0.35); }
+  .partner-initials {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .partner-card-text { min-width: 0; flex: 1; }
+  .partner-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.005em;
+  }
+  .partner-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin: 0;
+  }
+  .partner-pill {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(205,224,218,0.55);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #1a2620;
+    padding: 0.18rem 0.5rem;
+    border-radius: 50px;
+    flex-shrink: 0;
+  }
+  .partner-bio {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #8aa09a;
+    margin: 0;
+  }
+  .partner-links {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .partner-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .partner-links a:hover { color: #10b88a; border-color: #10b88a; }
+
+  /* Hiring */
+  .team-join {
+    margin: 4rem auto 0;
+    max-width: 720px;
+    text-align: center;
+  }
+  .team-join p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #6b8079;
+    margin: 0;
+  }
+  .team-join a {
+    color: #0d9373;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(13,147,115,0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .team-join a:hover { color: #10b88a; border-color: #10b88a; }
+
+  /* ── Responsive ─────────────────────────── */
+  @media (max-width: 1024px) {
+    .team-grid, .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .team-grid > :last-child, .partners-grid > :last-child {
+      grid-column: 1 / -1;
+      max-width: 520px;
+      justify-self: center;
+      width: 100%;
+    }
+  }
+  @media (max-width: 640px) {
+    .team-section { padding: 5rem 0; }
+    .team-inner { padding: 0 1.25rem; }
+    .team-header { margin-bottom: 2.5rem; }
+    .team-grid, .partners-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .team-grid > :last-child, .partners-grid > :last-child { max-width: 100%; }
+    .team-card { padding: 2rem 1.5rem 1.75rem; }
+    .team-photo { width: 112px; height: 112px; margin-bottom: 1rem; }
+    .partners-block { margin-top: 3.5rem; padding-top: 2.5rem; }
+    .partners-heading { font-size: 1.25rem; }
+  }
+</style>

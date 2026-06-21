@@ -5,16 +5,26 @@
  * record (ASIC, ABR) or from the engagement contract itself. Nothing here
  * makes a claim about *who* we work with — only about *how* we work.
  */
+/**
+ * Verifiable items get a `href` — the value becomes a real link that opens
+ * the independent source of truth (ABR, Google Maps, internal NDA PDF).
+ * Items without `href` render as plain text. Anything we make clickable
+ * must be checkable in one click; we will not link to our own marketing.
+ */
 const items = [
   {
     label: 'ABN',
-    value: '86 666 254 771',
-    detail: 'All Webbed Up Pty Ltd · parent company',
+    value: '32 698 684 105',
+    detail: 'AW Labs Pty Ltd · trading as All Webbed Labs',
+    href: 'https://abr.business.gov.au/ABN/View?id=32698684105',
+    hrefLabel: 'Verify on the Australian Business Register',
   },
   {
     label: 'Registered',
     value: 'Sydney, NSW',
     detail: '204 Birdwood Rd, Georges Hall 2198',
+    href: 'https://www.google.com/maps/search/?api=1&query=204+Birdwood+Rd+Georges+Hall+NSW+2198',
+    hrefLabel: 'Open the registered office on Google Maps',
   },
   {
     label: 'Delivery',
@@ -30,6 +40,8 @@ const items = [
     label: 'Engagement',
     value: 'NDA-first',
     detail: 'Mutual NDA template available before scoping',
+    href: '/docs/mutual-nda.pdf',
+    hrefLabel: 'Download the mutual NDA template',
   },
   {
     label: 'Tax position',
@@ -45,7 +57,22 @@ const items = [
       {items.map((item) => (
         <div class="trust-item">
           <div class="trust-item-label">{item.label}</div>
-          <div class="trust-item-value">{item.value}</div>
+          <div class="trust-item-value">
+            {item.href ? (
+              <a
+                href={item.href}
+                class="trust-item-link"
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                aria-label={item.hrefLabel}
+              >
+                {item.value}
+                <svg class="trust-item-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l10-10M9 7h8v8"/></svg>
+              </a>
+            ) : (
+              <>{item.value}</>
+            )}
+          </div>
           <div class="trust-item-detail">{item.detail}</div>
         </div>
       ))}
@@ -116,6 +143,27 @@ const items = [
     letter-spacing: -0.005em;
     line-height: 1.25;
   }
+  .trust-item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.45);
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+  }
+  .trust-item-link:hover {
+    color: #10b88a;
+    border-color: #10b88a;
+    gap: 0.45rem;
+  }
+  .trust-item-arrow {
+    color: #0d9373;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .trust-item-link:hover .trust-item-arrow { transform: translate(2px, -2px); }
 
   .trust-item-detail {
     font-family: 'DM Sans', sans-serif;

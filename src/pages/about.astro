@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TechStack from '../components/TechStack.astro';
+import TeamSection from '../components/TeamSection.astro';
 
 const values = [
   {
@@ -32,7 +33,7 @@ const values = [
 
 <Layout
   title="About All Webbed Labs — Our Story & Values | Australian AI Software Agency"
-  description="All Webbed Labs is the AI and software development arm of All Webbed Up — a Sydney based agency building autonomous systems for Australian businesses. Read our story and values."
+  description="All Webbed Labs is a Sydney based enterprise AI and software development company. Sister to All Webbed Up, the branding and marketing agency we work alongside. Read our story, team and values."
 >
   <Header />
   <main>
@@ -47,7 +48,7 @@ const values = [
             <span class="gradient-text">All Webbed Labs.</span>
           </h1>
           <p class="about-lead">
-            All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.
+            All Webbed Labs is a Sydney based enterprise AI and software development company. Sister to All Webbed Up, the branding and marketing agency we deliver client work alongside.
           </p>
           <p class="about-sub">
             Software engineers, AI specialists and technology strategists — built around a single belief:
@@ -56,6 +57,11 @@ const values = [
         </div>
       </div>
     </section>
+
+    <!-- Team + partner network — lifted to the top because /about is the
+         destination of the header "Team" link. The narrative sections (Story,
+         Values, Culture, Philosophy, Location, Tech Stack) continue below. -->
+    <TeamSection />
 
     <!-- Story -->
     <section class="story-section">
@@ -114,8 +120,8 @@ const values = [
             </div>
             <div class="culture-card">
               <div class="cc-icon">🇦🇺</div>
-              <div class="cc-label">100% Australian</div>
-              <div class="cc-desc">AEST timezone, local compliance knowledge, real accountability.</div>
+              <div class="cc-label">Australian entity</div>
+              <div class="cc-desc">Sydney-registered Pty Ltd, AEST hours, local compliance knowledge.</div>
             </div>
             <div class="culture-card">
               <div class="cc-icon">📖</div>
@@ -165,23 +171,6 @@ const values = [
               <div class="phil-techs"><span>OpenAI</span><span>Claude</span><span>LangChain</span><span>Custom ML</span></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team -->
-    {/* Team grid removed — previous content showed 'Team Member Name'
-        placeholders with TEAM_PLACEHOLDER bios. Will return once real
-        team profiles, photos and LinkedIn URLs are confirmed. */}
-    <section class="team-section">
-      <div class="team-inner">
-        <div class="team-header reveal">
-          <span class="section-label">The Team</span>
-          <h2 class="section-heading">A small team of senior engineers.</h2>
-          <p class="section-subheading">All Webbed Labs is the tech arm of All Webbed Up — a Sydney based agency. Our team profiles will appear here as we confirm them publicly. In the meantime, every project you engage us on is owned end-to-end by the founder.</p>
-        </div>
-        <div class="team-join reveal">
-          <p>Looking to join us? We hire experienced engineers who care about honest client work. <a href="/careers">See open roles →</a></p>
         </div>
       </div>
     </section>

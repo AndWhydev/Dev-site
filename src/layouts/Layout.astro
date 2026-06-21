@@ -28,7 +28,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 // Canonical brand definition — entity-locking sentence used site-wide for AI search (GEO).
 // Keep this string identical wherever it appears across the site.
 export const BRAND_DEFINITION =
-  'All Webbed Labs is the enterprise AI and software development arm of All Webbed Up, a Sydney based agency building autonomous systems for Australian businesses.';
+  'All Webbed Labs is a Sydney based enterprise AI and software development company. Sister company to All Webbed Up, the branding and marketing agency we deliver client work alongside.';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -68,12 +68,12 @@ const schema = {
     postalCode: '2198',
     addressCountry: 'AU',
   },
-  parentOrganization: {
-    '@type': 'Organization',
-    name: 'All Webbed Up',
-    url: 'https://allwebbedup.com.au',
-  },
+  // Sister-company link — All Webbed Up Pty Ltd is a separate legal entity with shared
+  // ownership but no parent/subsidiary relationship. Schema.org has no "sister organisation"
+  // type, so we surface the affiliation via `sameAs` plus a separately-described Organization
+  // on the parent property only if a true subsidiary relationship is established later.
   sameAs: [
+    'https://allwebbedup.com.au',
     'https://linkedin.com/company/allwebbedup',
     'https://facebook.com/allwebbedup',
     'https://instagram.com/allwebbedup',
@@ -265,10 +265,20 @@ const schema = {
       //      The astro:after-swap listener kills it on every navigation.
       //
       // Returning sessions skip the splash entirely (display:none, no animation).
+      const noAnim = /[?&]noanim=1\b/.test(location.search);
       const isFirstVisit = !sessionStorage.getItem('awl_visited');
       sessionStorage.setItem('awl_visited', '1');
 
-      if (!isFirstVisit) {
+      // Screenshot/debugging escape hatch: when ?noanim=1 is on the URL, also
+      // shrink any 100vh hero blocks so a full-page capture can show what is
+      // below the fold without the hero swallowing the viewport.
+      if (noAnim) {
+        const s = document.createElement('style');
+        s.textContent = '.awl-hero,.hero-section,[class*="hero"]{min-height:auto!important}#page-loader{display:none!important}';
+        document.head.appendChild(s);
+      }
+
+      if (noAnim || !isFirstVisit) {
         const loader = document.getElementById('page-loader');
         if (loader) loader.style.display = 'none';
       } else {
@@ -290,8 +300,18 @@ const schema = {
         if (loader) loader.style.display = 'none';
       });
 
-      // Scroll reveal — runs on initial load and after every view transition
+      // Scroll reveal — runs on initial load and after every view transition.
+      // Honours `?noanim=1` query param: forces every reveal element visible
+      // immediately and skips the observer. Used for headless screenshot runs
+      // and visual debugging where animations fight the capture.
       function initReveal() {
+        const forceShow = /[?&]noanim=1\b/.test(location.search);
+        if (forceShow) {
+          document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+            el.classList.add('visible');
+          });
+          return;
+        }
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
