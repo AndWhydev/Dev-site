@@ -7,6 +7,7 @@ const documents = [
   {
     title: 'Mutual NDA',
     description: 'A standard mutual non-disclosure agreement. We sign this before any commercial detail changes hands so you can speak freely about your business, roadmap and competitive position.',
+    notice: 'If you would prefer the NDA signed, please email it back to us before our call or meeting. Otherwise, by continuing with our discussion, we both agree to the terms of this mutual NDA.',
     filename: 'mutual-nda.pdf',
     href: '/client-pack/mutual-nda.pdf',
     size: '12 KB',
@@ -90,6 +91,12 @@ const documents = [
                     Download
                   </a>
                 </div>
+                {doc.notice && (
+                  <p class="doc-notice">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <span>{doc.notice}</span>
+                  </p>
+                )}
               </div>
             </article>
           ))}
@@ -320,6 +327,27 @@ const documents = [
     border-color: rgba(13,147,115,0.45);
     color: white;
     background: rgba(13,147,115,0.05);
+  }
+
+  .doc-notice {
+    margin: 1.25rem 0 0;
+    padding: 0.875rem 1rem;
+    background: rgba(13,147,115,0.06);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #cde0da;
+    line-height: 1.6;
+    max-width: 640px;
+  }
+  .doc-notice svg {
+    color: #0d9373;
+    flex-shrink: 0;
+    margin-top: 3px;
   }
 
   /* Next */
