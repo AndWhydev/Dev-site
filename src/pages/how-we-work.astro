@@ -1,0 +1,413 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const documents = [
+  {
+    title: 'Capability Showcase',
+    description: 'Selected case studies — what we have built, the stack we used and the outcomes we delivered. The single document to read if you want a feel for the calibre of work.',
+    filename: 'awl-capability-showcase.pdf',
+    href: '/client-pack/awl-capability-showcase.pdf',
+    size: '149 KB',
+    pages: null,
+    order: '01',
+  },
+  {
+    title: 'How This Works',
+    description: 'Our engagement process from first call to handover — discovery, scoping, build cadence, quality gates and what we hand over at the end. Read this if you want to know exactly what working with us looks like.',
+    filename: 'how-this-works.pdf',
+    href: '/client-pack/how-this-works.pdf',
+    size: '10 KB',
+    pages: null,
+    order: '02',
+  },
+  {
+    title: 'Mutual NDA',
+    description: 'A standard mutual non-disclosure agreement. We sign this before any commercial detail changes hands so you can speak freely about your business, roadmap and competitive position.',
+    filename: 'mutual-nda.pdf',
+    href: '/client-pack/mutual-nda.pdf',
+    size: '12 KB',
+    pages: null,
+    order: '03',
+  },
+];
+---
+
+<Layout
+  title="How We Work — Capability Showcase, Process & NDA | All Webbed Labs"
+  description="Download our capability showcase, engagement process document and mutual NDA. Everything we share with prospective clients after a discovery call."
+  noindex={true}
+>
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="hwk-hero">
+      <div class="hwk-hero-inner">
+        <div class="reveal">
+          <span class="section-label">Client Resources</span>
+          <h1 class="hwk-title">
+            Everything we send<br />
+            <span class="gradient-text">after a discovery call.</span>
+          </h1>
+          <p class="hwk-lead">
+            Three documents you would normally receive by email — published here so you can grab them whenever you need them, share them internally and reference them while we scope your engagement.
+          </p>
+          <p class="hwk-sub">
+            If you have already spoken with us, this is the pack we promised to send through. If you have not, the documents below give a clear picture of what we build, how we work and the terms we operate under.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents -->
+    <section class="docs-section">
+      <div class="docs-inner">
+        <div class="docs-list">
+          {documents.map((doc, i) => (
+            <article class={`doc-card reveal stagger-${i + 1}`}>
+              <div class="doc-order">{doc.order}</div>
+              <div class="doc-body">
+                <div class="doc-meta">
+                  <svg class="doc-pdf-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                  <span class="doc-type">PDF</span>
+                  <span class="doc-divider">·</span>
+                  <span class="doc-size">{doc.size}</span>
+                </div>
+                <h2 class="doc-title">{doc.title}</h2>
+                <p class="doc-description">{doc.description}</p>
+                <div class="doc-actions">
+                  <a href={doc.href} target="_blank" rel="noopener" class="btn-primary doc-btn">
+                    Open PDF
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                  </a>
+                  <a href={doc.href} download={doc.filename} class="doc-btn-secondary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What happens next -->
+    <section class="next-section">
+      <div class="next-inner">
+        <div class="next-grid">
+          <div class="reveal-left">
+            <span class="section-label">What Happens Next</span>
+            <h2 class="section-heading">The Path from Here to Signed</h2>
+            <p>If the capability showcase and process document hold up to your standards, the next step is a working session. We use it to translate your brief into a concrete scope, a fixed timeline and an honest price.</p>
+            <p>Before that session, we sign the mutual NDA so you can share anything material to the conversation — roadmaps, competitive context, internal politics, the parts of the problem your team has already tried.</p>
+            <p>From a signed NDA to a costed proposal is typically five to ten working days, depending on how much surface area we need to map.</p>
+          </div>
+          <div class="next-steps reveal-right stagger-2">
+            <div class="next-step">
+              <div class="ns-num">1</div>
+              <div class="ns-body">
+                <strong>Read the pack</strong>
+                <span>Capability showcase, process doc, NDA. About fifteen minutes total.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">2</div>
+              <div class="ns-body">
+                <strong>Sign the NDA</strong>
+                <span>Mutual, no scope, no commitment — purely so we can talk freely.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">3</div>
+              <div class="ns-body">
+                <strong>Scoping session</strong>
+                <span>Sixty to ninety minutes. We turn your brief into a surface map and risk register.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">4</div>
+              <div class="ns-body">
+                <strong>Costed proposal</strong>
+                <span>Fixed price or time-and-materials, deliverables, milestones, payment schedule.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ask CTA -->
+    <section class="ask-section">
+      <div class="ask-inner">
+        <div class="reveal" style="text-align: center; max-width: 760px; margin: 0 auto;">
+          <span class="section-label">Questions on Past Work</span>
+          <h2 class="section-heading">Want Detail on a Specific Project?</h2>
+          <p class="ask-copy">The capability showcase covers the highlights. If you want the engineering decisions behind a particular project, a reference from a past client, or to talk to the lead engineer who delivered it — just ask. We would rather walk you through it directly than dress it up in marketing copy.</p>
+          <div class="ask-actions">
+            <a href="/contact" class="btn-primary">Book a Call</a>
+            <a href="mailto:labs@allwebbedup.com.au" class="btn-outline">Email Us Directly</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hwk-hero {
+    padding: 10rem 0 6rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .hwk-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hwk-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hwk-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.875rem, 6.5vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 760px;
+    overflow-wrap: break-word;
+  }
+  .hwk-lead {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 500;
+    color: #cde0da;
+    max-width: 720px;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    border-left: 2px solid #0d9373;
+    background: rgba(13,147,115,0.05);
+    border-radius: 0 10px 10px 0;
+    overflow-wrap: break-word;
+  }
+  .hwk-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #8aa09a;
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* Documents */
+  .docs-section { padding: 6rem 0; background: #0f1614; }
+  .docs-inner { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+  .docs-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .doc-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2.25rem 2.5rem;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.75rem;
+    align-items: start;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .doc-card:hover {
+    border-color: rgba(13,147,115,0.35);
+    transform: translateY(-2px);
+  }
+
+  .doc-order {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.18);
+    border-radius: 12px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+  }
+
+  .doc-body { min-width: 0; }
+
+  .doc-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .doc-pdf-icon { color: #0d9373; }
+  .doc-divider { color: #2a3d35; }
+
+  .doc-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.625rem);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.625rem;
+    letter-spacing: -0.02em;
+  }
+  .doc-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+    max-width: 640px;
+  }
+
+  .doc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .doc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.125rem;
+    font-size: 0.875rem;
+  }
+  .doc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.125rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #cde0da;
+    text-decoration: none;
+    border: 1px solid #1e2d28;
+    border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .doc-btn-secondary:hover {
+    border-color: rgba(13,147,115,0.45);
+    color: white;
+    background: rgba(13,147,115,0.05);
+  }
+
+  /* Next */
+  .next-section { padding: 7rem 0; background: #0a0f0e; }
+  .next-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .next-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .next-section p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+
+  .next-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 4.5rem;
+  }
+  .next-step {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .ns-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0d9373;
+    background: rgba(13,147,115,0.1);
+    border: 1px solid rgba(13,147,115,0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ns-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .ns-body strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: white;
+  }
+  .ns-body span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    line-height: 1.55;
+  }
+
+  /* Ask */
+  .ask-section { padding: 7rem 0; background: #0f1614; }
+  .ask-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .ask-copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 1.25rem 0 2rem;
+  }
+  .ask-actions {
+    display: flex;
+    gap: 0.875rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .next-grid { grid-template-columns: 1fr; }
+    .next-steps { margin-top: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .doc-card {
+      padding: 1.75rem;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .doc-order {
+      width: 56px;
+    }
+  }
+</style>

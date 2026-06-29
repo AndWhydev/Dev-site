@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://awlabs.com.au',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/welcome'),
+      filter: (page) => !page.includes('/welcome') && !page.includes('/how-we-work'),
     }),
   ],
   vite: {
