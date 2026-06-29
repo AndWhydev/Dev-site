@@ -1,0 +1,94 @@
+{
+  "buildCommand": "echo 'Pre-built by GitHub Actions — no build step.'",
+  "installCommand": "echo 'No install needed.'",
+  "outputDirectory": ".",
+
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(www\\.)?aibusinesssolutions\\.au" }],
+      "destination": "https://awlabs.com.au/:path*",
+      "permanent": true
+    }
+  ],
+
+  "headers": [
+    {
+      "source": "/_astro/:all*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+
+    {
+      "source": "/(.*)\\.(woff2|woff|ttf|otf|eot)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+
+    {
+      "source": "/(.*)\\.(mp4|webm|mov)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+
+    {
+      "source": "/docs/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    },
+
+    {
+      "source": "/client-pack/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
+        { "key": "Cache-Control", "value": "private, max-age=0, must-revalidate" }
+      ]
+    },
+
+    {
+      "source": "/(.*\\.html|/|/.*)?",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate, s-maxage=600"
+        }
+      ]
+    },
+
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Content-Security-Policy", "value": "frame-src 'self' https://golf-app-demo.vercel.app;" }
+      ]
+    }
+  ]
+}
