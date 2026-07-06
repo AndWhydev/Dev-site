@@ -1,14 +1,13 @@
 ---
-const STRIPE_LINK = '[STRIPE_LINK]';
-
 const riskCategories = [
   {
     id: 'payments',
-    name: 'Payments & Money Movement',
+    name: 'Payments and Money Movement',
     icon: '$',
+    visible: ['Merchant of Record', 'AFSL Licensing'],
     items: [
       { title: 'Merchant of Record', body: 'If money flows through your platform between buyers and sellers, you may be legally classified as the merchant. You are responsible for every chargeback, fraud claim and refund. Stripe and PayPal freeze accounts of platforms that haven’t structured this correctly. We have seen founders lose access to their revenue overnight.' },
-      { title: 'PCI DSS Compliance', body: 'If your app touches card data in any way, non-compliance fines start at $5,000 per month. Your payment processor can terminate your account without notice.' },
+      { title: 'PCI DSS Compliance', body: 'If your app touches card data in any way, non compliance fines start at $5,000 per month. Your payment processor can terminate your account without notice.' },
       { title: 'AFSL Licensing', body: 'Any app touching financial advice, lending, insurance, investment or superannuation may require an Australian Financial Services Licence. Building without one isn’t a grey area. It carries criminal penalties.' },
       { title: 'Buy Now Pay Later', body: 'Integrating BNPL or deferred payment features may trigger credit licensing requirements under the National Consumer Credit Protection Act. You cannot build first and apply later.' },
       { title: 'Foreign Transaction Obligations', body: 'Overseas users may trigger tax and regulatory obligations in their jurisdictions including EU VAT and US sales tax by state.' },
@@ -16,13 +15,14 @@ const riskCategories = [
   },
   {
     id: 'data-privacy',
-    name: 'Data & Privacy',
+    name: 'Data and Privacy',
     icon: '◎',
+    visible: ['Australian Privacy Act', 'GDPR'],
     items: [
-      { title: 'Australian Privacy Act', body: 'Fines for serious breaches now reach $50 million, or three times the benefit obtained, or 30% of adjusted turnover — whichever is greater. If you are collecting any user data without proper architecture and a compliant privacy policy, this is your exposure.' },
+      { title: 'Australian Privacy Act', body: 'Fines for serious breaches now reach $50 million, or three times the benefit obtained, or 30% of adjusted turnover, whichever is greater. If you are collecting any user data without proper architecture and a compliant privacy policy, this is your exposure.' },
       { title: 'Health Data', body: 'Apps collecting health information are subject to the Health Records Act and potentially HIPAA for US users. Breaches carry mandatory notification obligations and significantly higher penalties.' },
-      { title: 'GDPR', body: 'If any EU resident can access your app — even if you are based in Australia and not targeting Europe — you may be subject to GDPR. Fines reach €20 million or 4% of global annual turnover.' },
-      { title: 'Children’s Data', body: 'COPPA and equivalent Australian obligations apply to any platform accessible by users under 13. Non-compliance is grounds for immediate app store removal.' },
+      { title: 'GDPR', body: 'If any EU resident can access your app, even if you are based in Australia and not targeting Europe, you may be subject to GDPR. Fines reach €20 million or 4% of global annual turnover.' },
+      { title: 'Children’s Data', body: 'COPPA and equivalent Australian obligations apply to any platform accessible by users under 13. Non compliance is grounds for immediate app store removal.' },
       { title: 'Tracking and Cookie Consent', body: 'Your analytics, ad pixels and retargeting tools may be collecting and transmitting user data without legally required consent flows. This is increasingly enforced.' },
     ],
   },
@@ -30,9 +30,10 @@ const riskCategories = [
     id: 'cybersecurity',
     name: 'Cybersecurity',
     icon: '✦',
+    visible: ['Cloud Misconfiguration', 'API Security'],
     items: [
-      { title: 'OWASP Top 10 Vulnerabilities', body: 'The ten most critical web application security risks are present in the majority of freelancer-built apps. Most MVPs fail at least three of these out of the box without the developer or the founder knowing.' },
-      { title: 'API Security', body: 'Exposed or unauthenticated API endpoints are the number one attack vector in modern applications. Most early-stage products have zero API security strategy. Your data, your users’ data and your business logic are all accessible to anyone who knows where to look.' },
+      { title: 'OWASP Top 10 Vulnerabilities', body: 'The ten most critical web application security risks are present in the majority of freelancer built apps. Most MVPs fail at least three of these out of the box without the developer or the founder knowing.' },
+      { title: 'API Security', body: 'Exposed or unauthenticated API endpoints are the number one attack vector in modern applications. Most early stage products have zero API security strategy. Your data, your users’ data and your business logic are all accessible to anyone who knows where to look.' },
       { title: 'Cloud Misconfiguration', body: 'Publicly exposed S3 buckets, unsecured Firebase databases, unprotected environment variables and missing access controls are how most startups get breached. It looks fine from your dashboard. It is wide open from the outside.' },
       { title: 'Dependency Vulnerabilities', body: 'Every open source library in your tech stack is a potential attack vector. If those libraries haven’t been audited, you’ve inherited someone else’s security problem.' },
       { title: 'No Penetration Testing', body: 'Launching without a penetration test is the equivalent of opening a business without ever checking whether the locks work. You are inviting the first person who tries.' },
@@ -42,41 +43,45 @@ const riskCategories = [
     id: 'ip',
     name: 'Intellectual Property',
     icon: '§',
+    visible: ['IP Ownership of the Codebase', 'Open Source Licence Compliance'],
     items: [
       { title: 'IP Ownership of the Codebase', body: 'In Australia, copyright defaults to the creator, not the person who paid, unless there is a written IP assignment agreement. If a freelancer or contractor built any part of your product without one in place, you may not legally own your own app.' },
-      { title: 'Open Source Licence Compliance', body: 'Using GPL-licensed code in a commercial product can legally require you to open source your entire codebase. Most developers drop in open source libraries without checking the licence terms. This can destroy your IP position overnight.' },
-      { title: 'Third-Party API Terms of Service', body: 'Building a business on top of another platform without understanding their commercial use terms is a significant risk. Platforms change terms, restrict commercial use or shut down APIs with limited notice. Your business model may not survive it.' },
+      { title: 'Open Source Licence Compliance', body: 'Using GPL licensed code in a commercial product can legally require you to open source your entire codebase. Most developers drop in open source libraries without checking the licence terms. This can destroy your IP position overnight.' },
+      { title: 'Third Party API Terms of Service', body: 'Building a business on top of another platform without understanding their commercial use terms is a significant risk. Platforms change terms, restrict commercial use or shut down APIs with limited notice. Your business model may not survive it.' },
       { title: 'Trademark Clearance', body: 'Launching under a name without checking whether it is already registered is one of the most common and most expensive mistakes founders make. A cease and desist six months after launch with a brand and marketing spend behind you is a serious problem.' },
     ],
   },
   {
     id: 'legal',
-    name: 'Legal Structure & Liability',
+    name: 'Legal Structure and Liability',
     icon: '⚖',
+    visible: ['Limitation of Liability', 'App Store Compliance'],
     items: [
       { title: 'Terms of Service and Acceptable Use Policy', body: 'Without these, your users have no obligations and you have no protection. You cannot enforce restrictions on how your platform is used or terminate abusive users with legal standing.' },
       { title: 'Limitation of Liability', body: 'If your app fails or results in a user experiencing financial loss, what is your legal exposure without a properly drafted limitation of liability clause? In many cases: unlimited.' },
       { title: 'Australian Consumer Law', body: 'Statutory guarantees, refund rights and misleading conduct provisions apply to digital products. They cannot be contracted out of. If your product doesn’t work as described, you have legal obligations regardless of what your terms say.' },
-      { title: 'App Store Compliance', body: 'Apple and Google have their own rules on subscriptions, in-app purchases, data collection disclosures and content. They will remove your app without warning. We have seen products with tens of thousands of users pulled overnight.' },
+      { title: 'App Store Compliance', body: 'Apple and Google have their own rules on subscriptions, in app purchases, data collection disclosures and content. They will remove your app without warning. We have seen products with tens of thousands of users pulled overnight.' },
       { title: 'Dispute Resolution', body: 'Without a governing law clause and a clear dispute resolution mechanism, any user anywhere in the world can potentially bring a claim in their local jurisdiction.' },
     ],
   },
   {
     id: 'tax',
-    name: 'Tax & Financial',
+    name: 'Tax and Financial',
     icon: '▲',
+    visible: ['R&D Tax Incentive', 'GST on Digital Services'],
     items: [
-      { title: 'GST on Digital Services', body: 'If you have overseas customers, you may have tax obligations in their jurisdictions including EU VAT registration and US sales tax obligations that vary by state.' },
       { title: 'R&D Tax Incentive', body: 'Most founders building software don’t know they may be eligible for up to 43.5 cents back on every dollar of eligible development expenditure. This must be structured correctly from day one. Retroactive registration rarely captures the full benefit. AWLabs helps every client access this.' },
+      { title: 'GST on Digital Services', body: 'If you have overseas customers, you may have tax obligations in their jurisdictions including EU VAT registration and US sales tax obligations that vary by state.' },
     ],
   },
   {
     id: 'employment',
-    name: 'Employment & Contractor Risk',
+    name: 'Employment and Contractor Risk',
     icon: '◆',
+    visible: ['Sham Contracting', 'IP Assignment Gaps'],
     items: [
-      { title: 'Sham Contracting', body: 'If you are engaging contractors who work exclusively for you or under your direct control, the ATO may reclassify them as employees — triggering superannuation obligations, leave entitlements and payroll tax liabilities, potentially backdated.' },
-      { title: 'Equity and Co-Founder Agreements', body: 'Without properly documented vesting schedules, cliff periods and exit provisions, a co-founder or early team member who leaves can walk away with equity they did nothing to earn — or hold the company hostage.' },
+      { title: 'Sham Contracting', body: 'If you are engaging contractors who work exclusively for you or under your direct control, the ATO may reclassify them as employees, triggering superannuation obligations, leave entitlements and payroll tax liabilities, potentially backdated.' },
+      { title: 'Equity and Co Founder Agreements', body: 'Without properly documented vesting schedules, cliff periods and exit provisions, a co founder or early team member who leaves can walk away with equity they did nothing to earn, or hold the company hostage.' },
       { title: 'IP Assignment Gaps', body: 'Every developer, contractor and consultant who contributes to your codebase needs a signed IP assignment agreement. One gap in that chain can cloud your IP ownership permanently.' },
     ],
   },
@@ -84,85 +89,89 @@ const riskCategories = [
     id: 'regulated',
     name: 'Regulated Industry Triggers',
     icon: '●',
+    visible: ['Health and Medical Apps', 'Legal Tech'],
     items: [
       { title: 'Health and Medical Apps', body: 'Any app that makes therapeutic claims, processes clinical data or could be used in a clinical setting may need TGA registration. This is a lengthy and expensive process. You cannot launch first and register later.' },
-      { title: 'Legal Tech', body: 'The line between providing legal information and legal advice is narrow and actively enforced. Crossing it — even through an AI feature — exposes you to professional liability claims.' },
+      { title: 'Legal Tech', body: 'The line between providing legal information and legal advice is narrow and actively enforced. Crossing it, even through an AI feature, exposes you to professional liability claims.' },
       { title: 'Education and Child Safety', body: 'Platforms with minors as users carry Working With Children Check obligations, child safety policy requirements and mandatory reporting obligations that vary by state.' },
-      { title: 'Property and Real Estate Features', body: 'Certain property-related features may require real estate agent licensing. Penalties for unlicensed conduct are significant.' },
+      { title: 'Property and Real Estate Features', body: 'Certain property related features may require real estate agent licensing. Penalties for unlicensed conduct are significant.' },
     ],
   },
   {
     id: 'accessibility',
     name: 'Accessibility',
     icon: '◦',
+    visible: ['WCAG 2.2 Compliance'],
     items: [
       { title: 'WCAG 2.2 Compliance', body: 'Under the Disability Discrimination Act 1992, digital products must be accessible to users with disabilities. Government contracts will not proceed without WCAG compliance. Enforcement is increasing. Retrofitting accessibility into an existing product is significantly more expensive than building it in from the start.' },
     ],
   },
   {
     id: 'architecture',
-    name: 'Architecture & Scalability',
+    name: 'Architecture and Scalability',
     icon: '▰',
+    visible: ['Wrong Tech Stack', 'No Disaster Recovery Strategy'],
     items: [
-      { title: 'Wrong Tech Stack', body: 'A freelancer builds in what they know, not what is right for your scale, your use case or your long-term roadmap. Rebuilding from scratch because the original architecture cannot handle growth is one of the most common and most expensive problems we see.' },
-      { title: 'No Disaster Recovery Strategy', body: 'If your database goes down, what happens? Most early-stage products have no backup strategy and no defined recovery time. One infrastructure event can mean permanent data loss.' },
-      { title: 'Vendor Lock-In', body: 'Building entirely on one cloud provider or proprietary platform with no exit strategy means that provider controls your costs, your uptime and ultimately your business continuity.' },
+      { title: 'Wrong Tech Stack', body: 'A freelancer builds in what they know, not what is right for your scale, your use case or your long term roadmap. Rebuilding from scratch because the original architecture cannot handle growth is one of the most common and most expensive problems we see.' },
+      { title: 'No Disaster Recovery Strategy', body: 'If your database goes down, what happens? Most early stage products have no backup strategy and no defined recovery time. One infrastructure event can mean permanent data loss.' },
+      { title: 'Vendor Lock In', body: 'Building entirely on one cloud provider or proprietary platform with no exit strategy means that provider controls your costs, your uptime and ultimately your business continuity.' },
     ],
   },
   {
     id: 'insurance',
     name: 'Insurance',
     icon: '†',
+    visible: ['Cyber Liability Insurance', 'Professional Indemnity'],
     items: [
-      { title: 'Cyber Liability Insurance', body: 'The average cost of a data breach in Australia is now over $4 million. Most early-stage founders have no cyber liability coverage. One breach can exceed the cost of the entire build.' },
+      { title: 'Cyber Liability Insurance', body: 'The average cost of a data breach in Australia is now over $4 million. Most early stage founders have no cyber liability coverage. One breach can exceed the cost of the entire build.' },
       { title: 'Professional Indemnity', body: 'If your software causes a client financial loss, professional indemnity insurance is your protection. Without it you are personally exposed.' },
     ],
   },
 ];
 
 const standards = [
-  { code: 'ISO 27001', name: 'Information Security Management', when: 'Every project — gold standard for data security' },
-  { code: 'ISO 27701', name: 'Privacy Information Management', when: 'Any project collecting personal data' },
-  { code: 'ISO 27017', name: 'Cloud Security', when: 'All cloud-hosted projects' },
-  { code: 'ISO 27018', name: 'Personal Data in the Cloud', when: 'Any project storing user data in the cloud' },
-  { code: 'ISO 25010', name: 'Software Product Quality', when: 'Every project' },
-  { code: 'ISO 12207', name: 'Software Lifecycle Processes', when: 'Every project — internationally auditable build process' },
-  { code: 'ISO 29119', name: 'Software Testing', when: 'Every project requiring pre-launch verification' },
-  { code: 'ISO 31000', name: 'Risk Management', when: 'Every project — the framework underpinning the DA itself' },
-  { code: 'PCI DSS', name: 'Payment Card Industry Standard', when: 'Any app touching card data' },
-  { code: 'SOC 2 Type II', name: 'Service Organisation Control', when: 'B2B SaaS targeting enterprise or US clients' },
-  { code: 'ISO 13485', name: 'Medical Devices Quality Management', when: 'Health and medical apps' },
-  { code: 'ISO 14971', name: 'Risk Management for Medical Devices', when: 'Software as a medical device' },
-  { code: 'HL7 FHIR', name: 'Health Data Interoperability', when: 'Health apps integrating with clinical systems' },
-  { code: 'ISO 42001', name: 'AI Management System', when: 'Any project with AI or machine learning features' },
-  { code: 'EU AI Act', name: 'AI Regulatory Compliance', when: 'Any AI feature accessible to EU users' },
-  { code: 'WCAG 2.2', name: 'Web Content Accessibility Guidelines', when: 'Every project' },
-  { code: 'ISO 9001', name: 'Quality Management Systems', when: 'Every project' },
+  { code: 'ISO 27001', name: 'Information Security Management', when: 'Every project. Gold standard for data security.' },
+  { code: 'ISO 27701', name: 'Privacy Information Management', when: 'Any project collecting personal data.' },
+  { code: 'ISO 27017', name: 'Cloud Security', when: 'All cloud hosted projects.' },
+  { code: 'ISO 27018', name: 'Personal Data in the Cloud', when: 'Any project storing user data in the cloud.' },
+  { code: 'ISO 25010', name: 'Software Product Quality', when: 'Every project.' },
+  { code: 'ISO 12207', name: 'Software Lifecycle Processes', when: 'Every project. Internationally auditable build process.' },
+  { code: 'ISO 29119', name: 'Software Testing', when: 'Every project requiring pre launch verification.' },
+  { code: 'ISO 31000', name: 'Risk Management', when: 'Every project. The framework underpinning the DA itself.' },
+  { code: 'PCI DSS', name: 'Payment Card Industry Standard', when: 'Any app touching card data.' },
+  { code: 'SOC 2 Type II', name: 'Service Organisation Control', when: 'B2B SaaS targeting enterprise or US clients.' },
+  { code: 'ISO 13485', name: 'Medical Devices Quality Management', when: 'Health and medical apps.' },
+  { code: 'ISO 14971', name: 'Risk Management for Medical Devices', when: 'Software as a medical device.' },
+  { code: 'HL7 FHIR', name: 'Health Data Interoperability', when: 'Health apps integrating with clinical systems.' },
+  { code: 'ISO 42001', name: 'AI Management System', when: 'Any project with AI or machine learning features.' },
+  { code: 'EU AI Act', name: 'AI Regulatory Compliance', when: 'Any AI feature accessible to EU users.' },
+  { code: 'WCAG 2.2', name: 'Web Content Accessibility Guidelines', when: 'Every project.' },
+  { code: 'ISO 9001', name: 'Quality Management Systems', when: 'Every project.' },
 ];
 
 const consequences = [
   { title: 'Merchant of record misclassification', body: 'We had a client whose marketplace hit $2M in GMV before Stripe froze their account due to undisclosed platform transactions. They couldn’t pay their vendors for six weeks. The business nearly collapsed.' },
   { title: 'IP ownership gap', body: 'A founder paid $60,000 to a development agency under a poorly drafted contract. When the relationship broke down, the agency retained ownership of the codebase. The founder had to rebuild from scratch.' },
-  { title: 'Privacy Act breach', body: 'A Sydney-based startup suffered a data breach affecting 4,000 users. Without a mandatory breach response plan, they notified the OAIC 47 days late. The investigation cost more than the original build.' },
+  { title: 'Privacy Act breach', body: 'A Sydney based startup suffered a data breach affecting 4,000 users. Without a mandatory breach response plan, they notified the OAIC 47 days late. The investigation cost more than the original build.' },
   { title: 'Cloud misconfiguration', body: 'A Firebase misconfiguration exposed the personal data of 100,000 users of an Australian fintech app. The database had been publicly readable for eight months before anyone discovered it.' },
   { title: 'App store removal', body: 'A consumer app with 30,000 active users was removed from the App Store for undisclosed data collection. It took four months and a full rebuild to get it reinstated. Four months of zero new users.' },
-  { title: 'Open source licence violation', body: 'A SaaS founder built their core product on a GPL-licensed library. When they went to raise their Series A, legal due diligence flagged the violation. They had to open source their product or rebuild the affected components before the round could close.' },
+  { title: 'Open source licence violation', body: 'A SaaS founder built their core product on a GPL licensed library. When they went to raise their Series A, legal due diligence flagged the violation. They had to open source their product or rebuild the affected components before the round could close.' },
 ];
 
 const deliverables = [
   { title: 'Full Scope and Risk Audit', body: 'We go deep on your idea or existing product. Every feature mapped. Every risk area across security, cyber exposure, legal liability, compliance and architecture identified and addressed.' },
-  { title: 'Investor-Ready Roadmap Document', body: 'A formal strategic document you can take to a VC, investor, bank, accelerator or board. Not a quote. A proper document showing what is being built, how it is being built, what the risks are and how they are mitigated, and what the path to market looks like. This document alone can open doors.' },
+  { title: 'Investor Ready Roadmap Document', body: 'A formal strategic document you can take to a VC, investor, bank, accelerator or board. Not a quote. A proper document showing what is being built, how it is being built, what the risks are and how they are mitigated, and what the path to market looks like. This document alone can open doors.' },
   { title: 'Pitch Deck and Strategy Session', body: 'We prepare a full pitch deck and present it to you in a dedicated strategy session. You are not getting an email with a number. You are getting a proper presentation of how we see your project playing out, including timeline and full investment required.' },
 ];
 
 const pillars = [
-  { title: 'Development', body: 'Custom software, app builds, AI integration' },
-  { title: 'Marketing', body: 'User acquisition through our in-house team at All Webbed Up' },
-  { title: 'Capital', body: 'R&D subsidies, government grants, financial structuring' },
-  { title: 'Legal', body: 'Compliance, privacy policy, IP protection built in from day one' },
+  { title: 'Development', body: 'Custom software, app builds, AI integration.' },
+  { title: 'Marketing', body: 'User acquisition through our in house team at All Webbed Up.' },
+  { title: 'Capital', body: 'R&D subsidies, government grants, financial structuring.' },
+  { title: 'Legal', body: 'Compliance, privacy policy, IP protection built in from day one.' },
 ];
 
-const title = 'AWLabs Discovery Audit — Before We Build Anything';
+const title = 'AWLabs Discovery Audit. Before We Build Anything.';
 const description = 'The Discovery Audit covers every legal, compliance, security and IP risk before a dollar goes into development. $750 credited to your build.';
 ---
 
@@ -171,7 +180,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -190,9 +199,6 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
           <span class="brand-mark">AW</span>
           <span class="brand-name">Labs</span>
         </a>
-        <a href={STRIPE_LINK} class="btn btn-primary btn-header">
-          Secure My Discovery Audit &mdash; $750
-        </a>
       </div>
     </header>
 
@@ -209,16 +215,8 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
           <h1 class="hero-title reveal">Most founders don&rsquo;t find out until it&rsquo;s too late.</h1>
           <p class="hero-sub reveal">
             You just got off a call with Andy. What he told you about the Discovery Audit is real.
-            Here&rsquo;s the full picture of what it covers &mdash; and what happens to founders who skip it.
+            Here&rsquo;s the full picture of what it covers, and what happens to founders who skip it.
           </p>
-          <div class="hero-cta reveal">
-            <a href={STRIPE_LINK} class="btn btn-primary btn-lg">
-              Secure My Discovery Audit &mdash; $750 <span class="btn-arrow">&rarr;</span>
-            </a>
-            <p class="hero-note">
-              $750 credited in full to your build when we proceed. This is not an extra cost.
-            </p>
-          </div>
         </div>
         <div class="hero-scroll" aria-hidden="true">
           <span></span>
@@ -236,7 +234,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
             Most dev agencies take your brief, build what you ask for, and send an invoice.
             Nobody checks whether you legally own the code. Nobody checks whether your payment
             setup will get your account frozen. Nobody checks whether you&rsquo;re sitting on a
-            six-figure compliance exposure. That&rsquo;s what the Discovery Audit is for.
+            six figure compliance exposure. That&rsquo;s what the Discovery Audit is for.
           </p>
         </div>
       </section>
@@ -246,6 +244,14 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         <div class="container">
           <div class="section-head reveal">
             <h2 class="section-title">Every risk area the Discovery Audit covers.</h2>
+            <div class="exposure-callout">
+              Across the categories below, the combined regulatory and legal exposure for an
+              unaudited app build can run into the millions. Privacy Act fines alone reach
+              $50 million. A single data breach averages over $4 million in Australia. PCI
+              non compliance runs $5,000 per month. IP ownership disputes have cost founders
+              their entire codebase. Most of it is invisible until something triggers it.
+              That is the point.
+            </div>
             <p class="section-sub">
               These are real, legally enforceable obligations. Most founders don&rsquo;t know
               they exist until they&rsquo;re facing the consequences.
@@ -253,24 +259,46 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
           </div>
 
           <div class="risk-grid">
-            {riskCategories.map((cat, i) => (
-              <details class="risk-card reveal" open={i === 0}>
-                <summary class="risk-summary">
-                  <span class="risk-icon" aria-hidden="true">{cat.icon}</span>
-                  <span class="risk-name">{cat.name}</span>
-                  <span class="risk-count">{cat.items.length}</span>
-                  <span class="risk-toggle" aria-hidden="true">+</span>
-                </summary>
-                <div class="risk-items">
-                  {cat.items.map((item) => (
-                    <div class="risk-item">
-                      <h3 class="risk-item-title">{item.title}</h3>
-                      <p class="risk-item-body">{item.body}</p>
-                    </div>
-                  ))}
-                </div>
-              </details>
-            ))}
+            {riskCategories.map((cat) => {
+              const visibleItems = cat.items.filter((i) => cat.visible.includes(i.title));
+              const hiddenItems = cat.items.filter((i) => !cat.visible.includes(i.title));
+              const moreLabel = hiddenItems.length === 1
+                ? 'Show 1 more risk in this category'
+                : `Show ${hiddenItems.length} more risks in this category`;
+              return (
+                <article class="risk-card reveal">
+                  <header class="risk-summary">
+                    <span class="risk-icon" aria-hidden="true">{cat.icon}</span>
+                    <span class="risk-name">{cat.name}</span>
+                    <span class="risk-count">{cat.items.length} {cat.items.length === 1 ? 'risk' : 'risks'}</span>
+                  </header>
+                  <div class="risk-items">
+                    {visibleItems.map((item) => (
+                      <div class="risk-item">
+                        <h3 class="risk-item-title">{item.title}</h3>
+                        <p class="risk-item-body">{item.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {hiddenItems.length > 0 && (
+                    <details class="risk-more">
+                      <summary class="risk-more-toggle">
+                        <span class="show-more">{moreLabel} &rarr;</span>
+                        <span class="show-less">Show less</span>
+                      </summary>
+                      <div class="risk-items risk-items-more">
+                        {hiddenItems.map((item) => (
+                          <div class="risk-item">
+                            <h3 class="risk-item-title">{item.title}</h3>
+                            <p class="risk-item-body">{item.body}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -305,7 +333,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
           <div class="section-head reveal">
             <h2 class="section-title">This is what happens when founders skip it.</h2>
             <p class="section-sub">
-              These are real consequences. First-person because we have seen them.
+              These are real consequences. First person because we have seen them.
             </p>
           </div>
 
@@ -344,7 +372,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         <div class="container">
           <div class="section-head reveal">
             <h2 class="section-title">AWLabs is not just a dev shop.</h2>
-            <p class="section-sub">A full end-to-end solution.</p>
+            <p class="section-sub">A full end to end solution.</p>
           </div>
 
           <div class="pillars-grid">
@@ -373,32 +401,47 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         <div class="container">
           <div class="close-inner">
             <h2 class="close-title reveal">Not everyone gets to this point.</h2>
+
+            <p class="close-urgency reveal">
+              Every week you build without this audit is another week of compounding exposure.
+            </p>
+
             <div class="close-body reveal">
               <p>
                 Andy is personally across every Discovery Audit we take on. We work with a
                 limited number of clients at a time and we are selective about who we take
-                on &mdash; because the DA only works when we can go deep.
+                on, because the DA only works when we can go deep.
               </p>
               <p>If you are reading this, it means Andy thinks there is something real here.</p>
               <p>
                 The Discovery Audit is $750. That $750 is credited in full to your build
-                when we proceed &mdash; so it is not an extra cost. It is money toward your
+                when we proceed, so it is not an extra cost. It is money toward your
                 project.
               </p>
               <p>
                 For what it protects you from, what it sets you up with, and the doors it
-                can open &mdash; whether you proceed with us or not &mdash; it is the most
-                important $750 you will spend on this project.
+                can open, whether you proceed with us or not, it is the most important $750
+                you will spend on this project.
+              </p>
+            </div>
+
+            <div class="close-social reveal" aria-label="Social proof">
+              <span class="close-social-stars" aria-hidden="true">
+                &#9733;&#9733;&#9733;&#9733;&#9733;
+              </span>
+              <p>
+                AWLabs and All Webbed Up have served over 150 Australian clients. Rated 5.0
+                on Google across 118 reviews.
               </p>
             </div>
 
             <div class="close-cta reveal">
-              <a href={STRIPE_LINK} class="btn btn-primary btn-xl">
-                Secure My Discovery Audit &mdash; $750 <span class="btn-arrow">&rarr;</span>
+              <a href="mailto:andy@awlabs.com.au" class="btn btn-primary btn-xl">
+                Get in touch with Andy <span class="btn-arrow">&rarr;</span>
               </a>
-              <p class="close-note">Spots are limited. Andy is personally across every DA.</p>
+              <p class="close-note">Or call 1800 714 148</p>
               <a href="/how-we-work" class="link-arrow close-secondary">
-                Learn how we work first &rarr;
+                View our case studies, NDA and how we work &rarr;
               </a>
             </div>
           </div>
@@ -415,13 +458,13 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
             <span class="brand-name">Labs</span>
           </div>
           <div class="footer-meta">
-            <p>All Webbed Labs Pty Ltd</p>
+            <p>AW Labs Pty Ltd</p>
             <p>
               <a href="mailto:andy@awlabs.com.au">andy@awlabs.com.au</a>
               <span class="footer-dot">&middot;</span>
               <a href="/">awlabs.com.au</a>
             </p>
-            <p class="footer-abn">ABN 12 345 678 901</p>
+            <p class="footer-abn">ABN 32 698 684 105</p>
           </div>
         </div>
       </div>
@@ -468,6 +511,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         --text: #f5f5f7;
         --text-dim: #a0a0a8;
         --text-mute: #6b6b74;
+        --gold: #fabb2b;
       }
 
       *,
@@ -595,7 +639,6 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         box-shadow: 0 16px 40px -12px rgba(20, 163, 125, 0.65),
           inset 0 1px 0 rgba(255, 255, 255, 0.2);
       }
-      .btn-header { padding: 10px 18px; font-size: 14px; }
       .btn-lg { padding: 18px 30px; font-size: 17px; }
       .btn-xl { padding: 22px 38px; font-size: 19px; }
       .btn-arrow { font-size: 1.1em; transition: transform 0.25s ease; display: inline-block; }
@@ -693,14 +736,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         font-size: clamp(17px, 1.6vw, 20px);
         color: var(--text-dim);
         max-width: 62ch;
-        margin-bottom: 44px;
         line-height: 1.6;
-      }
-      .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
-      .hero-note {
-        font-size: 14px;
-        color: var(--text-mute);
-        max-width: 42ch;
       }
       .hero-scroll {
         position: absolute;
@@ -764,7 +800,7 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
 
       /* SECTIONS: shared */
       .section-head {
-        max-width: 780px;
+        max-width: 820px;
         margin-bottom: 64px;
       }
       .section-title {
@@ -780,6 +816,19 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         line-height: 1.6;
       }
 
+      /* Exposure callout (risk section) */
+      .exposure-callout {
+        margin: 28px 0;
+        padding: 24px 28px;
+        border-left: 3px solid var(--red);
+        background: rgba(192, 0, 0, 0.08);
+        border-radius: 8px;
+        color: var(--text);
+        font-size: clamp(17px, 1.45vw, 20px);
+        line-height: 1.65;
+        max-width: 78ch;
+      }
+
       /* RISKS */
       .risks {
         padding: 120px 0;
@@ -791,29 +840,21 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         grid-template-columns: 1fr;
       }
       .risk-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        overflow: hidden;
-        transition: border-color 0.3s ease, background 0.3s ease;
-      }
-      .risk-card[open] {
         background: rgba(192, 0, 0, 0.04);
-        border-color: rgba(230, 57, 70, 0.35);
+        border: 1px solid rgba(230, 57, 70, 0.35);
+        border-radius: 16px;
+        padding: 26px 28px 28px;
+        transition: border-color 0.3s ease;
       }
-      .risk-card:hover { border-color: var(--line-2); }
+      .risk-card:hover { border-color: rgba(230, 57, 70, 0.55); }
       .risk-summary {
         display: flex;
         align-items: center;
         gap: 18px;
-        padding: 24px 28px;
-        cursor: pointer;
-        list-style: none;
-        user-select: none;
-        transition: background 0.2s ease;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        border-bottom: 1px solid var(--line);
       }
-      .risk-summary::-webkit-details-marker { display: none; }
-      .risk-summary:hover { background: rgba(255, 255, 255, 0.02); }
       .risk-icon {
         display: inline-flex;
         align-items: center;
@@ -845,27 +886,14 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         padding: 4px 10px;
         border: 1px solid var(--line-2);
         border-radius: 999px;
+        text-transform: uppercase;
       }
-      .risk-toggle {
-        width: 32px;
-        height: 32px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        color: var(--text-dim);
-        font-weight: 300;
-        transition: transform 0.3s ease;
-        flex-shrink: 0;
-      }
-      .risk-card[open] .risk-toggle { transform: rotate(45deg); color: var(--red-2); }
-
       .risk-items {
-        padding: 8px 28px 32px;
         display: grid;
         gap: 20px;
-        border-top: 1px solid var(--line);
-        margin-top: 4px;
+      }
+      .risk-items-more {
+        margin-top: 20px;
       }
       .risk-item {
         border-left: 2px solid var(--red);
@@ -884,6 +912,31 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         color: var(--text-dim);
         line-height: 1.65;
       }
+
+      /* Risk "show more" toggle */
+      .risk-more {
+        margin-top: 22px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .risk-more-toggle {
+        cursor: pointer;
+        list-style: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--red-2);
+        letter-spacing: 0.01em;
+        padding: 4px 0;
+        display: inline-block;
+        transition: color 0.2s ease;
+      }
+      .risk-more-toggle::-webkit-details-marker { display: none; }
+      .risk-more-toggle::marker { display: none; content: ''; }
+      .risk-more-toggle:hover { color: #ff5c66; }
+      .risk-more .show-less { display: none; color: var(--text-mute); }
+      .risk-more[open] .show-more { display: none; }
+      .risk-more[open] .show-less { display: inline; }
 
       /* STANDARDS */
       .standards {
@@ -1085,21 +1138,48 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
       }
       .close-title {
         font-size: clamp(36px, 5.5vw, 68px);
-        margin-bottom: 40px;
+        margin-bottom: 32px;
         letter-spacing: -0.025em;
         line-height: 1.05;
+      }
+      .close-urgency {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(22px, 2.6vw, 32px);
+        font-weight: 700;
+        color: var(--teal-2);
+        line-height: 1.25;
+        margin-bottom: 40px;
+        letter-spacing: -0.01em;
       }
       .close-body {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        margin-bottom: 56px;
+        margin-bottom: 40px;
         font-size: clamp(16px, 1.4vw, 19px);
         color: var(--text-dim);
         line-height: 1.7;
         text-align: left;
       }
       .close-body p { max-width: 62ch; margin: 0 auto; }
+
+      .close-social {
+        margin: 0 auto 48px;
+        max-width: 46ch;
+      }
+      .close-social-stars {
+        display: block;
+        color: var(--gold);
+        font-size: 18px;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+      }
+      .close-social p {
+        font-size: 14px;
+        color: var(--text-dim);
+        line-height: 1.55;
+      }
+
       .close-cta {
         display: flex;
         flex-direction: column;
@@ -1153,23 +1233,27 @@ const description = 'The Discovery Audit covers every legal, compliance, securit
         .container { padding: 0 20px; }
         .site-header-inner { padding: 12px 20px; }
         .brand { font-size: 20px; }
-        .btn-header { padding: 9px 14px; font-size: 13px; }
         .hero { padding: 130px 0 60px; }
         .hero-title { max-width: 100%; }
-        .hero-cta { align-items: stretch; }
-        .btn-lg, .btn-xl { width: 100%; }
         .problem { padding: 80px 0; }
         .problem-lede { max-width: 100%; }
         .risks, .standards, .consequences, .deliverables, .pillars, .close {
           padding: 80px 0;
         }
         .section-head { margin-bottom: 44px; }
-        .risk-summary { padding: 20px 20px; gap: 14px; }
+        .exposure-callout {
+          padding: 20px 22px;
+          font-size: 16px;
+        }
+        .risk-card { padding: 22px 20px 24px; }
+        .risk-summary { gap: 14px; padding-bottom: 18px; margin-bottom: 18px; }
         .risk-icon { width: 38px; height: 38px; font-size: 18px; }
         .risk-count { display: none; }
-        .risk-items { padding: 8px 20px 26px; }
-        .close-title { margin-bottom: 32px; }
-        .close-body { margin-bottom: 40px; text-align: left; }
+        .close-title { margin-bottom: 24px; }
+        .close-urgency { margin-bottom: 32px; }
+        .close-body { margin-bottom: 32px; text-align: left; }
+        .close-social { margin-bottom: 36px; }
+        .close-cta .btn-xl { width: 100%; padding: 20px 24px; font-size: 17px; }
         .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
         .footer-meta { text-align: left; }
         .hero-scroll { display: none; }
