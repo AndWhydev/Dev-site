@@ -91,7 +91,7 @@ const data = {
       step: '05',
       title: 'Internal Security Review & Audit Coordination',
       duration: 'Weeks 8–10',
-      description: 'Before engaging an external auditor we conduct our own line-by-line review against the threat model and resolve all internal findings. We then coordinate the third-party audit: providing context, answering auditor questions, and remediating every finding in the report before deployment. Audit cost is typically $15,000–$80,000 AUD depending on complexity and is budgeted separately from build cost.',
+      description: 'Before engaging an external auditor we conduct our own line-by-line review against the threat model and resolve all internal findings. We then coordinate the third-party audit: providing context, answering auditor questions, and remediating every finding in the report before deployment. Audit cost varies with contract complexity and is budgeted separately from build cost.',
     },
     {
       step: '06',
@@ -113,7 +113,7 @@ const data = {
   faqs: [
     {
       question: 'Do we really need a third-party audit, and what does it cost?',
-      answer: 'For any contract that holds or controls real value on a public chain, a third-party security audit is table stakes rather than optional. Unaudited contracts have been exploited for very large sums across the ecosystem, and once funds leave an immutable contract there is rarely any recourse. An audit is a systematic review by security specialists who look for known vulnerability classes, logic errors and economic attack vectors. We prepare your contracts so the audit is efficient — high test coverage, complete documentation, all internal findings resolved — which keeps the cost down. Audit pricing in the market is typically $15,000–$80,000 AUD depending on contract complexity and line count, and you should budget it as a distinct line item from development. We coordinate the engagement and remediate every finding before deployment, but the auditor is independent of us by design.',
+      answer: 'For any contract that holds or controls real value on a public chain, a third-party security audit is table stakes rather than optional. Unaudited contracts have been exploited for very large sums across the ecosystem, and once funds leave an immutable contract there is rarely any recourse. An audit is a systematic review by security specialists who look for known vulnerability classes, logic errors and economic attack vectors. We prepare your contracts so the audit is efficient — high test coverage, complete documentation, all internal findings resolved — which keeps the cost down. Audit pricing varies with contract complexity and line count, and you should budget it as a distinct line item from development. We coordinate the engagement and remediate every finding before deployment, but the auditor is independent of us by design.',
     },
     {
       question: 'If a deployed contract has a bug, can you just fix it?',
@@ -152,23 +152,6 @@ const data = {
       'You cannot fund a security audit — deploying unaudited value-bearing contracts is a risk we will not recommend.',
     ],
   },
-  pricing: [
-    {
-      name: 'Single Contract',
-      range: '$25k–$60k',
-      detail: 'A focused, well-scoped contract — a token, an escrow, a vesting or staking contract — with a full Foundry test suite, gas optimisation, static analysis and audit preparation. Audit fees are separate.',
-    },
-    {
-      name: 'Contract System',
-      range: '$60k–$150k',
-      detail: 'A set of interacting contracts with shared access control, events and off-chain indexing — for example a token plus its distribution, governance and treasury logic — including upgradeability design and internal security review.',
-    },
-    {
-      name: 'Protocol & Audit Coordination',
-      range: '$150k–$400k+',
-      detail: 'A larger on-chain protocol with economic mechanisms, oracle integration, invariant testing, full audit coordination and remediation, plus deployment and a post-launch monitoring plan. Third-party audit budgeted on top.',
-    },
-  ],
   definitions: [
     {
       term: 'Smart contract',
