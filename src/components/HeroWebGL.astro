@@ -307,8 +307,14 @@
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 28px;
-    max-width: 14ch;
+    max-width: 22ch;
     overflow: hidden;
+    /* Override global h1 rule so long words (enterprise, engineered)
+       never break mid-character inside the tight hero column. */
+    overflow-wrap: normal;
+    word-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
   .hero-heading .w {
     display: inline-block;
