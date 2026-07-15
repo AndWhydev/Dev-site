@@ -45,7 +45,7 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
         </p>
       </div>
 
-      <!-- In-code API request terminal — pure HTML/CSS, scroll-triggered -->
+      <!-- In-code API request terminal, pure HTML/CSS, scroll-triggered -->
       <div class="tech-term reveal-right stagger-2" data-tech-term aria-hidden="true">
         <div class="tech-term-head">
           <span class="tech-term-dots">
@@ -79,7 +79,7 @@ const categories = ['All', ...new Set(techs.map(t => t.category))];
       {techs.map((tech, i) => (
         <div
           class={`tech-item spotlight-card reveal stagger-${Math.min((i % 6) + 1, 6)}`}
-          title={`${tech.name} — ${tech.category}`}
+          title={`${tech.name}, ${tech.category}`}
         >
           <div class="tech-icon" style={`color: ${tech.color};`} set:html={tech.icon} />
           <span class="tech-name">{tech.name}</span>

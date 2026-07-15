@@ -8,14 +8,14 @@ const data = {
   heroHeadline: 'Cloud Architecture That\'s Secure, Resilient and Cost-Efficient',
   heroTagline: 'AWS, GCP and Azure infrastructure designed to be secure, observable and cheap to operate from day one.',
   description: [
-    'Cloud infrastructure is where the gap between "it works" and "it works at 3am during a DDoS, a database failover and a botched deployment simultaneously" becomes visible. We design and operate infrastructure for organisations where downtime has direct financial and reputational consequences — financial services platforms, government digital services, healthcare applications and large-scale consumer products. Our practice is informed by the production incidents, capacity planning decisions and zero-downtime migrations our engineers have lived through, so we do not put architectures on a whiteboard that we would not be willing to operate.',
-    'The scope of our infrastructure and DevOps practice covers initial cloud architecture design, infrastructure-as-code implementation using Terraform or AWS CDK, CI/CD pipeline construction, container orchestration on Kubernetes or ECS, observability stack design, security hardening and compliance controls, disaster recovery planning with tested recovery procedures, and ongoing managed operations for organisations that prefer not to build an internal SRE function. We are cloud-agnostic: we select the platform based on your existing agreements, compliance requirements, and the services best suited to your workload — not based on which certification we hold.',
+    'Cloud infrastructure is where the gap between "it works" and "it works at 3am during a DDoS, a database failover and a botched deployment simultaneously" becomes visible. We design and operate infrastructure for organisations where downtime has direct financial and reputational consequences, financial services platforms, government digital services, healthcare applications and large-scale consumer products. Our practice is informed by the production incidents, capacity planning decisions and zero-downtime migrations our engineers have lived through, so we do not put architectures on a whiteboard that we would not be willing to operate.',
+    'The scope of our infrastructure and DevOps practice covers initial cloud architecture design, infrastructure-as-code implementation using Terraform or AWS CDK, CI/CD pipeline construction, container orchestration on Kubernetes or ECS, observability stack design, security hardening and compliance controls, disaster recovery planning with tested recovery procedures, and ongoing managed operations for organisations that prefer not to build an internal SRE function. We are cloud-agnostic: we select the platform based on your existing agreements, compliance requirements, and the services best suited to your workload, not based on which certification we hold.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
       title: 'Infrastructure as Code, Always',
-      description: 'Every infrastructure resource we provision is codified in Terraform or AWS CDK. There are no click-ops configurations in the console that will drift from your documented state. This means infrastructure is reproducible, reviewable via pull requests, auditable, and recoverable — you can rebuild your entire environment in a new region from code.',
+      description: 'Every infrastructure resource we provision is codified in Terraform or AWS CDK. There are no click-ops configurations in the console that will drift from your documented state. This means infrastructure is reproducible, reviewable via pull requests, auditable, and recoverable, you can rebuild your entire environment in a new region from code.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
@@ -30,7 +30,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
       title: 'Cloud Cost Optimisation',
-      description: 'Cloud bills grow quietly until they do not. We implement tagging policies for cost attribution, right-size compute instances against actual utilisation data, identify and eliminate orphaned resources, convert appropriate workloads to Spot/Preemptible instances, and purchase Savings Plans or Committed Use Discounts for baseline workloads. A first-pass optimisation almost always finds material savings — but the only honest number is the one we produce after reading your actual usage data.',
+      description: 'Cloud bills grow quietly until they do not. We implement tagging policies for cost attribution, right-size compute instances against actual utilisation data, identify and eliminate orphaned resources, convert appropriate workloads to Spot/Preemptible instances, and purchase Savings Plans or Committed Use Discounts for baseline workloads. A first-pass optimisation almost always finds material savings, but the only honest number is the one we produce after reading your actual usage data.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
@@ -43,7 +43,7 @@ const data = {
       description: 'GitHub Actions, GitLab CI, or AWS CodePipeline configured to run automated tests, security scanning (SAST, container image scanning, dependency checks), build artefacts, deploy to staging, and await approval before production. Release frequency increases from weeks to days without increasing deployment risk.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'AWS', 'Google Cloud Platform', 'Microsoft Azure', 'Terraform', 'AWS CDK',
@@ -54,38 +54,38 @@ const data = {
     {
       step: '01',
       title: 'Architecture Assessment & Design',
-      duration: 'Weeks 1–3',
+      duration: 'Weeks 1 to 3',
       description: 'For existing workloads, we audit current infrastructure against the AWS/GCP/Azure Well-Architected Framework, identifying risks, inefficiencies and compliance gaps. For new workloads, we run a design workshop producing an architecture diagram, network topology, service selection rationale, and a cost model. Every design decision is documented with its trade-offs.',
     },
     {
       step: '02',
       title: 'Security Baseline & Compliance Controls',
-      duration: 'Weeks 2–4',
+      duration: 'Weeks 2 to 4',
       description: 'Identity and access management configuration, network security controls, encryption-at-rest and in-transit policies, logging and audit trail configuration, and baseline security monitoring. For regulated workloads, compliance controls specific to APRA CPS 234, IRAP, ISO 27001 or PCI DSS are mapped and implemented at this stage.',
     },
     {
       step: '03',
       title: 'Infrastructure as Code Implementation',
-      duration: 'Weeks 3–8',
+      duration: 'Weeks 3 to 8',
       description: 'All infrastructure resources are provisioned via Terraform or AWS CDK, structured with reusable modules, stored in version control with pull request review processes, and deployed through an automated pipeline. Environments (dev, staging, production) are defined as parameterised instances of the same modules.',
     },
     {
       step: '04',
       title: 'CI/CD Pipeline Construction',
-      duration: 'Weeks 4–8',
-      description: 'Pipeline design covering build, test, security scan, deploy-to-staging, integration test, and production deployment stages. Deployment strategies (blue-green, canary, rolling) are selected based on application tolerance for dual-version state. Rollback procedures are documented and tested — not discovered during incidents.',
+      duration: 'Weeks 4 to 8',
+      description: 'Pipeline design covering build, test, security scan, deploy-to-staging, integration test, and production deployment stages. Deployment strategies (blue-green, canary, rolling) are selected based on application tolerance for dual-version state. Rollback procedures are documented and tested, not discovered during incidents.',
     },
     {
       step: '05',
       title: 'Observability & Alerting',
-      duration: 'Weeks 6–10',
+      duration: 'Weeks 6 to 10',
       description: 'Metrics, logs and traces configured end-to-end. Dashboards for application health, infrastructure utilisation, cost, and security events. Alert thresholds defined based on SLA targets with noise reduction rules to prevent alert fatigue. An on-call runbook documents what each alert means and the initial response steps.',
     },
     {
       step: '06',
       title: 'Disaster Recovery Testing & Handover',
-      duration: 'Weeks 10–12',
-      description: 'Documented and scheduled DR runbook execution — we actually fail over the system, measure RTO and RPO against targets, and identify gaps before they matter. Handover includes architecture documentation, runbooks, access handover checklist, and a managed operations agreement if your team is not resourced to operate the environment independently.',
+      duration: 'Weeks 10 to 12',
+      description: 'Documented and scheduled DR runbook execution, we actually fail over the system, measure RTO and RPO against targets, and identify gaps before they matter. Handover includes architecture documentation, runbooks, access handover checklist, and a managed operations agreement if your team is not resourced to operate the environment independently.',
     },
   ],
   industries: [
@@ -101,11 +101,11 @@ const data = {
   faqs: [
     {
       question: 'How do you decide which cloud provider to use for our workload?',
-      answer: 'Cloud provider selection is driven by four factors: your existing enterprise agreements and committed spend (which can make one provider significantly cheaper than another), compliance and data sovereignty requirements (AWS\'s Australian regions and GovCloud designation, for example, are relevant for some government workloads), the specific managed services best suited to your workload (AWS leads on managed database services, GCP on large-scale data and ML infrastructure, Azure on Active Directory integration for Microsoft-heavy enterprises), and your internal team\'s operational familiarity. We do not have a preferred provider and will recommend the one that best serves your requirements — including multi-cloud where workloads have genuinely different optimal homes.',
+      answer: 'Cloud provider selection is driven by four factors: your existing enterprise agreements and committed spend (which can make one provider significantly cheaper than another), compliance and data sovereignty requirements (AWS\'s Australian regions and GovCloud designation, for example, are relevant for some government workloads), the specific managed services best suited to your workload (AWS leads on managed database services, GCP on large-scale data and ML infrastructure, Azure on Active Directory integration for Microsoft-heavy enterprises), and your internal team\'s operational familiarity. We do not have a preferred provider and will recommend the one that best serves your requirements, including multi-cloud where workloads have genuinely different optimal homes.',
     },
     {
       question: 'What is infrastructure as code and why does it matter for our organisation?',
-      answer: 'Infrastructure as code means your cloud environment is defined in version-controlled configuration files (Terraform HCL or AWS CDK TypeScript) rather than configured manually through cloud consoles. The practical benefits are substantial: your infrastructure becomes auditable (every change is a git commit with an author), reproducible (you can spin up an identical copy of your production environment for testing or disaster recovery), reviewable (infrastructure changes go through the same pull request process as application code), and recoverable (if a region goes down, you can provision the same environment elsewhere in hours). Organisations without infrastructure as code typically cannot answer the question "what is actually running in our cloud account?" with confidence — and find out why that matters during an incident.',
+      answer: 'Infrastructure as code means your cloud environment is defined in version-controlled configuration files (Terraform HCL or AWS CDK TypeScript) rather than configured manually through cloud consoles. The practical benefits are substantial: your infrastructure becomes auditable (every change is a git commit with an author), reproducible (you can spin up an identical copy of your production environment for testing or disaster recovery), reviewable (infrastructure changes go through the same pull request process as application code), and recoverable (if a region goes down, you can provision the same environment elsewhere in hours). Organisations without infrastructure as code typically cannot answer the question "what is actually running in our cloud account?" with confidence, and find out why that matters during an incident.',
     },
     {
       question: 'How do you approach cloud security for Australian regulatory requirements?',
@@ -113,40 +113,40 @@ const data = {
     },
     {
       question: 'What does it cost to run our application in the cloud, and can you reduce our existing bill?',
-      answer: 'Cloud cost is highly variable and depends on your workload characteristics — compute-intensive vs I/O-intensive, traffic patterns, data transfer volumes, and managed service choices. We provide cost modelling during the architecture design phase based on your application\'s characteristics and growth projections, so you have a realistic number before deployment. For organisations with existing cloud spend, our cost-optimisation engagement walks the same six levers in sequence — right-sizing (matching instance sizes to actual utilisation), Savings Plans or Reserved Instance purchases for baseline compute, converting batch workloads to Spot instances, eliminating orphaned resources (snapshots, unattached EBS volumes, unused Elastic IPs), architecture changes (moving appropriate workloads to serverless or container-based models), and tagging discipline so cost attribution actually works. We will tell you the realistic savings range after reading the bill, not before.',
+      answer: 'Cloud cost is highly variable and depends on your workload characteristics, compute-intensive vs I/O-intensive, traffic patterns, data transfer volumes, and managed service choices. We provide cost modelling during the architecture design phase based on your application\'s characteristics and growth projections, so you have a realistic number before deployment. For organisations with existing cloud spend, our cost-optimisation engagement walks the same six levers in sequence, right-sizing (matching instance sizes to actual utilisation), Savings Plans or Reserved Instance purchases for baseline compute, converting batch workloads to Spot instances, eliminating orphaned resources (snapshots, unattached EBS volumes, unused Elastic IPs), architecture changes (moving appropriate workloads to serverless or container-based models), and tagging discipline so cost attribution actually works. We will tell you the realistic savings range after reading the bill, not before.',
     },
     {
       question: 'How do you handle deployments without downtime for production systems?',
-      answer: 'Zero-downtime deployment is an architecture concern, not just a pipeline concern. It requires: the application itself to be stateless (no in-memory session state), database migrations that are backwards compatible with the previous version of the application (so both versions can run simultaneously during a rolling update), a load balancer that routes traffic gradually from the old version to the new, and health checks that validate the new version is actually serving traffic correctly before old instances are terminated. We implement blue-green deployments for applications that need to swap all traffic at once, and rolling deployments for those that can tolerate mixed versions. Every deployment strategy is coupled with an automated rollback trigger — if error rates spike above threshold after a deployment, traffic is automatically returned to the previous version without human intervention.',
+      answer: 'Zero-downtime deployment is an architecture concern, not just a pipeline concern. It requires: the application itself to be stateless (no in-memory session state), database migrations that are backwards compatible with the previous version of the application (so both versions can run simultaneously during a rolling update), a load balancer that routes traffic gradually from the old version to the new, and health checks that validate the new version is actually serving traffic correctly before old instances are terminated. We implement blue-green deployments for applications that need to swap all traffic at once, and rolling deployments for those that can tolerate mixed versions. Every deployment strategy is coupled with an automated rollback trigger, if error rates spike above threshold after a deployment, traffic is automatically returned to the previous version without human intervention.',
     },
     {
       question: 'Do we need a dedicated SRE team, or can you manage the infrastructure for us?',
-      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. For organisations running business-critical applications 24/7 with strict SLAs, an internal or outsourced SRE function is necessary. We offer managed infrastructure operations as a service — covering 24/7 monitoring with defined response SLAs, incident management, capacity planning, security patch management, and regular architecture reviews. This is typically more cost-effective than building an internal SRE capability for organisations with fewer than 20 engineers. For organisations building internal capability, we offer a transition model: we operate the infrastructure while mentoring your internal team, then hand over operations with a defined competency milestone as the transfer condition.',
+      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. For organisations running business-critical applications 24/7 with strict SLAs, an internal or outsourced SRE function is necessary. We offer managed infrastructure operations as a service, covering 24/7 monitoring with defined response SLAs, incident management, capacity planning, security patch management, and regular architecture reviews. This is typically more cost-effective than building an internal SRE capability for organisations with fewer than 20 engineers. For organisations building internal capability, we offer a transition model: we operate the infrastructure while mentoring your internal team, then hand over operations with a defined competency milestone as the transfer condition.',
     },
   ],
   serviceName: 'Cloud & DevOps',
   slug: 'cloud-infrastructure',
-  summaryStatement: 'Cloud and DevOps is the practice of designing, codifying and operating cloud infrastructure on AWS, GCP or Azure so that it is secure, highly available and cost-efficient — with every resource defined as infrastructure-as-code and released through automated, tested pipelines.',
+  summaryStatement: 'Cloud and DevOps is the practice of designing, codifying and operating cloud infrastructure on AWS, GCP or Azure so that it is secure, highly available and cost-efficient, with every resource defined as infrastructure-as-code and released through automated, tested pipelines.',
   comparison: {
     rightFor: [
       'You run workloads where downtime has direct financial or reputational consequences and need genuine high availability.',
       'Your infrastructure is configured by hand in the console and you cannot confidently say what is running or reproduce it.',
-      'You face regulatory obligations — APRA CPS 234, IRAP, ISO 27001, PCI DSS — that demand auditable controls and logging.',
+      'You face regulatory obligations, APRA CPS 234, IRAP, ISO 27001, PCI DSS, that demand auditable controls and logging.',
       'Your cloud bill is growing faster than your usage and you need disciplined cost optimisation.',
       'You want CI/CD pipelines and observability that let you deploy more often without increasing risk.',
     ],
     notRightFor: [
-      'You run a simple static site or low-traffic app — a managed platform (Vercel, Netlify, App Service) is cheaper and lower-overhead.',
+      'You run a simple static site or low-traffic app, a managed platform (Vercel, Netlify, App Service) is cheaper and lower-overhead.',
       'A single small server with managed backups already meets your availability and compliance needs.',
       'You have an in-house SRE team that already operates mature infrastructure-as-code; you may only need a one-off review.',
       'Your workload is genuinely short-lived or experimental, where the cost of full IaC and pipelines outweighs the benefit.',
-      'You are not prepared to adopt version control and code review for infrastructure — the model only pays off if you do.',
+      'You are not prepared to adopt version control and code review for infrastructure, the model only pays off if you do.',
     ],
   },
   definitions: [
     {
       term: 'IaC (Infrastructure as Code)',
-      definition: 'Defining cloud resources in version-controlled configuration files — using Terraform or AWS CDK — rather than clicking through a console, so infrastructure is reproducible, reviewable and auditable.',
+      definition: 'Defining cloud resources in version-controlled configuration files, using Terraform or AWS CDK, rather than clicking through a console, so infrastructure is reproducible, reviewable and auditable.',
     },
     {
       term: 'Blue-green deployment',
@@ -158,7 +158,7 @@ const data = {
     },
     {
       term: 'Autoscaling',
-      definition: 'Automatically adding or removing compute capacity in response to demand — reactively to live load or predictively ahead of known peaks — so the system stays performant without paying for idle capacity.',
+      definition: 'Automatically adding or removing compute capacity in response to demand, reactively to live load or predictively ahead of known peaks, so the system stays performant without paying for idle capacity.',
     },
     {
       term: 'RTO / RPO',

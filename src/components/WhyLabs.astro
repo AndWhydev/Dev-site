@@ -4,14 +4,14 @@ const pillars = [
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
     label: 'Enterprise-Grade Security',
     heading: 'Security Is Not An Afterthought',
-    body: 'Every application we build is architected with security from line one. OWASP standards, penetration testing, end-to-end encryption and role-based access control are built-in — not bolted on.',
+    body: 'Every application we build is architected with security from line one. OWASP standards, penetration testing, end-to-end encryption and role-based access control are built-in, not bolted on.',
     visual: 'lock',
   },
   {
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M16 4.93A9 9 0 0121 12"/></svg>`,
     label: 'Transparent Delivery',
     heading: 'No Surprises. Ever.',
-    body: 'A clear roadmap, weekly updates and milestones agreed in writing. If something is at risk, you hear it from us first — not when the deadline arrives.',
+    body: 'A clear roadmap, weekly updates and milestones agreed in writing. If something is at risk, you hear it from us first, not when the deadline arrives.',
     visual: 'milestones',
   },
   {
@@ -44,7 +44,7 @@ const pillars = [
     <div class="pillars-grid">
       {pillars.map((pillar, i) => (
         <div class={`pillar pillar--${pillar.visual} spotlight-card tilt-card reveal stagger-${i + 1}`}>
-          {/* Per-pillar background visual — each one unique to the section. */}
+          {/* Per-pillar background visual, each one unique to the section. */}
           <div class="pillar-visual" aria-hidden="true">
             {pillar.visual === 'lock' && (
               <svg viewBox="0 0 120 120" class="pv-svg">
@@ -116,7 +116,7 @@ const pillars = [
     <div class="proof-row reveal stagger-5">
       <div class="proof-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span>Senior engineers only — no juniors on client projects</span>
+        <span>Senior engineers only, no juniors on client projects</span>
       </div>
       <div class="proof-item">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

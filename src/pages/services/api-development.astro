@@ -8,7 +8,7 @@ const data = {
   heroHeadline: 'APIs That Connect Your Business to Everything It Needs',
   heroTagline: 'RESTful, GraphQL and event-driven APIs designed for reliability, security and developer experience.',
   description: [
-    'Every modern enterprise runs on APIs — whether you are exposing capabilities to partners, connecting internal systems, or powering digital products consumed by thousands of users. The quality of those APIs determines whether your platform becomes a competitive asset or a maintenance liability. Poorly designed APIs produce brittle integrations, inconsistent error handling, and developer experiences so poor that partners avoid building against them. We design and build APIs that are consistent, well-documented, observable, and built to evolve without breaking consumers.',
+    'Every modern enterprise runs on APIs, whether you are exposing capabilities to partners, connecting internal systems, or powering digital products consumed by thousands of users. The quality of those APIs determines whether your platform becomes a competitive asset or a maintenance liability. Poorly designed APIs produce brittle integrations, inconsistent error handling, and developer experiences so poor that partners avoid building against them. We design and build APIs that are consistent, well-documented, observable, and built to evolve without breaking consumers.',
     'Our API practice covers the full spectrum: RESTful APIs following OpenAPI 3.1 specifications, GraphQL schemas for client-driven data fetching, and event-driven architectures using message brokers like AWS SQS, SNS, and Kafka for systems that need to communicate asynchronously at scale. We also handle the integration work: connecting your systems to third-party platforms, managing authentication and credential rotation, implementing retry logic and circuit breakers, and building the middleware that makes heterogeneous enterprise systems talk to each other reliably. Every API we deliver ships with comprehensive documentation, an interactive sandbox, and the monitoring instrumentation your team needs to operate it confidently.',
   ],
   benefits: [
@@ -30,12 +30,12 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
       title: 'Versioning Without Breaking Consumers',
-      description: 'We implement API versioning strategies (URI versioning or content negotiation) and use additive change policies to evolve APIs without breaking existing consumers. Deprecation notices, sunset headers and migration guides are provided with adequate notice periods — not overnight surprises.',
+      description: 'We implement API versioning strategies (URI versioning or content negotiation) and use additive change policies to evolve APIs without breaking existing consumers. Deprecation notices, sunset headers and migration guides are provided with adequate notice periods, not overnight surprises.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
       title: 'Built for High Concurrency',
-      description: 'Node.js and Go-based API layers handle tens of thousands of concurrent connections without thread pool exhaustion. Connection pooling, async I/O, and database query optimisation ensure that API latency remains flat as load increases — not degrading gradually until a 2am incident reveals the ceiling.',
+      description: 'Node.js and Go-based API layers handle tens of thousands of concurrent connections without thread pool exhaustion. Connection pooling, async I/O, and database query optimisation ensure that API latency remains flat as load increases, not degrading gradually until a 2am incident reveals the ceiling.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
@@ -43,7 +43,7 @@ const data = {
       description: 'APIs consumed by developers need to be a pleasure to work with. We produce comprehensive Stoplight or Redoc documentation, Postman collection exports, code examples in multiple languages, and sandbox environments with realistic test data. Internal developer portals are available for organisations managing multiple API consumers.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'Node.js', 'Go', 'FastAPI (Python)', 'GraphQL', 'REST / OpenAPI 3.1',
@@ -53,32 +53,32 @@ const data = {
     {
       step: '01',
       title: 'API Design & Contract Definition',
-      duration: 'Weeks 1–3',
-      description: 'We run design workshops to map the capabilities the API needs to expose, the consumers that will use them, and the data models involved. API contracts are written as OpenAPI 3.1 specifications before any code is written — this surfaces design issues early and gives consumers a document to work against in parallel.',
+      duration: 'Weeks 1 to 3',
+      description: 'We run design workshops to map the capabilities the API needs to expose, the consumers that will use them, and the data models involved. API contracts are written as OpenAPI 3.1 specifications before any code is written, this surfaces design issues early and gives consumers a document to work against in parallel.',
     },
     {
       step: '02',
       title: 'Authentication & Security Architecture',
-      duration: 'Weeks 2–3',
-      description: 'We design the authentication and authorisation model appropriate for the consumer type — OAuth 2.0 PKCE for user-context APIs, client credentials for machine-to-machine, API keys with rotation policies for partner integrations. Security requirements are documented in the API spec itself as OpenAPI security schemes.',
+      duration: 'Weeks 2 to 3',
+      description: 'We design the authentication and authorisation model appropriate for the consumer type, OAuth 2.0 PKCE for user-context APIs, client credentials for machine-to-machine, API keys with rotation policies for partner integrations. Security requirements are documented in the API spec itself as OpenAPI security schemes.',
     },
     {
       step: '03',
       title: 'Core API Development',
-      duration: 'Weeks 3–12',
+      duration: 'Weeks 3 to 12',
       description: 'Implementation of API endpoints against the agreed specification, with contract tests validating that responses always match the OpenAPI schema. Integration work with underlying data stores and upstream systems happens in parallel. We do not move ahead of the agreed spec without a change control process.',
     },
     {
       step: '04',
       title: 'Integration & Third-Party Connections',
-      duration: 'Weeks 5–14',
+      duration: 'Weeks 5 to 14',
       description: 'Third-party integrations are built with resilience patterns: exponential backoff retry, circuit breakers (Resilience4j or custom), dead-letter queues for failed async events, and timeouts configured to prevent cascading failures. We test integration failure modes explicitly, not just happy paths.',
     },
     {
       step: '05',
       title: 'Load Testing & Performance Baseline',
-      duration: 'Week 13–14',
-      description: 'We run load tests using k6 or Gatling against the staging API with realistic traffic shapes — gradual ramp-up, spike tests, and sustained load at peak projections. Performance baselines are documented so regressions in future deployments are detectable against a known good state.',
+      duration: 'Week 13 to 14',
+      description: 'We run load tests using k6 or Gatling against the staging API with realistic traffic shapes, gradual ramp-up, spike tests, and sustained load at peak projections. Performance baselines are documented so regressions in future deployments are detectable against a known good state.',
     },
     {
       step: '06',
@@ -100,11 +100,11 @@ const data = {
   faqs: [
     {
       question: 'When should we use REST versus GraphQL versus event-driven APIs?',
-      answer: 'The choice depends on the primary consumer pattern and data access requirements. REST is the right default for most public-facing and partner-facing APIs: it is widely understood, tooling is mature, and caching at the HTTP layer is straightforward. GraphQL is valuable when you have multiple clients with substantially different data requirements — for example, a mobile app, a web app and a data analytics consumer all consuming the same backend — as it eliminates over-fetching and under-fetching without requiring multiple REST endpoints. Event-driven APIs using Kafka or SNS/SQS are the right choice when systems need to communicate asynchronously without tight coupling — typically for high-volume data pipelines, system integration between legacy applications, or any scenario where a synchronous request-response model would create unacceptable latency.',
+      answer: 'The choice depends on the primary consumer pattern and data access requirements. REST is the right default for most public-facing and partner-facing APIs: it is widely understood, tooling is mature, and caching at the HTTP layer is straightforward. GraphQL is valuable when you have multiple clients with substantially different data requirements, for example, a mobile app, a web app and a data analytics consumer all consuming the same backend, as it eliminates over-fetching and under-fetching without requiring multiple REST endpoints. Event-driven APIs using Kafka or SNS/SQS are the right choice when systems need to communicate asynchronously without tight coupling, typically for high-volume data pipelines, system integration between legacy applications, or any scenario where a synchronous request-response model would create unacceptable latency.',
     },
     {
       question: 'How do you handle integrations with systems that have poor or no APIs?',
-      answer: 'Legacy enterprise systems — particularly on-premises ERP and mainframe applications — frequently expose data only through database connections, file exports, or screen-scraping interfaces. We build ETL pipelines and middleware adapters that translate legacy data access patterns into well-structured API responses, insulating downstream consumers from the messiness of the source system. For file-based integrations (SFTP, EDI, flat files), we build ingestion pipelines with validation, error quarantine, and processing confirmation. The goal is always to give consuming systems a clean, consistent API contract regardless of what sits behind it.',
+      answer: 'Legacy enterprise systems, particularly on-premises ERP and mainframe applications, frequently expose data only through database connections, file exports, or screen-scraping interfaces. We build ETL pipelines and middleware adapters that translate legacy data access patterns into well-structured API responses, insulating downstream consumers from the messiness of the source system. For file-based integrations (SFTP, EDI, flat files), we build ingestion pipelines with validation, error quarantine, and processing confirmation. The goal is always to give consuming systems a clean, consistent API contract regardless of what sits behind it.',
     },
     {
       question: 'What security standards do your APIs meet for regulated industries?',
@@ -116,7 +116,7 @@ const data = {
     },
     {
       question: 'How do you ensure API reliability when upstream systems are unavailable?',
-      answer: 'Resilience patterns are a non-negotiable component of our API development. We implement circuit breakers that open when an upstream dependency starts failing, preventing cascading failures from propagating through your system. Async operations are queued in durable message stores (SQS, Kafka) rather than relying on synchronous calls that can time out. Retry logic uses exponential backoff with jitter to avoid thundering herd conditions. We build degraded-mode responses where partial functionality can be served even when non-critical dependencies are unavailable. These patterns are tested explicitly with chaos engineering techniques — simulating upstream failures in staging before launch.',
+      answer: 'Resilience patterns are a non-negotiable component of our API development. We implement circuit breakers that open when an upstream dependency starts failing, preventing cascading failures from propagating through your system. Async operations are queued in durable message stores (SQS, Kafka) rather than relying on synchronous calls that can time out. Retry logic uses exponential backoff with jitter to avoid thundering herd conditions. We build degraded-mode responses where partial functionality can be served even when non-critical dependencies are unavailable. These patterns are tested explicitly with chaos engineering techniques, simulating upstream failures in staging before launch.',
     },
     {
       question: 'Can you build an internal developer portal for our organisation\'s APIs?',
@@ -125,7 +125,7 @@ const data = {
   ],
   serviceName: 'API Development',
   slug: 'api-development',
-  summaryStatement: 'API development is the design and engineering of the interfaces that let software systems exchange data reliably — RESTful, GraphQL and event-driven APIs that are consistent, secure, documented and able to evolve without breaking the systems that depend on them.',
+  summaryStatement: 'API development is the design and engineering of the interfaces that let software systems exchange data reliably, RESTful, GraphQL and event-driven APIs that are consistent, secure, documented and able to evolve without breaking the systems that depend on them.',
   comparison: {
     rightFor: [
       'You need to expose capabilities to partners or external developers and want an API that is a pleasure to integrate against.',
@@ -135,9 +135,9 @@ const data = {
       'You are connecting to legacy systems with poor or no APIs and need a clean, consistent contract in front of them.',
     ],
     notRightFor: [
-      'A vendor already provides a well-supported API that meets your needs — integrate with it rather than building your own layer.',
+      'A vendor already provides a well-supported API that meets your needs, integrate with it rather than building your own layer.',
       'You have a single application talking to a single database with no external consumers; a separate API layer adds needless overhead.',
-      'A one-off data export or import is required — a scheduled file transfer or script is simpler than a maintained API.',
+      'A one-off data export or import is required, a scheduled file transfer or script is simpler than a maintained API.',
       'Your integration is low-volume and internal, where a managed integration platform (iPaaS) may be more cost-effective than custom work.',
       'You have not yet decided what capabilities the API should expose; design discovery should come before engineering.',
     ],

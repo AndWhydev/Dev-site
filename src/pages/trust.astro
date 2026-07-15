@@ -5,22 +5,22 @@ import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 /**
- * Trust page — the page every serious buyer needs before signing. Concrete
+ * Trust page, the page every serious buyer needs before signing. Concrete
  * facts (company registration, address, hours), the security posture we
  * actually hold ourselves to, the IP-transfer language we put in every
  * engagement contract, and a downloadable mutual NDA they can run past
  * their lawyer before the first commercial conversation.
  *
  * Nothing on this page is a claim about who we work with. It is only a
- * claim about how we work — every line of which is provable from the
+ * claim about how we work, every line of which is provable from the
  * contract or from public record (ASIC, ABR).
  */
 
 const facts = [
   { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Trading as All Webbed Labs. Sister company to All Webbed Up Pty Ltd.' },
-  { label: 'ABN', value: '32 698 684 105', detail: 'Australian Business Number — verifiable on abr.business.gov.au' },
+  { label: 'ABN', value: '32 698 684 105', detail: 'Australian Business Number, verifiable on abr.business.gov.au' },
   { label: 'Registered office', value: '1 Ramsay Rd, Five Dock NSW 2046', detail: 'Greater Sydney, Australia' },
-  { label: 'Operating hours', value: 'Mon–Fri, 9am–6pm AEST', detail: 'Real humans on the other end of every message' },
+  { label: 'Operating hours', value: 'Mon, Fri, 9am, 6pm AEST', detail: 'Real humans on the other end of every message' },
   { label: 'Ownership', value: '100% Australian-owned', detail: 'No offshore parent, no overseas subcontracting without your written consent' },
   { label: 'Insurance', value: 'Professional indemnity + public liability', detail: 'Certificates available on request before contract signing' },
 ];
@@ -28,7 +28,7 @@ const facts = [
 const ipClauses = [
   {
     title: 'Pre-existing IP stays with its owner',
-    body: 'Anything we bring to the engagement that already existed before the project starts — internal libraries, methodology, templates, third-party open source — remains owned by the original owner. We list these explicitly in the contract as Background IP. Open source remains under its existing licence.',
+    body: 'Anything we bring to the engagement that already existed before the project starts, internal libraries, methodology, templates, third-party open source, remains owned by the original owner. We list these explicitly in the contract as Background IP. Open source remains under its existing licence.',
   },
   {
     title: 'New IP created in the project is yours',
@@ -40,7 +40,7 @@ const ipClauses = [
   },
   {
     title: 'You receive the keys',
-    body: 'Source repository, DNS, hosting account, secret store, third-party service accounts — every credential is in your control before final invoice. We are removed from every system within five business days of project closeout.',
+    body: 'Source repository, DNS, hosting account, secret store, third-party service accounts, every credential is in your control before final invoice. We are removed from every system within five business days of project closeout.',
   },
 ];
 
@@ -56,7 +56,7 @@ const security = [
   {
     pillar: 'Authorisation',
     bullets: [
-      'Least-privilege by default — engineers get access only to the projects they are staffed on',
+      'Least-privilege by default, engineers get access only to the projects they are staffed on',
       'Audit log on every access to client production data, retained for the contracted period',
       'Just-in-time elevation for production changes; no standing admin credentials',
     ],
@@ -80,7 +80,7 @@ const security = [
   {
     pillar: 'Incident response',
     bullets: [
-      'Roll back first, investigate second — uptime takes priority over root cause',
+      'Roll back first, investigate second, uptime takes priority over root cause',
       'Postmortem within five business days; action items tracked to closure',
       'Client notified of incidents that affect their data or service within the contracted SLA',
     ],
@@ -98,7 +98,7 @@ const compliance = [
   },
   {
     label: 'R&D Tax Incentive eligibility',
-    body: 'The portion of a software build conducted in Australia is generally eligible for consideration under the AU R&D Tax Incentive (RDTI). We structure our project documentation — technical uncertainty registers, experiment logs, time tracking — to support your eventual claim. This is a structural advantage of working with an Australian agency, not a claim only we can make.',
+    body: 'The portion of a software build conducted in Australia is generally eligible for consideration under the AU R&D Tax Incentive (RDTI). We structure our project documentation, technical uncertainty registers, experiment logs, time tracking, to support your eventual claim. This is a structural advantage of working with an Australian agency, not a claim only we can make.',
   },
   {
     label: 'GDPR-adjacent obligations',
@@ -108,7 +108,7 @@ const compliance = [
 ---
 
 <Layout
-  title="Trust, Compliance & IP — All Webbed Labs"
+  title="Trust, Compliance & IP, All Webbed Labs"
   description="Company registration, IP transfer terms, security posture, compliance position and a downloadable mutual NDA. The page every serious buyer should read before scoping."
 >
   <Header />
@@ -123,7 +123,7 @@ const compliance = [
             Read this before you brief us.
           </h1>
           <p class="trust-lead">
-            Every line on this page is verifiable — from public record, from the engagement contract or from a downloadable document. We have written it down so you do not have to ask, and so your legal and security people can pre-clear us before the first commercial conversation.
+            Every line on this page is verifiable, from public record, from the engagement contract or from a downloadable document. We have written it down so you do not have to ask, and so your legal and security people can pre-clear us before the first commercial conversation.
           </p>
           <div class="trust-actions">
             <a href="/docs/mutual-nda.pdf" class="btn-primary" download>
@@ -232,7 +232,7 @@ const compliance = [
       <div class="trust-disclaimer-inner">
         <div class="reveal">
           <p>
-            <strong>An honest note.</strong> All Webbed Labs is a new operation within an established parent (All Webbed Up). We have deliberately not stamped this site with certifications we have not earned, badges we cannot produce on request, or client logos we cannot show under NDA. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:labs@allwebbedup.com.au">labs@allwebbedup.com.au</a> — we will tell you yes, no or "not yet" without dressing it up.
+            <strong>An honest note.</strong> All Webbed Labs is a new operation within an established parent (All Webbed Up). We have deliberately not stamped this site with certifications we have not earned, badges we cannot produce on request, or client logos we cannot show under NDA. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:labs@allwebbedup.com.au">labs@allwebbedup.com.au</a>, we will tell you yes, no or "not yet" without dressing it up.
           </p>
         </div>
       </div>
@@ -268,7 +268,7 @@ const compliance = [
   .trust-title {
     font-family: 'Sora', sans-serif;
     /* Min lowered from 2.5rem → 1.75rem so it fits comfortably on
-       360–414px phones without clipping. Tablet/desktop unaffected. */
+       360 to 414px phones without clipping. Tablet/desktop unaffected. */
     font-size: clamp(1.75rem, 6.5vw, 4.5rem);
     font-weight: 800;
     color: white;

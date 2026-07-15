@@ -72,7 +72,7 @@ interface Props {
   summaryStatement?: string;
   /** Pricing tiers (placeholder ranges, AUD). */
   pricing?: PricingTier[];
-  /** When this IS / is NOT the right solution — also carries the negative qualifiers. */
+  /** When this IS / is NOT the right solution, also carries the negative qualifiers. */
   comparison?: Comparison;
   /** Definition blocks for technical terms used on this page. */
   definitions?: Definition[];
@@ -192,7 +192,7 @@ const entitySentence = BRAND_DEFINITION;
           <div class="svc-what-highlights reveal-right stagger-2">
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Senior engineers only — no juniors on client work</span>
+              <span>Senior engineers only, no juniors on client work</span>
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -242,13 +242,13 @@ const entitySentence = BRAND_DEFINITION;
     <section class="svc-video-section">
       <div class="svc-inner">
         <div class="video-placeholder-wrap reveal">
-          <!-- VIDEO_PLACEHOLDER — add Rotato demo video here showing this service in action -->
+          <!-- VIDEO_PLACEHOLDER, add Rotato demo video here showing this service in action -->
           <div class="video-placeholder">
             <div class="vp-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
             </div>
             <p class="vp-label">Demo Video</p>
-            <p class="vp-note">VIDEO_PLACEHOLDER — add Rotato demo video here</p>
+            <p class="vp-note">VIDEO_PLACEHOLDER, add Rotato demo video here</p>
           </div>
         </div>
       </div>
@@ -369,7 +369,7 @@ const entitySentence = BRAND_DEFINITION;
           <div class="reveal">
             <span class="section-label">Indicative Pricing</span>
             <h2 class="section-heading">How much does {name} cost?</h2>
-            <p class="svc-pricing-note">Indicative ranges in AUD to help you budget. Every engagement is scoped individually — book a discovery call for a fixed quote tailored to your requirements.</p>
+            <p class="svc-pricing-note">Indicative ranges in AUD to help you budget. Every engagement is scoped individually, book a discovery call for a fixed quote tailored to your requirements.</p>
           </div>
           <div class="pricing-grid">
             {pricing.map((tier, i) => (

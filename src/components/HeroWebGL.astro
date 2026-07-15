@@ -1,6 +1,6 @@
 ---
 /**
- * AWL — WebGL particle-network hero (Lusion-inspired).
+ * AWL, WebGL particle-network hero (Lusion-inspired).
  * Three.js point cloud + connected node graph that responds to cursor.
  * Graceful fallback to a CSS gradient mesh when WebGL is unavailable.
  * Reduced motion: single static frame (no animation loop).
@@ -11,7 +11,7 @@
   <!-- CSS gradient mesh shown until WebGL takes over (and used as fallback if WebGL fails). -->
   <div class="awl-hero__mesh" aria-hidden="true"></div>
   <canvas id="awl-hero-canvas" aria-hidden="true"></canvas>
-  <!-- FIX 12 — soft accent-coloured radial glow that follows the cursor.
+  <!-- FIX 12, soft accent-coloured radial glow that follows the cursor.
        Position is updated via CSS variables in the mousemove handler; pure CSS,
        no per-frame layout. Sits above the WebGL canvas with mix-blend-mode:screen
        so it brightens rather than tints. -->
@@ -21,15 +21,15 @@
   <div class="awl-hero__inner">
     <div class="awl-hero__copy">
       <p class="awl-hero__eyebrow">ENTERPRISE SOFTWARE · SYDNEY</p>
-      <h1 id="awl-hero-heading" class="hero-heading">Software, engineered to enterprise standards.</h1>
-      <p class="awl-hero__sub">Custom platforms, integrations and AI systems for Australian enterprise. Built by senior engineers, behind explicit quality gates, with full source code in your repository from day one.</p>
+      <h1 id="awl-hero-heading" class="hero-heading">Custom platforms, integrations and AI systems for Australian enterprise.</h1>
+      <p class="awl-hero__sub">Built by senior engineers, behind explicit quality gates, with full source code in your repository from day one.</p>
       <div class="awl-hero__ctas">
         <a href="/methodology" class="btn-fill btn-magnetic" data-hover>How we work</a>
         <a href="/contact" class="awl-hero__link" data-hover>Book a call <span class="arrow">&rarr;</span></a>
       </div>
     </div>
 
-    {/* Overseer pipeline mock — illustrative log of how an AWL build run
+    {/* Overseer pipeline mock, illustrative log of how an AWL build run
         actually executes. Deliberately generic (no client/project names) and
         labeled "example run" so a sharp reader doesn't read it as proof of a
         specific client. Decorative only. */}
@@ -88,7 +88,7 @@
     min-height: 100svh;
     width: 100%;
     overflow: hidden;
-    /* Solid fallback colour painted by the browser before any JS/WebGL runs —
+    /* Solid fallback colour painted by the browser before any JS/WebGL runs
        guarantees no flash of unstyled blackness even if Three.js fails to load. */
     background: #0a0f0e;
     display: flex;
@@ -96,7 +96,7 @@
     isolation: isolate;
   }
 
-  /* CSS gradient mesh — fallback + initial paint before WebGL boots. */
+  /* CSS gradient mesh, fallback + initial paint before WebGL boots. */
   .awl-hero__mesh {
     position: absolute;
     inset: 0;
@@ -114,7 +114,7 @@
   }
 
   #awl-hero-canvas {
-    /* No initial opacity:0 — the canvas is transparent until WebGL paints into it,
+    /* No initial opacity:0, the canvas is transparent until WebGL paints into it,
        so the mesh underneath stays visible during init. Removing the fade avoids
        the "black screen until I move the mouse" perception. */
     position: absolute;
@@ -126,7 +126,7 @@
     display: block;
   }
 
-  /* FIX 12 — cursor-following radial glow. CSS-only, driven by --x/--y variables
+  /* FIX 12, cursor-following radial glow. CSS-only, driven by --x/--y variables
      set in JS. mix-blend-mode: screen so it brightens whatever is underneath. */
   .awl-hero__cursor-glow {
     position: absolute;
@@ -168,7 +168,7 @@
   }
   .awl-hero__copy { min-width: 0; }
 
-  /* FIX 6 — terminal mock card. Subtle green border, faint accent glow,
+  /* FIX 6, terminal mock card. Subtle green border, faint accent glow,
      slight rotation, monospace log. Hidden under 1024px (mobile falls back
      to a single-column hero where the copy gets the full width). */
   .awl-hero__terminal {
@@ -335,7 +335,7 @@
   }
 
   .awl-hero__sub {
-    /* FIX 8 — bumped from clamp(16,1.3vw,19) → clamp(20,1.6vw,22) and capped at 600px. */
+    /* FIX 8, bumped from clamp(16,1.3vw,19) → clamp(20,1.6vw,22) and capped at 600px. */
     margin: 0 0 44px;
     font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
     font-size: clamp(20px, 1.6vw, 22px);
@@ -360,7 +360,7 @@
     animation: awl-rise 0.9s 0.75s cubic-bezier(.19,1,.22,1) forwards;
   }
 
-  /* Primary CTA — solid filled at rest, darker fill slides in left→right on hover.
+  /* Primary CTA, solid filled at rest, darker fill slides in left→right on hover.
      btn-fill from ANIMATIONS.md, switched from ghost to solid as the hero's
      dominant action surface. */
   .btn-fill {
@@ -454,7 +454,7 @@
   }
 
   @media (max-width: 1024px) {
-    /* Hide the terminal on tablet + mobile — copy collapses to a single column
+    /* Hide the terminal on tablet + mobile, copy collapses to a single column
        with breathing room. The hero is busy enough without it on small screens. */
     .awl-hero__inner {
       grid-template-columns: 1fr;
@@ -475,7 +475,7 @@
   @media (max-width: 480px) {
     /* Phone-specific tuning. Less padding, even more compact type, and
        stack the CTAs vertically so 'See our work' + 'Book a call →' each
-       sit full-width — easier 44px touch targets, no accidental wraps. */
+       sit full-width, easier 44px touch targets, no accidental wraps. */
     .awl-hero { min-height: 100svh; }
     .awl-hero__inner { padding: 6rem 20px 4.5rem; }
     .awl-hero__eyebrow { font-size: 11px; letter-spacing: 0.18em; margin-bottom: 22px; }
@@ -507,17 +507,17 @@
       justify-content: center;
       padding: 14px 0;
     }
-    /* Scroll hint takes valuable bottom real estate on a phone — hide it. */
+    /* Scroll hint takes valuable bottom real estate on a phone, hide it. */
     .awl-hero__hint { display: none; }
   }
 </style>
 
 <script is:inline>
-  /* Hero boot — split the heading, play intro, lazy-load + init Three.js.
+  /* Hero boot, split the heading, play intro, lazy-load + init Three.js.
      Re-runs on Astro view transitions. is:inline so Astro doesn't bundle this
-     as a module — we need direct access to the global THREE.
+     as a module, we need direct access to the global THREE.
 
-     Three.js (~118KB) is NOT preloaded — it is injected on idle after the page
+     Three.js (~118KB) is NOT preloaded, it is injected on idle after the page
      has reached `load`, which keeps it off the critical path. The CSS gradient
      mesh underneath the canvas is the static fallback that paints first and is
      also the final state on reduced-motion, save-data, and WebGL-failure paths. */
@@ -568,7 +568,7 @@
     const section = document.getElementById('awl-hero');
     if (!canvas || !section) return;
     if (typeof THREE === 'undefined') {
-      // Three.js hasn't arrived yet — try again shortly.
+      // Three.js hasn't arrived yet, try again shortly.
       return setTimeout(awlInitWebGL, 200);
     }
     if (canvas.dataset.booted === '1') return;
@@ -580,14 +580,14 @@
     try {
       renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
     } catch (e) {
-      console.warn('[AWL hero] WebGL unavailable — using CSS mesh fallback.', e);
+      console.warn('[AWL hero] WebGL unavailable, using CSS mesh fallback.', e);
       return;
     }
-    if (!renderer.getContext()) { console.warn('[AWL hero] no WebGL context — fallback.'); return; }
+    if (!renderer.getContext()) { console.warn('[AWL hero] no WebGL context, fallback.'); return; }
 
     /* Mobile performance budget. Phones / small tablets get a third of the
        particles + a lower pixel ratio so the hero stays at 60fps on mid-tier
-       Android. Desktop keeps the full density. Re-evaluated only at boot —
+       Android. Desktop keeps the full density. Re-evaluated only at boot
        window resize after that doesn't change the budget (rebooting the
        scene mid-session would be more disruptive than a slightly suboptimal
        resize). */
@@ -642,7 +642,7 @@
     const ambPoints = new THREE.Points(ambGeom, ambMat);
     scene.add(ambPoints);
 
-    /* ---------- node graph (260 desktop, 140 mobile — O(n²) connection
+    /* ---------- node graph (260 desktop, 140 mobile, O(n²) connection
          pass on this cohort, so cutting count gives quadratic perf win) ---------- */
     const NODE_COUNT = isMobile ? 140 : 260;
     const CONNECT_THRESH = 95;
@@ -671,9 +671,9 @@
     const nodePoints = new THREE.Points(nodeGeom, nodeMat);
     scene.add(nodePoints);
 
-    /* ---------- FIX 12 — 10 BIG hero nodes that pulse slowly. A separate Points
+    /* ---------- FIX 12, 10 BIG hero nodes that pulse slowly. A separate Points
        cloud with a custom per-vertex size attribute driven by a sin wave. Brighter
-       (white core) and bigger (4–6px nominal, scaled by sizeAttenuation). ---------- */
+       (white core) and bigger (4 to 6px nominal, scaled by sizeAttenuation). ---------- */
     const BIG_NODE_COUNT = isMobile ? 6 : 10;
     const bigPos = new Float32Array(BIG_NODE_COUNT * 3);
     const bigVel = new Float32Array(BIG_NODE_COUNT * 3);
@@ -687,12 +687,12 @@
       bigVel[i * 3 + 1] = (Math.random() - 0.5) * 0.05;
       bigVel[i * 3 + 2] = (Math.random() - 0.5) * 0.04;
       bigPhase[i] = Math.random() * Math.PI * 2;
-      bigSize[i] = 14; // base value — overwritten every frame by the pulse
+      bigSize[i] = 14; // base value, overwritten every frame by the pulse
     }
     const bigGeom = new THREE.BufferGeometry();
     bigGeom.setAttribute('position', new THREE.BufferAttribute(bigPos, 3));
     bigGeom.setAttribute('size', new THREE.BufferAttribute(bigSize, 1));
-    // Custom shader to read per-vertex size — PointsMaterial only supports a single uniform size.
+    // Custom shader to read per-vertex size, PointsMaterial only supports a single uniform size.
     const bigMat = new THREE.ShaderMaterial({
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -749,7 +749,7 @@
       raycaster.ray.intersectPlane(repelPlane, repelTarget);
       repulse.copy(repelTarget);
     }
-    /* FIX 12 — combined handler: feed Three.js raycaster AND drive the
+    /* FIX 12, combined handler: feed Three.js raycaster AND drive the
        CSS cursor-glow div via CSS variables. One mousemove listener for both. */
     const cursorGlow = document.getElementById('awl-cursor-glow');
     let glowLive = false;
@@ -784,7 +784,7 @@
     const ambPos = ambGeom.attributes.position.array;
     const nodePos = nodeGeom.attributes.position.array;
 
-    // FIX 12 — repulsion tuning. Much stronger forces + larger reach so the
+    // FIX 12, repulsion tuning. Much stronger forces + larger reach so the
     // whole field visibly reacts to cursor motion (was 0.6/22000 + 1.8/34000).
     const AMB_REPEL_R2 = 55000;
     const AMB_REPEL_F  = 3.4;
@@ -806,7 +806,7 @@
         if (ambPos[ix]     >  BOUND_X || ambPos[ix]     < -BOUND_X) ambVel[ix]     *= -1;
         if (ambPos[ix + 1] >  BOUND_Y || ambPos[ix + 1] < -BOUND_Y) ambVel[ix + 1] *= -1;
         if (ambPos[ix + 2] >  BOUND_Z || ambPos[ix + 2] < -BOUND_Z) ambVel[ix + 2] *= -1;
-        // mouse repulsion — strong + wide so the field visibly scatters
+        // mouse repulsion, strong + wide so the field visibly scatters
         const dx = ambPos[ix] - rx, dy = ambPos[ix + 1] - ry;
         const d2 = dx * dx + dy * dy;
         if (d2 < AMB_REPEL_R2) {
@@ -818,7 +818,7 @@
       }
       ambGeom.attributes.position.needsUpdate = true;
 
-      // nodes — much stronger repulsion + wider reach for a fluid scatter feel
+      // nodes, much stronger repulsion + wider reach for a fluid scatter feel
       for (let i = 0; i < NODE_COUNT; i++) {
         const ix = i * 3;
         nodePos[ix]     += nodeVel[ix];
@@ -838,7 +838,7 @@
       }
       nodeGeom.attributes.position.needsUpdate = true;
 
-      // FIX 12 — big nodes: gentle drift + slow individual pulse (size oscillates
+      // FIX 12, big nodes: gentle drift + slow individual pulse (size oscillates
       // 12 → 22 over ~3s per node, each with its own phase offset for life).
       const tNow = performance.now() * 0.001;
       for (let i = 0; i < BIG_NODE_COUNT; i++) {
@@ -858,13 +858,13 @@
           bigPos[ix]     += dx * inv * f;
           bigPos[ix + 1] += dy * inv * f;
         }
-        // Per-vertex size pulse — sin wave around 17, ±5
+        // Per-vertex size pulse, sin wave around 17, ±5
         bigSizeAttr[i] = 17 + Math.sin(tNow * 2.0 + bigPhase[i]) * 5;
       }
       bigGeom.attributes.position.needsUpdate = true;
       bigGeom.attributes.size.needsUpdate = true;
 
-      // connections (O(n²) on the 260 nodes — fine). FIX 12: stronger near-far
+      // connections (O(n²) on the 260 nodes, fine). FIX 12: stronger near-far
       // brightness ramp so the web visibly throbs as nodes scatter & re-collapse.
       let segIdx = 0;
       const t2 = CONNECT_THRESH * CONNECT_THRESH;
@@ -912,16 +912,16 @@
 
   /* Defer Three.js to idle so the CDN fetch + parse never blocks first paint
      or LCP. The CSS gradient mesh is the static fallback shown until WebGL
-     boots — and the only state shown to reduced-motion / save-data users. */
+     boots, and the only state shown to reduced-motion / save-data users. */
   function awlScheduleWebGL() {
     if (typeof window === 'undefined') return;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const conn = navigator.connection;
     const saveData = conn && (conn.saveData || /^(slow-2g|2g)$/.test(conn.effectiveType || ''));
-    if (reduced || saveData) return; // keep the static CSS mesh — no JS load
+    if (reduced || saveData) return; // keep the static CSS mesh, no JS load
     const start = () => {
       awlLoadThree().then(awlInitWebGL).catch((e) => {
-        console.warn('[AWL hero] three.js load failed — using CSS mesh fallback.', e);
+        console.warn('[AWL hero] three.js load failed, using CSS mesh fallback.', e);
       });
     };
     const kick = () => {

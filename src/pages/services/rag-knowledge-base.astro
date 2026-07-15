@@ -3,16 +3,16 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'RAG Knowledge Base Development | All Webbed Labs',
-  metaDescription: 'We build retrieval-augmented generation systems that ground AI answers in your own documents — with vector search, citations, access control and Australian data residency.',
+  metaDescription: 'We build retrieval-augmented generation systems that ground AI answers in your own documents, with vector search, citations, access control and Australian data residency.',
   category: 'AI & Data',
   serviceName: 'RAG Knowledge Base',
   slug: 'rag-knowledge-base',
   heroHeadline: 'Answers Grounded in Your Documents, With Citations You Can Check',
-  heroTagline: 'Retrieval-augmented generation that connects a language model to your own knowledge — so answers are sourced from your content, not invented.',
+  heroTagline: 'Retrieval-augmented generation that connects a language model to your own knowledge, so answers are sourced from your content, not invented.',
   summaryStatement: 'A RAG knowledge base is a system that retrieves relevant passages from an organisation\'s own documents and supplies them to a language model at query time, so that answers are grounded in source material the user can verify rather than generated from the model\'s general training alone.',
   description: [
     'A language model on its own knows nothing about your contracts, your policies, your product documentation or your support history. Ask it a question about your business and it will either decline or, worse, invent a plausible-sounding answer. Retrieval-augmented generation solves this by separating knowledge from reasoning: your documents are ingested, broken into passages, converted into vector embeddings and stored in a search index, and at question time the most relevant passages are retrieved and handed to the model as context. The model then answers using that supplied material, and cites where each claim came from. This is the difference between an assistant that guesses and one that reads the right page of the right document before it replies.',
-    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in — PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets — and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add re-ranking to push the genuinely relevant passages to the top. We enforce access control so the system only ever retrieves documents a given user is permitted to see — a finance policy should not surface in a customer-facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We store and serve all of this within Australian regions where data residency and the Privacy Act 1988 require it, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
+    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add re-ranking to push the genuinely relevant passages to the top. We enforce access control so the system only ever retrieves documents a given user is permitted to see, a finance policy should not surface in a customer-facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We store and serve all of this within Australian regions where data residency and the Privacy Act 1988 require it, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
   ],
   benefits: [
     {
@@ -46,7 +46,7 @@ const data = {
       description: 'We evaluate retrieval and answer quality against a curated test set, tuning chunking, embeddings, hybrid search and re-ranking based on evidence. Improvements are measured rather than guessed, so the system gets better in a controlled, repeatable way.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated. Will return once real signed-off project examples can be referenced. */
 
   useCases: [],
   technologies: [
@@ -58,31 +58,31 @@ const data = {
     {
       step: '01',
       title: 'Knowledge Audit and Source Mapping',
-      duration: 'Weeks 1–2',
-      description: 'We catalogue where your knowledge lives — file shares, Confluence, SharePoint, ticketing systems, PDFs — assess quality and structure, and define which sources are in scope. We also map the access-control model so retrieval permissions mirror your existing entitlements.',
+      duration: 'Weeks 1 to 2',
+      description: 'We catalogue where your knowledge lives, file shares, Confluence, SharePoint, ticketing systems, PDFs, assess quality and structure, and define which sources are in scope. We also map the access-control model so retrieval permissions mirror your existing entitlements.',
     },
     {
       step: '02',
       title: 'Ingestion and Chunking Pipeline',
-      duration: 'Weeks 2–5',
+      duration: 'Weeks 2 to 5',
       description: 'We build pipelines that parse each format reliably, clean and chunk the content so passages stay coherent, and capture metadata for filtering and access control. Scheduled and event-driven refresh keeps the index current as source documents change.',
     },
     {
       step: '03',
       title: 'Embeddings, Vector Store and Retrieval',
-      duration: 'Weeks 4–7',
-      description: 'We generate vector embeddings, load them into the vector store best suited to your scale and residency needs — pgvector, Pinecone, Weaviate or Qdrant — and implement retrieval, often combining vector and keyword search with a re-ranking step to surface the most relevant passages.',
+      duration: 'Weeks 4 to 7',
+      description: 'We generate vector embeddings, load them into the vector store best suited to your scale and residency needs, pgvector, Pinecone, Weaviate or Qdrant, and implement retrieval, often combining vector and keyword search with a re-ranking step to surface the most relevant passages.',
     },
     {
       step: '04',
       title: 'Answer Generation With Citations',
-      duration: 'Weeks 6–8',
+      duration: 'Weeks 6 to 8',
       description: 'We prompt the model to answer strictly from retrieved passages, attach citations linking back to source documents, and instruct it to say when an answer is not present rather than inventing one. Access control is enforced at retrieval so users only see permitted content.',
     },
     {
       step: '05',
       title: 'Evaluation and Retrieval Tuning',
-      duration: 'Weeks 7–9',
+      duration: 'Weeks 7 to 9',
       description: 'We assemble a test set of representative questions with expected sources and answers, then measure retrieval and answer quality and tune chunking, embeddings, hybrid search and re-ranking against the evidence. This evaluation set becomes the gate for future changes.',
     },
     {
@@ -105,7 +105,7 @@ const data = {
   faqs: [
     {
       question: 'How is RAG different from just using ChatGPT or a model on its own?',
-      answer: 'A model on its own answers from its general training and has no knowledge of your specific documents, so it cannot reliably answer questions about your policies, products or procedures — and if pushed, it may invent an answer. A RAG knowledge base retrieves the relevant passages from your own content at query time and gives them to the model as context, so the answer is grounded in your material and comes with citations back to the source. In short, the model supplies the reasoning and language; your documents supply the facts.',
+      answer: 'A model on its own answers from its general training and has no knowledge of your specific documents, so it cannot reliably answer questions about your policies, products or procedures, and if pushed, it may invent an answer. A RAG knowledge base retrieves the relevant passages from your own content at query time and gives them to the model as context, so the answer is grounded in your material and comes with citations back to the source. In short, the model supplies the reasoning and language; your documents supply the facts.',
     },
     {
       question: 'Does RAG actually reduce hallucination?',
@@ -121,26 +121,26 @@ const data = {
     },
     {
       question: 'Where is our data stored, and does it meet Australian data residency requirements?',
-      answer: 'We can deploy the entire pipeline — vector store, document index and model access — within an Australian cloud region to meet data residency obligations and the Privacy Act 1988. Vector stores such as pgvector, Qdrant and Weaviate can run inside your own environment, and where a hosted model is used we configure zero-retention enterprise terms so your content is never used for training. The full data flow is documented for your compliance and security teams before launch.',
+      answer: 'We can deploy the entire pipeline, vector store, document index and model access, within an Australian cloud region to meet data residency obligations and the Privacy Act 1988. Vector stores such as pgvector, Qdrant and Weaviate can run inside your own environment, and where a hosted model is used we configure zero-retention enterprise terms so your content is never used for training. The full data flow is documented for your compliance and security teams before launch.',
     },
     {
       question: 'What document formats and sources can you ingest?',
-      answer: 'We routinely ingest PDFs, Word and PowerPoint documents, HTML and intranet pages, Confluence and SharePoint content, support tickets and structured database records. The ingestion pipeline parses each format, extracts clean text and metadata, and handles the awkward cases — scanned PDFs, tables, mixed layouts — that often degrade retrieval quality if ignored. During the knowledge audit we confirm exactly which sources are in scope and the best way to handle each one.',
+      answer: 'We routinely ingest PDFs, Word and PowerPoint documents, HTML and intranet pages, Confluence and SharePoint content, support tickets and structured database records. The ingestion pipeline parses each format, extracts clean text and metadata, and handles the awkward cases, scanned PDFs, tables, mixed layouts, that often degrade retrieval quality if ignored. During the knowledge audit we confirm exactly which sources are in scope and the best way to handle each one.',
     },
   ],
   comparison: {
     rightFor: [
-      'Your answers depend on a body of your own documents — policies, manuals, contracts, product or support content',
+      'Your answers depend on a body of your own documents, policies, manuals, contracts, product or support content',
       'Users need accurate, verifiable answers with citations back to the source material',
       'Your knowledge changes over time and a static FAQ or hard-coded responses cannot keep up',
       'You have access-control requirements that mean different users should see different content',
       'You have data residency or Privacy Act 1988 obligations that require content to stay within Australia',
     ],
     notRightFor: [
-      'Your knowledge fits in a short, stable FAQ — a simple search or static page is cheaper and simpler',
-      'The questions need reasoning over live transactional data rather than documents — that is an analytics or API problem',
+      'Your knowledge fits in a short, stable FAQ, a simple search or static page is cheaper and simpler',
+      'The questions need reasoning over live transactional data rather than documents, that is an analytics or API problem',
       'Your source content is inaccurate or contradictory; RAG faithfully reflects what it retrieves, so it cannot fix bad source material',
-      'You only need a conversational interface and have no document corpus to ground it in — an AI chatbot without RAG may suffice',
+      'You only need a conversational interface and have no document corpus to ground it in, an AI chatbot without RAG may suffice',
       'The underlying need is real-time numeric reporting, which is better served by data analytics than retrieval',
     ],
   },
@@ -151,7 +151,7 @@ const data = {
     },
     {
       term: 'Vector Embedding',
-      definition: 'A numerical representation of a piece of text that captures its meaning, so that passages with similar meaning sit close together in a mathematical space. Embeddings are what make semantic search possible — finding text by meaning rather than exact keywords.',
+      definition: 'A numerical representation of a piece of text that captures its meaning, so that passages with similar meaning sit close together in a mathematical space. Embeddings are what make semantic search possible, finding text by meaning rather than exact keywords.',
     },
     {
       term: 'Vector Store',

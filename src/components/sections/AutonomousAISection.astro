@@ -1,6 +1,6 @@
 ---
 /**
- * Sovereign AI style full-bleed section — positioned after the hero on the
+ * Sovereign AI style full-bleed section, positioned after the hero on the
  * homepage. Dark circuit-board aesthetic with a slowly rotating decorative
  * rings element in the top-right and a bottom-aligned content block.
  *
@@ -36,7 +36,7 @@
 
       <div class="autonomous-ai__right" data-anim="right">
         <p class="autonomous-ai__copy">
-          Overseer is our internal orchestration layer — it dispatches parallel
+          Overseer is our internal orchestration layer, it dispatches parallel
           Claude workers to deliver vertical slices, runs every change through
           our quality gate matrix (Hallmark design, Playwright visual,
           type-check, security scan), and holds at the deploy gate until a
@@ -68,7 +68,7 @@
     color: #ffffff;
   }
 
-  /* Animated circuit-board grid overlay — 1px lines on a 60px cell, drifting
+  /* Animated circuit-board grid overlay, 1px lines on a 60px cell, drifting
      diagonally for a subtle living circuitry feel. */
   .autonomous-ai__grid {
     position: absolute;
@@ -88,7 +88,7 @@
     100% { background-position: 60px 60px, 60px 60px; }
   }
 
-  /* Centred accent light — soft electric green halo */
+  /* Centred accent light, soft electric green halo */
   .autonomous-ai__accent {
     position: absolute;
     inset: 0;
@@ -166,7 +166,7 @@
     margin-bottom: 3.5rem;
   }
 
-  /* Animatable wrappers — start hidden, IntersectionObserver flips
+  /* Animatable wrappers, start hidden, IntersectionObserver flips
      .is-visible to play. */
   .autonomous-ai [data-anim] {
     opacity: 0;
@@ -296,7 +296,7 @@
 </style>
 
 <script>
-  /* Entrance — IntersectionObserver flips the section into .is-visible the
+  /* Entrance, IntersectionObserver flips the section into .is-visible the
      first time it scrolls into view, which triggers the staggered transitions
      on the [data-anim] children. Re-bound after each Astro view transition. */
   function bindAutonomousAI() {

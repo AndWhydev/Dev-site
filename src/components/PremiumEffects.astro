@@ -1,5 +1,5 @@
 ---
-// Premium visual effects — all vanilla JS/CSS, no dependencies
+// Premium visual effects, all vanilla JS/CSS, no dependencies
 // Disable on touch/mobile devices automatically
 ---
 
@@ -328,7 +328,7 @@
 
   // ── Custom cursor ──────────────────────────────────
   // Document-level listeners (mousemove, mousedown, mouseup, mouseleave,
-  // mouseenter) are attached ONCE — the document object survives across Astro
+  // mouseenter) are attached ONCE, the document object survives across Astro
   // view transitions, so re-attaching would create duplicates that fire the
   // same handler multiple times.
   //
@@ -354,7 +354,7 @@
     // the cursor isn't stuck hidden after a view transition.
     document.body.classList.remove('cursor-hidden', 'cursor-hover', 'cursor-click', 'cursor-text');
 
-    // Element-level hover listeners — DOM nodes are fresh after each nav,
+    // Element-level hover listeners, DOM nodes are fresh after each nav,
     // so re-attach. Use a sentinel to skip nodes already wired.
     const hoverEls = 'a, button, [role="button"], .card-hover, .mega-link, label, select';
     document.querySelectorAll<HTMLElement>(hoverEls).forEach(el => {

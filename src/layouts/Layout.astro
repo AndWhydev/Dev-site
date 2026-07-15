@@ -25,7 +25,7 @@ const {
 const siteUrl = 'https://awlabs.com.au';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 
-// Canonical brand definition — entity-locking sentence used site-wide for AI search (GEO).
+// Canonical brand definition, entity-locking sentence used site-wide for AI search (GEO).
 // Keep this string identical wherever it appears across the site.
 export const BRAND_DEFINITION =
   'All Webbed Labs is a Sydney based enterprise AI and software development company. Sister company to All Webbed Up, the branding and marketing agency we deliver client work alongside.';
@@ -68,7 +68,7 @@ const schema = {
     postalCode: '2046',
     addressCountry: 'AU',
   },
-  // Sister-company link — All Webbed Up Pty Ltd is a separate legal entity with shared
+  // Sister-company link, All Webbed Up Pty Ltd is a separate legal entity with shared
   // ownership but no parent/subsidiary relationship. Schema.org has no "sister organisation"
   // type, so we surface the affiliation via `sameAs` plus a separately-described Organization
   // on the parent property only if a true subsidiary relationship is established later.
@@ -113,7 +113,7 @@ const schema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
 
-    <!-- Fonts — non-render-blocking. Preconnect warms TLS to the font CDNs,
+    <!-- Fonts, non-render-blocking. Preconnect warms TLS to the font CDNs,
          the print-media trick lets the browser fetch the stylesheet without
          delaying first paint, and `display=swap` shows fallback text until
          the webfont arrives. Weights are subset to the ones actually used
@@ -141,7 +141,7 @@ const schema = {
 
     {/* Suppress benign InvalidStateError that the View Transitions API throws
         when a navigation is superseded by another (fast click, back button,
-        link clicked mid-transition). The page still renders correctly — this
+        link clicked mid-transition). The page still renders correctly, this
         just keeps the console quiet for an error that has no functional
         impact and that Astro itself does not handle internally. */}
     <script is:inline>
@@ -253,7 +253,7 @@ const schema = {
     <script>
       // Page loader close logic.
       //
-      // The loader is rendered into the layout, so it appears on every page —
+      // The loader is rendered into the layout, so it appears on every page
       // including pages swapped in by Astro's ClientRouter. Two distinct paths
       // need to close it:
       //
@@ -299,7 +299,7 @@ const schema = {
         if (loader) loader.style.display = 'none';
       });
 
-      // Scroll reveal — runs on initial load and after every view transition.
+      // Scroll reveal, runs on initial load and after every view transition.
       // Honours `?noanim=1` query param: forces every reveal element visible
       // immediately and skips the observer. Used for headless screenshot runs
       // and visual debugging where animations fight the capture.

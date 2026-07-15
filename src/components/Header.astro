@@ -85,7 +85,7 @@ const solutions = [
 
 const company = [
   { title: 'About Us', href: '/about', desc: 'Our team, story and values' },
-  { title: 'How We Deliver', href: '/methodology', desc: 'The exact process — phases, gates, cadence' },
+  { title: 'How We Deliver', href: '/methodology', desc: 'The exact process, phases, gates, cadence' },
   { title: 'Trust & Compliance', href: '/trust', desc: 'IP, security, NDA, company on the record' },
   { title: 'R&D Tax Incentive', href: '/r-and-d', desc: 'AU-built means RDTI-eligible spend' },
   { title: 'Technology Radar', href: '/technology-radar', desc: 'Tools and frameworks we use' },
@@ -100,7 +100,7 @@ function isActive(href: string) {
 <header id="site-header" transition:persist>
   <div class="header-inner">
     <!-- Logo -->
-    <a href="/" class="header-logo" aria-label="All Webbed Labs — Home">
+    <a href="/" class="header-logo" aria-label="All Webbed Labs, Home">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="36" height="36" rx="9" fill="#0d9373"/>
         <path d="M8 27L18 9L28 27" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -682,7 +682,7 @@ function isActive(href: string) {
     header.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  // ── Mega menu — JS-driven hover with close delay ────
+  // ── Mega menu, JS-driven hover with close delay ────
   const megaItems = document.querySelectorAll<HTMLElement>('.nav-mega-item');
 
   megaItems.forEach((item) => {
@@ -704,7 +704,7 @@ function isActive(href: string) {
     };
 
     const scheduleClose = () => {
-      // 120ms delay — gives the cursor time to travel from trigger to panel
+      // 120ms delay, gives the cursor time to travel from trigger to panel
       closeTimer = setTimeout(() => {
         item.classList.remove('is-open');
         trigger?.setAttribute('aria-expanded', 'false');
@@ -715,7 +715,7 @@ function isActive(href: string) {
     item.addEventListener('mouseenter', open);
     item.addEventListener('mouseleave', scheduleClose);
 
-    // Track the panel itself — cancel close when mouse enters panel
+    // Track the panel itself, cancel close when mouse enters panel
     panel?.addEventListener('mouseenter', () => clearTimeout(closeTimer));
     panel?.addEventListener('mouseleave', scheduleClose);
   });

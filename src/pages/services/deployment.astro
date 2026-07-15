@@ -11,14 +11,14 @@ const data = {
   heroTagline: 'CI/CD pipelines, containerisation, infrastructure as code and zero-downtime release strategies that turn deployments from high-stakes events into routine, reversible operations.',
   summaryStatement: 'Deployment and release engineering is the practice of automating how software moves from a code change into production safely, repeatably and with the ability to roll back if something goes wrong.',
   description: [
-    'The most dangerous moment in a software product is the deploy. When releases are manual, infrequent and poorly understood, every one becomes a tense event performed by the one person who knows the runbook, usually late at night to minimise the blast radius. The irony is that this caution makes things worse: large, infrequent releases bundle dozens of changes together, so when something breaks it is hard to tell which change caused it and harder still to undo. Good release engineering inverts this. By automating the entire path from commit to production and making deploys small, frequent and reversible, we make shipping so routine that it stops being an event at all — which is exactly the point.',
-    'Our deployment practice builds the full delivery chain. We containerise applications with Docker so they run identically on a developer laptop and in production, and orchestrate them on Kubernetes or AWS ECS depending on your scale and operational appetite. Infrastructure is defined as code in Terraform, so your entire environment is version-controlled, reviewable and reproducible rather than a hand-assembled configuration nobody fully understands. CI/CD pipelines in GitHub Actions or GitLab CI build, test and deploy automatically, with progressive rollout strategies — blue-green and canary releases — that expose new versions to a fraction of traffic before committing fully, and automated rollback when health checks fail. We integrate observability through Sentry, Datadog and structured logging so you see the impact of a release in real time, and manage secrets properly so credentials never live in code or chat. The result is a delivery system your team can operate with confidence, where deploying ten times a day is safer than deploying once a month. We also right-size the architecture to your actual needs rather than reaching for the most fashionable tooling: not every team needs Kubernetes, and a simpler platform that your engineers can confidently operate often beats a sophisticated one they cannot. This work pairs naturally with our cloud infrastructure practice, which provisions and hardens the platforms these pipelines deploy onto, and with our QA and testing practice, which supplies the automated quality gates these pipelines depend on to deploy safely.',
+    'The most dangerous moment in a software product is the deploy. When releases are manual, infrequent and poorly understood, every one becomes a tense event performed by the one person who knows the runbook, usually late at night to minimise the blast radius. The irony is that this caution makes things worse: large, infrequent releases bundle dozens of changes together, so when something breaks it is hard to tell which change caused it and harder still to undo. Good release engineering inverts this. By automating the entire path from commit to production and making deploys small, frequent and reversible, we make shipping so routine that it stops being an event at all, which is exactly the point.',
+    'Our deployment practice builds the full delivery chain. We containerise applications with Docker so they run identically on a developer laptop and in production, and orchestrate them on Kubernetes or AWS ECS depending on your scale and operational appetite. Infrastructure is defined as code in Terraform, so your entire environment is version-controlled, reviewable and reproducible rather than a hand-assembled configuration nobody fully understands. CI/CD pipelines in GitHub Actions or GitLab CI build, test and deploy automatically, with progressive rollout strategies, blue-green and canary releases, that expose new versions to a fraction of traffic before committing fully, and automated rollback when health checks fail. We integrate observability through Sentry, Datadog and structured logging so you see the impact of a release in real time, and manage secrets properly so credentials never live in code or chat. The result is a delivery system your team can operate with confidence, where deploying ten times a day is safer than deploying once a month. We also right-size the architecture to your actual needs rather than reaching for the most fashionable tooling: not every team needs Kubernetes, and a simpler platform that your engineers can confidently operate often beats a sophisticated one they cannot. This work pairs naturally with our cloud infrastructure practice, which provisions and hardens the platforms these pipelines deploy onto, and with our QA and testing practice, which supplies the automated quality gates these pipelines depend on to deploy safely.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
       title: 'Fully Automated Pipelines',
-      description: 'Every commit flows through an automated pipeline that builds, tests and deploys without manual steps. Removing the human from the deploy path removes the single largest source of release errors — the forgotten step, the wrong environment, the untested hotfix — and makes every deployment identical and auditable.',
+      description: 'Every commit flows through an automated pipeline that builds, tests and deploys without manual steps. Removing the human from the deploy path removes the single largest source of release errors, the forgotten step, the wrong environment, the untested hotfix, and makes every deployment identical and auditable.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>',
@@ -46,7 +46,7 @@ const data = {
       description: 'We wire in error tracking with Sentry, metrics and tracing with Datadog, and structured logging so the impact of every release is visible immediately. Deploy markers correlate code changes with shifts in error rates and latency, so when something moves you know which release moved it.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'GitHub Actions', 'GitLab CI', 'Docker', 'Kubernetes', 'AWS ECS', 'Terraform',
@@ -56,31 +56,31 @@ const data = {
     {
       step: '01',
       title: 'Delivery Assessment & Target State',
-      duration: 'Weeks 1–2',
-      description: 'We map how code currently reaches production, identify the manual steps, bottlenecks and failure points, and define a target delivery model appropriate to your team, compliance needs and operational maturity. Not everyone needs Kubernetes — we right-size the architecture to your reality.',
+      duration: 'Weeks 1 to 2',
+      description: 'We map how code currently reaches production, identify the manual steps, bottlenecks and failure points, and define a target delivery model appropriate to your team, compliance needs and operational maturity. Not everyone needs Kubernetes, we right-size the architecture to your reality.',
     },
     {
       step: '02',
       title: 'Containerisation & Build Pipeline',
-      duration: 'Weeks 2–4',
+      duration: 'Weeks 2 to 4',
       description: 'We containerise applications with Docker, establish reproducible build steps and a container registry, and create the foundational CI pipeline in GitHub Actions or GitLab CI that builds and tests every change automatically.',
     },
     {
       step: '03',
       title: 'Infrastructure as Code',
-      duration: 'Weeks 3–6',
+      duration: 'Weeks 3 to 6',
       description: 'We codify your environments in Terraform, bringing networking, compute, databases and orchestration under version control. Secrets are moved into a managed store such as HashiCorp Vault or a cloud secrets manager, out of code and configuration files.',
     },
     {
       step: '04',
       title: 'Deployment Strategy & Rollback',
-      duration: 'Weeks 5–8',
-      description: 'We implement the deployment strategy that fits — rolling, blue-green or canary — orchestrated through Kubernetes, ECS or ArgoCD, with health checks gating promotion and automated rollback on failure. Zero-downtime releases become the default behaviour, not a special case.',
+      duration: 'Weeks 5 to 8',
+      description: 'We implement the deployment strategy that fits, rolling, blue-green or canary, orchestrated through Kubernetes, ECS or ArgoCD, with health checks gating promotion and automated rollback on failure. Zero-downtime releases become the default behaviour, not a special case.',
     },
     {
       step: '05',
       title: 'Observability & Alerting',
-      duration: 'Week 7–9',
+      duration: 'Week 7 to 9',
       description: 'We integrate error tracking, metrics, distributed tracing and structured logging through Sentry and Datadog, with deploy markers and alert thresholds. You gain real-time visibility into the effect of each release and early warning before users feel a problem.',
     },
     {
@@ -107,7 +107,7 @@ const data = {
     },
     {
       question: 'Do we really need Kubernetes?',
-      answer: 'Often not. Kubernetes is powerful but carries significant operational complexity, and many teams are better served by simpler platforms like AWS ECS, managed container services, or even a well-configured set of virtual machines. We recommend Kubernetes when you genuinely need its capabilities — complex multi-service orchestration, fine-grained scaling, or a platform team to operate it — and steer you away from it when it would be an expensive distraction. Choosing the right level of complexity is part of the job.',
+      answer: 'Often not. Kubernetes is powerful but carries significant operational complexity, and many teams are better served by simpler platforms like AWS ECS, managed container services, or even a well-configured set of virtual machines. We recommend Kubernetes when you genuinely need its capabilities, complex multi-service orchestration, fine-grained scaling, or a platform team to operate it, and steer you away from it when it would be an expensive distraction. Choosing the right level of complexity is part of the job.',
     },
     {
       question: 'What does a zero-downtime deployment actually involve?',
@@ -119,11 +119,11 @@ const data = {
     },
     {
       question: 'How do you handle secrets and credentials securely?',
-      answer: 'Secrets never belong in code, configuration files or chat. We move credentials into a managed secrets store — HashiCorp Vault or a cloud-native service such as AWS Secrets Manager — where they are encrypted, access-controlled and auditable, and injected into applications at runtime rather than baked into images. We also set up automated rotation where the platform supports it and integrate secret scanning into CI to catch any credential accidentally committed before it reaches a repository history.',
+      answer: 'Secrets never belong in code, configuration files or chat. We move credentials into a managed secrets store, HashiCorp Vault or a cloud-native service such as AWS Secrets Manager, where they are encrypted, access-controlled and auditable, and injected into applications at runtime rather than baked into images. We also set up automated rotation where the platform supports it and integrate secret scanning into CI to catch any credential accidentally committed before it reaches a repository history.',
     },
     {
       question: 'Can you improve our existing pipeline rather than rebuild it?',
-      answer: 'Yes, and that is frequently the right call. We start by assessing what you already have, identifying the specific weak points — flaky builds, manual deploy steps, missing rollback, poor observability — and improving them incrementally. A full rebuild is only warranted when the existing setup is fundamentally unsuited to your needs. Wherever possible we deliver value through targeted improvements that your team can absorb without a disruptive migration.',
+      answer: 'Yes, and that is frequently the right call. We start by assessing what you already have, identifying the specific weak points, flaky builds, manual deploy steps, missing rollback, poor observability, and improving them incrementally. A full rebuild is only warranted when the existing setup is fundamentally unsuited to your needs. Wherever possible we deliver value through targeted improvements that your team can absorb without a disruptive migration.',
     },
   ],
   comparison: {
@@ -145,7 +145,7 @@ const data = {
   definitions: [
     {
       term: 'CI/CD',
-      definition: 'Continuous Integration and Continuous Delivery/Deployment — the automated practice of building, testing and releasing code changes through a pipeline, so software reaches production frequently and reliably.',
+      definition: 'Continuous Integration and Continuous Delivery/Deployment, the automated practice of building, testing and releasing code changes through a pipeline, so software reaches production frequently and reliably.',
     },
     {
       term: 'Containerisation',
@@ -153,7 +153,7 @@ const data = {
     },
     {
       term: 'Infrastructure as Code (IaC)',
-      definition: 'Defining and provisioning infrastructure — servers, networks, databases — through version-controlled configuration files such as Terraform, rather than manual setup, making environments reproducible and auditable.',
+      definition: 'Defining and provisioning infrastructure, servers, networks, databases, through version-controlled configuration files such as Terraform, rather than manual setup, making environments reproducible and auditable.',
     },
     {
       term: 'Blue-Green Deployment',
@@ -165,7 +165,7 @@ const data = {
     },
     {
       term: 'Observability',
-      definition: 'The ability to understand a system\'s internal state from its outputs — logs, metrics and traces — so issues can be detected, diagnosed and correlated with specific deployments.',
+      definition: 'The ability to understand a system\'s internal state from its outputs, logs, metrics and traces, so issues can be detected, diagnosed and correlated with specific deployments.',
     },
   ],
   relatedServices: [

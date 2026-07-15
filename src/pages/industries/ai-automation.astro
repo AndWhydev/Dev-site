@@ -9,7 +9,7 @@ const data = {
   heroHeadline: 'Enterprise AI That Delivers Real Operational Value',
   heroTagline: 'Custom AI tools, intelligent automation and ML pipelines for organisations ready to move beyond AI experimentation into production deployment.',
 
-  /* stats array emptied — values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
+  /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
 
   stats: [],
 
@@ -17,7 +17,7 @@ const data = {
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
       title: 'Stuck in AI Pilot Purgatory',
-      description: "Most Australian enterprises have run an AI pilot. Very few have taken it to production. The gap between a promising proof-of-concept and a reliable, scalable system that colleagues actually use daily is wider than expected — requiring proper data pipelines, evaluation frameworks, guardrails, integrations and change management that pilot projects rarely address.",
+      description: "Most Australian enterprises have run an AI pilot. Very few have taken it to production. The gap between a promising proof-of-concept and a reliable, scalable system that colleagues actually use daily is wider than expected, requiring proper data pipelines, evaluation frameworks, guardrails, integrations and change management that pilot projects rarely address.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
@@ -48,7 +48,7 @@ const data = {
     'Computer vision and image processing applications',
   ],
 
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
 
   useCases: [],
 
@@ -72,15 +72,15 @@ const data = {
     },
     {
       question: 'How do you evaluate AI system quality before production?',
-      answer: "We build evaluation frameworks as part of every AI project — not as an afterthought. This means defining ground-truth test sets before building, running automated evaluation across key quality dimensions (accuracy, groundedness, safety, helpfulness), and establishing human review workflows for ongoing quality monitoring. For RAG systems we specifically measure retrieval precision and recall, answer faithfulness and citation accuracy. We set quality gates that must be met before production deployment and instrument production systems to catch degradation.",
+      answer: "We build evaluation frameworks as part of every AI project, not as an afterthought. This means defining ground-truth test sets before building, running automated evaluation across key quality dimensions (accuracy, groundedness, safety, helpfulness), and establishing human review workflows for ongoing quality monitoring. For RAG systems we specifically measure retrieval precision and recall, answer faithfulness and citation accuracy. We set quality gates that must be met before production deployment and instrument production systems to catch degradation.",
     },
     {
-      question: 'We\'ve already run an AI pilot that didn\'t go to production — can you help rescue it?',
-      answer: "Yes, and this is a common engagement type for us. We start with a candid assessment of why the pilot stalled — usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
+      question: 'We\'ve already run an AI pilot that didn\'t go to production, can you help rescue it?',
+      answer: "Yes, and this is a common engagement type for us. We start with a candid assessment of why the pilot stalled, usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
     },
     {
       question: 'How do you handle hallucinations in production AI systems?',
-      answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface low-confidence or user-rejected responses for review and improvement. No AI system is hallucination-free — the goal is catching and containing errors before they cause downstream harm.",
+      answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface low-confidence or user-rejected responses for review and improvement. No AI system is hallucination-free, the goal is catching and containing errors before they cause downstream harm.",
     },
   ],
 

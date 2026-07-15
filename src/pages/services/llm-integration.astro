@@ -3,22 +3,22 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'LLM Integration for Enterprise Systems | All Webbed Labs',
-  metaDescription: 'We embed OpenAI, Anthropic Claude and open-weight models into your existing systems — with guardrails, evaluation, cost control and Australian data residency.',
+  metaDescription: 'We embed OpenAI, Anthropic Claude and open-weight models into your existing systems, with guardrails, evaluation, cost control and Australian data residency.',
   category: 'AI & Data',
   serviceName: 'LLM Integration',
   slug: 'llm-integration',
   heroHeadline: 'Put Foundation Models to Work Inside the Systems You Already Run',
-  heroTagline: 'Production-grade integration of OpenAI, Anthropic Claude and open-weight models into your applications — with guardrails, evaluation and cost control built in.',
+  heroTagline: 'Production-grade integration of OpenAI, Anthropic Claude and open-weight models into your applications, with guardrails, evaluation and cost control built in.',
   summaryStatement: 'LLM integration is the practice of embedding large language models into existing business systems through APIs, structured prompts and tool calling, so that an organisation can use language understanding and generation inside its own workflows without training a model from scratch.',
   description: [
-    'Most organisations do not need to train a model — they need to connect a capable one to their data and their software in a way that is reliable, measurable and affordable to run. LLM integration is the engineering discipline that sits between a raw model API and a feature your users can depend on. We work with hosted models from OpenAI and Anthropic, and with open-weight models such as Llama and Mistral served on your own infrastructure when data residency or cost at volume makes that the better call. The work is rarely about the prompt alone. It is about designing structured inputs and outputs the rest of your system can parse, giving the model controlled access to your tools and functions, and putting boundaries around what it is allowed to say and do.',
-    'A typical engagement covers prompt design and versioning, function and tool calling so the model can query your databases or trigger actions, structured output enforced with JSON schemas so downstream code never has to parse free text, and a layer of guardrails that validates responses, redacts sensitive data and blocks unsafe outputs before they reach a user. Just as important is the evaluation harness — a repeatable test suite that scores model responses against known-good answers so you can change a prompt or upgrade a model without quietly breaking behaviour in production. We instrument every call for token usage, latency and cost, and we design routing logic that sends simple requests to cheaper, faster models and reserves the strongest model for the cases that genuinely need it. The result is a feature that behaves predictably, costs what you expect it to cost, and can be audited and improved over time rather than a demo that impresses once and then drifts. Where Australian data residency or the Privacy Act 1988 governs the information being processed, we design the integration so that regulated data stays within the jurisdiction and within the boundaries your compliance team has approved.',
+    'Most organisations do not need to train a model, they need to connect a capable one to their data and their software in a way that is reliable, measurable and affordable to run. LLM integration is the engineering discipline that sits between a raw model API and a feature your users can depend on. We work with hosted models from OpenAI and Anthropic, and with open-weight models such as Llama and Mistral served on your own infrastructure when data residency or cost at volume makes that the better call. The work is rarely about the prompt alone. It is about designing structured inputs and outputs the rest of your system can parse, giving the model controlled access to your tools and functions, and putting boundaries around what it is allowed to say and do.',
+    'A typical engagement covers prompt design and versioning, function and tool calling so the model can query your databases or trigger actions, structured output enforced with JSON schemas so downstream code never has to parse free text, and a layer of guardrails that validates responses, redacts sensitive data and blocks unsafe outputs before they reach a user. Just as important is the evaluation harness, a repeatable test suite that scores model responses against known-good answers so you can change a prompt or upgrade a model without quietly breaking behaviour in production. We instrument every call for token usage, latency and cost, and we design routing logic that sends simple requests to cheaper, faster models and reserves the strongest model for the cases that genuinely need it. The result is a feature that behaves predictably, costs what you expect it to cost, and can be audited and improved over time rather than a demo that impresses once and then drifts. Where Australian data residency or the Privacy Act 1988 governs the information being processed, we design the integration so that regulated data stays within the jurisdiction and within the boundaries your compliance team has approved.',
   ],
   benefits: [
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3z"/></svg>',
       title: 'Model-Agnostic Architecture',
-      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping Claude for GPT-4o, or moving a workload to a self-hosted open-weight model, becomes a configuration change validated against your test suite — not a rewrite. This protects you from pricing changes and model deprecation.',
+      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping Claude for GPT-4o, or moving a workload to a self-hosted open-weight model, becomes a configuration change validated against your test suite, not a rewrite. This protects you from pricing changes and model deprecation.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>',
@@ -46,7 +46,7 @@ const data = {
       description: 'For data governed by the Privacy Act 1988 or internal residency rules, we deploy open-weight models within Australian regions, use zero-retention API configurations, and keep regulated data out of any provider training pipeline. Compliance constraints shape the architecture from day one.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'OpenAI GPT-4o', 'Anthropic Claude', 'Azure OpenAI Service', 'Amazon Bedrock',
@@ -57,31 +57,31 @@ const data = {
     {
       step: '01',
       title: 'Use-Case Definition and Feasibility',
-      duration: 'Weeks 1–2',
-      description: 'We work with you to define exactly what the model should do, what good output looks like, and where the hard boundaries are. We assess whether an LLM is the right tool at all — sometimes a rules engine or a simpler approach is cheaper and more reliable — and we agree the success criteria the evaluation harness will measure against.',
+      duration: 'Weeks 1 to 2',
+      description: 'We work with you to define exactly what the model should do, what good output looks like, and where the hard boundaries are. We assess whether an LLM is the right tool at all, sometimes a rules engine or a simpler approach is cheaper and more reliable, and we agree the success criteria the evaluation harness will measure against.',
     },
     {
       step: '02',
       title: 'Model Selection and Data Residency Review',
-      duration: 'Weeks 2–3',
+      duration: 'Weeks 2 to 3',
       description: 'We select candidate models based on capability, cost, latency and residency requirements. Where the Privacy Act 1988 or internal policy applies, we determine whether a hosted API with zero-retention terms is acceptable or whether an open-weight model served in an Australian region is required, and we document that decision for your compliance team.',
     },
     {
       step: '03',
       title: 'Prompt Engineering and Tool Design',
-      duration: 'Weeks 3–6',
+      duration: 'Weeks 3 to 6',
       description: 'We design and version the prompts, define the functions and tools the model may call, and enforce structured output with JSON schemas. The integration is built behind a provider-agnostic abstraction so models can be swapped without rewriting application code.',
     },
     {
       step: '04',
       title: 'Guardrails and Evaluation Harness',
-      duration: 'Weeks 5–8',
+      duration: 'Weeks 5 to 8',
       description: 'We build the input/output filtering, PII redaction and prompt-injection defences, and we assemble a scored test suite of representative inputs and expected outputs. This harness becomes the gate that every future prompt or model change must pass before release.',
     },
     {
       step: '05',
       title: 'Cost, Latency and Observability Tuning',
-      duration: 'Weeks 7–9',
+      duration: 'Weeks 7 to 9',
       description: 'We instrument every call for tokens, latency and cost, add caching and model routing, and set budgets and alerts. You get dashboards showing real cost-per-interaction and the data needed to make informed trade-offs between quality and spend.',
     },
     {
@@ -108,15 +108,15 @@ const data = {
     },
     {
       question: 'How do you stop the model from making things up?',
-      answer: 'Hallucination — a model stating something false with confidence — is managed in several layers. We constrain the model to a narrow task, enforce structured output so it cannot wander into free-form invention, and where the answer depends on your own data we ground it in retrieved source documents through a RAG approach rather than relying on the model\'s memory. Critically, we build an evaluation harness that scores outputs against known-good answers, so the rate of incorrect responses is measured rather than assumed. For high-stakes decisions, the model prepares work for a human rather than acting autonomously.',
+      answer: 'Hallucination, a model stating something false with confidence, is managed in several layers. We constrain the model to a narrow task, enforce structured output so it cannot wander into free-form invention, and where the answer depends on your own data we ground it in retrieved source documents through a RAG approach rather than relying on the model\'s memory. Critically, we build an evaluation harness that scores outputs against known-good answers, so the rate of incorrect responses is measured rather than assumed. For high-stakes decisions, the model prepares work for a human rather than acting autonomously.',
     },
     {
       question: 'Where does our data go, and is it used to train the model?',
-      answer: 'This depends on the deployment you choose, and we design it around your obligations under the Privacy Act 1988. Hosted providers such as OpenAI and Anthropic offer enterprise terms with zero data retention and a contractual guarantee that your inputs are not used for training — we configure these explicitly. Where data residency requires it, we deploy open-weight models within an Australian cloud region so that regulated information never leaves the jurisdiction. We document the data flow so your compliance and security teams can review it before launch.',
+      answer: 'This depends on the deployment you choose, and we design it around your obligations under the Privacy Act 1988. Hosted providers such as OpenAI and Anthropic offer enterprise terms with zero data retention and a contractual guarantee that your inputs are not used for training, we configure these explicitly. Where data residency requires it, we deploy open-weight models within an Australian cloud region so that regulated information never leaves the jurisdiction. We document the data flow so your compliance and security teams can review it before launch.',
     },
     {
       question: 'How much does it cost to run an LLM feature in production?',
-      answer: 'Running cost is driven by token usage — the volume of text sent to and returned from the model — multiplied by the per-token price of the model you use. We instrument this from the start so you can see real cost-per-interaction, and we reduce it with caching, prompt optimisation and routing logic that sends simple requests to cheaper models. For very high volumes, a self-hosted open-weight model on vLLM can be more economical than a per-token API. We give you the figures to make that trade-off deliberately rather than discovering the bill later.',
+      answer: 'Running cost is driven by token usage, the volume of text sent to and returned from the model, multiplied by the per-token price of the model you use. We instrument this from the start so you can see real cost-per-interaction, and we reduce it with caching, prompt optimisation and routing logic that sends simple requests to cheaper models. For very high volumes, a self-hosted open-weight model on vLLM can be more economical than a per-token API. We give you the figures to make that trade-off deliberately rather than discovering the bill later.',
     },
     {
       question: 'What happens when the model provider releases a new version or retires an old one?',
@@ -124,22 +124,22 @@ const data = {
     },
     {
       question: 'Can you integrate an LLM with our existing internal systems and databases?',
-      answer: 'Yes — that is the core of the work. Using function and tool calling, we give the model controlled, read-only or write-scoped access to your APIs and databases, so it can fetch the right information or trigger defined actions within boundaries you set. The model never gets unmediated access to your systems; every tool it can call is defined, validated and logged. This is how an LLM feature becomes genuinely useful against your own data rather than a generic chatbot bolted on the side.',
+      answer: 'Yes, that is the core of the work. Using function and tool calling, we give the model controlled, read-only or write-scoped access to your APIs and databases, so it can fetch the right information or trigger defined actions within boundaries you set. The model never gets unmediated access to your systems; every tool it can call is defined, validated and logged. This is how an LLM feature becomes genuinely useful against your own data rather than a generic chatbot bolted on the side.',
     },
   ],
   comparison: {
     rightFor: [
-      'You have a clear, bounded task — drafting, summarising, classifying, extracting or querying — where language understanding adds real value',
+      'You have a clear, bounded task, drafting, summarising, classifying, extracting or querying, where language understanding adds real value',
       'You want to use a capable existing model rather than fund training, and need it integrated reliably into production systems',
       'You can define what good output looks like, which makes an evaluation harness possible',
       'You have data residency or Privacy Act 1988 obligations that demand a carefully designed deployment',
       'You expect to run the feature at meaningful volume and need cost, latency and quality kept under control',
     ],
     notRightFor: [
-      'A deterministic rules engine or simple lookup would solve the problem more cheaply and reliably — not every problem needs an LLM',
+      'A deterministic rules engine or simple lookup would solve the problem more cheaply and reliably, not every problem needs an LLM',
       'The task requires fully autonomous decisions in a high-stakes domain with no human in the loop',
       'You only need a one-off experiment or demo, where an off-the-shelf tool like ChatGPT Enterprise is sufficient',
-      'Your answers depend heavily on your own document corpus — in which case RAG knowledge base work should come first',
+      'Your answers depend heavily on your own document corpus, in which case RAG knowledge base work should come first',
       'You genuinely need a model trained on proprietary patterns no foundation model captures, which is a different and much larger undertaking',
     ],
   },
@@ -150,11 +150,11 @@ const data = {
     },
     {
       term: 'Token',
-      definition: 'The unit a model reads and writes — roughly a word fragment of about four characters. Models charge by the token and have a maximum context window measured in tokens, so token usage drives both cost and how much text a model can consider at once.',
+      definition: 'The unit a model reads and writes, roughly a word fragment of about four characters. Models charge by the token and have a maximum context window measured in tokens, so token usage drives both cost and how much text a model can consider at once.',
     },
     {
       term: 'Function / Tool Calling',
-      definition: 'A capability that lets a model request a defined action — such as querying a database or calling an API — instead of only producing text. The application runs the requested function and returns the result, giving the model controlled access to live systems.',
+      definition: 'A capability that lets a model request a defined action, such as querying a database or calling an API, instead of only producing text. The application runs the requested function and returns the result, giving the model controlled access to live systems.',
     },
     {
       term: 'Structured Output',

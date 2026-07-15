@@ -8,37 +8,37 @@ const data = {
   serviceName: 'Smart Contracts',
   slug: 'smart-contracts',
   heroHeadline: 'Smart Contracts Engineered for Audit and Built to Last',
-  heroTagline: 'Solidity contract design, formal testing and audit-readiness for EVM chains — written by engineers who treat immutable code with the caution it demands.',
+  heroTagline: 'Solidity contract design, formal testing and audit-readiness for EVM chains, written by engineers who treat immutable code with the caution it demands.',
   summaryStatement: 'Smart contract development is the practice of designing, writing, testing and audit-preparing self-executing programs that run on a blockchain, where the deployed code is immutable, publicly visible and directly controls value.',
   description: [
-    'A smart contract is a program that runs on a blockchain and executes exactly as written, without an intermediary and without the ability to quietly patch a mistake later. That property — deterministic, public, value-bearing code that cannot be edited once deployed — is what makes smart contracts powerful and also what makes them unforgiving. A logic error in a conventional web application is a bug ticket; the same error in a deployed contract can be an immutable vulnerability that an attacker drains in a single transaction. We build smart contracts with that asymmetry front of mind. Every contract is designed against a written specification, implemented in idiomatic Solidity using audited OpenZeppelin libraries rather than hand-rolled primitives, and validated with a test suite that targets reachable branches, edge cases and known attack patterns before it ever touches a public network.',
-    'Our smart contract practice covers the full lifecycle: requirements and threat modelling, contract architecture (including whether upgradeability is genuinely needed and which proxy pattern fits), implementation, exhaustive testing with Foundry and Hardhat, gas optimisation, static analysis with Slither and Mythril, and coordination of a third-party security audit before mainnet deployment. We work across EVM chains — Ethereum, Polygon, Base, Arbitrum and other L2s — selecting the network against your throughput, cost and ecosystem requirements rather than defaulting to whichever chain is fashionable. We write contracts to be auditable as a first-class goal: complete NatSpec documentation, clear access control, explicit invariants, and upgrade mechanisms guarded by timelocks and multi-signature control so that no single key can unilaterally change the rules. We are candid about the limits of the technology. Immutability cuts both ways, audits reduce risk but never eliminate it, and we will tell you plainly when a problem you are trying to solve does not need a blockchain at all — because deploying code that controls money is a decision that deserves honesty, not enthusiasm.',
+    'A smart contract is a program that runs on a blockchain and executes exactly as written, without an intermediary and without the ability to quietly patch a mistake later. That property, deterministic, public, value-bearing code that cannot be edited once deployed, is what makes smart contracts powerful and also what makes them unforgiving. A logic error in a conventional web application is a bug ticket; the same error in a deployed contract can be an immutable vulnerability that an attacker drains in a single transaction. We build smart contracts with that asymmetry front of mind. Every contract is designed against a written specification, implemented in idiomatic Solidity using audited OpenZeppelin libraries rather than hand-rolled primitives, and validated with a test suite that targets reachable branches, edge cases and known attack patterns before it ever touches a public network.',
+    'Our smart contract practice covers the full lifecycle: requirements and threat modelling, contract architecture (including whether upgradeability is genuinely needed and which proxy pattern fits), implementation, exhaustive testing with Foundry and Hardhat, gas optimisation, static analysis with Slither and Mythril, and coordination of a third-party security audit before mainnet deployment. We work across EVM chains, Ethereum, Polygon, Base, Arbitrum and other L2s, selecting the network against your throughput, cost and ecosystem requirements rather than defaulting to whichever chain is fashionable. We write contracts to be auditable as a first-class goal: complete NatSpec documentation, clear access control, explicit invariants, and upgrade mechanisms guarded by timelocks and multi-signature control so that no single key can unilaterally change the rules. We are candid about the limits of the technology. Immutability cuts both ways, audits reduce risk but never eliminate it, and we will tell you plainly when a problem you are trying to solve does not need a blockchain at all, because deploying code that controls money is a decision that deserves honesty, not enthusiasm.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: 'Security as the Default Posture',
-      description: 'We assume the contract will be attacked. Reentrancy guards, checks-effects-interactions ordering, safe arithmetic, access control on every state-changing function, and explicit handling of external call failures are baseline practice — not items added after a near miss.',
+      description: 'We assume the contract will be attacked. Reentrancy guards, checks-effects-interactions ordering, safe arithmetic, access control on every state-changing function, and explicit handling of external call failures are baseline practice, not items added after a near miss.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
       title: 'Audit-Ready From the First Commit',
-      description: 'Auditors charge for time, and unclear code wastes it. We deliver complete NatSpec documentation, a passing Foundry test suite with high branch coverage, and a written threat model — so the audit firm spends its hours finding subtle issues, not deciphering intent.',
+      description: 'Auditors charge for time, and unclear code wastes it. We deliver complete NatSpec documentation, a passing Foundry test suite with high branch coverage, and a written threat model, so the audit firm spends its hours finding subtle issues, not deciphering intent.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
       title: 'Gas Optimisation Without Obfuscation',
-      description: 'Every storage write and external call costs real money on a public chain. We optimise storage layout, cache repeated reads, use unchecked blocks where overflow is provably impossible, and prefer events over storage where appropriate — without turning the code into something an auditor cannot reason about.',
+      description: 'Every storage write and external call costs real money on a public chain. We optimise storage layout, cache repeated reads, use unchecked blocks where overflow is provably impossible, and prefer events over storage where appropriate, without turning the code into something an auditor cannot reason about.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
       title: 'Considered Upgradeability',
-      description: 'Where mutability is genuinely required, we implement established patterns — transparent proxy, UUPS or the Diamond standard (EIP-2535) — with storage gaps, initialiser guards and governance controls. Where immutability is safer, we say so and design accordingly.',
+      description: 'Where mutability is genuinely required, we implement established patterns, transparent proxy, UUPS or the Diamond standard (EIP-2535), with storage gaps, initialiser guards and governance controls. Where immutability is safer, we say so and design accordingly.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
       title: 'Invariant and Fuzz Testing',
-      description: 'Unit tests confirm expected behaviour; invariant and fuzz testing find the inputs you did not think of. We use Foundry\'s fuzzing and invariant engine to assert that core properties — total supply conservation, access constraints, accounting balances — hold across thousands of randomised call sequences.',
+      description: 'Unit tests confirm expected behaviour; invariant and fuzz testing find the inputs you did not think of. We use Foundry\'s fuzzing and invariant engine to assert that core properties, total supply conservation, access constraints, accounting balances, hold across thousands of randomised call sequences.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
@@ -46,7 +46,7 @@ const data = {
       description: 'Deployment is a checklist, not a single command: verified constructor arguments, post-deploy verification of every critical state variable, source verification on the block explorer, and admin keys held in a multi-signature wallet rather than a single hot key.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'Solidity',
@@ -66,37 +66,37 @@ const data = {
     {
       step: '01',
       title: 'Requirements, Threat Model & Network Selection',
-      duration: 'Weeks 1–2',
-      description: 'We capture exactly what the contract must do and — equally important — what it must never do. We write a threat model identifying the assets at risk, the actors who might attack them and the attack vectors that apply (reentrancy, access control bypass, oracle manipulation, front-running). We then select the target chain against your cost, throughput and ecosystem needs, and confirm blockchain is genuinely the right substrate before proceeding.',
+      duration: 'Weeks 1 to 2',
+      description: 'We capture exactly what the contract must do and, equally important, what it must never do. We write a threat model identifying the assets at risk, the actors who might attack them and the attack vectors that apply (reentrancy, access control bypass, oracle manipulation, front-running). We then select the target chain against your cost, throughput and ecosystem needs, and confirm blockchain is genuinely the right substrate before proceeding.',
     },
     {
       step: '02',
       title: 'Contract Architecture & Upgradeability Decision',
-      duration: 'Weeks 2–3',
-      description: 'We design the contract structure: which contracts exist, what state each holds, what events they emit, and how access control is enforced. We make a deliberate decision on upgradeability — immutable where possible, a proven proxy pattern where mutability is genuinely required — and document the governance and timelock controls that will guard any upgrade path.',
+      duration: 'Weeks 2 to 3',
+      description: 'We design the contract structure: which contracts exist, what state each holds, what events they emit, and how access control is enforced. We make a deliberate decision on upgradeability, immutable where possible, a proven proxy pattern where mutability is genuinely required, and document the governance and timelock controls that will guard any upgrade path.',
     },
     {
       step: '03',
       title: 'Implementation & Test-First Development',
-      duration: 'Weeks 3–7',
+      duration: 'Weeks 3 to 7',
       description: 'Contracts are implemented against the specification using OpenZeppelin primitives rather than bespoke reimplementations. Tests are written alongside the code: unit tests for each function, integration tests for multi-contract flows, and fuzz and invariant tests asserting core properties hold across randomised inputs. The test suite is a deliverable that documents intended behaviour.',
     },
     {
       step: '04',
       title: 'Gas Optimisation & Static Analysis',
-      duration: 'Weeks 6–8',
-      description: 'We profile gas usage, optimise storage layout and hot paths, and run static analysers — Slither and Mythril — to surface common vulnerability patterns automatically. Findings are triaged and resolved, and we re-run the full test suite after every optimisation to confirm behaviour is unchanged.',
+      duration: 'Weeks 6 to 8',
+      description: 'We profile gas usage, optimise storage layout and hot paths, and run static analysers, Slither and Mythril, to surface common vulnerability patterns automatically. Findings are triaged and resolved, and we re-run the full test suite after every optimisation to confirm behaviour is unchanged.',
     },
     {
       step: '05',
       title: 'Internal Security Review & Audit Coordination',
-      duration: 'Weeks 8–10',
+      duration: 'Weeks 8 to 10',
       description: 'Before engaging an external auditor we conduct our own line-by-line review against the threat model and resolve all internal findings. We then coordinate the third-party audit: providing context, answering auditor questions, and remediating every finding in the report before deployment. Audit cost varies with contract complexity and is budgeted separately from build cost.',
     },
     {
       step: '06',
       title: 'Deployment, Verification & Handover',
-      duration: 'Weeks 10–12',
+      duration: 'Weeks 10 to 12',
       description: 'Deployment follows a written checklist: verified constructor arguments, multi-signature admin setup, post-deploy verification of every critical state variable, and source verification on the block explorer. We hand over deployment scripts, documentation, the test suite and a monitoring plan so your team can operate and observe the contract with confidence.',
     },
   ],
@@ -113,23 +113,23 @@ const data = {
   faqs: [
     {
       question: 'Do we really need a third-party audit, and what does it cost?',
-      answer: 'For any contract that holds or controls real value on a public chain, a third-party security audit is table stakes rather than optional. Unaudited contracts have been exploited for very large sums across the ecosystem, and once funds leave an immutable contract there is rarely any recourse. An audit is a systematic review by security specialists who look for known vulnerability classes, logic errors and economic attack vectors. We prepare your contracts so the audit is efficient — high test coverage, complete documentation, all internal findings resolved — which keeps the cost down. Audit pricing varies with contract complexity and line count, and you should budget it as a distinct line item from development. We coordinate the engagement and remediate every finding before deployment, but the auditor is independent of us by design.',
+      answer: 'For any contract that holds or controls real value on a public chain, a third-party security audit is table stakes rather than optional. Unaudited contracts have been exploited for very large sums across the ecosystem, and once funds leave an immutable contract there is rarely any recourse. An audit is a systematic review by security specialists who look for known vulnerability classes, logic errors and economic attack vectors. We prepare your contracts so the audit is efficient, high test coverage, complete documentation, all internal findings resolved, which keeps the cost down. Audit pricing varies with contract complexity and line count, and you should budget it as a distinct line item from development. We coordinate the engagement and remediate every finding before deployment, but the auditor is independent of us by design.',
     },
     {
       question: 'If a deployed contract has a bug, can you just fix it?',
-      answer: 'Not directly. A contract deployed to a blockchain is immutable — the bytecode cannot be edited in place. This is a deliberate security property, but it means a bug cannot be patched the way a web application can. There are two honest answers depending on how the contract was designed. If we built it as an immutable contract, the only remedies are social (warning users, pausing if a pause function exists) and migration to a new contract — which is disruptive. If we built it with an upgrade pattern (transparent proxy, UUPS or Diamond), the logic can be replaced through a governed upgrade, but the upgrade mechanism itself adds risk and must be audited. We discuss this trade-off explicitly at the architecture stage rather than defaulting to upgradeable, because upgradeability is not free safety — it is a different risk profile.',
+      answer: 'Not directly. A contract deployed to a blockchain is immutable, the bytecode cannot be edited in place. This is a deliberate security property, but it means a bug cannot be patched the way a web application can. There are two honest answers depending on how the contract was designed. If we built it as an immutable contract, the only remedies are social (warning users, pausing if a pause function exists) and migration to a new contract, which is disruptive. If we built it with an upgrade pattern (transparent proxy, UUPS or Diamond), the logic can be replaced through a governed upgrade, but the upgrade mechanism itself adds risk and must be audited. We discuss this trade-off explicitly at the architecture stage rather than defaulting to upgradeable, because upgradeability is not free safety, it is a different risk profile.',
     },
     {
       question: 'How do you keep gas costs down?',
-      answer: 'Gas is the unit of computation cost on EVM chains, and on Ethereum mainnet it can dominate user experience and economics. We reduce it through deliberate engineering: packing storage variables so related values share a slot, caching values read repeatedly in a function, minimising on-chain storage in favour of events where data only needs to be queryable off-chain, using unchecked arithmetic blocks only where overflow is provably impossible, and avoiding unbounded loops over user-controlled arrays. We also recommend deploying to an L2 such as Base, Arbitrum or Polygon where per-transaction costs are a fraction of mainnet, when your use case does not specifically require mainnet settlement. Optimisation never comes at the cost of auditability — code an auditor cannot reason about is a worse risk than a few thousand gas.',
+      answer: 'Gas is the unit of computation cost on EVM chains, and on Ethereum mainnet it can dominate user experience and economics. We reduce it through deliberate engineering: packing storage variables so related values share a slot, caching values read repeatedly in a function, minimising on-chain storage in favour of events where data only needs to be queryable off-chain, using unchecked arithmetic blocks only where overflow is provably impossible, and avoiding unbounded loops over user-controlled arrays. We also recommend deploying to an L2 such as Base, Arbitrum or Polygon where per-transaction costs are a fraction of mainnet, when your use case does not specifically require mainnet settlement. Optimisation never comes at the cost of auditability, code an auditor cannot reason about is a worse risk than a few thousand gas.',
     },
     {
       question: 'Which networks do you build on?',
-      answer: 'We work across EVM-compatible chains: Ethereum mainnet where maximum security and liquidity matter, and L2s and sidechains — Base, Arbitrum, Optimism and Polygon — where low transaction costs and higher throughput are the priority. The right choice depends on where your users and counterparties already are, the cost per transaction your model can absorb, and any settlement guarantees you need. Because these chains share the EVM, contracts are largely portable, but each has its own gas economics, finality characteristics and ecosystem tooling that we weigh during network selection. We are not tied to a single chain and will recommend the one that fits the project rather than the one we happen to prefer.',
+      answer: 'We work across EVM-compatible chains: Ethereum mainnet where maximum security and liquidity matter, and L2s and sidechains, Base, Arbitrum, Optimism and Polygon, where low transaction costs and higher throughput are the priority. The right choice depends on where your users and counterparties already are, the cost per transaction your model can absorb, and any settlement guarantees you need. Because these chains share the EVM, contracts are largely portable, but each has its own gas economics, finality characteristics and ecosystem tooling that we weigh during network selection. We are not tied to a single chain and will recommend the one that fits the project rather than the one we happen to prefer.',
     },
     {
       question: 'Are there Australian regulatory issues we should know about before deploying a token?',
-      answer: 'Possibly, and this is a question for legal counsel rather than engineers. ASIC has published guidance on how crypto assets, stablecoins and digital tokens are treated under the Corporations Act, and a token that functions as a financial product — for example a tokenised security or an interest in a managed investment scheme — can trigger licensing and disclosure obligations. Depending on the activity, AUSTRAC registration and AML/CTF obligations may also apply, particularly where you are exchanging tokens for fiat or providing custody. We are not lawyers and do not give legal advice. What we do is build systems that can accommodate the controls your legal advisers identify — transfer restrictions, allowlisting, pause functions, KYC gating at the application layer — so that compliance requirements can be implemented rather than retrofitted.',
+      answer: 'Possibly, and this is a question for legal counsel rather than engineers. ASIC has published guidance on how crypto assets, stablecoins and digital tokens are treated under the Corporations Act, and a token that functions as a financial product, for example a tokenised security or an interest in a managed investment scheme, can trigger licensing and disclosure obligations. Depending on the activity, AUSTRAC registration and AML/CTF obligations may also apply, particularly where you are exchanging tokens for fiat or providing custody. We are not lawyers and do not give legal advice. What we do is build systems that can accommodate the controls your legal advisers identify, transfer restrictions, allowlisting, pause functions, KYC gating at the application layer, so that compliance requirements can be implemented rather than retrofitted.',
     },
     {
       question: 'Can you take over an existing contract that someone else wrote?',
@@ -145,11 +145,11 @@ const data = {
       'You can accept the operational discipline that immutable, value-bearing code demands.',
     ],
     notRightFor: [
-      'A single trusted party controls all the data and logic — a conventional database is simpler, faster and far cheaper.',
+      'A single trusted party controls all the data and logic, a conventional database is simpler, faster and far cheaper.',
       'The data is private and must stay confidential, with no benefit from public verifiability.',
-      'You need to change business rules frequently and quickly — immutable contracts and governed upgrades make that slow and risky.',
+      'You need to change business rules frequently and quickly, immutable contracts and governed upgrades make that slow and risky.',
       'The use case is essentially a CRUD application that has been reframed as Web3 for marketing reasons.',
-      'You cannot fund a security audit — deploying unaudited value-bearing contracts is a risk we will not recommend.',
+      'You cannot fund a security audit, deploying unaudited value-bearing contracts is a risk we will not recommend.',
     ],
   },
   definitions: [
@@ -163,7 +163,7 @@ const data = {
     },
     {
       term: 'EVM',
-      definition: 'The Ethereum Virtual Machine — the runtime that executes smart contract bytecode. EVM-compatible chains such as Polygon, Base and Arbitrum run the same instruction set, so Solidity contracts are largely portable between them.',
+      definition: 'The Ethereum Virtual Machine, the runtime that executes smart contract bytecode. EVM-compatible chains such as Polygon, Base and Arbitrum run the same instruction set, so Solidity contracts are largely portable between them.',
     },
     {
       term: 'Reentrancy',

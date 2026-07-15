@@ -8,14 +8,14 @@ const data = {
   heroHeadline: 'Database Architecture That Performs at Enterprise Scale',
   heroTagline: 'Schema design, query optimisation and migration strategies for systems that handle billions of records.',
   description: [
-    'At enterprise scale, a poorly designed database is not just a performance problem — it is an existential risk. When query times creep from milliseconds into seconds, when indexes bloat to the point of slowing writes, or when a schema that made sense at ten thousand rows becomes a liability at ten billion, the consequences ripple through every layer of your business. Our database engineers have spent careers solving exactly these problems, across financial platforms, health systems, logistics networks and SaaS products that together handle trillions of records annually.',
+    'At enterprise scale, a poorly designed database is not just a performance problem, it is an existential risk. When query times creep from milliseconds into seconds, when indexes bloat to the point of slowing writes, or when a schema that made sense at ten thousand rows becomes a liability at ten billion, the consequences ripple through every layer of your business. Our database engineers have spent careers solving exactly these problems, across financial platforms, health systems, logistics networks and SaaS products that together handle trillions of records annually.',
     'We bring a rigorous, evidence-based methodology to every engagement: instrument first, diagnose with data, then redesign with precision. Whether you need a ground-up schema designed for a new product, a comprehensive audit and remediation plan for an ageing system, or a zero-downtime migration strategy from one database engine to another, we architect solutions that are performant today and maintainable for the decade ahead. We document everything, transfer knowledge to your team, and do not leave until your team understands the why behind every decision.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
       title: 'Query Performance at Scale',
-      description: 'We routinely reduce query times by 10x–100x through indexing strategy, query rewrites, execution plan analysis and data model normalisation or denormalisation appropriate to your access patterns.',
+      description: 'We routinely reduce query times by 10x, 100x through indexing strategy, query rewrites, execution plan analysis and data model normalisation or denormalisation appropriate to your access patterns.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
@@ -30,20 +30,20 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
       title: 'Replication & High Availability',
-      description: 'We design and implement replication topologies, failover strategies and read-replica configurations that deliver the uptime your business requires — including multi-region and multi-cloud setups.',
+      description: 'We design and implement replication topologies, failover strategies and read-replica configurations that deliver the uptime your business requires, including multi-region and multi-cloud setups.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
       title: 'Deep Performance Auditing',
-      description: 'Using APM tooling, slow-query logs, pg_stat_statements and custom instrumentation, we surface every bottleneck — not just the obvious ones — and prioritise fixes by business impact.',
+      description: 'Using APM tooling, slow-query logs, pg_stat_statements and custom instrumentation, we surface every bottleneck, not just the obvious ones, and prioritise fixes by business impact.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
       title: 'Polyglot Persistence Strategy',
-      description: 'Relational, document, graph, time-series, columnar — each storage engine has a domain where it excels. We help you pick the right store for each workload and integrate them cleanly.',
+      description: 'Relational, document, graph, time-series, columnar, each storage engine has a domain where it excels. We help you pick the right store for each workload and integrate them cleanly.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated. Will return once real signed-off project examples can be referenced. */
 
   useCases: [],
   technologies: [
@@ -71,13 +71,13 @@ const data = {
       step: '02',
       title: 'Architecture Audit & Root-Cause Analysis',
       description: 'We review your schema, index catalogue, execution plans, configuration settings and replication topology. We produce a ranked findings register that categorises issues by severity and estimated effort to remediate, giving you a clear picture of where to invest first.',
-      duration: 'Week 1–2',
+      duration: 'Week 1 to 2',
     },
     {
       step: '03',
       title: 'Redesign & Proof-of-Concept',
       description: 'For each significant finding, we develop and test a remediation in an isolated environment against a production-scale data clone. We measure before and after, document our approach and validate that changes do not introduce regressions before proposing them for production.',
-      duration: 'Week 2–3',
+      duration: 'Week 2 to 3',
     },
     {
       step: '04',
@@ -88,13 +88,13 @@ const data = {
     {
       step: '05',
       title: 'Staged Production Rollout',
-      description: 'Changes are applied in stages — starting with the lowest-risk changes and advancing only when each stage meets its success criteria. For schema migrations, we use online migration tools (pg_repack, pt-online-schema-change) to avoid table locks on live systems.',
-      duration: 'Week 4–5',
+      description: 'Changes are applied in stages, starting with the lowest-risk changes and advancing only when each stage meets its success criteria. For schema migrations, we use online migration tools (pg_repack, pt-online-schema-change) to avoid table locks on live systems.',
+      duration: 'Week 4 to 5',
     },
     {
       step: '06',
       title: 'Validation & Performance Sign-Off',
-      description: 'Post-migration, we run your full performance benchmark suite against the new configuration, validate data integrity and review monitoring dashboards. We do not consider work complete until metrics show consistent improvement across percentiles — p50, p95 and p99.',
+      description: 'Post-migration, we run your full performance benchmark suite against the new configuration, validate data integrity and review monitoring dashboards. We do not consider work complete until metrics show consistent improvement across percentiles, p50, p95 and p99.',
       duration: 'Week 5',
     },
     {
@@ -120,16 +120,16 @@ const data = {
       answer: 'We use read-only diagnostic tooling exclusively during the assessment phase. For PostgreSQL, this includes pg_stat_statements, pg_stat_user_tables, pg_stat_user_indexes and EXPLAIN ANALYZE on captured slow queries. For other engines, we use equivalent native tooling. We never run modifications or schema changes in production without explicit, written sign-off, and all changes are preceded by tested rollback procedures. The assessment phase is entirely non-destructive.',
     },
     {
-      question: 'Can you migrate our database from one engine to another — for example, MySQL to PostgreSQL?',
+      question: 'Can you migrate our database from one engine to another, for example, MySQL to PostgreSQL?',
       answer: 'Yes. Cross-engine migrations are a significant but manageable undertaking. The key challenges are schema translation (data types, constraints, stored procedures), data volume and the need for zero downtime during cutover. Our approach uses a dual-write pattern: the old and new databases receive identical writes simultaneously for a period, which allows us to validate data consistency before cutting over reads. We have successfully migrated systems with hundreds of gigabytes to several terabytes using this approach.',
     },
     {
       question: 'What is the difference between database optimisation and database architecture work?',
-      answer: 'Optimisation refers to improving the performance of an existing system — rewriting queries, adding indexes, adjusting configuration parameters, tuning connection pools. Architecture work is broader: it involves evaluating whether the current data model, storage engine and topology are appropriate for the workload, and redesigning them if not. Many engagements start as optimisation and surface architectural issues that require deeper intervention. We scope this clearly at the outset and keep you informed if we discover the problem is architectural rather than purely a tuning matter.',
+      answer: 'Optimisation refers to improving the performance of an existing system, rewriting queries, adding indexes, adjusting configuration parameters, tuning connection pools. Architecture work is broader: it involves evaluating whether the current data model, storage engine and topology are appropriate for the workload, and redesigning them if not. Many engagements start as optimisation and surface architectural issues that require deeper intervention. We scope this clearly at the outset and keep you informed if we discover the problem is architectural rather than purely a tuning matter.',
     },
     {
       question: 'How long does a typical database architecture engagement take?',
-      answer: 'A focused optimisation engagement — auditing an existing system and implementing a set of improvements — typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. We provide a detailed timeline with milestones after the initial discovery session.',
+      answer: 'A focused optimisation engagement, auditing an existing system and implementing a set of improvements, typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. We provide a detailed timeline with milestones after the initial discovery session.',
     },
     {
       question: 'Do you work with cloud-managed database services such as AWS RDS or Google Cloud SQL?',
@@ -142,19 +142,19 @@ const data = {
   ],
   serviceName: 'Database Architecture',
   slug: 'database-architecture',
-  summaryStatement: 'Database architecture is the engineering discipline of designing schemas, indexing and storage topologies — and optimising queries and migrations — so that a database performs reliably at enterprise scale and remains maintainable as data volumes grow into the billions of records.',
+  summaryStatement: 'Database architecture is the engineering discipline of designing schemas, indexing and storage topologies, and optimising queries and migrations, so that a database performs reliably at enterprise scale and remains maintainable as data volumes grow into the billions of records.',
   comparison: {
     rightFor: [
       'Query times are creeping from milliseconds into seconds, or writes are slowing as indexes bloat.',
       'A schema that worked at thousands of rows is becoming a liability at hundreds of millions or billions.',
-      'You need a zero-downtime migration — between engines, or onto a partitioned or replicated topology — on a live production system.',
+      'You need a zero-downtime migration, between engines, or onto a partitioned or replicated topology, on a live production system.',
       'You require replication, failover and high availability to meet uptime commitments.',
       'You have compliance obligations (PCI DSS, ISO 27001, the Privacy Act 1988) that shape encryption, access control and audit logging at the data layer.',
     ],
     notRightFor: [
-      'Your dataset is small and your queries are already fast — adding indexes yourself or upgrading the instance size is the cheaper fix.',
+      'Your dataset is small and your queries are already fast, adding indexes yourself or upgrading the instance size is the cheaper fix.',
       'The real bottleneck is application code or N+1 query patterns rather than the database itself.',
-      'You need analytical reporting and dashboards rather than transactional performance — data analytics is the better-fitted service.',
+      'You need analytical reporting and dashboards rather than transactional performance, data analytics is the better-fitted service.',
       'A fully managed service with default settings already meets your performance and availability needs.',
       'You are early-stage and still changing the data model weekly; premature optimisation will be wasted effort.',
     ],
@@ -182,7 +182,7 @@ const data = {
     },
     {
       term: 'Polyglot persistence',
-      definition: 'Using more than one type of data store — relational, document, graph, time-series or columnar — each chosen for the workload it handles best, rather than forcing everything into a single engine.',
+      definition: 'Using more than one type of data store, relational, document, graph, time-series or columnar, each chosen for the workload it handles best, rather than forcing everything into a single engine.',
     },
   ],
   relatedServices: [

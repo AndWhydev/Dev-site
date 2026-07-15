@@ -3,16 +3,16 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'AI Chatbot Development for Business | All Webbed Labs',
-  metaDescription: 'We build customer-facing and internal AI chatbots grounded in your knowledge — across web, WhatsApp and Teams, with human handoff and Australian data residency.',
+  metaDescription: 'We build customer-facing and internal AI chatbots grounded in your knowledge, across web, WhatsApp and Teams, with human handoff and Australian data residency.',
   category: 'AI & Data',
   serviceName: 'AI Chatbot',
   slug: 'ai-chatbot',
   heroHeadline: 'Conversational Assistants That Answer From Your Knowledge and Know When to Hand Off',
-  heroTagline: 'Customer-facing and internal AI chatbots across web, WhatsApp and Teams — grounded in your content, safe by design, and built to escalate to a human when they should.',
+  heroTagline: 'Customer-facing and internal AI chatbots across web, WhatsApp and Teams, grounded in your content, safe by design, and built to escalate to a human when they should.',
   summaryStatement: 'An AI chatbot is a conversational assistant powered by a language model that can answer questions, take defined actions and hold a natural dialogue across channels, grounded in an organisation\'s own knowledge and able to hand off to a human when a request falls outside its remit.',
   description: [
     'There is a wide gap between the no-code chatbot you can stand up in an afternoon and a conversational assistant you can put in front of customers or rely on internally. The cheap version follows rigid decision trees, breaks the moment a user phrases something unexpectedly, and either makes things up or dead-ends them with "I didn\'t understand that". A well-built AI chatbot uses a language model for genuine language understanding, draws its answers from your own knowledge through retrieval so it stays accurate, can call your systems to look up an order or raise a ticket, and recognises the limits of what it should handle so it hands the conversation to a person at the right moment. The difference is not the demo; it is how it behaves on the thousandth real conversation.',
-    'We build assistants for both customer-facing and internal use, and integrate them into the channels your audience already uses — your website, WhatsApp, Microsoft Teams and Slack — so the experience meets people where they are rather than forcing them somewhere new. Answers are grounded in your documentation and policies through a RAG approach, which keeps responses accurate and lets the assistant cite its sources, and tool calling gives it controlled access to your systems for tasks like checking an account, booking an appointment or creating a support case within boundaries you define. Safety is engineered in: input and output filtering, prompt-injection defences, topic boundaries and PII handling, plus a clear, reliable human handoff with full conversation context passed to the agent so the customer never has to repeat themselves. We add analytics so you can see what people are actually asking, where the assistant succeeds and where it escalates, and use that to improve it over time. Where the Privacy Act 1988 or data residency applies to the conversations being handled, we deploy within Australian regions and configure providers for zero data retention. The aim is an assistant that genuinely deflects routine load and gives good answers, while always knowing when a human should take over — not a frustrating wall between your customers and your team.',
+    'We build assistants for both customer-facing and internal use, and integrate them into the channels your audience already uses, your website, WhatsApp, Microsoft Teams and Slack, so the experience meets people where they are rather than forcing them somewhere new. Answers are grounded in your documentation and policies through a RAG approach, which keeps responses accurate and lets the assistant cite its sources, and tool calling gives it controlled access to your systems for tasks like checking an account, booking an appointment or creating a support case within boundaries you define. Safety is engineered in: input and output filtering, prompt-injection defences, topic boundaries and PII handling, plus a clear, reliable human handoff with full conversation context passed to the agent so the customer never has to repeat themselves. We add analytics so you can see what people are actually asking, where the assistant succeeds and where it escalates, and use that to improve it over time. Where the Privacy Act 1988 or data residency applies to the conversations being handled, we deploy within Australian regions and configure providers for zero data retention. The aim is an assistant that genuinely deflects routine load and gives good answers, while always knowing when a human should take over, not a frustrating wall between your customers and your team.',
   ],
   benefits: [
     {
@@ -33,7 +33,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8h2"/><path d="M13 8h4"/></svg>',
       title: 'Meets Users on Their Channels',
-      description: 'We integrate the assistant into the channels your audience already uses — your website, WhatsApp, Microsoft Teams and Slack — so support and answers happen where people are, with one consistent assistant behind every channel rather than separate disconnected bots.',
+      description: 'We integrate the assistant into the channels your audience already uses, your website, WhatsApp, Microsoft Teams and Slack, so support and answers happen where people are, with one consistent assistant behind every channel rather than separate disconnected bots.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
@@ -43,10 +43,10 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="14" y="6" width="3" height="11"/></svg>',
       title: 'Analytics That Drive Improvement',
-      description: 'You see what people are actually asking, the deflection rate, where the assistant escalates and where it falls short. That evidence feeds a deliberate improvement loop — tuning answers and coverage based on real conversations rather than guesswork.',
+      description: 'You see what people are actually asking, the deflection rate, where the assistant escalates and where it falls short. That evidence feeds a deliberate improvement loop, tuning answers and coverage based on real conversations rather than guesswork.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated. Will return once real signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated. Will return once real signed-off project examples can be referenced. */
 
   useCases: [],
   technologies: [
@@ -58,31 +58,31 @@ const data = {
     {
       step: '01',
       title: 'Scope, Intents and Handoff Rules',
-      duration: 'Weeks 1–2',
+      duration: 'Weeks 1 to 2',
       description: 'We define what the assistant should and should not handle, the intents it must recognise, and the rules for when it escalates to a human. We agree the channels it will live on and map the knowledge and systems it needs to draw on to be genuinely useful.',
     },
     {
       step: '02',
       title: 'Knowledge Grounding and Tooling',
-      duration: 'Weeks 2–5',
-      description: 'We ground the assistant in your documentation through a RAG approach so answers stay accurate and cited, and define the tools it may call — order lookups, ticket creation, bookings — with controlled, validated access to your systems within set boundaries.',
+      duration: 'Weeks 2 to 5',
+      description: 'We ground the assistant in your documentation through a RAG approach so answers stay accurate and cited, and define the tools it may call, order lookups, ticket creation, bookings, with controlled, validated access to your systems within set boundaries.',
     },
     {
       step: '03',
       title: 'Conversation Design and Safety',
-      duration: 'Weeks 4–7',
+      duration: 'Weeks 4 to 7',
       description: 'We design the conversational behaviour, tone and fallback handling, and build the safety layer: input/output filtering, prompt-injection defences, topic boundaries and PII handling. The assistant is tuned to refuse out-of-scope requests gracefully and to know its limits.',
     },
     {
       step: '04',
       title: 'Channel Integration and Human Handoff',
-      duration: 'Weeks 6–9',
-      description: 'We integrate the assistant into your chosen channels — web, WhatsApp, Teams, Slack — and wire up reliable human handoff into your support tooling, passing full conversation context so agents pick up exactly where the assistant left off.',
+      duration: 'Weeks 6 to 9',
+      description: 'We integrate the assistant into your chosen channels, web, WhatsApp, Teams, Slack, and wire up reliable human handoff into your support tooling, passing full conversation context so agents pick up exactly where the assistant left off.',
     },
     {
       step: '05',
       title: 'Evaluation, Analytics and Tuning',
-      duration: 'Weeks 8–10',
+      duration: 'Weeks 8 to 10',
       description: 'We build an evaluation set of representative conversations, measure answer quality, deflection and escalation, and set up analytics dashboards. Behaviour is tuned against evidence from real and simulated conversations before and after launch.',
     },
     {
@@ -113,7 +113,7 @@ const data = {
     },
     {
       question: 'Can the chatbot hand over to a human agent?',
-      answer: 'Yes, and we treat this as essential rather than optional. The assistant is configured with clear escalation rules — out-of-scope requests, explicit requests for a person, sensitive situations, or low-confidence answers all trigger a handoff. When it escalates, the full conversation history is passed to your agent through your support tooling such as Zendesk, so the customer never has to repeat themselves and the agent has immediate context.',
+      answer: 'Yes, and we treat this as essential rather than optional. The assistant is configured with clear escalation rules, out-of-scope requests, explicit requests for a person, sensitive situations, or low-confidence answers all trigger a handoff. When it escalates, the full conversation history is passed to your agent through your support tooling such as Zendesk, so the customer never has to repeat themselves and the agent has immediate context.',
     },
     {
       question: 'Which channels can you deploy the chatbot to?',
@@ -137,7 +137,7 @@ const data = {
       'You have data residency or Privacy Act 1988 obligations that require an Australian-hosted, carefully scoped deployment',
     ],
     notRightFor: [
-      'You only need a fixed, simple FAQ flow — a no-code builder or static help page is cheaper and adequate',
+      'You only need a fixed, simple FAQ flow, a no-code builder or static help page is cheaper and adequate',
       'Every enquiry genuinely needs a human, where an assistant adds a layer rather than value',
       'You have no usable knowledge base to ground answers in and are not willing to create one',
       'The core need is structured data lookup with no conversation, which an API or self-service portal serves better',
@@ -151,7 +151,7 @@ const data = {
     },
     {
       term: 'Intent',
-      definition: 'The underlying goal behind a user\'s message — for example "check my order" or "request a refund". Recognising intent lets the assistant respond to what the user actually wants rather than matching exact words.',
+      definition: 'The underlying goal behind a user\'s message, for example "check my order" or "request a refund". Recognising intent lets the assistant respond to what the user actually wants rather than matching exact words.',
     },
     {
       term: 'Human Handoff',

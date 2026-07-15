@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 /**
- * Methodology page — the credibility load-bearer. Every section here is
+ * Methodology page, the credibility load-bearer. Every section here is
  * derived from how AWL actually delivers work. No client names, no
  * fabricated metrics, no aspirational claims about scale we don't have.
  * Specificity over generality: name the tool, name the gate, name the
@@ -17,11 +17,11 @@ const phases = [
   {
     num: '01',
     title: 'Discovery',
-    duration: '3–10 days',
+    duration: '3 to 10 days',
     purpose: 'Turn an idea or RFP into a scoped, costed, signable engagement.',
     deliverables: [
       'Problem statement and success criteria',
-      'Surface map — every screen, integration and data model',
+      'Surface map, every screen, integration and data model',
       'Risk register with mitigation owners',
       'Fixed price or time-and-materials proposal',
       'Mutual NDA executed before any commercial data changes hands',
@@ -30,7 +30,7 @@ const phases = [
   {
     num: '02',
     title: 'Architecture',
-    duration: '1–2 weeks',
+    duration: '1 to 2 weeks',
     purpose: 'Decide every technical question that would cost more to undo than to debate.',
     deliverables: [
       'C4-model system diagrams (context, container, component)',
@@ -49,7 +49,7 @@ const phases = [
       'One-week sprints with a public progress board',
       'Trunk-based development with preview deploys per branch',
       'Daily standup notes published to your project portal',
-      'A working build at the end of every sprint — never a "wait until launch" gap',
+      'A working build at the end of every sprint, never a "wait until launch" gap',
       'Source code in your GitHub organisation from day one, not handed over at the end',
     ],
   },
@@ -59,10 +59,10 @@ const phases = [
     duration: 'every deploy',
     purpose: 'Refuse to release anything that has not passed an explicit, automated check.',
     deliverables: [
-      'TypeScript strict + lint must pass — non-negotiable',
+      'TypeScript strict + lint must pass, non-negotiable',
       'Unit + integration tests must pass at coverage thresholds set at architecture',
       'Playwright visual regression suite must be green',
-      'Hallmark design gate — no AI-slop layouts, no placeholder copy reaches prod',
+      'Hallmark design gate, no AI-slop layouts, no placeholder copy reaches prod',
       'Human review on every release, no matter how small',
       'Security scan (dependency audit + SAST) on every PR',
     ],
@@ -86,7 +86,7 @@ const phases = [
     duration: 'from day one',
     purpose: 'Make sure the project survives our involvement.',
     deliverables: [
-      'Architecture decision records — every non-obvious choice documented',
+      'Architecture decision records, every non-obvious choice documented',
       'Runbook for every operational scenario (incident, scale, backup, restore)',
       'Knowledge-transfer sessions recorded and indexed',
       'Source code, secrets and infrastructure ownership transferred to you',
@@ -118,7 +118,7 @@ const gates = [
   },
   {
     name: 'Hallmark design gate',
-    check: 'Layout, typography, spacing, motion, content density — graded against a rubric',
+    check: 'Layout, typography, spacing, motion, content density, graded against a rubric',
     why: 'The bar for "is this AI slop" should be enforced by a checklist, not by hope.',
   },
   {
@@ -140,15 +140,15 @@ const gates = [
 
 const weekly = [
   { day: 'Mon', what: 'Sprint kick-off + commitments published to portal' },
-  { day: 'Tue–Thu', what: 'Build · async by default · standup notes posted daily' },
+  { day: 'Tue, Thu', what: 'Build · async by default · standup notes posted daily' },
   { day: 'Fri AM', what: 'Demo of working software (recorded if you can\'t attend live)' },
   { day: 'Fri PM', what: 'Retrospective + next sprint planned · written summary sent' },
 ];
 ---
 
 <Layout
-  title="How We Deliver — Methodology | All Webbed Labs"
-  description="The exact process All Webbed Labs uses to deliver software: discovery, architecture, build, quality gates, release and handover. No fluff, no slogans — the artefacts, gates and weekly cadence."
+  title="How We Deliver, Methodology | All Webbed Labs"
+  description="The exact process All Webbed Labs uses to deliver software: discovery, architecture, build, quality gates, release and handover. No fluff, no slogans, the artefacts, gates and weekly cadence."
 >
   <Header />
   <main>
@@ -162,7 +162,7 @@ const weekly = [
             How we actually deliver.
           </h1>
           <p class="meth-lead">
-            This page is the operating manual. Every phase below produces specific, named artefacts; every release passes specific, named gates; every week has a specific, named cadence. Nothing here is aspirational — it is the floor, not the ceiling, of how we run an engagement.
+            This page is the operating manual. Every phase below produces specific, named artefacts; every release passes specific, named gates; every week has a specific, named cadence. Nothing here is aspirational, it is the floor, not the ceiling, of how we run an engagement.
           </p>
         </div>
       </div>
@@ -173,7 +173,7 @@ const weekly = [
       <div class="meth-phases-inner">
         <div class="reveal" style="max-width: 720px;">
           <span class="section-label">The six phases</span>
-          <h2 class="section-heading">Discovery to handover — every engagement, every time.</h2>
+          <h2 class="section-heading">Discovery to handover, every engagement, every time.</h2>
           <p class="section-subheading">
             We do not invent process per project. The same six phases run every time, sequenced and resourced to the engagement. What changes is depth, not structure.
           </p>
@@ -263,10 +263,10 @@ const weekly = [
             <span class="section-label">Autonomous tooling</span>
             <h2 class="section-heading">Where the speed comes from.</h2>
             <p>
-              We build with the same Claude-powered orchestration system — internally called <strong>Overseer</strong> — that runs our own infrastructure. Multi-worker dispatch, automated governance (rate limiting, anomaly detection, PII redaction), and Telegram escalation for decisions that need a human.
+              We build with the same Claude-powered orchestration system, internally called <strong>Overseer</strong>, that runs our own infrastructure. Multi-worker dispatch, automated governance (rate limiting, anomaly detection, PII redaction), and Telegram escalation for decisions that need a human.
             </p>
             <p>
-              The honest version of what it does: it compresses the parts of software delivery that are pattern work — scaffolding, integration wiring, asset generation, test authoring — so the senior engineering hours go into judgement, architecture and review. Every gate still runs. Every release still has a named human approver.
+              The honest version of what it does: it compresses the parts of software delivery that are pattern work, scaffolding, integration wiring, asset generation, test authoring, so the senior engineering hours go into judgement, architecture and review. Every gate still runs. Every release still has a named human approver.
             </p>
             <p>
               What it does <em>not</em> do: replace a senior engineer's read of a tricky PR, decide an architecture trade-off, or sign off on a release. Those stay human.

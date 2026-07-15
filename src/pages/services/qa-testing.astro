@@ -11,8 +11,8 @@ const data = {
   heroTagline: 'Test strategy, automated test suites, performance and accessibility testing, and CI quality gates that catch defects before your users do.',
   summaryStatement: 'QA and testing is the discipline of systematically verifying that software behaves correctly, performs adequately and meets accessibility and security expectations before it reaches production users.',
   description: [
-    'Most defects that reach production were preventable. They slip through because testing was treated as an afterthought — a manual pass squeezed in before a release date, with no automated regression coverage and no objective definition of what "done" actually means. Over time this produces a codebase that nobody dares to change, where every deployment is a gamble and every bug fix risks breaking two other things. Our QA and testing practice replaces that anxiety with evidence. We build layered test suites that run on every commit, define clear quality gates that block broken code from merging, and give your team an honest, measurable picture of software health at any moment.',
-    'We work across the full testing pyramid rather than over-investing in any single layer. Fast unit tests written in Jest, Vitest or Pytest verify individual functions and components in milliseconds. Integration tests confirm that modules, services and databases cooperate correctly. End-to-end tests built in Playwright or Cypress drive a real browser through the critical user journeys that actually generate revenue. On top of that functional base we add the testing layers teams most often skip: load and performance testing with k6 to find the breaking point before your customers do, accessibility testing against WCAG 2.2 using Axe and manual screen-reader passes, and security testing that probes for the OWASP Top 10. We also run structured manual exploratory sessions, because automation confirms what you thought to check while a skilled human tester finds what you did not. Everything is wired into your CI pipeline so quality is enforced continuously, not inspected occasionally. We also instrument your suites to surface meaningful signals — coverage trends, flaky-test rates, performance regressions against baseline — rather than a single pass-or-fail badge, so leaders can see software health objectively and engineers know exactly where to focus next. Crucially, we hand over documented test strategies, runbooks and coaching so your own engineers can extend and maintain the work long after we step away, turning testing from a service you rent into a capability your team genuinely owns.',
+    'Most defects that reach production were preventable. They slip through because testing was treated as an afterthought, a manual pass squeezed in before a release date, with no automated regression coverage and no objective definition of what "done" actually means. Over time this produces a codebase that nobody dares to change, where every deployment is a gamble and every bug fix risks breaking two other things. Our QA and testing practice replaces that anxiety with evidence. We build layered test suites that run on every commit, define clear quality gates that block broken code from merging, and give your team an honest, measurable picture of software health at any moment.',
+    'We work across the full testing pyramid rather than over-investing in any single layer. Fast unit tests written in Jest, Vitest or Pytest verify individual functions and components in milliseconds. Integration tests confirm that modules, services and databases cooperate correctly. End-to-end tests built in Playwright or Cypress drive a real browser through the critical user journeys that actually generate revenue. On top of that functional base we add the testing layers teams most often skip: load and performance testing with k6 to find the breaking point before your customers do, accessibility testing against WCAG 2.2 using Axe and manual screen-reader passes, and security testing that probes for the OWASP Top 10. We also run structured manual exploratory sessions, because automation confirms what you thought to check while a skilled human tester finds what you did not. Everything is wired into your CI pipeline so quality is enforced continuously, not inspected occasionally. We also instrument your suites to surface meaningful signals, coverage trends, flaky-test rates, performance regressions against baseline, rather than a single pass-or-fail badge, so leaders can see software health objectively and engineers know exactly where to focus next. Crucially, we hand over documented test strategies, runbooks and coaching so your own engineers can extend and maintain the work long after we step away, turning testing from a service you rent into a capability your team genuinely owns.',
   ],
   benefits: [
     {
@@ -28,7 +28,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
       title: 'Performance Verified Under Load',
-      description: 'We run k6 load tests with realistic traffic profiles — gradual ramps, sustained peaks and spike scenarios — to establish performance baselines and find the concurrency ceiling before launch. Latency percentiles and error rates are measured, not guessed, so you know your capacity ahead of a campaign or seasonal peak.',
+      description: 'We run k6 load tests with realistic traffic profiles, gradual ramps, sustained peaks and spike scenarios, to establish performance baselines and find the concurrency ceiling before launch. Latency percentiles and error rates are measured, not guessed, so you know your capacity ahead of a campaign or seasonal peak.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>',
@@ -38,7 +38,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: 'Security Testing as Standard',
-      description: 'Functional correctness is not the same as being safe. We probe for the OWASP Top 10 — injection, broken authentication, insecure direct object references and more — using a mix of automated scanning and manual testing, and integrate dependency and secret scanning into CI so known vulnerabilities are caught at the door.',
+      description: 'Functional correctness is not the same as being safe. We probe for the OWASP Top 10, injection, broken authentication, insecure direct object references and more, using a mix of automated scanning and manual testing, and integrate dependency and secret scanning into CI so known vulnerabilities are caught at the door.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
@@ -46,7 +46,7 @@ const data = {
       description: 'Automation only checks what you thought to script. Our manual exploratory sessions follow structured charters to probe edge cases, unusual workflows and the rough corners real users hit. We log reproducible defects with evidence, not vague "it feels off" reports, so developers can act immediately.',
     },
   ],
-  /* useCases array emptied — previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
+  /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
     'Playwright', 'Cypress', 'Jest', 'Vitest', 'Pytest', 'k6',
@@ -56,31 +56,31 @@ const data = {
     {
       step: '01',
       title: 'Test Strategy & Risk Assessment',
-      duration: 'Weeks 1–2',
+      duration: 'Weeks 1 to 2',
       description: 'We map your application, identify the highest-risk and highest-value user journeys, and define a layered test strategy with explicit coverage targets per layer. We agree on what constitutes a release-blocking failure and document the quality gates the team will be held to.',
     },
     {
       step: '02',
       title: 'Test Environment & Data Setup',
-      duration: 'Weeks 2–3',
-      description: 'We establish isolated, repeatable test environments and deterministic test data factories. Reliable tests depend on a controlled environment — we eliminate the shared-database and shared-state problems that make suites flaky and untrustworthy before writing significant test code.',
+      duration: 'Weeks 2 to 3',
+      description: 'We establish isolated, repeatable test environments and deterministic test data factories. Reliable tests depend on a controlled environment, we eliminate the shared-database and shared-state problems that make suites flaky and untrustworthy before writing significant test code.',
     },
     {
       step: '03',
       title: 'Automated Suite Development',
-      duration: 'Weeks 3–8',
+      duration: 'Weeks 3 to 8',
       description: 'We build out the test pyramid: unit tests in Jest, Vitest or Pytest, integration tests across service and database boundaries, and end-to-end coverage of critical journeys in Playwright or Cypress, validated across the browsers your audience actually uses via BrowserStack.',
     },
     {
       step: '04',
       title: 'Performance, Accessibility & Security Testing',
-      duration: 'Weeks 6–9',
+      duration: 'Weeks 6 to 9',
       description: 'We run k6 load and spike tests to establish performance baselines, conduct WCAG 2.2 accessibility audits with Axe, Lighthouse and manual assistive-technology passes, and perform OWASP-aligned security testing with documented, reproducible findings.',
     },
     {
       step: '05',
       title: 'CI Integration & Quality Gates',
-      duration: 'Week 9–10',
+      duration: 'Week 9 to 10',
       description: 'We wire the suites into GitHub Actions so tests run on every pull request, with gates that block merges on failures or coverage drops. Test results, coverage reports and performance trends become visible to the whole team, embedding quality into daily workflow.',
     },
     {
@@ -107,7 +107,7 @@ const data = {
     },
     {
       question: 'What is the difference between unit, integration and end-to-end tests?',
-      answer: 'Unit tests verify a single function or component in isolation and run in milliseconds, so you can have thousands of them. Integration tests check that multiple units work together correctly — for example, that a service writes to the database and reads it back as expected. End-to-end tests drive the real application through a browser exactly as a user would, validating the whole stack but running more slowly. A healthy suite has many fast unit tests, fewer integration tests, and a focused set of end-to-end tests covering only the most critical journeys.',
+      answer: 'Unit tests verify a single function or component in isolation and run in milliseconds, so you can have thousands of them. Integration tests check that multiple units work together correctly, for example, that a service writes to the database and reads it back as expected. End-to-end tests drive the real application through a browser exactly as a user would, validating the whole stack but running more slowly. A healthy suite has many fast unit tests, fewer integration tests, and a focused set of end-to-end tests covering only the most critical journeys.',
     },
     {
       question: 'Why are our existing automated tests so unreliable?',
@@ -115,15 +115,15 @@ const data = {
     },
     {
       question: 'Can you test accessibility, and what standard do you target?',
-      answer: 'Yes. We target WCAG 2.2 Level AA, which is the standard generally expected of Australian government and commercial digital services. Automated tools like Axe and Lighthouse catch a meaningful share of issues, but a large category — logical focus order, sensible alt text, keyboard operability of custom components — requires manual testing with keyboards and screen readers. We combine both and deliver findings mapped to specific WCAG success criteria with remediation guidance.',
+      answer: 'Yes. We target WCAG 2.2 Level AA, which is the standard generally expected of Australian government and commercial digital services. Automated tools like Axe and Lighthouse catch a meaningful share of issues, but a large category, logical focus order, sensible alt text, keyboard operability of custom components, requires manual testing with keyboards and screen readers. We combine both and deliver findings mapped to specific WCAG success criteria with remediation guidance.',
     },
     {
       question: 'Do you do load and performance testing?',
-      answer: 'Yes, primarily using k6. We model realistic traffic — including ramp-up, sustained peak load and sudden spikes — against a production-like environment, and measure latency percentiles, throughput and error rates rather than just averages. The output is a documented performance baseline and a clear picture of your concurrency ceiling, so you know whether your system will survive a campaign, a seasonal peak or unexpected viral demand before it happens.',
+      answer: 'Yes, primarily using k6. We model realistic traffic, including ramp-up, sustained peak load and sudden spikes, against a production-like environment, and measure latency percentiles, throughput and error rates rather than just averages. The output is a documented performance baseline and a clear picture of your concurrency ceiling, so you know whether your system will survive a campaign, a seasonal peak or unexpected viral demand before it happens.',
     },
     {
       question: 'Will you set up quality gates in our CI pipeline?',
-      answer: 'Yes. We integrate the test suites into your CI — most commonly GitHub Actions — so they run automatically on every pull request. Quality gates can block merges when tests fail, when coverage drops below an agreed threshold, or when new accessibility or security issues are introduced. This shifts quality enforcement left, catching problems at the point a change is made rather than during a stressful pre-release scramble.',
+      answer: 'Yes. We integrate the test suites into your CI, most commonly GitHub Actions, so they run automatically on every pull request. Quality gates can block merges when tests fail, when coverage drops below an agreed threshold, or when new accessibility or security issues are introduced. This shifts quality enforcement left, catching problems at the point a change is made rather than during a stressful pre-release scramble.',
     },
   ],
   comparison: {
@@ -136,7 +136,7 @@ const data = {
     ],
     notRightFor: [
       'Throwaway prototypes or proofs of concept that will be discarded before production',
-      'Teams seeking a guarantee of zero defects — testing reduces risk, it does not eliminate it',
+      'Teams seeking a guarantee of zero defects, testing reduces risk, it does not eliminate it',
       'Projects unwilling to invest in test environments or address flaky-test root causes',
       'Situations where the underlying product requirements are still undefined and changing daily',
       'Organisations wanting a one-off manual pass with no intention of maintaining any coverage',
@@ -145,7 +145,7 @@ const data = {
   definitions: [
     {
       term: 'Test Pyramid',
-      definition: 'A model recommending many fast, cheap unit tests at the base, fewer integration tests in the middle, and a small number of slow, expensive end-to-end tests at the top — balancing thorough coverage against speed and maintenance cost.',
+      definition: 'A model recommending many fast, cheap unit tests at the base, fewer integration tests in the middle, and a small number of slow, expensive end-to-end tests at the top, balancing thorough coverage against speed and maintenance cost.',
     },
     {
       term: 'Flaky Test',
@@ -153,7 +153,7 @@ const data = {
     },
     {
       term: 'Quality Gate',
-      definition: 'An automated checkpoint in a CI pipeline that blocks code from merging or deploying unless defined criteria — passing tests, minimum coverage, no new critical vulnerabilities — are met.',
+      definition: 'An automated checkpoint in a CI pipeline that blocks code from merging or deploying unless defined criteria, passing tests, minimum coverage, no new critical vulnerabilities, are met.',
     },
     {
       term: 'WCAG 2.2',
