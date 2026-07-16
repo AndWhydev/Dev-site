@@ -1,0 +1,308 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+interface CaseStudy {
+  slug: string;
+  client: string;
+  industry: string;
+  headline: string;
+  summary: string;
+  outcomes: { value: string; label: string }[];
+  href: string;
+}
+
+const caseStudies: CaseStudy[] = [];
+---
+
+<Layout
+  title="Case Studies, All Webbed Labs | Enterprise Software Delivered"
+  description="Real client work by All Webbed Labs. Enterprise apps, AI systems, mobile platforms and legacy modernisation projects delivered for Australian businesses."
+>
+  <Header />
+  <main>
+
+    <section class="cs-hero">
+      <div class="cs-hero-bg" aria-hidden="true"></div>
+      <div class="cs-hero-inner">
+        <div class="reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><span>Case Studies</span>
+          </nav>
+          <span class="section-label">Case Studies</span>
+          <h1 class="cs-hero-title">
+            Real Work,<br />
+            <span class="gradient-text">Real Outcomes.</span>
+          </h1>
+          <p class="cs-hero-sub">
+            Every project below shipped to production. Every number came from real users and real revenue.
+            The tools, the trade-offs, the decisions made, in the client's own words where possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-list-section">
+      <div class="cs-inner">
+
+        {caseStudies.length === 0 ? (
+          <div class="cs-empty reveal">
+            <div class="cs-empty-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h2>Case studies coming shortly.</h2>
+            <p>
+              We are curating client-approved write-ups covering our work across enterprise SaaS,
+              healthcare AI, logistics platforms and financial infrastructure. If you would like references
+              or a private walk-through of comparable work while these go live, get in touch.
+            </p>
+            <div class="cs-empty-ctas">
+              <a href="/contact" class="btn-primary">
+                Request References
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/services" class="btn-outline">Explore Services</a>
+            </div>
+          </div>
+        ) : (
+          <div class="cs-grid">
+            {caseStudies.map((cs, i) => (
+              <a href={cs.href} class={`cs-card reveal stagger-${Math.min(i + 1, 6)}`}>
+                <div class="cs-card-top">
+                  <span class="cs-tag">{cs.industry}</span>
+                  <span class="cs-client">{cs.client}</span>
+                </div>
+                <h3>{cs.headline}</h3>
+                <p>{cs.summary}</p>
+                <div class="cs-outcomes">
+                  {cs.outcomes.map((o) => (
+                    <div class="cs-outcome">
+                      <span class="cs-outcome-val">{o.value}</span>
+                      <span class="cs-outcome-lbl">{o.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <span class="cs-card-arrow" aria-hidden="true">
+                  Read the case study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .cs-hero {
+    padding: 9rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cs-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #4a6359; margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #4a6359; text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #0d9373; }
+
+  .cs-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 6vw, 4.25rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin: 0.75rem 0 1.25rem;
+    max-width: 780px;
+  }
+  .cs-hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    color: #8aa09a;
+    max-width: 620px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .cs-list-section {
+    padding: 6rem 0 8rem;
+    background: #0a0f0e;
+  }
+  .cs-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Empty state */
+  .cs-empty {
+    max-width: 640px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(13,147,115,0.06) 0%, #0f1614 60%);
+    border: 1px solid rgba(13,147,115,0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .cs-empty-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-empty h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .cs-empty p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .cs-empty-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Case study grid */
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .cs-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-decoration: none;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .cs-card:hover {
+    border-color: rgba(13,147,115,0.35);
+    transform: translateY(-3px);
+  }
+  .cs-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .cs-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+    padding: 0.25rem 0.625rem;
+    border-radius: 50px;
+  }
+  .cs-client {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #4a6359;
+  }
+  .cs-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .cs-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .cs-outcomes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .cs-outcome {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .cs-outcome-val {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0d9373;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .cs-outcome-lbl {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #4a6359;
+  }
+  .cs-card-arrow {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #0d9373;
+    transition: gap 0.2s ease;
+  }
+  .cs-card:hover .cs-card-arrow { gap: 0.75rem; }
+
+  @media (max-width: 900px) {
+    .cs-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .cs-empty { padding: 2rem 1.5rem; }
+    .cs-card { padding: 1.5rem; }
+    .cs-outcomes { gap: 1.25rem; }
+  }
+</style>

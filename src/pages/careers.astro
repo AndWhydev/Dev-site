@@ -4,12 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
-// TODO: Add real open roles when hiring. Each role should have: title, team, type (Full-time / Contract), location, description, requirements[], href
 const openRoles: never[] = [];
-// Example structure when roles are available:
-// const openRoles = [
-//   { title: 'Senior Flutter Engineer', team: 'Mobile', type: 'Full-time', location: 'Brisbane / Remote', description: '...', requirements: ['3+ years Flutter', 'Enterprise mobile experience', 'Strong Dart knowledge'], href: '/careers/senior-flutter-engineer' },
-// ];
 
 const values = [
   { emoji: '🧑‍💻', title: 'Senior-only team', desc: 'We hire experienced engineers and give them autonomy to do great work. No micromanagement, no juniors dragging sprints.' },
@@ -94,7 +89,6 @@ const roles = [
             <h3>No Specific Roles Open Right Now</h3>
             <p>We don't always advertise, we hire great people when we find them. If you're a senior engineer who does exceptional work, send us your CV and a note about what you're looking for.</p>
             <a href="mailto:careers@allwebbedup.com.au" class="btn-primary">Send Your CV Anyway</a>
-            <!-- TODO: Add real open roles here when hiring -->
           </div>
         ) : (
           <div class="roles-list">

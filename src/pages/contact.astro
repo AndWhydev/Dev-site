@@ -92,25 +92,6 @@ import Footer from '../components/Footer.astro';
         <!-- Right: form + Calendly -->
         <div class="contact-form-col reveal-right stagger-1">
 
-          <!-- Calendly Embed -->
-          <div class="calendly-card">
-            <div class="calendly-header">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <div>
-                <h3>Book a 30-Minute Call</h3>
-                <p>Select a time that works for you</p>
-              </div>
-            </div>
-            <!-- CALENDLY_PLACEHOLDER, add Calendly embed link here -->
-            <!-- Replace the div below with: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK" style="min-width:320px;height:450px;"></div><script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
-            <div class="calendly-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4a6359" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <p>Calendar Booking</p>
-              <span>CALENDLY_PLACEHOLDER, add booking link here</span>
-              <a href="mailto:labs@allwebbedup.com.au" class="btn-primary" style="margin-top: 0.5rem; font-size: 0.875rem;">Email Us to Schedule</a>
-            </div>
-          </div>
-
           <!-- Contact Form -->
           <div class="form-card">
             <h2>Send a Message</h2>
@@ -360,58 +341,6 @@ import Footer from '../components/Footer.astro';
     line-height: 1.5;
   }
 
-  /* Calendly card */
-  .calendly-card {
-    background: #0f1614;
-    border: 1px solid rgba(13,147,115,0.2);
-    border-radius: 20px;
-    padding: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
-  .calendly-header {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
-    margin-bottom: 1.25rem;
-  }
-  .calendly-header h3 {
-    font-family: 'Sora', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-  }
-  .calendly-header p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    color: #4a6359;
-    margin: 0;
-  }
-  .calendly-placeholder {
-    aspect-ratio: 16/7;
-    background: #0a0f0e;
-    border: 2px dashed #1e2d28;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
-  }
-  .calendly-placeholder p {
-    font-family: 'Sora', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #4a6359;
-    margin: 0;
-  }
-  .calendly-placeholder span {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    color: #2a3d35;
-    font-style: italic;
-  }
-
   /* Form card */
   .form-card {
     background: #0f1614;
@@ -553,7 +482,7 @@ import Footer from '../components/Footer.astro';
   }
   @media (max-width: 640px) {
     .contact-section { padding: 6rem 0; }
-    .form-card, .calendly-card { padding: 1.75rem 1.5rem; }
+    .form-card { padding: 1.75rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
   }
 </style>

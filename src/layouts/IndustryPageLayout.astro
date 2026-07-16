@@ -165,11 +165,7 @@ const {
         <div class="usecases-grid">
           {useCases.map((uc, i) => (
             <div class={`uc-card reveal stagger-${Math.min(i + 1, 3)}`}>
-              <!-- VIDEO_PLACEHOLDER, add Rotato industry demo video here showing {uc.videoNote} -->
-              <div class="uc-video-placeholder">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                <span>Demo coming</span>
-              </div>
+              <div class="uc-accent" aria-hidden="true"></div>
               <div class="uc-content">
                 <h3>{uc.title}</h3>
                 <p>{uc.description}</p>
@@ -195,18 +191,6 @@ const {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Case Study Placeholder -->
-    <section class="ind-casestudy">
-      <div class="ind-inner">
-        <div class="casestudy-placeholder reveal">
-          <!-- CASE_STUDY_PLACEHOLDER, add real {industryName} case study here when available -->
-          <span class="csp-label">Case Study</span>
-          <h3>Success Story Coming Soon</h3>
-          <p>We're preparing a detailed {industryName.toLowerCase()} case study with full metrics, architecture breakdown and business outcomes. <a href="/contact">Contact us</a> for references or to discuss similar work we've done.</p>
         </div>
       </div>
     </section>
@@ -517,6 +501,7 @@ const {
     border-radius: 20px;
     overflow: hidden;
     transition: border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
   }
 
   .uc-card:hover {
@@ -524,30 +509,16 @@ const {
     transform: translateY(-3px);
   }
 
-  .uc-video-placeholder {
-    aspect-ratio: 16/9;
-    background: #060c0b;
-    border-bottom: 1px solid #1e2d28;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .uc-video-placeholder span {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    color: #1e2d28;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  .uc-accent {
+    height: 4px;
+    background: linear-gradient(90deg, #0d9373 0%, rgba(13,147,115,0.15) 100%);
   }
 
   .uc-content {
-    padding: 1.5rem;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 0.75rem;
   }
 
   .uc-content h3 {
@@ -610,57 +581,6 @@ const {
 
   .ind-service-card:hover {
     color: white;
-  }
-
-  /* Case Study */
-  .ind-casestudy {
-    padding: 5rem 0;
-    background: #0f1614;
-  }
-
-  .casestudy-placeholder {
-    background: rgba(255,255,255,0.02);
-    border: 1px dashed #1e2d28;
-    border-radius: 20px;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 700px;
-  }
-
-  .csp-label {
-    display: inline-flex;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    color: #4a6359;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid #1e2d28;
-    padding: 0.2rem 0.625rem;
-    border-radius: 50px;
-    align-self: flex-start;
-  }
-
-  .casestudy-placeholder h3 {
-    font-family: 'Sora', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-  }
-
-  .casestudy-placeholder p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
-    color: #4a6359;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  .casestudy-placeholder p a {
-    color: #0d9373;
-    text-decoration: none;
   }
 
   /* FAQ */
