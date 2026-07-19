@@ -4,19 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroWebGL from '../components/HeroWebGL.astro';
 import TrustBar from '../components/TrustBar.astro';
-import DemosShowcase from '../components/DemosShowcase.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
 import LiveAppDemo from '../components/LiveAppDemo.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import Process from '../components/Process.astro';
 import TeamSection from '../components/TeamSection.astro';
 import CTABanner from '../components/CTABanner.astro';
 import AutonomousAISection from '../components/sections/AutonomousAISection.astro';
-/* Home page trimmed to the credibility spine: hero → trust → autonomy
-   pitch → live craft (demos) → real shipped app → services → process → CTA.
-   OurStory, IndustryShowcase, TechStack, WhyLabs, AISpotlight,
-   Web3Spotlight, ProductShowcase and ROICalculator all live on their own
-   pages and are reachable via the header nav, duplicating them on home
-   diluted every other proof signal. */
 ---
 
 <Layout
@@ -29,34 +23,11 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
 
     <TrustBar />
 
+    <ReviewsSection />
+
     <TeamSection />
 
     <AutonomousAISection />
-
-    {/* Capability marquee, client-facing language only. Avoid internal tool
-        names that read as boasting; favour the outcomes a buyer cares about.
-        Doubled via spread so translateX(-50%) infinite-scroll seams cleanly. */}
-    <div class="marquee-strip">
-      <div class="marquee-inner">
-        {(() => {
-          const phrases = [
-            'Australian-owned',
-            'Full IP transferred to you',
-            'Fixed-price or time-and-materials',
-            'AEST delivery, no offshore handoffs',
-            'Source code, not a black box',
-            'NDA-first engagements',
-            'R&D tax incentive eligible',
-            'Production-grade from day one',
-            'Quality gates before deploy',
-            'Human review on every release',
-          ];
-          return [...phrases, ...phrases].map(item => (
-            <span class="marquee-item">{item}</span>
-          ));
-        })()}
-      </div>
-    </div>
 
     <!-- Entity definition band (GEO entity locking) -->
     <section class="home-entity" aria-label="About All Webbed Labs">
@@ -69,7 +40,6 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
       </div>
     </section>
 
-    <DemosShowcase />
     <LiveAppDemo />
     <ServicesGrid />
     <Process />

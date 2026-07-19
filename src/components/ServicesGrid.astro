@@ -256,7 +256,7 @@ await app.deploy(<span class="c-str">"production"</span>);
 
 <style>
   .bento-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: #111111;
     position: relative;
     overflow: hidden;
@@ -284,18 +284,19 @@ await app.deploy(<span class="c-str">"production"</span>);
   /* ── Cards ──────────────────────────── */
   .bento-card {
     background: #0f1614;
-    border: 1px solid #1e2d28;
+    border: 1px solid rgba(30, 45, 40, 0.5);
     border-radius: 20px;
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
 
   .bento-card:hover {
-    border-color: rgba(13,147,115,0.3);
+    border-color: rgba(13,147,115,0.35);
+    background: #111a17;
   }
 
   /* Size variants */
@@ -373,19 +374,22 @@ await app.deploy(<span class="c-str">"production"</span>);
     border-radius: 4px;
   }
 
+  /* Full-card click surface. The visible "Explore →" text is preserved for
+     screen readers but hidden visually — the whole card acts as the link.
+     Cards get cursor: pointer + a subtle lift on hover to signal clickability. */
   .bento-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #0d9373;
-    text-decoration: none;
-    margin-top: auto;
-    transition: gap 0.2s ease;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
   }
-  .bento-link:hover { gap: 0.625rem; color: #10b88a; }
+  .bento-link svg { display: none; }
+  .bento-card:has(.bento-link) { cursor: pointer; }
+  .bento-card:has(.bento-link):hover { transform: translateY(-2px); }
+  .bento-link:focus-visible { outline: 2px solid #0d9373; outline-offset: -2px; border-radius: 20px; }
 
   /* ── Hero card code bg ──────────────── */
   .bento-card-bg-code {
