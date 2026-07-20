@@ -9,6 +9,16 @@
       "has": [{ "type": "host", "value": "(www\\.)?aibusinesssolutions\\.au" }],
       "destination": "https://awlabs.com.au/:path*",
       "permanent": true
+    },
+    {
+      "source": "/mutual-NDA",
+      "destination": "/client-pack/mutual-nda.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/mutual-nda",
+      "destination": "/client-pack/mutual-nda.pdf",
+      "permanent": false
     }
   ],
 
