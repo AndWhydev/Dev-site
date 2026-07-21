@@ -26,8 +26,16 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Copy vercel.json into build output
-        run: cp vercel.json dist/vercel.json
+      - name: Write vercel.json for deploy branch (skip build, serve dist as root)
+        run: |
+          node -e "
+            const fs = require('fs');
+            const c = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+            c.buildCommand = 'echo Pre-built by GitHub Actions — no build step.';
+            c.installCommand = 'echo No install needed.';
+            c.outputDirectory = '.';
+            fs.writeFileSync('dist/vercel.json', JSON.stringify(c, null, 2));
+          "
 
       - name: Push built files to deploy branch
         uses: peaceiris/actions-gh-pages@v4
