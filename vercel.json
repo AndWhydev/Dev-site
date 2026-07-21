@@ -8,12 +8,17 @@
     },
     {
       "source": "/mutual-NDA",
-      "destination": "/client-pack/mutual-nda.pdf",
+      "destination": "/NDA",
       "permanent": false
     },
     {
       "source": "/mutual-nda",
-      "destination": "/client-pack/mutual-nda.pdf",
+      "destination": "/NDA",
+      "permanent": false
+    },
+    {
+      "source": "/nda",
+      "destination": "/NDA",
       "permanent": false
     }
   ],
