@@ -26,6 +26,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Copy vercel.json into build output
+        run: cp vercel.json dist/vercel.json
+
       - name: Push built files to deploy branch
         uses: peaceiris/actions-gh-pages@v4
         with:
