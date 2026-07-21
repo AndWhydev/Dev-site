@@ -31,10 +31,7 @@ function initials(name: string): string {
         <div class="rating-meta">
           <span class="rating-value">{ratingDisplay}</span>
           <span class="rating-context">
-            {data.totalReviews > 0
-              ? <>from <strong>{data.totalReviews}</strong> reviews on <strong>Google</strong></>
-              : <>Verified 5-star business on <strong>Google</strong></>
-            }
+            Verified 5-star business on <strong>Google</strong>
           </span>
         </div>
       </div>
@@ -77,12 +74,6 @@ function initials(name: string): string {
       </div>
     )}
 
-    <div class="reviews-cta reveal">
-      <a href={data.reviewsUrl} target="_blank" rel="noopener noreferrer" class="reviews-link">
-        Read all reviews on Google
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -250,28 +241,6 @@ function initials(name: string): string {
     color: #8aa09a;
     margin: 0;
     line-height: 1.65;
-  }
-
-  /* CTA */
-  .reviews-cta { text-align: center; }
-  .reviews-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #0d9373;
-    text-decoration: none;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid rgba(13, 147, 115, 0.25);
-    border-radius: 999px;
-    transition: background 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
-  }
-  .reviews-link:hover {
-    background: rgba(13, 147, 115, 0.05);
-    border-color: rgba(13, 147, 115, 0.45);
-    gap: 0.75rem;
   }
 
   @media (max-width: 1024px) {
