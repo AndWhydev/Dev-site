@@ -135,7 +135,7 @@ import CTABanner from '../components/CTABanner.astro';
             {
               icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>`,
               title: 'Web3 Consulting & Strategy',
-              desc: 'Independent advice on protocol selection, tokenomics design, regulatory exposure, integration architecture and launch strategy. No vendor bias, we tell you what will actually work for your use case.'
+              desc: 'Independent input on protocol selection, tokenomics design, integration architecture and launch strategy, with regulatory questions routed to specialist crypto counsel before we architect around them. No vendor bias, we tell you what will actually work for your use case.'
             },
           ].map((svc, i) => (
             <div class={`w3-svc-card card-hover reveal stagger-${Math.min((i % 6) + 1, 6)}`}>
@@ -250,19 +250,18 @@ import CTABanner from '../components/CTABanner.astro';
             <span class="section-label">Australian Compliance</span>
             <h2 class="section-heading">Navigating the Australian Regulatory Landscape</h2>
             <p class="compliance-para">
-              Australia's crypto regulatory environment is evolving rapidly. ASIC has signalled that most tokens with investment characteristics fall under existing financial product frameworks.
-              The ATO treats cryptocurrency as property, with CGT events triggering on disposal, swap and DeFi yield. AUSTRAC AML/CTF obligations apply to digital currency exchange services with as-low-as-$10,000 reporting thresholds.
+              The AU regulatory picture for crypto is set by ASIC, the ATO, AUSTRAC and Treasury, and it is moving. Interpreting how your specific token, protocol or exchange sits inside it is a job for specialist crypto legal and tax counsel, not for us.
             </p>
             <p class="compliance-para">
-              We work alongside your legal counsel to structure token offerings, DeFi protocols and payment systems that operate within current guidance, while remaining adaptable as legislation matures.
+              What we do is build so the position your lawyers land on can be implemented, and adapted as legislation matures. We can refer you to specialist counsel we have worked alongside if you do not already have one.
             </p>
           </div>
           <div class="compliance-cards reveal-right stagger-2">
             {[
-              { body: 'ASIC', desc: 'Financial product analysis, MIS structure review, AFSL requirements', colour: '#0d9373' },
-              { body: 'ATO', desc: 'Digital asset CGT treatment, DeFi tax events, SMSF crypto rules', colour: '#627eea' },
-              { body: 'AUSTRAC', desc: 'DCE registration, AML/CTF program, TTRs and SMRs', colour: '#e84142' },
-              { body: 'Treasury', desc: 'Token mapping framework, custody reforms, exchange licensing', colour: '#f0b90b' },
+              { body: 'ASIC', desc: 'Where financial product, MIS or AFSL questions need specialist counsel, we can refer.', colour: '#0d9373' },
+              { body: 'ATO', desc: 'Digital asset tax treatment sits with your tax adviser; we build for the treatment they set.', colour: '#627eea' },
+              { body: 'AUSTRAC', desc: 'DCE registration and AML/CTF programs are counsel-led; we implement the reporting infrastructure.', colour: '#e84142' },
+              { body: 'Treasury', desc: 'Token mapping and licensing reforms are worth tracking; your lawyers advise on your exposure.', colour: '#f0b90b' },
             ].map((c, i) => (
               <div class={`compliance-card reveal stagger-${i + 1}`}>
                 <div class="cc-dot" style={`background:${c.colour}`}></div>
@@ -357,7 +356,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'How does your work comply with Australian crypto regulations?',
-              a: 'We take regulatory compliance seriously and work within the current ASIC, ATO and AUSTRAC frameworks. Our engagements include a regulatory risk assessment to identify whether your token or protocol constitutes a managed investment scheme, a financial product or a digital currency exchange service under existing law. We advise you to engage specialist crypto legal counsel (we can refer) for formal legal sign-off, we provide technical implementation that operates within the framework you agree with your lawyers.'
+              a: 'We take the regulatory picture seriously and design so the position your lawyers land on can be implemented cleanly. Our engagements include a technical risk register that flags where your token or protocol sits close to categories your lawyers will need to rule on, such as a managed investment scheme, a financial product or a digital currency exchange service. We do not make those determinations. Specialist crypto legal counsel does, and we can refer if you do not already have one.'
             },
             {
               q: 'Can you build on a private or permissioned blockchain?',

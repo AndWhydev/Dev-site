@@ -9,11 +9,11 @@ const riskCategories = [
     name: 'Payments and Money Movement',
     visible: ['Merchant of Record', 'AFSL Licensing'],
     items: [
-      { title: 'Merchant of Record', body: 'If money flows through your platform between buyers and sellers, you may be legally classified as the merchant. You are responsible for every chargeback, fraud claim and refund. Stripe and PayPal freeze accounts of platforms that haven’t structured this correctly. We have seen founders lose access to their revenue overnight.' },
-      { title: 'PCI DSS Compliance', body: 'If your app touches card data in any way, non compliance fines start at $5,000 per month. Your payment processor can terminate your account without notice.' },
-      { title: 'AFSL Licensing', body: 'Any app touching financial advice, lending, insurance, investment or superannuation may require an Australian Financial Services Licence. Building without one isn’t a grey area. It carries criminal penalties.' },
-      { title: 'Buy Now Pay Later', body: 'Integrating BNPL or deferred payment features may trigger credit licensing requirements under the National Consumer Credit Protection Act. You cannot build first and apply later.' },
-      { title: 'Foreign Transaction Obligations', body: 'Overseas users may trigger tax and regulatory obligations in their jurisdictions including EU VAT and US sales tax by state.' },
+      { title: 'Merchant of Record', body: 'Platforms that route funds between buyers and sellers often need to weigh merchant of record status early. Our engineering team flags this for your payments counsel or a partner like Stripe compliance rather than proceed on assumption. Stripe and PayPal have frozen accounts of platforms that got the structure wrong, and we have seen founders lose access to their revenue overnight as a result.' },
+      { title: 'PCI DSS Compliance', body: 'Card data brings PCI DSS scope with it. We design payment flows so the sensitive path is minimised, typically via tokenised providers like Stripe or Adyen, and flag PCI relevant architecture to your compliance advisor before build.' },
+      { title: 'AFSL Licensing', body: 'Products in financial advice, lending, insurance, investment or superannuation frequently raise AFSL questions. We do not opine on whether a licence is required. We build the system so a decision from your financial services counsel can be implemented cleanly, and we introduce you to specialist lawyers if you do not already have one.' },
+      { title: 'Buy Now Pay Later', body: 'BNPL and deferred payment features sit close to the credit licensing perimeter under the NCCP Act. We flag them at scoping so your credit law adviser can weigh in before the architecture locks in.' },
+      { title: 'Foreign Transaction Obligations', body: 'Cross border customers introduce indirect tax questions across jurisdictions, including EU VAT and US state sales tax. We build for the collection and reporting your tax advisor specifies; we do not determine your registration position.' },
     ],
   },
   {
@@ -21,11 +21,11 @@ const riskCategories = [
     name: 'Data and Privacy',
     visible: ['Australian Privacy Act', 'GDPR'],
     items: [
-      { title: 'Australian Privacy Act', body: 'Fines for serious breaches now reach $50 million, or three times the benefit obtained, or 30% of adjusted turnover, whichever is greater. If you are collecting any user data without proper architecture and a compliant privacy policy, this is your exposure.' },
-      { title: 'Health Data', body: 'Apps collecting health information are subject to the Health Records Act and potentially HIPAA for US users. Breaches carry mandatory notification obligations and significantly higher penalties.' },
-      { title: 'GDPR', body: 'If any EU resident can access your app, even if you are based in Australia and not targeting Europe, you may be subject to GDPR. Fines reach €20 million or 4% of global annual turnover.' },
-      { title: 'Children’s Data', body: 'COPPA and equivalent Australian obligations apply to any platform accessible by users under 13. Non compliance is grounds for immediate app store removal.' },
-      { title: 'Tracking and Cookie Consent', body: 'Your analytics, ad pixels and retargeting tools may be collecting and transmitting user data without legally required consent flows. This is increasingly enforced.' },
+      { title: 'Australian Privacy Act', body: 'Privacy Act penalties have been raised significantly in recent years. Our architecture default is data minimisation, encryption at rest and in transit, and audited access on personal information. Drafting your privacy policy and confirming your obligations sits with your legal counsel.' },
+      { title: 'Health Data', body: 'Health data attracts a heavier privacy regime in every jurisdiction we build in. We map controls to the standards your health law counsel identifies, including the Privacy Act and My Health Records Act, and HIPAA where US patients are in scope. The notification and audit trail your obligations demand is designed in from the start.' },
+      { title: 'GDPR', body: 'GDPR applicability turns on facts your data protection counsel is best placed to assess. Where EU users are in scope, we default to designing DSAR, consent and erasure machinery so the compliance position your lawyers set can be operationalised.' },
+      { title: 'Children’s Data', body: 'Platforms accessible to users under 13 tend to trigger COPPA and equivalent AU obligations. We build age gating, parental consent flows and data collection limits to a spec your counsel confirms.' },
+      { title: 'Tracking and Cookie Consent', body: 'Analytics, ad pixels and retargeting increasingly need consent flows to run cleanly. We audit what your site fires today and can implement the consent model your privacy adviser signs off on.' },
     ],
   },
   {
@@ -45,8 +45,8 @@ const riskCategories = [
     name: 'Intellectual Property',
     visible: ['IP Ownership of the Codebase', 'Open Source Licence Compliance'],
     items: [
-      { title: 'IP Ownership of the Codebase', body: 'In Australia, copyright defaults to the creator, not the person who paid, unless there is a written IP assignment agreement. If a freelancer or contractor built any part of your product without one in place, you may not legally own your own app.' },
-      { title: 'Open Source Licence Compliance', body: 'Using GPL licensed code in a commercial product can legally require you to open source your entire codebase. Most developers drop in open source libraries without checking the licence terms. This can destroy your IP position overnight.' },
+      { title: 'IP Ownership of the Codebase', body: 'IP assignment gaps are one of the most common issues we surface when we take over another team’s codebase. We do not draft IP assignment paperwork; that is your IP lawyer. What we do is map who has touched the codebase so any gaps are visible before they become a due diligence problem.' },
+      { title: 'Open Source Licence Compliance', body: 'GPL family licences carry obligations that many commercial teams do not intend to accept. We produce a licence inventory of your dependencies so your legal counsel can rule on whether a given dependency’s terms are compatible with your product.' },
       { title: 'Third Party API Terms of Service', body: 'Building a business on top of another platform without understanding their commercial use terms is a significant risk. Platforms change terms, restrict commercial use or shut down APIs with limited notice. Your business model may not survive it.' },
       { title: 'Trademark Clearance', body: 'Launching under a name without checking whether it is already registered is one of the most common and most expensive mistakes founders make. A cease and desist six months after launch with a brand and marketing spend behind you is a serious problem.' },
     ],
@@ -56,11 +56,11 @@ const riskCategories = [
     name: 'Legal Structure and Liability',
     visible: ['Limitation of Liability', 'App Store Compliance'],
     items: [
-      { title: 'Terms of Service and Acceptable Use Policy', body: 'Without these, your users have no obligations and you have no protection. You cannot enforce restrictions on how your platform is used or terminate abusive users with legal standing.' },
-      { title: 'Limitation of Liability', body: 'If your app fails or results in a user experiencing financial loss, what is your legal exposure without a properly drafted limitation of liability clause? In many cases: unlimited.' },
-      { title: 'Australian Consumer Law', body: 'Statutory guarantees, refund rights and misleading conduct provisions apply to digital products. They cannot be contracted out of. If your product doesn’t work as described, you have legal obligations regardless of what your terms say.' },
+      { title: 'Terms of Service and Acceptable Use Policy', body: 'Product terms and an acceptable use policy are what your operations team relies on when they need to remove a bad actor. We build the tooling to enforce them; the drafting sits with your commercial lawyer.' },
+      { title: 'Limitation of Liability', body: 'Limitation of liability clauses are one of the higher leverage items in a SaaS contract. Drafting is a job for commercial counsel. We mention it here so it is on your list before launch.' },
+      { title: 'Australian Consumer Law', body: 'The ACL is one of the frameworks a well drafted set of terms has to sit alongside. We flag it because founders sometimes assume a US style disclaimer clears everything; your commercial lawyer will tell you exactly how it applies to you.' },
       { title: 'App Store Compliance', body: 'Apple and Google have their own rules on subscriptions, in app purchases, data collection disclosures and content. They will remove your app without warning. We have seen products with tens of thousands of users pulled overnight.' },
-      { title: 'Dispute Resolution', body: 'Without a governing law clause and a clear dispute resolution mechanism, any user anywhere in the world can potentially bring a claim in their local jurisdiction.' },
+      { title: 'Dispute Resolution', body: 'Governing law and dispute resolution clauses are boilerplate for a reason. Drafting is your lawyer’s job; we mention it here for completeness.' },
     ],
   },
   {
@@ -68,8 +68,8 @@ const riskCategories = [
     name: 'Tax and Financial',
     visible: ['R&D Tax Incentive', 'GST on Digital Services'],
     items: [
-      { title: 'R&D Tax Incentive', body: 'Most founders building software don’t know they may be eligible for up to 43.5 cents back on every dollar of eligible development expenditure. This must be structured correctly from day one. Retroactive registration rarely captures the full benefit. AWLabs helps every client access this.' },
-      { title: 'GST on Digital Services', body: 'If you have overseas customers, you may have tax obligations in their jurisdictions including EU VAT registration and US sales tax obligations that vary by state.' },
+      { title: 'R&D Tax Incentive', body: 'R&D Tax Incentive rates are published by AusIndustry and the ATO. Australian conducted development work is generally eligible for consideration. Your claim is lodged by your registered R&D tax agent; we structure the technical evidence, including uncertainty registers, experiment logs and time allocation, so that agent has something defensible to work from.' },
+      { title: 'GST on Digital Services', body: 'Overseas customers can introduce indirect tax registration questions. We build for whatever collection and remittance rules your tax adviser confirms.' },
     ],
   },
   {
@@ -77,9 +77,9 @@ const riskCategories = [
     name: 'Employment and Contractor Risk',
     visible: ['Sham Contracting', 'IP Assignment Gaps'],
     items: [
-      { title: 'Sham Contracting', body: 'If you are engaging contractors who work exclusively for you or under your direct control, the ATO may reclassify them as employees, triggering superannuation obligations, leave entitlements and payroll tax liabilities, potentially backdated.' },
-      { title: 'Equity and Co Founder Agreements', body: 'Without properly documented vesting schedules, cliff periods and exit provisions, a co founder or early team member who leaves can walk away with equity they did nothing to earn, or hold the company hostage.' },
-      { title: 'IP Assignment Gaps', body: 'Every developer, contractor and consultant who contributes to your codebase needs a signed IP assignment agreement. One gap in that chain can cloud your IP ownership permanently.' },
+      { title: 'Sham Contracting', body: 'Contractor versus employee status is an area we see founders trip on. It is a question for your employment lawyer or accountant. We mention it because the answer changes what your equity, IP assignment and superannuation setup should look like on day one.' },
+      { title: 'Equity and Co Founder Agreements', body: 'Vesting schedules and cliffs are drafted by commercial counsel, not by us. We raise it here because unresolved cap table paperwork is the single most common blocker when a founder we work with goes to raise.' },
+      { title: 'IP Assignment Gaps', body: 'IP assignment is the paperwork side of the codebase inventory we run. Drafting sits with your IP lawyer; we make sure our own contribution is fully assigned to you at handover, and we surface gaps in anyone else’s.' },
     ],
   },
   {
@@ -87,10 +87,10 @@ const riskCategories = [
     name: 'Regulated Industry Triggers',
     visible: ['Health and Medical Apps', 'Legal Tech'],
     items: [
-      { title: 'Health and Medical Apps', body: 'Any app that makes therapeutic claims, processes clinical data or could be used in a clinical setting may need TGA registration. This is a lengthy and expensive process. You cannot launch first and register later.' },
-      { title: 'Legal Tech', body: 'The line between providing legal information and legal advice is narrow and actively enforced. Crossing it, even through an AI feature, exposes you to professional liability claims.' },
-      { title: 'Education and Child Safety', body: 'Platforms with minors as users carry Working With Children Check obligations, child safety policy requirements and mandatory reporting obligations that vary by state.' },
-      { title: 'Property and Real Estate Features', body: 'Certain property related features may require real estate agent licensing. Penalties for unlicensed conduct are significant.' },
+      { title: 'Health and Medical Apps', body: 'Therapeutic claims and clinical use are the two triggers we see push a build into TGA territory. It is a regulatory affairs consultant’s call, not ours. We design the system so their scope determination can be honoured.' },
+      { title: 'Legal Tech', body: 'AI features in a legal tech product raise unauthorised practice of law questions. That is a call for your legal counsel; on our side, we build guardrails, disclaimers and human in the loop review to whatever spec they set.' },
+      { title: 'Education and Child Safety', body: 'Platforms serving minors sit on top of state by state child safety regimes. We build the identity, safety and reporting flows to the spec your safeguarding advisor or legal counsel provides.' },
+      { title: 'Property and Real Estate Features', body: 'Some property features sit near the real estate licensing perimeter. It is a call for a licensing lawyer; we flag it at scope so it does not surprise you post launch.' },
     ],
   },
   {
@@ -98,7 +98,7 @@ const riskCategories = [
     name: 'Accessibility',
     visible: ['WCAG 2.2 Compliance'],
     items: [
-      { title: 'WCAG 2.2 Compliance', body: 'Under the Disability Discrimination Act 1992, digital products must be accessible to users with disabilities. Government contracts will not proceed without WCAG compliance. Enforcement is increasing. Retrofitting accessibility into an existing product is significantly more expensive than building it in from the start.' },
+      { title: 'WCAG 2.2 Compliance', body: 'WCAG 2.2 is our baseline on every build. Government tenders typically require it explicitly, and the DDA sits behind it as the anti discrimination framework your legal team will be familiar with. Retrofitting accessibility into an existing product is significantly more expensive than building it in from the start.' },
     ],
   },
   {
@@ -117,7 +117,7 @@ const riskCategories = [
     visible: ['Cyber Liability Insurance', 'Professional Indemnity'],
     items: [
       { title: 'Cyber Liability Insurance', body: 'The average cost of a data breach in Australia is now over $4 million. Most early stage founders have no cyber liability coverage. One breach can exceed the cost of the entire build.' },
-      { title: 'Professional Indemnity', body: 'If your software causes a client financial loss, professional indemnity insurance is your protection. Without it you are personally exposed.' },
+      { title: 'Professional Indemnity', body: 'Professional indemnity is a call for your insurance broker. We mention it because operators are sometimes surprised at how quickly they need it once enterprise clients start asking for certificates of currency.' },
     ],
   },
 ];
@@ -158,10 +158,10 @@ const deliverables = [
 ];
 
 const pillars = [
-  { title: 'Development', body: 'Custom software, app builds, AI integration.' },
+  { title: 'Development', body: 'Custom software, app builds, AI integration. Delivered in house.' },
   { title: 'Marketing', body: 'User acquisition through our in house team at All Webbed Up.' },
-  { title: 'Capital', body: 'R&D subsidies, government grants, financial structuring.' },
-  { title: 'Legal', body: 'Compliance, privacy policy, IP protection built in from day one.' },
+  { title: 'Capital', body: 'Coordinated with our named R&D tax and grants partners. We structure the technical documentation, they lodge the claim.' },
+  { title: 'Legal', body: 'Coordinated with our named commercial and IT law partners so contract, IP assignment and privacy drafting keeps pace with the build.' },
 ];
 ---
 
@@ -215,11 +215,11 @@ const pillars = [
               <line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
             <p>
-              Across the categories below, the combined regulatory and legal exposure for an unaudited app build can run into the millions. Privacy Act fines alone reach $50 million. A single data breach averages over $4 million in Australia. PCI non compliance runs $5,000 per month. IP ownership disputes have cost founders their entire codebase. Most of it is invisible until something triggers it. That is the point.
+              Across the categories below, the combined regulatory and legal surface for a modern software product is broad. Most founders discover the extent of it late. The Discovery Audit exists so those questions land in front of the right specialist, us or one of our named partners, before build.
             </p>
           </div>
           <p class="risks-sub">
-            These are real, legally enforceable obligations. Most founders don&rsquo;t know they exist until they are facing the consequences.
+            These are the risk areas the Audit walks through. Most founders don&rsquo;t know they exist until they are facing the consequences.
           </p>
         </div>
 
@@ -349,7 +349,7 @@ const pillars = [
           <div class="reveal-left">
             <span class="section-label">Not Just A Dev Shop</span>
             <h2 class="section-heading">Code, capital and compliance. One team, one roof.</h2>
-            <p>AWLabs is a full end to end solution. Development, marketing, capital and legal, all under the same roof, all working from the same brief. You are not stitching four vendors together. You are talking to one team.</p>
+            <p>AWLabs is a full end to end delivery partner. Development and marketing are ours; capital and legal are coordinated with our named third party partners, all working from the same brief. You are not stitching four vendors together and hunting for handovers. You are talking to one team.</p>
             <p>The Discovery Audit is the point where that comes together. Every risk we surface is something one of these four pillars addresses. Nothing is thrown over a fence.</p>
           </div>
           <div class="pillars-list reveal-right stagger-2">
