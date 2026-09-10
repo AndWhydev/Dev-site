@@ -72,6 +72,30 @@ const categories: Category[] = [
         description: 'A social app to meet other solo travellers and make friends when relocating to a new city or country.',
         url: 'https://goingsolo.app',
       },
+      {
+        name: 'AudioPen',
+        year: '2023',
+        description: 'A voice-to-text app that converts rambling voice notes into cleaned-up written summaries, aimed at people who think out loud.',
+        url: 'https://audiopen.ai',
+      },
+      {
+        name: 'HabitKit',
+        year: '2022',
+        description: 'A habit tracker for iOS and Android that visualises consistency as a GitHub-style contribution grid rather than as a streak count.',
+        url: 'https://habitkit.app',
+      },
+      {
+        name: 'Photo AI',
+        year: '2023',
+        description: 'An AI photo generator that produces studio-style portraits from user selfies, aimed at people who need headshots without a photographer.',
+        url: 'https://photoai.com',
+      },
+      {
+        name: 'Interior AI',
+        year: '2022',
+        description: 'An interior design generator that restyles photos of rooms in dozens of aesthetics, used by homeowners and for virtual property staging.',
+        url: 'https://interiorai.com',
+      },
     ],
   },
   {
@@ -109,6 +133,30 @@ const categories: Category[] = [
         description: 'Self-hostable, cookie-free website analytics as an alternative to Google Analytics. No consent banner required.',
         url: 'https://medama.io',
       },
+      {
+        name: 'TypingMind',
+        year: '2023',
+        description: 'A power-user front end for the major LLM APIs, built for people who want a better interface than the default vendor chat windows.',
+        url: 'https://typingmind.com',
+      },
+      {
+        name: 'Podscan',
+        year: '2023',
+        description: 'A monitoring service that transcribes every episode of every podcast and surfaces brand mentions, aimed at PR and marketing teams.',
+        url: 'https://podscan.fm',
+      },
+      {
+        name: 'SiteGPT',
+        year: '2023',
+        description: 'A no-code chatbot builder that trains on a company’s own website content, for support and pre-sales widgets embedded on marketing sites.',
+        url: 'https://sitegpt.ai',
+      },
+      {
+        name: 'Postiz',
+        year: '2024',
+        description: 'An open source, self-hostable social media scheduler across multiple platforms, positioned as an alternative to Buffer and Hootsuite.',
+        url: 'https://postiz.com',
+      },
     ],
   },
   {
@@ -139,6 +187,18 @@ const categories: Category[] = [
         year: '2022',
         description: 'An AI classroom and quiz tool for teachers, pitched as a free, classroom-safe alternative to the general-purpose LLMs.',
         url: 'https://www.teacherbot.io',
+      },
+      {
+        name: 'Feather',
+        year: '2022',
+        description: 'A Notion-to-blog publishing platform that turns Notion pages into a hosted, SEO-friendly blog, built for creators who already write in Notion.',
+        url: 'https://feather.so',
+      },
+      {
+        name: 'PDF.ai',
+        year: '2023',
+        description: 'A document Q&A tool that lets users chat with any PDF using LLMs, aimed at researchers and knowledge workers dealing with long documents.',
+        url: 'https://pdf.ai',
       },
     ],
   },
@@ -171,6 +231,24 @@ const categories: Category[] = [
         description: 'Lightweight self-hosted server and container monitoring with history, alerts and a dashboard, built on top of PocketBase.',
         url: 'https://beszel.dev',
       },
+      {
+        name: 'MacWhisper',
+        year: '2023',
+        description: 'A local audio transcription app for macOS that runs Whisper models on-device, so audio never leaves the machine.',
+        url: 'https://goodsnooze.gumroad.com/l/macwhisper',
+      },
+      {
+        name: 'DevUtils',
+        year: '2021',
+        description: 'A native macOS toolbox with offline JSON, JWT, regex and hash utilities, replacing the scattered web tools most backend developers keep bookmarked.',
+        url: 'https://devutils.com',
+      },
+      {
+        name: 'Screen Studio',
+        year: '2022',
+        description: 'A macOS screen recorder that produces auto-zoomed, cursor-highlighted product demos, aimed at developers and marketers making software walkthroughs.',
+        url: 'https://screen.studio',
+      },
     ],
   },
   {
@@ -189,6 +267,24 @@ const categories: Category[] = [
         year: '2025',
         description: 'Software that turns a Raspberry Pi and an e-ink display into a configurable dashboard for weather, calendar events and images.',
       },
+      {
+        name: 'Xnapper',
+        year: '2022',
+        description: 'A macOS screenshot tool that adds backgrounds, redacts sensitive text and auto-frames captures, aimed at people sharing screenshots publicly.',
+        url: 'https://xnapper.com',
+      },
+      {
+        name: 'Bezel',
+        year: '2023',
+        description: 'A macOS app that mirrors an iPhone display for demos and recordings, so developers and designers can show mobile apps on a desktop screen.',
+        url: 'https://bezelstudio.app',
+      },
+      {
+        name: 'RocketSim',
+        year: '2021',
+        description: 'An Xcode Simulator companion that adds network throttling, App Store screenshot generation and other missing features for iOS and macOS developers.',
+        url: 'https://www.rocketsim.app',
+      },
     ],
   },
   {
@@ -206,7 +302,6 @@ const categories: Category[] = [
   },
 ];
 
-const totalProjects = categories.reduce((sum, c) => sum + c.items.length, 0);
 ---
 
 <Layout
@@ -215,29 +310,6 @@ const totalProjects = categories.reduce((sum, c) => sum + c.items.length, 0);
 >
   <Header />
   <main>
-
-    <section class="cs-hero">
-      <div class="cs-hero-bg" aria-hidden="true"></div>
-      <div class="cs-hero-inner">
-        <div class="reveal">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Home</a><span>/</span><span>Capability Showcase</span>
-          </nav>
-          <span class="section-label">Capability Showcase</span>
-          <h1 class="cs-hero-title">
-            Small builds.<br />
-            <span class="gradient-text">Serious range.</span>
-          </h1>
-          <p class="cs-hero-sub">
-            A curated look at {totalProjects} recent, live software products, each one shipped by a solo founder or a tiny founding pair.
-            Grouped by category to show the surface area, quality and shape of what a small team can put in market today.
-          </p>
-          <p class="cs-hero-note">
-            These are illustrative examples, not our client work. We publish them to show the range of categories, platforms and standards we build to. For a walk-through of engagements we have led directly, request the capability pack on the <a href="/how-we-work">How We Work</a> page.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <section class="cs-list-section">
       <div class="cs-inner">
