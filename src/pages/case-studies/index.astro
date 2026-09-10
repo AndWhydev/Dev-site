@@ -20,7 +20,7 @@ interface Category {
 
 const categories: Category[] = [
   {
-    label: 'Consumer',
+    label: 'B2C · Consumer',
     title: 'Consumer Apps',
     intro: 'Products people install for themselves. Mobile-first, delight-driven, distributed through the app stores.',
     items: [
@@ -75,7 +75,7 @@ const categories: Category[] = [
     ],
   },
   {
-    label: 'B2B Horizontal',
+    label: 'B2B · Horizontal',
     title: 'Business Tools, Cross-Industry',
     intro: 'Software any small business can pick up and run with. Minimal, focused, priced for founders and operators rather than procurement teams.',
     items: [
@@ -112,7 +112,7 @@ const categories: Category[] = [
     ],
   },
   {
-    label: 'B2B Vertical',
+    label: 'B2B · Vertical',
     title: 'Industry-Specific Tools',
     intro: 'Software built for a single trade and shaped to its workflow. Deep in one niche rather than shallow across many.',
     items: [
@@ -143,7 +143,7 @@ const categories: Category[] = [
     ],
   },
   {
-    label: 'Developer Tools',
+    label: 'B2D · DevTools',
     title: 'Developer & Infrastructure Tools',
     intro: 'Software developers pay for in their own money. High signal for what a serious engineering audience is willing to adopt.',
     items: [
@@ -174,7 +174,7 @@ const categories: Category[] = [
     ],
   },
   {
-    label: 'Prosumer',
+    label: 'B2C · Prosumer',
     title: 'Prosumer Utilities',
     intro: 'Small, focused utilities that punch above their weight against paid incumbents. Often free, often the tool power users actually keep installed.',
     items: [
@@ -192,7 +192,7 @@ const categories: Category[] = [
     ],
   },
   {
-    label: 'Marketplace',
+    label: 'C2C · Marketplace',
     title: 'Marketplace',
     intro: 'Two-sided commerce, curated rather than open. Small commission, tight editorial control on what gets listed.',
     items: [
@@ -281,6 +281,30 @@ const totalProjects = categories.reduce((sum, c) => sum + c.items.length, 0);
             </div>
           </div>
         ))}
+
+        <div class="cs-more reveal">
+          <div class="cs-more-inner">
+            <span class="cs-more-label">More on Request</span>
+            <h2 class="cs-more-title">
+              Plenty more examples for<br />
+              <span class="gradient-text">specific industries and niches.</span>
+            </h2>
+            <p class="cs-more-copy">
+              This list is a general capability snapshot. For examples in a particular vertical &mdash;
+              finance and fintech, healthcare, education, logistics and transport, hospitality, real estate
+              and PropTech, government and enterprise, construction and trades, sports and recreation,
+              retail and e-commerce, AI and automation, Web3 and crypto &mdash; we can put a
+              targeted shortlist together on request.
+            </p>
+            <div class="cs-more-actions">
+              <a href="/contact" class="btn-primary cs-more-btn">
+                Request Industry Examples
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/industries" class="cs-more-secondary">Browse industries we serve</a>
+            </div>
+          </div>
+        </div>
 
         <p class="cs-disclaimer reveal">
           Every product above is third-party software, included as an example of what a small, well-scoped team can put in market. Their inclusion does not indicate involvement by All Webbed Labs and is not a claim of authorship. Product names and marks belong to their respective owners. Details verified September 2026.
@@ -482,8 +506,80 @@ const totalProjects = categories.reduce((sum, c) => sum + c.items.length, 0);
   }
   a.cs-card:hover .cs-card-arrow { gap: 0.75rem; }
 
+  /* More on request callout */
+  .cs-more {
+    margin: 4.5rem auto 0;
+    max-width: 900px;
+    background: linear-gradient(135deg, rgba(13,147,115,0.08) 0%, #0f1614 60%);
+    border: 1px solid rgba(13,147,115,0.28);
+    border-radius: 24px;
+    padding: 3rem 3rem 3.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-more::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(13,147,115,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cs-more-inner { position: relative; z-index: 1; }
+  .cs-more-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0d9373;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .cs-more-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+  }
+  .cs-more-copy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #cde0da;
+    line-height: 1.7;
+    margin: 0 0 1.75rem;
+    max-width: 720px;
+  }
+  .cs-more-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cs-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cs-more-secondary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #8aa09a;
+    text-decoration: none;
+    border-bottom: 1px solid #2a3d35;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .cs-more-secondary:hover {
+    color: #0d9373;
+    border-color: rgba(13,147,115,0.6);
+  }
+
   .cs-disclaimer {
-    margin: 4rem auto 0;
+    margin: 2.5rem auto 0;
     max-width: 820px;
     padding: 1.25rem 1.5rem;
     background: #0f1614;
@@ -502,5 +598,8 @@ const totalProjects = categories.reduce((sum, c) => sum + c.items.length, 0);
   @media (max-width: 640px) {
     .cs-card { padding: 1.5rem; }
     .cs-category { padding: 2.25rem 0 2.5rem; }
+    .cs-more { padding: 2rem 1.5rem 2.25rem; border-radius: 18px; }
+    .cs-more-actions { flex-direction: column; align-items: stretch; }
+    .cs-more-secondary { text-align: center; }
   }
 </style>
