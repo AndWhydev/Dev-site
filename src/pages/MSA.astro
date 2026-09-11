@@ -145,7 +145,10 @@ const clauses = [
   .btn-download svg { flex-shrink: 0; }
 
   .policy-content { font-family: 'DM Sans', sans-serif; }
-  .policy-content h2 {
+
+  /* Descendant typography — global-scoped because most of this content is
+     injected via set:html and won't receive Astro's scoped class hash. */
+  .policy-content :global(h2) {
     font-family: 'Sora', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
@@ -154,7 +157,7 @@ const clauses = [
     letter-spacing: -0.01em;
     scroll-margin-top: 6rem;
   }
-  .policy-content h3 {
+  .policy-content :global(h3) {
     font-family: 'Sora', sans-serif;
     font-size: 1.0625rem;
     font-weight: 600;
@@ -163,22 +166,23 @@ const clauses = [
     letter-spacing: -0.005em;
     scroll-margin-top: 6rem;
   }
-  .policy-content p,
-  .policy-content li {
+  .policy-content :global(p),
+  .policy-content :global(li) {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.9625rem;
     color: #cde0da;
     line-height: 1.75;
   }
-  .policy-content p { margin: 0 0 1rem; }
-  .policy-content strong { color: white; font-weight: 600; }
-  .policy-content a {
+  .policy-content :global(p) { margin: 0 0 1rem; }
+  .policy-content :global(strong) { color: white; font-weight: 600; }
+  .policy-content :global(em) { font-style: italic; }
+  .policy-content :global(a) {
     color: #0d9373;
     text-decoration: none;
     border-bottom: 1px solid rgba(13, 147, 115, 0.4);
     transition: border-color 0.2s ease, color 0.2s ease;
   }
-  .policy-content a:hover { border-color: #0d9373; color: #14b58e; }
+  .policy-content :global(a:hover) { border-color: #0d9373; color: #14b58e; }
 
   .policy-lead {
     font-size: 1.0625rem !important;
