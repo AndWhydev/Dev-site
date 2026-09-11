@@ -12,6 +12,8 @@ interface ShowcaseItem {
 }
 
 interface Category {
+  id: string;
+  filterLabel: string;
   label: string;
   title: string;
   intro: string;
@@ -20,6 +22,8 @@ interface Category {
 
 const categories: Category[] = [
   {
+    id: 'consumer',
+    filterLabel: 'Consumer Apps',
     label: 'B2C · Consumer',
     title: 'Consumer Apps',
     intro: 'Products people install for themselves. Mobile-first, delight-driven, distributed through the app stores.',
@@ -41,12 +45,6 @@ const categories: Category[] = [
         year: '2023',
         description: 'A learning app that schedules spaced-repetition reviews at the topic level, so users retain what they learn without hand-building flashcards.',
         url: 'https://usespacey.app/',
-      },
-      {
-        name: 'Aiko',
-        year: '2023',
-        description: 'Private, on-device AI transcription for meetings and lectures. The model runs locally, so audio never leaves the machine.',
-        url: 'https://sindresorhus.com/aiko',
       },
       {
         name: 'Pixquare',
@@ -99,6 +97,8 @@ const categories: Category[] = [
     ],
   },
   {
+    id: 'horizontal',
+    filterLabel: 'Business Tools',
     label: 'B2B · Horizontal',
     title: 'Business Tools, Cross-Industry',
     intro: 'Software any small business can pick up and run with. Minimal, focused, priced for founders and operators rather than procurement teams.',
@@ -130,7 +130,7 @@ const categories: Category[] = [
       {
         name: 'Medama',
         year: '2024',
-        description: 'Self-hostable, cookie-free website analytics as an alternative to Google Analytics. No consent banner required.',
+        description: 'Cookie-free website analytics as an alternative to Google Analytics. No consent banner required.',
         url: 'https://medama.io',
       },
       {
@@ -154,12 +154,14 @@ const categories: Category[] = [
       {
         name: 'Postiz',
         year: '2024',
-        description: 'An open source, self-hostable social media scheduler across multiple platforms, positioned as an alternative to Buffer and Hootsuite.',
+        description: 'A social media scheduler that publishes across multiple platforms from one calendar, positioned as an alternative to Buffer and Hootsuite.',
         url: 'https://postiz.com',
       },
     ],
   },
   {
+    id: 'vertical',
+    filterLabel: 'Industry Tools',
     label: 'B2B · Vertical',
     title: 'Industry-Specific Tools',
     intro: 'Software built for a single trade and shaped to its workflow. Deep in one niche rather than shallow across many.',
@@ -203,6 +205,8 @@ const categories: Category[] = [
     ],
   },
   {
+    id: 'devtools',
+    filterLabel: 'DevTools',
     label: 'B2D · DevTools',
     title: 'Developer & Infrastructure Tools',
     intro: 'Software developers pay for in their own money. High signal for what a serious engineering audience is willing to adopt.',
@@ -216,7 +220,7 @@ const categories: Category[] = [
       {
         name: 'PocketBase',
         year: '2022',
-        description: 'An open source backend in a single file. Gives an app a database, authentication, real-time updates and an admin interface without any infrastructure setup.',
+        description: 'A lightweight backend that bundles a database, authentication, real-time updates and an admin interface into a single deployable service.',
         url: 'https://pocketbase.io',
       },
       {
@@ -228,14 +232,8 @@ const categories: Category[] = [
       {
         name: 'Beszel',
         year: '2024',
-        description: 'Lightweight self-hosted server and container monitoring with history, alerts and a dashboard, built on top of PocketBase.',
+        description: 'Lightweight server and container monitoring with history, alerts and a dashboard for small infrastructure fleets.',
         url: 'https://beszel.dev',
-      },
-      {
-        name: 'MacWhisper',
-        year: '2023',
-        description: 'A local audio transcription app for macOS that runs Whisper models on-device, so audio never leaves the machine.',
-        url: 'https://goodsnooze.gumroad.com/l/macwhisper',
       },
       {
         name: 'DevUtils',
@@ -252,6 +250,8 @@ const categories: Category[] = [
     ],
   },
   {
+    id: 'prosumer',
+    filterLabel: 'Prosumer',
     label: 'B2C · Prosumer',
     title: 'Prosumer Utilities',
     intro: 'Small, focused utilities that punch above their weight against paid incumbents. Often free, often the tool power users actually keep installed.',
@@ -288,15 +288,47 @@ const categories: Category[] = [
     ],
   },
   {
+    id: 'marketplace',
+    filterLabel: 'Marketplace',
     label: 'C2C · Marketplace',
     title: 'Marketplace',
-    intro: 'Two-sided commerce, curated rather than open. Small commission, tight editorial control on what gets listed.',
+    intro: 'Two-sided commerce across goods, services and creator work. Curated or open, commission or subscription.',
     items: [
       {
         name: 'Makeshift',
         year: '2026',
         description: 'A curated marketplace for independent Australian artists and makers, running on a small commission rather than a marketplace ad model.',
         url: 'https://makeshift-au.com/',
+      },
+      {
+        name: 'Whop',
+        year: '2021',
+        description: 'A creator commerce platform where independent sellers list digital products, communities and courses, aimed at people monetising an audience without their own storefront.',
+        url: 'https://whop.com',
+      },
+      {
+        name: 'Mercor',
+        year: '2022',
+        description: 'A talent marketplace where vetted contractors are matched to short-term technical roles via AI screening, used by AI labs and startups needing specialist labour on demand.',
+        url: 'https://mercor.com',
+      },
+      {
+        name: 'Passes',
+        year: '2022',
+        description: 'A creator subscription platform where independent creators sell paid content, DMs and experiences to their audience, positioned against the incumbent fan-monetisation platforms.',
+        url: 'https://passes.com',
+      },
+      {
+        name: 'Lumikha Cosplay Resale',
+        year: '2021',
+        description: 'A secondhand cosplay marketplace where costumers list costumes, wigs, fabric and props for other cosplayers to buy and sell within the community.',
+        url: 'https://lumikhacosplay.com',
+      },
+      {
+        name: 'INPINK',
+        year: '2022',
+        description: 'A talent marketplace where women and non-binary music-industry professionals list services, booked by venues and brands for gigs, tour management and production work.',
+        url: 'https://www.inpink.com',
       },
     ],
   },
@@ -313,8 +345,17 @@ const categories: Category[] = [
 
     <section class="cs-list-section">
       <div class="cs-inner">
+        <div class="cs-filter-wrap reveal">
+          <div class="cs-filter" role="tablist" aria-label="Filter by category">
+            <button class="cs-chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+            {categories.map((cat) => (
+              <button class="cs-chip" data-filter={cat.id} role="tab" aria-selected="false">{cat.filterLabel}</button>
+            ))}
+          </div>
+        </div>
+
         {categories.map((cat) => (
-          <div class="cs-category">
+          <div class="cs-category" id={cat.id} data-cat={cat.id}>
             <div class="cs-cat-head reveal">
               <span class="cs-cat-label">{cat.label}</span>
               <h2 class="cs-cat-title">{cat.title}</h2>
@@ -456,12 +497,65 @@ const categories: Category[] = [
     padding: 0 2rem;
   }
 
+  /* Filter bar */
+  .cs-filter-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    margin: 0 -2rem 1rem;
+    padding: 1.25rem 2rem;
+    background: rgba(10, 15, 14, 0.85);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid #1e2d28;
+  }
+  .cs-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .cs-chip {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #cde0da;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+  .cs-chip:hover {
+    color: white;
+    border-color: rgba(13,147,115,0.55);
+    background: #101a17;
+  }
+  .cs-chip.is-active {
+    color: #0a0f0e;
+    background: #0d9373;
+    border-color: #0d9373;
+  }
+  .cs-chip.is-active:hover {
+    background: #12b389;
+    border-color: #12b389;
+    color: #0a0f0e;
+  }
+  .cs-chip:focus-visible {
+    outline: 2px solid #0d9373;
+    outline-offset: 2px;
+  }
+
   /* Categories */
   .cs-category {
     padding: 3rem 0 3.5rem;
     border-top: 1px solid #1e2d28;
+    scroll-margin-top: 5rem;
   }
-  .cs-category:first-child { border-top: none; padding-top: 1rem; }
+  .cs-filter-wrap + .cs-category { border-top: none; padding-top: 1rem; }
 
   .cs-cat-head {
     max-width: 720px;
@@ -673,5 +767,39 @@ const categories: Category[] = [
     .cs-more { padding: 2rem 1.5rem 2.25rem; border-radius: 18px; }
     .cs-more-actions { flex-direction: column; align-items: stretch; }
     .cs-more-secondary { text-align: center; }
+    .cs-filter-wrap { margin: 0 -1.25rem 0.5rem; padding: 0.875rem 1.25rem; }
+    .cs-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .cs-filter::-webkit-scrollbar { display: none; }
+    .cs-chip { flex-shrink: 0; }
   }
 </style>
+
+<script>
+  function bindCaseStudyFilter() {
+    const chips = document.querySelectorAll<HTMLButtonElement>('.cs-chip');
+    const cats = document.querySelectorAll<HTMLElement>('.cs-category');
+    if (!chips.length || !cats.length) return;
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.dataset.filter;
+        chips.forEach((c) => {
+          const active = c === chip;
+          c.classList.toggle('is-active', active);
+          c.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        cats.forEach((cat) => {
+          const show = filter === 'all' || cat.dataset.cat === filter;
+          cat.style.display = show ? '' : 'none';
+        });
+        if (filter && filter !== 'all') {
+          const target = document.getElementById(filter);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  bindCaseStudyFilter();
+  document.addEventListener('astro:after-swap', bindCaseStudyFilter);
+</script>
