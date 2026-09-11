@@ -20,6 +20,16 @@
       "source": "/nda",
       "destination": "/NDA",
       "permanent": false
+    },
+    {
+      "source": "/msa",
+      "destination": "/MSA",
+      "permanent": false
+    },
+    {
+      "source": "/master-services-agreement",
+      "destination": "/MSA",
+      "permanent": false
     }
   ],
 

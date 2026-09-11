@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lastReviewed = '11 September 2026';
+---
+
+<Layout
+  title="Master Services Agreement, All Webbed Labs"
+  description="AW Labs Pty Ltd's Master Services Agreement — the umbrella terms that govern each Schedule of Work or Care Plan entered into with our clients."
+  noindex={true}
+>
+  <Header />
+  <main>
+    <section class="policy-section">
+      <div class="policy-inner">
+        <div class="policy-header reveal">
+          <span class="section-label">Legal</span>
+          <h1>Master Services Agreement</h1>
+          <p class="policy-meta">Version dated {lastReviewed} · AW Labs Pty Ltd · ABN 32 698 684 105</p>
+
+          <div class="policy-actions">
+            <a
+              href="/client-pack/msa.pdf"
+              class="btn-primary msa-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Open the MSA (PDF)
+            </a>
+            <a
+              href="/client-pack/msa.pdf"
+              class="msa-download"
+              download="AWLabs-Master-Services-Agreement.pdf"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="policy-content reveal stagger-1">
+          <p class="policy-lead">
+            This page hosts our Master Services Agreement (MSA) for your review. It is the
+            umbrella agreement that governs the relationship between AW Labs Pty Ltd
+            (<strong>All Webbed Labs</strong>) and each of our clients. Every individual project,
+            retainer or Care Plan we take on is documented in a separate Schedule of Work (SOW)
+            that sits underneath this MSA.
+          </p>
+
+          <p>
+            The MSA is 48 pages of full legal terms. Reviewing it before you commit is
+            encouraged, not required — take as long as you need, share it with your advisers,
+            and come back with any questions before we prepare an SOW for your project.
+          </p>
+
+          <h2>What the MSA covers</h2>
+          <ul>
+            <li>Operative framework — how the MSA, SOWs, Discovery Audits and Variations fit together.</li>
+            <li>Service standard, personnel, subcontractors and third-party platforms.</li>
+            <li>Client obligations, dependencies and approvals.</li>
+            <li>Infrastructure, account ownership, administrative access and security.</li>
+            <li>Fees, invoicing, milestones and payment terms.</li>
+            <li>Director's guarantee (where the Client is a corporation).</li>
+            <li>Scope control, variations and change management.</li>
+            <li>Development, testing, acceptance and handover.</li>
+            <li>30-day post-launch warranty and support obligations.</li>
+            <li>Intellectual property, including payment-linked assignment of Project IP.</li>
+            <li>AI-assisted services, confidentiality, privacy and data handling.</li>
+            <li>Independent professional advisers (legal, accounting, tax).</li>
+            <li>Marketing, hosting, maintenance and Care Plans.</li>
+            <li>Warranties, Australian Consumer Law, limitation of liability.</li>
+            <li>Term, termination, dispute resolution, governing law and general provisions.</li>
+          </ul>
+
+          <h2>When and how it is signed</h2>
+          <p>
+            You are not signing anything by opening this page. The MSA is executed once, at the
+            start of the commercial relationship, and is then reused across every project or
+            retainer we run together — you do not sign a new set of general terms each time.
+          </p>
+          <p>
+            When you are ready to proceed, we prepare a Schedule of Work for the specific project
+            and issue the MSA for signature alongside it. Signing is done electronically.
+          </p>
+
+          <h2>Questions or amendments</h2>
+          <p>
+            If anything in the MSA is unclear, or if your legal or procurement team needs a
+            particular clause adjusted, email
+            <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a> or reply to whoever sent
+            you this link. We are happy to walk through the document with you and consider
+            reasonable amendments recorded in writing.
+          </p>
+
+          <hr class="policy-rule" />
+
+          <p class="policy-foot">
+            This page is a review portal only and is not linked from the public site. The
+            authoritative document is the signed PDF version above. In the event of any
+            inconsistency between this summary page and the PDF, the PDF prevails.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .policy-section { padding: 9rem 0 6rem; background: #0a0f0e; min-height: 80vh; }
+  .policy-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+  .policy-header { margin-bottom: 3rem; }
+  .policy-header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: white;
+    margin: 0.75rem 0 0.5rem;
+    letter-spacing: -0.015em;
+  }
+  .policy-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #6b8478;
+    margin: 0 0 1.5rem;
+  }
+
+  .policy-actions {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+  .msa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .msa-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #8aa09a;
+    text-decoration: none;
+    border-bottom: 1px solid #2a3d35;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .msa-download:hover {
+    color: #0d9373;
+    border-color: rgba(13, 147, 115, 0.6);
+  }
+  .msa-download svg { flex-shrink: 0; }
+
+  .policy-content h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin: 2.75rem 0 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .policy-content p,
+  .policy-content li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9625rem;
+    color: #cde0da;
+    line-height: 1.75;
+  }
+  .policy-content p { margin: 0 0 1rem; }
+  .policy-content ul { margin: 0.5rem 0 1.5rem 1.25rem; padding: 0; }
+  .policy-content ul li { margin-bottom: 0.5rem; }
+  .policy-content strong { color: white; font-weight: 600; }
+  .policy-content a {
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13, 147, 115, 0.4);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .policy-content a:hover { border-color: #0d9373; color: #14b58e; }
+
+  .policy-lead {
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+    color: #e1eee9 !important;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid #0d9373;
+    background: rgba(13, 147, 115, 0.06);
+    margin: 0 0 2rem 0 !important;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .policy-rule {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 3rem 0 1.5rem 0;
+  }
+  .policy-foot {
+    font-size: 0.875rem !important;
+    color: rgba(205, 224, 218, 0.65) !important;
+    font-style: italic;
+  }
+</style>
