@@ -26,8 +26,50 @@ const categories: Category[] = [
     filterLabel: 'Consumer Apps',
     label: 'B2C · Consumer',
     title: 'Consumer Apps',
-    intro: 'Products people install for themselves. Mobile-first, delight-driven, distributed through the app stores.',
+    intro: 'Products people install for themselves. Mobile-first, delight-driven, distributed through the app stores and the web.',
     items: [
+      {
+        name: 'Arc Browser',
+        year: '2022',
+        description: 'A rebuilt desktop browser with spaces, split view and a tab bar that reorganises itself, aimed at people who spend most of their day inside the browser.',
+        url: 'https://arc.net',
+      },
+      {
+        name: 'Beeper',
+        year: '2022',
+        description: 'A unified messaging client that folds iMessage, WhatsApp, Signal, Discord and more into a single inbox, consolidating every chat network in one app.',
+        url: 'https://www.beeper.com',
+      },
+      {
+        name: 'Perplexity',
+        year: '2022',
+        description: 'A conversational AI search engine that returns cited answers instead of a list of links, positioned as a synthesis-first replacement for general web search.',
+        url: 'https://www.perplexity.ai',
+      },
+      {
+        name: 'Granola',
+        year: '2024',
+        description: 'AI meeting notes that record calls, transcribe them and produce structured summaries the user can edit alongside the transcript.',
+        url: 'https://www.granola.ai',
+      },
+      {
+        name: 'Wispr Flow',
+        year: '2021',
+        description: 'A cross-platform dictation tool that turns speech into cleaned-up written text across any application on Mac, Windows, iOS and Android, adapting to the user’s tone and vocabulary over time.',
+        url: 'https://wisprflow.ai',
+      },
+      {
+        name: 'Podimo',
+        year: '2019',
+        description: 'A subscription audio platform for exclusive podcasts and audiobooks with original commissions produced with local creators, live across multiple European markets.',
+        url: 'https://podimo.com',
+      },
+      {
+        name: 'Tabby',
+        year: '2019',
+        description: 'A Gulf-region consumer finance app offering BNPL instalments, a cashback debit card, money transfers and merchant deals, regulated by the UAE and Saudi central banks.',
+        url: 'https://tabby.ai',
+      },
       {
         name: 'Workout Quest',
         year: '2023',
@@ -35,10 +77,10 @@ const categories: Category[] = [
         url: 'https://www.workoutquestapp.com/',
       },
       {
-        name: '8udget',
-        year: '2025',
-        description: 'An offline-first budgeting and expense app with bill and investment tracking, built for people who do not want their finances in the cloud.',
-        url: 'https://www.8udget.my/',
+        name: 'Notion Calendar',
+        year: '2024',
+        description: 'A calendar client that pairs Google Calendar with Notion databases, time-blocking and meeting scheduling in a single planning surface.',
+        url: 'https://www.notion.com/product/calendar',
       },
       {
         name: 'Spacey',
@@ -47,10 +89,10 @@ const categories: Category[] = [
         url: 'https://usespacey.app/',
       },
       {
-        name: 'Pixquare',
-        year: '2023',
-        description: 'A full pixel-art studio for iPad and iPhone, with a serious feature set aimed at working illustrators and game artists.',
-        url: 'https://www.pixquare.art/',
+        name: 'Craft',
+        year: '2020',
+        description: 'A document editor built around nested pages, blocks and considered typography, aimed at people who want richer structure than Google Docs.',
+        url: 'https://www.craft.do',
       },
       {
         name: 'Pestle',
@@ -59,40 +101,16 @@ const categories: Category[] = [
         url: 'https://pestlechef.app',
       },
       {
+        name: 'Beli',
+        year: '2020',
+        description: 'A restaurant-ranking social app where users rate every place they eat and see recommendations from the friends whose taste they trust.',
+        url: 'https://beliapp.com',
+      },
+      {
         name: 'Pagebound',
         year: '2025',
-        description: 'A social reading community pairing book tracking with book-specific forums, built deliberately against the usual growth playbook.',
+        description: 'A social reading community pairing book tracking with book-specific forums, deliberately built against the usual social-growth playbook.',
         url: 'https://pagebound.co',
-      },
-      {
-        name: 'Going Solo',
-        year: '2023',
-        description: 'A social app to meet other solo travellers and make friends when relocating to a new city or country.',
-        url: 'https://goingsolo.app',
-      },
-      {
-        name: 'AudioPen',
-        year: '2023',
-        description: 'A voice-to-text app that converts rambling voice notes into cleaned-up written summaries, aimed at people who think out loud.',
-        url: 'https://audiopen.ai',
-      },
-      {
-        name: 'HabitKit',
-        year: '2022',
-        description: 'A habit tracker for iOS and Android that visualises consistency as a GitHub-style contribution grid rather than as a streak count.',
-        url: 'https://habitkit.app',
-      },
-      {
-        name: 'Photo AI',
-        year: '2023',
-        description: 'An AI photo generator that produces studio-style portraits from user selfies, aimed at people who need headshots without a photographer.',
-        url: 'https://photoai.com',
-      },
-      {
-        name: 'Interior AI',
-        year: '2022',
-        description: 'An interior design generator that restyles photos of rooms in dozens of aesthetics, used by homeowners and for virtual property staging.',
-        url: 'https://interiorai.com',
       },
     ],
   },
@@ -101,24 +119,66 @@ const categories: Category[] = [
     filterLabel: 'Business Tools',
     label: 'B2B · Horizontal',
     title: 'Business Tools, Cross-Industry',
-    intro: 'Software any small business can pick up and run with. Minimal, focused, priced for founders and operators rather than procurement teams.',
+    intro: 'Cross-industry software teams reach for daily. CRMs, collaboration, communication and content platforms that operators actually stand up their businesses on.',
     items: [
+      {
+        name: 'Attio',
+        year: '2023',
+        description: 'A modern customer relationship management platform with a spreadsheet-native surface, aimed at go-to-market teams outgrowing Pipedrive or HubSpot.',
+        url: 'https://attio.com',
+      },
+      {
+        name: 'Loom',
+        year: '2022',
+        description: 'Asynchronous video messaging for work, letting teams record and share short screen or camera clips instead of scheduling another meeting.',
+        url: 'https://www.loom.com',
+      },
+      {
+        name: 'Descript',
+        year: '2022',
+        description: 'A video and audio editor that treats media as text — cutting or rearranging a transcript automatically edits the underlying recording.',
+        url: 'https://www.descript.com',
+      },
+      {
+        name: 'Dovetail',
+        year: '2020',
+        description: 'A customer intelligence platform that ingests calls, tickets and interviews and turns them into searchable insights for product, research and CX teams. Sydney-based, used inside Atlassian and Canva.',
+        url: 'https://www.dovetail.com',
+      },
+      {
+        name: 'Payhawk',
+        year: '2020',
+        description: 'A European spend management platform combining corporate cards, expense workflows, business travel and AP automation in a single finance console, licensed as an EMI in the UK and EU.',
+        url: 'https://payhawk.com',
+      },
+      {
+        name: 'Moss',
+        year: '2019',
+        description: 'A corporate card and spend platform for European small and mid-sized businesses, consolidating card issuing, invoice automation, employee reimbursements and ERP sync in one BaFin-regulated product.',
+        url: 'https://www.getmoss.com',
+      },
+      {
+        name: 'Pigment',
+        year: '2019',
+        description: 'An integrated business planning platform for modelling finance, workforce, sales and supply-chain scenarios, used inside enterprises like Unilever, Siemens and Figma.',
+        url: 'https://www.pigment.com',
+      },
       {
         name: 'CloserKit',
         year: '2026',
-        description: 'A deliberately minimal deal pipeline for solo sales reps who need one clean surface, not another enterprise CRM.',
+        description: 'A focused deal pipeline for revenue teams that want one clean surface for tracking active conversations, not another sprawling enterprise CRM.',
         url: 'https://closerkit.app',
       },
       {
         name: 'Hardbook',
         year: '2026',
-        description: 'Booking, contract signing and deposits for day-rate freelancers, unified in a single client-facing flow.',
+        description: 'Booking, contract signing and deposits for professional services teams, unified in a single client-facing flow.',
         url: 'https://hard-book.com',
       },
       {
         name: 'TaskShell',
         year: '2026',
-        description: 'Task management driven by AI agents through the MCP standard, so LLMs can plan and update work directly.',
+        description: 'Task management driven by AI agents through the MCP standard, so LLMs can plan and update work inside the tool directly.',
         url: 'https://taskshell.app',
       },
       {
@@ -128,34 +188,16 @@ const categories: Category[] = [
         url: 'https://deltio.io',
       },
       {
-        name: 'Medama',
-        year: '2024',
-        description: 'Cookie-free website analytics as an alternative to Google Analytics. No consent banner required.',
-        url: 'https://medama.io',
-      },
-      {
         name: 'TypingMind',
         year: '2023',
-        description: 'A power-user front end for the major LLM APIs, built for people who want a better interface than the default vendor chat windows.',
+        description: 'A power-user front end for the major LLM APIs, built for teams that want a better interface than the default vendor chat windows.',
         url: 'https://typingmind.com',
-      },
-      {
-        name: 'Podscan',
-        year: '2023',
-        description: 'A monitoring service that transcribes every episode of every podcast and surfaces brand mentions, aimed at PR and marketing teams.',
-        url: 'https://podscan.fm',
       },
       {
         name: 'SiteGPT',
         year: '2023',
-        description: 'A no-code chatbot builder that trains on a company’s own website content, for support and pre-sales widgets embedded on marketing sites.',
+        description: 'A no-code chatbot builder trained on a company’s own website content, for support and pre-sales widgets embedded on marketing sites.',
         url: 'https://sitegpt.ai',
-      },
-      {
-        name: 'Postiz',
-        year: '2024',
-        description: 'A social media scheduler that publishes across multiple platforms from one calendar, positioned as an alternative to Buffer and Hootsuite.',
-        url: 'https://postiz.com',
       },
     ],
   },
@@ -164,25 +206,55 @@ const categories: Category[] = [
     filterLabel: 'Industry Tools',
     label: 'B2B · Vertical',
     title: 'Industry-Specific Tools',
-    intro: 'Software built for a single trade and shaped to its workflow. Deep in one niche rather than shallow across many.',
+    intro: 'Software built for a single sector and shaped to its workflow. Deep in one vertical rather than shallow across many.',
     items: [
       {
-        name: 'LegalGemini',
-        year: '2024',
-        description: 'AI legal research and drafting with cited sources, focused on giving solo practitioners a faster first pass on complex matters.',
-        url: 'https://legalgemini.com',
+        name: 'Harvey',
+        year: '2022',
+        description: 'A domain-specific AI assistant for legal work, purpose-built for law firms handling contract review, litigation and regulatory research at scale.',
+        url: 'https://www.harvey.ai',
+      },
+      {
+        name: 'Ambience Healthcare',
+        year: '2022',
+        description: 'AI clinical documentation for physicians, listening to visits and generating structured notes, orders and after-visit summaries in the EHR.',
+        url: 'https://www.ambiencehealthcare.com',
+      },
+      {
+        name: 'Mews',
+        year: '2020',
+        description: 'A cloud-native hotel operating system unifying front desk, revenue management, payments and F&B point-of-sale across more than 15,000 properties, based in Prague.',
+        url: 'https://www.mews.com',
+      },
+      {
+        name: 'Legora',
+        year: '2023',
+        description: 'A collaborative AI workspace for lawyers covering document review, research, monitoring and drafting across M&A, litigation and tax practices, based in Stockholm.',
+        url: 'https://www.legora.com',
+      },
+      {
+        name: 'cargo.one',
+        year: '2020',
+        description: 'A booking and procurement platform for freight forwarders, integrated with 76+ airlines and 30+ ocean liners for quoting, capacity and documentation. Berlin-headquartered.',
+        url: 'https://cargo.one',
+      },
+      {
+        name: 'Constellr',
+        year: '2020',
+        description: 'A German satellite operator running a thermal Earth-observation constellation, delivering calibrated infrared data to agriculture, industrial monitoring and defence customers.',
+        url: 'https://www.constellr.com',
+      },
+      {
+        name: 'Digantara',
+        year: '2020',
+        description: 'A Bengaluru-based space situational awareness company tracking orbital objects for defence and commercial operators through a mixed satellite hardware and software stack.',
+        url: 'https://www.digantara.co.in',
       },
       {
         name: 'My Real Estate Listing AI',
         year: '2023',
-        description: 'Generates a full property sales brochure PDF from photos and a handful of answers, aimed at listing agents.',
+        description: 'Generates a full property sales brochure PDF from photos and a handful of answers, aimed at listing agents and real-estate agencies.',
         url: 'https://myrealestatelisting.app',
-      },
-      {
-        name: 'Routo',
-        year: '2025',
-        description: 'A multi-stop delivery route planner for couriers, tradespeople and small operators running their own runs each day.',
-        url: 'https://apps.apple.com/us/app/routo-delivery-route-planner/id6743483590',
       },
       {
         name: 'Teacherbot',
@@ -193,13 +265,13 @@ const categories: Category[] = [
       {
         name: 'Feather',
         year: '2022',
-        description: 'A Notion-to-blog publishing platform that turns Notion pages into a hosted, SEO-friendly blog, built for creators who already write in Notion.',
+        description: 'A Notion-to-blog publishing platform that turns Notion pages into a hosted, SEO-friendly blog, built for content teams already writing in Notion.',
         url: 'https://feather.so',
       },
       {
         name: 'PDF.ai',
         year: '2023',
-        description: 'A document Q&A tool that lets users chat with any PDF using LLMs, aimed at researchers and knowledge workers dealing with long documents.',
+        description: 'A document Q&A tool that lets teams chat with any PDF using LLMs, aimed at researchers and knowledge workers dealing with long documents.',
         url: 'https://pdf.ai',
       },
     ],
@@ -209,43 +281,61 @@ const categories: Category[] = [
     filterLabel: 'DevTools',
     label: 'B2D · DevTools',
     title: 'Developer & Infrastructure Tools',
-    intro: 'Software developers pay for in their own money. High signal for what a serious engineering audience is willing to adopt.',
+    intro: 'The tools engineering teams standardise on for development, deployment and operations. High signal for what a serious technical audience will adopt across a whole org.',
     items: [
       {
-        name: 'Posting',
-        year: '2024',
-        description: 'A terminal-based HTTP and API client. A keyboard-driven alternative to Postman that lives inside the developer’s existing terminal workflow.',
-        url: 'https://posting.sh',
+        name: 'Linear',
+        year: '2020',
+        description: 'An issue tracker and project planner for software teams, positioned as a keyboard-first, opinionated replacement for Jira and its clones.',
+        url: 'https://linear.app',
       },
       {
-        name: 'PocketBase',
-        year: '2022',
-        description: 'A lightweight backend that bundles a database, authentication, real-time updates and an admin interface into a single deployable service.',
-        url: 'https://pocketbase.io',
+        name: 'Vercel',
+        year: '2020',
+        description: 'A hosting and deployment platform for modern frontends and serverless backends, built around Git-driven previews and edge-network delivery.',
+        url: 'https://vercel.com',
       },
       {
-        name: 'Harlequin',
+        name: 'Cursor',
         year: '2023',
-        description: 'A SQL workspace that runs in the terminal, for querying DuckDB, SQLite, Postgres and more with a familiar keyboard-first interface.',
-        url: 'https://harlequin.sh',
+        description: 'An AI-native code editor that integrates model-based completions, edits and chat into the same surface engineers already use, forked from VS Code.',
+        url: 'https://www.cursor.com',
       },
       {
-        name: 'Beszel',
-        year: '2024',
-        description: 'Lightweight server and container monitoring with history, alerts and a dashboard for small infrastructure fleets.',
-        url: 'https://beszel.dev',
+        name: 'Raycast',
+        year: '2020',
+        description: 'A keyboard-driven productivity launcher for macOS with a full extension ecosystem, positioned as a modern replacement for Spotlight and Alfred.',
+        url: 'https://www.raycast.com',
+      },
+      {
+        name: 'Warp',
+        year: '2022',
+        description: 'A native terminal with block-based command output, shared workflows and AI-assisted commands, aimed at engineering teams that live in the shell.',
+        url: 'https://www.warp.dev',
+      },
+      {
+        name: 'Neon',
+        year: '2021',
+        description: 'A serverless Postgres platform with database branching, autoscaling and an AI Gateway. Acquired by Databricks in 2025 and now the Postgres foundation of its data intelligence stack.',
+        url: 'https://neon.com',
+      },
+      {
+        name: 'Chalk',
+        year: '2022',
+        description: 'A real-time feature and data platform for machine-learning and AI-agent workloads, serving high-throughput feature queries into customer-owned cloud accounts.',
+        url: 'https://www.chalk.ai',
+      },
+      {
+        name: 'Zenskar',
+        year: '2022',
+        description: 'A billing and revenue recognition platform handling usage metering, contract-to-cash and RevRec automation for SaaS finance teams, positioned for complex enterprise pricing.',
+        url: 'https://www.zenskar.com',
       },
       {
         name: 'DevUtils',
         year: '2021',
-        description: 'A native macOS toolbox with offline JSON, JWT, regex and hash utilities, replacing the scattered web tools most backend developers keep bookmarked.',
+        description: 'A native macOS toolbox with offline JSON, JWT, regex and hash utilities, replacing the scattered web tools most backend engineers keep bookmarked.',
         url: 'https://devutils.com',
-      },
-      {
-        name: 'Screen Studio',
-        year: '2022',
-        description: 'A macOS screen recorder that produces auto-zoomed, cursor-highlighted product demos, aimed at developers and marketers making software walkthroughs.',
-        url: 'https://screen.studio',
       },
     ],
   },
@@ -254,18 +344,43 @@ const categories: Category[] = [
     filterLabel: 'Prosumer',
     label: 'B2C · Prosumer',
     title: 'Prosumer Utilities',
-    intro: 'Small, focused utilities that punch above their weight against paid incumbents. Often free, often the tool power users actually keep installed.',
+    intro: 'Focused Mac and mobile utilities from established software studios. The paid tools power users install once and keep across every device.',
     items: [
       {
-        name: 'Ice',
-        year: '2023',
-        description: 'A macOS menu bar manager that hides, rearranges and searches menu bar items. A free alternative to a well-known paid utility.',
-        url: 'https://icemenubar.app',
+        name: 'Fantastical',
+        year: '2020',
+        description: 'A calendar and tasks client for Mac and iOS with natural-language event entry, calendar sets and openings sharing, from a long-established Mac software studio.',
+        url: 'https://flexibits.com/fantastical',
       },
       {
-        name: 'InkyPi',
-        year: '2025',
-        description: 'Software that turns a Raspberry Pi and an e-ink display into a configurable dashboard for weather, calendar events and images.',
+        name: 'CleanShot X',
+        year: '2020',
+        description: 'A macOS screenshot and screen-recording tool with annotations, cloud sharing and a full capture history, distributed on the App Store and via Setapp.',
+        url: 'https://cleanshot.com',
+      },
+      {
+        name: 'Motion',
+        year: '2020',
+        description: 'An AI calendar that automatically time-blocks a user’s tasks around their meetings, aimed at operators who want their day planned for them.',
+        url: 'https://www.usemotion.com',
+      },
+      {
+        name: 'Arcade',
+        year: '2021',
+        description: 'A browser-based tool for creating interactive product demos, walkthroughs and short marketing videos, used inside Salesforce, OpenAI, Webflow, Atlassian and Instacart.',
+        url: 'https://www.arcade.software',
+      },
+      {
+        name: 'Spinach',
+        year: '2021',
+        description: 'An AI meeting agent that records, transcribes and summarises stand-ups and calls across Zoom, Meet and Teams, then routes actions into Jira, CRMs and recap emails.',
+        url: 'https://spinach.ai',
+      },
+      {
+        name: 'Kittl',
+        year: '2020',
+        description: 'A browser-based design studio for lettering, illustration, mockups and AI-assisted vector work, with a template and font marketplace. Berlin-based, used inside Pentagram, Netflix and Uber.',
+        url: 'https://kittl.com',
       },
       {
         name: 'Xnapper',
@@ -274,15 +389,9 @@ const categories: Category[] = [
         url: 'https://xnapper.com',
       },
       {
-        name: 'Bezel',
-        year: '2023',
-        description: 'A macOS app that mirrors an iPhone display for demos and recordings, so developers and designers can show mobile apps on a desktop screen.',
-        url: 'https://bezelstudio.app',
-      },
-      {
         name: 'RocketSim',
         year: '2021',
-        description: 'An Xcode Simulator companion that adds network throttling, App Store screenshot generation and other missing features for iOS and macOS developers.',
+        description: 'An Xcode Simulator companion that adds network throttling, App Store screenshot generation and other missing features for iOS and macOS engineering teams.',
         url: 'https://www.rocketsim.app',
       },
     ],
@@ -309,14 +418,26 @@ const categories: Category[] = [
       {
         name: 'Mercor',
         year: '2022',
-        description: 'A talent marketplace where vetted contractors are matched to short-term technical roles via AI screening, used by AI labs and startups needing specialist labour on demand.',
+        description: 'A talent marketplace matching vetted contractors to short-term technical roles via AI screening, used by AI labs and enterprises needing specialist labour on demand.',
         url: 'https://mercor.com',
       },
       {
         name: 'Passes',
         year: '2022',
-        description: 'A creator subscription platform where independent creators sell paid content, DMs and experiences to their audience, positioned against the incumbent fan-monetisation platforms.',
+        description: 'A creator subscription platform where creators sell paid content, DMs and experiences to their audience, positioned against the incumbent fan-monetisation platforms.',
         url: 'https://passes.com',
+      },
+      {
+        name: 'Enode',
+        year: '2020',
+        description: 'A marketplace-style API connecting energy retailers and virtual-power-plant operators to more than 1,000 EV, solar, battery and meter device models across millions of homes. Norway-based.',
+        url: 'https://www.enode.com',
+      },
+      {
+        name: 'Zeitview',
+        year: '2020',
+        description: 'A two-sided platform pairing a global pilot network with AI inspection software for wind, solar, utilities and commercial real-estate assets, used by Duke Energy, EDF Renewables and Vestas.',
+        url: 'https://www.zeitview.com',
       },
       {
         name: 'Lumikha Cosplay Resale',
@@ -337,8 +458,8 @@ const categories: Category[] = [
 ---
 
 <Layout
-  title="Capability Showcase, All Webbed Labs | What Small Teams Can Ship"
-  description="A curated look at small, recent, live software from solo founders and tiny teams. Examples of the categories, surface areas and quality All Webbed Labs can deliver."
+  title="Capability Showcase, All Webbed Labs"
+  description="A curated look at recent, live software across the categories, surface areas and quality All Webbed Labs delivers for its clients."
 >
   <Header />
   <main>
@@ -420,7 +541,7 @@ const categories: Category[] = [
         </div>
 
         <p class="cs-disclaimer reveal">
-          Every product above is third-party software, included as an example of what a small, well-scoped team can put in market. Their inclusion does not indicate involvement by All Webbed Labs and is not a claim of authorship. Product names and marks belong to their respective owners. Details verified September 2026.
+          Every product above is third-party software, included as an example of the surface areas, categories and quality All Webbed Labs can deliver for its clients. Their inclusion does not indicate involvement by All Webbed Labs and is not a claim of authorship. Product names and marks belong to their respective owners. Details verified September 2026.
         </p>
       </div>
     </section>
