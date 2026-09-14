@@ -22,9 +22,13 @@
 
   html {
     scroll-behavior: smooth;
-    /* Pair with body overflow-x: hidden so neither root element can scroll
-       horizontally. Some browsers honour body, some honour html — set both. */
+    /* `clip` clips overflow WITHOUT establishing a scroll container.
+       `hidden` does the same clipping but creates a scroll container, which
+       under Astro view-transitions can develop a stale horizontal scroll
+       offset that shifts content off-viewport. `clip` avoids that class of
+       bug entirely. Fallback to `hidden` handled by CSS ordering. */
     overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
@@ -34,10 +38,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
-    /* Defensive: guarantees no horizontal scroll even if a child accidentally
-       overflows the viewport on small screens. */
     overflow-x: hidden;
-    /* Hard cap on width so an over-wide child never enables a sideways viewport. */
+    overflow-x: clip;
     max-width: 100vw;
   }
 
