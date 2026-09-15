@@ -8,9 +8,10 @@ const documents = [
     file: '/docs/how-this-works.pdf',
   },
   {
-    title: 'Case Study Portfolio',
-    description: 'A cross-section of past builds across different industries, platforms and technology stacks.',
-    file: '/docs/case-study-portfolio.pdf',
+    title: 'Case Studies',
+    description: 'A cross-section of past builds across different industries, platforms and technology stacks. Now published as a live page rather than a static PDF.',
+    file: '/case-studies',
+    isLink: true,
   },
   {
     title: 'Mutual NDA',
@@ -54,21 +55,32 @@ const documents = [
             <h2>{doc.title}</h2>
             <p>{doc.description}</p>
             <div class="actions">
-              <a class="btn view" href={doc.file} target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-                <span>View</span>
-              </a>
-              <a class="btn download" href={doc.file} download>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                <span>Download</span>
-              </a>
+              {doc.isLink ? (
+                <a class="btn view" href={doc.file}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                  <span>Visit page</span>
+                </a>
+              ) : (
+                <>
+                  <a class="btn view" href={doc.file} target="_blank" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <span>View</span>
+                  </a>
+                  <a class="btn download" href={doc.file} download>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Download</span>
+                  </a>
+                </>
+              )}
             </div>
           </li>
         ))}

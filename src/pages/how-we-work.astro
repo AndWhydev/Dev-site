@@ -15,13 +15,14 @@ const documents = [
     order: '01',
   },
   {
-    title: 'Capability Showcase',
-    description: 'Selected case studies, what we have built, the stack we used and the outcomes we delivered. The single document to read if you want a feel for the calibre of work.',
-    filename: 'awl-capability-showcase.pdf',
-    href: '/client-pack/awl-capability-showcase.pdf',
-    size: '149 KB',
+    title: 'Case Studies',
+    description: 'Selected case studies, what we have built, the stack we used and the outcomes we delivered. Now published as a live page rather than a static PDF, so it stays current as new work ships.',
+    filename: null,
+    href: '/case-studies',
+    size: null,
     pages: null,
     order: '02',
+    isLink: true,
   },
   {
     title: 'How This Works',
@@ -36,8 +37,8 @@ const documents = [
 ---
 
 <Layout
-  title="How We Work, Capability Showcase, Process & NDA | All Webbed Labs"
-  description="Download our capability showcase, engagement process document and mutual NDA. Everything we share with prospective clients after a discovery call."
+  title="How We Work, Case Studies, Process & NDA | All Webbed Labs"
+  description="Browse our case studies, engagement process document and mutual NDA. Everything we share with prospective clients after a discovery call."
   noindex={true}
 >
   <Header />
@@ -75,21 +76,30 @@ const documents = [
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                     <polyline points="14 2 14 8 20 8"/>
                   </svg>
-                  <span class="doc-type">PDF</span>
-                  <span class="doc-divider">·</span>
-                  <span class="doc-size">{doc.size}</span>
+                  <span class="doc-type">{doc.isLink ? 'PAGE' : 'PDF'}</span>
+                  {doc.size && <span class="doc-divider">·</span>}
+                  {doc.size && <span class="doc-size">{doc.size}</span>}
                 </div>
                 <h2 class="doc-title">{doc.title}</h2>
                 <p class="doc-description">{doc.description}</p>
                 <div class="doc-actions">
-                  <a href={doc.href} target="_blank" rel="noopener" class="btn-primary doc-btn">
-                    Open PDF
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-                  </a>
-                  <a href={doc.href} download={doc.filename} class="doc-btn-secondary">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download
-                  </a>
+                  {doc.isLink ? (
+                    <a href={doc.href} class="btn-primary doc-btn">
+                      Visit page
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  ) : (
+                    <>
+                      <a href={doc.href} target="_blank" rel="noopener" class="btn-primary doc-btn">
+                        Open PDF
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                      </a>
+                      <a href={doc.href} download={doc.filename} class="doc-btn-secondary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                      </a>
+                    </>
+                  )}
                 </div>
                 {doc.notice && (
                   <p class="doc-notice">
@@ -111,7 +121,7 @@ const documents = [
           <div class="reveal-left">
             <span class="section-label">What Happens Next</span>
             <h2 class="section-heading">The Path from Here to Signed</h2>
-            <p>If the capability showcase and process document hold up to your standards, the next step is a working session. We use it to translate your brief into a concrete scope, a fixed timeline and an honest price.</p>
+            <p>If the case studies and process document hold up to your standards, the next step is a working session. We use it to translate your brief into a concrete scope, a fixed timeline and an honest price.</p>
             <p>Before that session, we sign the mutual NDA so you can share anything material to the conversation, roadmaps, competitive context, internal politics, the parts of the problem your team has already tried.</p>
             <p>From a signed NDA to a costed proposal is typically five to ten working days, depending on how much surface area we need to map.</p>
           </div>
@@ -155,7 +165,7 @@ const documents = [
         <div class="reveal" style="text-align: center; max-width: 760px; margin: 0 auto;">
           <span class="section-label">Questions on Past Work</span>
           <h2 class="section-heading">Want Detail on a Specific Project?</h2>
-          <p class="ask-copy">The capability showcase covers the highlights. If you want the engineering decisions behind a particular project, a reference from a past client, or to talk to the lead engineer who delivered it, just ask. We would rather walk you through it directly than dress it up in marketing copy.</p>
+          <p class="ask-copy">The case studies page covers the highlights. If you want the engineering decisions behind a particular project, a reference from a past client, or to talk to the lead engineer who delivered it, just ask. We would rather walk you through it directly than dress it up in marketing copy.</p>
           <div class="ask-actions">
             <a href="/contact" class="btn-primary">Book a Call</a>
             <a href="mailto:labs@allwebbedup.com.au" class="btn-outline">Email Us Directly</a>
