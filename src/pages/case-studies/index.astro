@@ -22,93 +22,12 @@ interface Category {
 
 const categories: Category[] = [
   {
-    id: 'consumer',
-    filterLabel: 'Consumer Apps',
-    label: 'B2C · Consumer',
-    title: 'Consumer Apps',
-    intro: 'Products people install for themselves. Mobile-first, delight-driven, distributed through the app stores and the web.',
+    id: 'ai',
+    filterLabel: 'AI & Automation',
+    label: 'Vertical · AI & Automation',
+    title: 'AI & Automation',
+    intro: 'Applied AI, workflow automation and agent-driven products. LLM front ends, RAG-heavy tools, autonomous task systems and privacy-first analytics.',
     items: [
-      {
-        name: 'Workout Quest',
-        year: '2023',
-        description: 'A gamified gym and home workout tracker where users earn experience points and levels as they train.',
-        url: 'https://www.workoutquestapp.com/',
-      },
-      {
-        name: 'Spacey',
-        year: '2023',
-        description: 'A learning app that schedules spaced-repetition reviews at the topic level, so users retain what they learn without hand-building flashcards.',
-        url: 'https://usespacey.app/',
-      },
-      {
-        name: 'Pestle',
-        year: '2022',
-        description: 'A recipe manager that imports recipes from the web and social feeds, then turns them into a hands-free, step-by-step cook mode.',
-        url: 'https://pestlechef.app',
-      },
-      {
-        name: 'Beli',
-        year: '2020',
-        description: 'A restaurant-ranking social app where users rate every place they eat and see recommendations from the friends whose taste they trust.',
-        url: 'https://beliapp.com',
-      },
-      {
-        name: 'Pagebound',
-        year: '2025',
-        description: 'A social reading community pairing book tracking with book-specific forums, deliberately built against the usual social-growth playbook.',
-        url: 'https://pagebound.co',
-      },
-      {
-        name: 'Reflect',
-        year: '2021',
-        description: 'End-to-end encrypted note-taking with daily notes, backlinks and AI-assisted recall, targeted at people who want a private second brain across Mac, iOS and web.',
-        url: 'https://reflect.app',
-      },
-      {
-        name: 'Copilot Money',
-        year: '2020',
-        description: 'A personal finance tracker for iOS and macOS covering accounts, budgets, investments and cash flow in a single dashboard, with an Apple Design Award to its name.',
-        url: 'https://copilot.money',
-      },
-      {
-        name: 'Meco',
-        year: '2022',
-        description: 'A dedicated newsletter reader that pulls email newsletters out of the inbox and into a clean feed on iOS, iPad and web, used by hundreds of thousands of readers worldwide.',
-        url: 'https://meco.app',
-      },
-      {
-        name: 'mymind',
-        year: '2020',
-        description: 'A private AI-organised bookmarking tool that auto-categorises everything a user saves. Positioned against public social bookmarking and cluttered read-later apps.',
-        url: 'https://mymind.com',
-      },
-      {
-        name: 'Ellipsus',
-        year: '2023',
-        description: 'A collaborative writing app for novelists, screenwriters and worldbuilding groups, structured around drafts, feedback threads and long-form fiction workflows.',
-        url: 'https://ellipsus.com',
-      },
-    ],
-  },
-  {
-    id: 'horizontal',
-    filterLabel: 'Business Tools',
-    label: 'B2B · Horizontal',
-    title: 'Business Tools, Cross-Industry',
-    intro: 'Cross-industry software teams reach for daily. CRMs, collaboration, communication and content platforms that operators actually stand up their businesses on.',
-    items: [
-      {
-        name: 'CloserKit',
-        year: '2026',
-        description: 'A focused deal pipeline for revenue teams that want one clean surface for tracking active conversations, not another sprawling enterprise CRM.',
-        url: 'https://closerkit.app',
-      },
-      {
-        name: 'Hardbook',
-        year: '2026',
-        description: 'Booking, contract signing and deposits for professional services teams, unified in a single client-facing flow.',
-        url: 'https://hard-book.com',
-      },
       {
         name: 'TaskShell',
         year: '2026',
@@ -134,16 +53,91 @@ const categories: Category[] = [
         url: 'https://sitegpt.ai',
       },
       {
-        name: 'Loops',
-        year: '2022',
-        description: 'A modern email platform for SaaS teams that unifies marketing and transactional email in a single editor and delivery log, replacing the usual Mailchimp plus SendGrid stack.',
-        url: 'https://loops.so',
+        name: 'PDF.ai',
+        year: '2023',
+        description: 'A document Q&A tool that lets teams chat with any PDF using LLMs, aimed at researchers and knowledge workers dealing with long documents.',
+        url: 'https://pdf.ai',
       },
       {
-        name: 'Basedash',
+        name: 'Chalk',
+        year: '2022',
+        description: 'A real-time feature and data platform for machine-learning and AI-agent workloads, serving high-throughput feature queries into customer-owned cloud accounts.',
+        url: 'https://www.chalk.ai',
+      },
+      {
+        name: 'Beam Analytics',
+        year: '2022',
+        description: 'A privacy-focused web analytics tool positioned as a Google Analytics replacement for indie SaaS and marketing sites, no cookies required.',
+        url: 'https://beamanalytics.io',
+      },
+    ],
+  },
+  {
+    id: 'construction',
+    filterLabel: 'Construction',
+    label: 'Vertical · Construction & Trades',
+    title: 'Construction & Trades',
+    intro: 'Site management, safety compliance, permits and job coordination for head contractors, subcontractors and small builders.',
+    items: [
+      {
+        name: 'BuildPass',
         year: '2021',
-        description: 'A team-shareable admin panel that turns any Postgres, MySQL or Snowflake database into an internal tool without an engineering team building forms and tables from scratch.',
-        url: 'https://www.basedash.com',
+        description: 'AI-powered construction site management combining safety, compliance, asset management, QA and site coordination for Australian and US builders in a single mobile-first workflow.',
+        url: 'https://www.buildpass.ai',
+      },
+      {
+        name: 'Breadcrumb',
+        year: '2020',
+        description: 'Construction safety and compliance software that automates site inductions, attendance sign-on, permits and SWMS document workflows for head contractors and their subcontractors.',
+        url: 'https://www.breadcrumb.co',
+      },
+    ],
+  },
+  {
+    id: 'education',
+    filterLabel: 'Education',
+    label: 'Vertical · Education',
+    title: 'Education & Learning',
+    intro: 'Tools for teachers, learners and creators. Spaced repetition, classroom AI and long-form collaborative writing.',
+    items: [
+      {
+        name: 'Spacey',
+        year: '2023',
+        description: 'A learning app that schedules spaced-repetition reviews at the topic level, so users retain what they learn without hand-building flashcards.',
+        url: 'https://usespacey.app/',
+      },
+      {
+        name: 'Teacherbot',
+        year: '2022',
+        description: 'An AI classroom and quiz tool for teachers, pitched as a free, classroom-safe alternative to the general-purpose LLMs.',
+        url: 'https://www.teacherbot.io',
+      },
+      {
+        name: 'Ellipsus',
+        year: '2023',
+        description: 'A collaborative writing app for novelists, screenwriters and worldbuilding groups, structured around drafts, feedback threads and long-form fiction workflows.',
+        url: 'https://ellipsus.com',
+      },
+    ],
+  },
+  {
+    id: 'finance',
+    filterLabel: 'Finance & Fintech',
+    label: 'Vertical · Finance & Fintech',
+    title: 'Finance & Fintech',
+    intro: 'Consumer finance, SaaS billing infrastructure and relationship management for the founder and investor economy.',
+    items: [
+      {
+        name: 'Copilot Money',
+        year: '2020',
+        description: 'A personal finance tracker for iOS and macOS covering accounts, budgets, investments and cash flow in a single dashboard, with an Apple Design Award to its name.',
+        url: 'https://copilot.money',
+      },
+      {
+        name: 'Zenskar',
+        year: '2022',
+        description: 'A billing and revenue recognition platform handling usage metering, contract-to-cash and RevRec automation for SaaS finance teams, positioned for complex enterprise pricing.',
+        url: 'https://www.zenskar.com',
       },
       {
         name: 'Cabinet',
@@ -151,26 +145,14 @@ const categories: Category[] = [
         description: 'A personal CRM for founders, investors and BD folk to track relationships, follow-ups and warm intros without standing up a full go-to-market stack.',
         url: 'https://letscabinet.com',
       },
-      {
-        name: 'Endorsely',
-        year: '2022',
-        description: 'A lightweight affiliate and referral program platform for indie SaaS, focused on getting a program live in a day instead of a sales cycle.',
-        url: 'https://endorsely.com',
-      },
-      {
-        name: 'BeforeSunset',
-        year: '2023',
-        description: 'A daily planner that turns to-do lists, calendars and email into a time-blocked plan for the day, aimed at operators optimising individual focus.',
-        url: 'https://beforesunset.ai',
-      },
     ],
   },
   {
-    id: 'vertical',
-    filterLabel: 'Industry Tools',
-    label: 'B2B · Vertical',
-    title: 'Industry-Specific Tools',
-    intro: 'Software built for a single sector and shaped to its workflow. Deep in one vertical rather than shallow across many.',
+    id: 'government',
+    filterLabel: 'Gov & Enterprise',
+    label: 'Vertical · Government & Enterprise',
+    title: 'Government & Enterprise',
+    intro: 'Earth observation, space situational awareness, renewable-asset inspection and regulatory compliance platforms for regulated environments.',
     items: [
       {
         name: 'Constellr',
@@ -185,34 +167,10 @@ const categories: Category[] = [
         url: 'https://www.digantara.co.in',
       },
       {
-        name: 'My Real Estate Listing AI',
-        year: '2023',
-        description: 'Generates a full property sales brochure PDF from photos and a handful of answers, aimed at listing agents and real-estate agencies.',
-        url: 'https://myrealestatelisting.app',
-      },
-      {
-        name: 'Teacherbot',
-        year: '2022',
-        description: 'An AI classroom and quiz tool for teachers, pitched as a free, classroom-safe alternative to the general-purpose LLMs.',
-        url: 'https://www.teacherbot.io',
-      },
-      {
-        name: 'Feather',
-        year: '2022',
-        description: 'A Notion-to-blog publishing platform that turns Notion pages into a hosted, SEO-friendly blog, built for content teams already writing in Notion.',
-        url: 'https://feather.so',
-      },
-      {
-        name: 'PDF.ai',
-        year: '2023',
-        description: 'A document Q&A tool that lets teams chat with any PDF using LLMs, aimed at researchers and knowledge workers dealing with long documents.',
-        url: 'https://pdf.ai',
-      },
-      {
-        name: 'Simply Fleet',
-        year: '2021',
-        description: 'Fleet maintenance and inspection software for small and mid-size operators, replacing paper checklists and spreadsheets with a mobile-first app for drivers and workshops.',
-        url: 'https://www.simply-fleet.com',
+        name: 'Zeitview',
+        year: '2020',
+        description: 'A two-sided platform pairing a global pilot network with AI inspection software for wind, solar, utilities and commercial real-estate assets, used by Duke Energy, EDF Renewables and Vestas.',
+        url: 'https://www.zeitview.com',
       },
       {
         name: 'FarmLab',
@@ -220,6 +178,165 @@ const categories: Category[] = [
         description: 'An Australian soil sampling and carbon monitoring platform for regenerative ag operators applying for offset credits, unifying lab results, geospatial data and audit trails.',
         url: 'https://farmlab.com.au',
       },
+    ],
+  },
+  {
+    id: 'healthcare',
+    filterLabel: 'Healthcare',
+    label: 'Vertical · Healthcare',
+    title: 'Healthcare',
+    intro: 'Practice management, patient booking and clinical workflow tools for solo practitioners and small allied-health clinics.',
+    items: [
+      {
+        name: 'Carepatron',
+        year: '2021',
+        description: 'Practice management, electronic health records, scheduling and billing for solo practitioners and small allied health, psychology and coaching clinics across NZ, Australia, the US and UK.',
+        url: 'https://www.carepatron.com',
+      },
+      {
+        name: 'BookedSolid',
+        year: '2023',
+        description: 'An AI receptionist for UK private clinics that answers calls, books appointments and syncs with practice management systems like coreplus for psychology and allied health practices.',
+        url: 'https://bookedsolid.health',
+      },
+    ],
+  },
+  {
+    id: 'hospitality',
+    filterLabel: 'Hospitality',
+    label: 'Vertical · Hospitality & F&B',
+    title: 'Hospitality & Food',
+    intro: 'Restaurant discovery, recipe workflows and client-facing booking flows for hospitality and professional services.',
+    items: [
+      {
+        name: 'Pestle',
+        year: '2022',
+        description: 'A recipe manager that imports recipes from the web and social feeds, then turns them into a hands-free, step-by-step cook mode.',
+        url: 'https://pestlechef.app',
+      },
+      {
+        name: 'Beli',
+        year: '2020',
+        description: 'A restaurant-ranking social app where users rate every place they eat and see recommendations from the friends whose taste they trust.',
+        url: 'https://beliapp.com',
+      },
+      {
+        name: 'Hardbook',
+        year: '2026',
+        description: 'Booking, contract signing and deposits for professional services teams, unified in a single client-facing flow.',
+        url: 'https://hard-book.com',
+      },
+    ],
+  },
+  {
+    id: 'logistics',
+    filterLabel: 'Logistics',
+    label: 'Vertical · Logistics & Transport',
+    title: 'Logistics & Transport',
+    intro: 'Fleet operations for SMB operators and API infrastructure for the distributed energy grid.',
+    items: [
+      {
+        name: 'Simply Fleet',
+        year: '2021',
+        description: 'Fleet maintenance and inspection software for small and mid-size operators, replacing paper checklists and spreadsheets with a mobile-first app for drivers and workshops.',
+        url: 'https://www.simply-fleet.com',
+      },
+      {
+        name: 'Enode',
+        year: '2020',
+        description: 'An API connecting energy retailers and virtual-power-plant operators to more than 1,000 EV, solar, battery and meter device models across millions of homes. Norway-based.',
+        url: 'https://www.enode.com',
+      },
+    ],
+  },
+  {
+    id: 'realestate',
+    filterLabel: 'Real Estate',
+    label: 'Vertical · Real Estate & PropTech',
+    title: 'Real Estate & PropTech',
+    intro: 'Listing generation, property maintenance dispatch and agent workflow tools built around the rental and sales lifecycles.',
+    items: [
+      {
+        name: 'My Real Estate Listing AI',
+        year: '2023',
+        description: 'Generates a full property sales brochure PDF from photos and a handful of answers, aimed at listing agents and real-estate agencies.',
+        url: 'https://myrealestatelisting.app',
+      },
+      {
+        name: 'Bricks & Agent',
+        year: '2020',
+        description: 'An Australian property maintenance marketplace pairing landlords and property managers with tradespeople for quoted, tracked jobs across the rental portfolio.',
+        url: 'https://bricksandagent.com',
+      },
+    ],
+  },
+  {
+    id: 'retail',
+    filterLabel: 'Retail & E-commerce',
+    label: 'Vertical · Retail & E-commerce',
+    title: 'Retail & E-commerce',
+    intro: 'Curated marketplaces, resale communities, affiliate infrastructure and content platforms for retail and creator brands.',
+    items: [
+      {
+        name: 'Makeshift',
+        year: '2026',
+        description: 'A curated marketplace for independent Australian artists and makers, running on a small commission rather than a marketplace ad model.',
+        url: 'https://makeshift-au.com/',
+      },
+      {
+        name: 'Lumikha Cosplay Resale',
+        year: '2021',
+        description: 'A secondhand cosplay marketplace where costumers list costumes, wigs, fabric and props for other cosplayers to buy and sell within the community.',
+        url: 'https://lumikhacosplay.com',
+      },
+      {
+        name: 'Endorsely',
+        year: '2022',
+        description: 'A lightweight affiliate and referral program platform for indie SaaS, focused on getting a program live in a day instead of a sales cycle.',
+        url: 'https://endorsely.com',
+      },
+      {
+        name: 'Feather',
+        year: '2022',
+        description: 'A Notion-to-blog publishing platform that turns Notion pages into a hosted, SEO-friendly blog, built for content teams already writing in Notion.',
+        url: 'https://feather.so',
+      },
+    ],
+  },
+  {
+    id: 'sports',
+    filterLabel: 'Sports & Recreation',
+    label: 'Vertical · Sports & Recreation',
+    title: 'Sports & Recreation',
+    intro: 'Fitness, leisure planning and industry marketplaces across sport, music and cultural production.',
+    items: [
+      {
+        name: 'Workout Quest',
+        year: '2023',
+        description: 'A gamified gym and home workout tracker where users earn experience points and levels as they train.',
+        url: 'https://www.workoutquestapp.com/',
+      },
+      {
+        name: 'INPINK',
+        year: '2022',
+        description: 'A talent marketplace where women and non-binary music-industry professionals list services, booked by venues and brands for gigs, tour management and production work.',
+        url: 'https://www.inpink.com',
+      },
+      {
+        name: 'Sofa',
+        year: '2020',
+        description: 'An iOS leisure planner for tracking films, shows, books, games and podcasts a user wants to get to on the weekend, without the social layer of the mainstream trackers.',
+        url: 'https://www.sofahq.com',
+      },
+    ],
+  },
+  {
+    id: 'travel',
+    filterLabel: 'Travel',
+    label: 'Vertical · Travel',
+    title: 'Travel',
+    intro: 'Trip planning, itinerary building and shared travel memory across the whole journey.',
+    items: [
       {
         name: 'TripMemo',
         year: '2026',
@@ -235,29 +352,56 @@ const categories: Category[] = [
     ],
   },
   {
-    id: 'devtools',
-    filterLabel: 'DevTools',
-    label: 'B2D · DevTools',
-    title: 'Developer & Infrastructure Tools',
-    intro: 'The tools engineering teams standardise on for development, deployment and operations. High signal for what a serious technical audience will adopt across a whole org.',
+    id: 'web3',
+    filterLabel: 'Web3 & Crypto',
+    label: 'Vertical · Web3 & Crypto',
+    title: 'Web3 & Crypto',
+    intro: 'On-chain publishing, non-custodial asset management and tokenised workflows for crypto-native users.',
     items: [
       {
-        name: 'Chalk',
-        year: '2022',
-        description: 'A real-time feature and data platform for machine-learning and AI-agent workloads, serving high-throughput feature queries into customer-owned cloud accounts.',
-        url: 'https://www.chalk.ai',
-      },
-      {
-        name: 'Zenskar',
-        year: '2022',
-        description: 'A billing and revenue recognition platform handling usage metering, contract-to-cash and RevRec automation for SaaS finance teams, positioned for complex enterprise pricing.',
-        url: 'https://www.zenskar.com',
-      },
-      {
-        name: 'DevUtils',
+        name: 'Paragraph',
         year: '2021',
-        description: 'A native macOS toolbox with offline JSON, JWT, regex and hash utilities, replacing the scattered web tools most backend engineers keep bookmarked.',
-        url: 'https://devutils.com',
+        description: 'A Web3-native newsletter and publishing platform that lets writers gate posts by NFT ownership, monetise via token collects and build on-chain communities.',
+        url: 'https://paragraph.com',
+      },
+      {
+        name: 'Chamber',
+        year: '2020',
+        description: 'A non-custodial on-chain asset management protocol that lets investors follow tokenised vaults run by traders using TradingView signals, built by an Australian-founded team across Ethereum, Optimism, Arbitrum, Polygon and Base.',
+        url: 'https://chamberfi.com',
+      },
+    ],
+  },
+  {
+    id: 'saas',
+    filterLabel: 'SaaS & Productivity',
+    label: 'Horizontal · SaaS & Productivity',
+    title: 'SaaS & Productivity',
+    intro: 'Cross-industry SaaS, personal productivity tools and macOS or iOS utilities. The tools that don’t belong to one sector, sold direct.',
+    items: [
+      {
+        name: 'CloserKit',
+        year: '2026',
+        description: 'A focused deal pipeline for revenue teams that want one clean surface for tracking active conversations, not another sprawling enterprise CRM.',
+        url: 'https://closerkit.app',
+      },
+      {
+        name: 'Loops',
+        year: '2022',
+        description: 'A modern email platform for SaaS teams that unifies marketing and transactional email in a single editor and delivery log, replacing the usual Mailchimp plus SendGrid stack.',
+        url: 'https://loops.so',
+      },
+      {
+        name: 'Basedash',
+        year: '2021',
+        description: 'A team-shareable admin panel that turns any Postgres, MySQL or Snowflake database into an internal tool without an engineering team building forms and tables from scratch.',
+        url: 'https://www.basedash.com',
+      },
+      {
+        name: 'BeforeSunset',
+        year: '2023',
+        description: 'A daily planner that turns to-do lists, calendars and email into a time-blocked plan for the day, aimed at operators optimising individual focus.',
+        url: 'https://beforesunset.ai',
       },
       {
         name: 'Rowy',
@@ -266,25 +410,46 @@ const categories: Category[] = [
         url: 'https://rowy.io',
       },
       {
-        name: 'Beam Analytics',
-        year: '2022',
-        description: 'A privacy-focused web analytics tool positioned as a Google Analytics replacement for indie SaaS and marketing sites, no cookies required.',
-        url: 'https://beamanalytics.io',
+        name: 'DevUtils',
+        year: '2021',
+        description: 'A native macOS toolbox with offline JSON, JWT, regex and hash utilities, replacing the scattered web tools most backend engineers keep bookmarked.',
+        url: 'https://devutils.com',
       },
-    ],
-  },
-  {
-    id: 'prosumer',
-    filterLabel: 'Prosumer',
-    label: 'B2C · Prosumer',
-    title: 'Prosumer Utilities',
-    intro: 'Focused Mac and mobile utilities from established software studios. The paid tools power users install once and keep across every device.',
-    items: [
+      {
+        name: 'Reflect',
+        year: '2021',
+        description: 'End-to-end encrypted note-taking with daily notes, backlinks and AI-assisted recall, targeted at people who want a private second brain across Mac, iOS and web.',
+        url: 'https://reflect.app',
+      },
+      {
+        name: 'Meco',
+        year: '2022',
+        description: 'A dedicated newsletter reader that pulls email newsletters out of the inbox and into a clean feed on iOS, iPad and web, used by hundreds of thousands of readers worldwide.',
+        url: 'https://meco.app',
+      },
+      {
+        name: 'mymind',
+        year: '2020',
+        description: 'A private AI-organised bookmarking tool that auto-categorises everything a user saves. Positioned against public social bookmarking and cluttered read-later apps.',
+        url: 'https://mymind.com',
+      },
+      {
+        name: 'Pagebound',
+        year: '2025',
+        description: 'A social reading community pairing book tracking with book-specific forums, deliberately built against the usual social-growth playbook.',
+        url: 'https://pagebound.co',
+      },
       {
         name: 'Kittl',
         year: '2020',
         description: 'A browser-based design studio for lettering, illustration, mockups and AI-assisted vector work, with a template and font marketplace. Berlin-based, used inside Pentagram, Netflix and Uber.',
         url: 'https://kittl.com',
+      },
+      {
+        name: 'Focus Bear',
+        year: '2021',
+        description: 'A focus and habit-tracking utility built with neurodivergent users in mind, blocking distractions and enforcing routines across Mac, Windows, iOS and Android.',
+        url: 'https://focusbear.io',
       },
       {
         name: 'Xnapper',
@@ -299,67 +464,10 @@ const categories: Category[] = [
         url: 'https://www.rocketsim.app',
       },
       {
-        name: 'Focus Bear',
-        year: '2021',
-        description: 'A focus and habit-tracking utility built with neurodivergent users in mind, blocking distractions and enforcing routines across Mac, Windows, iOS and Android.',
-        url: 'https://focusbear.io',
-      },
-      {
-        name: 'Sofa',
-        year: '2020',
-        description: 'An iOS leisure planner for tracking films, shows, books, games and podcasts a user wants to get to on the weekend, without the social layer of the mainstream trackers.',
-        url: 'https://www.sofahq.com',
-      },
-      {
         name: 'Text Blaze',
         year: '2020',
         description: 'A cross-browser text expansion utility with dynamic snippets, forms and variables, aimed at support, sales and clinical teams typing the same responses on repeat.',
         url: 'https://blaze.today',
-      },
-    ],
-  },
-  {
-    id: 'marketplace',
-    filterLabel: 'Marketplace',
-    label: 'C2C · Marketplace',
-    title: 'Marketplace',
-    intro: 'Two-sided commerce across goods, services and creator work. Curated or open, commission or subscription.',
-    items: [
-      {
-        name: 'Makeshift',
-        year: '2026',
-        description: 'A curated marketplace for independent Australian artists and makers, running on a small commission rather than a marketplace ad model.',
-        url: 'https://makeshift-au.com/',
-      },
-      {
-        name: 'Enode',
-        year: '2020',
-        description: 'A marketplace-style API connecting energy retailers and virtual-power-plant operators to more than 1,000 EV, solar, battery and meter device models across millions of homes. Norway-based.',
-        url: 'https://www.enode.com',
-      },
-      {
-        name: 'Zeitview',
-        year: '2020',
-        description: 'A two-sided platform pairing a global pilot network with AI inspection software for wind, solar, utilities and commercial real-estate assets, used by Duke Energy, EDF Renewables and Vestas.',
-        url: 'https://www.zeitview.com',
-      },
-      {
-        name: 'Lumikha Cosplay Resale',
-        year: '2021',
-        description: 'A secondhand cosplay marketplace where costumers list costumes, wigs, fabric and props for other cosplayers to buy and sell within the community.',
-        url: 'https://lumikhacosplay.com',
-      },
-      {
-        name: 'INPINK',
-        year: '2022',
-        description: 'A talent marketplace where women and non-binary music-industry professionals list services, booked by venues and brands for gigs, tour management and production work.',
-        url: 'https://www.inpink.com',
-      },
-      {
-        name: 'Bricks & Agent',
-        year: '2020',
-        description: 'An Australian property maintenance marketplace pairing landlords and property managers with tradespeople for quoted, tracked jobs across the rental portfolio.',
-        url: 'https://bricksandagent.com',
       },
     ],
   },
@@ -430,15 +538,14 @@ const categories: Category[] = [
           <div class="cs-more-inner">
             <span class="cs-more-label">More on Request</span>
             <h2 class="cs-more-title">
-              Plenty more examples for<br />
-              <span class="gradient-text">specific industries and niches.</span>
+              Deeper cuts for<br />
+              <span class="gradient-text">your specific niche.</span>
             </h2>
             <p class="cs-more-copy">
-              This list is a general capability snapshot. For examples in a particular vertical &mdash;
-              finance and fintech, healthcare, education, logistics and transport, hospitality, real estate
-              and PropTech, government and enterprise, construction and trades, sports and recreation,
-              retail and e-commerce, AI and automation, Web3 and crypto &mdash; we can put a
-              targeted shortlist together on request.
+              The list above is a working snapshot. For examples closer to a specific sub-vertical
+              &mdash; NDIS providers, mortgage brokers, orthodontics, boutique hotels, quantity
+              surveyors, sports clubs, Web3 gaming &mdash; we can put a targeted shortlist together
+              on request.
             </p>
             <div class="cs-more-actions">
               <a href="/contact" class="btn-primary cs-more-btn">
