@@ -455,6 +455,16 @@ const categories: Category[] = [
   <Header />
   <main>
 
+    <section class="cs-framing" aria-label="About this showcase">
+      <div class="cs-framing-inner reveal">
+        <span class="section-label">Context</span>
+        <p>
+          All Webbed Labs launched in mid 2026 as the software arm of <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>. AWU has been running for five years, on top of two years of pre-agency freelance before that, with over two decades of combined engineering experience across the current team. The examples below are the calibre of live software our team builds to &mdash; the standard we hold client work against.
+        </p>
+        <a href="/our-journey" class="cs-framing-link">See the full journey <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
     <section class="cs-list-section">
       <div class="cs-inner">
         <div class="cs-filter-wrap reveal">
@@ -539,6 +549,54 @@ const categories: Category[] = [
 </Layout>
 
 <style>
+  .cs-framing {
+    padding: 8.5rem 0 3rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-framing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cs-framing-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .cs-framing-inner p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 1.9vw, 1.125rem);
+    color: #cde0da;
+    line-height: 1.75;
+    margin: 0.75rem 0 1.25rem;
+    max-width: 780px;
+  }
+  .cs-framing-inner p a {
+    color: #0d9373;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.4);
+    transition: border-color 0.2s ease;
+  }
+  .cs-framing-inner p a:hover { border-color: #0d9373; }
+  .cs-framing-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+  .cs-framing-link:hover { gap: 0.55rem; }
+
   .cs-hero {
     padding: 9rem 0 5rem;
     background: #0a0f0e;

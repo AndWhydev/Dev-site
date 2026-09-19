@@ -34,6 +34,17 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
           Sister company to <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>,
           the branding and marketing agency we deliver client work alongside.
         </p>
+        <p class="home-entity-timeline">
+          Launched mid-2026 as the software arm of All Webbed Up. Built on five years of AWU, two years of pre-agency freelance before that, and over two decades of combined engineering experience across the team. <a href="/our-journey">Our full journey</a>.
+        </p>
+        <div class="home-entity-sister">
+          <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer" class="sister-pill">
+            <span class="sister-pill-label">Sister brand</span>
+            <span class="sister-pill-arrow">&rarr;</span>
+            <span class="sister-pill-name">All Webbed Up</span>
+            <span class="sister-pill-sub">Marketing &amp; brand</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -65,6 +76,18 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
     margin: 0;
     text-align: center;
   }
+  .home-entity-timeline {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: clamp(0.9375rem, 1.7vw, 1.0625rem) !important;
+    font-weight: 400 !important;
+    color: #8aa09a !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0 !important;
+    margin-top: 1rem !important;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .home-entity-inner strong { color: white; font-weight: 700; }
   .home-entity-inner a {
     color: #0d9373;
@@ -73,4 +96,63 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
     transition: border-color 0.2s ease;
   }
   .home-entity-inner a:hover { border-color: #0d9373; }
+
+  .home-entity-sister {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .sister-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem 1.1rem 0.7rem 0.85rem;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.35);
+    border-radius: 999px;
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(13,147,115,0.35) !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .sister-pill:hover {
+    background: rgba(13,147,115,0.14);
+    border-color: #0d9373 !important;
+    transform: translateY(-1px);
+  }
+  .sister-pill-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0d9373;
+    padding: 0.15rem 0.55rem;
+    background: rgba(13,147,115,0.15);
+    border-radius: 999px;
+  }
+  .sister-pill-arrow {
+    font-family: 'Sora', sans-serif;
+    color: #0d9373;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .sister-pill-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+  .sister-pill-sub {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #8aa09a;
+    border-left: 1px solid #2a3d35;
+    padding-left: 0.75rem;
+    margin-left: 0.15rem;
+  }
+  @media (max-width: 520px) {
+    .sister-pill { flex-wrap: wrap; justify-content: center; }
+    .sister-pill-sub { border-left: none; padding-left: 0; margin-left: 0; width: 100%; text-align: center; }
+  }
 </style>
