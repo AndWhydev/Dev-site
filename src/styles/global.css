@@ -284,3 +284,36 @@
     width: 100%;
   }
 }
+
+/* ── Tablet and phone: centred section intros, sitewide ─────────────────
+   Below 1024px the two-column heroes and section layouts stack, which left
+   headings pinned to the left of a wide, half-empty screen. Every section
+   intro on the site starts with a .section-label, so centre that label, the
+   heading that follows, the hero's first paragraph and its button row.
+   Longer body copy, lists and cards stay left-aligned for readability.
+   Unlayered and !important so scoped component margins can't pin a
+   width-capped heading to the left again. */
+@media (max-width: 1024px) {
+  .section-label {
+    display: flex !important;
+    justify-content: center;
+    text-align: center;
+  }
+  :has(> .section-label) > :is(h1, h2, .section-heading, .section-subheading) {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  :has(> .section-label) > h1 + p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  :has(> .section-label) > div:has(> :is(a, button)[class*="btn"]),
+  :has(> .section-label) > [class*="trust-row"],
+  :has(> .section-label) > [class*="hero-stats"],
+  :has(> .section-label) > [class*="hero-features"] {
+    justify-content: center !important;
+    text-align: center;
+  }
+}

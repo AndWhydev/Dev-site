@@ -43,7 +43,7 @@ const items = featured
 <style>
   .fg { padding: 6rem 0; background: #0a0f0e; border-top: 1px solid #1a2620; }
   .fg-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .fg-head { max-width: 760px; margin-bottom: 2.5rem; }
+  .fg-head { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
   .fg-intro { color: #8aa09a; line-height: 1.7; font-size: 1.0625rem; margin: 0.75rem 0 0; }
   .fg-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .fg-card { display: flex; flex-direction: column; gap: 0.55rem; height: 100%; padding: 1.4rem; border: 1px solid #1a2620; border-radius: 14px; background: #0f1614; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
@@ -51,7 +51,7 @@ const items = featured
   .fg-kind { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #19b58f; font-weight: 700; }
   .fg-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 1.05rem; color: #fff; line-height: 1.35; }
   .fg-desc { font-size: 0.9rem; line-height: 1.6; color: #8aa09a; }
-  .fg-all { display: inline-block; margin-top: 1.75rem; color: #19b58f; font-weight: 600; text-decoration: none; }
+  .fg-all { display: table; margin: 1.75rem auto 0; color: #19b58f; font-weight: 600; text-decoration: none; }
   .fg-all:hover { text-decoration: underline; }
   @media (max-width: 1024px) { .fg-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .fg { padding: 4rem 0; } .fg-inner { padding: 0 1.25rem; } .fg-list { grid-template-columns: 1fr; } }

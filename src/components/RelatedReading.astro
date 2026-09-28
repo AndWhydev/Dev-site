@@ -68,4 +68,11 @@ const list = items.sort((a, b) => b.score - a.score || a.title.localeCompare(b.t
   .rr-kind { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #19b58f; font-weight: 700; }
   .rr-title { font-family: 'Sora', sans-serif; font-weight: 600; color: #fff; line-height: 1.4; }
   @media (max-width: 640px) { .rr { padding: 3.5rem 0; } .rr-inner { padding: 0 1.25rem; } }
+
+  /* Centre a short last row instead of leaving it stuck to the left. */
+  .rr-list { display: flex; flex-wrap: wrap; justify-content: center; }
+  .rr-list > li { flex: 0 1 300px; min-width: 0; }
+  @media (max-width: 640px) { .rr-list > li { flex-basis: 100%; } }
+  .rr-inner { text-align: center; }
+  .rr-card { text-align: left; }
 </style>

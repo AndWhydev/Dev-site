@@ -293,6 +293,14 @@
       transition: none;
     }
   }
+
+  /* Stacked layout on tablet and phone: centre the text and the pill row. */
+  @media (max-width: 960px) {
+    .autonomous-ai__content { text-align: center; }
+    .autonomous-ai__left, .autonomous-ai__right { margin-left: auto; margin-right: auto; }
+    .autonomous-ai__heading, .autonomous-ai__copy { margin-left: auto; margin-right: auto; }
+    .autonomous-ai__pills { justify-content: center; }
+  }
 </style>
 
 <script>

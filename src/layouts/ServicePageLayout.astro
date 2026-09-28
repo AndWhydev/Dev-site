@@ -1152,6 +1152,33 @@ const entitySentence = BRAND_DEFINITION;
       display: none;
     }
   }
+
+  /* Tablet and phone: the hero icon is hidden and sections stack, so centre
+     the hero and every section intro instead of pinning them to the left of
+     a wide, half-empty screen. Body copy, lists and cards stay left-aligned. */
+  @media (max-width: 1024px) {
+    .svc-hero-inner { grid-template-columns: 1fr; }
+    .svc-hero-content { text-align: center; margin-left: auto; margin-right: auto; max-width: 720px; }
+    .svc-breadcrumb, .svc-hero-ctas { justify-content: center; }
+    .svc-hero-title, .svc-hero-tagline { margin-left: auto; margin-right: auto; }
+    .svc-inner > .reveal { text-align: center; }
+    .svc-inner > .reveal .section-heading,
+    .svc-inner > .reveal .section-subheading { margin-left: auto; margin-right: auto; }
+  }
+
+  /* Centre a short last row of related cards (same 4/2/1 columns as before). */
+  .related-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .related-grid > * { flex: 0 0 calc((100% - 3rem) / 4); min-width: 0; }
+  @media (max-width: 1024px) { .related-grid > * { flex-basis: calc((100% - 1rem) / 2); } }
+  @media (max-width: 640px) { .related-grid > * { flex-basis: 100%; } }
+  @media (max-width: 1024px) {
+    .svc-what-grid > .reveal-left > .section-label,
+    .svc-what-grid > .reveal-left > .section-heading { display: block; text-align: center; }
+    .svc-what-grid > .reveal-left > .section-label { display: flex; justify-content: center; }
+  }
+  @media (max-width: 1024px) {
+    .svc-inner > .reveal > .svc-pricing-note { margin-left: auto; margin-right: auto; }
+  }
 </style>
 
 <script>

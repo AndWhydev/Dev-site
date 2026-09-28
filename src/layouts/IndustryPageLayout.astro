@@ -731,6 +731,28 @@ const {
     .pain-grid { grid-template-columns: 1fr; }
     .ind-services-grid { grid-template-columns: 1fr; }
   }
+
+  /* Tablet and phone: centre the hero and section intros (see ServicePageLayout). */
+  @media (max-width: 1024px) {
+    .ind-hero-inner { text-align: center; }
+    .ind-hero-inner > * { margin-left: auto; margin-right: auto; }
+    .ind-breadcrumb, .ind-hero-ctas, .ind-cta-actions { justify-content: center; }
+    .ind-pill { display: inline-flex; }
+    .ind-hero-title, .ind-hero-tagline { margin-left: auto; margin-right: auto; }
+    .ind-inner > .reveal { text-align: center; }
+    .ind-inner > .reveal .section-heading,
+    .ind-inner > .reveal .section-subheading { margin-left: auto; margin-right: auto; }
+  }
+
+  /* Centre a short last row of service cards (same 3/2/1 columns as before). */
+  .ind-services-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .ind-services-grid > * { flex: 0 0 calc((100% - 2rem) / 3); min-width: 0; }
+  @media (max-width: 1024px) { .ind-services-grid > * { flex-basis: calc((100% - 1rem) / 2); } }
+  @media (max-width: 640px) { .ind-services-grid > * { flex-basis: 100%; } }
+  @media (max-width: 1024px) {
+    .ind-solutions-grid > .reveal-left { text-align: center; }
+    .ind-solutions-grid > .reveal-left .section-subheading { margin-left: auto; margin-right: auto; }
+  }
 </style>
 
 <script>

@@ -311,4 +311,10 @@ const disclaimers: Record<string, string> = {
     .lf-summary p { font-size: 1.0625rem; }
     .lf-prose { font-size: 1rem; }
   }
+
+  /* Centre a short last row instead of leaving it stuck to the left. */
+  .lf-related ul { display: flex; flex-wrap: wrap; justify-content: center; }
+  .lf-related ul > li { flex: 0 1 300px; min-width: 0; }
+  @media (max-width: 640px) { .lf-related ul > li { flex-basis: 100%; } }
+  .lf-related .lf-small-heading { text-align: center; }
 </style>
