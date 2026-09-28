@@ -210,7 +210,7 @@ function isActive(href: string) {
   </div>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
     <div class="mobile-menu-inner">
       <div class="mob-group">
         <button class="mob-group-trigger">
@@ -756,6 +756,7 @@ function isActive(href: string) {
     if (isOpen) mobileMenu.style.setProperty('--menu-top', `${mobileMenu.getBoundingClientRect().top}px`);
     mobileMenu.classList.toggle('open', isOpen);
     mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    mobileMenu.inert = !isOpen;
     document.documentElement.style.overflowY = isOpen ? 'hidden' : '';
   });
 
@@ -766,6 +767,7 @@ function isActive(href: string) {
     hamburger.setAttribute('aria-expanded', 'false');
     mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileMenu.inert = true;
     document.documentElement.style.overflowY = '';
   });
 

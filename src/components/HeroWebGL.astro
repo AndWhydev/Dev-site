@@ -321,17 +321,19 @@
     overflow: hidden;
     vertical-align: top;
   }
+  /* Words slide up inside their clipping mask. No opacity fade: the heading
+     is the LCP element, and text held at opacity 0 delays LCP by the length
+     of the intro animation. */
   .hero-heading .w > span {
     display: inline-block;
     transform: translateY(110%) rotate(3deg);
-    opacity: 0;
-    will-change: transform, opacity;
+    will-change: transform;
   }
   .hero-heading.is-in .w > span {
     animation: awl-word-up 0.95s cubic-bezier(.19,1,.22,1) forwards;
   }
   @keyframes awl-word-up {
-    to { transform: translateY(0) rotate(0); opacity: 1; }
+    to { transform: translateY(0) rotate(0); }
   }
 
   .awl-hero__sub {

@@ -47,7 +47,7 @@ const team: Person[] = [
     name: 'Hyacinth Soriano',
     role: 'Brand & Design',
     bio: 'Hyacinth leads brand and design at the Labs. She brings more than a decade of branding experience to client work, covering brand systems, visual identity and the interface design that sits on top of the software we build. Hyacinth partners with engineering from kickoff onward, so what a client sees reflects the same care as the systems underneath.',
-    photo: '/team/hyacinth-soriano.png',
+    photo: '/team/hyacinth-soriano.webp',
     initials: 'HS',
     accent: 'amber',
     links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/hyacinth-soriano-69b229403/' }],
@@ -59,7 +59,7 @@ const partners: Person[] = [
     name: 'Jared Bachman',
     role: 'Servers & IT Installation',
     bio: 'Owner of Commercial Electrical Services Sydney. We bring Jared in when a client engagement needs on-site server, rack or network installation work delivered alongside the software.',
-    photo: '/team/jared-bachman.png',
+    photo: '/team/jared-bachman.webp',
     initials: 'JB',
     accent: 'green',
     links: [{ label: 'Commercial Electrical Services', href: 'https://commercialelectrician.net.au' }],
@@ -68,7 +68,7 @@ const partners: Person[] = [
     name: 'Troy Schoenfisch',
     role: 'R&D Tax & Innovation Rebates',
     bio: 'Accountant and financial mentor at Crescendo Strategy. We refer clients to Troy when they want to claim the Australian R&D Tax Incentive on a software build we deliver, he comes in early enough to structure the project documentation for an eventual claim.',
-    photo: '/team/troy-schoenfisch.png',
+    photo: '/team/troy-schoenfisch.webp',
     initials: 'TS',
     accent: 'violet',
     links: [
@@ -80,7 +80,7 @@ const partners: Person[] = [
     name: 'Elena Nelyubina',
     role: 'Commercial & IT Law',
     bio: 'Director and Principal Lawyer at Square Legal. Elena handles the commercial side of software engagements, client contracts, IT licensing, privacy and the IP assignment clauses inside our delivery agreements. She came to law from an IT contracts management background.',
-    photo: '/team/elena-nelyubina.png',
+    photo: '/team/elena-nelyubina.webp',
     initials: 'EN',
     accent: 'amber',
     links: [
@@ -109,7 +109,7 @@ const partners: Person[] = [
         <article class={`team-card reveal stagger-${i + 1}`}>
           <div class={`team-photo accent-${p.accent ?? 'green'}`}>
             {p.photo ? (
-              <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" />
+              <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" decoding="async" width="400" height="400" />
             ) : p.silhouette ? (
               <div class="team-silhouette" role="img" aria-label={`Stylised silhouette representing ${p.name}`}>
                 <svg viewBox="0 0 132 132" width="100%" height="100%" aria-hidden="true">
@@ -173,7 +173,7 @@ const partners: Person[] = [
             <div class="partner-card-head">
               <div class={`partner-photo accent-${p.accent ?? 'green'}`}>
                 {p.photo ? (
-                  <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" />
+                  <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" decoding="async" width="400" height="400" />
                 ) : (
                   <span class="partner-initials" aria-hidden="true">{p.initials}</span>
                 )}

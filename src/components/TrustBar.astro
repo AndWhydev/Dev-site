@@ -64,7 +64,7 @@ const items = [
                 class="trust-item-link"
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                aria-label={item.hrefLabel}
+                aria-label={`${item.value}, ${item.hrefLabel.charAt(0).toLowerCase()}${item.hrefLabel.slice(1)}`}
               >
                 {item.value}
                 <svg class="trust-item-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l10-10M9 7h8v8"/></svg>
@@ -132,7 +132,7 @@ const items = [
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #4a6359;
+    color: #718b81;
   }
 
   .trust-item-value {
@@ -168,7 +168,7 @@ const items = [
   .trust-item-detail {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.75rem;
-    color: #4a6359;
+    color: #718b81;
     line-height: 1.45;
   }
 
