@@ -464,7 +464,10 @@
   }
 
   @media (max-width: 720px) {
-    .awl-hero__inner { padding: 7rem 24px 6rem; }
+    /* Size the hero to its content on phones. A full-viewport hero left
+       ~200px of dead space under the CTAs before the trust bar. */
+    .awl-hero { min-height: auto; }
+    .awl-hero__inner { padding: 7rem 24px 4rem; }
     .awl-hero__ctas { gap: 20px; }
     /* Bring the headline down so 'software that runs itself.' wraps nicely
        on a phone instead of one giant word per line at 52px. */
@@ -476,8 +479,7 @@
     /* Phone-specific tuning. Less padding, even more compact type, and
        stack the CTAs vertically so 'See our work' + 'Book a call →' each
        sit full-width, easier 44px touch targets, no accidental wraps. */
-    .awl-hero { min-height: 100svh; }
-    .awl-hero__inner { padding: 6rem 20px 4.5rem; }
+    .awl-hero__inner { padding: 6rem 20px 3.5rem; }
     .awl-hero__eyebrow { font-size: 11px; letter-spacing: 0.18em; margin-bottom: 22px; }
     .awl-hero__eyebrow::before { width: 24px; }
     .hero-heading {
