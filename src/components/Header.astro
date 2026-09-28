@@ -606,7 +606,14 @@ function isActive(href: string) {
     transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1);
   }
 
-  .mobile-menu.open { max-height: 90vh; overflow-y: auto; }
+  /* Open menu fills the rest of the viewport so page content never shows
+     underneath it. --menu-top is set from the header's live height on open. */
+  .mobile-menu.open {
+    height: calc(100dvh - var(--menu-top, 72px));
+    max-height: calc(100dvh - var(--menu-top, 72px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
 
   .mobile-menu-inner {
     padding: 1rem 1.5rem 2.5rem;
@@ -746,8 +753,20 @@ function isActive(href: string) {
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) mobileMenu.style.setProperty('--menu-top', `${mobileMenu.getBoundingClientRect().top}px`);
     mobileMenu.classList.toggle('open', isOpen);
     mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    document.documentElement.style.overflowY = isOpen ? 'hidden' : '';
+  });
+
+  // Header is transition:persist, so close the menu and release the scroll
+  // lock on every ClientRouter navigation.
+  document.addEventListener('astro:after-swap', () => {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflowY = '';
   });
 
   // ── Mobile accordions ───────────────────────────────

@@ -23,13 +23,13 @@ import Footer from '../components/Footer.astro';
           <p class="contact-sub">Whether you have a detailed brief or an idea you're still exploring, we want to hear about it. Our team responds to all enterprise enquiries within 2 business hours.</p>
 
           <div class="contact-details">
-            <a href="mailto:labs@allwebbedup.com.au" class="contact-item">
+            <a href="mailto:admin@awlabs.com.au" class="contact-item">
               <div class="ci-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div>
                 <div class="ci-label">Email</div>
-                <div class="ci-val">labs@allwebbedup.com.au</div>
+                <div class="ci-val">admin@awlabs.com.au</div>
               </div>
             </a>
             <a href="tel:1800714148" class="contact-item">
@@ -502,18 +502,50 @@ import Footer from '../components/Footer.astro';
       if (l) l.textContent = 'Sending…';
     }
 
+    const fd = new FormData(form);
+    const v = (k: string) => String(fd.get(k) || '').trim();
+    const name = `${v('firstName')} ${v('lastName')}`.trim();
+    const subject = `Enquiry: ${v('service') || 'General'} · ${v('company') || name}`;
+    // Body leads with the highest-signal fields so the inbox preview is useful.
+    // Deliberately no individual field keys in the payload: Web3Forms switches
+    // to its summary template when it sees them and buries this body.
+    const body = [
+      `${name} · ${v('company')}`,
+      `Email: ${v('email')}`,
+      v('phone') ? `Phone: ${v('phone')}` : null,
+      `Service: ${v('service')}`,
+      v('budget') ? `Budget: ${v('budget')}` : null,
+      v('hear') ? `Heard via: ${v('hear')}` : null,
+      fd.get('nda') ? 'NDA requested before scoping' : null,
+      '',
+      v('message'),
+    ].filter((l) => l !== null).join('\n');
+
+    const key = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+    if (!key) {
+      // No form backend configured: hand off to the visitor's mail client
+      // rather than failing silently.
+      window.location.href = `mailto:admin@awlabs.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+      return;
+    }
+
     try {
-      const res = await fetch('/contact.php', { method: 'POST', body: new FormData(form) });
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ access_key: key, subject, from_name: name, replyto: v('email'), message: body }),
+      });
       const json = await res.json();
 
       if (json.success) {
         if (form && success) { form.hidden = true; success.hidden = false; }
       } else {
-        alert(json.message || 'Something went wrong. Please email labs@allwebbedup.com.au');
+        alert('Something went wrong. Please email us directly at admin@awlabs.com.au');
         if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
       }
     } catch {
-      alert('Unable to send. Please email us directly at labs@allwebbedup.com.au');
+      alert('Unable to send. Please email us directly at admin@awlabs.com.au');
       if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
     }
   });
