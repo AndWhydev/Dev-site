@@ -125,6 +125,11 @@ import Footer from '../components/Footer.astro';
                 <label for="service">Service Interested In *</label>
                 <select id="service" name="service" required>
                   <option value="">Select a service...</option>
+                  <option>AI Agent Development</option>
+                  <option>AI Readiness Assessment</option>
+                  <option>Private LLM Deployment</option>
+                  <option>MCP Server Development</option>
+                  <option>AI Document Processing</option>
                   <option>Custom App Development</option>
                   <option>React and Next.js</option>
                   <option>Flutter Mobile Apps</option>
@@ -140,8 +145,6 @@ import Footer from '../components/Footer.astro';
                   <option>Cybersecurity</option>
                   <option>Database Architecture</option>
                   <option>Smart Contracts</option>
-                  <option>DeFi Platform</option>
-                  <option>NFT Marketplace</option>
                   <option>QA and Testing</option>
                   <option>Deployment</option>
                   <option>SEO and Backlinks</option>
@@ -522,7 +525,9 @@ import Footer from '../components/Footer.astro';
       v('message'),
     ].filter((l) => l !== null).join('\n');
 
-    const key = import.meta.env.PUBLIC_WEB3FORMS_KEY;
+    // Web3Forms access keys are public by design (they only allow sending to
+    // the inbox registered against the key, admin@awlabs.com.au).
+    const key = import.meta.env.PUBLIC_WEB3FORMS_KEY || '1fb248ed-c46d-4ba0-bdb6-6b18cbb7e07c';
     if (!key) {
       // No form backend configured: hand off to the visitor's mail client
       // rather than failing silently.
