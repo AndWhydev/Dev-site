@@ -1,0 +1,207 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Software Maintenance & Support Retainers | All Webbed Labs",
+  metaDescription: "Software maintenance retainers with clear response targets, security patching, dependency and runtime upgrades, monitoring and handover from other vendors.",
+  category: "Support",
+  serviceName: "Software Maintenance & Support",
+  slug: "software-maintenance-support",
+  heroHeadline: "Keep Your Software Patched, Monitored and Moving Forward",
+  heroTagline: "Monthly maintenance retainers with written response targets, security patching, dependency upgrades and monitoring, for software we built or software another vendor left behind.",
+  summaryStatement: "Software maintenance and support is the ongoing work of keeping a live application secure, working and current after launch: applying security patches, upgrading dependencies and runtimes before they reach end of life, monitoring for errors and outages, fixing defects and making small improvements, under an agreement that sets out response times, hours and what happens outside business hours.",
+  description: [
+    "Software does not stay finished. The day an application goes live, its dependencies start ageing. Open source libraries publish security fixes, cloud providers deprecate services, browsers and mobile operating systems change behaviour, and the runtime underneath the code has a published end-of-life date. Node.js, for example, supports each long-term support release for 30 months, and each Python version receives fixes for about five years. An application nobody touches for two years is not stable; it is quietly accumulating vulnerabilities and upgrade work that gets harder the longer it waits. The widely used planning figure is that maintenance costs around 15 to 20% of the original build each year, and most of that is not new features. It is the work of standing still safely.",
+    "Our maintenance retainers make that work predictable. Each month includes a block of senior engineering hours, a written response target for each severity level, a regular patch and upgrade cycle, and monitoring that tells us about errors and outages before your users do. We track your dependencies for published vulnerabilities, apply urgent security fixes out of cycle, and plan runtime and framework upgrades well ahead of their end-of-life dates rather than in a rush afterwards. Unused hours go to the backlog of small improvements you actually want. We also take over software built by other vendors or by a departed developer: we start with a structured handover and a health check, so you know what you have, what is at risk and what it will cost to keep running, before you commit to anything ongoing. You keep full ownership of the code, repository and cloud accounts throughout, so you are never locked in to us either.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      title: "Written Response Targets",
+      description: "Each retainer sets out what counts as critical, high, medium and low severity, and how quickly we respond to each during covered hours. You know in advance what happens when something breaks, instead of negotiating urgency by email while your users wait.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+      title: "Security Patching on a Cycle",
+      description: "Dependencies are scanned continuously for published vulnerabilities. Routine patches go out on a regular cycle with tests, and urgent fixes for exploitable issues are applied out of cycle. Patching applications is one of the ASD Essential Eight strategies, and this gives you the evidence trail to show it happens.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
+      title: "Upgrades Before End of Life",
+      description: "We keep a register of your runtimes, frameworks and managed cloud services with their end-of-support dates, and schedule upgrades months ahead. Moving one major version at a time is routine; jumping three versions after support has ended is a project.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+      title: "Monitoring That Reaches a Person",
+      description: "Uptime checks, error tracking and key performance alerts are set up if they do not exist, and routed to an engineer who knows your system. Many problems are fixed before anyone reports them, and the ones that are not arrive with the error trace already attached.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>',
+      title: "Handover From Another Vendor",
+      description: "We take over software built elsewhere through a structured handover: access transfer, a working local build, a documented deployment and a health report. If the previous vendor is unresponsive, we work from what you own and tell you plainly what is missing.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: "Hours That Move You Forward",
+      description: "Hours not used on incidents and patching go to a prioritised backlog of small improvements you choose. A monthly report shows what was patched, what was fixed, what was improved and what is coming up, so the retainer is visible value rather than an insurance premium.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "Node.js / TypeScript", "Python", "React / Next.js", "Flutter", "PostgreSQL", "AWS / Azure / Google Cloud",
+    "Vercel", "Sentry", "OpenTelemetry", "Grafana", "Dependabot / Renovate", "Snyk / npm audit / pip-audit",
+    "Better Stack / PagerDuty", "Terraform",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Access and Handover",
+      duration: "Week 1",
+      description: "We collect access to the repository, cloud accounts, domains, third-party services and any existing documentation, and confirm you hold ownership of each. For software from another vendor, we run a handover session with them where possible and record anything that cannot be transferred.",
+    },
+    {
+      step: "02",
+      title: "Health Check and Risk Register",
+      duration: "Weeks 1 to 2",
+      description: "We get the application building and deploying from a clean environment, scan dependencies for known vulnerabilities, list runtimes and services with their end-of-life dates, and review backups and monitoring. You receive a short report with a prioritised risk register and an estimate for anything urgent.",
+    },
+    {
+      step: "03",
+      title: "Stabilise the Urgent Items",
+      duration: "Weeks 2 to 4",
+      description: "Critical findings are fixed first: exploitable vulnerabilities, missing backups, expired certificates, unsupported runtimes and deployments that only one person knew how to run. This is quoted separately from the retainer so the monthly fee reflects steady-state work.",
+    },
+    {
+      step: "04",
+      title: "Monitoring and Runbooks",
+      duration: "Week 4",
+      description: "We set up or tune uptime checks, error tracking and alerting, and write runbooks for deployment, rollback, restoring from backup and the most likely incidents. Alerts route to the engineers covering your system, and to your team if you want visibility.",
+    },
+    {
+      step: "05",
+      title: "Monthly Retainer Cycle",
+      duration: "Ongoing, monthly",
+      description: "Each month covers incident response within the agreed targets, the scheduled patch and upgrade cycle, small improvements from your backlog and a written report. We review the risk register quarterly and plan upcoming runtime and framework upgrades ahead of their deadlines.",
+    },
+    {
+      step: "06",
+      title: "Annual Review",
+      duration: "Every 12 months",
+      description: "Once a year we review the hours used, incident history and upcoming end-of-life dates, and recommend whether the retainer level still fits, whether any part of the system is due for larger investment, and whether it is time to bring maintenance in-house. We will help with that transition if it is the right call.",
+    },
+  ],
+  industries: [
+    "Small & Mid-Sized Businesses",
+    "Software & SaaS",
+    "Professional Services",
+    "Not-for-Profits",
+    "Construction & Trades",
+    "Logistics & Transport",
+    "Education & Training",
+    "Retail & E-commerce",
+  ],
+  faqs: [
+    {
+      question: "How much does software maintenance cost per year?",
+      answer: "A common planning figure is 15 to 20% of the original build cost each year, covering patches, upgrades, bug fixes and small changes, plus hosting and licences on top. The real figure depends on how many dependencies and integrations the system has, how often it changes, and what response times you need. Our software maintenance cost guide explains the drivers and the arithmetic in more detail, and the retainer ranges on this page show typical monthly figures.",
+    },
+    {
+      question: "What is included in a maintenance retainer?",
+      answer: "A retainer includes a monthly block of senior engineering hours, response targets by severity during covered hours, dependency and security patching on a regular cycle, monitoring and alerting, runtime and framework upgrades planned ahead of end-of-life, small improvements from your backlog, and a monthly report. Larger features and major upgrades are scoped and quoted separately so they do not quietly consume the retainer.",
+    },
+    {
+      question: "Do you offer after-hours or 24/7 support?",
+      answer: "Our standard cover is business hours, Australian Eastern time, Monday to Friday. For systems where an outage at night or on a weekend has real cost, we offer an on-call option for critical incidents, priced separately because it means an engineer is rostered and reachable outside hours. We will tell you honestly if your system does not need it.",
+    },
+    {
+      question: "Can you take over software another company built?",
+      answer: "Yes. We start with a paid handover and health check rather than an immediate retainer, because we need to confirm we can build, deploy and safely change the system before we commit to response targets. If the original vendor has disappeared or will not cooperate, we work from the source code and accounts you own and document anything that is missing, such as credentials or undocumented infrastructure.",
+    },
+    {
+      question: "What happens to unused hours?",
+      answer: "Unused hours in a month go to your backlog of small improvements, technical debt reduction or documentation, agreed with you in advance. We do not bank hours indefinitely, because a large accrued balance usually means the retainer is set too high, and we would rather recommend a lower tier.",
+    },
+    {
+      question: "Why do dependency updates matter if the software works fine?",
+      answer: "Working software can still be vulnerable. Security issues are regularly found and published in open source libraries, and once a fix is public, attackers know exactly what to look for in unpatched systems. Runtimes also reach end of life on published dates, after which they stop receiving security fixes. Small regular upgrades are cheap and low risk; large overdue ones are expensive and risky.",
+    },
+    {
+      question: "Do we lose control of our code by using a retainer?",
+      answer: "No. The code stays in your repository and your cloud accounts stay in your name. We work through your access, commit through normal pull requests and keep runbooks up to date, so another team or your own staff can take over at any time. We will assist with the transition if you decide to move maintenance elsewhere.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "You have a live application that customers or staff depend on, and no in-house engineer whose job includes patching and upgrades",
+      "Your software was built by a vendor or developer who is no longer available, and you need someone to take responsibility for it",
+      "You need written response targets for incidents, for your own peace of mind or because a customer contract asks for them",
+      "The system has several dependencies, integrations or runtimes that need planned upgrades before they reach end of life",
+      "You want a steady flow of small improvements without scoping a new project each time",
+    ],
+    notRightFor: [
+      "You already employ engineers who own the system; ad hoc specialist help or a code audit may serve you better than a retainer",
+      "The software is a simple brochure site or an off-the-shelf SaaS product, where the vendor or a basic hosting plan already covers maintenance",
+      "The system is due to be retired or replaced within months, where minimal keep-alive support is more sensible than a full retainer",
+      "You need a large new feature or a rebuild, which should be scoped as a project rather than squeezed into monthly hours",
+      "You need a 24/7 staffed operations centre watching your systems around the clock, which is the domain of dedicated managed service providers",
+    ],
+  },
+  pricing: [
+    {
+      name: "Essentials (typical range)",
+      range: "$1.5k to $3.5k / month",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. About 1 to 2.5 senior days a month at a planning rate of roughly $1,400 a day: business-hours support, monthly patch cycle, dependency scanning, basic uptime and error monitoring, and a monthly report. Suits a single application with modest change.",
+    },
+    {
+      name: "Standard (typical range)",
+      range: "$4k to $9k / month",
+      detail: "Typical range, AUD ex GST. About 3 to 6 senior days a month: faster response targets, planned runtime and framework upgrades, performance and cost reviews, and a regular backlog of small improvements. Suits a customer-facing product or a business-critical internal system.",
+    },
+    {
+      name: "Priority with on-call (typical range)",
+      range: "$10k to $25k+ / month",
+      detail: "Typical range, AUD ex GST. More hours, rostered on-call for critical incidents outside business hours, and quarterly security and architecture reviews. A one-off handover and health check, typically $5k to $20k depending on system size, applies before any retainer for software we did not build.",
+    },
+  ],
+  definitions: [
+    {
+      term: "Service level agreement (SLA)",
+      definition: "The written terms that set out how quickly a support provider will respond to, and work on, issues of each severity, during which hours, and what happens if the targets are missed.",
+    },
+    {
+      term: "Response time vs resolution time",
+      definition: "Response time is how quickly an engineer acknowledges and starts work on an issue. Resolution time is how long it takes to fix it. Honest agreements commit to response times, because resolution depends on the problem.",
+    },
+    {
+      term: "End of life (EOL)",
+      definition: "The date after which a runtime, framework or product stops receiving updates, including security fixes. Software still running on an end-of-life component becomes steadily more exposed.",
+    },
+    {
+      term: "Long-term support (LTS)",
+      definition: "A release line that a project commits to supporting for an extended, published period. Node.js supports each LTS release for 30 months, which is why production systems should run on LTS versions.",
+    },
+    {
+      term: "Dependency update",
+      definition: "Moving a third-party library your code relies on to a newer version, usually to pick up security fixes or maintain compatibility. Tools such as Dependabot and Renovate propose these automatically for review.",
+    },
+    {
+      term: "On-call roster",
+      definition: "A schedule that makes a named engineer reachable outside business hours to respond to critical incidents, usually paid as a standby fee plus time worked when called.",
+    },
+    {
+      term: "Runbook",
+      definition: "A written, step-by-step procedure for a routine or emergency task, such as deploying, rolling back or restoring from a backup, so anyone on the team can do it correctly under pressure.",
+    },
+  ],
+  relatedServices: [
+    { title: "Software Maintenance Cost Guide", href: "/guides/software-maintenance-cost" },
+    { title: "Code Audit & Due Diligence", href: "/services/code-audit" },
+    { title: "Cloud Infrastructure & DevOps", href: "/services/cloud-infrastructure" },
+    { title: "Deployment & Release Engineering", href: "/services/deployment" },
+    { title: "Cybersecurity", href: "/services/cybersecurity" },
+    { title: "Legacy System Modernisation", href: "/services/legacy-modernisation" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

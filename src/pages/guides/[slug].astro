@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from 'astro:content';
+import LongformLayout from '../../layouts/LongformLayout.astro';
+import { guideCategories } from '../../data/guide-categories';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const cat = guideCategories[entry.data.category];
+const crumbs = [
+  { title: 'Home', href: '/' },
+  { title: 'Guides', href: '/guides' },
+  { title: cat.label, href: `/guides#${entry.data.category}` },
+  { title: entry.data.title },
+];
+---
+
+<LongformLayout data={entry.data} crumbs={crumbs} headings={headings} schemaType="Article">
+  <Content />
+</LongformLayout>

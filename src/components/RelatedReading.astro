@@ -1,0 +1,71 @@
+---
+/**
+ * Hub-to-spoke links: lists guides, solutions and location pages that point
+ * at this page (via their `service`, `industry` or `related` frontmatter).
+ * Keeps every long-form page reachable from its parent service or industry.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props { match: string; heading?: string; limit?: number }
+const { match, heading = 'Guides and related reading', limit = 9 } = Astro.props;
+
+const norm = (h: string) => h.replace(/\/+$/, '');
+const target = norm(match);
+const [guides, solutions, locations] = await Promise.all([
+  getCollection('guides'),
+  getCollection('solutions'),
+  getCollection('locations'),
+]);
+
+type Item = { title: string; href: string; kind: string; score: number };
+const items: Item[] = [];
+const score = (d: { service?: { href: string }; related: { href: string }[]; industry?: { href: string } }) =>
+  (d.service && norm(d.service.href) === target ? 2 : 0) +
+  (d.industry && norm(d.industry.href) === target ? 3 : 0) +
+  (d.related.some((r) => norm(r.href) === target) ? 1 : 0);
+
+for (const g of guides) {
+  const s = score(g.data);
+  if (s) items.push({ title: g.data.title, href: `/guides/${g.id}`, kind: g.data.eyebrow, score: s });
+}
+for (const g of solutions) {
+  const s = score(g.data);
+  if (s) items.push({ title: g.data.title, href: `/solutions/${g.id}`, kind: 'Industry solution', score: s + 1 });
+}
+for (const g of locations) {
+  const s = score(g.data);
+  if (s) items.push({ title: g.data.title, href: `/locations/${g.id}`, kind: g.data.eyebrow, score: s });
+}
+const list = items.sort((a, b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, limit);
+---
+
+{list.length > 0 && (
+  <section class="rr" aria-labelledby="rr-heading">
+    <div class="rr-inner">
+      <span class="section-label">Further reading</span>
+      <h2 id="rr-heading" class="section-heading">{heading}</h2>
+      <ul class="rr-list">
+        {list.map((i) => (
+          <li>
+            <a href={i.href} class="rr-card">
+              <span class="rr-kind">{i.kind}</span>
+              <span class="rr-title">{i.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .rr { padding: 5rem 0; border-top: 1px solid #1a2620; background: #0a0f0e; }
+  .rr-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .rr .section-heading { margin-bottom: 2rem; }
+  .rr-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .rr-card { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding: 1.25rem 1.35rem; border: 1px solid #1a2620; border-radius: 14px; background: #0f1614; text-decoration: none; transition: border-color 0.2s ease; }
+  .rr-card:hover { border-color: #0d9373; }
+  .rr-kind { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #19b58f; font-weight: 700; }
+  .rr-title { font-family: 'Sora', sans-serif; font-weight: 600; color: #fff; line-height: 1.4; }
+  @media (max-width: 640px) { .rr { padding: 3.5rem 0; } .rr-inner { padding: 0 1.25rem; } }
+</style>

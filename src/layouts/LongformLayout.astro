@@ -1,0 +1,314 @@
+---
+/**
+ * Long-form search page: guides, solutions and location pages.
+ * Structure follows SEO-SOP.md section 5: answer first, takeaways, body,
+ * FAQs, sources, related links, visible "last updated" date.
+ */
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+interface Crumb { title: string; href?: string }
+interface Heading { depth: number; slug: string; text: string }
+interface LinkItem { title: string; href: string }
+
+interface Props {
+  data: {
+    title: string;
+    metaTitle: string;
+    description: string;
+    eyebrow: string;
+    published: Date;
+    updated: Date;
+    summary: string;
+    takeaways: string[];
+    faqs: { q: string; a: string }[];
+    sources: { title: string; url: string; publisher?: string }[];
+    related: LinkItem[];
+    service?: LinkItem;
+    disclaimer: 'none' | 'legal' | 'tax' | 'financial';
+  };
+  crumbs: Crumb[];
+  headings: Heading[];
+  /** 'Article' for guides, 'Service' for solution and location pages. */
+  schemaType: 'Article' | 'Service';
+  areaServed?: string;
+}
+
+const { data, crumbs, headings, schemaType, areaServed } = Astro.props;
+const siteUrl = 'https://www.awlabs.com.au';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const orgRef = { '@id': `${siteUrl}/#organization` };
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Australia/Sydney' });
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+
+const toc = headings.filter((h) => h.depth === 2);
+
+const mainSchema =
+  schemaType === 'Article'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: data.title,
+        description: data.description,
+        datePublished: iso(data.published),
+        dateModified: iso(data.updated),
+        author: orgRef,
+        publisher: orgRef,
+        mainEntityOfPage: pageUrl,
+        inLanguage: 'en-AU',
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: data.title,
+        description: data.description,
+        provider: orgRef,
+        areaServed: areaServed
+          ? { '@type': 'Place', name: areaServed }
+          : { '@type': 'Country', name: 'Australia' },
+        url: pageUrl,
+      };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.title,
+    ...(c.href ? { item: new URL(c.href, siteUrl).href } : { item: pageUrl }),
+  })),
+};
+
+const faqSchema = data.faqs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: data.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+
+const extraSchema = [mainSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
+const disclaimers: Record<string, string> = {
+  legal:
+    'This page is general information about Australian law and regulation, current at the date shown. It is not legal advice. Get advice from a qualified lawyer about your circumstances.',
+  tax:
+    'This page is general information, not tax advice. All Webbed Labs is not a registered tax agent. Eligibility for the R&D Tax Incentive depends on your circumstances; speak to a registered R&D tax agent and see business.gov.au and the ATO.',
+  financial:
+    'Prices on this page are typical Australian market ranges for planning purposes, not quotes. Every project is priced after scoping.',
+};
+---
+
+<Layout title={data.metaTitle} description={data.description} extraSchema={extraSchema}>
+  <Header />
+  <main class="lf">
+    <header class="lf-hero">
+      <div class="lf-wrap">
+        <nav class="lf-crumbs" aria-label="Breadcrumb">
+          <ol>
+            {crumbs.map((c, i) => (
+              <li>
+                {c.href && i < crumbs.length - 1 ? <a href={c.href}>{c.title}</a> : <span aria-current="page">{c.title}</span>}
+              </li>
+            ))}
+          </ol>
+        </nav>
+        <span class="section-label">{data.eyebrow}</span>
+        <h1 class="lf-title">{data.title}</h1>
+        <p class="lf-meta">
+          <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
+          <span aria-hidden="true">·</span>
+          <span>Published by <a href="/about">All Webbed Labs</a></span>
+          <span aria-hidden="true">·</span>
+          <a href="/editorial-policy">How we write</a>
+        </p>
+      </div>
+    </header>
+
+    <div class="lf-wrap lf-grid">
+      <article class="lf-article">
+        <section class="lf-summary" aria-labelledby="lf-short-answer">
+          <h2 id="lf-short-answer" class="lf-summary-label">The short answer</h2>
+          <p>{data.summary}</p>
+        </section>
+
+        <section class="lf-takeaways" aria-labelledby="lf-takeaways">
+          <h2 id="lf-takeaways" class="lf-small-heading">Key takeaways</h2>
+          <ul>
+            {data.takeaways.map((t) => <li>{t}</li>)}
+          </ul>
+        </section>
+
+        <div class="lf-prose">
+          <slot />
+        </div>
+
+        {data.faqs.length > 0 && (
+          <section class="lf-faqs" aria-labelledby="lf-faq-heading">
+            <h2 id="lf-faq-heading">Frequently asked questions</h2>
+            {data.faqs.map((f) => (
+              <details class="lf-faq">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </section>
+        )}
+
+        {data.disclaimer !== 'none' && <p class="lf-disclaimer">{disclaimers[data.disclaimer]}</p>}
+
+        {data.sources.length > 0 && (
+          <section class="lf-sources" aria-labelledby="lf-sources-heading">
+            <h2 id="lf-sources-heading" class="lf-small-heading">Sources</h2>
+            <ol>
+              {data.sources.map((s) => (
+                <li>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+                  {s.publisher && <span class="lf-src-pub">, {s.publisher}</span>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+      </article>
+
+      <aside class="lf-aside">
+        {toc.length > 2 && (
+          <nav class="lf-toc" aria-label="On this page">
+            <p class="lf-small-heading">On this page</p>
+            <ol>
+              {toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+            </ol>
+          </nav>
+        )}
+        <div class="lf-cta-card">
+          <p class="lf-cta-title">Talk to a senior engineer</p>
+          <p class="lf-cta-copy">Sydney based, AEST hours, fixed price after a paid discovery. No sales layer between you and the people who build.</p>
+          <a href="/contact" class="btn-primary lf-cta-btn">Book a call</a>
+          {data.service && <a href={data.service.href} class="lf-cta-link">{data.service.title} &rarr;</a>}
+        </div>
+      </aside>
+    </div>
+
+    {data.related.length > 0 && (
+      <section class="lf-related" aria-labelledby="lf-related-heading">
+        <div class="lf-wrap">
+          <h2 id="lf-related-heading" class="lf-small-heading">Related</h2>
+          <ul>
+            {data.related.map((r) => (
+              <li><a href={r.href}>{r.title}<span aria-hidden="true">&rarr;</span></a></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .lf { background: #0a0f0e; color: #fff; }
+  .lf-wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  .lf-hero { padding: 9rem 0 2.5rem; border-bottom: 1px solid #1a2620; background: radial-gradient(ellipse 60% 80% at 20% 0%, rgba(13,147,115,0.10), transparent 70%); }
+  .lf-crumbs ol { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0 0 1.5rem; padding: 0; font-size: 0.8125rem; color: #718b81; }
+  .lf-crumbs li + li::before { content: '/'; margin-right: 0.5rem; color: #3a5048; }
+  .lf-crumbs a { color: #718b81; text-decoration: none; }
+  .lf-crumbs a:hover { color: #0d9373; }
+  .lf-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4.6vw, 3.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin: 0.75rem 0 1.25rem; max-width: 20ch; }
+  .lf-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.875rem; color: #8aa09a; margin: 0; }
+  .lf-meta a { color: #8aa09a; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #2a3d35; }
+  .lf-meta a:hover { color: #0d9373; }
+
+  .lf-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 4rem; padding-top: 3rem; padding-bottom: 4rem; }
+  .lf-article { min-width: 0; max-width: 760px; }
+
+  .lf-summary { background: linear-gradient(180deg, rgba(13,147,115,0.12), rgba(13,147,115,0.04)); border: 1px solid rgba(13,147,115,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 2rem; }
+  .lf-summary-label { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: #19b58f; margin: 0 0 0.6rem; font-weight: 700; }
+  .lf-summary p { font-size: 1.125rem; line-height: 1.65; color: #e8f0ed; margin: 0; }
+
+  .lf-small-heading { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8aa09a; font-weight: 700; margin: 0 0 0.9rem; }
+  .lf-takeaways { margin-bottom: 2.5rem; }
+  .lf-takeaways ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
+  .lf-takeaways li { position: relative; padding-left: 1.6rem; line-height: 1.6; color: #d5e0dc; }
+  .lf-takeaways li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 0.6rem; height: 0.6rem; border-radius: 2px; background: #0d9373; }
+
+  .lf-prose { font-size: 1.0625rem; line-height: 1.75; color: #c9d6d1; }
+  .lf-prose :global(h2) { font-family: 'Sora', sans-serif; font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 700; color: #fff; line-height: 1.25; letter-spacing: -0.015em; margin: 3rem 0 1rem; scroll-margin-top: 110px; }
+  .lf-prose :global(h3) { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 600; color: #fff; margin: 2rem 0 0.75rem; scroll-margin-top: 110px; }
+  .lf-prose :global(p) { margin: 0 0 1.15rem; }
+  .lf-prose :global(strong) { color: #fff; font-weight: 600; }
+  .lf-prose :global(a) { color: #19b58f; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(25,181,143,0.4); }
+  .lf-prose :global(a:hover) { text-decoration-color: #19b58f; }
+  .lf-prose :global(ul), .lf-prose :global(ol) { margin: 0 0 1.25rem; padding-left: 1.35rem; }
+  .lf-prose :global(li) { margin-bottom: 0.45rem; }
+  .lf-prose :global(li::marker) { color: #0d9373; }
+  .lf-prose :global(blockquote) { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid #0d9373; background: #0f1614; border-radius: 0 10px 10px 0; color: #dfe8e4; }
+  .lf-prose :global(blockquote p:last-child) { margin-bottom: 0; }
+  .lf-prose :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: #111a17; border: 1px solid #1a2620; padding: 0.1em 0.35em; border-radius: 5px; color: #e8f0ed; }
+  .lf-prose :global(table) { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.5rem 0 1.75rem; font-size: 0.9375rem; line-height: 1.5; }
+  .lf-prose :global(thead th) { background: #111a17; color: #fff; font-weight: 600; text-align: left; }
+  .lf-prose :global(th), .lf-prose :global(td) { border: 1px solid #1f2e28; padding: 0.7rem 0.85rem; vertical-align: top; min-width: 120px; }
+  .lf-prose :global(tbody tr:nth-child(even) td) { background: rgba(255,255,255,0.015); }
+  .lf-prose :global(hr) { border: 0; border-top: 1px solid #1a2620; margin: 2.5rem 0; }
+
+  .lf-faqs { margin-top: 3.5rem; }
+  .lf-faqs h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 700; margin: 0 0 1.25rem; }
+  .lf-faq { border: 1px solid #1a2620; border-radius: 12px; background: #0f1614; margin-bottom: 0.75rem; }
+  .lf-faq summary { cursor: pointer; list-style: none; padding: 1.05rem 3rem 1.05rem 1.25rem; font-weight: 600; color: #fff; position: relative; line-height: 1.45; }
+  .lf-faq summary::-webkit-details-marker { display: none; }
+  .lf-faq summary::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: #0d9373; font-size: 1.4rem; font-weight: 400; }
+  .lf-faq[open] summary::after { content: '\2212'; }
+  .lf-faq p { margin: 0; padding: 0 1.25rem 1.2rem; color: #c9d6d1; line-height: 1.7; }
+
+  .lf-disclaimer { margin: 2.5rem 0 0; padding: 1rem 1.25rem; border: 1px dashed #2a3d35; border-radius: 10px; font-size: 0.875rem; color: #8aa09a; line-height: 1.6; }
+
+  .lf-sources { margin-top: 2.5rem; }
+  .lf-sources ol { margin: 0; padding-left: 1.35rem; font-size: 0.9rem; color: #8aa09a; line-height: 1.6; }
+  .lf-sources li { margin-bottom: 0.4rem; }
+  .lf-sources a { color: #b4c4be; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #2a3d35; overflow-wrap: anywhere; }
+  .lf-sources a:hover { color: #19b58f; }
+
+  .lf-aside { position: relative; }
+  .lf-toc, .lf-cta-card { position: sticky; top: 110px; }
+  .lf-toc { border-left: 1px solid #1a2620; padding-left: 1.25rem; margin-bottom: 2rem; position: static; }
+  .lf-toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+  .lf-toc a { color: #8aa09a; text-decoration: none; font-size: 0.875rem; line-height: 1.45; display: block; }
+  .lf-toc a:hover { color: #0d9373; }
+  .lf-cta-card { background: #0f1614; border: 1px solid #1a2620; border-radius: 16px; padding: 1.5rem; }
+  .lf-cta-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem; margin: 0 0 0.5rem; }
+  .lf-cta-copy { font-size: 0.9rem; line-height: 1.6; color: #8aa09a; margin: 0 0 1.1rem; }
+  .lf-cta-btn { width: 100%; justify-content: center; }
+  .lf-cta-link { display: block; margin-top: 0.9rem; font-size: 0.875rem; color: #19b58f; text-decoration: none; }
+  .lf-cta-link:hover { text-decoration: underline; }
+
+  .lf-related { border-top: 1px solid #1a2620; padding: 3rem 0 4rem; }
+  .lf-related ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+  .lf-related a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.15rem; border: 1px solid #1a2620; border-radius: 12px; background: #0f1614; color: #e8f0ed; text-decoration: none; font-weight: 500; line-height: 1.4; transition: border-color 0.2s ease; }
+  .lf-related a:hover { border-color: #0d9373; }
+  .lf-related a span { color: #0d9373; }
+
+  @media (max-width: 960px) {
+    .lf-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .lf-aside { order: 2; }
+    .lf-toc { display: none; }
+    .lf-cta-card { position: static; }
+  }
+  @media (max-width: 640px) {
+    .lf-hero { padding: 7rem 0 2rem; }
+    .lf-summary { padding: 1.25rem; }
+    .lf-summary p { font-size: 1.0625rem; }
+    .lf-prose { font-size: 1rem; }
+  }
+</style>

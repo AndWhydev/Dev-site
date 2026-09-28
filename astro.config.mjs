@@ -2,6 +2,20 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Map long-form page URLs to their frontmatter `updated` date for <lastmod>.
+// Only pages with a real, maintained date get one (Google ignores unreliable lastmod).
+const lastmod = new Map();
+for (const dir of ['guides', 'solutions', 'locations']) {
+  const base = path.join('src/content', dir);
+  if (!fs.existsSync(base)) continue;
+  for (const f of fs.readdirSync(base).filter((n) => n.endsWith('.md'))) {
+    const m = fs.readFileSync(path.join(base, f), 'utf8').match(/^updated:\s*"?(\d{4}-\d{2}-\d{2})/m);
+    if (m) lastmod.set(`https://www.awlabs.com.au/${dir}/${f.replace(/\.md$/, '')}`, m[1]);
+  }
+}
 
 export default defineConfig({
   site: 'https://www.awlabs.com.au',
@@ -14,6 +28,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/welcome') && !page.includes('/how-we-work') && !page.includes('/demos/'),
+      serialize: (item) => {
+        const d = lastmod.get(item.url.replace(/\/$/, ''));
+        return d ? { ...item, lastmod: d } : item;
+      },
     }),
   ],
   vite: {

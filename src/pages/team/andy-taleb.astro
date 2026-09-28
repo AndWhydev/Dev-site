@@ -1,0 +1,346 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+/**
+ * Founder profile. Target of the Person @id referenced by the sitewide
+ * Organization schema (founder) and by guide bylines. Facts here must match
+ * SEO-SOP.md section 3 exactly: software since 2019, All Webbed Up since 2021,
+ * All Webbed Labs launched mid 2026. LinkedIn is the only external profile
+ * we link. Never add links or sameAs entries for code hosting profiles.
+ */
+
+const siteUrl = 'https://www.awlabs.com.au';
+const linkedIn = 'https://www.linkedin.com/in/andytaleb/';
+
+const pageTitle = 'Andy Taleb, Founder of All Webbed Labs';
+const pageDescription =
+  'Andy Taleb founded All Webbed Labs, a Sydney software and AI company. Building software since 2019 and running All Webbed Up since 2021.';
+
+const timeline = [
+  { year: '2019', text: 'Starts building software professionally.' },
+  { year: '2021', text: 'Begins running All Webbed Up, a Sydney marketing and development agency, which he still runs today.' },
+  { year: 'Mid 2026', text: 'Founds All Webbed Labs as a partnership with a group of senior developers and founders, focused on enterprise software and AI.' },
+];
+
+const role = [
+  { title: 'Architecture', body: 'Makes or reviews the key architecture decisions on engagements: how a system is structured, where it is hosted, and how AI components are governed.' },
+  { title: 'Code review', body: 'Stays hands-on in the code, reviewing the work that goes into client systems.' },
+  { title: 'Commercial conversations', body: 'Takes part in the commercial conversations, from first brief through scoping and pricing, so the person you brief stays involved in the build.' },
+  { title: 'Editorial responsibility', body: 'Has final responsibility for the guides and pages published on this site, under our editorial policy.' },
+];
+
+const reading = [
+  { title: 'Data residency vs data sovereignty in Australia', href: '/guides/data-residency-vs-data-sovereignty' },
+  { title: 'How to choose an AI development company in Australia', href: '/guides/how-to-choose-an-ai-development-company' },
+  { title: 'How much does custom software cost in Australia?', href: '/guides/custom-software-development-cost-australia' },
+  { title: 'Fixed price vs time and materials contracts', href: '/guides/fixed-price-vs-time-and-materials' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${siteUrl}/team/andy-taleb#webpage`,
+  url: `${siteUrl}/team/andy-taleb`,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: 'en-AU',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': `${siteUrl}/team/andy-taleb#person`,
+    name: 'Andy Taleb',
+    jobTitle: 'Founder',
+    url: `${siteUrl}/team/andy-taleb`,
+    image: `${siteUrl}/team/andy-taleb.webp`,
+    worksFor: { '@id': `${siteUrl}/#organization` },
+    sameAs: [linkedIn],
+    knowsAbout: [
+      'Custom software development',
+      'Software architecture',
+      'Artificial intelligence integration',
+      'Large language model applications',
+      'Retrieval-augmented generation',
+      'Web and mobile application development',
+      'TypeScript',
+      'Next.js',
+      'Flutter',
+      'Cloud infrastructure',
+    ],
+  },
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} extraSchema={[schema]}>
+  <Header />
+  <main>
+
+    <section class="pf-hero">
+      <div class="pf-inner pf-hero-grid">
+        <div class="pf-photo reveal">
+          <img src="/team/andy-taleb.webp" alt="Andy Taleb, founder of All Webbed Labs" width="400" height="400" loading="eager" decoding="async" />
+        </div>
+        <div class="reveal">
+          <span class="section-label">Team</span>
+          <h1 class="pf-title">Andy Taleb</h1>
+          <p class="pf-role">Founder, All Webbed Labs</p>
+          <p class="pf-lead">
+            Andy has been building software professionally since 2019 and has run All Webbed Up, a Sydney marketing and development agency, since 2021. In mid 2026 he founded All Webbed Labs as a partnership with a group of senior developers and founders, to focus on enterprise software and AI.
+          </p>
+          <div class="pf-actions">
+            <a href={linkedIn} class="btn-outline" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:admin@awlabs.com.au" class="btn-primary">Contact All Webbed Labs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-section pf-alt">
+      <div class="pf-inner">
+        <div class="reveal pf-intro">
+          <span class="section-label">What he does</span>
+          <h2 class="section-heading">Hands-on, from first call to final commit.</h2>
+          <p class="section-subheading">
+            Andy works across architecture, code review and commercial conversations on All Webbed Labs engagements.
+          </p>
+        </div>
+        <div class="pf-grid">
+          {role.map((r) => (
+            <article class="pf-card reveal">
+              <h3>{r.title}</h3>
+              <p>{r.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-section">
+      <div class="pf-inner">
+        <div class="reveal pf-intro">
+          <span class="section-label">Background</span>
+          <h2 class="section-heading">Timeline.</h2>
+        </div>
+        <ol class="pf-timeline">
+          {timeline.map((t) => (
+            <li class="reveal">
+              <span class="pf-year">{t.year}</span>
+              <p>{t.text}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="pf-note reveal">
+          Read the fuller story on <a href="/our-journey">our journey</a>, or meet the rest of the team on the <a href="/about">about page</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="pf-section pf-alt">
+      <div class="pf-inner">
+        <div class="reveal pf-intro">
+          <span class="section-label">Reading</span>
+          <h2 class="section-heading">Guides from All Webbed Labs.</h2>
+          <p class="section-subheading">
+            Andy has final responsibility for the guides on this site. See our <a href="/editorial-policy">editorial policy</a> for how they are researched and written.
+          </p>
+        </div>
+        <ul class="pf-reading">
+          {reading.map((r) => (
+            <li class="reveal"><a href={r.href}>{r.title}</a></li>
+          ))}
+        </ul>
+        <p class="pf-note reveal"><a href="/guides">Browse all guides</a></p>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .pf-hero {
+    padding: 10rem 0 5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .pf-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .pf-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .pf-hero-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .pf-photo img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid #1e2d28;
+  }
+  .pf-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.5rem;
+  }
+  .pf-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #0d9373;
+    margin: 0 0 1.5rem;
+  }
+  .pf-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 0 2rem;
+  }
+  .pf-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .pf-actions .btn-outline, .pf-actions .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pf-section { padding: 6rem 0; background: #0a0f0e; }
+  .pf-alt { background: #0f1614; }
+  .pf-intro { max-width: 760px; }
+  .pf-intro a, .pf-note a, .pf-reading a {
+    color: #19b58f;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.4);
+  }
+  .pf-intro a:hover, .pf-note a:hover, .pf-reading a:hover { border-color: #19b58f; }
+
+  .pf-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .pf-card {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+  }
+  .pf-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem;
+  }
+  .pf-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .pf-timeline {
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+    max-width: 760px;
+    border-left: 2px solid #1e2d28;
+  }
+  .pf-timeline li {
+    position: relative;
+    padding: 0 0 2rem 2rem;
+  }
+  .pf-timeline li::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d9373;
+  }
+  .pf-year {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0d9373;
+    letter-spacing: 0.04em;
+  }
+  .pf-timeline p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0.375rem 0 0;
+  }
+  .pf-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    margin: 1.5rem 0 0;
+  }
+
+  .pf-reading {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .pf-reading li {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .pf-hero-grid { grid-template-columns: 240px 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 768px) {
+    .pf-hero-grid { grid-template-columns: 1fr; }
+    .pf-photo img { max-width: 220px; }
+    .pf-grid, .pf-reading { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .pf-hero { padding: 8rem 0 3.5rem; }
+    .pf-section { padding: 4rem 0; }
+    .pf-inner { padding: 0 1rem; }
+    .pf-card { padding: 1.5rem; }
+  }
+</style>

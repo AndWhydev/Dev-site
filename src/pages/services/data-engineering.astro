@@ -1,0 +1,206 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Data Engineering & AI Data Readiness | All Webbed Labs",
+  metaDescription: "Data pipelines, warehouses, quality testing and governance that give AI and analytics clean, documented, permissioned data, hosted in Australian regions.",
+  category: "AI & Data",
+  serviceName: "Data Engineering",
+  slug: "data-engineering",
+  heroHeadline: "The Data Foundation Your AI and Analytics Depend On",
+  heroTagline: "Pipelines, warehouses, quality checks and governance that turn scattered, inconsistent source data into something a model, a dashboard or an auditor can trust.",
+  summaryStatement: "Data engineering is the discipline of building and operating the pipelines, storage and controls that move data from source systems into a governed platform, tested for quality, documented with lineage and classified for sensitivity, so that analytics, machine learning and AI applications are built on data that is accurate, current and lawfully usable.",
+  description: [
+    "Most AI projects that stall do not fail on the model. They fail on the data. The customer record exists in three systems with three spellings, the product table was last reconciled two years ago, the documents an assistant should answer from sit in shared drives with no owner and no permissions model, and nobody can say which fields contain personal information. A dashboard built on that data shows confident wrong numbers; an AI feature built on it gives confident wrong answers, faster. Data engineering is the unglamorous work that fixes this at the source: getting data out of operational systems reliably, cleaning and joining it in one place, testing it continuously, and recording where every field came from and who is allowed to use it.",
+    "We design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse in an Australian region, transforming it in version-controlled, tested models, and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, owned by you and documented well enough for your team to run.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+      title: "Pipelines That Run Unattended",
+      description: "Ingestion is orchestrated, retried on failure and alerted when something breaks, so data arrives on time without someone running exports by hand. Incremental and change-data-capture loads keep volumes and costs down as history grows.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: "Quality Tested on Every Load",
+      description: "Automated tests check freshness, completeness, uniqueness, valid values and reconciliation against source totals on every run. A bad load is stopped and flagged before it reaches a dashboard, a model or a customer, instead of being noticed weeks later.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>',
+      title: "Lineage You Can Show an Auditor",
+      description: "Every table and metric can be traced back through its transformations to the source systems that fed it. When a number is questioned or a model output needs explaining, the answer is a diagram, not an investigation.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: "Sensitive Data Classified",
+      description: "Personal and sensitive fields are identified, tagged and handled by policy: masked in analytics, excluded from AI training and prompts where required, and restricted by role. That gives your privacy team a clear view of where personal information flows.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>',
+      title: "Unstructured Data Made Usable",
+      description: "Documents, emails and tickets are inventoried, extracted, de-duplicated and tagged with owners and access rules, then kept current by refresh pipelines. This is the groundwork a RAG knowledge base or document AI system needs to give reliable answers.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
+      title: "One Governed Source of Truth",
+      description: "Shared definitions for customers, products, revenue and other core entities live in version-controlled models, so finance, operations and AI projects work from the same numbers. Changes are reviewed like code, with tests, before they go live.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "Python", "SQL", "dbt", "Apache Airflow", "Dagster", "Fivetran / Airbyte",
+    "Snowflake", "Google BigQuery", "Databricks", "PostgreSQL", "Amazon S3 / Azure Data Lake",
+    "Apache Iceberg", "Debezium (CDC)", "Great Expectations / Soda",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Use Cases and Source Inventory",
+      duration: "Weeks 1 to 2",
+      description: "We start from the analytics questions and AI use cases the platform must serve, then inventory the source systems, documents and owners behind them. We assess data quality, volumes, sensitivity and residency requirements, and agree the first use case the platform will deliver end to end.",
+    },
+    {
+      step: "02",
+      title: "Platform Architecture",
+      duration: "Weeks 2 to 3",
+      description: "We recommend a warehouse or lakehouse, ingestion approach, orchestration and quality tooling that fit your scale, skills and budget, hosted in an Australian cloud region by default. Architecture decisions are written down with the trade-offs, so your team understands why each choice was made.",
+    },
+    {
+      step: "03",
+      title: "Ingestion Pipelines",
+      duration: "Weeks 3 to 7",
+      description: "We build pipelines from the priority sources using managed connectors where they are reliable and custom code where they are not, with incremental loads, retries and alerting. For unstructured sources, we extract text and metadata and attach ownership and access rules at ingestion.",
+    },
+    {
+      step: "04",
+      title: "Modelling and Quality Tests",
+      duration: "Weeks 5 to 9",
+      description: "Raw data is transformed through staged, version-controlled models into clean, documented tables for core business entities. Quality tests run on every load, and reconciliation checks compare totals against the source systems so trust in the numbers is earned, not assumed.",
+    },
+    {
+      step: "05",
+      title: "Governance and Access",
+      duration: "Weeks 8 to 10",
+      description: "We classify personal and sensitive fields, apply masking and role-based access, publish a data catalogue with lineage, and document retention rules. The first use case, whether a dashboard, a model feature or a knowledge base feed, goes live on the governed data.",
+    },
+    {
+      step: "06",
+      title: "Operations and Handover",
+      duration: "Final 2 weeks",
+      description: "We set up monitoring for pipeline health, freshness and cost, write runbooks for common failures, and train your team on adding sources and models safely. Ongoing operation is available under a support retainer if you do not have data engineers in-house.",
+    },
+  ],
+  industries: [
+    "Financial Services",
+    "Insurance",
+    "Healthcare & Aged Care",
+    "Retail & E-commerce",
+    "Logistics & Supply Chain",
+    "Utilities & Energy",
+    "Professional Services",
+    "Government & Agencies",
+  ],
+  faqs: [
+    {
+      question: "What is the difference between data engineering and data analytics?",
+      answer: "Data engineering builds and runs the pipelines, storage and controls that make data reliable and available. Data analytics uses that data to answer questions through dashboards, reports and models. Engineering is the foundation and analytics is what sits on top. Our data analytics service focuses on the reporting and insight layer; this service focuses on the platform underneath, and many projects need both.",
+    },
+    {
+      question: "Do we need data engineering before starting an AI project?",
+      answer: "Not always, but more often than people expect. A narrow AI feature over a clean, single source can start immediately. Anything that combines data from several systems, answers questions from a large document collection, or makes decisions about people needs reliable, permissioned and current data, and it is cheaper to build that foundation once than to patch it inside every AI project.",
+    },
+    {
+      question: "What does AI data readiness actually mean?",
+      answer: "It means the data an AI system will use is accurate enough, current enough, documented, classified for sensitivity and accessible under clear rules. For structured data that means tested, reconciled models. For documents it means knowing what exists, which versions are authoritative, who owns them and who may see them. A readiness assessment measures each of those against your intended use cases and tells you what to fix first.",
+    },
+    {
+      question: "Should we use a data warehouse, a data lake or a lakehouse?",
+      answer: "It depends on your data and your team. A cloud warehouse such as Snowflake or BigQuery suits mostly structured business data and SQL-skilled teams. A lakehouse built on open table formats such as Apache Iceberg suits large volumes, mixed structured and unstructured data, and machine learning workloads. Many mid-sized organisations are well served by PostgreSQL for longer than they think. We recommend the simplest option that meets your needs for the next few years.",
+    },
+    {
+      question: "Can our data stay in Australia?",
+      answer: "Yes. The major warehouse and lakehouse platforms and the underlying cloud storage can be deployed in Australian regions, including AWS Sydney and Melbourne, Azure Australia East and Southeast, and Google Cloud Sydney and Melbourne. We confirm the specific services and features available in your chosen region at the start of the project, because availability varies by product.",
+    },
+    {
+      question: "How do you handle personal information in a data platform?",
+      answer: "We identify and tag personal and sensitive fields during ingestion, apply masking or tokenisation for analytics users who do not need raw values, restrict access by role, and document retention and deletion rules. This supports your obligations under the Privacy Act 1988 and the Australian Privacy Principles, though your organisation remains responsible for how it uses the data. This is general information, not legal advice.",
+    },
+    {
+      question: "How long does it take to build a data platform?",
+      answer: "A first production use case on a new platform, with a handful of sources, tested models and governance basics, typically takes 8 to 12 weeks. Broader platforms grow source by source after that. We deliberately deliver one real use case end to end early, rather than spending months ingesting everything before anyone sees value.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "Your AI or analytics plans depend on data spread across several systems, spreadsheets or document stores that do not agree with each other",
+      "Reports are produced by manual exports and spreadsheet work that breaks when the person who does it is away",
+      "You need to show where numbers or AI outputs came from, for a board, a regulator or an auditor",
+      "Personal or sensitive information is involved and you need to know where it flows and who can see it",
+      "You want a platform your own team can extend, built on documented, version-controlled code rather than a black box",
+    ],
+    notRightFor: [
+      "Your reporting needs are met by the built-in reports of one or two SaaS systems, where a data platform would add cost without adding insight",
+      "You need a dashboard on data that is already clean and centralised, where our data analytics service is the more direct route",
+      "Your data volumes are small and a well-structured PostgreSQL database with a few scheduled queries will do the job",
+      "The real problem is a broken operational process creating bad data, which should be fixed at the source before any pipeline is built",
+      "You are looking for a one-off data migration between two systems rather than an ongoing platform",
+    ],
+  },
+  pricing: [
+    {
+      name: "AI data readiness assessment (typical range)",
+      range: "$15k to $35k",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. About 10 to 25 senior days at a planning rate of roughly $1,400 a day: source and document inventory, quality and sensitivity assessment against your AI use cases, and a prioritised remediation plan.",
+    },
+    {
+      name: "Data platform foundation (typical range)",
+      range: "$50k to $120k",
+      detail: "Typical range, AUD ex GST. Warehouse or lakehouse in an Australian region, pipelines from a handful of priority sources, tested models for core entities, quality checks, basic governance and one production use case. Platform and connector subscriptions are billed separately by vendors.",
+    },
+    {
+      name: "Enterprise data platform (typical range)",
+      range: "$150k+",
+      detail: "Typical range, AUD ex GST. Many sources including legacy systems, change data capture, unstructured document pipelines for AI, a data catalogue with lineage, fine-grained access control and support for several teams. Scoped after a paid discovery and then fixed price.",
+    },
+  ],
+  definitions: [
+    {
+      term: "Data pipeline",
+      definition: "An automated process that extracts data from a source system, transforms it and loads it into a destination such as a warehouse, on a schedule or in response to changes.",
+    },
+    {
+      term: "Lakehouse",
+      definition: "A data platform that stores data in open file formats on low-cost cloud storage while providing warehouse-style tables, transactions and SQL access, so structured and unstructured data can be managed together.",
+    },
+    {
+      term: "Change data capture (CDC)",
+      definition: "A technique that reads inserts, updates and deletes from a database's change log and streams them to other systems, so downstream data stays current without repeatedly copying whole tables.",
+    },
+    {
+      term: "Data lineage",
+      definition: "A record of where data came from and every transformation it passed through, so any table, metric or AI input can be traced back to its source systems.",
+    },
+    {
+      term: "Data contract",
+      definition: "An agreed specification between a data producer and its consumers of the structure, meaning and quality of a dataset, so changes in a source system do not silently break the pipelines and models that depend on it.",
+    },
+    {
+      term: "Data quality test",
+      definition: "An automated check run on data as it loads, such as confirming values are not null, keys are unique or totals reconcile with the source, that stops bad data before it reaches users.",
+    },
+    {
+      term: "Data classification",
+      definition: "Labelling data by sensitivity, for example public, internal, personal or sensitive, so access, masking, retention and AI usage rules can be applied consistently.",
+    },
+  ],
+  relatedServices: [
+    { title: "Data Analytics & Business Intelligence", href: "/services/data-analytics" },
+    { title: "RAG Knowledge Base", href: "/services/rag-knowledge-base" },
+    { title: "Database Architecture & Optimisation", href: "/services/database-architecture" },
+    { title: "AI Readiness Assessment", href: "/services/ai-readiness-assessment" },
+    { title: "AI Governance", href: "/services/ai-governance" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6" cy="5" rx="4" ry="2"/><path d="M2 5v4c0 1.1 1.8 2 4 2s4-.9 4-2V5"/><path d="M10 7h4a4 4 0 0 1 4 4v2"/><ellipse cx="18" cy="15" rx="4" ry="2"/><path d="M14 15v4c0 1.1 1.8 2 4 2s4-.9 4-2v-4"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

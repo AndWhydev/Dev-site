@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import LongformLayout from '../../layouts/LongformLayout.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('locations');
+  return items.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const crumbs = [
+  { title: 'Home', href: '/' },
+  { title: 'Locations', href: '/locations' },
+  { title: entry.data.title },
+];
+const areaServed = entry.data.city === 'Australia' ? undefined : `${entry.data.city}, ${entry.data.state}, Australia`;
+---
+
+<LongformLayout data={entry.data} crumbs={crumbs} headings={headings} schemaType="Service" areaServed={areaServed}>
+  <Content />
+</LongformLayout>

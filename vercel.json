@@ -36,6 +36,16 @@
       "source": "/master-services-agreement",
       "destination": "/MSA",
       "permanent": false
+    },
+    {
+      "source": "/blog",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/guides",
+      "permanent": true
     }
   ],
   "headers": [

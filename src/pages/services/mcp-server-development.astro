@@ -1,0 +1,203 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'MCP Server Development in Australia | All Webbed Labs',
+  metaDescription: "We build Model Context Protocol servers that expose your systems to Claude, ChatGPT, Copilot and your own agents, with OAuth, scoped tools and audit logs.",
+  category: 'AI & Data',
+  serviceName: 'MCP Server Development',
+  slug: 'mcp-server-development',
+  heroHeadline: 'Connect Your Systems to Any AI Client, Once',
+  heroTagline: "Model Context Protocol servers that give Claude, ChatGPT, Copilot, IDEs and your own agents controlled access to your data and actions, built to the current specification and secured like any production API.",
+  summaryStatement: "An MCP server is a service that exposes an organisation's data and actions to AI applications through the Model Context Protocol, an open standard that defines how AI clients discover and call tools, read resources and use prompt templates, so one integration can serve many AI clients instead of being rebuilt for each.",
+  description: [
+    "Every AI assistant becomes more useful when it can reach your systems: the CRM, the job management platform, the policy library, the data warehouse. Before the Model Context Protocol, each of those connections was custom code written for one model or one product, and rewritten when you changed either. MCP, introduced by Anthropic in November 2024 and contributed to the Agentic AI Foundation under the Linux Foundation in December 2025, standardises that connection. An MCP server describes what it offers in three forms the protocol defines: tools the model can execute, resources that supply context and data, and prompts that package common workflows. Any compliant client can then discover and use them. At the time of writing (September 2026), MCP client support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, among others, and Anthropic's Messages API can connect to remote MCP servers directly.",
+    "Writing a demo MCP server takes an afternoon. Writing one you can safely point at production data is a different job, and it is the one we do. The current specification (version 2026-07-28) defines two standard transports: stdio for servers launched locally by the client, and Streamable HTTP for remote servers. For remote servers, the authorisation framework is based on OAuth 2.1: the MCP server acts as an OAuth resource server, must publish protected resource metadata, must check that each access token was issued specifically for it, and must not pass tokens through to other services. We implement that properly against your identity provider, so users only reach what their own permissions allow. Beyond the protocol, we design tools a model can use well (clear names, tight input schemas, useful errors, bounded result sizes), separate read tools from write tools, treat tool descriptions and returned content as untrusted, log every call, and version the server so an upgrade on the AI side does not break your integration. The result is one well governed interface to your systems that any approved AI client can use.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>',
+      title: 'Build Once, Use Everywhere',
+      description: "One MCP server can serve Claude, ChatGPT, Copilot, developer tools and your in-house agents. When you change model provider or add a new AI client, the integration with your systems stays put, which removes a common source of vendor lock-in.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>',
+      title: 'OAuth Done to the Spec',
+      description: "Remote servers authenticate users through your existing identity provider using the OAuth 2.1 based flow the specification defines, with protected resource metadata, audience-bound tokens and scope challenges. Users act with their own permissions, never a shared service account.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+      title: 'Tools Models Can Actually Use',
+      description: "Tool design decides whether an assistant uses your server well or flounders. We write precise descriptions, strict input schemas, paginated and size-bounded results, and error messages that tell the model how to recover, then test them with real clients.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>',
+      title: 'Read and Write Kept Apart',
+      description: "Read-only tools and state-changing tools are separated, scoped and rate limited independently. Destructive actions can require confirmation through the client. An organisation can approve the read-only server widely and the write-enabled one for a smaller group.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>',
+      title: 'Every Call on the Record',
+      description: "Each tool call is logged with the user, client, arguments, result size and outcome, and can carry OpenTelemetry trace context. Security teams can see which AI clients touched which data, and investigate anything unusual.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
+      title: 'Ready for a Moving Standard',
+      description: "MCP has had several specification revisions since 2024, including a move to a stateless request model in 2026. We build on the official SDKs, test against multiple clients and keep your server current, so a protocol update is routine maintenance rather than a rebuild.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Model Context Protocol', 'MCP TypeScript SDK', 'MCP Python SDK', 'Streamable HTTP',
+    'OAuth 2.1', 'Microsoft Entra ID', 'Okta', 'Auth0',
+    'Node.js', 'Python', 'PostgreSQL', 'OpenTelemetry',
+    'AWS', 'Azure', 'Google Cloud', 'Docker',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Capability and Risk Mapping',
+      duration: 'Week 1',
+      description: "We list what AI clients should be able to see and do in your systems, who should be able to do it, and which clients will connect. Each capability is classified by risk, and we decide which become tools, which become resources, and which should stay out of reach.",
+    },
+    {
+      step: '02',
+      title: 'Interface and Auth Design',
+      duration: 'Weeks 1 to 2',
+      description: "We design tool names, descriptions and schemas, choose local (stdio) or remote (Streamable HTTP) deployment, and design the authorisation flow against your identity provider, including scopes, token lifetimes and how existing role permissions map across.",
+    },
+    {
+      step: '03',
+      title: 'Server Build',
+      duration: 'Weeks 2 to 4',
+      description: "We implement the server on the official MCP SDKs over your APIs or databases, with input validation, pagination, rate limiting, structured errors and logging. Where your system has no suitable API, we build a thin service layer first.",
+    },
+    {
+      step: '04',
+      title: 'Client Testing and Security Review',
+      duration: 'Weeks 4 to 5',
+      description: "We test the server with the AI clients you plan to use and with scripted evaluation tasks, then run a security review covering token handling, scope enforcement, injection through returned content, excessive data exposure and denial-of-service limits.",
+    },
+    {
+      step: '05',
+      title: 'Deployment and Rollout',
+      duration: 'Weeks 5 to 6',
+      description: "We deploy into your cloud account, in an Australian region by default, behind your network controls, and register the server with the approved clients. Rollout usually starts read-only with a pilot group before write tools are enabled.",
+    },
+    {
+      step: '06',
+      title: 'Handover and Upkeep',
+      duration: 'Ongoing',
+      description: "You receive the source code, test suite, client configuration notes and runbooks. We can maintain the server as the specification and client support evolve, adding tools as new use cases are approved.",
+    },
+  ],
+  industries: [
+    'Software & SaaS Vendors',
+    'Financial Services',
+    'Professional & Legal Services',
+    'Construction & Field Services',
+    'Logistics & Transport',
+    'Government & Agencies',
+    'Education & Training',
+    'Internal IT & Platform Teams',
+  ],
+  faqs: [
+    {
+      question: "What is MCP in plain terms?",
+      answer: "The Model Context Protocol is an open standard for connecting AI applications to external systems. It works a little like a universal adapter: your system runs an MCP server describing the tools, data and prompts it offers, and any AI application with an MCP client can discover and use them. It uses JSON-RPC 2.0 messages and is maintained as an open project under the Agentic AI Foundation, part of the Linux Foundation.",
+    },
+    {
+      question: "Why build an MCP server instead of a normal API integration?",
+      answer: "If only one application will ever call your system, a direct API integration may be simpler. MCP pays off when several AI clients need the same access, for example staff using Claude or Copilot, developers using an IDE assistant and your own agents. You build and secure the integration once and each client connects to it. If you already have a good REST API, the MCP server usually sits in front of it rather than replacing it.",
+    },
+    {
+      question: "Is it safe to let an AI assistant use our systems through MCP?",
+      answer: "It can be, if the server is engineered for it. The specification itself says tools represent arbitrary code execution and must be treated with caution, and that hosts must obtain user consent before invoking tools. We add the controls a production API needs: user-level OAuth, least-privilege scopes, separate read and write tools, rate limits, validation, logging and a security review. The main residual risk is prompt injection through content the assistant reads, which is why write actions stay narrow and confirmable.",
+    },
+    {
+      question: "Which AI clients can use our MCP server?",
+      answer: "At the time of writing (September 2026), MCP support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, and Anthropic's Messages API can call remote MCP servers directly. Support for individual features varies by client and changes often, so we test against the specific clients you intend to approve.",
+    },
+    {
+      question: "Should our MCP server be local or remote?",
+      answer: "Local servers run on the user's machine over stdio and take credentials from the environment. They suit developer tools and personal workflows. Remote servers run over Streamable HTTP in your cloud and use the OAuth based authorisation framework. They suit shared business systems because access, logging and updates are managed centrally. Most business deployments are remote.",
+    },
+    {
+      question: "We sell software. Should we ship an MCP server for our customers?",
+      answer: "Increasingly, buyers expect AI assistants to work with the products they use. A published MCP server lets your customers connect your product to the assistant of their choice without you building a separate integration for each. The work then includes multi-tenant authorisation, per-customer rate limits and a stable, versioned tool surface, which we design for from the start.",
+    },
+    {
+      question: "How long does an MCP server take to build?",
+      answer: "A focused server with a handful of read tools over an existing API typically takes 3 to 6 weeks including authorisation, testing and deployment. Servers that add write actions, span several systems or need to serve many customer tenants take longer. Paid discovery fixes the scope and the price.",
+    },
+  ],
+  pricing: [
+    {
+      name: 'Internal read-only server',
+      range: '$15k to $35k',
+      detail: "Typical Australian market range, AUD ex GST. A handful of read tools over an existing API, OAuth against your identity provider, logging and deployment. Roughly 10 to 25 senior engineer-days at a $1,400/day planning rate.",
+    },
+    {
+      name: 'Read and write server',
+      range: '$35k to $80k',
+      detail: "Typical range, AUD ex GST. Several systems, write tools with confirmation, security review and multi-client testing. Roughly 25 to 55 engineer-days.",
+    },
+    {
+      name: 'Customer-facing product server',
+      range: 'From $80k',
+      detail: "Typical range, AUD ex GST. Multi-tenant authorisation, per-tenant limits, versioned public tool surface and documentation for your customers. Scoped after paid discovery.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "Several AI clients, such as Claude, Copilot, IDE assistants and your own agents, need access to the same systems",
+      "You want staff to use approved AI assistants against live business data with their own permissions",
+      "You sell software and want customers to connect it to the AI assistant of their choice",
+      "You want to avoid rebuilding integrations every time you change model or AI vendor",
+      "Your security team needs one governed, logged interface for AI access instead of many ad hoc ones",
+    ],
+    notRightFor: [
+      "Only one application will ever call the system, where a direct API integration is simpler",
+      "The system has no API and the data is not ready; data engineering or an API layer comes first",
+      "A vendor already ships a maintained MCP server for the product and it covers your needs",
+      "You need autonomous multi-step work rather than access; that is agent development, which may use MCP underneath",
+      "Your policy does not yet allow AI assistants near the data in question; governance should come first",
+    ],
+  },
+  definitions: [
+    {
+      term: 'Model Context Protocol (MCP)',
+      definition: "An open standard, built on JSON-RPC 2.0, that defines how AI applications connect to external systems to discover and call tools, read resources and use prompt templates.",
+    },
+    {
+      term: 'MCP Server',
+      definition: "A service that exposes capabilities to AI applications over MCP. It advertises tools, resources and prompts, and executes requests from connected clients.",
+    },
+    {
+      term: 'MCP Host and Client',
+      definition: "The host is the AI application a person uses, such as a desktop assistant or IDE. Inside it, an MCP client manages the connection to each MCP server.",
+    },
+    {
+      term: 'Tools, Resources and Prompts',
+      definition: "The three kinds of server feature in MCP. Tools are functions the model can execute, resources supply context and data, and prompts are templated messages and workflows for users.",
+    },
+    {
+      term: 'Streamable HTTP',
+      definition: "The standard MCP transport for remote servers, where each message is an HTTP POST to a single endpoint and replies return as JSON or a request-scoped event stream. The alternative, stdio, is for locally launched servers.",
+    },
+    {
+      term: 'Protected Resource Metadata',
+      definition: "A document, defined in RFC 9728, that a remote MCP server must publish so clients can discover which authorisation server issues its access tokens.",
+    },
+  ],
+  relatedServices: [
+    { title: 'AI Agent Development', href: '/services/ai-agent-development' },
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'LLM Integration', href: '/services/llm-integration' },
+    { title: 'AI Chatbot', href: '/services/ai-chatbot' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><circle cx="4" cy="4" r="2"/><circle cx="20" cy="4" r="2"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="20" r="2"/><path d="M5.5 5.5 9 9"/><path d="M18.5 5.5 15 9"/><path d="M5.5 18.5 9 15"/><path d="M18.5 18.5 15 15"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

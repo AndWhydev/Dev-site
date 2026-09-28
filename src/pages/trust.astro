@@ -87,6 +87,41 @@ const security = [
   },
 ];
 
+const aiData = [
+  {
+    pillar: 'Where your data goes',
+    bullets: [
+      'Client systems we build default to Australian cloud regions for storage, databases and vector indexes',
+      'Where a model your project needs is available in an Australian region, we use that region for inference',
+      'Anything that must leave Australia is documented for your privacy impact assessment before it is built',
+    ],
+  },
+  {
+    pillar: 'Model providers and training',
+    bullets: [
+      'We use commercial API and cloud agreements, not consumer AI apps, for client work',
+      'We choose services whose terms exclude training on customer content, and confirm this during discovery',
+      'Prompts, documents and embeddings are treated with the same classification as the source data',
+    ],
+  },
+  {
+    pillar: 'AI in our delivery pipeline',
+    bullets: [
+      'Our engineers use AI coding agents, and every change is reviewed by a senior engineer before it ships',
+      'If your contract restricts AI tooling on your codebase, we agree the rules in writing before work starts',
+      'Secrets and production data are never placed in prompts; development uses test or masked data',
+    ],
+  },
+  {
+    pillar: 'Controls in the systems we build',
+    bullets: [
+      'Access control enforced at retrieval, so AI features only see what the user is allowed to see',
+      'Logging of prompts, sources and outputs where your policy allows, for audit and incident review',
+      'Evaluation sets and human review paths for high-stakes outputs, aligned with Australia\'s Guidance for AI Adoption',
+    ],
+  },
+];
+
 const compliance = [
   {
     label: 'Australian Privacy Principles',
@@ -208,6 +243,30 @@ const compliance = [
       </div>
     </section>
 
+    <!-- AI and your data -->
+    <section class="trust-ai" id="ai-and-your-data">
+      <div class="trust-security-inner">
+        <div class="reveal" style="max-width: 760px;">
+          <span class="section-label">AI and your data</span>
+          <h2 class="section-heading">How we handle your data around AI.</h2>
+          <p class="section-subheading">
+            The questions procurement asks about AI: where data is processed, whether it trains anyone's model, and how AI is used in our own delivery. See also our guide to <a href="/guides/data-residency-vs-data-sovereignty">data residency vs data sovereignty</a>.
+          </p>
+        </div>
+
+        <div class="sec-grid">
+          {aiData.map((s) => (
+            <div class="sec-card reveal">
+              <h3 class="sec-card-pillar">{s.pillar}</h3>
+              <ul>
+                {s.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- Compliance -->
     <section class="trust-compliance">
       <div class="trust-compliance-inner">
@@ -298,14 +357,16 @@ const compliance = [
   }
 
   /* Sections */
-  .trust-facts, .trust-ip, .trust-security, .trust-compliance, .trust-disclaimer {
+  .trust-facts, .trust-ip, .trust-security, .trust-ai, .trust-compliance, .trust-disclaimer {
     padding: 6.5rem 0;
   }
   .trust-facts { background: #0f1614; }
   .trust-ip { background: #0a0f0e; }
   .trust-security { background: #0f1614; }
-  .trust-compliance { background: #0a0f0e; }
-  .trust-disclaimer { background: #0f1614; padding: 4.5rem 0; }
+  .trust-ai { background: #0a0f0e; }
+  .trust-ai .section-subheading a { color: #19b58f; }
+  .trust-compliance { background: #0f1614; }
+  .trust-disclaimer { background: #0a0f0e; padding: 4.5rem 0; }
 
   .trust-facts-inner, .trust-ip-inner, .trust-security-inner, .trust-compliance-inner, .trust-disclaimer-inner {
     max-width: 1280px;

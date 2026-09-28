@@ -1,0 +1,200 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'AI Readiness Assessment for Businesses | All Webbed Labs',
+  metaDescription: "A fixed-scope, paid AI discovery: we assess your use cases, data, systems and risk, then deliver a ranked roadmap and a fixed price for your first build.",
+  category: 'AI & Data',
+  serviceName: 'AI Readiness Assessment',
+  slug: 'ai-readiness-assessment',
+  heroHeadline: 'Find Out Where AI Will Pay Off Before You Build Anything',
+  heroTagline: "A fixed-scope, three to four week paid discovery that tests your AI ideas against your real data, systems and obligations, and ends with a ranked roadmap and a fixed price for the first project.",
+  summaryStatement: "An AI readiness assessment is a short, fixed-scope engagement that evaluates an organisation's candidate AI use cases against its data, systems, security and privacy obligations, and delivery capacity, and produces a prioritised, costed plan stating which use cases to pursue, in what order, and which to drop.",
+  description: [
+    "Most organisations have more AI ideas than they can fund, and little evidence about which ones will work. The ideas that sound best in a workshop are often the ones whose data is scattered across spreadsheets, locked in a system with no API, or too sensitive to send to a hosted model. The quiet, unglamorous ideas, such as extracting fields from a form the business processes thousands of times a month, often have the clearest return. An AI readiness assessment sorts one from the other with evidence rather than enthusiasm. It is how we begin every AI engagement: a paid discovery with a fixed scope, a fixed fee agreed before we start and a defined set of deliverables, so you are buying answers, not an open-ended conversation.",
+    "Over three to four weeks, senior engineers work through your candidate use cases with the people who own the processes. For each one we look at the value at stake, the data it depends on (where it lives, its quality, who can access it and whether it can lawfully be used for the purpose), the systems it must connect to, the risk if the AI gets it wrong, and whether an existing product already solves it. We sample real data under NDA rather than relying on descriptions, and where the top use case has a genuine technical question, such as whether a model can read your particular documents, we run a small, time-boxed spike to answer it. We also note your obligations that shape the design, including the Privacy Act 1988 and the automated decision-making transparency requirements in APP 1 that commence on 10 December 2026, and set a baseline against the six practices in Australia's Guidance for AI Adoption. You finish with a ranked opportunity register, a data readiness report, a risk register, a target architecture, a 90-day roadmap and a fixed-price proposal for the first build. You own every deliverable, and you are free to take them to another supplier or build in-house.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>',
+      title: 'Fixed Scope, Fixed Fee',
+      description: "The assessment has a defined timeline, a defined list of deliverables and a fee agreed before we start. There is no drift into months of workshops. If we find something that needs deeper work, it goes in the roadmap as a separate, priced item.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><path d="M3 6h1v4"/><path d="M3 10h2"/><path d="M4 14.5a1 1 0 0 1 1.5 1.3L3 18h2.5"/></svg>',
+      title: 'A Ranked Opportunity Register',
+      description: "Every candidate use case is scored on value, feasibility, data readiness and risk, with the reasoning written down. You get a clear order of work, and an explicit list of ideas to park or drop, which is often the most useful part.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>',
+      title: 'Evidence From Your Real Data',
+      description: "We sample the actual records, documents and system exports each use case depends on, under NDA, instead of relying on how people describe them. Data gaps surface now, when they are cheap to plan around, rather than halfway through a build.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+      title: 'Risks and Obligations Named Early',
+      description: "For each use case we record what happens if the AI is wrong, which personal information is involved, whether a decision could trigger the Privacy Act automated decision-making disclosure, and what human oversight is needed. The design starts with those constraints.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>',
+      title: 'A Spike Where It Counts',
+      description: "When the top use case hinges on a technical unknown, such as whether a model can reliably read your forms, we run a short, time-boxed experiment on sample data. You get a measured answer before committing a build budget.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>',
+      title: 'Deliverables You Own Outright',
+      description: "The register, reports, architecture and roadmap are yours. They are written so a board can approve funding from them and so another supplier or your own team could build from them. We provide a fixed-price proposal for the first project, with no obligation to accept it.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Use-case scoring matrix', 'Data sampling and profiling', 'Python', 'SQL',
+    'Jupyter', 'Anthropic Claude', 'OpenAI models', 'Open-weight models',
+    'Amazon Bedrock', 'Azure AI Foundry', 'Google Vertex AI', 'Microsoft 365 Copilot',
+    'Privacy impact assessment templates', 'Architecture diagrams (C4)',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Kick-Off and Use-Case Intake',
+      duration: 'Days 1 to 3',
+      description: "We sign the NDA, agree who we need to speak to and collect your candidate use cases, including the ones people mention in passing. We ask for sample data access and system documentation early, because waiting for access is the usual cause of delay.",
+    },
+    {
+      step: '02',
+      title: 'Process and Stakeholder Interviews',
+      duration: 'Week 1',
+      description: "Short sessions with the people who do the work, own the systems and carry the risk: operations, IT, security, privacy or legal, and finance. We map how each candidate process runs today, how often, what it costs and where errors hurt.",
+    },
+    {
+      step: '03',
+      title: 'Data and Systems Review',
+      duration: 'Weeks 1 to 2',
+      description: "We profile sample data for each use case, check where it is stored and who can access it, and review integration points, APIs and hosting. We note residency constraints and whether the data can lawfully be used for the proposed purpose, flagging questions for your privacy adviser.",
+    },
+    {
+      step: '04',
+      title: 'Scoring and Technical Spike',
+      duration: 'Weeks 2 to 3',
+      description: "We score every use case on value, feasibility, data readiness and risk, compare build, buy and configure options, and run a time-boxed spike on the top candidate where a technical unknown would otherwise drive the price.",
+    },
+    {
+      step: '05',
+      title: 'Roadmap, Architecture and Proposal',
+      duration: 'Weeks 3 to 4',
+      description: "We write up the opportunity register, data readiness report, risk register, target architecture and a 90-day roadmap, plus a fixed-price proposal for the first build with scope, timeline, acceptance criteria and expected running costs.",
+    },
+    {
+      step: '06',
+      title: 'Readout and Decision',
+      duration: 'Final session',
+      description: "We present the findings to your decision makers, walk through the trade-offs and answer challenges. You leave with a clear recommendation, including where the right answer is an off-the-shelf tool or doing nothing yet.",
+    },
+  ],
+  industries: [
+    'Professional & Legal Services',
+    'Accounting & Advisory',
+    'Financial Services & Insurance',
+    'Construction & Trades',
+    'Logistics & Transport',
+    'Healthcare & Aged Care',
+    'Not-for-Profits',
+    'Government & Agencies',
+  ],
+  faqs: [
+    {
+      question: "What exactly do we get at the end?",
+      answer: "Six things: a ranked opportunity register scoring each use case on value, feasibility, data readiness and risk; a data readiness report; a risk register covering privacy, security and error impact; a target architecture for the recommended use cases; a 90-day roadmap; and a fixed-price proposal for the first build. Where we ran a technical spike, you also get its results and the code.",
+    },
+    {
+      question: "How much does an AI readiness assessment cost?",
+      answer: "Paid discovery for AI work in Australia typically falls between about $10,000 and $25,000 (AUD, ex GST), depending on the number of use cases, business units and systems in scope and whether a technical spike is included. That is roughly 7 to 18 senior engineer-days at a $1,400 per day planning rate. We agree the scope and a fixed fee before starting, so the number does not move.",
+    },
+    {
+      question: "How long does it take?",
+      answer: "Usually three to four weeks from kick-off to readout. The most common cause of delay is waiting for access to data samples and system documentation, so we request those on day one. A narrow assessment of one or two use cases can be shorter.",
+    },
+    {
+      question: "Are we obliged to use you for the build?",
+      answer: "No. The deliverables are yours and are written so another supplier or your own team could build from them. We include a fixed-price proposal for the first project because it is the natural next step, but there is no obligation to accept it.",
+    },
+    {
+      question: "How is this different from an AI strategy workshop?",
+      answer: "A strategy workshop usually produces ideas and themes. This assessment tests specific use cases against your actual data, systems and obligations, and ends with priced, buildable work. Senior engineers do the assessment, so feasibility and cost estimates come from the people who would build it.",
+    },
+    {
+      question: "What do you need from us?",
+      answer: "A sponsor who can make decisions, around an hour each from the people who run the candidate processes and the relevant systems, representative data samples provided under NDA, and a named contact in IT or security for access questions. We keep the time burden on your staff deliberately small.",
+    },
+    {
+      question: "Does the assessment cover governance and compliance?",
+      answer: "It covers what affects feasibility and design: personal information involved, likely Privacy Act implications including the automated decision-making disclosure from 10 December 2026, residency constraints and human oversight needs, with a baseline against the six practices in Australia's Guidance for AI Adoption. It is not a legal review or a compliance certification. For a fuller governance programme, see our AI governance service.",
+    },
+  ],
+  pricing: [
+    {
+      name: 'Focused assessment',
+      range: '$10k to $15k',
+      detail: "Typical Australian market range for paid AI discovery, AUD ex GST. One or two use cases in one business unit, two to three weeks. Roughly 7 to 11 senior engineer-days at a $1,400/day planning rate.",
+    },
+    {
+      name: 'Standard assessment',
+      range: '$15k to $25k',
+      detail: "Typical range, AUD ex GST. Up to around eight use cases across several teams and systems, with a technical spike on the top candidate. Three to four weeks, roughly 11 to 18 engineer-days.",
+    },
+    {
+      name: 'Multi-division assessment',
+      range: 'Scoped individually',
+      detail: "For larger organisations with several divisions, many systems or formal procurement. We propose a fixed fee after an initial call about scope.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "You have several AI ideas and need evidence about which to fund first",
+      "Leadership wants a costed, defensible plan before approving an AI budget",
+      "You suspect data quality, access or sensitivity may limit what is possible",
+      "You operate under privacy, residency or sector obligations that will shape any design",
+      "You want a fixed price for the first build rather than an open-ended estimate",
+    ],
+    notRightFor: [
+      "You already have one well defined use case with known data; go straight to discovery for that build",
+      "You mainly want staff to use a licensed assistant; a Copilot or ChatGPT Enterprise rollout plan is the better fit",
+      "You need a legal opinion or compliance sign-off; that is work for your legal and privacy advisers",
+      "You are looking for a certification such as ISO/IEC 42001; that requires an accredited certification body",
+      "No one in the business can make time for interviews or provide data samples in the next month",
+    ],
+  },
+  definitions: [
+    {
+      term: 'AI Readiness',
+      definition: "How prepared an organisation is to use AI for a specific purpose, judged on its data, systems, skills, governance and risk appetite for that use case, not in the abstract.",
+    },
+    {
+      term: 'Paid Discovery',
+      definition: "A short, fixed-fee phase before a build that investigates requirements, data and risks in enough depth to set a reliable fixed price and scope for the delivery that follows.",
+    },
+    {
+      term: 'Opportunity Register',
+      definition: "A list of candidate AI use cases, each scored on value, feasibility, data readiness and risk, with a recommendation to pursue, park or drop.",
+    },
+    {
+      term: 'Data Readiness',
+      definition: "Whether the data a use case needs exists, is accessible, is of adequate quality and volume, and can lawfully be used for the intended purpose.",
+    },
+    {
+      term: 'Technical Spike',
+      definition: "A short, time-boxed experiment built to answer one technical question, such as whether a model can reliably extract fields from a particular document type, before committing to a full build.",
+    },
+  ],
+  relatedServices: [
+    { title: 'AI Consulting', href: '/ai-consulting' },
+    { title: 'AI Governance', href: '/services/ai-governance' },
+    { title: 'Data Engineering', href: '/services/data-engineering' },
+    { title: 'AI Document Processing', href: '/services/ai-document-processing' },
+    { title: 'AI Agent Development', href: '/services/ai-agent-development' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 12 2 2 4-4"/><path d="M9 17h6"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

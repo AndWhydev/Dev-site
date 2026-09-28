@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+/**
+ * Editorial policy. Linked from the byline on every guide, solution and
+ * location page ("Published by All Webbed Labs"). States how pages are
+ * researched, written, priced, dated and corrected. Keep every line here
+ * true to how we actually publish; if the process changes, change this page.
+ */
+
+const siteUrl = 'https://www.awlabs.com.au';
+const updated = '28 September 2026';
+
+const pageTitle = 'How We Research and Write | Editorial Policy | AWLabs';
+const pageDescription =
+  'How All Webbed Labs researches and writes its guides: AI-assisted drafts checked against primary sources, dated pages, price ranges and a corrections policy.';
+
+const principles = [
+  {
+    title: 'Who writes our pages',
+    body: 'Pages are written and reviewed by the All Webbed Labs team. Founder Andy Taleb has final responsibility for everything we publish. Pages are published under the company name because they reflect the team\'s shared view, and the person accountable for them is named here.',
+  },
+  {
+    title: 'How AI is used',
+    body: 'Drafts are AI-assisted. We use AI tools to help research, structure and draft pages, then check the facts against primary sources and edit the text before it is published. AI is a drafting tool, not a source: no claim is published because a model said it.',
+  },
+  {
+    title: 'Sources for every factual claim',
+    body: 'Every regulatory fact, date, figure and price is checked against a primary or reputable source: legislation, regulators such as the OAIC, APRA and ASD, government agencies, vendor documentation and published market surveys. Those sources are listed at the end of each page with links. If we cannot verify something, we leave it out.',
+  },
+  {
+    title: 'A date on every page',
+    body: 'Every guide, solution and location page shows the date it was published and the date it was last updated. Anything that changes often, such as which AI models run in which Australian cloud region, is written as "at the time of writing" with a link to the vendor\'s own page.',
+  },
+];
+
+const rules = [
+  {
+    label: 'Prices',
+    body: 'Cost guides give typical Australian market ranges, in AUD, with the basis stated (for example, ex GST and what is included) and the arithmetic shown. They are ranges to help you plan, not quotes. We quote fixed prices only after a paid discovery, because the real cost depends on your scope.',
+  },
+  {
+    label: 'Regulation and tax',
+    body: 'Pages about privacy law, AI regulation, prudential standards, government policy or the R&D Tax Incentive are general information, not legal, tax or financial advice. They carry a note saying so. For advice on your situation, speak to a lawyer, an accountant or a registered tax agent.',
+  },
+  {
+    label: 'No invented stories',
+    body: 'We never publish invented client stories, testimonials, case studies, project outcomes or metrics. Where a real example would help and we do not have one we can share, we explain what we would do and how, rather than claim we have done it.',
+  },
+  {
+    label: 'No claims we cannot back',
+    body: 'We do not claim certifications, government panel membership, security clearances, partner tiers or awards we do not hold. Where a page explains a certification or panel, it explains it; it does not imply we have it.',
+  },
+  {
+    label: 'Fair comparisons',
+    body: 'Comparison pages say when the other option is the better choice, including when that means not hiring us. Each page has one short section about how All Webbed Labs approaches the topic, clearly separated from the rest.',
+  },
+];
+
+const cadence = [
+  { what: 'Key guides (cost guides, Australian regulation, data residency)', when: 'Reviewed quarterly' },
+  { what: 'Cost guides with a year in the title', when: 'New edition each January' },
+  { what: 'Pages affected by a law, policy or vendor change', when: 'Updated when the change is announced' },
+  { what: 'All other guides, solution and location pages', when: 'Reviewed at least once a year' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${siteUrl}/editorial-policy#webpage`,
+  url: `${siteUrl}/editorial-policy`,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: 'en-AU',
+  dateModified: '2026-09-28',
+  about: { '@id': `${siteUrl}/#organization` },
+  publisher: { '@id': `${siteUrl}/#organization` },
+  accountablePerson: { '@id': `${siteUrl}/team/andy-taleb#person` },
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} extraSchema={[schema]}>
+  <Header />
+  <main>
+
+    <section class="ed-hero">
+      <div class="ed-inner">
+        <div class="reveal">
+          <span class="section-label">Editorial policy</span>
+          <h1 class="ed-title">How we research and write.</h1>
+          <p class="ed-lead">
+            Our guides are written to help Australian buyers make decisions about software and AI. This page explains who writes them, how they are researched, how prices and regulation are presented, and how to tell us when we have got something wrong.
+          </p>
+          <p class="ed-meta">Last updated {updated}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ed-section ed-alt">
+      <div class="ed-inner">
+        <div class="reveal ed-intro">
+          <span class="section-label">How pages are made</span>
+          <h2 class="section-heading">Researched, sourced and dated.</h2>
+        </div>
+        <div class="ed-grid">
+          {principles.map((p) => (
+            <article class="ed-card reveal">
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="ed-section">
+      <div class="ed-inner">
+        <div class="reveal ed-intro">
+          <span class="section-label">What we will and will not publish</span>
+          <h2 class="section-heading">The rules every page follows.</h2>
+        </div>
+        <div class="ed-rules">
+          {rules.map((r) => (
+            <article class="ed-rule reveal">
+              <h3>{r.label}</h3>
+              <p>{r.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="ed-section ed-alt">
+      <div class="ed-inner">
+        <div class="reveal ed-intro">
+          <span class="section-label">Keeping pages current</span>
+          <h2 class="section-heading">How often we update.</h2>
+          <p class="section-subheading">
+            Facts about AI models, cloud regions, prices and regulation change quickly. When we update a page, we change its "last updated" date and revise anything that is no longer accurate.
+          </p>
+        </div>
+        <div class="ed-table-wrap reveal">
+          <table class="ed-table">
+            <thead>
+              <tr><th scope="col">Page type</th><th scope="col">Review cadence</th></tr>
+            </thead>
+            <tbody>
+              {cadence.map((c) => (
+                <tr><td>{c.what}</td><td>{c.when}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="ed-section" id="corrections">
+      <div class="ed-inner">
+        <div class="ed-callout reveal">
+          <h2>Corrections</h2>
+          <p>
+            If you find an error, an out-of-date fact or a broken source link, email <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a> with the page address and what you think is wrong. We review every report. Where we agree, we correct the page, update its "last updated" date and, for a material error such as a wrong date, figure or legal requirement, add a short note on the page describing what changed.
+          </p>
+          <p>
+            Read more <a href="/about">about All Webbed Labs</a>, our founder <a href="/team/andy-taleb">Andy Taleb</a>, or browse the <a href="/guides">guides</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .ed-hero {
+    padding: 10rem 0 4.5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .ed-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .ed-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .ed-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 6vw, 4rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+    max-width: 760px;
+    overflow-wrap: break-word;
+  }
+  .ed-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 0 0 1.25rem;
+  }
+  .ed-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    color: #4a6359;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  .ed-section { padding: 6rem 0; background: #0a0f0e; }
+  .ed-alt { background: #0f1614; }
+  .ed-intro { max-width: 760px; }
+
+  .ed-grid, .ed-rules {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .ed-rules { grid-template-columns: repeat(3, 1fr); }
+  .ed-card, .ed-rule {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    transition: border-color 0.3s ease;
+  }
+  .ed-rule { background: #0f1614; }
+  .ed-card:hover, .ed-rule:hover { border-color: rgba(13,147,115,0.3); }
+  .ed-card h3, .ed-rule h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.75rem;
+  }
+  .ed-rule h3 { color: #0d9373; }
+  .ed-card p, .ed-rule p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .ed-table-wrap {
+    margin-top: 2.5rem;
+    max-width: 880px;
+    overflow-x: auto;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+  }
+  .ed-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+  }
+  .ed-table th, .ed-table td {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #1e2d28;
+  }
+  .ed-table th {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a6359;
+    background: #0a0f0e;
+  }
+  .ed-table td { color: #8aa09a; line-height: 1.55; }
+  .ed-table td:last-child { color: white; white-space: nowrap; }
+  .ed-table tr:last-child td { border-bottom: none; }
+
+  .ed-callout {
+    max-width: 880px;
+    background: rgba(13,147,115,0.04);
+    border: 1px solid rgba(13,147,115,0.15);
+    border-left: 3px solid #0d9373;
+    border-radius: 0 12px 12px 0;
+    padding: 2rem 2.25rem;
+  }
+  .ed-callout h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+  }
+  .ed-callout p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #8aa09a;
+    line-height: 1.75;
+    margin: 0 0 1rem;
+  }
+  .ed-callout p:last-child { margin-bottom: 0; }
+  .ed-callout a, .ed-section a {
+    color: #19b58f;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,147,115,0.4);
+  }
+  .ed-callout a:hover { border-color: #0d9373; }
+
+  @media (max-width: 1024px) {
+    .ed-rules { grid-template-columns: repeat(2, 1fr); }
+    .ed-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .ed-hero { padding: 8rem 0 3.5rem; }
+    .ed-section { padding: 4rem 0; }
+    .ed-inner { padding: 0 1rem; }
+    .ed-rules { grid-template-columns: 1fr; }
+    .ed-card, .ed-rule { padding: 1.5rem; }
+    .ed-callout { padding: 1.5rem; }
+    .ed-table th, .ed-table td { padding: 0.875rem 1rem; }
+    .ed-table td:last-child { white-space: normal; }
+  }
+</style>

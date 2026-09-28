@@ -1,0 +1,207 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Node.js & Python Backend Development | All Webbed Labs",
+  metaDescription: "Node.js and Python backends built by senior engineers: APIs, background jobs, queues, integrations and performance work, hosted in Australian cloud regions.",
+  category: "Backend",
+  serviceName: "Node.js & Python Backends",
+  slug: "backend-development",
+  heroHeadline: "Backends That Keep Working When Traffic, Data and Integrations Grow",
+  heroTagline: "Node.js and Python services, background jobs, queues and integrations built by senior engineers, with the unglamorous parts done properly: retries, idempotency, observability and upgrades.",
+  summaryStatement: "Backend development is the engineering of the server-side part of an application: the business logic, APIs, background jobs, queues, data access and third-party integrations that run out of sight of users; Node.js and Python are the two most common runtimes for it, Node.js favoured for high-concurrency web services in TypeScript and Python for data-heavy, machine learning and AI workloads.",
+  description: [
+    "Users see the screens, but the backend decides whether an application is trustworthy. It is where orders are priced, permissions are checked, payments are reconciled, emails are sent, files are processed and data from other systems is pulled in and pushed out. Most backend failures are not dramatic. A payment webhook is processed twice and a customer is charged twice. A nightly import silently skips rows. A report that took two seconds with a thousand customers takes two minutes with fifty thousand. An integration partner changes a field and nothing alerts anyone for a week. Good backend engineering is mostly about designing for these cases before they happen, and it is the part of a system where senior experience pays for itself most clearly.",
+    "We build backends in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real-time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long-running and failure-prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead-letter queues so a partner outage never loses data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long-term releases, and deliver the code into your repository with tests, documentation and runbooks so your team can own it.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      title: "The Right Runtime for the Job",
+      description: "Node.js with TypeScript for high-concurrency APIs and real-time services, Python for data processing, machine learning and AI pipelines, or both side by side where that fits. We explain the trade-off in terms of your workload, hiring market and existing skills.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="5" rx="1"/><rect x="2" y="10" width="20" height="5" rx="1"/><rect x="2" y="17" width="20" height="5" rx="1"/></svg>',
+      title: "Background Jobs and Queues",
+      description: "Slow and unreliable work such as sending email, generating documents, calling AI models and syncing with partners runs in background workers fed by durable queues. Requests stay fast, spikes are absorbed, and failed jobs retry automatically instead of disappearing.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
+      title: "Safe to Retry, by Design",
+      description: "Webhook handlers, payment flows and jobs are built to be idempotent, so processing the same event twice has the same effect as processing it once. That single discipline prevents double charges, duplicate records and the manual clean-up that follows.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
+      title: "Integrations That Fail Gracefully",
+      description: "Every third-party call has a timeout, retries with backoff, and a dead-letter queue for messages that still fail. Partner outages and unexpected payload changes raise an alert and wait for a fix, rather than corrupting data or losing it silently.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      title: "Performance From Measurement",
+      description: "We profile real traffic before changing code, then fix what the measurements show: missing indexes, N+1 queries, unbounded result sets, blocking calls on the event loop, or work that belongs in a cache or a queue. Improvements are measured against a baseline.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: "Observable From the First Deploy",
+      description: "Structured logs with request IDs, metrics for latency, error rate and queue depth, and distributed traces across services are part of the first release. When something is slow or failing, the evidence already exists and points at the cause.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "Node.js", "TypeScript", "Fastify / NestJS / Express", "Python", "FastAPI", "Django",
+    "PostgreSQL", "Redis", "BullMQ", "Celery", "Amazon SQS / Google Pub/Sub", "Temporal",
+    "Docker", "OpenTelemetry",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Workload and Integration Mapping",
+      duration: "Weeks 1 to 2",
+      description: "We map what the backend must do: the business rules, the data it owns, the systems it talks to, expected volumes and peaks, and what must never go wrong. For existing backends, we also profile current behaviour and read the code to find the real bottlenecks and risks.",
+    },
+    {
+      step: "02",
+      title: "Architecture and Runtime Decisions",
+      duration: "Week 2",
+      description: "We choose the runtime, framework, data store, queue and hosting model, and decide which work is synchronous and which moves to background jobs. Decisions are written up with trade-offs. We default to a well-structured modular service and split into more services only when there is a clear reason.",
+    },
+    {
+      step: "03",
+      title: "Core Services and Data Layer",
+      duration: "Weeks 3 to 8",
+      description: "We build the business logic, data access and API layer with automated tests alongside. Schema changes are managed through versioned migrations, authorisation is enforced on the server for every operation, and configuration and secrets stay out of the codebase.",
+    },
+    {
+      step: "04",
+      title: "Jobs, Queues and Integrations",
+      duration: "Weeks 5 to 10",
+      description: "We implement background workers, scheduled jobs and third-party integrations with idempotency, retries, timeouts and dead-letter handling. Each integration is tested against the partner's sandbox where one exists, and against recorded failure cases where it does not.",
+    },
+    {
+      step: "05",
+      title: "Load Testing and Hardening",
+      duration: "Weeks 9 to 11",
+      description: "We load test against expected peaks plus headroom, fix the bottlenecks found, and confirm observability and alerts fire as intended. Dependency and security scans run in CI, and the service is reviewed by a senior engineer before production.",
+    },
+    {
+      step: "06",
+      title: "Launch and Handover",
+      duration: "Final week",
+      description: "We deploy to your cloud account in an Australian region by default, monitor closely through launch, and hand over documentation, runbooks and a runtime upgrade schedule. Ongoing support is available under a maintenance retainer.",
+    },
+  ],
+  industries: [
+    "Software & SaaS",
+    "Fintech & Payments",
+    "E-commerce & Marketplaces",
+    "Logistics & Transport",
+    "Healthcare Technology",
+    "Media & Content",
+    "Education Technology",
+    "Construction & Field Services",
+  ],
+  faqs: [
+    {
+      question: "Should our backend be built in Node.js or Python?",
+      answer: "Choose Node.js when the backend mainly serves APIs and real-time features with many concurrent connections, or when your team already works in TypeScript on the front end. Choose Python when the backend does heavy data processing, uses scientific or machine learning libraries, or runs AI pipelines. Both are mature, well supported and easy to hire for in Australia. Many systems use Node.js for the API layer and Python for data and AI workers, connected by a queue.",
+    },
+    {
+      question: "How is this different from your API development service?",
+      answer: "API development focuses on the interface: contract design, versioning, authentication, documentation and developer experience for the people and systems consuming the API. Backend development covers everything behind it: business logic, background processing, queues, data access, integrations and performance. Most projects need both, and the two services are often delivered together.",
+    },
+    {
+      question: "When do we need background jobs and queues?",
+      answer: "As soon as a request triggers work that is slow, unreliable or not needed immediately, such as sending email, generating PDFs, calling a partner API, processing uploads or calling an AI model. Moving that work into a queue keeps the application responsive, absorbs spikes in demand, and lets failed work retry automatically without the user waiting or the data being lost.",
+    },
+    {
+      question: "Can you improve the performance of our existing backend?",
+      answer: "Yes. We start by measuring rather than guessing: profiling production traffic, reviewing slow query logs and tracing the slowest requests end to end. The fix is usually a handful of specific changes, such as adding indexes, removing repeated queries, caching expensive results or moving work to background jobs. A full rewrite is rarely the answer to a performance problem.",
+    },
+    {
+      question: "Microservices or a monolith?",
+      answer: "For most new backends, a well-structured modular monolith is the better start: simpler to build, deploy, debug and run. We separate out a service when there is a concrete reason, such as a workload with very different scaling needs, a Python AI worker beside a Node.js API, or a team boundary. Splitting too early adds network calls, deployment complexity and consistency problems without a matching benefit.",
+    },
+    {
+      question: "How do you keep Node.js and Python versions supported?",
+      answer: "We run production on supported releases and plan upgrades ahead of end-of-life dates. Node.js supports each long-term support release for 30 months, and each Python version receives fixes for about five years, so upgrades are a predictable, scheduled task. We record runtime versions and their end-of-life dates in the handover documentation.",
+    },
+    {
+      question: "Where will the backend be hosted?",
+      answer: "In your own cloud account, so you own the infrastructure and the data. We deploy to Australian regions by default, such as AWS Sydney or Melbourne, Azure Australia East or Google Cloud Sydney, using containers or managed services depending on the workload. Hosting choice is documented along with its expected monthly cost.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "Your application has real business logic, not just forms over a database, such as pricing, scheduling, approvals or reconciliation",
+      "You integrate with several third-party systems, payment providers or partner APIs and need those integrations to be reliable",
+      "Work such as document generation, file processing, syncing or AI calls needs to run in the background at volume",
+      "An existing backend has become slow, fragile or hard to change, and you need measured improvements rather than a rewrite",
+      "You want a backend your own engineers can maintain, in mainstream languages with tests, documentation and runbooks",
+    ],
+    notRightFor: [
+      "Your needs are met by a backend-as-a-service such as Supabase or Firebase with little custom logic, which will be faster and cheaper to start",
+      "The workflow is simple enough for an automation platform such as n8n, Make or Zapier connecting existing SaaS tools",
+      "Your organisation has standardised on another stack, such as Java or .NET, and your team will maintain the code, where matching that stack is wiser",
+      "You need a full product including design and front end, where our custom app or SaaS development services cover the whole build",
+      "The bottleneck is infrastructure or the database engine itself rather than application code, where cloud or database architecture work comes first",
+    ],
+  },
+  pricing: [
+    {
+      name: "Integration or job service (typical range)",
+      range: "$15k to $40k",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. A focused backend component such as a partner integration, webhook processor or background job system, about 10 to 28 senior days at a planning rate of roughly $1,400 a day, including tests, monitoring and handover.",
+    },
+    {
+      name: "Product backend (typical range)",
+      range: "$50k to $150k",
+      detail: "Typical range, AUD ex GST. The backend for a new web or mobile product: business logic, data model, API layer, authentication, background jobs, a few integrations, load testing and deployment to an Australian region. Hosting and third-party service fees are separate.",
+    },
+    {
+      name: "Performance and reliability review (typical range)",
+      range: "$10k to $30k",
+      detail: "Typical range, AUD ex GST. Profiling and review of an existing Node.js or Python backend, a prioritised findings report, and implementation of the highest-value fixes against a measured baseline. Larger re-architecture work is quoted separately.",
+    },
+  ],
+  definitions: [
+    {
+      term: "Background job",
+      definition: "A task that runs outside the user's request, in a separate worker process, such as sending an email or generating a report, so the application stays responsive and the task can be retried if it fails.",
+    },
+    {
+      term: "Message queue",
+      definition: "A durable holding area for tasks or events waiting to be processed, such as Amazon SQS, Redis with BullMQ, or Google Pub/Sub. It absorbs spikes and lets producers and workers run at different speeds.",
+    },
+    {
+      term: "Idempotency",
+      definition: "The property that performing the same operation more than once has the same effect as performing it once. It makes retries and duplicate webhook deliveries safe, preventing double charges and duplicate records.",
+    },
+    {
+      term: "Dead-letter queue",
+      definition: "A separate queue where messages go after repeated processing failures, so they are kept for investigation and replay instead of blocking the main queue or being lost.",
+    },
+    {
+      term: "Event loop",
+      definition: "The mechanism Node.js uses to handle many concurrent operations on a single thread. It is efficient for input and output, but a long CPU-heavy task on it blocks every other request, which is why such work goes to workers.",
+    },
+    {
+      term: "N+1 query",
+      definition: "A common performance problem where code runs one query to fetch a list and then one more query per item, turning a single request into hundreds of database round trips as data grows.",
+    },
+    {
+      term: "Exponential backoff",
+      definition: "A retry strategy that waits progressively longer between attempts, usually with some randomness, so a struggling partner system is not overwhelmed by immediate repeated retries.",
+    },
+  ],
+  relatedServices: [
+    { title: "API Development & Integrations", href: "/services/api-development" },
+    { title: "Database Architecture & Optimisation", href: "/services/database-architecture" },
+    { title: "Cloud Infrastructure & DevOps", href: "/services/cloud-infrastructure" },
+    { title: "Add AI to Existing Software", href: "/services/ai-integration" },
+    { title: "SaaS Product Development", href: "/services/saas-development" },
+    { title: "Software Maintenance & Support", href: "/services/software-maintenance-support" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/><path d="M10 6h8"/><path d="M10 18h8"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

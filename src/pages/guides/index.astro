@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import HubPage from '../../components/HubPage.astro';
+import { guideCategories, type GuideCategory } from '../../data/guide-categories';
+
+const guides = (await getCollection('guides')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const order: GuideCategory[] = ['cost', 'compare', 'australia', 'explainer'];
+const groups = order
+  .map((id) => ({
+    id,
+    label: guideCategories[id].label,
+    intro: guideCategories[id].intro,
+    items: guides
+      .filter((g) => g.data.category === id)
+      .map((g) => ({ title: g.data.title, href: `/guides/${g.id}`, description: g.data.description })),
+  }))
+  .filter((g) => g.items.length);
+---
+
+<HubPage
+  metaTitle="Software and AI Guides for Australian Buyers | All Webbed Labs"
+  metaDescription="Cost guides, comparisons, explainers and Australian regulation guides for planning a software or AI project. Written in plain English, with sources."
+  eyebrow="Guides"
+  title="Guides for planning a software or AI project in Australia"
+  intro="What things cost in Australia, how the options compare, what the jargon means, and which rules apply. Plain English, AUD figures, primary sources, and a visible date on every page so you know how current it is."
+  crumbTitle="Guides"
+  groups={groups}
+/>

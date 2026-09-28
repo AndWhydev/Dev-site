@@ -1,0 +1,203 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'AI Document Processing & Data Extraction | All Webbed Labs',
+  metaDescription: "AI that reads invoices, claims and contracts, extracts validated fields into your systems and routes doubtful ones to staff. Accuracy measured on your files.",
+  category: 'AI & Data',
+  serviceName: 'AI Document Processing',
+  slug: 'ai-document-processing',
+  heroHeadline: 'From Inbox PDF to Validated Record, Without the Re-Keying',
+  heroTagline: "Intelligent document processing that classifies incoming documents, extracts the fields you need, checks them against your rules and records, and sends only the doubtful ones to a person.",
+  summaryStatement: "AI document processing, also called intelligent document processing, is the use of OCR, layout analysis and language models to classify documents such as invoices, claims, contracts and forms, extract specified fields into structured data, validate those fields against business rules, and route low-confidence results to human reviewers before the data enters downstream systems.",
+  description: [
+    "Plenty of important work still arrives as documents: supplier invoices in a shared inbox, claim forms with photos attached, signed contracts, delivery dockets, medical certificates, bank statements, applications scanned on a phone. Someone opens each one, reads it and types the relevant details into another system. It is slow, it is error prone, and it scales only by hiring. Older template-based OCR tools helped when every document looked the same, but broke the moment a supplier changed their invoice layout. Modern document AI combines OCR and layout analysis with language models that understand what a field means rather than where it sits on the page, so the same pipeline can handle hundreds of layouts, handwriting, tables that span pages and documents that mix several types in one file.",
+    "The extraction model is the easy part to demo and the smallest part of a system that works. What makes document processing trustworthy is everything around it. Each document is first classified, so an invoice, a credit note and a statement go down different paths. Extracted fields are validated: line items must sum to the total, GST must be consistent with the amounts, an ABN must pass the ATO's check-digit algorithm, a purchase order number must exist in your ERP, a policy must have been active on the date of loss. Every field carries a confidence score, and anything below the threshold you set, or failing a rule, goes to a review screen that shows the extracted value beside the highlighted source so a person can confirm or correct it in seconds. Those corrections feed back into evaluation. We do not quote accuracy figures in advance, because accuracy depends on your documents: we measure field-level accuracy on a labelled sample of your own files during the build, agree the thresholds for straight-through processing with you, and report the same measures in production. Documents and extracted data stay in your cloud account, in an Australian region by default; at the time of writing (September 2026), for example, Amazon Textract has been available in the AWS Sydney region since December 2019.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>',
+      title: 'Handles the Real Mix',
+      description: "Emails, attachments, scans, phone photos, multi-document PDFs and handwriting. Documents are split, classified and sent to the right extraction path automatically, so the system copes with what actually arrives rather than a tidy test set.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></svg>',
+      title: 'Structured Output to Your Schema',
+      description: "Fields, line items and tables are extracted into a defined schema that matches your downstream system, with source page and position recorded for each value. Nothing reaches your ERP, claims or practice system as loose text.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Business Rules Catch Errors',
+      description: "Totals must reconcile, dates must be plausible, ABNs must pass the check-digit test, and references must match records in your systems. Validation catches mistakes that a confident model would otherwise pass straight through.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M8 11h6"/><path d="M11 8v6"/></svg>',
+      title: 'Fast Human Review',
+      description: "Low-confidence or rule-failing fields go to a review screen showing the value beside the highlighted source region. Staff confirm or correct in a click, and only the uncertain fields need attention, not the whole document.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: 'Accuracy Measured on Your Files',
+      description: "We label a representative sample of your own documents and measure accuracy field by field before go-live. Straight-through thresholds are set from that evidence, and the same measures are tracked in production using reviewer corrections.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="10" width="6" height="5" rx="1"/><path d="M10 10V8.5a2 2 0 0 1 4 0V10"/></svg>',
+      title: 'Sensitive Documents Kept Onshore',
+      description: "Documents, extracted data and review history stay in your cloud account in an Australian region, with retention rules, access control and redaction of fields that downstream users do not need to see.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Amazon Textract', 'Azure AI Document Intelligence', 'Google Document AI', 'Anthropic Claude',
+    'OpenAI models', 'Open-weight vision models', 'Docling', 'Unstructured',
+    'Python', 'TypeScript', 'Pydantic', 'PostgreSQL',
+    'Amazon S3', 'Azure Blob Storage', 'React', 'Label Studio',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Document Inventory and Sample Labelling',
+      duration: 'Weeks 1 to 2',
+      description: "We collect a representative sample of each document type, including the ugly ones, and label the fields you need with your team. This labelled set defines what correct means and becomes the benchmark every design choice is measured against.",
+    },
+    {
+      step: '02',
+      title: 'Schema, Rules and Routing Design',
+      duration: 'Weeks 2 to 3',
+      description: "We define the output schema for each document type, the validation rules (arithmetic, formats, check digits, lookups against your records) and the routing: what may flow straight through, what goes to review and what is rejected.",
+    },
+    {
+      step: '03',
+      title: 'Extraction Pipeline Build',
+      duration: 'Weeks 3 to 6',
+      description: "We build ingestion from your inboxes, portals or storage, then classification, OCR and layout analysis, and extraction. We compare approaches on your sample, from dedicated document services to multimodal language models, and choose per document type on accuracy and cost.",
+    },
+    {
+      step: '04',
+      title: 'Review Interface and Integration',
+      duration: 'Weeks 5 to 8',
+      description: "We build the reviewer screen with source highlighting and keyboard-first correction, and integrate validated output with your ERP, claims, CRM or practice management system through its API, with idempotent writes so nothing is posted twice.",
+    },
+    {
+      step: '05',
+      title: 'Accuracy Evaluation and Threshold Setting',
+      duration: 'Weeks 7 to 9',
+      description: "We measure field-level accuracy on a held-back part of the labelled set, report where errors occur, and agree confidence thresholds with you. Stricter thresholds mean more review and fewer errors; the trade-off is your decision, made on evidence.",
+    },
+    {
+      step: '06',
+      title: 'Parallel Run and Go-Live',
+      duration: 'Weeks 9 to 10',
+      description: "The system processes live documents alongside your current process so results can be compared, then takes over progressively by document type. Dashboards track volumes, straight-through rate, review time and corrections from day one.",
+    },
+  ],
+  industries: [
+    'Insurance & Claims',
+    'Accounting & Finance Teams',
+    'Legal Services',
+    'Logistics & Freight',
+    'Construction & Property',
+    'Healthcare Administration',
+    'Lending & Financial Services',
+    'Government & Agencies',
+  ],
+  faqs: [
+    {
+      question: "How accurate is AI document extraction?",
+      answer: "It depends on your documents: their quality, layout variety, handwriting, and how many fields you need. Anyone quoting a single accuracy figure before seeing your files is guessing. We measure field-level accuracy on a labelled sample of your own documents during the build, show you where errors happen, and set review thresholds with you so that uncertain fields are checked by a person. Validation rules then catch many of the errors that remain.",
+    },
+    {
+      question: "What kinds of documents can you process?",
+      answer: "Typical examples are supplier invoices, receipts, remittances, claim forms, medical certificates, contracts, leases, delivery dockets, bills of lading, bank statements, identity documents, applications and correspondence. Printed, scanned, photographed and handwritten content can all be handled, with handwriting and poor scans generally needing more human review.",
+    },
+    {
+      question: "How is this different from a RAG knowledge base?",
+      answer: "A RAG knowledge base answers questions by retrieving passages from a collection of documents. Document processing turns each incoming document into structured, validated data that another system can use, such as an invoice posted to your accounts payable ledger. Some organisations need both, for example contract extraction to populate a register and a knowledge base for questions about contract terms.",
+    },
+    {
+      question: "Why not use the document AI feature built into our accounting or claims software?",
+      answer: "If the built-in feature handles your documents accurately enough, use it: it is cheaper and already integrated. A custom pipeline is worth it when you have document types the product does not support, need validation against several systems, want control over where documents are processed, or need extraction feeding more than one platform.",
+    },
+    {
+      question: "Where are our documents processed and stored?",
+      answer: "In your own cloud account, in an Australian region by default. Document services such as Amazon Textract are available in the AWS Sydney region, and extraction with language models can use in-region endpoints or a privately deployed model. We document the full data flow, apply retention rules you set and restrict who can view original documents.",
+    },
+    {
+      question: "What happens when a supplier changes their invoice layout?",
+      answer: "Because extraction is based on understanding the content rather than fixed template positions, a new layout usually works without changes. If accuracy drops for a particular source, reviewer corrections and monitoring show it quickly, and we add examples to the evaluation set and adjust.",
+    },
+    {
+      question: "Does automating decisions from documents raise Privacy Act issues?",
+      answer: "It can. From 10 December 2026, APP entities must describe in their privacy policies certain decisions made, or substantially assisted, by computer programs using personal information where the decision could significantly affect an individual's rights or interests. Extracting claim data is not itself a decision, but auto-approving or declining a claim may be. We map where decisions occur so your privacy team can assess disclosure, and keep humans in the loop where required.",
+    },
+  ],
+  pricing: [
+    {
+      name: 'Single document type',
+      range: '$30k to $60k',
+      detail: "Typical Australian market range, AUD ex GST, build only. One document type such as supplier invoices, validation rules, review screen and one integration. Roughly 20 to 45 senior engineer-days at a $1,400/day planning rate.",
+    },
+    {
+      name: 'Multi-document pipeline',
+      range: '$60k to $150k',
+      detail: "Typical range, AUD ex GST. Several document types with classification, splitting, cross-system validation and more than one integration. Roughly 45 to 105 engineer-days.",
+    },
+    {
+      name: 'Enterprise document platform',
+      range: 'From $150k',
+      detail: "Typical range, AUD ex GST. High volume, many sources and teams, private model hosting and formal audit requirements. Per-page processing and model costs quoted separately after discovery.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "Staff re-key data from documents into systems at meaningful volume every week",
+      "Documents arrive in many layouts from many sources, so fixed templates keep breaking",
+      "The extracted data can be checked against rules or existing records",
+      "Errors are costly, so you need confidence scores, review queues and an audit trail",
+      "The documents are sensitive and must be processed within Australia in an environment you control",
+    ],
+    notRightFor: [
+      "Volumes are low enough that manual entry costs less than building and running a pipeline",
+      "Your existing software already extracts these documents accurately enough",
+      "The sender could provide structured data directly through an API, EDI or e-invoicing",
+      "You need answers to questions across documents rather than fields from each one; a RAG knowledge base fits better",
+      "You expect fully unattended processing of high-stakes decisions with no human review at all",
+    ],
+  },
+  definitions: [
+    {
+      term: 'Intelligent Document Processing (IDP)',
+      definition: "Software that classifies documents, extracts structured data from them and validates it, combining OCR, layout analysis and machine learning or language models with business rules and human review.",
+    },
+    {
+      term: 'OCR (Optical Character Recognition)',
+      definition: "Converting images of text, such as scans and photos, into machine-readable characters. It is the first step for any document that is not already digital text.",
+    },
+    {
+      term: 'Confidence Score',
+      definition: "A system's estimate of how likely an extracted value is to be correct. Values below an agreed threshold are sent to a person rather than passed straight through.",
+    },
+    {
+      term: 'Straight-Through Processing',
+      definition: "Documents that pass extraction and validation without any human touch and flow directly into downstream systems. The rate depends on document quality and the thresholds you set.",
+    },
+    {
+      term: 'Field-Level Accuracy',
+      definition: "The proportion of individual extracted fields that match the correct value in a labelled test set. It is more informative than document-level accuracy because it shows which fields cause errors.",
+    },
+    {
+      term: 'Human in the Loop',
+      definition: "A design where people review, confirm or correct specific AI outputs before they take effect, used here for uncertain or rule-failing fields.",
+    },
+  ],
+  relatedServices: [
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'RAG Knowledge Base', href: '/services/rag-knowledge-base' },
+    { title: 'Private LLM Deployment', href: '/services/private-llm-deployment' },
+    { title: 'Data Engineering', href: '/services/data-engineering' },
+    { title: 'AI Readiness Assessment', href: '/services/ai-readiness-assessment' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h6"/><polyline points="14 2 14 8 20 8"/><path d="M20 8v4"/><line x1="8" y1="13" x2="13" y2="13"/><line x1="8" y1="17" x2="11" y2="17"/><rect x="15" y="15" width="7" height="7" rx="1"/><path d="m17 18.5 1.5 1.5 2-2.5"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

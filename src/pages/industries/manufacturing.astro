@@ -1,0 +1,94 @@
+---
+import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
+
+const data = {
+  metaTitle: 'Manufacturing Software & ERP Integration Australia | All Webbed Labs',
+  metaDescription: 'ERP integration, production and quality data platforms, and AI document processing for Australian manufacturers, built around SAP Business One, Acumatica, NetSuite and Dynamics.',
+
+  industryName: 'Manufacturing',
+  heroHeadline: 'Software That Connects the Factory Floor to the ERP',
+  heroTagline: 'ERP integration, production and quality data, and AI that reads supplier paperwork, built for Australian manufacturers running lean teams on mixed systems.',
+
+  /* stats array deliberately empty: no verified, attributable figures to show. Do not add invented statistics. */
+
+  stats: [],
+
+  painPoints: [
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="13" width="8" height="8" rx="1"/><path d="M10 7h4a2 2 0 012 2v4"/><path d="M14 17h-4a2 2 0 01-2-2v-4"/></svg>',
+      title: 'An ERP That Doesn\'t Talk to Anything Else',
+      description: 'Orders, stock and costing live in SAP Business One, MYOB Acumatica, NetSuite or Microsoft Dynamics, while production scheduling, quality checks and machine data sit in spreadsheets, standalone apps or paper. Staff re-key the same numbers between systems every shift, and month-end reconciliation becomes a hunt for which version is right.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>',
+      title: 'Supplier Paperwork Buried in Inboxes',
+      description: 'Purchase order confirmations, delivery dockets, certificates of analysis, material test certificates and safety data sheets arrive as PDFs and scans in every format imaginable. Someone has to read each one, match it to the right PO and batch, and file it where an auditor or customer can find it later.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
+      title: 'Quality Records You Can\'t Trace Quickly',
+      description: 'When a customer raises a complaint or a supplier issues a recall, you need to trace a finished batch back to its raw material lots, process parameters and inspection results. If that trail spans paper checksheets, a spreadsheet and the ERP, answering one question can take days.',
+    },
+    {
+      icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>',
+      title: 'Machine Data Nobody Uses',
+      description: 'Newer equipment produces sensor and PLC data, older machines produce none, and the two rarely end up in one place. Without clean, timestamped history linked to jobs and maintenance records, predictive maintenance stays a vendor slide rather than something your maintenance team can act on.',
+    },
+  ],
+
+  solutions: [
+    'ERP integration for SAP Business One, MYOB Acumatica, NetSuite and Microsoft Dynamics',
+    'Production scheduling and shop-floor data capture apps',
+    'Quality management, inspection and non-conformance workflows',
+    'Batch and lot traceability from raw material to dispatch',
+    'AI document processing for supplier certificates, dockets and invoices',
+    'Production and quality dashboards on a single data layer',
+    'Machine and sensor data pipelines as a foundation for predictive maintenance',
+    'Customer and supplier portals connected to live ERP data',
+  ],
+
+  /* useCases array deliberately empty: no signed-off manufacturing project examples to reference yet. Add honest capability statements only once real, permissioned examples exist. */
+
+  useCases: [],
+
+  relevantServices: [
+    { title: 'API Development & Integrations', href: '/services/api-development' },
+    { title: 'AI Document Processing', href: '/services/ai-document-processing' },
+    { title: 'Data Analytics', href: '/services/data-analytics' },
+    { title: 'Enterprise Software', href: '/services/enterprise-software' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'Legacy Modernisation', href: '/services/legacy-modernisation' },
+  ],
+
+  faqs: [
+    {
+      question: 'Which ERP systems can you integrate with?',
+      answer: "We work through each ERP's supported integration path: the Service Layer and DI API for SAP Business One, the REST and contract-based APIs for MYOB Acumatica, SuiteTalk and RESTlets for NetSuite, and the published APIs for Microsoft Dynamics 365 Business Central and Finance and Operations. Older on-premises ERPs without a usable API can often be integrated through their database views, scheduled exports or an existing middleware layer. We confirm the exact route, licence requirements and any partner involvement during discovery, before quoting a fixed price.",
+    },
+    {
+      question: 'Should we replace our ERP or build around it?',
+      answer: "Usually build around it. An ERP is expensive and disruptive to replace, and most of the pain manufacturers describe comes from the gaps between the ERP and everything else, not the ERP itself. We keep the ERP as the system of record for orders, stock and costing and build the missing pieces beside it: shop-floor capture, quality workflows, traceability and reporting. If your ERP genuinely can't support where the business is going, we'll say so and help you scope a replacement with an ERP partner rather than rebuild it ourselves.",
+    },
+    {
+      question: 'Can AI read our supplier certificates and delivery dockets?',
+      answer: "Yes, this is one of the most practical uses of AI in manufacturing. A document processing pipeline reads incoming PDFs and scans, extracts fields such as supplier, PO number, batch or heat number, quantities and test results, checks them against the purchase order and specification in your ERP, and files the document against the right receipt. Each extracted field carries a confidence score, so staff review only the uncertain values and anything that fails a specification check, rather than retyping every document.",
+    },
+    {
+      question: 'Do you build predictive maintenance systems?',
+      answer: "We build the data foundation that predictive maintenance depends on: collecting machine and sensor data, linking it to assets, jobs and maintenance history, and making it queryable. On top of that we can build condition alerts and anomaly detection. Whether prediction is worth it depends on having enough history, including failures, for the machines that matter. We assess that honestly in discovery, and often recommend starting with condition monitoring and better maintenance records before any prediction model.",
+    },
+    {
+      question: 'We are a mid-sized Australian manufacturer with a small IT team. Is custom software realistic for us?',
+      answer: "Often, if it is scoped tightly. We start with a paid discovery to find the one or two workflows where connecting systems or removing re-keying saves the most time, then build those at a fixed price. All code goes into your own repository, the system runs in Australian cloud regions or on your own infrastructure, and we document it so your team or another provider can support it. Some manufacturing R&D may be eligible for the R&D Tax Incentive; speak to a registered R&D tax agent, as we are not one.",
+    },
+    {
+      question: 'Can the system work on the factory floor with patchy Wi-Fi and shared devices?',
+      answer: "Yes, if it is designed for it from the start. Shop-floor apps should work offline and sync when the connection returns, support shared tablets with quick badge or PIN sign-in, use large touch targets that work with gloves, and scan barcodes or QR codes rather than relying on typing. We test on the actual devices and in the actual environment before rollout.",
+    },
+  ],
+
+  ctaHeadline: 'Ready to Connect Your Systems?',
+  ctaDescription: "Whether you need your ERP talking to the shop floor, supplier paperwork processed automatically or a single view of production and quality, we start with a paid discovery and a fixed price. Tell us which systems you run and where the re-keying hurts most.",
+};
+---
+<IndustryPageLayout {...data} />

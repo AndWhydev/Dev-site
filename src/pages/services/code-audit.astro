@@ -1,0 +1,210 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Code Audit & Technical Due Diligence | All Webbed Labs",
+  metaDescription: "Independent code audits and technical due diligence for acquirers, investors and boards, or before a rebuild: security, IP, architecture and delivery risk.",
+  category: "Assurance",
+  serviceName: "Code Audit",
+  slug: "code-audit",
+  heroHeadline: "Know What You Are Buying, Funding or Rebuilding Before You Commit",
+  heroTagline: "An independent, senior review of an existing codebase and how it is built, run and owned, written up so that engineers can act on it and decision makers can price it.",
+  summaryStatement: "A code audit is an independent review of an existing software system's source code, architecture, dependencies, security, infrastructure and delivery practices, producing a severity-rated findings report and remediation estimate; when it is commissioned by an acquirer, investor or board to inform a transaction or funding decision, it is usually called technical due diligence.",
+  description: [
+    "Software is often the largest asset in a deal that nobody on the deal team can read. An acquirer sees a product demo, a revenue line and a team slide. What they cannot see is whether the code is maintainable by anyone other than its original author, whether it depends on libraries with licences that conflict with how it is sold, whether customer data is protected, whether it will survive ten times the users, or whether a large part of it was written by contractors who never assigned their rights. The same blind spot applies to a board approving another year of spend on an internal platform, an investor weighing a follow-on round, or a business owner deciding whether to keep the system they have or pay for a rebuild. A code audit replaces assumptions with evidence, in the time frame a decision actually allows.",
+    "Our audits combine automated analysis with senior engineers reading the code. Tooling covers what machines do well: dependency vulnerabilities, open source licence inventory, secrets committed to the repository history, static analysis, test coverage and code churn. People cover what tooling cannot: whether the architecture fits the business plan, whether the data model will hold up, how deployments and backups actually work, where knowledge is concentrated in one person, and what it would realistically cost to fix what we find. Every finding is rated by severity and business impact, linked to evidence, and paired with a remediation estimate, so an acquirer can adjust price or conditions, a board can fund the right fixes, and an owner can compare the cost of repair against the cost of replacement. We work under NDA, read-only where possible, and report to whoever commissioned the audit. If you are a founder planning a new product rather than assessing an existing one, our Discovery Audit covers the legal, compliance and IP questions before a build starts; this service is for software that already exists.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M8 11h6"/><path d="M11 8v6"/></svg>',
+      title: "Evidence, Not Impressions",
+      description: "Each finding links to the file, commit, configuration or scan result that supports it. You can hand the report to the target's engineers and they can verify every point, which makes negotiation about facts rather than opinions.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+      title: "Findings With a Price Tag",
+      description: "Severity ratings alone do not help a deal team. We estimate the effort to remediate each material finding in engineer days and cost ranges, so issues can be reflected in price, escrow, conditions precedent or a post-completion plan.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="12" cy="14" r="2"/><path d="M12 16v2"/></svg>',
+      title: "Licence and Provenance Checks",
+      description: "We inventory open source components and their licences, flag copyleft obligations that may conflict with how the software is distributed, and map who committed the code. That gives your lawyers a factual basis for their review of IP assignment.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      title: "Security From the Inside",
+      description: "A code audit reviews authentication, authorisation, input handling, secrets management and data protection by reading the source, which finds issues an external scan cannot. Where a live penetration test is also warranted, we say so and scope it separately.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: "Key-Person Risk Made Visible",
+      description: "Commit history, documentation and interviews show how much of the system lives in one or two people's heads. For an acquirer or investor, that is often the largest risk in the asset, and it has a practical mitigation plan if identified early.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-7"/></svg>',
+      title: "Repair or Rebuild, Answered",
+      description: "For owners weighing a rebuild, we compare the cost and risk of fixing the current system against replacing it, module by module where that helps. Sometimes the honest answer is that the existing code is better than it feels, and a rebuild would waste money.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "TypeScript / JavaScript", "Python", "PHP", "Java", "C# / .NET", "React / Next.js",
+    "PostgreSQL / MySQL", "AWS / Azure / Google Cloud", "Semgrep", "SonarQube",
+    "OWASP Dependency-Check / Snyk", "Syft / CycloneDX (SBOM)", "Gitleaks / TruffleHog", "ScanCode (licences)",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Scope, Questions and NDA",
+      duration: "Days 1 to 2",
+      description: "We agree the decision the audit supports, the questions that matter most, the systems in scope, the deadline and who receives the report. NDAs are signed with the commissioning party and, in a transaction, with the target. Scope is fixed before work starts.",
+    },
+    {
+      step: "02",
+      title: "Access and Automated Analysis",
+      duration: "Days 2 to 5",
+      description: "With read-only access to repositories and, where agreed, cloud consoles, we run dependency, licence, secrets and static analysis scans, generate a software bill of materials, and measure test coverage and code churn. Results are triaged by an engineer; raw scanner output is never passed off as findings.",
+    },
+    {
+      step: "03",
+      title: "Senior Engineering Review",
+      duration: "Days 4 to 12",
+      description: "Senior engineers read the critical paths: authentication, payments, data access, integrations and the areas with the most change or defects. We review architecture, data model, infrastructure, deployment, backups and observability against the business plan the software needs to support.",
+    },
+    {
+      step: "04",
+      title: "Team Interviews",
+      duration: "Days 6 to 12",
+      description: "Short structured interviews with the engineers and product owners fill gaps the code cannot: how releases happen, what breaks, what is planned, and who knows what. In a transaction, these are coordinated through the deal team and kept to agreed topics.",
+    },
+    {
+      step: "05",
+      title: "Findings, Ratings and Estimates",
+      duration: "Days 10 to 15",
+      description: "Each finding is written up with evidence, a severity and business impact rating, and a remediation estimate. We share draft findings with the commissioning party for factual correction before the report is finalised, so nothing in it is a surprise.",
+    },
+    {
+      step: "06",
+      title: "Report and Read-Out",
+      duration: "Final 2 to 3 days",
+      description: "You receive an executive summary, a detailed technical report, a risk register and a remediation roadmap, followed by a read-out session for decision makers and a separate technical session for engineers. We remain available to answer follow-up questions during the decision period.",
+    },
+  ],
+  industries: [
+    "Private Equity & Venture Capital",
+    "Corporate M&A",
+    "Software & SaaS",
+    "Financial Services & Fintech",
+    "Healthcare Technology",
+    "Government & Enterprise",
+    "E-commerce & Marketplaces",
+    "Professional Services",
+  ],
+  faqs: [
+    {
+      question: "What is the difference between a code audit and technical due diligence?",
+      answer: "The technical work is largely the same. A code audit is the broader term and can be commissioned by anyone, including the software's owner. Technical due diligence is a code audit commissioned by a prospective acquirer or investor to inform a transaction, so it adds a focus on valuation-relevant risks such as IP provenance, key-person dependency, scalability against the business plan and the cost of remediation after completion.",
+    },
+    {
+      question: "What do we receive at the end of a code audit?",
+      answer: "An executive summary written for non-technical decision makers, a detailed technical report with evidence for each finding, a risk register rated by severity and business impact, remediation estimates in engineer days and cost ranges, a software bill of materials with licence inventory, and a read-out session. The format can be adapted to fit a data room or a board paper.",
+    },
+    {
+      question: "How long does technical due diligence take?",
+      answer: "A focused audit of a single application usually takes one to two weeks from access to report. A multi-system platform or a target with several products typically takes three to four weeks. Deal timetables are often tight, so we can deliver a red-flag summary early in the engagement, followed by the full report.",
+    },
+    {
+      question: "Is a code audit the same as a penetration test?",
+      answer: "No. A penetration test attacks the running system from outside to find exploitable weaknesses. A code audit reads the source and configuration from inside, and covers much more than security: architecture, maintainability, licences, delivery practices and team risk. They complement each other. If our review suggests a penetration test is warranted, we recommend it and can scope it through our cybersecurity service.",
+    },
+    {
+      question: "Does the audit confirm that the target owns its IP?",
+      answer: "Not on its own. We provide the technical facts: an inventory of open source licences and their obligations, a list of who committed the code and when, and any third-party or generated code we can identify. Whether ownership has been validly assigned is a legal question for your lawyers, who can use our findings as evidence. This is general information, not legal advice.",
+    },
+    {
+      question: "Will the target company's engineers be disrupted?",
+      answer: "Minimally. Most of the work is done from read-only repository access and documentation. We typically need a few hours of interviews with the lead engineers and a named contact for questions. We agree the time commitment with the deal team up front.",
+    },
+    {
+      question: "We are planning a new product, not buying one. Is this the right service?",
+      answer: "Probably not. A code audit assesses software that already exists. If you are a founder about to commission a new build, our Discovery Audit covers the legal, compliance, security and IP questions before development starts, and its fee is credited to the build if you proceed.",
+    },
+    {
+      question: "Should we audit our current system before deciding to rebuild it?",
+      answer: "Yes, in most cases. Rebuilds are expensive and often recreate the same problems. An audit tells you which parts of the current system are sound, which are genuinely holding you back, and what fixing them would cost, so the choice between refactoring, partial replacement and a full rebuild is made on evidence.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "You are acquiring, investing in or lending against a company whose value depends substantially on its software",
+      "A board or executive team needs an independent view of an internal platform before approving further investment",
+      "You are deciding whether to repair, partially replace or rebuild an existing system and want the decision grounded in evidence",
+      "You have inherited a codebase from a departed vendor or developer and need to know what you now own",
+      "You are preparing for a sale or raise and want to find and fix issues before a buyer's diligence team does",
+    ],
+    notRightFor: [
+      "You are planning a brand new product with no existing code, where our Discovery Audit is the right starting point",
+      "You need formal assurance against a certification standard such as ISO 27001 or SOC 2, which requires an accredited auditor",
+      "You only need to test whether a live system can be breached from outside, where a penetration test is the more direct tool",
+      "The software is an off-the-shelf SaaS product you subscribe to, where vendor security documentation and contract terms matter more than code",
+      "The decision is already made and the audit would only confirm it, in which case spend the budget on the remediation itself",
+    ],
+  },
+  pricing: [
+    {
+      name: "Focused audit (typical range)",
+      range: "$8k to $18k",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. A single application of modest size, about 6 to 12 senior days at a planning rate of roughly $1,400 a day: automated scans, targeted code review, short report, risk register and read-out.",
+    },
+    {
+      name: "Technical due diligence (typical range)",
+      range: "$18k to $40k",
+      detail: "Typical range, AUD ex GST. A product and its infrastructure for a transaction or funding decision, about 13 to 28 senior days: full scans and SBOM, architecture and security review, team interviews, remediation estimates, executive summary and data-room-ready report.",
+    },
+    {
+      name: "Multi-system or complex target (typical range)",
+      range: "$40k+",
+      detail: "Typical range, AUD ex GST. Several products, legacy platforms or heavy regulatory exposure, with a red-flag summary early and a full report to a deal timetable. Scoped and fixed before work starts.",
+    },
+  ],
+  definitions: [
+    {
+      term: "Technical due diligence",
+      definition: "An independent review of a company's software, infrastructure and engineering practices commissioned by a prospective acquirer or investor, to identify risks that affect value, deal terms or post-completion plans.",
+    },
+    {
+      term: "Software bill of materials (SBOM)",
+      definition: "A machine-readable list of every third-party component in a piece of software, with versions and licences. It shows exactly what the software is made of and which published vulnerabilities apply to it.",
+    },
+    {
+      term: "Copyleft licence",
+      definition: "An open source licence, such as the GPL or AGPL, that can require software incorporating the licensed code to be released under the same terms in certain circumstances. It matters when proprietary software is distributed or offered as a service.",
+    },
+    {
+      term: "Static analysis",
+      definition: "Automated examination of source code without running it, to detect likely bugs, insecure patterns and code quality issues. Useful for coverage, but its output needs an engineer to separate real problems from noise.",
+    },
+    {
+      term: "Key-person risk",
+      definition: "The risk that critical knowledge of a system is held by one or two individuals, so their departure would slow or stall development. Commit history and documentation gaps are the usual evidence.",
+    },
+    {
+      term: "Code churn",
+      definition: "How often particular files or modules are changed over time. Areas with high churn and many defects are usually where maintenance cost and risk are concentrated.",
+    },
+    {
+      term: "Red-flag report",
+      definition: "A short early summary of the most serious findings in a due diligence engagement, delivered ahead of the full report so a deal team can decide quickly whether to proceed, renegotiate or dig deeper.",
+    },
+  ],
+  relatedServices: [
+    { title: "Discovery Audit (before a new build)", href: "/why-audit" },
+    { title: "Cybersecurity", href: "/services/cybersecurity" },
+    { title: "Legacy System Modernisation", href: "/services/legacy-modernisation" },
+    { title: "Software Maintenance & Support", href: "/services/software-maintenance-support" },
+    { title: "Rewrite vs Refactor Legacy Software", href: "/guides/rewrite-vs-refactor-legacy-software" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><circle cx="12" cy="12" r="2.5"/><path d="m13.8 13.8 2 2"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

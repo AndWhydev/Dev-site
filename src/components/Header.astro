@@ -3,40 +3,39 @@ const currentPath = Astro.url.pathname;
 
 const serviceGroups = [
   {
-    label: 'Development',
-    items: [
-      { title: 'Custom App Development', href: '/services/custom-app-development' },
-      { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
-      { title: 'React & Next.js', href: '/services/react-nextjs' },
-      { title: 'API Development', href: '/services/api-development' },
-      { title: 'Custom SaaS', href: '/services/saas-development' },
-    ],
-  },
-  {
-    label: 'Mobile',
-    items: [
-      { title: 'Flutter Development', href: '/services/flutter-development' },
-      { title: 'iOS & Android', href: '/services/web-mobile-apps' },
-      { title: 'UI & UX Design', href: '/services/ui-ux-design' },
-    ],
-  },
-  {
     label: 'AI & Data',
     items: [
+      { title: 'AI Agent Development', href: '/services/ai-agent-development' },
       { title: 'LLM Integration', href: '/services/llm-integration' },
       { title: 'RAG Knowledge Base', href: '/services/rag-knowledge-base' },
       { title: 'AI Chatbot', href: '/services/ai-chatbot' },
+      { title: 'Private LLM Deployment', href: '/services/private-llm-deployment' },
+      { title: 'MCP Server Development', href: '/services/mcp-server-development' },
+      { title: 'AI Document Processing', href: '/services/ai-document-processing' },
+    ],
+  },
+  {
+    label: 'AI Strategy',
+    items: [
+      { title: 'AI Readiness Assessment', href: '/services/ai-readiness-assessment' },
+      { title: 'AI Governance', href: '/services/ai-governance' },
+      { title: 'Add AI to Existing Software', href: '/services/ai-integration' },
+      { title: 'Data Engineering', href: '/services/data-engineering' },
       { title: 'Data Analytics', href: '/services/data-analytics' },
       { title: 'Workflow Automation', href: '/services/workflow-automation' },
     ],
   },
   {
-    label: 'Web3 & Blockchain',
+    label: 'Development',
     items: [
-      { title: 'Smart Contracts', href: '/services/smart-contracts' },
-      { title: 'DeFi Platform', href: '/services/defi-platform' },
-      { title: 'NFT Marketplace', href: '/services/nft-marketplace' },
-      { title: 'Blockchain & Web3', href: '/services/blockchain-development' },
+      { title: 'Custom App Development', href: '/services/custom-app-development' },
+      { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
+      { title: 'React & Next.js', href: '/services/react-nextjs' },
+      { title: 'Flutter Development', href: '/services/flutter-development' },
+      { title: 'Node.js & Python Backends', href: '/services/backend-development' },
+      { title: 'API Development', href: '/services/api-development' },
+      { title: 'Custom SaaS', href: '/services/saas-development' },
+      { title: 'UI & UX Design', href: '/services/ui-ux-design' },
     ],
   },
   {
@@ -51,10 +50,19 @@ const serviceGroups = [
     ],
   },
   {
-    label: 'Quality & Growth',
+    label: 'Quality & Support',
     items: [
+      { title: 'Code Audit & Due Diligence', href: '/services/code-audit' },
+      { title: 'Maintenance & Support', href: '/services/software-maintenance-support' },
       { title: 'QA & Testing', href: '/services/qa-testing' },
       { title: 'Deployment', href: '/services/deployment' },
+    ],
+  },
+  {
+    label: 'Web3 & Other',
+    items: [
+      { title: 'Blockchain & Web3', href: '/services/blockchain-development' },
+      { title: 'Smart Contracts', href: '/services/smart-contracts' },
       { title: 'SEO & Backlinks', href: '/services/seo-backlinks' },
     ],
   },
@@ -73,6 +81,7 @@ const industries = [
   { title: 'Sports & Recreation', href: '/industries/sports-recreation' },
   { title: 'Web3 & Crypto', href: '/industries/web3-crypto' },
   { title: 'AI & Automation', href: '/industries/ai-automation' },
+  { title: 'Manufacturing', href: '/industries/manufacturing' },
 ];
 
 const solutions = [
@@ -81,6 +90,8 @@ const solutions = [
   { title: 'Digital Transformation', desc: 'Modernise your business end to end', href: '/digital-transformation' },
   { title: 'Startup MVP', desc: 'From idea to launch in 90 days', href: '/startup-mvp' },
   { title: 'Staff Augmentation', desc: 'Extend your team with senior engineers', href: '/staff-augmentation' },
+  { title: 'Industry Solutions', desc: 'AI and software shaped by your industry\'s rules', href: '/solutions' },
+  { title: 'Where We Work', desc: 'Sydney based, delivering across Australia', href: '/locations' },
 ];
 
 const company = [
@@ -90,6 +101,7 @@ const company = [
   { title: 'Trust & Compliance', href: '/trust', desc: 'IP, security, NDA, company on the record' },
   { title: 'R&D Tax Incentive', href: '/r-and-d', desc: 'AU-built means RDTI-eligible spend' },
   { title: 'Technology Radar', href: '/technology-radar', desc: 'Tools and frameworks we use' },
+  { title: 'How We Write', href: '/editorial-policy', desc: 'Sources, dates and corrections on our guides' },
   { title: 'Careers', href: '/careers', desc: 'Join the All Webbed Labs team' },
 ];
 
@@ -193,6 +205,7 @@ function isActive(href: string) {
         </div>
       </div>
 
+      <a href="/guides" class={`nav-link ${isActive('/guides') ? 'active' : ''}`}>Guides</a>
       <a href="/case-studies" class={`nav-link ${isActive('/case-studies') ? 'active' : ''}`}>Case Studies</a>
       <a href="/about#team" class="nav-link">Team</a>
     </nav>
@@ -261,6 +274,7 @@ function isActive(href: string) {
         </div>
       </div>
 
+      <a href="/guides" class="mob-link mob-direct">Guides</a>
       <a href="/case-studies" class="mob-link mob-direct">Case Studies</a>
       <a href="/about#team" class="mob-link mob-direct">Team</a>
       <div class="mob-cta">

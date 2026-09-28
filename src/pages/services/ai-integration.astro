@@ -1,0 +1,203 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Add AI to Existing Software | All Webbed Labs",
+  metaDescription: "Add AI search, summarisation, extraction and assistants to software you already run, released behind feature flags with evaluations and cost controls.",
+  category: "AI & Data",
+  serviceName: "AI Integration",
+  slug: "ai-integration",
+  heroHeadline: "Add AI to the Software You Already Run, Without Rebuilding It",
+  heroTagline: "Search, summarisation, extraction and in-app assistants built into your existing product or internal system, rolled out behind feature flags and measured before everyone gets them.",
+  summaryStatement: "AI integration is the work of adding language model features, such as semantic search, summarisation, data extraction and in-app assistants, to an application that already exists, fitted to its codebase, data model, permissions and users, and released gradually so quality and running cost are measured before the feature reaches everyone.",
+  description: [
+    "Most organisations asking about AI do not need a new AI product. They have a product, a portal or an internal system that people already use every day, and they want it to do something it cannot do today: find the right record when someone describes it in plain words, summarise a long case history before a call, pull the fields out of an uploaded invoice, or answer a how-do-I question inside the screen where the question comes up. The value is in putting that capability where the work already happens, inside the existing app, using the data and permissions the app already has. That is a different job from building a chatbot from scratch, and it is usually faster and cheaper, because the hard parts (users, authentication, data, hosting) are already in place.",
+    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per-use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So we treat an AI feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="m14 9 3 3-3 3"/></svg>',
+      title: "Fits the App You Have",
+      description: "We integrate through a thin AI service behind an internal interface, not by rewriting your application. Your existing screens, data model, authentication and deployment pipeline stay in place, and the rest of the codebase never calls a model provider directly, which keeps the change small and reversible.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>',
+      title: "Released Behind Feature Flags",
+      description: "Every AI feature ships dark, then to staff, then to a small share of real users, with a kill switch at each stage. You see how it performs on real traffic before committing to it, and a bad model update can be switched off in seconds without a redeploy.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+      title: "Running Cost Designed In",
+      description: "Per-request cost is tracked from the first test, not discovered on the first invoice. Model routing sends simple requests to cheaper models, prompt and response caching cut repeat calls, and budgets cap usage per user and per tenant, so cost grows in line with value rather than ahead of it.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: "Your Permissions, Respected",
+      description: "The AI feature sees only what the signed-in user could already see in your app. We reuse your existing authorisation checks and tenant boundaries rather than giving the model a privileged back door into the database, so a summary or search result never leaks another customer's records.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: "Quality Measured Before Launch",
+      description: "We build an evaluation set from your own examples, with expected outputs agreed by the people who know the domain, and score every prompt and model change against it. Launch decisions are made on numbers, and regressions from future model updates are caught in CI rather than by customers.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+      title: "Graceful When the Model Fails",
+      description: "Timeouts, provider outages and low-confidence answers all have a defined fallback: the classic keyword search, the original form, or a clear message. The core workflow of your app never depends on a model responding, so an AI outage degrades one feature instead of taking the product down.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "Anthropic Claude", "OpenAI models", "Open-weight models", "AWS Bedrock", "Azure OpenAI",
+    "Google Vertex AI", "PostgreSQL + pgvector", "TypeScript / Node.js", "Python",
+    "Vercel AI SDK", "LaunchDarkly / Unleash / Flags SDK", "OpenTelemetry", "Redis", "Langfuse",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Feature Selection and Codebase Review",
+      duration: "Week 1",
+      description: "We work with you to pick the one or two AI features with the clearest value, then read the codebase, data model and authorisation logic to find where they should plug in. The output is a short integration plan, a rough per-request cost estimate and a list of risks, before any build starts.",
+    },
+    {
+      step: "02",
+      title: "Evaluation Set and Prototype",
+      duration: "Weeks 2 to 3",
+      description: "We collect real examples from your data, agree expected outputs with your domain experts, and prototype against them with two or three candidate models. This tells you early whether the feature is good enough, which model tier it needs and what it will cost to run at your volumes.",
+    },
+    {
+      step: "03",
+      title: "Integration Behind a Flag",
+      duration: "Weeks 3 to 6",
+      description: "We build the AI service, wire it into your app behind a feature flag, reuse your existing permission checks, and add fallbacks, timeouts, caching and per-tenant budgets. The code lands in your repository through your normal review and CI process, with tests alongside it.",
+    },
+    {
+      step: "04",
+      title: "Internal and Staged Rollout",
+      duration: "Weeks 6 to 8",
+      description: "The feature is switched on for staff, then for a small percentage of users. We watch quality scores, latency, cost per request and user feedback on a dashboard, fix what the real traffic reveals, and widen the rollout only when the numbers hold.",
+    },
+    {
+      step: "05",
+      title: "General Release and Cost Tuning",
+      duration: "Weeks 8 to 9",
+      description: "Once the feature is on for everyone, we tune model routing and caching against real usage patterns, set spend alerts, and confirm the per-user cost matches the business case. Anything that is not earning its cost is simplified or switched off.",
+    },
+    {
+      step: "06",
+      title: "Handover and Model Change Plan",
+      duration: "Final week",
+      description: "We hand over the evaluation suite, dashboards, runbooks and a plan for handling model version changes, so your team can swap or upgrade models by running the evals rather than guessing. Ongoing support is available under a maintenance retainer if you want it.",
+    },
+  ],
+  industries: [
+    "Software & SaaS",
+    "Professional Services",
+    "Financial Services",
+    "Insurance",
+    "Healthcare Administration",
+    "Education & Training",
+    "Logistics & Field Services",
+    "Property & Real Estate",
+  ],
+  faqs: [
+    {
+      question: "Which AI features are worth adding to an existing app first?",
+      answer: "The best first features remove a task users already do by hand inside your app. Common starting points are semantic search that finds records from a plain-language description, summaries of long histories such as tickets, cases or notes, extraction of fields from uploaded documents into forms, and a help assistant that answers questions about the screen the user is on. We usually recommend starting with one feature where the output is easy to check, measuring it properly, and adding the next one once the first has paid for itself.",
+    },
+    {
+      question: "Do we need to rebuild our application to add AI?",
+      answer: "No. In most cases the AI capability is added as a small service or module that your existing application calls through an internal interface. The rest of the app, including its database, authentication and hosting, stays as it is. A rebuild only makes sense if the application is already due for replacement for other reasons, in which case our legacy modernisation service is the better starting point.",
+    },
+    {
+      question: "How much does it cost to add AI to an existing app?",
+      answer: "There are two costs: the build, and the per-use running cost. A single well-scoped feature such as search or summarisation typically falls in the lower build ranges shown on this page, while an in-app assistant that can take actions costs more because it needs more safety work and testing. Running cost depends on volume, model tier and caching, and we estimate it per request during the first week. Our guide on the cost to add AI to an existing app breaks down the drivers in more detail.",
+    },
+    {
+      question: "How do you stop AI running costs from blowing out as usage grows?",
+      answer: "Cost control is built in from the start rather than added later. We measure cost per request during prototyping, route simple requests to smaller and cheaper models, cache repeated prompts and responses, trim the context sent to the model, and set budgets and rate limits per user and per tenant. Spend alerts go to your team, and the feature flag gives you an immediate off switch if something unexpected happens.",
+    },
+    {
+      question: "What happens when the model provider changes or retires a model?",
+      answer: "Providers release new versions and retire old ones regularly, so we design for it. Your app talks to our AI service, not directly to a provider, and the evaluation suite lets you test a new model against your own examples before switching. A model change becomes a measured configuration change behind a flag rather than a surprise in production.",
+    },
+    {
+      question: "Can the AI feature keep our data in Australia?",
+      answer: "Often, yes. The major cloud AI platforms offer some models in Australian regions, but which models are available where changes frequently, so we check the vendor's current regional availability for your chosen model at the start of the project. Where a required model is not available onshore, we explain the trade-off and the options, including open-weight models hosted in your own Australian cloud account.",
+    },
+    {
+      question: "Will the AI feature affect automated decisions under the Privacy Act?",
+      answer: "It can. From 10 December 2026, APP entities must describe in their privacy policy the kinds of decisions a computer program makes, or substantially and directly contributes to, that could significantly affect a person's rights or interests. If an AI feature scores, ranks or flags people, we log what it did and help you document it so your privacy team can assess it. This is general information, not legal advice.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "You have a working application with real users and want it to search, summarise, extract or assist in places where people currently do that work by hand",
+      "The data the AI needs already lives in your app, and the feature should respect the permissions and tenant boundaries your app already enforces",
+      "You want to test value on real traffic with a staged rollout before committing to a larger AI program",
+      "Running cost matters and needs to be predictable per user or per tenant as adoption grows",
+      "Your team wants to own and maintain the feature afterwards, with evaluations and runbooks to do so safely",
+    ],
+    notRightFor: [
+      "An off-the-shelf tool already covers the need, such as the AI features built into your existing SaaS platforms or Microsoft 365 Copilot, which will be cheaper than custom work",
+      "The application itself is due for replacement, in which case modernise first and design AI into the new system",
+      "You need a standalone assistant over a large document library with no existing app to host it, where a RAG knowledge base is the better fit",
+      "The underlying data is too incomplete or inconsistent for the feature to be reliable, which is a data engineering problem to fix first",
+      "The task needs the same exact, rule-based answer every time, where ordinary rules and code will be cheaper and more predictable than a model",
+    ],
+  },
+  pricing: [
+    {
+      name: "Single AI feature (typical range)",
+      range: "$15k to $45k",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. One well-scoped feature such as semantic search, summarisation or field extraction, including evaluation set, flagged rollout and handover. Roughly 10 to 30 senior days at a planning rate of about $1,400 a day. Model usage is billed separately by the provider.",
+    },
+    {
+      name: "In-app assistant (typical range)",
+      range: "$45k to $120k",
+      detail: "Typical range, AUD ex GST. An assistant inside your app that answers questions and can take limited actions through your existing APIs, with permission checks, action confirmation, safety testing and staged rollout. The upper end applies where many actions or several data sources are involved.",
+    },
+    {
+      name: "AI feature program (typical range)",
+      range: "$120k+",
+      detail: "Typical range, AUD ex GST. Several AI features across a product or a group of internal systems, with a shared AI service, cost dashboards, evaluation pipeline in CI and governance documentation. Scoped after a paid discovery and then fixed price.",
+    },
+  ],
+  definitions: [
+    {
+      term: "Feature flag",
+      definition: "A switch in code that turns a feature on or off for chosen users without redeploying. It lets an AI feature be released to staff first, then a percentage of users, and switched off instantly if quality or cost goes wrong.",
+    },
+    {
+      term: "Evaluation set",
+      definition: "A collection of real example inputs with agreed good outputs, used to score an AI feature automatically. It turns quality from an opinion into a number that can be compared across prompts and models.",
+    },
+    {
+      term: "Model routing",
+      definition: "Sending each request to the cheapest model that can handle it well, for example a small model for short classification tasks and a larger model only for complex requests, to keep running cost down.",
+    },
+    {
+      term: "Semantic search",
+      definition: "Search that matches on meaning rather than exact words, usually using vector embeddings, so a user can describe what they want in their own words and still find the right record.",
+    },
+    {
+      term: "Fallback path",
+      definition: "The behaviour an app falls back to when the AI part fails, times out or is not confident, such as ordinary keyword search or the original manual form, so the core workflow keeps working.",
+    },
+    {
+      term: "Prompt caching",
+      definition: "Reusing the processed form of a repeated prompt prefix, such as long instructions or reference material, so later requests cost less and return faster. Most major model providers offer it in some form.",
+    },
+  ],
+  relatedServices: [
+    { title: "LLM Integration", href: "/services/llm-integration" },
+    { title: "RAG Knowledge Base", href: "/services/rag-knowledge-base" },
+    { title: "AI Document Processing", href: "/services/ai-document-processing" },
+    { title: "AI Agent Development", href: "/services/ai-agent-development" },
+    { title: "API Development", href: "/services/api-development" },
+    { title: "Cost to Add AI to an Existing App", href: "/guides/cost-to-add-ai-to-an-existing-app" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8"/><path d="M12 18v4"/><path d="M12 7l1.2 2.8L16 11l-2.8 1.2L12 15l-1.2-2.8L8 11l2.8-1.2z"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

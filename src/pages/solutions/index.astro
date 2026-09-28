@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import HubPage from '../../components/HubPage.astro';
+
+const items = (await getCollection('solutions')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const groups = [
+  {
+    id: 'all',
+    label: 'Industry solutions',
+    items: items.map((s) => ({ title: s.data.title, href: `/solutions/${s.id}`, description: s.data.description })),
+  },
+];
+---
+
+<HubPage
+  metaTitle="AI and Software Solutions by Industry | All Webbed Labs"
+  metaDescription="How we approach AI and custom software for regulated and specialist Australian industries, from APRA-regulated finance to health, legal and government."
+  eyebrow="Solutions"
+  title="AI and software solutions shaped by your industry's rules"
+  intro="The same technology behaves differently in a bank, a hospital and a law firm. These pages cover the regulations, systems and use cases that change how we design and build for each industry."
+  crumbTitle="Solutions"
+  groups={groups}
+/>

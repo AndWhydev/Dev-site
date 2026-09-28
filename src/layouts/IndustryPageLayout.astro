@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import RelatedReading from '../components/RelatedReading.astro';
 
 export interface PainPoint {
   icon: string;
@@ -113,7 +114,7 @@ const {
           <span class="section-label">Challenges We Solve</span>
           <h2 class="section-heading">The Pain Points We Understand</h2>
           <p class="section-subheading">
-            We've worked inside {industryName.toLowerCase()} deeply enough to know exactly what keeps technology leaders up at night.
+            The problems we plan around when building for {industryName.toLowerCase()}, because they shape the architecture from day one.
           </p>
         </div>
         <div class="pain-grid">
@@ -236,6 +237,7 @@ const {
         </div>
       </div>
     </section>
+    <RelatedReading match={Astro.url.pathname} heading={`${industryName}: solutions and guides`} />
   </main>
   <Footer />
 </Layout>

@@ -1,0 +1,208 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: 'AI Governance & Responsible AI Engineering | All Webbed Labs',
+  metaDescription: "Responsible AI controls: evals, logging, human review, model cards and incident handling, mapped to Australia's Guidance for AI Adoption and ADM rules.",
+  category: 'AI & Data',
+  serviceName: 'AI Governance',
+  slug: 'ai-governance',
+  heroHeadline: 'Responsible AI as Working Controls, Not a Policy PDF',
+  heroTagline: "We build the evaluation gates, logs, review steps, documentation and incident processes that let you show how your AI systems behave, and map them to Australian guidance and privacy law.",
+  summaryStatement: "AI governance engineering is the work of building technical controls into AI systems, such as an inventory of systems and decisions, pre-release evaluation gates, decision logging, human review points, model and system documentation, monitoring and incident handling, so that an organisation can demonstrate how each system behaves and who is accountable for it.",
+  description: [
+    "Most organisations now have an AI policy. Far fewer can answer the questions that follow when something goes wrong or an auditor asks: which AI systems are running, which decisions they influence, what each one was tested against before release, what it did on a given day for a given customer, who approved that, and how quickly it can be switched off. Those answers do not come from policy documents. They come from engineering: an inventory that stays current, test suites that gate releases, logs that capture inputs, outputs and approvals, review steps designed into the workflow, and a rehearsed incident process. That is the part of governance we do. We work alongside your risk, privacy and legal people, who own the policy and the judgements, and we build the controls that make their policy real and produce the evidence they need.",
+    "Two Australian reference points shape most of this work. The first is the Guidance for AI Adoption, published by the National AI Centre in October 2025 to replace the Voluntary AI Safety Standard, which sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. We map each control we build to those practices so you can show coverage and gaps. The second is the Privacy Act 1988: from 10 December 2026, APP entities must describe in their privacy policies the kinds of decisions made by computer programs using personal information, or where a program does something substantially and directly related to making such a decision, when the decision could reasonably be expected to significantly affect an individual's rights or interests. Meeting that obligation starts with knowing where those decisions happen, which is an engineering inventory problem. To be plain about scope: we do not offer ISO/IEC 42001 certification, we are not a certification body, and we do not hold that certification ourselves. Certification against ISO/IEC 42001 is issued by accredited certification bodies. The controls and records we build can support an organisation preparing for it, but they are not a substitute for the audit. This is general information, not legal advice; your legal and privacy advisers remain responsible for compliance assessments.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg>',
+      title: 'An Inventory That Stays Current',
+      description: "A register of every AI system, the models and vendors behind it, the data it uses, the decisions it touches and its accountable owner. We connect it to your deployment pipeline where possible, so a new AI feature cannot ship without an entry.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Evaluation Gates Before Release',
+      description: "Each system gets test suites for quality, safety, bias where relevant and prompt injection, with agreed thresholds. Model upgrades and prompt changes must pass them in CI before release, and the results are kept as evidence.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+      title: 'Decision Logging You Can Query',
+      description: "Inputs, outputs, model versions, retrieved sources, confidence and human approvals are logged against each decision, with retention and access rules set with your privacy team. You can reconstruct what happened in a specific case.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Human Review That Works',
+      description: "We design review steps people can realistically perform: clear evidence, sensible queues, sampling of automated decisions, and override tracking. Oversight that reviewers rubber-stamp is not oversight, so we measure it.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="12" cy="14" r="2"/><path d="M8 20a4 4 0 0 1 8 0"/></svg>',
+      title: 'Model and System Cards',
+      description: "Plain-language documentation for each system: purpose, users, data, model, known limitations, evaluation results, oversight arrangements and owner. It gives staff, auditors and, where appropriate, customers the essential information.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>',
+      title: 'Incident Handling and Kill Switches',
+      description: "Monitoring and alerts for drift, error spikes and policy breaches, an AI incident register, a runbook tied to your existing incident and data breach processes, and a tested way to switch a feature off or fall back to a manual path.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Langfuse', 'OpenTelemetry', 'Promptfoo', 'Inspect (UK AISI)',
+    'CI/CD pipelines', 'Azure DevOps', 'PostgreSQL', 'Grafana',
+    'AWS CloudTrail', 'Azure Monitor', 'Amazon Bedrock Guardrails', 'Azure AI Content Safety',
+    'Python', 'TypeScript', 'Terraform', 'Confluence',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'AI System and Decision Inventory',
+      duration: 'Weeks 1 to 2',
+      description: "We find the AI in use across the organisation, including features inside SaaS products and staff-built tools, and record each system, its data, its models and vendors, the decisions it influences and an accountable owner. We flag decisions that may fall within the Privacy Act automated decision-making disclosure for your privacy team to assess.",
+    },
+    {
+      step: '02',
+      title: 'Risk Tiering and Control Mapping',
+      duration: 'Weeks 2 to 3',
+      description: "With your risk owners we tier each system by impact, then map existing controls against the six practices in the Guidance for AI Adoption. The output is a gap list sized by risk, so effort goes to the systems that matter most.",
+    },
+    {
+      step: '03',
+      title: 'Evaluation and Release Gates',
+      duration: 'Weeks 3 to 6',
+      description: "For higher-tier systems we build evaluation suites and wire them into CI so changes cannot ship without passing. We include adversarial tests for prompt injection and data leakage, and bias testing where decisions affect people.",
+    },
+    {
+      step: '04',
+      title: 'Logging, Review and Monitoring',
+      duration: 'Weeks 4 to 8',
+      description: "We add decision logging with agreed retention, design or improve human review points, and set up monitoring and alerts for quality, drift, cost and policy breaches, with dashboards for system owners.",
+    },
+    {
+      step: '05',
+      title: 'Documentation and Incident Readiness',
+      duration: 'Weeks 7 to 9',
+      description: "We produce model and system cards, an incident runbook linked to your existing incident and Notifiable Data Breaches processes, and a working kill switch or fallback for each high-tier system. We then run a tabletop exercise to test it.",
+    },
+    {
+      step: '06',
+      title: 'Handover and Periodic Review',
+      duration: 'Week 10 and ongoing',
+      description: "You receive the register, controls, evaluation suites, documentation and runbooks. We can run quarterly reviews to re-test systems, update the register and report against the practices as models and obligations change.",
+    },
+  ],
+  industries: [
+    'Financial Services & Insurance',
+    'Healthcare & Aged Care',
+    'Government & Agencies',
+    'Education & Training',
+    'Professional & Legal Services',
+    'Human Resources & Recruitment',
+    'Software & SaaS Vendors',
+    'Utilities & Critical Infrastructure',
+  ],
+  faqs: [
+    {
+      question: "Do you provide ISO/IEC 42001 certification?",
+      answer: "No. We do not offer ISO/IEC 42001 certification, we are not a certification body, and we do not hold the certification ourselves. Certification is issued by accredited certification bodies after an audit of your AI management system. What we provide is engineering: the inventory, evaluations, logging, oversight, documentation and incident controls. If you are preparing for certification, those controls and records can support that work, alongside a certification body and any management system consultant you engage.",
+    },
+    {
+      question: "What is Australia's Guidance for AI Adoption?",
+      answer: "It is voluntary guidance published by the National AI Centre in October 2025, replacing the 2024 Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a shorter Foundations version and a more detailed Implementation Practices version for technical and governance professionals.",
+    },
+    {
+      question: "What do the Privacy Act automated decision-making rules require?",
+      answer: "From 10 December 2026, APP 1 requires APP entities to include information in their privacy policies about decisions made by computer programs using personal information, or where a program does something substantially and directly related to making the decision, if the decision could reasonably be expected to significantly affect an individual's rights or interests. It is a transparency obligation. The engineering challenge is knowing where such decisions occur, which is why we start with an inventory. Your privacy and legal advisers decide what must be disclosed.",
+    },
+    {
+      question: "Is this a policy writing service?",
+      answer: "No. Your risk, legal and privacy teams, or advisers you appoint, own policy. We build the technical controls that put policy into practice and generate evidence: tests, logs, review workflows, documentation and incident processes. We are happy to work from a policy you already have, or alongside advisers writing one.",
+    },
+    {
+      question: "Can you add governance controls to AI systems we did not build?",
+      answer: "Often, yes. Logging, evaluation and monitoring can usually be added around an existing system at its interfaces. For AI features inside third-party SaaS products, controls are more limited, so the work shifts to vendor due diligence, configuration review, usage monitoring and documenting what the vendor does and does not provide.",
+    },
+    {
+      question: "How do you evaluate an AI system for bias or unfair outcomes?",
+      answer: "Where a system's outputs affect people, we define with you which groups and outcomes to compare, build test sets that represent them, and measure differences in error rates or outcomes. Some attributes are sensitive information under the Privacy Act, so how test data is sourced and handled is agreed with your privacy team first. Results are documented in the system card with any mitigations.",
+    },
+    {
+      question: "Does this make us compliant?",
+      answer: "No engineering work can guarantee compliance on its own. We build controls to your requirements and provide evidence of what they do. Whether that meets a particular legal or regulatory obligation is an assessment for your legal, privacy and compliance advisers. This page is general information, not legal advice.",
+    },
+  ],
+  pricing: [
+    {
+      name: 'Inventory and gap review',
+      range: '$15k to $30k',
+      detail: "Typical Australian market range, AUD ex GST. AI system and decision inventory, risk tiering and a control gap list mapped to the six practices. Roughly 11 to 21 senior engineer-days at a $1,400/day planning rate.",
+    },
+    {
+      name: 'Controls for key systems',
+      range: '$30k to $90k',
+      detail: "Typical range, AUD ex GST. Evaluation gates, decision logging, review design, monitoring, system cards and incident runbooks for one to three higher-risk systems. Roughly 21 to 65 engineer-days.",
+    },
+    {
+      name: 'Portfolio programme',
+      range: 'Scoped individually',
+      detail: "For organisations with many AI systems across divisions, including quarterly re-testing and reporting. Fixed fee proposed after an inventory.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "You run AI systems that influence decisions about customers, staff or citizens",
+      "You need evidence of testing, oversight and logging for a board, regulator, auditor or customer",
+      "You want to map your controls to Australia's Guidance for AI Adoption",
+      "You need to find where automated decisions occur ahead of the Privacy Act disclosure from 10 December 2026",
+      "Your policy exists but engineering teams have no practical way to meet it",
+    ],
+    notRightFor: [
+      "You want ISO/IEC 42001 certification; that requires an accredited certification body, not us",
+      "You need a legal opinion or compliance sign-off; engage legal and privacy advisers",
+      "You need a policy or ethics framework written from scratch with no systems yet in use",
+      "Your only AI use is a licensed assistant with vendor-managed controls; an acceptable use policy and vendor review may suffice",
+      "You want a badge or certificate rather than working controls",
+    ],
+  },
+  definitions: [
+    {
+      term: 'AI Governance',
+      definition: "The policies, roles and technical controls an organisation uses to make sure its AI systems are accountable, tested, monitored and used as intended.",
+    },
+    {
+      term: 'Guidance for AI Adoption',
+      definition: "Voluntary Australian Government guidance from the National AI Centre, released in October 2025, setting out six essential practices for responsible AI use. It replaced the Voluntary AI Safety Standard.",
+    },
+    {
+      term: 'Automated Decision-Making (ADM)',
+      definition: "Decisions made by a computer program, or substantially assisted by one. Under the Privacy Act changes commencing 10 December 2026, certain ADM using personal information must be described in privacy policies.",
+    },
+    {
+      term: 'Model Card / System Card',
+      definition: "A short document describing an AI model or system's purpose, data, performance, limitations and oversight, so users and reviewers understand what it should and should not be used for.",
+    },
+    {
+      term: 'Evaluation Gate',
+      definition: "An automated check in the release pipeline that runs a test suite against an AI system and blocks deployment if results fall below agreed thresholds.",
+    },
+    {
+      term: 'ISO/IEC 42001',
+      definition: "The international standard for AI management systems, published in 2023. Organisations can be certified against it by accredited certification bodies.",
+    },
+    {
+      term: 'AI Incident',
+      definition: "An event where an AI system causes or nearly causes harm, such as a wrong decision affecting a person, a data leak or unsafe output, recorded and handled through a defined process.",
+    },
+  ],
+  relatedServices: [
+    { title: 'AI Readiness Assessment', href: '/services/ai-readiness-assessment' },
+    { title: 'AI Agent Development', href: '/services/ai-agent-development' },
+    { title: 'LLM Integration', href: '/services/llm-integration' },
+    { title: 'Private LLM Deployment', href: '/services/private-llm-deployment' },
+    { title: 'Cybersecurity', href: '/services/cybersecurity' },
+    { title: 'QA & Testing', href: '/services/qa-testing' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M3 7h18"/><path d="m6 7-3 7a3 3 0 0 0 6 0Z"/><path d="m18 7-3 7a3 3 0 0 0 6 0Z"/><circle cx="12" cy="3" r="1"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

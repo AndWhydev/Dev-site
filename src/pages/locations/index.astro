@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import HubPage from '../../components/HubPage.astro';
+
+const items = (await getCollection('locations')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const groups = [
+  {
+    id: 'all',
+    label: 'Where we work',
+    items: items.map((s) => ({ title: s.data.title, href: `/locations/${s.id}`, description: s.data.description })),
+  },
+];
+---
+
+<HubPage
+  metaTitle="Where We Work: Sydney and Across Australia | All Webbed Labs"
+  metaDescription="All Webbed Labs is based in Sydney and delivers software and AI projects for clients across Australia, remotely and on site when a workshop needs it."
+  eyebrow="Locations"
+  title="Based in Sydney, delivering across Australia"
+  intro="Our team works from Sydney on AEST hours. We deliver remotely for clients in every capital city and travel for workshops when being in the room matters. These pages cover what that looks like in each market."
+  crumbTitle="Locations"
+  groups={groups}
+/>

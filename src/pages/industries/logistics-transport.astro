@@ -54,7 +54,7 @@ const data = {
   faqs: [
     {
       question: 'Can your systems integrate with existing TMS and ERP platforms like SAP, Oracle and CargoWise?',
-      answer: "Yes. We have integration experience with CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and a range of Australian-specific platforms including Microlistics, Paperless and Freight2020. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
+      answer: "Yes. We integrate with CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and a range of Australian-specific platforms including Microlistics, Paperless and Freight2020. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
     },
     {
       question: 'How do you handle NHVL chain of responsibility compliance in your fleet systems?',
@@ -70,7 +70,7 @@ const data = {
     },
     {
       question: 'Do you have experience with last-mile platforms for retail and e-commerce fulfilment?',
-      answer: "Yes. We've built last-mile platforms specifically for Australian e-commerce fulfilment, including multi-carrier rate shopping (integrating with Australia Post, Sendle, CouriersPlease, StarTrack and DHL), automated despatch manifesting, carrier label printing, delivery exception management and returns processing. We understand the nuances of Australia Post's eParcel and MyPost Business platforms, including the API quirks that catch teams out at scale. For high-volume operations we implement intelligent carrier selection rules based on zone, weight, service level and negotiated rate tables.",
+      answer: "Yes. We build last-mile platforms for Australian e-commerce fulfilment, including multi-carrier rate shopping (integrating with Australia Post, Sendle, CouriersPlease, StarTrack and DHL), automated despatch manifesting, carrier label printing, delivery exception management and returns processing. We plan for the specifics of Australia Post's eParcel and MyPost Business platforms, including rate limits and label workflows that catch teams out at scale. For high-volume operations we implement intelligent carrier selection rules based on zone, weight, service level and negotiated rate tables.",
     },
   ],
   ctaHeadline: "Ready to Build a Smarter Supply Chain?",

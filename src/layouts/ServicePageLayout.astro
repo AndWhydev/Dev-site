@@ -3,6 +3,7 @@ import Layout, { BRAND_DEFINITION } from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import RelatedReading from '../components/RelatedReading.astro';
 
 export interface Benefit {
   icon: string;
@@ -434,6 +435,8 @@ const entitySentence = BRAND_DEFINITION;
         </div>
       </div>
     </section>
+
+    <RelatedReading match={`/services/${pageSlug}`} />
 
     <CTABanner />
   </main>
