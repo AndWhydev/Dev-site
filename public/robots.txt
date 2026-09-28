@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://awlabs.com.au/sitemap-index.xml
+Sitemap: https://www.awlabs.com.au/sitemap-index.xml

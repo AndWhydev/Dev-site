@@ -1,9 +1,15 @@
 {
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "(www\\.)?aibusinesssolutions\\.au" }],
-      "destination": "https://awlabs.com.au/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?aibusinesssolutions\\.au"
+        }
+      ],
+      "destination": "https://www.awlabs.com.au/:path*",
       "permanent": true
     },
     {
@@ -32,7 +38,6 @@
       "permanent": false
     }
   ],
-
   "headers": [
     {
       "source": "/_astro/:all*",
@@ -43,7 +48,6 @@
         }
       ]
     },
-
     {
       "source": "/(.*)\\.(woff2|woff|ttf|otf|eot)",
       "headers": [
@@ -53,7 +57,6 @@
         }
       ]
     },
-
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico)",
       "headers": [
@@ -63,7 +66,6 @@
         }
       ]
     },
-
     {
       "source": "/(.*)\\.(mp4|webm|mov)",
       "headers": [
@@ -73,7 +75,6 @@
         }
       ]
     },
-
     {
       "source": "/docs/(.*)",
       "headers": [
@@ -83,15 +84,19 @@
         }
       ]
     },
-
     {
       "source": "/client-pack/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
-        { "key": "Cache-Control", "value": "private, max-age=0, must-revalidate" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, max-age=0, must-revalidate"
+        }
       ]
     },
-
     {
       "source": "/(.*\\.html|/|/.*)?",
       "headers": [
@@ -101,14 +106,25 @@
         }
       ]
     },
-
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Content-Security-Policy", "value": "frame-src 'self' https://golf-app-demo.vercel.app;" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-src 'self' https://golf-app-demo.vercel.app;"
+        }
       ]
     }
   ]
