@@ -1,11 +1,11 @@
 ---
 title: "Software for Australian RTOs and education providers"
-metaTitle: "Software for Australian RTOs: AVETMISS, USI and CRICOS"
-description: "RTO software shaped by the move from AVETMISS to the VET Information Standard, the 2025 Standards for RTOs, USI, LMS integration and ESOS obligations."
+metaTitle: "RTO Software and Education Software Development Australia"
+description: "RTO software and education software development in Australia: the move from AVETMISS to the VET Information Standard, USI, LMS integration, CRICOS and AI."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Software for Australian registered training organisations is shaped by national data and quality rules more than by teaching features. The biggest change in years is under way: national VET reporting is moving from AVETMISS to the VET Information Standard, with amended Data Provision Requirements commencing on 1 October 2026 and quarterly, API-based reporting to NCVER's STARS system. RTOs also operate under the 2025 Standards for RTOs, which took effect on 1 July 2025, must verify each student's USI, and, if they enrol international students, report through PRISMS under the ESOS framework. Most RTOs should buy a student management system that supports the new standard and build only the integrations and tools around it."
+summary: "RTO software, like most education software development for Australian registered training organisations, is shaped by national data and quality rules more than by teaching features. The biggest change in years is under way: national VET reporting is moving from AVETMISS to the VET Information Standard, with amended Data Provision Requirements commencing on 1 October 2026 and quarterly, API-based reporting to NCVER's STARS system. RTOs also operate under the 2025 Standards for RTOs, which took effect on 1 July 2025, must verify each student's USI, and, if they enrol international students, report through PRISMS under the ESOS framework. Most RTOs should buy a student management system that supports the new standard and build only the integrations and tools around it."
 takeaways:
   - "The VET Information Standard replaces AVETMISS for the VET Provider Collection; the amending Data Provision Requirements instrument commences on 1 October 2026 and RTOs transition on a quarter-by-quarter basis."
   - "Under the new standard, data is reported progressively, with quarterly submissions due by 30 April, 31 July, 31 October and 31 January."
@@ -13,6 +13,8 @@ takeaways:
   - "USI integration uses the USI Registry System web services, which require the ATO's Digital Partnership Office authentication kit before the USI developer kit."
   - "ASQA's principles for responsible AI use in VET keep decisions affecting students with qualified trainers, assessors and staff; AI can assist, not assess on its own."
 faqs:
+  - q: "What is AVETMISS?"
+    a: "AVETMISS, the Australian Vocational Education and Training Management Information Statistical Standard, is the national data standard RTOs have used to report training activity to NCVER. It is being replaced by the VET Information Standard for the VET Provider Collection, with RTOs moving across quarter by quarter. Until an RTO transitions, AVETMISS 8.0 reporting still applies."
   - q: "Should we build our own student management system?"
     a: "Usually not. Most RTOs will meet the new VET data system requirement through a commercial SMS that supports the VET Information Standard, and the SMS supplier carries the burden of keeping up with NCVER changes. Building your own makes sense only for large providers with genuinely unusual delivery models, and it means taking on API integration with STARS, the USI Registry System and possibly PRISMS yourself."
   - q: "When do we have to switch from AVETMISS to the VET Information Standard?"
@@ -23,6 +25,8 @@ faqs:
     a: "ASQA's principles for responsible AI use in VET say decisions affecting students remain the responsibility of qualified trainers, assessors and staff. AI can help draft feedback, check submissions for completeness or flag possible academic integrity issues, but a qualified assessor makes the competency judgement. ASQA also distinguishes AI from simple automation, such as automatically marking multiple choice questions."
   - q: "What do we need for international students?"
     a: "CRICOS providers must report specified student information to the Australian Government through PRISMS, including confirmation of enrolment details, fees received and visa information, and must monitor course progress and attendance under Standard 8 of the National Code 2018. Your systems need to hold that data accurately and produce it on time."
+  - q: "Can an RTO use an AI chatbot for course enquiries?"
+    a: "Yes, if it answers from published course information and is labelled as AI. Questions about a person's own eligibility for funded training, credit transfer or recognition of prior learning should go to a staff member, because those are decisions affecting students under ASQA's principles. Keep the conversation logs, since prospective student information is personal information."
   - q: "Can you integrate our LMS with our student management system?"
     a: "Usually yes. Moodle, Canvas and other major LMS platforms offer APIs and support LTI for embedding tools. The typical integration syncs enrolments from the SMS to the LMS and returns progress, attendance and assessment outcomes to the SMS, which stays the system of record for reporting."
 sources:
@@ -33,7 +37,7 @@ sources:
     url: "https://www.asqa.gov.au/for-providers/provider-obligations/data-collection-provision/vet-activity-data-reporting"
     publisher: "Australian Skills Quality Authority"
   - title: "Reporting under the VET Information Standard"
-    url: "https://www.dewr.gov.au/vet-activity-data/reporting-under-vet-information-standard"
+    url: "https://www.dewr.gov.au/reporting-under-vet-information-standard"
     publisher: "Department of Employment and Workplace Relations"
   - title: "RTO transition journey"
     url: "https://vetinformationstandard.ncver.edu.au/Preparing-for-transition/rto-transition-journey"
@@ -96,7 +100,7 @@ The rest of this page is about the rules that make those custom pieces harder th
 | Date | What happens |
 |---|---|
 | 1 July 2025 | 2025 Standards for RTOs take effect |
-| 10 July 2026 | NCVER announces that the new data reporting requirements have been published |
+| July 2026 | New Data Provision Requirements published, alongside the launch of NCVER's VET Information Standard website |
 | 1 October 2026 | The Data Provision Requirements amendment instrument (Data Streamlining) 2026 commences |
 | Quarter by quarter | RTOs transition when ready; NCVER recommends notifying it at least 3 months before the chosen quarter |
 
@@ -161,11 +165,11 @@ Standard 8 of the National Code of Practice for Providers of Education and Train
 
 **The SMS should remain the system of record for students, enrolments and outcomes; the LMS delivers learning and sends results back.** A typical integration creates LMS enrolments when a student enrols in the SMS, returns progress, attendance and assessment outcomes to the SMS, and keeps unit versions aligned with the training package. For specialised tools, such as a workplace logbook or simulation, LTI lets them embed inside the LMS without a separate login. Our [API development](/services/api-development) service covers how we build and test these integrations.
 
-## Where does AI fit within ASQA's principles?
+## How can RTOs use AI in education within ASQA's principles?
 
-**ASQA's principles for responsible AI use in VET don't add new rules, but they make clear that decisions affecting students stay with qualified trainers, assessors and staff.** The five principles cover governance, human oversight, secure information handling, equity and alignment with training product and industry requirements.
+**RTOs can use AI to assist trainers and staff, but ASQA's principles for responsible AI use in VET make clear that decisions affecting students stay with qualified trainers, assessors and staff.** The principles don't add new rules. The five principles cover governance, human oversight, secure information handling, equity and alignment with training product and industry requirements.
 
-Reasonable uses include drafting learning materials for trainer review, summarising student questions, helping trainers write feedback, answering prospective student questions from published course information, and checking enrolment documents for completeness with [AI document processing](/services/ai-document-processing). Uses that need care include anything that judges competency, predicts which students to intervene with, or processes sensitive information such as disability details.
+Reasonable uses include drafting learning materials for trainer review, summarising student questions, helping trainers write feedback, answering prospective student questions from published course information with an [AI chatbot](/services/ai-chatbot), and checking enrolment documents for completeness with [AI document processing](/services/ai-document-processing). Uses that need care include anything that judges competency, predicts which students to intervene with, or processes sensitive information such as disability details.
 
 ## What does a typical engagement look like?
 

@@ -1,12 +1,12 @@
 ---
 title: "AI agents vs chatbots vs workflow automation: what's the difference?"
-metaTitle: "AI Agents vs Chatbots vs Workflow Automation"
-description: "Chatbots answer, workflow automation follows fixed rules, AI agents decide their own steps. When each fits, what each costs to run, and the risks to plan for."
+metaTitle: "AI Agent vs Chatbot vs Automation: The Difference"
+description: "AI agent vs chatbot vs workflow automation: chatbots answer, automation follows fixed rules, agents choose their own steps. When to use each, and the risks."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A chatbot holds a conversation and answers questions. Workflow automation runs a fixed sequence of steps when something happens, like copying a form submission into your CRM. An AI agent is given a goal and tools, and decides for itself which steps to take and in what order. Use automation for predictable, repeatable processes, a chatbot when people need answers, and an agent only when the path genuinely varies case by case and you can afford the extra cost, testing and oversight."
+summary: "The difference between an AI agent, a chatbot and workflow automation is who decides the steps. A chatbot holds a conversation and answers questions. Workflow automation runs a fixed sequence of steps when something happens, like copying a form submission into your CRM. An AI agent is given a goal and tools, and decides for itself which steps to take and in what order. Use automation for predictable, repeatable processes, a chatbot when people need answers, and an agent only when the path genuinely varies case by case and you can afford the extra cost, testing and oversight."
 takeaways:
   - "Workflow automation is deterministic: the same input produces the same steps every time. It's the cheapest and most predictable option."
   - "A chatbot answers questions in conversation. Grounded in your documents, it's usually a RAG system with a chat interface."
@@ -20,6 +20,12 @@ faqs:
     a: "They can add AI steps to workflows, and several now offer agent features that let a model choose between tools. They're a good way to prototype. For agents that touch sensitive data, need thorough testing, or must run in a specific Australian region, a custom build usually gives more control. Our n8n vs Make vs Zapier guide compares the platforms."
   - q: "Are AI agents reliable enough for business use?"
     a: "For bounded tasks with good tools, clear instructions, limited permissions and human approval on consequential actions, yes. For open-ended tasks with broad access and no review, not yet. Reliability comes from the design around the model: narrow scope, testing, logging and checkpoints."
+  - q: "What's the difference between a rule-based chatbot and an AI chatbot?"
+    a: "A rule-based chatbot follows a decision tree or matches keywords to scripted replies, so it only handles the questions someone anticipated. An AI chatbot uses a large language model to interpret free-form questions and write its own answers, ideally grounded in your documents. Rule-based bots are cheaper and fully predictable; AI chatbots handle far more variety but need testing for wrong answers."
+  - q: "Is agentic AI the same as an AI agent?"
+    a: "Close, but not identical. An AI agent is a specific system that pursues a goal using tools. Agentic AI is the broader label for AI that acts with some autonomy, and it's often applied to workflows with a few AI decisions in them. When a vendor says a product is agentic, ask what it can actually do without a human approving it."
+  - q: "What is the best AI chatbot?"
+    a: "It depends on the job. For staff who need a general assistant, the choice is usually between ChatGPT, Claude and Microsoft Copilot, which our ChatGPT vs Claude vs Copilot guide compares. For answering customer or staff questions from your own policies and documents, a general assistant isn't enough: you need a chatbot grounded in your content, with citations and an evaluation set."
   - q: "Which is cheapest to run?"
     a: "Rule-based automation, by a wide margin, because most steps don't call a language model at all. A chatbot costs a model call per message. An agent can make many model calls per task as it plans, uses tools and checks its work, so per-task costs are higher and less predictable."
   - q: "Do Australian privacy rules affect AI agents?"
@@ -57,13 +63,22 @@ service:
 disclaimer: none
 ---
 
-## What's the difference in one sentence each?
+## What's the difference between an AI agent, a chatbot and automation?
 
 **Workflow automation follows a script, a chatbot answers questions, and an AI agent pursues a goal by choosing its own steps.**
 
 - **Workflow automation** runs a predefined sequence when a trigger fires. "When a web form is submitted, create a contact in the CRM, notify sales in Teams, and send a welcome email." No judgement, same path every time.
 - **A chatbot** converses with a person. It interprets the question and replies, often using your documents as the source. Modern business chatbots are usually a language model plus retrieval over a knowledge base.
 - **An AI agent** is given a goal, instructions and a set of tools, and decides what to do next based on what it finds. Anthropic's widely cited definition describes agents as systems where the model dynamically directs its own process and tool use, as opposed to workflows, where models and tools are orchestrated through predefined code paths.
+
+## Where do AI assistants, LLMs and rule-based chatbots fit?
+
+**A large language model (LLM) is the engine; chatbots, AI assistants and AI agents are products built on top of it.** The model on its own only turns text into text. What it can do for a business depends on what's wrapped around it.
+
+- **Rule-based chatbot:** the older kind. It follows a decision tree or matches keywords, with no language model involved. Predictable and cheap, but it fails on any question nobody scripted.
+- **AI chatbot:** an LLM that interprets free-form questions and writes answers, usually grounded in a knowledge base. This is the difference between a chatbot and an AI chatbot that buyers most often ask about.
+- **AI assistant:** a general-purpose chatbot for an individual, such as ChatGPT, Claude or Microsoft Copilot (compared in our [ChatGPT vs Claude vs Copilot for business](/guides/chatgpt-vs-claude-vs-copilot-for-business) guide), which helps with drafting, summarising and research. It works for one person at a time and usually waits to be asked.
+- **AI agent:** an LLM given tools and a goal, which acts rather than just replies. "Agentic AI" is the broader label for systems that behave this way.
 
 The terms get used loosely in marketing. Plenty of products sold as "agents" are workflows with one AI step, and that's often a good thing.
 
@@ -97,7 +112,7 @@ For the underlying concepts, see [what is an AI agent](/guides/what-is-an-ai-age
 
 **What most companies should build.** A workflow with two AI steps: one that reads free-text emails and photos and classifies urgency and category, and one that drafts the tenant reply. Routing, job creation and approvals stay as fixed, testable rules. This captures most of the value of the agent version with far less risk, and it's easier to explain to the property manager when something goes wrong.
 
-## Which one should you use?
+## When should you use an AI agent, a chatbot or automation?
 
 **Start with the simplest option that handles your real inputs, and add autonomy only where fixed rules fail.** Anthropic's own guidance to developers makes the same point: find the simplest solution, and only increase complexity when needed.
 

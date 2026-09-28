@@ -1,0 +1,11 @@
+{
+ "url": "/guides/vector-database-comparison",
+ "title": "pgvector vs Pinecone vs Weaviate vs Qdrant: which vector database should you use?",
+ "seeds": [
+  "pgvector vs pinecone vs weaviate"
+ ],
+ "keywords": [
+  "pinecone vs weaviate vs pgvector"
+ ],
+ "questions": []
+}

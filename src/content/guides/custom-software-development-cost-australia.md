@@ -1,15 +1,15 @@
 ---
 title: "How much does custom software cost in Australia? (2026 guide)"
 metaTitle: "Custom Software Development Cost in Australia (2026)"
-description: "Custom software in Australia typically costs $15k to $40k for a simple tool and $150k to $500k+ for complex systems. Ranges, cost drivers and a worked example."
+description: "How much does custom software cost in Australia? From $15k to $40k for a simple tool to $150k to $500k+ for complex systems. Bespoke software pricing guide."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Custom software built by an Australian team typically costs $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a mid-complexity system such as a customer portal or job management platform, and $150,000 to $500,000 or more for multi-system or enterprise platforms. Most of the difference comes from integrations, user roles, data migration and security requirements, not screen count. Budget another 15 to 20% of the build cost each year for maintenance, plus hosting."
+summary: "Custom software development in Australia typically costs $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a mid-complexity system such as a customer portal or job management platform, and $150,000 to $500,000 or more for multi-system or enterprise platforms. Most of the difference comes from integrations, user roles, data migration and security requirements, not screen count. Budget another 15 to 20% of the build cost each year for maintenance, plus hosting."
 takeaways:
   - "Published Australian agency guides cluster around three bands: under $40k, $40k to $150k, and $150k to $500k+ (AUD, ex GST)."
-  - "Price is mostly hours multiplied by rate. Australian agencies commonly bill $120 to $250 an hour; the hours are what you can influence."
+  - "Price is mostly hours multiplied by rate. Most published Australian agency rates fall between about $120 and $250 an hour, with some small and mid-sized firms up to $330; the hours are what you can influence."
   - "Integrations, data migration, permissions and compliance evidence move a project up a band faster than extra screens do."
   - "A paid discovery phase, typically $10k to $25k, turns a wide estimate into a fixed price and is usually the cheapest risk reduction available."
   - "Ongoing costs are real: allow 15 to 20% of the build cost per year for maintenance, plus hosting and licences, and add 10% GST to every figure."
@@ -24,6 +24,10 @@ faqs:
     a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. Many projects use paid discovery, then a fixed price per phase."
   - q: "How long does custom software take to build?"
     a: "Published Australian guides put simple tools at about 4 to 8 weeks, mid-complexity systems at 8 to 16 weeks, and enterprise platforms at 4 to 12 months or more. Integration access and decision speed on the client side often set the pace more than coding does."
+  - q: "What is the hourly rate for custom software development in Australia?"
+    a: "Most published Australian agency rates fall between about $120 and $250 an hour (AUD, ex GST). Conduct reports small and mid-sized agencies at $123 to $330 an hour and large firms at $330 to $495. The hours a vendor estimates usually matter more to the total than the rate."
+  - q: "How much does custom software cost per month once it is live?"
+    a: "In the worked example on this page, a $119,625 customer portal costs about $23,944 a year to keep running, or roughly $2,000 a month ex GST, covering maintenance at 15% of the build, hosting and third-party services. Payment processing fees come on top and scale with transactions."
   - q: "Does AI-assisted coding make custom software cheaper?"
     a: "It reduces time on routine coding, and some Australian agencies now quote a 30 to 40% reduction on those tasks. It does less for requirements, integration testing, security review and data migration, which is where much of the budget goes on larger projects."
 sources:
@@ -64,7 +68,7 @@ disclaimer: financial
 
 ## What does custom software cost in Australia in 2026?
 
-**Most custom software projects built by Australian teams land between $15,000 and $500,000 (AUD, ex GST), and the band you fall into is set by complexity, not by the type of business.** Published 2026 guides from Australian agencies agree closely on the lower two bands and diverge at the top, because "enterprise" covers everything from a multi-tenant portal to a core banking replacement.
+**Most custom software projects built by Australian teams land between $15,000 and $500,000 (AUD, ex GST), and the band you fall into is set by complexity, not by the type of business.** That holds whether you call it custom, bespoke or tailored software: the price of building it depends on what it has to connect to and who has to use it. Published 2026 guides from Australian agencies agree closely on the lower two bands and diverge at the top, because "enterprise" covers everything from a multi-tenant portal to a core banking replacement.
 
 | Project band | Typical examples | Typical range (AUD, ex GST) | Typical timeline |
 |---|---|---|---|
@@ -111,7 +115,7 @@ Conduct's phase split is a useful sanity check on any quote: roughly 10% require
 **Here is how a mid-complexity project turns into a number, using illustrative figures inside the published ranges.** The project: a portal where a services company's customers log in, see job status, approve quotes and pay invoices, with a sync to the company's accounting system.
 
 1. **Estimate the build hours by feature.** Authentication and user management 60 hours; job status views 90; quote approval workflow 80; invoice payments through a payment provider 70; accounting system sync 110; admin screens 90; automated testing and QA 110; deployment pipeline and environments 40; project management and design 75. Total: 725 hours.
-2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at a blended $165 an hour: 725 × $165 = $119,625.
+2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at a blended $165 an hour: 725 × $165 = $119,625. (That is about $1,250 a day, below the $1,400 senior-team day rate used in our other cost guides, because the part-time design and QA hours bring the blend down.)
 3. **Add discovery.** Two to three weeks of paid discovery before the fixed price: $12,000.
 4. **Total project cost:** $119,625 + $12,000 = $131,625 ex GST.
 5. **Add GST.** $131,625 × 1.1 = $144,787.50 including GST (claimable as an input tax credit if you're registered).
@@ -123,14 +127,14 @@ Then the ongoing costs for the first year after launch:
 | Maintenance and minor changes | 15% of the $119,625 build | $17,944 |
 | Cloud hosting, database, backups | $350 a month | $4,200 |
 | Third-party services (email, monitoring, error tracking) | $150 a month | $1,800 |
-| Payment processing | Charged per transaction by the provider, often around 1.75 to 2.9% | Variable, usually passed through |
+| Payment processing | A percentage plus a fixed fee per transaction, set by the provider; check its current pricing page | Variable, usually passed through |
 | **Total fixed ongoing** | | **$23,944** |
 
 Over three years, the portal costs roughly $131,625 + (3 × $23,944) = $203,457 ex GST before any new features. That three-year figure is the right one to compare against a SaaS subscription, which our [build vs buy guide](/guides/build-vs-buy-software) walks through.
 
-## What's usually not in a software quote?
+## What are the hidden costs of custom software?
 
-**Most quotes cover design, build, testing and launch, and leave out the costs that start after launch or sit outside the vendor's control.** Check every quote for these:
+**The hidden costs are the ones a quote usually leaves out: most quotes cover design, build, testing and launch, and skip the costs that start after launch or sit outside the vendor's control.** Check every quote for these:
 
 - **GST.** Business quotes are normally ex GST. Add 10%.
 - **Hosting and cloud services.** Expeed puts typical monthly hosting at $30 to $100 for basic, $100 to $500 for cloud and $500 to $2,000+ for enterprise setups.
@@ -145,6 +149,14 @@ Over three years, the portal costs roughly $131,625 + (3 × $23,944) = $203,457 
 **Offshore rates are much lower per hour, but the total gap is smaller than the rate gap once coordination, rework and time zone overhead are counted.** Accelerance's 2026 survey puts senior developers in Asia at about USD $31 to $41 an hour and in Central and Eastern Europe at USD $64 to $76, against the $120 to $250 AUD range for Australian agencies.
 
 Offshore delivery works well for well-specified work with a strong local product owner. It tends to cost more than expected when requirements are still moving, when the work needs daily access to Australian stakeholders, or when data must stay onshore for privacy or contractual reasons. Our [onshore vs offshore comparison](/guides/onshore-vs-offshore-software-development) sets out when each is the better choice.
+
+## Is custom software worth the cost?
+
+**Custom software is worth the cost when it supports a workflow that sets your business apart, or when the subscriptions and workarounds it replaces cost more over three years than building and running it.** It is usually not worth it for common needs like accounting, payroll or email marketing, where mature SaaS products already fit.
+
+The honest comparison is total cost over three to five years, not build price against a monthly fee. The portal above costs about $203,457 ex GST over three years. If the alternative is a SaaS platform plus manual work that adds up to more than that, or the SaaS product cannot handle the workflow at all, building wins. If an off-the-shelf tool covers most of the need and the gap is tolerable, buying usually wins. The same logic applies to a custom ERP build: replacing an ERP module sits in the enterprise band above, and our [enterprise software development cost guide](/guides/enterprise-software-development-cost-australia) covers when that makes sense.
+
+Three signs the numbers favour building: staff re-keying data between systems every day, per-seat licence costs growing faster than revenue, and a process competitors cannot copy because it is how you win work.
 
 ## How can you reduce the cost without cutting corners?
 

@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Private LLM Deployment in Australia | All Webbed Labs',
-  metaDescription: "Open-weight LLMs deployed in your own AWS, Azure or Google Cloud account in Australian regions, with private networking, no vendor retention and evals.",
+  metaTitle: 'Private & Self-Hosted LLM Deployment Australia | AWLabs',
+  metaDescription: "Private LLM deployment in Australia: self-hosted open-weight models in your own AWS, Azure or Google Cloud account, with private networking and no retention.",
   category: 'AI & Data',
   serviceName: 'Private LLM Deployment',
   slug: 'private-llm-deployment',
   heroHeadline: 'Your Model, Your Cloud Account, Your Region',
-  heroTagline: "Open-weight language models served inside your own cloud tenancy in Sydney or Melbourne, on private networks you control, with the evaluation evidence to show what they can and cannot do.",
-  summaryStatement: "Private LLM deployment is the practice of running a language model, typically an open-weight model whose weights can be downloaded and self-hosted, inside infrastructure the organisation controls, such as its own cloud account in an Australian region, so prompts, documents and outputs are processed on that infrastructure rather than sent to a model provider's shared service.",
+  heroTagline: "Private LLM deployment of open-weight language models inside your own cloud tenancy in Sydney or Melbourne, on private networks you control, with the evaluation evidence to show what they can and cannot do.",
+  summaryStatement: "Private LLM deployment is the practice of running a language model (often called a private, self-hosted or on-premise LLM), typically an open-weight model whose weights can be downloaded and self-hosted, inside infrastructure the organisation controls, such as its own cloud account in an Australian region, so prompts, documents and outputs are processed on that infrastructure rather than sent to a model provider's shared service.",
   description: [
     "Hosted AI APIs are the fastest way to use a capable model, and for many workloads their enterprise terms (no training on your data, limited retention, regional processing options) are enough. Some organisations need more. A health record, a legal matter file, a defence supply chain document or a board paper may be subject to contractual, regulatory or internal rules that say the data must stay in an Australian region, inside infrastructure the organisation controls, with no third-party operator able to see it. Others want predictable cost at high volume, freedom from a provider changing or retiring a model, or the ability to fine-tune on data that cannot leave. Private deployment answers those needs by running an open-weight model, such as models from the Llama, Mistral, Qwen, Gemma or gpt-oss families, in your own cloud account. Licences differ between these families, and some carry use restrictions, so licence review is part of model selection.",
-    "There are two broad ways to do it, and we will recommend whichever suits your constraints. The managed route uses a cloud provider's model service inside your account: Amazon Bedrock, for example, announced open-weight models from providers including DeepSeek, Google, Mistral, Nvidia and OpenAI in the Asia Pacific (Sydney) region in February 2026. The self-managed route runs the model on GPU instances or a Kubernetes cluster you own, served by an inference engine such as vLLM, with no provider model service in the path at all. Either way, the engineering is similar: choosing and licensing the model, sizing hardware and quantisation to your latency and volume, private networking with no public endpoint, an OpenAI-compatible gateway so your applications do not care which model sits behind it, authentication, rate limits, logging you own, and an evaluation suite comparing the private model against a hosted frontier model on your real tasks. Open-weight models have closed much of the gap, but on some complex reasoning tasks they can still trail the best hosted models, and we measure that on your work rather than assume it. Model and region availability changes often, so everything on this page is stated as at the time of writing (September 2026), and we confirm the current position against each vendor's regional availability page when we scope your deployment.",
+    "There are two broad ways to do it, and we will recommend whichever suits your constraints. The managed route uses a cloud provider's model service inside your account: Amazon Bedrock's regional availability table, for example, lists open-weight models from providers including DeepSeek, Google, Mistral, Nvidia, OpenAI and Qwen for In-Region use in Asia Pacific (Sydney) at the time of writing. The self-managed route runs the model on GPU instances or a Kubernetes cluster you own (the cloud equivalent of an on-premise LLM), served by an inference engine such as vLLM, with no provider model service in the path at all. Either way, the engineering is similar: choosing and licensing the model, sizing hardware and quantisation to your latency and volume, private networking with no public endpoint, an OpenAI-compatible gateway so your applications do not care which model sits behind it, authentication, rate limits, logging you own, and an evaluation suite comparing the private model against a hosted frontier model on your real tasks. Open-weight models have closed much of the gap, but on some complex reasoning tasks they can still trail the best hosted models, and we measure that on your work rather than assume it. Model and region availability changes often, so everything on this page is stated as at the time of writing (September 2026), and we confirm the current position against each vendor's regional availability page when we scope your deployment.",
   ],
   benefits: [
     {
@@ -50,7 +50,7 @@ const data = {
   technologies: [
     'vLLM', 'Hugging Face', 'Meta Llama', 'Mistral',
     'Qwen', 'Gemma', 'gpt-oss', 'Amazon Bedrock',
-    'Amazon SageMaker', 'Amazon EKS', 'Azure AI Foundry', 'Azure Kubernetes Service',
+    'Amazon SageMaker', 'Amazon EKS', 'Microsoft Foundry (formerly Azure AI Foundry)', 'Azure Kubernetes Service',
     'Google Vertex AI', 'Terraform', 'LiteLLM', 'Prometheus',
   ],
   process: [
@@ -103,12 +103,12 @@ const data = {
   ],
   faqs: [
     {
-      question: "Do we need a private LLM, or are enterprise API terms enough?",
+      question: "Is a self-hosted LLM worth it, or are enterprise API terms enough?",
       answer: "Often the API terms are enough. Enterprise agreements from major providers commonly exclude your data from training and limit retention, and several offer Australian processing options for some models. A private deployment is worth it when a contract, regulation or internal policy requires processing inside infrastructure you control, when you need to pin a model version indefinitely, when volume makes self-hosting cheaper, or when you want to fine-tune on data that cannot leave. We will tell you if the API route meets your requirements.",
     },
     {
       question: "Which open-weight models can run in Australian regions?",
-      answer: "If you self-host, any open-weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), AWS has announced open-weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI and others on Amazon Bedrock in Sydney. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages when scoping, because they change month to month.",
+      answer: "If you self-host, any open-weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), Amazon Bedrock's regional availability table lists open-weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI, Qwen and others for In-Region use in Sydney. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages when scoping, because they change month to month.",
     },
     {
       question: "Are open-weight models as good as ChatGPT or Claude?",
@@ -129,6 +129,22 @@ const data = {
     {
       question: "Does a private deployment make us compliant with the Privacy Act?",
       answer: "No deployment makes an organisation compliant on its own. Keeping processing onshore and under your control helps with obligations such as APP 8 on cross-border disclosure and APP 11 on security, but compliance also depends on what data you collect, why, how you use outputs and what you tell individuals. We build to your requirements and provide the architecture evidence; your privacy and legal advisers assess compliance.",
+    },
+    {
+      question: "How much does private LLM deployment cost in Australia?",
+      answer: "Typical Australian market ranges for the build are $25k to $60k for a managed open-weight model in your own cloud account, $60k to $140k for self-managed GPU serving, and from $140k for a private AI platform serving several models and teams (AUD, ex GST). GPU running costs are separate and depend on model size, traffic and how many hours the hardware runs. We model build and running costs against your traffic before you commit.",
+    },
+    {
+      question: "What is the difference between a private LLM and a public LLM like ChatGPT?",
+      answer: "A public LLM service such as ChatGPT or a provider's API runs on the provider's shared infrastructure, so your prompts are sent to them and processed under their terms. A private LLM runs on infrastructure you control, so prompts and outputs stay in your account and region with no provider operator in the path. The trade-off is that you take on hosting, scaling and model updates, and the most capable hosted models are generally not released as open weights.",
+    },
+    {
+      question: "Can you deploy an on-premise LLM in our own data centre?",
+      answer: "Our default is your own cloud account in an Australian region, because GPU capacity, scaling and security controls are simpler to manage there. Where a policy genuinely requires your own hardware, the same software stack (an inference engine such as vLLM behind an OpenAI-compatible gateway) runs on on-premise GPU servers. Hardware lead times, power, cooling and ongoing operations make that route slower and usually more expensive, so we weigh it against an in-region cloud deployment during discovery.",
+    },
+    {
+      question: "What GPU do we need to self-host an LLM?",
+      answer: "It depends mainly on model size and quantisation: the model weights, plus working memory for concurrent requests, must fit in GPU memory. Smaller models can run on a single data centre GPU, while large models need several GPUs or a multi-GPU instance. We size hardware from your model choice, latency target and traffic, and confirm GPU availability and quota in the Australian region before committing.",
     },
   ],
   pricing: [

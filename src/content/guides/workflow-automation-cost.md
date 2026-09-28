@@ -1,12 +1,12 @@
 ---
 title: "How much does business process automation cost?"
 metaTitle: "Business Process Automation Cost in Australia (2026)"
-description: "Workflow automation costs from a $30 a month Zapier plan to $30k to $150k AUD for custom systems. Ranges, platform fees, payback maths and upkeep costs."
+description: "How much does business process automation cost? From a $30 a month Zapier plan to $30k to $150k AUD for custom workflow automation. Pricing, payback, upkeep."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A single workflow built on Zapier, Make, n8n or Power Automate typically costs $1k to $15k AUD (ex GST) to have built professionally, plus a platform subscription from tens to hundreds of dollars a month. Multi-system automations with error handling and AI document extraction usually cost $15k to $50k, and custom-coded automation services $30k to $150k. Whichever route you take, budget for upkeep: automations break when the systems they connect change."
+summary: "Business process automation costs anything from a monthly platform fee to a six-figure custom system. A single workflow built on Zapier, Make, n8n or Power Automate typically costs $1k to $15k AUD (ex GST) to have built professionally, plus a platform subscription from tens to hundreds of dollars a month. Multi-system automations with error handling and AI document extraction usually cost $15k to $50k, and custom-coded automation services $30k to $150k. Whichever route you take, budget for upkeep: automations break when the systems they connect change."
 takeaways:
   - "Most small and mid-sized businesses should start on an automation platform; custom code earns its place at high volume, complex logic or strict data rules."
   - "Platform pricing is usage-based. Model your real monthly volume before you choose, because the entry plan rarely fits a busy process."
@@ -14,6 +14,12 @@ takeaways:
   - "Work out the value of the time saved first. If a process takes two hours a week, a $20k automation won't pay back."
   - "AI extraction and classification have made document-heavy processes automatable, but they need checks for low-confidence results."
 faqs:
+  - q: "What is business process automation?"
+    a: "Business process automation (BPA) is using software to carry out the repetitive steps of a business process, such as moving data between systems, routing approvals or reading documents, so staff only handle exceptions. It ranges from a simple Zapier workflow to a custom-coded service, and increasingly includes AI steps for reading and classifying documents."
+  - q: "How much does RPA cost?"
+    a: "Robotic process automation, where software operates an application's screens like a person would, is usually the fallback for systems without a proper API. On Microsoft's platform, unattended bots need the Power Automate Process plan, listed at AU$224.50 per bot a month at the time of writing, plus build effort. RPA is slower to build and more fragile than API integrations, so budget more upkeep."
+  - q: "How long does it take to automate a business process?"
+    a: "In engineering time, a simple workflow is typically one to three days of work, a multi-system workflow five to ten days, and a custom automation service from about 20 days to 100 or more. Mapping and simplifying the process first, and getting access to each connected system, often takes longer than the build."
   - q: "Is Zapier, Make or n8n cheapest?"
     a: "It depends on volume and how each counts usage. Zapier charges by task, Make by credits consumed per module action, and n8n by workflow execution, with a free self-hosted Community Edition if you run the server yourself. For a few simple workflows, the entry plan of any of them is inexpensive. At high volume with many steps per run, per-execution pricing or self-hosting often works out cheaper. Our n8n vs Make vs Zapier guide compares them in detail."
   - q: "When should we build custom automation instead of using a platform?"
@@ -61,9 +67,9 @@ service:
 disclaimer: financial
 ---
 
-## What does workflow automation cost?
+## How much does workflow automation cost?
 
-**Costs range from a platform subscription you set up yourself to a six-figure custom system, and the right tier depends on volume, complexity and data rules.** The table shows typical Australian market ranges for professionally built automation, in AUD, ex GST. Build figures cover design, build, testing and handover; platform fees are separate. They are ranges, not quotes.
+**Workflow automation costs range from a platform subscription you set up yourself to a six-figure custom system, and the right tier depends on volume, complexity and data rules.** The table shows typical Australian market ranges for professionally built automation, in AUD, ex GST. Build figures cover design, build, testing and handover; platform fees are separate. They are ranges, not quotes.
 
 | Approach | Typical example | Build cost | Running cost |
 |---|---|---|---|
@@ -90,9 +96,9 @@ The pricing unit matters more than the headline price. A workflow with ten steps
 
 Self-hosting n8n removes the subscription but not the cost. You pay for a server, and someone has to patch, back up and monitor it.
 
-## A worked example: automating supplier invoices
+## Is automation worth it? A worked example with supplier invoices
 
-**The example below compares a platform build with a custom build for the same process, and works out payback using Australian wage data.** It's illustrative: your volumes and times will differ, so substitute your own.
+**Automation is worth it when the value of the time saved each month comfortably exceeds the running cost, and the build pays back within a year or so.** The example below compares a platform build with a custom build for the same process, and works out payback using Australian wage data. It's illustrative: your volumes and times will differ, so substitute your own.
 
 **The process today.** A business receives about 1,200 supplier invoices a month by email. Staff open each PDF, key it into the accounting system, check it against a purchase order and chase approvals. Assume automation saves 4 minutes per invoice once exceptions are accounted for.
 
@@ -106,12 +112,12 @@ Self-hosting n8n removes the subscription but not the cost. You pay for a server
 
 | Item | Cost |
 |---|---|
-| Build and testing: 8 days at $1,300 | $10,400 |
+| Build and testing: 8 days at $1,400 | $11,200 |
 | Platform plan sized for about 12,000 module actions or 1,200 executions a month | tens to low hundreds of dollars a month |
 | AI extraction at an illustrative few cents per invoice | roughly $30 to $100 a month |
-| Upkeep: about 1 day a month | $1,300 a month |
+| Upkeep: about 1 day a month | $1,400 a month |
 
-Payback on the build: $10,400 ÷ ($5,200 − about $1,500 running) ≈ 3 months.
+Payback on the build: $11,200 ÷ ($5,200 − about $1,600 running) ≈ 3 months.
 
 **Option B: custom automation service in your own Australian cloud account.**
 
@@ -137,9 +143,9 @@ At this volume, Option A wins on payback. Option B starts to make sense when vol
 - **Audit and compliance.** Financial and personal data flows may need logs of who approved what and when, and controls on where data is processed.
 - **Volume and speed.** Near real-time processing at scale needs queues, retries and monitoring.
 
-## What isn't included in an automation quote?
+## What are the hidden costs of automation?
 
-**Quotes usually exclude the platforms and the process work on your side.** Check whether these are in or out:
+**The hidden costs are what quotes usually exclude: the platforms and the process work on your side.** Check whether these are in or out:
 
 - Platform subscriptions and AI usage, typically billed to your own account
 - Licence upgrades on connected apps (for example, API access on a higher tier)

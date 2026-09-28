@@ -1,29 +1,31 @@
 ---
 title: "What does it cost to run an LLM in production? (2026 guide)"
-metaTitle: "LLM Running Costs in Production: Tokens, Caching, Hosting"
-description: "What an LLM costs to run: token pricing, caching, batch, model tiers, Australian region premiums and self-hosting, with the arithmetic shown step by step."
+metaTitle: "LLM API Cost 2026: Claude and GPT Pricing per Token"
+description: "LLM API cost in 2026: Claude and GPT pricing per token, caching, batch, Australian region premiums and self-hosting, with the arithmetic shown step by step."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Running a large language model in production usually costs somewhere between tens of dollars and several thousand dollars a month for most business applications, set by four things: how many tokens you send and receive, which model tier you use, whether you use prompt caching and batch processing, and where the model runs. At the time of writing, mainstream hosted models cost from about US$0.10 to US$10 per million input tokens and US$0.50 to US$50 per million output tokens. Caching, batching and model routing cut the bill in the worked example below by about 80%. Self-hosting an open-weight model only saves money at high, steady volume."
+summary: "For most business applications, the cost of running a large language model in production, mostly LLM API token charges, is somewhere between tens of dollars and several thousand dollars a month, set by four things: how many tokens you send and receive, which model tier you use, whether you use prompt caching and batch processing, and where the model runs. At the time of writing, mainstream hosted models cost from about US$0.10 to US$10 per million input tokens and US$0.50 to US$50 per million output tokens. Caching, batching and model routing cut the bill in the worked example below by about 80%. Self-hosting an open-weight model only saves money at high, steady volume."
 takeaways:
   - "You pay per token, and output tokens cost about five times as much as input tokens on most current models."
-  - "Prompt caching charges 10% of the normal input price for repeated context on most Claude and GPT models, which often halves the bill for document-heavy work."
+  - "Prompt caching charges 10% or less of the normal input price for repeated context on current Claude and GPT models, which often halves the bill for document-heavy work."
   - "Batch processing is 50% cheaper for work that can wait, and the discount stacks with caching."
   - "Australian and other regional endpoints typically cost about 10% more on hosted APIs, and GPU servers in AWS Sydney cost about 30% more than in North Virginia at the time of writing."
   - "Self-hosting a model on a GPU server costs thousands of dollars a month before engineering time, so it pays off only at high volume or when sovereignty requires it."
 faqs:
   - q: "How much does it cost to run ChatGPT or Claude for my business?"
     a: "It depends on how you use it. Seat-based products such as ChatGPT Enterprise or Claude Enterprise are priced per user per month. Custom applications using the API are priced per token. A focused internal tool may cost under $100 a month in model usage; a high-volume customer-facing system can cost thousands. Hosting, monitoring and maintenance are extra."
+  - q: "How much does 1 token cost?"
+    a: "A fraction of a cent. Prices are quoted per million tokens, so at the time of writing an input token costs from US$0.0000001 on the cheapest model in our table (US$0.10 per million) to US$0.00001 on frontier models (US$10 per million), and output tokens cost about five times more. Cost per task, not per token, is the number to budget with."
+  - q: "Is a ChatGPT or Claude subscription cheaper than the API?"
+    a: "They pay for different things. A subscription or business seat covers a person using the chat app, at a fixed price per user per month. The API charges per token and is what you use to build AI into your own software. For staff productivity, seats are simpler; for an application serving many users or documents, API pricing with caching and routing is usually the only workable model."
   - q: "What is a token?"
     a: "A token is a piece of text a model processes, roughly three quarters of an English word on average. Models count both the tokens you send (instructions, documents, conversation history) and the tokens they generate. Our guide to tokens and context windows explains why they drive cost."
   - q: "Is it cheaper to run an open-weight model ourselves?"
     a: "Rarely at low or uneven volume. A GPU server costs the same whether it's busy or idle, and someone has to run, patch and monitor it. At the time of writing, a single four-GPU server in AWS Sydney costs about US$4,370 a month running full time. Hosted open-weight models on platforms like Amazon Bedrock often give most of the sovereignty benefit at lower cost."
   - q: "Do Australian regions cost more for AI?"
     a: "Usually a little. At the time of writing, Anthropic notes a 10% premium for regional endpoints on AWS Bedrock and Google Cloud for recent Claude models, OpenAI charges a 10% uplift for regional processing on eligible models, and AWS GPU instances cost about 30% more in Sydney than in North Virginia. Check the live pricing pages, because this changes."
-  - q: "Why is our LLM bill higher than our estimate?"
-    a: "Common causes are conversation history resent on every turn, more retrieved context than needed, retries and fallbacks, agent loops making many calls per task, a premium model used for simple steps, and development and testing traffic. Logging token usage per feature usually shows the cause within a week."
   - q: "How do exchange rates affect LLM costs?"
     a: "Most model providers bill in US dollars. If the Australian dollar falls from US$0.70 to US$0.65, the same usage costs about 7.7% more in AUD. Build a currency buffer into your budget."
 sources:
@@ -62,7 +64,7 @@ service:
 disclaimer: financial
 ---
 
-## What are you actually paying for when you run an LLM?
+## How does LLM API pricing work?
 
 **When you call a hosted model, you pay per token sent and per token generated. Everything else on the bill is either a discount on those tokens or the infrastructure around them.** A token is roughly three quarters of an English word; our [tokens and context windows explainer](/guides/tokens-and-context-windows) covers the detail.
 
@@ -79,9 +81,9 @@ disclaimer: financial
 
 Two details catch teams out. First, conversation history is sent again with every turn, so a 20-turn conversation costs far more than 20 single questions. Second, tokenisers differ: Anthropic notes that the tokeniser in Claude 4.7 and later models produces about 30% more tokens for the same text than earlier models. Compare models on cost per task, not price per token.
 
-## What do the models cost per token right now?
+## How much does a token cost? Claude and GPT API pricing
 
-**At the time of writing (September 2026), hosted model prices span roughly a hundredfold from the smallest to the largest models.** Prices change often, so treat this table as a snapshot and check the live pricing pages in the sources.
+**At the time of writing (September 2026), hosted model prices span roughly a hundredfold from the smallest to the largest models.** The table compares Claude API pricing with OpenAI's GPT cost per token, plus one hosted open-weight model. Prices change often, so treat this table as a snapshot and check the live pricing pages in the sources.
 
 | Tier | Example models | Input (US$ per million tokens) | Cached input | Output (US$ per million tokens) |
 |---|---|---|---|---|
@@ -96,12 +98,12 @@ Other discounts and surcharges from the providers' pricing pages:
 
 - **Batch processing** is 50% off input and output on both Anthropic and OpenAI.
 - **Prompt caching** on Anthropic charges 1.25 times the input price to write a 5-minute cache and 0.1 times to read it, so it pays for itself after one reuse.
-- **Long context:** Anthropic charges the same per-token rate across the full 1 million token window on recent models.
+- **Long context:** Anthropic charges the same per-token rate across the full 1 million token window on recent models. OpenAI's GPT-6 prices in the table are its short context rates; long context requests are billed at higher rates.
 - **Embeddings:** OpenAI's text-embedding-3-small is US$0.02 per million tokens.
 
 ## A worked example: a document review agent, before and after optimisation
 
-**Here is the arithmetic for a realistic workload, then the effect of each cost lever.** The workload: an agent reviews 30,000 documents a month. For each document it makes 4 model calls. Every call sends a 2,000-token system prompt with tool definitions, the 6,000-token document, and about 500 tokens of new instructions or results, and generates 400 tokens.
+**Here is the arithmetic for a realistic workload, then the effect of each cost lever.** You can use the same steps as a simple LLM cost calculator for your own workload. The workload: an agent reviews 30,000 documents a month. For each document it makes 4 model calls. Every call sends a 2,000-token system prompt with tool definitions, the 6,000-token document, and about 500 tokens of new instructions or results, and generates 400 tokens.
 
 **Step 1: count the tokens.**
 
@@ -188,7 +190,7 @@ Our comparison of [open-weight vs API models](/guides/open-weight-vs-api-llms) c
 
 **Measure cost per task, then apply the cheapest lever first.**
 
-1. **Log tokens per feature and per user** from day one. You can't manage what you can't see.
+1. **Log tokens per feature and per user** from day one. You can't manage what you can't see. When a bill comes in higher than the estimate, the usual causes are conversation history resent on every turn, more retrieved context than needed, retries and fallbacks, agent loops, a premium model on simple steps, and development traffic; per-feature logs usually show which within a week.
 2. **Trim context.** Send the three most relevant passages, not twenty. Summarise long conversation history.
 3. **Cache stable prefixes**: system prompts, tool definitions and documents used across several calls.
 4. **Route by difficulty.** Use a small model for classification and extraction and a larger one only where it measurably helps.

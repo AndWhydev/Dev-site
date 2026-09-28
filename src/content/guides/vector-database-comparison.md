@@ -1,12 +1,12 @@
 ---
 title: "pgvector vs Pinecone vs Weaviate vs Qdrant: which vector database should you use?"
-metaTitle: "pgvector vs Pinecone vs Weaviate vs Qdrant (2026)"
-description: "pgvector, Pinecone, Weaviate and Qdrant compared: hosting, Australian regions, pricing models and scale, plus a guide to which suits your RAG project."
+metaTitle: "pgvector vs Pinecone vs Weaviate vs Qdrant: Best Vector DB"
+description: "Vector database comparison: pgvector vs Pinecone vs Weaviate vs Qdrant on hosting, Australian regions, price and scale, and the best vector database for RAG."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "For most business RAG and search projects under tens of millions of vectors, pgvector inside a managed PostgreSQL database in an Australian region is the simplest and cheapest choice. Pinecone is the most hands-off managed service, but at the time of writing (September 2026) it has no Australian region outside its Enterprise bring-your-own-cloud option. Qdrant and Weaviate are open source engines you can self-host anywhere, including Sydney, and suit larger or more demanding workloads with filtering and hybrid search needs."
+summary: "For most business RAG and search projects under tens of millions of vectors, the best vector database is pgvector inside a managed PostgreSQL database in an Australian region: it is the simplest and cheapest choice. Pinecone is the most hands-off managed service, but at the time of writing (September 2026) it has no Australian region outside its Enterprise bring-your-own-cloud option. Qdrant and Weaviate are open source engines you can self-host anywhere, including Sydney, and suit larger or more demanding workloads with filtering and hybrid search needs."
 takeaways:
   - "pgvector adds vector search to PostgreSQL, so vectors sit next to your existing data, permissions and backups, and it runs on AWS, Azure and Google Cloud managed Postgres in Australian regions."
   - "Pinecone serverless runs in US, EU and Singapore regions at the time of writing; keeping data in Australia requires its Enterprise BYOC deployment in your own cloud account."
@@ -18,12 +18,16 @@ faqs:
     a: "Usually not at first. If you already run PostgreSQL, pgvector handles millions of vectors with HNSW indexes and keeps your data model simple. Move to a dedicated engine when you hit measured limits: very large collections, high query rates, heavy filtered search or multi-tenant isolation needs that Postgres handles awkwardly."
   - q: "Which vector databases can keep data in Australia?"
     a: "At the time of writing, pgvector on AWS RDS or Aurora, Azure Database for PostgreSQL and Google Cloud SQL or AlloyDB can all run in Australian regions. Qdrant and Weaviate can be self-hosted in an Australian region, and Qdrant Hybrid Cloud and Pinecone BYOC run in your own cloud account. Check each managed service's region list before relying on it, because availability changes."
+  - q: "pgvector vs Pinecone: which should I choose?"
+    a: "Choose pgvector if you already run PostgreSQL, want vectors next to your existing data and permissions, or need the data in Australia on managed Postgres. Choose Pinecone if you want nothing to operate and overseas hosting is acceptable, or you have an Enterprise budget for its bring-your-own-cloud option. At modest scale both work well; the deciding factors are residency and who runs the database."
+  - q: "Qdrant vs Weaviate: what's the difference?"
+    a: "Both are open source vector databases you can self-host in Australia or use as a managed cloud. Qdrant is built around fast filtered search and bills its managed cloud on compute, memory and disk. Weaviate emphasises built-in hybrid search and embedding modules, and bills largely on vector dimensions stored. Test both on your own filters and queries."
+  - q: "What are the alternatives to Pinecone?"
+    a: "The usual alternatives are pgvector on managed PostgreSQL, and the open source engines Qdrant and Weaviate, all of which can run in an Australian region. Other options include Milvus, Chroma, and the vector search features built into OpenSearch and MongoDB Atlas. This guide compares the four we're asked about most."
   - q: "How many vectors can pgvector handle?"
     a: "There isn't one number: it depends on dimensions, index type, memory and query patterns. Millions of vectors on a well-sized instance is routine. pgvector indexes the standard vector type up to 2,000 dimensions and half-precision vectors up to 4,000, which covers common embedding models."
   - q: "Is Pinecone more expensive than self-hosting?"
     a: "At small scale Pinecone can be cheaper once you count engineering time, because there's nothing to operate. At sustained high volume, usage-based read and write units can exceed the cost of a self-managed cluster. Model both against your expected storage and query volume using the vendors' current pricing pages."
-  - q: "Can I switch vector databases later?"
-    a: "Yes, if you keep your source documents and chunking pipeline. Vectors can be re-embedded or exported and reloaded. Keep the database behind a thin retrieval interface in your code so a switch is a contained change."
 sources:
   - title: "Working with PostgreSQL extensions (pgvector versions)"
     url: "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-extensions.html"
@@ -63,13 +67,13 @@ service:
   href: "/services/rag-knowledge-base"
 ---
 
-## Which vector database should you choose?
+## What is the best vector database for RAG?
 
-**Start with pgvector if you already use PostgreSQL and your collection is in the millions of vectors, not billions; choose a dedicated engine when you have measured a need for one.** The vector database is rarely what makes a RAG system good or bad. Chunking, retrieval strategy, access control and evaluation matter more. But the choice does fix your hosting, residency and running cost for years.
+**For most projects the best vector database is the one you already run: start with pgvector if you already use PostgreSQL and your collection is in the millions of vectors, not billions; choose a dedicated engine when you have measured a need for one.** The vector database is rarely what makes a RAG system good or bad. Chunking, retrieval strategy, access control and evaluation matter more. But the choice does fix your hosting, residency and running cost for years. You can switch later if you keep your source documents and chunking pipeline and put the store behind a thin retrieval interface, but it's still a project.
 
 If you're new to the concept, our explainer on [what a vector database is](/guides/what-is-a-vector-database) covers the basics, and [what embeddings are](/guides/what-are-embeddings) explains what gets stored.
 
-## How do they compare side by side?
+## Vector database comparison: pgvector vs Pinecone vs Weaviate vs Qdrant
 
 **pgvector is a PostgreSQL extension; Pinecone is a managed-only service; Qdrant and Weaviate are open source engines with managed clouds.** The table reflects each vendor's documentation and pricing pages as at 28 September 2026. We link live pricing in the sources rather than quoting figures that change.
 
@@ -77,7 +81,7 @@ If you're new to the concept, our explainer on [what a vector database is](/guid
 |---|---|---|---|---|
 | What it is | Extension adding vector types and indexes to PostgreSQL | Proprietary managed vector database | Open source vector database with managed cloud | Open source vector search engine with managed cloud |
 | Self-host | Yes, anywhere Postgres runs | No (BYOC on Enterprise runs in your cloud account) | Yes | Yes |
-| Managed options | AWS RDS and Aurora, Azure Database for PostgreSQL, Google Cloud SQL and AlloyDB, and others | Serverless (Starter, Builder, Standard, Enterprise), BYOC | Serverless and Dedicated Cloud | Managed Cloud (Standard, Premium), Hybrid Cloud, Private Cloud |
+| Managed options | AWS RDS and Aurora, Azure Database for PostgreSQL, Google Cloud SQL and AlloyDB, and others | Serverless (Starter, Builder, Standard, Enterprise), BYOC | Weaviate Cloud: Flex (shared), Premium (shared or dedicated) | Managed Cloud (Standard, Premium), Hybrid Cloud, Private Cloud |
 | Australian region at the time of writing | Yes, through managed Postgres in Sydney and Melbourne regions | Not in serverless (US, EU, Singapore); yes through BYOC in your own account | Self-host or dedicated deployments; confirm managed region availability with the vendor | Self-host or Hybrid Cloud; confirm managed region availability in the console |
 | Pricing model | The cost of your Postgres instance and storage | Storage plus read and write units, with plan minimums | Based on vector dimensions stored, plus storage | Compute, memory, disk and backups |
 | Index types | HNSW, IVFFlat | Managed (not exposed) | HNSW, flat, dynamic | HNSW |
@@ -93,21 +97,21 @@ It also solves Australian residency cheaply. At the time of writing, AWS RDS for
 
 The limits are real but further out than people expect. pgvector indexes standard vectors up to 2,000 dimensions and half-precision vectors up to 4,000. HNSW indexes need memory, so very large collections need a large instance. Query rates in the thousands per second, or collections in the hundreds of millions, are where dedicated engines start to justify themselves. Upgrades also need care: AWS notes the extension doesn't automatically upgrade with the database engine.
 
-## When is Pinecone the better choice?
+## pgvector vs Pinecone: when is Pinecone the better choice?
 
 **Pinecone suits teams that want no infrastructure to manage and don't have a requirement to keep data in Australia.** You create an index and send vectors; scaling, replication and index tuning are Pinecone's problem.
 
-At the time of writing, Pinecone serverless indexes can be created in AWS `us-east-1`, `us-west-2`, `eu-west-1`, `eu-central-1` and `ap-southeast-1` (Singapore), GCP `us-central1` and `europe-west4`, and Azure `eastus2`. The free Starter plan is limited to `us-east-1`, and an index's cloud and region can't be changed after creation. For Australian residency, Pinecone's answer is BYOC: an Enterprise-only deployment in your own AWS, GCP or Azure account, where vectors, metadata and queries stay in your environment and only operational metrics go back to Pinecone.
+At the time of writing, Pinecone serverless indexes can be created in AWS `us-east-1`, `us-west-2`, `eu-west-1`, `eu-central-1` and `ap-southeast-1` (Singapore), GCP `us-central1` and `europe-west4`, and Azure `eastus2`. The free Starter plan is limited to `us-east-1`, and an index's cloud and region can't be changed after creation. For Australian residency, Pinecone's answer is BYOC: an Enterprise-only deployment in your own AWS, GCP or Azure account, where vectors, metadata and queries stay in your environment and only operational metrics and traces go back to Pinecone.
 
 Pricing is usage-based: storage per GB plus read units and write units, with monthly minimums on paid plans. That's efficient for spiky, modest workloads and can become expensive for sustained, high query volumes. For overseas hosting of personal information, remember APP 8 of the Privacy Act: you remain accountable for how an overseas recipient handles it.
 
-## When are Qdrant or Weaviate the better choice?
+## Qdrant vs Weaviate: when is an open source vector database the better choice?
 
 **Choose one of the open source engines when you need more scale or search features than pgvector gives you comfortably, and want control over where it runs.** Both can be self-hosted in an Australian region on your own infrastructure, which keeps residency simple.
 
 **Qdrant** is built around fast filtered vector search, which matters when every query must be restricted by tenant, permission or document type. Its managed cloud bills on compute, memory, disk and backups across AWS, GCP and Azure. Qdrant Hybrid Cloud, on the Enterprise plan, runs the database inside your own Kubernetes cluster while Qdrant manages it; its documentation states that only telemetry and status information leave your environment, not user data.
 
-**Weaviate** has strong built-in hybrid search (keyword and vector combined) and modules that generate embeddings for you. Weaviate Cloud offers serverless and dedicated deployments, billed largely on the number of vector dimensions stored plus storage. Its pricing page lists a limited set of regions on lower tiers and a broad set across AWS, GCP and Azure on Premium, so confirm Australian availability directly if you want managed hosting onshore.
+**Weaviate** has strong built-in hybrid search (keyword and vector combined) and modules that generate embeddings for you. Weaviate Cloud offers shared deployments (Flex and Premium) and dedicated deployments (Premium), billed largely on the number of vector dimensions stored plus storage and backups. At the time of writing its pricing page lists a limited set of regions (7) on the shared tiers and about 40 regions across AWS, GCP and Azure on Premium dedicated, so confirm Australian availability directly if you want managed hosting onshore.
 
 The trade-off with both is operations. Self-hosting means you run upgrades, backups, monitoring and capacity planning, which is a genuine ongoing cost.
 

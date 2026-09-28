@@ -1,16 +1,16 @@
 ---
 title: "How much does it cost to build a SaaS product in Australia?"
-metaTitle: "SaaS Development Cost in Australia (2026 Guide)"
-description: "Building a SaaS product in Australia typically costs $80k to $300k AUD for a commercial first version. Ranges, SaaS-specific cost drivers and running costs."
+metaTitle: "How Much Does It Cost to Build SaaS in Australia? (2026)"
+description: "How much does it cost to build a SaaS product in Australia? A commercial first version is typically $80k to $300k AUD. Pricing, timelines and running costs."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A commercial first version of a SaaS product built by an Australian team typically costs $80k to $300k AUD (ex GST). A narrow validation MVP can come in at $40k to $100k, and a B2B platform ready for enterprise buyers, with SSO, audit logs and security review evidence, often runs $250k to $700k or more. The SaaS-specific parts (multi-tenancy, subscription billing, onboarding, admin tooling and security) typically add 25 to 40% on top of the core features themselves."
+summary: "Building a SaaS product in Australia typically costs $80k to $300k AUD (ex GST) for a commercial first version built by an Australian team. A narrow validation MVP can come in at $40k to $100k, and a B2B platform ready for enterprise buyers, with SSO, audit logs and security review evidence, often runs $250k to $700k or more. The SaaS-specific parts (multi-tenancy, subscription billing, onboarding, admin tooling and security) typically account for 25 to 40% of the build."
 takeaways:
   - "SaaS costs more than a single-customer app of the same size because of tenancy, billing, onboarding, admin and support tooling."
   - "Selling to larger businesses adds a second wave of cost: SSO, roles, audit logs and answering security questionnaires."
-  - "Payment processing is a running cost that scales with revenue: at the time of writing Stripe lists 1.7% + A$0.30 per domestic card charge, plus 0.7% for Stripe Billing."
+  - "Payment processing is a running cost that scales with revenue: Stripe charges a percentage plus a fixed fee per successful card charge, and Stripe Billing adds a percentage of billing volume. Check the live pricing page before you model it."
   - "Budget 15 to 25% of build cost per year for maintenance, on top of hosting and third-party services."
   - "Decide the tenancy model early. Changing from shared to isolated tenants later is one of the most expensive rework items in SaaS."
 faqs:
@@ -60,9 +60,9 @@ service:
 disclaimer: financial
 ---
 
-## What does a SaaS product cost at each stage?
+## How much does it cost to build a SaaS product, stage by stage?
 
-**Most SaaS products are built in stages, and each stage has a distinct budget.** The table shows typical Australian market ranges for a senior local team, in AUD, ex GST, covering design, engineering, testing and deployment. They are ranges, not quotes, and exclude marketing, legal and certification.
+**Most SaaS products are built in stages, and each stage has a distinct budget,** whether you are developing a SaaS application for a single niche or a SaaS platform for many industries. The table shows typical Australian market ranges for a senior local team, in AUD, ex GST, covering design, engineering, testing and deployment. They are ranges, not quotes, and exclude marketing, legal and certification.
 
 | Stage | What you get | Typical cost | Typical timeline |
 |---|---|---|---|
@@ -89,7 +89,7 @@ If you're still testing whether anyone will pay, start with our [MVP cost guide]
 | Transactional email and notifications | Receipts, alerts, password resets, digests | $3k to $10k |
 | Security baseline | Rate limiting, secrets management, backups, logging, penetration test fixes | $10k to $30k |
 
-Add those up and a commercial v1 carries $60k to $200k of SaaS-specific work before counting any of the features customers actually buy it for. That's why SaaS quotes often look high next to a single-customer app with similar screens.
+Add those up and a commercial v1 carries roughly $60k to $210k of SaaS-specific work before counting any of the features customers actually buy it for. That's why SaaS quotes often look high next to a single-customer app with similar screens.
 
 ## What moves a SaaS budget up or down within a stage?
 
@@ -138,13 +138,19 @@ The $1,400 day rate is a planning figure for a senior Australian agency team. Fo
 
 Notice that tenancy, billing, the support console and security baseline together account for 39 of the 128 days, about 30%. That's typical.
 
+## How long does it take to build a SaaS product?
+
+**A validation MVP typically takes 8 to 14 weeks, a commercial v1 4 to 8 months, and an enterprise-ready platform 8 to 18 months.** Those are the timelines in the stage table above, and they assume a senior team with a decision-maker available each week.
+
+Calendar time depends on more than engineering days. The worked example above is 128 engineer-days, but discovery, design reviews, waiting for integration access (Xero, payment accounts, identity providers) and a round of changes after early customers use it all add elapsed weeks. The fastest way to shorten the timeline is the same as the fastest way to cut cost: launch with fewer roles, fewer integrations and simpler pricing, then add the rest once paying customers tell you what matters.
+
 ## What are the running costs of a SaaS product?
 
 **Running costs have four parts: hosting, third-party services, payment fees and maintenance, and maintenance is usually the largest.** Early hosting is cheap; people underestimate the rest.
 
-**Payment fees scale with revenue.** At the time of writing, Stripe's Australian pricing lists 1.7% + A$0.30 per successful domestic card charge (with lower pricing flagged from 1 October 2026), 3.5% + A$0.30 for international cards, and 0.7% of billing volume for Stripe Billing on the pay-as-you-go plan. Check the live pricing page before you model it.
+**Payment fees scale with revenue.** Stripe's Australian card pricing is a percentage of each successful charge plus a fixed fee, with separate rates for domestic and international cards, and Stripe Billing adds a percentage of billing volume on the pay-as-you-go plan (0.7% at the time of writing). Stripe has announced lower domestic card pricing from 1 October 2026 and lower international card pricing from 1 April 2027, so take current rates from the [Stripe pricing page](https://stripe.com/au/pricing) before you model it.
 
-Illustrative arithmetic with those rates: 200 customers paying $99 a month on domestic cards is $19,800 in monthly revenue.
+Illustrative arithmetic, assuming a card fee of 1.7% + A$0.30 per charge (Stripe's listed domestic rate before 1 October 2026, so a conservative assumption after that date) and 0.7% for Billing: 200 customers paying $99 a month on domestic cards is $19,800 in monthly revenue.
 
 - Card fees: $19,800 × 1.7% = $336.60, plus 200 × $0.30 = $60
 - Billing fee: $19,800 × 0.7% = $138.60
@@ -162,9 +168,9 @@ Illustrative arithmetic with those rates: 200 customers paying $99 a month on do
 
 If your product includes AI features, model costs deserve their own line; see [what it costs to run an LLM in production](/guides/llm-running-costs). For what a maintenance budget should buy, see our [software maintenance cost guide](/guides/software-maintenance-cost).
 
-## What isn't usually included in a SaaS development quote?
+## What are the hidden costs of building a SaaS product?
 
-**Development quotes cover the product; many costs of running a SaaS business sit outside them.** Check for:
+**The hidden costs sit outside the development quote: quotes cover the product, and many costs of running a SaaS business sit outside them.** Check for:
 
 - Penetration testing by an independent firm
 - SOC 2 or ISO 27001 audits and compliance platform subscriptions
@@ -173,6 +179,12 @@ If your product includes AI features, model costs deserve their own line; see [w
 - Customer support staffing and help desk software
 - Marketing site, content and paid acquisition
 - Data migration for customers moving from spreadsheets or competitors
+
+## Is building a SaaS product worth the cost?
+
+**It is worth it when you have evidence that customers will pay, and a realistic path to enough recurring revenue to cover the build within a few years as well as the running costs every month.** It is not worth it on the strength of an idea alone; that is what a validation MVP or a pre-sale is for.
+
+A simple test uses the numbers on this page. The illustrative commercial v1 has a planning budget of $206,080. At 200 customers paying $99 a month, gross revenue is $19,800 a month, so the build equals roughly ten and a half months of that revenue, before hosting, payment fees, maintenance, support and marketing. If reaching 200 paying customers looks years away, start smaller: a narrower product in the $40k to $100k MVP band, or a manual service that proves demand first.
 
 ## How can you reduce the cost of building SaaS?
 

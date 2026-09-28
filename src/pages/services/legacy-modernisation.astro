@@ -2,14 +2,14 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Legacy System Modernisation | All Webbed Labs',
-  metaDescription: 'Phased legacy system modernisation that eliminates technical debt and unlocks new capabilities while keeping full business continuity throughout migration.',
+  metaTitle: 'Legacy System Modernisation Australia | All Webbed Labs',
+  metaDescription: 'Legacy system modernisation in Australia: phased migration of ageing applications to modern, supported platforms without a risky big-bang cutover.',
   category: 'Modernisation',
   heroHeadline: 'Modernise Your Legacy Systems Without Disrupting Your Business',
-  heroTagline: 'Phased migration strategies that eliminate technical debt while maintaining business continuity throughout.',
+  heroTagline: 'Legacy system modernisation for Australian organisations: phased migration strategies that eliminate technical debt while maintaining business continuity throughout.',
   description: [
     'Legacy systems are a paradox: they are too important to touch and too costly to leave alone. A system built on end-of-life technology, maintained by an ageing pool of specialists and unable to integrate with the modern tooling your business needs is not just a technical problem, it is a strategic constraint. It slows feature development, accumulates security vulnerabilities, makes recruiting difficult and limits your ability to compete. But rewriting a system that has run your business for fifteen years in a single big-bang project is one of the highest-risk undertakings in enterprise technology. Our practice was built around resolving this dilemma.',
-    'We use the Strangler Fig pattern and other incremental modernisation strategies that replace legacy systems piece by piece, running old and new in parallel at every stage. This approach eliminates the need for a high-risk cutover event, allows you to validate the replacement against real production traffic before decommissioning anything, and delivers business value incrementally throughout the programme rather than at the end. We have guided organisations through modernisations involving COBOL mainframes, decade-old Java monoliths, unsupported PHP applications and custom-built ERP systems, always with the same commitment: your business keeps running throughout.',
+    'We use the Strangler Fig pattern and other incremental modernisation strategies that replace legacy systems piece by piece, running old and new in parallel at every stage. This approach eliminates the need for a high-risk cutover event, allows you to validate the replacement against real production traffic before decommissioning anything, and delivers business value incrementally throughout the programme rather than at the end. The approach applies whether the system is a COBOL mainframe, a decade-old Java monolith, an unsupported PHP application or a custom-built ERP, always with the same commitment: your business keeps running throughout.',
   ],
   benefits: [
     {
@@ -139,10 +139,22 @@ const data = {
       question: 'What happens to the team who currently maintains the legacy system?',
       answer: 'This is an important question that is often not asked early enough. Our modernisation programmes include structured knowledge transfer to the engineers who will own the replacement system. For organisations whose internal team maintained the legacy system, we work alongside them throughout the programme, they contribute domain knowledge, we contribute modern engineering practices, and the result is a team that is capable of owning the new system rather than dependent on external consultants. The mix of upskilling and knowledge transfer is a core part of our methodology, not an optional extra.',
     },
+    {
+      question: 'What is a legacy system?',
+      answer: 'A legacy system is software that still runs important parts of the business but has become hard or risky to change: it may rely on unsupported languages or platforms, lack documentation, depend on one or two people who understand it, or be unable to integrate with modern tools. Age alone does not make a system legacy; the cost and risk of keeping it running does.',
+    },
+    {
+      question: 'How much does legacy system modernisation cost?',
+      answer: 'Cost depends on the size and condition of the codebase, how much data has to migrate, the number of integrations, and whether the system is being rehosted, refactored or rebuilt. We start with an assessment, then quote fixed prices for each phase so spending tracks delivered value. Our legacy modernisation cost guide explains typical Australian market ranges.',
+    },
+    {
+      question: 'Should we rewrite or refactor our legacy application?',
+      answer: 'Refactor when the core design is sound and the problems are local, such as outdated libraries, missing tests or a slow module. Rewrite, usually piece by piece, when the architecture itself blocks what the business needs. A full big-bang rewrite is rarely the right call, because it freezes change for months and concentrates all the risk in one cutover.',
+    },
   ],
   serviceName: 'Legacy Modernisation',
   slug: 'legacy-modernisation',
-  summaryStatement: 'Legacy modernisation is the phased replacement of ageing business-critical systems using incremental patterns such as the Strangler Fig, running old and new in parallel so technical debt is eliminated and capabilities are unlocked without a high-risk big-bang cutover.',
+  summaryStatement: 'Legacy system modernisation (legacy application modernization, in US spelling) is the phased replacement of ageing business-critical systems using incremental patterns such as the Strangler Fig, running old and new in parallel so technical debt is eliminated and capabilities are unlocked without a high-risk big-bang cutover.',
   comparison: {
     rightFor: [
       'A core system runs on end-of-life technology, is hard to recruit for, and now constrains your ability to ship features or stay compliant.',

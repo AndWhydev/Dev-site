@@ -156,12 +156,13 @@ const {
       </div>
     </section>
 
-    <!-- Use Cases -->
+    <!-- Use Cases: only rendered when there are real, permissioned examples -->
+    {useCases.length > 0 && (
     <section class="ind-usecases">
       <div class="ind-inner">
         <div class="reveal">
           <span class="section-label">Real World Applications</span>
-          <h2 class="section-heading">Solutions We've Built For This Industry</h2>
+          <h2 class="section-heading">Examples From This Industry</h2>
         </div>
         <div class="usecases-grid">
           {useCases.map((uc, i) => (
@@ -177,6 +178,7 @@ const {
         </div>
       </div>
     </section>
+    )}
 
     <!-- Relevant Services -->
     <section class="ind-services">

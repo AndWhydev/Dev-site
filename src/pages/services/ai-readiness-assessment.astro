@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'AI Readiness Assessment for Businesses | All Webbed Labs',
-  metaDescription: "A fixed-scope, paid AI discovery: we assess your use cases, data, systems and risk, then deliver a ranked roadmap and a fixed price for your first build.",
+  metaTitle: 'AI Readiness Assessment & AI Consulting Australia | AWLabs',
+  metaDescription: "AI readiness assessment by Sydney AI consultants who also build: we test your use cases, data and risk, then give you a ranked roadmap and fixed build price.",
   category: 'AI & Data',
   serviceName: 'AI Readiness Assessment',
   slug: 'ai-readiness-assessment',
   heroHeadline: 'Find Out Where AI Will Pay Off Before You Build Anything',
-  heroTagline: "A fixed-scope, three to four week paid discovery that tests your AI ideas against your real data, systems and obligations, and ends with a ranked roadmap and a fixed price for the first project.",
+  heroTagline: "A fixed-scope AI readiness assessment: three to four weeks of paid discovery that tests your AI ideas against your real data, systems and obligations, and ends with a ranked roadmap and a fixed price for the first project.",
   summaryStatement: "An AI readiness assessment is a short, fixed-scope engagement that evaluates an organisation's candidate AI use cases against its data, systems, security and privacy obligations, and delivery capacity, and produces a prioritised, costed plan stating which use cases to pursue, in what order, and which to drop.",
   description: [
     "Most organisations have more AI ideas than they can fund, and little evidence about which ones will work. The ideas that sound best in a workshop are often the ones whose data is scattered across spreadsheets, locked in a system with no API, or too sensitive to send to a hosted model. The quiet, unglamorous ideas, such as extracting fields from a form the business processes thousands of times a month, often have the clearest return. An AI readiness assessment sorts one from the other with evidence rather than enthusiasm. It is how we begin every AI engagement: a paid discovery with a fixed scope, a fixed fee agreed before we start and a defined set of deliverables, so you are buying answers, not an open-ended conversation.",
-    "Over three to four weeks, senior engineers work through your candidate use cases with the people who own the processes. For each one we look at the value at stake, the data it depends on (where it lives, its quality, who can access it and whether it can lawfully be used for the purpose), the systems it must connect to, the risk if the AI gets it wrong, and whether an existing product already solves it. We sample real data under NDA rather than relying on descriptions, and where the top use case has a genuine technical question, such as whether a model can read your particular documents, we run a small, time-boxed spike to answer it. We also note your obligations that shape the design, including the Privacy Act 1988 and the automated decision-making transparency requirements in APP 1 that commence on 10 December 2026, and set a baseline against the six practices in Australia's Guidance for AI Adoption. You finish with a ranked opportunity register, a data readiness report, a risk register, a target architecture, a 90-day roadmap and a fixed-price proposal for the first build. You own every deliverable, and you are free to take them to another supplier or build in-house.",
+    "This is AI consulting done by the people who build. Over three to four weeks, senior engineers work through your candidate use cases with the people who own the processes. For each one we look at the value at stake, the data it depends on (where it lives, its quality, who can access it and whether it can lawfully be used for the purpose), the systems it must connect to, the risk if the AI gets it wrong, and whether an existing product already solves it. We sample real data under NDA rather than relying on descriptions, and where the top use case has a genuine technical question, such as whether a model can read your particular documents, we run a small, time-boxed spike to answer it. We also note your obligations that shape the design, including the Privacy Act 1988 and the automated decision-making transparency requirements in APP 1 that commence on 10 December 2026, and set a baseline against the six practices in Australia's Guidance for AI Adoption. You finish with a ranked opportunity register, a data readiness report, a risk register, a target architecture, a 90-day roadmap and a fixed-price proposal for the first build. You own every deliverable, and you are free to take them to another supplier or build in-house.",
   ],
   benefits: [
     {
@@ -50,7 +50,7 @@ const data = {
   technologies: [
     'Use-case scoring matrix', 'Data sampling and profiling', 'Python', 'SQL',
     'Jupyter', 'Anthropic Claude', 'OpenAI models', 'Open-weight models',
-    'Amazon Bedrock', 'Azure AI Foundry', 'Google Vertex AI', 'Microsoft 365 Copilot',
+    'Amazon Bedrock', 'Microsoft Foundry (formerly Azure AI Foundry)', 'Google Vertex AI', 'Microsoft 365 Copilot',
     'Privacy impact assessment templates', 'Architecture diagrams (C4)',
   ],
   process: [
@@ -129,6 +129,22 @@ const data = {
     {
       question: "Does the assessment cover governance and compliance?",
       answer: "It covers what affects feasibility and design: personal information involved, likely Privacy Act implications including the automated decision-making disclosure from 10 December 2026, residency constraints and human oversight needs, with a baseline against the six practices in Australia's Guidance for AI Adoption. It is not a legal review or a compliance certification. For a fuller governance programme, see our AI governance service.",
+    },
+    {
+      question: "How much do AI consultants charge, and why a fixed fee?",
+      answer: "We price assessments as a fixed fee rather than by the hour, based on a $1,400 per day senior engineer planning rate, so a typical assessment lands between $10,000 and $25,000 (AUD, ex GST). Rates across the Australian AI consulting market vary widely with firm size and seniority, so compare what you hold at the end, not only the day rate. A fixed fee with defined deliverables caps your exposure before any build decision.",
+    },
+    {
+      question: "What does your AI readiness assessment framework cover?",
+      answer: "Each candidate use case is scored on four dimensions: value, feasibility, data readiness and risk. Alongside that we baseline your organisation against the six practices in Australia's Guidance for AI Adoption and note the Privacy Act obligations that shape the design. The output is a recommendation per use case to pursue, park or drop, with the evidence behind it.",
+    },
+    {
+      question: "Is an AI readiness assessment worth it for a small business?",
+      answer: "Often, yes, in its focused form: one or two use cases in one business unit over two to three weeks, typically $10k to $15k (AUD, ex GST). For a small business with a single clear idea, an initial call may be enough to establish that an off-the-shelf tool already does the job, and if so we will say that rather than sell an assessment.",
+    },
+    {
+      question: "Can we use a free AI readiness questionnaire or template instead?",
+      answer: "A self-assessment questionnaire, such as those published by cloud vendors, is a useful way to start the conversation internally. It tells you how ready you feel in general; it cannot tell you whether your particular data supports a particular use case, what the work will cost or what could go wrong. Our assessment samples your real data under NDA and ends with priced, buildable work.",
     },
   ],
   pricing: [

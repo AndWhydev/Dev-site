@@ -1,12 +1,12 @@
 ---
 title: "Open-weight models vs API models: which should Australian enterprises use?"
-metaTitle: "Open-Weight vs API LLMs for Australian Enterprises"
-description: "Open-weight models like Llama, Mistral, Qwen and gpt-oss vs hosted APIs: capability, sovereignty, cost, licences and operations compared for Australian firms."
+metaTitle: "Open-Weight vs API LLMs: When to Self-Host in Australia"
+description: "Open-weight (open source) LLMs like Llama, Mistral, Qwen and gpt-oss vs API models: when a self-hosted LLM beats an API on sovereignty, cost and control."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Use a hosted API model by default: the strongest models are API-only, you pay only for what you use, and several can now process data inside Australia through cloud platforms. Choose an open-weight model when you need prompts to never reach a model vendor, when you must run offline or in an isolated environment, when steady high volume makes owning capacity cheaper, or when you need to fine-tune and control the exact model version. Many enterprises end up using both, routed by data sensitivity."
+summary: "In the open-weight vs API LLM decision, use a hosted API model by default: the strongest models are API-only, you pay only for what you use, and several can now process data inside Australia through cloud platforms. Choose an open-weight model when you need prompts to never reach a model vendor, when you must run offline or in an isolated environment, when steady high volume makes owning capacity cheaper, or when you need to fine-tune and control the exact model version. Many enterprises end up using both, routed by data sensitivity."
 takeaways:
   - "Open-weight means the trained weights are published so you can run the model on your own infrastructure. It doesn't always mean open source: licences such as Llama's carry conditions."
   - "API models still lead on the hardest reasoning and coding tasks, but open-weight models such as gpt-oss, Qwen and Mistral handle most classification, extraction and summarisation work well."
@@ -18,12 +18,16 @@ faqs:
     a: "For the hardest tasks, generally not at the time of writing: the frontier models are API-only. For well-defined tasks such as extraction, classification, routing, summarisation and retrieval-augmented answers over your own documents, a good open-weight model is often good enough. Test on your own data rather than relying on public benchmarks."
   - q: "Is it legal to use open-weight models commercially in Australia?"
     a: "Usually yes, but read the licence. gpt-oss, the Qwen3 models and many Mistral models are released under Apache 2.0, which permits commercial use. Meta's Llama 4 Community License allows commercial use but requires attribution, compliance with Meta's acceptable use policy, and a separate licence above 700 million monthly active users."
+  - q: "What is the best open source LLM for business?"
+    a: "There isn't one best model; it depends on the task, the hardware you can run and the licence you can accept. At the time of writing, OpenAI's gpt-oss, the Qwen3 family and Mistral's Apache 2.0 models are sensible starting points because their licences permit commercial use. Shortlist two or three and test them on your own examples."
+  - q: "Is an open-weight model the same as an open source LLM?"
+    a: "Not quite, though people use the terms interchangeably. Open-weight means the trained weights are published so you can run the model yourself. Open source, strictly, would also cover the training code and data, which usually aren't released, and some open-weight licences, such as Llama's, add conditions an open source licence wouldn't."
+  - q: "Can we run an LLM on-premises or locally instead of in the cloud?"
+    a: "Yes, with an open-weight model. You can run a private LLM on your own servers, in a secure facility or fully offline, which API models don't allow. You take on the hardware, serving, patching and evaluation, so it makes sense when isolation is a requirement rather than a preference."
   - q: "Does self-hosting take care of our Privacy Act obligations?"
     a: "No single technical choice does that. Self-hosting in an Australian region removes the overseas disclosure question for the model itself, which simplifies your APP 8 analysis, but you still need to meet the other Australian Privacy Principles for collection, use, security and access. The OAIC's guidance on AI products is a good starting point."
   - q: "What hardware does an open-weight model need?"
     a: "It depends on size. OpenAI's gpt-oss-20b runs within 16 GB of memory, and gpt-oss-120b fits on a single 80 GB GPU thanks to quantisation. Larger models need several GPUs. Cloud GPU instances are available in Australian regions, subject to quota."
-  - q: "Can we fine-tune an API model instead?"
-    a: "Some API providers offer fine-tuning for selected models, but you don't get the weights and the options are narrower. If you need full control over training, or to run a fine-tuned model offline, open-weight is the route. Often retrieval (RAG) solves the problem without fine-tuning at all."
 sources:
   - title: "Regional availability by models (Amazon Bedrock User Guide)"
     url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html"
@@ -35,7 +39,7 @@ sources:
     url: "https://dev.meta.ai/llama/llama4/license/"
     publisher: "Meta"
   - title: "Models overview"
-    url: "https://docs.mistral.ai/getting-started/models/"
+    url: "https://docs.mistral.ai/models"
     publisher: "Mistral AI"
   - title: "Qwen3-32B model card"
     url: "https://huggingface.co/Qwen/Qwen3-32B"
@@ -63,11 +67,11 @@ service:
   href: "/services/private-llm-deployment"
 ---
 
-## Open-weight or API: what's the short answer?
+## Open-weight vs API LLMs: which should you use?
 
 **Start with a hosted API model unless you have a specific reason not to; move to open-weight when sovereignty, isolation, volume or control demands it.** The decision is less about ideology and more about four practical questions: how capable does the model need to be, where may the data go, how much volume will you run, and who will operate it.
 
-The terms first. An **API model** (Claude, GPT, Gemini) runs only on its vendor's or a cloud partner's infrastructure; you send a request and pay per token. An **open-weight model** (Llama, Mistral, Qwen, DeepSeek, OpenAI's gpt-oss) has its trained weights published, so you can download it and run it wherever you like. "Open-weight" isn't the same as open source: the training data and code usually aren't released, and some licences restrict use.
+The terms first. An **API model** (Claude, GPT, Gemini) runs only on its vendor's or a cloud partner's infrastructure; you send a request and pay per token. An **open-weight model** (Llama, Mistral, Qwen, DeepSeek, OpenAI's gpt-oss) has its trained weights published, so you can download it and run it wherever you like. "Open-weight" isn't the same as open source: the training data and code usually aren't released, and some licences restrict use. Buyers searching for an "open source LLM", a "self-hosted LLM", a "local LLM" or a "private LLM" usually mean an open-weight model run on infrastructure they control; API models are sometimes called closed or proprietary models.
 
 ## How do they compare side by side?
 
@@ -98,9 +102,9 @@ Choose an API model if:
 - You don't have, and don't want, people to operate GPU infrastructure.
 - An Australian-region API option exists for the model, or offshore processing has been assessed and accepted.
 
-## Where do open-weight models win?
+## When should you use a self-hosted LLM?
 
-**On control: over where data goes, which exact model runs, how it's tuned, and whether it runs at all without an internet connection.** When you self-host, prompts and outputs never reach a model vendor, and your own logs prove where every request went.
+**When control matters more than the last increment of capability. Open-weight models win on control: over where data goes, which exact model runs, how it's tuned, and whether it runs at all without an internet connection.** When you self-host, prompts and outputs never reach a model vendor, and your own logs prove where every request went.
 
 Situations where that matters:
 
@@ -164,7 +168,7 @@ The other common pattern is routing by sensitivity: a single internal gateway se
 | You want onshore processing without running GPUs | Open-weight on a managed platform in Sydney |
 | Mixed data sensitivity | Both, behind one routing gateway |
 
-If fine-tuning is the reason you're considering open-weight models, read [RAG vs fine-tuning](/guides/rag-vs-fine-tuning) first: retrieval often solves the problem more cheaply.
+If fine-tuning is the reason you're considering open-weight models, note that some API providers also offer fine-tuning for selected models, though you don't get the weights and the options are narrower. Read [RAG vs fine-tuning](/guides/rag-vs-fine-tuning) first: retrieval often solves the problem more cheaply than either.
 
 ## How All Webbed Labs approaches model choice
 

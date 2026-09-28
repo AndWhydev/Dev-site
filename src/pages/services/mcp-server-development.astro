@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'MCP Server Development in Australia | All Webbed Labs',
-  metaDescription: "We build Model Context Protocol servers that expose your systems to Claude, ChatGPT, Copilot and your own agents, with OAuth, scoped tools and audit logs.",
+  metaTitle: 'MCP Server Development Services Australia | All Webbed Labs',
+  metaDescription: "Custom MCP server development in Sydney: Model Context Protocol servers that connect your systems to Claude, ChatGPT, Copilot and agents, with OAuth and logs.",
   category: 'AI & Data',
   serviceName: 'MCP Server Development',
   slug: 'mcp-server-development',
   heroHeadline: 'Connect Your Systems to Any AI Client, Once',
-  heroTagline: "Model Context Protocol servers that give Claude, ChatGPT, Copilot, IDEs and your own agents controlled access to your data and actions, built to the current specification and secured like any production API.",
-  summaryStatement: "An MCP server is a service that exposes an organisation's data and actions to AI applications through the Model Context Protocol, an open standard that defines how AI clients discover and call tools, read resources and use prompt templates, so one integration can serve many AI clients instead of being rebuilt for each.",
+  heroTagline: "Custom MCP server development: Model Context Protocol servers that give Claude, ChatGPT, Copilot, IDEs and your own agents controlled access to your data and actions, built to the current specification and secured like any production API.",
+  summaryStatement: "MCP server development is the design, build and operation of an MCP server: a service that exposes an organisation's data and actions to AI applications through the Model Context Protocol, an open standard that defines how AI clients discover and call tools, read resources and use prompt templates, so one integration can serve many AI clients instead of being rebuilt for each.",
   description: [
-    "Every AI assistant becomes more useful when it can reach your systems: the CRM, the job management platform, the policy library, the data warehouse. Before the Model Context Protocol, each of those connections was custom code written for one model or one product, and rewritten when you changed either. MCP, introduced by Anthropic in November 2024 and contributed to the Agentic AI Foundation under the Linux Foundation in December 2025, standardises that connection. An MCP server describes what it offers in three forms the protocol defines: tools the model can execute, resources that supply context and data, and prompts that package common workflows. Any compliant client can then discover and use them. At the time of writing (September 2026), MCP client support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, among others, and Anthropic's Messages API can connect to remote MCP servers directly.",
-    "Writing a demo MCP server takes an afternoon. Writing one you can safely point at production data is a different job, and it is the one we do. The current specification (version 2026-07-28) defines two standard transports: stdio for servers launched locally by the client, and Streamable HTTP for remote servers. For remote servers, the authorisation framework is based on OAuth 2.1: the MCP server acts as an OAuth resource server, must publish protected resource metadata, must check that each access token was issued specifically for it, and must not pass tokens through to other services. We implement that properly against your identity provider, so users only reach what their own permissions allow. Beyond the protocol, we design tools a model can use well (clear names, tight input schemas, useful errors, bounded result sizes), separate read tools from write tools, treat tool descriptions and returned content as untrusted, log every call, and version the server so an upgrade on the AI side does not break your integration. The result is one well governed interface to your systems that any approved AI client can use.",
+    "Every AI assistant becomes more useful when it can reach your systems: the CRM, the job management platform, the policy library, the data warehouse. Before the Model Context Protocol, each of those connections was custom code written for one model or one product, and rewritten when you changed either. MCP, introduced by Anthropic in November 2024 and contributed to the Agentic AI Foundation under the Linux Foundation in December 2025, standardises that connection. An MCP server describes what it offers in three forms the protocol defines: tools the model can execute, resources that supply context and data, and prompts that package common workflows. Any compliant client can then discover and use them. At the time of writing (September 2026), MCP client support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, among others, and Anthropic's Messages API can connect to remote MCP servers directly through its MCP connector, in beta at the time of writing.",
+    "Writing a demo MCP server takes an afternoon. Writing a custom MCP server you can safely point at production data is a different job, and it is the one we do. The current specification (version 2026-07-28) defines two standard transports: stdio for servers launched locally by the client, and Streamable HTTP for remote servers. For remote servers, the authorisation framework is based on OAuth 2.1: the MCP server acts as an OAuth resource server, must publish protected resource metadata, must check that each access token was issued specifically for it, and must not pass tokens through to other services. We implement that properly against your identity provider, so users only reach what their own permissions allow. Beyond the protocol, we design tools a model can use well (clear names, tight input schemas, useful errors, bounded result sizes), separate read tools from write tools, treat tool descriptions and returned content as untrusted, log every call, and version the server so an upgrade on the AI side does not break your integration. The result is one well governed interface to your systems that any approved AI client can use.",
   ],
   benefits: [
     {
@@ -116,7 +116,7 @@ const data = {
     },
     {
       question: "Which AI clients can use our MCP server?",
-      answer: "At the time of writing (September 2026), MCP support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, and Anthropic's Messages API can call remote MCP servers directly. Support for individual features varies by client and changes often, so we test against the specific clients you intend to approve.",
+      answer: "At the time of writing (September 2026), MCP support is built into Claude, ChatGPT, Microsoft Copilot, Gemini, Cursor and Visual Studio Code, and Anthropic's Messages API can call remote MCP servers directly through its MCP connector, which is in beta. Support for individual features varies by client and changes often, so we test against the specific clients you intend to approve.",
     },
     {
       question: "Should our MCP server be local or remote?",
@@ -129,6 +129,22 @@ const data = {
     {
       question: "How long does an MCP server take to build?",
       answer: "A focused server with a handful of read tools over an existing API typically takes 3 to 6 weeks including authorisation, testing and deployment. Servers that add write actions, span several systems or need to serve many customer tenants take longer. Paid discovery fixes the scope and the price.",
+    },
+    {
+      question: "How much does MCP server development cost?",
+      answer: "Typical Australian market ranges are $15k to $35k for an internal read-only server over an existing API, $35k to $80k for a server with write actions across several systems, and from $80k for a multi-tenant server you publish to your own customers (AUD, ex GST). Scope drives the price: the number of tools and systems, whether writes need confirmation flows, and how many AI clients must be tested. Paid discovery fixes the figure before the build starts.",
+    },
+    {
+      question: "What is the role of a custom MCP server in an AI system?",
+      answer: "A custom MCP server is the controlled doorway between AI clients and your own systems. The model decides what it wants to do; the server decides what it is allowed to do, runs the call against your API or database with the user's own permissions and returns a bounded result. Ready-made MCP servers exist for many popular products, but anything specific to your business, such as an internal job system or a warehouse with your own access rules, needs a custom server.",
+    },
+    {
+      question: "Do you build MCP servers in Python or TypeScript?",
+      answer: "Both. The official MCP SDKs include TypeScript and Python, the two languages we use most for servers. We usually match the language of the system the server sits in front of, so your team can maintain it alongside the code it already owns.",
+    },
+    {
+      question: "How do staff connect our MCP server to Claude, ChatGPT or Visual Studio Code?",
+      answer: "For a remote server, users add its URL in the client's connector or MCP settings and sign in through your identity provider, so they only see what their own account allows. A local server is configured with the command that launches it. We supply setup instructions for each client you approve and work with your administrators on how the server is approved and rolled out across the organisation.",
     },
   ],
   pricing: [

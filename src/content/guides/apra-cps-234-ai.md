@@ -1,12 +1,12 @@
 ---
-title: "APRA CPS 234 and AI systems: what vendors need to provide"
-metaTitle: "APRA CPS 234 and AI Systems: What Vendors Must Provide"
-description: "How APRA's CPS 234 information security standard applies to AI systems, what regulated entities must assess in their vendors, and the evidence to ask for."
+title: "APRA CPS 234 requirements for AI systems: what vendors need to provide"
+metaTitle: "APRA CPS 234 Requirements for AI Systems and Vendors"
+description: "APRA CPS 234 requirements explained for AI systems: who the information security standard applies to, what vendors must provide, and a checklist to use."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "CPS 234 is APRA's information security standard. It has applied to banks, insurers, private health insurers and super trustees since 1 July 2019, and it covers every information asset, including software and data managed by third parties. An AI system is an information asset, so a regulated entity must classify it, control it, test it and assess the security capability of any vendor that builds or runs it. The vendor doesn't carry the obligation, but it must supply the evidence the entity needs, and must tell the entity about incidents fast enough for the entity to notify APRA within 72 hours."
+summary: "CPS 234 is APRA's information security standard, and its requirements have applied to banks, insurers, private health insurers and super trustees since 1 July 2019. It covers every information asset, including software and data managed by third parties. An AI system is an information asset, so a regulated entity must classify it, control it, test it and assess the security capability of any vendor that builds or runs it. The vendor doesn't carry the obligation, but it must supply the evidence the entity needs, and must tell the entity about incidents fast enough for the entity to notify APRA within 72 hours."
 takeaways:
   - "CPS 234 applies to APRA-regulated entities, not to their vendors, but it reaches every information asset a third party manages for them."
   - "AI models, prompts, retrieved documents, embeddings, logs and the code around them are all information assets under the standard's definition."
@@ -22,6 +22,10 @@ faqs:
     a: "Be wary of that claim. CPS 234 obligations sit with the regulated entity, and each entity assesses its own assets and risks. A vendor can provide evidence that supports the entity's assessment, such as independent assurance reports, test results and control descriptions, but it can't make the entity compliant."
   - q: "How quickly must an AI vendor report a security incident to its APRA-regulated client?"
     a: "CPS 234 doesn't set a vendor deadline. It requires the entity to notify APRA no later than 72 hours after becoming aware of a material incident. Contracts therefore usually require the vendor to notify the entity well inside that window, often within 24 hours or sooner, so the entity can assess materiality in time."
+  - q: "What does CPS 234 stand for?"
+    a: "CPS stands for Cross-industry Prudential Standard, APRA's label for standards that apply across banking, insurance and superannuation. CPS 234 is the information security standard in that series. Its companion, CPG 234, is a Cross-industry Prudential Practice Guide: guidance on meeting the standard, not a binding requirement."
+  - q: "Is there a CPS 234 compliance deadline?"
+    a: "Not a future one. CPS 234 commenced on 1 July 2019, and its requirements for information assets managed by third parties applied from 1 July 2020 or the earlier renewal of the contract. Regulated entities are expected to meet it now, including for any new AI system or vendor they bring in."
   - q: "Does CPS 234 say anything specific about AI?"
     a: "No. The standard is technology neutral and doesn't mention AI. Its requirements apply to AI systems because they are information assets. ASD's guidance on engaging with AI and the OWASP list of LLM risks are useful for working out which AI-specific controls to evaluate."
 sources:
@@ -58,9 +62,11 @@ service:
 disclaimer: legal
 ---
 
-## What is CPS 234?
+## What is CPS 234 and who does it apply to?
 
 **Prudential Standard CPS 234 Information Security is APRA's binding standard requiring regulated financial institutions to protect the confidentiality, integrity and availability of their information assets.** It commenced on 1 July 2019 and applies to authorised deposit-taking institutions (ADIs), general insurers, life companies, private health insurers and RSE licensees in superannuation, including the heads of their groups.
+
+CPS stands for Cross-industry Prudential Standard, which is APRA's label for a standard that applies across banking, insurance and superannuation. APRA publishes a companion practice guide, CPG 234, and the two are often searched together as "CPS 234 vs CPG 234": the standard is binding, the guide explains how APRA expects it to be met.
 
 Its stated objective is to minimise the likelihood and impact of information security incidents, "including information assets managed by related parties or third parties". That phrase is why CPS 234 matters to anyone selling software or AI to a bank, insurer or super fund. The obligations sit with the regulated entity, but they follow the entity's data and systems into its vendors.
 
@@ -84,7 +90,7 @@ For a typical AI application, that means at least these assets need classifying 
 
 Classification drives everything else: CPS 234 requires controls commensurate with the criticality and sensitivity of the asset, its threats and vulnerabilities, where it is in its life cycle, and the consequences of an incident.
 
-## What does CPS 234 require, paragraph by paragraph?
+## What are the APRA CPS 234 requirements, paragraph by paragraph?
 
 **The standard has seven working areas: roles, capability, policy, classification, controls, incident management and testing, plus internal audit and APRA notification.** The table summarises the requirements most relevant to AI projects, with the paragraph numbers from the standard.
 
@@ -101,7 +107,7 @@ Classification drives everything else: CPS 234 requires controls commensurate wi
 | 35 | Notify APRA within 72 hours of a material information security incident | Vendors must alert the entity fast enough for this |
 | 36 | Notify APRA within 10 business days of a material control weakness that can't be remediated in time | Known AI weaknesses without a fix become reportable |
 
-APRA's practice guide CPG 234 gives guidance on meeting the standard. It is guidance, not binding, but assessors use it.
+APRA's practice guide CPG 234 gives guidance on meeting the standard. It is guidance, not a binding requirement, but it shows where APRA's supervisors continue to find weaknesses.
 
 ## What must a regulated entity check in an AI vendor?
 
@@ -130,7 +136,7 @@ Controls that map to CPS 234's requirements for AI systems include:
 
 Our guide to [prompt injection](/guides/prompt-injection) covers the defences in more detail, and [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) covers the location questions.
 
-## What should be in an AI vendor's CPS 234 evidence pack?
+## CPS 234 checklist: what should be in an AI vendor's evidence pack?
 
 **A useful evidence pack lets the entity complete its paragraph 16, 22 and 28 assessments without weeks of back and forth.** Use this as a checklist, whether you are asking for it or preparing it:
 
@@ -147,7 +153,15 @@ Our guide to [prompt injection](/guides/prompt-injection) covers the defences in
 11. Incident response plan summary and the notification commitment to the entity
 12. Business continuity and exit arrangements, which also feed into CPS 230
 
-## How does CPS 234 fit with CPS 230?
+## Does ISO 27001 certification meet CPS 234?
+
+**Not on its own. CPS 234 is a prudential standard made by APRA under the Banking Act 1959, the Insurance Act 1973 and related Acts, and it binds the regulated entity; ISO/IEC 27001 is an international management system standard an organisation chooses to be certified against.** CPS 234 doesn't mention ISO 27001 or any other certification.
+
+A vendor's ISO 27001 certificate is still useful evidence. It can feed the entity's assessment of the vendor's information security capability and control design. What it can't do is replace that assessment, because CPS 234 asks the entity itself to classify its assets, judge whether controls are commensurate with them, and check that testing covers them. A certificate's scope may also exclude the AI components the entity cares about, so check what it covers before relying on it.
+
+The practical answer to "CPS 234 vs ISO 27001" is that they overlap in subject matter but answer to different people: ISO 27001 to a certification body, CPS 234 to APRA.
+
+## CPS 234 vs CPS 230: how do they fit together?
 
 **CPS 234 governs the security of information assets; CPS 230 governs operational risk, critical operations and service providers more broadly.** CPS 230 requires entities to meet CPS 234's information security requirements as part of managing technology risk, and says an incident already notified under CPS 234 doesn't need to be reported again under CPS 230.
 

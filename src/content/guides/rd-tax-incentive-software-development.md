@@ -1,12 +1,12 @@
 ---
 title: "R&D Tax Incentive for software development: what qualifies in Australia?"
-metaTitle: "R&D Tax Incentive for Software Development: What Qualifies"
-description: "How the Australian R&D Tax Incentive treats software: core vs supporting activities, the internal administration exclusion, the 10 month deadline and records."
+metaTitle: "R&D Tax Incentive for Software: What Qualifies in Australia"
+description: "R&D Tax Incentive (RDTI) eligibility for software development in Australia: core vs supporting activities, the internal software exclusion and the deadline."
 eyebrow: "Australian program"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Software development can qualify for the Australian R&D Tax Incentive, but only the parts that are genuine experiments: work to resolve a technical hurdle that no existing knowledge or solution can answer, carried out as hypothesis, experiment, observation, evaluation and conclusion. Routine building, integrating and configuring usually doesn't qualify as core R&D, software built mainly for your own internal administration is excluded from core R&D, and you must register with the Department of Industry, Science and Resources within 10 months of the end of your income year. Eligibility is self-assessed, so speak to a registered R&D tax agent before you rely on it."
+summary: "Software development can qualify for the Australian R&D Tax Incentive (RDTI), but only the parts that are genuine experiments: work to resolve a technical hurdle that no existing knowledge or solution can answer, carried out as hypothesis, experiment, observation, evaluation and conclusion. Routine building, integrating and configuring usually doesn't qualify as core R&D, software built mainly for your own internal administration is excluded from core R&D, and you must register with the Department of Industry, Science and Resources within 10 months of the end of your income year. Eligibility is self-assessed, so speak to a registered R&D tax agent before you rely on it."
 takeaways:
   - "Only a company can be an R&D entity, and eligible R&D expenditure generally has to reach $20,000 in the income year."
   - "Core R&D activities are experiments whose outcome can't be known in advance, run as a systematic progression of work to generate new knowledge."
@@ -22,6 +22,8 @@ faqs:
     a: "No. The official guidance says a methodology such as agile or waterfall doesn't make an activity eligible or ineligible by itself. What matters is whether individual activities meet the core or supporting definitions, and whether your records show it."
   - q: "What happens if we miss the 10 month registration deadline?"
     a: "You can ask the department for an extension of time, but approval isn't automatic. Plan to register well before the deadline, and talk to your R&D tax agent early in the year after the work is done."
+  - q: "Is there an R&D Tax Incentive application form?"
+    a: "There's no paper form. You apply to register through the department's R&DTI customer portal, and the department publishes a guidance document, Registration: application form questions, that explains each question. Many companies have their registered R&D tax agent prepare the application with them."
   - q: "Can our software developer lodge the claim for us?"
     a: "Not unless they are a registered tax agent. A development company can produce project records that show what was tested and why, but the eligibility assessment, registration and tax claim should be handled with a registered R&D tax agent and your accountant."
   - q: "Does offshore development count?"
@@ -40,7 +42,7 @@ sources:
     url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/check-if-you-are-eligible-for-the-randd-tax-incentive/excluded-rd-activities-under-the-rdti"
     publisher: "business.gov.au"
   - title: "Apply for the R&D Tax Incentive"
-    url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-to-register-with-the-randd-tax-incentive"
+    url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-the-randd-tax-incentive"
     publisher: "business.gov.au"
   - title: "Overview of the R&D Tax Incentive"
     url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/overview-of-rd-tax-incentive"
@@ -49,7 +51,10 @@ sources:
     url: "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/helping-you-get-r-d-claims-right/checklist-for-claiming-r-d-tax-incentive"
     publisher: "Australian Taxation Office"
   - title: "Keeping records and calculating your notional deductions"
-    url: "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive-and-concessions/research-and-development-tax-incentive/in-detail/keeping-records-and-calculating-your-notional-deductions"
+    url: "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/keeping-records-and-calculating-your-notional-deductions"
+    publisher: "Australian Taxation Office"
+  - title: "Tax Reform: better targeting the Research and Development Tax Incentive (12 May 2026)"
+    url: "https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive"
     publisher: "Australian Taxation Office"
 related:
   - title: "R&D Tax Incentive and how we document software projects"
@@ -70,15 +75,30 @@ disclaimer: tax
 
 **The R&D Tax Incentive (R&DTI) treats software like any other field: the technology doesn't make work eligible, the experiment does.** A software activity can be a core R&D activity if it resolves a technical hurdle that existing knowledge, methods or solutions can't, even for experienced professionals, and the way through can only be found by testing a hypothesis.
 
-The program is jointly administered. The Department of Industry, Science and Resources registers R&D activities, and the Australian Taxation Office processes the expenditure claim in your company tax return. It runs on self-assessment: registration confirms your application was received, not that your activities are eligible. If the department reviews your claim, it assesses your activities against sections 355-25 and 355-30 of the Income Tax Assessment Act 1997.
+The program is jointly administered. The Department of Industry, Science and Resources registers R&D activities, and the Australian Taxation Office processes the expenditure claim in your company tax return. It runs on self-assessment: registration confirms your activities have been registered, not that they are eligible. If the department reviews your claim, it assesses your activities against sections 355-25 and 355-30 of the Income Tax Assessment Act 1997.
+
+The Government announced changes to the program in the 2026 to 27 Budget that would start from 1 July 2028, including removing supporting R&D activities from the offset and raising the minimum spend to $50,000; the ATO notes the measure is not yet law, and the current rules apply until then.
 
 This guide explains the eligibility rules as they apply to software. It doesn't tell you what your claim is worth. For the benefit calculation, talk to a registered R&D tax agent; for how the program interacts with project budgets, see [how the R&D Tax Incentive affects the cost of building software](/guides/rd-tax-incentive-software-development-cost).
 
-## Who can claim?
+## Who is eligible for the R&D Tax Incentive?
 
 **Only an R&D entity can claim, and that means a corporation.** business.gov.au lists three kinds: a company incorporated under an Australian law, a foreign company that is an Australian resident for tax purposes, and certain foreign companies carrying on business here through a permanent establishment under a double tax agreement. Sole traders, partnerships and most trusts don't qualify in their own right.
 
 Your R&D expenditure for the income year generally needs to be at least $20,000. That threshold doesn't apply if you engage a registered research service provider or contribute to the Cooperative Research Centres Program.
+
+## Is the R&D Tax Incentive a tax credit or a rebate?
+
+**In Australia it is a tax offset, not a credit or a rebate, although many people search for it as the "R&D tax credit" or "R&D tax rebate".** The offset is claimed in the company tax return after the activities are registered.
+
+business.gov.au describes two forms, depending on aggregated turnover:
+
+| Company | Type of offset |
+|---|---|
+| Aggregated turnover under $20 million | Refundable R&D tax offset |
+| Aggregated turnover of $20 million or more | Non-refundable R&D tax offset |
+
+What a claim is worth depends on the company's tax position, its eligible expenditure and how the rules apply to it, so we don't quote a figure here. A registered R&D tax agent can work out what applies to your company. The "R&D tax credit for software development" material you'll find online is often written for the US program, which has different rules.
 
 ## What is a core R&D activity in software?
 
@@ -120,7 +140,7 @@ Our [R&D page](/r-and-d) lists the same shape of work from an engineering view: 
 
 ## What is the internal administration exclusion?
 
-**Developing, modifying or customising software for the dominant purpose of internal administration is excluded from core R&D.** The exclusion covers software whose main use is the internal administration, including of business functions, of the company that develops it, a connected entity or an affiliate.
+**Developing, modifying or customising software for the dominant purpose of internal administration is excluded from core R&D.** It is the Australian counterpart to what US guides call "internal use software", but the test and wording are different, so don't rely on US material. The exclusion covers software whose main use is the internal administration, including of business functions, of the company that develops it, a connected entity or an affiliate.
 
 Two points in the official guidance narrow its reach. It is not intended to catch software developed in-house that is applied in nature, such as software forming part of an electrical or mechanical device. And it doesn't capture software where the dominant purpose is to sell the product commercially, even if that product is business administration software.
 
@@ -133,15 +153,17 @@ Two points in the official guidance narrow its reach. It is not intended to catc
 
 An excluded activity can still be a supporting R&D activity if it is directly related to a core activity and done for the dominant purpose of supporting it. That is a narrow path. Take advice before relying on it.
 
-## When do you have to register?
+## What is the R&D Tax Incentive deadline, and how do you apply?
 
-**You must apply to register within 10 months of the end of the income year in which the R&D was done.** For a company with a 30 June year end, that is 30 April the following year. You register every income year you want to claim, then put your registration number in the R&D schedule of your company tax return.
+**You must apply to register within 10 months of the end of the income year in which the R&D was done.** For a company with a 30 June year end, that is 30 April the following year. You register every income year you want to claim, through the department's R&DTI customer portal, then put your registration number in the R&D Tax Incentive schedule of your company tax return.
+
+business.gov.au sets out four steps: self-assess your eligibility, conduct the R&D and keep records, apply to register within the deadline, and claim the tax offset with the ATO. The department's "Registration: application form questions" guidance explains what the application asks, including how supporting activities can be grouped under the core activity they relate to.
 
 Here is how one income year plays out for a company with a standard 30 June year end:
 
 | Date | What happens |
 |---|---|
-| Before or during the work | Optional: apply for an advance finding if you want the department's view on eligibility first. Get an overseas finding before relying on any overseas R&D |
+| Before or during the work | Optional: apply for an advance finding if you want the department's view on eligibility first. Get an overseas finding before relying on any overseas R&D; the application must be made before the end of the income year in which the overseas work is done |
 | 1 July 2025 to 30 June 2026 | Income year: run the experiments and create records as you go |
 | From 1 July 2026 | Apply to register the year's activities with the department |
 | 30 April 2027 | Registration deadline for that income year |

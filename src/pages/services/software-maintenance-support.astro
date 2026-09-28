@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Software Maintenance & Support Retainers | All Webbed Labs",
-  metaDescription: "Software maintenance retainers with clear response targets, security patching, dependency and runtime upgrades, monitoring and handover from other vendors.",
+  metaTitle: "Software Maintenance & Support Services Australia | AWLabs",
+  metaDescription: "Software maintenance and support services from Sydney: monthly retainers with response targets, security patching, upgrades, monitoring and vendor handover.",
   category: "Support",
   serviceName: "Software Maintenance & Support",
   slug: "software-maintenance-support",
   heroHeadline: "Keep Your Software Patched, Monitored and Moving Forward",
-  heroTagline: "Monthly maintenance retainers with written response targets, security patching, dependency upgrades and monitoring, for software we built or software another vendor left behind.",
+  heroTagline: "Software maintenance and support retainers with written response targets, security patching, dependency upgrades and monitoring, for software we built or software another vendor left behind.",
   summaryStatement: "Software maintenance and support is the ongoing work of keeping a live application secure, working and current after launch: applying security patches, upgrading dependencies and runtimes before they reach end of life, monitoring for errors and outages, fixing defects and making small improvements, under an agreement that sets out response times, hours and what happens outside business hours.",
   description: [
-    "Software does not stay finished. The day an application goes live, its dependencies start ageing. Open source libraries publish security fixes, cloud providers deprecate services, browsers and mobile operating systems change behaviour, and the runtime underneath the code has a published end-of-life date. Node.js, for example, supports each long-term support release for 30 months, and each Python version receives fixes for about five years. An application nobody touches for two years is not stable; it is quietly accumulating vulnerabilities and upgrade work that gets harder the longer it waits. The widely used planning figure is that maintenance costs around 15 to 20% of the original build each year, and most of that is not new features. It is the work of standing still safely.",
-    "Our maintenance retainers make that work predictable. Each month includes a block of senior engineering hours, a written response target for each severity level, a regular patch and upgrade cycle, and monitoring that tells us about errors and outages before your users do. We track your dependencies for published vulnerabilities, apply urgent security fixes out of cycle, and plan runtime and framework upgrades well ahead of their end-of-life dates rather than in a rush afterwards. Unused hours go to the backlog of small improvements you actually want. We also take over software built by other vendors or by a departed developer: we start with a structured handover and a health check, so you know what you have, what is at risk and what it will cost to keep running, before you commit to anything ongoing. You keep full ownership of the code, repository and cloud accounts throughout, so you are never locked in to us either.",
+    "Software does not stay finished. The day an application goes live, its dependencies start ageing. Open source libraries publish security fixes, cloud providers deprecate services, browsers and mobile operating systems change behaviour, and the runtime underneath the code has a published end-of-life date. At the time of writing (September 2026), for example, Node.js says each long-term support release typically receives critical fixes for a total of 30 months, and each Python version receives bugfix and then security releases for about five years. An application nobody touches for two years is not stable; it is quietly accumulating vulnerabilities and upgrade work that gets harder the longer it waits. The widely used planning figure is that maintenance costs around 15 to 20% of the original build each year, and most of that is not new features. It is the work of standing still safely.",
+    "Our software support retainers make that work predictable. Each month includes a block of senior engineering hours, a written response target for each severity level, a regular patch and upgrade cycle, and monitoring that tells us about errors and outages before your users do. We track your dependencies for published vulnerabilities, apply urgent security fixes out of cycle, and plan runtime and framework upgrades well ahead of their end-of-life dates rather than in a rush afterwards. Unused hours go to the backlog of small improvements you actually want. We also take over software built by other vendors or by a departed developer: we start with a structured handover and a health check, so you know what you have, what is at risk and what it will cost to keep running, before you commit to anything ongoing. You keep full ownership of the code, repository and cloud accounts throughout, so you are never locked in to us either.",
   ],
   benefits: [
     {
@@ -23,7 +23,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
       title: "Security Patching on a Cycle",
-      description: "Dependencies are scanned continuously for published vulnerabilities. Routine patches go out on a regular cycle with tests, and urgent fixes for exploitable issues are applied out of cycle. Patching applications is one of the ASD Essential Eight strategies, and this gives you the evidence trail to show it happens.",
+      description: "Dependencies are scanned continuously for published vulnerabilities. Routine patches go out on a regular cycle with tests, and urgent fixes for exploitable issues are applied out of cycle. Patch applications is one of the ASD Essential Eight mitigation strategies, and this gives you the evidence trail to show it happens.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
@@ -129,6 +129,18 @@ const data = {
       question: "Do we lose control of our code by using a retainer?",
       answer: "No. The code stays in your repository and your cloud accounts stay in your name. We work through your access, commit through normal pull requests and keep runbooks up to date, so another team or your own staff can take over at any time. We will assist with the transition if you decide to move maintenance elsewhere.",
     },
+    {
+      question: "What is the difference between software maintenance and software support?",
+      answer: "Support is reactive: responding to incidents, answering questions and fixing defects users report. Maintenance is proactive: security patching, dependency and runtime upgrades, monitoring and small improvements that stop problems arising in the first place. A good agreement covers both, with response targets for the reactive side and a regular cycle for the proactive side.",
+    },
+    {
+      question: "Do you maintain web and mobile apps as well as internal systems?",
+      answer: "Yes. We maintain web applications, APIs and backends, mobile apps and internal business systems, most comfortably on the stacks we build with ourselves: TypeScript, React, Next.js, Node.js, Python, Flutter and PostgreSQL on AWS, Azure, Google Cloud or Vercel. For anything outside that, the handover and health check tells both of us whether we are the right team before any retainer starts.",
+    },
+    {
+      question: "What response times should a software support agreement include?",
+      answer: "Response targets should be set per severity level, with a critical outage acknowledged fastest and minor issues handled in the normal cycle, and they should state which hours they apply to. Commit to response times rather than resolution times, because how long a fix takes depends on the problem. We agree the severity definitions and targets with you in writing before the retainer starts.",
+    },
   ],
   comparison: {
     rightFor: [
@@ -178,7 +190,7 @@ const data = {
     },
     {
       term: "Long-term support (LTS)",
-      definition: "A release line that a project commits to supporting for an extended, published period. Node.js supports each LTS release for 30 months, which is why production systems should run on LTS versions.",
+      definition: "A release line that a project commits to supporting for an extended, published period. At the time of writing, Node.js says its LTS releases typically receive critical fixes for a total of 30 months, which is why production systems should run on LTS versions.",
     },
     {
       term: "Dependency update",

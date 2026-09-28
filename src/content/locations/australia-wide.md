@@ -1,13 +1,13 @@
 ---
 title: "Software and AI development across Australia: how remote delivery works"
-metaTitle: "Remote Software and AI Development Across Australia"
-description: "How a Sydney team delivers software and AI projects to every Australian capital: time zones, daylight saving gaps, meeting cadence, workshops and hosting."
+metaTitle: "Software and AI Development Company Across Australia"
+description: "How a Sydney-based software and AI development company delivers remotely across Australia: time zones, daylight saving, weekly cadence, workshops and hosting."
 eyebrow: "Australia-wide"
 city: "Australia"
 state: "National"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is based in Sydney and delivers software and AI projects remotely to organisations in every Australian capital, travelling for workshops when being in the room matters. Remote delivery works when there's a fixed weekly rhythm, a shared working window across time zones, and in-person sessions at the moments that shape the project: discovery, key design decisions and user testing."
+summary: "All Webbed Labs is a custom software and AI development company based in Sydney that delivers projects remotely to organisations in every Australian capital, travelling for workshops when being in the room matters. Remote delivery works when there's a fixed weekly rhythm, a shared working window across time zones, and in-person sessions at the moments that shape the project: discovery, key design decisions and user testing."
 takeaways:
   - "Our team is in Sydney; we work remotely with organisations elsewhere in Australia and travel for workshops and testing."
   - "Queensland, Western Australia and the Northern Territory don't observe daylight saving, so time gaps with Sydney change between October and April."
@@ -23,6 +23,10 @@ faqs:
     a: "Travel for agreed on-site sessions is scoped and priced into the proposal up front, so there are no surprise invoices. If a project needs no travel, none is charged."
   - q: "How do you handle Perth's time difference?"
     a: "We schedule shared meetings in the middle of the day, when Perth mornings overlap Sydney afternoons, and keep asynchronous updates written so nothing depends on a live call. In summer that overlap is roughly 9am to 3pm Perth time."
+  - q: "What is a software development company?"
+    a: "A software development company designs, builds and maintains software for other organisations, as opposed to selling one packaged product. The work usually runs from discovery and design through engineering, testing and deployment to ongoing support. An AI development company does the same with AI models at the centre of the system, such as knowledge search, document processing or agents."
+  - q: "How do we choose the best software development company in Australia?"
+    a: "There isn't one best firm for every project, whatever the ranking lists say. Shortlist on fit: relevant experience, who actually writes the code, whether you own the code and IP from day one, how they test, and how they price. Directory reviews help, but a paid discovery phase with one or two firms tells you far more about how they work."
   - q: "Is remote delivery slower?"
     a: "Not if it's run properly. The build itself happens at a desk wherever the team is. Delays in remote projects usually come from unclear decisions, which is why we put decision-heavy sessions in person."
 sources:
@@ -147,4 +151,4 @@ For a private company this rarely changes the build. For a state agency or a hea
 
 ## How All Webbed Labs delivers across Australia
 
-We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. Every engagement starts with an NDA and paid discovery, then a fixed price. We work AEST hours with the overlap windows above, keep code in your repository from day one, and host in Australian regions by default. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/how-we-work) or our [custom app development](/services/custom-app-development) service.
+We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. Every engagement starts with an NDA and paid discovery, then a fixed price. We work AEST hours with the overlap windows above, keep code in your repository from day one, and host in Australian regions by default. If you're comparing firms, our guides on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) and [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) set out the questions to ask. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/how-we-work) or our [custom app development](/services/custom-app-development) service.

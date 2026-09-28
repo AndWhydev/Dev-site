@@ -2,12 +2,12 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Construction & Trades Software Development | All Webbed Labs',
-  metaDescription: 'Custom job management platforms, compliance tools, subcontractor portals and site apps for Australian builders and trades. Technology that keeps jobs on time.',
+  metaTitle: 'Construction Software Development Australia | AWLabs',
+  metaDescription: 'Custom construction software development for Australian builders and trades: job management, site diary and SWMS apps, subcontractor portals and AI tools.',
 
   industryName: 'Construction & Trades',
   heroHeadline: 'Construction Technology That Keeps Projects On Time and On Budget',
-  heroTagline: 'Site management platforms, compliance tools and job management systems for builders, trades and construction companies.',
+  heroTagline: 'Construction software development for Australian builders, trades and construction companies: custom construction management software, site apps, compliance tools and job management systems.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
 
@@ -45,6 +45,7 @@ const data = {
     'Variation management and approval workflows',
     'SWMS automation and digital sign-off',
     'Project cost tracking dashboards',
+    'AI tools for estimating, scheduling and document review',
   ],
 
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
@@ -52,6 +53,7 @@ const data = {
   useCases: [],
 
   relevantServices: [
+    { title: 'Construction Software and AI in Australia', href: '/solutions/construction-software-and-ai' },
     { title: 'Custom Web Application Development', href: '/services/react-nextjs' },
     { title: 'Mobile App Development', href: '/services/flutter-development' },
     { title: 'API Development & Integrations', href: '/services/api-development' },
@@ -62,12 +64,20 @@ const data = {
 
   faqs: [
     {
+      question: 'Should we buy construction management software or build custom?',
+      answer: "Buy first if an off-the-shelf construction management platform fits the way you run jobs; the Australian market has mature options for estimating, scheduling, job costing and site safety. Custom construction software makes sense when your workflow is a genuine competitive advantage, when you are stitching together several tools with spreadsheets in between, or when per-seat licensing no longer adds up for your subcontractor base. Often the best answer is a thin custom layer, such as a subcontractor portal or site app, that integrates with the systems you already use.",
+    },
+    {
+      question: 'How is AI used in construction?',
+      answer: "The practical uses of AI in construction today are mostly document-heavy: drafting and checking SWMS, searching specifications, drawings and contracts, summarising site diaries and RFIs, extracting quantities and line items for estimating, and flagging schedule risks from progress data. AI in construction project management works best as an assistant with a person signing off, not as an autonomous decision-maker. Our construction software and AI guide covers the use cases and the Australian rules in more detail.",
+    },
+    {
       question: 'Can you integrate with existing accounting software like Xero or MYOB?',
-      answer: "Yes. Most construction job management platforms we build integrate directly with Xero, MYOB AccountRight or QuickBooks Online via their official APIs. This keeps your accounts team working in familiar software while project managers and site supervisors work in a purpose-built tool. We handle job costing, progress claim generation, supplier invoice matching and subcontractor payment scheduling as part of the integration.",
+      answer: "Yes. The construction job management platforms we build integrate directly with Xero, MYOB AccountRight or QuickBooks Online via their official APIs. This keeps your accounts team working in familiar software while project managers and site supervisors work in a purpose-built tool. We handle job costing, progress claim generation, supplier invoice matching and subcontractor payment scheduling as part of the integration.",
     },
     {
       question: 'How do you handle offline functionality for on-site workers with poor connectivity?',
-      answer: "Mobile apps we build for site use are designed offline-first. Workers can complete forms, capture photos, log time and update job status without a data connection. Everything syncs automatically when connectivity is restored. This is critical for remote sites, basement levels and rural projects where 4G coverage is unreliable.",
+      answer: "In our construction app development, mobile apps for site use are designed offline-first. Workers can complete forms, capture photos, log time and update job status without a data connection. Everything syncs automatically when connectivity is restored. This is critical for remote sites, basement levels and rural projects where 4G coverage is unreliable.",
     },
     {
       question: 'Do your platforms support compliance with Australia\'s Security of Payment legislation?',
@@ -75,7 +85,7 @@ const data = {
     },
     {
       question: 'Can the software scale from a small trade business to a large construction company?',
-      answer: "Absolutely. We typically design systems with a modular architecture, a small plumbing company with 8 staff might start with job management and invoicing, then add the subcontractor portal and compliance module as they grow. Pricing and feature sets scale accordingly. We've built systems used by sole traders all the way up to Tier 2 commercial contractors managing 500+ concurrent jobs.",
+      answer: "Absolutely. We typically design systems with a modular architecture, a small plumbing company with 8 staff might start with job management and invoicing, then add the subcontractor portal and compliance module as they grow. Hosting costs and feature sets scale accordingly, and the data model is designed in discovery for the job volumes and user numbers you expect in a few years, not just today.",
     },
     {
       question: 'How long does it take to build a custom job management platform?',

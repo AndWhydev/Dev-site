@@ -1,7 +1,7 @@
 ---
 title: "How to evaluate an LLM application before launch"
-metaTitle: "LLM Evaluation: How to Test an AI App Before Launch"
-description: "LLM evaluation measures whether an AI app gives correct, grounded, safe answers. How to build an eval set, pick metrics, use LLM judges and catch regressions."
+metaTitle: "What Is LLM Evaluation? Metrics and How to Test an AI App"
+description: "What is LLM evaluation? How to test an AI app before launch: building an eval set, RAG and generation metrics, LLM-as-a-judge, tools and regression testing."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -18,6 +18,10 @@ faqs:
     a: "Start with 50 to 100 well-chosen cases covering your main question types and known edge cases, then grow toward several hundred as real traffic shows you what users ask. Anthropic's guidance favours more cases with automated grading over a handful of hand-graded ones."
   - q: "Can we use public benchmarks instead?"
     a: "Public benchmarks tell you how capable a model is in general. They say little about whether it answers your policy questions correctly from your documents. Use them to shortlist models, then decide with your own eval set."
+  - q: "How is LLM evaluation different from normal software testing?"
+    a: "Normal tests expect the same output every time and check it exactly. LLM output varies in wording between runs, so evals score qualities such as correctness, faithfulness and relevance, often with graded scales, AI judges and repeated runs. The discipline is the same: fixed test cases, automatic runs and blocked releases on regression."
+  - q: "What is RAG evaluation?"
+    a: "RAG evaluation is LLM evaluation applied to a retrieval-augmented generation system. It scores the retrieval step (did the right passages come back?) and the generation step (is the answer faithful to them, correct and relevant?) separately, so you can tell which half to fix."
   - q: "Who should write the expected answers?"
     a: "Subject matter experts from the business, not the developers. Engineers can build the harness and automated checks, but only the people who own the content know what a correct and complete answer looks like."
   - q: "What score is good enough to launch?"
@@ -57,7 +61,7 @@ disclaimer: none
 
 ## What is LLM evaluation?
 
-**LLM evaluation is the repeatable measurement of how well an AI application performs on the tasks it was built for.** You assemble realistic inputs with known good outcomes, run the system over them, score the results, and track those scores over time. Engineers call the test sets and the harness that runs them "evals".
+**LLM evaluation (often shortened to "LLM evals") is the repeatable measurement of how well an AI application performs on the tasks it was built for.** You assemble realistic inputs with known good outcomes, run the system over them, score the results, and track those scores over time. Engineers call the test sets and the harness that runs them "evals".
 
 Evaluation matters because language model output varies. The same question can produce different wording on each run, a model update can quietly change behaviour, and a small prompt edit that fixes one answer can break ten others. Without evals, every change is a guess. OpenAI's guidance names informal "vibe-based" testing as an anti-pattern for exactly this reason.
 
@@ -139,6 +143,27 @@ Because outputs vary between runs, run borderline cases more than once and watch
 - **After launch:** reviewers read a regular sample of live conversations, especially ones users rated poorly, and turn failures into new test cases.
 
 NIST's Generative AI Profile (AI 600-1) frames this as ongoing measurement and management across the system's life, not a one-off gate.
+
+## LLM evaluation vs model benchmarks
+
+**Benchmarks measure a model; evaluation measures your application.** Public leaderboards test general abilities, such as reasoning, coding or knowledge, on shared datasets. Useful for shortlisting models, but they can't tell you whether your assistant answers your customers' questions correctly from your documents with your prompt.
+
+| | Model benchmark | Application evaluation |
+|---|---|---|
+| What's tested | A model on its own | Your whole system: prompt, retrieval, tools and model |
+| Test data | Public datasets | Your real questions and documents |
+| Who writes the answers | Benchmark authors | Your subject matter experts |
+| Use it to | Shortlist models | Decide whether to launch, and catch regressions |
+
+## What tools are used for LLM evaluation?
+
+**You need three things: a place to keep test cases, a harness that runs them and scores results, and tracing so you can see what happened in each case.** Options range from a spreadsheet and a script to dedicated platforms.
+
+- **Open-source evaluation frameworks** such as Ragas, promptfoo and DeepEval provide ready-made metrics for RAG and generation, and run in a CI pipeline.
+- **Model provider tooling**, such as the evaluation features in OpenAI's platform, can run graders over datasets.
+- **Tracing and observability platforms** such as Langfuse and LangSmith record prompts, retrieved context and outputs in production so failures can be turned into new test cases.
+
+The tool matters less than the test set. A well-built eval set can move between tools; a clever tool with poor test cases measures the wrong thing.
 
 ## Pre-launch evaluation checklist
 

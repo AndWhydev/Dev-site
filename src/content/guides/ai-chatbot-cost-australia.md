@@ -1,7 +1,7 @@
 ---
 title: "How much does an AI chatbot cost in Australia? (2026 guide)"
-metaTitle: "AI Chatbot Cost in Australia (2026): From DIY to Enterprise"
-description: "AI chatbots in Australia cost from under $300 a month for DIY tools to $80k to $250k+ for enterprise AI agents. Four tiers compared, with a break-even example."
+metaTitle: "How Much Does an AI Chatbot Cost in Australia? (2026)"
+description: "How much does an AI chatbot cost in Australia? Under $300 a month for DIY tools up to $80k to $250k+ for enterprise agents. Chatbot development pricing guide."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
@@ -18,6 +18,10 @@ faqs:
     a: "A DIY chatbot tool trained on your website and FAQs, at roughly US$19 to US$120 a month at small-business volumes. It works well for answering common questions. It struggles once the bot needs to look up orders, bookings or customer records in your own systems."
   - q: "How much does ChatGPT or Claude cost per chatbot conversation?"
     a: "At the time of writing, model usage for a typical support conversation costs a fraction of a cent to a few cents, depending on the model and how much context is sent. Anthropic's own worked example puts about 10,000 support tickets at roughly US$37 on its Haiku 4.5 model. Platform fees, hosting and maintenance usually cost far more than the model."
+  - q: "How much does an AI chatbot for a website cost?"
+    a: "A DIY website chatbot trained on your pages and FAQs costs roughly US$19 to US$120 a month at small-business volumes, plus $300 to $1,000 if you want it configured professionally. A custom AI chatbot for your website starts at about $10,000 to $30,000 for a simple bot, rising to $30,000 to $80,000 once it is connected to your knowledge base and systems."
+  - q: "How much does a WhatsApp chatbot cost to develop?"
+    a: "The chatbot itself costs the same as a web chatbot in the same tier. WhatsApp adds a channel to build and test, with its own message formats and limits, and the provider charges per message on top of your model and hosting costs. Each extra channel moves a project towards the higher end of its tier."
   - q: "Should I use Intercom Fin, Zendesk AI or a custom chatbot?"
     a: "If your support team already works in that helpdesk and volumes are moderate, the built-in AI agent is usually the fastest and cheapest route. A custom chatbot starts to make sense at high volumes, when you need deep integration with your own systems, or when data must stay in Australian infrastructure you control."
   - q: "How long does it take to build a custom AI chatbot?"
@@ -62,13 +66,13 @@ service:
 disclaimer: financial
 ---
 
-## What are the four tiers of AI chatbot, and what does each cost?
+## How much does an AI chatbot cost? The four tiers compared
 
-**AI chatbots fall into four tiers, and the price jumps between them because each tier takes on more responsibility: from answering questions, to looking things up, to taking actions.** Most small-business cost guides stop at the second or third tier. This one covers all four.
+**AI chatbot prices fall into four tiers, and the cost jumps between them because each tier takes on more responsibility: from answering questions, to looking things up, to taking actions.** Most small-business cost guides stop at the second or third tier. This one covers all four, from a website chatbot for customer service to a custom AI chatbot built for your own systems.
 
 | Tier | What it does | Upfront cost (AUD, ex GST) | Monthly running cost | Best for |
 |---|---|---|---|---|
-| 1. DIY chatbot tool | Answers questions from your website and FAQs | $0 (self-setup) or $300 to $1,000 for professional configuration | About US$19 to US$300 | Small businesses with common, public questions |
+| 1. DIY chatbot tool | Answers questions from your website and FAQs | $0 (self-setup) or $300 to $1,000 for professional configuration | US$19 to US$120 (PSOS) or $0 to $300 (Bumblebee Studio) | Small businesses with common, public questions |
 | 2. Configured helpdesk AI | AI agent inside your helpdesk (Intercom, Zendesk, Freshdesk) answering from help articles | $5,000 to $20,000 for setup, content and testing | Seat fees plus per-resolution or per-message charges | Support teams already on that helpdesk |
 | 3. Custom chatbot | Your own bot, connected to your knowledge base and a few systems (orders, bookings, CRM) | $10,000 to $30,000 for a simple bot; $30,000 to $80,000 with knowledge base and integrations | About $800 to $10,000 | Higher volumes, specific workflows, data control |
 | 4. Enterprise AI agent | Handles authenticated customers or staff, takes actions across systems, escalates with context, full audit trail | $80,000 to $250,000+ | About $9,000 to $35,000 | Large organisations, regulated industries, multiple channels |
@@ -126,13 +130,13 @@ If you're unsure whether you need a chatbot, an agent or plain workflow automati
 - Running cost per year: (A$86 + A$500) × 12 + A$9,000 ≈ A$16,000
 - Three years: A$60,000 + (3 × A$16,000) = about A$108,000
 
-**What the numbers mean.** Option A is cheaper in year one (A$50,900 against A$76,000) and needs no build. Option B is about A$44,000 cheaper over three years at this volume, and the gap widens as volume grows. At 500 resolutions a month, Option A costs about A$8,500 a year and would stay cheaper for a long time.
+**What the numbers mean.** Option A is cheaper in year one (A$50,900 against A$76,000) and needs no build. Option B is about A$45,000 cheaper over three years at this volume, and the gap widens as volume grows. At 500 resolutions a month, Option A costs about A$8,500 a year and would stay cheaper for a long time.
 
 The comparison isn't only about money. Helpdesk AI comes with a mature inbox, reporting and handover built in, which a custom build must recreate or integrate with. A custom build gives you control over the model, the data flow, where data is processed, and what the bot can do in your own systems.
 
-## What running costs should you budget for?
+## How much does an AI chatbot cost per month?
 
-**Budget for model usage, hosting, monitoring, content upkeep and someone reviewing conversations.** Team 400's April 2026 figures give a useful spread by tier:
+**Monthly running costs range from under $100 for a DIY tool to over $15,000 for a busy enterprise agent: budget for model usage, hosting, monitoring, content upkeep and someone reviewing conversations.** Team 400's April 2026 figures give a useful spread by tier:
 
 | Monthly cost (AUD) | Simple FAQ bot | Integrated chatbot | Enterprise agent |
 |---|---|---|---|
@@ -143,7 +147,13 @@ The comparison isn't only about money. Helpdesk AI comes with a mature inbox, re
 
 These model usage figures are higher than the token arithmetic above suggests, which is normal: real systems send longer context, retry, run safety checks and use premium models for harder questions. Our [LLM running costs guide](/guides/llm-running-costs) explains how to estimate and control that bill.
 
-Also not usually in the quote: GST at 10%, messaging channel fees (SMS and WhatsApp are charged per message by the provider), helpdesk seat licences, and your team's time writing and approving content.
+Hidden costs that are not usually in the quote: GST at 10%, messaging channel fees (SMS and WhatsApp are charged per message by the provider), helpdesk seat licences, and your team's time writing and approving content.
+
+## Is an AI chatbot worth the cost?
+
+**An AI chatbot is worth the cost when it resolves a meaningful volume of repetitive questions that would otherwise take staff time, without frustrating the customers it can't help.** It is not worth it when enquiries are few, varied or emotionally charged, or when the underlying content is out of date.
+
+A quick way to test it: count the conversations a bot could resolve on its own each month, multiply by the staff time each one takes, and compare that with the monthly cost for the right tier in the table above. At 3,000 resolutions a month, the worked example shows running costs between about A$1,300 and A$4,250 a month depending on the option. At 50 enquiries a month, even a DIY tool may not pay for the time spent maintaining it. Remember that a chatbot rarely removes the need for people; it changes what they spend their time on.
 
 ## How can you keep chatbot costs down?
 

@@ -1,12 +1,12 @@
 ---
 title: "What is MCP (Model Context Protocol)?"
-metaTitle: "What Is MCP (Model Context Protocol)? Explained"
-description: "MCP is an open standard for connecting AI apps to tools and data. Who created it, how hosts, clients and servers work, who supports it, and the security risks."
+metaTitle: "What Is MCP? Model Context Protocol and MCP Servers"
+description: "What is MCP in AI? The Model Context Protocol is an open standard that connects AI apps to tools and data. How MCP servers work, examples, and MCP vs API."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
 updated: 2026-09-28
-summary: "The Model Context Protocol (MCP) is an open standard that defines how AI applications connect to external tools and data sources. A system is wrapped once as an MCP server, exposing tools, resources and prompts, and any MCP-compatible AI application, such as Claude, ChatGPT, Copilot or an in-house agent, can then discover and use it. Anthropic released MCP in November 2024 and donated it to the Linux Foundation's Agentic AI Foundation in December 2025."
+summary: "MCP, short for Model Context Protocol, is an open standard that defines how AI applications connect to external tools and data sources. A system is wrapped once as an MCP server, exposing tools, resources and prompts, and any MCP-compatible AI application, such as Claude, ChatGPT, Copilot or an in-house agent, can then discover and use it. Anthropic released MCP in November 2024 and donated it to the Linux Foundation's Agentic AI Foundation in December 2025."
 takeaways:
   - "MCP replaces one-off integrations between each AI app and each system with a single shared protocol."
   - "There are three roles: the host (the AI application), a client inside the host for each connection, and the server that exposes a system."
@@ -22,6 +22,10 @@ faqs:
     a: "An API is how software talks to your system. MCP sits on top: an MCP server usually calls your existing API, but describes its capabilities in a standard, machine-readable way so AI applications can discover what's available and call it without custom integration code for each one."
   - q: "Is MCP secure?"
     a: "The protocol includes an authorisation model based on OAuth and publishes security best practices, but a connection is only as safe as the server and the permissions behind it. A malicious or careless server can leak data or take harmful actions. Use servers from trusted sources, give each the narrowest access, require approval for consequential tool calls, and log everything."
+  - q: "How much does MCP cost?"
+    a: "The protocol itself is free: the specification and official SDKs are open source. The costs are in building, hosting and securing an MCP server for your system, plus the usage costs of the AI application calling it. A thin server over a well-documented API is a small job; one that needs new APIs, per-user permissions and audit logging is a larger one."
+  - q: "What is the difference between an MCP server and an MCP client?"
+    a: "The server exposes a system, such as a CRM or file store, as tools, resources and prompts. The client lives inside the AI application (the host) and holds the connection to one server, discovering what it offers and sending the model's requests to it. One host usually runs several clients, one per server."
   - q: "Should we build an MCP server for our product or internal systems?"
     a: "Build one if you want several AI applications, or your customers' AI tools, to use the same system. If a single app needs a couple of functions, ordinary tool calling inside that app is simpler. An MCP server earns its keep through reuse."
 sources:
@@ -43,6 +47,12 @@ sources:
   - title: "Connectors and MCP servers"
     url: "https://developers.openai.com/api/docs/guides/tools-connectors-mcp"
     publisher: "OpenAI"
+  - title: "A2A and MCP"
+    url: "https://a2a-protocol.org/latest/topics/a2a-and-mcp/"
+    publisher: "Agent2Agent Protocol project"
+  - title: "Introducing Agent Skills"
+    url: "https://claude.com/blog/skills"
+    publisher: "Anthropic"
   - title: "Model Context Protocol (MCP) on Windows overview"
     url: "https://learn.microsoft.com/en-us/windows/ai/mcp/overview"
     publisher: "Microsoft"
@@ -60,6 +70,10 @@ service:
   href: "/services/mcp-server-development"
 disclaimer: none
 ---
+
+## What is MCP in AI, in simple terms?
+
+**MCP (Model Context Protocol) is a universal connector between AI assistants and the software they need to use.** It defines one standard way for an AI application such as Claude, ChatGPT or Microsoft Copilot to find out what a system can do, like "search deals" or "read this file", and then ask it to do that on the user's behalf. Build the connection once, and any MCP-compatible AI tool can use it.
 
 ## What problem does MCP solve?
 
@@ -81,7 +95,7 @@ Underneath, MCP has two layers. The **data layer** uses JSON-RPC 2.0 messages fo
 
 Here is what happens when a user asks an MCP-enabled assistant, "Which of my open deals close this month?":
 
-1. **Discover.** On connecting, the host's client asks the CRM server what it supports and lists its tools, such as `search_deals` with a defined input schema.
+1. **Discover.** The host's client asks the CRM server what it supports (the `server/discover` call) and lists its tools, such as `search_deals` with a defined input schema.
 2. **Offer.** The host adds those tool descriptions to what the model can see.
 3. **Decide.** The model decides to call `search_deals` with status "open" and a date range.
 4. **Approve (optional).** The host can ask the user to approve the call before it runs.
@@ -89,6 +103,19 @@ Here is what happens when a user asks an MCP-enabled assistant, "Which of my ope
 6. **Answer.** The model reads the results and replies.
 
 MCP deliberately stops at the connection. It doesn't dictate which model you use or how the application manages context. That's what makes it vendor-neutral.
+
+## What is an MCP server?
+
+**An MCP server is a small program that wraps a system, such as a CRM, database, file store or SaaS product, and exposes its capabilities to AI applications using the Model Context Protocol.** It usually sits in front of the system's existing API, translating the AI application's requests into ordinary API calls and returning the results.
+
+MCP server examples include the open-source reference servers Anthropic released at launch for Google Drive, Slack, Git and Postgres, and servers that software vendors now publish for their own products. A business might run:
+
+- A **CRM server** with tools to search accounts, read deal history and log a call.
+- A **document server** that searches a permission-aware [RAG knowledge base](/services/rag-knowledge-base).
+- A **database server** that runs read-only queries against a reporting database.
+- A **ticketing server** that creates and updates support or IT tickets.
+
+What an MCP server is used for, in short: letting AI tools read from and act on a system in a controlled, reusable way.
 
 ## What can an MCP server expose?
 
@@ -100,7 +127,7 @@ MCP deliberately stops at the connection. It doesn't dictate which model you use
 | Resources | Read-only data provided as context, each with a URI | The application | A file, a database schema, a knowledge base article |
 | Prompts | Reusable instruction templates with arguments | The user, explicitly (for example a slash command) | "Summarise this account's last quarter" |
 
-Clients can offer capabilities back to servers too. The main one is **elicitation**, which lets a server ask the user for more information or confirmation mid-task. An older client feature, sampling (letting a server borrow the host's model), is deprecated as of the 2026-07-28 version.
+Clients can offer capabilities back to servers too. The main one is **elicitation**, which lets a server ask the user for more information or confirmation mid-task. Older client features, sampling (letting a server borrow the host's model) and roots, are deprecated as of the 2026-07-28 version, along with protocol-level logging.
 
 ## Local and remote servers
 
@@ -122,6 +149,19 @@ For businesses, remote servers are the more important pattern: a single, central
 | 9 December 2025 | Anthropic donates MCP to the Agentic AI Foundation under the Linux Foundation, co-founded with Block and OpenAI; Anthropic reports over 10,000 active public MCP servers and more than 97 million monthly SDK downloads |
 | At the time of writing | OpenAI's Responses API connects to remote MCP servers; Windows provides an on-device agent registry for MCP servers with admin controls |
 
+## MCP vs API, RAG, function calling and A2A
+
+**MCP is a connection standard, so it's usually compared with things it works alongside rather than replaces.**
+
+| Comparison | The difference |
+|---|---|
+| MCP vs API (REST API) | An API is how software talks to your system. An MCP server usually calls that API, but describes it in a standard, self-describing form so AI applications can discover and use it without custom code for each app |
+| MCP vs function calling (tool use) | Function calling is a model feature: the model asks to run a named tool. MCP is how tools are packaged and shared, so the same tools can be offered to many applications |
+| MCP vs RAG | [Retrieval-augmented generation (RAG)](/guides/what-is-rag) is a pattern for answering from your documents. An MCP server can expose a RAG search as a tool, so they complement each other |
+| MCP vs A2A | The Agent2Agent (A2A) protocol, created by Google and now a Linux Foundation project, connects agents to other agents. Its documentation puts it simply: "A2A connects the agents to each other; MCP connects each agent to its own tools" |
+| MCP vs agent skills | Skills, such as Anthropic's Agent Skills, are packaged instructions and scripts an agent loads when relevant. MCP connects the agent to external systems. An agent often uses both |
+| MCP vs AI agent | An [AI agent](/guides/what-is-an-ai-agent) is the system that decides what to do. MCP is one way it reaches the tools it needs |
+
 ## Is MCP safe to use in a business?
 
 **MCP is a plumbing standard; it makes connections easier, which makes getting permissions right more important.** A server can read data and take actions, and anything it returns goes into the model's context. OpenAI's documentation puts it bluntly: a malicious server "can exfiltrate sensitive data from anything that enters the model's context".
@@ -132,7 +172,7 @@ The MCP specification's own security best practices cover risks including:
 - **Confused deputy.** Proxy servers that sit in front of third-party APIs must get per-client user consent, or an attacker can obtain access without the user's approval.
 - **Local server compromise.** A one-click local server install runs code on the user's machine. Clients must show the exact command and get consent; servers should run sandboxed.
 - **Scope minimisation.** Start with minimal permissions and step up only when a privileged operation is needed, rather than requesting everything up front.
-- **Server-side request forgery.** Clients must validate URLs a server supplies during authorisation, so a malicious server can't point them at internal systems.
+- **Server-side request forgery.** Clients should validate URLs a server supplies during authorisation, blocking private and internal addresses, so a malicious server can't point them at internal systems.
 
 Add to that the risks every agent faces: a tool result or document containing hidden instructions (see [prompt injection](/guides/prompt-injection)), and tools with more power than the task needs. The practical rules: use servers from trusted sources, run actions with the user's own identity, enforce authorisation in the underlying system, require approval for consequential tools, and log every call.
 
@@ -140,9 +180,9 @@ Add to that the risks every agent faces: a tool result or document containing hi
 
 **Build one when a system will be used by more than one AI application, or when you want your customers' AI tools to work with your product.** Examples:
 
-- An internal system (CRM, ticketing, document management) that staff want to use from Claude, Copilot and an in-house [AI agent](/guides/what-is-an-ai-agent).
+- An internal system (CRM, ticketing, document management) that staff want to use from Claude, Copilot and an in-house AI agent.
 - A SaaS product whose customers increasingly work inside AI assistants.
-- A governed gateway to company knowledge, pairing MCP with a [RAG knowledge base](/services/rag-knowledge-base) so every AI tool retrieves from the same permission-aware index.
+- A governed gateway to company knowledge, pairing MCP with a RAG knowledge base so every AI tool retrieves from the same permission-aware index.
 
 Skip it when a single application needs one or two functions. Plain tool calling inside that app is simpler, and you can wrap it as an MCP server later. And if the underlying system has no usable API, that's the first job: see [API development](/services/api-development).
 

@@ -1,7 +1,7 @@
 ---
 title: "What counts as technical uncertainty for the R&D Tax Incentive?"
-metaTitle: "Technical Uncertainty and the R&D Tax Incentive"
-description: "For the R&D Tax Incentive, an outcome must be unknowable in advance from current knowledge. What that test means for software and AI work, with examples."
+metaTitle: "What Is Technical Uncertainty? R&D Tax Incentive Guide"
+description: "What is technical uncertainty for the R&D Tax Incentive? An outcome that can't be known in advance from current knowledge. What it means for software."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -12,10 +12,14 @@ takeaways:
   - "The uncertainty must be resolved by experiment: a hypothesis, planned tests, observation, evaluation and a logical conclusion, all recorded."
   - "Integrating APIs by following documentation, building dashboards, standard data migrations and routine testing are generally not core R&D, according to business.gov.au."
   - "Software developed mainly for your own internal administration is excluded from core R&D under s355-25(2)(h)."
-  - "The program is self-assessed and changes announced in the 2026 to 27 Budget start from 1 July 2028; get advice from a registered R&D tax agent before relying on it."
+  - "The program is self-assessed and changes announced in the 2026 to 27 Budget would start from 1 July 2028 (not yet law); get advice from a registered R&D tax agent before relying on it."
 faqs:
   - q: "Does using AI or a new framework make a project eligible?"
     a: "No. business.gov.au says using an AI model or technique that is new to you does not by itself make an activity eligible, and that eligibility doesn't depend on the technology used. What matters is whether there's a technical hurdle that only experimentation can resolve."
+  - q: "What is an example of technical uncertainty in software development?"
+    a: "An illustration: a team needs a scheduling engine to meet a response-time target under constraints that published algorithms don't handle, and a competent professional couldn't tell from existing knowledge whether any approach would work. Testing a hypothesis about a new method, and recording the results, is the kind of activity that may involve technical uncertainty. Building a portal on a standard framework with documented APIs is not."
+  - q: "Is commercial uncertainty enough for the R&D Tax Incentive?"
+    a: "No. Not knowing whether customers will buy a product, or whether a feature will be popular, is commercial risk, not technical uncertainty. business.gov.au notes that software work can be commercially novel and still involve applying existing knowledge, which isn't core R&D."
   - q: "Does the project have to succeed?"
     a: "No. business.gov.au notes that activities may still be eligible even if you don't reach a positive outcome. A failed experiment that was properly designed and recorded can be core R&D; a successful build that applied known methods usually isn't."
   - q: "Is agile development incompatible with the R&D Tax Incentive?"
@@ -51,6 +55,9 @@ sources:
   - title: "Tax Practitioners Board public register"
     url: "https://www.tpb.gov.au/public-register"
     publisher: "Tax Practitioners Board"
+  - title: "Tax Reform: better targeting the Research and Development Tax Incentive (12 May 2026)"
+    url: "https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive"
+    publisher: "Australian Taxation Office"
 related:
   - title: "R&D Tax Incentive for software development: what qualifies"
     href: "/guides/rd-tax-incentive-software-development"
@@ -72,9 +79,22 @@ disclaimer: tax
 
 > (a) whose outcome cannot be known or determined in advance on the basis of current knowledge, information or experience, but can only be determined by applying a systematic progression of work that: (i) is based on principles of established science; and (ii) proceeds from hypothesis to experiment, observation and evaluation, and leads to logical conclusions; and (b) that are conducted for the purpose of generating new knowledge (including new knowledge in the form of new or improved materials, products, devices, processes or services).
 
-The legislation doesn't use the words "technical uncertainty", but it's the common shorthand for limb (a). business.gov.au's software guidance talks about a "technical hurdle" that no existing knowledge, method or solution can resolve, "even for experienced professionals".
+The legislation doesn't use the words "technical uncertainty", but it's the common shorthand for limb (a), and business.gov.au's own guidance uses the term. business.gov.au's software guidance talks about a "technical hurdle" that no existing knowledge, method or solution can resolve, "even for experienced professionals".
 
 This page explains the concept for software buyers. It isn't tax advice, and it can't tell you whether your project is eligible.
+
+## Technical uncertainty vs difficulty, novelty and commercial risk
+
+**Technical uncertainty is about whether the outcome could be known from existing knowledge, not about how hard, new or risky the work feels.** business.gov.au's software sector guide makes the distinction directly: "While software development work may be technically complex, have implementation challenges or be commercially novel, it often involves applying existing knowledge, techniques, tools and established practices to achieve a defined outcome."
+
+| What you might have | Is it technical uncertainty? |
+|---|---|
+| The work is technically complex or will take a long time | Not by itself |
+| The technology or technique is new to your team | Not by itself, if it's documented elsewhere |
+| The product is new to the market | Not by itself; that's commercial novelty |
+| You don't know if customers will buy it | No; that's commercial risk |
+| You're choosing between known options by trial and error | Generally no, per business.gov.au |
+| A competent professional couldn't know from worldwide knowledge whether any approach will achieve the result, and you test hypotheses to find out | This is what the test describes |
 
 ## Whose knowledge counts?
 
@@ -155,7 +175,7 @@ Use this to prepare for a conversation with a registered R&D tax agent, not to d
 
 **From a registered tax agent who specialises in the R&D Tax Incentive, backed by the official guidance.** The program is self-assessed, which means your company carries the risk if the Department of Industry, Science and Resources or the ATO later disagrees. You can check an adviser's registration on the Tax Practitioners Board public register. For certainty before spending, the department offers binding advance findings.
 
-business.gov.au also notes that the Government announced changes to the R&D Tax Incentive in the 2026 to 27 Budget, starting from 1 July 2028, with the current rules continuing until then. Check the latest position with your adviser.
+business.gov.au also notes that the Government announced changes to the R&D Tax Incentive in the 2026 to 27 Budget, starting from 1 July 2028, with the current rules continuing until then. As announced, they include removing supporting R&D activities from the offset and raising the minimum spend from $20,000 to $50,000; the ATO notes the measure is not yet law. Check the latest position with your adviser.
 
 For how the incentive interacts with project budgets, see [how the R&D Tax Incentive affects the cost of building software](/guides/rd-tax-incentive-software-development-cost), and for the broader rules, [what qualifies for software development](/guides/rd-tax-incentive-software-development) and [AI and machine learning projects](/guides/rd-tax-incentive-ai-projects).
 

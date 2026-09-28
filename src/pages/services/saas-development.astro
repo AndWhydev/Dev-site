@@ -2,13 +2,13 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Custom SaaS Product Development | All Webbed Labs',
-  metaDescription: 'End-to-end SaaS product development for Australian founders and enterprises. Multi-tenant architecture, subscription billing, analytics and room to scale.',
+  metaTitle: 'SaaS Development Company Australia | All Webbed Labs',
+  metaDescription: 'SaaS development company in Australia building multi-tenant subscription products with billing, onboarding and analytics, architected from MVP to scale.',
   category: 'Product',
   heroHeadline: 'Launch Your SaaS Product With the Architecture to Scale',
-  heroTagline: 'Multi-tenant, subscription-ready and analytics-wired from day one. We build SaaS products that win market share.',
+  heroTagline: 'SaaS product development for Australian founders and enterprises: multi-tenant, subscription-ready and analytics-wired from day one.',
   description: [
-    'Building a SaaS product is categorically different from building a bespoke internal application. The architecture decisions made in the first three months, multi-tenancy model, billing system design, onboarding flow, permission model, trial conversion logic, will either constrain or enable your growth for the next five years. Getting them wrong is expensive: rebuilding a single-tenant architecture into a proper multi-tenant system after you have paying customers is one of the most painful and risky engineering projects a company can undertake. We have done it on behalf of clients who inherited the problem from a previous vendor. The cost is always larger than the original build would have been.',
+    'Building a SaaS product is categorically different from building a bespoke internal application. The architecture decisions made in the first three months, multi-tenancy model, billing system design, onboarding flow, permission model, trial conversion logic, will either constrain or enable your growth for the next five years. Getting them wrong is expensive: rebuilding a single-tenant architecture into a proper multi-tenant system after you have paying customers is one of the most painful and risky engineering projects a company can undertake. The cost of that rework is almost always larger than getting the architecture right in the original build.',
     'Our SaaS practice covers product strategy, architecture design, full-stack implementation, and go-to-market readiness. We work with founder-led companies building their first commercial product, and with enterprises launching new product lines into market. In both cases, we bring the same discipline: a multi-tenant data model from day one, Stripe-integrated billing with plan management and usage metering from day one, an instrumented analytics layer that tracks funnel performance and feature adoption from day one, and an administrative layer that lets you manage customers without engineering involvement. These are not features we add later, they are part of the initial architecture.',
   ],
   benefits: [
@@ -20,7 +20,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
       title: 'Stripe Billing, Done Properly',
-      description: 'Subscription lifecycle management covering trials, plan upgrades and downgrades, prorated billing, usage-based metering, seat-based pricing, coupon and discount management, invoice generation, dunning email sequences, and webhook handling with idempotency guarantees. We have implemented Stripe Billing for over a dozen SaaS products.',
+      description: 'Subscription lifecycle management covering trials, plan upgrades and downgrades, prorated billing, usage-based metering, seat-based pricing, coupon and discount management, invoice generation, dunning email sequences, and webhook handling with idempotency guarantees. We usually build on Stripe Billing rather than reinventing it.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
@@ -121,12 +121,20 @@ const data = {
     },
     {
       question: 'Can you take over a SaaS product that was started by another development team?',
-      answer: 'Yes, and we do this regularly. We begin with a technical audit covering code quality, architecture, security posture, test coverage, deployment processes and documentation. The audit produces a frank assessment of what is well-built, what carries technical debt, and what represents immediate risk, along with a prioritised remediation plan. We have taken over SaaS products ranging from well-structured codebases that simply needed a more senior team to evolve them, to products where the first priority was fixing critical security vulnerabilities before the next customer was onboarded. We will not agree to take over a codebase without first completing the audit, because we need to understand what we are committing to deliver.',
+      answer: 'Yes. We begin with a technical audit covering code quality, architecture, security posture, test coverage, deployment processes and documentation. The audit produces a frank assessment of what is well-built, what carries technical debt, and what represents immediate risk, along with a prioritised remediation plan. Inherited products range from well-structured codebases that simply need a more senior team to evolve them, to products where the first priority is fixing critical security vulnerabilities before the next customer is onboarded. We will not agree to take over a codebase without first completing the audit, because we need to understand what we are committing to deliver.',
+    },
+    {
+      question: 'What does a SaaS development company do?',
+      answer: 'A SaaS development company designs, builds and often operates a subscription software product on your behalf: product discovery, UX, multi-tenant architecture, billing, onboarding, analytics, security and cloud hosting. With us, you own the code and IP from day one, and the product can move to your own team whenever you are ready.',
+    },
+    {
+      question: 'What is SaaS MVP development?',
+      answer: 'A SaaS MVP is the smallest version of your product that paying customers can actually use, built to test demand before you invest in the full roadmap. The difference from a throwaway prototype is that the foundations, tenancy, authentication and billing, are built properly so they do not need rebuilding once customers arrive. Our startup MVP development service covers this stage.',
     },
   ],
   serviceName: 'Custom SaaS',
   slug: 'saas-development',
-  summaryStatement: 'Custom SaaS development is the end-to-end building of a multi-tenant subscription software product, covering tenancy model, billing, onboarding, analytics and an administrative layer, architected from day one to scale with paying customers rather than to be rebuilt once they arrive.',
+  summaryStatement: 'Custom SaaS development, or SaaS product development, is the end-to-end building of a multi-tenant subscription software product, covering tenancy model, billing, onboarding, analytics and an administrative layer, architected from day one to scale with paying customers rather than to be rebuilt once they arrive.',
   comparison: {
     rightFor: [
       'You are building a commercial software product that many customers will subscribe to, and the early architecture decisions will shape the next five years.',

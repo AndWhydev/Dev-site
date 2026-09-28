@@ -1,11 +1,11 @@
 ---
 title: "Logistics and transport software in Australia"
 metaTitle: "Logistics and Transport Software Development in Australia"
-description: "Logistics software shaped by Chain of Responsibility, the amended HVNL, fatigue records and WMS, TMS and telematics integration, with phases and cost ranges."
+description: "Transport and logistics software development in Australia: TMS, WMS and telematics integration, Chain of Responsibility, HVNL changes and AI in logistics."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Logistics software in Australia is shaped by the Heavy Vehicle National Law: Chain of Responsibility makes consignors, schedulers, loaders and receivers accountable for heavy vehicle safety, not just drivers, and the amended HVNL that commenced on 1 August 2026 changed accreditation, fatigue and work diary rules. Custom software earns its place as the layer that joins your WMS, TMS, telematics and ERP into one evidence trail, rather than replacing mature platforms. A typical integration and compliance evidence build costs $60,000 to $200,000 (AUD, ex GST) as a market range, not a quote."
+summary: "Logistics and transport software development in Australia is shaped by the Heavy Vehicle National Law: Chain of Responsibility makes consignors, schedulers, loaders and receivers accountable for heavy vehicle safety, not just drivers, and the amended HVNL that commenced on 1 August 2026 changed accreditation, fatigue and work diary rules. Custom software earns its place as the layer that joins your WMS, TMS, telematics and ERP into one evidence trail, rather than replacing mature platforms. A typical integration and compliance evidence build costs $60,000 to $200,000 (AUD, ex GST) as a market range, not a quote."
 takeaways:
   - "You're a Chain of Responsibility party if you perform any of 10 functions, including scheduling, consigning, receiving, packing, loading or unloading, even if you never own a truck."
   - "The amended HVNL commenced on 1 August 2026, replacing NHVAS with the Heavy Vehicle Accreditation scheme and changing work diary and fatigue provisions. Systems built on the old rules need review."
@@ -19,6 +19,10 @@ faqs:
     a: "Usually not. An EWD has to meet the NHVR's EWD standards and be approved before use, and the NHVR and Transport Certification Australia have introduced a Generation 2.0 EWD framework with a new system specification and strengthened testing. Unless fatigue technology is your product, buy an approved EWD and integrate its data into your dispatch and compliance systems."
   - q: "What changed on 1 August 2026?"
     a: "The Heavy Vehicle National Law Amendment Act 2025 commenced. The NHVR lists changes including the new Heavy Vehicle Accreditation scheme and safety management system audits, unfit to drive provisions, simplified work diary record keeping, and mass, dimension and loading changes. Transitional arrangements mean some old and new rules run side by side for a period, so check each rule's effective date."
+  - q: "What is the difference between logistics software and transport software?"
+    a: "Transport software, usually a transport management system, handles the movement of freight: bookings, rating, allocation to vehicles, tracking and proof of delivery. Logistics software is the wider set, adding warehousing, inventory, packing, customs and customer visibility. Most businesses run several of each, which is why the joining layer between them is where custom work pays off."
+  - q: "Should we buy a TMS or build custom transport management software?"
+    a: "Buy, in most cases. Mature transport management systems cover bookings, allocation and tracking well, and their vendors keep up with carrier and customer integrations. Build custom when your operating model is unusual enough that a TMS forces constant workarounds, or when you are building a freight product to sell, and otherwise put the custom effort into integration and compliance evidence around the TMS."
   - q: "Can you integrate with CargoWise, SAP or our WMS?"
     a: "Integration is the core of most logistics projects. The approach depends on what each platform exposes: modern REST APIs, EDI messages, file drops or database views. We confirm access, test environments and message formats during discovery, because integration effort varies more than any other cost driver."
   - q: "Do drivers need a native app, or will a web app do?"
@@ -115,14 +119,14 @@ Two practical points. First, transitional arrangements mean old and new rules op
 
 For most businesses the valuable custom piece is what happens with the data: warning dispatchers before they allocate a run a driver can't legally complete, and reconciling fatigue records against telematics and job times.
 
-## How do WMS, TMS, telematics and ERP fit together?
+## How do a transport management system, WMS, telematics and ERP fit together?
 
 **In most logistics businesses the systems are individually fine and collectively disconnected, and the gaps are where both cost and CoR risk accumulate.** Custom software usually sits between them.
 
 | System | Typical role | Common integration method | What the joining layer does |
 |---|---|---|---|
 | Warehouse management (WMS) | Inventory, picking, packing, dispatch | REST API, EDI, file exports | Pulls consignment weights and packing details into the load record |
-| Transport management (TMS) or freight platform | Bookings, rating, allocation, tracking | REST or XML API, EDI | Pushes allocations and receives status events |
+| Transport management (TMS) or freight platform, such as CargoWise for forwarders | Bookings, rating, allocation, tracking | REST or XML API, EDI | Pushes allocations and receives status events |
 | Telematics | Location, speed, engine data, sometimes driver ID | Vendor API, webhooks | Adds actual times and locations; flags speed or route anomalies |
 | EWD | Work and rest records | Vendor API or exports | Checks allocation against available hours |
 | ERP and accounting | Invoicing, costing | API or integration platform | Turns proof of delivery into an invoice without rekeying |
@@ -144,13 +148,13 @@ Points to settle during design:
 
 Handled well, drivers see the data protecting them as much as watching them, which helps adoption of the app far more than any feature. It also means that when an incident investigation asks for a journey's records, the business can produce exactly what's needed without exposing everything else it holds about that driver.
 
-## Where do AI and optimisation actually help?
+## How is AI used in logistics, and where does optimisation help?
 
-**The most reliable AI uses in logistics are document handling and exception triage; route optimisation is a mature field where proven solvers often beat new AI.**
+**The most reliable uses of AI in logistics are document handling and exception triage; route optimisation is a mature field where proven solvers often beat new AI.**
 
 - **Document extraction.** Consignment notes, bills of lading, customs documents and proof of delivery photos can be read and matched to bookings with [AI document processing](/services/ai-document-processing), with a person checking low confidence fields.
 - **Exception triage.** Summarising why a load is late from telematics, messages and job notes, so a dispatcher acts faster.
-- **Customer enquiries.** Answering "where's my freight" from live tracking data through a chatbot, with a handoff to a person.
+- **Customer enquiries.** Answering "where's my freight" from live tracking data through an [AI chatbot](/services/ai-chatbot), with a handoff to a person.
 - **Forecasting.** Demand and volume forecasts for rostering, built with standard [data analytics](/services/data-analytics) methods first.
 
 Use AI with care where it touches safety decisions such as allocation against fatigue limits. Those rules should be deterministic, tested code, not a model's judgement.
@@ -166,7 +170,7 @@ Use AI with care where it touches safety decisions such as allocation against fa
 | Driver or yard app | 6 to 10 | Offline pre-start checks, load photos, proof of delivery | $40,000 to $90,000 |
 | Dashboards and alerts | 3 to 5 | Fatigue and allocation warnings, exception queues, audit exports | $15,000 to $40,000 |
 
-A business needing only the integration core and dashboards would sit around $60,000 to $165,000; adding the app takes it towards $200,000 or beyond. Replacing a legacy TMS is a different scale of project; see our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia).
+A business needing only the integration core and dashboards would sit around $67,000 to $165,000 including discovery; adding the app takes it towards $200,000 or beyond. Replacing a legacy TMS is a different scale of project, and our [build vs buy guide](/guides/build-vs-buy-software) is the place to start that decision; see also our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia).
 
 ### Questions to settle before you commission anything
 

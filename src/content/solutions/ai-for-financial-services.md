@@ -1,15 +1,15 @@
 ---
 title: "AI development for APRA-regulated financial services"
-metaTitle: "AI Development for APRA-Regulated Financial Services"
-description: "How to build AI for Australian banks, insurers and super funds under CPS 234, CPS 230 and CPG 235: use cases, controls, integrations, risks and cost ranges."
+metaTitle: "AI in Financial Services Australia: APRA-Regulated Builds"
+description: "AI in financial services for Australian banks, insurers and super funds: use cases, CPS 234 and CPS 230 controls, integrations and typical build costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI for an APRA-regulated entity is built like any other material system: information security under CPS 234, service provider and operational resilience controls under CPS 230, and data quality discipline from CPG 235. APRA's April 2026 letter to industry adds explicit expectations on AI inventories, human involvement in high-risk decisions and AI supply chain visibility. Start with internal, human-reviewed use cases, keep data in Australian regions, and budget roughly $120k to $400k (AUD, ex GST) for a first production system after discovery."
+summary: "AI in Australian financial services, for an APRA-regulated bank, insurer or super fund, is built like any other material system: information security under CPS 234, service provider and operational resilience controls under CPS 230, and data quality discipline from CPG 235. APRA's April 2026 letter to industry adds explicit expectations on AI inventories, human involvement in high-risk decisions and AI supply chain visibility. Start with internal, human-reviewed use cases, keep data in Australian regions, and budget roughly $120k to $400k (AUD, ex GST) for a first production system after discovery."
 takeaways:
   - "CPS 234 applies to AI systems and the third parties that run them, including model providers: you need evidence of their controls, not just a contract."
   - "Under CPS 230, a model or AI platform provider can become a material service provider, which brings register, contract and exit planning requirements."
-  - "CPG 235's data quality dimensions (accuracy, completeness, consistency, timeliness, availability) map directly to how you test retrieval and extraction."
+  - "CPG 235's data quality dimensions (accuracy, completeness, consistency, timeliness, availability, fitness for use) map directly to how you test retrieval and extraction."
   - "APRA's 30 April 2026 AI letter expects an AI inventory, human involvement for high-risk decisions and continuous monitoring rather than point-in-time review."
   - "Internal assistants and document workflows with a human reviewer are the lowest-risk starting point; automated customer decisions come later, if at all."
 faqs:
@@ -21,6 +21,10 @@ faqs:
     a: "Not because it is AI. The existing triggers still apply: CPS 230 notifications for new or changed material arrangements and offshoring, and CPS 234 notifications within 72 hours of a material information security incident. Your compliance team decides whether a specific arrangement meets those thresholds."
   - q: "How do you stop an AI system giving financial advice?"
     a: "By scoping and testing for it. Customer-facing tools get a defined topic boundary, retrieval limited to approved content, refusal behaviour for personal advice questions, and an evaluation set that tries to push the system over the line. Whether a given output amounts to personal advice under the Corporations Act is a question for your licensee compliance and legal advisers."
+  - q: "Does this apply to fintechs that aren't APRA-regulated?"
+    a: "The prudential standards bind APRA-regulated entities, not their suppliers directly. In practice a fintech selling into a bank, insurer or super fund is asked for the same evidence through contracts, security questionnaires and the entity's CPS 230 and CPS 234 obligations over third parties. Fintechs holding an Australian financial services or credit licence also face ASIC's expectations on AI governance, set out in REP 798."
+  - q: "Can AI help with fraud detection and AML?"
+    a: "Transaction monitoring for fraud and AML usually runs on rules engines and established machine learning models rather than large language models. Generative AI fits better around the investigation: summarising an alert's history, gathering the customer's documents and drafting a case narrative for an analyst to review. The analyst still decides whether a matter is reported to AUSTRAC."
   - q: "Who owns the models, prompts and evaluation data?"
     a: "You do. Prompts, retrieval pipelines, evaluation sets and all code live in your repository from the first day, and IP transfers on completion. Foundation models remain the vendor's, used under your own cloud or API agreement."
   - q: "How long before something is in production?"
@@ -32,8 +36,8 @@ sources:
   - title: "CPS 234 Information Security"
     url: "https://www.apra.gov.au/standards/cps-234"
     publisher: "Australian Prudential Regulation Authority"
-  - title: "Operational risk management (CPS 230)"
-    url: "https://www.apra.gov.au/operational-risk-management"
+  - title: "CPS 230 Operational Risk Management"
+    url: "https://www.apra.gov.au/standards/cps-230"
     publisher: "Australian Prudential Regulation Authority"
   - title: "CPG 235 Managing Data Risk"
     url: "https://www.apra.gov.au/practice-guides/cpg-235"
@@ -67,15 +71,15 @@ What changes is the evidence. A startup can ship a chatbot and iterate. An autho
 
 ASIC reached a similar conclusion from the conduct side. Its October 2024 review of 23 licensees (REP 798) found AI adoption running ahead of governance and risk frameworks, and asked licensees to close that gap before deploying AI in ways that affect consumers.
 
-## Which AI use cases make sense to start with?
+## Which AI use cases in financial services make sense to start with?
 
-**Start where a person already reviews the output and the data stays internal.** The table ranks common financial services use cases by how much regulatory and conduct exposure they carry.
+**Start where a person already reviews the output and the data stays internal.** That holds for AI in banking, insurance and superannuation alike. The table ranks common financial services use cases by how much regulatory and conduct exposure they carry.
 
 | Use case | What the AI does | Exposure | Human role |
 |---|---|---|---|
 | Policy and procedure assistant | Answers staff questions from approved internal documents, with citations | Low | Staff member reads the cited source before acting |
 | Complaint triage | Classifies incoming complaints, flags vulnerability indicators and deadlines, drafts a summary | Medium | Complaints officer confirms category and owns the response |
-| KYC and onboarding document extraction | Pulls fields from identity documents, trust deeds and company extracts into structured data | Medium | Analyst verifies low-confidence fields and all exceptions |
+| KYC and onboarding document extraction ([AI document processing](/services/ai-document-processing)) | Pulls fields from identity documents, trust deeds and company extracts into structured data | Medium | Analyst verifies low-confidence fields and all exceptions |
 | Credit memo and file drafting | Assembles a first draft from application data and statements | Medium | Credit officer edits and signs; the decision stays human |
 | Regulatory change mapping | Compares new APRA, ASIC or AUSTRAC material to internal obligations registers | Low to medium | Compliance analyst accepts or rejects each mapping |
 | Customer-facing assistant | Answers general product questions on web or app | High | Scope limits, escalation to a person, ongoing monitoring |
@@ -93,13 +97,13 @@ Automated decisions carry an extra obligation from 10 December 2026, when the Pr
 | CPS 234 testing | Systematic testing of control effectiveness | Security tests in the delivery pipeline, penetration test before launch, retest schedule |
 | CPS 230 operational risk (in force since 1 July 2025) | Manage operational risk, maintain critical operations within tolerance, manage material service providers | Dependency map of every AI supplier, fallback mode if the model endpoint fails, documented exit path to another model |
 | CPS 230 service providers | Register of material service providers, contract requirements; pre-existing contracts apply from the earlier of renewal or 1 July 2026 | Information for the register: data flows, locations, sub-processors, termination and transition terms |
-| CPG 235 data risk (guidance, 2013) | Data quality across accuracy, completeness, consistency, timeliness and availability; validation close to capture | Retrieval and extraction evaluation sets, source freshness checks, validation at ingestion rather than after the model answers |
+| CPG 235 data risk (guidance, 2013) | Data quality across accuracy, completeness, consistency, timeliness, availability and fitness for use; validation close to capture | Retrieval and extraction evaluation sets, source freshness checks, validation at ingestion rather than after the model answers |
 
 Two of these deserve more detail, and they have their own guides: [CPS 234 and AI systems](/guides/apra-cps-234-ai) and [CPS 230 for AI vendors](/guides/apra-cps-230-ai-vendors).
 
 ## What did APRA's April 2026 AI letter add?
 
-**It moved APRA from "the existing framework covers AI" to a specific list of what it expects to see.** The letter followed targeted engagement with large banks, insurers and super trustees in late 2025, and it names seven areas. Each one lands on the engineering team in a concrete way.
+**It moved APRA from "the existing framework covers AI" to a specific list of what it expects to see.** The letter followed targeted engagement with large banks, insurers and super trustees in late 2025. Its expectations can be grouped into the seven areas below. Each one lands on the engineering team in a concrete way.
 
 1. **Board literacy and strategy.** Boards should understand AI well enough to oversee a strategy consistent with risk appetite. Deliverable: plain-language system descriptions and risk summaries a director can read.
 2. **Lifecycle ownership.** Ownership from design to decommissioning. Deliverable: a named owner, a model card and a retirement plan for each system.
@@ -111,7 +115,7 @@ Two of these deserve more detail, and they have their own guides: [CPS 234 and A
 
 ## What does the AI need to plug into?
 
-**Most of the cost in financial services AI sits in integration and access control, not in the model.** A typical first system touches five to eight of these:
+**Most of the cost in financial services AI, as in financial services software development generally, sits in integration and access control, not in the model.** A typical first system touches five to eight of these:
 
 - **Identity:** Microsoft Entra ID or Okta, so the AI inherits the user's existing permissions and never shows a document the user couldn't open directly.
 - **Document stores:** SharePoint, OpenText or a policy management platform holding the approved source content.
@@ -119,7 +123,7 @@ Two of these deserve more detail, and they have their own guides: [CPS 234 and A
 - **Core platforms:** core banking, policy administration or member administration systems, usually read-only through an existing API or integration layer.
 - **Data platform:** Snowflake, Databricks or an on-premises warehouse for structured context.
 - **Security tooling:** your SIEM (for example Microsoft Sentinel or Splunk) for AI audit logs, and your secrets manager for credentials.
-- **Model hosting:** Amazon Bedrock, Azure AI Foundry or Google Vertex AI in an Australian region, or an open-weight model in your own account. Our [cloud AI platform comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the trade-offs.
+- **Model hosting:** Amazon Bedrock, Microsoft Foundry (formerly Azure AI Foundry) or Google Vertex AI in an Australian region, or an open-weight model in your own account. Our [cloud AI platform comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the trade-offs.
 
 ## Where should the model and the data live?
 
@@ -135,7 +139,7 @@ When the model you want isn't offered in an Australian region, there are usually
 - [ ] Retrieval enforces document-level permissions from the source system
 - [ ] Prompts, outputs and retrieved passages logged, retained per your records policy, and searchable
 - [ ] Evaluation set of real questions with expected answers, run on every change, with a pass threshold agreed by the business owner
-- [ ] Prompt injection tests against uploaded documents and emails
+- [ ] [Prompt injection](/guides/prompt-injection) tests against uploaded documents and emails
 - [ ] Fallback behaviour defined for model outage, slow responses and low confidence
 - [ ] Model provider's data use, retention and region terms documented for the service provider register
 - [ ] Exit plan: the prompt and retrieval layer can switch to another model with a test run, not a rebuild
@@ -143,7 +147,7 @@ When the model you want isn't offered in an Australian region, there are usually
 
 ## How long does it take, and what does it cost?
 
-**A first production AI system for a regulated entity typically runs 12 to 24 weeks and costs roughly $120,000 to $400,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. The spread comes from the number of integrations, the security review burden and whether the system faces customers.
+**A first production AI system for a regulated entity typically runs 13 to 23 weeks and costs roughly $120,000 to $400,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. The spread comes from the number of integrations, the security review burden and whether the system faces customers.
 
 | Phase | Typical duration | Typical range (AUD, ex GST) | Output |
 |---|---|---|---|
@@ -158,4 +162,4 @@ The arithmetic behind the middle of that range: a pilot of about 500 hours of se
 
 We start with paid discovery that produces the risk inputs your teams need alongside the technical plan, then build at a fixed price. Data, vector indexes and, where the model is available onshore, inference stay in Australian regions by default. Every change passes automated quality gates (type checks, tests, security scans) and a senior engineer's review before deploy, and all code sits in your repository from day one.
 
-We don't hold ISO 27001 or SOC 2 certifications to offer as a shortcut; what we provide is the evidence about the system we built, in the form your assessors ask for. Your organisation stays responsible for its compliance. See our [LLM integration](/services/llm-integration) and [AI governance](/services/ai-governance) services, or the broader [finance and fintech](/industries/finance-fintech) page.
+We don't hold ISO 27001 or SOC 2 certifications to offer as a shortcut; what we provide is the evidence about the system we build for you, in the form your assessors ask for. Your organisation stays responsible for its compliance. See our [LLM integration](/services/llm-integration) and [AI governance](/services/ai-governance) services, or the broader [finance and fintech](/industries/finance-fintech) page.

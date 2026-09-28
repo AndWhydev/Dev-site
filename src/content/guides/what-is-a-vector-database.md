@@ -1,12 +1,12 @@
 ---
 title: "What is a vector database?"
-metaTitle: "What Is a Vector Database? Explained for Business"
-description: "A vector database stores embeddings and finds items by similarity of meaning, not exact words. How it works, when you need one, and when Postgres is enough."
+metaTitle: "What Is a Vector Database? Meaning, Uses and Examples"
+description: "What is a vector database? It stores embeddings and finds data by meaning, not keywords. How it works, examples, uses in AI and RAG, and vs SQL databases."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A vector database is a database built to store embeddings, lists of numbers that represent the meaning of text, images or other data, and to quickly find the stored items whose embeddings are closest to a query's. It lets software search by similarity of meaning rather than exact keywords, which is why it sits underneath most RAG systems and semantic search features."
+summary: "A vector database is a database built to store vector embeddings, lists of numbers that represent the meaning of text, images or other data, and to quickly find the stored items whose embeddings are closest to a query's. It lets software search by similarity of meaning rather than exact keywords, which is why it sits underneath most RAG systems and semantic search features."
 takeaways:
   - "A vector database answers one question very fast: which stored items are most similar to this one?"
   - "It uses approximate nearest neighbour indexes such as HNSW, trading a small amount of accuracy for large gains in speed."
@@ -22,6 +22,12 @@ faqs:
     a: "Yes. pgvector runs on Amazon RDS and Aurora PostgreSQL, Azure Database for PostgreSQL and Google Cloud SQL in their Australian regions, and open-source engines can be self-hosted in any region. For managed vector services, check the vendor's current region list, as it changes."
   - q: "Can someone reconstruct my documents from the vectors?"
     a: "Treat it as possible. Research has shown that text can be partly recovered from some embeddings, and vector stores usually keep the original chunk text next to each vector anyway. Apply the same encryption, access control and residency rules you apply to the source documents."
+  - q: "How many dimensions does a vector database have?"
+    a: "The database doesn't set the number; the embedding model does. Common models produce vectors of 256 to 3,072 dimensions, and every vector in one index must have the same number. More dimensions mean more storage and memory per item."
+  - q: "What is the difference between a vector database and a vector store?"
+    a: "In practice the terms overlap. \"Vector store\" is often used in AI frameworks for any component that saves embeddings and runs similarity search, which could be an in-memory index, pgvector or a dedicated product. \"Vector database\" usually implies the full database features: persistence, updates, filtering, backups and access control."
+  - q: "How much does a vector database cost?"
+    a: "It depends mostly on the number of vectors, their dimensions, query volume and whether the index must sit in memory. pgvector adds no licence cost to a PostgreSQL instance you already pay for; managed vector services charge for storage, reads and writes or capacity. Check the vendor's current pricing page, and size your data first using the worked example on this page."
   - q: "How big does a vector database get?"
     a: "A rough rule: vectors take dimensions × 4 bytes each when stored as 32-bit floats, plus index overhead and the stored text. One million chunks at 1,536 dimensions is about 6 GB of raw vectors before indexing."
 sources:
@@ -55,11 +61,22 @@ service:
 disclaimer: none
 ---
 
-## What problem does a vector database solve?
+## What is a vector database, in simple terms?
 
 **A vector database finds things that mean the same, even when they share no words.** A normal database is excellent at exact questions: every invoice over $10,000, every customer in Victoria. It's poor at fuzzy ones: which support tickets describe the same fault as this one, which policy clauses deal with working from home when the clause says "remote arrangements".
 
 The fix is to turn each item into an [embedding](/guides/what-are-embeddings), a list of a few hundred to a few thousand numbers produced by an AI model, where items with similar meaning get similar numbers. Once everything is a point in that numeric space, "find similar items" becomes "find the nearest points". A vector database is the system that stores those points and does that search quickly, at scale, while behaving like a proper database.
+
+## What is a vector database used for?
+
+**Its main use in AI is semantic search: finding the passages, products or records closest in meaning to a query.** Common uses:
+
+- **Retrieval for RAG.** The vector database for RAG holds your document chunks so a language model can be given the most relevant ones for each question.
+- **Semantic search** on an intranet, help centre or product catalogue, where people search in their own words.
+- **Memory for AI agents**, storing past notes or conversations the agent can look up later.
+- **Recommendations**, such as related articles or similar products.
+- **Deduplication and matching**, such as spotting near-identical tickets, invoices or records.
+- **Image and multimodal search**, where images and text are embedded into the same space.
 
 ## How does a vector database work?
 
@@ -71,6 +88,20 @@ The fix is to turn each item into an [embedding](/guides/what-are-embeddings), a
 4. **Score.** Closeness is measured with a distance function, usually cosine similarity or dot product, and results come back ranked.
 
 The key word is *approximate*. Comparing a query against every stored vector gives perfect results but gets slow as the collection grows. Approximate nearest neighbour (ANN) indexes check only a small, well-chosen fraction and usually still find nearly all of the true nearest matches. You tune the trade-off. In pgvector, for example, the `ef_search` setting controls how much of the HNSW graph each query explores: AWS's June 2026 production guidance calls the default of 40 "often too low for production" and suggests 100 as a starting point.
+
+## Vector database vs relational (SQL) database
+
+**A relational database finds rows that match exact conditions; a vector database finds items that are close in meaning.** Most businesses need both, and they often live side by side.
+
+| | Relational (SQL) database | Vector database |
+|---|---|---|
+| Example | PostgreSQL, SQL Server, MySQL | pgvector, Pinecone, Qdrant, Weaviate, Milvus |
+| Stores | Rows and columns: customers, orders, invoices | Embeddings plus metadata and usually the source text |
+| Typical question | "All orders over $10,000 from Victoria in June" | "The 10 passages most similar to this question" |
+| Result | Exact matches | Ranked by similarity score |
+| Good for | Transactions, reporting, systems of record | Semantic search, RAG, recommendations |
+
+The line is blurring: pgvector adds vector columns to PostgreSQL, and Azure AI Search and Amazon OpenSearch Service support vector search alongside keyword search. A graph database, or a knowledge graph, is different again: it stores explicit relationships between entities (this supplier supplies that part) and answers questions by following them, while a vector database stores meaning and answers by similarity. Some RAG systems combine the two.
 
 ## Vector database vs vector index vs search engine
 
@@ -86,6 +117,18 @@ The terms get blurred. Here is how they differ.
 | Good at exact codes and names | No | Weak | Strong |
 
 FAISS, released by Facebook AI Research and described by Johnson, Douze and Jégou in 2017, is a library you embed in your own code: very fast, but it leaves storage, updates and security to you. A vector database wraps that kind of index in database features. Many search engines now support vectors too, and many vector databases now support keyword search, which matters because combining both (hybrid search) usually beats either alone.
+
+## Vector database examples
+
+**Vector databases fall into three groups: vector support added to a database you may already run, dedicated vector databases, and managed stores built into AI platforms.**
+
+| Group | Examples | Typical fit |
+|---|---|---|
+| Extension to an existing database | pgvector for PostgreSQL (available on Amazon RDS and Aurora, Azure Database for PostgreSQL, Google Cloud SQL and Supabase) | Most business systems up to a few million vectors |
+| Dedicated vector database, open source | Qdrant, Weaviate, Milvus | Self-hosting, heavy filtering, large scale |
+| Managed vector service | Pinecone, or managed editions of the open-source engines | Large scale with a small operations team |
+| Search engines with vector support | Elasticsearch, OpenSearch, Azure AI Search | Teams that already run search and want hybrid ranking |
+| Managed retrieval in an AI platform | Amazon Bedrock Knowledge Bases, which manages the vector store for you | Teams building end to end on one cloud platform |
 
 ## Do you need a dedicated vector database?
 

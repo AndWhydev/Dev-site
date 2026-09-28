@@ -1,11 +1,11 @@
 ---
 title: "AI claims and document automation for Australian insurers"
-metaTitle: "AI Claims Automation for Australian Insurers"
-description: "AI for general insurance claims: intake, document extraction and triage built around the Code of Practice timeframes, human decisions and APRA controls."
+metaTitle: "Insurance Claims Automation with AI for Australian Insurers"
+description: "Insurance claims automation with AI for Australian insurers: claims intake, document automation and triage, built around the Code of Practice and APRA rules."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI claims automation for an Australian general insurer reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. A first production workflow typically costs $100k to $300k (AUD, ex GST) after discovery."
+summary: "Insurance claims automation with AI, for an Australian general insurer, reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. A first production workflow typically costs $100k to $300k (AUD, ex GST) after discovery."
 takeaways:
   - "The best return is usually in the first ten business days of a claim: intake, missing-information requests and routing, where the Code already sets deadlines."
   - "Extraction should return a confidence score per field, so officers check the uncertain values instead of retyping everything."
@@ -13,6 +13,8 @@ takeaways:
   - "Vulnerability indicators, such as mentions of family violence, illness or hardship, should route a claim to a person, never trigger an automated response."
   - "APRA's CPS 234 and CPS 230 apply to the AI platform like any other claims system, including the model provider."
 faqs:
+  - q: "What is AI document automation in insurance?"
+    a: "It means using AI models to read unstructured documents, such as claim forms, quotes, invoices and reports, and turn them into structured fields, routed tasks and draft correspondence. Older document automation relied on fixed templates and rules, which break when a repairer changes its quote layout. AI handles that variation, provided every extracted field carries a confidence score and uncertain values go to a person."
   - q: "Can AI approve low-value claims automatically?"
     a: "Technically yes, and some insurers use straight-through processing for simple claims. We recommend starting with AI that prepares the claim and a person who approves it, then automating approval only for a narrow, well-tested category once you have months of evidence that the system's recommendation matches officer decisions. Automated decisions also bring Privacy Act transparency obligations from 10 December 2026."
   - q: "Does this replace our claims platform?"
@@ -23,6 +25,8 @@ faqs:
     a: "Medical certificates and reports are sensitive information under the Privacy Act. They should be processed in Australian regions, access-restricted to officers who need them, excluded from any model training, and retained only as long as your records policy requires."
   - q: "Could AI help detect fraud?"
     a: "It can flag inconsistencies, such as dates that don't line up or duplicated invoices, for a person to review. It should not label a customer as fraudulent or stall a claim on its own. Investigations carry their own commitments under the Code, and those stay with your investigations team."
+  - q: "What are other AI automation use cases in insurance?"
+    a: "The same intake pattern works outside claims: sorting broker submissions for underwriters, answering staff questions from policy wordings with citations, and triaging complaints for the internal dispute resolution team. In each case the AI reads, extracts and drafts while a person makes the underwriting, coverage or complaint decision."
   - q: "How do we know the extraction is accurate enough?"
     a: "By measuring it before launch on a sample of your own historical documents with known correct values. We agree a field-level accuracy threshold with the claims owner, and fields below it go to human review by default."
 sources:
@@ -38,8 +42,8 @@ sources:
   - title: "CPS 234 Information Security"
     url: "https://www.apra.gov.au/standards/cps-234"
     publisher: "Australian Prudential Regulation Authority"
-  - title: "Operational risk management (CPS 230)"
-    url: "https://www.apra.gov.au/operational-risk-management"
+  - title: "CPS 230 Operational Risk Management"
+    url: "https://www.apra.gov.au/standards/cps-230"
     publisher: "Australian Prudential Regulation Authority"
   - title: "REP 798 Beware the gap: Governance arrangements in the face of AI innovation"
     url: "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation"
@@ -62,9 +66,9 @@ industry:
 disclaimer: legal
 ---
 
-## What can AI actually do in a claims operation?
+## What can AI actually do in insurance claims processing?
 
-**AI is good at turning unstructured claim material into structured, routed work: reading emails and attachments, extracting the facts, spotting what's missing and drafting the next message.** It is not good at, and shouldn't be trusted with, deciding whether a claim is covered.
+**In insurance claims processing, AI is good at turning unstructured claim material into structured, routed work: reading emails and attachments, extracting the facts, spotting what's missing and drafting the next message.** It is not good at, and shouldn't be trusted with, deciding whether a claim is covered.
 
 Here is how a claim moves through an AI-assisted intake flow we would design, step by step:
 
@@ -83,9 +87,9 @@ Steps 1 to 7 are where most handling time goes, and none of them requires the AI
 
 **The Code's commitments become system requirements: deadlines become timers, customer rights become data you must be able to produce, and vulnerability becomes a routing rule.** The table maps the commitments most relevant to automation. Check the current Code text for exact wording; this is our engineering reading, not legal advice.
 
-| Code commitment (current Code, last updated October 2023) | Design implication |
+| Code commitment (current Code, last updated October 2023; a redrafted Code went to public consultation in mid 2026) | Design implication |
 |---|---|
-| Within 10 business days of receiving a claim, tell the customer what information is needed and give an estimated timeframe | Intake must complete classification and gap detection fast enough for an officer to send the request inside the window; the clock starts at receipt, not at triage |
+| Where further information or assessment is needed, within 10 business days of receiving a claim, tell the customer what information is needed and give an estimated timeframe | Intake must complete classification and gap detection fast enough for an officer to send the request inside the window; the clock starts at receipt, not at triage |
 | Progress updates at least every 20 business days | A timer per claim that surfaces overdue updates to the handling officer, with a drafted update ready |
 | Decision within 10 business days of having all relevant information, and generally within 4 months of the claim | Track "all information received" as an explicit status so the decision clock is visible |
 | Written reasons when a claim is denied, with the right to request the information and reports relied on | Every document and extracted fact used must be retrievable and exportable; AI summaries are working notes, not the record of reasons |
@@ -120,7 +124,7 @@ Our [AI document processing service](/services/ai-document-processing) covers th
 
 ## Where does it sit alongside the claims platform?
 
-**The AI layer reads from and writes back to your claims platform; it doesn't become a second system of record.** Typical integration points:
+**The AI layer reads from and writes back to your claims platform; it doesn't become a second system of record.** Most of the insurance software development in a project like this is integration work around the platforms below. Typical integration points:
 
 - Claims platform: Guidewire ClaimCenter, Duck Creek Claims or an in-house system, through its APIs or integration layer
 - Policy administration, for coverage and policy details (read-only)
@@ -164,7 +168,7 @@ The [LLM evaluation guide](/guides/llm-evaluation) explains how to build the lab
 | Pilot | 6 to 10 weeks | $55,000 to $150,000 | Intake, extraction and routing for one product line with a small officer group |
 | Production | 3 to 6 weeks | $30,000 to $115,000 | Monitoring, fallbacks, security testing, second product line if in scope |
 
-Worked example at the midpoint: 450 hours of pilot engineering at a blended $180 an hour is $81,000; 300 hours to production is $54,000; with $25,000 of discovery the total is $160,000 ex GST. Model usage is a separate running cost that scales with pages processed; we estimate it in discovery from your actual claim volumes.
+Worked example within the range: 450 hours of pilot engineering at a blended $180 an hour is $81,000; 300 hours to production is $54,000; with $25,000 of discovery the total is $160,000 ex GST. Model usage is a separate running cost that scales with pages processed; we estimate it in discovery from your actual claim volumes.
 
 ## Working with All Webbed Labs on claims automation
 

@@ -1,14 +1,14 @@
 ---
 title: "Why AI hallucinates and how to reduce it in business systems"
-metaTitle: "Why AI Hallucinates and How to Reduce It"
-description: "AI hallucinations are confident but false outputs. Why language models make things up, the main types, and the layered controls that reduce them at work."
+metaTitle: "What Are AI Hallucinations? Why They Happen, Fixes"
+description: "What are AI hallucinations? Confident but false AI outputs. Why language models make things up, examples, and how to prevent or reduce hallucinations at work."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
 updated: 2026-09-28
 summary: "An AI hallucination is output from a language model that sounds confident and plausible but is false, unsupported by its sources, or invented, such as a made-up citation, policy or figure. It happens because models generate the most likely-sounding text rather than looking facts up, and because training and testing have historically rewarded guessing over admitting uncertainty. Hallucinations can't be eliminated, but grounding, constraints, verification and human review reduce them to a level most business uses can manage."
 takeaways:
-  - "Hallucination is a built-in property of how language models generate text, not a bug that a future update will fully remove."
+  - "Hallucination follows from how language models are trained and generate text; every current model does it, and no routine update will fully remove it."
   - "There are two main kinds: factual errors about the world, and unfaithful answers that misstate the documents the model was given."
   - "Research by Kalai et al. (2025) argues models hallucinate partly because training and benchmarks reward guessing over saying \"I don't know\"."
   - "The strongest controls are grounding answers in retrieved sources, allowing and testing refusals, requiring citations, and checking outputs before they're acted on."
@@ -18,6 +18,10 @@ faqs:
     a: "No. Every current language model can produce false statements. The realistic goal is to make them rare, detectable and low-impact for your use case: ground the model in sources, let it decline, check its claims, and keep a human in the loop where errors matter."
   - q: "Does using RAG stop hallucinations?"
     a: "It reduces them substantially for questions your documents can answer, because the model works from supplied text instead of memory. It doesn't stop them: the model can still misread a passage, merge two sources or answer when retrieval found nothing relevant. You still need citations, refusal rules and testing."
+  - q: "Why does ChatGPT hallucinate?"
+    a: "For the same reasons every large language model does. ChatGPT, Claude, Gemini and Copilot all generate the most plausible next words rather than looking facts up, and their training has rewarded answering over admitting doubt. Answers drawn from web search or supplied documents are less prone to it than answers from the model's memory alone."
+  - q: "Is an AI hallucination the same as AI bias?"
+    a: "No. A hallucination is an output that's false or unsupported, often a one-off. Bias is a systematic skew in outputs, such as treating some groups less favourably, usually learned from training data. Both need testing, but they are measured and fixed differently."
   - q: "Are newer, bigger models less likely to hallucinate?"
     a: "Generally more capable models hallucinate less on common knowledge, but none are immune, and they can be more convincing when they are wrong. Model choice helps; system design matters more."
   - q: "Who is responsible if our AI gives a customer wrong information?"
@@ -54,6 +58,20 @@ service:
   href: "/services/llm-integration"
 disclaimer: none
 ---
+
+## What is an AI hallucination? Meaning and examples
+
+**An AI hallucination is when an AI model states something false or unsupported as if it were true.** The term borrows from psychology, but the model isn't seeing things: it's producing fluent text that fits the pattern of a correct answer without being one. The output often reads as confidently as a correct answer, which is what makes hallucinations hard to spot.
+
+Illustrative examples of the kinds of hallucination businesses run into:
+
+- A research assistant cites a court case, journal article or standard that doesn't exist, complete with a plausible title and reference number.
+- A customer service chatbot quotes a refund window or fee that isn't in the company's policy.
+- A summary of a 40-page contract says a clause allows termination on 30 days' notice when it says 90.
+- An assistant describes a product feature the product doesn't have, because similar products do.
+- An agent tells a user "I've cancelled your booking" when no cancellation was sent.
+
+Each of these is fluent, specific and wrong, and a busy reader could act on any of them.
 
 ## Why do language models make things up?
 
@@ -94,7 +112,7 @@ The "invented capability" row deserves attention in [AI agents](/guides/what-is-
 | Extracting data into systems of record | High | Low once stored | Validation rules, confidence thresholds, sampling review |
 | Decisions affecting individuals (credit, claims, eligibility) | Very high | Low | Human decision-maker, full audit trail, legal review |
 
-## How do you reduce hallucinations in a business system?
+## How do you prevent or reduce AI hallucinations in a business system?
 
 **Use several layers, because no single technique is enough.** Roughly in order of impact:
 

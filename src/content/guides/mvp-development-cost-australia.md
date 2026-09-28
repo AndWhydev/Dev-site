@@ -1,12 +1,12 @@
 ---
 title: "How much does an MVP cost in Australia? (2026 guide)"
-metaTitle: "MVP Development Cost in Australia (2026 Guide)"
-description: "An MVP in Australia typically costs $50k to $120k (AUD, ex GST), or less with no-code. MVP types, scope levers, a worked scope cut and the R&D Tax Incentive."
+metaTitle: "How Much Does MVP Development Cost in Australia? (2026)"
+description: "How much does MVP development cost in Australia? A coded MVP usually costs $50k to $120k (AUD, ex GST), less with no-code. Startup MVP pricing and scope cuts."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A coded minimum viable product (MVP) built by an Australian team typically costs $50,000 to $120,000 (AUD, ex GST), with simple validation apps from about $20,000 to $50,000 and complex or AI-heavy MVPs at $120,000 to $200,000 or more. No-code MVPs can cost much less to build, with platform fees in the low hundreds of US dollars a month. The biggest lever on cost is scope: cutting an MVP to the one workflow that proves demand often removes half the budget."
+summary: "MVP development in Australia typically costs $50,000 to $120,000 (AUD, ex GST) for a coded minimum viable product built by an Australian team, with simple validation apps from about $20,000 to $50,000 and complex or AI-heavy MVPs at $120,000 to $200,000 or more. No-code MVPs can cost much less to build, with platform fees in the low hundreds of US dollars a month. The biggest lever on cost is scope: cutting an MVP to the one workflow that proves demand often removes half the budget."
 takeaways:
   - "Published Australian ranges for a coded MVP run from $20k to $200k+; most business MVPs land between $50k and $120k."
   - "Sources disagree because 'MVP' means anything from a quick validation app to a polished, production-ready first release."
@@ -22,6 +22,8 @@ faqs:
     a: "Yes, and many startups do. The no-code version proves demand and shapes the requirements. Expect the coded version to be a rebuild rather than a migration, because no-code platforms don't export maintainable source code."
   - q: "How long does it take to build an MVP?"
     a: "A tightly scoped coded MVP can take 8 to 12 weeks. Appinventiv's August 2026 guide gives 3 to 9 months for a fuller MVP including discovery, design, engineering, testing and release stabilisation."
+  - q: "How much does an MVP cost per month to run?"
+    a: "In the worked example on this page, hosting and services run about $300 a month and maintenance at 15% of a $73,000 build adds about $912 a month, so roughly $1,200 a month ex GST before payment fees. A no-code MVP on Bubble's Growth plan is US$209 a month billed annually at the time of writing, plus any paid plugins or services."
   - q: "Does the R&D Tax Incentive cover MVP development?"
     a: "Only the parts that are genuine experimental R&D: work to resolve a technical uncertainty that a competent professional couldn't answer in advance. Building standard features with known technology generally won't qualify. Eligible companies must spend at least $20,000 on eligible R&D in the year (with limited exceptions) and register their activities. Speak to a registered R&D tax agent early."
   - q: "Should I give equity to a developer instead of paying for my MVP?"
@@ -62,9 +64,9 @@ service:
 disclaimer: financial
 ---
 
-## What does an MVP cost to build in Australia?
+## How much does MVP development cost in Australia?
 
-**Most coded MVPs built by Australian teams cost $50,000 to $120,000 (AUD, ex GST), with simpler validation builds from about $20,000 and complex MVPs above $120,000.** An MVP, or minimum viable product, is the smallest version of a product that lets real users get real value, so you can learn whether it's worth building further.
+**Most coded MVPs built by Australian teams for startups and new business ventures cost $50,000 to $120,000 (AUD, ex GST), with simpler validation builds from about $20,000 and complex MVPs above $120,000.** An MVP, or minimum viable product, is the smallest version of a product that lets real users get real value, so you can learn whether it's worth building further.
 
 | MVP complexity | Typical example | Range (AUD, ex GST) | Source |
 |---|---|---|---|
@@ -126,6 +128,12 @@ Our comparison of [low-code and custom development](/guides/low-code-vs-custom-d
 
 **First-year running costs** for this MVP: hosting and services at about $300 a month ($3,600), maintenance at 15% of the build ($10,950), and payment provider fees per transaction. AppGurus recommends budgeting 15 to 20% of the build cost a year for maintenance.
 
+## Is it worth paying for an MVP?
+
+**An MVP is worth paying for when the question it answers (will people use this, and will they pay?) is worth more to you than the build cost, and cheaper tests have already come back positive.** It is a poor use of money when nobody has shown interest yet, or when the founder already knows what to build and needs a full product for a committed customer.
+
+The worked example shows the trade. Spending $73,000 to learn whether builders and hire yards will transact is far cheaper than spending $187,000 on the full wishlist and finding out they won't. If the answer is yes, most of the MVP code carries forward into the next version. If it is no, you have lost less than half of what the full build would have cost, and you know why. Run a landing page test or a clickable prototype first if you can: they answer the "does anyone want this?" question for a small fraction of either figure.
+
 ## Which scope levers save the most?
 
 **The biggest savings come from platform choice, manual workarounds and deferring anything that doesn't test your core assumption.**
@@ -149,9 +157,9 @@ The harder test is the activity itself. Building an MVP with standard technology
 
 We're not tax advisers. Read our guide on [how the R&D Tax Incentive affects the cost of building software](/guides/rd-tax-incentive-software-development-cost) and speak to a registered R&D tax agent before you start, so records are kept from day one.
 
-## What's usually not in an MVP quote?
+## What are the hidden costs of an MVP?
 
-**MVP quotes typically cover design, build and launch, and exclude running costs, third-party fees and your own time.** Check for:
+**The hidden costs are what MVP quotes leave out. They typically cover design, build and launch, and exclude running costs, third-party fees and your own time.** Check for:
 
 - **GST** at 10% on ex GST quotes (claimable if your company is GST registered).
 - **Hosting and third-party services**: email, SMS, maps, monitoring, payment provider fees.

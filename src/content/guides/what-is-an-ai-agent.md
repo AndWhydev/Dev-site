@@ -1,7 +1,7 @@
 ---
 title: "What is an AI agent? (Agentic AI explained)"
-metaTitle: "What Is an AI Agent? Agentic AI Explained"
-description: "An AI agent is a language model that uses tools in a loop to reach a goal. How agents work, when a business needs one, the risks, and how to keep control."
+metaTitle: "What Is an AI Agent? Agentic AI Explained, With Examples"
+description: "What is an AI agent? A language model that uses tools in a loop to reach a goal. How agentic AI works, examples, agentic vs generative AI, risks, use cases."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -22,6 +22,10 @@ faqs:
     a: "Traditional automation follows rules you wrote in advance and breaks when inputs don't match. An agent can read unstructured inputs and decide what to do, which handles variation better but is less predictable. Many good systems combine them: fixed automation for the predictable steps, an agent only for the judgement calls."
   - q: "What does MCP have to do with AI agents?"
     a: "The Model Context Protocol (MCP) is an open standard for connecting AI applications to tools and data. Instead of writing a custom integration for each agent and each system, you expose a system once as an MCP server and any MCP-compatible agent can use it, subject to the permissions you set."
+  - q: "What is an AI agent harness?"
+    a: "The harness is the software around the model that turns it into an agent: it supplies context and memory, runs the tools, and enforces permissions and limits. Australia's ASD defines it as the software layer that connects the LLM to external tools, data sources, memory and planning workflows, and treats it as the part organisations can most directly govern and secure."
+  - q: "How much does an AI agent cost?"
+    a: "Building one costs more than a chatbot because most of the effort goes into tools, integrations, permissions, testing and approval flows. Running costs depend on how many model calls each task takes, since every loop is another call. Our AI development cost guide sets out typical Australian ranges and what drives them."
   - q: "Do agents replace staff?"
     a: "In practice they mostly take on bounded, repetitive multi-step work, such as gathering information, drafting, triage and data entry across systems, with a person reviewing the result or approving key actions. Fully unsupervised agents are rare in business settings because the cost of a wrong action is usually higher than the saving."
 sources:
@@ -37,6 +41,12 @@ sources:
   - title: "LLM06:2025 Excessive Agency"
     url: "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/"
     publisher: "OWASP Gen AI Security Project"
+  - title: "Agentic AI harnesses: the layer above the model"
+    url: "https://www.cyber.gov.au/business-government/secure-design/artificial-intelligence/agentic-ai-harnesses"
+    publisher: "Australian Signals Directorate, ACSC"
+  - title: "OWASP GenAI LLM Top 10 2026"
+    url: "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    publisher: "OWASP Gen AI Security Project"
 related:
   - title: "What is MCP (Model Context Protocol)?"
     href: "/guides/what-is-mcp"
@@ -51,6 +61,12 @@ service:
   href: "/services/ai-agent-development"
 disclaimer: none
 ---
+
+## What is an AI agent, in simple words?
+
+**An AI agent is AI that does things rather than only saying things: you give it a goal, and it works out the steps, uses software tools to carry them out and checks the results until the goal is met.** A chatbot tells you how to reset a password; an agent looks up your account, triggers the reset and confirms it's done.
+
+"Agentic AI" is the broader term for this style of system, where AI acts with some autonomy. In everyday use the two phrases mean nearly the same thing: an AI agent is one system; agentic AI is the approach, and can include several agents working together.
 
 ## How does an AI agent work?
 
@@ -68,6 +84,21 @@ Here is the loop in words, for a request like "Find out why order 48213 hasn't s
 
 This pattern of alternating reasoning and action was formalised in the ReAct paper (Yao et al., 2022), which showed that letting a model consult external sources between reasoning steps reduced hallucination on fact-checking and question answering tasks. Modern model APIs build it in as "tool use" or "function calling": the model returns a structured request to call a named tool with specific inputs, your code executes it, and sends back the result.
 
+## AI agent examples
+
+**Agents show up wherever a task needs several lookups or actions whose order depends on what's found.** Examples of the kinds of agents businesses build:
+
+| Example | What the agent does | Tools it uses |
+|---|---|---|
+| Customer support agent | Checks the order, shipping and account, then resolves the case or drafts a reply | Order system, courier API, CRM |
+| IT service desk agent | Diagnoses a request, resets access or raises a ticket with the details filled in | Identity system, ticketing tool, knowledge base |
+| Accounts payable agent | Matches an invoice to a purchase order, chases missing details and queues it for approval | Finance system, email, document reader |
+| Research agent | Searches internal documents and approved sources, then writes a cited brief | Search, RAG index |
+| Coding agent | Reads a codebase, makes a change, runs the tests and proposes the fix for review | Code repository, test runner, terminal |
+| Sales operations agent | Updates CRM records from meeting notes and schedules follow-ups | CRM, calendar, email |
+
+In each case, the agent's usefulness comes from the tools it can reach, and its safety comes from the limits placed on them.
+
 ## What are the parts of an agent?
 
 **Every agent has a model, a set of tools, instructions, and a runtime that enforces limits.** Most of the engineering effort goes into the last three.
@@ -81,6 +112,20 @@ This pattern of alternating reasoning and action was formalised in the ReAct pap
 | Runtime and guardrails | The code running the loop: step limits, permissions, approvals, logging | Hard limits enforced outside the model |
 
 Anthropic's advice is to invest in tool design with the same care you'd give a user interface, because a vague tool description is the agent equivalent of a confusing button. Tools are also where standards help: the [Model Context Protocol](/guides/what-is-mcp) lets you expose a system once and use it from any compatible agent.
+
+Australia's ASD calls everything around the model the **harness**: the software layer that connects the LLM to tools, data sources, memory and planning workflows. Its September 2026 guidance argues the harness, not the model, is where organisations should focus security and governance, because it's the part they control.
+
+## Agentic AI vs generative AI, LLMs and AI assistants
+
+**Generative AI creates content; agentic AI takes actions to reach a goal.** Most agents are built on generative AI, so the terms overlap, but they describe different things:
+
+| Comparison | The difference |
+|---|---|
+| Agentic AI vs generative AI | Generative AI produces text, images or code in response to a prompt. Agentic AI uses a generative model to plan and act across several steps with tools |
+| AI agent vs LLM | The large language model (LLM) is the reasoning engine. The agent is the whole system: model plus tools, instructions, memory and the harness |
+| AI agent vs AI assistant | An assistant such as Copilot or ChatGPT mainly responds to a person turn by turn. An agent can be given a goal and left to work through the steps, often in the background |
+| AI agent vs chatbot | A chatbot answers questions; an agent completes tasks. See the comparison linked below |
+| AI agent vs AI workflow | In a workflow your code fixes the steps; in an agent the model chooses them. The next section covers when each fits |
 
 ## Workflow or agent: which do you actually need?
 
@@ -113,7 +158,7 @@ Signs you don't need one yet:
 
 ## What are the risks of AI agents?
 
-**The distinctive risk is an agent doing the wrong thing with real permissions, whether through a mistake, a manipulated input, or simply too much freedom.** OWASP's 2025 Top 10 for LLM applications names this "excessive agency" and traces it to three causes: excessive functionality (tools that can do more than needed), excessive permissions (tools running with broad access instead of the user's own), and excessive autonomy (high-impact actions without human confirmation).
+**The distinctive risk is an agent doing the wrong thing with real permissions, whether through a mistake, a manipulated input, or simply too much freedom.** OWASP's Top 10 for LLM applications names this "excessive agency" (LLM06 in the 2025 edition; it climbed to third in the August 2026 edition), and the 2025 entry traces it to three causes: excessive functionality (tools that can do more than needed), excessive permissions (tools running with broad access instead of the user's own), and excessive autonomy (high-impact actions without human confirmation).
 
 Other pitfalls to plan for:
 

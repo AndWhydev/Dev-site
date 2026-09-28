@@ -2,11 +2,11 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Logistics & Transport Software Australia | All Webbed Labs',
-  metaDescription: 'Real-time fleet management, route optimisation, warehouse automation and last-mile tracking platforms for Australian logistics and transport operators.',
+  metaTitle: 'Logistics Software Development Australia | All Webbed Labs',
+  metaDescription: 'Logistics and transport software development for Australian operators: fleet management, dispatch, driver apps, warehouse systems and AI route tools.',
   industryName: 'Logistics & Transport',
   heroHeadline: 'Technology That Keeps Your Supply Chain Moving',
-  heroTagline: "Real-time tracking, fleet management and warehouse automation for Australia's leading logistics and transport companies.",
+  heroTagline: "Logistics software development for Australian freight, transport and warehousing operators: real-time tracking, fleet management, logistics app development and warehouse automation.",
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
   stats: [],
   painPoints: [
@@ -40,10 +40,12 @@ const data = {
     'Proof of delivery (POD) capture',
     'Cold chain monitoring and alerting',
     'Customs and border compliance tools',
+    'AI for logistics and supply chain: ETA prediction, exception triage and document extraction',
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   relevantServices: [
+    { title: 'Logistics and Transport Software Development', href: '/solutions/logistics-software-development' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
     { title: 'API Development', href: '/services/api-development' },
@@ -53,23 +55,31 @@ const data = {
   ],
   faqs: [
     {
+      question: 'How is AI used in logistics and supply chain management?',
+      answer: "The most practical uses of AI in logistics and supply chain today are predicting delivery ETAs from live GPS and history, triaging delivery exceptions, extracting data from consignment notes, invoices and customs documents, answering where-is-my-freight queries, and forecasting demand for warehouse labour. Route optimisation itself is mostly established operations research rather than generative AI, and we use whichever technique fits. Our logistics and transport software guide covers these use cases in an Australian context.",
+    },
+    {
+      question: 'Should we buy logistics software or build custom?',
+      answer: "If a standard TMS, WMS or fleet platform fits your operation, buy it. Custom logistics software development makes sense when your operation has workflows packaged tools handle badly, when you need to join several systems into one view for customers or dispatch, or when per-vehicle or per-user licensing stops adding up. The common middle path is keeping the core platform and building the driver app, customer tracking portal or integration layer around it.",
+    },
+    {
       question: 'Can your systems integrate with existing TMS and ERP platforms like SAP, Oracle and CargoWise?',
       answer: "Yes. We integrate with CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and a range of Australian-specific platforms including Microlistics, Paperless and Freight2020. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
     },
     {
-      question: 'How do you handle NHVL chain of responsibility compliance in your fleet systems?',
+      question: 'How do you handle HVNL chain of responsibility compliance in your fleet systems?',
       answer: "Chain of responsibility (CoR) under the Heavy Vehicle National Law means that every party in the supply chain, not just the driver, can be liable for HVNL breaches. Our fleet systems capture the data needed to demonstrate due diligence: pre-departure safety checks with photo evidence, mass and dimension declarations linked to consignment records, driver fatigue and work diary data cross-referenced against scheduled departure times, and vehicle maintenance records with service due alerts. We can produce CoR compliance reports on demand and integrate with NHVR's Intelligent Access Programme (IAP) transponder data where required.",
     },
     {
-      question: 'What does a driver mobile app built by your team typically include?',
-      answer: "Our driver apps are built natively for Android (the dominant platform in Australian fleet operations) with offline-first architecture for regional areas with poor connectivity. Standard features include GPS tracking, job card management, digital proof of delivery with photo and signature capture, barcode/QR scanning, real-time messaging with dispatch, pre-start safety checklists, fatigue status tracking, and dangerous goods acknowledgement workflows. The app syncs with the dispatch platform over low-bandwidth connections and queues data locally when offline, flushing to the server on reconnection.",
+      question: 'What does a driver mobile app typically include?',
+      answer: "We build driver apps for the Android and iOS devices your fleet already carries, with offline-first architecture for regional areas with poor connectivity. Standard features include GPS tracking, job card management, digital proof of delivery with photo and signature capture, barcode/QR scanning, real-time messaging with dispatch, pre-start safety checklists, fatigue status tracking, and dangerous goods acknowledgement workflows. The app syncs with the dispatch platform over low-bandwidth connections and queues data locally when offline, flushing to the server on reconnection.",
     },
     {
       question: 'Can your tracking platforms provide customer-facing consignment tracking?',
       answer: "Yes, and it's one of the most impactful features for reducing inbound customer service calls. We build branded tracking portals and SMS/email notification workflows that give consignees live visibility of their freight status, estimated delivery windows, driver ETA based on real-time GPS, and the ability to redirect deliveries or authorise safe drop. These portals integrate with the carrier's internal TMS data via a thin API layer and are typically deployable as a white-labelled subdomain (e.g. track.yourcompany.com.au) within two to three weeks.",
     },
     {
-      question: 'Do you have experience with last-mile platforms for retail and e-commerce fulfilment?',
+      question: 'Can you build last-mile platforms for retail and e-commerce fulfilment?',
       answer: "Yes. We build last-mile platforms for Australian e-commerce fulfilment, including multi-carrier rate shopping (integrating with Australia Post, Sendle, CouriersPlease, StarTrack and DHL), automated despatch manifesting, carrier label printing, delivery exception management and returns processing. We plan for the specifics of Australia Post's eParcel and MyPost Business platforms, including rate limits and label workflows that catch teams out at scale. For high-volume operations we implement intelligent carrier selection rules based on zone, weight, service level and negotiated rate tables.",
     },
   ],

@@ -1,12 +1,12 @@
 ---
 title: "What to check before signing a software development contract in Australia"
 metaTitle: "Software Development Contract Checklist (Australia)"
-description: "A clause-by-clause checklist for Australian software contracts: IP assignment, moral rights, source code access, warranties, liability, privacy and exit."
+description: "What to check before signing a software development contract in Australia: IP assignment, moral rights, source code, warranties, liability, privacy and exit."
 eyebrow: "Checklist"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Before signing, confirm six things: that IP in the code is assigned to you in writing, with moral rights consents from the people who wrote it; that you get the source code and credentials, ideally in your own repository throughout; that scope, acceptance testing and change control are defined; that warranties and liability caps are reasonable and sit alongside the Australian Consumer Law; that privacy and security obligations are written in; and that you can leave with everything if the relationship ends."
+summary: "Before signing a software development contract, confirm six things: that IP in the code is assigned to you in writing, with moral rights consents from the people who wrote it; that you get the source code and credentials, ideally in your own repository throughout; that scope, acceptance testing and change control are defined; that warranties and liability caps are reasonable and sit alongside the Australian Consumer Law; that privacy and security obligations are written in; and that you can leave with everything if the relationship ends."
 takeaways:
   - "Under section 196(3) of the Copyright Act 1968, an assignment of copyright has no effect unless it's in writing and signed by or on behalf of the assignor. Without it, the developer usually owns the code."
   - "Moral rights can't be assigned. The contract should secure written consents from the individual authors, which section 195AWA says must relate to specified acts or classes of acts."
@@ -17,13 +17,19 @@ faqs:
   - q: "Who owns the code if the contract says nothing?"
     a: "Generally the developer or their employer, not you. Copyright in software belongs to its author, or to the author's employer for work done in the course of employment, and it only moves to you through a written, signed assignment. You might have an implied licence to use what you paid for, but that's a weak position if you want to modify, sell or license the software."
   - q: "Is it normal for IP to transfer only after payment?"
-    a: "Yes. Many Australian development agreements, including ours, assign IP in deliverables when they're paid for. What matters is that you get a licence to use the work in the meantime, that each milestone's IP transfers when that milestone is paid, and that the vendor's pre-existing tools come with a perpetual licence so you can keep using and modifying the software."
+    a: "Yes. Many Australian development agreements, including ours, assign IP in deliverables when they're paid for. Ours gives you a licence to review and test a deliverable until it's paid for. What matters is that you get a licence that suits how you'll use the work in the meantime, that each milestone's IP transfers when that milestone is paid, and that the vendor's pre-existing tools come with a perpetual licence so you can keep using and modifying the software."
   - q: "Do I need source code escrow?"
     a: "If the code is written for you and sits in your own repository, escrow adds little. Escrow is useful when a vendor licenses or hosts software you depend on and won't hand over the source: a third party holds the code and releases it to you if the vendor fails or stops supporting it."
   - q: "What's a reasonable liability cap?"
     a: "A cap equal to the fees paid or payable under the contract, or a multiple of them, is common in Australian IT contracts. Look at the carve-outs as much as the number: breaches of confidentiality, privacy, IP infringement and wilful misconduct are often excluded from the cap or given a higher one."
   - q: "Should the contract say how AI coding tools are used?"
     a: "It's increasingly common and sensible. Ask the vendor to disclose AI-assisted development, confirm that your confidential information isn't used to train third-party models, and address ownership of AI-assisted output. Australian law on copyright in purely AI-generated material is still being worked through."
+  - q: "What should I know before signing an NDA with a software developer?"
+    a: "Check that it's mutual, so both sides' information is protected, that the definition of confidential information covers your data, code, designs and business plans, and that it lasts long enough to matter after the project ends. Look for the usual exclusions (information already public or independently developed) and a duty to return or destroy your information. An NDA protects confidentiality only; it doesn't give you ownership of any code, which needs the IP assignment in the main contract."
+  - q: "What's the difference between a master services agreement and a statement of work?"
+    a: "A master services agreement (MSA) sets the general terms for the whole relationship: IP, confidentiality, liability, warranties, privacy and termination. A statement of work, sometimes called a schedule of work, sits under it and covers one project's scope, deliverables, price, milestones and acceptance criteria. Check both, and check which one wins if they conflict."
+  - q: "Can I use a software development contract template?"
+    a: "A template is a reasonable starting point for understanding what a software development agreement should cover, and the checklist on this page shows what to look for in one. But templates are written for a generic situation. Have your lawyer adapt it, or review the vendor's version, against your project's IP, privacy and exit needs."
   - q: "Do I need a lawyer to review the contract?"
     a: "For anything significant, yes. A checklist helps you ask the right questions, but only a lawyer advising you can weigh the whole document against your situation. The vendor's lawyer acts for the vendor."
 sources:
@@ -39,6 +45,9 @@ sources:
   - title: "Australian Consumer Law and your business"
     url: "https://business.gov.au/legal/fair-trading/australian-consumer-law-and-your-business"
     publisher: "business.gov.au"
+  - title: "Competition and Consumer Act 2010, Schedule 2 (Australian Consumer Law), ss 23 and 224"
+    url: "https://www.legislation.gov.au/C2004A00109/latest/text"
+    publisher: "Federal Register of Legislation"
   - title: "Small business and the Privacy Act"
     url: "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/organisations/small-business"
     publisher: "Office of the Australian Information Commissioner"
@@ -68,7 +77,7 @@ service:
 disclaimer: legal
 ---
 
-## What matters most in a software development contract?
+## What matters most in a software development contract or agreement?
 
 **The clauses that decide whether you own, control and can walk away with what you paid for: IP assignment, moral rights consents, source code and account ownership, and exit.** Price and timeline get most of the attention in negotiation, but these are the terms that cause the expensive problems years later, when you want to change vendors, raise investment or sell the business.
 
@@ -105,11 +114,11 @@ Also ask for a list of open source and third-party components and their licences
 
 ## What are moral rights, and why do they need consents?
 
-**Moral rights are personal rights of the individual authors, such as the right of attribution and the right of integrity, and they can't be assigned.** The Attorney-General's Department states plainly that moral rights cannot be transferred or assigned. So even a perfect IP assignment leaves the individual programmers with rights that could, in principle, be used to object to derogatory treatment of their work.
+**Moral rights are personal rights of the individual authors, such as the right of attribution and the right of integrity, and they can't be assigned.** The Attorney-General's Department states plainly that moral rights cannot be assigned or licensed to another person. So even a perfect IP assignment leaves the individual programmers with rights that could, in principle, be used to object to derogatory treatment of their work.
 
 In practice the fix is written consent. Section 195AWA provides that it isn't an infringement to do something within the scope of a written consent genuinely given by the author, and that a consent must relate to specified acts or classes of acts and to specified works or works of a described kind. Employees can give broad consents covering all work made in the course of their employment.
 
-Look for a clause in which the vendor promises to obtain consents from its employees and contractors covering modification, adaptation, use without attribution and commercialisation. Our [Master Services Agreement](/MSA) includes a moral rights clause of this kind at clause 10.5.
+Look for a clause in which the vendor promises to obtain consents from its employees and contractors covering modification, adaptation, use without attribution and commercialisation. Our [Master Services Agreement](/MSA) includes a moral rights consent clause at clause 10.5, covering use, modification, adaptation, maintenance and exploitation of paid deliverables.
 
 ## Do you get the source code, and when?
 
@@ -128,15 +137,15 @@ Check:
 
 Above the threshold, your protection comes mostly from the contract. Look for:
 
-- A **defect warranty** for a defined period after acceptance, during which bugs against the agreed scope are fixed at no charge. Ours is 30 days unless a schedule of work says otherwise.
+- A **defect warranty** for a defined period after acceptance, during which bugs against the agreed scope are fixed at no charge. Ours is 30 days from when the deliverable is first deployed to production, unless a schedule of work says otherwise.
 - A warranty that the work is **original** and doesn't infringe third-party IP, backed by an indemnity.
 - A warranty that the vendor will use **appropriately skilled personnel** and follow good industry practice.
 
-Also check for unfair terms. The ACL protects small businesses from unfair terms in standard form contracts. business.gov.au gives the example of a term letting only one party vary the contract, such as the price; a court can declare such a term void.
+Also check for unfair terms. The ACL protects small businesses from unfair terms in standard form contracts. business.gov.au gives the example of a term letting only one party vary the contract, such as the price; a court can declare such a term void. Since 9 November 2023, a small business for this purpose is one with fewer than 100 employees or annual turnover under $10 million, and proposing, applying or relying on an unfair term in a standard form contract can attract civil penalties: for a company, up to the greater of $50 million, 3 times the benefit obtained, or 30% of adjusted turnover during the breach period.
 
 ## Is the liability cap reasonable?
 
-**A cap linked to the fees under the contract is normal; what deserves scrutiny is whether it's mutual and what sits outside it.** Our own MSA caps our liability at 100% of the fees payable under the relevant schedule of work, which is a common structure.
+**A cap linked to the fees under the contract is normal; what deserves scrutiny is whether it's mutual and what sits outside it.** Our own MSA caps our liability at 100% of the fees payable under the relevant schedule of work, which is a common structure. That cap limits our liability, and the exclusion of consequential loss applies to both parties.
 
 Questions to ask:
 
@@ -171,7 +180,7 @@ Confidentiality is usually covered by a mutual NDA signed before discovery. Our 
 - **Survival** of IP, confidentiality and privacy clauses after termination.
 - **Dispute resolution** with negotiation and mediation steps before court, and a stated governing law, usually the law of an Australian state.
 
-## A quick pre-signing checklist
+## What should you check before signing? A quick pre-signing checklist
 
 - [ ] IP in deliverables assigned to you in writing, with timing clear
 - [ ] Perpetual licence to any vendor background IP in the software
@@ -193,4 +202,4 @@ Confidentiality is usually covered by a mutual NDA signed before discovery. Our 
 
 ## How All Webbed Labs handles contracts
 
-We sign an NDA before discovery and work under a published [Master Services Agreement](/MSA) with a schedule of work for each project. Code sits in your repository from day one, hosting and other accounts are transferred to your ownership before launch, IP in paid deliverables transfers to you, and our pre-existing tools come with a perpetual licence. We disclose our use of AI-assisted development in the agreement. Read both documents before we talk, and have your lawyer review them. See our [custom software development service](/services/custom-app-development).
+We sign an NDA before discovery and work under a published [Master Services Agreement](/MSA) with a schedule of work for each project. Our practice is to keep code in your repository from day one; the MSA itself allows either party's repository during development, with final repository access on payment. Hosting and other production accounts are transferred to your ownership before launch once the related fees are paid, IP in paid deliverables transfers to you, and our pre-existing tools come with a perpetual licence to use and modify them as part of your software. We disclose our use of AI-assisted development in the agreement. Read both documents before we talk, and have your lawyer review them. See our [custom software development service](/services/custom-app-development).

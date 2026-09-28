@@ -1,14 +1,14 @@
 ---
 title: "AI for accounting and advisory firms in Australia"
-metaTitle: "AI for Accounting Firms in Australia"
-description: "AI for Australian accounting firms: document intake, workpapers and client queries built around TPB Code confidentiality and Xero, MYOB and practice systems."
+metaTitle: "AI for Accounting Firms in Australia: Uses and Costs"
+description: "AI for accounting firms in Australia: real examples, accounting automation with Xero and MYOB, TPB confidentiality rules and what a custom build costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI in an Australian accounting practice works best on the document-heavy work around compliance jobs: collecting and sorting client records, extracting figures into workpapers, drafting queries and answering staff questions from the firm's own procedures. The main constraint is Code item 6 of the Tax Practitioners Board's Code of Professional Conduct: an AI provider is a third party, so client permission, disclosure in engagement letters and tight data handling come first. A custom build for a mid-sized firm typically costs $40k to $180k (AUD, ex GST)."
+summary: "AI for accounting firms in Australia works best on the document-heavy work around compliance jobs: collecting and sorting client records, extracting figures into workpapers, drafting queries and answering staff questions from the firm's own procedures. The main constraint is Code item 6 of the Tax Practitioners Board's Code of Professional Conduct: an AI provider is a third party, so client permission, disclosure in engagement letters and tight data handling come first. A custom build for a mid-sized firm typically costs $40k to $205k (AUD, ex GST) including discovery."
 takeaways:
   - "The TPB says third parties include offsite and cloud storage providers; treat an AI model provider the same way and cover it in your engagement letter."
-  - "Xero's developer terms, updated in 2026, prohibit using data obtained from its APIs to train AI or machine learning models."
+  - "Xero's revised developer terms (effective from 4 December 2025 for new developers and 2 March 2026 for existing ones) prohibit using data obtained from its APIs to train AI or machine learning models."
   - "The best first projects sit before and after the accountant's judgement: document intake, reconciliation prep and first drafts, not the tax position itself."
   - "Off-the-shelf AI in Xero, MYOB and practice management tools is often enough; custom work pays off when you need to join systems or apply firm-specific procedures."
   - "Every AI output that reaches the ATO or a client should pass a registered agent's review, consistent with the Code's competence and reasonable care obligations."
@@ -23,6 +23,10 @@ faqs:
     a: "Usually, but check access first. At the time of writing, Xero lists the XPM API as a premium feature requiring a security assessment and use case approval, available on its higher partner tiers. That approval can take longer than the build, so it belongs in discovery."
   - q: "We're a 10-person firm. Is custom AI worth it?"
     a: "Often not yet. Start with the AI features in the software you already pay for and a well-configured business AI assistant. Custom work makes sense when a recurring workflow crosses several systems, or when you have firm-specific procedures that generic tools can't follow."
+  - q: "Will AI replace accountants?"
+    a: "Not the parts of the job that carry professional responsibility. The Code ties tax positions, reasonable care and lodgment to a registered agent, so AI in accounting mostly removes the document handling and first drafts around that work. Firms that adopt it tend to shift staff time from data entry towards review and advisory work rather than removing the accountant."
+  - q: "What is the difference between accounting automation and AI?"
+    a: "Accounting automation usually means fixed rules: bank feed rules, recurring journals, a workflow that moves a file when a status changes. AI adds judgement-like steps that rules can't handle, such as reading an unfamiliar PDF, classifying a document or drafting a reply. Most useful builds combine both, with rules doing the predictable steps and a model handling the messy inputs."
   - q: "What happens to tax file numbers?"
     a: "TFNs are covered by the Privacy (Tax File Number) Rule 2015 as well as the Privacy Act. Our default is to detect and mask TFNs before any text reaches a model, and to keep them only in the systems that already hold them."
 sources:
@@ -62,14 +66,14 @@ industry:
 disclaimer: legal
 ---
 
-## Where does AI fit in an accounting practice?
+## How can accounting firms use AI? Examples by workflow
 
-**AI earns its keep on the collection, sorting and drafting work that surrounds each job, while the accountant keeps the judgement.** Tax, BAS and advisory work runs on documents: bank statements, invoices, trust distribution minutes, depreciation schedules, emails from clients who attach the wrong year's statement. That's the part a model handles well.
+**The best way to use AI in accounting is on the collection, sorting and drafting work that surrounds each job, while the accountant keeps the judgement.** Tax, BAS and advisory work runs on documents: bank statements, invoices, trust distribution minutes, depreciation schedules, emails from clients who attach the wrong year's statement. That's the part a model handles well, and it's where most practical examples of AI in accounting sit today, whether you buy a feature or commission custom accounting software development.
 
 | Workflow | What AI does | Who checks it |
 |---|---|---|
 | Year-end records collection | Reads what the client uploaded, labels each document, lists what's missing against the job checklist, drafts the follow-up request | Job manager sends the request |
-| Bank and ledger prep | Suggests coding for uncoded transactions using the client's history, flags unusual items | Accountant accepts or recodes in Xero or MYOB |
+| Bookkeeping and bank reconciliation prep | Suggests coding for uncoded transactions using the client's history, flags unusual items | Accountant accepts or recodes in Xero or MYOB |
 | Workpaper population | Extracts figures from statements and schedules into the firm's workpaper template, with a link to each source | Preparer ticks each figure; reviewer signs off |
 | Client queries | Drafts replies to routine questions from the file and the firm's standard wording | Staff member edits and sends |
 | Internal procedures assistant | Answers staff questions from the firm's manuals, checklists and past technical memos | Staff member reads the cited source |
@@ -91,7 +95,7 @@ An AI model provider fits comfortably inside that description. The practical con
 4. **Minimisation:** mask TFNs, bank account numbers and identity document numbers before text reaches a model, unless the task genuinely needs them.
 5. **Access control:** the AI should only see the jobs the user is allowed to open in the practice management system.
 
-The 2024 Code Determination added further obligations, including quality management systems and ensuring services provided on your behalf are competent. Those apply from 1 January 2025 for larger practices and 1 July 2025 for practices with 100 or fewer employees. An AI tool that drafts work is part of how services are delivered on your behalf, so it belongs in your quality management documentation. Members of the professional bodies also carry the confidentiality principle in the APES 110 Code of Ethics.
+The 2024 Code Determination added further obligations, including quality management systems and ensuring those who provide services on your behalf have sufficient knowledge and skills. Those apply from 1 January 2025 for larger practices and 1 July 2025 for practices with 100 or fewer employees. An AI tool that drafts work is part of how services are delivered on your behalf, so it belongs in your quality management documentation. Members of the professional bodies also carry the confidentiality principle in the APES 110 Code of Ethics.
 
 For the wider Privacy Act picture, our guide to [using personal information in AI systems](/guides/privacy-act-and-ai) covers collection, use and overseas disclosure.
 
@@ -116,7 +120,7 @@ For the wider Privacy Act picture, our guide to [using personal information in A
 
 | System | What the AI layer reads or writes | Watch for |
 |---|---|---|
-| Xero | Transactions, contacts, reports, attachments; writes suggested coding back as drafts | Since the 2026 terms change, data from Xero's APIs may not be used to train AI or ML models. Partner tiers based on connection counts and data egress replaced the old revenue share model from 2 March 2026 |
+| Xero | Transactions, contacts, reports, attachments; writes suggested coding back as drafts | Under Xero's revised developer terms, data from its APIs may not be used to train AI or ML models. Partner tiers based on connection counts and data egress replaced the old revenue share model from 2 March 2026 |
 | Xero Practice Manager | Jobs, clients, tasks, time | XPM API access requires a security assessment and use case approval at the time of writing |
 | MYOB (AccountRight, Business, Essentials) | Company file data through the MYOB Business API | MYOB Acumatica has a separate API and developer program |
 | Practice and document tools (for example FYI, Karbon, SuiteFiles, SharePoint) | Client documents, emails, job status | Each has its own API limits and permission model |
@@ -144,7 +148,7 @@ Nothing in that flow changes who is responsible for the return. What changes is 
 
 - **Shadow AI.** If the firm doesn't provide an approved tool, staff will use their own. Providing a sanctioned assistant with the right terms usually reduces risk more than banning AI outright.
 - **Wrong-period figures.** A model reading a bank statement can pick up the opening balance of the wrong year. Checking the statement period against the job's financial year catches this before it reaches a workpaper.
-- **Plausible but wrong explanations.** When asked why a figure changed, a model may invent a reason. Keep AI explanations out of client-facing material unless a person has confirmed them against the file.
+- **Plausible but wrong explanations.** When asked why a figure changed, a model may invent a reason (see [why AI hallucinates and how to reduce it](/guides/ai-hallucinations)). Keep AI explanations out of client-facing material unless a person has confirmed them against the file.
 - **Cross-client leakage.** A shared knowledge base built from past files can surface one client's details in another client's answer. Build retrieval per client, or restrict shared content to the firm's own procedures and de-identified technical memos.
 
 ## Should you build or buy?
@@ -162,7 +166,7 @@ Our [build vs buy guide](/guides/build-vs-buy-software) goes through the total c
 
 ## What does it cost for a mid-sized firm?
 
-**Custom AI work for a mid-sized firm typically runs 6 to 16 weeks and $40,000 to $180,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
+**Custom AI work for a mid-sized firm typically runs 6 to 19 weeks and $40,000 to $205,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
 
 | Scope | Typical duration | Typical range (AUD, ex GST) |
 |---|---|---|

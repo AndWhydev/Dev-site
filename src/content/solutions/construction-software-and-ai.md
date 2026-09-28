@@ -1,11 +1,11 @@
 ---
 title: "Construction software and AI in Australia"
-metaTitle: "Construction Software and AI Development in Australia"
-description: "Custom construction software shaped by state security of payment laws, WHS site records and Procore, Xero and MYOB integrations. Use cases, phases and costs."
+metaTitle: "Construction Software Development and AI in Australia"
+description: "Construction software development and AI in construction for Australian builders: security of payment, WHS site records, Procore, Xero and MYOB, and costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Custom construction software earns its cost where off-the-shelf tools don't fit how a builder or trade business actually runs: payment claims that follow each state's security of payment timeframes, site records that stand up under WHS law, and job costing that flows into Xero or MYOB without rekeying. AI is useful on the document side, such as searching specifications, drafting RFIs and checking claims against contracts, but it doesn't replace an estimator's judgement or a site supervisor's sign-off. A focused module typically costs $40,000 to $150,000 (AUD, ex GST) as a market range, not a quote."
+summary: "Custom construction software development earns its cost where off-the-shelf tools don't fit how a builder or trade business actually runs: payment claims that follow each state's security of payment timeframes, site records that stand up under WHS law, and job costing that flows into Xero or MYOB without rekeying. AI is useful on the document side, such as searching specifications, drafting RFIs and checking claims against contracts, but it doesn't replace an estimator's judgement or a site supervisor's sign-off. A focused module typically costs $40,000 to $150,000 (AUD, ex GST) as a market range, not a quote."
 takeaways:
   - "Security of payment law differs by state: in NSW a payment schedule is due within 10 business days of a claim, while Queensland allows 15 business days, so claims software must calculate deadlines per contract and state."
   - "NSW head contractors must hold subcontractor retention money in a trust account on projects over $20 million, and Queensland requires project and retention trust accounts on eligible contracts."
@@ -21,6 +21,8 @@ faqs:
     a: "It should. Basements, rural jobs and new estates often have poor coverage, so site apps should be offline first: forms, photos and sign-offs are saved on the device and sync when a connection returns, with conflict handling for records edited in two places."
   - q: "Can AI do quantity takeoff from our drawings?"
     a: "Tools exist that assist with takeoff from PDF and CAD drawings, and they're improving, but accuracy depends heavily on drawing quality and conventions. We'd treat any automated takeoff as a first pass for an estimator to check, and we'd measure it against your past jobs before trusting it on a tender."
+  - q: "How long does custom construction software take to build?"
+    a: "A focused module, such as payment claims and retention for two states with a Xero integration, typically takes 12 to 20 weeks from the start of discovery to rollout. An offline site app for diaries, SWMS and inductions adds several weeks on top. A full custom job management system is a larger project, scoped individually after discovery."
   - q: "How do you integrate with Xero or MYOB?"
     a: "Through their official APIs. Typically job costs, supplier bills, progress claims and payments sync between the job system and the ledger, with the accounting package remaining the source of truth for money. Each API has rate limits and data model quirks, so the integration design is settled in discovery rather than assumed."
   - q: "What happens with Victoria, since it didn't adopt the model WHS laws?"
@@ -83,6 +85,12 @@ disclaimer: legal
 
 The existing [construction and trades](/industries/construction-trades) page covers the wider set of services. This page is about how the industry's rules change what gets built.
 
+## What software do construction companies use?
+
+**Most Australian builders run a stack rather than one product: a construction management platform for projects, an accounting package for money, and a handful of point tools for estimating, site forms and document control.** Construction management software is the project layer: it holds drawings and revisions, RFIs, variations, site diaries, defects and subcontractor communication in one place. Procore is one example of this kind of platform. Money usually sits in Xero or MYOB for small and mid-sized businesses, while larger contractors often run a fuller ERP system.
+
+Around those sit the tools that cause the rekeying problems in the table above: estimating spreadsheets or dedicated estimating software, a separate app for SWMS and inductions, a shared drive for documents, and email for claims. Custom construction software rarely replaces the platform or the ledger. It fills the gaps between them, which is why the rest of this page is about claims, site records and integrations rather than a new all-in-one system.
+
 ## How does security of payment law shape a payment claims system?
 
 **Every state and territory has its own security of payment Act with its own deadlines, so a claims system has to know which Act governs each contract and calculate dates in business days from the day a claim is made.** Getting a date wrong can cost a claimant their right to adjudication, or leave a respondent liable for the full claimed amount.
@@ -133,9 +141,9 @@ The engineering challenge is less the forms than the conditions: gloves, glare, 
 
 Every vendor API has rate limits, webhooks of varying reliability and data model quirks, so integrations are designed in discovery. Our [API development](/services/api-development) and [build vs buy](/guides/build-vs-buy-software) pages go further.
 
-## Where does AI help on construction data?
+## How is AI used in construction?
 
-**AI is most useful on the mountain of documents a project produces: specifications, contracts, drawings registers, RFIs, variations and correspondence.** It's least useful where the answer depends on physical judgement.
+**AI in construction is most useful on the mountain of documents a project produces: specifications, contracts, drawings registers, RFIs, variations and correspondence.** It's least useful where the answer depends on physical judgement.
 
 Realistic uses:
 
@@ -144,7 +152,7 @@ Realistic uses:
 - Drafting RFIs, variation descriptions and site diary summaries for a person to edit.
 - Comparing tender submissions against the scope to highlight exclusions.
 
-Uses to be careful with: automated takeoff without checking, anything that decides whether a claim is valid, and safety decisions. In each case a qualified person signs off, and the system logs what the AI suggested.
+Uses to be careful with: automated takeoff without checking (including in estimating software sold as AI powered), anything that decides whether a claim is valid, and safety decisions. In each case a qualified person signs off, and the system logs what the AI suggested.
 
 ## What usually goes wrong with construction software projects?
 

@@ -1,12 +1,12 @@
 ---
 title: "Is there an AI Act in Australia? AI regulation in 2026"
-metaTitle: "Is There an AI Act in Australia? AI Regulation in 2026"
-description: "Australia has no standalone AI Act. How AI is regulated in 2026 through existing laws, the National AI Plan, privacy reform and voluntary guidance."
+metaTitle: "AI Regulation in Australia 2026: Is There an AI Act?"
+description: "Australia has no standalone AI Act. How AI regulation in Australia works in 2026: the AI laws that already apply, the National AI Plan and the EU AI Act."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "No. At the time of writing (September 2026), Australia has no standalone AI Act and no mandatory AI guardrails law. The National AI Plan, released on 2 December 2025, confirmed that the government will regulate AI through existing, largely technology-neutral laws, such as privacy, consumer, anti-discrimination, online safety and work health and safety law, supported by a new AI Safety Institute and voluntary guidance. The one new AI-relevant legal duty with a fixed date is the Privacy Act automated decision-making disclosure, which starts on 10 December 2026."
+summary: "No. At the time of writing (September 2026), Australia has no standalone AI Act and no mandatory AI guardrails law, so AI regulation in Australia works through laws that already exist. The National AI Plan, released on 2 December 2025, confirmed that the government will regulate AI through existing, largely technology-neutral laws, such as privacy, consumer, anti-discrimination, online safety and work health and safety law, supported by a new AI Safety Institute and voluntary guidance. The one new AI-relevant legal duty with a fixed date is the Privacy Act automated decision-making disclosure, which starts on 10 December 2026."
 takeaways:
   - "There is no Australian AI Act. The government proposed mandatory guardrails for high-risk AI in 2024 but chose, in the December 2025 National AI Plan, to rely on existing laws instead."
   - "Existing laws already bite on AI: the Privacy Act, Australian Consumer Law, anti-discrimination law, online safety law, work health and safety law, negligence and directors' duties."
@@ -21,7 +21,7 @@ faqs:
   - q: "Is the Voluntary AI Safety Standard still current?"
     a: "It has been superseded as the recommended starting point. On 21 October 2025 the National AI Centre published the Guidance for AI Adoption, which condenses the 10 voluntary guardrails into 6 essential practices. The standard remains published for reference."
   - q: "Which laws apply to AI in Australia right now?"
-    a: "The government's own summary lists privacy law, the Australian Consumer Law, anti-discrimination law, online safety law, work health and safety law, product liability, negligence, defamation, intellectual property, directors' duties and sector rules such as APRA's prudential standards and the Security of Critical Infrastructure Act."
+    a: "The government's own summary lists privacy law, the Australian Consumer Law, anti-discrimination law, online safety law, work health and safety law, product liability, negligence, defamation, intellectual property, directors' duties, competition and criminal law, and sector rules such as financial services laws and the Security of Critical Infrastructure Act."
   - q: "Is an Australian AI law coming?"
     a: "Targeted changes are more likely than a single AI Act. The National AI Plan lists work on privacy reform, copyright and AI, consumer law clarifications, AI in healthcare and medical device software, and online harms. Check this page's updated date, since the landscape moves quickly."
   - q: "Does the EU AI Act apply to Australian companies?"
@@ -48,6 +48,9 @@ sources:
   - title: "EU Artificial Intelligence Act, Article 2: Scope"
     url: "https://artificialintelligenceact.eu/article/2/"
     publisher: "Future of Life Institute (EU AI Act Explorer)"
+  - title: "Criminal Code Amendment (Deepfake Sexual Material) Act 2024 (No. 78, 2024)"
+    url: "https://www.legislation.gov.au/C2024A00078/asmade/text"
+    publisher: "Federal Register of Legislation"
   - title: "Privacy and Other Legislation Amendment Act 2024 (No. 128, 2024), as made"
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
     publisher: "Federal Register of Legislation"
@@ -89,7 +92,7 @@ The National AI Plan, launched by the Department of Industry, Science and Resour
 | 15 December 2025 | DTA AI policy version 2.0 takes effect |
 | 10 December 2026 | Privacy Act automated decision-making disclosures (APP 1.7 to 1.9) commence |
 
-## Which existing laws apply to AI?
+## What AI laws apply in Australia right now?
 
 **Most of the legal risk in an AI system comes from laws you already know, applied to new failure modes.** The National AI Centre's summary of AI and Australian law groups them by the harm they address. The table maps that summary to what engineering teams actually control.
 
@@ -104,6 +107,14 @@ The National AI Plan, launched by the Department of Industry, Science and Resour
 | Supply chain | Privacy Act transparency, ACL unfair contract terms, competition law | Vendor due diligence, contract terms, documentation passed downstream |
 
 The government's summary also notes that Fair Work obligations can require consulting employees before introducing AI in the workplace, and that state laws apply where AI is used for workplace surveillance.
+
+## Are there Australian laws on deepfakes and AI copyright?
+
+**Deepfakes: yes, for sexual material. Copyright: existing law applies, and the government lists copyright and AI as an area of ongoing work rather than a settled new rule.**
+
+The Criminal Code Amendment (Deepfake Sexual Material) Act 2024 added section 474.17A to the Criminal Code. It makes it an offence to use a carriage service to transmit sexual material depicting an adult without their consent, and it expressly covers material that has been "created, or altered in any way, using technology". It is written with generated and manipulated content in mind, even though it doesn't use the word AI. Other deepfake harms, such as scams, defamation or impersonation, fall under consumer, defamation, online safety and criminal law.
+
+On copyright, the National AI Plan includes work on copyright and AI among its targeted reforms. Unless and until that work changes the law, the Copyright Act 1968 applies to AI training data and outputs in the same way it applies to anything else, which is why the risk table above lists copyright under misuse of data. If your product trains on or reproduces third-party content, get copyright advice specific to your use.
 
 ## What's actually new and binding?
 

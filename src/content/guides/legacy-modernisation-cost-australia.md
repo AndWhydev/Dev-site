@@ -1,12 +1,12 @@
 ---
 title: "How much does legacy system modernisation cost in Australia?"
 metaTitle: "Legacy System Modernisation Cost in Australia (2026)"
-description: "Legacy modernisation in Australia typically costs $40k to $700k+ AUD depending on approach. Ranges for rehost, replatform, refactor, rebuild and replace."
+description: "How much does legacy system modernisation cost in Australia? Typically $40k to $700k+ AUD, from a cloud rehost to a full rebuild. Costs by approach explained."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Modernising a single legacy business application in Australia typically costs $40k to $200k AUD (ex GST) if you move it with modest changes, and $200k to $700k or more if you re-architect or rebuild it. Core or regulated systems regularly pass $1 million. The approach you choose (rehost, replatform, refactor, rebuild or replace) drives the price more than any other factor, and a paid assessment of $10k to $40k is the usual first step."
+summary: "Legacy system modernisation in Australia typically costs $40k to $200k AUD (ex GST) for a single business application moved with modest changes, and $200k to $700k or more if you re-architect or rebuild it. Core or regulated systems regularly pass $1 million. The approach you choose (rehost, replatform, refactor, rebuild or replace) drives the price more than any other factor, and a paid assessment of $10k to $40k is the usual first step."
 takeaways:
   - "Approach sets the budget: rehosting a system costs a fraction of rebuilding it, and they solve different problems."
   - "Most of the cost in legacy work is discovery and risk: undocumented logic, unknown integrations and data quality."
@@ -20,6 +20,10 @@ faqs:
     a: "Refactoring is usually cheaper and lower risk when the core design is sound and the business logic is correct. Rebuilding makes sense when the platform itself is the problem (unsupported language, no source code, a design that blocks every change) and the business process has changed enough that you'd rebuild it differently anyway."
   - q: "How long does legacy modernisation take?"
     a: "A rehost of one application can take 6 to 14 weeks. Replatforming and refactoring commonly take 3 to 9 months. Rebuilding a core system incrementally often runs 9 to 24 months, delivered in stages so users see progress along the way."
+  - q: "How much does it cost to migrate a legacy application to the cloud?"
+    a: "A lift-and-shift rehost of one moderate-sized application typically costs $15k to $80k (AUD, ex GST), and a replatform onto managed cloud services $40k to $200k. The worked example on this page, a .NET app moved to Azure Australia East with a runtime upgrade, comes to a planning budget of $176,400 including contingency."
+  - q: "How much does mainframe modernisation cost?"
+    a: "Mainframe, AS/400 and 4GL systems sit at the top of the ranges on this page, because the specialists are scarce and the systems are usually core to the business. Core or regulated systems regularly pass $1 million. A paid assessment is essential before anyone quotes."
   - q: "Can AI coding tools reduce the cost of legacy modernisation?"
     a: "They can shorten parts of it, especially reading and documenting old code, writing tests around existing behaviour and translating repetitive code. They don't remove the need for someone to decide what the system should do, verify behaviour against real data, and manage cutover. Treat AI savings as a reduction in engineering days, not in discovery or testing."
   - q: "Should I replace my custom system with off-the-shelf SaaS instead?"
@@ -60,9 +64,9 @@ service:
 disclaimer: financial
 ---
 
-## What does legacy modernisation cost, by approach?
+## How much does legacy modernisation cost, by approach?
 
-**The approach you choose is the single biggest cost driver, so pick the approach first and the budget follows.** AWS groups migration options into the "7 Rs" (retire, retain, rehost, relocate, repurchase, replatform, refactor). For custom business software, the useful set is below, plus a full rebuild, which AWS doesn't list because it isn't a migration.
+**The approach you choose is the single biggest cost driver, so pick the approach first and the budget follows.** That applies whether you call it legacy system modernisation, application modernisation (modernization, in US usage), a cloud migration or a system replacement. AWS groups migration options into the "7 Rs" (retire, retain, rehost, relocate, repurchase, replatform, refactor). For custom business software, the useful set is below, plus a full rebuild, which AWS doesn't list because it isn't a migration.
 
 These are typical Australian market ranges for one business application of moderate size (tens of screens, a handful of integrations, one main database), in AUD, ex GST, covering engineering, testing, data migration and cutover. They are ranges, not quotes.
 
@@ -116,9 +120,9 @@ The same system rehosted as-is onto a cloud virtual machine might cost $25k to $
 6. **Regulation and audit.** Financial, health and government systems need evidence of data integrity and access controls through the migration, and often a formal security review.
 7. **Platform age.** Mainframes, AS/400 and obscure 4GL languages need specialists who are scarce and expensive. AWS lists mainframe and mid-range systems among those needing "careful assessment and planning" before any move.
 
-## What isn't usually included in a modernisation quote?
+## What are the hidden costs of legacy modernisation?
 
-**Check the exclusions before you compare quotes, because two numbers that look different may cover different work.** Commonly excluded:
+**The hidden costs are usually in the exclusions, so check them before you compare quotes, because two numbers that look different may cover different work.** Commonly excluded:
 
 - New cloud hosting and licence costs (these replace your current costs, so compare net)
 - Third-party SaaS subscriptions if you replace part of the system
@@ -135,12 +139,12 @@ The same system rehosted as-is onto a cloud virtual machine might cost $25k to $
 - **Go incremental.** The [strangler fig pattern](/guides/strangler-fig-pattern) replaces one module at a time behind a routing layer. You pay as you go and can stop when the remaining legacy is cheap enough to leave.
 - **Move, then improve.** For a group of systems, rehost or replatform first and refactor later, as AWS recommends. You get off unsupported infrastructure quickly and spread the larger spend.
 - **Buy where the process is standard.** If your legacy app mostly does what a mainstream product does, replacing it can be cheaper than modernising. Our [build vs buy guide](/guides/build-vs-buy-software) covers that decision.
-- **Pay for discovery.** A $10k to $40k assessment that maps code, data and integrations is the best defence against a mid-project blowout. See [what a discovery phase covers](/guides/software-discovery-phase).
+- **Pay for discovery.** A $10k to $40k assessment that maps code, data and integrations (more than a typical new-build discovery, because the old system has to be understood as well as the new one planned) is the best defence against a mid-project blowout. See [what a discovery phase covers](/guides/software-discovery-phase).
 - **Use AI tools for the reading, not the deciding.** AI-assisted code analysis and test generation can cut engineering days on documentation and repetitive translation. Keep humans on business rules, data checks and cutover.
 
-## What does it cost to keep the old system instead?
+## Is legacy modernisation worth the cost? Compare it with keeping the old system
 
-**Keeping a legacy system isn't free, and the running cost is the number to compare a modernisation budget against.** The US Government Accountability Office reported in 2025 that federal agencies typically spend about 80% of their IT budgets operating and maintaining existing systems, legacy ones included, leaving little for improvement. Australian organisations face the same dynamic at smaller scale.
+**Modernisation is worth it when the old system costs more to keep, in money, risk and lost change, than the project costs to deliver: the running cost of standing still is the number to compare a modernisation budget against.** The US Government Accountability Office reported in 2025 that federal agencies typically spend about 80% of their IT budgets operating and maintaining existing systems, legacy ones included, leaving little for improvement. Australian organisations face the same dynamic at smaller scale.
 
 Add up the real annual cost of standing still:
 

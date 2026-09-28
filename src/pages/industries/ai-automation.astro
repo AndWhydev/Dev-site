@@ -2,12 +2,12 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'AI & Automation Development Australia | All Webbed Labs',
-  metaDescription: 'Custom LLM apps, RAG systems, AI chatbots and automation for Australian enterprises moving from AI pilot to production, with 100% Australian data sovereignty.',
+  metaTitle: 'AI Automation Services Australia | All Webbed Labs',
+  metaDescription: 'AI automation services for Australian businesses: custom LLM apps, RAG knowledge bases, AI agents and workflow automation, taken from pilot to production.',
 
   industryName: 'AI & Automation',
-  heroHeadline: 'Enterprise AI That Delivers Real Operational Value',
-  heroTagline: 'Custom AI tools, intelligent automation and ML pipelines for organisations ready to move beyond AI experimentation into production deployment.',
+  heroHeadline: 'AI Automation Services That Reach Production',
+  heroTagline: 'AI automation for Australian businesses: custom AI tools, AI agents, business process automation and ML pipelines for organisations ready to move beyond experimentation into production.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
 
@@ -44,7 +44,8 @@ const data = {
     'Predictive analytics and forecasting models',
     'ML model training, fine-tuning and deployment',
     'AI governance and safety frameworks',
-    'Workflow automation with AI decision points',
+    'Workflow and business process automation with AI decision points',
+    'AI agents that act across your systems, with human approval steps',
     'Computer vision and image processing applications',
   ],
 
@@ -53,15 +54,30 @@ const data = {
   useCases: [],
 
   relevantServices: [
-    { title: 'AI & Machine Learning Development', href: '/services/data-analytics' },
-    { title: 'Custom Web Application Development', href: '/services/react-nextjs' },
-    { title: 'API Development & Integrations', href: '/services/api-development' },
+    { title: 'LLM Integration', href: '/services/llm-integration' },
+    { title: 'RAG Knowledge Base Development', href: '/services/rag-knowledge-base' },
+    { title: 'AI Agent Development', href: '/services/ai-agent-development' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'AI Knowledge Bases for Professional Services', href: '/solutions/professional-services-knowledge-base' },
+    { title: 'AI for Australian Law Firms', href: '/solutions/ai-for-law-firms' },
+    { title: 'AI for Not-for-Profits', href: '/solutions/ai-for-not-for-profits' },
     { title: 'Data & Analytics Platforms', href: '/services/data-analytics' },
-    { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },
     { title: 'Security & Compliance Engineering', href: '/services/cybersecurity' },
   ],
 
   faqs: [
+    {
+      question: 'What business processes can AI automation handle?',
+      answer: "AI automation works best on repetitive, text-heavy work where a person currently reads, decides and re-keys: triaging inboxes and support tickets, extracting data from invoices, forms and contracts, answering staff questions from policy documents, drafting routine correspondence, and moving information between systems such as your CRM, finance platform and document store. Rules-based steps are usually cheaper to automate with a plain workflow; an AI model earns its place where the input is unstructured or needs judgement. High-stakes decisions should keep a human approval step.",
+    },
+    {
+      question: 'How much do AI automation services cost in Australia?',
+      answer: "It depends on how many systems are involved, how sensitive the data is and how much evaluation the use case needs. We quote a fixed price after a paid discovery rather than an hourly estimate. For typical Australian market ranges and what drives them, see our guides to AI development cost in Australia and workflow automation cost.",
+    },
+    {
+      question: 'Should we use n8n, Make or Zapier, or build custom AI automation?',
+      answer: "If the process is simple, low volume and the data can leave Australia, a no-code tool like Zapier, Make or n8n is often the right answer, and we will say so. Custom AI automation makes sense when you need Australian data residency, complex logic, integrations those tools don't support well, proper evaluation of AI outputs, or when per-task pricing becomes expensive at volume. n8n can also be self-hosted in an Australian region, which is a useful middle path. Our n8n vs Make vs Zapier comparison guide covers the trade-offs.",
+    },
     {
       question: 'Can you build AI systems that keep our data in Australia?',
       answer: "Yes, and this is a common requirement. We have multiple architectures for Australian data sovereignty. AWS Bedrock in Sydney region gives you access to Claude, Llama and other frontier models without data leaving Australia. We also deploy open-weight models (Llama, Mistral, Qwen) on your own AWS or Azure infrastructure in Australian regions. For organisations with the strictest requirements, we can deploy fully on-premises or in air-gapped environments. We assess the right architecture for your sensitivity profile and performance requirements in discovery.",
@@ -76,7 +92,7 @@ const data = {
     },
     {
       question: 'We\'ve already run an AI pilot that didn\'t go to production, can you help rescue it?',
-      answer: "Yes, and this is a common engagement type for us. We start with a candid assessment of why the pilot stalled, usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
+      answer: "Yes. We start with a candid assessment of why the pilot stalled, usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
     },
     {
       question: 'How do you handle hallucinations in production AI systems?',
@@ -85,7 +101,7 @@ const data = {
   ],
 
   ctaHeadline: 'Move Your AI From Experiment to Production',
-  ctaDescription: "The organisations getting real value from AI in 2025 are the ones that treated it as an engineering problem, not a vendor selection exercise. We build the data pipelines, evaluation frameworks, guardrails and integrations that turn promising AI prototypes into reliable production systems. Let's talk about where you are and where you need to be.",
+  ctaDescription: "The organisations getting real value from AI are the ones that treated it as an engineering problem, not a vendor selection exercise. We build the data pipelines, evaluation frameworks, guardrails and integrations that turn promising AI prototypes into reliable production systems. Let's talk about where you are and where you need to be.",
 };
 ---
 <IndustryPageLayout {...data} />

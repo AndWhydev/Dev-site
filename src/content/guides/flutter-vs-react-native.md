@@ -1,12 +1,12 @@
 ---
 title: "Flutter vs React Native in 2026: which should you build your app with?"
-metaTitle: "Flutter vs React Native in 2026: A Fair Comparison"
-description: "Flutter vs React Native in 2026: architecture, performance, hiring, updates and cost compared, with a guide to when each framework is the better choice."
+metaTitle: "Flutter vs React Native 2026: Which Is Better?"
+description: "Flutter vs React Native in 2026: which is better for your mobile app? Performance, hiring, updates and cost compared, and when each is the right pick."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Both Flutter and React Native are mature, production-ready ways to ship one codebase to iOS and Android, and either is the right answer for most business apps. Choose Flutter when you want a consistent custom interface, strong rendering performance and one toolkit across mobile, web and desktop. Choose React Native when your team already works in React and TypeScript, you want to share code with a React web app, or you rely on over-the-air updates through Expo."
+summary: "Neither Flutter nor React Native is better across the board in 2026: both are mature, production-ready ways to ship one codebase to iOS and Android, and either is the right answer for most business apps. Choose Flutter when you want a consistent custom interface, strong rendering performance and one toolkit across mobile, web and desktop. Choose React Native when your team already works in React and TypeScript, you want to share code with a React web app, or you rely on over-the-air updates through Expo."
 takeaways:
   - "Flutter draws every pixel itself with its Impeller renderer; React Native renders real native platform components driven from JavaScript."
   - "Both have modernised: React Native has been New Architecture only since 0.82 (October 2025) with Hermes V1 as default from 0.84, and Flutter's Impeller is the default renderer on iOS and on Android API 29+."
@@ -16,6 +16,10 @@ takeaways:
 faqs:
   - q: "Is Flutter or React Native faster?"
     a: "For typical business apps, users won't notice a difference. Flutter has an edge for animation-heavy and custom-drawn interfaces because it controls rendering end to end. React Native's New Architecture removed the old asynchronous bridge, which closed much of the historic gap for everyday screens."
+  - q: "Is Flutter or React Native better for beginners?"
+    a: "A developer who already knows JavaScript will be productive in React Native sooner, and the React skills carry over to web work. Someone starting from scratch often finds Flutter easier to get going with, because the SDK, widgets and tooling come in one package with fewer choices to make. For a business, the better question is which one your future maintainers will know."
+  - q: "Is Flutter or React Native better for games?"
+    a: "Neither is designed for serious games. For 3D, physics-heavy or action games, a game engine such as Unity or Unreal is the usual choice. Flutter can handle simple 2D and casual games because it draws its own graphics, and both frameworks are fine for gamified features inside a normal business app."
   - q: "Which is cheaper to build with in Australia?"
     a: "Neither is inherently cheaper. Both save roughly the cost of a second native app compared with building separately for iOS and Android. Cost differences come from the team: a React shop will be quicker in React Native, and a Flutter team will be quicker in Flutter. See our app development cost guide for Australian ranges."
   - q: "Can Flutter apps be updated without an app store release?"
@@ -43,6 +47,18 @@ sources:
   - title: "Shorebird pricing"
     url: "https://shorebird.dev/pricing"
     publisher: "Shorebird"
+  - title: "Xamarin official support policy"
+    url: "https://dotnet.microsoft.com/en-us/platform/support/policy/xamarin"
+    publisher: "Microsoft"
+  - title: "What is .NET MAUI?"
+    url: "https://learn.microsoft.com/en-us/dotnet/maui/what-is-maui"
+    publisher: "Microsoft"
+  - title: "Kotlin Multiplatform"
+    url: "https://www.jetbrains.com/kotlin-multiplatform/"
+    publisher: "JetBrains"
+  - title: "Ionic Framework documentation"
+    url: "https://ionicframework.com/docs"
+    publisher: "Ionic"
   - title: "2025 Developer Survey: Technology"
     url: "https://survey.stackoverflow.co/2025/technology"
     publisher: "Stack Overflow"
@@ -66,7 +82,7 @@ service:
 
 A few years ago the comparison had sharp edges: React Native's bridge caused jank, and Flutter had early-renderer stutter on iOS. Both problems have been engineered away. React Native shipped its first New Architecture only release in 0.82 (October 2025) and made Hermes V1 the default engine in 0.84 (February 2026). Flutter's Impeller renderer became the default on iOS and on Android API 29+ from Flutter 3.27, and is now the only renderer on iOS.
 
-## How do they compare side by side?
+## Flutter vs React Native: how do they compare side by side?
 
 **The core difference is rendering: Flutter paints its own widgets, while React Native drives the platform's native components.** Most other differences flow from that. The table reflects the frameworks' own documentation as at 28 September 2026.
 
@@ -75,13 +91,27 @@ A few years ago the comparison had sharp edges: React Native's bridge caused jan
 | Backed by | Google | Meta, with Expo and a large community |
 | Language | Dart | JavaScript or TypeScript (strict TypeScript API default from 0.87) |
 | Latest stable (Sept 2026) | 3.47 (12 August 2026) | 0.87 (11 August 2026) |
-| Rendering | Draws every pixel with Impeller; identical look on every device | Renders native iOS and Android components |
+| Rendering | Draws every pixel itself (Impeller, with a legacy renderer fallback on older Android devices); identical look on every device | Renders native iOS and Android components |
 | Platforms | iOS, Android, web (with WebAssembly), Windows, macOS, Linux | iOS, Android; web, TV and more through Expo and community projects |
 | Recommended starting point | Flutter SDK and CLI | A framework, with Expo named in the official docs |
 | Over-the-air updates | Third-party (Shorebird), billed per patch install | Expo EAS Update, billed by monthly active users |
 | Code sharing with a web app | Flutter web, best for app-like tools | Shares logic and some components with React web apps |
 | Talent pool | Smaller; Dart used by 5.9% of 2025 Stack Overflow respondents | Very large; JavaScript 66%, TypeScript 43.6% |
 | Native look and feel | Close imitation (Material and Cupertino widgets) | Native by default |
+
+## What about Kotlin Multiplatform, .NET MAUI, Ionic and Xamarin?
+
+**Flutter and React Native are the two most common cross-platform choices, but not the only ones, and each alternative suits a particular kind of team.**
+
+| Alternative | What it is | When it fits |
+|---|---|---|
+| Kotlin Multiplatform (KMP) | Shares Kotlin code across Android, iOS, desktop, web and server. You can share business logic behind fully native interfaces, or share the interface too with Compose Multiplatform. | Teams with strong Android and Kotlin skills, or an existing native app that wants to share logic gradually |
+| .NET MAUI | Microsoft's cross-platform framework for mobile and desktop apps written in C# and XAML | Organisations standardised on .NET and Visual Studio |
+| Ionic | An open source toolkit for building apps with web technologies (HTML, CSS, JavaScript), deployed through Capacitor or run as a progressive web app | Web teams building simpler, content or form-driven apps |
+| Xamarin | The older Microsoft framework. Support ended on 1 May 2024, with .NET MAUI as the successor for Xamarin.Forms apps | Only as a migration source, not for new builds |
+| Native Swift and Kotlin | Separate apps per platform | Apps that depend on deep platform features (see below) |
+
+If your team isn't already invested in Kotlin or .NET, Flutter vs React Native remains the main decision for most business apps.
 
 ## Where does Flutter win?
 
@@ -138,7 +168,7 @@ A practical budget for either: plan an upgrade sprint at least twice a year, kee
 
 For most business apps, such as portals, booking tools, field-service apps and internal tools, that cost isn't justified. And if the need is basic data capture for staff, a low-code tool may do; see [low-code vs custom development](/guides/low-code-vs-custom-development).
 
-## Which should you choose? A decision checklist
+## Which is better for your app, Flutter or React Native? A decision checklist
 
 Choose **Flutter** if most of these are true:
 
@@ -159,4 +189,4 @@ If it's a genuine tie, pick the one your future maintainers already know. Whoeve
 
 ## How All Webbed Labs approaches the choice
 
-We build most mobile work in Flutter, because it suits the custom interfaces and mobile-plus-desktop tools we're usually asked for. We'll recommend React Native when your team works in React and will own the app afterwards, and we'll say so during discovery rather than after the quote. Either way the code sits in your repository from day one. See our [Flutter development service](/services/flutter-development), or our [React and Next.js work](/services/react-nextjs) for web front ends.
+We build most mobile work in Flutter, because it suits the custom interfaces and mobile-plus-desktop tools we focus on. We'll recommend React Native when your team works in React and will own the app afterwards, and we'll say so during discovery rather than after the quote. Either way the code sits in your repository from day one. See our [Flutter development service](/services/flutter-development), or our [React and Next.js work](/services/react-nextjs) for web front ends.

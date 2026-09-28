@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Data Engineering & AI Data Readiness | All Webbed Labs",
-  metaDescription: "Data pipelines, warehouses, quality testing and governance that give AI and analytics clean, documented, permissioned data, hosted in Australian regions.",
+  metaTitle: "Data Engineering Services Australia | All Webbed Labs",
+  metaDescription: "Data engineering services from Sydney: pipelines, warehouses, quality testing and governance that give AI and analytics clean, permissioned, onshore data.",
   category: "AI & Data",
   serviceName: "Data Engineering",
   slug: "data-engineering",
   heroHeadline: "The Data Foundation Your AI and Analytics Depend On",
-  heroTagline: "Pipelines, warehouses, quality checks and governance that turn scattered, inconsistent source data into something a model, a dashboard or an auditor can trust.",
+  heroTagline: "Data engineering that turns scattered, inconsistent source data into something a model, a dashboard or an auditor can trust: pipelines, warehouses, quality checks and governance.",
   summaryStatement: "Data engineering is the discipline of building and operating the pipelines, storage and controls that move data from source systems into a governed platform, tested for quality, documented with lineage and classified for sensitivity, so that analytics, machine learning and AI applications are built on data that is accurate, current and lawfully usable.",
   description: [
     "Most AI projects that stall do not fail on the model. They fail on the data. The customer record exists in three systems with three spellings, the product table was last reconciled two years ago, the documents an assistant should answer from sit in shared drives with no owner and no permissions model, and nobody can say which fields contain personal information. A dashboard built on that data shows confident wrong numbers; an AI feature built on it gives confident wrong answers, faster. Data engineering is the unglamorous work that fixes this at the source: getting data out of operational systems reliably, cleaning and joining it in one place, testing it continuously, and recording where every field came from and who is allowed to use it.",
-    "We design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse in an Australian region, transforming it in version-controlled, tested models, and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, owned by you and documented well enough for your team to run.",
+    "As data engineering consultants, we design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse in an Australian region, transforming it in version-controlled, tested models (the ELT pattern), and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, owned by you and documented well enough for your team to run.",
   ],
   benefits: [
     {
@@ -129,6 +129,22 @@ const data = {
       question: "How long does it take to build a data platform?",
       answer: "A first production use case on a new platform, with a handful of sources, tested models and governance basics, typically takes 8 to 12 weeks. Broader platforms grow source by source after that. We deliberately deliver one real use case end to end early, rather than spending months ingesting everything before anyone sees value.",
     },
+    {
+      question: "What is data engineering, in simple terms?",
+      answer: "Data engineering is the plumbing behind analytics and AI. Data engineers build the pipelines that copy data out of the systems where work happens, clean and combine it in one governed place, test it every time it loads and record where each field came from. Without that layer, every dashboard and AI feature ends up doing its own inconsistent version of the same clean-up.",
+    },
+    {
+      question: "How much do data engineering services cost?",
+      answer: "Typical Australian market ranges are $15k to $35k for an AI data readiness assessment, $50k to $120k for a data platform foundation with a handful of sources and one production use case, and $150k or more for an enterprise platform (AUD, ex GST). Warehouse, lakehouse and connector subscriptions are billed separately by vendors. After a paid discovery, the build is quoted at a fixed price.",
+    },
+    {
+      question: "What is the difference between ETL and ELT?",
+      answer: "ETL transforms data before loading it into the destination; ELT loads raw data first and transforms it inside the warehouse, usually in SQL with a tool such as dbt. Most modern cloud platforms favour ELT because the raw data stays available for reprocessing and transformations are version controlled. ETL still suits cases where data must be cleaned or masked before it lands, such as stripping personal information.",
+    },
+    {
+      question: "Which data engineering tools do you use?",
+      answer: "We choose per project from mature, widely supported tools: Fivetran or Airbyte for ingestion, dbt for transformation, Apache Airflow or Dagster for orchestration, Snowflake, Google BigQuery, Databricks or PostgreSQL for storage, Debezium for change data capture, and Great Expectations or Soda for quality tests. We prefer the simplest combination your team can run after handover over the longest feature list.",
+    },
   ],
   comparison: {
     rightFor: [
@@ -150,7 +166,7 @@ const data = {
     {
       name: "AI data readiness assessment (typical range)",
       range: "$15k to $35k",
-      detail: "Typical Australian market range, AUD ex GST, not a quote. About 10 to 25 senior days at a planning rate of roughly $1,400 a day: source and document inventory, quality and sensitivity assessment against your AI use cases, and a prioritised remediation plan.",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. About 10 to 25 senior days at a planning rate of roughly $1,400 a day: source and document inventory, quality and sensitivity assessment against your AI use cases, and a prioritised remediation plan. This goes deeper into the data than a general AI readiness assessment or paid discovery, which typically runs $10k to $25k.",
     },
     {
       name: "Data platform foundation (typical range)",

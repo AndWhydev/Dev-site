@@ -2,14 +2,15 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Enterprise Software Solutions | All Webbed Labs',
-  metaDescription: 'Large-scale enterprise software: custom platforms, ERP integrations, mission-critical systems and multi-tenant SaaS built for compliance, scale and longevity.',
+  metaTitle: 'Enterprise Software Development Australia | All Webbed Labs',
+  metaDescription: 'Enterprise software development in Australia: custom platforms, ERP integrations and mission-critical systems built for compliance, scale and a long life.',
   category: 'Enterprise',
   heroHeadline: 'Enterprise Software That Operates at the Scale You Need',
   heroTagline: 'Large-scale platforms, ERP integrations and mission-critical systems built for complexity and compliance.',
+  summaryStatement: 'Enterprise software development is the design and engineering of large, business-critical systems, such as custom platforms, ERP integrations, workflow and regulatory reporting systems, built to an organisation\'s security, compliance and scale requirements and designed to be run and extended for many years.',
   description: [
     'Enterprise software has unique demands that consumer and SMB applications do not. It must handle concurrency at scale without data corruption. It must integrate with the patchwork of existing systems every organisation has accumulated. It must satisfy compliance and audit requirements that add complexity at every layer. It must be operable by a team who will maintain it long after the engineers who built it have moved on. And it must remain performant and reliable even as requirements change and data volumes grow tenfold. Off-the-shelf solutions almost never fit these requirements precisely, and the gap between "almost fits" and "fits" is where significant engineering effort lives.',
-    'We specialise in the class of problems that off-the-shelf software cannot solve and that require bespoke engineering at enterprise quality. Our team has deep experience with the specific challenges of enterprise-scale systems: distributed transaction management, complex role-based access control, multi-tenancy with strong data isolation, regulatory reporting pipelines, event-sourced architectures for complete audit trails, and the integration challenges of connecting new systems to existing ERP, HRIS and CRM platforms. We are not generalist software developers; we are engineers who have spent careers building systems that run businesses.',
+    'We specialise in the class of problems that off-the-shelf software cannot solve and that require bespoke engineering at enterprise quality. We focus on the specific challenges of enterprise-scale systems: distributed transaction management, complex role-based access control, multi-tenancy with strong data isolation, regulatory reporting pipelines, event-sourced architectures for complete audit trails, and the integration challenges of connecting new systems to existing ERP, HRIS and CRM platforms. Every engagement is led by senior engineers, not juniors learning on your system.',
   ],
   benefits: [
     {
@@ -25,7 +26,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
       title: 'Deep ERP & Platform Integration',
-      description: 'Enterprise software rarely operates in isolation. We have deep experience integrating custom-built systems with SAP, Oracle, Microsoft Dynamics, Salesforce, Workday and dozens of other enterprise platforms, using their APIs properly, not fragile workarounds.',
+      description: 'Enterprise software rarely operates in isolation. We integrate custom-built systems with SAP, Oracle, Microsoft Dynamics, Salesforce, Workday and other enterprise platforms through their supported APIs, not fragile workarounds.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
@@ -125,7 +126,7 @@ const data = {
     },
     {
       question: 'How do you handle the integration with our existing SAP / Oracle / Dynamics environment?',
-      answer: 'ERP integration is a specialised discipline with a significant learning curve for each platform. We have engineers with deep, hands-on experience with SAP BAPI and IDoc integration, Oracle REST APIs and database-level integration, Microsoft Dynamics web APIs and Power Platform connectors, and Salesforce platform event and API integration. For each platform, we understand the data model, the transaction management constraints and the performance characteristics of the available integration mechanisms. We design integrations that are reliable, maintainable and tolerant of the API version changes and scheduled maintenance windows that ERP platforms impose.',
+      answer: 'ERP integration is a specialised discipline with a significant learning curve for each platform. The mechanisms differ by platform: SAP BAPI and IDoc integration, Oracle REST APIs and database-level integration, Microsoft Dynamics web APIs and Power Platform connectors, and Salesforce platform event and API integration. For each platform, we understand the data model, the transaction management constraints and the performance characteristics of the available integration mechanisms. We design integrations that are reliable, maintainable and tolerant of the API version changes and scheduled maintenance windows that ERP platforms impose.',
     },
     {
       question: 'What level of ongoing support do you provide after delivery?',
@@ -138,6 +139,18 @@ const data = {
     {
       question: 'Do you offer fixed-price or time-and-materials engagements?',
       answer: 'Both, and we advise on which is appropriate based on scope certainty. Fixed-price engagements are appropriate when requirements are well-defined and stable, typically the implementation phase of a project where requirements and architecture have already been locked down. Time-and-materials is more appropriate for discovery, architecture and the early phases of complex projects where scope inevitably evolves as understanding deepens. Hybrid arrangements, fixed-price per sprint with defined deliverables, are often the best of both worlds for larger programmes. We are transparent about the trade-offs of each model and help you choose the structure that best manages risk for your specific situation.',
+    },
+    {
+      question: 'How much does enterprise software development cost in Australia?',
+      answer: 'It varies with the number of users and roles, integrations with ERP, HRIS and CRM platforms, data migration, and security and compliance obligations. We scope it in a paid discovery and then quote a fixed price for each phase, so large programmes are funded in controlled steps. Our enterprise software development cost guide sets out typical Australian market ranges.',
+    },
+    {
+      question: 'What is the difference between enterprise software and ERP?',
+      answer: 'ERP is a category of packaged enterprise software, such as SAP, Oracle or Microsoft Dynamics, that runs core finance, supply chain and HR processes. Enterprise software development builds the systems an ERP does not cover well: industry-specific workflows, customer and partner portals, reporting pipelines and the integrations that connect them to the ERP. In most cases the aim is to work with your ERP, not replace it.',
+    },
+    {
+      question: 'Should we build custom enterprise software or buy a platform?',
+      answer: 'Buy when a mature product covers most of your needs and your process is standard for your industry. Build when the process is what differentiates you, when the platform would need heavy customisation that breaks on every upgrade, or when integration and licence costs across your user base outweigh a build. Our discovery phase includes this build versus buy assessment, and we will recommend buying if that is the better answer.',
     },
   ],
   relatedServices: [

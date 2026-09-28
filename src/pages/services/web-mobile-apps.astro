@@ -2,11 +2,12 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Web & Mobile Applications | All Webbed Labs',
-  metaDescription: 'Production-grade web and mobile applications for Australian enterprises. Customer portals, internal tools and digital products built to perform at scale.',
+  metaTitle: 'Web & Mobile App Development Australia | All Webbed Labs',
+  metaDescription: 'Web and mobile app development for Australian organisations: customer portals, internal tools and digital products that perform well on every device.',
   category: 'Development',
   heroHeadline: 'Web and Mobile Applications That Scale With Your Business',
   heroTagline: 'From customer portals to internal tools, performant, accessible and production-grade from launch day.',
+  summaryStatement: 'Web and mobile app development is the building of applications that run in a browser, on iOS and Android, or both, such as customer portals, internal tools and digital products, usually sharing one backend and designed to perform on the devices people actually use.',
   description: [
     'The gap between a web application that merely works and one that drives measurable business outcomes is not a feature list, it is quality of execution. Page loads that take 4 seconds instead of 1.2 reduce conversion rates by double digits. Mobile applications that crash under poor network conditions destroy trust faster than any marketing can rebuild it. Every application we deliver is engineered to the production standards your users expect and your infrastructure needs to support: Core Web Vitals in the green, accessibility meeting WCAG 2.1 AA, and architecture that degrades gracefully under load rather than falling over.',
     'We build web applications using React and Next.js for consumer-grade interfaces, and pair them with robust Node.js or Go backends designed for high concurrency. Our mobile applications are built in Flutter for maximum code reuse across iOS and Android, or in React Native where team familiarity justifies the choice. We do not prescribe a stack, we recommend based on your team\'s long-term ownership requirements, your user base\'s device distribution, and the performance characteristics your use case demands. You get a considered recommendation with clear reasoning, not a default selection.',
@@ -25,7 +26,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
       title: 'Mobile-First Without Compromise',
-      description: 'Over 65% of Australian web traffic originates from mobile devices. We design and test on real devices, not just browser emulators, covering the range of Android hardware our users actually carry, including mid-range devices where performance issues surface first.',
+      description: 'Much of your audience will reach you on a phone. We design and test on real devices, not just browser emulators, covering the range of Android hardware our users actually carry, including mid-range devices where performance issues surface first.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
@@ -112,7 +113,7 @@ const data = {
     },
     {
       question: 'Can the application integrate with our existing enterprise systems?',
-      answer: 'Integration is a standard component of every application we build. We have production experience integrating with SAP, Salesforce, Microsoft Dynamics, ServiceNow, Workday, and numerous Australian-specific systems including PEXA, Xero, and myGov infrastructure. Where APIs do not exist, we design and build middleware layers with appropriate queuing, retry logic, and circuit breakers to maintain application resilience when upstream systems are degraded or unreachable.',
+      answer: 'Integration is a standard component of every application we build. We integrate with platforms such as SAP, Salesforce, Microsoft Dynamics, ServiceNow, Workday and Xero through their supported APIs. Where APIs do not exist, we design and build middleware layers with appropriate queuing, retry logic, and circuit breakers to maintain application resilience when upstream systems are degraded or unreachable.',
     },
     {
       question: 'What does ongoing support look like after the application launches?',
@@ -121,6 +122,14 @@ const data = {
     {
       question: 'How do you handle application security for customer-facing products?',
       answer: 'Customer-facing applications introduce a broader attack surface than internal tools. Our standard security posture includes OWASP Top 10 protections built into the application layer, rate limiting and bot detection at the edge, HTTPS enforcement with HSTS preloading, CSP headers, sub-resource integrity for third-party scripts, and regular automated dependency scanning via Dependabot or Snyk. For applications handling payment data, we architect around PCI DSS SAQ-A compliance by delegating card data to Stripe or Windcave rather than processing it ourselves. A formal penetration test is included before any public-facing launch.',
+    },
+    {
+      question: 'What is the difference between a web app and a mobile app?',
+      answer: 'A web app runs in a browser and works on any device without installation; a mobile app is installed from the App Store or Google Play and can use device features such as push notifications, the camera and offline storage more fully. Many products start as a responsive web app and add a mobile app, often built with Flutter, once usage justifies it.',
+    },
+    {
+      question: 'How much does web and mobile app development cost?',
+      answer: 'The main drivers are the number of screens and user roles, integrations with your existing systems, whether you need web, mobile or both, and security requirements. We quote a fixed price after a paid discovery; our app development cost guide sets out typical Australian market ranges.',
     },
   ],
   relatedServices: [

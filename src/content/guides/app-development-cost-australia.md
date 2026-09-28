@@ -1,12 +1,12 @@
 ---
 title: "How much does it cost to build an app in Australia? (2026 business guide)"
-metaTitle: "App Development Cost in Australia (2026 Business Guide)"
-description: "Business apps in Australia typically cost $50k to $250k (AUD, ex GST). What the backend, integrations and Flutter vs native choice add, with a worked example."
+metaTitle: "How Much Does It Cost to Build an App in Australia? (2026)"
+description: "How much does it cost to build an app in Australia? Most business apps for iOS and Android cost $50k to $250k (AUD, ex GST). App development pricing guide."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A business app built by an Australian team typically costs $50,000 to $120,000 (AUD, ex GST) for a standard staff or customer app on iOS and Android, $120,000 to $250,000 for a feature-rich platform with several integrations, and $200,000 to $350,000 or more for enterprise apps. Simple apps can start around $20,000, but that rarely includes the backend, admin tools and integrations a business app needs. Budget 15 to 20% of the build cost per year to keep an app working as iOS and Android change."
+summary: "Building a business app in Australia typically costs $50,000 to $120,000 (AUD, ex GST) for a standard staff or customer app on iOS and Android, $120,000 to $250,000 for a feature-rich platform with several integrations, and $200,000 to $350,000 or more for enterprise apps. Simple apps can start around $20,000, but that rarely includes the backend, admin tools and integrations a business app needs. Budget 15 to 20% of the build cost per year to keep an app working as iOS and Android change, and towards 25% for apps with frequent releases or many integrations."
 takeaways:
   - "The app on the phone is often less than half the cost. The backend, admin portal and integrations make up the rest."
   - "Cross-platform frameworks such as Flutter or React Native typically save 30 to 40% compared with building separate native iOS and Android apps."
@@ -18,8 +18,10 @@ faqs:
     a: "Usually, for business apps. One Flutter codebase serves iOS and Android, and Australian agencies commonly estimate a 30 to 40% saving on the app itself compared with two native builds. Native is still the better choice when the app depends heavily on the newest platform features, complex background processing, or deep hardware integration."
   - q: "How much does it cost to publish an app on the App Store and Google Play?"
     a: "At the time of writing, the Apple Developer Program costs US$99 per membership year (charged in local currency) and Google Play charges a one-time US$25 registration fee. Apple and Google also take a commission on paid apps and in-app purchases, 15% for small developers under Apple's Small Business Program."
-  - q: "Can I build a business app for under $30,000?"
-    a: "You can build a focused prototype or a simple app with no custom backend, or use a no-code tool. Once you need your own database, user roles, an admin portal and a connection to an existing system, most Australian quotes move above $50,000."
+  - q: "How much does it cost to build a simple app?"
+    a: "AppGurus starts simple apps and MVPs at $20,000 to $50,000. Under $30,000 you can build a focused prototype or a simple app with no custom backend, or use a no-code tool. Once you need your own database, user roles, an admin portal and a connection to an existing system, most Australian quotes move above $50,000."
+  - q: "How much does it cost to have someone build an app for you?"
+    a: "The ranges on this page are what Australian agencies and development teams typically charge to build a business app for you, from about $50,000 to $250,000 ex GST. A freelancer usually costs less per hour, but you take on project management, testing and the backend yourself. Our freelancer vs agency vs in-house guide compares the options."
   - q: "Do I need a web app as well as a mobile app?"
     a: "Most business apps need at least a web admin portal so staff can manage users, content and data. Some should start as a responsive web app or progressive web app instead, which avoids app store review and a second release process."
   - q: "How long does it take to build a business app?"
@@ -62,9 +64,9 @@ service:
 disclaimer: financial
 ---
 
-## What does a business app cost to build in Australia?
+## How much does it cost to build an app in Australia?
 
-**Most business apps built by Australian teams cost between $50,000 and $250,000 (AUD, ex GST), with simple apps from about $20,000 and enterprise apps above $350,000.** The range is wide because "an app" can mean a single-purpose tool with no backend or a platform that connects staff, customers and three internal systems.
+**Most business apps built from scratch by Australian teams cost between $50,000 and $250,000 (AUD, ex GST) for iOS and Android, with simple apps from about $20,000 and enterprise apps above $350,000.** The range is wide because "an app" can mean a single-purpose tool with no backend or a platform that connects staff, customers and three internal systems.
 
 Consumer app guides dominate search results, but business apps have a different cost profile. They usually have fewer screens and less marketing polish, and far more integration, security and admin work. This guide focuses on apps that companies build for their staff, customers or partners.
 
@@ -82,7 +84,7 @@ These ranges draw on AppGurus' 2026 guide (standard business apps $50k to $120k,
 
 **They describe different deliverables.** AppGurus starts simple apps and MVPs at $20,000 to $50,000. Wave Digital says anything under $75,000 is usually a prototype or proof of concept with limited production readiness, and that most production-ready MVPs cost $125,000 to $250,000.
 
-Both can be right. The lower figure fits a focused app with a small feature set, standard design and a lightweight backend. The higher figure includes product strategy, user research, bespoke design, a production backend and ongoing release management. When comparing quotes, ask which of those each one includes. Our [MVP cost guide](/guides/mvp-development-cost-australia) goes deeper on what a first release should and shouldn't contain.
+Both can be right. The lower figure fits a focused app with a small feature set, standard design and a lightweight backend. The higher figure includes product strategy, user research, bespoke design, a production backend and ongoing release management. When comparing quotes, ask which of those each one includes. Our [MVP cost guide](/guides/mvp-development-cost-australia) goes deeper on what a first release should and shouldn't contain. Freelancers usually quote lower again, in exchange for you managing more of the project; our [freelancer vs agency vs in-house comparison](/guides/freelancer-vs-agency-vs-in-house) sets out the trade-off.
 
 ## Where does the money go in an app project?
 
@@ -133,9 +135,9 @@ The saving applies to the app, not the whole project. The backend, admin portal 
 
 **First-year ongoing costs:** maintenance at 15% of the build is $19,350; hosting at $200 a month is $2,400; the Apple Developer Program is US$99 a year and Google Play a one-off US$25 at the time of writing. Call it about $22,000 a year before new features.
 
-## What app costs are usually left out of the quote?
+## What are the hidden costs of building an app?
 
-**Quotes usually cover design, build and launch, and leave out store fees, running costs and the yearly platform update cycle.** Check for these:
+**The hidden costs are the ones left out of the quote. Quotes usually cover design, build and launch, and leave out store fees, running costs and the yearly platform update cycle.** Check for these:
 
 - **GST** at 10% on top of ex GST quotes.
 - **Developer accounts.** At the time of writing, Apple charges US$99 per membership year, billed in local currency, and Google Play a one-time US$25 registration fee.
@@ -144,6 +146,25 @@ The saving applies to the app, not the whole project. The backend, admin portal 
 - **Private distribution.** Staff apps are often distributed through Apple Business Manager or managed Google Play with a device management tool, which has its own licence cost.
 - **Annual OS updates.** iOS and Android ship major versions every year. Budget for testing and fixes each time.
 - **Security testing** for apps handling personal, health or payment data.
+
+## How much does it cost to build an app like Uber?
+
+**A first version of an app like Uber, Airtasker or any on-demand service is a two-sided platform, which sits in the $130,000 to $300,000 band (AUD, ex GST) in the table above.** You are building two experiences (customer and provider), plus a backend that matches them, and an admin portal to run the marketplace.
+
+What pushes a platform like this towards the top of the range:
+
+- **Real-time location and dispatch.** Live maps, tracking and matching logic are far more work than a list of bookings.
+- **Payments between parties.** Taking money from one side, holding it and paying the other side needs a marketplace payments setup and careful testing.
+- **Trust features.** Ratings, identity checks, dispute handling and support tools are easy to underestimate.
+- **Scale.** The first version needs to work for your launch market, not for millions of users. Designing for Uber's scale on day one is the most common way these budgets blow out.
+
+The cost to copy the look of a famous app is modest. The cost to copy its operations is not, which is why an MVP that proves demand in one city or niche is the usual starting point.
+
+## Is building an app worth the cost?
+
+**An app is worth building when people will use it repeatedly on a phone, away from a desk, and when it replaces work that costs more than the app does.** Field staff, frequent customers and anyone who needs the camera, location or offline access are the strongest cases.
+
+It is often not worth it when users are at a desk, visit once a year, or when a mobile-friendly web app would do the same job. In the worked example above, the field service app costs $129,000 to build and about $22,000 a year to run. For 60 technicians that is roughly $2,150 each up front, which pays back quickly if it saves each technician a few hours of paperwork and re-keying every month. Run the same arithmetic on your own numbers before you commit.
 
 ## How can you lower the cost of an app?
 

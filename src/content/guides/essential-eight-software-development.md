@@ -1,12 +1,12 @@
 ---
-title: "The Essential Eight for custom software projects"
-metaTitle: "The Essential Eight for Custom Software Projects"
-description: "How ASD's Essential Eight maturity model applies to custom software: what maps to a web or cloud app, patching timelines, MFA rules and a build checklist."
+title: "The Essential Eight maturity model for custom software projects"
+metaTitle: "Essential Eight Maturity Model for Custom Software"
+description: "How ASD's Essential Eight (Essential 8) maturity model applies to custom software: maturity levels 1 to 3, patching and MFA rules, and a build checklist."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "The Essential Eight is ASD's baseline of eight mitigation strategies, measured against a maturity model with levels zero to three. It was designed to protect organisations' internet-connected IT networks, not to certify individual applications, so there's no such thing as \"Essential Eight compliant software\". But a custom application becomes one of the client's online services, and several strategies apply to it directly: patching the application and its dependencies on set timelines, multi-factor authentication for staff and customers, restricted administrative privileges, and backups that can be restored. Building those in from the start is far cheaper than retrofitting them."
+summary: "The Essential Eight (often written Essential 8 or E8) is ASD's baseline of eight mitigation strategies, measured against a maturity model with levels zero to three. It was designed to protect organisations' internet-connected IT networks, not to certify individual applications, so there's no such thing as \"Essential Eight compliant software\". But a custom application becomes one of the client's online services, and several strategies apply to it directly: patching the application and its dependencies on set timelines, multi-factor authentication for staff and customers, restricted administrative privileges, and backups that can be restored. Building those in from the start is far cheaper than retrofitting them."
 takeaways:
   - "At the time of writing, the current Essential Eight maturity model is ASD's November 2023 release."
   - "Maturity is assessed for an organisation's systems, not certified for a product; ASD says there's no requirement for independent certification unless a directive, regulator or contract requires assessment."
@@ -14,6 +14,12 @@ takeaways:
   - "Critical vulnerabilities in online services must be patched within 48 hours of release at every maturity level from One upwards."
   - "Patching, MFA, admin privileges and backups map most directly to custom software; application control and Office macros mostly concern workstations."
 faqs:
+  - q: "Is the Essential Eight mandatory?"
+    a: "For Australian Government entities, yes. The Protective Security Policy Framework (PSPF Release 2026) requires each of the eight mitigation strategies to be implemented to Maturity Level Two, and it also reaches service providers where a deed or agreement requires it. For private organisations it's voluntary unless a regulator, directive or contract requires it, which is common in government supply chains."
+  - q: "How is an Essential Eight assessment done?"
+    a: "ASD's assessment process guide sets four stages: planning and preparation, agreeing the scope and approach, assessing the controls for each strategy, and writing a security assessment report. Assessors rate the quality of evidence, with testing a control by simulated activity rated highest, and a target level can't be claimed if any strategy isn't implemented."
+  - q: "What is the difference between the Essential Eight and ISO 27001?"
+    a: "The Essential Eight is a set of eight specific technical mitigation strategies from ASD, measured by maturity level. ISO/IEC 27001 is an international standard for an information security management system that an organisation can be certified against. They complement each other: one prescribes particular controls, the other governs how security is managed overall, and holding one doesn't demonstrate the other."
   - q: "Can a software developer make our application Essential Eight compliant?"
     a: "Not on its own. Essential Eight maturity is a property of an organisation's systems and how they're run, including patching, access and backups over time. A developer can build the application so it supports the controls, such as MFA, least privilege, logging and restorable backups, but the organisation's operations determine the maturity level achieved."
   - q: "Which maturity level should we target?"
@@ -40,6 +46,12 @@ sources:
   - title: "Essential Eight explained"
     url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-explained"
     publisher: "Australian Signals Directorate"
+  - title: "PSPF Release 2026: list of requirements"
+    url: "https://www.protectivesecurity.gov.au/publications-library/pspf-release-2026-list-requirements"
+    publisher: "Department of Home Affairs (Protective Security Policy Framework)"
+  - title: "About the PSPF"
+    url: "https://www.protectivesecurity.gov.au/about"
+    publisher: "Department of Home Affairs (Protective Security Policy Framework)"
   - title: "Information Security Manual (ISM)"
     url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism"
     publisher: "Australian Signals Directorate"
@@ -58,7 +70,7 @@ service:
 disclaimer: legal
 ---
 
-## What is the Essential Eight?
+## What is the Essential Eight (Essential 8)?
 
 **The Essential Eight is the Australian Signals Directorate's recommended baseline of eight mitigation strategies, drawn from its broader Strategies to mitigate cyber security incidents.** ASD says the baseline "makes it much harder for adversaries to compromise systems". The eight strategies are:
 
@@ -71,7 +83,21 @@ disclaimer: legal
 7. User application hardening
 8. Regular backups
 
+That list is what people usually mean by "the Essential 8 list". ASD's Australian Cyber Security Centre (ACSC) publishes the framework on cyber.gov.au, so it's also called the ACSC Essential Eight.
+
 ASD publishes a maturity model that defines four levels, from Maturity Level Zero (weaknesses present) to Maturity Level Three, each aimed at a higher level of attacker tradecraft and targeting. The model was first published in June 2017 and is updated regularly. At the time of writing (September 2026), the current release is November 2023, and ASD's assessment process guide is written against that release.
+
+## What are Essential Eight maturity levels 1, 2 and 3?
+
+**Each maturity level is defined by the attacker it's meant to stop: Maturity Level One (ML1) targets opportunistic attackers using commodity tools, Maturity Level Two (ML2) targets attackers willing to invest more time and effort, and Maturity Level Three (ML3) targets adaptive attackers who move quickly on new exploits.** Maturity Level Zero means there are weaknesses in the organisation's overall posture.
+
+| Level | Attacker ASD describes | What that means for an application |
+|---|---|---|
+| ML1 | Uses widely available commodity tradecraft and looks for any victim | Basic patching timelines, MFA where sensitive data is held, backups |
+| ML2 | Invests more time in a target, goes after credentials with phishing and tries to get around weak MFA | Phishing-resistant MFA for staff, customer passkey option, logging of authentication events, tighter admin access |
+| ML3 | Adapts to the target's specific controls and uses new exploits as soon as they are public | Phishing-resistant MFA for customers too, just-in-time admin, backups even admins can't delete |
+
+ASD says organisations should choose a target level based on their desirability to attackers and the consequences of an incident, and reach that level across all eight strategies before moving up. **Essential Eight Maturity Level Two** carries extra weight because the Protective Security Policy Framework (PSPF) requires Australian Government entities to implement every strategy to ML2. Suppliers into government should expect to be asked how their software supports ML2, even though the obligation sits with the agency.
 
 ## Why is the Essential Eight awkward for custom software?
 
@@ -139,7 +165,7 @@ For a custom system, that usually means:
 - Backups of the database, file storage and configuration taken together so they restore to a common point, with restore tests as part of disaster recovery exercises.
 - Backup storage the application's own accounts can't delete, such as immutable or locked object storage.
 
-## A checklist for your next software project
+## An Essential Eight checklist for your next software project
 
 **Put these in the requirements before development starts, because each one is cheap early and expensive later.**
 

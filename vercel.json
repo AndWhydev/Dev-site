@@ -46,6 +46,16 @@
       "source": "/blog/:path*",
       "destination": "/guides",
       "permanent": true
+    },
+    {
+      "source": "/services/nft-marketplace",
+      "destination": "/services/blockchain-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/defi-platform",
+      "destination": "/services/blockchain-development",
+      "permanent": true
     }
   ],
   "headers": [

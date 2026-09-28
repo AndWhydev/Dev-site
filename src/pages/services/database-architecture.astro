@@ -2,8 +2,8 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Database Architecture & Optimisation | All Webbed Labs',
-  metaDescription: 'Database architecture, schema design, query optimisation and migration for enterprise systems with billions of records. PostgreSQL, MySQL, MongoDB and Redis.',
+  metaTitle: 'Database Architecture & Design Services | All Webbed Labs',
+  metaDescription: 'Database architecture and design services: schema design, query optimisation and zero-downtime migration for PostgreSQL, MySQL, MongoDB and Redis.',
   category: 'Data',
   heroHeadline: 'Database Architecture That Performs at Enterprise Scale',
   heroTagline: 'Schema design, query optimisation and migration strategies for systems that handle billions of records.',
@@ -25,7 +25,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: 'Zero-Downtime Migrations',
-      description: 'Migrating a live production database is one of the highest-risk operations in engineering. Our phased migration playbooks have executed hundreds of live migrations without a single incident causing customer-visible downtime.',
+      description: 'Migrating a live production database is one of the highest-risk operations in engineering. Our phased approach, with dual writes, data validation and a rehearsed rollback, is designed so customers never see downtime during the cutover.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
@@ -121,7 +121,7 @@ const data = {
     },
     {
       question: 'Can you migrate our database from one engine to another, for example, MySQL to PostgreSQL?',
-      answer: 'Yes. Cross-engine migrations are a significant but manageable undertaking. The key challenges are schema translation (data types, constraints, stored procedures), data volume and the need for zero downtime during cutover. Our approach uses a dual-write pattern: the old and new databases receive identical writes simultaneously for a period, which allows us to validate data consistency before cutting over reads. We have successfully migrated systems with hundreds of gigabytes to several terabytes using this approach.',
+      answer: 'Yes. Cross-engine migrations are a significant but manageable undertaking. The key challenges are schema translation (data types, constraints, stored procedures), data volume and the need for zero downtime during cutover. Our approach uses a dual-write pattern: the old and new databases receive identical writes simultaneously for a period, which allows us to validate data consistency before cutting over reads. The same approach works from gigabytes up to multi-terabyte databases.',
     },
     {
       question: 'What is the difference between database optimisation and database architecture work?',
@@ -133,11 +133,19 @@ const data = {
     },
     {
       question: 'Do you work with cloud-managed database services such as AWS RDS or Google Cloud SQL?',
-      answer: 'Absolutely. Managed database services introduce specific constraints (no superuser access, limited configuration parameters, cloud-specific replication behaviour) that we account for in our approach. In many cases, cloud-managed services are the right choice and we will recommend them. We also have deep experience with cloud-native analytics services including Redshift, BigQuery and Snowflake, and with serverless database options like Aurora Serverless and PlanetScale.',
+      answer: 'Absolutely. Managed database services introduce specific constraints (no superuser access, limited configuration parameters, cloud-specific replication behaviour) that we account for in our approach. In many cases, cloud-managed services are the right choice and we will recommend them. We also work with cloud-native analytics services including Redshift, BigQuery and Snowflake, and with serverless database options like Aurora Serverless and PlanetScale.',
     },
     {
       question: 'We have compliance requirements (HIPAA, PCI-DSS, SOC 2). Does that affect the approach?',
       answer: 'Yes, and it is something we incorporate from the outset rather than treating as an afterthought. Compliance frameworks impose specific requirements on data encryption (at rest and in transit), access control, audit logging, backup retention and data residency. We are familiar with HIPAA, PCI-DSS, SOC 2, ISO 27001 and the Australian Privacy Act requirements as they relate to database infrastructure, and we design solutions that satisfy your compliance obligations without unnecessary complexity.',
+    },
+    {
+      question: 'What does a database architect do?',
+      answer: 'A database architect decides how data is structured, stored and accessed: the schema and relationships, indexing, partitioning, replication and backup strategy, and which database engines fit which workloads. The aim is a database that stays fast, consistent and easy to change as data volumes and the application grow.',
+    },
+    {
+      question: 'When should we bring in a database architect?',
+      answer: 'Early in a new system, when schema decisions are cheap to change, and whenever the database becomes the bottleneck: slow queries under load, rising cloud database bills, a planned engine migration, or a move to multi-tenancy. A short health check is usually enough to tell whether you need a redesign or a set of targeted fixes.',
     },
   ],
   serviceName: 'Database Architecture',

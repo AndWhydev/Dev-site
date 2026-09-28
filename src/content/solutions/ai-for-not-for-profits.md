@@ -1,11 +1,11 @@
 ---
 title: "AI for Australian not-for-profits"
-metaTitle: "AI for Australian Not-for-Profits and Charities"
-description: "How Australian charities can use AI safely: when the Privacy Act covers NFPs, ACNC governance duties, donor and case management systems, and low-cost options."
+metaTitle: "AI for Not-for-Profits and Charities in Australia"
+description: "AI for not-for-profits in Australia: where AI helps charities, when the Privacy Act applies, what an NFP AI policy needs, and low-cost ways to start."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI can save a not-for-profit real staff time on grant writing, donor communications, case note summaries and answering the public, but the obligations are easy to misjudge. The Privacy Act's small business exemption does not cover every small charity: an NFP is covered if its annual turnover is over $3 million, and also if it provides a health service, is a contracted service provider for an Australian Government contract, or trades in personal information, among other cases. Charities also have to show their board is overseeing risk under the ACNC Governance Standards. Most NFPs should start with configured tools and small, targeted builds in the $15,000 to $60,000 range (AUD, ex GST), not large custom platforms."
+summary: "AI for not-for-profits can save real staff time on grant writing, donor communications, case note summaries and answering the public, but the obligations are easy to misjudge. The Privacy Act's small business exemption does not cover every small charity: an NFP is covered if its annual turnover is over $3 million, and also if it provides a health service, is a contracted service provider for an Australian Government contract, or trades in personal information, among other cases. Charities also have to show their board is overseeing risk under the ACNC Governance Standards. Most NFPs should start with configured tools and small, targeted builds in the $5,000 to $90,000 range (AUD, ex GST), not large custom platforms."
 takeaways:
   - "The Privacy Act applies to an NFP with annual turnover over $3 million, counting income from all sources, and to smaller NFPs in specific cases such as providing a health service or delivering a Commonwealth contract."
   - "The OAIC recommends not entering personal information, particularly sensitive information, into publicly available generative AI tools. For client data, use enterprise services with clear retention terms."
@@ -23,6 +23,10 @@ faqs:
     a: "Some can. Capacity building and digital transformation grants from governments, foundations and corporate programs sometimes fund software, but guidelines differ on whether they cover licences, development, training and ongoing running costs. Budget for the running costs after the grant ends, because a system nobody can afford to maintain becomes a liability."
   - q: "Does AI-assisted decision-making need to be disclosed?"
     a: "If your charity is covered by the Privacy Act and uses a computer program to make, or substantially and directly contribute to, decisions that could significantly affect someone's rights or interests, such as eligibility for a service, the privacy policy disclosure rules that commence on 10 December 2026 may apply. Assistance tools that help staff draft or search generally aren't decision-making, but eligibility triage could be."
+  - q: "What should an AI policy for a not-for-profit include?"
+    a: "Keep it short enough that volunteers will read it. It should list the approved AI tools, the kinds of information that never go into them (client records and sensitive information in free tools, for a start), who must review AI output before it's used, how AI use is disclosed to donors and clients, and who to contact if something goes wrong. The board should approve it and see the register of AI uses that sits behind it."
+  - q: "What is the best AI tool for a not-for-profit?"
+    a: "Usually the one built into software you already pay for. The AI features in your productivity suite and donor CRM come with the data terms you've already accepted and cost little to switch on. A general AI assistant on a business plan covers drafting work. A custom tool only earns its place when a task involves sensitive client data or eats many hours a week across a team."
   - q: "Should we tell donors we use AI?"
     a: "It's good practice, and required in some cases. The OAIC advises updating privacy policies and notices with clear information about AI use and making sure public facing AI tools, such as chatbots, are identified as AI. Donors care about trust, so a plain statement of what you use AI for, and what you don't, tends to help."
 sources:
@@ -72,14 +76,14 @@ disclaimer: legal
 | Provide a health service, even as a side activity (for example a club program helping members with injuries) | Yes, regardless of turnover |
 | Contracted service provider or subcontractor on an Australian Government contract, such as disability or aged care services | Yes, and check the contract for extra obligations |
 | Sell, buy or trade personal information for a benefit, such as swapping supporter lists for sponsorship | Yes |
-| Related to a larger body covered by the Act, such as part of a global network with turnover over $3 million | Yes |
+| A related body corporate of a larger organisation with turnover over $3 million | Yes |
 | Under $3 million, none of the above | Generally no, unless you opt in |
 
 Even if the Act doesn't apply, the OAIC points out that coverage can change as you grow or add services, and that poor privacy practice can cost funding and public trust. Building to the Australian Privacy Principles from the start is cheaper than retrofitting later. If you are covered, the Notifiable Data Breaches scheme applies too, and so do the automated decision-making disclosure rules from 10 December 2026, explained in our [ADM guide](/guides/privacy-act-automated-decision-making).
 
-## Where does AI genuinely help a charity?
+## Where does AI genuinely help in the not-for-profit sector?
 
-**AI helps most with writing and reading work that staff do repeatedly: grant applications and acquittals, donor communications, board papers, policies, and answering the same public questions.** The risk rises sharply once it touches client records, especially sensitive information about health, family violence, disability or immigration status.
+**AI helps charities most with writing and reading work that staff do repeatedly: grant applications and acquittals, donor communications, board papers, policies, and answering the same public questions.** The risk rises sharply once it touches client records, especially sensitive information about health, family violence, disability or immigration status. The same holds whether you call yourself a not-for-profit, a charity or, in American usage, a nonprofit.
 
 | Use case | Data involved | Risk | Sensible approach |
 |---|---|---|---|
@@ -100,7 +104,7 @@ A useful test is whether a person will read and correct the output before anyone
 In practice, a board exercising reasonable care over AI would expect:
 
 1. **A register of AI uses.** What tools and systems use AI, for what purpose, and with what data.
-2. **A short AI use policy** for staff and volunteers: approved tools, what data never goes into them, and who to ask.
+2. **A short AI policy for the not-for-profit** covering staff and volunteers: approved tools, what data never goes into them, who reviews AI output before it is relied on, and who to ask.
 3. **Risk assessment for anything touching clients.** A privacy impact assessment is the OAIC's recommended tool, and suits charities well.
 4. **Cost oversight.** Subscription and usage costs that scale with activity need a budget line and a named owner.
 5. **Records.** Registered charities must keep written financial and operational records, and the ACNC says to keep them for seven years. If AI drafts a record, the final approved version is the one kept.
@@ -144,7 +148,7 @@ The charity provides counselling alongside other services, so it provides a heal
 3. **Don't collect what you don't need.** No name or contact details are asked for unless the person requests a callback, and then only the minimum.
 4. **Host in Australia.** The document index, application and logs run in an Australian cloud region; the model provider's retention terms are recorded in the privacy impact assessment.
 5. **Log and review.** A staff member reviews a sample of conversations weekly for wrong answers and gaps in the source documents.
-6. **Budget.** Rung 3 on the ladder above: a build in the $15,000 to $50,000 range depending on channels and integrations, plus monthly usage that scales with conversations.
+6. **Budget.** Rung 3 on the ladder above, the kind of [AI chatbot development](/services/ai-chatbot) most charities start with: a build in the $15,000 to $50,000 range depending on channels and integrations, plus monthly usage that scales with conversations.
 
 The same charity would treat case note summarisation as a separate, later project, with its own impact assessment, because it moves from public information to sensitive client records.
 
@@ -153,7 +157,7 @@ The same charity would treat case note summarisation as a separate, later projec
 **Some rules should hold regardless of budget.** For charities working with vulnerable people, these protect clients first and the organisation second.
 
 - No client information in free or consumer AI tools, ever.
-- Sensitive information stays in Australian cloud regions unless there's a documented reason and a lawful basis to send it elsewhere.
+- Sensitive information stays in Australian cloud regions unless there's a documented reason and a lawful basis to send it elsewhere (see [using personal information in AI systems under the Privacy Act](/guides/privacy-act-and-ai)).
 - Every AI-generated summary of a client is reviewed by the worker before it's saved.
 - Access follows the case: workers see their clients, not the whole database.
 - AI never makes eligibility or safety decisions on its own.

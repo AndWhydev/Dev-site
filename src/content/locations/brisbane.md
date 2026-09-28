@@ -1,13 +1,13 @@
 ---
 title: "AI and software development for Brisbane and Queensland"
-metaTitle: "AI and Software Development for Brisbane and Queensland"
-description: "Software and AI for Brisbane and Queensland: QTenders and QITC, the Queensland Privacy Principles in force since 1 July 2025, time zones and local industry."
+metaTitle: "Software Developers and AI Consultants for Brisbane"
+description: "Sydney-based software developers and AI consultants for Brisbane and Queensland: QTenders and QITC, Queensland Privacy Principles, time zones and industry."
 eyebrow: "Brisbane"
 city: "Brisbane"
 state: "QLD"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a Sydney-based team that builds software and AI for Brisbane and Queensland organisations remotely, travelling to Brisbane for workshops when being in the room matters. Queensland differs from the southern states in three practical ways: no daylight saving, its own procurement system built on QTenders and the QITC contracting framework, and new Queensland Privacy Principles and data breach rules for state agencies that commenced on 1 July 2025."
+summary: "All Webbed Labs is a Sydney-based team of software developers and AI consultants that builds custom software and AI for Brisbane and Queensland organisations remotely, travelling to Brisbane for workshops when being in the room matters. Queensland differs from the southern states in three practical ways: no daylight saving, its own procurement system built on QTenders and the QITC contracting framework, and new Queensland Privacy Principles and data breach rules for state agencies that commenced on 1 July 2025."
 takeaways:
   - "We're based in Sydney, deliver to Brisbane remotely and travel for workshops and user testing; we have no Queensland office."
   - "Queensland doesn't observe daylight saving, so Brisbane is one hour behind Sydney from October to April and level with it the rest of the year."
@@ -23,23 +23,25 @@ faqs:
     a: "Agencies must first check for a common-use supply arrangement for what they're buying. We're not on a Queensland Government standing offer arrangement at the time of writing, so an agency would need a pathway that allows that, such as an open approach to market on QTenders or engaging us through an arrangement holder."
   - q: "Does the lack of a Queensland cloud region matter?"
     a: "For most business systems, no. Data hosted in Sydney or Melbourne is still in Australia, and latency from Brisbane is low. It matters only where a contract specifically requires in-state hosting, which you'd identify during discovery."
+  - q: "What do AI consultants charge in Brisbane?"
+    a: "There is no settled market rate yet. Re:Sourced's 2026 guide says AI and machine learning contract rates are still forming as a distinct market, with specialist AI implementation work pricing above the general software band, which sits at $700 to $950 a day in Brisbane (AUD, ex GST). A fixed price after discovery is easier to compare than day rates, because it prices the outcome rather than the hours."
   - q: "What do senior developers cost in Brisbane?"
-    a: "Re:Sourced's 2026 guide puts senior software contractor day rates in Brisbane at $700 to $950 (AUD, ex GST), below Sydney and Melbourne. Agencies charge more because they add design, testing and project management."
+    a: "Re:Sourced's 2026 guide puts senior software contractor day rates in Brisbane at $700 to $950 (AUD, ex GST), below Sydney and Melbourne. Re:Sourced puts Brisbane roughly 10 to 15 per cent below Sydney overall. Agencies charge more because they add design, testing and project management."
 sources:
   - title: "Information Privacy and Other Legislation Amendment Act 2023 (as made)"
     url: "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2023-032"
     publisher: "Queensland Legislation"
-  - title: "Queensland's privacy reforms start 1 July 2025"
-    url: "https://www.minterellison.com/articles/queensland-privacy-and-rti-reform-ready-for-ipola-2025"
-    publisher: "MinterEllison"
+  - title: "Information Privacy and Other Legislation Amendment Act 2023: legislative history and commencement"
+    url: "https://www.legislation.qld.gov.au/view/html/asmade/act-2023-032/lh"
+    publisher: "Queensland Legislation"
+  - title: "Information Privacy Act 2009 (current, including section 219 on local government)"
+    url: "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-2009-014"
+    publisher: "Queensland Legislation"
   - title: "Buying ICT products and services"
     url: "https://www.forgov.qld.gov.au/finance-procurement-and-travel/procurement/buy-for-queensland-government/buying-categories/ict-products-and-services/how-to-buy-ict-products-and-services"
     publisher: "Queensland Government"
-  - title: "ICT contracting framework (QITC)"
-    url: "https://www.business.qld.gov.au/industries/science-it-creative/ict/tendering-government/contracting-framework"
-    publisher: "Business Queensland"
-  - title: "ICT tendering opportunities"
-    url: "https://www.business.qld.gov.au/industries/science-it-creative/ict/tendering-government/resources"
+  - title: "ICT tendering opportunities and the QITC contracting framework"
+    url: "https://www.business.qld.gov.au/industries/science-it-creative/ict/tendering-government"
     publisher: "Business Queensland"
   - title: "Daylight saving in NSW"
     url: "https://www.nsw.gov.au/about-nsw/daylight-saving"
@@ -79,7 +81,7 @@ The clock matters more than people expect. Queensland doesn't observe daylight s
 
 In practice we schedule Brisbane meetings between 10am and 4pm Sydney time during summer, write every invite in Brisbane time, and never book a Friday demo at 5pm Sydney time, which is 4pm for a Brisbane team ready to leave.
 
-## What are Queensland organisations building?
+## What are Queensland organisations building with software and AI?
 
 **Queensland has large mining and resources, mining equipment and services, agriculture and food, construction and tourism sectors, and a pipeline of infrastructure work ahead of the Brisbane 2032 Olympic and Paralympic Games.** Those industries shape the software:
 
@@ -135,7 +137,7 @@ The QPPs apply to Queensland public sector agencies. Private businesses in Queen
 - Work that must be done by a supplier on a Queensland standing offer arrangement we're not part of.
 - Teams that strongly prefer to meet in person every week rather than on video.
 
-Remote delivery from Sydney makes sense when the in-person needs are predictable (discovery, key design decisions, user testing) and the bulk of the work is engineering that can happen anywhere. In that case what you're really choosing is the quality of the engineering and the process, and location matters much less. Our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) lists the questions that tell the difference.
+Remote delivery from Sydney makes sense when the in-person needs are predictable (discovery, key design decisions, user testing) and the bulk of the work is engineering that can happen anywhere. In that case what you're really choosing is the quality of the engineering and the process, and location matters much less. Whether you are shortlisting a software development company in Brisbane or an AI consulting company from anywhere in Australia, there is no single best consultancy; our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) lists the questions that tell the difference.
 
 ## How All Webbed Labs works with Queensland organisations
 

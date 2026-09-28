@@ -1,7 +1,7 @@
 ---
-title: "The Notifiable Data Breaches scheme: what it means for software you build"
-metaTitle: "Notifiable Data Breaches Scheme: What It Means for Software"
-description: "Australia's Notifiable Data Breaches scheme for software teams: the 30 day assessment, who to notify, and the logging and design choices that make it workable."
+title: "The Notifiable Data Breaches (NDB) scheme: what it means for software you build"
+metaTitle: "Notifiable Data Breaches (NDB) Scheme: A Software Guide"
+description: "The Notifiable Data Breaches (NDB) scheme in Australia for software teams: who it applies to, the 30 day deadline, penalties and a readiness checklist."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
@@ -25,8 +25,10 @@ faqs:
     a: "Where information is held jointly, only one entity needs to assess and notify, but if none does, all can be in breach. The OAIC suggests the entity with the most direct relationship with the affected individuals is usually best placed to notify. Settle who does what in your contract before an incident."
   - q: "Is encrypted data covered if it's stolen?"
     a: "It depends on the likelihood of serious harm. Strongly encrypted data with keys that weren't compromised may make serious harm unlikely. If the keys were exposed, or the encryption was weak, treat it as readable. Record the encryption details in your assessment."
-  - q: "Does the NDB scheme apply to small businesses?"
-    a: "It applies to entities covered by the Privacy Act. Most businesses with turnover of $3 million or less are exempt, but some are covered regardless, such as health service providers. The scheme also applies to any entity that holds tax file number information, in relation to that information."
+  - q: "How do you report a data breach to the OAIC?"
+    a: "Use the OAIC's online Notifiable Data Breach form. It asks for the same content the statement must contain: your organisation's name and contact details, a description of the breach, the kinds of information involved and the steps individuals should take. Notify affected individuals as well, either directly or, if that isn't practicable, by publishing the statement."
+  - q: "What are the penalties under the NDB scheme?"
+    a: "The OAIC enforces the scheme by handling complaints, investigating and taking other regulatory action. Since 11 December 2024 it can also issue infringement notices where a breach statement doesn't include the content required by section 26WK(3), under section 13K. This page doesn't cover the wider Privacy Act penalty regime; get legal advice on your exposure."
 sources:
   - title: "About the Notifiable Data Breaches scheme"
     url: "https://www.oaic.gov.au/privacy/notifiable-data-breaches/about-the-notifiable-data-breaches-scheme"
@@ -67,6 +69,12 @@ disclaimer: legal
 
 It is not a niche obligation. In calendar year 2024 the OAIC received 1,113 notifications under the scheme, according to its July to December 2024 report. Every one of those started as a technical event: a compromised credential, a misconfigured bucket, an email to the wrong person, a stolen laptop. How your software is built decides how quickly you can see that event, contain it, and answer the questions the law asks.
 
+## Who does the NDB scheme apply to?
+
+**The NDB scheme applies to every organisation and agency the Privacy Act 1988 covers: APP entities, credit reporting bodies, credit providers and tax file number recipients.** APP entities include Australian Government agencies and most private sector organisations with annual turnover above $3 million.
+
+Most businesses with turnover of $3 million or less are exempt from the Privacy Act, but some are covered regardless of size, such as health service providers. Any entity that holds tax file number information is covered in relation to that information. If you build software for clients, check which of them are covered: a small business client may be outside the scheme while a clinic or a government agency using the same product is inside it.
+
 ## What counts as an eligible data breach?
 
 **A breach is eligible, and therefore notifiable, when all three of these are true.** The test comes from section 26WE and the OAIC's guidance.
@@ -79,7 +87,7 @@ The third limb matters for engineers. If you act fast enough that serious harm i
 
 Information you've sent overseas can still count. If you disclose personal information to an overseas recipient under APP 8.1, you are generally treated as still holding it for NDB purposes (s 26WC), so a breach at your offshore vendor can be your breach.
 
-## What are the deadlines?
+## What are the NDB scheme deadlines?
 
 **Thirty days to assess a suspected breach, and "as soon as practicable" to notify once you believe it is eligible.**
 
@@ -146,7 +154,7 @@ A SaaS platform for physiotherapy clinics finds that a developer accidentally co
 
 Without per-query logs, step 2 would have had to assume every record in the database was read, and the notification would have gone to every patient of every clinic on the platform.
 
-## NDB readiness checklist for software teams
+## NDB scheme checklist for software teams
 
 - [ ] A data inventory maps every store, index and log to the categories of personal information it holds.
 - [ ] Access to sensitive records is logged at record or query level, with time-synchronised, tamper-resistant logs.

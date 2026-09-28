@@ -1,4 +1,27 @@
+# All Webbed Labs. Everything public is crawlable.
+# AI search and answer engines are named explicitly: we want to be cited.
+# A crawler follows only its most specific group, so each group repeats the rules.
+
 User-agent: *
 Allow: /
+Disallow: /client-pack/
+
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: Googlebot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+Allow: /
+Disallow: /client-pack/
 
 Sitemap: https://www.awlabs.com.au/sitemap-index.xml

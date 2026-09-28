@@ -7,8 +7,8 @@ import CTABanner from '../components/CTABanner.astro';
 ---
 
 <Layout
-  title="Digital Transformation Consulting, All Webbed Labs | Australia"
-  description="End-to-end digital transformation for Australian enterprises. Legacy modernisation, cloud migration, process automation and change management."
+  title="Digital Transformation Services Australia | All Webbed Labs"
+  description="Digital transformation consulting and delivery in Australia: legacy modernisation, cloud migration, process automation and the change management that sticks."
 >
   <Header />
   <main>
@@ -33,7 +33,7 @@ import CTABanner from '../components/CTABanner.astro';
             <span class="gradient-text">For the Digital Age</span>
           </h1>
           <p class="dt-hero-sub">
-            Digital transformation is not about buying new software. It's about rebuilding how your business creates and
+            Digital transformation for Australian organisations is not about buying new software. It's about rebuilding how your business creates and
             delivers value, changing systems, processes, data flows and the ways people work together.
             We do the hard yards: legacy decommissioning, cloud migration, process re-engineering and the change
             management that makes it stick.
@@ -46,11 +46,11 @@ import CTABanner from '../components/CTABanner.astro';
             <a href="#assessment" class="btn-outline">Take the Assessment</a>
           </div>
           <div class="hero-trust-row">
-            <div class="trust-item"><span class="trust-num">$40M+</span><span class="trust-label">Legacy Costs Eliminated</span></div>
+            <div class="trust-item"><span class="trust-num">Process</span><span class="trust-label">First, Then Technology</span></div>
             <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">200+</span><span class="trust-label">Enterprise Stakeholders</span></div>
+            <div class="trust-item"><span class="trust-num">Phased</span><span class="trust-label">Measurable Milestones</span></div>
             <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">18mo</span><span class="trust-label">Avg Transformation Window</span></div>
+            <div class="trust-item"><span class="trust-num">AU</span><span class="trust-label">Cloud Regions by Default</span></div>
           </div>
         </div>
         <div class="dt-hero-visual reveal-right stagger-2" aria-hidden="true">
@@ -98,8 +98,8 @@ import CTABanner from '../components/CTABanner.astro';
           </div>
           <div class="dt-what-stats reveal-right stagger-2">
             {[
-              { stat: '73%', desc: 'of digital transformations fail to achieve their stated goals, McKinsey Global Survey 2023' },
-              { stat: '3×', desc: 'more likely to succeed when technical and organisational change happen concurrently' },
+              { stat: 'Most', desc: 'large transformation programs miss at least some of their goals, which is why we deliver in phases that each stand on their own' },
+              { stat: 'Phase 1', desc: 'ships working software in weeks, so the value is proven before the larger spend is committed' },
               { stat: '6 to 24mo', desc: 'realistic timeline for meaningful transformation of a mid-market enterprise' },
               { stat: 'Day 1', desc: 'when change management should start, not after the technology is deployed' },
             ].map((s, i) => (
@@ -352,7 +352,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'Can you modernise our legacy systems without shutting them down?',
-              a: 'Yes. The strangler fig pattern, gradually replacing legacy components by building a modern system alongside the old one and cutting over functionality piece by piece, allows modernisation without a big bang cutover. This approach reduces risk significantly and allows the business to continue operating normally throughout the transformation. We have used this pattern on mainframes, AS/400 systems and legacy .NET monoliths.'
+              a: 'Yes. The strangler fig pattern, gradually replacing legacy components by building a modern system alongside the old one and cutting over functionality piece by piece, allows modernisation without a big bang cutover. This approach reduces risk significantly and allows the business to continue operating normally throughout the transformation. The pattern works for mainframes, AS/400 systems and legacy .NET monoliths alike.'
             },
             {
               q: 'How do you handle the people and culture side of transformation?',
@@ -372,7 +372,15 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'What cloud provider do you recommend?',
-              a: 'We are genuinely vendor-neutral at the hyperscaler level, we have deep experience with AWS, Azure and GCP and will recommend based on your existing skills, data residency requirements, industry-specific services needed and commercial terms. For most Australian enterprises without an existing cloud commitment, AWS Sydney remains the default recommendation based on service breadth, ecosystem and regional support, but this is not a religious position.'
+              a: 'We are genuinely vendor-neutral at the hyperscaler level, we work across AWS, Azure and GCP and will recommend based on your existing skills, data residency requirements, industry-specific services needed and commercial terms. For most Australian enterprises without an existing cloud commitment, AWS Sydney remains the default recommendation based on service breadth, ecosystem and regional support, but this is not a religious position.'
+            },
+            {
+              q: 'What is digital transformation?',
+              a: 'Digital transformation is changing how an organisation operates and delivers value by redesigning its processes, systems and data around modern technology, rather than simply digitising the old way of working. In practice it usually combines legacy system modernisation, cloud migration, process automation and better use of data, with change management so people actually adopt the new ways of working.'
+            },
+            {
+              q: 'How much does digital transformation cost?',
+              a: 'There is no meaningful single figure, because a programme can range from one application moving to the cloud to an organisation-wide change over several years. We break it into phases, each with a defined scope, fixed price and measurable outcome, so you can fund the next phase once the previous one has delivered. The first step is usually a short assessment that sizes the programme honestly.'
             },
           ].map((faq, i) => (
             <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>

@@ -1,12 +1,12 @@
 ---
 title: "How much does software maintenance cost per year?"
 metaTitle: "Software Maintenance Cost Per Year in Australia (2026)"
-description: "Software maintenance typically costs 15 to 20% of the original build each year. What that buys, retainer and SLA options in AUD, and how to keep it down."
+description: "How much does software maintenance cost per year? Typically 15 to 20% of the build cost. Support retainer and SLA pricing in AUD, and how to reduce the cost."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Maintaining custom software typically costs 15 to 20% of the original build cost per year, and up to 25% for mobile apps, fast-moving products or systems with many integrations. For a $200k system that's $30k to $40k AUD a year (ex GST), usually paid as a monthly retainer, plus hosting and third-party licences. The budget covers security patches, dependency and platform upgrades, bug fixes and small improvements, not major new features."
+summary: "Software maintenance typically costs 15 to 20% of the original build cost per year, and up to 25% for mobile apps, fast-moving products or systems with many integrations. For a $200k system that's $30k to $40k AUD a year (ex GST), usually paid as a monthly retainer, plus hosting and third-party licences. The budget covers security patches, dependency and platform upgrades, bug fixes and small improvements, not major new features."
 takeaways:
   - "The 15 to 20% rule of thumb is widely used by Australian providers; treat it as a planning figure, not a law."
   - "Most maintenance is not bug fixing: it's keeping up with changing platforms, dependencies, security fixes and business needs."
@@ -22,6 +22,10 @@ faqs:
     a: "Yes, if it's in use. The software may not change, but the operating system, runtime, browsers, mobile platforms, third-party APIs and security threats around it do. Software left untouched for a few years usually needs a large catch-up upgrade before any change can be made safely."
   - q: "What is a typical SLA for software support in Australia?"
     a: "Common arrangements respond to critical outages within 1 to 4 business hours, with 24/7 cover available at extra cost, and to minor issues within 1 to 3 business days. Response time is not fix time; check whether the agreement commits to restoration targets as well."
+  - q: "How much does a software support retainer cost per month?"
+    a: "Typical Australian retainers for business-critical systems run about $1,500 to $15,000 a month ex GST, depending on the hours included and the response times agreed. A managed service with 24/7 cover commonly costs $8,000 to $30,000 or more a month. At a $1,400 day rate, two days a month is $2,800."
+  - q: "How much does app maintenance cost per year?"
+    a: "Mobile apps sit at the higher end, around 20 to 25% of the build cost a year, because iOS and Android change every year and Google Play raises its target API level requirement annually. For a $300k web and mobile app build, that's $60k to $75k a year, or $5,000 to $6,250 a month."
   - q: "Is hosting included in maintenance?"
     a: "Usually not. Hosting, domains, email services and software licences are normally billed separately, often directly to your own accounts. Some providers bundle them into a managed service fee."
   - q: "Can we maintain the software in-house instead?"
@@ -63,11 +67,11 @@ service:
 disclaimer: financial
 ---
 
-## How much should you budget for maintenance each year?
+## How much does software maintenance cost per year?
 
 **Plan on 15 to 20% of the original build cost per year for software that's actively used, and up to 25% for mobile apps and fast-moving products.** It's a rule of thumb rather than a law, but it's consistent across Australian providers: VT Digital's 2026 guide cites 15 to 20% a year, and Aizecs cites 15 to 25%.
 
-Here's what that looks like in AUD, ex GST, for common system types. These are typical planning ranges, not quotes, and exclude hosting and licences.
+Here's what that looks like in AUD, ex GST, for common system types, per year and as a monthly maintenance fee. These are typical planning ranges, not quotes, and exclude hosting and licences.
 
 | System | Illustrative build cost | Typical rate | Annual maintenance | Monthly equivalent |
 |---|---|---|---|---|
@@ -81,7 +85,7 @@ Why a percentage of build cost? Because the build cost is a decent proxy for how
 
 ## Why does software need maintenance if nothing is broken?
 
-**Because the world around the software keeps changing, even when the code doesn't.** The IEEE's Software Engineering Body of Knowledge (SWEBOK) treats maintenance as its own discipline, and the international standard for it, ISO/IEC/IEEE 14764, splits the work into four types:
+**Because the world around the software keeps changing, even when the code doesn't.** The IEEE's Software Engineering Body of Knowledge (SWEBOK) treats maintenance as its own discipline, and the international standard for it, ISO/IEC/IEEE 14764, classifies the work into categories. The four classic ones are:
 
 | Type | What it means | Examples |
 |---|---|---|
@@ -111,7 +115,7 @@ Most of the effort goes into adaptive and perfective work, not bug fixes. The en
 | Backup checks and restore testing | Out-of-hours cover, unless purchased |
 | Monthly report on work done and risks | Penetration testing by an independent firm |
 
-Ask any provider for this list in writing. The most common dispute in support arrangements is whether something is a bug (covered) or a change (billable).
+The right-hand column is where the hidden costs of maintenance usually sit, so ask any provider for this list in writing. The most common dispute in support arrangements is whether something is a bug (covered) or a change (billable).
 
 ## Which support model suits you, and what does it cost?
 
@@ -153,9 +157,9 @@ That's 18.9% of the build cost, or $3,150 a month as a retainer. On top of that 
 
 If the business wanted a significant new module during the year, that would be quoted as a separate project, not squeezed into maintenance hours.
 
-## What happens if you skip maintenance?
+## Is software maintenance worth the cost? What happens if you skip it
 
-**Skipped maintenance doesn't disappear; it accumulates, and it gets more expensive the longer you wait.** The US Government Accountability Office reported in 2025 that federal agencies typically spend about 80% of their IT budgets operating and maintaining existing systems, much of it on legacy systems that became expensive precisely because they fell behind.
+**Maintenance is worth paying for on any system your business relies on, because skipped maintenance doesn't disappear; it accumulates, and it gets more expensive the longer you wait.** The US Government Accountability Office reported in 2025 that federal agencies typically spend about 80% of their IT budgets operating and maintaining existing systems, much of it on legacy systems that became expensive precisely because they fell behind.
 
 The pattern at smaller scale is familiar:
 

@@ -2,12 +2,12 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Sports & Recreation Software Development | All Webbed Labs',
-  metaDescription: 'Member management platforms, performance analytics, fan engagement and facility booking systems for Australian sporting organisations and fitness venues.',
+  metaTitle: 'Sports Software Development Australia | All Webbed Labs',
+  metaDescription: 'Sports software and app development for Australian clubs, associations and venues: club management software, facility booking, analytics and fan apps.',
 
   industryName: 'Sports & Recreation',
   heroHeadline: 'Sports Technology That Connects Athletes, Clubs and Fans',
-  heroTagline: 'Member management, performance analytics and fan engagement platforms for sporting organisations, fitness venues and recreation providers.',
+  heroTagline: 'Sports software and app development for Australian sporting organisations, fitness venues and recreation providers: club management software, performance analytics and fan engagement platforms.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
 
@@ -45,6 +45,7 @@ const data = {
     'Live scoring and results publication',
     'Merchandise and event ticketing integrations',
     'Coaching and squad management apps',
+    'AI tools for sports analytics, video tagging and member communications',
   ],
 
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
@@ -62,12 +63,20 @@ const data = {
 
   faqs: [
     {
+      question: 'How much does sports app development cost?',
+      answer: "A club or association app that wraps existing registration, fixtures and news feeds costs far less than a platform with its own membership database, payments, live scoring and performance analytics. The main drivers are integrations (PlayHQ, payment gateways, wearables), real-time features and whether you need separate apps for members, coaches and admins. We quote a fixed price after a paid discovery; our app development cost guide gives typical Australian market ranges.",
+    },
+    {
+      question: 'How is AI used in sports analytics?',
+      answer: "AI in sports analytics is mostly used to tag and search match video, spot patterns in training load and GPS data, flag injury risk indicators for staff review, and summarise performance reports for coaches and players. Clubs also use AI for member communications and answering common registration questions. The value depends on clean, consolidated athlete data, so a single athlete data platform usually comes first.",
+    },
+    {
       question: 'Can you integrate with national sporting body registration systems like PlayHQ or Dribl?',
       answer: "Yes where APIs exist. PlayHQ (Cricket Australia, Football Australia) has published APIs that allow us to sync registration data, results and ladder standings with custom club or association platforms. Other national body systems vary in API maturity, we assess this in discovery and design integration architecture accordingly, including middleware approaches where direct API access is limited.",
     },
     {
       question: 'We\'re a community club with limited budget, is custom software realistic for us?',
-      answer: "Possibly, depending on what you need. For a community club with 500 members, a purpose-built platform is likely overkill, we'd recommend off-the-shelf tools like TeamApp, SportsTG or ClubRunner. But if you're a state body, a large fitness group, a professional club or an organisation with specific workflows that packaged software can't address, custom development often delivers strong ROI within 18 months. We're happy to give you an honest assessment before you commit to anything.",
+      answer: "Possibly, depending on what you need. For a community club with 500 members, a purpose-built platform is likely overkill, we'd recommend off-the-shelf tools like TeamApp, SportsTG or ClubRunner. But if you're a state body, a large fitness group, a professional club or an organisation with specific workflows that packaged software can't address, custom development can pay for itself by replacing licences and manual admin; we'll work through that case with you in discovery. We're happy to give you an honest assessment before you commit to anything.",
     },
     {
       question: 'How do you handle athlete data privacy, particularly for junior members?',
@@ -75,7 +84,7 @@ const data = {
     },
     {
       question: 'Can performance analytics platforms integrate with wearables and GPS trackers we already use?',
-      answer: "Yes. We have experience integrating with Catapult, Garmin, Polar and Whoop APIs for wearable data, as well as video platforms like Hudl and Sportscode for tagging and analysis data. Where a wearable device doesn't have a formal API, we can work with data exports and build automated ingestion pipelines. The goal is to bring your existing data sources into a single platform rather than asking athletes and coaches to change what they already use.",
+      answer: "Yes, where the vendor provides API or data export access. Wearable platforms such as Catapult, Garmin, Polar and Whoop, and video platforms like Hudl and Sportscode, can supply wearable, tagging and analysis data. Where a wearable device doesn't have a formal API, we can work with data exports and build automated ingestion pipelines. The goal is to bring your existing data sources into a single platform rather than asking athletes and coaches to change what they already use.",
     },
     {
       question: 'How do fan engagement apps generate revenue for the club?',

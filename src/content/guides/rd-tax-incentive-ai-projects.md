@@ -1,12 +1,12 @@
 ---
-title: "R&D Tax Incentive for AI and machine learning projects"
-metaTitle: "R&D Tax Incentive for AI and Machine Learning Projects"
-description: "When AI and machine learning work can be R&D under Australia's R&D Tax Incentive, what the official AI guidance rules out, and how to record experiments."
+title: "R&D Tax Incentive for AI and machine learning projects in Australia"
+metaTitle: "R&D Tax Incentive for AI Projects in Australia"
+description: "Can AI projects qualify for the R&D Tax Incentive (RDTI) in Australia? What the official AI guidance rules out, a worked RAG example and how to keep records."
 eyebrow: "Australian program"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI work can qualify for the Australian R&D Tax Incentive, but using AI doesn't make an activity eligible. The official AI guidance on business.gov.au says an AI activity is core R&D only where there is a technical hurdle that experts can't resolve with existing knowledge, and a proposed solution is tested through planned experiments. Picking a model, wiring up an API, preparing data to a documented format or tuning parameters with known effects usually isn't core R&D. Records must be made as the work happens, and a registered R&D tax agent should assess any claim."
+summary: "AI projects can qualify for the Australian R&D Tax Incentive (RDTI), but using AI doesn't make an activity eligible. The official AI guidance on business.gov.au says an AI activity is core R&D only where there is a technical hurdle that experts can't resolve with existing knowledge, and a proposed solution is tested through planned experiments. Picking a model, wiring up an API, preparing data to a documented format or tuning parameters with known effects usually isn't core R&D. Records must be made as the work happens, and a registered R&D tax agent should assess any claim."
 takeaways:
   - "business.gov.au has specific guidance on AI-related activities, which sits on top of the general software sector guide."
   - "Using a model or technique that is new to you doesn't make the work eligible; the hurdle has to be unknown to experts in the field."
@@ -22,6 +22,8 @@ faqs:
     a: "Standard preparation to meet a model's documented input requirements, where the transformations are known in advance, is unlikely to be core R&D. It may be a supporting activity if it is directly related to a core experiment, and in some cases it must also be done for the dominant purpose of supporting that experiment."
   - q: "We used AI coding assistants to build our product. Does that help a claim?"
     a: "No. The guidance says the requirements don't depend on the technology used. How the code was written is irrelevant; what matters is whether an activity resolved a technical hurdle through a systematic progression of work."
+  - q: "Is there a special R&D tax credit or rate for AI in Australia?"
+    a: "No. AI activities are assessed under the same R&D Tax Incentive rules as any other R&D, and the benefit is a tax offset rather than a credit: refundable for companies with aggregated turnover under $20 million and non-refundable for larger ones, according to business.gov.au. What a claim is worth depends on the company, so ask a registered R&D tax agent rather than relying on a headline rate."
   - q: "Who should assess whether our AI project qualifies?"
     a: "A registered R&D tax agent, working from your technical records. You can also apply to the department for an advance finding if you want its view before you register."
 sources:
@@ -38,10 +40,16 @@ sources:
     url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/check-if-you-are-eligible-for-the-randd-tax-incentive/conducting-supporting-rd-activities-for-the-rdti"
     publisher: "business.gov.au"
   - title: "Apply for the R&D Tax Incentive"
-    url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-to-register-with-the-randd-tax-incentive"
+    url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/apply-for-the-randd-tax-incentive"
     publisher: "business.gov.au"
   - title: "Checklist for claiming R&D tax incentive"
     url: "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/helping-you-get-r-d-claims-right/checklist-for-claiming-r-d-tax-incentive"
+    publisher: "Australian Taxation Office"
+  - title: "Overview of the R&D Tax Incentive"
+    url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/overview-of-rd-tax-incentive"
+    publisher: "business.gov.au"
+  - title: "Tax Reform: better targeting the Research and Development Tax Incentive (12 May 2026)"
+    url: "https://www.ato.gov.au/about-ato/new-legislation/in-detail/businesses/tax-reform-better-targeting-the-research-and-development-tax-incentive"
     publisher: "Australian Taxation Office"
 related:
   - title: "R&D Tax Incentive for software development: what qualifies"
@@ -62,9 +70,11 @@ disclaimer: tax
 
 **Yes, some AI activities can qualify, but the technology is irrelevant to eligibility.** The Department of Industry, Science and Resources published guidance on AI-related activities as a supplement to its software sector guide, and its central point is that the requirements "do not depend on the technology used". An AI activity is core R&D only when a technical hurdle exists and an expert in the field considers that only experimentation will show whether a proposed solution can resolve it.
 
-That is a higher bar than many AI projects clear. A lot of commercial AI work in 2026 is integration: choosing a hosted model, connecting it to company data, and building a product around it. That can be hard, valuable work and still be routine in the program's sense.
+That is a higher bar than many AI projects clear, whether the work involves large language models (LLMs), classic machine learning or computer vision. A lot of commercial AI work in 2026 is integration: choosing a hosted model, connecting it to company data, and building a product around it. That can be hard, valuable work and still be routine in the program's sense.
 
 The general rules (who can claim, the $20,000 expenditure threshold, the internal administration exclusion, registration within 10 months of your income year end) are the same as for any software project. We cover them in [R&D Tax Incentive for software development](/guides/rd-tax-incentive-software-development). This page deals with what is specific to AI.
+
+Those general rules are due to change: the Government announced in the 2026 to 27 Budget that, from 1 July 2028, supporting R&D activities would be removed from the offset and the minimum spend raised to $50,000, among other changes. The ATO notes the measure is not yet law, and the current rules apply until then.
 
 ## What does the official guidance count as AI-related activity?
 
@@ -104,7 +114,7 @@ These activities may still be supporting R&D if they are directly related to a c
 
 Note the shape of both: established methods have been tried or ruled out, the uncertainty is about the approach itself, and the answer can only come from running the experiment.
 
-## A worked example: one RAG chatbot, three different answers
+## An R&D Tax Incentive example for AI: one RAG chatbot, three answers
 
 **The department's own examples use a single retrieval-augmented generation (RAG) chatbot to show how the same project contains ineligible, supporting and core activities.** It is the most useful illustration available for AI buyers, so here it is in summary.
 

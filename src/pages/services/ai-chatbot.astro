@@ -2,14 +2,14 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'AI Chatbot Development for Business | All Webbed Labs',
-  metaDescription: 'We build customer-facing and internal AI chatbots grounded in your knowledge, across web, WhatsApp and Teams, with human handoff and Australian data residency.',
+  metaTitle: 'AI Chatbot Development Australia | All Webbed Labs',
+  metaDescription: 'AI chatbot development in Australia: custom chatbots for web, WhatsApp and Teams, grounded in your knowledge, with human handoff and onshore data hosting.',
   category: 'AI & Data',
   serviceName: 'AI Chatbot',
   slug: 'ai-chatbot',
   heroHeadline: 'Conversational Assistants That Answer From Your Knowledge and Know When to Hand Off',
-  heroTagline: 'Customer-facing and internal AI chatbots across web, WhatsApp and Teams, grounded in your content, safe by design, and built to escalate to a human when they should.',
-  summaryStatement: 'An AI chatbot is a conversational assistant powered by a language model that can answer questions, take defined actions and hold a natural dialogue across channels, grounded in an organisation\'s own knowledge and able to hand off to a human when a request falls outside its remit.',
+  heroTagline: 'Custom AI chatbot development for Australian organisations: customer-facing and internal chatbots across web, WhatsApp and Teams, grounded in your content, safe by design, and built to escalate to a human when they should.',
+  summaryStatement: 'AI chatbot development is the building of a conversational assistant, powered by a language model, that answers questions, takes defined actions and holds a natural dialogue across channels, grounded in an organisation\'s own knowledge and able to hand off to a human when a request falls outside its remit.',
   description: [
     'There is a wide gap between the no-code chatbot you can stand up in an afternoon and a conversational assistant you can put in front of customers or rely on internally. The cheap version follows rigid decision trees, breaks the moment a user phrases something unexpectedly, and either makes things up or dead-ends them with "I didn\'t understand that". A well-built AI chatbot uses a language model for genuine language understanding, draws its answers from your own knowledge through retrieval so it stays accurate, can call your systems to look up an order or raise a ticket, and recognises the limits of what it should handle so it hands the conversation to a person at the right moment. The difference is not the demo; it is how it behaves on the thousandth real conversation.',
     'We build assistants for both customer-facing and internal use, and integrate them into the channels your audience already uses, your website, WhatsApp, Microsoft Teams and Slack, so the experience meets people where they are rather than forcing them somewhere new. Answers are grounded in your documentation and policies through a RAG approach, which keeps responses accurate and lets the assistant cite its sources, and tool calling gives it controlled access to your systems for tasks like checking an account, booking an appointment or creating a support case within boundaries you define. Safety is engineered in: input and output filtering, prompt-injection defences, topic boundaries and PII handling, plus a clear, reliable human handoff with full conversation context passed to the agent so the customer never has to repeat themselves. We add analytics so you can see what people are actually asking, where the assistant succeeds and where it escalates, and use that to improve it over time. Where the Privacy Act 1988 or data residency applies to the conversations being handled, we deploy within Australian regions and configure providers for zero data retention. The aim is an assistant that genuinely deflects routine load and gives good answers, while always knowing when a human should take over, not a frustrating wall between your customers and your team.',
@@ -126,6 +126,18 @@ const data = {
     {
       question: 'How do you measure whether the chatbot is actually working?',
       answer: 'We instrument the assistant with analytics covering what users ask, the deflection rate, escalation rate, answer quality and cost per conversation, and we maintain an evaluation set of representative conversations to test against before changes ship. This gives you evidence of where the assistant succeeds and where it should improve, so tuning is driven by real usage rather than impressions. Reviewing these metrics is part of the ongoing improvement loop after launch.',
+    },
+    {
+      question: 'How much does it cost to build an AI chatbot in Australia?',
+      answer: 'The build cost depends on the channels, how many systems the chatbot connects to, whether it takes actions or only answers questions, and how much knowledge it has to be grounded in. We quote a fixed price after a paid discovery. Running costs are separate and usage-based, mostly model tokens and hosting, and we model them per conversation before build. Our AI chatbot cost guide covers typical Australian market ranges.',
+    },
+    {
+      question: 'What is the difference between a custom AI chatbot and ChatGPT?',
+      answer: 'ChatGPT is a general assistant that knows nothing about your business unless someone pastes it in. A custom AI chatbot is connected to your own content and systems, follows your rules about what it may and may not say, runs in your channels under your brand, and logs every conversation for review. It can also use the same underlying models, including OpenAI and Anthropic Claude, through enterprise APIs with data retention terms you control.',
+    },
+    {
+      question: 'What is the difference between an AI chatbot and an AI agent?',
+      answer: 'A chatbot mainly answers questions in a conversation. An AI agent plans and carries out multi-step tasks, calling tools and systems to get work done, such as updating a record or lodging a request. Many chatbots include a few agent-style actions; a full agent needs tighter permissions, approval steps and monitoring, which we cover under AI agent development.',
     },
   ],
   comparison: {

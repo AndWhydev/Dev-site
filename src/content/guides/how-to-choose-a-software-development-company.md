@@ -1,12 +1,12 @@
 ---
 title: "How to choose a software development company in Australia"
-metaTitle: "How to Choose a Software Development Company (AU)"
-description: "How to compare software development companies in Australia: the checks to run, questions to ask, how to read three quotes, and the contract terms to insist on."
+metaTitle: "How to Choose a Software Development Company in Australia"
+description: "How to choose the right software development company in Australia: checks to run, questions to ask, how to compare quotes, and contract terms to insist on."
 eyebrow: "Buyer's guide"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Pick a software development company by checking the business, testing how it thinks about your problem, and comparing proposals on the same basis. Verify the ABN and insurance, meet the people who will write the code, ask how they test and deploy, compare quotes line by line rather than by total, and sign only a contract that gives you the source code and the intellectual property. The cheapest quote is rarely the cheapest project."
+summary: "To choose the right software development company, start by checking the business, testing how it thinks about your problem, and comparing proposals on the same basis. Verify the ABN and insurance, meet the people who will write the code, ask how they test and deploy, compare quotes line by line rather than by total, and sign only a contract that gives you the source code and the intellectual property. The cheapest quote is rarely the cheapest project."
 takeaways:
   - "Decide what kind of partner you need first: a product studio, an enterprise integrator, a specialist, or extra developers for your own team."
   - "Run basic business checks before any meeting: ABN, company age, insurance, and who the directors are."
@@ -16,6 +16,10 @@ takeaways:
 faqs:
   - q: "Is it better to choose a local software company?"
     a: "Local helps with workshops, time zone and legal recourse, but it isn't a guarantee of quality, and remote delivery works well for most projects. Choose on capability and evidence first, then weigh location as one factor. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
+  - q: "How do you choose the best offshore software development company?"
+    a: "Run the same checks as for a local firm, then add four: how many working hours overlap with AEST, which country's law governs the contract and whether you could enforce it there, how the firm handles personal information given your APP 8 obligations, and who exactly will write the code. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
+  - q: "How do I choose a custom software development company rather than a product reseller?"
+    a: "Ask whether the proposal builds software you'll own or configures a product you'll license. A custom software development company should put the code in your repository, assign the IP to you and explain the architecture it will build. If the price depends on an ongoing licence to the firm's own platform, you're buying a product, which can be fine, but compare it against SaaS options rather than custom builds."
   - q: "How many quotes should I get for a software project?"
     a: "Three is typical. Give every firm the same brief so the quotes are comparable, and expect the range to be wide on early estimates, because each firm is making different assumptions about scope you haven't defined yet."
   - q: "Should I pay for a discovery or scoping phase?"
@@ -87,9 +91,9 @@ If you have a capable internal product owner and tech lead, augmentation or a fr
 - **Claims you can verify.** Certifications (ISO 27001, SOC 2), partner tiers and panel memberships should appear on the issuing body's own register or directory. If you can't find them there, ask why.
 - **Named people.** Can you find the senior engineers on the firm's site or professional profiles? A firm that names only its founder and sales staff may be subcontracting the build.
 
-## What should you ask the delivery team?
+## What questions should you ask a software development company?
 
-**Ask the people who will write your code how they work, and listen for specifics.** Good engineering teams describe their process in concrete terms without being prompted.
+**Put your questions to the people who will write your code, not only the sales lead, and listen for specifics.** Good engineering teams describe their process in concrete terms without being prompted.
 
 **On engineering practice**
 1. How does code get from a developer's laptop into production? Who reviews it?
@@ -129,7 +133,7 @@ Here is an illustrative comparison for a mid-sized internal operations platform.
 | Code in client repository | From day one | At handover | Not stated |
 | Who carries overrun risk | Firm | Firm | Client |
 
-On paper Firm C is cheapest. Once you add the missing integration, hosting setup, testing and the overrun risk that sits with you, it may well be the most expensive. Firm A and Firm B are comparable once discovery is counted. The difference between them comes down to warranty length against code access, and to which team you trusted in the technical session.
+On paper Firm C is cheapest. Once you add the missing integration, hosting setup, testing and the overrun risk that sits with you, it may well be the most expensive. Firm A and Firm B cover comparable scope. Once Firm A's discovery is added it is still about $55k cheaper ($155k against $210k), so the choice between them comes down to price and code access against Firm B's longer warranty, and to which team you trusted in the technical session.
 
 To normalise your own quotes:
 
@@ -156,6 +160,14 @@ For typical Australian ranges by project size, see [how much custom software cos
 | Exit and handover | Documented handover, reasonable assistance at agreed rates | Lets another team continue |
 
 This is general information, not legal advice. Have a lawyer review any contract of material value. Our [contract checklist](/guides/software-development-contract-checklist) goes through each clause.
+
+## Which software development company is best?
+
+**There's no single best software development company, only the best fit for your project, and that fit is something you can test.** A firm that's excellent at consumer apps may be the wrong choice for an ERP integration, and the right partner for a startup's first version may be too small for a multi-year government program.
+
+"Top 10" and "best software developer" lists can help you build a longlist, but treat them as a starting point. Some are sponsored or built from profiles the firms submit themselves, so check any claim against the evidence the list links to. Then judge the shortlist on things you can verify: named engineers you've met, how they answer the technical questions above, comparable work they can show you, reference calls with past clients, and a proposal that prices the same scope as everyone else's.
+
+The firm that scores best on those checks is the best company for you, whatever its ranking.
 
 ## What are the warning signs in a proposal?
 

@@ -1,7 +1,7 @@
 ---
 title: "Custom software development in Sydney"
-metaTitle: "Custom Software Development in Sydney"
-description: "Custom software in Sydney: when to build, local senior rates, buying via buy.nsw and the ICT Services Scheme, and NSW privacy law under the PPIP and HRIP Acts."
+metaTitle: "Custom Software and App Development Company in Sydney"
+description: "Sydney-based custom software and app developers in Five Dock: what custom software development costs in Sydney, when to build, buy.nsw and NSW privacy law."
 eyebrow: "Sydney"
 city: "Sydney"
 state: "NSW"
@@ -22,7 +22,11 @@ faqs:
   - q: "Does the NSW PPIP Act apply to my private company?"
     a: "Generally no. The PPIP Act covers NSW public sector agencies, councils, universities and state-owned corporations. Private businesses are usually covered by the Commonwealth Privacy Act 1988 instead. The exception is health information: the NSW HRIP Act 2002 also applies to private sector organisations that provide health services or hold health information, including some businesses with turnover above $3 million."
   - q: "Can you work on site with our team in Sydney?"
-    a: "Yes. We're based in Five Dock, so workshops, sprint reviews and user testing at your office are straightforward across Greater Sydney. Most build work happens from our office between those sessions."
+    a: "Yes. We're based in Five Dock in the Inner West, so if you're looking for software developers near you in Sydney, workshops, sprint reviews and user testing at your office are straightforward from the CBD to Parramatta and across Greater Sydney. Most build work happens from our office between those sessions."
+  - q: "Do you build mobile apps as well as business software?"
+    a: "Yes. As well as internal systems and portals, we build web and mobile apps, typically with Flutter for iOS and Android from one codebase or React and Next.js for the web. A Sydney business looking for app developers gets the same process: paid discovery, a fixed price, and code in its own repository."
+  - q: "How much does a software developer cost in Sydney?"
+    a: "Re:Sourced's 2026 guide puts senior software contractors in Sydney at $800 to $1,100 a day (AUD, ex GST), with principal and specialist profiles reaching about $1,300. A software development company adds design, project management and testing on top of the engineering, which is why project budgets are better compared than hourly rates."
   - q: "What happens to the code if we stop working with you?"
     a: "It's already yours. Code lives in your repository from the first commit, and IP transfers to you on payment. Any developer can pick it up, which is the point."
 sources:
@@ -62,7 +66,7 @@ service:
 
 ## When should a Sydney business build custom software?
 
-**Build custom software when the way you work is a real advantage or when off-the-shelf tools force you into expensive workarounds.** If your process is standard (payroll, basic CRM, accounting), buy a SaaS product and configure it. Custom work earns its cost in the gaps: the operational system that ties three SaaS tools together, the client portal that reflects how your firm actually works, or the internal platform that replaces a tangle of spreadsheets.
+**Build custom software when the way you work is a real advantage or when off-the-shelf tools force you into expensive workarounds.** If your process is standard (payroll, basic CRM, accounting), buy a SaaS product and configure it. Custom work earns its cost in the gaps: the operational system that ties three SaaS tools together, the client portal that reflects how your firm actually works, the internal platform that replaces a tangle of spreadsheets, or a customer app built through [web and mobile app development](/services/web-mobile-apps).
 
 A quick decision matrix:
 
@@ -77,9 +81,9 @@ A quick decision matrix:
 
 Our [build vs buy guide](/guides/build-vs-buy-software) works through total cost of ownership in more detail, including when buying is clearly the better answer.
 
-## What does custom software cost in Sydney?
+## How much does custom software development cost in Sydney?
 
-**Sydney rates for senior software talent are the highest of the major Australian cities, and they set the floor for what Sydney agencies charge.** Re:Sourced's 2026 guide puts senior software contractor day rates in Sydney at $800 to $1,100 (AUD, ex GST), with principal and specialist profiles reaching about $1,300, compared with $750 to $1,050 in Melbourne and $700 to $950 in Brisbane.
+**Sydney rates for senior software developers are the highest of the major Australian cities, and they set the floor for what Sydney agencies charge.** Re:Sourced's 2026 guide puts senior software contractor day rates in Sydney at $800 to $1,100 (AUD, ex GST), with principal and specialist profiles reaching about $1,300, compared with $750 to $1,050 in Melbourne and $700 to $950 in Brisbane.
 
 Here's the arithmetic that turns rates into budgets. These are illustrative ranges, not quotes.
 
@@ -89,7 +93,7 @@ Here's the arithmetic that turns rates into budgets. These are illustrative rang
 | Internal operations tool replacing spreadsheets, with roles and reporting | 80 to 150 | $64k to $165k |
 | Customer-facing portal with payments and integrations | 150 to 300 | $120k to $330k |
 
-Agencies add design, project management and testing on top, and some price below contractor rates by using junior or offshore staff. Ongoing maintenance typically runs well after launch, so budget for it from the start. Our [custom software cost guide](/guides/custom-software-development-cost-australia) covers the drivers, and [software maintenance cost](/guides/software-maintenance-cost) covers life after launch.
+Agencies add design, project management and testing on top, and some price below contractor rates by using junior or offshore staff. Ongoing maintenance typically runs well after launch, so budget for it from the start. Our [custom software cost guide](/guides/custom-software-development-cost-australia) covers the drivers, [software developer rates in Australia](/guides/software-developer-rates-australia) compares hourly and day rates by role, and [software maintenance cost](/guides/software-maintenance-cost) covers life after launch.
 
 ## How do NSW Government agencies buy custom software?
 
@@ -99,7 +103,7 @@ Key facts from buy.nsw at the time of writing:
 
 - The scheme covers 18 categories, from architecture and design through software and cloud services.
 - Suppliers apply at any time through buy.nsw, and applications are typically processed in one to two weeks.
-- **Registered** suppliers can take low-risk contracts up to $150,000 ex GST. **Advanced** suppliers, who provide referee reports and pass solvency checks, can take high-risk work or contracts above $150,000.
+- **Registered** suppliers can take low-risk contracts up to $150,000 ex GST. **Advanced** suppliers, who provide referee reports and meet financial solvency requirements, can take high-risk contracts valued over $150,000 ex GST.
 - ICT consulting engagements up to $250,000 ex GST can be negotiated directly with a supplier that accepts the ICT consulting commercial framework, without three quotes.
 - The ICT Purchasing Framework uses Core& contracts for low-risk procurements up to $1 million and the MICTA/ICTA framework for high-risk procurements above $1 million.
 
@@ -132,7 +136,7 @@ Each connection needs error handling, retries and monitoring, and it's usually w
 
 ## What should a Sydney software contract protect?
 
-**Whoever you hire, the contract should leave you able to walk away with a working system.** Sydney has a crowded market of agencies and freelancers, and the gap between a good contract and a weak one matters more than the gap between two good developers. Check for these before signing:
+**Whoever you hire, the contract should leave you able to walk away with a working system.** Sydney has a crowded market of software development companies, agencies and freelancers, and the gap between a good contract and a weak one matters more than the gap between two good developers. Check for these before signing:
 
 1. **IP assignment.** New code and designs created for you are assigned to you, with pre-existing tools listed separately and licensed to you.
 2. **Source code access from day one.** The repository sits in your account, not the developer's, so you never have to ask for it.

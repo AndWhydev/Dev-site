@@ -1,12 +1,12 @@
 ---
 title: "Fixed price vs time and materials: which software contract should you sign?"
 metaTitle: "Fixed Price vs Time and Materials Software Contracts"
-description: "Fixed price or time and materials? How each software contract model shares risk, what it really costs, the hybrid options, and how to choose for your project."
+description: "Fixed price vs time and materials contracts for software: how each model shares risk, what it really costs, hybrids such as capped T&M, and how to choose."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A fixed price contract puts the risk of overruns on the vendor, so it suits work whose scope can be defined before the build starts. Time and materials puts that risk on you but lets the scope change freely, so it suits work where you'll learn as you go. Most sensible projects mix the two: a short paid discovery on time and materials or a small fixed fee, then a fixed price for each clearly defined phase, with a written change process for anything new."
+summary: "The difference between fixed price and time and materials is who carries the risk of overruns. A fixed price contract puts that risk on the vendor, so it suits work whose scope can be defined before the build starts. Time and materials puts that risk on you but lets the scope change freely, so it suits work where you'll learn as you go. Most sensible projects mix the two: a short paid discovery on time and materials or a small fixed fee, then a fixed price for each clearly defined phase, with a written change process for anything new."
 takeaways:
   - "The difference is who carries the risk of the estimate being wrong: the vendor under fixed price, you under time and materials."
   - "Fixed price costs more per hour of work, because a competent vendor prices in contingency. You're buying certainty."
@@ -16,6 +16,12 @@ takeaways:
 faqs:
   - q: "Is fixed price always more expensive?"
     a: "Per unit of work, usually yes, because the vendor carries the risk and prices it in. In total, not necessarily: fixed price creates pressure on both sides to keep scope tight, and a loosely managed time and materials project can easily cost more than the fixed quote would have."
+  - q: "Are fixed fee, fixed bid and firm fixed price the same thing?"
+    a: "Broadly, yes: all three mean the price for a defined scope is agreed before work starts. Firm fixed price is the term used in US government contracting for a price that doesn't adjust for the vendor's actual costs. In Australian software contracts you'll mostly see fixed price or fixed fee, and what matters is the scope and variation clauses, not the label."
+  - q: "Is time and expense the same as time and materials?"
+    a: "Close. Time and expense usually means you pay for hours worked plus out-of-pocket costs such as travel, billed at cost. In software, the 'materials' in time and materials are usually licences, cloud services or third-party tools passed through. Check what's billable and whether pass-through costs carry a markup."
+  - q: "How is cost plus different from fixed price?"
+    a: "Under cost plus, you pay the vendor's actual costs plus an agreed margin or fee, so, like time and materials, you carry the overrun risk. It's more common in construction and some government work than in software, where hourly rates already include the vendor's margin. Fixed price is the opposite: the vendor carries the risk and keeps any savings."
   - q: "What is a capped time and materials contract?"
     a: "You pay for actual hours at agreed rates, up to a ceiling. Below the cap you get the savings; above it the vendor either absorbs the cost or stops and asks for approval, depending on the contract. Check which, because 'cap' means different things in different contracts."
   - q: "How are changes handled in a fixed price contract?"
@@ -57,7 +63,7 @@ disclaimer: legal
 
 ## What's the difference between fixed price and time and materials?
 
-**Under a fixed price contract you agree the total cost for a defined scope up front; under time and materials (T&M) you pay for the hours actually worked at agreed rates.** Everything else follows from one question: who pays when the estimate turns out to be wrong?
+**Under a fixed price contract (also called fixed fee or fixed bid) you agree the total cost for a defined scope up front; under time and materials (T&M) you pay for the hours actually worked at agreed rates.** Everything else follows from one question: who pays when the estimate turns out to be wrong?
 
 Every software estimate is a guess about the future. Under fixed price the vendor owns that guess. If the work takes longer, the vendor absorbs it; if it's quicker, the vendor keeps the margin. Under T&M you own it. You pay for overruns and you keep any savings.
 
@@ -144,7 +150,7 @@ It fits badly when the brief is a paragraph, when integrations haven't been inve
 
 Australian law adds a floor. Under the Australian Consumer Law, services costing less than $100,000, including those bought by a business, come with guarantees that they're supplied with due care and skill, fit for any stated purpose, and within a reasonable time if no timeframe was agreed. Standard form contracts with small businesses are also covered by unfair contract term protections: a term letting only one party vary the price, for example, can be found unfair and void. Our [contract checklist](/guides/software-development-contract-checklist) goes through these clauses in detail.
 
-## A decision guide
+## Fixed price or time and materials: which should you choose?
 
 | Your situation | Suggested model |
 |---|---|
@@ -157,4 +163,4 @@ Australian law adds a floor. Under the Australian Consumer Law, services costing
 
 ## How All Webbed Labs prices work
 
-We run a paid discovery first, then quote a fixed price for the agreed scope, usually per phase. That's one option among several above, and we use it because it gives you a firm number without paying for contingency on unknowns. Where work is genuinely exploratory, such as an AI proof of concept, we'll suggest capped T&M instead and say why. Changes are always written and approved before they're billed, and the code is in your repository from day one. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).
+We run a paid discovery first, then quote a fixed price for the agreed scope, usually per phase. That's one option among several above, and we use it because it gives you a firm number without paying for contingency on unknowns. Where work is genuinely exploratory, such as an AI proof of concept, we'll suggest capped T&M instead and say why. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and our practice is to keep the code in your repository from day one. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).

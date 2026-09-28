@@ -2,8 +2,8 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Smart Contract Development & Audit-Readiness | All Webbed Labs',
-  metaDescription: 'Solidity smart contract design, development, testing and audit preparation for EVM chains. Gas-optimised OpenZeppelin contracts with Foundry test suites.',
+  metaTitle: 'Smart Contract Development Australia | All Webbed Labs',
+  metaDescription: 'Smart contract development in Australia: Solidity design, Foundry testing and audit preparation for EVM chains, with gas-optimised OpenZeppelin contracts.',
   category: 'Web3 & Blockchain',
   serviceName: 'Smart Contracts',
   slug: 'smart-contracts',
@@ -135,6 +135,14 @@ const data = {
       question: 'Can you take over an existing contract that someone else wrote?',
       answer: 'Yes, with a clear-eyed review first. Before we modify or extend an inherited contract we conduct an assessment: reading the code against current best practice, checking whether it was audited and by whom, reproducing its test suite (or writing one if none exists), and running static analysis to surface obvious issues. If the contract is already deployed and immutable, our options are constrained to what its design allows, and we will tell you honestly whether a safe path forward exists or whether a fresh, properly audited deployment with a migration plan is the lower-risk option. We do not assume inherited code is safe simply because it is live; plenty of deployed contracts carry latent issues that have not yet been triggered.',
     },
+    {
+      question: 'What is a smart contract, in simple terms?',
+      answer: 'A smart contract is a program stored on a blockchain that runs automatically when its conditions are met, for example releasing payment once goods are confirmed delivered. Because it runs on the blockchain, anyone can verify what it does and no single party can quietly change it, which is also why bugs are so costly.',
+    },
+    {
+      question: 'How much does it cost to build a smart contract?',
+      answer: 'A simple token contract built on audited OpenZeppelin libraries is a small job; a protocol that holds user funds, with complex economic logic, is a major engineering project, and the independent audit is often a significant share of the budget. We quote development at a fixed price after reviewing the specification and help you scope and budget for the audit separately.',
+    },
   ],
   comparison: {
     rightFor: [
@@ -180,7 +188,6 @@ const data = {
   ],
   relatedServices: [
     { title: 'Web3 & Blockchain Development', href: '/services/blockchain-development' },
-    { title: 'DeFi Platform Development', href: '/services/defi-platform' },
     { title: 'Cybersecurity Consulting', href: '/services/cybersecurity' },
   ],
   heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>',

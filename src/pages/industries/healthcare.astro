@@ -3,13 +3,13 @@ import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
   metaTitle: 'Healthcare Software Development Australia | All Webbed Labs',
-  metaDescription: 'ADHA-compliant, HL7 FHIR-integrated clinical platforms for Australian hospitals, telehealth and allied health, including My Health Record integration.',
+  metaDescription: 'Healthcare software development for Australian clinics, hospitals and telehealth: medical software, healthcare apps, HL7 FHIR integration and AI tools.',
   industryName: 'Healthcare',
   heroHeadline: 'Healthcare Technology That Improves Patient Outcomes',
-  heroTagline: 'ADHA-compliant, HL7/FHIR-integrated clinical platforms for hospitals, telehealth providers and allied health organisations.',
+  heroTagline: 'Healthcare software development for Australian hospitals, telehealth providers and allied health: HL7 FHIR-integrated clinical platforms, medical software and healthcare apps built to ADHA specifications.',
   stats: [
     { value: 'HL7 FHIR R4', label: 'native integration, no translation layer' },
-    { value: 'My Health Record', label: 'ADHA VTE conformance experience' },
+    { value: 'My Health Record', label: 'built to ADHA specifications' },
     { value: 'AU Core', label: 'FHIR Implementation Guide aware' },
     { value: 'Privacy by Design', label: 'OAIC-aligned architecture' },
   ],
@@ -44,10 +44,12 @@ const data = {
     'Electronic prescription management',
     'Pathology and radiology order integrations',
     'Hospital workflow and bed management',
+    'AI scribes, clinical documentation and healthcare automation',
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   relevantServices: [
+    { title: 'AI and Software Development for Healthcare', href: '/solutions/ai-in-healthcare' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'API Development', href: '/services/api-development' },
     { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
@@ -57,8 +59,16 @@ const data = {
   ],
   faqs: [
     {
+      question: 'Is healthcare software or AI regulated by the TGA?',
+      answer: "It depends on the software's intended purpose, not its technology. Electronic health records and clinical workflow software generally fall within the TGA's exclusions, and an AI scribe that only records and summarises a consultation generally isn't a medical device. Add a feature that suggests diagnoses or treatments and that function can become software as a medical device. We map the intended purpose against the TGA boundary with your advisers before choosing an architecture; our guide to AI and software development for Australian healthcare covers the detail.",
+    },
+    {
+      question: 'How much does healthcare app development cost in Australia?',
+      answer: "Healthcare app development costs more than a comparable consumer app because of privacy engineering, audit logging, clinical integrations (HL7, FHIR, practice management systems) and any conformance work with national infrastructure. A booking or patient-intake app with one integration sits at the lower end; a telehealth or clinical platform with My Health Record and Medicare claiming sits well above it. We quote a fixed price after a paid discovery, and our app development cost guide gives typical Australian market ranges.",
+    },
+    {
       question: 'How do you handle My Health Record integration and ADHA conformance?',
-      answer: "My Health Record (MHR) integration requires conformance testing through the Australian Digital Health Agency (ADHA) and adherence to the National Clinical Terminology Service (NCTS) standards including SNOMED CT-AU and ICD-10-AM. We have experience with the ADHA's Vendor Trial Environment (VTE) testing process, the NASH PKI certificate requirements for system authentication, and the correct handling of access controls including healthcare provider access and emergency access flags. Our integrations produce CDA-compliant clinical documents using Australian-localised templates for discharge summaries, event summaries, specialist letters and prescription records.",
+      answer: "My Health Record (MHR) integration requires conformance testing through the Australian Digital Health Agency (ADHA) and adherence to the National Clinical Terminology Service (NCTS) standards including SNOMED CT-AU and ICD-10-AM. We plan the software around the ADHA's Vendor Trial Environment (VTE) testing process, the NASH PKI certificate requirements for system authentication, and the correct handling of access controls including healthcare provider access and emergency access flags. Integrations produce CDA clinical documents using Australian-localised templates for discharge summaries, event summaries, specialist letters and prescription records. Conformance itself belongs to the software owner: we build to the specifications and support the process, but we don't hold conformance for a product of our own.",
     },
     {
       question: 'What HL7 standards do you work with?',
@@ -74,7 +84,7 @@ const data = {
     },
     {
       question: 'Do you build for AHPRA-regulated practitioners specifically?',
-      answer: "Yes. We understand that AHPRA-registered practitioners across medicine, nursing, psychology, physiotherapy and other professions have distinct digital health obligations, including professional indemnity considerations, clinical documentation requirements for record-keeping, and the need for systems that support compliant telehealth delivery under the Medicare telehealth item number rules. Our clinical workflow design is informed by working closely with practitioners in these disciplines to ensure the software supports, rather than disrupts, safe clinical practice.",
+      answer: "Yes. We understand that AHPRA-registered practitioners across medicine, nursing, psychology, physiotherapy and other professions have distinct digital health obligations, including professional indemnity considerations, clinical documentation requirements for record-keeping, and the need for systems that support compliant telehealth delivery under the Medicare telehealth item number rules. Clinical workflows are worked out with your practitioners during discovery so the software supports, rather than disrupts, safe clinical practice.",
     },
   ],
   ctaHeadline: "Let's Build Healthcare Technology That Puts Patients First",

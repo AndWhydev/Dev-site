@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Node.js & Python Backend Development | All Webbed Labs",
-  metaDescription: "Node.js and Python backends built by senior engineers: APIs, background jobs, queues, integrations and performance work, hosted in Australian cloud regions.",
+  metaTitle: "Node.js & Python Backend Development Australia | AWLabs",
+  metaDescription: "Backend development services from Sydney: Node.js and Python developers building APIs, background jobs, queues and integrations, hosted in Australian regions.",
   category: "Backend",
   serviceName: "Node.js & Python Backends",
   slug: "backend-development",
   heroHeadline: "Backends That Keep Working When Traffic, Data and Integrations Grow",
-  heroTagline: "Node.js and Python services, background jobs, queues and integrations built by senior engineers, with the unglamorous parts done properly: retries, idempotency, observability and upgrades.",
+  heroTagline: "Backend development in Node.js and Python: services, background jobs, queues and integrations built by senior engineers, with the unglamorous parts done properly: retries, idempotency, observability and upgrades.",
   summaryStatement: "Backend development is the engineering of the server-side part of an application: the business logic, APIs, background jobs, queues, data access and third-party integrations that run out of sight of users; Node.js and Python are the two most common runtimes for it, Node.js favoured for high-concurrency web services in TypeScript and Python for data-heavy, machine learning and AI workloads.",
   description: [
     "Users see the screens, but the backend decides whether an application is trustworthy. It is where orders are priced, permissions are checked, payments are reconciled, emails are sent, files are processed and data from other systems is pulled in and pushed out. Most backend failures are not dramatic. A payment webhook is processed twice and a customer is charged twice. A nightly import silently skips rows. A report that took two seconds with a thousand customers takes two minutes with fifty thousand. An integration partner changes a field and nothing alerts anyone for a week. Good backend engineering is mostly about designing for these cases before they happen, and it is the part of a system where senior experience pays for itself most clearly.",
-    "We build backends in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real-time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long-running and failure-prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead-letter queues so a partner outage never loses data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long-term releases, and deliver the code into your repository with tests, documentation and runbooks so your team can own it.",
+    "Our backend developers work in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real-time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long-running and failure-prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead-letter queues so a partner outage never loses data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long-term releases, and deliver the code into your repository with tests, documentation and runbooks so your team can own it.",
   ],
   benefits: [
     {
@@ -123,11 +123,23 @@ const data = {
     },
     {
       question: "How do you keep Node.js and Python versions supported?",
-      answer: "We run production on supported releases and plan upgrades ahead of end-of-life dates. Node.js supports each long-term support release for 30 months, and each Python version receives fixes for about five years, so upgrades are a predictable, scheduled task. We record runtime versions and their end-of-life dates in the handover documentation.",
+      answer: "We run production on supported releases and plan upgrades ahead of end-of-life dates. At the time of writing (September 2026), Node.js says each long-term support release typically receives critical fixes for a total of 30 months, and each Python version receives bugfix and then security releases for about five years, so upgrades are a predictable, scheduled task. We record runtime versions and their end-of-life dates in the handover documentation.",
     },
     {
       question: "Where will the backend be hosted?",
       answer: "In your own cloud account, so you own the infrastructure and the data. We deploy to Australian regions by default, such as AWS Sydney or Melbourne, Azure Australia East or Google Cloud Sydney, using containers or managed services depending on the workload. Hosting choice is documented along with its expected monthly cost.",
+    },
+    {
+      question: "How much does backend development cost?",
+      answer: "Typical Australian market ranges are $15k to $40k for a focused component such as a partner integration or background job system, $50k to $150k for the full backend of a new web or mobile product, and $10k to $30k for a performance and reliability review of an existing backend (AUD, ex GST). Hosting and third-party service fees are separate, and the build is fixed-priced after paid discovery.",
+    },
+    {
+      question: "Which frameworks do you use for Node.js and Python backends?",
+      answer: "For Node.js we typically use Fastify, NestJS or Express with TypeScript, and BullMQ on Redis for background jobs. For Python we use FastAPI for APIs, Django where an admin interface and batteries-included framework help, and Celery for workers. Temporal handles long-running workflows that must survive restarts, and PostgreSQL is our default database.",
+    },
+    {
+      question: "Can you take over or extend a backend another team built?",
+      answer: "Yes. We start by reading the code, running it locally, checking how it is deployed and monitored, and listing the risks before changing anything significant. Where the state of the system is unclear, a short code audit comes first so you know what you are inheriting. After that, new features, performance work and upgrades follow the same engineering practices as a new build.",
     },
   ],
   comparison: {

@@ -1,12 +1,12 @@
 ---
-title: "APRA CPS 230 and AI vendors: what changes when your AI supplier is material"
-metaTitle: "APRA CPS 230 and AI Vendors: Material Service Providers"
-description: "How APRA's CPS 230 applies to AI vendors and model providers: when they're material service providers, what contracts must say, and the key 2025 and 2026 dates."
+title: "APRA CPS 230 requirements for AI vendors: what changes when your AI supplier is material"
+metaTitle: "APRA CPS 230 Requirements for AI Vendors and Model Providers"
+description: "APRA CPS 230 requirements for AI vendors: when an AI supplier is a material service provider, what the contract must say, and the notification deadlines."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "CPS 230 is APRA's operational risk standard. It commenced on 1 July 2025, and pre-existing service provider contracts had until the earlier of their next renewal or 1 July 2026 to meet it, so it now applies in full. An AI vendor is a material service provider if the regulated entity relies on it for a critical operation, such as customer enquiries or claims processing, or if it exposes the entity to material operational risk. Material arrangements need due diligence, a formal agreement with minimum terms, APRA access rights, tolerance-level planning, an exit plan and, for material offshoring, notice to APRA before it starts."
+summary: "CPS 230 is APRA's operational risk management standard, and its requirements now apply in full to AI vendors that banks, insurers and super funds rely on. It commenced on 1 July 2025, and pre-existing service provider contracts had until the earlier of their next renewal or 1 July 2026 to meet it. An AI vendor is a material service provider if the regulated entity relies on it for a critical operation, such as customer enquiries or claims processing, or if it exposes the entity to material operational risk. Material arrangements need due diligence, a formal agreement with minimum terms, APRA access rights, tolerance-level planning, an exit plan and, for material offshoring, notice to APRA before it starts."
 takeaways:
   - "CPS 230 commenced on 1 July 2025; the transition for pre-existing service provider contracts ended on 1 July 2026 at the latest."
   - "Customer enquiries are a minimum critical operation for every APRA-regulated entity, and claims processing is one for insurers, which puts many AI projects in scope."
@@ -19,9 +19,13 @@ faqs:
   - q: "Do CPS 230's contract requirements apply to OpenAI, Anthropic or other model providers directly?"
     a: "If the entity contracts with a model provider directly and the arrangement is material, the formal agreement requirements apply to that arrangement. If the model provider sits behind a vendor, it is a fourth party: the entity must manage the associated risks, and its agreement with the vendor must require notice of material subcontractors and make the vendor liable for their failures."
   - q: "Did the April 2026 amendments exempt cloud or AI providers from the contract rules?"
-    a: "No. The targeted amendments that took effect on 1 July 2026 exempt specific categories listed in an attachment to CPS 230, such as government agencies, regulators, central banks, financial market exchanges, clearing and settlement facilities, payment system operators and financial messaging infrastructure. Commercial cloud and AI vendors aren't among those categories."
+    a: "No. The targeted amendments that took effect on 1 July 2026 exempt material arrangements from some contract requirements only where the provider falls in a category listed in an attachment to CPS 230 and the arrangement uses the provider's standardised terms or has no formal agreement. The categories are government agencies, regulators, central banks, financial market exchanges, clearing and settlement facilities, payment system operators and financial messaging infrastructure. Commercial cloud and AI vendors aren't among those categories."
   - q: "What happens if the AI service goes down?"
     a: "For a critical operation, the entity must set tolerance levels for maximum disruption time, maximum data loss and minimum service levels, and its business continuity plan must show how it stays within them. It must notify APRA within 24 hours of a disruption to a critical operation outside tolerance. AI vendors should design for this with fallbacks and documented recovery."
+  - q: "What does CPS 230 stand for?"
+    a: "CPS stands for Cross-industry Prudential Standard, APRA's label for standards that apply across banking, insurance and superannuation. CPS 230 is the one on operational risk management. Its companion practice guide, CPG 230, explains how APRA expects the standard to be met but isn't binding in itself."
+  - q: "Is there a CPS 230 notification form?"
+    a: "Yes. On 27 June 2025 APRA released electronic forms for notifying an operational risk incident, a breach of a critical operation tolerance, and a new or changed material arrangement or offshoring. The forms and the information each one asks for are on APRA's operational risk management page."
   - q: "Does CPS 230 replace CPS 234?"
     a: "No. CPS 234 still governs information security. CPS 230 requires the entity to meet CPS 234 when managing technology risk, and an incident notified under CPS 234 doesn't need a second notification under CPS 230."
 sources:
@@ -58,15 +62,15 @@ service:
 disclaimer: legal
 ---
 
-## What is CPS 230?
+## What is CPS 230 and who does it apply to?
 
-**Prudential Standard CPS 230 Operational Risk Management is APRA's cross-industry standard requiring regulated entities to manage operational risk, keep critical operations running through severe disruption, and manage the risks of using service providers.** It applies to ADIs, general insurers, life companies, private health insurers and RSE licensees.
+**Prudential Standard CPS 230 Operational Risk Management is APRA's cross-industry standard requiring regulated entities to manage operational risk, keep critical operations running through severe disruption, and manage the risks of using service providers.** It applies to ADIs, general insurers, life companies, private health insurers and RSE licensees. CPS stands for Cross-industry Prudential Standard, meaning one standard covers all of those industries, and the standard is often described as APRA's operational resilience standard because of its business continuity and service provider rules.
 
 APRA finalised the standard on 17 July 2023, and it commenced on 1 July 2025. For contracts with service providers that already existed on that date, APRA gave a transition: the service provider requirements applied from the earlier of the next contract renewal or 1 July 2026. That window has closed, so every arrangement now has to meet the standard.
 
 On 30 April 2026 APRA finalised targeted amendments, remaking CPS 230 in a version that commenced on 1 July 2026. The main change is a limited exemption from some contract requirements for listed categories of non-traditional service providers, such as central banks and clearing and settlement facilities, where contractual compliance isn't practicable. It doesn't cover commercial software, cloud or AI vendors.
 
-## Key dates
+## CPS 230 key dates and deadlines
 
 **The dates below come from APRA's standard, its implementation announcements and its 2026 amendment release.**
 
@@ -110,7 +114,7 @@ Contracts carry this through. The formal agreement with a material service provi
 
 For AI, that means an entity should know which model, from which provider, in which region, and what happens if that provider changes terms, deprecates the model or has an outage. Many AI products depend on a small number of model providers, so concentration risk is a real question, not a formality.
 
-## What must a material AI vendor agreement contain?
+## CPS 230 contract checklist: what must a material AI vendor agreement contain?
 
 **Every material arrangement needs a formal, legally binding agreement with minimum terms set by CPS 230, including APRA's own access rights.** Use this checklist against a draft contract:
 
@@ -127,7 +131,7 @@ For AI, that means an entity should know which model, from which provider, in wh
 
 Before signing or materially changing the arrangement, the entity must do due diligence, including an assessment of the vendor's ability to provide the service on an ongoing basis. For AI vendors, ask specifically about model deprecation, price changes by the model provider, and how quickly the system can move to another model. Our [software development contract checklist](/guides/software-development-contract-checklist) covers the commercial terms that sit alongside these.
 
-## What does APRA need to be told, and when?
+## CPS 230 notification requirements: what does APRA need to be told, and when?
 
 **CPS 230 has four notification triggers relevant to AI vendors: offshoring, new or changed critical arrangements, material incidents and disruptions outside tolerance.**
 
@@ -137,6 +141,8 @@ Before signing or materially changing the arrangement, the entity must do due di
 | Entering or materially changing an agreement for a service the entity relies on for a critical operation | As soon as possible, and within 20 business days |
 | An operational risk incident likely to have a material financial impact or a material impact on critical operations | As soon as possible, and within 72 hours |
 | A disruption to a critical operation outside tolerance | As soon as possible, and within 24 hours |
+
+APRA released electronic notification forms on 27 June 2025 for three of these: operational risk incidents, breaches of a critical operation tolerance, and new or changed material arrangements or offshoring. Its operational risk management page lists what each form asks for, so a vendor can see in advance which facts the entity will need from it in a hurry.
 
 The offshoring trigger matters for AI. CPS 230 defines offshoring by where the service is physically performed, not where the provider is incorporated. If a material AI service sends data to a model running outside Australia, the entity may need to notify APRA before it starts. Keeping inference and storage in Australian regions, where the model is available there, avoids that question. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
 
@@ -150,8 +156,21 @@ The offshoring trigger matters for AI. CPS 230 defines offshoring by where the s
 - **Testing.** CPS 230 requires business continuity testing with severe but plausible scenarios, including disruption to material service providers. Expect to take part.
 - **Exit.** Keep prompts, configuration, evaluation sets and source data in forms the entity can take to another provider, and make sure indexes can be rebuilt from source.
 
+## CPS 230 vs CPS 234: which applies to an AI vendor?
+
+**Usually both, for different reasons: CPS 234 covers the security of the information assets an AI system touches, and CPS 230 covers the operational risk of relying on the vendor to deliver a service.** Neither binds the vendor directly. Both reach it through the regulated entity's assessments and contracts.
+
+| Question | CPS 234 Information Security | CPS 230 Operational Risk Management |
+|---|---|---|
+| What it protects | Confidentiality, integrity and availability of information assets | Critical operations and the entity's resilience to disruption |
+| What triggers vendor scrutiny | Any third party managing the entity's information assets | A material service provider, or a fourth party one relies on |
+| What the vendor is asked for | Security capability, control design and testing evidence | Due diligence, contract terms, tolerance planning and an exit plan |
+| Incident notice to APRA | Material information security incidents within 72 hours | Material operational risk incidents within 72 hours; disruption outside tolerance within 24 hours |
+
+An incident notified under CPS 234 doesn't need to be notified again under CPS 230. For the security evidence pack, see [APRA CPS 234 requirements for AI systems](/guides/apra-cps-234-ai).
+
 ## How All Webbed Labs approaches CPS 230 work
 
 We don't certify anyone as meeting CPS 230, and the materiality assessment belongs to the regulated entity. Our part is engineering and documentation: a named list of every third and fourth party the system relies on, Australian hosting regions by default, designs that can switch models without a rewrite, documented fallback behaviour for model outages, and source code in the client's own repository from day one, which makes exit a practical option rather than a clause.
 
-Read how we'd approach this for banks, insurers and super funds in [AI for APRA-regulated financial services](/solutions/ai-for-financial-services) and [insurance claims automation](/solutions/insurance-claims-automation), or see our [enterprise software](/services/enterprise-software) service. For the information security side, read [APRA CPS 234 and AI systems](/guides/apra-cps-234-ai).
+Read how we'd approach this for banks, insurers and super funds in [AI for APRA-regulated financial services](/solutions/ai-for-financial-services) and [insurance claims automation](/solutions/insurance-claims-automation), or see our [enterprise software](/services/enterprise-software) service.

@@ -1,12 +1,12 @@
 ---
-title: "How to sell software to Australian government"
-metaTitle: "How to Sell Software to Australian Government (2026)"
-description: "How software companies sell to Australian government: BuyICT and DTA panels, the 2025 Commonwealth Procurement Rules, NSW and Victorian schemes, and security."
+title: "How to sell software to the Australian government"
+metaTitle: "How to Sell Software to the Australian Government (2026)"
+description: "How to sell software to the Australian government: BuyICT panels, AusTender, the 2025 Commonwealth Procurement Rules, state schemes and security requirements."
 eyebrow: "Australian procurement"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Federal agencies buy most digital and ICT services through BuyICT, the Digital Transformation Agency's platform for whole-of-government panels such as the Digital Marketplace Panel 2, the Software and ERP Marketplace Panel and the Cloud Marketplace Panel, and through open tenders on AusTender. The Commonwealth Procurement Rules that took effect on 17 November 2025 raised the non-corporate entity threshold to $125,000 and require agencies to invite only Australian businesses for many smaller procurements. States run their own arrangements, such as the NSW ICT Services Scheme and Victoria's Supplier Hub. Expect security questions based on ASD's Information Security Manual, especially for cloud and AI products."
+summary: "To sell software to the Australian government at federal level, you usually go through BuyICT, the Digital Transformation Agency's platform for whole-of-government panels such as the Digital Marketplace Panel 2, the Software and ERP Marketplace Panel and the Cloud Marketplace Panel, or respond to open tenders on AusTender. The Commonwealth Procurement Rules that took effect on 17 November 2025 raised the non-corporate entity threshold to $125,000 and require agencies to invite only Australian businesses for many smaller procurements. States run their own arrangements, such as the NSW ICT Services Scheme and Victoria's Supplier Hub. Expect security questions based on ASD's Information Security Manual, especially for cloud and AI products."
 takeaways:
   - "BuyICT hosts six DTA whole-of-government marketplaces; some are mandated for non-corporate Commonwealth entities in specific categories, others are opt-in."
   - "Under the Commonwealth Procurement Rules from 17 November 2025, the procurement threshold for non-corporate Commonwealth entities is $125,000 (GST inclusive) for non-construction work."
@@ -22,6 +22,8 @@ faqs:
     a: "Under the Commonwealth Procurement Rules, an SME is an Australian or New Zealand business with fewer than 200 full-time equivalent employees, counting employees of associated entities such as parent companies and subsidiaries."
   - q: "Do I need an IRAP assessment to sell to government?"
     a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller or lower-risk purchases won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight."
+  - q: "How do I register as a government supplier in Australia?"
+    a: "There's no single national register. For federal work, create accounts on BuyICT and AusTender and apply to the relevant panel when it opens. For states, register with each jurisdiction: for example, become a registered NSW Government supplier before applying to the NSW ICT Services Scheme, or register on Victoria's Supplier Hub."
   - q: "Is All Webbed Labs on BuyICT or a state panel?"
     a: "No. All Webbed Labs isn't a seller on any BuyICT marketplace panel, the NSW ICT Services Scheme or any other government panel or scheme. This guide is general information for software companies considering the government market."
   - q: "How long do agencies give suppliers to respond to an open tender?"
@@ -72,13 +74,27 @@ disclaimer: none
 
 The practical question for a software company is which route its buyers use for its category, and what it needs to be eligible for that route. That depends on the level of government, the size of the purchase, and what the product does.
 
+## What are the requirements to sell software to government?
+
+**There is no single licence to sell software to government; the requirements depend on the route and the buyer.** For most software companies they come down to five things.
+
+| Requirement | What it involves | Where it comes from |
+|---|---|---|
+| A route to the buyer | Membership of the relevant panel or scheme, or a response to a published tender | BuyICT, AusTender, state schemes such as the NSW ICT Services Scheme |
+| Supplier status | Evidence that you meet the definitions of an Australian business or an SME, if you want the benefit of the preferences | Commonwealth Procurement Rules 2025 |
+| Security evidence | An ISM-informed control summary, your Essential Eight position and, for sensitive cloud data, possibly an IRAP assessment | Agency requirements based on ASD guidance |
+| AI information | Descriptions, test results and change notices agencies need for their own assessments | DTA policy for the responsible use of AI in government |
+| Contract terms | Acceptance of the panel head agreement or state contracting framework, including liability, IP and data clauses | The panel or scheme's terms |
+
+The sections below cover each route in turn. It pays to have all five in place before you bid, rather than assembling them under a tender deadline.
+
 ## What is BuyICT?
 
 **BuyICT is the Digital Transformation Agency's platform connecting government buyers with digital and ICT sellers, and it hosts the DTA's whole-of-government procurement arrangements.** The DTA describes six marketplaces on it. Whether an agency must use a given panel depends on the agency type and the category:
 
 | Arrangement | What it covers | Use by agencies (per the DTA) |
 |---|---|---|
-| Digital Marketplace Panel 2 | Module 1: ICT labour hire. Module 2: professional and consultancy services | Module 2 is opt-in for non-corporate and corporate Commonwealth entities and state and territory entities |
+| Digital Marketplace Panel 2 | Module 1: ICT labour hire. Module 2: professional and consultancy services | Opt-in for non-corporate and corporate Commonwealth entities and state and territory entities |
 | Software and ERP Marketplace Panel | Software, including enterprise resource planning | Mandatory for non-corporate Commonwealth entities buying ERP products; opt-in for corporate Commonwealth entities |
 | Cloud Marketplace Panel | Cloud services | Opt-in for non-corporate and corporate Commonwealth entities and state and territory entities |
 | Hardware Marketplace Panel | Desktops, laptops, monitors, printers and similar | Mandated for non-corporate Commonwealth entities for listed device types |
@@ -139,7 +155,7 @@ It tends not to suit early-stage products still finding their market, products t
 
 A middle path many software companies take is to partner with an established panel supplier as a subcontractor. That can work well, but read the panel's head agreement first, because subcontractors often inherit its obligations on security, data and liability.
 
-## A step-by-step path to the government market
+## How to sell software to government: a step-by-step checklist
 
 **Most software companies get further by choosing one buyer group and one route, getting eligible, and building evidence, rather than applying everywhere at once.**
 

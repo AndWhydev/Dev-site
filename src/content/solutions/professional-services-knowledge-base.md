@@ -1,11 +1,11 @@
 ---
 title: "AI knowledge bases for professional services firms"
-metaTitle: "AI Knowledge Bases for Professional Services Firms"
-description: "How consulting, engineering and advisory firms build RAG knowledge bases over past work, with per-client access control, confidentiality and Australian hosting."
+metaTitle: "AI Knowledge Base for Professional Services Firms Australia"
+description: "AI knowledge base software for Australian consulting, engineering and advisory firms: RAG over past work with per-client access control and onshore hosting."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "An AI knowledge base for a professional services firm is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a mid-sized firm typically costs $60,000 to $180,000 (AUD, ex GST) as a market range, not a quote."
+summary: "An AI knowledge base for professional services firms is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a mid-sized firm typically costs $75,000 to $195,000 (AUD, ex GST) including discovery, as a market range, not a quote."
 takeaways:
   - "The hard part isn't the AI. It's making sure every answer respects client confidentiality, ethical walls and engagement-level permissions."
   - "Permissions must be filtered before retrieval, not after generation; otherwise confidential content can leak into an answer even if the source link is hidden."
@@ -19,6 +19,10 @@ faqs:
     a: "It shouldn't be. Enterprise API terms from the major model providers generally exclude customer data from training by default, but terms differ by provider and product and change over time, so confirm them for the exact service you use and record the date. A RAG system also doesn't need training on your documents at all: it retrieves them at question time."
   - q: "Can the knowledge base run entirely in Australia?"
     a: "The document store, search index and application can run in Australian cloud regions. Whether the model itself runs onshore depends on which model you choose and its availability in Australian regions at the time, which changes often. We check the provider's regional availability page during discovery and document any processing that leaves Australia."
+  - q: "How is an AI knowledge base different from traditional knowledge management software?"
+    a: "Traditional knowledge management relies on people tagging and filing documents so others can browse or keyword search them, and it decays when nobody maintains it. An AI knowledge base reads the documents themselves, finds relevant passages by meaning rather than exact words, and writes an answer with citations. It still needs curation, but far less manual tagging, and it can sit on top of the document systems you already use."
+  - q: "Can it connect to SharePoint, iManage or our project system?"
+    a: "Usually, through each system's API. The connector brings in documents and, just as importantly, their permissions, so search results respect who can open what. Systems without a usable API can sometimes be handled through scheduled exports, but permission sync is harder that way, so we check every source during discovery."
   - q: "What about superseded documents and old standards?"
     a: "Tag documents with status and date, rank current versions higher, and show the date alongside every citation so a reader can tell a 2016 methodology from the current one. For engineering firms, licensed standards documents should only be indexed if the licence permits it; many don't allow reuse in this way."
   - q: "How long before staff can use it?"
@@ -58,7 +62,7 @@ service:
 disclaimer: legal
 ---
 
-## What does a firm knowledge base actually answer?
+## What can an AI knowledge base answer for a consulting or engineering firm?
 
 **A professional services knowledge base answers the questions staff currently ask a senior colleague or spend an hour searching shared drives for: "Have we done this before, for whom, and what did we recommend?"** It retrieves passages from the firm's own documents and has a language model compose an answer with a citation to each source, so the reader can check it. The technique is [retrieval-augmented generation](/guides/what-is-rag).
 
@@ -70,7 +74,7 @@ disclaimer: legal
 | Proposal | "Draft a relevant experience section for a water utility tender." | Credentials library, project summaries | Hours saved per tender |
 | Technical recall | "What design assumptions did we use for seismic loads on the 2023 warehouse jobs?" | Calculations, design reports | Consistency, fewer repeated mistakes |
 
-Consulting, engineering, architecture, planning and advisory firms share the same pattern: valuable knowledge locked in thousands of engagement documents, filed by client and project, with access that should stay restricted. Law and accounting firms add their own regulatory layers, covered on our [law firm](/solutions/ai-for-law-firms) and [accounting firm](/solutions/ai-for-accounting-firms) pages.
+This is knowledge management for professional services with a search box that answers in sentences rather than returning a list of files. Consulting, engineering, architecture, planning and advisory firms share the same pattern: valuable knowledge locked in thousands of engagement documents, filed by client and project, with access that should stay restricted. Law and accounting firms add their own regulatory layers, covered on our [law firm](/solutions/ai-for-law-firms) and [accounting firm](/solutions/ai-for-accounting-firms) pages.
 
 ## Why does per-client access control shape the whole architecture?
 
@@ -98,7 +102,7 @@ Getting filter-before-retrieval right involves several details that generic tool
 
 - **Client contracts.** Engagement terms may restrict use of AI tools, processing outside Australia, subcontracting, or reuse of deliverables for other clients. Some government and infrastructure clients impose security requirements on anyone handling their documents. Review a sample of your major contracts before deciding what to index.
 - **Privacy Act.** If your firm is covered (most firms with annual turnover above $3 million, among others), the Australian Privacy Principles apply to personal information in engagement files: names, contact details, employee data from HR advisory work, health information in injury or workplace reports. The OAIC's guidance on AI products says privacy obligations apply to personal information input into an AI system and to outputs that contain it, including inferred or incorrect information. It also recommends not entering personal information, particularly sensitive information, into publicly available generative AI tools.
-- **Cross-border disclosure.** If a model runs offshore, personal information in prompts and retrieved passages is disclosed overseas, which brings APP 8 into play. Keeping inference onshore where possible, or documenting what leaves, is simpler than arguing about it later.
+- **Cross-border disclosure.** If a model runs offshore, personal information in prompts and retrieved passages is disclosed overseas, which brings APP 8 into play. Keeping inference onshore where possible (an open-weight model through [private LLM deployment](/services/private-llm-deployment) is one route), or documenting what leaves, is simpler than arguing about it later.
 - **Professional expectations.** Registered engineers, architects and other professionals remain responsible for their advice. A knowledge base can surface precedent; it can't sign off on a design or a recommendation.
 
 ### Before you index anything: a checklist

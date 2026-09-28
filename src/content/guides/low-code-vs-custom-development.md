@@ -1,12 +1,12 @@
 ---
 title: "Low-code (Power Apps, Bubble) vs custom development: which should you choose?"
-metaTitle: "Low-Code (Power Apps, Bubble) vs Custom Development"
-description: "Power Apps and Bubble vs custom software: where low-code wins, where it breaks, how licensing scales, data residency in Australia, and when to move to code."
+metaTitle: "Low-Code vs Custom Software Development: Which to Choose?"
+description: "Low-code vs custom software development: where Power Apps and Bubble win, where low-code breaks down, how licensing scales, and data residency in Australia."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Low-code wins for internal tools, simple workflows and early product experiments: Power Apps if you already run Microsoft 365 and your users are staff, Bubble if you're testing a customer-facing web product quickly. Custom development wins when the software is core to how you compete, serves many external users, needs complex logic or integrations, or must be portable and fully under your control. Many organisations should use both: low-code for the long tail of internal apps, code for the few systems that matter most."
+summary: "Low-code beats custom development for internal tools, simple workflows and early product experiments: Power Apps if you already run Microsoft 365 and your users are staff, Bubble if you're testing a customer-facing web product quickly. Custom development wins when the software is core to how you compete, serves many external users, needs complex logic or integrations, or must be portable and fully under your control. Many organisations should use both: low-code for the long tail of internal apps, code for the few systems that matter most."
 takeaways:
   - "Power Apps is licensed per user, so it's cost-effective for a few dozen staff and expensive for thousands of external users; Bubble bills on workload units tied to server usage."
   - "At the time of writing (September 2026), Power Platform environments can be created in an Australian region for Australian tenants; Bubble's standard hosting is Bubble-managed, with region choice on dedicated instances."
@@ -16,6 +16,10 @@ takeaways:
 faqs:
   - q: "Is low-code cheaper than custom development?"
     a: "Usually for the first version, and often for small internal apps over their whole life. It stops being cheaper when licence costs scale with users, when you hit platform limits and need workarounds, or when a rebuild becomes necessary because the platform can't do what the business now needs. Compare three-year total cost, not build cost."
+  - q: "What are the pros and cons of low-code?"
+    a: "The pros are speed, a low first-version cost, and the ability for trained staff to build simple apps without waiting for developers. The cons are licence costs that grow with users, weaker testing and version control, platform limits on logic and performance, and lock-in: you can't take a low-code app to another platform without rebuilding it. It's a strong choice for simple internal apps and a weak one for core, complex systems."
+  - q: "What are the alternatives to Power Apps?"
+    a: "Other low-code platforms, such as OutSystems, Mendix and Appian, target larger enterprise applications. No-code builders like Bubble suit customer-facing prototypes. Sometimes the better alternative is an off-the-shelf SaaS product that already does the job, or a SharePoint list with Power Automate for very simple cases. For core systems with complex rules or many external users, the alternative is custom development."
   - q: "Can Power Apps handle external customers?"
     a: "Power Apps is designed mainly for internal staff apps. Microsoft offers Power Pages for external-facing sites, licensed differently. For a customer-facing product with thousands of users, custom development or a product-focused platform usually fits better."
   - q: "Can we move off Bubble later?"
@@ -57,11 +61,19 @@ service:
   href: "/services/custom-app-development"
 ---
 
-## Low-code or custom: which should you choose?
+## Low-code vs custom development: which should you choose?
 
 **Choose low-code when speed matters more than control and the app is simple, internal or experimental; choose custom development when the software is core, complex, customer-facing at scale, or must be fully yours.** Neither is a compromise version of the other. They're tools for different jobs, and plenty of organisations are best served by using both.
 
 "Low-code" covers a wide range. **Power Apps** is Microsoft's platform for business apps, tightly tied to Microsoft 365, Dataverse and Power Automate. **Bubble** is a visual builder for full web applications, popular with founders building a first product. Both let non-developers build working software, and both let developers go further with code extensions.
+
+## What's the difference between low-code, no-code and custom development?
+
+**No-code tools let people build software entirely through visual editors; low-code tools add the option to write code where the visual tools run out; custom development means engineers write the software in a general-purpose language.** Custom development is also called traditional or pro-code development.
+
+In practice the lines blur. Bubble is often described as no-code, yet developers extend it with plugins and API calls. Power Apps is marketed as low-code and used by staff who never write a formula more complex than a spreadsheet's. Enterprise low-code platforms such as OutSystems and Mendix are aimed at professional developers who want to build faster.
+
+A newer category, AI app builders that generate code from prompts, sits between the two: you get real code, but it still needs review, testing and maintenance like any other code. The useful question isn't the label but where the software will run, who can change it safely, and whether you can take it with you.
 
 ## How do they compare side by side?
 
@@ -77,7 +89,7 @@ service:
 | Australian data residency | Environments can be created in an Australian region for Australian tenants | Bubble-managed hosting; region choice on dedicated instances | Any Australian cloud region |
 | Portability | Tied to Power Platform | No source code export; JSON logic export and data export | Full source code, host anywhere |
 | Limits to watch | 40,000 Power Platform requests per Premium user per 24 hours; connector and Dataverse limits | Workload unit consumption, performance on heavy logic | Only what you build and pay for |
-| Mobile | Runs in the Power Apps mobile app | Native iOS and Android on paid plans | Native or cross-platform apps |
+| Mobile | Runs in the Power Apps mobile app | Native iOS and Android apps; publishing to the stores needs a paid plan | Native or cross-platform apps |
 
 ## Where does low-code win?
 
@@ -127,7 +139,7 @@ At 40 users, low-code wins comfortably. At 400, the licence bill exceeds the cos
 - **Review before publishing** anything used by more than one team or holding personal information.
 - **Keep an inventory** with each app's users, data and business importance, and revisit it yearly. The apps near the top of that list are your candidates for a move to code.
 
-## A decision guide
+## When should you use low-code, no-code or custom code? A decision guide
 
 Choose **Power Apps** if:
 
@@ -154,4 +166,4 @@ If automation rather than apps is the question, see [n8n vs Make vs Zapier](/gui
 
 ## How All Webbed Labs approaches the choice
 
-We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, we build it with code in your repository from day one, hosted in an Australian region by default, and we often migrate successful low-code apps into code once they've proved their worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).
+We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, we build it with code in your repository from day one, hosted in an Australian region by default, and we can migrate a successful low-code app into code once it has proved its worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).

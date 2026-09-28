@@ -1,12 +1,12 @@
 ---
 title: "n8n vs Make vs Zapier: which automation platform fits (and when to go custom)?"
-metaTitle: "n8n vs Make vs Zapier (and When to Go Custom)"
-description: "n8n, Make and Zapier compared for Australian businesses: pricing models, self-hosting, data residency and limits, plus when custom code beats all three."
+metaTitle: "n8n vs Make vs Zapier: Pricing and Self-Hosting in Australia"
+description: "n8n vs Zapier vs Make for Australian businesses: pricing models, self-hosted n8n in Australia, data residency and limits, and when custom code beats them."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Zapier is the easiest to start with and has the largest app catalogue, but it bills per task and is hosted only in the US. Make is cheaper for multi-step scenarios, bills per credit, and lets you choose a US or EU data centre. n8n is the only one of the three you can self-host, including in an Australian cloud region, and it bills per workflow execution rather than per step. Go custom when volumes, logic or data rules outgrow all three."
+summary: "Comparing n8n vs Make vs Zapier: Zapier is the easiest to start with and has the largest app catalogue, but it bills per task and is hosted only in the US. Make is cheaper for multi-step scenarios, bills per credit, and lets you choose a US or EU data centre. n8n is the only one of the three you can self-host, including in an Australian cloud region, and it bills per workflow execution rather than per step. Go custom when volumes, logic or data rules outgrow all three."
 takeaways:
   - "Each platform counts usage differently: Zapier per successful action (task), Make per module action (credit), n8n per full workflow run (execution). The same workflow can cost very different amounts."
   - "At the time of writing (September 2026), Zapier is hosted on AWS in the United States and Make offers US or EU data centres. Neither offers an Australian region."
@@ -16,14 +16,18 @@ takeaways:
 faqs:
   - q: "Is n8n free?"
     a: "The self-hosted Community edition is free to use for your own business, under n8n's Sustainable Use License rather than a standard open source licence. You still pay for the server, and you carry the operational work. n8n Cloud and the Business and Enterprise editions are paid, and some features such as SSO, environments and Git version control need a paid licence."
+  - q: "n8n vs Zapier: which is better?"
+    a: "Zapier is better for non-technical teams connecting mainstream SaaS apps at modest volume: it has 9,000+ apps and nothing to run. n8n is better when workflows have many steps, volume is high, or data must stay in Australia, because it bills per execution and can be self-hosted in an Australian region. The trade-off is that n8n asks more of your team technically."
+  - q: "Does Zapier cost money?"
+    a: "There is a free plan with 100 tasks a month and two-step Zaps only. Beyond that, Zapier's Professional, Team and Enterprise plans are paid, and the price rises with the number of tasks you use. Check Zapier's pricing page for current figures in your currency."
+  - q: "Is Zapier worth it, and why does it get expensive?"
+    a: "For a handful of simple automations across popular apps, usually yes: it's quick to set up and saves developer time. It gets expensive because it bills per task, so every action step in every run counts, and costs grow in line with steps and volume. When the bill climbs, moving the busiest workflows to n8n or code is usually cheaper than cutting automations."
   - q: "Can I keep Zapier or Make data in Australia?"
     a: "Not at the time of writing. Zapier states it is hosted on AWS in the United States, and Make lets each organisation choose a US or EU data centre, fixed when the organisation is created. If data must stay onshore, self-hosted n8n in an Australian region or a custom build are the practical options."
   - q: "Does sending personal information through Zapier breach the Privacy Act?"
     a: "Not automatically. The Privacy Act 1988 doesn't ban overseas disclosure, but APP 8 requires reasonable steps to make sure the overseas recipient handles the information consistently with the APPs, and you generally stay accountable. Record which fields flow through the platform, check the vendor's data processing terms, and mention overseas disclosure in your privacy policy."
   - q: "Which is best for AI workflows?"
     a: "All three now include AI steps and agent features. n8n is popular for AI agents because you can self-host it next to your data and call models in your own cloud account. For anything customer-facing or high-volume, a coded service gives you better evaluation, logging and cost control."
-  - q: "When should I move off a no-code platform?"
-    a: "Common triggers are a monthly bill that keeps climbing with volume, workflows nobody can safely change, failures that go unnoticed, and a compliance review asking where data goes. Moving the one or two critical workflows to code while leaving the long tail on the platform is often the best split."
 sources:
   - title: "n8n plans and pricing"
     url: "https://n8n.io/pricing/"
@@ -34,6 +38,9 @@ sources:
   - title: "Host n8n"
     url: "https://docs.n8n.io/deploy/host-n8n.md"
     publisher: "n8n Docs"
+  - title: "Security at n8n (cloud hosting and storage)"
+    url: "https://n8n.io/legal/security/"
+    publisher: "n8n"
   - title: "Make pricing"
     url: "https://www.make.com/en/pricing"
     publisher: "Make"
@@ -63,9 +70,11 @@ service:
   href: "/services/workflow-automation"
 ---
 
-## Which should you choose: n8n, Make or Zapier?
+## n8n vs Make vs Zapier: which should you choose?
 
 **Choose Zapier for fast, simple automations across popular SaaS apps; Make for visual multi-step scenarios at lower cost per step; and n8n when you need self-hosting, onshore data or developer-level control.** All three are good products. The wrong choice usually shows up six months in, as a bill that scales badly or a compliance question nobody can answer.
+
+If your organisation runs on Microsoft 365, Microsoft Power Automate is also worth a look; we don't compare it in detail here, so check its licensing and where your environment's data is stored before deciding.
 
 The table below reflects each vendor's own pages as at 28 September 2026. Prices change often, so we describe the pricing model and link the live pricing pages in the sources rather than quoting dollar figures.
 
@@ -75,13 +84,13 @@ The table below reflects each vendor's own pages as at 28 September 2026. Prices
 | Plans | Free, Professional, Team, Enterprise | Free, Make plan, Enterprise | Cloud Starter, Pro, Enterprise; self-hosted Community (free), Business, Enterprise |
 | Free tier | 100 tasks a month, two-step Zaps only | 1,000 credits a month | Self-hosted Community edition (you pay for hosting) |
 | App catalogue | 9,000+ apps | 3,000+ apps | Smaller catalogue, plus generic HTTP and code nodes for anything with an API |
-| Where it runs | AWS in the United States | AWS, US or EU data centre chosen per organisation | n8n Cloud in the EU (Frankfurt), or anywhere you self-host |
+| Where it runs | AWS in the United States | AWS, US or EU data centre chosen per organisation | n8n Cloud on Microsoft Azure in the EU, or anywhere you self-host |
 | Australian region | No | No | Yes, if you self-host in AWS, Azure or Google Cloud Australian regions |
 | Self-hosting | No | No (an on-prem agent can reach internal systems) | Yes: Docker, Docker Compose, npm, or a cloud provider |
-| Custom code | Code steps in JavaScript or Python | Custom functions on Enterprise | JavaScript and Python code nodes, custom nodes |
+| Custom code | Code steps in JavaScript or Python | Custom JavaScript functions (plan-dependent; check the current plan table) | JavaScript and Python code nodes, custom nodes |
 | Best at | Breadth, ease, non-technical teams | Complex branching at a moderate price | Control, data location, AI agents, high step counts |
 
-## How do the pricing models change the real cost?
+## n8n vs Make vs Zapier pricing: how do the models change the real cost?
 
 **The counting unit matters more than the headline price.** A workflow with many steps is cheap on n8n (one execution) and expensive on Zapier (one task per action). A workflow with one step that runs thousands of times a day costs about the same unit count everywhere, so plan price per unit decides it.
 
@@ -99,7 +108,7 @@ At low volume, the difference is small and ease of use should decide. At high vo
 
 ## Where does your data go, and does that matter in Australia?
 
-**At the time of writing, none of the three hosted services runs in Australia, so every record that passes through Zapier or Make, and n8n Cloud, is processed overseas.** Zapier states it is hosted on AWS in the United States. Make lets you choose a US or EU data centre when you create an organisation, and you can't change it later. n8n Cloud runs in Frankfurt.
+**At the time of writing, none of the three hosted services runs in Australia, so every record that passes through Zapier or Make, and n8n Cloud, is processed overseas.** Zapier states it is hosted on AWS in the United States. Make lets you choose a US or EU data centre when you create an organisation, and you can't change it later. n8n Cloud is hosted on Microsoft Azure in the European Union.
 
 For many workflows that is fine. The Privacy Act 1988 doesn't prohibit overseas processing. But APP 8 makes you responsible for taking reasonable steps so the overseas recipient handles personal information consistently with the Australian Privacy Principles, and you generally remain accountable for its mistakes. Automation platforms also keep execution logs, which may contain full copies of the data that passed through each step.
 
@@ -111,9 +120,9 @@ It matters more when:
 
 Self-hosting n8n in AWS Sydney (`ap-southeast-2`), Azure Australia East or Google `australia-southeast1` is the most direct way to keep automation data onshore without writing everything from scratch. Our [data residency explainer](/guides/data-residency-vs-data-sovereignty) covers the difference between keeping data onshore and keeping it out of foreign legal reach.
 
-## What does self-hosting n8n actually involve?
+## What does self-hosting n8n in Australia involve?
 
-**Self-hosting gives you control over location and cost, and hands you every operational job the vendor used to do.** n8n's documentation offers Docker Compose for production, a one-line setup for quick starts, npm, and guides for AWS, Azure, Google Cloud and DigitalOcean.
+**Self-hosting n8n in an Australian region gives you control over location and cost, and hands you every operational job the vendor used to do.** n8n's documentation offers Docker Compose for production, a one-line setup for quick starts, npm, and guides for AWS, Azure, Google Cloud and DigitalOcean.
 
 What you take on:
 
@@ -150,7 +159,7 @@ Zapier edges it for breadth and ease; with 9,000+ apps, it probably has a connec
 | Complex logic, long-running jobs or heavy data processing | Platforms impose timeouts and step limits; code doesn't |
 | AI steps that need evaluation and cost tracking | A coded service can log prompts, score outputs and cap spend |
 
-Custom doesn't have to mean all or nothing. A common pattern is to move the two or three critical, high-volume flows to a small coded service in your own cloud account and leave the long tail of internal automations on Zapier or Make, where non-technical staff can keep maintaining them. If you're weighing AI steps, our comparison of [AI agents, chatbots and workflow automation](/guides/ai-agents-vs-chatbots-vs-automation) explains which problems need which tool.
+Common triggers for moving off a no-code platform are a monthly bill that keeps climbing with volume, workflows nobody can safely change, failures that go unnoticed, and a compliance review asking where data goes. Custom doesn't have to mean all or nothing. A common pattern is to move the two or three critical, high-volume flows to a small coded service in your own cloud account and leave the long tail of internal automations on Zapier or Make, where non-technical staff can keep maintaining them. If you're weighing AI steps, our comparison of [AI agents, chatbots and workflow automation](/guides/ai-agents-vs-chatbots-vs-automation) explains which problems need which tool.
 
 ## A quick decision guide
 

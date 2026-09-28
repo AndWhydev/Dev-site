@@ -1,12 +1,12 @@
 ---
 title: "AI data sovereignty in Australia: which models can run onshore?"
-metaTitle: "AI Data Sovereignty in Australia: Which Models Run Onshore?"
-description: "Which AI models can process prompts inside Australia as of September 2026, across Bedrock, Azure, Vertex AI, Claude and OpenAI, and how to verify it yourself."
+metaTitle: "AI Data Sovereignty Australia: Which Models Run Onshore?"
+description: "AI data sovereignty in Australia: which models process prompts onshore on AWS Bedrock, Azure OpenAI, Vertex AI, Claude and OpenAI, and how to prove it."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "At the time of writing (September 2026), you can keep AI inference inside Australia, but only for particular models on particular platforms. Amazon Bedrock offers in-region inference in Sydney or Melbourne, or an Australia-only cross-region profile, for several Claude, Amazon Nova and open-weight models. Azure and Google Vertex AI offer Australian geography endpoints for some models. The direct Claude API offers US or global inference only, and OpenAI's API offers Australian data storage but not Australian processing. The newest frontier models usually launch on global routing first, so onshore options lag."
+summary: "At the time of writing (September 2026), AI data sovereignty in Australia is achievable: you can keep AI inference inside Australia, but only for particular models on particular platforms. Amazon Bedrock offers in-region inference in Sydney or Melbourne, or an Australia-only cross-region profile, for several Claude, Amazon Nova and open-weight models. Azure and Google Vertex AI offer Australian processing for a short list of models. The direct Claude API offers US or global inference only, and OpenAI's API offers Australian data storage but not Australian processing. The newest frontier models usually launch on global routing first, so onshore options lag."
 takeaways:
   - "Onshore AI means the model's inference runs in Australia, not just that your database does. Check processing location, not only storage."
   - "Every major platform now has three routing modes: single region, a defined geography, or global. Only the first two can keep prompts in Australia."
@@ -18,30 +18,34 @@ faqs:
   - q: "Can I use Claude with data staying in Australia?"
     a: "At the time of writing, yes, through Amazon Bedrock. AWS lists several Claude models with in-region inference in Melbourne (ap-southeast-4) and an Australian geographic cross-region profile that keeps requests within Australian regions. Some of the newest Claude tiers are listed as global only. The direct Claude API currently offers US-only or global inference, not Australian. Check the AWS regional availability page for the exact model before you build."
   - q: "Does OpenAI's API process data in Australia?"
-    a: "Not at the time of writing. OpenAI's data controls documentation lists Australia with regional storage but not regional processing, so prompts can be stored in Australia while inference happens elsewhere. Azure's Standard deployment type is the usual route to Australian processing for OpenAI models, where the specific model is offered in Australia East."
+    a: "Not at the time of writing. OpenAI's data controls documentation lists Australia with regional storage but not regional processing, so prompts can be stored in Australia while inference happens elsewhere. On Azure, Standard and Regional Provisioned deployments in Australia East keep processing in the Australian geography, but only for the models Microsoft lists there: at the time of writing, Standard covers gpt-4.1-mini, gpt-4o and the text embedding models, and Regional Provisioned adds gpt-5, gpt-5.1, gpt-5.2, gpt-5.4 and o3. The newest GPT-5.6 and GPT-6 models are Global only in Australia East."
   - q: "Is an Australian region enough for data sovereignty?"
     a: "It gives you residency, not full sovereignty. The major cloud and model providers are foreign companies, so foreign legal processes can still reach them. That distinction, and how Australian law treats it, is covered in our data residency vs data sovereignty explainer."
   - q: "What is the difference between in-region and geographic cross-region inference?"
     a: "In-region inference processes the request only in the region you call, such as Melbourne. Geographic cross-region inference lets the platform route the request to any region in a defined geography, which on Bedrock can be Australia. Both keep data in Australia when the geography is Australia; global routing does not."
   - q: "Are open-weight models more sovereign than API models?"
     a: "They can be. If you run an open-weight model on infrastructure in your own Australian cloud account, no model vendor sees your prompts. Bedrock also hosts many open-weight models in Sydney. The trade-off is capability, since the strongest frontier models are generally not open-weight, and the cost and effort of operating GPU infrastructure."
-  - q: "How often does this change?"
-    a: "Often. New models tend to launch on global endpoints first, then geographic and single-region options follow weeks or months later, if at all. Treat any list, including this one, as a snapshot and check the vendor's availability page before each release."
+  - q: "What is AI data sovereignty?"
+    a: "AI data sovereignty is control over where your prompts, documents, embeddings and model outputs are processed and stored, and which country's laws can reach them. For an AI system it hinges on where the model runs, because every question and every retrieved passage is sent to the model."
+  - q: "Can Microsoft keep AI data in Australia?"
+    a: "Partly. Microsoft 365 Copilot stores interaction content in Australia for Australian tenants, but Microsoft doesn't commit to processing it in Australia. For onshore processing on Microsoft's cloud, a custom application can call a Standard or Regional Provisioned deployment in Azure Australia East, for the models Microsoft lists there. Our comparison of ChatGPT, Claude and Copilot covers the assistant side."
+  - q: "Does Australian law require AI to be processed onshore?"
+    a: "Not generally. At the time of writing Australia has no standalone AI Act, and the Privacy Act 1988 doesn't require personal information to stay in Australia, although APP 8 keeps you accountable for overseas recipients. Onshore requirements usually come from sector rules, government policy or your own contracts."
 sources:
   - title: "Regional availability by models (Amazon Bedrock User Guide)"
     url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html"
     publisher: "Amazon Web Services"
   - title: "Understanding deployment types in Microsoft Foundry Models"
-    url: "https://learn.microsoft.com/en-us/azure/ai-foundry/foundry-models/concepts/deployment-types"
+    url: "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
     publisher: "Microsoft"
-  - title: "Foundry Models sold by Azure (model and region availability)"
-    url: "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/models"
+  - title: "Region availability for Foundry Models sold by Azure"
+    url: "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure-region-availability"
     publisher: "Microsoft"
-  - title: "Data residency (generative AI on Google Cloud)"
-    url: "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency"
+  - title: "Data residency (Gemini Enterprise Agent Platform, formerly Vertex AI)"
+    url: "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/data-residency"
     publisher: "Google Cloud"
   - title: "Data residency (Claude API)"
-    url: "https://platform.claude.com/docs/en/build-with-claude/data-residency"
+    url: "https://platform.claude.com/docs/en/manage-claude/data-residency"
     publisher: "Anthropic"
   - title: "Data controls in the OpenAI platform"
     url: "https://developers.openai.com/api/docs/guides/your-data"
@@ -68,7 +72,15 @@ disclaimer: legal
 
 **Onshore AI means the model's inference, the computation that reads your prompt and writes the answer, runs on infrastructure in Australia.** Storing your documents in Sydney is not enough if every question and every retrieved passage is sent to a model endpoint overseas.
 
-This page answers the practical question: which models can do that today, on which platforms, and how do you prove it. For the underlying difference between where data sits and whose laws reach it, read our explainer on [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty). We don't repeat it here.
+This page answers the practical question behind "sovereign AI" for an Australian buyer: which models can do that today, on which platforms, and how do you prove it. For the underlying difference between where data sits and whose laws reach it, read our explainer on [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty). We don't repeat it here.
+
+## Why is data sovereignty important for AI in Australia?
+
+**Because an AI system sends your most sensitive material, the question and the documents retrieved to answer it, to wherever the model runs.** A traditional app might store customer records in Sydney and never move them. A chatbot or [RAG knowledge base](/services/rag-knowledge-base) sends excerpts of those records to a model on every request.
+
+That matters in three practical ways. Your APP 8 accountability applies whenever personal information is disclosed to an overseas recipient. Government, health and financial services buyers increasingly write onshore processing into contracts and security questionnaires. And sovereignty is a matter of control: the fewer foreign endpoints your data passes through, the fewer legal regimes and providers can reach it.
+
+"Sovereign AI" is also used more broadly, for a country building and running its own models, compute and data centres. This guide sticks to the buyer's question: whether the AI services you use keep your data in Australia today. For Australia's regulatory position on AI generally, see [is there an AI Act in Australia](/guides/is-there-an-ai-act-in-australia).
 
 Everything below reflects vendor documentation read in September 2026. Model availability changes often, so treat this as a dated snapshot and follow the source links before you commit.
 
@@ -86,17 +98,21 @@ The naming differs. Bedrock calls them in-Region, Geographic (Geo) cross-Region 
 
 One trap stands out. Azure's data zones are US, EU and Asia Pacific, and Microsoft says the APAC zone covers multiple Asia Pacific regions and can have regions added without notice. An APAC data zone deployment is therefore not an Australian residency option. For Australia on Azure you need the Standard or Regional Provisioned type in an Australian region.
 
-## Which models can run in Australia today?
+## Which AI models can run in Australia today?
 
-**At the time of writing (September 2026), Amazon Bedrock has the broadest set of models with documented Australian processing.** The table summarises vendor documentation; it isn't exhaustive, and the source pages are authoritative.
+**At the time of writing (September 2026), AWS, through Amazon Bedrock, has the broadest set of models with documented Australian processing.** The table summarises vendor documentation; it isn't exhaustive, and the source pages are authoritative.
 
 | Platform | Australian inference options at the time of writing | Notable gaps |
 |---|---|---|
 | Amazon Bedrock | Claude Opus 5.5, Opus 5, Sonnet 5, Opus 4.8, Haiku 4.5 and others in-region in Melbourne; several Claude models through an Australia geographic profile from Sydney and Melbourne; Amazon Nova Pro, Lite and Micro in-region; open-weight models in-region in Sydney including Mistral, Qwen3, OpenAI gpt-oss, DeepSeek and GLM | Claude Fable 5.1 and Mythos 5.1, and OpenAI GPT-5.6 models on Bedrock, listed as global only |
-| Microsoft Azure (Foundry) | Standard deployments keep prompts and responses within the Azure geography; availability per model in Australia East is listed in Microsoft's model table | New models arrive on Global first; Microsoft says geography-based types come last with no guaranteed date |
-| Google Cloud (Vertex AI) | Locational endpoints, including Australia (australia-southeast1), keep ML processing in that jurisdiction for models Google lists as supported | Global endpoints give no residency guarantee; per-model support varies |
+| Microsoft Azure (Microsoft Foundry, formerly Azure AI Foundry) | Standard and Regional Provisioned deployments keep prompts and responses within the Azure geography. In Australia East, Standard lists gpt-4.1-mini, gpt-4o and OpenAI embedding models; Regional Provisioned adds gpt-5, gpt-5.1, gpt-5.2, gpt-5.4, o3 and o3-mini | GPT-5.6 and GPT-6 models are Global only in Australia East; Microsoft says geography-based types come last with no guaranteed date |
+| Google Cloud (Vertex AI, now part of Gemini Enterprise Agent Platform) | Locational endpoints in australia-southeast1 keep ML processing in Australia only for the models Google lists: Gemini 3.5 Flash, Gemini 2.5 Flash (128k context) and text-embedding-004 | No Australian commitment for newer Gemini models or partner models such as Claude; global endpoints give no residency guarantee |
 | Claude API (direct) | None: inference geo options are global or US only | No Australian workspace or inference geo |
-| OpenAI API (direct) | Australian regional storage through `au.api.openai.com` | Regional processing not offered for Australia |
+| OpenAI API (direct) | Australian regional storage through `au.api.openai.com`, which requires approval for Modified Abuse Monitoring or Zero Data Retention | Regional processing not offered for Australia |
+
+### Claude data sovereignty in Australia
+
+Claude is the clearest example of why the platform matters as much as the model. The same Claude models that the direct Claude API runs only in the US or globally can run in Melbourne, or within an Australia-only profile, when you call them through Amazon Bedrock. For AWS data sovereignty in Australia generally, Bedrock's Sydney and Melbourne regions are the starting point.
 
 The Bedrock details come from AWS's regional availability table, which marks each model and region against the three inference types. Two details matter for design. First, in-region support differs between Sydney and Melbourne for the same model, so choose your primary region after choosing your model, not before. Second, Bedrock prices geographic cross-region calls at the source region's rate, so the Australia profile is usually the easiest way to get capacity without leaving the country.
 

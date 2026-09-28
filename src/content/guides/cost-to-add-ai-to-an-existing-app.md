@@ -1,7 +1,7 @@
 ---
 title: "How much does it cost to add AI to an existing app?"
-metaTitle: "Cost to Add AI to an Existing App in Australia (2026)"
-description: "Adding AI to an existing app typically costs $10k to $60k AUD per feature, and $60k to $200k for assistants or agents. Feature ranges and a worked example."
+metaTitle: "How Much Does It Cost to Add AI to an App? (Australia 2026)"
+description: "How much does it cost to add AI to an existing app? Typically $10k to $60k AUD per feature and $60k to $200k for assistants or agents. AI integration pricing."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
@@ -16,6 +16,10 @@ takeaways:
 faqs:
   - q: "What is the cheapest way to add AI to an app?"
     a: "A narrow text feature inside an existing screen, such as summarising a record or drafting a reply, calling a hosted model API. It needs no new data infrastructure and can often be built and evaluated in one to three weeks."
+  - q: "How much does it cost to add ChatGPT or Claude to an app?"
+    a: "Connecting an existing app to a hosted model such as OpenAI's GPT models or Anthropic's Claude for one narrow feature, like summaries or drafted replies, typically costs $10k to $30k AUD ex GST to build properly, plus usage billed by the provider. In the worked example on this page, two features for a 20,000-ticket helpdesk cost about US$180 a month in model usage at list prices."
+  - q: "How long does it take to add AI to an existing app?"
+    a: "A single summarising, drafting or tagging feature typically takes 2 to 6 weeks including evaluation. Semantic search and document extraction take 4 to 10 weeks, an assistant over your content 6 to 16 weeks, and an agent that takes actions 8 to 20 weeks."
   - q: "Do we need to train our own model?"
     a: "Almost never for business apps. Hosted models from Anthropic, OpenAI and others handle most tasks with good instructions and the right context from your data. Fine-tuning or training is worth considering only for very high volume, narrow tasks or special privacy needs."
   - q: "Will adding AI slow down or break our existing app?"
@@ -57,9 +61,9 @@ service:
 disclaimer: financial
 ---
 
-## What does each type of AI feature cost to add?
+## How much does it cost to add AI to an existing app, by feature?
 
-**Most AI features fall into a handful of patterns, and each pattern has a fairly predictable cost range.** The table shows typical Australian market ranges for adding a feature to an existing, reasonably modern web or mobile app, in AUD, ex GST, covering design, build, evaluation and release. They are ranges, not quotes. Model usage is extra and ongoing.
+**Most AI features fall into a handful of patterns, and each pattern has a fairly predictable cost range,** whether you describe the job as adding AI to an app, integrating AI into existing software, or adding an AI chatbot to a product you already run. The table shows typical Australian market ranges for adding a feature to an existing, reasonably modern web or mobile app, in AUD, ex GST, covering design, build, evaluation and release. They are ranges, not quotes. Model usage is extra and ongoing.
 
 | AI feature | What it does | Typical build cost | Typical timeline |
 |---|---|---|---|
@@ -71,7 +75,7 @@ disclaimer: financial
 | Assistant over your content (RAG) | Answers questions from your documents and app data, with citations | $40k to $150k | 6 to 16 weeks |
 | Agent that takes actions | Carries out tasks in the app (create, update, schedule) with user approval | $60k to $200k | 8 to 20 weeks |
 
-The lower half of each range assumes clean APIs, a mainstream stack and a narrow scope. The upper half assumes messy data, strict permissions, multiple languages or regulated information. For a standalone AI product rather than a feature, see [AI development cost in Australia](/guides/ai-development-cost-australia); for a question-answering system in detail, see [RAG knowledge base cost](/guides/rag-knowledge-base-cost).
+The lower half of each range assumes clean APIs, a mainstream stack and a narrow scope. The upper half assumes messy data, strict permissions, multiple languages or regulated information. For a standalone AI product rather than a feature, see [AI development cost in Australia](/guides/ai-development-cost-australia); for a question-answering system in detail, see [RAG knowledge base cost](/guides/rag-knowledge-base-cost); and for a customer-facing assistant, see the [AI chatbot cost guide](/guides/ai-chatbot-cost-australia).
 
 ## Why does the first AI feature cost more than the rest?
 
@@ -107,7 +111,7 @@ Skipping these makes the first feature cheaper and every later one more expensiv
 
 The $1,400 day rate is a planning figure for a senior Australian agency team. For comparison, the Robert Walters 2026 guide lists NSW senior backend contractors at $800 to $1,000 a day, and Talent International reports top-end averages of about $1,450 a day for AI principal engineers; agencies add project management, testing and warranty on top of contractor rates.
 
-About 19 of the 43 days are foundations (gateway, permissions, evaluation and monitoring). A third AI feature added later, such as suggested replies, might need 10 to 15 days rather than 25.
+About 19 of the 43 days are foundations (gateway, permissions, evaluation and monitoring). A third AI feature added later, such as suggested replies, might need 10 to 15 days rather than the 25 or so a first feature needs once the 19 days of foundations are counted.
 
 **Running cost (illustrative, at list prices at the time of writing).** Anthropic lists Claude Sonnet 5 at US$2 per million input tokens and US$10 per million output tokens. Assume each ticket sends about 3,000 tokens of text and receives about 300 tokens back, across both features combined.
 
@@ -134,9 +138,9 @@ Using a smaller model for classification would cut that further; Anthropic lists
 
 In practice that means choosing a model endpoint whose data handling you've reviewed, confirming whether the specific model is available in an Australian region at the time you build, and documenting what data leaves your systems. Those decisions belong in discovery, because they can change the model choice and therefore the running cost.
 
-## What's usually excluded from the quote?
+## What are the hidden costs of adding AI?
 
-**Model usage, vendor accounts and your team's time are the usual exclusions.** Check for:
+**The hidden costs are the usual exclusions from a quote: model usage, vendor accounts and your team's time.** Check for:
 
 - Model API usage, billed to your own provider account
 - Vector database or search service hosting, if the feature needs one
@@ -144,6 +148,12 @@ In practice that means choosing a model endpoint whose data handling you've revi
 - Legal review of privacy policy changes and customer contracts
 - Work to clean or restructure data before AI can use it
 - Changes to mobile apps and app store releases, if the feature appears there
+
+## Is adding AI to your app worth the cost?
+
+**Adding AI is worth it when a feature saves your users meaningful time on a task they repeat often, or makes your product noticeably better to buy, and a proof of concept shows it is accurate enough.** It is not worth it as a label on the marketing page, or where users would need to check every output so carefully that no time is saved.
+
+In the helpdesk example above, the build is a $69,230 planning budget and model usage about US$180 a month. Suppose, purely for illustration, the ticket summary saves an agent one minute per ticket. At 20,000 tickets a month that is about 333 hours a month, roughly the working hours of two full-time staff. If the real saving is a fraction of that, the numbers can still work; if staff ignore the summaries, they don't. Measure time per ticket before and after a feature-flagged rollout to find out.
 
 ## How can you reduce the cost?
 

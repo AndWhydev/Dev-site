@@ -3,16 +3,16 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'AI Agent Development Company Australia | All Webbed Labs',
-  metaDescription: "Sydney-built AI agents that plan, use your tools and finish multi-step work, with scoped permissions, approval gates, full traces and Australian hosting.",
+  metaDescription: "AI agent development company in Sydney. We build AI agents for business that plan, use your tools and finish multi-step work, with approval gates and traces.",
   category: 'AI & Data',
   serviceName: 'AI Agent Development',
   slug: 'ai-agent-development',
   heroHeadline: 'AI Agents That Finish the Job, Inside Limits You Set',
-  heroTagline: "Goal-driven software that plans, calls your systems, checks its own work and stops for a human at the points that matter. Designed, built and operated by a senior Australian team.",
+  heroTagline: "AI agent development for Australian businesses: goal-driven software that plans, calls your systems, checks its own work and stops for a human at the points that matter. Designed, built and operated by a senior Australian team.",
   summaryStatement: "AI agent development is the engineering of software in which a language model works towards a goal over several steps, choosing which tools to call, reading the results and deciding what to do next, within explicit limits on permissions, cost, time and the decisions it may take without a human.",
   description: [
-    "A chatbot answers a question. An automation follows a fixed path. An agent is given an objective, such as reconciling a supplier statement, triaging an inbound request or preparing a tender response, and works out the steps itself: it looks things up, calls APIs, drafts, checks the result against the goal and tries again when something fails. That flexibility is what makes agents useful for messy, variable work that rules-based automation cannot handle, and it is also what makes them risky. A model that can choose its own next action can choose a wrong one, loop, spend money or act on instructions hidden in a document it was asked to read. Most of the engineering in a production agent goes into bounding that freedom, not into the prompt.",
-    "We build agents as ordinary, testable software with a model in the decision seat. Each tool the agent can use is a typed function with its own permission scope, rate limit and audit record. Read actions and write actions are separated, and anything irreversible or high value (a payment, a customer email, a change to a record of truth) passes through an approval step by default. Runs have step, time and spend budgets, execution is durable so a long task survives a restart, and every run produces a full trace of what the agent saw, decided and did. We evaluate trajectories, not only final answers, so we can tell whether an agent got the right result for the right reasons. We also run agents ourselves: our internal delivery pipeline, Overseer, runs multiple AI coding agents in parallel, and every change they produce goes through quality gates (type checks, visual tests, security scans) and a senior engineer's review before it is deployed. That daily experience of where agents drift, stall and overreach shapes how we design the guardrails in yours.",
+    "A chatbot answers a question. An automation follows a fixed path. An AI agent (sometimes called an autonomous agent) is given an objective, such as reconciling a supplier statement, triaging an inbound request or preparing a tender response, and works out the steps itself: it looks things up, calls APIs, drafts, checks the result against the goal and tries again when something fails. That flexibility is what makes agents useful for messy, variable work that rules-based automation cannot handle, and it is also what makes them risky. A model that can choose its own next action can choose a wrong one, loop, spend money or act on instructions hidden in a document it was asked to read. Most of the engineering in a production agent goes into bounding that freedom, not into the prompt.",
+    "Our AI agent development services treat agents as ordinary, testable software with a model in the decision seat. Each tool the agent can use is a typed function with its own permission scope, rate limit and audit record. Read actions and write actions are separated, and anything irreversible or high value (a payment, a customer email, a change to a record of truth) passes through an approval step by default. Runs have step, time and spend budgets, execution is durable so a long task survives a restart, and every run produces a full trace of what the agent saw, decided and did. We evaluate trajectories, not only final answers, so we can tell whether an agent got the right result for the right reasons. We also run agents ourselves: our internal delivery pipeline, Overseer, runs multiple AI coding agents in parallel, and every change they produce goes through quality gates (type checks, visual tests, security scans) and a senior engineer's review before it is deployed. That daily experience of where agents drift, stall and overreach shapes how we design the guardrails in yours.",
   ],
   benefits: [
     {
@@ -50,7 +50,7 @@ const data = {
   technologies: [
     'Anthropic Claude', 'OpenAI models', 'Open-weight models', 'Claude Agent SDK',
     'OpenAI Agents SDK', 'LangGraph', 'Model Context Protocol', 'Temporal',
-    'Amazon Bedrock', 'Azure AI Foundry', 'TypeScript', 'Python',
+    'Amazon Bedrock', 'Microsoft Foundry (formerly Azure AI Foundry)', 'TypeScript', 'Python',
     'PostgreSQL', 'OpenTelemetry', 'Langfuse', 'Docker',
   ],
   process: [
@@ -129,6 +129,22 @@ const data = {
     {
       question: "What does an agent cost to run?",
       answer: "Running cost is mostly model usage, which scales with the number of steps per run and the amount of context each step reads, plus hosting and any third-party APIs. Agent runs usually cost more per task than a single model call because they involve several calls. We measure cost per completed run during the shadow period and set per-run spend limits, so you know the unit cost before you widen autonomy.",
+    },
+    {
+      question: "How much does AI agent development cost in Australia?",
+      answer: "Typical Australian market ranges are $40k to $90k for a single-task agent pilot, $90k to $220k for a production agent integrated with several systems, and from $220k for a multi-agent platform (AUD, ex GST, build only). The main cost drivers are the number of systems the agent touches, how many actions need approval flows and the depth of the scenario suite. Model usage and hosting are separate, and paid discovery turns the range into a fixed price.",
+    },
+    {
+      question: "What can AI agents do for a business?",
+      answer: "AI agents for business are best at variable, multi-step work that currently needs a person to read, look things up and decide, such as reconciling supplier statements, triaging inbound requests or preparing a first draft of a tender response. They are a poor fit where every step is already fixed or where there is no clear definition of done. The useful question is which of your recurring tasks has enough volume and a checkable end state to justify an agent.",
+    },
+    {
+      question: "Which frameworks and tools do you use to build AI agents?",
+      answer: "We choose per project, most often the Claude Agent SDK, the OpenAI Agents SDK or LangGraph for the agent loop, the Model Context Protocol for reusable tools, Temporal for durable execution, and OpenTelemetry or Langfuse for tracing. The framework matters less than the tool design, permissions and evaluation suite around it, so we keep business logic out of framework-specific code where we can, which makes it easier to move later.",
+    },
+    {
+      question: "Is an AI agent the same as RPA?",
+      answer: "No. Robotic process automation (RPA) replays a scripted sequence of clicks and keystrokes through existing screens, so it breaks when a screen or input changes and cannot handle cases outside the script. An AI agent decides its next step from what it reads, and in our builds it acts through APIs and typed tools rather than a user interface. RPA can still be the better choice for a stable, high-volume process on a system with no API.",
     },
   ],
   pricing: [

@@ -1,7 +1,7 @@
 ---
 title: "Australia's AI Ethics Principles in practice: how to build to them"
-metaTitle: "Australia's AI Ethics Principles in Practice (2026)"
-description: "Australia's 8 AI Ethics Principles turned into engineering controls and evidence: fairness tests, explanations, contest flows, logging and human oversight."
+metaTitle: "Australia's 8 AI Ethics Principles in Practice (2026)"
+description: "The Australian Government's 8 AI Ethics Principles turned into engineering controls: fairness tests, explanations, contest flows and human oversight."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
@@ -16,6 +16,8 @@ takeaways:
 faqs:
   - q: "What are Australia's 8 AI Ethics Principles?"
     a: "Human, societal and environmental wellbeing; human-centred values; fairness; privacy protection and security; reliability and safety; transparency and explainability; contestability; and accountability. They were published by the Department of Industry, Science and Resources on 7 November 2019."
+  - q: "What is ethics in AI?"
+    a: "AI ethics is the set of values used to judge whether an AI system is designed and used in a way that is fair, safe, transparent and accountable to the people it affects. In Australia the government's version is the 8 AI Ethics Principles. They matter most at deployment, when a system starts affecting real people's access to services, jobs, money or information."
   - q: "Are the AI Ethics Principles mandatory?"
     a: "No, they are voluntary. Federal agencies are required by the DTA's AI policy to give staff designing and implementing AI use cases a way to learn about the principles, and many procurement processes ask about them, but there is no law requiring businesses to adopt them."
   - q: "Have the AI Ethics Principles been replaced?"
@@ -57,7 +59,7 @@ disclaimer: legal
 
 ## What are Australia's AI Ethics Principles?
 
-**Australia's AI Ethics Principles are 8 voluntary principles for designing, developing, deploying and operating AI responsibly, published by the Department of Industry, Science and Resources on 7 November 2019.** They are short, deliberately general, and still the reference point for "ethical AI" in Australian government and procurement.
+**Australia's AI Ethics Principles are 8 voluntary principles for designing, developing, deploying and operating AI responsibly, published by the Department of Industry, Science and Resources on 7 November 2019.** They are short, deliberately general, and still the reference point for "ethical AI" in Australian government and procurement. If a tender or customer questionnaire asks which ethical principles your AI deployment follows, these 8 are the Australian answer.
 
 | # | Principle | The one-line version |
 |---|---|---|
@@ -91,7 +93,7 @@ They haven't disappeared. The essential practices are described as aligning with
 | Contestability | "Challenge this" route, human review queue, access to the inputs used | Contest volumes, turnaround times, outcomes of reviews |
 | Accountability | Named owner per system and lifecycle phase, release approval, audit trail, external review support | Ownership register, approval records, audit logs |
 
-## The three principles engineers underestimate
+## The three AI ethics principles engineers underestimate at deployment
 
 ### Fairness is a test suite, not a promise
 

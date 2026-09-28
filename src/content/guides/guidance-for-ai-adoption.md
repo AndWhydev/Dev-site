@@ -1,7 +1,7 @@
 ---
 title: "Australia's Guidance for AI Adoption: the six essential practices explained"
-metaTitle: "Guidance for AI Adoption: The 6 Essential Practices"
-description: "Australia's Guidance for AI Adoption replaced the Voluntary AI Safety Standard in October 2025. The six practices and what each means for software teams."
+metaTitle: "Guidance for AI Adoption (AI6): The 6 Essential Practices"
+description: "Australia's Guidance for AI Adoption replaced the Voluntary AI Safety Standard (VAISS) in October 2025. The six essential practices and what each one means."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
@@ -9,13 +9,17 @@ updated: 2026-09-28
 summary: "The Guidance for AI Adoption is the Australian Government's voluntary framework for responsible AI, published by the National AI Centre on 21 October 2025. It condenses the 10 guardrails of the 2024 Voluntary AI Safety Standard into six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in two versions: foundations, for organisations starting out or using AI in low-risk ways, and implementation guidance, for teams building AI or running higher-risk use cases."
 takeaways:
   - "Published 21 October 2025 by the National AI Centre; it evolves the Voluntary AI Safety Standard and the AI Ethics Principles rather than adding to them."
-  - "It is voluntary, but the National AI Plan names it as the government's framework for responsible AI adoption, so customers and auditors use it as a benchmark."
+  - "It is voluntary, but the National AI Plan says its six practices will underpin the government's new responsible AI tools and resources, so customers and auditors use it as a benchmark."
   - "Six practices: accountability, impacts, risk, information sharing, testing and monitoring, and human control."
   - "The implementation guidance flags actions specific to developers (DEV), deployers (DEP) and general-purpose AI providers (GPAI), which tells a software team which obligations are theirs."
   - "Most of the practices produce artefacts engineering teams already know how to make: registers, test results, monitoring dashboards, incident processes and kill switches."
 faqs:
   - q: "Is the Guidance for AI Adoption mandatory?"
     a: "No. It is voluntary guidance for Australian organisations. It becomes contractually binding only if a customer, funder or procurement process requires it. Federal agencies have their own mandatory policy from the Digital Transformation Agency, which covers similar ground."
+  - q: "What is AI6?"
+    a: "AI6 is shorthand you'll see for the six essential practices in the Guidance for AI Adoption. The official name is the Guidance for AI Adoption, and the practices are listed on ai.gov.au under Essential AI practices. It shouldn't be confused with unrelated products that share the name, such as computer chips."
+  - q: "Who publishes the Guidance for AI Adoption?"
+    a: "The National AI Centre (NAIC), which sits within the Department of Industry, Science and Resources. The guidance, the foundations and implementation versions, and the templates are published on ai.gov.au, and the older Voluntary AI Safety Standard remains on industry.gov.au."
   - q: "What replaced the Voluntary AI Safety Standard?"
     a: "The Guidance for AI Adoption, published on 21 October 2025. The Department of Industry, Science and Resources describes it as updated and simplified guidance that evolves the Voluntary AI Safety Standard. The standard and its 10 guardrails remain published for reference."
   - q: "What are the six essential practices?"
@@ -62,18 +66,20 @@ disclaimer: legal
 
 ## What is the Guidance for AI Adoption?
 
-**The Guidance for AI Adoption is the Australian Government's voluntary framework of six essential practices for using and building AI responsibly, published by the National AI Centre (NAIC) on 21 October 2025.** It is the current answer to "what does good AI governance look like in Australia?"
+**The Guidance for AI Adoption is the Australian Government's voluntary framework of six essential practices for using and building AI responsibly, published by the National AI Centre (NAIC) on 21 October 2025.** It is the current answer to "what does good AI governance look like in Australia?" You may see the six practices called "AI6" for short; the official title is the Guidance for AI Adoption.
 
-It didn't appear from nowhere. The Department of Industry, Science and Resources says it "evolves" both the 2024 Voluntary AI Safety Standard and the 2019 AI Ethics Principles. The National AI Plan of 2 December 2025 then named it as the government's framework for encouraging responsible adoption, and said the six practices will underpin new NAIC tools and resources. There is no Australian AI Act, so this guidance is the closest thing to a national standard. See [is there an AI Act in Australia](/guides/is-there-an-ai-act-in-australia) for the wider legal picture.
+It didn't appear from nowhere. The Department of Industry, Science and Resources says it "evolves" both the 2024 Voluntary AI Safety Standard and the 2019 AI Ethics Principles. The National AI Plan of 2 December 2025 then said the six practices will underpin new NAIC tools and resources, describing them as a coherent framework adaptable to different audiences. There is no Australian AI Act, so this guidance is the closest thing to a national standard. See [is there an AI Act in Australia](/guides/is-there-an-ai-act-in-australia) for the wider legal picture.
 
-## How it evolved
+## What happened to the Voluntary AI Safety Standard?
+
+**The Voluntary AI Safety Standard (VAISS), published in September 2024 with 10 voluntary AI guardrails, is still available but is no longer the recommended starting point; the Guidance for AI Adoption evolves it into six practices.** The timeline below shows how the Australian Government's AI guidance has changed.
 
 | Date | Publication | Status in September 2026 |
 |---|---|---|
 | 7 November 2019 | Australia's AI Ethics Principles (8 principles) | Still published; the values the practices align with |
 | 5 September 2024 | Voluntary AI Safety Standard (10 guardrails) | Still published for reference; superseded as the starting point |
 | 21 October 2025 | Guidance for AI Adoption (6 essential practices), foundations and implementation versions | Current |
-| 2 December 2025 | National AI Plan names the guidance as the framework for responsible adoption | Current policy |
+| 2 December 2025 | National AI Plan says the six practices will underpin new NAIC tools and resources | Current policy |
 | 5 May 2026 | Implementation guidance on ai.gov.au shows this publication date | Current |
 
 If you built a governance process around the 10 guardrails, you haven't wasted the effort. The six practices cover the same ground with less repetition, and the table further down shows where each guardrail landed.
@@ -130,7 +136,7 @@ Keep people able to oversee, intervene and switch off. Action 6.1.2 asks develop
 | 5. Test and monitor | Acceptance criteria, evaluation suite and results, deployment approval, monitoring dashboards |
 | 6. Human control | Human approval gates, per-feature kill switch, fallback process, decommissioning plan |
 
-## Where the 10 guardrails went
+## Voluntary AI Safety Standard guardrails mapped to the six practices
 
 This mapping is our reading of the two documents, offered to help teams migrate. It is not an official crosswalk.
 

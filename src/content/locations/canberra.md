@@ -1,13 +1,13 @@
 ---
 title: "AI and software development for Canberra and federal agencies"
-metaTitle: "AI and Software Development for Canberra Agencies"
-description: "Software and AI for Canberra agencies and their suppliers: the DTA AI policy timeline, BuyICT, PSPF Release 2026, hosting and what we can and can't offer."
+metaTitle: "Custom Software and AI Consulting for Canberra Agencies"
+description: "Sydney-based custom software development and AI consulting for Canberra agencies and suppliers: the DTA AI policy, BuyICT, PSPF 2026 and what we can't offer."
 eyebrow: "Canberra"
 city: "Canberra"
 state: "ACT"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a Sydney-based team that works remotely with Canberra organisations and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
+summary: "All Webbed Labs is a Sydney-based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
 takeaways:
   - "We're based in Sydney, deliver remotely and travel to Canberra for workshops; we have no Canberra office."
   - "We are not on any government panel, including BuyICT's Digital Marketplace Panel 2, and our team holds no security clearances."
@@ -23,6 +23,8 @@ faqs:
     a: "Yes, from an engineering angle. The policy applies to agencies, but agencies pass many of its expectations to suppliers through procurement. We help vendors build the logging, evaluation evidence, transparency information and controls that agencies will ask for. We don't provide legal advice on the policy."
   - q: "Are you IRAP assessed?"
     a: "No. We have no IRAP-assessed system and we're not IRAP assessors. We can build on cloud services that have been assessed, and structure documentation to support an assessment you commission. Our guide to IRAP explains how the program works."
+  - q: "Do security-cleared developers cost more in Canberra?"
+    a: "Yes. Re:Sourced's 2026 guide says security-cleared contractors in defence-adjacent work command 15 to 25 per cent above commercial day rates, with NV1-plus contractors around Canberra pricing at the top of that range. We hold no clearances, so if your work needs them, budget for that premium with a cleared supplier; for unclassified work, the commercial rates apply."
   - q: "How often do you come to Canberra?"
     a: "As often as the project needs. Canberra is close enough to Sydney for day trips, so discovery workshops, design reviews and user testing can all happen in person. Travel is priced into the proposal."
 sources:
@@ -38,12 +40,21 @@ sources:
   - title: "PSPF annual release"
     url: "https://www.protectivesecurity.gov.au/pspf-annual-release"
     publisher: "Department of Home Affairs"
+  - title: "PSPF Release 2025 and Tranche 2 of the Commonwealth Uplift Policy is live"
+    url: "https://www.protectivesecurity.gov.au/news/pspf-release-2025-and-tranche-2-commonwealth-uplift-policy-live"
+    publisher: "Department of Home Affairs"
+  - title: "PSPF Release 2026 now available"
+    url: "https://www.protectivesecurity.gov.au/news/pspf-release-2026-now-available"
+    publisher: "Department of Home Affairs"
   - title: "Hosting Certification Framework"
     url: "https://www.hostingcertification.gov.au/framework"
-    publisher: "Digital Transformation Agency"
+    publisher: "Department of Home Affairs"
   - title: "State and territory privacy legislation (Australian Capital Territory)"
     url: "https://www.oaic.gov.au/privacy/privacy-legislation/state-and-territory-privacy-legislation"
     publisher: "Office of the Australian Information Commissioner"
+  - title: "Tech contractor day rates in Australia: the 2026 guide"
+    url: "https://www.resourced.com.au/articles/contractor-day-rates-australia-guide-2026"
+    publisher: "Re:Sourced"
   - title: "Azure geographies"
     url: "https://azure.microsoft.com/en-au/explore/global-infrastructure/geographies/"
     publisher: "Microsoft"
@@ -63,7 +74,7 @@ service:
   href: "/ai-consulting"
 ---
 
-## Who do we work with in Canberra, and how?
+## Who do we build custom software and AI for in Canberra, and how?
 
 **Our team is based in Sydney. We work remotely with Canberra organisations and travel down for workshops, design reviews and user testing when being in the room matters.** Canberra shares Sydney's time zone and is close enough for day trips, so on-site time is easy to arrange. We don't have a Canberra office, and we don't list one.
 
@@ -82,7 +93,7 @@ The people we're best placed to help in Canberra are:
 |---|---|
 | Are you on BuyICT's Digital Marketplace Panel 2? | No |
 | Does your team hold security clearances? | No |
-| Do you have an IRAP-assessed system? | No |
+| Do you have an IRAP-assessed system? | No ([IRAP explained](/guides/irap-explained) covers what that involves) |
 | Can you work on classified systems or data? | No |
 | Can you work on OFFICIAL, unclassified systems? | Yes, subject to your agency's requirements |
 | Is delivery onshore, with data in Australian regions? | Yes, by default |
@@ -95,7 +106,7 @@ The people we're best placed to help in Canberra are:
 
 For custom software and AI work, the arrangement that matters most is the Digital Marketplace Panel 2. At the time of writing it has two modules, ICT labour hire and professional and consultancy services, and it's opt-in for non-corporate and corporate Commonwealth entities and for state and territory government entities. Some other BuyICT arrangements, such as the Data Centre Panel, are mandated for non-corporate Commonwealth entities.
 
-Because we aren't on a panel, the realistic routes to working with an agency are as a subcontractor to a panel seller, or through an approach to market that permits non-panel suppliers. Our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) walks through these pathways for vendors.
+If you are comparing software companies in Canberra, panel membership and clearances are usually the first filter, before price or portfolio. Because we aren't on a panel, the realistic routes to working with an agency are as a subcontractor to a panel seller, or through an approach to market that permits non-panel suppliers. Our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) walks through these pathways for vendors.
 
 ## What does the DTA AI policy require, and when?
 
@@ -104,19 +115,19 @@ Because we aren't on a panel, the realistic routes to working with an agency are
 | Date | Milestone |
 |---|---|
 | 1 September 2024 | Version 1.1 takes effect: accountable officials and AI transparency statements |
-| 15 December 2025 | Version 2.0 takes effect, with a new AI impact assessment tool and procurement guidance |
+| 15 December 2025 | Version 2.0 takes effect, supported by a new AI impact assessment tool |
 | 15 June 2026 | First new mandatory requirement under version 2.0 begins |
 | December 2026 | All remaining version 2.0 requirements in effect |
 
-Version 2.0 adds requirements for agencies to take a strategic approach to AI adoption, operationalise responsible use, assign accountability for each AI use case, and carry out risk-based actions at the use case level, including impact assessments. The DTA also published procurement steps, checklists and contract clause guidance.
+Version 2.0 adds requirements for agencies to take a strategic approach to AI adoption, operationalise responsible use, assign accountability for each AI use case, and carry out risk-based actions at the use case level, including impact assessments. The policy also points agencies to the DTA's guidance on AI procurement and its AI model clauses for contracts.
 
 For suppliers, the effect is that agencies will ask for more evidence about any AI in what they buy: what the model is, where it runs, how it was tested, how outputs are reviewed, and how incidents are reported. Our guide to the [DTA AI policy](/guides/dta-ai-policy-government) covers each requirement in detail.
 
 ## Where does the PSPF fit?
 
-**The Protective Security Policy Framework sets the Australian Government's protective security requirements and is mandatory for non-corporate Commonwealth entities; Home Affairs updates it every year.** PSPF Release 2026 was issued on 1 July 2026. The 2025 release, published in July 2025, added material on AI, cloud gateways and post-quantum encryption, and required entities to report foreign ownership, control or influence risks identified in procurement.
+**The Protective Security Policy Framework sets the Australian Government's protective security requirements and is mandatory for non-corporate Commonwealth entities; Home Affairs updates it every year.** PSPF Release 2026 was issued on 1 July 2026. The 2025 release introduced changes to personnel and information security and to the handling of technologies such as artificial intelligence and quantum computing, and gave authority to new security standards for gateway security and systems of government significance. Release 2026 adds post-quantum cryptography transition planning, AI training and bring-your-own-device obligations.
 
-The PSPF binds agencies, not suppliers directly, but its requirements reach suppliers through contracts: personnel security, where data is hosted, who can access it and how incidents are reported. Federal agencies handling sensitive or classified data also look for hosting providers certified under the DTA's Hosting Certification Framework. A useful companion is the ASD's Essential Eight, covered in our guide to the [Essential Eight for software projects](/guides/essential-eight-software-development).
+The PSPF binds agencies, not suppliers directly, but its requirements reach suppliers through contracts: personnel security, where data is hosted, who can access it and how incidents are reported. Federal agencies handling sensitive or security classified data also look for hosting providers certified under the Hosting Certification Framework, which the Department of Home Affairs runs (new certifications have been paused since 3 November 2025 while the framework is reformed). A useful companion is the ASD's Essential Eight, covered in our guide to the [Essential Eight for software projects](/guides/essential-eight-software-development).
 
 ## A supplier evidence pack for Canberra buyers
 

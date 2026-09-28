@@ -1,12 +1,12 @@
 ---
 title: "Freelancer vs agency vs in-house developers: which should you use?"
 metaTitle: "Freelancer vs Agency vs In-House Developers (Australia)"
-description: "Freelancer, agency or in-house developers? Australian costs, risk and continuity compared, with a worked cost per productive hour and a guide to choosing."
+description: "Freelancer vs agency vs in-house developers: Australian costs, risk and continuity compared, with the true cost of hiring a developer and a guide to choosing."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Hire in-house when software is core to your business and you need it built and changed continuously for years. Use a freelancer or contractor for a well-defined piece of work you can manage yourself. Use an agency when you need a complete team for a project with a start and an end, without the cost and delay of hiring. In Sydney, a senior employee costs roughly $120 to $135 per productive hour once on-costs are counted, a senior contractor $100 to $140, and an agency $120 to $250 (AUD, ex GST)."
+summary: "The freelancer vs agency vs in-house decision comes down to how long the work lasts and who on your side can lead it. Hire in-house when software is core to your business and you need it built and changed continuously for years. Use a freelancer or contractor for a well-defined piece of work you can manage yourself. Use an agency when you need a complete team for a project with a start and an end, without the cost and delay of hiring. In Sydney, a senior employee costs roughly $120 to $135 per productive hour once on-costs are counted, a senior contractor $100 to $140, and an agency $120 to $250 (AUD, ex GST)."
 takeaways:
   - "A $165,000 senior salary costs an employer about $203,000 a year once super, payroll tax, insurance and equipment are added, or roughly $120 per productive hour after leave."
   - "Senior contractors in Sydney bill about $800 to $1,100 a day ex GST; Sydney freelancers often quote $80 to $150 an hour; Australian agencies commonly bill $120 to $250 an hour."
@@ -16,6 +16,12 @@ takeaways:
 faqs:
   - q: "Is it cheaper to hire a developer or use an agency?"
     a: "For continuous, long-term work, an employee is usually cheaper per productive hour. For a project of three to nine months, an agency is often cheaper overall because you avoid recruitment time, a mismatch of skills, and paying for people between projects. The comparison only works when you count the full employer cost and the management time you'll spend."
+  - q: "Should I outsource software development or keep it in-house?"
+    a: "Keep it in-house when software is a permanent competitive advantage and there's continuous work for at least two engineers. Outsource to an agency or contractors when the work is a project with an end date, when you need skills you can't hire quickly, or when nobody internally can lead engineering. Many businesses outsource the first version and bring the ongoing work in-house later."
+  - q: "What are the pros and cons of hiring a freelance developer?"
+    a: "The pros are a lower hourly rate than most agencies, a fast start, specialist skills on demand and no long-term commitment. The cons are that you manage the work yourself, you get one person's skills rather than a team, nobody reviews their code unless you arrange it, and the project stalls if they get sick or move on. Freelancers work best when someone technical on your side can direct and check the work."
+  - q: "Is a contractor cheaper than an employee?"
+    a: "Per productive hour, a senior Sydney contractor at $800 to $1,100 a day (about $100 to $140 an hour) costs roughly the same as a fully loaded senior employee at about $120 to $135. The difference is flexibility: you pay a contractor only for the days you use, with no leave, super or recruitment cost, but you also lose the long-term knowledge an employee builds."
   - q: "Who owns the code a freelancer writes for me?"
     a: "Unless there's a written assignment, the freelancer generally does. Section 196(3) of the Copyright Act 1968 says an assignment of copyright has no effect unless it is in writing and signed by or on behalf of the assignor. Make sure the contract assigns IP to you and includes moral rights consents; our contract checklist explains what to look for."
   - q: "Can I treat a long-term contractor like an employee?"
@@ -71,7 +77,7 @@ service:
   href: "/services/custom-app-development"
 ---
 
-## Freelancer, agency or in-house: which is right for you?
+## Freelancer vs agency vs in-house developers: which is right for you?
 
 **The right model depends on how long the work lasts, how central software is to your business, and how much management time you have.** None of the three is best in general. Each is cheapest in a particular situation and expensive outside it.
 
@@ -108,7 +114,7 @@ If your business sits under the payroll tax threshold, the figure drops to aroun
 
 ## When is hiring in-house the better choice?
 
-**Hire when software is a permanent part of how you compete and there's enough continuous work to keep at least two engineers busy for years.** An employee builds knowledge of your business that no outside party can match, and per productive hour they're usually cheaper than an agency.
+**Keep development in-house (rather than outsourcing it) when software is a permanent part of how you compete and there's enough continuous work to keep at least two engineers busy for years.** An employee builds knowledge of your business that no outside party can match, and per productive hour they're usually cheaper than an agency.
 
 In-house makes sense if:
 
@@ -153,7 +159,7 @@ If you want agency engineers working inside your team under your direction, that
 
 Moral rights are separate. Under the Act they can't be assigned at all, so good contracts include the author's written consent to the kinds of changes you'll make to the code. Our [contract checklist](/guides/software-development-contract-checklist) covers IP assignment, moral rights consents and source code access in more detail.
 
-## A decision guide
+## Should you hire a developer or use an agency? A decision guide
 
 **Start from the length and shape of the work, then check who on your side can lead it.** If nobody internally can judge technical quality, rule out a lone freelancer first, whatever the rate. If the work will never really stop, rule out a pure project engagement. What remains is usually obvious.
 

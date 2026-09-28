@@ -1,11 +1,11 @@
 ---
 title: "AI for Australian law firms: document review, precedent search and matter knowledge"
-metaTitle: "AI for Australian Law Firms: Review, Precedents, Knowledge"
-description: "Building AI for Australian law firms around privilege, confidentiality, the Uniform Law regulators' AI statement and court practice notes on generative AI."
+metaTitle: "AI for Law Firms in Australia: Review, Precedents, Matters"
+description: "AI for law firms in Australia: legal AI for document review, precedent search and matter knowledge, built around privilege, confidentiality and court rules."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI for an Australian law firm has to protect confidentiality and privilege first and speed second. The Uniform Law regulators in NSW, Victoria and WA say lawyers can't safely put confidential or privileged client information into public AI tools, must verify everything AI produces and should have written AI policies. Courts such as the NSW Supreme Court set further rules on what AI may touch. Within those limits, document review, precedent search and matter knowledge bases are the builds that fit best, typically $60k to $250k (AUD, ex GST)."
+summary: "AI for law firms in Australia has to protect confidentiality and privilege first and speed second. The Uniform Law regulators in NSW, Victoria and WA say lawyers can't safely put confidential or privileged client information into public AI tools, must verify everything AI produces and should have written AI policies. Courts such as the NSW Supreme Court set further rules on what AI may touch. Within those limits, document review, precedent search and matter knowledge bases are the builds that fit best, typically $60k to $250k (AUD, ex GST)."
 takeaways:
   - "The December 2024 Uniform Law statement ties AI use to existing conduct rules: confidentiality (ASCR r 9.1), independent advice, competence and diligence, and fair costs."
   - "NSW Supreme Court Practice Note SC Gen 23 bars generative AI from generating the content of affidavits and witness statements, and restricts which material can be entered into AI tools at all."
@@ -23,6 +23,10 @@ faqs:
     a: "Only as their licence terms allow. Research publishers generally restrict copying their content into your own systems, and several offer their own AI tools. A custom build usually indexes the firm's own work product and links out to licensed research rather than ingesting it."
   - q: "How do we bill for work done with AI?"
     a: "The Uniform Law statement says billed time and work items should accurately represent the legal work done by the practice's staff, and AI shouldn't increase costs above traditional methods through extra verification time. Recording AI use per matter makes those conversations with clients easier."
+  - q: "Can lawyers use ChatGPT?"
+    a: "Not with confidential or privileged client information in a public version. The Uniform Law regulators' statement says lawyers can't safely enter that information into public AI tools, and that commercial tools need their contract terms reviewed first. Business or enterprise plans with no training and controlled retention can be used within a written firm policy, and the lawyer must still verify everything the tool produces."
+  - q: "Is legal AI worth it for a small law firm?"
+    a: "Usually not as a custom build at first. A small firm gets more from the AI features in its practice management and research subscriptions, used under a written AI policy. Custom work starts to pay off when a firm has a large precedent bank or matter history of its own that no vendor tool can search with the citations and access controls it needs."
   - q: "Is Queensland or South Australia different?"
     a: "They aren't Uniform Law jurisdictions, so the joint statement doesn't formally apply, but their conduct rules on confidentiality and competence are similar, and their law societies and courts publish their own guidance. We build to the strictest set of rules among the jurisdictions a firm practises in."
 sources:
@@ -55,7 +59,7 @@ disclaimer: legal
 
 ## What changes when the client is a law firm?
 
-**Two things: the information is protected by privilege as well as confidentiality, and the people using the output are personally responsible to clients and courts for every word of it.** A retrieval error in a retail chatbot is an annoyance. In a firm it can be a false citation in submissions or a document from another client's matter surfacing in the wrong place.
+**Two things: the information is protected by privilege as well as confidentiality, and the people using the output are personally responsible to clients and courts for every word of it.** A retrieval error in a retail chatbot is an annoyance. In a firm it can be a false citation in submissions (the [AI hallucination](/guides/ai-hallucinations) problem) or a document from another client's matter surfacing in the wrong place.
 
 Client legal privilege protects confidential communications and documents made for the dominant purpose of legal advice or litigation. In court proceedings it is set out in the uniform Evidence Acts (sections 118 and 119 of the Commonwealth Act), with the common law applying elsewhere. It survives only while confidentiality does, and conduct inconsistent with maintaining confidentiality can waive it. So the first design question for any legal AI system is where client information goes, who can see it, and whether any provider can keep or learn from it. The second is how a lawyer checks what the system says, quickly enough that they will actually do it.
 
@@ -79,9 +83,9 @@ The table turns the key points into software requirements. It's our engineering 
 
 Queensland, South Australia and other jurisdictions sit outside the Uniform Law but have similar confidentiality and competence rules and their own guidance, and other courts publish their own practice notes. A firm practising across several should design to the strictest.
 
-## Which AI builds fit law firms best?
+## Which legal AI use cases fit law firms best?
 
-**Three builds do most of the useful work: document review, precedent search and a matter knowledge base.** All three are retrieval problems at heart: the model's job is to find and quote the firm's own material accurately, not to know the law. Our [RAG explainer](/guides/what-is-rag) covers the underlying technique.
+**Three legal AI builds do most of the useful work: document review, precedent search and a matter knowledge base.** All three are retrieval problems at heart: the model's job is to find and quote the firm's own material accurately, not to know the law. Our [RAG explainer](/guides/what-is-rag) covers the underlying technique.
 
 ### Document review and summarising
 
@@ -94,7 +98,7 @@ Design points we would insist on:
 - A reviewer screen that shows the source clause beside the extraction for one-click accept or correct
 - Sampling: a lawyer checks a random share of accepted answers, and the error rate is reported
 
-This is preparatory and summarising work of the kind SC Gen 23 permits, provided the material entered meets its paragraph 9A conditions.
+This is preparatory and summarising work of the kind SC Gen 23 permits, provided the material entered meets its paragraph 9A conditions. It is also different from legal document automation in the older sense, which assembles a contract from a template and a questionnaire using fixed rules. Many firms already run that; AI review works in the other direction, reading documents that already exist.
 
 ### Precedent and clause search
 
@@ -120,7 +124,7 @@ It's also where access control matters most, covered below. For firms wanting a 
 - [ ] Every query, retrieved document and answer is logged against the user and matter
 - [ ] Deleting or archiving a matter removes its documents and embeddings from the index
 - [ ] Documents flagged as suppressed, subpoenaed or subject to undertakings are excluded from tools that don't meet the court's conditions
-- [ ] Uploaded documents from other parties are treated as untrusted input and tested for prompt injection
+- [ ] Uploaded documents from other parties are treated as untrusted input and tested for [prompt injection](/guides/prompt-injection)
 
 ## Which systems does a legal AI build connect to?
 
@@ -139,11 +143,11 @@ It's also where access control matters most, covered below. For firms wanting a 
 
 **Buy if a vendor product covers your need and its data terms satisfy your policy; build when your advantage is your own precedents, matter history or workflows.** Research publishers and legal tech vendors sell AI assistants, and Microsoft 365 Copilot handles general drafting well where permissions are tidy. For many firms that's the right answer, and we'd say so in discovery. Our [Copilot vs custom assistant comparison](/guides/copilot-vs-custom-ai-assistant) sets out the trade-offs.
 
-Custom builds make sense when a firm needs citations at clause level across its own documents, matter walls a general tool can't model, Australian processing with specific providers, or integration with a practice management system the vendors don't support well.
+Custom legal software development makes sense when a firm needs citations at clause level across its own documents, matter walls a general tool can't model, Australian processing with specific providers, or integration with a practice management system the vendors don't support well.
 
 ## What budget and timeline should a firm plan for?
 
-**A first legal AI system typically takes 10 to 20 weeks and costs roughly $60,000 to $250,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
+**A first legal AI system typically takes 8 to 20 weeks and costs roughly $60,000 to $250,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
 
 | Scope | Duration | Typical range (AUD, ex GST) |
 |---|---|---|

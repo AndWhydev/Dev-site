@@ -1,12 +1,12 @@
 ---
 title: "RAG vs fine-tuning: which does your business need?"
-metaTitle: "RAG vs Fine-Tuning: Which Does Your Business Need?"
-description: "RAG gives a model your knowledge; fine-tuning changes how it behaves. A decision guide with costs, Australian data residency limits and when to combine both."
+metaTitle: "RAG vs Fine-Tuning vs Prompt Engineering: Which to Use?"
+description: "RAG vs fine-tuning (and prompt engineering): RAG gives a model your knowledge, fine-tuning changes how it behaves. Costs, data residency, and when to combine."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Use retrieval-augmented generation (RAG) when the model needs to answer from your documents and data, especially if they change or need citations and access control. Use fine-tuning when you need the model to behave differently, such as following a strict output format, a house style or a narrow classification task, and prompting alone can't get there. Most business knowledge assistants need RAG, not fine-tuning. Some mature systems use both."
+summary: "Choose between RAG and fine-tuning by the problem you have: use retrieval-augmented generation (RAG) when the model needs to answer from your documents and data, especially if they change or need citations and access control. Use fine-tuning when you need the model to behave differently, such as following a strict output format, a house style or a narrow classification task, and prompting alone can't get there. Most business knowledge assistants need RAG, not fine-tuning. Some mature systems use both."
 takeaways:
   - "RAG adds knowledge at question time by retrieving relevant passages; fine-tuning adjusts the model's weights with training examples."
   - "If the problem is 'the model doesn't know our information', RAG is almost always the answer. If it's 'the model knows enough but behaves wrongly', consider fine-tuning."
@@ -14,6 +14,8 @@ takeaways:
   - "At the time of writing, fine-tuning inside Australian regions is far more limited than inference, which matters if training data must stay onshore."
   - "Try better prompts and RAG first. Fine-tune only when evaluation shows a gap they can't close."
 faqs:
+  - q: "What is model fine-tuning?"
+    a: "Fine-tuning is further training of an existing, pre-trained model on your own examples, usually hundreds to thousands of input and output pairs, so its weights shift towards the behaviour you want. It doesn't build a model from scratch. Methods such as LoRA train a small set of extra weights instead of the whole model, which makes it cheaper. Our guide to what LLM fine-tuning is covers it in more depth."
   - q: "Can fine-tuning teach a model our company's knowledge?"
     a: "Partly, but it's an unreliable way to do it. Fine-tuning is good at teaching patterns, formats and style. It's poor at making a model recall specific facts accurately, it can't cite where an answer came from, and every update to your documents means another training run. RAG is the standard approach for knowledge."
   - q: "Is RAG cheaper than fine-tuning?"
@@ -28,6 +30,9 @@ sources:
   - title: "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (Lewis et al., 2020)"
     url: "https://arxiv.org/abs/2005.11401"
     publisher: "arXiv"
+  - title: "LoRA: Low-Rank Adaptation of Large Language Models (Hu et al., 2021)"
+    url: "https://arxiv.org/abs/2106.09685"
+    publisher: "arXiv"
   - title: "Foundry Models sold by Azure: fine-tuning models and regions"
     url: "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure"
     publisher: "Microsoft Learn"
@@ -38,7 +43,7 @@ sources:
     url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html"
     publisher: "Amazon Web Services"
   - title: "Data residency for generative AI"
-    url: "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency"
+    url: "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency"
     publisher: "Google Cloud"
   - title: "Guidance on privacy and developing and training generative AI models"
     url: "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/guidance-on-privacy-and-developing-and-training-generative-ai-models"
@@ -86,6 +91,22 @@ An analogy that holds up: RAG is giving a capable new hire access to the company
 
 For a fuller explanation of each technique, see [what is RAG](/guides/what-is-rag) and [what is LLM fine-tuning](/guides/what-is-llm-fine-tuning).
 
+## Where do prompt engineering, LoRA, embeddings, MCP and agents fit?
+
+**Prompt engineering is the step before both; LoRA is a way to fine-tune; embeddings are part of RAG; MCP and agents are ways to connect a model to tools.** Buyers often see these listed as alternatives, but only prompt engineering is a genuine third option for the same problem.
+
+| Term | What it is | How it relates to RAG vs fine-tuning |
+|---|---|---|
+| Prompt engineering | Writing clear instructions and worked examples into the prompt | Try it first. It's free to test and often removes the need for either technique |
+| LoRA | Low-Rank Adaptation: freezes the model's weights and trains small added matrices | A cheaper form of fine-tuning, not an alternative to it |
+| Embeddings | Numeric representations of text that let a system find passages by meaning | The search engine inside most RAG systems; see [what are embeddings](/guides/what-are-embeddings) |
+| Training from scratch | Pre-training a new model on a huge corpus | Almost never needed by a business; fine-tuning starts from an existing model |
+| MCP | The Model Context Protocol, an open standard for connecting models to tools and data sources | Complements RAG: it can fetch live records from systems, while RAG searches documents. See [what is MCP](/guides/what-is-mcp) |
+| AI agents | Systems where the model chooses its own steps using tools | An agent can use RAG as one of its tools; fine-tuning rarely comes into it |
+| Long context | Putting whole documents into a very large prompt | Can replace RAG for small, stable document sets (see the FAQ below) |
+
+So the practical order is: prompt engineering, then RAG if the gap is knowledge, then fine-tuning if the gap is behaviour.
+
 ## Which one does your business need?
 
 **Most organisations asking this question need RAG.** The usual complaint is "the model doesn't know our policies, products or procedures", and that's a knowledge problem. Fine-tuning is the right tool for a different complaint: "the model has the information but won't reliably do what we need with it".
@@ -122,7 +143,7 @@ For a fuller explanation of each technique, see [what is RAG](/guides/what-is-ra
 
 The same organisation needs both techniques, for different jobs. Neither problem needs a model trained from scratch.
 
-## How do the costs compare?
+## RAG vs fine-tuning cost: how do they compare?
 
 **RAG usually costs less to start and more per question; fine-tuning costs more to start and can cost less per request at scale.** The exact numbers depend on the model, volumes and vendor pricing, which change often, so treat this as a map of cost drivers rather than a price list. Current rates are on each vendor's pricing page, linked in the sources.
 

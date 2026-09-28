@@ -7,8 +7,8 @@ import CTABanner from '../components/CTABanner.astro';
 ---
 
 <Layout
-  title="AI Consulting, All Webbed Labs | Custom AI Development Australia"
-  description="Custom AI tools, LLM integration and intelligent automation for Australian enterprises. OpenAI, Claude, Llama, we build AI that works in production."
+  title="AI Consulting Sydney & AI Development | All Webbed Labs"
+  description="AI consulting in Sydney for Australian teams: AI strategy, LLM integration and custom AI development with OpenAI, Claude and open models, in production."
 >
   <Header />
   <main>
@@ -33,7 +33,8 @@ import CTABanner from '../components/CTABanner.astro';
             With <span class="gradient-text">Artificial Intelligence</span>
           </h1>
           <p class="ai-hero-sub">
-            We build production-ready AI systems that solve real operational problems. Not demos. Not prototypes that never ship.
+            AI consulting and development from Sydney, for organisations across Australia. We build production-ready AI
+            systems that solve real operational problems. Not demos. Not prototypes that never ship.
             Custom LLMs, intelligent document processing, predictive analytics and conversational AI, integrated into your
             existing systems and running at enterprise scale.
           </p>
@@ -211,7 +212,7 @@ import CTABanner from '../components/CTABanner.astro';
             {
               industry: 'Revenue',
               title: 'Sales & Revenue Forecasting',
-              desc: 'ML models trained on historical pipeline data, seasonal signals and market indicators to produce weekly revenue forecasts with 90%+ accuracy, enabling confident resource planning.'
+              desc: 'ML models trained on historical pipeline data, seasonal signals and market indicators to produce weekly revenue forecasts, with accuracy backtested against your own history before anyone relies on them.'
             },
             {
               industry: 'Risk & Compliance',
@@ -403,8 +404,20 @@ import CTABanner from '../components/CTABanner.astro';
               a: 'AI models degrade over time as real-world data distributions shift away from training data, this is called model drift. Our standard post-deployment package includes monthly performance reporting, quarterly retraining reviews, automated drift detection alerts, and a model update SLA. This is not optional, we won\'t deploy AI without a maintenance plan in place.'
             },
             {
-              q: 'What industries are you most experienced in for AI projects?',
-              a: 'We have the deepest experience in financial services (fraud detection, document processing, compliance automation), healthcare (clinical note processing, patient triage chatbots), logistics (demand forecasting, route optimisation), and enterprise SaaS (product recommendation, customer success prediction). That said, our architecture and delivery methodology adapts to any domain where the underlying data problems are well-defined.'
+              q: 'Which industries do you work with on AI projects?',
+              a: 'Our delivery method is industry-agnostic and works wherever the underlying data problem is well defined. The use cases we design for most often include document processing and compliance automation in financial services, clinical note processing and triage assistants in healthcare, demand forecasting in logistics, and recommendation and churn prediction in SaaS. Regulated industries add requirements, such as APRA prudential standards or health privacy law, which we map in discovery.'
+            },
+            {
+              q: 'What does an AI consultant actually do?',
+              a: 'An AI consultant identifies where AI will genuinely pay off in your organisation, tests whether it works on your own data, and designs how it fits your systems, security and compliance obligations. With us, the consulting leads straight into delivery: the same senior engineers who assess the opportunity build, evaluate and deploy the system, so the advice is grounded in what can actually be shipped.'
+            },
+            {
+              q: 'Do we need an AI strategy before we build anything?',
+              a: 'You need clarity on one or two high-value use cases, not a long strategy document. We usually start with a short discovery that ranks candidate use cases by value, feasibility and risk, checks your data, and recommends a first project small enough to prove value quickly. A broader roadmap follows once that first project shows what works in your environment.'
+            },
+            {
+              q: 'Do you only work with Sydney businesses?',
+              a: 'No. We are based in Five Dock, Sydney, and work on AEST hours with organisations across Australia. Workshops can be in person in Sydney or remote, and delivery is remote-first with regular demos, so location rarely affects how an engagement runs.'
             },
           ].map((faq, i) => (
             <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>

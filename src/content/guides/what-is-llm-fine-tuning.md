@@ -1,7 +1,7 @@
 ---
 title: "What is LLM fine-tuning, and when don't you need it?"
-metaTitle: "What Is LLM Fine-Tuning, and When Don't You Need It?"
-description: "Fine-tuning retrains a language model on your examples to change how it behaves. How it works, the main methods, and when prompting or RAG is the better choice."
+metaTitle: "What Is LLM Fine-Tuning? Methods, Examples, vs RAG"
+description: "What is fine-tuning an LLM? It trains a model further on your examples to change how it behaves. How it works, LoRA, examples, and when RAG is better."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -10,18 +10,22 @@ summary: "LLM fine-tuning is the process of further training an existing large l
 takeaways:
   - "Fine-tuning changes the model's weights using example inputs and ideal outputs; prompting and RAG leave the model untouched."
   - "It's best for behaviour: consistent formats, classification, tone, and making a small, cheap model do one job as well as a big one."
-  - "It's weak for knowledge. Research comparing the two found RAG consistently beat fine-tuning at adding facts."
+  - "It's weak for knowledge. Research comparing the two found RAG consistently beat unsupervised fine-tuning at adding facts."
   - "Parameter-efficient methods such as LoRA train a tiny fraction of the weights, making fine-tuning far cheaper than it was."
   - "Try better prompts, examples and retrieval first. Fine-tune only when you have an evaluation set proving they fall short."
 faqs:
   - q: "Can I fine-tune a model on our company documents so it knows our business?"
     a: "You can, but it's usually the wrong tool. Models absorb new facts poorly through fine-tuning, can't cite where an answer came from, and go stale the moment a document changes. For question answering over company knowledge, use RAG, and consider fine-tuning later only if you need a particular answer style."
+  - q: "What is the difference between fine-tuning and prompt engineering?"
+    a: "Prompt engineering changes the instructions you send with each request and leaves the model as it is. Fine-tuning changes the model's weights so the behaviour is built in. Prompting is faster, cheaper and easier to change, so it comes first; fine-tuning is worth considering when a well-engineered prompt still fails too often on a stable, high-volume task."
+  - q: "What is LoRA fine-tuning?"
+    a: "LoRA (low-rank adaptation) is a parameter-efficient fine-tuning method. Instead of retraining all of a model's weights, it freezes them and trains small add-on matrices, which cuts memory and cost sharply and lets one base model host many small task-specific adapters."
   - q: "How much training data does fine-tuning need?"
     a: "It depends on the task and method. Narrow formatting or classification tasks can show results with a few hundred high-quality examples; harder tasks need thousands. Quality and consistency matter more than volume: a few hundred carefully reviewed examples usually beat thousands of noisy ones."
   - q: "What does fine-tuning cost?"
     a: "On managed platforms you typically pay for training by tokens processed (training data tokens multiplied by the number of passes, called epochs), a monthly storage fee per custom model, and inference, which may require dedicated capacity. Self-hosting an open-weight model adds GPU costs. The ongoing costs usually outweigh the one-off training run."
   - q: "Can we fine-tune Claude or GPT models?"
-    a: "Some hosted models can be fine-tuned through the vendor or a cloud platform, and many open-weight models can be fine-tuned anywhere. Which models support which methods, and in which regions, changes often. Check the provider's current documentation before planning around it."
+    a: "Some hosted models can be fine-tuned through the vendor or a cloud platform, and many open-weight models can be fine-tuned anywhere. Which models support which methods, and in which regions, changes often: at the time of writing, for example, OpenAI is winding down its fine-tuning platform and no longer accepts new users. Check the provider's current documentation before planning around it."
   - q: "Will a fine-tuned model still work when the base model is retired?"
     a: "No. A fine-tune is tied to one base model version. When the vendor deprecates that version, you retrain on a newer one, which means keeping your training data and evaluation set ready to reuse."
 sources:
@@ -58,9 +62,9 @@ service:
 disclaimer: none
 ---
 
-## What does fine-tuning actually change?
+## What is fine-tuning, and what does it change?
 
-**Fine-tuning changes the model itself.** A large language model is, underneath, billions of numeric weights learned during its original training. Fine-tuning runs a second, much smaller round of training on your examples, nudging those weights so that the model's default behaviour shifts towards what the examples show.
+**Fine-tuning an LLM means training an existing model further on your own examples, which changes the model itself.** A large language model is, underneath, billions of numeric weights learned during its original training. Fine-tuning runs a second, much smaller round of training on your examples, nudging those weights so that the model's default behaviour shifts towards what the examples show.
 
 Compare that with the other ways of customising a model:
 
@@ -98,7 +102,30 @@ The famous demonstration of what fine-tuning can do is OpenAI's InstructGPT work
 | Distillation | Outputs from a large "teacher" model | Making a small model match a big one on your task |
 | LoRA and other parameter-efficient methods | Any of the above, training small add-on weights | Cheaper training and hosting of many variants |
 
-Parameter-efficient methods changed the economics. LoRA (Hu et al., 2021) freezes the original weights and trains small add-on matrices instead; against full fine-tuning of GPT-3 175B, it cut trainable parameters by 10,000 times and GPU memory by 3 times. QLoRA (Dettmers et al., 2023) added 4-bit quantisation and showed a 65 billion parameter model could be fine-tuned on a single 48 GB GPU. Managed services such as OpenAI's platform and Amazon Bedrock now offer supervised, preference or reinforcement fine-tuning and distillation for selected models.
+Parameter-efficient methods changed the economics. LoRA (Hu et al., 2021) freezes the original weights and trains small add-on matrices instead; against full fine-tuning of GPT-3 175B, it cut trainable parameters by 10,000 times and GPU memory by 3 times. QLoRA (Dettmers et al., 2023) added 4-bit quantisation and showed a 65 billion parameter model could be fine-tuned on a single 48 GB GPU. Managed services have followed: Amazon Bedrock, for example, offers supervised fine-tuning, reinforcement fine-tuning and distillation for selected models. OpenAI's platform added supervised, preference (DPO) and reinforcement fine-tuning, but at the time of writing OpenAI says it is winding down its fine-tuning platform and no longer accepts new users.
+
+## Fine-tuning examples: what is it used for?
+
+**Fine-tuning is used where the task is narrow, repeated at volume and easy to show with examples.** Typical business examples:
+
+- **Classification and routing:** labelling support tickets, emails or claims into a fixed set of categories.
+- **Structured extraction:** pulling the same fields from invoices, forms or contracts into JSON every time.
+- **House style and tone:** drafting replies or summaries in a consistent voice that's hard to describe in a prompt.
+- **Domain language:** handling specialist terms in areas like medicine, law or engineering more reliably.
+- **Smaller, cheaper models:** distilling a large model's behaviour on one task into a small model that's faster and cheaper to run, or that can run on your own infrastructure.
+
+What these have in common is that they change *how* the model responds. None of them is "make the model know our documents", which is a retrieval job.
+
+## Fine-tuning vs RAG: the short version
+
+**Fine-tuning changes behaviour; RAG supplies knowledge.** They solve different problems and are often combined.
+
+| Question | Fine-tuning | RAG |
+|---|---|---|
+| What changes? | The model's weights | The information in each prompt |
+| Best for | Format, tone, narrow tasks | Company knowledge, current facts |
+| Can it cite sources? | No | Yes |
+| Keeping it current | Retrain | Update the index |
 
 ## When does a business need fine-tuning?
 
@@ -111,7 +138,7 @@ Parameter-efficient methods changed the economics. LoRA (Hu et al., 2021) freeze
 
 And when you don't:
 
-- **You want the AI to know your documents.** Ovadia et al. (2023) found RAG consistently outperformed fine-tuning for adding knowledge, both familiar and new. Use retrieval.
+- **You want the AI to know your documents.** Ovadia et al. (2023) found RAG consistently outperformed unsupervised fine-tuning for adding knowledge, both familiar and new. Use retrieval.
 - **Your facts change** monthly or weekly. Every change would need retraining.
 - **You need citations.** A fine-tuned model can't point to where it learned something.
 - **You haven't tried a strong prompt with examples.** Many "we need fine-tuning" problems disappear here.

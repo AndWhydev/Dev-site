@@ -1,12 +1,12 @@
 ---
 title: "How to choose an AI development company in Australia"
 metaTitle: "How to Choose an AI Development Company in Australia"
-description: "A fair buyer's checklist for hiring an AI developer in Australia: questions to ask, evidence to request, red flags, and when you don't need a developer at all."
+description: "How to choose the right AI development company in Australia: questions to ask, evidence to request, red flags, and when you don't need an AI developer at all."
 eyebrow: "Buyer's guide"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Choose an AI development company on evidence, not demos. Ask to see a working system they built and can talk through in detail, how they measure answer quality before launch, where your data and prompts will be processed, who owns the code and model artefacts, and what it will cost to run each month. A good firm will also tell you when an off-the-shelf tool is enough and you don't need a custom build."
+summary: "Choose the right AI development company for your business on evidence, not demos. Ask to see a working system they built and can talk through in detail, how they measure answer quality before launch, where your data and prompts will be processed, who owns the code and model artefacts, and what it will cost to run each month. A good firm will also tell you when an off-the-shelf tool is enough and you don't need a custom build."
 takeaways:
   - "Start by deciding whether you need a developer at all: many internal assistant and summarising needs are met by licensed tools like Microsoft 365 Copilot or ChatGPT Enterprise."
   - "Judge firms on evidence you can check: a live walkthrough of a comparable system, an evaluation report, an architecture document and references you can call."
@@ -17,6 +17,10 @@ takeaways:
 faqs:
   - q: "How many AI development companies should I shortlist?"
     a: "Three is usually enough. Fewer and you have nothing to compare against; more and you spend weeks in meetings. Send all three the same written brief and the same list of questions so the answers are comparable."
+  - q: "Which is the best AI development company in Australia?"
+    a: "There isn't one answer, because the best firm for a customer-facing chatbot may be the wrong one for document processing in a regulated industry. Use rankings and directories to build a longlist, then score each firm on the evidence in this guide: shipped systems, an evaluation method, a data flow you understand, named engineers and honest running costs. The firm that scores highest on evidence is the best one for you."
+  - q: "Do I need an AI consultant or an AI development company?"
+    a: "An AI consultant helps you decide what to do: which use cases are worth it, whether your data is ready and what the risks are. An AI development company builds and runs the system. Some firms do both. If you don't yet know which problem to solve first, start with a readiness assessment or short discovery, then hire for the build."
   - q: "Should I choose a firm with a Microsoft, AWS or Google partner badge?"
     a: "A partner tier tells you the firm has met that vendor's commercial and training criteria. It's a useful signal if you're committed to that cloud, but it doesn't prove the firm can build a reliable AI system. Ask for the evaluation evidence either way, and check the tier on the vendor's own partner directory rather than a logo on a website."
   - q: "Is it a red flag if an AI company has no case studies?"
@@ -43,6 +47,9 @@ sources:
   - title: "Does my business own the software it is having developed?"
     url: "https://legalvision.com.au/own-the-software/"
     publisher: "LegalVision"
+  - title: "LLM06:2025 Excessive Agency"
+    url: "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/"
+    publisher: "OWASP Gen AI Security Project"
   - title: "National AI Centre AI Directory"
     url: "https://aidirectory.industry.gov.au/"
     publisher: "Department of Industry, Science and Resources"
@@ -97,9 +104,9 @@ This scorecard gives you a consistent way to compare a shortlist. Score each fir
 
 A firm scoring 14 or more out of 18 on evidence is a strong candidate. A high score built on claims rather than evidence is worth nothing.
 
-## Which questions should you ask on the first call?
+## What questions should you ask an AI development company?
 
-**Ask questions that force specifics.** Vague answers to these usually mean the firm hasn't done it before.
+**Ask questions that force specifics, ideally on the first call.** Vague answers to these usually mean the firm hasn't done it before.
 
 1. Show me a system you built that's similar to what we need. What went wrong in the first month after launch, and what did you change?
 2. How will you know the system is good enough to go live? What's the test set, who writes it, and what pass rate do you target?
@@ -115,6 +122,20 @@ A firm scoring 14 or more out of 18 on evidence is a strong candidate. A high sc
 12. What would make you tell us not to build this?
 
 The last question is the most revealing. A firm that has never talked a client out of a project is selling, not advising.
+
+## Choosing an AI agent development company: what's different?
+
+**If the system will take actions, not just answer questions, judge the firm on how it limits what the AI can do.** An AI agent that updates records, sends messages or moves money needs controls that a chatbot doesn't, and OWASP lists "excessive agency" among the top risks for LLM applications for that reason.
+
+Add these questions when you're choosing an AI agent development company:
+
+1. Which tools will the agent have, and what's the narrowest permission each one needs?
+2. Which actions require a human to approve them first?
+3. Is every tool call logged with inputs and outputs, so we can reconstruct what happened?
+4. What limits stop a runaway agent: step caps, spend caps, rate limits?
+5. How will you test it with realistic tasks, including emails or documents that try to give it instructions?
+
+A firm with real agent experience will answer these without hesitation, and will often suggest a simpler workflow with AI steps instead. Our comparison of [AI agents vs chatbots vs automation](/guides/ai-agents-vs-chatbots-vs-automation) explains when an agent is worth the extra risk, and our [AI agent development](/services/ai-agent-development) page shows how we'd approach one.
 
 ## What evidence should you ask for before signing?
 
@@ -173,6 +194,6 @@ For deeper background, see our guides on [data residency vs data sovereignty](/g
 
 ## How All Webbed Labs fits this process
 
-We'd rather you ran this process on us than skipped it. All Webbed Labs launched in mid 2026 as a partnership of developers and founders; our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021. We don't hold ISO 27001, IRAP or vendor partner tiers, and we don't yet have public AI case studies under the All Webbed Labs name, so ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
+We'd rather you ran this process on us than skipped it. Our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership of developers and founders. We don't hold ISO 27001, IRAP or vendor partner tiers, and we don't yet have public AI case studies under the All Webbed Labs name, so ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
 
 What we can commit to in writing: paid discovery followed by a fixed price, code in your repository from day one with IP transferring on completion, an NDA before you share anything, AEST hours, Australian cloud regions by default, and an evaluation plan agreed before build. If discovery shows a licensed tool will do the job, we'll say so. Start with our [AI consulting](/ai-consulting) page or an [AI readiness assessment](/services/ai-readiness-assessment).

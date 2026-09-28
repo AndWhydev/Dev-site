@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Add AI to Existing Software | All Webbed Labs",
-  metaDescription: "Add AI search, summarisation, extraction and assistants to software you already run, released behind feature flags with evaluations and cost controls.",
+  metaTitle: "AI Integration Services: Add AI to Existing Apps | AWLabs",
+  metaDescription: "AI integration services from Sydney: add AI search, summarisation, extraction and assistants to software you already run, with feature flags and spend caps.",
   category: "AI & Data",
   serviceName: "AI Integration",
   slug: "ai-integration",
   heroHeadline: "Add AI to the Software You Already Run, Without Rebuilding It",
-  heroTagline: "Search, summarisation, extraction and in-app assistants built into your existing product or internal system, rolled out behind feature flags and measured before everyone gets them.",
+  heroTagline: "AI integration for the product or internal system you already have: search, summarisation, extraction and in-app assistants, rolled out behind feature flags and measured before everyone gets them.",
   summaryStatement: "AI integration is the work of adding language model features, such as semantic search, summarisation, data extraction and in-app assistants, to an application that already exists, fitted to its codebase, data model, permissions and users, and released gradually so quality and running cost are measured before the feature reaches everyone.",
   description: [
     "Most organisations asking about AI do not need a new AI product. They have a product, a portal or an internal system that people already use every day, and they want it to do something it cannot do today: find the right record when someone describes it in plain words, summarise a long case history before a call, pull the fields out of an uploaded invoice, or answer a how-do-I question inside the screen where the question comes up. The value is in putting that capability where the work already happens, inside the existing app, using the data and permissions the app already has. That is a different job from building a chatbot from scratch, and it is usually faster and cheaper, because the hard parts (users, authentication, data, hosting) are already in place.",
-    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per-use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So we treat an AI feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
+    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per-use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So when we integrate AI into existing software, we treat each feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
   ],
   benefits: [
     {
@@ -48,7 +48,7 @@ const data = {
   ],
   useCases: [],
   technologies: [
-    "Anthropic Claude", "OpenAI models", "Open-weight models", "AWS Bedrock", "Azure OpenAI",
+    "Anthropic Claude", "OpenAI models", "Open-weight models", "Amazon Bedrock", "Azure OpenAI",
     "Google Vertex AI", "PostgreSQL + pgvector", "TypeScript / Node.js", "Python",
     "Vercel AI SDK", "LaunchDarkly / Unleash / Flags SDK", "OpenTelemetry", "Redis", "Langfuse",
   ],
@@ -129,6 +129,18 @@ const data = {
       question: "Will the AI feature affect automated decisions under the Privacy Act?",
       answer: "It can. From 10 December 2026, APP entities must describe in their privacy policy the kinds of decisions a computer program makes, or substantially and directly contributes to, that could significantly affect a person's rights or interests. If an AI feature scores, ranks or flags people, we log what it did and help you document it so your privacy team can assess it. This is general information, not legal advice.",
     },
+    {
+      question: "Can you integrate OpenAI or Claude models into our existing app?",
+      answer: "Yes. We integrate models from OpenAI and Anthropic directly or through Amazon Bedrock, Azure OpenAI and Google Vertex AI, and open-weight models where data must stay in your own cloud account. The model sits behind a small AI service your app calls, so switching provider or model later is a configuration change tested against your evaluation set, not a rewrite.",
+    },
+    {
+      question: "Can you add AI to an app that is not written in Python or JavaScript?",
+      answer: "Usually, yes. The AI capability lives in a small service, typically TypeScript on Node.js or Python, that your application calls through an internal API. That means an app built in .NET, Java, PHP or another language can gain AI features without its core code changing much, and your team keeps working in the language it knows.",
+    },
+    {
+      question: "How long does it take to add an AI feature to an existing app?",
+      answer: "A single well-scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy-to-check output can be quicker; in-app assistants that take actions take longer because they need more safety testing. Paid discovery fixes the timeline and price.",
+    },
   ],
   comparison: {
     rightFor: [
@@ -149,17 +161,17 @@ const data = {
   pricing: [
     {
       name: "Single AI feature (typical range)",
-      range: "$15k to $45k",
-      detail: "Typical Australian market range, AUD ex GST, not a quote. One well-scoped feature such as semantic search, summarisation or field extraction, including evaluation set, flagged rollout and handover. Roughly 10 to 30 senior days at a planning rate of about $1,400 a day. Model usage is billed separately by the provider.",
+      range: "$10k to $60k",
+      detail: "Typical Australian market range, AUD ex GST, not a quote. One well-scoped feature such as semantic search, summarisation or field extraction, including evaluation set, flagged rollout and handover. Simpler features such as summaries sit at the lower end; semantic search and document extraction usually sit higher. Roughly 7 to 43 senior days at a planning rate of about $1,400 a day. Model usage is billed separately by the provider.",
     },
     {
       name: "In-app assistant (typical range)",
-      range: "$45k to $120k",
-      detail: "Typical range, AUD ex GST. An assistant inside your app that answers questions and can take limited actions through your existing APIs, with permission checks, action confirmation, safety testing and staged rollout. The upper end applies where many actions or several data sources are involved.",
+      range: "$40k to $150k",
+      detail: "Typical range, AUD ex GST. An assistant inside your app that answers questions and can take limited actions through your existing APIs, with permission checks, action confirmation, safety testing and staged rollout. The upper end applies where many actions or several data sources are involved; agents that carry out many tasks can cost more.",
     },
     {
       name: "AI feature program (typical range)",
-      range: "$120k+",
+      range: "$150k+",
       detail: "Typical range, AUD ex GST. Several AI features across a product or a group of internal systems, with a shared AI service, cost dashboards, evaluation pipeline in CI and governance documentation. Scoped after a paid discovery and then fixed price.",
     },
   ],

@@ -1,12 +1,12 @@
 ---
 title: "Build vs buy: custom software or off-the-shelf SaaS?"
 metaTitle: "Build vs Buy Software: Custom or Off-the-Shelf SaaS?"
-description: "When to buy SaaS and when custom software pays off: five-year cost examples, a weighted decision matrix, lock-in on both sides, and Australian data notes."
+description: "Build vs buy software: when off-the-shelf SaaS wins and when custom (bespoke) software pays off, with five-year cost examples and a weighted decision matrix."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Buy off-the-shelf software when a product already does most of what you need and the process isn't what sets you apart. Build custom software when the workflow is a genuine competitive advantage, no product fits without heavy workarounds, integration needs are complex, or per-user SaaS fees at your scale exceed the cost of owning it. Most organisations end up with a mix: buy the commodity systems and build the parts that make them different."
+summary: "In the build vs buy software decision, buy off-the-shelf software when a product already does most of what you need and the process isn't what sets you apart. Build custom software when the workflow is a genuine competitive advantage, no product fits without heavy workarounds, integration needs are complex, or per-user SaaS fees at your scale exceed the cost of owning it. Most organisations end up with a mix: buy the commodity systems and build the parts that make them different."
 takeaways:
   - "Buying should be the default. A mature SaaS product spreads its development cost across thousands of customers, so you rarely beat it on price for a standard process."
   - "Build when the process is your differentiator, when you'd need extensive workarounds to fit a product, or when user numbers make subscriptions more expensive than ownership."
@@ -16,6 +16,12 @@ takeaways:
 faqs:
   - q: "Is custom software always more expensive than SaaS?"
     a: "Upfront, almost always. Over five years it depends on scale. A SaaS product priced per user gets more expensive as you grow, while custom software's running costs grow more slowly. For a small team using a standard process, SaaS is usually cheaper for good. For hundreds of users on a core workflow, custom can be cheaper within a few years."
+  - q: "What are the pros and cons of off-the-shelf software?"
+    a: "The advantages are low upfront cost, fast rollout, vendor maintenance and features you'd otherwise have to build, such as mobile apps and reporting. The disadvantages are per-user fees that grow with headcount, a process you have to adapt to, a roadmap you don't control, and data held wherever the vendor chooses. Competitors can also buy exactly the same product."
+  - q: "What are the advantages and disadvantages of bespoke software?"
+    a: "Bespoke (custom) software fits your process exactly, integrates with your systems, can be hosted in an Australian region of your choice, and becomes an asset you own. The disadvantages are a higher upfront cost, months rather than days to go live, and ongoing responsibility for maintenance and security. It only pays off when fit, scale or differentiation justify it."
+  - q: "What is a build vs buy analysis?"
+    a: "It's a structured comparison of building software against buying a product, usually covering five-year total cost of ownership, fit to your process, integration, time to value, lock-in and data location. The two tools on this page, a five-year cost model and a weighted decision matrix, are the core of one. Agree the weights before anyone argues for an answer."
   - q: "What about low-code platforms?"
     a: "Low-code tools such as Power Apps sit between the two. They're good for internal tools with modest complexity and a small user base, especially if you already pay for the platform. They get harder to manage as logic, integrations and user numbers grow. Our low-code vs custom development guide goes into the detail."
   - q: "Can we start with SaaS and build later?"
@@ -34,8 +40,8 @@ sources:
   - title: "Notifiable Data Breaches scheme"
     url: "https://www.oaic.gov.au/privacy/notifiable-data-breaches"
     publisher: "Office of the Australian Information Commissioner"
-  - title: "Cloud computing security guidance"
-    url: "https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/cloud-security-guidance/cloud-computing-security-considerations"
+  - title: "Cloud computing security for tenants"
+    url: "https://www.cyber.gov.au/business-government/protecting-devices-systems/cloud-computing/cloud-computing-security-for-tenants"
     publisher: "Australian Signals Directorate"
   - title: "Does my business own the software it is having developed?"
     url: "https://legalvision.com.au/own-the-software/"
@@ -57,15 +63,15 @@ service:
 disclaimer: none
 ---
 
-## Should you build or buy?
+## Should you build or buy software?
 
 **Buy, unless you have a specific reason to build.** Off-the-shelf software is cheaper to start, faster to roll out, and maintained by someone else. The reasons to build are narrower but real: the process is how you win, nothing on the market fits without contortions, you need deep integration across systems, or subscription fees at your scale cost more than ownership.
 
 A software developer telling you to buy might sound odd. It's the honest starting point. For accounting, payroll, email, HR, standard CRM and project management, well-established products exist and a custom build almost never makes sense.
 
-## What's the real difference between the two?
+## What's the difference between custom software and off-the-shelf software?
 
-**Buying rents a product built for many customers; building creates an asset built for you.** Each wins on different things.
+**Buying rents a product built for many customers; building creates an asset built for you.** Off-the-shelf software (sometimes called COTS, commercial off-the-shelf) includes SaaS subscriptions and packaged products; custom software, also called bespoke software, is written for one organisation. Each wins on different things.
 
 | | Off-the-shelf SaaS | Custom software |
 |---|---|---|

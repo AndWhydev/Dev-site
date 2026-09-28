@@ -2,12 +2,12 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Manufacturing Software & ERP Integration Australia | All Webbed Labs',
-  metaDescription: 'ERP integration, production and quality data platforms, and AI document processing for Australian manufacturers, built around SAP Business One, Acumatica, NetSuite and Dynamics.',
+  metaTitle: 'Manufacturing Software & ERP Integration Australia | AWLabs',
+  metaDescription: 'Custom manufacturing software for Australian manufacturers: ERP integration, batch traceability, quality workflows and AI document processing, from Sydney.',
 
   industryName: 'Manufacturing',
   heroHeadline: 'Software That Connects the Factory Floor to the ERP',
-  heroTagline: 'ERP integration, production and quality data, and AI that reads supplier paperwork, built for Australian manufacturers running lean teams on mixed systems.',
+  heroTagline: 'Custom manufacturing software for Australian manufacturers running lean teams on mixed systems: ERP integration, production and quality data, and AI that reads supplier paperwork.',
 
   /* stats array deliberately empty: no verified, attributable figures to show. Do not add invented statistics. */
 
@@ -63,7 +63,7 @@ const data = {
   faqs: [
     {
       question: 'Which ERP systems can you integrate with?',
-      answer: "We work through each ERP's supported integration path: the Service Layer and DI API for SAP Business One, the REST and contract-based APIs for MYOB Acumatica, SuiteTalk and RESTlets for NetSuite, and the published APIs for Microsoft Dynamics 365 Business Central and Finance and Operations. Older on-premises ERPs without a usable API can often be integrated through their database views, scheduled exports or an existing middleware layer. We confirm the exact route, licence requirements and any partner involvement during discovery, before quoting a fixed price.",
+      answer: "We work through each ERP's supported integration path: the Service Layer and DI API for SAP Business One, the contract-based REST API and OData interface for MYOB Acumatica, SuiteTalk and RESTlets for NetSuite, and the published APIs for Microsoft Dynamics 365 Business Central and Finance and Operations. Older on-premises ERPs without a usable API can often be integrated through their database views, scheduled exports or an existing middleware layer. We confirm the exact route, licence requirements and any partner involvement during discovery, before quoting a fixed price.",
     },
     {
       question: 'Should we replace our ERP or build around it?',
@@ -84,6 +84,18 @@ const data = {
     {
       question: 'Can the system work on the factory floor with patchy Wi-Fi and shared devices?',
       answer: "Yes, if it is designed for it from the start. Shop-floor apps should work offline and sync when the connection returns, support shared tablets with quick badge or PIN sign-in, use large touch targets that work with gloves, and scan barcodes or QR codes rather than relying on typing. We test on the actual devices and in the actual environment before rollout.",
+    },
+    {
+      question: "How much does custom manufacturing software cost?",
+      answer: "It depends on how many systems are involved and how much the shop floor needs to change, so we fix the price after a paid discovery. As a guide, the typical Australian market ranges on our service pages are $15k to $40k for a focused integration or background job service, $30k to $60k for AI processing of one document type such as supplier certificates, and $50k to $120k for a production and quality data platform with one live use case (AUD, ex GST). Most manufacturers start with one workflow rather than all of them.",
+    },
+    {
+      question: "Do we need an MES, or can we build around our ERP?",
+      answer: "A manufacturing execution system (MES) manages and records work on the shop floor: scheduling, work orders, data capture, quality and traceability. Large or highly regulated plants often justify a full MES. Many mid-sized manufacturers get most of the value from a few targeted apps connected to the ERP, covering scheduling, shop-floor capture and batch traceability, at lower cost and disruption. We compare both routes honestly in discovery.",
+    },
+    {
+      question: "Can you connect our machines and PLCs to the rest of our systems?",
+      answer: "For equipment that exposes data, yes. Many modern machines and PLCs publish data over industrial protocols such as OPC UA or MQTT, often through an edge gateway, and older machines can be retrofitted with sensors. We build the software side: collecting that data, timestamping it, linking it to jobs and assets, and making it available to dashboards and maintenance workflows. Any controls or electrical work on the machines themselves stays with your automation integrator or electrician.",
     },
   ],
 

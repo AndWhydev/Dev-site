@@ -1,12 +1,12 @@
 ---
 title: "Enterprise software development cost in Australia"
 metaTitle: "Enterprise Software Development Cost in Australia (2026)"
-description: "Enterprise software in Australia typically costs $150k to $1M+ AUD. Ranges by scale, plus the integration, security, procurement and governance costs."
+description: "How much does enterprise software development cost in Australia? Typically $150k to $1M+ AUD, including custom ERP work. Costs by scale, integrations, risk."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Custom enterprise software in Australia typically costs $150k to $350k AUD (ex GST) for a single departmental system, $350k to $1M for an integrated platform used across several teams, and well over $1M for core system replacements. The same features cost more in an enterprise than in a small business because of integrations, identity and security requirements, security reviews, data migration, governance and training, which together commonly add 30 to 60% to the engineering effort."
+summary: "Custom enterprise software development in Australia typically costs $150k to $350k AUD (ex GST) for a single departmental system, $350k to $1M for an integrated platform used across several teams, and well over $1M for core system replacements. The same features cost more in an enterprise than in a small business because of integrations, identity and security requirements, security reviews, data migration, governance and training, which together commonly add 30 to 60% to the engineering effort."
 takeaways:
   - "Enterprise overheads are real work: integration, single sign-on, audit logging, security testing, change control and training."
   - "Integrations are usually the largest single cost driver and the biggest source of estimate risk."
@@ -14,6 +14,10 @@ takeaways:
   - "Procurement and vendor due diligence take weeks and cost both sides money. Factor that into the timeline."
   - "Plan total cost of ownership over three to five years, not the build price alone: maintenance commonly runs 15 to 20% of build cost per year."
 faqs:
+  - q: "What is enterprise software development?"
+    a: "Enterprise software development is building custom software for large organisations: systems used by hundreds or thousands of staff, connected to the ERP, CRM, HR and identity systems already in place, and built to pass security, audit and governance review. The features can look like small-business software; the surrounding requirements are what make it enterprise."
+  - q: "How much does custom ERP software development cost?"
+    a: "A custom module that works alongside an existing ERP, such as production scheduling for a manufacturer, usually fits the departmental or integrated platform bands on this page, $150k to $1M AUD ex GST depending on integrations. Replacing the ERP itself is a core system replacement at $1M or more. For standard finance, inventory and payroll, configuring a commercial ERP is usually the cheaper route."
   - q: "Why is enterprise software so much more expensive than small business software?"
     a: "Mostly because of what surrounds the features. Enterprise systems connect to more systems, handle more sensitive data, need single sign-on and fine-grained permissions, must pass security reviews, migrate years of data, and go through formal testing, change control and training. Each of those is real engineering and management time."
   - q: "How long does an enterprise software project take?"
@@ -62,7 +66,7 @@ service:
 disclaimer: financial
 ---
 
-## What does enterprise software cost in Australia?
+## How much does enterprise software development cost in Australia?
 
 **For custom enterprise software built by a senior Australian team, most projects fall between $150k and $1M AUD, with core system replacements going higher.** Scale, integrations and risk decide where you land. These are typical market ranges in AUD, ex GST, covering discovery, design, engineering, testing, migration, deployment and handover. They are ranges, not quotes.
 
@@ -139,9 +143,9 @@ For the buyer, the internal cost is staff time across IT, security, legal and pr
 - **Run a paid discovery as the first contract.** It lets both sides test the working relationship and produces a scoped, fixed price for the build with far less speculative effort.
 - **Reuse standard documents.** A clear [software development contract checklist](/guides/software-development-contract-checklist) and a prepared security questionnaire response shorten negotiation.
 
-## What is usually excluded from an enterprise quote?
+## What are the hidden costs of enterprise software?
 
-**Licences, infrastructure and your own people are the usual gaps.** Confirm how a quote treats:
+**The hidden costs are what enterprise quotes usually exclude, and licences, infrastructure and your own people are the usual gaps.** Confirm how a quote treats:
 
 - Cloud hosting and third-party licences (often billed to your own account)
 - The independent penetration test, if you commission it directly
@@ -160,7 +164,7 @@ For the buyer, the internal cost is staff time across IT, security, legal and pr
 - **Choose the contract model deliberately.** Fixed price suits well-scoped stages; time and materials suits genuine exploration. Our guide to [fixed price vs time and materials](/guides/fixed-price-vs-time-and-materials) explains the trade-offs.
 - **Buy what's standard.** Keep custom development for the processes that differ; use proven products for the rest.
 
-## What will it cost to run over five years?
+## What will it cost over five years, and is it worth it?
 
 **Plan the total cost of ownership over three to five years: build cost plus roughly 15 to 20% of it per year for maintenance, plus hosting and licences.** Using the worked example above:
 
@@ -172,6 +176,8 @@ For the buyer, the internal cost is staff time across IT, security, legal and pr
 | Annual penetration test | | $10k to $15k |
 
 Over five years, the running costs can approach or exceed the original build. That's normal for enterprise software and a reason to design for maintainability from the start. See [software maintenance cost](/guides/software-maintenance-cost) for what a support agreement should cover.
+
+**Whether it is worth the cost comes down to what the five-year total replaces.** Compare it with the licences, customisation and workarounds of the alternative over the same five years, plus the value of anything the custom system does that a product can't: removing manual re-keying between systems, supporting a process that sets you apart, or retiring a legacy platform that is becoming a security risk. If a configured commercial product meets the need at a lower five-year cost, buy it. If it doesn't, the numbers in this section are the ones to put in the business case.
 
 ## How All Webbed Labs approaches enterprise projects
 

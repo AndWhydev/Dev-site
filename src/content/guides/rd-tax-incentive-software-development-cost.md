@@ -1,12 +1,12 @@
 ---
 title: "How the R&D Tax Incentive affects the cost of building software"
-metaTitle: "R&D Tax Incentive and the Cost of Building Software"
-description: "How the R&D Tax Incentive can change the net cost of a software build in Australia: which costs may count, the eligibility gates, timing and cash flow."
+metaTitle: "R&D Tax Incentive and Software Development Costs (Australia)"
+description: "Can the R&D Tax Incentive reduce software development costs in Australia? Which costs may count for the R&D tax offset, eligibility, timing and claim costs."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "The R&D Tax Incentive can reduce the net cost of the experimental parts of a software project, not the whole build. Only registered core R&D activities (and activities directly supporting them) count, eligible spend must generally be at least $20,000 in the income year, software built mainly for your own internal administration is excluded, and any benefit arrives after the income year ends, through your company tax return. Budget the build at full cost, and ask a registered R&D tax agent whether any of it may qualify before work starts."
+summary: "The R&D Tax Incentive can reduce the net cost of the experimental parts of a software development project, not the whole build. Only registered core R&D activities (and activities directly supporting them) count, eligible spend must generally be at least $20,000 in the income year, software built mainly for your own internal administration is excluded, and any benefit arrives after the income year ends, through your company tax return. Budget the build at full cost, and ask a registered R&D tax agent whether any of it may qualify before work starts."
 takeaways:
   - "Eligibility is decided activity by activity, not project by project. Most routine development work in a software build is not core R&D."
   - "The offset replaces your normal tax deduction on eligible spend, so the real benefit is smaller than the offset amount looks at first glance."
@@ -21,6 +21,10 @@ faqs:
     a: "Building software is not R&D in itself. Core R&D activities are experiments to generate new knowledge where a competent professional couldn't know the outcome in advance, even with access to what's publicly known worldwide. Some software projects contain activities like that; many contain none."
   - q: "Can I claim for software I'm building for my own business operations?"
     a: "Probably not as core R&D if its dominant purpose is your own internal administration, such as your own finance, HR or back-office systems. business.gov.au says this exclusion doesn't apply where the dominant purpose is use by other, unconnected entities, for example a product you sell to other businesses."
+  - q: "Is it worth claiming the R&D Tax Incentive on a software project?"
+    a: "It depends on how much of the work is genuinely experimental and how well it is documented. Weigh the possible extra benefit, which the worked example on this page shows is smaller than the offset amount suggests, against agent fees, your team's time, record-keeping and the risk of review. A registered R&D tax agent can tell you whether a claim is likely to be worthwhile for your circumstances."
+  - q: "How long after the spend would any benefit arrive?"
+    a: "Only after the income year ends. You register activities within 10 months of the year end, then claim in the company tax return, and any offset flows through when that return is processed. For work done between October 2026 and March 2027, registration is due by 30 April 2028. Fund the full build without relying on it."
   - q: "When do I need to register?"
     a: "You must apply to register your R&D activities within 10 months of the end of the income year in which they took place. For a company with a 30 June year end, that's by 30 April of the following year. Registration does not confirm eligibility; it just records your activities."
   - q: "Can a software development company claim the R&D Tax Incentive on my behalf?"
@@ -72,9 +76,9 @@ service:
 disclaimer: tax
 ---
 
-## Does the R&D Tax Incentive reduce what a software build costs?
+## Does the R&D Tax Incentive reduce software development costs?
 
-**It can reduce the net cost of the eligible experimental activities within a build, after the fact, but it doesn't reduce the price of the build or what you pay upfront.** The R&D Tax Incentive (R&DTI) is a legislated Australian Government program that offsets some of the cost of eligible research and development through the company tax system. It's jointly administered by the Department of Industry, Science and Resources, which registers R&D activities, and the ATO, which processes the expenditure claims.
+**It can reduce the net cost of the eligible experimental activities within a build, after the fact, but it doesn't reduce the price of the build or what you pay upfront.** The R&D Tax Incentive (R&DTI, or RDTI), sometimes called the R&D tax offset, is a legislated Australian Government program that offsets some of the cost of eligible research and development through the company tax system. It's jointly administered by the Department of Industry, Science and Resources, which registers R&D activities, and the ATO, which processes the expenditure claims.
 
 For budgeting, three facts matter most:
 
@@ -84,7 +88,7 @@ For budgeting, three facts matter most:
 
 We're software engineers, not tax agents. This page explains how the program interacts with software budgets so you can ask the right questions. For whether it applies to you, speak to a registered R&D tax agent.
 
-## Which parts of a software budget might count?
+## Which software development costs might count?
 
 **Only core R&D activities, and activities directly related to them, can count, and most of a typical software build is neither.** Core R&D activities are experimental activities conducted to generate new knowledge, where the outcome can't be known or determined in advance and can only be found through a systematic progression of work: hypothesis, experiment, observation, evaluation and logical conclusions.
 
@@ -142,11 +146,11 @@ Refundable means that if the offset exceeds the tax you owe, the excess can be p
 
 **For a loss-making startup**, the picture differs: the refundable offset may produce a cash refund of up to $34,800 when the tax return is processed, but the $80,000 no longer adds to carried-forward tax losses. Whether that trade is worthwhile depends on the company's prospects, which is a question for your agent.
 
-**Timing.** If the work happens between October 2026 and March 2027, it falls in the income year ending 30 June 2027. Registration is due by 30 April 2028, and the refund arrives after the return is lodged and processed. The company must fund the full build in the meantime.
+**Timing.** If the work happens between October 2026 and March 2027, it falls in the income year ending 30 June 2027. Registration is due by 30 April 2028, and any refund would arrive only after the return is lodged and processed. The company must fund the full build in the meantime.
 
-## What does claiming cost?
+## What does it cost to claim the R&D Tax Incentive?
 
-**Claiming has real costs: an adviser's fees, your team's time, and the discipline of keeping records during the project.** Budget for:
+**Claiming has real costs, some of them hidden in staff time: an adviser's fees, your team's time, and the discipline of keeping records during the project.** Budget for:
 
 - **R&D tax agent fees.** Agents price in different ways, commonly fixed fees or a share of the benefit. Get the basis in writing and check who is responsible if the claim is reviewed.
 - **Contemporaneous records.** The ATO says records should be made as soon as possible after transactions occur, that backdated or non-specific records aren't appropriate, and that records must be kept for 5 years after the claim. For experiments, that means hypotheses, test plans, results and conclusions written at the time.

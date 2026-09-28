@@ -1,12 +1,12 @@
 ---
 title: "Software developer rates in Australia (2026): employee, contractor, agency and offshore"
-metaTitle: "Software Developer Rates in Australia (2026)"
-description: "Australian developer rates in 2026: salaries, contractor day rates, agency and offshore hourly rates, and the true loaded cost of an employee, worked through."
+metaTitle: "Software Developer Hourly Rates in Australia (2026)"
+description: "Software developer hourly rates in Australia for 2026: salaries, contractor day rates, agency and offshore rates, and what an employee really costs per hour."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "In 2026, a senior software developer in Sydney typically earns $150,000 to $180,000 a year before super, costs roughly $115 per productive hour once on-costs and leave are included, charges $800 to $1,100 a day as a contractor, and is billed by Australian agencies at roughly $120 to $330 an hour. Offshore senior developers in Asia cost about US$31 to US$41 an hour through vendors. Hourly rates aren't directly comparable, because each option includes different overheads, management and risk."
+summary: "Software developer rates in Australia depend on how you engage them. In 2026, a senior developer in Sydney typically earns $150,000 to $180,000 a year before super, costs roughly $115 per productive hour once on-costs and leave are included, charges $800 to $1,100 a day as a contractor, and is billed by Australian agencies at roughly $120 to $330 an hour. Offshore senior developers in Asia cost about US$31 to US$41 an hour through vendors. Hourly rates aren't directly comparable, because each option includes different overheads, management and risk."
 takeaways:
   - "The national median for software and applications programmers is about $131,900 a year full time (ABS data via Jobs and Skills Australia); Sydney senior roles sit at $150k to $180k."
   - "An employee costs far more than salary: super at 12%, payroll tax in larger businesses, workers compensation, leave and equipment lift a $160k senior to about $197k a year."
@@ -14,8 +14,14 @@ takeaways:
   - "Agency rates look higher per hour because they include project management, QA, design, continuity and delivery risk."
   - "Offshore rates are genuinely lower and the right fit for some work; the total cost gap narrows once management time, time zones and rework are counted."
 faqs:
-  - q: "What is the average software developer salary in Australia?"
+  - q: "How much do software developers make in Australia?"
     a: "Jobs and Skills Australia reports median full-time earnings of $2,537 a week (about $131,900 a year) for software and applications programmers, from ABS data for May 2025. Seek's September 2026 average for software developer roles is about $131,200. Senior roles in Sydney are higher: Robert Walters puts senior full stack developers at $150,000 to $170,000 and senior backend developers at $150,000 to $180,000, excluding super."
+  - q: "Who earns more, a software developer or a software engineer?"
+    a: "In Australia the titles are largely interchangeable, and pay follows seniority and skills rather than the title. Seek's September 2026 averages are almost identical: about $131,200 for software developers and $128,100 for software engineers."
+  - q: "What does a graduate or entry-level software developer earn in Sydney?"
+    a: "Robert Walters' 2026 guide puts junior developers with up to three years' experience in NSW at $80,000 to $105,000 a year, excluding super. Junior contractors charge about $400 to $450 a day."
+  - q: "What is the hourly rate for a web developer in Australia?"
+    a: "React developers, who build most modern web front ends, charge about $500 to $700 a day as contractors in Sydney according to Robert Walters, or roughly $66 to $92 an hour at 7.6 hours a day. Senior full stack engineers charge $800 to $1,000 a day, and agencies bill a web development team at about $120 to $330 an hour."
   - q: "What is a typical contractor day rate for a developer in Sydney?"
     a: "Around $800 to $1,100 a day ex GST for a senior software engineer, according to Robert Walters and Re:Sourced 2026 figures. Junior contractors are about $400 to $450 a day, and principal engineers and architects $950 to $1,300 or more."
   - q: "Why do agencies charge more per hour than contractors?"
@@ -72,21 +78,21 @@ service:
 disclaimer: financial
 ---
 
-## What do software developers cost in Australia in 2026?
+## What is the average hourly rate for a software developer in Australia?
 
-**The same senior developer can cost about $115 an hour as an employee, $105 to $145 an hour as a contractor, and $120 to $330 an hour through an Australian agency, because each figure includes different things.** The table below gives the headline numbers; the rest of this guide explains what sits inside each.
+**There is no single average, because the same senior developer costs about $115 an hour as an employee, $105 to $145 an hour as a contractor, and $120 to $330 an hour through an Australian agency, and each figure includes different things.** The same spread applies whether the role is called software developer or software engineer. The table below gives the headline numbers; the rest of this guide explains what sits inside each.
 
 | Engagement | Senior developer, Sydney (typical) | What the figure includes | Source |
 |---|---|---|---|
 | Permanent employee | $150,000 to $180,000 a year, excluding super | Salary only | Robert Walters 2026 |
 | Employee, fully loaded | About $115 per productive hour (worked example below) | Salary, super, payroll tax, workers comp, leave, equipment | Our calculation |
 | Contractor | $800 to $1,100 a day ex GST | One person's time on days worked | Robert Walters 2026, Re:Sourced 2026 |
-| Australian agency | $120 to $330 an hour ex GST (small and mid-sized firms) | A delivery team: engineering, management, QA, tools, continuity | Conduct 2026, Robert Walters, agency guides |
+| Australian agency | $120 to $330 an hour ex GST (small and mid-sized firms) | A delivery team: engineering, management, QA, tools, continuity | Conduct 2026, other agency guides |
 | Offshore outsourcing firm (Asia) | US$31 to US$41 an hour | One developer through a vendor, management overhead varies | Accelerance 2026 |
 
-## What do Australian developers earn as employees?
+## What do software developers earn in Australia? Sydney and Melbourne salaries
 
-**The national median for software and applications programmers is about $131,900 a year full time, and Sydney senior roles pay $150,000 to $180,000 before super.** Jobs and Skills Australia reports median full-time weekly earnings of $2,537 (ABS Employee Earnings and Hours, May 2025), a median hourly rate of $67, and about 203,200 people employed in the occupation. Seek's September 2026 averages are close: about $131,200 for software developers and $128,100 for software engineers.
+**The national median for software and applications programmers is about $131,900 a year full time, and Sydney senior roles pay $150,000 to $180,000 before super.** Jobs and Skills Australia reports median full-time weekly earnings of $2,537 (ABS Employee Earnings and Hours, May 2025), a median hourly rate of $67, and about 203,200 people employed in the occupation. That median works out to about $11,000 a month before tax. Seek's September 2026 averages are close: about $131,200 for software developers and $128,100 for software engineers.
 
 Robert Walters' 2026 mid-year salary guide gives the role-level picture. Figures exclude super, benefits and bonuses.
 
@@ -101,7 +107,7 @@ Robert Walters' 2026 mid-year salary guide gives the role-level picture. Figures
 | Solution architect | $195,000 to $220,000 | $207,500 |
 | Software engineering manager | $185,000 to $215,000 | $200,000 |
 
-Victoria runs slightly lower in the same guide: developers at $95,000 to $120,000, senior developers at $150,000 to $175,000 and solution architects at $170,000 to $200,000.
+Victorian salaries, including Melbourne, run slightly lower in the same guide: developers at $95,000 to $120,000, senior developers at $150,000 to $175,000 and solution architects at $170,000 to $200,000.
 
 **Why sources disagree.** Payscale's average for software developers (about $90,900 in July 2026) is far below Seek, Jobs and Skills Australia and Robert Walters. Its sample skews junior, so it's better read as a floor than a market rate. Some Seek advertisements include super in the package, which lifts its averages slightly. Recruiter guides such as Robert Walters reflect roles they place, which tend to be in larger cities and larger employers.
 
@@ -125,7 +131,7 @@ Victoria runs slightly lower in the same guide: developers at $95,000 to $120,00
 
 That's before recruitment fees, management time, office space, and the hours spent in meetings, planning and onboarding rather than building. A business below the payroll tax threshold saves the $9,766, bringing the figure to about $110 an hour.
 
-## What do contractors charge?
+## What is a software developer contractor's day rate?
 
 **Senior software contractors in Sydney typically charge $800 to $1,100 a day ex GST, with principal engineers and architects at $950 to $1,300 or more.** Contractors are paid only for days worked, so there's no leave loading, but they usually manage their own super, insurance and equipment.
 
@@ -139,13 +145,13 @@ That's before recruitment fees, management time, office space, and the hours spe
 | Solution architect | $900 to $1,100 | Robert Walters 2026 |
 | Enterprise architect | $1,100 to $1,200 | Robert Walters 2026 |
 
-Canberra government work pays more. Hays figures reported by Hyperion IT in May 2026 put ACT software engineers at $110 to $140 an hour, senior engineers at $140 to $175 and solution architects at $155 to $220. At 7.6 hours a day, a senior ACT engineer at $160 an hour is about $1,216 a day, above the Sydney range. Talent International's March 2026 figures show averages at the top end of around $1,450 a day for AI principal engineers and cloud and enterprise architects.
+Canberra government work pays more. Hays figures reported by Hyperion IT in May 2026 put ACT software engineers at $110 to $140 an hour, senior engineers at $140 to $175 and solution architects at $155 to $220. At 7.6 hours a day, a senior ACT engineer at $160 an hour is about $1,216 a day, above the Sydney range. Talent International's March 2026 figures show top-end averages of about $1,450 to $1,510 a day for AI principal engineers and cloud and enterprise architects.
 
-**Converting to hourly:** $900 a day ÷ 7.6 hours ≈ $118 an hour, close to the loaded employee cost. The difference is flexibility: you pay only for the weeks you need, and there's no notice period or redundancy.
+**Converting a day rate to an hourly rate:** $900 a day ÷ 7.6 hours ≈ $118 an hour, close to the loaded employee cost. The difference is flexibility: you pay only for the weeks you need, and there's no notice period or redundancy.
 
 ## What do Australian agencies charge?
 
-**Small and mid-sized Australian software agencies commonly bill $120 to $330 an hour, and large firms $330 to $495.** Conduct's 2026 guide gives those bands and puts enterprise consultancies higher again. Other 2026 agency guides cluster lower in the range, at about $120 to $200 an hour for a local team, with tech leads and architects above $200.
+**Small and mid-sized Australian software agencies commonly bill about $123 to $330 an hour, and large firms $330 to $495.** Conduct's 2026 guide gives those bands and puts enterprise consultancies higher again. Other 2026 agency guides cluster lower in the range, at about $120 to $200 an hour for a local team, with tech leads and architects above $200.
 
 The rate looks high next to a contractor's, but an agency hour usually buys more than one person's time:
 
@@ -163,9 +169,9 @@ An agency is usually poor value when you have strong in-house technical leadersh
 
 | Region | Senior developer (USD an hour) | Approx. AUD an hour |
 |---|---|---|
-| Asia | $31 to $41 | $44 to $58 |
-| Latin America | $60 to $75 | $85 to $107 |
-| Central and Eastern Europe | $64 to $76 | $91 to $108 |
+| Asia | $31 to $41 | $44 to $59 |
+| Latin America | $60 to $75 | $86 to $107 |
+| Central and Eastern Europe | $64 to $76 | $91 to $109 |
 
 Accelerance puts junior developers in Asia at US$24 to US$31. Other providers quote wider ranges, with some offshore staffing firms advertising lower junior rates and higher senior rates than Accelerance.
 

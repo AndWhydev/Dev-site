@@ -1,12 +1,12 @@
 ---
 title: "AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency"
-metaTitle: "Bedrock vs Azure OpenAI vs Vertex AI: Australian Residency"
-description: "Which cloud AI platform keeps prompts in Australia? Bedrock, Azure OpenAI and Vertex AI compared on onshore models, data use and governance, September 2026."
+metaTitle: "AWS Bedrock vs Azure OpenAI vs Vertex AI in Australia"
+description: "AWS Bedrock vs Azure OpenAI vs Vertex AI in Australia: which models run onshore in Bedrock Sydney, Azure OpenAI Australia East and Vertex AI's Sydney region."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "At the time of writing (September 2026), Amazon Bedrock offers the widest choice of models that can process prompts inside Australia, including several current Claude models through its Australian geography and many open-weight models in Sydney. Azure OpenAI keeps processing in Australia East only for an older subset of OpenAI models on pay-as-you-go, with more on reserved capacity. Google Vertex AI commits to Australian processing for a small number of Gemini and embedding models. All three keep your data at rest in the region you choose and say they don't train on your prompts. The newest models usually launch on global routing first."
+summary: "Comparing AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency at the time of writing (September 2026), Amazon Bedrock offers the widest choice of models that can process prompts inside Australia, including several current Claude models through its Australian geography and many open-weight models in Sydney. Azure OpenAI keeps processing in Australia East only for an older subset of OpenAI models on pay-as-you-go, with more on reserved capacity. Google Vertex AI commits to Australian processing for a small number of Gemini and embedding models. All three keep your data at rest in the region you choose and say they don't train on your prompts. The newest models usually launch on global routing first."
 takeaways:
   - "Separate storage from processing. All three platforms store data at rest in the region you choose; the question is where the model actually runs."
   - "Each platform has an onshore option and a cheaper or broader global option. Global routing can process prompts outside Australia."
@@ -25,6 +25,12 @@ faqs:
     a: "Sometimes, but often not on launch day. All three vendors typically release new models on global routing first, with regional availability following later or not at all. If onshore processing is mandatory, design your system so you can swap models easily and test against the best model available in Australia."
   - q: "Should we run open-weight models ourselves instead?"
     a: "It's an option when you need full control, such as running a model entirely in your own cloud account. It adds hosting, scaling and patching work. Bedrock already offers several open-weight models in Sydney as a managed service, which is a middle path. Our open-weight vs API models guide covers the trade-offs."
+  - q: "Which Bedrock region should I use in Australia, Sydney or Melbourne?"
+    a: "Choose the model first, then the region. At the time of writing, several Claude models (including Opus 5.5, Opus 5, Sonnet 5 and Haiku 4.5) run In-Region in Melbourne (ap-southeast-4), while Amazon Nova and open-weight models such as Mistral, Qwen3 and gpt-oss run In-Region in Sydney (ap-southeast-2). The Australian geographic profile is callable from both regions for several models, though Sonnet 5 is listed from Melbourne only."
+  - q: "What is Azure OpenAI, and is it the same as Microsoft Foundry?"
+    a: "Azure OpenAI is Microsoft's service for running OpenAI models under Azure's security, networking and billing. It is now delivered through Microsoft Foundry (formerly Azure AI Foundry), which also offers models from other providers. Australian processing depends on the model and deployment type you pick in Australia East, not on the Foundry name."
+  - q: "Is Azure better than AWS for AI?"
+    a: "Neither is better across the board. For Australian residency at the time of writing, AWS Bedrock offers more onshore models, including current Claude and open-weight models, while Azure suits organisations committed to OpenAI models and Microsoft 365. Whichever cloud your team already runs is usually easier, because identity, networking and logging carry over."
 sources:
   - title: "Regional availability by models (Amazon Bedrock)"
     url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html"
@@ -44,17 +50,17 @@ sources:
   - title: "Data, privacy and security for Models sold by Azure"
     url: "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy"
     publisher: "Microsoft Learn"
-  - title: "Data residency for generative AI"
-    url: "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/data-residency"
+  - title: "Data residency (Gemini Enterprise Agent Platform, formerly Vertex AI)"
+    url: "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/data-residency"
     publisher: "Google Cloud"
   - title: "Gemini Enterprise Agent Platform and zero data retention"
-    url: "https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance"
+    url: "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/zero-data-retention"
     publisher: "Google Cloud"
   - title: "Amazon Bedrock pricing"
     url: "https://aws.amazon.com/bedrock/pricing/"
     publisher: "Amazon Web Services"
   - title: "Azure OpenAI pricing"
-    url: "https://azure.microsoft.com/en-au/pricing/details/cognitive-services/openai-service/"
+    url: "https://azure.microsoft.com/en-au/pricing/details/azure-openai/"
     publisher: "Microsoft"
 related:
   - title: "Data residency vs data sovereignty in Australia"
@@ -73,9 +79,9 @@ service:
 disclaimer: none
 ---
 
-## Which platform keeps AI processing in Australia?
+## AWS Bedrock vs Azure OpenAI vs Vertex AI: which keeps AI processing in Australia?
 
-**All three can keep some AI processing in Australia, but they differ sharply in which models qualify.** Amazon Bedrock, Azure OpenAI in Microsoft Foundry and Google Vertex AI (which Google now documents as Gemini Enterprise Agent Platform) each let you store data in an Australian region. Where they differ is whether the model you want runs onshore, and under which deployment option.
+**All three can keep some AI processing in Australia, but they differ sharply in which models qualify.** Amazon Bedrock, Azure OpenAI in Microsoft Foundry (formerly Azure AI Foundry) and Google Vertex AI (which Google now documents as Gemini Enterprise Agent Platform) each let you store data in an Australian region. Where they differ is whether the model you want runs onshore, and under which deployment option.
 
 Everything on this page reflects each vendor's own documentation at the time of writing (September 2026). Model availability changes monthly, so treat the snapshots below as a starting point and confirm on the linked availability pages before you commit to an architecture.
 
@@ -92,9 +98,9 @@ Everything on this page reflects each vendor's own documentation at the time of 
 
 Two details catch people out. Azure's APAC data zone spans multiple Asia Pacific regions, so it isn't Australian residency. And on every platform, the global option is where new models appear first and, often, where prices are lowest. AWS notes that for some models global cross-Region inference is priced lower than geographic, and Microsoft recommends Global Standard as the default starting point for exactly those reasons.
 
-## Which models can run onshore right now?
+## Which AI models are available in Australia on each platform?
 
-**Bedrock has the broadest onshore catalogue, Azure has a narrower one on pay-as-you-go, and Vertex has the fewest.** This snapshot is a summary; each vendor's page lists exact models and versions.
+**Bedrock has the broadest onshore catalogue, Azure has a narrower one on pay-as-you-go, and Vertex has the fewest.** The Australian locations are the Bedrock Sydney region (ap-southeast-2) and Melbourne region (ap-southeast-4), Azure OpenAI in Australia East, and Vertex AI in australia-southeast1 (Sydney). This snapshot is a summary; each vendor's page lists exact models and versions.
 
 | | Amazon Bedrock (Sydney, Melbourne) | Azure OpenAI (Australia East) | Google Vertex AI (australia-southeast1) |
 |---|---|---|---|
@@ -131,7 +137,7 @@ Retention exceptions are model-specific and change, so check each model's page b
 
 ## How should you compare costs?
 
-**Compare on the deployment type you'll actually use, because onshore options can be priced differently from global ones.** Per-token prices change frequently, so use each vendor's pricing page for current AUD or USD rates rather than a figure from an article.
+**Compare on the deployment type you'll actually use, because onshore options can be priced differently from global ones.** Bedrock, Azure OpenAI and Vertex AI pricing for language models is quoted per token on pay-as-you-go. Per-token prices change frequently, so use each vendor's pricing page for current AUD or USD rates rather than a figure from an article.
 
 Things to check:
 

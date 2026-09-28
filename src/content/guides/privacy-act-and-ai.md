@@ -1,12 +1,12 @@
 ---
 title: "Using personal information in AI systems under the Privacy Act"
-metaTitle: "Privacy Act and AI: Using Personal Information in AI"
-description: "How the Australian Privacy Principles apply to AI prompts, outputs, RAG and model training, based on OAIC guidance, with a checklist for software teams."
+metaTitle: "Privacy Act and AI: Using Personal Information in AI Systems"
+description: "Using personal information in AI under Australia's Privacy Act: how the APPs apply to prompts, RAG, outputs and model training, based on OAIC guidance."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "There is no separate AI privacy law in Australia: the Privacy Act 1988 and the 13 Australian Privacy Principles apply to personal information going into an AI system, coming out of it, and used to train it. The OAIC's October 2024 guidance makes three points software teams most often miss: AI-generated or inferred information about an identifiable person is a new collection under APP 3, reusing data you already hold to train or fine-tune a model is usually a secondary use under APP 6, and publicly available data isn't automatically fair game for training."
+summary: "Using personal information in AI systems is governed by the Privacy Act 1988, because Australia has no separate AI privacy law: the 13 Australian Privacy Principles apply to personal information going into an AI system, coming out of it, and used to train it. The OAIC's October 2024 guidance makes three points software teams most often miss: AI-generated or inferred information about an identifiable person is a new collection under APP 3, reusing data you already hold to train or fine-tune a model is usually a secondary use under APP 6, and publicly available data isn't automatically fair game for training."
 takeaways:
   - "Prompts, retrieved documents, outputs, embeddings and logs can all contain personal information, and the APPs apply to each."
   - "The OAIC treats inferred, incorrect or generated information about an identifiable person, including hallucinations, as personal information."
@@ -17,6 +17,8 @@ takeaways:
 faqs:
   - q: "Can we put customer data into ChatGPT, Claude or Copilot?"
     a: "The OAIC's best practice position is not to enter personal information, especially sensitive information, into publicly available generative AI tools. Enterprise products with contractual controls, no training on your data and defined retention are a different risk profile, but you still need to satisfy APP 6 on use, APP 8 if data goes offshore and APP 11 on security. Do the due diligence the OAIC describes before rollout."
+  - q: "Can staff use their own personal AI accounts for work?"
+    a: "It's risky if work involves personal information. A personal account sits outside your organisation's contracts, retention settings and access controls, and the OAIC's best practice is not to enter personal information into publicly available generative AI tools at all. Give staff an approved tool and an acceptable use policy instead. Federal public servants have DTA guidance that rules out entering personal information or information classified OFFICIAL: Sensitive or above into public generative AI tools."
   - q: "Can we train or fine-tune a model on our customer records?"
     a: "Possibly, but it is usually a secondary use under APP 6. You need consent, or a strong case that customers would reasonably expect it and that it relates to the purpose of collection. For sensitive information the bar is higher: it generally requires consent. De-identifying the data first, or using retrieval instead of training, often removes the problem."
   - q: "Is scraped public web data fair to use for training?"
@@ -40,6 +42,9 @@ sources:
   - title: "Privacy and Other Legislation Amendment Act 2024 (No. 128, 2024), as made"
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
     publisher: "Federal Register of Legislation"
+  - title: "Staff guidance on public generative AI"
+    url: "https://www.digital.gov.au/policy/ai/staff-guidance-public-generative-ai"
+    publisher: "Digital Transformation Agency"
   - title: "Chapter 1: APP 1 Open and transparent management of personal information"
     url: "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-1-app-1-open-and-transparent-management-of-personal-information"
     publisher: "Office of the Australian Information Commissioner"
@@ -62,7 +67,7 @@ disclaimer: legal
 
 **Yes. The Privacy Act 1988 applies to personal information handled by AI systems exactly as it applies to any other system, and there is no AI exemption.** If your organisation is an APP entity, the 13 Australian Privacy Principles govern the data you put into a model, the data the model produces and the data you use to train it.
 
-The Office of the Australian Information Commissioner (OAIC) published two pieces of guidance on 21 October 2024 that apply the APPs to AI: one for organisations using commercially available AI products, and one for developers building and training generative AI models. They don't create new law, but they tell you how the regulator reads the existing principles. This guide turns them into engineering decisions.
+The Office of the Australian Information Commissioner (OAIC) published two pieces of guidance on 21 October 2024 that apply the APPs to AI: one for organisations using commercially available AI products, and one for developers building and training generative AI models. They don't create new law, but they tell you how the regulator reads the existing principles. In practice, Australia's AI privacy law is the Privacy Act itself, read through that guidance. This guide turns them into engineering decisions.
 
 ## Where does personal information flow in an AI system?
 
@@ -81,7 +86,7 @@ The Office of the Australian Information Commissioner (OAIC) published two piece
 
 The logs row is where most real exposure lives. Observability tools that capture full prompts create a second, often less protected, copy of everything users typed.
 
-## How does each principle translate into engineering work?
+## How do the Australian Privacy Principles apply to AI?
 
 **The principles are technology neutral, so the work is in applying them to AI's particular data flows.** Here are the ones that bite hardest.
 

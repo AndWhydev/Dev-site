@@ -1,12 +1,12 @@
 ---
 title: "How much does a RAG knowledge base cost? (2026 Australian guide)"
-metaTitle: "RAG Knowledge Base Cost in Australia (2026)"
-description: "A RAG knowledge base typically costs $25k to $50k to pilot and $60k to $150k in production (AUD). Build costs and per-1,000-query run costs, with the method."
+metaTitle: "How Much Does a RAG Knowledge Base Cost? (Australia 2026)"
+description: "How much does a RAG knowledge base cost? An AI knowledge base is usually $25k to $50k to pilot and $60k to $150k in production (AUD), plus a per-query cost."
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "A retrieval-augmented generation (RAG) knowledge base typically costs $25,000 to $50,000 (AUD, ex GST) for a pilot on one document collection, $60,000 to $150,000 for a production system serving a department, and $150,000 to $350,000 or more for an enterprise system that spans several sources and enforces document-level permissions. Model usage is usually modest, about US$9 to US$36 per 1,000 questions across current low-cost to premium models at the time of writing, so ongoing cost is driven more by hosting, content upkeep and evaluation."
+summary: "A retrieval-augmented generation (RAG) knowledge base, the kind of AI knowledge base that lets staff chat with your documents, typically costs $25,000 to $50,000 (AUD, ex GST) for a pilot on one document collection, $60,000 to $150,000 for a production system serving a department, and $150,000 to $350,000 or more for an enterprise system that spans several sources and enforces document-level permissions. Model usage is usually modest, about US$9 to US$36 per 1,000 questions across current low-cost to premium models at the time of writing, so ongoing cost is driven more by hosting, content upkeep and evaluation."
 takeaways:
   - "Build cost is driven by the number and messiness of sources, permission rules and how good the answers must be, not by document count."
   - "Embedding even a large document collection costs a few dollars at current prices. Ingestion engineering, not embedding, is the expensive part."
@@ -20,6 +20,8 @@ faqs:
     a: "Not usually at the start. PostgreSQL with the pgvector extension handles millions of chunks for most business knowledge bases, and it's available on managed services such as Amazon RDS in Australian regions. Dedicated vector databases make sense at very large scale or when you need features they specialise in."
   - q: "How long does a RAG knowledge base take to build?"
     a: "A pilot on one clean document collection takes about 4 to 8 weeks. A production system for a department, with integrations and permissions, usually takes 3 to 5 months. Enterprise systems with many sources take longer, mostly because of access control and content governance."
+  - q: "How much does a RAG chatbot for customer support cost?"
+    a: "A customer-facing chatbot that answers from your help content is the same technology pointed at a public audience. Team 400 prices a chatbot with knowledge base integration at $30,000 to $80,000 (AUD, ex GST). Customer support adds handover to staff, tone controls and more testing; our AI chatbot cost guide covers those tiers."
   - q: "Can Microsoft 365 Copilot or ChatGPT Enterprise do this instead?"
     a: "Often, for documents already in SharePoint or connected sources, and that's the cheaper route if it meets your accuracy and data requirements. A custom RAG system is worth it when you need specific sources those tools can't reach, stricter control over where data is processed, cited answers tuned to your domain, or integration into your own product."
   - q: "What does it cost to keep a knowledge base up to date?"
@@ -66,11 +68,11 @@ service:
 disclaimer: financial
 ---
 
-## What does a RAG knowledge base cost to build?
+## How much does a RAG knowledge base cost to build?
 
-**Most RAG knowledge bases cost $25,000 to $150,000 (AUD, ex GST) to build, with enterprise systems above that.** A RAG system answers questions by first retrieving relevant passages from your documents, then giving them to a language model to write a cited answer. If the term is new, start with [what RAG is](/guides/what-is-rag).
+**Most RAG knowledge bases cost $25,000 to $150,000 (AUD, ex GST) to build, with enterprise systems above that.** A RAG system (sometimes sold as an AI knowledge base, AI search or "chat with your documents") answers questions by first retrieving relevant passages from your documents, then giving them to a language model to write a cited answer. If the term is new, start with [what RAG is](/guides/what-is-rag). If the audience is customers rather than staff, the [AI chatbot cost guide](/guides/ai-chatbot-cost-australia) covers the extra work.
 
-Very few Australian firms publish RAG-specific pricing. The bands below are our synthesis of published Australian AI ranges: Team 400 prices a chatbot with knowledge base integration at $30,000 to $80,000, and Quanton AI puts a focused generative AI pilot at $20,000 to $50,000 and a production deployment at $50,000 to $150,000.
+Very few Australian firms publish RAG-specific pricing. The bands below are our synthesis of published Australian AI ranges: Team 400 prices a chatbot with knowledge base integration at $30,000 to $80,000, and Quanton AI puts a narrowly focused generative AI project at $20,000 to $50,000 and a production deployment at $50,000 to $150,000.
 
 | Scope | What's included | Typical range (AUD, ex GST) | Typical timeline |
 |---|---|---|---|
@@ -132,7 +134,7 @@ AUD conversions use the Reserve Bank's 25 September 2026 rate of about US$0.70 p
 
 **What raises it:** sending more chunks, long conversation history, agent-style multi-step retrieval (several model calls per question), premium models, and regional endpoints. At the time of writing, Anthropic notes a 10% premium for regional endpoints on AWS Bedrock and Google Cloud for recent models, and OpenAI a 10% uplift for regional processing on eligible models. The [LLM running costs guide](/guides/llm-running-costs) goes further on these levers.
 
-## A worked example: monthly cost for a 300-person firm
+## How much does a RAG knowledge base cost per month? A 300-person firm
 
 **For a typical mid-sized organisation, the model bill is the smallest part of running a knowledge base.** Illustrative figures, AUD ex GST:
 
@@ -147,9 +149,9 @@ AUD conversions use the Reserve Bank's 25 September 2026 rate of about US$0.70 p
 
 That's about $14.50 per staff member a month, or about 17 cents per question. The biggest line items are people: maintenance and content governance. Cutting the model bill in half would save about $330 a month; a bad answer about a policy could cost far more.
 
-## What's usually excluded from a RAG quote?
+## What are the hidden costs of a RAG system?
 
-**Check whether a quote includes access control, evaluation and content clean-up, not just the chat interface.** Also check for:
+**The hidden costs sit in what quotes leave out, so check whether a quote includes access control, evaluation and content clean-up, not just the chat interface.** Also check for:
 
 - **GST** at 10% on ex GST quotes.
 - **Model and embedding usage**, billed in US dollars by the provider.
@@ -158,6 +160,12 @@ That's about $14.50 per staff member a month, or about 17 cents per question. Th
 - **Licences** for source systems' APIs or connectors.
 - **Your experts' time** writing test questions and reviewing answers.
 - **Content remediation.** RAG makes contradictions in your documents visible. Fixing them is business work.
+
+## Is a RAG knowledge base worth the cost?
+
+**A RAG knowledge base is worth it when many people spend real time searching for answers in documents that already exist, and a wrong or slow answer has a cost.** Policy libraries, contracts, technical manuals and procedures are the classic fits. It is not worth building when the documents are few, rarely consulted, or so out of date that the first job is rewriting them.
+
+The break-even arithmetic is simple. In the example above, the system costs $4,339 a month to run. At the same internal cost of $90 an hour, it covers its running costs if it saves about 48 hours a month across the firm: roughly 10 minutes per person per month for 300 staff. Recovering the build cost as well takes more, so estimate honestly how often people search today and how long it takes them. A pilot on one collection, with usage logging, gives you real numbers before you commit to production.
 
 ## How do you reduce RAG costs without hurting answer quality?
 

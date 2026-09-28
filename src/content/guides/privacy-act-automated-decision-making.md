@@ -1,12 +1,12 @@
 ---
 title: "Privacy Act automated decision-making rules from 10 December 2026: what software teams must change"
-metaTitle: "Privacy Act Automated Decision-Making Rules (Dec 2026)"
-description: "From 10 December 2026, APP 1.7 to 1.9 require privacy policies to disclose automated decisions. What software teams need to inventory, log and document."
+metaTitle: "Privacy Act Automated Decision-Making Rules: December 2026"
+description: "The Privacy Act automated decision-making rules start 10 December 2026. What APP 1.7 to 1.9 require, examples of systems in scope and what teams must change."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "From 10 December 2026, Australian Privacy Principles 1.7 to 1.9 require an APP entity's privacy policy to describe the kinds of personal information used, and the kinds of decisions made, when a computer program makes or substantially and directly contributes to a decision that could reasonably be expected to significantly affect someone's rights or interests. The law is a transparency duty, not a ban on automation. For software teams, the practical work is finding every such decision in your systems, recording how each one works, and keeping that record accurate as the code changes."
+summary: "From 10 December 2026, the Privacy Act's automated decision-making rules, Australian Privacy Principles 1.7 to 1.9, require an APP entity's privacy policy to describe the kinds of personal information used, and the kinds of decisions made, when a computer program makes or substantially and directly contributes to a decision that could reasonably be expected to significantly affect someone's rights or interests. The law is a transparency duty, not a ban on automation. For software teams, the practical work is finding every such decision in your systems, recording how each one works, and keeping that record accurate as the code changes."
 takeaways:
   - "The obligation was added by Schedule 1, Part 15 of the Privacy and Other Legislation Amendment Act 2024 and commences on 10 December 2026, 24 months after Royal Assent."
   - "It applies to decisions made after commencement, even if the system was built and the data collected years earlier."
@@ -24,9 +24,9 @@ faqs:
   - q: "Does this apply to small businesses?"
     a: "It applies to APP entities. Most businesses with annual turnover of $3 million or less are not APP entities, but some are regardless of turnover, including health service providers and businesses that trade in personal information. Check your status with the OAIC's guidance before assuming you are out of scope."
   - q: "What happens if our privacy policy doesn't cover our automated decisions?"
-    a: "APP 1.7 is listed in section 13K of the Privacy Act, a civil penalty provision with a maximum of 200 penalty units per contravention, and the OAIC can issue infringement notices or compliance notices for it. More serious interferences with privacy can also be pursued under sections 13G and 13H."
+    a: "APP 1.7 is listed in section 13K of the Privacy Act, a civil penalty provision with a maximum of 200 penalty units per contravention (up to five times that for a body corporate under the Regulatory Powers Act), and the OAIC can issue infringement notices or compliance notices for it. More serious interferences with privacy can also be pursued under sections 13G and 13H."
   - q: "Has the OAIC published final guidance?"
-    a: "At the time of writing (September 2026), the OAIC has updated its APP 1 guidelines to cover the new subclauses and ran a consultation on detailed ADM guidance that closed on 15 June 2026. It said it intended to publish that guidance before commencement. Check the OAIC site for the final version."
+    a: "At the time of writing (September 2026), the OAIC has updated its APP 1 guidelines to cover the new subclauses and ran a consultation on detailed ADM guidance that closed on 15 June 2026. Its issues paper said it intended to release that guidance by September 2026, before commencement. Check the OAIC site for the final version."
 sources:
   - title: "Privacy and Other Legislation Amendment Act 2024 (No. 128, 2024), as made"
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
@@ -58,6 +58,14 @@ service:
 disclaimer: legal
 ---
 
+## What is automated decision-making under the Privacy Act?
+
+**Automated decision-making (ADM) is the use of a computer program to make a decision about a person, or to do something substantially and directly related to that decision, such as scoring an application or flagging an account for review.** The Privacy Act's new rules care about ADM that uses personal information and could significantly affect someone's rights or interests.
+
+Everyday automated decision-making examples in Australia include automated credit and buy now pay later approvals, insurance claim triage, CV screening that filters applicants, and fraud models that freeze accounts. The technology doesn't matter: a rules engine is covered as much as machine learning or a large language model. The table further down sorts common systems by how likely they are to be in scope.
+
+The rules are part of the Privacy Act reforms passed in December 2024, and they start on 10 December 2026, two years after most of the other reforms took effect.
+
 ## What does the new automated decision-making rule require?
 
 **From 10 December 2026, an APP entity's privacy policy must describe its use of computer programs in decisions that could significantly affect individuals.** The rule sits in three new subclauses of Australian Privacy Principle 1, inserted by Schedule 1, Part 15 of the Privacy and Other Legislation Amendment Act 2024.
@@ -76,7 +84,7 @@ APP 1.8 sets what the policy must contain:
 
 APP 1.9 widens the net. Refusing or failing to decide counts as deciding. A decision can affect someone beneficially as well as adversely. The Act gives three examples of decisions that may affect rights or interests: granting or refusing a benefit under legislation, a decision affecting rights under a contract, and a decision affecting access to a significant service or support.
 
-## Key dates
+## When do the Privacy Act ADM changes start?
 
 **The obligation is fixed in the Act and doesn't need a proclamation.** Part 15 commences the day after the end of 24 months starting on Royal Assent.
 
@@ -92,7 +100,7 @@ APP 1.9 widens the net. Refusing or failing to decide counts as deciding. A deci
 
 The application clause matters for existing systems. Item 89 says the rule applies to decisions made after commencement, whether the program was arranged, and the data acquired, before or after that date. A credit rules engine written in 2019 is in scope on 10 December 2026 if it is still making decisions.
 
-## Which systems are likely in scope?
+## Automated decision-making examples: which systems are likely in scope?
 
 **Anything that uses personal information to decide, score, rank, approve, refuse or route people in a way that materially affects them.** It doesn't matter whether the logic is a machine learning model, a large language model, or a hand-written `if` statement. "Computer program" is not limited to AI.
 

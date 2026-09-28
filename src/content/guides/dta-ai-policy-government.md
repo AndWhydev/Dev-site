@@ -1,7 +1,7 @@
 ---
 title: "The DTA policy for responsible use of AI in government: what agencies and suppliers must do"
-metaTitle: "DTA AI Policy v2.0: What Agencies and Suppliers Must Do"
-description: "The DTA's Policy for the responsible use of AI in government v2.0 took effect 15 December 2025. The deadlines, requirements and what suppliers should prepare."
+metaTitle: "DTA Policy for Responsible Use of AI in Government v2.0"
+description: "The DTA policy for the responsible use of AI in government v2.0 took effect 15 December 2025. Who it applies to, the requirements and what suppliers need."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
@@ -22,6 +22,8 @@ faqs:
     a: "A use case is in scope if its use, misuse or failure could cause more than insignificant harm, if it materially influences administrative decisions, if the public may interact with it or be significantly affected by it without human review, if it uses personal, sensitive or security classified information, or if the DTA has directed that it is elevated risk. Incidental uses such as grammar checks are excluded."
   - q: "What is an AI transparency statement?"
     a: "A public statement each agency must publish on its website describing why and how it uses AI, classified by usage patterns and domains, how it monitors effectiveness and protects the public, and how it complies with the policy and law. It must be reviewed at least annually. Transparency statements were first required on 28 February 2025 under the earlier version."
+  - q: "Why does the government promote responsible use of AI?"
+    a: "The DTA says the policy is meant to enable accelerated and sustainable AI adoption by agencies while keeping government an exemplar in responsible AI use, in line with community expectations. It also aims for a coordinated approach across agencies that complements, rather than duplicates, existing APS frameworks. In short, responsible use is treated as the condition for using AI more, not a brake on it."
   - q: "Do state and local governments have to follow the DTA policy?"
     a: "No. It applies to non-corporate Commonwealth entities, and corporate Commonwealth entities are encouraged to apply it. States and territories have their own AI frameworks and assurance processes, which suppliers to state agencies need to check separately."
   - q: "Is there a technical standard that goes with the policy?"
@@ -44,6 +46,9 @@ sources:
     publisher: "Digital Transformation Agency"
   - title: "Standard for AI transparency statements"
     url: "https://www.digital.gov.au/ai/ai-in-government-policy/standard-ai-transparency-statements"
+    publisher: "Digital Transformation Agency"
+  - title: "Staff guidance on public generative AI"
+    url: "https://www.digital.gov.au/policy/ai/staff-guidance-public-generative-ai"
     publisher: "Digital Transformation Agency"
   - title: "Appendices: in-scope AI use cases"
     url: "https://www.digital.gov.au/ai/ai-in-government-policy/appendices"
@@ -71,7 +76,9 @@ Version 2.0 took effect on 15 December 2025 and replaced version 1.1, which had 
 
 The policy doesn't apply to the defence portfolio or the national intelligence community, which may adopt parts of it voluntarily.
 
-## What are the deadlines?
+The DTA describes its purpose as enabling accelerated and sustainable adoption of AI by agencies while positioning government as an exemplar in responsible AI use, and it is designed to complement existing Australian Public Service (APS) frameworks rather than duplicate them. Alongside the policy, the DTA publishes the AI technical standard, an AI impact assessment tool, and separate agency and staff guidance on public generative AI tools.
+
+## What are the DTA AI policy v2.0 deadlines?
 
 **The key dates are 15 December 2025 (effective), about 15 June 2026 (6 months), about 15 December 2026 (12 months) and 30 April 2027 (existing use cases).** The policy expresses most deadlines as a period after it took effect, so the calendar dates below are calculated from 15 December 2025.
 
@@ -89,7 +96,7 @@ The policy doesn't apply to the defence portfolio or the national intelligence c
 
 A note on reporting. Several commentaries describe 15 December 2026 as the date for full compliance. The policy's own text gives existing use cases until 30 April 2027, and it encourages agencies to act sooner where practicable.
 
-## What must agencies do?
+## What are the DTA AI policy requirements for agencies?
 
 **Eight mandatory areas: accountable officials, transparency statements, a strategic approach, operationalising responsible AI, use case accountability, internal use case registers, staff training and use case impact assessments.**
 
@@ -108,6 +115,18 @@ Within 12 months, agencies must establish an approach to embed responsible AI, i
 ### Use case impact assessment
 
 Every new AI use case must be assessed against the in-scope criteria during design. In-scope use cases need an AI use case impact assessment, begun at design and finalised, with risk treatments applied, before deployment. High-risk use cases must be reported to the accountable official, governed by a board or senior executive, reported to the DTA once deployed, and reviewed at least every 12 months.
+
+## What does responsible use of generative AI in government look like?
+
+**Under the policy, responsible use is a workflow, not a tool choice: test whether the use case is in scope at design, assess its impact before deployment, name an accountable owner, record it in the register, keep a person reviewing outputs where the public could be affected, and monitor it once live.**
+
+1. **Design.** Check the use case against the in-scope criteria below. A generative AI tool that drafts replies to the public, or reads case files, will usually be in scope.
+2. **Assess.** Complete an AI use case impact assessment, using the DTA's tool or an equivalent internal process, and apply risk treatments before go-live.
+3. **Own and record.** Assign an accountable use case owner and add the use case to the internal register.
+4. **Keep a human in the loop.** Decide where a person reviews outputs before they reach the public or influence a decision, and say so in the transparency statement.
+5. **Monitor and re-validate.** Watch performance in production and reassess when the model, data or behaviour changes materially.
+
+For individual public servants, the DTA's staff guidance on public generative AI works much like an acceptable use policy. Subject to their agency's own policies, staff can use public generative AI tools with OFFICIAL level information, but must not enter information classified OFFICIAL: Sensitive or above, or personal information. The guidance also says generative AI must not make final decisions on government advice, services or outputs.
 
 ## Is your AI use case in scope?
 

@@ -1,12 +1,12 @@
 ---
-title: "IRAP explained for software buyers and SaaS vendors"
-metaTitle: "IRAP Explained for Software Buyers and SaaS Vendors"
-description: "What an IRAP assessment is, what it isn't, how the four stages work, and how SaaS vendors prepare to sell to Australian government under ASD's ISM."
+title: "IRAP assessments explained for software buyers and SaaS vendors"
+metaTitle: "IRAP Assessment Explained: Process, Cost and Who Needs It"
+description: "What an IRAP assessment is, why there's no IRAP certification, how the four stage process works, what drives the cost, and how SaaS vendors prepare."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "IRAP, the Infosec Registered Assessors Program, is run by the Australian Signals Directorate (ASD). It endorses individual security professionals to independently assess systems and cloud services, generally against ASD's Information Security Manual, for systems up to SECRET. An IRAP assessment produces a report and control matrix; it isn't a certification, and IRAP assessors don't accredit or approve systems. The buying organisation's authorising officer reads the report and decides whether to accept the risk. There's no such thing as being \"IRAP certified\"."
+summary: "An IRAP assessment is an independent security assessment of a system or cloud service by an assessor endorsed under IRAP, the Infosec Registered Assessors Program run by the Australian Signals Directorate (ASD). Assessors test controls, generally from ASD's Information Security Manual, for systems up to SECRET. The assessment produces a report and control matrix; it isn't a certification, and IRAP assessors don't accredit or approve systems. The buying organisation's authorising officer reads the report and decides whether to accept the risk. There's no such thing as being \"IRAP certified\"."
 takeaways:
   - "IRAP endorses assessors, not products: ASD says assessors don't accredit, certify, endorse or register systems."
   - "An IRAP report records how well controls from ASD's Information Security Manual are implemented, without rating the risk or deciding if the system is acceptable."
@@ -22,6 +22,8 @@ faqs:
     a: "No. Your application can inherit some controls from the cloud platform under a shared responsibility model, but the controls you configure and build are yours, and they sit outside the platform's assessment. ASD's cloud controls matrix is designed to show which controls a consumer inherits and which it must implement."
   - q: "How much does an IRAP assessment cost?"
     a: "It depends on the scope, the classification level, the number of systems and how ready you are. ASD doesn't publish prices, and it recommends getting at least three quotes and not limiting yourself to assessors close by. Preparation, such as fixing control gaps and writing documentation, is often a bigger cost than the assessment itself."
+  - q: "How do I find an IRAP assessor?"
+    a: "ASD publishes a list of endorsed IRAP assessors on cyber.gov.au. ASD doesn't recommend specific assessors or help choose one for a particular job, so shortlist from the list, get at least three quotes, and check each assessor's experience with your type of system and classification level. ASD also warns that an unsolicited caller claiming to be an IRAP assessor may be a scammer."
   - q: "Is All Webbed Labs an IRAP assessor?"
     a: "No. All Webbed Labs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We can build software to ISM-informed requirements and prepare documentation, but an assessment must be done by an independent, endorsed assessor."
 sources:
@@ -66,30 +68,47 @@ The assessments are based mainly on ASD's Information Security Manual (ISM), the
 
 Any organisation can engage an IRAP assessor. It is most common among cloud and software providers that want to sell to Australian government agencies, and among agencies assessing their own systems.
 
-## What IRAP is not
+## Is there an IRAP certification?
 
-**IRAP is not a certification, an accreditation or an approved products list.** ASD is explicit: "IRAP Assessors do not accredit, certify, endorse or register systems on behalf of ASD." It adds that an assessment generally won't cover every ISM control, and that a completed assessment doesn't in itself mean a system complies with the controls tested.
+**No. IRAP is not a certification, an accreditation or an approved products list.** ASD is explicit: "IRAP Assessors do not accredit, certify, endorse or register systems on behalf of ASD." It adds that an assessment generally won't cover every ISM control, and that a completed assessment doesn't in itself mean a system complies with the controls tested.
 
 That makes a lot of marketing language inaccurate. A quick guide to what you'll hear:
 
 | What people say | What's actually true |
 |---|---|
 | "We're IRAP certified" | There is no IRAP certification. A service can be IRAP assessed, against a scope, at a level, on a date |
+| "We're IRAP compliant" | ASD says a completed assessment doesn't in itself mean a system complies with the controls tested. Ask for the report or letter of completion and its scope |
 | "ASD approved our platform" | ASD doesn't approve systems through IRAP. It endorses the assessors |
 | "We're on ASD's certified cloud list" | ASD ended its Cloud Services Certification Program on 2 March 2020 and the Certified Cloud Services List on 27 July 2020. Those certifications are void |
 | "Our host is IRAP assessed, so our app is too" | Only the controls inherited from the host are covered. Your application's controls need their own assessment |
 | "IRAP means we're cleared for PROTECTED" | The agency's authorising officer decides whether to authorise a system, after reading the report |
 
-## How does an IRAP assessment work?
+## What is the IRAP assessment process?
 
 **ASD's IRAP Common Assessment Framework sets out four stages that assessors must follow: plan and prepare, define the assessment boundary, assess the controls, and produce the report.**
 
 1. **Plan and prepare.** The assessor sets objectives, forms the team and identifies information sources. Before starting, the assessor must notify ASD's IRAP administration team and submit a conflict of interest declaration.
 2. **Define the assessment boundary.** The assessor and the organisation agree what is in scope: systems, components, locations and, for a service provider, possibly its corporate network depending on how administration is secured. Anything out of scope must be justified in the report.
 3. **Assess the controls.** The assessor tests implemented controls against the ISM, gathering evidence for each.
-4. **Produce the report.** The report and control matrix record how each control is implemented, whether it is effective, ineffective, an alternate control, not implemented, not visible or not applicable, the evidence and how it was tested, security weaknesses, and recommendations.
+4. **Produce the report.** The report and control matrix record how each control is implemented, whether it is effective, ineffective, an alternate control, not implemented, not assessed, not applicable, or could not be verified ("no visibility"), the evidence and how it was tested, security weaknesses, and recommendations.
 
 One detail surprises many buyers. IRAP assessors don't give risk ratings. The framework says they describe weaknesses and potential impacts "so that the consumer of the report can undertake their own assessment of the risks", because risk is a business decision for the authorising officer.
+
+## What drives IRAP assessment cost?
+
+**ASD doesn't publish IRAP assessment prices, because the cost depends on the scope, the classification level, the number of systems and components in the boundary, and how ready the system is when the assessor arrives.** Assessors quote their own fees, and ASD recommends getting at least three quotes and not limiting the search to assessors located nearby.
+
+The factors that move the price:
+
+| Cost driver | Why it matters |
+|---|---|
+| Assessment boundary | More components, regions, third parties and admin paths mean more controls to test |
+| Classification level | ISM control applicability depends on it, so a higher classification usually brings more controls into scope |
+| Readiness | Missing documentation or unimplemented controls lengthen the assessment and the findings list |
+| Evidence access | Assessors need access to people, systems and records; delays add days |
+| Re-assessment | A lapsing assessment has to be redone in time, and a changed system may need a wider scope |
+
+For most vendors, preparation is the bigger cost: fixing control gaps, writing the system security plan and running a penetration test first. The readiness checklist below is where that money goes.
 
 ## Who decides whether a system can be used?
 

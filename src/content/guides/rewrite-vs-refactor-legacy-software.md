@@ -1,12 +1,12 @@
 ---
 title: "Rewrite vs refactor: what should you do with legacy software?"
-metaTitle: "Rewrite vs Refactor: What to Do With Legacy Software"
-description: "Should you rewrite legacy software from scratch or refactor what you have? Decision criteria, risks, a scoring matrix and the incremental middle path explained."
+metaTitle: "Rewrite vs Refactor Legacy Software: How to Decide"
+description: "Rewrite vs refactor legacy software: when to rebuild from scratch, when to refactor, and the incremental middle path, with a scoring matrix for deciding."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Refactor when the system still does its job and the business logic is sound, but the code is hard to change: you keep years of embedded knowledge and ship improvements continuously. Rewrite only when the platform itself is the problem (unsupported technology, no way to host or secure it, or an architecture that can't meet new requirements), and even then replace it piece by piece rather than in one big switch. Sometimes the best answer is neither: buy a product, or leave a stable system alone."
+summary: "When deciding whether to rewrite or refactor legacy software, refactor when the system still does its job and the business logic is sound, but the code is hard to change: you keep years of embedded knowledge and ship improvements continuously. Rewrite only when the platform itself is the problem (unsupported technology, no way to host or secure it, or an architecture that can't meet new requirements), and even then replace it piece by piece rather than in one big switch. Sometimes the best answer is neither: buy a product, or leave a stable system alone."
 takeaways:
   - "Refactoring changes the structure of code without changing what it does. Rewriting builds a new system to replace the old one."
   - "Big-bang rewrites are risky because the old system keeps changing while the new one is built, and undocumented behaviour gets lost."
@@ -18,6 +18,10 @@ faqs:
     a: "Look at evidence rather than age. Warning signs are an unsupported language, framework or database version, security patches you can't apply, changes that routinely break unrelated features, a shrinking pool of people who can work on it, and hosting you can't move. A code audit gives you these facts in a few weeks."
   - q: "Is it cheaper to rewrite or refactor?"
     a: "Refactoring is usually cheaper in the short and medium term because you keep working software and deliver value along the way. A rewrite can be cheaper over ten years if the old platform is a dead end, but rewrite estimates are notoriously optimistic, because much of the old system's behaviour is undocumented."
+  - q: "When should you rewrite software from scratch?"
+    a: "Rarely, and only when the system is small, well understood and can be fully respecified in a short project, or when the platform is so far gone that nothing can be kept. For anything large or business-critical, a rewrite should still happen module by module rather than as a single rebuild from scratch."
+  - q: "Does refactoring pay down technical debt?"
+    a: "Yes, that's its main job. Technical debt is the extra cost of change caused by past shortcuts: tangled modules, missing tests, outdated libraries. Refactoring pays it down gradually, and it pays back fastest in the parts of the code that change most often. Debt in code nobody touches can often be left alone."
   - q: "Can we rewrite without a code freeze?"
     a: "Yes, and you should avoid a long freeze. With an incremental approach, the old system keeps running and receives urgent fixes while new modules take over one at a time. Freezing features for a year or more to finish a big-bang rewrite is one of the most common reasons these projects fail."
   - q: "Should we move to microservices while we're at it?"
@@ -57,7 +61,7 @@ service:
   href: "/services/legacy-modernisation"
 ---
 
-## Should you rewrite or refactor?
+## Should you rewrite or refactor legacy software?
 
 **Refactor by default, and rewrite only when the underlying platform can't take you where the business needs to go.** Even then, replace the system in stages rather than all at once. Most legacy systems that feel beyond saving are actually carrying valuable, hard-won business rules inside messy code, and that knowledge is the expensive part to recreate.
 
@@ -75,6 +79,21 @@ The two terms get used loosely, so it helps to be precise:
 | Rollback | Per change | Per module | Hard once cut over |
 | Can escape a dead platform? | Only partly | Yes | Yes |
 | Typical cost profile | Steady, ongoing | Higher, spread over time | Highest, concentrated, often overruns |
+
+## How do rewrite and refactor fit with other legacy modernisation options?
+
+**Rewrite and refactor are two of several legacy modernisation (or "modernization", in US usage) strategies, and cloud vendors use some of the same words differently.** AWS's widely used list of six migration strategies is a helpful map:
+
+| Strategy | What it means | Closest option on this page |
+|---|---|---|
+| Rehost | Move the system to new infrastructure unchanged ("lift and shift") | Leave it alone, on supported hosting |
+| Replatform | Move with small changes, such as a managed database | Light refactoring |
+| Repurchase | Move to a different product, often SaaS | Replace with SaaS |
+| Refactor / re-architect | Rework how the application is built, typically using cloud-native features | Incremental rewrite |
+| Retire | Switch it off | Decommission |
+| Retain | Keep it as is for now and revisit later | Retain and stabilise |
+
+Note the clash in vocabulary. In AWS's list, "refactor" means re-architecting the system, which is closer to a rewrite. In everyday engineering, and in this guide, refactoring means improving code structure without changing behaviour. When a proposal says "refactor", ask which one it means, because the cost difference is large.
 
 ## Why do big-bang rewrites so often go wrong?
 
@@ -141,7 +160,7 @@ Our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australi
 
 **Running old and new systems side by side temporarily doubles the places your data lives, so privacy and residency need planning before the first module moves.** Under the Privacy Act 1988, personal information in the new system, the old one, and any synchronisation layer or test copy all needs the same protection, and old copies should be destroyed or de-identified once they're no longer needed. If your contracts require onshore storage, check that the new services, logging and any migration tooling run in Australian regions too. Regulated organisations, such as APRA-regulated entities, will also want the migration covered in their risk and change management records.
 
-## A decision guide
+## Rewrite, refactor, replace or retain? A decision guide
 
 - **Refactor** if the logic is right, the platform is supported and the pain is mainly slow, risky change.
 - **Incremental rewrite** if the platform is a dead end or the architecture blocks the roadmap, and the system is too important to switch over in one go.

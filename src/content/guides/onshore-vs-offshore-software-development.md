@@ -1,12 +1,12 @@
 ---
 title: "Onshore vs offshore software development for Australian companies"
 metaTitle: "Onshore vs Offshore Software Development in Australia"
-description: "A fair comparison of onshore and offshore development for Australian companies: 2026 rate ranges, total cost, time zones, privacy, IP, and when offshore wins."
+description: "Onshore vs offshore software development for Australian companies: 2026 offshore rates by region, total cost, time zones, privacy, IP, and when offshore wins."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Offshore development is cheaper per hour, often by half or more, and it's the right choice for well-specified work, larger teams, and organisations that can manage a remote vendor closely. Onshore development costs more per hour but reduces coordination overhead, time zone friction and privacy complexity, which matters most for ambiguous projects, regulated data and small teams without in-house technical leadership. Compare total project cost and risk, not hourly rates."
+summary: "Offshore software development, where the work is done by a team in another country, is cheaper per hour than onshore development, often by half or more, and it's the right choice for well-specified work, larger teams, and organisations that can manage a remote vendor closely. Onshore development costs more per hour but reduces coordination overhead, time zone friction and privacy complexity, which matters most for ambiguous projects, regulated data and small teams without in-house technical leadership. Compare total project cost and risk, not hourly rates."
 takeaways:
   - "Published 2026 ranges put Australian agency rates at roughly $120 to $200 AUD an hour, and Asian offshore senior developers at roughly $31 to $41 USD an hour."
   - "The hourly gap narrows once you add management overhead, rework from miscommunication, and the internal time needed to run an offshore team well."
@@ -17,6 +17,10 @@ takeaways:
 faqs:
   - q: "How much cheaper is offshore software development?"
     a: "On hourly rates, substantially. Published 2026 benchmarks put senior developers at Asian outsourcing firms at around $31 to $41 USD an hour, against Australian agency rates of roughly $120 to $200 AUD. On total project cost the saving is usually smaller, because offshore projects need more specification, management and review. For well-run, long engagements the saving can still be large."
+  - q: "Which countries are best for offshore software development?"
+    a: "For Australian companies, the best country is usually the one with enough overlap with AEST and a talent pool that fits the work. The Philippines, Vietnam, Indonesia and India share several working hours with Sydney. Eastern Europe and Latin America charge more per hour and overlap little or not at all. Judge the individual vendor more than the country: a strong team in any location beats a weak one in the ideal time zone."
+  - q: "How do you choose an offshore software development company?"
+    a: "Use the same checks as for any software vendor, then add location-specific ones: where each developer sits, who can reach production data, how many hours overlap with AEST, whether the IP assignment binds every individual and subcontractor, and whether there's an Australian entity to contract with. Our guide on how to choose a software development company covers the general checks and questions."
   - q: "Is offshore development lower quality?"
     a: "Not inherently. There are excellent offshore teams and poor onshore ones. Quality problems in offshore projects usually come from unclear requirements, weak oversight and communication gaps rather than developer skill. Judge any vendor on evidence: code samples, references and a trial piece of work."
   - q: "Which offshore locations work best with Australian time zones?"
@@ -73,7 +77,18 @@ disclaimer: none
 
 We're an onshore firm, so read this knowing that. We've tried to set out the cases where offshore is the better choice as plainly as the cases where it isn't.
 
-## What do onshore and offshore developers cost in 2026?
+## What do onshore, offshore and nearshore mean?
+
+**Onshore software development means your developers are in the same country as you; offshore means they're in a distant country, usually one with lower labour costs.** For an Australian company, an onshore team is in Australia, and an offshore team might be in India, the Philippines, Vietnam or Eastern Europe.
+
+Two related terms come up in proposals:
+
+- **Nearshore:** a nearby country with a similar time zone. For Australia that mostly means New Zealand, and some vendors describe South-East Asian teams this way because of the overlap with AEST.
+- **Onsite:** developers working at your premises, whether they're employees, contractors or vendor staff. It's the traditional counterpart to offshore in IT outsourcing, where a vendor puts a small onsite team with the client and runs most of the work from an offshore centre.
+
+An offshore software development company is simply a vendor whose delivery team sits overseas. Many run a local sales or account office, so check where the engineers actually are.
+
+## What are onshore and offshore software development rates in 2026?
 
 **Published 2026 benchmarks show a large hourly gap.** The table below gathers ranges from recruitment firms, market surveys and vendors. Methods and definitions differ between sources, so treat these as indicative ranges, not quotes.
 
@@ -118,7 +133,7 @@ For full project ranges, see [how much custom software costs in Australia](/guid
 | Vietnam, Jakarta | 3 | About 5 hours |
 | India | 4.5 | About 3.5 hours |
 | Eastern Europe | 7 to 8 | Little to none without shifted hours |
-| Latin America | 13 to 14 | None without night work |
+| Latin America | 13 to 16 | None without night work |
 
 Daylight saving in the south-eastern states shifts these by an hour for part of the year. South-East Asian and Indian teams often shift their hours to overlap with Australian clients, which works, but ask how the vendor handles it and whether the same people are available when you need them.
 
@@ -139,7 +154,7 @@ Some contexts go further. Government contracts, health records and some financia
 
 **Enforcement.** If something goes wrong, pursuing an Australian company under Australian law is simpler than pursuing a company overseas. That's a risk factor, not a verdict: many offshore firms have Australian entities that sign contracts locally.
 
-## When is offshore the better choice?
+## When is offshore software development the better choice?
 
 **Offshore is the better choice when the work is well defined, the engagement is long, and you can manage it properly.**
 
@@ -169,6 +184,8 @@ Choose hybrid if you want onshore ownership of architecture, security and client
 
 ## Questions to ask any vendor, onshore or offshore
 
+**Whether you're choosing an offshore software development company or a local one, these questions expose the differences that matter.** For the wider checks on any vendor, see [how to choose a software development company](/guides/how-to-choose-a-software-development-company).
+
 1. Where exactly will each person on our project be located, and are any subcontractors involved?
 2. Who can access production systems and personal information, from where?
 3. How many working hours will you overlap with AEST, and who is on call when something breaks?
@@ -178,4 +195,4 @@ Choose hybrid if you want onshore ownership of architecture, security and client
 
 ## How All Webbed Labs approaches this
 
-We're an onshore team based in Five Dock, Sydney, working AEST hours with senior engineers only. We use AI coding agents in our delivery pipeline to reduce the hours a project needs, with every change passing automated quality gates and a senior engineer's review before deploy. That's how we narrow the cost gap with offshore rates without sending your data or code overseas. If your project is well specified, long running and budget-bound, and you have the capacity to manage a vendor, an offshore team may genuinely serve you better, and we'll say so. See [custom software development](/services/custom-app-development) or [staff augmentation](/staff-augmentation).
+We're an onshore team based in Five Dock, Sydney, working AEST hours with senior engineers only. We use AI coding agents in our delivery pipeline to reduce the hours a project needs, with every change passing automated quality gates and a senior engineer's review before deploy. That's how we narrow the cost gap with offshore rates while keeping your systems and data in Australian cloud regions by default. If your project is well specified, long running and budget-bound, and you have the capacity to manage a vendor, an offshore team may genuinely serve you better, and we'll say so. See [custom software development](/services/custom-app-development) or [staff augmentation](/staff-augmentation).

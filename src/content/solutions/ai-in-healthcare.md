@@ -1,11 +1,11 @@
 ---
 title: "AI and software development for Australian healthcare"
-metaTitle: "AI and Software Development for Australian Healthcare"
-description: "Building AI and software for Australian healthcare: sensitive information, state health records laws, My Health Record onshore rules, TGA limits and FHIR AU."
+metaTitle: "AI in Healthcare Australia: Healthcare Software Development"
+description: "AI in healthcare in Australia: use cases and healthcare software development under the Privacy Act, state health records laws, My Health Record and TGA rules."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Health software in Australia is shaped by five overlapping sets of rules: health information is sensitive information under the Privacy Act, several states add their own health records laws, the My Health Records Act bars certain participants from holding or processing records offshore, the TGA regulates software whose intended purpose is diagnosis, monitoring or treatment, and Ahpra expects practitioners to stay accountable for AI-assisted care. Administrative and documentation tools sit outside TGA regulation; tools that suggest diagnoses or treatments may not. Interoperability runs on HL7 v2 today and FHIR AU increasingly."
+summary: "AI in healthcare, and healthcare software development generally, is shaped in Australia by five overlapping sets of rules: health information is sensitive information under the Privacy Act, several states add their own health records laws, the My Health Records Act bars certain participants from holding or processing records offshore, the TGA regulates software whose intended purpose is diagnosis, monitoring or treatment, and Ahpra expects practitioners to stay accountable for AI-assisted care. Administrative and documentation tools sit outside TGA regulation; tools that suggest diagnoses or treatments may not. Interoperability runs on HL7 v2 today and FHIR AU increasingly."
 takeaways:
   - "All health information is sensitive information under the Privacy Act, and any business providing a health service is covered regardless of turnover."
   - "Whether software is a medical device depends on its intended purpose, not its technology. An AI scribe that only summarises is generally outside TGA regulation; add diagnosis suggestions and it can become a device."
@@ -23,6 +23,10 @@ faqs:
     a: "Connecting to the My Health Record system requires registration and conformance processes run by the Australian Digital Health Agency and Services Australia. We can build the software side and support that process, but we don't hold conformance for a product of our own, and passing it is the software owner's responsibility."
   - q: "Which clinical systems can you integrate with?"
     a: "Integration usually goes through the vendor's published API, an HL7 v2 interface engine, a FHIR endpoint or a secure messaging provider. Access terms vary by vendor and often need a partnership agreement, so we confirm access in discovery before quoting the build."
+  - q: "Is custom EHR or practice software regulated by the TGA?"
+    a: "Electronic health records and clinical workflow management software are among the TGA's exclusion categories, so a records or practice system is generally not a medical device. The exclusion only holds if every function meets it. Add a feature that flags a likely diagnosis or predicts deterioration and that function needs its own assessment."
+  - q: "Can AI help with Medicare billing and claims?"
+    a: "Yes, on the preparation side. A model can check that the documentation supports the item numbers selected and flag incomplete notes before claims go out, for billing staff to review. The practice and the treating practitioner stay responsible for what is claimed, so the tool should suggest and flag rather than submit on its own."
   - q: "Is de-identified data outside the Privacy Act?"
     a: "Information that is genuinely de-identified is no longer personal information, but free-text clinical notes are hard to de-identify reliably and re-identification risk rises when datasets are combined. Treat de-identification as a risk assessment, not a checkbox, and keep the original data under full protection."
 sources:
@@ -113,19 +117,19 @@ A practical way to test a feature:
 
 We don't act as a TGA sponsor or manufacturer's regulatory representative. Where a project crosses the line, the product owner needs regulatory advice and a quality management system, and the build plan changes accordingly.
 
-## Which use cases are realistic without crossing that line?
+## Which AI use cases in healthcare are realistic without crossing that line?
 
-**Most of the near-term value is administrative and documentary, and it stays on the non-device side when designed carefully.**
+**Most of the near-term value of AI in healthcare is administrative and documentary, which is also where healthcare automation has always paid off first, and it stays on the non-device side when designed carefully.**
 
 - **Clinical documentation support:** transcription and draft notes that the clinician edits and approves, with consent captured first.
-- **Referral and correspondence processing:** reading incoming referrals, extracting patient and referrer details, and matching them to the patient record for staff to confirm.
+- **Referral and correspondence processing:** reading incoming referrals, extracting patient and referrer details, and matching them to the patient record for staff to confirm, a standard [AI document processing](/services/ai-document-processing) pattern.
 - **Staff policy assistant:** answering questions from the organisation's own procedures, infection control manuals and HR policies, with citations. Our [RAG knowledge base service](/services/rag-knowledge-base) covers the retrieval design.
 - **Revenue cycle and claims:** checking item numbers and documentation completeness before claims are submitted, for billing staff to review.
 - **Patient communications:** appointment reminders, preparation instructions and plain-language versions of approved information, never individual clinical advice.
 
 ## How does it exchange data with clinical systems?
 
-**Most Australian clinical systems still exchange HL7 v2 messages, while new national work is built on FHIR, so a realistic build handles both.** HL7 Australia publishes AU Base, which defines Australian concepts such as Medicare numbers, and AU Core, which sets minimum expectations for FHIR resources and API interactions. The Sparked program, a community of government, clinicians and vendors, develops AU Core and related Australian data sets.
+**Most Australian clinical systems, from GP practice software to hospital EMRs and EHRs, still exchange HL7 v2 messages, while new national work is built on FHIR, so a realistic build handles both.** HL7 Australia publishes AU Base, which defines Australian concepts such as Medicare numbers, and AU Core, which sets minimum expectations for FHIR resources and API interactions. The Sparked program, a community of government, clinicians and vendors, develops AU Core and related Australian data sets.
 
 | System type | Examples | Typical integration path |
 |---|---|---|
@@ -159,7 +163,7 @@ Our [guide to reducing AI hallucinations](/guides/ai-hallucinations) goes into t
 
 ## What does an engagement look like, and what does it cost?
 
-**A first health AI system on the non-device side typically takes 12 to 24 weeks and costs roughly $90,000 to $350,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. Integration access and privacy assessment usually drive the timeline more than the engineering.
+**A first health AI system on the non-device side typically takes 13 to 23 weeks and costs roughly $90,000 to $350,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. Integration access and privacy assessment usually drive the timeline more than the engineering.
 
 | Phase | Duration | Typical range (AUD, ex GST) | Output |
 |---|---|---|---|

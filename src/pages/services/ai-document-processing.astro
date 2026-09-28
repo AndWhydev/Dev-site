@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'AI Document Processing & Data Extraction | All Webbed Labs',
-  metaDescription: "AI that reads invoices, claims and contracts, extracts validated fields into your systems and routes doubtful ones to staff. Accuracy measured on your files.",
+  metaTitle: 'AI Document Processing Services Australia | All Webbed Labs',
+  metaDescription: "AI document processing in Sydney: intelligent document processing that extracts validated fields from invoices, claims and contracts into your systems.",
   category: 'AI & Data',
   serviceName: 'AI Document Processing',
   slug: 'ai-document-processing',
   heroHeadline: 'From Inbox PDF to Validated Record, Without the Re-Keying',
-  heroTagline: "Intelligent document processing that classifies incoming documents, extracts the fields you need, checks them against your rules and records, and sends only the doubtful ones to a person.",
+  heroTagline: "AI document processing that classifies incoming documents, extracts the fields you need, checks them against your rules and records, and sends only the doubtful ones to a person.",
   summaryStatement: "AI document processing, also called intelligent document processing, is the use of OCR, layout analysis and language models to classify documents such as invoices, claims, contracts and forms, extract specified fields into structured data, validate those fields against business rules, and route low-confidence results to human reviewers before the data enters downstream systems.",
   description: [
     "Plenty of important work still arrives as documents: supplier invoices in a shared inbox, claim forms with photos attached, signed contracts, delivery dockets, medical certificates, bank statements, applications scanned on a phone. Someone opens each one, reads it and types the relevant details into another system. It is slow, it is error prone, and it scales only by hiring. Older template-based OCR tools helped when every document looked the same, but broke the moment a supplier changed their invoice layout. Modern document AI combines OCR and layout analysis with language models that understand what a field means rather than where it sits on the page, so the same pipeline can handle hundreds of layouts, handwriting, tables that span pages and documents that mix several types in one file.",
-    "The extraction model is the easy part to demo and the smallest part of a system that works. What makes document processing trustworthy is everything around it. Each document is first classified, so an invoice, a credit note and a statement go down different paths. Extracted fields are validated: line items must sum to the total, GST must be consistent with the amounts, an ABN must pass the ATO's check-digit algorithm, a purchase order number must exist in your ERP, a policy must have been active on the date of loss. Every field carries a confidence score, and anything below the threshold you set, or failing a rule, goes to a review screen that shows the extracted value beside the highlighted source so a person can confirm or correct it in seconds. Those corrections feed back into evaluation. We do not quote accuracy figures in advance, because accuracy depends on your documents: we measure field-level accuracy on a labelled sample of your own files during the build, agree the thresholds for straight-through processing with you, and report the same measures in production. Documents and extracted data stay in your cloud account, in an Australian region by default; at the time of writing (September 2026), for example, Amazon Textract has been available in the AWS Sydney region since December 2019.",
+    "Whether the job is invoice data extraction or claims intake, the extraction model is the easy part to demo and the smallest part of a system that works. What makes document processing trustworthy is everything around it. Each document is first classified, so an invoice, a credit note and a statement go down different paths. Extracted fields are validated: line items must sum to the total, GST must be consistent with the amounts, an ABN must pass the ATO's check-digit algorithm, a purchase order number must exist in your ERP, a policy must have been active on the date of loss. Every field carries a confidence score, and anything below the threshold you set, or failing a rule, goes to a review screen that shows the extracted value beside the highlighted source so a person can confirm or correct it in seconds. Those corrections feed back into evaluation. We do not quote accuracy figures in advance, because accuracy depends on your documents: we measure field-level accuracy on a labelled sample of your own files during the build, agree the thresholds for straight-through processing with you, and report the same measures in production. Documents and extracted data stay in your cloud account, in an Australian region by default; at the time of writing (September 2026), for example, AWS lists an Amazon Textract endpoint in its Sydney region.",
   ],
   benefits: [
     {
@@ -120,7 +120,7 @@ const data = {
     },
     {
       question: "Where are our documents processed and stored?",
-      answer: "In your own cloud account, in an Australian region by default. Document services such as Amazon Textract are available in the AWS Sydney region, and extraction with language models can use in-region endpoints or a privately deployed model. We document the full data flow, apply retention rules you set and restrict who can view original documents.",
+      answer: "In your own cloud account, in an Australian region by default. At the time of writing (September 2026), document services such as Amazon Textract have an endpoint in the AWS Sydney region, and extraction with language models can use in-region endpoints or a privately deployed model. We document the full data flow, apply retention rules you set and restrict who can view original documents.",
     },
     {
       question: "What happens when a supplier changes their invoice layout?",
@@ -129,6 +129,22 @@ const data = {
     {
       question: "Does automating decisions from documents raise Privacy Act issues?",
       answer: "It can. From 10 December 2026, APP entities must describe in their privacy policies certain decisions made, or substantially assisted, by computer programs using personal information where the decision could significantly affect an individual's rights or interests. Extracting claim data is not itself a decision, but auto-approving or declining a claim may be. We map where decisions occur so your privacy team can assess disclosure, and keep humans in the loop where required.",
+    },
+    {
+      question: "How much does intelligent document processing cost?",
+      answer: "Typical Australian market ranges for the build are $30k to $60k for a single document type such as supplier invoices, $60k to $150k for a pipeline handling several document types with cross-system validation, and from $150k for an enterprise platform (AUD, ex GST). Per-page processing and model usage are running costs on top, which we estimate from your monthly volumes. Paid discovery sets a fixed price for the build.",
+    },
+    {
+      question: "How does intelligent document processing work?",
+      answer: "Documents arrive from an inbox, upload or scanner and are converted to text with OCR and layout analysis. Each one is classified by type, the specified fields are extracted by a language model or extraction service, and those fields are validated against business rules and your own records. Anything uncertain or failing a rule goes to a person for review before the data is posted downstream, and reviewer corrections feed back into evaluation.",
+    },
+    {
+      question: "Can you automate invoice data extraction into our accounting system or ERP?",
+      answer: "Yes, invoice data extraction is one of the most common starting points. Header fields, line items, GST and ABN are extracted and checked, matched to purchase orders where you use them, and posted through your accounting system's or ERP's API, with exceptions held for review. Cloud accounting platforms such as Xero and MYOB provide APIs for this; which fields and matching rules apply is agreed in discovery.",
+    },
+    {
+      question: "Is intelligent document processing the same as OCR?",
+      answer: "No. OCR turns an image of text into characters, but it does not know which number is the invoice total or whether it is right. Intelligent document processing uses OCR as its first step, then adds classification, extraction based on what each field means, validation against rules and systems, and human review of uncertain results. That is what lets it cope with many layouts instead of one fixed template.",
     },
   ],
   pricing: [

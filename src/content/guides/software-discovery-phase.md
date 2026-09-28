@@ -1,7 +1,7 @@
 ---
 title: "What is a discovery phase in software development?"
 metaTitle: "What Is a Discovery Phase in Software Development?"
-description: "A discovery phase is short, paid work that turns an idea into a defined scope, design and plan. What it produces, how long it takes and what it costs."
+description: "What is the discovery phase in software development? Short, paid work that turns an idea into a scope, design and plan. The process, outputs, timing and cost."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -22,6 +22,8 @@ faqs:
     a: "Some suppliers credit it, others don't. Either model is fine as long as it's stated up front. What matters more is that the outputs are useful to you whether or not you proceed with the same supplier."
   - q: "What do you need from us during discovery?"
     a: "Access to the people who do the work today, a decision maker who can settle scope questions quickly, samples of real data and documents, and access to any systems that need to be integrated. Slow access is the most common reason discovery overruns."
+  - q: "Is a discovery phase the same as a scoping phase or product discovery?"
+    a: "Largely, yes. Suppliers call it discovery, scoping, inception or a discovery workshop series. \"Product discovery\" is sometimes used more narrowly for ongoing research into what users need in a product team. Whatever the name, check what it produces and whether you can take the outputs to another supplier."
   - q: "How is discovery different from a proof of concept?"
     a: "Discovery works out what should be built and what it will take. A proof of concept tests whether one specific technical idea works at all. For AI projects, a small proof of concept is often part of discovery when the key risk is whether the model can do the task well enough."
 sources:
@@ -57,11 +59,23 @@ disclaimer: financial
 
 ## What is a discovery phase?
 
-**A discovery phase is a short, time-boxed piece of work that defines what a software project should build, how, and at what cost, before the build is committed.** It sits between "we have an idea or a problem" and "we've signed a contract to build it".
+**A discovery phase is a short, time-boxed piece of work that defines what a software project should build, how, and at what cost, before the build is committed.** Discovery in software development is sometimes called scoping or inception. It sits between "we have an idea or a problem" and "we've signed a contract to build it".
 
 The UK Government Digital Service describes discovery as understanding the problem before committing resources to a solution, and is firm that you "should not start building your service" during it. Australia's Digital Transformation Agency takes the same line in its service design and delivery process: prototyping and testing belong to the next stage, not discovery.
 
 Commercial software projects borrow the idea but usually aim it at a narrower target: a scope and price precise enough to sign.
+
+## What happens during the discovery process?
+
+**The discovery process moves from understanding the problem, to examining the real systems and data, to designing and pricing a solution.** A typical sequence for a commercial project:
+
+1. **Kick-off.** Agree the goals, the decision maker, who needs to be interviewed and which systems and data are in scope.
+2. **Interviews and observation.** Talk to the people who do the work today, not only managers, and watch the current process, including the spreadsheets and workarounds.
+3. **Systems and data review.** Look at the actual APIs, databases, documents and access arrangements that the new software will depend on.
+4. **Scope and journeys.** Write up the user groups, key journeys and a prioritised feature list with acceptance criteria.
+5. **Prototype.** Sketch or click through the main screens with users and adjust.
+6. **Architecture and risks.** Outline hosting, components, security and data residency, and list the known unknowns. For AI work, run a small feasibility test on real data.
+7. **Estimate and playback.** Present the scope, plan and price, and agree what happens next.
 
 ## What does a discovery phase produce?
 
@@ -136,6 +150,20 @@ A quick checklist for judging a proposal or a finished discovery:
 - [ ] Ends with a clear price or range and a phased plan
 
 Warning signs: a discovery that produces only a slide deck, one where every recommendation needs the same supplier's proprietary platform, or one that can't say what would make the project a bad idea.
+
+## What comes after the discovery phase?
+
+**A decision: proceed to build, change direction, or stop.** If you proceed, the discovery outputs become the basis of the build contract, usually a fixed-price proposal for the defined scope, followed by detailed design and development in stages.
+
+In government, the next stage has a name. The DTA's service design and delivery process moves from discovery to alpha, where teams prototype and test the ideas formed in discovery, before beta and live. In commercial projects the steps after discovery usually look like this:
+
+| After discovery | What happens |
+|---|---|
+| Decision | The business reviews the scope, price and risks and decides whether to go ahead |
+| Contract | A build contract or schedule of work is signed against the discovery scope |
+| Design | Detailed UI design and technical design for the first stage |
+| Build in stages | Development in milestones, each with a demo and acceptance against the agreed criteria |
+| Launch and support | Release, handover, then maintenance and improvement |
 
 ## Should discovery ever end with "don't build"?
 

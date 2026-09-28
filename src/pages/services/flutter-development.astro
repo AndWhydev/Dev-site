@@ -2,20 +2,20 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Flutter Development | All Webbed Labs',
-  metaDescription: 'Expert Flutter development for Australian enterprises. Cross-platform iOS and Android apps with native performance, one codebase and a faster path to launch.',
+  metaTitle: 'Flutter App Developers Sydney | All Webbed Labs',
+  metaDescription: 'Flutter app developers in Sydney building cross-platform iOS and Android apps from one codebase for Australian organisations, with near-native speed.',
   category: 'Mobile',
   heroHeadline: 'Cross-Platform Mobile Apps With Native Performance',
-  heroTagline: 'One codebase. iOS and Android. Zero performance compromise. Built by Flutter experts who\'ve shipped real products.',
+  heroTagline: 'One codebase for iOS and Android, built by senior Flutter app developers in Sydney, with near-native performance and no second codebase to maintain.',
   description: [
     'Flutter\'s proposition is compelling: a single Dart codebase that compiles to native ARM code on iOS and Android, renders via its own Skia/Impeller graphics engine rather than platform WebViews, and ships UI that is visually indistinguishable from native development. The practical result is that enterprises no longer have to choose between maintaining two separate codebases, and paying for two separate development teams, or accepting the sluggishness of hybrid frameworks that were never intended for production-grade mobile. Flutter is Google\'s fastest-growing UI framework and now powers applications at BMW, eBay, and the New York Times.',
-    'Our Flutter practice is run by engineers who have built and maintained Flutter applications in production, not developers who learned it from documentation. We have handled state management architecture at scale using Riverpod and BLoC, implemented complex custom animations and gesture handling, integrated with native platform APIs via platform channels, published to both the App Store and Google Play Store, and debugged performance regressions using DevTools\' performance profiler. When you engage us for Flutter development, you get engineers who have already encountered the edge cases that trip up teams new to the framework.',
+    'We are a Sydney company working on AEST hours, and our Flutter work covers the full lifecycle: state management architecture with Riverpod or BLoC, custom animations and gesture handling, native platform APIs via platform channels, App Store and Google Play submission, and performance profiling with Flutter DevTools. Senior engineers lead every build, so the edge cases that trip up teams new to the framework are planned for rather than discovered late.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
       title: 'One Codebase, Two Platforms',
-      description: 'Maintaining separate iOS and Android codebases typically doubles mobile engineering cost. Flutter\'s single Dart codebase shares business logic, state management, navigation, and the majority of UI across both platforms, reducing mobile development cost by 40 to 60% compared to parallel native development.',
+      description: 'Maintaining separate iOS and Android codebases typically doubles mobile engineering cost. Flutter\'s single Dart codebase shares business logic, state management, navigation, and the majority of UI across both platforms, which usually reduces mobile development cost substantially compared to parallel native development.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
@@ -100,7 +100,7 @@ const data = {
   faqs: [
     {
       question: 'Is Flutter mature enough for enterprise production applications?',
-      answer: 'Flutter reached stable 1.0 in December 2018 and has been used in production by enterprises including BMW, eBay, and Alibaba for several years. The framework is backed by Google, has a well-funded core team, and is one of the most starred repositories on GitHub. The ecosystem of packages on pub.dev has matured significantly, the major concerns about missing packages that existed in 2019 are no longer relevant for the functionality required by most enterprise applications. We have had Flutter applications running in production without incident for two years, and the upgrade path between Flutter versions has been stable.',
+      answer: 'Flutter reached stable 1.0 in December 2018 and has been used in production by enterprises including BMW, eBay, and Alibaba for several years. The framework is backed by Google, has a well-funded core team, and is one of the most starred repositories on GitHub. The ecosystem of packages on pub.dev has matured significantly, the major concerns about missing packages that existed in 2019 are no longer relevant for the functionality required by most enterprise applications. Upgrades between Flutter versions are well documented, with migration guides for breaking changes.',
     },
     {
       question: 'How does Flutter compare to React Native for our use case?',
@@ -112,20 +112,28 @@ const data = {
     },
     {
       question: 'Can Flutter access the hardware features we need, like camera, Bluetooth, and biometrics?',
-      answer: 'Yes, via Flutter\'s platform channels, which allow the Dart layer to invoke native Swift or Kotlin code with type-safe data passing. The pub.dev ecosystem provides battle-tested packages for most hardware integrations: camera, BLE via flutter_blue_plus, biometrics via local_auth, NFC, GPS, push notifications, barcode scanning, and more. For custom hardware integrations not covered by existing packages, we write native platform channel plugins in Swift and Kotlin, we have done this for proprietary Bluetooth devices and custom SDK integrations. The integration point is clean and does not compromise performance of the rest of the application.',
+      answer: 'Yes, via Flutter\'s platform channels, which allow the Dart layer to invoke native Swift or Kotlin code with type-safe data passing. The pub.dev ecosystem provides battle-tested packages for most hardware integrations: camera, BLE via flutter_blue_plus, biometrics via local_auth, NFC, GPS, push notifications, barcode scanning, and more. For custom hardware integrations not covered by existing packages, we write native platform channel plugins in Swift and Kotlin, for example to talk to proprietary Bluetooth devices or vendor SDKs. The integration point is clean and does not compromise performance of the rest of the application.',
     },
     {
       question: 'How do you handle offline functionality for field-based applications?',
-      answer: 'Offline-first architecture in Flutter involves local database storage (we use Drift, which is a type-safe SQLite wrapper), a synchronisation layer that queues mutations when offline and replays them on reconnect, conflict resolution strategy for cases where data changes on both client and server while disconnected, and a connectivity observer that adapts the UI to accurately reflect the sync state. We design the sync architecture at project start, not as a bolt-on feature, because offline-first data models are fundamentally different from always-connected ones. This is a pattern we have implemented on multiple field operations applications and have documented internal playbooks for.',
+      answer: 'Offline-first architecture in Flutter involves local database storage (we use Drift, which is a type-safe SQLite wrapper), a synchronisation layer that queues mutations when offline and replays them on reconnect, conflict resolution strategy for cases where data changes on both client and server while disconnected, and a connectivity observer that adapts the UI to accurately reflect the sync state. We design the sync architecture at project start, not as a bolt-on feature, because offline-first data models are fundamentally different from always-connected ones.',
     },
     {
       question: 'Who owns the Flutter codebase and can our internal team maintain it after delivery?',
       answer: 'You own the code completely. Every Flutter project we deliver includes documented architecture decisions, widget documentation, a developer onboarding guide, and an explanation of state management patterns used. We encourage clients to have at least one internal developer involved during the latter stages of development so knowledge transfer is gradual rather than a single handover event. Dart is a well-designed language that most experienced developers find approachable within a few weeks, the learning curve is far more manageable than the transition from React Native to native development. We also offer Dart and Flutter training workshops for internal teams as a separate engagement.',
     },
+    {
+      question: 'How much does Flutter app development cost in Australia?',
+      answer: 'It depends on the number of screens and user roles, the backend and integrations required, offline and hardware features, and design complexity. Because one Flutter codebase serves both iOS and Android, it usually costs less than building two native apps. We quote a fixed price after a paid discovery; our app development cost guide covers typical Australian market ranges.',
+    },
+    {
+      question: 'Can Flutter also build web and desktop apps?',
+      answer: 'Yes. Flutter supports web, Windows, macOS and Linux as well as iOS and Android. It is strongest for app-like experiences such as dashboards and internal tools; for content-heavy public websites where search ranking matters, a web framework like Next.js is usually the better fit.',
+    },
   ],
   serviceName: 'Flutter Mobile Apps',
   slug: 'flutter-development',
-  summaryStatement: 'Flutter mobile app development is the building of iOS and Android applications from a single Dart codebase that compiles to native machine code and renders through its own graphics engine, giving near-native performance without maintaining two separate native codebases.',
+  summaryStatement: 'Flutter app development is the building of iOS and Android applications from a single Dart codebase that compiles to native machine code and renders through its own graphics engine, giving near-native performance without maintaining two separate native codebases.',
   comparison: {
     rightFor: [
       'You need iOS and Android apps with shared business logic and a single QA cycle, rather than funding two parallel native teams.',

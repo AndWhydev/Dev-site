@@ -1,7 +1,7 @@
 ---
 title: "What is the strangler fig pattern?"
-metaTitle: "What Is the Strangler Fig Pattern? Legacy Modernisation"
-description: "The strangler fig pattern replaces a legacy system piece by piece behind a routing layer until the old one can be retired. How it works and when it fits."
+metaTitle: "What Is the Strangler Fig Pattern? Meaning and Example"
+description: "What is the strangler fig pattern? A way to replace legacy software piece by piece behind a routing layer. How it works, an example, and microservices use."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
@@ -22,6 +22,10 @@ faqs:
     a: "Yes, and that's one of the main reasons to choose it. AWS's guidance recommends building new features in the new system rather than the legacy one, while continuing to fix bugs in the old system for stability."
   - q: "What if we don't have the legacy source code?"
     a: "You can still intercept traffic at the network or API level, but options narrow. Microsoft's guidance lists lack of source access as a reason the pattern may not suit, because you often need small changes inside the old system to redirect internal calls."
+  - q: "Is the strangler pattern the same as the strangler fig pattern?"
+    a: "Yes. \"Strangler pattern\", \"strangler application\" and \"strangler fig pattern\" all describe the same approach. Martin Fowler's current name is Strangler Fig, and Microsoft and AWS both document it as the strangler fig pattern."
+  - q: "Does the strangler fig pattern only apply to microservices?"
+    a: "No. It's often used to break a monolith into microservices, but the new system can equally be a single modern application, a SaaS product or a set of serverless functions. The pattern is about how you migrate, not what you migrate to."
   - q: "Does the routing layer stay forever?"
     a: "Usually not. Once every feature has moved, the facade is typically removed and clients talk to the new system directly. Some teams keep it as an adapter for older clients that can't be updated."
 sources:
@@ -55,7 +59,7 @@ service:
 disclaimer: none
 ---
 
-## What does "strangler fig" mean in software?
+## What is the strangler fig pattern? Meaning in software
 
 **The strangler fig pattern is an incremental way to replace a legacy system: new code grows around the old system, takes over its jobs one at a time, and the old system is retired once nothing depends on it.** Users keep working throughout, often without noticing which parts have moved.
 
@@ -63,7 +67,7 @@ The name comes from Martin Fowler. On a holiday in the rainforests of Queensland
 
 ## Why not just rebuild the whole thing?
 
-**Because full replacements of serious systems usually take longer than planned, and users can't wait years for new features.** Fowler writes that he has seen the "simple-sounding plan" of building a like-for-like replacement "go down in flames most of the time." Three reasons recur:
+**Because full replacements of serious systems usually take longer than planned, and users can't wait years for new features.** Fowler writes that he and his colleagues have seen the "simple-sounding plan" of building a like-for-like replacement "go down in flames most of the time." Three reasons recur:
 
 - **Hidden behaviour.** Nobody fully knows what a 15-year-old system does until they try to copy it. Edge cases live in code, not documents.
 - **Wasted effort.** Much of the old behaviour is no longer wanted, but a like-for-like rebuild recreates it anyway.
@@ -82,6 +86,19 @@ The strangler fig approach avoids a single high-stakes switch-over. Each slice i
 5. **Retire.** When the legacy system no longer handles any requests and nothing calls it, decommission it and, usually, remove the facade.
 
 Where parts of the old system need to call features that have already moved, both Microsoft and AWS recommend an anti-corruption layer: an adapter that translates between the old system's conventions and the new design, so the new code doesn't inherit legacy quirks.
+
+## Strangler fig pattern example
+
+Here is an illustrative example. A distributor runs a 15-year-old .NET monolith that handles quotes, orders, inventory, invoicing and reporting. Changes are slow and risky, and the vendor of one of its libraries no longer supports it.
+
+1. **Facade.** The team puts an API gateway in front of the monolith. Every request still goes to the old system, and users notice nothing.
+2. **First slice: quote PDFs.** A new service generates quote documents. The gateway routes "create quote PDF" requests to it. The old code path stays in place for a fortnight as a fallback, then is switched off.
+3. **New feature in the new system.** A customer portal for order tracking is built entirely in the new stack, reading order data through an adapter over the legacy database.
+4. **Notifications, then reporting.** Each moves in turn, with change data capture keeping a new reporting database in step with the old one.
+5. **The hard core.** Pricing, then orders and invoicing, move last, each with its own data cutover once the new service has run in parallel and matched results.
+6. **Retire.** With nothing left routed to it, the monolith is decommissioned.
+
+At every point the business keeps trading on a working system, and each step can be rolled back on its own.
 
 ## What gets moved first?
 
@@ -114,6 +131,24 @@ Common approaches, roughly from simplest to most thorough:
 | Domain cutover | After validation, the new database becomes the system of record and old tables are removed | Final step; rolling back afterwards is costly |
 
 Microsoft's guidance is explicit that removing legacy tables should be a deliberate final step per domain, taken only after validation, because rolling back after that point means restoring objects and replaying data changes.
+
+## Strangler fig pattern and microservices
+
+**The strangler fig is the most common way to move from a monolith to microservices, because it lets you extract one service at a time.** Each slice carved off the old system becomes a service with its own code, deployment and, eventually, its own data. The facade becomes the API gateway that fronts the services.
+
+Two cautions. First, microservices aren't the goal in themselves: a well-structured modular application is often easier to run for a mid-sized business. Second, AWS's warning about premature decomposition applies strongly here, because service boundaries drawn before the domain is understood are expensive to redraw. The same pattern works in Java, .NET, PHP or any other stack; it depends on routing, not language.
+
+## Strangler fig vs big bang, branch by abstraction and blue-green
+
+**The strangler fig is a migration strategy; some of the terms it's compared with are techniques you might use inside it.**
+
+| Approach | What it is | How it relates |
+|---|---|---|
+| Big bang rewrite | Build the full replacement, then switch everyone over at once | The alternative the strangler fig exists to avoid; still sensible for small systems |
+| Branch by abstraction | Introduce an abstraction layer inside the codebase, build the new implementation behind it, then switch over | Works inside one codebase where a network-level facade can't intercept the calls; often combined with a strangler fig |
+| Blue-green deployment | Run two identical production environments and switch traffic from one to the other | A release technique for cutting over safely, not a modernisation strategy; useful for each slice |
+| Parallel run | Run old and new side by side on the same inputs and compare results | A way to validate each slice before moving traffic |
+| Replace with SaaS | Retire the custom system in favour of a product | Sometimes better than any rebuild; see our [build vs buy guide](/guides/build-vs-buy-software) |
 
 ## When is the strangler fig the wrong choice?
 

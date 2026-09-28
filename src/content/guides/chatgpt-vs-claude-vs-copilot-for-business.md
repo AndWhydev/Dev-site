@@ -1,12 +1,12 @@
 ---
 title: "ChatGPT Enterprise vs Claude vs Microsoft Copilot for Australian businesses"
-metaTitle: "ChatGPT Enterprise vs Claude vs Copilot for Business (AU)"
-description: "How ChatGPT Enterprise, Claude and Microsoft 365 Copilot compare on data use, Australian residency, admin controls and pricing basis. Checked September 2026."
+metaTitle: "ChatGPT vs Claude vs Copilot for Business in Australia"
+description: "ChatGPT vs Claude vs Copilot for business: ChatGPT Enterprise, Claude and Microsoft Copilot compared on data privacy, Australian residency and pricing basis."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All three business AI assistants commit not to train on your business content by default and offer single sign-on and admin controls on their business tiers. The real differences are where they live and where your data goes. Microsoft 365 Copilot works inside Microsoft 365 and stores interaction content in Australia for Australian tenants. ChatGPT Enterprise and Claude are standalone workspaces with strong general capability, but at the time of writing (September 2026) their published residency options for Australia are narrower. Pick on where your work happens, then check residency for the data you'll put in."
+summary: "For business use, ChatGPT Enterprise, Claude and Microsoft Copilot all commit not to train on your business content by default and offer single sign-on and admin controls on their business tiers. The real differences are where they live and where your data goes. Microsoft 365 Copilot works inside Microsoft 365 and stores interaction content in Australia for Australian tenants. ChatGPT Enterprise and Claude are standalone workspaces with strong general capability, but at the time of writing (September 2026) their published residency options for Australia are narrower. Pick on where your work happens, then check residency for the data you'll put in."
 takeaways:
   - "On business plans, all three vendors say they don't train models on your content by default. Consumer and free plans have different terms, so ban personal accounts for work data."
   - "Microsoft 365 Copilot is the natural choice if your documents, email and meetings are already in Microsoft 365."
@@ -18,10 +18,12 @@ faqs:
     a: "It depends on where your work lives. If you're a Microsoft 365 organisation and most tasks involve your own email, files and meetings, Copilot is usually the best fit. If you want the strongest general assistant for drafting, analysis or coding, and your content isn't mainly in Microsoft 365, trial ChatGPT Enterprise and Claude side by side with your own tasks."
   - q: "Do ChatGPT Enterprise and Claude store data in Australia?"
     a: "Check the current vendor documentation for your plan. At the time of writing, OpenAI documents Australian regional storage for its API but not regional processing, and says ChatGPT residency coverage varies by plan and region. Anthropic's first-party residency controls offer global or US inference. If Australian processing is a hard requirement, Claude models can be reached through Amazon Bedrock's Australian geography, and OpenAI models through Azure in Australia East for certain models."
+  - q: "Is ChatGPT safe for business use?"
+    a: "A business plan such as ChatGPT Business or Enterprise, with admin controls and a usage policy, is a reasonable choice for most business content: OpenAI says it doesn't train on business data by default. It isn't a fit for data that must be processed in Australia, and personal free accounts are not safe for work data because the organisation has no control over them."
+  - q: "Claude vs Copilot: which is better for work?"
+    a: "Copilot is usually better when the work lives in Outlook, Word, Excel and Teams, because it can reach your Microsoft 365 content with existing permissions. Claude tends to suit long documents, careful writing, analysis and software work that isn't anchored in Microsoft 365. Test both on the same real tasks, and note that some Copilot experiences already use Anthropic models."
   - q: "Can staff use free ChatGPT or Claude accounts for work?"
     a: "They shouldn't for business or personal information. Consumer accounts have different data terms and give the organisation no admin visibility, retention control or audit trail. The OAIC recommends against entering personal information, particularly sensitive information, into publicly available AI tools."
-  - q: "Can we buy more than one?"
-    a: "Yes. Some organisations license Copilot broadly for Microsoft 365 work and a smaller number of ChatGPT Enterprise or Claude seats for teams that need them, such as analysts or developers. Set a clear policy on which tool is approved for which data."
   - q: "Do these tools replace a custom AI system?"
     a: "For general productivity, often yes. They don't replace a system that must serve customers, act inside your line-of-business software with strict rules, or run in a specific Australian cloud region under your control. Those needs usually call for a custom build on a cloud AI platform."
   - q: "How do we evaluate them fairly?"
@@ -34,7 +36,7 @@ sources:
     url: "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-copilot-offerings"
     publisher: "Microsoft Learn"
   - title: "Microsoft 365 Copilot licensing"
-    url: "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing"
+    url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing"
     publisher: "Microsoft Learn"
   - title: "ChatGPT Work admin FAQ (enterprise privacy and data commitments)"
     url: "https://learn.chatgpt.com/docs/enterprise/work-admin-faq"
@@ -76,7 +78,9 @@ disclaimer: none
 
 ## What are you actually choosing between?
 
-**You're choosing between an assistant built into Microsoft 365 and two standalone AI workspaces.** Microsoft 365 Copilot lives inside Outlook, Word, Excel, Teams and SharePoint and works over your Microsoft Graph content. ChatGPT Enterprise (from OpenAI) and Claude Team and Enterprise (from Anthropic) are separate apps your staff open to write, analyse, code and research, connected to other systems through connectors and plugins.
+**In the ChatGPT vs Claude vs Copilot decision, you're choosing between an assistant built into Microsoft 365 and two standalone AI workspaces.** Microsoft 365 Copilot (which Microsoft's licensing and privacy pages now call Microsoft Copilot) lives inside Outlook, Word, Excel, Teams and SharePoint and works over your Microsoft Graph content. ChatGPT Enterprise (from OpenAI) and Claude Team and Enterprise (from Anthropic) are separate apps your staff open to write, analyse, code and research, connected to other systems through connectors and plugins.
+
+"Copilot" on this page means the Microsoft 365 assistant. GitHub Copilot is a separate coding product, and choosing between coding tools such as GitHub Copilot, Claude Code or OpenAI's Codex is a different decision from choosing a company-wide assistant. Google Workspace organisations would weigh Gemini the same way Microsoft 365 organisations weigh Copilot.
 
 That difference matters more than any benchmark. The best assistant is the one that can reach the content your staff work with, under data terms your organisation can accept.
 
@@ -99,19 +103,19 @@ Everything below reflects the vendors' own documentation at the time of writing 
 
 A note on the Microsoft column: Microsoft's documentation states that Anthropic models are also available inside some Microsoft 365 Copilot experiences as a subprocessor. So "Copilot or Claude" is not always an either-or question.
 
-## What happens to your data?
+## Is ChatGPT, Claude or Copilot safe for business data?
 
 **All three business offerings say your content isn't used to train their models by default; the differences are in retention, residency and who can see what.**
 
 Points worth checking for each vendor, with what their documentation says at the time of writing:
 
-- **Microsoft 365 Copilot.** Prompts, responses and Graph data aren't used to train foundation models. Copilot only surfaces content a user already has permission to view, and interaction history can be governed with Microsoft Purview retention policies. When web search is on, Copilot sends generated search queries to Bing.
+- **Microsoft 365 Copilot data privacy.** Prompts, responses and Graph data aren't used to train foundation models. Copilot only surfaces content a user already has permission to view, and interaction history can be governed with Microsoft Purview retention policies. When web search is on, Copilot sends generated search queries to Bing.
 - **ChatGPT Enterprise.** OpenAI lists no training on business data by default, encryption in transit and at rest, workspace access controls and audit logging. It also says coverage for data residency, inference residency and a HIPAA Business Associate Agreement "isn't universal" and must be confirmed for the features and regions in use.
 - **Claude.** Anthropic's commercial terms say it may not train models on customer content. For the API, it offers zero data retention arrangements for eligible customers. Team and Enterprise plans advertise no model training on your content by default.
 
 Two cautions apply to all three. First, connectors and plugins inherit the data rules of the connected system, not just the assistant. Second, the biggest data risk is usually staff pasting work content into personal, consumer accounts. Under the Privacy Act, your organisation remains responsible for personal information your staff disclose, and the OAIC advises against entering personal information into publicly available AI tools. A licensed business tool plus a clear policy is safer than an unofficial free-for-all.
 
-## Can any of them keep data in Australia?
+## Can ChatGPT Enterprise, Claude or Copilot keep data in Australia?
 
 **Microsoft offers the clearest Australian storage commitment; none of the three documents full Australian processing for its standard business assistant at the time of writing.** If "in Australia" is a hard requirement, separate it into two questions: where is data stored at rest, and where is the model run?
 
@@ -123,9 +127,9 @@ Two cautions apply to all three. First, connectors and plugins inherit the data 
 
 The last row is the key point for regulated organisations. If you need prompts processed onshore, the usual answer isn't a different chat subscription; it's a custom application calling a model through an Australian cloud region. Our [Bedrock vs Azure OpenAI vs Vertex AI](/guides/bedrock-vs-azure-openai-vs-vertex-australia) comparison covers which models are available where, and [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia) explains the legal side.
 
-## How should you compare pricing?
+## How much do ChatGPT Enterprise, Claude and Copilot cost?
 
-**Compare the pricing model, not the headline number, and get quotes in AUD for your agreement type.** Vendor prices change frequently and differ by commitment term, currency and volume, so we deliberately don't list them here. Current prices are on the pricing pages linked in the sources.
+**The cost of ChatGPT Business or Enterprise, Claude Team or Enterprise and Copilot depends on the pricing model and your agreement, so compare the basis, not the headline number, and get quotes in AUD.** Vendor prices change frequently and differ by commitment term, currency and volume, so we deliberately don't list them here. Current prices are on the pricing pages linked in the sources.
 
 What to compare:
 
@@ -133,7 +137,9 @@ What to compare:
 2. **Minimums and terms.** Annual commitments, minimum seat counts and whether you can add seats mid-term.
 3. **Usage caps.** What happens when a heavy user hits limits, and whether overage is billed or throttled.
 4. **Currency and tax.** Whether the quote is in USD or AUD, and GST treatment for Australian businesses.
-5. **Hidden prerequisites.** Copilot requires an eligible Microsoft 365 plan. Advanced Data Residency is a separate add-on that must cover every eligible seat.
+5. **Hidden prerequisites.** Copilot requires an eligible Microsoft 365 plan. Advanced Data Residency is a separate add-on that must cover every eligible paid Microsoft 365 seat in the tenant.
+
+You can also buy more than one. Some organisations license Copilot broadly for Microsoft 365 work and a smaller number of ChatGPT Enterprise or Claude seats for teams that need them, such as analysts or developers, with a clear policy on which tool is approved for which data.
 
 A useful exercise: work out cost per active user per month after a pilot, not cost per licence. Many organisations find a third of licensed users rarely touch the tool, which changes the value calculation more than the list price does.
 

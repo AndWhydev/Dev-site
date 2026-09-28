@@ -1,15 +1,15 @@
 ---
 title: "What are embeddings in AI?"
-metaTitle: "What Are Embeddings in AI? A Plain-English Guide"
-description: "Embeddings turn text or images into lists of numbers where similar meanings sit close together. How they work, what businesses use them for, and how to choose."
+metaTitle: "What Are Embeddings in AI? Meaning and Examples"
+description: "What are embeddings in AI? Vector embeddings turn text or images into numbers where similar meanings sit close. How they work, examples, and their use in RAG."
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
 updated: 2026-09-28
-summary: "An embedding is a list of numbers, produced by an AI model, that represents the meaning of a piece of content such as a sentence, document or image. Content with similar meaning gets similar numbers, so software can measure how related two things are by comparing their embeddings, which powers semantic search, recommendations, clustering and the retrieval step in RAG."
+summary: "In AI, an embedding (or vector embedding) is a list of numbers, produced by an AI model, that represents the meaning of a piece of content such as a sentence, document or image. Content with similar meaning gets similar numbers, so software can measure how related two things are by comparing their embeddings, which powers semantic search, recommendations, clustering and the retrieval step in RAG."
 takeaways:
   - "An embedding places each piece of content as a point in a space with hundreds or thousands of dimensions; nearby points mean similar things."
-  - "Embeddings are made by a separate, smaller model than the chatbot model, and they are cheap to generate."
+  - "Embeddings are usually made by a separate, smaller model than the chatbot model, and they are cheap to generate."
   - "Search is only one use: embeddings also classify, cluster, deduplicate, recommend and flag outliers."
   - "Vectors from different models can't be mixed. Changing embedding model means re-embedding everything."
   - "Embeddings can leak the text they came from, so treat them as sensitive as the source."
@@ -20,10 +20,14 @@ faqs:
     a: "Test two or three on your own documents and real queries rather than picking from a leaderboard. The MTEB benchmark found no single model wins across all tasks. Consider language coverage, domain (legal, finance and code models exist), where the model can be hosted, and cost per million tokens."
   - q: "Does Anthropic offer an embedding model for use with Claude?"
     a: "At the time of writing, no. Anthropic's documentation says it doesn't offer its own embedding model and points to Voyage AI as one provider, while recommending you assess several vendors. Claude works with embeddings from any provider."
+  - q: "What is an embedding in RAG?"
+    a: "In a RAG system, every chunk of your documents is turned into an embedding and stored in a vector database. Each question is embedded the same way, and the chunks with the closest embeddings are retrieved and given to the language model to answer from."
+  - q: "Where can we get an embedding model in Australia?"
+    a: "The major clouds offer embedding models as managed services, including Azure OpenAI in Azure, Amazon Titan and Cohere models on Amazon Bedrock, and Google's models on Vertex AI, and open-weight models can run on your own servers. Which models are offered in which Australian region changes often, so check the provider's regional availability page at the time you plan."
   - q: "How many dimensions do we need?"
     a: "Common models output 256 to 3,072 dimensions. More dimensions can capture finer distinctions but cost more storage and memory. Several current models let you shorten vectors with modest quality loss, so measure on your data before paying for the largest size."
   - q: "Can embeddings contain personal information?"
-    a: "Yes, indirectly. Research at EMNLP 2023 recovered 92% of short 32-token inputs exactly from their embeddings, including full names from clinical notes. If the source contains personal information, handle the embeddings under the same Privacy Act obligations."
+    a: "Yes, indirectly. Research at EMNLP 2023 used an iterative method to recover 92% of short 32-token inputs exactly from one open embedding model's vectors, including full names from clinical notes. If the source contains personal information, handle the embeddings under the same Privacy Act obligations."
 sources:
   - title: "Efficient Estimation of Word Representations in Vector Space (Mikolov et al., 2013)"
     url: "https://arxiv.org/abs/1301.3781"
@@ -58,11 +62,23 @@ service:
 disclaimer: none
 ---
 
-## What does an embedding actually look like?
+## What is an embedding in AI, and what does it look like?
 
 **An embedding is just a long list of decimal numbers, such as [0.021, -0.113, 0.087, ...], typically 256 to 3,072 of them.** No single number means anything a person would recognise. Together they position a piece of content in a mathematical space where distance reflects difference in meaning.
 
 A useful picture is a map. On a street map, two cafés near each other are physically close. In an embedding space, "annual leave policy" and "how many holidays do I get" sit close together even though they share no words, while "leave the building" sits somewhere else entirely. The map just has far more than two dimensions, which is what lets it capture topic, tone, intent and many other shades of meaning at once.
+
+## Embeddings vs tokens vs vectors
+
+**A token is a piece of text, a vector is any list of numbers, and an embedding is a vector that a model produced to represent meaning.** The three words turn up together, so they're easy to mix up.
+
+| Term | What it is | Example |
+|---|---|---|
+| Token | The unit of text a model reads, roughly three quarters of an English word | "windscreen" might be split into two tokens |
+| Vector | A list of numbers; the general mathematical object | [0.021, -0.113, 0.087, ...] |
+| Embedding | A vector made by an embedding model so that distance reflects meaning | The vector for a whole help article |
+
+Models first split text into tokens, then turn the tokens into internal vectors, and an embedding model combines those into one vector for the whole passage. Providers bill embedding models per token of input, which is why the two ideas often appear side by side; see [tokens and context windows explained](/guides/tokens-and-context-windows).
 
 ## How are embeddings created?
 
@@ -106,6 +122,12 @@ The same example shows a limit. If the customer typed a policy number, embedding
 
 Many of these need no chat model at all, which makes them fast and cheap. Classifying tickets by embedding similarity can cost a fraction of asking a large model to read each one.
 
+## How are embeddings used in generative AI?
+
+**Generative AI uses embeddings in two ways: inside every model, and as a separate retrieval step in front of it.** Inside a language model, each token is turned into an internal embedding before the model can process it, so embeddings are part of how any large language model works. Image generators use a text encoder to turn your prompt into embeddings that steer the image, which is why wording matters.
+
+For businesses, the more visible use is outside the model. A separate embedding model indexes your content so the right material can be found and handed to a generative model at question time. That's the retrieval step in RAG, and it's why "embeddings" appears in almost every AI knowledge base proposal.
+
 ## Where are embeddings stored?
 
 **Once created, embeddings are stored so they can be searched later, usually in a vector database or a vector column in an ordinary database.** A [vector database](/guides/what-is-a-vector-database) indexes them so that finding the nearest matches among millions takes milliseconds. You embed your content once (and again when it changes), then embed each new query at the moment it's asked.
@@ -131,7 +153,7 @@ Criteria that matter in practice:
 - **Forgetting the re-embedding cost.** Upgrading models means re-processing the whole archive. Budget for it and keep the source text so you can.
 - **Embedding the wrong unit.** A whole 80-page contract squeezed into one vector blurs everything together. Chunk sensibly.
 - **Expecting exact matching.** Codes, names and numbers need keyword or structured search alongside.
-- **Assuming vectors are anonymous.** Morris et al. (EMNLP 2023) reconstructed 92% of short text inputs exactly from their embeddings. Apply the same access control and residency rules as the original content; see [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
+- **Assuming vectors are anonymous.** Morris et al. (EMNLP 2023) reconstructed 92% of short 32-token inputs exactly from the embeddings of one open model, using an iterative method. Apply the same access control and residency rules as the original content; see [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
 
 ## Embeddings vs fine-tuning
 

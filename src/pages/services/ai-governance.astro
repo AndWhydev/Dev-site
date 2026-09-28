@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'AI Governance & Responsible AI Engineering | All Webbed Labs',
-  metaDescription: "Responsible AI controls: evals, logging, human review, model cards and incident handling, mapped to Australia's Guidance for AI Adoption and ADM rules.",
+  metaTitle: 'AI Governance & Responsible AI Services Australia | AWLabs',
+  metaDescription: "AI governance services from Sydney: responsible AI controls such as evals, logging, human review and incident handling, mapped to Australia's AI guidance.",
   category: 'AI & Data',
   serviceName: 'AI Governance',
   slug: 'ai-governance',
   heroHeadline: 'Responsible AI as Working Controls, Not a Policy PDF',
-  heroTagline: "We build the evaluation gates, logs, review steps, documentation and incident processes that let you show how your AI systems behave, and map them to Australian guidance and privacy law.",
+  heroTagline: "We build the AI governance controls that let you show how your AI systems behave: evaluation gates, logs, review steps, documentation and incident processes, mapped to Australian guidance and privacy law.",
   summaryStatement: "AI governance engineering is the work of building technical controls into AI systems, such as an inventory of systems and decisions, pre-release evaluation gates, decision logging, human review points, model and system documentation, monitoring and incident handling, so that an organisation can demonstrate how each system behaves and who is accountable for it.",
   description: [
-    "Most organisations now have an AI policy. Far fewer can answer the questions that follow when something goes wrong or an auditor asks: which AI systems are running, which decisions they influence, what each one was tested against before release, what it did on a given day for a given customer, who approved that, and how quickly it can be switched off. Those answers do not come from policy documents. They come from engineering: an inventory that stays current, test suites that gate releases, logs that capture inputs, outputs and approvals, review steps designed into the workflow, and a rehearsed incident process. That is the part of governance we do. We work alongside your risk, privacy and legal people, who own the policy and the judgements, and we build the controls that make their policy real and produce the evidence they need.",
-    "Two Australian reference points shape most of this work. The first is the Guidance for AI Adoption, published by the National AI Centre in October 2025 to replace the Voluntary AI Safety Standard, which sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. We map each control we build to those practices so you can show coverage and gaps. The second is the Privacy Act 1988: from 10 December 2026, APP entities must describe in their privacy policies the kinds of decisions made by computer programs using personal information, or where a program does something substantially and directly related to making such a decision, when the decision could reasonably be expected to significantly affect an individual's rights or interests. Meeting that obligation starts with knowing where those decisions happen, which is an engineering inventory problem. To be plain about scope: we do not offer ISO/IEC 42001 certification, we are not a certification body, and we do not hold that certification ourselves. Certification against ISO/IEC 42001 is issued by accredited certification bodies. The controls and records we build can support an organisation preparing for it, but they are not a substitute for the audit. This is general information, not legal advice; your legal and privacy advisers remain responsible for compliance assessments.",
+    "Most organisations now have an AI policy. Far fewer can answer the questions that follow when something goes wrong or an auditor asks: which AI systems are running, which decisions they influence, what each one was tested against before release, what it did on a given day for a given customer, who approved that, and how quickly it can be switched off. Those answers do not come from policy documents. They come from engineering: an inventory that stays current, test suites that gate releases, logs that capture inputs, outputs and approvals, review steps designed into the workflow, and a rehearsed incident process. That engineering side of AI governance and AI risk management is the part we do. We work alongside your risk, privacy and legal people, who own the policy and the judgements, and we build the controls that make their policy real and produce the evidence they need.",
+    "Two Australian reference points shape most of this work. The first is the Guidance for AI Adoption, published by the National AI Centre on 21 October 2025 as updated, simplified guidance that evolves the Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. We map each control we build to those practices so you can show coverage and gaps. The second is the Privacy Act 1988: from 10 December 2026, APP entities must describe in their privacy policies the kinds of decisions made by computer programs using personal information, or where a program does something substantially and directly related to making such a decision, when the decision could reasonably be expected to significantly affect an individual's rights or interests. Meeting that obligation starts with knowing where those decisions happen, which is an engineering inventory problem. To be plain about scope: we do not offer ISO/IEC 42001 certification, we are not a certification body, and we do not hold that certification ourselves. Certification against ISO/IEC 42001 is issued by accredited certification bodies. The controls and records we build can support an organisation preparing for it, but they are not a substitute for the audit. This is general information, not legal advice; your legal and privacy advisers remain responsible for compliance assessments.",
   ],
   benefits: [
     {
@@ -108,7 +108,7 @@ const data = {
     },
     {
       question: "What is Australia's Guidance for AI Adoption?",
-      answer: "It is voluntary guidance published by the National AI Centre in October 2025, replacing the 2024 Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a shorter Foundations version and a more detailed Implementation Practices version for technical and governance professionals.",
+      answer: "It is voluntary guidance published by the National AI Centre on 21 October 2025 as updated, simplified guidance that evolves the 2024 Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a shorter Foundations version and a more detailed Implementation guidance version for technical and governance professionals.",
     },
     {
       question: "What do the Privacy Act automated decision-making rules require?",
@@ -129,6 +129,22 @@ const data = {
     {
       question: "Does this make us compliant?",
       answer: "No engineering work can guarantee compliance on its own. We build controls to your requirements and provide evidence of what they do. Whether that meets a particular legal or regulatory obligation is an assessment for your legal, privacy and compliance advisers. This page is general information, not legal advice.",
+    },
+    {
+      question: "What is responsible AI, in simple terms?",
+      answer: "Responsible AI means designing, building and using AI systems so that someone is accountable for them, they are tested and monitored, people are told what they do, and humans stay in control where it matters. Australia's Guidance for AI Adoption turns that into six essential practices. AI governance is how an organisation makes sure those principles actually hold in each system, rather than only in a policy.",
+    },
+    {
+      question: "How much does AI governance work cost?",
+      answer: "Typical Australian market ranges are $15k to $30k for an AI system inventory and gap review, and $30k to $90k to build controls such as evaluation gates, decision logging, review design and incident runbooks for one to three higher-risk systems (AUD, ex GST). Organisations with many AI systems across divisions get a fixed fee proposed after the inventory, because the inventory is what reveals the real scope.",
+    },
+    {
+      question: "What is an AI risk management framework, and which one should we use?",
+      answer: "An AI risk management framework is a structured way to identify, assess and treat the risks of AI systems across their life. Australian organisations usually start from the Guidance for AI Adoption; many also reference the voluntary NIST AI Risk Management Framework from the United States (AI RMF 1.0, released January 2023 and under revision at the time of writing), and ISO/IEC 42001 where they want a certifiable management system. We map the controls we build to whichever framework your risk team has adopted.",
+    },
+    {
+      question: "What is the difference between AI governance and data governance?",
+      answer: "Data governance covers the data itself: ownership, quality, access, retention and lawful use. AI governance covers the systems that use data to make or assist decisions: what each is for, how it was tested, how it is monitored, who approves its outputs and what happens when it goes wrong. The two overlap on training and retrieval data, and AI governance depends on data governance being in reasonable shape.",
     },
   ],
   pricing: [
@@ -171,7 +187,7 @@ const data = {
     },
     {
       term: 'Guidance for AI Adoption',
-      definition: "Voluntary Australian Government guidance from the National AI Centre, released in October 2025, setting out six essential practices for responsible AI use. It replaced the Voluntary AI Safety Standard.",
+      definition: "Voluntary Australian Government guidance from the National AI Centre, released on 21 October 2025, setting out six essential practices for responsible AI use. It evolves and simplifies the Voluntary AI Safety Standard.",
     },
     {
       term: 'Automated Decision-Making (ADM)',

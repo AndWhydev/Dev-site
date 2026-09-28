@@ -2,12 +2,12 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Real Estate & PropTech Software Development | All Webbed Labs',
-  metaDescription: 'Custom property management platforms, tenant portals, inspection apps and investment analytics for Australian agencies, developers and property managers.',
+  metaTitle: 'Real Estate Software Development Australia | All Webbed Labs',
+  metaDescription: 'Real estate software development for Australian agencies and property managers: custom CRMs, tenant portals, inspection apps and real estate automation.',
 
   industryName: 'Real Estate',
   heroHeadline: 'PropTech That Powers Australia\'s Property Market',
-  heroTagline: 'Property management platforms, agent tools and investment analytics for real estate agencies, developers and property managers.',
+  heroTagline: 'Real estate software development for Australian agencies, developers and property managers: property management platforms, custom real estate CRMs, real estate apps and investment analytics.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
 
@@ -45,6 +45,8 @@ const data = {
     'Lease management and renewal automation',
     'Investment analytics and owner dashboards',
     'Buyer and seller property portals',
+    'Custom real estate CRM development',
+    'Real estate automation and AI tools for listings, enquiries and admin',
   ],
 
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
@@ -52,6 +54,7 @@ const data = {
   useCases: [],
 
   relevantServices: [
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
     { title: 'Custom Web Application Development', href: '/services/react-nextjs' },
     { title: 'Mobile App Development', href: '/services/flutter-development' },
     { title: 'API Development & Integrations', href: '/services/api-development' },
@@ -62,12 +65,24 @@ const data = {
 
   faqs: [
     {
+      question: 'Should we build a custom real estate CRM or use an off-the-shelf one?',
+      answer: "Most agencies should start with an established real estate CRM and trust accounting platform; the Australian market is well served. A custom real estate CRM, or a custom layer on top of your existing one, makes sense for groups with multiple brands or offices, unusual lead flows such as project marketing or commercial leasing, or where staff re-key data between several systems every day. We are happy to recommend staying with what you have when it fits.",
+    },
+    {
+      question: 'How is AI used in real estate?',
+      answer: "Common uses of AI in real estate include drafting listing copy for agent review, answering buyer and tenant enquiries out of hours, summarising inspection notes and condition reports, triaging maintenance requests to the right trade, and searching lease and strata documents. Agents stay responsible for what is published, so we design AI features with a review step, and we keep tenant and owner data in Australian cloud regions.",
+    },
+    {
+      question: 'Can you automate real estate admin with tools like n8n?',
+      answer: "Yes. Real estate automation often starts with a workflow tool such as n8n, Make or Zapier connecting your CRM, property management software, email and forms: new enquiry routing, inspection booking reminders, lease renewal follow-ups and owner reporting. We move to custom automation when the volume, data sensitivity or integration gaps outgrow those tools; our workflow automation service covers both approaches.",
+    },
+    {
       question: 'Can you integrate with our existing property management software like PropertyMe, Palace or Console Cloud?',
       answer: "Yes. Most major Australian property management platforms have REST APIs we can connect to. PropertyMe, Palace, Console Cloud and MRI Property Tree all offer API access that allows us to sync tenancy data, maintenance jobs, financial transactions and inspection records with custom tools we build for you. We assess API capabilities early in discovery so you know exactly what data is accessible before any code is written.",
     },
     {
-      question: 'Do your solutions comply with state tenancy legislation like the Residential Tenancies Act?',
-      answer: "Yes. We build compliance into the workflows from day one, entry notice periods, condition report requirements, rent increase notice periods and bond lodgement obligations vary by state (NSW RTA, VIC Residential Tenancies Act, QLD Residential Tenancies and Rooming Accommodation Act) and we design automation accordingly. We work closely with your property management team to map workflows against legislative requirements.",
+      question: 'How do you handle state tenancy legislation like the Residential Tenancies Act?',
+      answer: "We build the rules your team and advisers specify into the workflows from day one: entry notice periods, condition report requirements, rent increase notice periods and bond lodgement obligations vary by state (NSW RTA, VIC Residential Tenancies Act, QLD Residential Tenancies and Rooming Accommodation Act) and we design automation accordingly. We work closely with your property management team to map workflows against legislative requirements.",
     },
     {
       question: 'Can a tenant portal be white-labelled to match our agency brand?',

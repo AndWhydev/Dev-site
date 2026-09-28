@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Code Audit & Technical Due Diligence | All Webbed Labs",
-  metaDescription: "Independent code audits and technical due diligence for acquirers, investors and boards, or before a rebuild: security, IP, architecture and delivery risk.",
+  metaTitle: "Code Audit & Technical Due Diligence Australia | AWLabs",
+  metaDescription: "Code audit services and technical due diligence from Sydney: independent source code review for acquirers, investors and boards on security, IP and risk.",
   category: "Assurance",
   serviceName: "Code Audit",
   slug: "code-audit",
   heroHeadline: "Know What You Are Buying, Funding or Rebuilding Before You Commit",
-  heroTagline: "An independent, senior review of an existing codebase and how it is built, run and owned, written up so that engineers can act on it and decision makers can price it.",
+  heroTagline: "An independent code audit: a senior review of an existing codebase and how it is built, run and owned, written up so that engineers can act on it and decision makers can price it.",
   summaryStatement: "A code audit is an independent review of an existing software system's source code, architecture, dependencies, security, infrastructure and delivery practices, producing a severity-rated findings report and remediation estimate; when it is commissioned by an acquirer, investor or board to inform a transaction or funding decision, it is usually called technical due diligence.",
   description: [
     "Software is often the largest asset in a deal that nobody on the deal team can read. An acquirer sees a product demo, a revenue line and a team slide. What they cannot see is whether the code is maintainable by anyone other than its original author, whether it depends on libraries with licences that conflict with how it is sold, whether customer data is protected, whether it will survive ten times the users, or whether a large part of it was written by contractors who never assigned their rights. The same blind spot applies to a board approving another year of spend on an internal platform, an investor weighing a follow-on round, or a business owner deciding whether to keep the system they have or pay for a rebuild. A code audit replaces assumptions with evidence, in the time frame a decision actually allows.",
-    "Our audits combine automated analysis with senior engineers reading the code. Tooling covers what machines do well: dependency vulnerabilities, open source licence inventory, secrets committed to the repository history, static analysis, test coverage and code churn. People cover what tooling cannot: whether the architecture fits the business plan, whether the data model will hold up, how deployments and backups actually work, where knowledge is concentrated in one person, and what it would realistically cost to fix what we find. Every finding is rated by severity and business impact, linked to evidence, and paired with a remediation estimate, so an acquirer can adjust price or conditions, a board can fund the right fixes, and an owner can compare the cost of repair against the cost of replacement. We work under NDA, read-only where possible, and report to whoever commissioned the audit. If you are a founder planning a new product rather than assessing an existing one, our Discovery Audit covers the legal, compliance and IP questions before a build starts; this service is for software that already exists.",
+    "Our code audit services combine automated analysis with senior engineers reading the code, so every audit is a genuine source code review, not only an automated scan. Tooling covers what machines do well: dependency vulnerabilities, open source licence inventory, secrets committed to the repository history, static analysis, test coverage and code churn. People cover what tooling cannot: whether the architecture fits the business plan, whether the data model will hold up, how deployments and backups actually work, where knowledge is concentrated in one person, and what it would realistically cost to fix what we find. Every finding is rated by severity and business impact, linked to evidence, and paired with a remediation estimate, so an acquirer can adjust price or conditions, a board can fund the right fixes, and an owner can compare the cost of repair against the cost of replacement. We work under NDA, read-only where possible, and report to whoever commissioned the audit. If you are a founder planning a new product rather than assessing an existing one, our Discovery Audit covers the legal, compliance and IP questions before a build starts; this service is for software that already exists.",
   ],
   benefits: [
     {
@@ -132,6 +132,22 @@ const data = {
     {
       question: "Should we audit our current system before deciding to rebuild it?",
       answer: "Yes, in most cases. Rebuilds are expensive and often recreate the same problems. An audit tells you which parts of the current system are sound, which are genuinely holding you back, and what fixing them would cost, so the choice between refactoring, partial replacement and a full rebuild is made on evidence.",
+    },
+    {
+      question: "How much does a code audit cost in Australia?",
+      answer: "Typical Australian market ranges are $8k to $18k for a focused audit of a single application, $18k to $40k for technical due diligence on a product and its infrastructure, and $40k or more for several products or a complex regulated target (AUD, ex GST). The size of the codebase, the number of systems and the deal timetable drive the figure, and the scope and fee are fixed before work starts.",
+    },
+    {
+      question: "Can a code audit tell us whether our agency or developers did a good job?",
+      answer: "It can tell you, with evidence, whether the code is secure, tested, documented and maintainable to a reasonable professional standard, and where it falls short. It cannot settle who was at fault in a dispute, because that depends on what was agreed. An audit is a sensible step if you are unsure about software an agency or freelancer delivered, before paying a final invoice or briefing a new team.",
+    },
+    {
+      question: "Do you audit codebases written with AI coding tools?",
+      answer: "Yes, and they are audited the same way as any other code. Code produced quickly with AI assistants can carry the usual problems at higher volume: duplicated logic, thin tests, insecure defaults, committed secrets and outdated or unnecessary dependencies. The report shows where those issues sit and what it would cost to bring the codebase up to a maintainable standard.",
+    },
+    {
+      question: "Which languages and stacks can you audit?",
+      answer: "Our manual review covers TypeScript and JavaScript (including React and Next.js), Python, PHP, Java and C# with .NET, on PostgreSQL or MySQL, hosted on AWS, Azure or Google Cloud. Automated scanning for vulnerabilities, secrets and licences covers most mainstream languages. If a target uses a stack outside that range, we say so at scoping rather than review it thinly.",
     },
   ],
   comparison: {

@@ -3,14 +3,14 @@ import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
   metaTitle: 'Government Software Development Australia | All Webbed Labs',
-  metaDescription: 'PROTECTED-compliant platforms, citizen portals, grants management and open data solutions for Australian federal, state and local government. ISM-aligned.',
+  metaDescription: 'Government software development and AI for Australian federal, state and local government: citizen portals, grants and case management, built to the ISM.',
   industryName: 'Government & Public Sector',
   heroHeadline: 'Digital Government Solutions That Serve Citizens Better',
-  heroTagline: 'PROTECTED-compliant platforms, open data portals and digital transformation programmes for federal, state and local government.',
+  heroTagline: 'Government software development and AI in government for Australian federal, state and local government: citizen portals, case management and open data platforms for OFFICIAL workloads.',
   stats: [
-    { value: 'IRAP', label: 'PROTECTED-aware architecture' },
+    { value: 'OFFICIAL', label: 'and OFFICIAL: Sensitive workloads' },
     { value: 'ISM', label: 'control-mapped delivery' },
-    { value: 'Essential Eight', label: 'baseline controls implemented' },
+    { value: 'Essential Eight', label: 'mitigations designed in' },
     { value: 'DTA DSS', label: 'Digital Service Standard aligned' },
   ],
   painPoints: [
@@ -32,7 +32,7 @@ const data = {
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
       title: 'Procurement and Compliance Complexity',
-      description: "Government ICT procurement through DITESA (formerly DTA) panels, state government standing offer arrangements and council tender processes adds significant lead time and administrative overhead. Mandatory security requirements including IRAP assessment, Essential Eight compliance and ISM control mapping create real complexity, but agencies that shortcut these controls face the prospect of a data breach affecting citizens' most sensitive personal information.",
+      description: "Government ICT procurement through BuyICT panels, state government standing offer arrangements and council tender processes adds significant lead time and administrative overhead. Mandatory security requirements including IRAP assessment, Essential Eight compliance and ISM control mapping create real complexity, but agencies that shortcut these controls face the prospect of a data breach affecting citizens' most sensitive personal information.",
     },
   ],
   solutions: [
@@ -44,11 +44,14 @@ const data = {
     'Open data portals and APIs',
     'Case management systems',
     'Government API gateway platforms',
+    'Local government software for councils, permits and service requests',
+    'AI assistants and document automation for OFFICIAL data',
   ],
   /* useCases array emptied, previous content was fabricated. Will return once real signed-off project examples can be referenced. */
 
   useCases: [],
   relevantServices: [
+    { title: 'AI and Software Development for Government', href: '/solutions/government-ai-and-software' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Cybersecurity', href: '/services/cybersecurity' },
     { title: 'API Development', href: '/services/api-development' },
@@ -58,20 +61,24 @@ const data = {
   ],
   faqs: [
     {
+      question: 'How is AI being used in Australian government?',
+      answer: "Common uses of AI in government include drafting and summarising correspondence and briefs, searching policy and legislation, triaging service requests and FOI applications, and assisting case officers with document-heavy work. Commonwealth agencies build under the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), alongside the ISM and PSPF. Decisions about people need human accountability and a clear record, and our guide to AI and software development for Australian government covers the requirements in detail.",
+    },
+    {
       question: 'How do you approach IRAP assessment and Essential Eight compliance for government systems?',
-      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an ASD-certified assessor, that's not us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We've worked alongside multiple IRAP assessors across federal and state government engagements.",
+      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an ASD-certified assessor, that's not us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We hold no IRAP-assessed system ourselves and say so up front.",
     },
     {
       question: 'Are you on any government ICT procurement panels?',
-      answer: "We are registered on the Digital Marketplace (now the DITESA ICT Procurement Panel) under relevant categories including software development and cloud services. We can also be engaged via state government standing offer arrangements including the NSW Government ICT Services Scheme, the Victorian Government Technology Products and Services panel, and Queensland Government QAssure. For smaller local government engagements below the mandatory tender threshold, we can be engaged directly. If your agency requires engagement via a specific panel arrangement that we're not currently on, talk to us, panel registration processes are straightforward and we can usually be onboarded within four to six weeks.",
+      answer: "No. We hold no BuyICT or state panel membership at the time of writing. Agencies can still engage us through a prime contractor that holds panel membership, through an open approach to market, or, for many state agencies and local councils, under their own procurement rules. We will tell you plainly if a panel is the only route your agency can use. Our guide to selling software to Australian government explains the channels.",
     },
     {
-      question: 'What is your approach to myGovID and Digital Identity integration?',
-      answer: "The Australian Government's Digital Identity system (built on the Trusted Digital Identity Framework) provides a federated identity layer that lets citizens authenticate once using their myGovID credential and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the TDIF technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms, a significant citizen experience improvement.",
+      question: 'What is your approach to myID and Digital ID integration?',
+      answer: "The Australian Government's Digital Identity system (built on the Trusted Digital Identity Framework) provides a federated identity layer that lets citizens authenticate once using a digital ID such as myID (formerly myGovID) and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the published technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms, a significant citizen experience improvement.",
     },
     {
       question: 'How do you handle OFFICIAL:Sensitive and PROTECTED data classifications?',
-      answer: "Australia's Protective Security Policy Framework (PSPF) defines the handling requirements for OFFICIAL, OFFICIAL:Sensitive and PROTECTED data. For OFFICIAL and OFFICIAL:Sensitive systems, we typically deploy to commercial Azure Government or AWS GovCloud (Sydney) regions with appropriate encryption, access controls and audit logging. For PROTECTED systems, the PSPF requires storage on infrastructure with explicit PROTECTED authorisation, currently a small number of certified providers including Microsoft Azure (with PROTECTED assessment), AWS and some on-premises managed environments. We design systems with data classification in mind from the start, including appropriate labelling, handling procedures for API consumers, and the access control architecture needed to enforce classification boundaries.",
+      answer: "Australia's Protective Security Policy Framework (PSPF) defines the handling requirements for OFFICIAL, OFFICIAL: Sensitive and PROTECTED data. We build OFFICIAL and OFFICIAL: Sensitive workloads in Australian cloud regions with appropriate encryption, access controls and audit logging. PROTECTED systems need infrastructure and services assessed through ASD's IRAP program and personnel with the relevant security clearances; we have neither, so for PROTECTED work we can only contribute components that need no clearance under a cleared prime contractor. Either way, we design with data classification in mind from the start, including labelling, handling rules for API consumers and the access control architecture needed to enforce classification boundaries.",
     },
     {
       question: 'Can you work within agile delivery frameworks required by DTA and state digital strategies?',

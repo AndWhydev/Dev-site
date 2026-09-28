@@ -2,11 +2,11 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'API Development & Third-Party Integrations | All Webbed Labs',
-  metaDescription: 'RESTful, GraphQL and event-driven API development for Australian enterprises. Secure, reliable APIs that connect your systems and power your digital products.',
+  metaTitle: 'API Development Services Australia | All Webbed Labs',
+  metaDescription: 'API development services in Australia: REST, GraphQL and event-driven APIs and third-party integrations that are secure, documented and built to evolve.',
   category: 'Backend',
   heroHeadline: 'APIs That Connect Your Business to Everything It Needs',
-  heroTagline: 'RESTful, GraphQL and event-driven APIs designed for reliability, security and developer experience.',
+  heroTagline: 'API development and integration services for Australian organisations: RESTful, GraphQL and event-driven APIs designed for reliability, security and developer experience.',
   description: [
     'Every modern enterprise runs on APIs, whether you are exposing capabilities to partners, connecting internal systems, or powering digital products consumed by thousands of users. The quality of those APIs determines whether your platform becomes a competitive asset or a maintenance liability. Poorly designed APIs produce brittle integrations, inconsistent error handling, and developer experiences so poor that partners avoid building against them. We design and build APIs that are consistent, well-documented, observable, and built to evolve without breaking consumers.',
     'Our API practice covers the full spectrum: RESTful APIs following OpenAPI 3.1 specifications, GraphQL schemas for client-driven data fetching, and event-driven architectures using message brokers like AWS SQS, SNS, and Kafka for systems that need to communicate asynchronously at scale. We also handle the integration work: connecting your systems to third-party platforms, managing authentication and credential rotation, implementing retry logic and circuit breakers, and building the middleware that makes heterogeneous enterprise systems talk to each other reliably. Every API we deliver ships with comprehensive documentation, an interactive sandbox, and the monitoring instrumentation your team needs to operate it confidently.',
@@ -121,6 +121,18 @@ const data = {
     {
       question: 'Can you build an internal developer portal for our organisation\'s APIs?',
       answer: 'Yes. For organisations managing multiple APIs consumed by internal teams or external partners, a developer portal significantly reduces the friction and support burden associated with API onboarding. We build portals using Backstage (Spotify\'s open-source developer portal framework) or Stoplight Workspace, depending on your scale and requirements. The portal provides interactive API documentation, self-service API key issuance, usage analytics per consumer, and a changelog for tracking API evolution. For organisations with complex B2B partner integration programs, a developer portal can reduce integration time for new partners from weeks to days.',
+    },
+    {
+      question: 'How much does it cost to build an API?',
+      answer: 'It depends on the number of endpoints and data models, the systems behind the API, authentication and security requirements, and whether it must serve external developers with a portal and documentation. A single internal integration is a small project; a public API platform is a substantial one. We quote a fixed price after a short discovery.',
+    },
+    {
+      question: 'How long does it take to build an API?',
+      answer: 'A focused API or integration between two systems can often be delivered in a few weeks. An API layer that fronts several legacy systems, with versioning, monitoring and a developer portal, takes longer. Most of the time goes into understanding the data and edge cases of the systems being connected, which is why we map them first.',
+    },
+    {
+      question: 'What is the difference between API development and API integration?',
+      answer: 'API development is building a new API that exposes your own data or services. API integration is connecting your systems to APIs that already exist, such as Xero, Salesforce or a payment gateway. Most projects involve both: an API of your own, plus integrations to the platforms around it.',
     },
   ],
   serviceName: 'API Development',

@@ -2,11 +2,11 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Financial Services & Fintech Software | All Webbed Labs',
-  metaDescription: 'APRA and ASIC-compliant software for Australian banks, insurers, super funds and fintechs. Core banking integrations, KYC/AML automation and open banking.',
+  metaTitle: 'Fintech Software Development Australia | All Webbed Labs',
+  metaDescription: 'Fintech and financial software development for Australian banks, insurers, super funds and fintechs: KYC/AML automation, open banking, CDR and AI tools.',
   industryName: 'Financial Services & Fintech',
   heroHeadline: 'Software That Meets the Demands of Financial Services',
-  heroTagline: 'Regulatory compliance, real-time processing and security-first architecture for banks, insurers, super funds and fintech companies.',
+  heroTagline: 'Fintech and custom financial software development for Australian banks, insurers, super funds and fintech companies, with security-first architecture built around APRA and ASIC requirements.',
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
   stats: [],
   painPoints: [
@@ -42,10 +42,14 @@ const data = {
     'Wealth management and adviser portals',
     'Insurance claims processing systems',
     'Superannuation administration platforms',
+    'Finance automation and AI document processing',
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   relevantServices: [
+    { title: 'AI for APRA-Regulated Financial Services', href: '/solutions/ai-for-financial-services' },
+    { title: 'AI Claims Automation for Insurers', href: '/solutions/insurance-claims-automation' },
+    { title: 'AI for Accounting Firms', href: '/solutions/ai-for-accounting-firms' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'API Development', href: '/services/api-development' },
     { title: 'Data Analytics', href: '/services/data-analytics' },
@@ -55,12 +59,24 @@ const data = {
   ],
   faqs: [
     {
+      question: 'How much does it cost to build a fintech app in Australia?',
+      answer: "Fintech app costs are driven less by screen count and more by identity verification, payments and banking integrations, AML/CTF controls, security testing and the evidence your compliance team needs. A narrow MVP costs far less than a regulated platform with open banking and card issuing. We quote a fixed price after a paid discovery; our app development cost and MVP development cost guides give typical Australian market ranges.",
+    },
+    {
+      question: 'How is AI used in fintech and financial services?',
+      answer: "Common uses of AI in finance include document processing for loan, claims and onboarding files, KYC and AML alert triage, fraud signals, drafting customer communications, and internal assistants that answer staff questions from policy and product documents. For APRA-regulated entities, AI vendors and models fall under CPS 234 and CPS 230, so the design has to cover data location, human review and evidence for your risk team. Our guide to AI development for APRA-regulated financial services covers this in detail.",
+    },
+    {
+      question: 'Can you automate finance and accounting workflows?',
+      answer: "Yes. Finance automation typically targets accounts payable, invoice and receipt extraction, reconciliations, month-end reporting packs and client document collection. We connect the workflow to your accounting or ERP platform through its API and keep a person approving anything that moves money or goes to a regulator. Accounting and advisory firms have their own patterns, covered in our AI for accounting firms guide.",
+    },
+    {
       question: 'How do you ensure software meets APRA CPS 234 requirements?',
       answer: "CPS 234 requires ADIs and other APRA-regulated entities to maintain information security capabilities commensurate with the size and extent of their threats. In practice, that means we design systems with a formal information asset register, clearly mapped control ownership, third-party assurance requirements (including us as a service provider), and tested incident response runbooks. We produce the artefacts APRA examiners actually ask for, information security policies, penetration test reports, vulnerability management evidence and control effectiveness attestations, rather than just checking a compliance checkbox.",
     },
     {
       question: 'Can you integrate with core banking systems like Temenos, Silverlake and Sandstone?',
-      answer: "Yes. We have engineers with hands-on integration experience across Temenos T24/Transact, Silverlake BANKS, TCS BaNCS, and several Australian-built platforms including Sandstone and ultracs. Our preferred approach is API-first integration through the vendor's published integration layer, but we've also built robust ETL and messaging bridges where the core system predates modern APIs. We work closely with your vendor's professional services team to align on the integration architecture before writing a line of code.",
+      answer: "Yes. Core platforms such as Temenos T24/Transact, Silverlake BANKS, TCS BaNCS and Australian-built platforms including Sandstone and ultracs each expose different integration options. Our preferred approach is API-first integration through the vendor's published integration layer, with ETL and messaging bridges where the core system predates modern APIs. We work closely with your vendor's professional services team to align on the integration architecture before writing a line of code.",
     },
     {
       question: 'What does your AML/CTF compliance engineering look like in practice?',
@@ -72,7 +88,7 @@ const data = {
     },
     {
       question: 'Do you work with early-stage fintechs as well as established banks?',
-      answer: "Absolutely, and the needs are quite different. With early-stage fintechs we tend to focus on building a scalable foundation quickly: robust identity verification, a clean API contract, event-sourced data models that don't paint you into a corner, and an architecture that can absorb a Series A growth event without a rewrite. With established ADIs and insurers the focus is usually modernisation, compliance uplift or building net-new digital products alongside existing infrastructure. We have worked with fintechs whose AFSL and ACL position was being determined by specialist counsel, and we design the system so whatever obligations their lawyers land on can be implemented cleanly. We do not provide the licensing advice ourselves; we will refer you if you need it.",
+      answer: "Absolutely, and the needs are quite different. With early-stage fintechs we tend to focus on building a scalable foundation quickly: robust identity verification, a clean API contract, event-sourced data models that don't paint you into a corner, and an architecture that can absorb a Series A growth event without a rewrite. With established ADIs and insurers the focus is usually modernisation, compliance uplift or building net-new digital products alongside existing infrastructure. Where a fintech's AFSL or ACL position is still being determined by specialist counsel, we design the system so whatever obligations their lawyers land on can be implemented cleanly. We do not provide the licensing advice ourselves; we will refer you if you need it.",
     },
   ],
   ctaHeadline: "Ready to Build Financial Software That Stands Up to Regulatory Scrutiny Alongside Your Compliance Team?",
