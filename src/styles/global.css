@@ -304,11 +304,25 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  :has(> .section-label) > h1 + p {
+  :has(> .section-label) > :is(h1, h2, .section-heading) ~ p {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  /* A lone button directly inside a centred intro sits in the middle too. */
+  :has(> .section-label) > :is(a, button)[class*="btn"] {
+    display: flex !important;
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Width-capped section intro wrappers sit in the middle, not on the left. */
+  .section-header,
+  :has(> .section-label) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  nav.breadcrumb, .breadcrumb > ol { justify-content: center; }
   :has(> .section-label) > div:has(> :is(a, button)[class*="btn"]),
   :has(> .section-label) > [class*="trust-row"],
   :has(> .section-label) > [class*="hero-stats"],
@@ -316,4 +330,11 @@
     justify-content: center !important;
     text-align: center;
   }
+}
+
+/* Even out heading line breaks so a single word never hangs on its own line. */
+h1, h2, h3, h1 *, h2 *, h3 * { text-wrap: balance; }
+/* On phones a manual <br> in a heading fights the balancing, so drop it. */
+@media (max-width: 640px) {
+  :is(h1, h2) br { display: none; }
 }

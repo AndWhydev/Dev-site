@@ -126,10 +126,8 @@ const disclaimers: Record<string, string> = {
         <h1 class="lf-title">{data.title}</h1>
         <p class="lf-meta">
           <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
-          <span aria-hidden="true">·</span>
-          <span>Published by <a href="/about">All Webbed Labs</a></span>
-          <span aria-hidden="true">·</span>
-          <a href="/editorial-policy">How we write</a>
+          <span class="lf-meta-sep">Published by <a href="/about">All Webbed Labs</a></span>
+          <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
         </p>
       </div>
     </header>
@@ -172,8 +170,7 @@ const disclaimers: Record<string, string> = {
             <ol>
               {data.sources.map((s) => (
                 <li>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
-                  {s.publisher && <span class="lf-src-pub">, {s.publisher}</span>}
+                  <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>{s.publisher && <span class="lf-src-pub">, {s.publisher}</span>}
                 </li>
               ))}
             </ol>
@@ -223,13 +220,15 @@ const disclaimers: Record<string, string> = {
 
   .lf-hero { padding: 9rem 0 2.5rem; border-bottom: 1px solid #1a2620; background: radial-gradient(ellipse 60% 80% at 20% 0%, rgba(13,147,115,0.10), transparent 70%); }
   .lf-crumbs ol { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0 0 1.5rem; padding: 0; font-size: 0.8125rem; color: #718b81; }
-  .lf-crumbs li + li::before { content: '/'; margin-right: 0.5rem; color: #3a5048; }
+  .lf-crumbs li:not(:last-child)::after { content: '/'; margin-left: 0.5rem; color: #3a5048; }
   .lf-crumbs a { color: #718b81; text-decoration: none; }
   .lf-crumbs a:hover { color: #0d9373; }
   .lf-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4.6vw, 3.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin: 0.75rem 0 1.25rem; max-width: 20ch; }
   .lf-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.875rem; color: #8aa09a; margin: 0; }
   .lf-meta a { color: #8aa09a; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #2a3d35; }
   .lf-meta a:hover { color: #0d9373; }
+  .lf-meta { column-gap: 0; }
+  .lf-meta-sep::before { content: '·'; margin: 0 0.5rem; color: #3a5048; }
 
   .lf-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 4rem; padding-top: 3rem; padding-bottom: 4rem; }
   .lf-article { min-width: 0; max-width: 760px; }
@@ -252,12 +251,21 @@ const disclaimers: Record<string, string> = {
   .lf-prose :global(a) { color: #19b58f; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(25,181,143,0.4); }
   .lf-prose :global(a:hover) { text-decoration-color: #19b58f; }
   .lf-prose :global(ul), .lf-prose :global(ol) { margin: 0 0 1.25rem; padding-left: 1.35rem; }
+  .lf-prose :global(ul) { list-style: disc; }
+  .lf-prose :global(ol) { list-style: decimal; }
   .lf-prose :global(li) { margin-bottom: 0.45rem; }
   .lf-prose :global(li::marker) { color: #0d9373; }
   .lf-prose :global(blockquote) { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid #0d9373; background: #0f1614; border-radius: 0 10px 10px 0; color: #dfe8e4; }
   .lf-prose :global(blockquote p:last-child) { margin-bottom: 0; }
   .lf-prose :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: #111a17; border: 1px solid #1a2620; padding: 0.1em 0.35em; border-radius: 5px; color: #e8f0ed; }
-  .lf-prose :global(table) { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.5rem 0 1.75rem; font-size: 0.9375rem; line-height: 1.5; }
+  .lf-prose :global(table) { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.5rem 0 1.75rem; font-size: 0.9375rem; line-height: 1.5;
+    /* Edge shadows appear only when there is more table to scroll to. */
+    background:
+      linear-gradient(90deg, #0a0f0e 30%, rgba(10,15,14,0)) left / 40px 100% no-repeat local,
+      linear-gradient(270deg, #0a0f0e 30%, rgba(10,15,14,0)) right / 40px 100% no-repeat local,
+      radial-gradient(farthest-side at 0 50%, rgba(25,181,143,0.45), rgba(25,181,143,0)) left / 16px 100% no-repeat scroll,
+      radial-gradient(farthest-side at 100% 50%, rgba(25,181,143,0.45), rgba(25,181,143,0)) right / 16px 100% no-repeat scroll;
+    -webkit-overflow-scrolling: touch; }
   .lf-prose :global(thead th) { background: #111a17; color: #fff; font-weight: 600; text-align: left; }
   .lf-prose :global(th), .lf-prose :global(td) { border: 1px solid #1f2e28; padding: 0.7rem 0.85rem; vertical-align: top; min-width: 120px; }
   .lf-prose :global(tbody tr:nth-child(even) td) { background: rgba(255,255,255,0.015); }
@@ -275,7 +283,7 @@ const disclaimers: Record<string, string> = {
   .lf-disclaimer { margin: 2.5rem 0 0; padding: 1rem 1.25rem; border: 1px dashed #2a3d35; border-radius: 10px; font-size: 0.875rem; color: #8aa09a; line-height: 1.6; }
 
   .lf-sources { margin-top: 2.5rem; }
-  .lf-sources ol { margin: 0; padding-left: 1.35rem; font-size: 0.9rem; color: #8aa09a; line-height: 1.6; }
+  .lf-sources ol { list-style: decimal; margin: 0; padding-left: 1.35rem; font-size: 0.9rem; color: #8aa09a; line-height: 1.6; }
   .lf-sources li { margin-bottom: 0.4rem; }
   .lf-sources a { color: #b4c4be; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #2a3d35; overflow-wrap: anywhere; }
   .lf-sources a:hover { color: #19b58f; }
@@ -304,17 +312,22 @@ const disclaimers: Record<string, string> = {
     .lf-aside { order: 2; }
     .lf-toc { display: none; }
     .lf-cta-card { position: static; }
+    .lf-aside { max-width: 760px; }
+    .lf-crumbs ol, .lf-meta { justify-content: center; text-align: center; }
   }
   @media (max-width: 640px) {
     .lf-hero { padding: 7rem 0 2rem; }
     .lf-summary { padding: 1.25rem; }
     .lf-summary p { font-size: 1.0625rem; }
     .lf-prose { font-size: 1rem; }
+    .lf-meta { flex-direction: column; align-items: center; row-gap: 0.25rem; }
+    .lf-meta-sep::before { display: none; }
   }
 
   /* Centre a short last row instead of leaving it stuck to the left. */
   .lf-related ul { display: flex; flex-wrap: wrap; justify-content: center; }
-  .lf-related ul > li { flex: 0 1 300px; min-width: 0; }
+  .lf-related ul > li { flex: 0 1 300px; min-width: 0; display: flex; }
+  .lf-related ul > li > a { flex: 1; }
   @media (max-width: 640px) { .lf-related ul > li { flex-basis: 100%; } }
   .lf-related .lf-small-heading { text-align: center; }
 </style>

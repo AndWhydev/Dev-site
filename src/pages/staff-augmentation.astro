@@ -743,7 +743,7 @@ import CTABanner from '../components/CTABanner.astro';
 
   .comp-row .comp-dim { color: #8aa09a; font-weight: 500; }
   .comp-row .comp-aug { color: #0d9373; }
-  .comp-row .comp-hire { border-right: none; }
+  .comp-row .comp-hire { border-right: none; color: #8aa09a; }
 
   /* Vetting */
   .vetting-steps {
@@ -941,17 +941,22 @@ import CTABanner from '../components/CTABanner.astro';
     .how-grid { flex-direction: column; }
     .how-connector { display: none; }
     .roles-grid { grid-template-columns: repeat(2, 1fr); }
-    .models-grid { grid-template-columns: 1fr; max-width: 520px; }
+    .models-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
     .tz-grid { grid-template-columns: 1fr; }
     .tz-right { margin-top: 0; }
     .tz-row { grid-template-columns: 1fr; gap: 0.25rem; }
     .tz-bar-wrap { display: none; }
   }
 
+  /* Phone: each row becomes the dimension as a heading, then the two options side by side. */
+  @media (max-width: 640px) {
+    .comp-header, .comp-row { grid-template-columns: 1fr 1fr; }
+    .comp-header .comp-dim { display: none; }
+    .comp-row .comp-dim { grid-column: 1 / -1; border-right: none; border-bottom: 1px solid #1e2d28; color: #fff; font-weight: 600; padding-bottom: 0.6rem; }
+    .comp-header .comp-aug, .comp-header .comp-hire, .comp-row .comp-aug, .comp-row .comp-hire { padding: 0.85rem 0.9rem; }
+  }
   @media (max-width: 640px) {
     .roles-grid { grid-template-columns: 1fr; }
-    .comp-header, .comp-row { grid-template-columns: 1fr 1fr; }
-    .comp-header .comp-hire, .comp-row .comp-hire { display: none; }
     .hero-trust-row { gap: 1.25rem; }
     .trust-divider { display: none; }
   }

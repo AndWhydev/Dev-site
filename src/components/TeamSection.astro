@@ -53,6 +53,13 @@ const team: Person[] = [
     accent: 'amber',
     links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/hyacinth-soriano-69b229403/' }],
   },
+  {
+    name: 'Nicole',
+    role: 'Admin & Operations',
+    bio: 'Nicole runs admin and operations at the Labs. She manages client onboarding, keeps every Discovery Audit and project moving to its next step, and makes sure documents, schedules and follow ups land when they should.',
+    initials: 'N',
+    accent: 'green',
+  },
 ];
 
 const partners: Person[] = [
@@ -107,7 +114,7 @@ const partners: Person[] = [
       <span class="section-label">The team</span>
       <h2 class="section-heading">Leadership, specialists, and a wider delivery bench.</h2>
       <p class="section-subheading">
-        Andy, Sam and Hyacinth lead Labs day to day. Alongside them sit our CFO, our lawyers across IT, IP and commercial litigation, and our server and hardware lead, plus a wider delivery bench of senior engineers, designers and DevOps specialists who scale onto engagements as scope requires. We publish only leadership and specialists here; full delivery rosters and CVs are available under NDA.
+        Andy, Sam, Hyacinth and Nicole lead Labs day to day. Alongside them sit our CFO, our lawyers across IT, IP and commercial litigation, and our server and hardware lead, plus a wider delivery bench of senior engineers, designers and DevOps specialists who scale onto engagements as scope requires. We publish only leadership and specialists here; full delivery rosters and CVs are available under NDA.
       </p>
     </div>
 
@@ -252,7 +259,7 @@ const partners: Person[] = [
   /* ── Core team grid ─────────────────────── */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
   }
 
@@ -399,11 +406,15 @@ const partners: Person[] = [
     margin: 0.625rem 0 0;
   }
 
+  /* Six tracks, each card spans two, so a short last row can be centred. */
   .partners-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1.25rem;
   }
+  .partners-grid > * { grid-column: span 2; }
+  .partners-grid > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .partners-grid > :nth-child(3n+1):last-child { grid-column: 3 / span 2; }
   .partner-card {
     background: #0c1310;
     border: 1px solid #1a2620;
@@ -506,6 +517,7 @@ const partners: Person[] = [
     margin: 0;
   }
   .team-join a {
+    white-space: nowrap;
     color: #0d9373;
     text-decoration: none;
     font-weight: 600;
@@ -518,7 +530,10 @@ const partners: Person[] = [
   /* ── Responsive ─────────────────────────── */
   @media (max-width: 1024px) {
     .team-grid, .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .team-grid > :last-child, .partners-grid > :last-child {
+    .partners-grid > *,
+    .partners-grid > :nth-child(3n+1):nth-last-child(2),
+    .partners-grid > :nth-child(3n+1):last-child { grid-column: auto; }
+    .team-grid > :last-child:nth-child(odd), .partners-grid > :last-child:nth-child(odd) {
       grid-column: 1 / -1;
       max-width: 520px;
       justify-self: center;
@@ -530,7 +545,7 @@ const partners: Person[] = [
     .team-inner { padding: 0 1.25rem; }
     .team-header { margin-bottom: 2.5rem; }
     .team-grid, .partners-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .team-grid > :last-child, .partners-grid > :last-child { max-width: 100%; }
+    .team-grid > :last-child:nth-child(odd), .partners-grid > :last-child:nth-child(odd) { max-width: 100%; }
     .team-card { padding: 2rem 1.5rem 1.75rem; }
     .team-photo { width: 112px; height: 112px; margin-bottom: 1rem; }
     .partners-block { margin-top: 3.5rem; padding-top: 2.5rem; }

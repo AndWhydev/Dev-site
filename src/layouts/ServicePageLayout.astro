@@ -239,7 +239,8 @@ const entitySentence = BRAND_DEFINITION;
       </div>
     </section>
 
-    <!-- Use Cases -->
+    <!-- Use Cases (hidden until a page has signed-off examples) -->
+    {useCases.length > 0 && (
     <section class="svc-usecases">
       <div class="svc-inner">
         <div class="reveal">
@@ -257,6 +258,7 @@ const entitySentence = BRAND_DEFINITION;
         </div>
       </div>
     </section>
+    )}
 
     <!-- Technology Stack -->
     <section class="svc-tech">
@@ -796,6 +798,11 @@ const entitySentence = BRAND_DEFINITION;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  /* Tablet and phone: chip rows sit centred under their centred section heads. */
+  @media (max-width: 1024px) {
+    .tech-tags, .svc-industry-tags { justify-content: center; }
   }
 
   .svc-ind-tag {

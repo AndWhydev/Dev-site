@@ -356,16 +356,19 @@ const {
 
   .ind-stat-val {
     font-family: 'Sora', sans-serif;
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
     font-weight: 800;
     color: #0d9373;
     letter-spacing: -0.03em;
+    line-height: 1.15;
+    text-align: center;
+    text-wrap: balance;
   }
 
   .ind-stat-lbl {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
-    color: #4a6359;
+    color: #8aa09a;
     text-align: center;
     margin-top: 0.25rem;
   }
@@ -419,13 +422,14 @@ const {
     font-size: 1rem;
     font-weight: 600;
     color: white;
+    line-height: 1.35;
     margin: 0;
   }
 
   .pain-card p {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.875rem;
-    color: #4a6359;
+    color: #8aa09a;
     line-height: 1.65;
     margin: 0;
   }

@@ -337,6 +337,43 @@ const schema = {
 
       initReveal();
       document.addEventListener('astro:after-swap', initReveal);
+
+      // Centre a short last row in card grids, so a lone card never sits
+      // stuck to the left. Only touches grids of equal-width columns whose
+      // children are all the same kind of card with automatic placement.
+      // Uses `left` (position: relative) so it never fights reveal transforms.
+      function centreOrphans() {
+        document.querySelectorAll('main *').forEach((grid) => {
+          const cs = getComputedStyle(grid);
+          if (cs.display !== 'grid' || grid.closest('form, table, [data-no-centre]')) return;
+          const items = Array.from(grid.children).filter((c) => {
+            const s = getComputedStyle(c);
+            return s.display !== 'none' && s.position !== 'absolute' && s.position !== 'fixed';
+          });
+          items.forEach((c) => { if (c.dataset.orphan) { c.style.left = ''; delete c.dataset.orphan; } });
+          const tracks = cs.gridTemplateColumns.split(' ').map(parseFloat).filter((n) => !isNaN(n));
+          const cols = tracks.length;
+          if (cols < 2 || items.length <= cols) return;
+          if (tracks.some((t) => Math.abs(t - tracks[0]) > 1)) return;
+          const kind = items[0].tagName + '.' + (items[0].classList[0] || '');
+          if (!items.every((c) => c.tagName + '.' + (c.classList[0] || '') === kind)) return;
+          if (items.some((c) => { const s = getComputedStyle(c); return s.gridColumnStart !== 'auto' || s.gridColumnEnd !== 'auto' || s.gridRowStart !== 'auto'; })) return;
+          const rest = items.length % cols;
+          if (!rest) return;
+          const gap = parseFloat(cs.columnGap) || 0;
+          const shift = ((cols - rest) * (tracks[0] + gap)) / 2;
+          items.slice(items.length - rest).forEach((c) => {
+            if (getComputedStyle(c).position === 'static') c.style.position = 'relative';
+            c.style.left = shift + 'px';
+            c.dataset.orphan = '1';
+          });
+        });
+      }
+      let orphanTimer;
+      const scheduleOrphans = () => { clearTimeout(orphanTimer); orphanTimer = setTimeout(centreOrphans, 120); };
+      if (document.readyState === 'complete') centreOrphans(); else window.addEventListener('load', centreOrphans);
+      window.addEventListener('resize', scheduleOrphans);
+      document.addEventListener('astro:after-swap', centreOrphans);
     </script>
   </body>
 </html>
