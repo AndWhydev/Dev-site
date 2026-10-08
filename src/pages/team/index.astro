@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import TeamSection from '../../components/TeamSection.astro';
+
+const pageTitle = 'Our Team | All Webbed Labs';
+const pageDescription =
+  'Meet the All Webbed Labs team: engineering, design, finance, legal and infrastructure under one roof for Australian software and AI builds.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.awlabs.com.au' },
+    { '@type': 'ListItem', position: 2, name: 'Team', item: 'https://www.awlabs.com.au/team' },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} extraSchema={[breadcrumb]}>
+  <Header />
+  <main>
+    <section class="team-hero">
+      <div class="team-hero-inner reveal">
+        <span class="section-label">Our team</span>
+        <h1 class="team-hero-title">
+          Everyone your build needs,<br />
+          <span class="gradient-text">in one team.</span>
+        </h1>
+        <p class="team-hero-lead">
+          Engineering, design, finance, legal and infrastructure sit together at Labs, so the people who scope your project are the people who build, contract, structure and install it.
+        </p>
+      </div>
+    </section>
+
+    <TeamSection />
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .team-hero {
+    background: #0a0f0e;
+    padding: 10rem 0 2rem;
+  }
+  .team-hero-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  .team-hero-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+    margin: 1rem 0 1.5rem;
+  }
+  .team-hero-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #cde0da;
+    margin: 0 auto;
+    max-width: 640px;
+  }
+  @media (max-width: 640px) {
+    .team-hero { padding: 8rem 0 1rem; }
+    .team-hero-inner { padding: 0 1rem; }
+  }
+</style>

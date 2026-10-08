@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import TechStack from '../components/TechStack.astro';
-import TeamSection from '../components/TeamSection.astro';
+import TeamCallout from '../components/TeamCallout.astro';
 
 const values = [
   {
@@ -56,10 +56,8 @@ const values = [
       </div>
     </section>
 
-    <!-- Team + partner network, lifted to the top because /about is the
-         destination of the header "Team" link. The narrative sections (Story,
-         Values, Culture, Philosophy, Location, Tech Stack) continue below. -->
-    <TeamSection />
+    <!-- Team teaser; the full grid lives on /team. -->
+    <TeamCallout />
 
     <!-- Story -->
     <section class="story-section">

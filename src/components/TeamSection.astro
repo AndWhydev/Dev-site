@@ -1,13 +1,14 @@
 ---
 /**
- * Team + partner network.
+ * Team + specialists.
  *
  * Honesty constraint (load-bearing for the /trust page promise):
  *   - Every bio states only what is independently verifiable or what the
  *     person has personally signed off on. No invented years of experience,
  *     no invented past clients, no invented credentials.
- *   - Partners (the bottom strip) are listed only with their consent and
- *     framed as specialist affiliates, not employees.
+ *   - Specialists (the bottom strip) are listed only with their consent.
+ *     Present them as part of the team, but don't name their outside firms
+ *     and never call them employees or in-house staff.
  *
  * Photos: each member is responsible for the photo we display. We do not
  * AI-generate likenesses of real people.
@@ -36,8 +37,8 @@ const team: Person[] = [
   },
   {
     name: 'Sam Trinder',
-    role: 'Senior Software Engineer',
-    bio: 'Sam is a senior software engineer on the Labs delivery team. He brings over a decade of backend, cloud infrastructure and enterprise software experience across industries and team sizes, with a bias toward clean architecture and systems that scale. Sam leads the day-to-day engineering with Andy on the harder architecture calls.',
+    role: 'Senior Developer',
+    bio: 'Sam is a senior developer on the Labs delivery team. He brings over a decade of backend, cloud infrastructure and enterprise software experience across industries and team sizes, with a bias toward clean architecture and systems that scale. Sam leads the day-to-day engineering with Andy on the harder architecture calls.',
     photo: '/team/sam-trinder.webp',
     initials: 'ST',
     accent: 'violet',
@@ -57,36 +58,43 @@ const team: Person[] = [
 const partners: Person[] = [
   {
     name: 'Jared Bachman',
-    role: 'Servers & IT Installation',
-    bio: 'Owner of Commercial Electrical Services Sydney. We bring Jared in when a client engagement needs on-site server, rack or network installation work delivered alongside the software.',
+    role: 'Servers & Hardware',
+    bio: 'Jared is our server and hardware lead. Servers, racks, networking and on-site installation: when a project needs physical infrastructure delivered alongside the software, Jared specs it, installs it and hands it over running.',
     photo: '/team/jared-bachman.webp',
     initials: 'JB',
     accent: 'green',
-    links: [{ label: 'Commercial Electrical Services', href: 'https://commercialelectrician.net.au' }],
   },
   {
     name: 'Troy Schoenfisch',
-    role: 'R&D Tax & Innovation Rebates',
-    bio: 'Accountant and financial mentor at Crescendo Strategy. We refer clients to Troy when they want to claim the Australian R&D Tax Incentive on a software build we deliver, he comes in early enough to structure the project documentation for an eventual claim.',
+    role: 'CFO, Financial Advisory & Tax',
+    bio: 'Troy is our CFO. He leads financial advisory and tax mitigation for the software and apps we build, from structuring a project for the Australian R&D Tax Incentive on day one to making sure the documentation is in place when the claim is made.',
     photo: '/team/troy-schoenfisch.webp',
     initials: 'TS',
     accent: 'violet',
-    links: [
-      { label: 'troyschoenfisch.com', href: 'https://troyschoenfisch.com/' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/troyschoenfisch/' },
-    ],
   },
   {
     name: 'Elena Nelyubina',
-    role: 'Commercial & IT Law',
-    bio: 'Director and Principal Lawyer at Square Legal. Elena handles the commercial side of software engagements, client contracts, IT licensing, privacy and the IP assignment clauses inside our delivery agreements. She came to law from an IT contracts management background.',
+    role: 'IT & IP Law',
+    bio: 'Elena is our IT and IP lawyer. She handles client contracts, IT licensing, privacy and the IP assignment clauses inside our delivery agreements, and came to law from an IT contracts management background.',
     photo: '/team/elena-nelyubina.webp',
     initials: 'EN',
     accent: 'amber',
-    links: [
-      { label: 'Square Legal', href: 'https://squarelegal.com.au/our-people/' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/elena-nelyubina/' },
-    ],
+  },
+  {
+    name: 'Zak Tayyar',
+    role: 'Commercial Litigation',
+    bio: 'Zak leads commercial litigation and dispute resolution. He has practised across national law firms, insurers and boutique practices, and covers every stage of proceedings, from early negotiation to court. Zak is admitted to the Supreme Court of NSW and the High Court of Australia.',
+    photo: '/team/zak-tayyar.webp',
+    initials: 'ZT',
+    accent: 'green',
+  },
+  {
+    name: 'Mirage Sohail',
+    role: 'Software, App & IP Law',
+    bio: 'Mirage handles the legal side of the software and apps we build and ship. His background spans the Commonwealth Attorney-General\'s Department, the Administrative Appeals Tribunal and civil litigation in private practice. Mirage is admitted to the Supreme Court of NSW and the High Court of Australia.',
+    photo: '/team/mirage-sohail.webp',
+    initials: 'MS',
+    accent: 'violet',
   },
 ];
 ---
@@ -97,9 +105,9 @@ const partners: Person[] = [
     <!-- Header -->
     <div class="team-header reveal">
       <span class="section-label">The team</span>
-      <h2 class="section-heading">Leadership, named partners, and a wider delivery bench.</h2>
+      <h2 class="section-heading">Leadership, specialists, and a wider delivery bench.</h2>
       <p class="section-subheading">
-        Andy, Sam and Hyacinth lead Labs day to day. Around them sit our named specialist partners, commercial &amp; IT law, R&amp;D tax structuring, on-site infrastructure, and a wider delivery bench of senior engineers, designers and DevOps specialists who scale onto engagements as scope requires. We publish only the leadership and named partners here; full delivery rosters and CVs are available under NDA.
+        Andy, Sam and Hyacinth lead Labs day to day. Alongside them sit our CFO, our lawyers across IT, IP and commercial litigation, and our server and hardware lead, plus a wider delivery bench of senior engineers, designers and DevOps specialists who scale onto engagements as scope requires. We publish only leadership and specialists here; full delivery rosters and CVs are available under NDA.
       </p>
     </div>
 
@@ -160,11 +168,11 @@ const partners: Person[] = [
       ))}
     </div>
 
-    <!-- Partner network -->
+    <!-- Specialists -->
     <div class="partners-block">
       <div class="partners-head reveal">
-        <span class="section-label small">Specialist partner network</span>
-        <h3 class="partners-heading">Named specialists we bring in by engagement need.</h3>
+        <span class="section-label small">Specialists</span>
+        <h3 class="partners-heading">The specialists on our engagements.</h3>
       </div>
 
       <div class="partners-grid">
@@ -182,7 +190,6 @@ const partners: Person[] = [
                 <h4 class="partner-name">{p.name}</h4>
                 <p class="partner-role">{p.role}</p>
               </div>
-              <span class="partner-pill">Partner</span>
             </div>
             <p class="partner-bio">{p.bio}</p>
             {p.links && p.links.length > 0 && (
@@ -457,19 +464,6 @@ const partners: Person[] = [
     text-transform: uppercase;
     color: #0d9373;
     margin: 0;
-  }
-  .partner-pill {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(205,224,218,0.55);
-    background: rgba(255,255,255,0.03);
-    border: 1px solid #1a2620;
-    padding: 0.18rem 0.5rem;
-    border-radius: 50px;
-    flex-shrink: 0;
   }
   .partner-bio {
     font-family: 'DM Sans', sans-serif;

@@ -1,7 +1,7 @@
 ---
 /**
  * Compact "meet the team" teaser for the home page. Stacked avatars + one-line
- * positioning + CTA into /about#team where the full team grid lives.
+ * positioning + CTA into /team where the full team grid lives.
  *
  * Photos here are the same files served from /public/team/.
  */
@@ -17,14 +17,17 @@ type Avatar = {
 
 const avatars: Avatar[] = [
   { name: 'Andy Taleb', role: 'Founder & Developer', photo: '/team/andy-taleb.webp', initials: 'AT', accent: 'green' },
+  { name: 'Sam Trinder', role: 'Senior Developer', photo: '/team/sam-trinder.webp', initials: 'ST', accent: 'violet' },
   { name: 'Hyacinth Soriano', role: 'Brand & Design', photo: '/team/hyacinth-soriano.webp', initials: 'HS', accent: 'amber' },
-  { name: 'Jared Bachman', role: 'Servers & IT', photo: '/team/jared-bachman.webp', initials: 'JB', accent: 'green' },
-  { name: 'Troy Schoenfisch', role: 'R&D Tax', photo: '/team/troy-schoenfisch.webp', initials: 'TS', accent: 'violet' },
-  { name: 'Elena Nelyubina', role: 'Commercial & IT Law', photo: '/team/elena-nelyubina.webp', initials: 'EN', accent: 'amber' },
+  { name: 'Jared Bachman', role: 'Servers & Hardware', photo: '/team/jared-bachman.webp', initials: 'JB', accent: 'green' },
+  { name: 'Troy Schoenfisch', role: 'CFO', photo: '/team/troy-schoenfisch.webp', initials: 'TS', accent: 'violet' },
+  { name: 'Elena Nelyubina', role: 'IT & IP Law', photo: '/team/elena-nelyubina.webp', initials: 'EN', accent: 'amber' },
+  { name: 'Zak Tayyar', role: 'Commercial Litigation', photo: '/team/zak-tayyar.webp', initials: 'ZT', accent: 'green' },
+  { name: 'Mirage Sohail', role: 'Software, App & IP Law', photo: '/team/mirage-sohail.webp', initials: 'MS', accent: 'violet' },
 ];
 ---
 
-<section class="team-callout" aria-label="Meet the All Webbed Labs team">
+<section class="team-callout" id="team" aria-label="Meet the All Webbed Labs team">
   <div class="tc-inner">
     <div class="tc-stack reveal" aria-hidden="true">
       {avatars.map((a, i) => (
@@ -53,11 +56,11 @@ const avatars: Avatar[] = [
 
     <div class="tc-text reveal">
       <span class="section-label">The team</span>
-      <h2 class="tc-heading">Leadership and named partners.</h2>
+      <h2 class="tc-heading">Leadership and specialists.</h2>
       <p class="tc-sub">
-        These are the leadership and verified specialist partners we publish here. The wider delivery team, senior engineers, designers and infrastructure specialists, scales onto engagements as scope requires; full names and CVs are available under NDA.
+        These are the leadership and specialists we publish here. The wider delivery team, senior engineers, designers and infrastructure specialists, scales onto engagements as scope requires; full names and CVs are available under NDA.
       </p>
-      <a href="/about#team" class="tc-cta">
+      <a href="/team" class="tc-cta">
         Meet the team
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
