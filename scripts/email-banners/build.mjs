@@ -30,6 +30,7 @@ const PEOPLE = [
   { slug: 'andy-taleb', name: 'Andy Taleb', title: 'Founder & Developer', email: 'andy@awlabs.com.au' },
   { slug: 'nicole-castillo', name: 'Nicole Castillo', title: 'Admin & Operations', email: 'admin@awlabs.com.au' },
   { slug: 'sam-trinder', name: 'Sam Trinder', title: 'Senior Developer', email: 'admin@awlabs.com.au' },
+  { slug: 'hyacinth-soriano', name: 'Hyacinth Soriano', title: 'Brand & Design', email: 'admin@awlabs.com.au' },
 ];
 const TAGLINE = 'Custom platforms, integrations and AI systems for Australian business.';
 
