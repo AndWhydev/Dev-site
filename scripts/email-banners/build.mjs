@@ -74,6 +74,12 @@ const background = (glowX) => `
   <rect width="${W}" height="${H}" fill="url(#glow)"/>
   <rect x="0" y="${H - 4}" width="${W}" height="4" fill="${C.accent}"/>`;
 
+// Right hand call to action pill. The whole banner links to /contact, so the
+// pill tells the reader what a click does.
+const cta = (right, y) => `
+  <rect x="${right - 236}" y="${y}" width="236" height="52" rx="26" fill="${C.accent}"/>
+  <text x="${right - 118}" y="${y + 34}" text-anchor="middle" font-family="DM Sans" font-weight="600" font-size="22" fill="#ffffff">Start a project  →</text>`;
+
 const personSvg = (p) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   ${background(150)}
   <circle cx="150" cy="148" r="106" fill="none" stroke="${C.accent}" stroke-opacity="0.25" stroke-width="10"/>
@@ -82,6 +88,10 @@ const personSvg = (p) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" h
   <text x="302" y="174" font-family="DM Sans" font-weight="500" font-size="28" fill="${C.muted}">${esc(p.title)}</text>
   <rect x="302" y="204" width="56" height="3" rx="1.5" fill="${C.accent}"/>
   <text x="302" y="248" font-family="DM Sans" font-weight="600" font-size="26" fill="${C.accent}">awlabs.com.au</text>
+  <rect x="790" y="110" width="1" height="146" fill="${C.line}"/>
+  <text x="1150" y="146" text-anchor="end" font-family="DM Sans" font-weight="600" font-size="15" letter-spacing="2.4" fill="${C.muted}">WHAT WE BUILD</text>
+  <text x="1150" y="180" text-anchor="end" font-family="DM Sans" font-weight="500" font-size="21" fill="${C.text}">Platforms  ·  Integrations  ·  AI systems</text>
+  ${cta(1150, 204)}
 </svg>`;
 
 const genericSvg = () => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
@@ -91,6 +101,7 @@ const genericSvg = () => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" h
   <text x="284" y="174" font-family="DM Sans" font-weight="500" font-size="25" fill="${C.muted}">${esc(TAGLINE)}</text>
   <rect x="284" y="204" width="56" height="3" rx="1.5" fill="${C.accent}"/>
   <text x="284" y="248" font-family="DM Sans" font-weight="600" font-size="26" fill="${C.accent}">awlabs.com.au</text>
+  ${cta(1150, 210)}
 </svg>`;
 
 // Encode as JPG, stepping quality down until it is under 100 KB.
@@ -106,7 +117,7 @@ async function toJpg(pipeline, file) {
 }
 
 const signatureHtml = (p) => `<!-- ${p.name}, All Webbed Labs email signature. Built by scripts/email-banners/build.mjs -->
-<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;">
   <tr>
     <td style="padding:0 0 4px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#0a0f0e;">${esc(p.name)}</td>
   </tr>
@@ -124,7 +135,7 @@ const signatureHtml = (p) => `<!-- ${p.name}, All Webbed Labs email signature. B
   </tr>
   <tr>
     <td style="padding:0;">
-      <a href="${SITE}" style="text-decoration:none;"><img src="${SITE}/email/${p.slug}.jpg" width="600" height="150" alt="${esc(p.name)}, ${esc(p.title)}, All Webbed Labs. awlabs.com.au" style="display:block;width:600px;height:150px;border:0;outline:none;" /></a>
+      <a href="${SITE}/contact" style="text-decoration:none;"><img src="${SITE}/email/${p.slug}.jpg" width="600" height="150" border="0" alt="${esc(p.name)}, ${esc(p.title)}, All Webbed Labs. Start a project at awlabs.com.au" style="display:block;width:600px;height:150px;border:0;outline:none;" /></a>
     </td>
   </tr>
 </table>
