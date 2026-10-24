@@ -330,6 +330,32 @@
     justify-content: center !important;
     text-align: center;
   }
+  /* A text link that closes a centred intro sits under it too. */
+  :has(> .section-label) > a {
+    display: flex !important;
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Width-capped blocks under a centred intro sit in the middle instead of
+     hanging off the left edge. Named rather than matched by structure, since
+     auto margins on a stacked grid or flex child would shrink it. */
+  .faq-list,
+  .vetting-steps,
+  .assessment-container,
+  .ed-table-wrap,
+  .ed-callout,
+  .pf-timeline,
+  .exposure-callout {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  /* Case study category intros follow the same centred pattern. */
+  .cs-cat-head {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 }
 
 /* Even out heading line breaks so a single word never hangs on its own line. */
