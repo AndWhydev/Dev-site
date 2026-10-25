@@ -12,7 +12,7 @@ takeaways:
   - "Anthropic distinguishes workflows (predefined code paths) from agents (the model directs its own process). Most business problems need a workflow, not a full agent."
   - "Agents suit open-ended tasks where the steps can't be known in advance; they cost more and errors can compound."
   - "The main risk is excessive agency: too many tools, too much permission or too little human oversight."
-  - "Well-designed tools, least-privilege access, human approval for consequential actions and full logging are what make agents safe to deploy."
+  - "Well-designed tools, least-privilege access, human approval for consequential actions and full logging are what keep agent risk under control."
 faqs:
   - q: "What's the difference between an AI agent and a chatbot?"
     a: "A chatbot answers in conversation; it talks. An agent acts: it can look things up, update records, send messages or run code across several steps to finish a task. Many products blur the line, with a chat interface on the front and agent behaviour behind it. Our comparison of agents, chatbots and workflow automation covers when each fits."
@@ -180,6 +180,6 @@ Before an agent touches production systems, check that:
 - Every step is logged with inputs, outputs and the tool results.
 - A test suite of realistic scenarios, including hostile inputs, passes before each release.
 
-## How All Webbed Labs approaches agents
+## How AWLabs approaches agents
 
 We usually start by mapping the process and building the predictable parts as a workflow, then add agent behaviour only where the path genuinely varies. Tools are narrow and permissioned per user, consequential actions go through approval, and every step is logged. Where the agent needs to reach several systems, we often expose them as MCP servers so the integrations can be reused. See [AI agent development](/services/ai-agent-development) and [MCP server development](/services/mcp-server-development).

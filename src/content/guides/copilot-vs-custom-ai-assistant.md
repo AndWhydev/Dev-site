@@ -64,7 +64,7 @@ related:
 service:
   title: "Custom AI assistant and chatbot development"
   href: "/services/ai-chatbot"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## When is Microsoft 365 Copilot the right answer?
@@ -169,6 +169,6 @@ The pattern that usually emerges: for broad productivity across hundreds of staf
 5. Record where Copilot couldn't help and why: missing system access, wrong answers, rules it couldn't follow.
 6. Use that list to decide whether a Copilot Studio agent or custom assistant is justified for the gaps, and for which workflow.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We build custom assistants and agents, and we're also comfortable telling you that Copilot is the better buy. If discovery shows your need is general productivity in Microsoft 365, we'll recommend licences and a permissions review and stop there. When a custom build is justified, we design it around the gap your pilot found: specific integrations, record-level access rules, an Australian region by default, and an evaluation set agreed before build. Code lives in your repository from day one. See our [AI chatbot development](/services/ai-chatbot) and [AI agent development](/services/ai-agent-development) services.
+We build custom assistants and agents, and we're also comfortable telling you that Copilot is the better buy. If our Discovery Audit shows your need is general productivity in Microsoft 365, we'll recommend licences and a permissions review and stop there. When a custom build is justified, we design it around the gap your pilot found: specific integrations, record-level access rules, an Australian region where the services you need are available there, and an evaluation set agreed before build. If your data must stay in Australia, we write it into your Schedule of Work before you sign. You can see and test the code while we build, and each part is assigned to you as it is paid for in full. See our [AI chatbot development](/services/ai-chatbot) and [AI agent development](/services/ai-agent-development) services.

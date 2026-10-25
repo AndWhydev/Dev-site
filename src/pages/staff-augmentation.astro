@@ -7,7 +7,7 @@ import CTABanner from '../components/CTABanner.astro';
 ---
 
 <Layout
-  title="IT Staff Augmentation Australia | All Webbed Labs"
+  title="IT Staff Augmentation Australia | AWLabs"
   description="Staff augmentation in Australia: senior software engineers embedded in your team on AEST hours, across React, Flutter, Node.js, AI and DevOps, no lock-in."
 >
   <Header />
@@ -30,11 +30,11 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">Staff Augmentation</span>
           <h1 class="sa-hero-title">
             Extend Your Team With<br />
-            <span class="gradient-text">World-Class Developers</span>
+            <span class="gradient-text">Experienced Developers</span>
           </h1>
           <p class="sa-hero-sub">
             Staff augmentation for Australian teams: senior engineers embedded into your team, working in your timezone, using your tools, aligned to your
-            engineering culture. No agency overhead. No offshore communication delays. No juniors billing at senior rates.
+            engineering culture. No agency overhead. No offshore communication delays. No juniors passed off as seniors.
             Engineers who show up on day one and deliver.
           </p>
           <div class="sa-hero-ctas">
@@ -45,7 +45,7 @@ import CTABanner from '../components/CTABanner.astro';
             <a href="#roles" class="btn-outline">View Available Roles</a>
           </div>
           <div class="hero-trust-row">
-            <div class="trust-item"><span class="trust-num">48hr</span><span class="trust-label">Match-to-Interview Time</span></div>
+            <div class="trust-item"><span class="trust-num">Agreed</span><span class="trust-label">Terms Before Anyone Starts</span></div>
             <div class="trust-divider"></div>
             <div class="trust-item"><span class="trust-num">Senior</span><span class="trust-label">Engineers Only</span></div>
             <div class="trust-divider"></div>
@@ -74,7 +74,7 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">How It Works</span>
           <h2 class="section-heading">Three Steps to Your Extended Team</h2>
           <p class="section-subheading">
-            We've streamlined the process so you have a matched, vetted engineer ready to start within days, not weeks.
+            Experienced developers who join your team on agreed terms. We agree the role, the terms and the start date with you before anyone starts.
           </p>
         </div>
         <div class="how-grid">
@@ -84,7 +84,7 @@ import CTABanner from '../components/CTABanner.astro';
               <h3>Brief Us</h3>
               <p>
                 Tell us what you need: the role, the tech stack, the team context, the engagement length and when you
-                want to start. We do not need a formal job description, a 30-minute call is enough.
+                want to start. We do not need a formal job description, a conversation with Andy is enough.
                 We ask the questions other agencies don't: what does your team culture look like? What's the biggest
                 delivery challenge? What does failure look like in this role?
               </p>
@@ -98,8 +98,8 @@ import CTABanner from '../components/CTABanner.astro';
             <div class="how-content">
               <h3>Match Engineers</h3>
               <p>
-                Within 48 hours, we present two to three pre-screened candidates from our pool, not CVs from a database,
-                but engineers we know personally, whose code we have reviewed and whose working style we can vouch for.
+                We put forward experienced developers we work with, not CVs from a database,
+                whose code we have reviewed and whose working style we can vouch for.
                 You interview them. If none are right, we keep looking. No fee until you say yes.
               </p>
             </div>
@@ -131,7 +131,7 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">Roles Available</span>
           <h2 class="section-heading">Every Engineering Role You Need</h2>
           <p class="section-subheading">
-            Senior practitioners across the full software development lifecycle. All with minimum five years commercial experience.
+            Experienced developers across the full software development lifecycle, who join your team on agreed terms.
           </p>
         </div>
         <div class="roles-grid">
@@ -223,13 +223,12 @@ import CTABanner from '../components/CTABanner.astro';
             <div class="comp-hire">Direct Hire</div>
           </div>
           {[
-            { dim: 'Time to start', aug: '1 to 2 weeks', hire: '3 to 6 months (hiring cycle)' },
+            { dim: 'Time to start', aug: 'Agreed with you upfront', hire: 'A full hiring cycle' },
             { dim: 'Upfront cost', aug: 'No recruiter fee, no equity dilution', hire: 'Recruiter fee or equity' },
             { dim: 'Flexibility', aug: 'Scale up, down or out with notice', hire: 'Fixed headcount, complex to unwind' },
-            { dim: 'Payroll overhead', aug: 'None, we handle employment, super, leave', hire: 'Employer of record obligations' },
-            { dim: 'Commitment risk', aug: 'Low, typically 3-month minimum', hire: 'High, cultural misfit is expensive' },
+            { dim: 'Commitment risk', aug: 'Low, terms agreed upfront', hire: 'High, cultural misfit is expensive' },
             { dim: 'Deep team integration', aug: 'Good, works within your team fully', hire: 'Strongest, permanent member' },
-            { dim: 'Long-term cost', aug: 'Higher hourly rate than salary equivalent', hire: 'Lower total cost over 2+ years' },
+            { dim: 'Long-term cost', aug: 'Usually higher than a salary over a long period', hire: 'Lower total cost over several years' },
             { dim: 'Best suited for', aug: 'Surge capacity, skill gap, time-sensitive projects', hire: 'Core long-term roles, culture carriers' },
           ].map((row, i) => (
             <div class={`comp-row ${i % 2 === 0 ? 'comp-row-alt' : ''}`}>
@@ -251,7 +250,7 @@ import CTABanner from '../components/CTABanner.astro';
           <span class="section-label">Quality Assurance</span>
           <h2 class="section-heading">Our 5-Step Engineer Vetting Process</h2>
           <p class="section-subheading">
-            Every engineer in our pool has passed this process.
+            Every developer we put forward has been through this process.
             You should never receive a candidate who is not genuinely senior.
           </p>
         </div>
@@ -311,27 +310,25 @@ import CTABanner from '../components/CTABanner.astro';
           <div class="model-card reveal stagger-1">
             <div class="model-header">
               <div class="model-name">Part-Time</div>
-              <div class="model-hours">Minimum 20 hrs/week</div>
+              <div class="model-hours">Part of the week</div>
             </div>
             <p class="model-desc">
               Ideal for augmenting your team with specialised expertise you need consistently but not full-time.
               Common for: DevOps support, QA oversight, UI/UX design or AI/ML capability that doesn't warrant a full-time placement.
             </p>
             <ul class="model-features">
-              <li>Minimum 20 hours per week</li>
               <li>Consistent weekly availability, not ad hoc</li>
               <li>Participates in stand-ups and sprint ceremonies</li>
-              <li>3-month minimum engagement</li>
+              <li>Terms agreed before anyone starts</li>
             </ul>
-            <div class="model-price">Rate on application</div>
+            <div class="model-price">Priced after a conversation with Andy</div>
             <a href="/contact?model=part-time" class="btn-outline model-cta">Enquire</a>
           </div>
 
           <div class="model-card model-featured reveal stagger-2">
-            <div class="model-featured-badge">Most Requested</div>
             <div class="model-header">
               <div class="model-name">Full-Time</div>
-              <div class="model-hours">40 hrs/week</div>
+              <div class="model-hours">Full time</div>
             </div>
             <p class="model-desc">
               A dedicated engineer embedded fully into your team. Attends all team ceremonies, integrates with your
@@ -339,13 +336,13 @@ import CTABanner from '../components/CTABanner.astro';
               for sustained delivery velocity.
             </p>
             <ul class="model-features">
-              <li>Full 40-hour week, your core hours</li>
+              <li>Full time, your core hours</li>
               <li>AEST timezone, same-day response</li>
               <li>Full sprint participation + ownership</li>
               <li>Dedicated to one client only</li>
-              <li>3-month minimum, extend as needed</li>
+              <li>Terms agreed upfront, extend as needed</li>
             </ul>
-            <div class="model-price">Rate on application</div>
+            <div class="model-price">Priced after a conversation with Andy</div>
             <a href="/contact?model=full-time" class="btn-primary model-cta">
               Enquire
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -364,11 +361,11 @@ import CTABanner from '../components/CTABanner.astro';
             </p>
             <ul class="model-features">
               <li>Defined scope, timeline and acceptance criteria</li>
-              <li>Fixed or capped price available</li>
+              <li>One fixed price for the agreed scope, set out in a Schedule of Work</li>
               <li>Dedicated team for duration</li>
               <li>Full handover and documentation</li>
             </ul>
-            <div class="model-price">Quote-based</div>
+            <div class="model-price">Priced after your Discovery Audit</div>
             <a href="/contact?model=project" class="btn-outline model-cta">Get a Quote</a>
           </div>
         </div>
@@ -385,7 +382,7 @@ import CTABanner from '../components/CTABanner.astro';
             <span class="section-label">Timezone and Communication</span>
             <h2 class="section-heading">Australian-Based, Globally Connected</h2>
             <p class="tz-para">
-              All Webbed Labs engineers operate on AEST (UTC+10) or AEDT (UTC+11). This places us in full overlap
+              AWLabs engineers operate on AEST (UTC+10) or AEDT (UTC+11). This places us in full overlap
               with teams on the east coast, and a shared working day with Perth (two to three hours behind).
             </p>
             <p class="tz-para">
@@ -442,16 +439,16 @@ import CTABanner from '../components/CTABanner.astro';
         <div class="faq-list">
           {[
             {
-              q: 'What are your day rates for augmented engineers?',
-              a: 'Rates vary by role seniority, technology specialisation and engagement length, and longer-term commitments attract discounted rates. Rather than publish a static rate card that will not match your specific mix of roles, we issue a fixed rate card at the start of every engagement once we understand the shape of what you need, no hidden charges, no markup surprises, super and insurance included in the stated rate.'
+              q: 'How is staff augmentation priced?',
+              a: 'Experienced developers join your team on agreed terms. Pricing depends on the role, the skills and how long you need them, so it is set after a conversation with Andy, and the terms are written down before anyone starts. For a defined project, we start with the Discovery Audit ($750 plus GST, credited in full against your build) and you receive one fixed price for the agreed scope.'
             },
             {
               q: 'Are your engineers genuinely senior, not just billed at senior rates?',
-              a: 'This is the most important question to ask any augmentation provider and most cannot answer it honestly. Our benchmark is clear: five or more years of commercial experience shipping production software, at least two years in a role with genuine technical ownership (not junior tasks), able to independently design and implement features end-to-end, and capable of reviewing code and mentoring others. If we recommend an engineer, it is because we would put them on our own internal projects.'
+              a: 'This is the most important question to ask any augmentation provider and most cannot answer it honestly. Our benchmark is clear: real commercial experience shipping production software, genuine technical ownership (not junior tasks), able to independently design and implement features end-to-end, and capable of reviewing code and mentoring others. If we recommend an engineer, it is because we would put them on our own internal projects.'
             },
             {
               q: 'What is the minimum engagement length?',
-              a: 'Three months for part-time and full-time placements. This minimum exists because the ramp-up time, learning your codebase, team conventions, domain context, means the first four to six weeks of any placement are below peak contribution. A three-month minimum protects both sides: it gives the engineer time to add genuine value and gives you enough of a run to assess fit and performance fairly.'
+              a: 'It is agreed with you before anyone starts. We usually suggest a period long enough to get past the ramp up, because learning your codebase, team conventions and domain context means the first weeks of any placement are below peak contribution. That protects both sides: it gives the developer time to add genuine value and gives you enough of a run to assess fit and performance fairly.'
             },
             {
               q: 'What happens if the engineer is not a good fit?',
@@ -459,7 +456,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'How quickly can you place someone?',
-              a: 'For common roles (frontend, backend, React, Flutter) we can typically present matched candidates within 48 hours and have an engineer starting within two weeks. For specialist roles (AI/ML engineering, solutions architects, highly specific tech stacks) it may take one to two weeks to identify the right match. We will tell you honestly when we cannot move fast enough for your timeline rather than rushing a poor placement.'
+              a: 'It depends on the role. Common roles (frontend, backend, React, Flutter) are usually quicker to match. Specialist roles (AI/ML engineering, solutions architects, highly specific tech stacks) take longer to find the right person. We will tell you honestly when we cannot move fast enough for your timeline rather than rushing a poor placement.'
             },
             {
               q: 'Do your engineers work exclusively for us during the engagement?',
@@ -467,11 +464,11 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'What is your IP and confidentiality position?',
-              a: 'All work product created by our engineers during an engagement belongs to you. Engineers sign IP assignment agreements before starting. We also provide mutual NDAs for all engagements as standard, there is no additional negotiation required. Confidentiality extends to any proprietary code, business logic, data or product information the engineer encounters.'
+              a: 'Work our developers create for you is assigned to you once the fees for it are paid. We also provide mutual NDAs for all engagements as standard, there is no additional negotiation required. Confidentiality extends to any proprietary code, business logic, data or product information the engineer encounters.'
             },
             {
               q: 'Can you provide a team rather than individual engineers?',
-              a: 'Yes. Project-based engagements typically involve teams of two to six engineers, a tech lead and optionally a QA engineer, working together on a defined deliverable. For larger programmes we can scope an embedded squad with a lead, engineers and an architect working together. Brief us on the team shape you need and we will scope accordingly.'
+              a: 'Yes. Project-based engagements typically involve teams of two to four engineers, a tech lead and optionally a QA engineer, working together on a defined deliverable. For larger programmes we can scope an embedded squad with a lead, engineers and an architect working together. Brief us on the team shape you need and we will scope accordingly.'
             },
             {
               q: 'What is staff augmentation?',

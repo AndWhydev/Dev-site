@@ -16,21 +16,21 @@ import CTABanner from '../components/CTABanner.astro';
 const phases = [
   {
     num: '01',
-    title: 'Discovery',
-    duration: '3 to 10 days',
-    purpose: 'Turn an idea or RFP into a scoped, costed, signable engagement.',
+    title: 'Discovery Audit',
+    duration: 'Written within 7 days of your answers',
+    purpose: 'Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.',
     deliverables: [
-      'Problem statement and success criteria',
-      'Surface map, every screen, integration and data model',
-      'Risk register with mitigation owners',
-      'Fixed price or time-and-materials proposal',
+      'A written audit, typically fifty to seventy pages: scope, build order and dependencies',
+      'Risks across twelve categories, and the seventeen standards your product is assessed against',
+      'The legal documents you will need, identified (not drafted)',
+      'Fixed price Schedule of Work: what is included, the milestones, and the three payments',
       'Mutual NDA executed before any commercial data changes hands',
     ],
   },
   {
     num: '02',
     title: 'Architecture',
-    duration: '1 to 2 weeks',
+    duration: 'scoped per build',
     purpose: 'Decide every technical question that would cost more to undo than to debate.',
     deliverables: [
       'C4-model system diagrams (context, container, component)',
@@ -43,14 +43,14 @@ const phases = [
   {
     num: '03',
     title: 'Build',
-    duration: 'sprint-by-sprint',
-    purpose: 'Ship working software in vertical slices, behind quality gates, with weekly reviews.',
+    duration: 'stage by stage',
+    purpose: 'Ship working software in vertical slices, behind quality gates, in stages you test and accept.',
     deliverables: [
-      'One-week sprints with a public progress board',
+      'Sprint length is set for each build',
       'Trunk-based development with preview deploys per branch',
-      'Daily standup notes published to your project portal',
+      'An update every Tuesday and Friday, Sydney time, with access to test the latest work',
       'A working build at the end of every sprint, never a "wait until launch" gap',
-      'Source code in your GitHub organisation from day one, not handed over at the end',
+      'You can see and test the code while we build; each part is assigned to you as it is paid for in full',
     ],
   },
   {
@@ -83,14 +83,15 @@ const phases = [
   {
     num: '06',
     title: 'Handover and operate',
-    duration: 'from day one',
+    duration: 'after the final payment',
     purpose: 'Make sure the project survives our involvement.',
     deliverables: [
       'Architecture decision records, every non-obvious choice documented',
       'Runbook for every operational scenario (incident, scale, backup, restore)',
       'Knowledge-transfer sessions recorded and indexed',
-      'Source code, secrets and infrastructure ownership transferred to you',
-      'Optional retained-engineering arrangement for ongoing evolution',
+      'Full repository, logins and accounts handed over after the final payment',
+      'A 30 day warranty from launch: we fix bugs and anything caused by our work at no cost',
+      'After that, an optional Care Plan, month to month, priced for your system',
     ],
   },
 ];
@@ -139,16 +140,16 @@ const gates = [
 ];
 
 const weekly = [
-  { day: 'Mon', what: 'Sprint kick-off + commitments published to portal' },
-  { day: 'Tue, Thu', what: 'Build · async by default · standup notes posted daily' },
-  { day: 'Fri AM', what: 'Demo of working software (recorded if you can\'t attend live)' },
-  { day: 'Fri PM', what: 'Retrospective + next sprint planned · written summary sent' },
+  { day: 'Tue', what: 'Update sent, Sydney time, with access to test the latest work' },
+  { day: 'Wed, Thu', what: 'Build continues · async by default' },
+  { day: 'Fri', what: 'Update sent, Sydney time, with access to test the latest work' },
+  { day: 'Each stage', what: 'You test and accept the stage before the next one starts' },
 ];
 ---
 
 <Layout
-  title="How We Deliver, Methodology | All Webbed Labs"
-  description="How All Webbed Labs delivers software: discovery, architecture, build, quality gates, release and handover. No slogans, just the artefacts, gates and cadence."
+  title="How We Deliver, Methodology | AWLabs"
+  description="How AWLabs delivers software: discovery, architecture, build, quality gates, release and handover. No slogans, just the artefacts, gates and cadence."
 >
   <Header />
   <main>
@@ -162,7 +163,7 @@ const weekly = [
             How we actually deliver.
           </h1>
           <p class="meth-lead">
-            This page is the operating manual. Every phase below produces specific, named artefacts; every release passes specific, named gates; every week has a specific, named cadence. Nothing here is aspirational, it is the floor, not the ceiling, of how we run an engagement.
+            This page is the operating manual. Every phase below produces specific, named artefacts; every release passes specific, named gates; every week has a specific, named cadence. Sprint length is set for each build. You get an update every Tuesday and Friday, Sydney time, with access to test the latest work.
           </p>
         </div>
       </div>
@@ -250,7 +251,7 @@ const weekly = [
 
         <div class="week-promise reveal">
           <div class="week-promise-label">The promise</div>
-          <p>If a sprint commitment is at risk, you hear it from us by Wednesday at the latest. We do not save bad news for the Friday demo.</p>
+          <p>If a stage is at risk, you hear it from us in the next Tuesday or Friday update at the latest. We do not save bad news.</p>
         </div>
       </div>
     </section>
@@ -319,13 +320,13 @@ const weekly = [
           <div class="esc-row reveal">
             <div class="esc-row-tier">Tier 1</div>
             <div class="esc-row-body">
-              <strong>Sprint risk surfaced.</strong> Engineer-to-engineer. Logged in the portal and discussed at the next standup. Mitigation drafted same day.
+              <strong>Sprint risk surfaced.</strong> Engineer-to-engineer. Logged and raised in the next update. Mitigation drafted same day.
             </div>
           </div>
           <div class="esc-row reveal">
             <div class="esc-row-tier">Tier 2</div>
             <div class="esc-row-body">
-              <strong>Sprint commitment at risk.</strong> Delivery lead writes you a same-week summary: what slipped, why, options to recover, recommended path.
+              <strong>Stage at risk.</strong> Andy writes you a same week summary: what slipped, why, options to recover, recommended path.
             </div>
           </div>
           <div class="esc-row reveal">

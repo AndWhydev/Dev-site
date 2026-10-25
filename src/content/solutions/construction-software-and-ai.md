@@ -22,9 +22,9 @@ faqs:
   - q: "Can AI do quantity takeoff from our drawings?"
     a: "Tools exist that assist with takeoff from PDF and CAD drawings, and they're improving, but accuracy depends heavily on drawing quality and conventions. We'd treat any automated takeoff as a first pass for an estimator to check, and we'd measure it against your past jobs before trusting it on a tender."
   - q: "How long does custom construction software take to build?"
-    a: "A focused module, such as payment claims and retention for two states with a Xero integration, typically takes 12 to 20 weeks from the start of discovery to rollout. An offline site app for diaries, SWMS and inductions adds several weeks on top. A full custom job management system is a larger project, scoped individually after discovery."
+    a: "A focused module, such as payment claims and retention for two states with a Xero integration, typically takes 10 to 17 weeks from the Discovery Audit to rollout. An offline site app for diaries, SWMS and inductions adds several weeks on top. A full custom job management system is a larger project, scoped individually after the Discovery Audit."
   - q: "How do you integrate with Xero or MYOB?"
-    a: "Through their official APIs. Typically job costs, supplier bills, progress claims and payments sync between the job system and the ledger, with the accounting package remaining the source of truth for money. Each API has rate limits and data model quirks, so the integration design is settled in discovery rather than assumed."
+    a: "Through their official APIs. Typically job costs, supplier bills, progress claims and payments sync between the job system and the ledger, with the accounting package remaining the source of truth for money. Each API has rate limits and data model quirks, so the integration design is settled in the Discovery Audit rather than assumed."
   - q: "What happens with Victoria, since it didn't adopt the model WHS laws?"
     a: "Victoria has its own occupational health and safety legislation, regulated by WorkSafe Victoria. The site records you need are broadly similar in practice, but the terminology, forms and some duties differ, so a multi-state builder's software needs configurable forms per jurisdiction rather than one hard-coded set."
 sources:
@@ -139,7 +139,7 @@ The engineering challenge is less the forms than the conditions: gloves, glare, 
 | Your process is your competitive advantage (a specialised trade, prefab, maintenance contracts) | A custom core system is more likely to pay back |
 | You're a small trade business with standard workflows | Buy an off-the-shelf job management product; custom software is probably overkill |
 
-Every vendor API has rate limits, webhooks of varying reliability and data model quirks, so integrations are designed in discovery. Our [API development](/services/api-development) and [build vs buy](/guides/build-vs-buy-software) pages go further.
+Every vendor API has rate limits, webhooks of varying reliability and data model quirks, so integrations are designed in the Discovery Audit. Our [API development](/services/api-development) and [build vs buy](/guides/build-vs-buy-software) pages go further.
 
 ## How is AI used in construction?
 
@@ -169,18 +169,19 @@ A useful test before starting: name the person who will be accountable for the s
 
 ## What does a typical engagement look like?
 
-**A worked example: a payment claims and retention module for a mid-sized commercial builder working in NSW and Queensland, integrating with an existing project platform and Xero.** Figures are typical Australian market ranges (AUD, ex GST) for an onshore senior team, labelled as ranges, not quotes. See our [custom software cost guide](/guides/custom-software-development-cost-australia) for the basis.
+**A worked example: a payment claims and retention module for a mid-sized commercial builder working in NSW and Queensland, integrating with an existing project platform and Xero.** Figures are typical Australian market ranges (AUD, ex GST) for an onshore senior team, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Phase | Weeks | Scope | Typical range (AUD, ex GST) |
 |---|---|---|---|
-| Discovery | 2 to 3 | Map current claims process, contract types, state rules, integration points; fixed price | $10,000 to $20,000 |
 | Core build | 6 to 10 | Contracts register, claims and schedules, deadline engine for two states, evidence store | $45,000 to $90,000 |
 | Integrations | 2 to 4 | Project platform read, Xero push for claims and retentions | $15,000 to $35,000 |
 | Testing and rollout | 2 to 3 | Parallel run on live jobs, training, fixes | $8,000 to $20,000 |
-| **Total** | **12 to 20** | | **$78,000 to $165,000** |
+| **Total** | **10 to 17** | | **$68,000 to $145,000** |
 
-Adding an offline site app for diaries, SWMS and inductions typically adds $40,000 to $90,000 depending on the number of forms and approval flows. Ongoing maintenance usually runs at 15 to 20% of build cost a year.
+In the same market, adding an offline site app for diaries, SWMS and inductions typically adds $40,000 to $90,000 depending on the number of forms and approval flows.
 
-## How All Webbed Labs approaches construction software
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work. After launch you get a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, support is an optional Care Plan, month to month, priced for your system.
 
-We start with a paid discovery that maps your contracts and states before any design, then quote a fixed price. Regulatory rules go into configuration with effective dates, so a legislative change is a settings update rather than a rebuild. Source code sits in your repository from day one and IP transfers on completion. Every change passes automated type checks, visual tests and security scans and a senior engineer's review before release. See our [custom app development](/services/custom-app-development) service to start a conversation.
+## How AWLabs approaches construction software
+
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps your contracts and states before any design. After two strategy sessions you receive a fixed price for an agreed scope. Regulatory rules go into configuration with effective dates, so a legislative change is a settings update rather than a rebuild. Deadlines are calculated from rules your contract administrator or lawyer confirms; whether a claim is valid stays with them. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. Every change passes automated type checks, visual tests and security scans and a senior engineer's review before release. See our [custom app development](/services/custom-app-development) service to start a conversation.

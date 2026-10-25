@@ -71,7 +71,7 @@ interface Props {
   slug?: string;
   /** One-sentence, third-person liftable summary of this service. */
   summaryStatement?: string;
-  /** Pricing tiers (placeholder ranges, AUD). */
+  /** Pricing block. Not used: AWLabs publishes no build prices (only the Discovery Audit fee). */
   pricing?: PricingTier[];
   /** When this IS / is NOT the right solution, also carries the negative qualifiers. */
   comparison?: Comparison;
@@ -167,10 +167,10 @@ const entitySentence = BRAND_DEFINITION;
           <p class="svc-hero-tagline">{heroTagline}</p>
           <div class="svc-hero-ctas">
             <a href="/contact" class="btn-primary">
-              Get a Quote
+              Start with a Discovery Call
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/contact" class="btn-outline">Book a Discovery Call</a>
+            <a href="/why-audit" class="btn-outline">How the Discovery Audit works</a>
           </div>
         </div>
         {heroIcon && (
@@ -197,7 +197,7 @@ const entitySentence = BRAND_DEFINITION;
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Full IP ownership transferred on completion</span>
+              <span>Your code and IP assigned to you on payment</span>
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -205,15 +205,15 @@ const entitySentence = BRAND_DEFINITION;
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Post-launch support and SLA available</span>
+              <span>Care Plan support after launch</span>
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Australian-registered entity, AEST hours</span>
+              <span>Australian company, Sydney business hours</span>
             </div>
             <div class="highlight-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Enterprise security standards built-in</span>
+              <span>Security built to fit your risk</span>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Key Benefits</span>
-          <h2 class="section-heading">Why choose All Webbed Labs for {name}?</h2>
+          <h2 class="section-heading">Why choose AWLabs for {name}?</h2>
         </div>
         <div class="benefits-grid">
           {benefits.map((b, i) => (
@@ -265,7 +265,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Technology Stack</span>
-          <h2 class="section-heading">What technologies does All Webbed Labs use for {name}?</h2>
+          <h2 class="section-heading">What technologies does AWLabs use for {name}?</h2>
         </div>
         <div class="tech-tags reveal stagger-1">
           {technologies.map((tech) => (
@@ -354,9 +354,9 @@ const entitySentence = BRAND_DEFINITION;
       <section class="svc-pricing">
         <div class="svc-inner">
           <div class="reveal">
-            <span class="section-label">Indicative Pricing</span>
+            <span class="section-label">Pricing</span>
             <h2 class="section-heading">How much does {name} cost?</h2>
-            <p class="svc-pricing-note">Indicative ranges in AUD to help you budget. Every engagement is scoped individually, book a discovery call for a fixed quote tailored to your requirements.</p>
+            <p class="svc-pricing-note">Every build is scoped and priced individually after a Discovery Audit.</p>
           </div>
           <div class="pricing-grid">
             {pricing.map((tier, i) => (

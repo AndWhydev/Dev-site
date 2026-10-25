@@ -199,6 +199,6 @@ Our comparison of [open-weight vs API models](/guides/open-weight-vs-api-llms) c
 7. **Set spend alerts and per-user limits** to catch runaway agent loops early.
 8. **Re-check prices quarterly.** New model releases often deliver the same quality for less.
 
-## How All Webbed Labs manages LLM running costs
+## How AWLabs manages LLM running costs
 
-We build a cost model during discovery, using your real documents and expected volumes, so you see a monthly range before committing to a build. Systems we deliver log token usage per feature, use caching and model routing where testing shows no loss of quality, and include spend alerts. We default to Australian regions where the model you need is available there and show you what the regional premium costs. See our [LLM integration services](/services/llm-integration).
+Our Discovery Audit looks at the case for building it and works through the potential return using your own figures, so running costs are part of the decision before you commit to a build. Systems we deliver log token usage per feature, use caching and model routing where testing shows no loss of quality, and include spend alerts. We usually recommend Australian regions where the model you need is available there, and show you what the regional premium costs. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. See our [LLM integration services](/services/llm-integration).

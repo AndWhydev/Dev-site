@@ -75,6 +75,7 @@ related:
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"
+disclaimer: legal
 ---
 
 ## Freelancer vs agency vs in-house developers: which is right for you?
@@ -149,7 +150,7 @@ Agencies fit best when:
 - Nobody in-house can lead engineering or judge technical quality.
 - You want a fixed price or a clear budget rather than an open-ended headcount cost.
 
-The honest downsides: the hourly rate is higher, you're one client among several, and a poor agency can leave you with code nobody else understands. That last risk is manageable. Insist on code in your own repository from day one, documentation, and written IP assignment. Our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) covers what to check.
+The honest downsides: the hourly rate is higher, you're one client among several, and a poor agency can leave you with code nobody else understands. That last risk is manageable. Make sure the contract says the IP becomes yours as each stage is paid for, that you can see the code while it is built, and that the repository and every account move into your name at handover, with documentation. Our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) covers what to check.
 
 If you want agency engineers working inside your team under your direction, that's [staff augmentation](/staff-augmentation), which sits between contracting and a project engagement.
 
@@ -172,6 +173,6 @@ Moral rights are separate. Under the Act they can't be assigned at all, so good 
 | First version of a new product, future team size unknown | Agency to build, then hire and hand over |
 | Only one developer affordable, system is business-critical | One hire plus an external partner for review and cover |
 
-## How All Webbed Labs fits in
+## How AWLabs fits in
 
-We're an agency, so the honest advice above applies to us too: if you have years of continuous work and can build a team, hire. Where we fit is building a first version or a defined project with senior engineers only, then handing over cleanly. Code lives in your repository from day one and IP transfers on completion, so an in-house team can take over without starting again. We also provide engineers into existing teams through [staff augmentation](/staff-augmentation). See our [custom software development service](/services/custom-app-development).
+We're an agency, so the honest advice above applies to us too: if you have years of continuous work and can build a team, hire. Where we fit is building a first version or a defined project with senior engineers only, then handing over cleanly. Each part of the build is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment, so an in-house team can take over without starting again. We also provide engineers into existing teams through [staff augmentation](/staff-augmentation). See our [custom software development service](/services/custom-app-development).

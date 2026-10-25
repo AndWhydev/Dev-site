@@ -56,7 +56,7 @@ related:
 service:
   title: "LLM integration"
   href: "/services/llm-integration"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## What is an AI hallucination? Meaning and examples
@@ -149,6 +149,6 @@ The result is not a system that never errs. It's one whose errors are visible (a
 
 The OAIC recommends human oversight, verifying outputs before recording them, and marking AI-generated information in records as such. If your system writes AI output about people into a CRM, case file or decision, build those steps in. Read more in [using personal information in AI systems](/guides/privacy-act-and-ai).
 
-## How All Webbed Labs handles hallucination risk
+## How AWLabs handles hallucination risk
 
-We start by rating the use case on the risk matrix above, then choose controls to match. By default that means answers grounded in retrieved sources with per-claim citations, tested refusal behaviour, facts pulled from systems of record rather than the model, schema validation for extraction, and an evaluation set that runs on every change. See our [LLM integration](/services/llm-integration) and [RAG knowledge base](/services/rag-knowledge-base) services.
+We start by rating the use case on the risk matrix above, then choose controls to match. By default that means answers grounded in retrieved sources with per-claim citations, tested refusal behaviour, facts pulled from systems of record rather than the model, schema validation for extraction, and an evaluation set that runs on every change. What is in your build is listed in your Schedule of Work. See our [LLM integration](/services/llm-integration) and [RAG knowledge base](/services/rag-knowledge-base) services.

@@ -6,8 +6,8 @@ import Footer from '../components/Footer.astro';
 const documents = [
   {
     title: 'Mutual NDA',
-    description: 'A standard mutual non-disclosure agreement. We sign this before any commercial detail changes hands so you can speak freely about your business, roadmap and competitive position.',
-    notice: 'If you would prefer a fully executed copy on file, please return a signed version by email prior to our scheduled meeting. Otherwise, by continuing our discussions, both parties shall be deemed to have accepted the terms set out in this NDA.',
+    description: 'Our mutual non-disclosure agreement. We send it before you share your idea so you can speak freely about your business, roadmap and competitive position.',
+    notice: 'Our NDA is signed by AW Labs Pty Ltd. You accept it by replying to our email to say you agree. No wet signature needed.',
     filename: 'mutual-nda.pdf',
     href: '/client-pack/mutual-nda.pdf',
     size: '12 KB',
@@ -15,11 +15,11 @@ const documents = [
     order: '01',
   },
   {
-    title: 'How This Works',
-    description: 'Our engagement process from first call to handover, discovery, scoping, build cadence, quality gates and what we hand over at the end. Read this if you want to know exactly what working with us looks like.',
-    filename: 'how-this-works.pdf',
-    href: '/client-pack/how-this-works.pdf',
-    size: '10 KB',
+    title: 'Master Services Agreement',
+    description: 'The standing terms for every build. You sign it with your fixed price Schedule of Work, only when you are ready to go ahead. Read it now, share it with your advisers, and ask us about any clause.',
+    filename: 'msa.pdf',
+    href: '/client-pack/msa.pdf',
+    size: null,
     pages: null,
     order: '02',
   },
@@ -27,8 +27,8 @@ const documents = [
 ---
 
 <Layout
-  title="How We Work, Process & NDA | All Webbed Labs"
-  description="Browse our engagement process document and mutual NDA. Everything we share with prospective clients after a discovery call."
+  title="How We Work, Process & NDA | AWLabs"
+  description="Our mutual NDA and how a build with us runs, from the first call to signing."
   noindex={true}
 >
   <Header />
@@ -40,14 +40,14 @@ const documents = [
         <div class="reveal">
           <span class="section-label">Client Resources</span>
           <h1 class="hwk-title">
-            Everything we send<br />
-            <span class="gradient-text">after a discovery call.</span>
+            Our NDA and<br />
+            <span class="gradient-text">how a build runs.</span>
           </h1>
           <p class="hwk-lead">
-            Three documents you would normally receive by email, published here so you can grab them whenever you need them, share them internally and reference them while we scope your engagement.
+            Two documents you would normally receive by email, published here so you can grab them whenever you need them and share them internally.
           </p>
           <p class="hwk-sub">
-            If you have already spoken with us, this is the pack we promised to send through. If you have not, the documents below give a clear picture of what we build, how we work and the terms we operate under.
+            If you have already spoken with us, this is the pack we promised to send through. If you have not, the documents below and the steps further down show how we work and the terms we operate under.
           </p>
         </div>
       </div>
@@ -110,38 +110,60 @@ const documents = [
         <div class="next-grid">
           <div class="reveal-left">
             <span class="section-label">What Happens Next</span>
-            <h2 class="section-heading">The Path from Here to Signed</h2>
-            <p>If the process document holds up to your standards, the next step is a working session. We use it to translate your brief into a concrete scope, a fixed timeline and an honest price.</p>
-            <p>Before that session, we sign the mutual NDA so you can share anything material to the conversation, roadmaps, competitive context, internal politics, the parts of the problem your team has already tried.</p>
-            <p>From a signed NDA to a costed proposal is typically five to ten working days, depending on how much surface area we need to map.</p>
+            <h2 class="section-heading">From First Call to Launch</h2>
+            <p>Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.</p>
+            <p>We send the mutual NDA before you share your idea, so you can tell us anything material: roadmaps, competitive context and the parts of the problem your team has already tried.</p>
+            <p>The audit is one written document, typically fifty to seventy pages. It maps the scope, the risks across twelve categories, the seventeen standards your product is assessed against, the legal documents you will need, dependencies, build order, marketing and unit economics, investment readiness, the competition and the case for building it, and the potential return on your own figures. You keep it whoever builds.</p>
+            <p>Every build is one fixed price for an agreed scope, set out in a Schedule of Work and paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover.</p>
           </div>
           <div class="next-steps reveal-right stagger-2">
             <div class="next-step">
               <div class="ns-num">1</div>
               <div class="ns-body">
-                <strong>Read the pack</strong>
-                <span>Process doc and NDA. About ten minutes total.</span>
+                <strong>Discovery Call</strong>
+                <span>A short phone call with our team.</span>
               </div>
             </div>
             <div class="next-step">
               <div class="ns-num">2</div>
               <div class="ns-body">
-                <strong>Sign the NDA</strong>
-                <span>Mutual, no scope, no commitment, purely so we can talk freely.</span>
+                <strong>Discovery Audit Meeting</strong>
+                <span>Sixty minutes on Zoom with Andy. If it is a fit, you book the Discovery Audit: $750 plus GST, credited in full against your build.</span>
               </div>
             </div>
             <div class="next-step">
               <div class="ns-num">3</div>
               <div class="ns-body">
-                <strong>Scoping session</strong>
-                <span>Sixty to ninety minutes. We turn your brief into a surface map and risk register.</span>
+                <strong>Discovery Audit Session</strong>
+                <span>Sixty minutes on what you need built. Your written audit follows within seven days of your answers.</span>
               </div>
             </div>
             <div class="next-step">
               <div class="ns-num">4</div>
               <div class="ns-body">
-                <strong>Costed proposal</strong>
-                <span>Fixed price or time-and-materials, deliverables, milestones, payment schedule.</span>
+                <strong>Strategy Session one</strong>
+                <span>We walk you through the audit and the build scope.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">5</div>
+              <div class="ns-body">
+                <strong>Strategy Session two</strong>
+                <span>Your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">6</div>
+              <div class="ns-body">
+                <strong>Build</strong>
+                <span>You get an update every Tuesday and Friday, Sydney time, with access to test the latest work. You accept each stage.</span>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">7</div>
+              <div class="ns-body">
+                <strong>Handover and warranty</strong>
+                <span>A 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, an optional Care Plan, month to month.</span>
               </div>
             </div>
           </div>

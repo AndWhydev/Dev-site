@@ -7,7 +7,7 @@ import CTABanner from '../components/CTABanner.astro';
 ---
 
 <Layout
-  title="Digital Transformation Services Australia | All Webbed Labs"
+  title="Digital Transformation Services Australia | AWLabs"
   description="Digital transformation consulting and delivery in Australia: legacy modernisation, cloud migration, process automation and the change management that sticks."
 >
   <Header />
@@ -50,7 +50,7 @@ import CTABanner from '../components/CTABanner.astro';
             <div class="trust-divider"></div>
             <div class="trust-item"><span class="trust-num">Phased</span><span class="trust-label">Measurable Milestones</span></div>
             <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">AU</span><span class="trust-label">Cloud Regions by Default</span></div>
+            <div class="trust-item"><span class="trust-num">AU</span><span class="trust-label">Hosting Region Agreed Upfront</span></div>
           </div>
         </div>
         <div class="dt-hero-visual reveal-right stagger-2" aria-hidden="true">
@@ -100,7 +100,7 @@ import CTABanner from '../components/CTABanner.astro';
             {[
               { stat: 'Most', desc: 'large transformation programs miss at least some of their goals, which is why we deliver in phases that each stand on their own' },
               { stat: 'Phase 1', desc: 'ships working software in weeks, so the value is proven before the larger spend is committed' },
-              { stat: '6 to 24mo', desc: 'realistic timeline for meaningful transformation of a mid-market enterprise' },
+              { stat: 'Phased', desc: 'each phase has its own scope, so the timeline is set phase by phase rather than promised upfront' },
               { stat: 'Day 1', desc: 'when change management should start, not after the technology is deployed' },
             ].map((s, i) => (
               <div class={`what-stat-item reveal stagger-${i + 1}`}>
@@ -160,7 +160,7 @@ import CTABanner from '../components/CTABanner.astro';
             {
               icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
               title: 'DevOps and Platform Engineering',
-              desc: 'CI/CD pipeline implementation, infrastructure-as-code, automated testing, security scanning, observability platforms and internal developer platforms. Cuts deployment cycle from months to hours and dramatically reduces production incidents.'
+              desc: 'CI/CD pipeline implementation, infrastructure-as-code, automated testing, security scanning, observability platforms and internal developer platforms. Shortens the deployment cycle sharply and reduces production incidents.'
             },
             {
               icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
@@ -348,7 +348,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'Where do you start, with technology or with process?',
-              a: 'Process first, always. Automating or migrating a broken process makes it faster and cheaper to be wrong. Before touching any technology, we conduct process discovery workshops to map current state, identify waste and redesign the process for how it should work, then we build the technology that supports the redesigned process. This is the discipline that separates transformations that deliver ROI from those that do not.'
+              a: 'Process first, always. Automating or migrating a broken process makes it faster and cheaper to be wrong. Before touching any technology, we map the current process as part of the Discovery Audit, identify waste and redesign the process for how it should work, then we build the technology that supports the redesigned process. This is the discipline that separates transformations that deliver ROI from those that do not.'
             },
             {
               q: 'Can you modernise our legacy systems without shutting them down?',
@@ -360,7 +360,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'What is your approach to data migration?',
-              a: 'Data migration is the highest-risk phase of most transformation programmes. Our approach: data profiling and quality assessment before migration begins; migration of a representative data sample to staging first; automated reconciliation to verify data integrity; a parallel-running period where old and new systems operate simultaneously; and a clearly defined cutover plan with rollback capability. We design every migration so that data loss is not a possible failure mode, only deferred cutover is.'
+              a: 'Data migration is the highest-risk phase of most transformation programmes. Our approach: data profiling and quality assessment before migration begins; migration of a representative data sample to staging first; automated reconciliation to verify data integrity; a parallel-running period where old and new systems operate simultaneously; and a clearly defined cutover plan with rollback capability. We design every migration to protect against data loss, so the usual fallback is a deferred cutover rather than lost data.'
             },
             {
               q: 'How do you quantify ROI on a digital transformation programme?',
@@ -380,7 +380,7 @@ import CTABanner from '../components/CTABanner.astro';
             },
             {
               q: 'How much does digital transformation cost?',
-              a: 'There is no meaningful single figure, because a programme can range from one application moving to the cloud to an organisation-wide change over several years. We break it into phases, each with a defined scope, fixed price and measurable outcome, so you can fund the next phase once the previous one has delivered. The first step is usually a short assessment that sizes the programme honestly.'
+              a: 'There is no meaningful single figure, because a programme can range from one application moving to the cloud to an organisation-wide change over several years. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. It sizes the programme honestly. Each build after that is one fixed price for an agreed scope, set out in a Schedule of Work. Larger programmes are split into separate builds, so you can fund the next once the previous one has delivered.'
             },
           ].map((faq, i) => (
             <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>
@@ -655,7 +655,7 @@ import CTABanner from '../components/CTABanner.astro';
         'Identify one or two high-pain, high-volume manual processes for quick-win automation',
         'Begin cloud readiness assessment for non-critical workloads',
         'Establish a data governance baseline covering naming, ownership and quality',
-        'Book a discovery engagement to build a prioritised 12-month roadmap',
+        'Book a Discovery Audit to build a prioritised roadmap',
       ],
     },
     developing: {
@@ -673,7 +673,7 @@ import CTABanner from '../components/CTABanner.astro';
     advanced: {
       label: 'Advanced',
       title: 'Advanced: Optimise and Differentiate',
-      desc: 'Your digital foundations are solid. Cloud-native, automated, data-driven and deploying continuously, you are in the top quartile of Australian enterprise digital maturity. The focus now shifts from foundational transformation to competitive differentiation through AI, personalisation and next-generation customer experience.',
+      desc: 'Your digital foundations are solid. Cloud-native, automated, data-driven and deploying continuously, your digital maturity is well advanced. The focus now shifts from foundational transformation to competitive differentiation through AI, personalisation and next-generation customer experience.',
       steps: [
         'Invest in AI/ML capabilities layered onto your clean data foundation',
         'Platform engineering: build the internal developer platform that compounds productivity',

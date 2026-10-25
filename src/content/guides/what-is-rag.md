@@ -182,6 +182,6 @@ Before commissioning a RAG build, check you can answer yes to most of these:
 - We know where the data must be stored and processed (see [data residency vs sovereignty](/guides/data-residency-vs-data-sovereignty)).
 - Someone will own the system after launch and review its failures.
 
-## How All Webbed Labs approaches RAG
+## How AWLabs approaches RAG
 
-We start with the evaluation set and the permission model, then the retrieval pipeline, and only then the chat interface. By default we use hybrid search with reranking, chunk-level context, permission filters applied at retrieval, and citations on every answer, hosted in Australian cloud regions. For many projects PostgreSQL with pgvector is enough and avoids another vendor. Every change is measured against the test set before it ships. See [RAG knowledge base development](/services/rag-knowledge-base), or read what drives the price in [how much a RAG knowledge base costs](/guides/rag-knowledge-base-cost).
+We start with the evaluation set and the permission model, then the retrieval pipeline, and only then the chat interface. By default we use hybrid search with reranking, chunk-level context, permission filters applied at retrieval, and citations on every answer, hosted in an Australian cloud region where the services you need are available there. For many projects PostgreSQL with pgvector is enough and avoids another vendor. Every change is measured against the test set before it ships. See [RAG knowledge base development](/services/rag-knowledge-base), or read what drives the price in [how much a RAG knowledge base costs](/guides/rag-knowledge-base-cost).

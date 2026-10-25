@@ -5,7 +5,7 @@ description: "AI for accounting firms in Australia: real examples, accounting au
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI for accounting firms in Australia works best on the document-heavy work around compliance jobs: collecting and sorting client records, extracting figures into workpapers, drafting queries and answering staff questions from the firm's own procedures. The main constraint is Code item 6 of the Tax Practitioners Board's Code of Professional Conduct: an AI provider is a third party, so client permission, disclosure in engagement letters and tight data handling come first. A custom build for a mid-sized firm typically costs $40k to $205k (AUD, ex GST) including discovery."
+summary: "AI for accounting firms in Australia works best on the document-heavy work around compliance jobs: collecting and sorting client records, extracting figures into workpapers, drafting queries and answering staff questions from the firm's own procedures. The main constraint is Code item 6 of the Tax Practitioners Board's Code of Professional Conduct: an AI provider is a third party, so client permission, disclosure in engagement letters and tight data handling come first. Market ranges put a custom build for a mid-sized firm at roughly $30k to $180k (AUD, ex GST)."
 takeaways:
   - "The TPB says third parties include offsite and cloud storage providers; treat an AI model provider the same way and cover it in your engagement letter."
   - "Xero's revised developer terms (effective from 4 December 2025 for new developers and 2 March 2026 for existing ones) prohibit using data obtained from its APIs to train AI or machine learning models."
@@ -20,7 +20,7 @@ faqs:
   - q: "Can AI prepare and lodge tax returns?"
     a: "AI can assemble data and draft schedules, but lodgment and the positions taken should stay with a registered agent. The Code requires tax agent services provided on your behalf to be provided competently and requires reasonable care in applying the tax law. A human review step is how you meet that when AI is involved."
   - q: "Will this work with Xero Practice Manager?"
-    a: "Usually, but check access first. At the time of writing, Xero lists the XPM API as a premium feature requiring a security assessment and use case approval, available on its higher partner tiers. That approval can take longer than the build, so it belongs in discovery."
+    a: "Usually, but check access first. At the time of writing, Xero lists the XPM API as a premium feature requiring a security assessment and use case approval, available on its higher partner tiers. That approval can take longer than the build, so it belongs in the Discovery Audit."
   - q: "We're a 10-person firm. Is custom AI worth it?"
     a: "Often not yet. Start with the AI features in the software you already pay for and a well-configured business AI assistant. Custom work makes sense when a recurring workflow crosses several systems, or when you have firm-specific procedures that generic tools can't follow."
   - q: "Will AI replace accountants?"
@@ -166,17 +166,18 @@ Our [build vs buy guide](/guides/build-vs-buy-software) goes through the total c
 
 ## What does it cost for a mid-sized firm?
 
-**Custom AI work for a mid-sized firm typically runs 6 to 19 weeks and $40,000 to $205,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
+**Custom AI work for a mid-sized firm typically runs 4 to 16 weeks and $30,000 to $180,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote.
 
 | Scope | Typical duration | Typical range (AUD, ex GST) |
 |---|---|---|
-| Discovery: workflows, systems, API access, confidentiality review | 2 to 3 weeks | $10,000 to $25,000 |
 | Internal procedures assistant over the firm's manuals | 4 to 6 weeks | $30,000 to $60,000 |
 | Records intake and workpaper extraction for one job type | 6 to 10 weeks | $50,000 to $110,000 |
 | Multi-system workflow across ledger, practice management and portal | 10 to 16 weeks | $90,000 to $180,000 |
 
-Worked example: a records intake workflow of about 400 hours at a blended $170 an hour is $68,000; with $15,000 of discovery the project is $83,000 ex GST. Running costs are mainly model usage, which scales with pages processed, plus hosting and any Xero partner tier fee.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
-## How All Webbed Labs works with accounting firms
+Running costs are mainly model usage, which scales with pages processed, plus hosting and any Xero partner tier fee.
 
-We start with paid discovery that maps your workflows, confirms API access with Xero, MYOB and your practice tools, and sets out the confidentiality position for your partners to approve. Then we build at a fixed price, with data in Australian regions by default and every change going through automated quality gates and a senior engineer's review. Code sits in your repository from day one. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and [AI knowledge bases for professional services firms](/solutions/professional-services-knowledge-base).
+## How AWLabs works with accounting firms
+
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps your workflows, confirms API access with Xero, MYOB and your practice tools, and identifies the confidentiality questions for your partners to decide. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change goes through automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and [AI knowledge bases for professional services firms](/solutions/professional-services-knowledge-base).

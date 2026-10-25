@@ -2,7 +2,7 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'LLM Integration Services Australia | All Webbed Labs',
+  metaTitle: 'LLM Integration Services Australia | AWLabs',
   metaDescription: 'LLM integration services in Australia: OpenAI, Anthropic Claude and open-weight models embedded in your systems, with guardrails, evaluation and cost control.',
   category: 'AI & Data',
   serviceName: 'LLM Integration',
@@ -18,7 +18,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3z"/></svg>',
       title: 'Model-Agnostic Architecture',
-      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping Claude for GPT-4o, or moving a workload to a self-hosted open-weight model, becomes a configuration change validated against your test suite, not a rewrite. This protects you from pricing changes and model deprecation.',
+      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping an Anthropic model for an OpenAI one, or moving a workload to a self-hosted open-weight model, becomes a configuration change validated against your test suite, not a rewrite. This protects you from pricing changes and model deprecation.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>',
@@ -43,13 +43,13 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
       title: 'Data Residency and Privacy',
-      description: 'For data governed by the Privacy Act 1988 or internal residency rules, we deploy open-weight models within Australian regions, use zero-retention API configurations, and keep regulated data out of any provider training pipeline. Compliance constraints shape the architecture from day one.',
+      description: 'For data governed by the Privacy Act 1988 or internal residency rules, we can deploy open-weight models in Australian cloud regions, and where a hosted model is used we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and document the terms that apply. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Those constraints shape the architecture from the start.',
     },
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   technologies: [
-    'OpenAI GPT-4o', 'Anthropic Claude', 'Azure OpenAI Service', 'Amazon Bedrock',
+    'OpenAI models', 'Anthropic Claude', 'Azure OpenAI Service', 'Amazon Bedrock',
     'Meta Llama', 'Mistral', 'vLLM', 'LangChain', 'LangGraph', 'Instructor',
     'Pydantic', 'OpenTelemetry', 'Langfuse', 'Python / TypeScript',
   ],
@@ -64,7 +64,7 @@ const data = {
       step: '02',
       title: 'Model Selection and Data Residency Review',
       duration: 'Weeks 2 to 3',
-      description: 'We select candidate models based on capability, cost, latency and residency requirements. Where the Privacy Act 1988 or internal policy applies, we determine whether a hosted API with zero-retention terms is acceptable or whether an open-weight model served in an Australian region is required, and we document that decision for your compliance team.',
+      description: 'We select candidate models based on capability, cost, latency and residency requirements. Where the Privacy Act 1988 or internal policy applies, we set out whether a hosted API with the provider\'s enterprise data terms or an open-weight model served in an Australian region fits your requirements, and we document that recommendation for your compliance team to confirm.',
     },
     {
       step: '03',
@@ -112,7 +112,7 @@ const data = {
     },
     {
       question: 'Where does our data go, and is it used to train the model?',
-      answer: 'This depends on the deployment you choose, and we design it around your obligations under the Privacy Act 1988. Hosted providers such as OpenAI and Anthropic offer enterprise terms with zero data retention and a contractual guarantee that your inputs are not used for training, we configure these explicitly. Where data residency requires it, we deploy open-weight models within an Australian cloud region so that regulated information never leaves the jurisdiction. We document the data flow so your compliance and security teams can review it before launch.',
+      answer: 'This depends on the deployment you choose, and your lawyer or privacy adviser confirms how the Privacy Act 1988 applies to you. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. We can deploy open-weight models in an Australian cloud region; if your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. We document the data flow so your compliance and security teams can review it before launch.',
     },
     {
       question: 'How much does it cost to run an LLM feature in production?',
@@ -144,7 +144,7 @@ const data = {
       'You have a clear, bounded task, drafting, summarising, classifying, extracting or querying, where language understanding adds real value',
       'You want to use a capable existing model rather than fund training, and need it integrated reliably into production systems',
       'You can define what good output looks like, which makes an evaluation harness possible',
-      'You have data residency or Privacy Act 1988 obligations that demand a carefully designed deployment',
+      'Your contracts, sector rules or internal policy require content to stay within Australia, so the deployment needs careful design',
       'You expect to run the feature at meaningful volume and need cost, latency and quality kept under control',
     ],
     notRightFor: [
@@ -158,7 +158,7 @@ const data = {
   definitions: [
     {
       term: 'Large Language Model (LLM)',
-      definition: 'A model trained on large volumes of text that can understand and generate human language. Examples include OpenAI\'s GPT-4o and Anthropic\'s Claude. It predicts likely continuations of text, which lets it draft, summarise, classify and answer questions.',
+      definition: 'A model trained on large volumes of text that can understand and generate human language. Examples include models from OpenAI and Anthropic. It predicts likely continuations of text, which lets it draft, summarise, classify and answer questions.',
     },
     {
       term: 'Token',

@@ -198,6 +198,6 @@ Offshore works well for maintenance of stable systems, clearly specified feature
 
 To turn rates into a project budget, see our [custom software cost guide](/guides/custom-software-development-cost-australia).
 
-## How All Webbed Labs prices engineering time
+## How AWLabs prices engineering time
 
-We work as an onshore team of senior engineers in AEST hours. For projects, we run paid discovery and then quote a fixed price, so you're buying an outcome rather than hours. For teams that need extra capacity under their own leadership, we provide senior engineers through [staff augmentation](/staff-augmentation). In both cases, code lives in your repository from day one. If your work suits a contractor, an employee or an offshore team better, we'll say so.
+We work as an onshore team of senior engineers in AEST hours. For projects, every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After that you receive one fixed price, so you're buying an outcome rather than hours. For teams that need extra capacity under their own leadership, we provide senior engineers through [staff augmentation](/staff-augmentation). On projects, each part of the build is assigned to you as it is paid for in full. If your work suits a contractor, an employee or an offshore team better, we'll say so.

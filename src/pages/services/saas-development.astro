@@ -2,25 +2,25 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'SaaS Development Company Australia | All Webbed Labs',
+  metaTitle: 'SaaS Development Company Australia | AWLabs',
   metaDescription: 'SaaS development company in Australia building multi-tenant subscription products with billing, onboarding and analytics, architected from MVP to scale.',
   category: 'Product',
   heroHeadline: 'Launch Your SaaS Product With the Architecture to Scale',
   heroTagline: 'SaaS product development for Australian founders and enterprises: multi-tenant, subscription-ready and analytics-wired from day one.',
   description: [
     'Building a SaaS product is categorically different from building a bespoke internal application. The architecture decisions made in the first three months, multi-tenancy model, billing system design, onboarding flow, permission model, trial conversion logic, will either constrain or enable your growth for the next five years. Getting them wrong is expensive: rebuilding a single-tenant architecture into a proper multi-tenant system after you have paying customers is one of the most painful and risky engineering projects a company can undertake. The cost of that rework is almost always larger than getting the architecture right in the original build.',
-    'Our SaaS practice covers product strategy, architecture design, full-stack implementation, and go-to-market readiness. We work with founder-led companies building their first commercial product, and with enterprises launching new product lines into market. In both cases, we bring the same discipline: a multi-tenant data model from day one, Stripe-integrated billing with plan management and usage metering from day one, an instrumented analytics layer that tracks funnel performance and feature adoption from day one, and an administrative layer that lets you manage customers without engineering involvement. These are not features we add later, they are part of the initial architecture.',
+    'Our SaaS practice covers product strategy, architecture design, full-stack implementation, and go-to-market readiness. We build for founders launching a first product and for established businesses launching a new one. In both cases, we bring the same discipline: a multi-tenant data model from day one, Stripe-integrated billing with plan management and usage metering from day one, an instrumented analytics layer that tracks funnel performance and feature adoption from day one, and an administrative layer that lets you manage customers without engineering involvement. These are not features we add later, they are part of the initial architecture.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
       title: 'Proper Multi-Tenancy Architecture',
-      description: 'Row-level security in PostgreSQL using tenant-scoped policies, schema isolation where compliance requires it, and an application layer that enforces tenancy at every data access point. Customer data is cryptographically isolated, not just filtered by a tenant_id column without database-level enforcement.',
+      description: 'Row-level security in PostgreSQL using tenant-scoped policies, schema isolation where compliance requires it, and an application layer that enforces tenancy at every data access point. Tenant isolation is enforced by the database itself, not just by filtering on a tenant_id column in application code.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>',
       title: 'Stripe Billing, Done Properly',
-      description: 'Subscription lifecycle management covering trials, plan upgrades and downgrades, prorated billing, usage-based metering, seat-based pricing, coupon and discount management, invoice generation, dunning email sequences, and webhook handling with idempotency guarantees. We usually build on Stripe Billing rather than reinventing it.',
+      description: 'Subscription lifecycle management covering trials, plan upgrades and downgrades, prorated billing, usage-based metering, seat-based pricing, coupon and discount management, invoice generation, dunning email sequences, and idempotent webhook handling. We usually build on Stripe Billing rather than reinventing it.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
@@ -35,7 +35,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: 'Enterprise-Ready Security & Compliance',
-      description: 'SAML 2.0 SSO and SCIM provisioning for enterprise customers who mandate single sign-on. Audit log trails per tenant. Data export and deletion APIs for GDPR/Privacy Act compliance. Role-based access control with permission hierarchies. SOC 2 Type II readiness as a design consideration from the start.',
+      description: 'SAML 2.0 SSO and SCIM provisioning for enterprise customers who mandate single sign-on. Audit log trails per tenant. Data export and deletion APIs that support your Privacy Act and GDPR obligations. Role-based access control with permission hierarchies. SOC 2 Type II readiness as a design consideration from the start.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
@@ -53,9 +53,9 @@ const data = {
   process: [
     {
       step: '01',
-      title: 'Product Strategy & Architecture Blueprint',
-      duration: 'Weeks 1 to 3',
-      description: 'We run structured sessions to define ICP, core value proposition, must-have features for v1, pricing model, and competitive differentiation. The output is a product architecture blueprint covering multi-tenancy model, billing system design, identity architecture, integration strategy and a phased feature roadmap aligned to your go-to-market timeline.',
+      title: 'Discovery Audit & Architecture Blueprint',
+      duration: 'Before the build',
+      description: 'Every build starts with a Discovery Audit ($750 plus GST, credited in full against the build). Through the audit and two strategy sessions we define ICP, core value proposition, must-have features for v1, pricing model, and competitive differentiation. The output is a product architecture blueprint covering multi-tenancy model, billing system design, identity architecture, integration strategy and a phased feature roadmap aligned to your go to market timeline, with a fixed price for an agreed scope.',
     },
     {
       step: '02',
@@ -71,9 +71,9 @@ const data = {
     },
     {
       step: '04',
-      title: 'Feature Development Sprints',
+      title: 'Feature Development',
       duration: 'Weeks 10 to 24',
-      description: 'Two-week product sprints building the differentiated features that drive your value proposition. Each sprint is prioritised against your ICP\'s most important jobs-to-be-done and measured against activation and retention hypotheses. We treat every sprint as an opportunity to validate product decisions, not just execute them.',
+      description: 'Building the differentiated features that drive your value proposition. Sprint length is set for each build. You get an update every Tuesday and Friday, Sydney time, with access to test the latest work. Work is prioritised against your ICP\'s most important jobs to be done and measured against activation and retention hypotheses. We treat every stage as an opportunity to validate product decisions, not just execute them.',
     },
     {
       step: '05',
@@ -85,7 +85,7 @@ const data = {
       step: '06',
       title: 'Public Launch & Growth Infrastructure',
       duration: 'Week 26+',
-      description: 'Production launch with zero-downtime deployment, status page, customer support tooling (Intercom or Crisp), SEO foundations, referral program mechanics, and a documented growth experimentation process. We remain available as a sprint delivery partner for ongoing feature development and growth experiments.',
+      description: 'Production launch with zero downtime deployment, status page, customer support tooling (Intercom or Crisp), SEO foundations, referral program mechanics, and a documented growth experimentation process. A 30 day warranty runs from launch, and after that a Care Plan can cover ongoing feature development and growth experiments.',
     },
   ],
   industries: [
@@ -101,7 +101,7 @@ const data = {
   faqs: [
     {
       question: 'What is the minimum viable architecture for a SaaS product at launch?',
-      answer: 'The minimum viable architecture for a SaaS product includes: a multi-tenant data model with proper tenant isolation (not just filtered queries), an authentication system supporting email/password and at minimum Google OAuth, a billing integration with Stripe covering subscription creation, payment failure handling and plan management, a transactional email system for onboarding and notifications, and a basic administrative panel for managing customers. Products that launch without these foundations, particularly billing and admin tooling, create immediate operational problems at the point where you most want to focus on growth. We scope and deliver this foundation as a non-negotiable first phase.',
+      answer: 'The minimum viable architecture for a SaaS product includes: a multi-tenant data model with proper tenant isolation (not just filtered queries), an authentication system supporting email/password and at minimum Google OAuth, a billing integration with Stripe covering subscription creation, payment failure handling and plan management, a transactional email system for onboarding and notifications, and a basic administrative panel for managing customers. Products that launch without these foundations, particularly billing and admin tooling, create immediate operational problems at the point where you most want to focus on growth. We scope and deliver this foundation as the first stage of the build.',
     },
     {
       question: 'How do you approach multi-tenancy, and why does the model chosen at the start matter so much?',
@@ -109,11 +109,11 @@ const data = {
     },
     {
       question: 'How should we think about the build vs buy decision for billing infrastructure?',
-      answer: 'Billing is a domain where off-the-shelf solutions (Stripe Billing, Chargebee, Paddle) are almost always preferable to building your own. The complexity of handling trials, upgrades, downgrades, prorations, failed payments, dunning, tax calculation across jurisdictions, and invoice compliance is genuinely substantial, and getting it wrong has direct revenue and compliance consequences. We integrate with Stripe Billing for most of our SaaS engagements, occasionally Paddle for products where seller-of-record arrangement (handling GST/VAT compliance globally) is valuable. The engineering effort we save by not rebuilding billing infrastructure is redirected into your product\'s differentiated features.',
+      answer: 'Billing is a domain where off-the-shelf solutions (Stripe Billing, Chargebee, Paddle) are almost always preferable to building your own. The complexity of handling trials, upgrades, downgrades, prorations, failed payments, dunning, tax calculation across jurisdictions, and invoice compliance is genuinely substantial, and getting it wrong has direct revenue and compliance consequences. We usually integrate with Stripe Billing, and sometimes Paddle for products where seller-of-record arrangement (handling GST/VAT compliance globally) is valuable. The engineering effort we save by not rebuilding billing infrastructure is redirected into your product\'s differentiated features.',
     },
     {
       question: 'What does it cost to build a SaaS product, and how should we stage investment?',
-      answer: 'A properly architected SaaS product with the core platform (auth, billing, multi-tenancy, admin) plus enough product features to validate with your first customers typically requires 20 to 30 weeks of senior engineering effort. We strongly recommend staging investment: a discovery and architecture phase first (4 weeks, fixed cost), which produces a specification detailed enough to give you a reliable estimate for the build. This approach eliminates the most common source of cost overruns, starting development before requirements are understood well enough to estimate accurately. We provide detailed line-item estimates so you can make informed decisions about what to include in the first version.',
+      answer: 'A properly architected SaaS product with the core platform (auth, billing, multi tenancy, admin) plus enough product features to validate with your first customers typically takes 20 to 30 weeks to build. Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Your Schedule of Work comes with three options (The Minimum, The Recommended and The Complete), so you can decide what goes into the first version.',
     },
     {
       question: 'How do you handle data privacy obligations for a SaaS product with Australian customers?',
@@ -125,7 +125,7 @@ const data = {
     },
     {
       question: 'What does a SaaS development company do?',
-      answer: 'A SaaS development company designs, builds and often operates a subscription software product on your behalf: product discovery, UX, multi-tenant architecture, billing, onboarding, analytics, security and cloud hosting. With us, you own the code and IP from day one, and the product can move to your own team whenever you are ready.',
+      answer: 'A SaaS development company designs, builds and often operates a subscription software product on your behalf: product discovery, UX, multi-tenant architecture, billing, onboarding, analytics, security and cloud hosting. You own what we build for you once it is paid for: each part is assigned to you as it is paid for in full, and the full repository and accounts are handed over after the final payment, so the product can move to your own team whenever you are ready.',
     },
     {
       question: 'What is SaaS MVP development?',

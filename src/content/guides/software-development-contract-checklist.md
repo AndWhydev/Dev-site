@@ -6,11 +6,11 @@ eyebrow: "Checklist"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Before signing a software development contract, confirm six things: that IP in the code is assigned to you in writing, with moral rights consents from the people who wrote it; that you get the source code and credentials, ideally in your own repository throughout; that scope, acceptance testing and change control are defined; that warranties and liability caps are reasonable and sit alongside the Australian Consumer Law; that privacy and security obligations are written in; and that you can leave with everything if the relationship ends."
+summary: "Before signing a software development contract, confirm six things: that IP in the code is assigned to you in writing, with moral rights consents from the people who wrote it; that you get the source code and credentials, with a clear point when the repository and accounts move into your name; that scope, acceptance testing and change control are defined; that warranties and liability caps are reasonable and sit alongside the Australian Consumer Law; that privacy and security obligations are written in; and that you can leave with everything if the relationship ends."
 takeaways:
   - "Under section 196(3) of the Copyright Act 1968, an assignment of copyright has no effect unless it's in writing and signed by or on behalf of the assignor. Without it, the developer usually owns the code."
   - "Moral rights can't be assigned. The contract should secure written consents from the individual authors, which section 195AWA says must relate to specified acts or classes of acts."
-  - "Insist on code in a repository you control, plus ownership of hosting, domain and app store accounts. Escrow matters mainly when a vendor hosts or licenses the software to you."
+  - "Know when the repository and every account (hosting, domain, app store) move into your name, and what has to be paid first. Escrow matters mainly when a vendor hosts or licenses the software to you."
   - "Consumer guarantees under the Australian Consumer Law cover services under $100,000, including business purchases, and require due care and skill."
   - "A vendor with turnover of $3 million or less may not be covered by the Privacy Act, so the contract itself should impose privacy, security and breach notification duties."
 faqs:
@@ -23,7 +23,7 @@ faqs:
   - q: "What's a reasonable liability cap?"
     a: "A cap equal to the fees paid or payable under the contract, or a multiple of them, is common in Australian IT contracts. Look at the carve-outs as much as the number: breaches of confidentiality, privacy, IP infringement and wilful misconduct are often excluded from the cap or given a higher one."
   - q: "Should the contract say how AI coding tools are used?"
-    a: "It's increasingly common and sensible. Ask the vendor to disclose AI-assisted development, confirm that your confidential information isn't used to train third-party models, and address ownership of AI-assisted output. Australian law on copyright in purely AI-generated material is still being worked through."
+    a: "It's increasingly common and sensible. Ask the vendor to disclose AI-assisted development, ask what its contract says about how your confidential information is handled by AI tools, and address ownership of AI-assisted output. Australian law on copyright in purely AI-generated material is still being worked through."
   - q: "What should I know before signing an NDA with a software developer?"
     a: "Check that it's mutual, so both sides' information is protected, that the definition of confidential information covers your data, code, designs and business plans, and that it lasts long enough to matter after the project ends. Look for the usual exclusions (information already public or independently developed) and a duty to return or destroy your information. An NDA protects confidentiality only; it doesn't give you ownership of any code, which needs the IP assignment in the main contract."
   - q: "What's the difference between a master services agreement and a statement of work?"
@@ -70,7 +70,7 @@ related:
   - title: "Our Master Services Agreement"
     href: "/MSA"
   - title: "Our mutual NDA"
-    href: "/NDA"
+    href: "/how-we-work"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"
@@ -91,11 +91,11 @@ This checklist is written for Australian buyers of custom software and reflects 
 | Background IP | Vendor keeps its tools, with a perpetual, royalty-free licence for you to use and modify them within the software | Licence ends with the contract or needs ongoing fees |
 | Moral rights | Vendor obtains written consents from individual authors covering modification and use without attribution | No mention at all |
 | Third-party and open source | Listed, with licences disclosed; copyleft components flagged | Unknown components; "vendor proprietary library" you can't inspect |
-| Source code and accounts | Code in your repository from day one; you own hosting, domain, app store and payment accounts | Code handed over only at the end; vendor owns your cloud account |
-| Scope and acceptance | Written scope, acceptance criteria and a testing period | "Deemed accepted" after a few days with no test |
+| Source code and accounts | You know when the repository and every account move into your name, and what has to be paid first; you can see the code while it is built | No stated handover point; accounts stay in the vendor's name after you have paid |
+| Scope and acceptance | Written scope, acceptance criteria and a testing period, with any deemed acceptance rule stated clearly | No acceptance criteria, or no clear way to raise defects before acceptance |
 | Change control | Written variations, priced and approved by you before work | Variations billable on the vendor's say-so |
 | Warranty | Defect fixing period after acceptance, plus Australian Consumer Law rights | Warranties excluded "to the maximum extent", with no defect period |
-| Liability | Mutual cap linked to fees, sensible carve-outs | One-sided cap; no carve-outs for privacy or confidentiality |
+| Liability | A cap linked to fees, with carve-outs you have read and understood | No cap at all, or a cap far below the fees; no carve-outs for privacy or confidentiality |
 | Privacy and security | APP-standard handling, security controls, breach notification to you, onshore or disclosed data locations | Nothing, or "vendor will comply with applicable law" alone |
 | Confidentiality | Mutual NDA or clause covering your data, code and business information | One-way, or expires quickly |
 | Termination and exit | You can end for convenience, pay for work done, and receive everything | Termination only for breach; handover at vendor's discretion |
@@ -122,7 +122,7 @@ Look for a clause in which the vendor promises to obtain consents from its emplo
 
 ## Do you get the source code, and when?
 
-**The safest arrangement is that the code lives in your repository, under your account, from the first commit.** Then there's nothing to hand over and nothing to argue about.
+**What matters is that you know when the code and every account move into your name, and what has to be paid first.** Some vendors work in your repository from the first commit; others hand over the repository after final payment. Either works if the contract says so clearly and you can see the code while it is built.
 
 Check:
 
@@ -149,7 +149,7 @@ Also check for unfair terms. The ACL protects small businesses from unfair terms
 
 Questions to ask:
 
-1. Is the cap **mutual**, or does it only protect the vendor?
+1. Who does the cap **apply to**, and is it proportionate to the contract value?
 2. Are **consequential losses**, such as lost profits, excluded for both parties?
 3. What's **carved out** of the cap? Breach of confidentiality, privacy breaches, IP infringement indemnities, fraud and wilful misconduct are commonly excluded or given a higher cap.
 4. Does the vendor hold **professional indemnity and cyber insurance** of a level that makes the cap meaningful?
@@ -168,7 +168,7 @@ A privacy and security clause should cover:
 - Where data is stored and accessed from, and which subcontractors are involved, including any AI coding or model providers.
 - Return or destruction of your data at the end.
 
-Confidentiality is usually covered by a mutual NDA signed before discovery. Our [mutual NDA](/NDA) is published if you want to see what one looks like.
+Confidentiality is usually covered by a mutual NDA signed before discovery. Our [mutual NDA](/how-we-work) is published if you want to see what one looks like.
 
 ## Can you leave cleanly?
 
@@ -186,11 +186,11 @@ Confidentiality is usually covered by a mutual NDA signed before discovery. Our 
 - [ ] Perpetual licence to any vendor background IP in the software
 - [ ] Moral rights consents from individual authors
 - [ ] Open source and third-party components listed
-- [ ] Code in your repository; accounts in your name
+- [ ] Clear point when the repository and accounts move into your name
 - [ ] Scope, acceptance criteria and a testing period defined
 - [ ] Written change control with your approval before billing
 - [ ] Defect warranty period and non-infringement warranty
-- [ ] Mutual liability cap with sensible carve-outs
+- [ ] Liability cap and carve-outs you understand
 - [ ] Privacy, security and breach notification obligations
 - [ ] Data locations and subcontractors disclosed, including AI tools
 - [ ] Termination for convenience and a handover obligation
@@ -200,6 +200,6 @@ Confidentiality is usually covered by a mutual NDA signed before discovery. Our 
 
 **For a small, low-risk job, a short letter of engagement that covers IP assignment, confidentiality, price and payment may be enough.** A framework agreement with schedules makes sense when you expect repeat work or the system matters to the business. Whatever the size, don't skip the IP assignment: it's the one clause that's hard to fix after the fact. If you're choosing between contract pricing models, see [fixed price vs time and materials](/guides/fixed-price-vs-time-and-materials), and for vetting vendors more broadly, [how to choose a software development company](/guides/how-to-choose-a-software-development-company).
 
-## How All Webbed Labs handles contracts
+## How AWLabs handles contracts
 
-We sign an NDA before discovery and work under a published [Master Services Agreement](/MSA) with a schedule of work for each project. Our practice is to keep code in your repository from day one; the MSA itself allows either party's repository during development, with final repository access on payment. Hosting and other production accounts are transferred to your ownership before launch once the related fees are paid, IP in paid deliverables transfers to you, and our pre-existing tools come with a perpetual licence to use and modify them as part of your software. We disclose our use of AI-assisted development in the agreement. Read both documents before we talk, and have your lawyer review them. See our [custom software development service](/services/custom-app-development).
+We sign an NDA before the Discovery Audit and work under a published [Master Services Agreement](/MSA) with a schedule of work for each project. You can see and test the code while we build; the MSA allows either party's repository during development, with the full repository handed over after the final payment. Hosting and other production accounts are transferred to your ownership before launch once the related fees are paid, IP in paid deliverables transfers to you, and our pre-existing tools come with a perpetual licence to use and modify them as part of your software. We disclose our use of AI-assisted development in the agreement. Read both documents before we talk, and have your lawyer review them. See our [custom software development service](/services/custom-app-development).

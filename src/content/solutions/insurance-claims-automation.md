@@ -5,7 +5,7 @@ description: "Insurance claims automation with AI for Australian insurers: claim
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Insurance claims automation with AI, for an Australian general insurer, reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. A first production workflow typically costs $100k to $300k (AUD, ex GST) after discovery."
+summary: "Insurance claims automation with AI, for an Australian general insurer, reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. Market ranges put a first production workflow at roughly $85k to $265k (AUD, ex GST)."
 takeaways:
   - "The best return is usually in the first ten business days of a claim: intake, missing-information requests and routing, where the Code already sets deadlines."
   - "Extraction should return a confidence score per field, so officers check the uncertain values instead of retyping everything."
@@ -146,7 +146,7 @@ Our [AI document processing service](/services/ai-document-processing) covers th
 
 ## How do you know it's working?
 
-**Agree the measures before building, and measure them on your own historical claims.** We would set these up in discovery and report them through the pilot. We don't promise particular improvements; the point is to find out, on your data, whether the system is good enough.
+**Agree the measures before building, and measure them on your own historical claims.** We would set these up in the Discovery Audit and report them through the pilot. We don't promise particular improvements; the point is to find out, on your data, whether the system is good enough.
 
 | Measure | How it's calculated | Why it matters |
 |---|---|---|
@@ -160,16 +160,17 @@ The [LLM evaluation guide](/guides/llm-evaluation) explains how to build the lab
 
 ## What should an insurer budget for a first workflow?
 
-**A first production workflow, usually one product line, typically takes 12 to 20 weeks and costs roughly $100,000 to $300,000 (AUD, ex GST).** These are typical Australian market ranges for senior onshore teams, not a quote.
+**A first production workflow, usually one product line, typically takes 9 to 16 weeks and costs roughly $85,000 to $265,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote.
 
 | Phase | Duration | Typical range (AUD, ex GST) | What you get |
 |---|---|---|---|
-| Discovery | 3 to 4 weeks | $15,000 to $35,000 | Process map, labelled document sample, integration design, risk inputs, fixed price |
 | Pilot | 6 to 10 weeks | $55,000 to $150,000 | Intake, extraction and routing for one product line with a small officer group |
 | Production | 3 to 6 weeks | $30,000 to $115,000 | Monitoring, fallbacks, security testing, second product line if in scope |
 
-Worked example within the range: 450 hours of pilot engineering at a blended $180 an hour is $81,000; 300 hours to production is $54,000; with $25,000 of discovery the total is $160,000 ex GST. Model usage is a separate running cost that scales with pages processed; we estimate it in discovery from your actual claim volumes.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
-## Working with All Webbed Labs on claims automation
+Model usage is a separate running cost that scales with pages processed; we estimate it in the Discovery Audit from your actual claim volumes.
 
-We begin with paid discovery on a sample of your real claims and documents, then build at a fixed price. Data and processing stay in Australian regions by default, every change passes automated quality gates and a senior engineer's review, and the code lives in your repository from day one. We build to your requirements and provide the evidence your risk, compliance and APRA-facing teams need; your organisation remains responsible for its obligations under the Code and prudential standards. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and our wider view of [AI for financial services](/solutions/ai-for-financial-services).
+## Working with AWLabs on claims automation
+
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build, working from a sample of your real claims and documents. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data and processing in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We build to your requirements and provide the evidence your risk, compliance and APRA-facing teams need; your organisation remains responsible for its obligations under the Code and prudential standards. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and our wider view of [AI for financial services](/solutions/ai-for-financial-services).

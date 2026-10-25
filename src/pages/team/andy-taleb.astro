@@ -7,21 +7,21 @@ import Footer from '../../components/Footer.astro';
  * Founder profile. Target of the Person @id referenced by the sitewide
  * Organization schema (founder) and by guide bylines. Facts here must match
  * SEO-SOP.md section 3 exactly: software since 2019, All Webbed Up since 2021,
- * All Webbed Labs launched mid 2026. LinkedIn is the only external profile
+ * AWLabs launched mid 2026. LinkedIn is the only external profile
  * we link. Never add links or sameAs entries for code hosting profiles.
  */
 
 const siteUrl = 'https://www.awlabs.com.au';
 const linkedIn = 'https://www.linkedin.com/in/andytaleb/';
 
-const pageTitle = 'Andy Taleb, Founder of All Webbed Labs';
+const pageTitle = 'Andy Taleb, Founder of AWLabs';
 const pageDescription =
-  'Andy Taleb founded All Webbed Labs, a Sydney software and AI company. Building software since 2019 and running All Webbed Up since 2021.';
+  'Andy Taleb founded AWLabs, a Sydney software and AI company. Building software since 2019 and running All Webbed Up since 2021.';
 
 const timeline = [
   { year: '2019', text: 'Starts building software professionally.' },
   { year: '2021', text: 'Begins running All Webbed Up, a Sydney marketing and development agency, which he still runs today.' },
-  { year: 'Mid 2026', text: 'Founds All Webbed Labs as a partnership with a group of senior developers and founders, focused on enterprise software and AI.' },
+  { year: 'Mid 2026', text: 'Founds AWLabs as a partnership with a group of senior developers and founders, focused on enterprise software and AI.' },
 ];
 
 const role = [
@@ -50,7 +50,7 @@ const schema = {
     '@type': 'Person',
     '@id': `${siteUrl}/team/andy-taleb#person`,
     name: 'Andy Taleb',
-    jobTitle: 'Founder',
+    jobTitle: 'Founder and Director',
     url: `${siteUrl}/team/andy-taleb`,
     image: `${siteUrl}/team/andy-taleb.webp`,
     worksFor: { '@id': `${siteUrl}/#organization` },
@@ -78,21 +78,21 @@ const schema = {
     <section class="pf-hero">
       <div class="pf-inner pf-hero-grid">
         <div class="pf-photo reveal">
-          <img src="/team/andy-taleb.webp" alt="Andy Taleb, founder of All Webbed Labs" width="400" height="400" loading="eager" decoding="async" />
+          <img src="/team/andy-taleb.webp" alt="Andy Taleb, founder of AWLabs" width="400" height="400" loading="eager" decoding="async" />
         </div>
         <div class="reveal">
           <span class="section-label">Team</span>
           <h1 class="pf-title">Andy Taleb</h1>
-          <p class="pf-role">Founder, All Webbed Labs</p>
+          <p class="pf-role">Founder and Director, AWLabs</p>
           <p class="pf-lead">
-            Andy has been building software professionally since 2019 and has run All Webbed Up, a Sydney marketing and development agency, since 2021. In mid 2026 he founded All Webbed Labs as a partnership with a group of senior developers and founders, to focus on enterprise software and AI.
+            Andy has been building software professionally since 2019 and has run All Webbed Up, a Sydney marketing and development agency, since 2021. In mid 2026 he founded AWLabs as a partnership with a group of senior developers and founders, to focus on enterprise software and AI.
           </p>
           <div class="pf-actions">
             <a href={linkedIn} class="btn-outline" target="_blank" rel="noopener noreferrer">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
               LinkedIn
             </a>
-            <a href="mailto:admin@awlabs.com.au" class="btn-primary">Contact All Webbed Labs</a>
+            <a href="mailto:admin@awlabs.com.au" class="btn-primary">Contact AWLabs</a>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ const schema = {
           <span class="section-label">What he does</span>
           <h2 class="section-heading">Hands-on, from first call to final commit.</h2>
           <p class="section-subheading">
-            Andy works across architecture, code review and commercial conversations on All Webbed Labs engagements.
+            Andy works across architecture, code review and commercial conversations on AWLabs engagements.
           </p>
         </div>
         <div class="pf-grid">
@@ -142,7 +142,7 @@ const schema = {
       <div class="pf-inner">
         <div class="reveal pf-intro">
           <span class="section-label">Reading</span>
-          <h2 class="section-heading">Guides from All Webbed Labs.</h2>
+          <h2 class="section-heading">Guides from AWLabs.</h2>
           <p class="section-subheading">
             Andy has final responsibility for the guides on this site. See our <a href="/editorial-policy">editorial policy</a> for how they are researched and written.
           </p>

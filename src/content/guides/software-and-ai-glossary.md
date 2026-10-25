@@ -171,7 +171,7 @@ The definitions describe how the terms are generally used in the Australian mark
 
 ## Delivery and contracts
 
-**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment).
+**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 **Scope.** Scope is the agreed list of what will be built, and just as importantly what won't. Vague scope is the most common cause of disputes and overruns.
 
@@ -187,7 +187,7 @@ The definitions describe how the terms are generally used in the Australian mark
 
 **MVP (minimum viable product).** An MVP is the smallest version of a product that real users can use and give feedback on. See [MVP development cost in Australia](/guides/mvp-development-cost-australia) and our [startup MVP service](/startup-mvp).
 
-**Agile and sprints.** Agile is an approach that delivers software in short cycles with regular feedback. A sprint is one of those cycles, typically one to two weeks; see [our methodology](/methodology).
+**Agile and sprints.** Agile is an approach that delivers software in short cycles with regular feedback. A sprint is one of those cycles. Sprint length is set for each build; our clients get an update with access to test every Tuesday and Friday. See [how we work](/how-we-work).
 
 **Technical debt.** Technical debt is the future cost created by shortcuts or outdated design in existing code, paid back as slower and riskier changes. Some debt is a reasonable trade-off; unmanaged debt compounds.
 
@@ -248,12 +248,12 @@ The definitions describe how the terms are generally used in the Australian mark
 - [ ] What exactly is in scope, and what is explicitly out?
 - [ ] What are the acceptance criteria for each main feature?
 - [ ] Is it fixed price or time and materials, and how are change requests priced?
-- [ ] When does IP transfer, and do we have the source code from day one?
+- [ ] When does the IP become ours, can we see the code while it is built, and when do the repository and accounts move into our name?
 - [ ] For AI features: which model, which region, how is it evaluated, and what does it cost per request?
 - [ ] Where will data be stored and processed, and by which providers?
 - [ ] What security testing is included before launch?
 - [ ] What does maintenance cover after launch, and at what cost?
 
-## How All Webbed Labs uses these terms
+## How AWLabs uses these terms
 
-We write proposals in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Every project starts with a paid discovery and a fixed price for the agreed scope, with source code in your repository from day one. If a term in a proposal from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).
+We write our Discovery Audit and Schedule of Work in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After that you receive one fixed price for the agreed scope, and each part of the build is assigned to you as it is paid for in full. If a term in a document from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).

@@ -76,7 +76,7 @@ disclaimer: financial
 | Integrated platform | Operations platform shared by several teams, with a customer or partner portal | 3 to 8 | $350k to $1M | 9 to 18 months |
 | Core system replacement | Replacing a system the business runs on, in staged releases | 8+ | $1M+ | 12 to 36 months |
 
-VT Digital's 2026 guide gives $120k to $500k or more for enterprise software in Australia, and estimates that security and compliance alone add 15 to 25% to project costs. Our bands start slightly higher because they assume enterprise-grade identity, testing and migration are in scope from the start rather than added later.
+VT Digital's 2026 guide gives $120k to $500k or more for enterprise software in Australia, and estimates that security and compliance alone add 15 to 25% to project costs. The bands on this page start slightly higher because they assume enterprise-grade identity, testing and migration are in scope from the start rather than added later. They are market ranges, not our prices.
 
 If your project is smaller or for a single business unit without enterprise controls, the [custom software cost guide](/guides/custom-software-development-cost-australia) is the better reference.
 
@@ -103,7 +103,7 @@ None of these are padding. Each one answers a question an enterprise's IT, secur
 
 **Here is an illustrative estimate for a mid-sized enterprise project, to show how the overheads add up.** The organisation: 600 staff across several sites. The system: a field operations platform for job scheduling, compliance checklists and reporting, with a supervisor dashboard and a customer portal. It must use Entra ID single sign-on, integrate with the ERP, the HR system and the data warehouse, migrate five years of job history, and pass an independent penetration test. Hosted in the client's Azure tenancy in Australia East.
 
-| Work package | Engineer-days | Cost at $1,400/day |
+| Work package | Engineer-days | Cost at an assumed $1,400/day market rate |
 |---|---|---|
 | Discovery and architecture | 25 | $35,000 |
 | Core features (scheduling, checklists, dashboards, portal) | 150 | $210,000 |
@@ -121,7 +121,7 @@ None of these are padding. Each one answers a question an enterprise's IT, secur
 
 Of the 347 days, only 150 are the features a user would describe. The rest, 197 days, is the enterprise work around them. The same core features built for a single-site business without SSO, integrations or migration might cost $250k to $300k.
 
-The $1,400 day rate is a planning figure for a senior Australian agency team. The Robert Walters 2026 guide puts NSW solution architects at $900 to $1,100 a day as contractors, and Talent International reports top-end averages of about $1,450 to $1,510 a day for enterprise and cloud architects. See [developer rates in Australia](/guides/software-developer-rates-australia) for detail.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope. The Robert Walters 2026 guide puts NSW solution architects at $900 to $1,100 a day as contractors, and Talent International reports top-end averages of about $1,450 to $1,510 a day for enterprise and cloud architects. See [developer rates in Australia](/guides/software-developer-rates-australia) for detail.
 
 ## What drives enterprise software cost up?
 
@@ -179,6 +179,6 @@ Over five years, the running costs can approach or exceed the original build. Th
 
 **Whether it is worth the cost comes down to what the five-year total replaces.** Compare it with the licences, customisation and workarounds of the alternative over the same five years, plus the value of anything the custom system does that a product can't: removing manual re-keying between systems, supporting a process that sets you apart, or retiring a legacy platform that is becoming a security risk. If a configured commercial product meets the need at a lower five-year cost, buy it. If it doesn't, the numbers in this section are the ones to put in the business case.
 
-## How All Webbed Labs approaches enterprise projects
+## How AWLabs approaches enterprise projects
 
-We start with a paid discovery that maps integrations, security requirements and stakeholders, then quote a fixed price per stage. We work NDA first, in AEST hours, deploy into Australian cloud regions or your own tenancy, and keep the full source code in your repository from day one, with IP transferring on completion. Senior engineers lead the work; our delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests, security scans and a senior engineer's review before deploy. We build to your security requirements and provide the evidence your teams ask for; compliance decisions remain yours. Read more about our [enterprise software service](/services/enterprise-software).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps integrations, security requirements and stakeholders, and you then receive one fixed price for the agreed scope, paid in three payments as you accept each stage. We work NDA first, in AEST hours, and deploy into your own tenancy or an Australian cloud region where the services you need are available there. If your data must stay in Australia, we write it into your Schedule of Work before you sign. Each part is assigned to you as it is paid for in full, and the full repository, logins and accounts are handed over after the final payment. Senior engineers lead the work; our delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests, security scans and a senior engineer's review before deploy. We build to your security requirements and provide the evidence your teams ask for; compliance decisions remain yours. Read more about our [enterprise software service](/services/enterprise-software).

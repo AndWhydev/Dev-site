@@ -108,7 +108,7 @@ const data = {
     },
     {
       question: "Which open-weight models can run in Australian regions?",
-      answer: "If you self-host, any open-weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), Amazon Bedrock's regional availability table lists open-weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI, Qwen and others for In-Region use in Sydney. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages when scoping, because they change month to month.",
+      answer: "If you self-host, any open-weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), Amazon Bedrock's regional availability table lists open-weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI, Qwen and others for In-Region use in Sydney. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages during the Discovery Audit, because they change month to month.",
     },
     {
       question: "Are open-weight models as good as ChatGPT or Claude?",
@@ -132,7 +132,7 @@ const data = {
     },
     {
       question: "How much does private LLM deployment cost in Australia?",
-      answer: "Typical Australian market ranges for the build are $25k to $60k for a managed open-weight model in your own cloud account, $60k to $140k for self-managed GPU serving, and from $140k for a private AI platform serving several models and teams (AUD, ex GST). GPU running costs are separate and depend on model size, traffic and how many hours the hardware runs. We model build and running costs against your traffic before you commit.",
+      answer: "Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. GPU running costs are separate and depend on model size, traffic and how many hours the hardware runs. We model build and running costs against your traffic before you commit.",
     },
     {
       question: "What is the difference between a private LLM and a public LLM like ChatGPT?",
@@ -140,28 +140,11 @@ const data = {
     },
     {
       question: "Can you deploy an on-premise LLM in our own data centre?",
-      answer: "Our default is your own cloud account in an Australian region, because GPU capacity, scaling and security controls are simpler to manage there. Where a policy genuinely requires your own hardware, the same software stack (an inference engine such as vLLM behind an OpenAI-compatible gateway) runs on on-premise GPU servers. Hardware lead times, power, cooling and ongoing operations make that route slower and usually more expensive, so we weigh it against an in-region cloud deployment during discovery.",
+      answer: "Our default is your own cloud account in an Australian region, because GPU capacity, scaling and security controls are simpler to manage there. Where a policy genuinely requires your own hardware, the same software stack (an inference engine such as vLLM behind an OpenAI-compatible gateway) runs on on-premise GPU servers. Hardware lead times, power, cooling and ongoing operations make that route slower and usually more expensive, so we weigh it against an in region cloud deployment during the Discovery Audit.",
     },
     {
       question: "What GPU do we need to self-host an LLM?",
       answer: "It depends mainly on model size and quantisation: the model weights, plus working memory for concurrent requests, must fit in GPU memory. Smaller models can run on a single data centre GPU, while large models need several GPUs or a multi-GPU instance. We size hardware from your model choice, latency target and traffic, and confirm GPU availability and quota in the Australian region before committing.",
-    },
-  ],
-  pricing: [
-    {
-      name: 'Managed model in your account',
-      range: '$25k to $60k',
-      detail: "Typical Australian market range, AUD ex GST, build only. A managed open-weight endpoint in an Australian region with private networking, gateway, logging and evaluation. Roughly 18 to 40 senior engineer-days at a $1,400/day planning rate.",
-    },
-    {
-      name: 'Self-managed GPU serving',
-      range: '$60k to $140k',
-      detail: "Typical range, AUD ex GST. Your own GPU instances or Kubernetes cluster, inference engine tuning, autoscaling, load testing and security review. Roughly 40 to 100 engineer-days. GPU running costs are separate.",
-    },
-    {
-      name: 'Private AI platform',
-      range: 'From $140k',
-      detail: "Typical range, AUD ex GST. Several models, multiple teams, fine-tuning pipeline, quota management and ongoing model lifecycle. Scoped after paid discovery.",
     },
   ],
   comparison: {

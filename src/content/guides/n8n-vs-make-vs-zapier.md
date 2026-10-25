@@ -68,6 +68,7 @@ related:
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"
+disclaimer: legal
 ---
 
 ## n8n vs Make vs Zapier: which should you choose?
@@ -169,6 +170,6 @@ Common triggers for moving off a no-code platform are a monthly bill that keeps 
 4. **Want n8n's model without running it:** n8n Cloud, accepting EU hosting.
 5. **Workflow is core to the business, high volume, or needs testing and audit trails:** custom code, possibly alongside one of the above.
 
-## How All Webbed Labs approaches automation
+## How AWLabs approaches automation
 
-We start by listing every workflow, its volume, the data it touches and what happens when it fails. That inventory usually shows that most flows belong on an off-the-shelf platform and only a few justify code. Where they do, we build them as small services in your own cloud account, in an Australian region by default, with tests, monitoring and the source in your repository. We also deploy and harden self-hosted n8n when that's the better fit. See our [workflow automation service](/services/workflow-automation), or compare the broader trade-off in [low-code vs custom development](/guides/low-code-vs-custom-development).
+We start by listing every workflow, its volume, the data it touches and what happens when it fails. That inventory usually shows that most flows belong on an off-the-shelf platform and only a few justify code. Where they do, we build them as small services in your own cloud account, in an Australian region where the services you need are available there, with tests and monitoring. The source is assigned to you as it is paid for and handed over with the repository after the final payment. We also deploy and harden self-hosted n8n when that's the better fit. See our [workflow automation service](/services/workflow-automation), or compare the broader trade-off in [low-code vs custom development](/guides/low-code-vs-custom-development).

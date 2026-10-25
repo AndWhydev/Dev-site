@@ -95,7 +95,7 @@ Skipping these makes the first feature cheaper and every later one more expensiv
 
 **Build cost**
 
-| Work package | Engineer-days | Cost at $1,400/day |
+| Work package | Engineer-days | Cost at an assumed $1,400/day market rate |
 |---|---|---|
 | Discovery and proof of concept on 200 real tickets | 8 | $11,200 |
 | Model gateway: retries, fallbacks, provider abstraction | 6 | $8,400 |
@@ -109,7 +109,7 @@ Skipping these makes the first feature cheaper and every later one more expensiv
 | Contingency at 15% | | $9,030 |
 | **Planning budget** | | **$69,230 ex GST** |
 
-The $1,400 day rate is a planning figure for a senior Australian agency team. For comparison, the Robert Walters 2026 guide lists NSW senior backend contractors at $800 to $1,000 a day, and Talent International reports top-end averages of about $1,450 a day for AI principal engineers; agencies add project management, testing and warranty on top of contractor rates.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope. For comparison, the Robert Walters 2026 guide lists NSW senior backend contractors at $800 to $1,000 a day, and Talent International reports top-end averages of about $1,450 a day for AI principal engineers; agencies add project management, testing and warranty on top of contractor rates.
 
 About 19 of the 43 days are foundations (gateway, permissions, evaluation and monitoring). A third AI feature added later, such as suggested replies, might need 10 to 15 days rather than the 25 or so a first feature needs once the 19 days of foundations are counted.
 
@@ -169,6 +169,6 @@ In the helpdesk example above, the build is a $69,230 planning budget and model 
 
 **Plan for model usage plus ongoing tuning.** Beyond the monthly model bill, AI features need periodic evaluation runs, prompt adjustments when providers update or retire models, and monitoring of quality and cost. A reasonable planning figure is 15 to 25% of the build cost a year, on top of usage, with more in the first few months as real users reveal edge cases. Our guide to [evaluating an LLM application](/guides/llm-evaluation) covers how to keep quality measurable.
 
-## How All Webbed Labs approaches adding AI
+## How AWLabs approaches adding AI
 
-We start with a short, paid discovery and proof of concept on your real data, then quote a fixed price for the build. The AI runs as a separate service behind your existing permissions, with evaluation tests, logging, cost limits and a feature flag so it can be rolled out gradually. We work in your repository from day one, default to Australian cloud regions, and choose models (Anthropic Claude, OpenAI or open-weight) on fit, cost and data location. Read more about our [AI integration service](/services/ai-integration).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive one fixed price for the agreed scope. The AI runs as a separate service behind your existing permissions, with evaluation tests, logging, cost limits and a feature flag so it can be rolled out gradually. You can see and test the code while we build, and each part is assigned to you as it is paid for in full. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. We choose models (Anthropic Claude, OpenAI or open-weight) on fit, cost and data location. Read more about our [AI integration service](/services/ai-integration).

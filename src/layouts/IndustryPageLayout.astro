@@ -114,7 +114,7 @@ const {
           <span class="section-label">Challenges We Solve</span>
           <h2 class="section-heading">The Pain Points We Understand</h2>
           <p class="section-subheading">
-            The problems we plan around when building for {industryName.toLowerCase()}, because they shape the architecture from day one.
+            The problems we plan around on {industryName} builds, because they shape the architecture from day one.
           </p>
         </div>
         <div class="pain-grid">
@@ -137,7 +137,7 @@ const {
             <span class="section-label">Our Solutions</span>
             <h2 class="section-heading">What We Build For {industryName}</h2>
             <p class="section-subheading" style="max-width: 480px;">
-              Purpose-built software and technology solutions designed around the specific needs, compliance requirements and workflows of {industryName.toLowerCase()} organisations.
+              Purpose-built software and technology solutions designed around the specific needs, compliance requirements and workflows of organisations in {industryName}.
             </p>
             <a href="/contact" class="btn-primary" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
               Discuss Your Project
@@ -218,6 +218,7 @@ const {
             </div>
           ))}
         </div>
+        <p class="ind-disclaimer">This page is general information, not legal advice. Your lawyer confirms how any law applies to you.</p>
       </div>
     </section>
 
@@ -651,6 +652,15 @@ const {
     color: #4a6359;
     line-height: 1.7;
     margin: 0;
+  }
+
+  .ind-disclaimer {
+    max-width: 900px;
+    margin: 2rem 0 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #6b8279;
   }
 
   /* CTA */

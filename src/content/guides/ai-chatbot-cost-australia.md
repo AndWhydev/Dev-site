@@ -77,7 +77,7 @@ disclaimer: financial
 | 3. Custom chatbot | Your own bot, connected to your knowledge base and a few systems (orders, bookings, CRM) | $10,000 to $30,000 for a simple bot; $30,000 to $80,000 with knowledge base and integrations | About $800 to $10,000 | Higher volumes, specific workflows, data control |
 | 4. Enterprise AI agent | Handles authenticated customers or staff, takes actions across systems, escalates with context, full audit trail | $80,000 to $250,000+ | About $9,000 to $35,000 | Large organisations, regulated industries, multiple channels |
 
-Tier 1 figures come from PSOS (US$19 to US$120 a month at small-business volumes) and Bumblebee Studio ($0 to $300 a month DIY, $300 to $1,000 for configuration). Tier 3 and 4 figures come from Team 400's April 2026 guide. The Tier 2 setup range is our estimate of typical configuration work; the platform fees are on each vendor's pricing page.
+Tier 1 figures come from PSOS (US$19 to US$120 a month at small-business volumes) and Bumblebee Studio ($0 to $300 a month DIY, $300 to $1,000 for configuration). Tier 3 and 4 figures come from Team 400's April 2026 guide. The Tier 2 setup range is an estimate of typical market pricing for configuration work, not our price; the platform fees are on each vendor's pricing page.
 
 ## Why do Australian chatbot quotes range from $6,500 to $250,000?
 
@@ -168,6 +168,6 @@ A quick way to test it: count the conversations a bot could resolve on its own e
 
 If your staff mainly need help with internal documents, email and meetings in Microsoft 365, an assistant like Copilot may be the better buy; see [Copilot vs a custom AI assistant](/guides/copilot-vs-custom-ai-assistant).
 
-## How All Webbed Labs approaches chatbot projects
+## How AWLabs approaches chatbot projects
 
-We build Tier 3 and Tier 4 systems: custom chatbots connected to your knowledge base and systems, and enterprise [AI agents](/services/ai-agent-development) that take actions under clear permissions. When a Tier 1 or Tier 2 product will do the job, we say so in discovery. Every build includes a test set of real questions with expected answers, human handover, and logging of what the bot said and did. We host in Australian cloud regions by default and quote a fixed price after paid discovery. See our [AI chatbot development service](/services/ai-chatbot).
+We build Tier 3 and Tier 4 systems: custom chatbots connected to your knowledge base and systems, and enterprise [AI agents](/services/ai-agent-development) that take actions under clear permissions. When a Tier 1 or Tier 2 product will do the job, we say so in the Discovery Audit. Where it fits the scope, a build includes a test set of real questions with expected answers, human handover, and logging of what the bot said and did; what is in your build is listed in your Schedule of Work. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After that you receive one fixed price for the agreed scope. See our [AI chatbot development service](/services/ai-chatbot).

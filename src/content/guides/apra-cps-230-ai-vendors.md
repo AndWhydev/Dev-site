@@ -144,7 +144,7 @@ Before signing or materially changing the arrangement, the entity must do due di
 
 APRA released electronic notification forms on 27 June 2025 for three of these: operational risk incidents, breaches of a critical operation tolerance, and new or changed material arrangements or offshoring. Its operational risk management page lists what each form asks for, so a vendor can see in advance which facts the entity will need from it in a hurry.
 
-The offshoring trigger matters for AI. CPS 230 defines offshoring by where the service is physically performed, not where the provider is incorporated. If a material AI service sends data to a model running outside Australia, the entity may need to notify APRA before it starts. Keeping inference and storage in Australian regions, where the model is available there, avoids that question. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
+The offshoring trigger matters for AI. CPS 230 defines offshoring by where the service is physically performed, not where the provider is incorporated. If a material AI service sends data to a model running outside Australia, the entity may need to notify APRA before it starts. Keeping inference and storage in Australian regions, where the model is available there, may reduce that exposure, but offshore personnel with access can still count. Whether notification is needed is a question for the entity and its legal advisers. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
 
 ## Designing an AI service for tolerance levels and exit
 
@@ -169,8 +169,8 @@ The offshoring trigger matters for AI. CPS 230 defines offshoring by where the s
 
 An incident notified under CPS 234 doesn't need to be notified again under CPS 230. For the security evidence pack, see [APRA CPS 234 requirements for AI systems](/guides/apra-cps-234-ai).
 
-## How All Webbed Labs approaches CPS 230 work
+## How AWLabs approaches CPS 230 work
 
-We don't certify anyone as meeting CPS 230, and the materiality assessment belongs to the regulated entity. Our part is engineering and documentation: a named list of every third and fourth party the system relies on, Australian hosting regions by default, designs that can switch models without a rewrite, documented fallback behaviour for model outages, and source code in the client's own repository from day one, which makes exit a practical option rather than a clause.
+We don't certify anyone as meeting CPS 230, and the materiality assessment belongs to the regulated entity. Our part is engineering and documentation: a named list of every third and fourth party the system relies on, Australian hosting regions where the services are available there, with any residency requirement written into the Schedule of Work, designs that can switch models without a rewrite, documented fallback behaviour for model outages, and a full handover of the repository, logins and accounts after the final payment, which makes exit a practical option rather than a clause.
 
 Read how we'd approach this for banks, insurers and super funds in [AI for APRA-regulated financial services](/solutions/ai-for-financial-services) and [insurance claims automation](/solutions/insurance-claims-automation), or see our [enterprise software](/services/enterprise-software) service.

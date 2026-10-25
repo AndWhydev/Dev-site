@@ -12,7 +12,7 @@ const riskCategories = [
       { title: 'Merchant of Record', body: 'Platforms that route funds between buyers and sellers often need to weigh merchant of record status early. Our engineering team flags this for your payments counsel or a partner like Stripe compliance rather than proceed on assumption. Stripe and PayPal have frozen accounts of platforms that got the structure wrong, and we have seen founders lose access to their revenue overnight as a result.' },
       { title: 'PCI DSS Compliance', body: 'Card data brings PCI DSS scope with it. We design payment flows so the sensitive path is minimised, typically via tokenised providers like Stripe or Adyen, and flag PCI relevant architecture to your compliance advisor before build.' },
       { title: 'AFSL Licensing', body: 'Products in financial advice, lending, insurance, investment or superannuation frequently raise AFSL questions. We do not opine on whether a licence is required. We build the system so a decision from your financial services counsel can be implemented cleanly, and we introduce you to specialist lawyers if you do not already have one.' },
-      { title: 'Buy Now Pay Later', body: 'BNPL and deferred payment features sit close to the credit licensing perimeter under the NCCP Act. We flag them at scoping so your credit law adviser can weigh in before the architecture locks in.' },
+      { title: 'Buy Now Pay Later', body: 'BNPL and deferred payment features sit close to the credit licensing perimeter under the NCCP Act. We flag them in the audit so your credit law adviser can weigh in before the architecture locks in.' },
       { title: 'Foreign Transaction Obligations', body: 'Cross border customers introduce indirect tax questions across jurisdictions, including EU VAT and US state sales tax. We build for the collection and reporting your tax advisor specifies; we do not determine your registration position.' },
     ],
   },
@@ -68,7 +68,7 @@ const riskCategories = [
     name: 'Tax and Financial',
     visible: ['R&D Tax Incentive', 'GST on Digital Services'],
     items: [
-      { title: 'R&D Tax Incentive', body: 'R&D Tax Incentive rates are published by AusIndustry and the ATO. Australian conducted development work is generally eligible for consideration. Your claim is lodged by your registered R&D tax agent; we structure the technical evidence, including uncertainty registers, experiment logs and time allocation, so that agent has something defensible to work from.' },
+      { title: 'R&D Tax Incentive', body: 'R&D Tax Incentive rates are published by business.gov.au and the ATO. Whether your build qualifies, and what you can claim, is for a registered R&D tax agent; our accountants at Crescendo can advise. Your claim is lodged by your tax agent, and we keep build records your tax agent can ask for.' },
       { title: 'GST on Digital Services', body: 'Overseas customers can introduce indirect tax registration questions. We build for whatever collection and remittance rules your tax adviser confirms.' },
     ],
   },
@@ -79,7 +79,7 @@ const riskCategories = [
     items: [
       { title: 'Sham Contracting', body: 'Contractor versus employee status is an area we see founders trip on. It is a question for your employment lawyer or accountant. We mention it because the answer changes what your equity, IP assignment and superannuation setup should look like on day one.' },
       { title: 'Equity and Co Founder Agreements', body: 'Vesting schedules and cliffs are drafted by commercial counsel, not by us. We raise it here because unresolved cap table paperwork is the single most common blocker when a founder we work with goes to raise.' },
-      { title: 'IP Assignment Gaps', body: 'IP assignment is the paperwork side of the codebase inventory we run. Drafting sits with your IP lawyer; we make sure our own contribution is fully assigned to you at handover, and we surface gaps in anyone else’s.' },
+      { title: 'IP Assignment Gaps', body: 'IP assignment is the paperwork side of the codebase inventory we run. Drafting sits with your IP lawyer; what we build for you is assigned to you as each part is paid for in full, and we surface gaps in anyone else’s.' },
     ],
   },
   {
@@ -96,9 +96,9 @@ const riskCategories = [
   {
     order: '09',
     name: 'Accessibility',
-    visible: ['WCAG 2.2 Compliance'],
+    visible: ['WCAG 2.2 Accessibility'],
     items: [
-      { title: 'WCAG 2.2 Compliance', body: 'WCAG 2.2 is our baseline on every build. Government tenders typically require it explicitly, and the DDA sits behind it as the anti discrimination framework your legal team will be familiar with. Retrofitting accessibility into an existing product is significantly more expensive than building it in from the start.' },
+      { title: 'WCAG 2.2 Accessibility', body: 'WCAG 2.2 AA is the standard we build to on every build. Government tenders typically require it explicitly, and the DDA sits behind it as the anti discrimination framework your legal team will be familiar with. Retrofitting accessibility into an existing product is significantly more expensive than building it in from the start.' },
     ],
   },
   {
@@ -116,7 +116,7 @@ const riskCategories = [
     name: 'Insurance',
     visible: ['Cyber Liability Insurance', 'Professional Indemnity'],
     items: [
-      { title: 'Cyber Liability Insurance', body: 'The average cost of a data breach in Australia is now over $4 million. Most early stage founders have no cyber liability coverage. One breach can exceed the cost of the entire build.' },
+      { title: 'Cyber Liability Insurance', body: 'IBM’s Cost of a Data Breach report puts the average cost of a data breach in Australia at over $4 million. Most early stage founders have no cyber liability coverage. One breach can exceed the cost of the entire build.' },
       { title: 'Professional Indemnity', body: 'Professional indemnity is a call for your insurance broker. We mention it because operators are sometimes surprised at how quickly they need it once enterprise clients start asking for certificates of currency.' },
     ],
   },
@@ -128,7 +128,7 @@ const standards = [
   { code: 'ISO 27017', name: 'Cloud Security', when: 'All cloud hosted projects.' },
   { code: 'ISO 27018', name: 'Personal Data in the Cloud', when: 'Any project storing user data in the cloud.' },
   { code: 'ISO 25010', name: 'Software Product Quality', when: 'Every project.' },
-  { code: 'ISO 12207', name: 'Software Lifecycle Processes', when: 'Every project. Internationally auditable build process.' },
+  { code: 'ISO 12207', name: 'Software Lifecycle Processes', when: 'Every project. The build process is assessed against it.' },
   { code: 'ISO 29119', name: 'Software Testing', when: 'Every project requiring pre launch verification.' },
   { code: 'ISO 31000', name: 'Risk Management', when: 'Every project. The framework underpinning the DA itself.' },
   { code: 'PCI DSS', name: 'Payment Card Industry Standard', when: 'Any app touching card data.' },
@@ -137,7 +137,7 @@ const standards = [
   { code: 'ISO 14971', name: 'Risk Management for Medical Devices', when: 'Software as a medical device.' },
   { code: 'HL7 FHIR', name: 'Health Data Interoperability', when: 'Health apps integrating with clinical systems.' },
   { code: 'ISO 42001', name: 'AI Management System', when: 'Any project with AI or machine learning features.' },
-  { code: 'EU AI Act', name: 'AI Regulatory Compliance', when: 'Any AI feature accessible to EU users.' },
+  { code: 'EU AI Act', name: 'EU AI Regulation', when: 'Any AI feature accessible to EU users.' },
   { code: 'WCAG 2.2', name: 'Web Content Accessibility Guidelines', when: 'Every project.' },
   { code: 'ISO 9001', name: 'Quality Management Systems', when: 'Every project.' },
 ];
@@ -152,22 +152,22 @@ const consequences = [
 ];
 
 const deliverables = [
-  { order: '01', title: 'Full Scope and Risk Audit', body: 'We go deep on your idea or existing product. Every feature mapped. Every risk area across security, cyber exposure, legal liability, compliance and architecture identified and addressed.' },
+  { order: '01', title: 'Full Scope and Risk Audit', body: 'We go deep on your idea or existing product. Every feature mapped. Every risk area across security, cyber exposure, legal liability, compliance and architecture identified, with who should review it.' },
   { order: '02', title: 'Investor Ready Roadmap Document', body: 'A formal strategic document you can take to a VC, investor, bank, accelerator or board. Not a quote. A proper document showing what is being built, how it is being built, what the risks are and how they are mitigated, and what the path to market looks like. This document alone can open doors.' },
-  { order: '03', title: 'Pitch Deck and Strategy Session', body: 'We prepare a full pitch deck and present it to you in a dedicated strategy session. You are not getting an email with a number. You are getting a proper presentation of how we see your project playing out, including timeline and full investment required.' },
+  { order: '03', title: 'Pitch Deck and Strategy Session', body: 'We prepare a full pitch deck and present it to you across two strategy sessions. You are not getting an email with a number. You are getting a proper presentation of how we see your project playing out, including timeline and full investment required.' },
 ];
 
 const pillars = [
   { title: 'Development', body: 'Custom software, app builds, AI integration. Delivered in house.' },
   { title: 'Marketing', body: 'User acquisition through our in house team at All Webbed Up.' },
-  { title: 'Capital', body: 'Coordinated with our named R&D tax and grants partners. We structure the technical documentation, they lodge the claim.' },
-  { title: 'Legal', body: 'Coordinated with our named commercial and IT law partners so contract, IP assignment and privacy drafting keeps pace with the build.' },
+  { title: 'Capital', body: 'Our accountants at Crescendo advise you directly on the R&D Tax Incentive and grants. We keep build records your tax agent can ask for.' },
+  { title: 'Legal', body: 'Our lawyers at Avicenna Lawyers advise you directly. Your privacy policy and terms of service are prepared when you add them, timed to the final scope so they match what is launched.' },
 ];
 ---
 
 <Layout
-  title="Discovery Audit. Before We Build Anything | All Webbed Labs"
-  description="The Discovery Audit covers every legal, compliance, security and IP risk before a dollar goes into development. Credited to your build if you proceed."
+  title="Discovery Audit. Before We Build Anything | AWLabs"
+  description="The Discovery Audit identifies the legal, compliance, security and IP risks in your product before a dollar goes into development. $750 plus GST, credited in full against your build."
 >
   <Header />
   <main>
@@ -182,7 +182,7 @@ const pillars = [
             <span class="gradient-text">until it&rsquo;s too late.</span>
           </h1>
           <p class="audit-lead">
-            You just got off a call with Andy. What he told you about the Discovery Audit is real. This is the full picture of what it covers, and what happens to founders who skip it.
+            You have spoken with our team about your idea. This page sets out what the Discovery Audit covers, and what happens to founders who skip it.
           </p>
           <p class="audit-sub">
             Most agencies take your brief, build what you ask for and send an invoice. Nobody checks whether you legally own the code. Nobody checks whether your payment setup will get your account frozen. Nobody checks whether you are sitting on a six figure compliance exposure. That is what the Discovery Audit is for.
@@ -215,7 +215,7 @@ const pillars = [
               <line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
             <p>
-              Across the categories below, the combined regulatory and legal surface for a modern software product is broad. Most founders discover the extent of it late. The Discovery Audit exists so those questions land in front of the right specialist on our team before build.
+              Across the categories below, the combined regulatory and legal surface for a modern software product is broad. Most founders discover the extent of it late. The Discovery Audit exists so those questions land in front of the right specialist before build.
             </p>
           </div>
           <p class="risks-sub">
@@ -283,10 +283,10 @@ const pillars = [
     <section class="standards-section">
       <div class="standards-inner">
         <div class="reveal">
-          <span class="section-label">Compliance Standards</span>
-          <h2 class="section-heading">The standards we audit against.</h2>
+          <span class="section-label">Standards</span>
+          <h2 class="section-heading">The standards your product is assessed against.</h2>
           <p class="section-sub">
-            These are the internationally recognised frameworks AWLabs applies to every project. This is what enterprise clients, investors and acquirers will ask for. Most founders have never heard of them.
+            These are the seventeen internationally recognised standards your product is assessed against in the audit. Each one is marked as applying or not applying to your product. We do not certify against any standard. This is what enterprise clients, investors and acquirers will ask for. Most founders have never heard of them.
           </p>
         </div>
 
@@ -349,7 +349,7 @@ const pillars = [
           <div class="reveal-left">
             <span class="section-label">Not Just A Dev Shop</span>
             <h2 class="section-heading">Code, capital and compliance. One team, one roof.</h2>
-            <p>AWLabs is a full end to end delivery partner. Development and marketing are ours; capital and legal are coordinated with our named third party partners, all working from the same brief. You are not stitching four vendors together and hunting for handovers. You are talking to one team.</p>
+            <p>AWLabs builds the product, and All Webbed Up handles marketing. Our lawyers at Avicenna Lawyers and our accountants at Crescendo work from the same brief. They are separate practices with their own licences, you engage them directly, and AWLabs never gives legal or financial advice. You are not stitching four vendors together and hunting for handovers. You are talking to one team.</p>
             <p>The Discovery Audit is the point where that comes together. Every risk we surface is something one of these four pillars addresses. Nothing is thrown over a fence.</p>
           </div>
           <div class="pillars-list reveal-right stagger-2">
@@ -379,7 +379,7 @@ const pillars = [
           <div class="close-body">
             <p>Andy is personally across every Discovery Audit we take on. We work with a limited number of clients at a time and we are selective about who we take on, because the DA only works when we can go deep.</p>
             <p>If you are reading this, it means Andy thinks there is something real here.</p>
-            <p>The Discovery Audit is a fixed fee. If we proceed to build, that fee is credited in full to your build, so it is not an extra cost. It is money toward your project.</p>
+            <p>The Discovery Audit is $750 plus GST ($825). If we go ahead with the build, the full fee is credited against your build, so it is not an extra cost. It is money toward your project.</p>
             <p>For what it protects you from, what it sets you up with and the doors it can open, whether you proceed with us or not, it is one of the most important line items you will approve on this project.</p>
           </div>
 
@@ -393,7 +393,8 @@ const pillars = [
               Book Your Discovery Audit
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>
-            <a href="/how-we-work" class="btn-outline">View Case Studies and NDA</a>
+            <a href="/case-studies" class="btn-outline">See our work</a>
+            <a href="/how-we-work" class="btn-outline">Read our NDA</a>
           </div>
           <p class="close-note">Or call 1800 714 148</p>
         </div>

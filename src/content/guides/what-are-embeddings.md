@@ -159,6 +159,6 @@ Criteria that matter in practice:
 
 People sometimes ask whether they should "train the AI on our documents" or "embed our documents". Embedding doesn't change any model; it indexes your content so it can be found. [Fine-tuning](/guides/what-is-llm-fine-tuning) changes a model's weights to alter how it behaves. For making company knowledge available to an assistant, embeddings plus retrieval are almost always the first step. The trade-off is covered in [RAG vs fine-tuning](/guides/rag-vs-fine-tuning).
 
-## How All Webbed Labs works with embeddings
+## How AWLabs works with embeddings
 
-We shortlist embedding models that can run where your data is allowed to go, test them against a question set built from your own documents, and keep the source text and model version with every vector so re-embedding is a routine job, not a migration. The vectors usually live in PostgreSQL with pgvector in an Australian region. This work sits inside our [RAG knowledge base development](/services/rag-knowledge-base) service.
+We shortlist embedding models that can run where your data is allowed to go, test them against a question set built from your own documents, and keep the source text and model version with every vector so re-embedding is a routine job, not a migration. The vectors usually live in PostgreSQL with pgvector, in an Australian region where your data needs to stay onshore. This work sits inside our [RAG knowledge base development](/services/rag-knowledge-base) service.

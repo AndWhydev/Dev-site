@@ -24,8 +24,8 @@ faqs:
     a: "It depends on the scope, the classification level, the number of systems and how ready you are. ASD doesn't publish prices, and it recommends getting at least three quotes and not limiting yourself to assessors close by. Preparation, such as fixing control gaps and writing documentation, is often a bigger cost than the assessment itself."
   - q: "How do I find an IRAP assessor?"
     a: "ASD publishes a list of endorsed IRAP assessors on cyber.gov.au. ASD doesn't recommend specific assessors or help choose one for a particular job, so shortlist from the list, get at least three quotes, and check each assessor's experience with your type of system and classification level. ASD also warns that an unsolicited caller claiming to be an IRAP assessor may be a scammer."
-  - q: "Is All Webbed Labs an IRAP assessor?"
-    a: "No. All Webbed Labs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We can build software to ISM-informed requirements and prepare documentation, but an assessment must be done by an independent, endorsed assessor."
+  - q: "Is AWLabs an IRAP assessor?"
+    a: "No. AWLabs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We can build software to ISM-informed requirements and prepare documentation, but an assessment must be done by an independent, endorsed assessor."
 sources:
   - title: "Infosec Registered Assessors Program (IRAP)"
     url: "https://www.cyber.gov.au/business-government/protecting-devices-systems/assessment-evaluation-programs/irap"
@@ -154,8 +154,8 @@ The [Essential Eight guide](/guides/essential-eight-software-development) covers
 
 **An AI feature is part of the system, so it belongs inside the assessment boundary like any other component.** In practice that means the model endpoint, its region, the data sent to it, logging of prompts and outputs, and any third-party model provider should all appear in the boundary diagram and the system security plan. A vendor whose IRAP report predates its AI features should expect agencies to ask whether those features were assessed.
 
-## How All Webbed Labs relates to IRAP
+## How AWLabs relates to IRAP
 
-To be clear: All Webbed Labs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We don't hold security clearances and we aren't on any government panel.
+To be clear: AWLabs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We don't hold security clearances and we aren't on any government panel.
 
-What we can do is engineering. We build software on cloud platforms in Australian regions, can design to the ISM controls a client specifies, document system boundaries and data flows, and produce the technical material a system security plan draws on. The assessment itself must come from an independent, endorsed IRAP assessor chosen by the client. If you are preparing a product for government, see our [cybersecurity](/services/cybersecurity) service, [AI and software for government](/solutions/government-ai-and-software), and [how to sell software to Australian government](/guides/selling-software-to-australian-government).
+What we can do is engineering. We build software on cloud platforms, in Australian regions where that is written into your Schedule of Work, can design to the ISM controls a client specifies, document system boundaries and data flows, and produce the technical material a system security plan draws on. The assessment itself must come from an independent, endorsed IRAP assessor chosen by the client. If you are preparing a product for government, see our [cybersecurity](/services/cybersecurity) service, [AI and software for government](/solutions/government-ai-and-software), and [how to sell software to Australian government](/guides/selling-software-to-australian-government).

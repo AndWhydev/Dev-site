@@ -5,7 +5,7 @@ description: "AI in financial services for Australian banks, insurers and super 
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI in Australian financial services, for an APRA-regulated bank, insurer or super fund, is built like any other material system: information security under CPS 234, service provider and operational resilience controls under CPS 230, and data quality discipline from CPG 235. APRA's April 2026 letter to industry adds explicit expectations on AI inventories, human involvement in high-risk decisions and AI supply chain visibility. Start with internal, human-reviewed use cases, keep data in Australian regions, and budget roughly $120k to $400k (AUD, ex GST) for a first production system after discovery."
+summary: "AI in Australian financial services, for an APRA-regulated bank, insurer or super fund, is built like any other material system: information security under CPS 234, service provider and operational resilience controls under CPS 230, and data quality discipline from CPG 235. APRA's April 2026 letter to industry adds explicit expectations on AI inventories, human involvement in high-risk decisions and AI supply chain visibility. Start with internal, human-reviewed use cases and decide early where data is hosted. Typical Australian market ranges put a first production system at roughly $120k to $400k (AUD, ex GST); those are market figures, not AWLabs prices."
 takeaways:
   - "CPS 234 applies to AI systems and the third parties that run them, including model providers: you need evidence of their controls, not just a contract."
   - "Under CPS 230, a model or AI platform provider can become a material service provider, which brings register, contract and exit planning requirements."
@@ -26,9 +26,9 @@ faqs:
   - q: "Can AI help with fraud detection and AML?"
     a: "Transaction monitoring for fraud and AML usually runs on rules engines and established machine learning models rather than large language models. Generative AI fits better around the investigation: summarising an alert's history, gathering the customer's documents and drafting a case narrative for an analyst to review. The analyst still decides whether a matter is reported to AUSTRAC."
   - q: "Who owns the models, prompts and evaluation data?"
-    a: "You do. Prompts, retrieval pipelines, evaluation sets and all code live in your repository from the first day, and IP transfers on completion. Foundation models remain the vendor's, used under your own cloud or API agreement."
+    a: "You own what we build for you once it is paid for. Prompts, retrieval pipelines, evaluation sets and code are assigned to you as each part is paid for in full. You can see and test the code while we build, and the full repository and logins are handed over after the final payment. Foundation models remain the vendor's, used under your own cloud or API agreement."
   - q: "How long before something is in production?"
-    a: "For a well-scoped internal use case, typically 12 to 20 weeks from the start of discovery, including security review. Security assessment and vendor onboarding inside a bank or insurer often take longer than the engineering, so start them in parallel with discovery."
+    a: "For a well-scoped internal use case, typically 12 to 20 weeks from the Discovery Audit, including security review. Security assessment and vendor onboarding inside a bank or insurer often take longer than the engineering, so start them in parallel with the Discovery Audit."
 sources:
   - title: "APRA Letter to Industry on Artificial Intelligence (AI), 30 April 2026"
     url: "https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai"
@@ -94,7 +94,7 @@ Automated decisions carry an extra obligation from 10 December 2026, when the Pr
 | Obligation | What it says in short | What the build produces |
 |---|---|---|
 | CPS 234 information security (in force since 1 July 2019) | Controls commensurate with the asset's criticality and sensitivity, including assets managed by third parties; notify APRA within 72 hours of a material incident | Data classification of every input and output, threat model covering prompt injection and data leakage, evidence pack on the model provider's controls, alerting wired into your incident process |
-| CPS 234 testing | Systematic testing of control effectiveness | Security tests in the delivery pipeline, penetration test before launch, retest schedule |
+| CPS 234 testing | Systematic testing of control effectiveness | Security tests in the delivery pipeline, automated penetration testing before launch, an independent test if you choose one, retest schedule |
 | CPS 230 operational risk (in force since 1 July 2025) | Manage operational risk, maintain critical operations within tolerance, manage material service providers | Dependency map of every AI supplier, fallback mode if the model endpoint fails, documented exit path to another model |
 | CPS 230 service providers | Register of material service providers, contract requirements; pre-existing contracts apply from the earlier of renewal or 1 July 2026 | Information for the register: data flows, locations, sub-processors, termination and transition terms |
 | CPG 235 data risk (guidance, 2013) | Data quality across accuracy, completeness, consistency, timeliness, availability and fitness for use; validation close to capture | Retrieval and extraction evaluation sets, source freshness checks, validation at ingestion rather than after the model answers |
@@ -127,7 +127,7 @@ Two of these deserve more detail, and they have their own guides: [CPS 234 and A
 
 ## Where should the model and the data live?
 
-**In Australian regions by default, with any exception written down before build.** No prudential standard bans offshore processing outright, but offshoring is one of the arrangements CPS 230 expects you to manage and notify, and most boards and customers expect onshore handling of financial data. For AI that means checking three locations, not one: where documents and embeddings are stored, where the model runs inference, and where the provider keeps logs or samples for abuse monitoring.
+**Most regulated entities choose Australian regions, with any exception written down before build.** No prudential standard bans offshore processing outright, but offshoring is one of the arrangements CPS 230 expects you to manage and notify, and most boards and customers expect onshore handling of financial data. For AI that means checking three locations, not one: where documents and embeddings are stored, where the model runs inference, and where the provider keeps logs or samples for abuse monitoring.
 
 When the model you want isn't offered in an Australian region, there are usually three options. Use a different model that is available onshore and test whether it meets your quality bar. Host an open-weight model in your own Australian cloud account, which trades some capability for full control. Or accept offshore inference for low-sensitivity content only, with the data flow documented for your privacy and service provider assessments. Our [data residency explainer](/guides/data-residency-vs-data-sovereignty) covers why onshore storage alone doesn't settle the jurisdiction question.
 
@@ -147,19 +147,18 @@ When the model you want isn't offered in an Australian region, there are usually
 
 ## How long does it take, and what does it cost?
 
-**A first production AI system for a regulated entity typically runs 13 to 23 weeks and costs roughly $120,000 to $400,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. The spread comes from the number of integrations, the security review burden and whether the system faces customers.
+**In typical Australian market ranges, a first production AI system for a regulated entity runs 10 to 18 weeks of build and costs roughly $120,000 to $400,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. The spread comes from the number of integrations, the security review burden and whether the system faces customers.
 
 | Phase | Typical duration | Typical range (AUD, ex GST) | Output |
 |---|---|---|---|
-| Paid discovery | 3 to 5 weeks | $15,000 to $40,000 | Use case selection, data and integration map, risk assessment inputs, fixed price for the build |
 | Pilot build | 6 to 10 weeks | $60,000 to $150,000 | Working system for a small user group, evaluation set, security testing |
 | Production hardening | 4 to 8 weeks | $45,000 to $210,000 | Monitoring, fallbacks, penetration test remediation, runbooks, handover |
 | Run and improve | Ongoing | 15% to 20% of build per year, plus model and cloud costs | Model upgrades, evaluation reruns, new sources |
 
-The arithmetic behind the middle of that range: a pilot of about 500 hours of senior engineering at a blended $180 an hour is $90,000; production hardening of 400 hours is $72,000; add $25,000 of discovery and the total is $187,000 ex GST. Discovery is longer here than in unregulated work because vendor risk questionnaires and data classification take real time.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work. Scoping takes longer here than in unregulated work because vendor risk questionnaires and data classification take real time.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We start with paid discovery that produces the risk inputs your teams need alongside the technical plan, then build at a fixed price. Data, vector indexes and, where the model is available onshore, inference stay in Australian regions by default. Every change passes automated quality gates (type checks, tests, security scans) and a senior engineer's review before deploy, and all code sits in your repository from day one.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It identifies the risk inputs your teams need alongside the technical plan, and after two strategy sessions you receive a fixed price for an agreed scope. We can host your data, vector indexes and, where the model is available onshore, inference in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates (type checks, tests, security scans) and a senior engineer's review before deploy. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment.
 
 We don't hold ISO 27001 or SOC 2 certifications to offer as a shortcut; what we provide is the evidence about the system we build for you, in the form your assessors ask for. Your organisation stays responsible for its compliance. See our [LLM integration](/services/llm-integration) and [AI governance](/services/ai-governance) services, or the broader [finance and fintech](/industries/finance-fintech) page.

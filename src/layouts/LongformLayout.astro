@@ -102,9 +102,9 @@ const disclaimers: Record<string, string> = {
   legal:
     'This page is general information about Australian law and regulation, current at the date shown. It is not legal advice. Get advice from a qualified lawyer about your circumstances.',
   tax:
-    'This page is general information, not tax advice. All Webbed Labs is not a registered tax agent. Eligibility for the R&D Tax Incentive depends on your circumstances; speak to a registered R&D tax agent and see business.gov.au and the ATO.',
+    'This page is general information, not tax advice. AWLabs is not a registered tax agent. Eligibility for the R&D Tax Incentive depends on your circumstances; speak to a registered R&D tax agent and see business.gov.au and the ATO.',
   financial:
-    'Prices on this page are typical Australian market ranges for planning purposes, not quotes. Every project is priced after scoping.',
+    'These figures are market ranges, not quotes and not what AWLabs charges. Every AWLabs build is priced after our Discovery Audit.',
 };
 ---
 
@@ -126,7 +126,7 @@ const disclaimers: Record<string, string> = {
         <h1 class="lf-title">{data.title}</h1>
         <p class="lf-meta">
           <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
-          <span class="lf-meta-sep">Published by <a href="/about">All Webbed Labs</a></span>
+          <span class="lf-meta-sep">Published by <a href="/about">AWLabs</a></span>
           <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
         </p>
       </div>
@@ -188,8 +188,8 @@ const disclaimers: Record<string, string> = {
           </nav>
         )}
         <div class="lf-cta-card">
-          <p class="lf-cta-title">Talk to a senior engineer</p>
-          <p class="lf-cta-copy">Sydney based, AEST hours, fixed price after a paid discovery. No sales layer between you and the people who build.</p>
+          <p class="lf-cta-title">Talk to us about your idea</p>
+          <p class="lf-cta-copy">Sydney based. Every build starts with a Discovery Audit, $750 plus GST, credited in full against a fixed price build.</p>
           <a href="/contact" class="btn-primary lf-cta-btn">Book a call</a>
           {data.service && <a href={data.service.href} class="lf-cta-link">{data.service.title} &rarr;</a>}
         </div>

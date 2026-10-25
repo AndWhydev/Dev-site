@@ -2,14 +2,14 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Cloud & DevOps Consulting Australia | All Webbed Labs',
+  metaTitle: 'Cloud & DevOps Consulting Australia | AWLabs',
   metaDescription: 'Cloud and DevOps consulting in Australia: AWS, Azure and Google Cloud architecture, infrastructure as code and CI/CD, secure and cost-efficient from day one.',
   category: 'Infrastructure',
   heroHeadline: 'Cloud Architecture That\'s Secure, Resilient and Cost-Efficient',
   heroTagline: 'Cloud and DevOps consulting for Australian organisations: AWS, GCP and Azure infrastructure designed to be secure, observable and cheap to operate from day one.',
   description: [
-    'Cloud infrastructure is where the gap between "it works" and "it works at 3am during a DDoS, a database failover and a botched deployment simultaneously" becomes visible. We design and operate infrastructure for organisations where downtime has direct financial and reputational consequences, financial services platforms, government digital services, healthcare applications and large-scale consumer products. Our practice is informed by the production incidents, capacity planning decisions and zero-downtime migrations our engineers have lived through, so we do not put architectures on a whiteboard that we would not be willing to operate.',
-    'The scope of our infrastructure and DevOps practice covers initial cloud architecture design, infrastructure-as-code implementation using Terraform or AWS CDK, CI/CD pipeline construction, container orchestration on Kubernetes or ECS, observability stack design, security hardening and compliance controls, disaster recovery planning with tested recovery procedures, and ongoing managed operations for organisations that prefer not to build an internal SRE function. We are cloud-agnostic: we select the platform based on your existing agreements, compliance requirements, and the services best suited to your workload, not based on which certification we hold.',
+    'Cloud infrastructure is where the gap between "it works" and "it works at 3am during a DDoS, a database failover and a botched deployment simultaneously" becomes visible. We design infrastructure for systems where downtime costs money, and we only recommend designs we are prepared to run ourselves.',
+    'The scope of our infrastructure and DevOps practice covers initial cloud architecture design, infrastructure-as-code implementation using Terraform or AWS CDK, CI/CD pipeline construction, container orchestration on Kubernetes or ECS, observability stack design, security hardening and compliance controls, disaster recovery planning with tested recovery procedures, and ongoing support through a Care Plan for teams that prefer not to build an internal SRE function. We are cloud-agnostic: we select the platform based on your existing agreements, compliance requirements, and the services best suited to your workload.',
   ],
   benefits: [
     {
@@ -61,7 +61,7 @@ const data = {
       step: '02',
       title: 'Security Baseline & Compliance Controls',
       duration: 'Weeks 2 to 4',
-      description: 'Identity and access management configuration, network security controls, encryption-at-rest and in-transit policies, logging and audit trail configuration, and baseline security monitoring. For regulated workloads, compliance controls specific to APRA CPS 234, IRAP, ISO 27001 or PCI DSS are mapped and implemented at this stage.',
+      description: 'Identity and access management configuration, network security controls, encryption-at-rest and in-transit policies, logging and audit trail configuration, and baseline security monitoring. For regulated workloads, the controls that APRA CPS 234, IRAP, ISO 27001 or PCI DSS point to are identified and built in at this stage, and your assessor or compliance team confirms the result.',
     },
     {
       step: '03',
@@ -85,7 +85,7 @@ const data = {
       step: '06',
       title: 'Disaster Recovery Testing & Handover',
       duration: 'Weeks 10 to 12',
-      description: 'Documented and scheduled DR runbook execution, we actually fail over the system, measure RTO and RPO against targets, and identify gaps before they matter. Handover includes architecture documentation, runbooks, access handover checklist, and a managed operations agreement if your team is not resourced to operate the environment independently.',
+      description: 'Documented and scheduled DR runbook execution, we actually fail over the system, measure RTO and RPO against targets, and identify gaps before they matter. Handover includes architecture documentation, runbooks, access handover checklist, and a Care Plan if your team is not resourced to operate the environment independently.',
     },
   ],
   industries: [
@@ -101,7 +101,7 @@ const data = {
   faqs: [
     {
       question: 'How do you decide which cloud provider to use for our workload?',
-      answer: 'Cloud provider selection is driven by four factors: your existing enterprise agreements and committed spend (which can make one provider significantly cheaper than another), compliance and data sovereignty requirements (AWS\'s Australian regions and GovCloud designation, for example, are relevant for some government workloads), the specific managed services best suited to your workload (AWS leads on managed database services, GCP on large-scale data and ML infrastructure, Azure on Active Directory integration for Microsoft-heavy enterprises), and your internal team\'s operational familiarity. We do not have a preferred provider and will recommend the one that best serves your requirements, including multi-cloud where workloads have genuinely different optimal homes.',
+      answer: 'Cloud provider selection is driven by four factors: your existing enterprise agreements and committed spend (which can make one provider significantly cheaper than another), compliance and data sovereignty requirements (the providers\' Australian regions, for example, matter for some government workloads), the specific managed services best suited to your workload (AWS leads on managed database services, GCP on large-scale data and ML infrastructure, Azure on Active Directory integration for Microsoft-heavy enterprises), and your internal team\'s operational familiarity. We do not have a preferred provider and will recommend the one that best serves your requirements, including multi-cloud where workloads have genuinely different optimal homes.',
     },
     {
       question: 'What is infrastructure as code and why does it matter for our organisation?',
@@ -109,7 +109,7 @@ const data = {
     },
     {
       question: 'How do you approach cloud security for Australian regulatory requirements?',
-      answer: 'For financial services organisations, APRA CPS 234 requires material information assets to be protected by information security controls commensurate with the threat environment. In practice this means: comprehensive logging and audit trails, access controls based on least privilege, penetration testing of internet-facing systems, and a tested incident response procedure. For government workloads, IRAP (Information Security Registered Assessors Program) assessment may be required depending on data classification. We can design infrastructure against the controls a PROTECTED-level assessment examines and support your team through an IRAP assessment, which is carried out by an independent IRAP assessor. For healthcare, the Australian Digital Health Agency\'s security requirements and My Health Record system operator requirements drive additional controls. We engage with your compliance and legal team to understand which frameworks apply and implement controls systematically.',
+      answer: 'For financial services organisations, APRA CPS 234 requires material information assets to be protected by information security controls commensurate with the threat environment. In practice this means: comprehensive logging and audit trails, access controls based on least privilege, penetration testing of internet-facing systems, and a tested incident response procedure. For government workloads, IRAP (Information Security Registered Assessors Program) assessment may be required depending on data classification. We can design infrastructure against the controls a PROTECTED-level assessment examines and support your team through an IRAP assessment, which is carried out by an independent IRAP assessor. For healthcare, the Australian Digital Health Agency\'s security requirements and My Health Record system operator requirements drive additional controls. Which frameworks apply to you is for your compliance and legal advisers to confirm; we then build the controls they point to.',
     },
     {
       question: 'What does it cost to run our application in the cloud, and can you reduce our existing bill?',
@@ -121,7 +121,7 @@ const data = {
     },
     {
       question: 'Do we need a dedicated SRE team, or can you manage the infrastructure for us?',
-      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. For organisations running business-critical applications 24/7 with strict SLAs, an internal or outsourced SRE function is necessary. We offer managed infrastructure operations as a service, covering 24/7 monitoring with defined response SLAs, incident management, capacity planning, security patch management, and regular architecture reviews. This is typically more cost-effective than building an internal SRE capability for organisations with fewer than 20 engineers. For organisations building internal capability, we offer a transition model: we operate the infrastructure while mentoring your internal team, then hand over operations with a defined competency milestone as the transfer condition.',
+      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. Systems that must run around the clock need someone responsible for operating them, inside or outside your business. After the 30 day warranty, we can support the infrastructure we build through a Care Plan: month to month, priced for your system. It can cover monitoring, incident handling, capacity planning, security patching and regular architecture reviews. Support runs in New South Wales business hours with agreed response targets, and after hours cover can be added where your system needs it. If you are building internal capability, we can operate the infrastructure while mentoring your team, then hand over operations when they are ready.',
     },
     {
       question: 'What does a cloud consultant do?',

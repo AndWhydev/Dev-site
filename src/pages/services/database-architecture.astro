@@ -2,20 +2,20 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Database Architecture & Design Services | All Webbed Labs',
+  metaTitle: 'Database Architecture & Design Services | AWLabs',
   metaDescription: 'Database architecture and design services: schema design, query optimisation and zero-downtime migration for PostgreSQL, MySQL, MongoDB and Redis.',
   category: 'Data',
   heroHeadline: 'Database Architecture That Performs at Enterprise Scale',
-  heroTagline: 'Schema design, query optimisation and migration strategies for systems that handle billions of records.',
+  heroTagline: 'Schema design, query optimisation and migration strategies for systems that need to keep performing as data grows.',
   description: [
-    'At enterprise scale, a poorly designed database is not just a performance problem, it is an existential risk. When query times creep from milliseconds into seconds, when indexes bloat to the point of slowing writes, or when a schema that made sense at ten thousand rows becomes a liability at ten billion, the consequences ripple through every layer of your business. Our database engineers have spent careers solving exactly these problems, across financial platforms, health systems, logistics networks and SaaS products that together handle trillions of records annually.',
+    'At enterprise scale, a poorly designed database is not just a performance problem, it is an existential risk. When query times creep from milliseconds into seconds, when indexes bloat to the point of slowing writes, or when a schema that made sense at ten thousand rows becomes a liability at ten billion, the consequences ripple through every layer of your business. We start by measuring how your database actually behaves, then fix what the numbers show.',
     'We bring a rigorous, evidence-based methodology to every engagement: instrument first, diagnose with data, then redesign with precision. Whether you need a ground-up schema designed for a new product, a comprehensive audit and remediation plan for an ageing system, or a zero-downtime migration strategy from one database engine to another, we architect solutions that are performant today and maintainable for the decade ahead. We document everything, transfer knowledge to your team, and do not leave until your team understands the why behind every decision.',
   ],
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
       title: 'Query Performance at Scale',
-      description: 'We routinely reduce query times by 10x, 100x through indexing strategy, query rewrites, execution plan analysis and data model normalisation or denormalisation appropriate to your access patterns.',
+      description: 'We measure query times before and after every change, and cut them through indexing strategy, query rewrites, execution plan analysis and data model normalisation or denormalisation appropriate to your access patterns.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
@@ -25,7 +25,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: 'Zero-Downtime Migrations',
-      description: 'Migrating a live production database is one of the highest-risk operations in engineering. Our phased approach, with dual writes, data validation and a rehearsed rollback, is designed so customers never see downtime during the cutover.',
+      description: 'Migrating a live production database is one of the highest-risk operations in engineering. Our phased approach, with dual writes, data validation and a rehearsed rollback, is designed to avoid customer facing downtime during the cutover.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
@@ -129,15 +129,15 @@ const data = {
     },
     {
       question: 'How long does a typical database architecture engagement take?',
-      answer: 'A focused optimisation engagement, auditing an existing system and implementing a set of improvements, typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. We provide a detailed timeline with milestones after the initial discovery session.',
+      answer: 'A focused optimisation engagement, auditing an existing system and implementing a set of improvements, typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope, with a timeline and milestones.',
     },
     {
       question: 'Do you work with cloud-managed database services such as AWS RDS or Google Cloud SQL?',
       answer: 'Absolutely. Managed database services introduce specific constraints (no superuser access, limited configuration parameters, cloud-specific replication behaviour) that we account for in our approach. In many cases, cloud-managed services are the right choice and we will recommend them. We also work with cloud-native analytics services including Redshift, BigQuery and Snowflake, and with serverless database options like Aurora Serverless and PlanetScale.',
     },
     {
-      question: 'We have compliance requirements (HIPAA, PCI-DSS, SOC 2). Does that affect the approach?',
-      answer: 'Yes, and it is something we incorporate from the outset rather than treating as an afterthought. Compliance frameworks impose specific requirements on data encryption (at rest and in transit), access control, audit logging, backup retention and data residency. We are familiar with HIPAA, PCI-DSS, SOC 2, ISO 27001 and the Australian Privacy Act requirements as they relate to database infrastructure, and we design solutions that satisfy your compliance obligations without unnecessary complexity.',
+      question: 'We have compliance requirements (health records laws, PCI DSS, SOC 2). Does that affect the approach?',
+      answer: 'Yes, and it is something we incorporate from the outset rather than treating as an afterthought. Compliance frameworks impose specific requirements on data encryption (at rest and in transit), access control, audit logging, backup retention and data residency. We build with PCI DSS, SOC 2, ISO 27001, the Privacy Act 1988, the My Health Records Act and state health records laws in mind as they relate to database infrastructure, and we design controls aligned with them without unnecessary complexity. Whether that meets your obligations is for your compliance advisers to confirm.',
     },
     {
       question: 'What does a database architect do?',

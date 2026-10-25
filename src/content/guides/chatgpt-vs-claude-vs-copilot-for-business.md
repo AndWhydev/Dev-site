@@ -19,7 +19,7 @@ faqs:
   - q: "Do ChatGPT Enterprise and Claude store data in Australia?"
     a: "Check the current vendor documentation for your plan. At the time of writing, OpenAI documents Australian regional storage for its API but not regional processing, and says ChatGPT residency coverage varies by plan and region. Anthropic's first-party residency controls offer global or US inference. If Australian processing is a hard requirement, Claude models can be reached through Amazon Bedrock's Australian geography, and OpenAI models through Azure in Australia East for certain models."
   - q: "Is ChatGPT safe for business use?"
-    a: "A business plan such as ChatGPT Business or Enterprise, with admin controls and a usage policy, is a reasonable choice for most business content: OpenAI says it doesn't train on business data by default. It isn't a fit for data that must be processed in Australia, and personal free accounts are not safe for work data because the organisation has no control over them."
+    a: "A business plan such as ChatGPT Business or Enterprise, with admin controls and a usage policy, is a reasonable choice for most business content: OpenAI says it doesn't train on business data by default. It isn't a fit for data that must be processed in Australia, and personal free accounts are a poor fit for work data because the organisation has no control over them."
   - q: "Claude vs Copilot: which is better for work?"
     a: "Copilot is usually better when the work lives in Outlook, Word, Excel and Teams, because it can reach your Microsoft 365 content with existing permissions. Claude tends to suit long documents, careful writing, analysis and software work that isn't anchored in Microsoft 365. Test both on the same real tasks, and note that some Copilot experiences already use Anthropic models."
   - q: "Can staff use free ChatGPT or Claude accounts for work?"
@@ -73,7 +73,7 @@ related:
 service:
   title: "AI consulting and LLM integration"
   href: "/services/llm-integration"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## What are you actually choosing between?
@@ -113,7 +113,7 @@ Points worth checking for each vendor, with what their documentation says at the
 - **ChatGPT Enterprise.** OpenAI lists no training on business data by default, encryption in transit and at rest, workspace access controls and audit logging. It also says coverage for data residency, inference residency and a HIPAA Business Associate Agreement "isn't universal" and must be confirmed for the features and regions in use.
 - **Claude.** Anthropic's commercial terms say it may not train models on customer content. For the API, it offers zero data retention arrangements for eligible customers. Team and Enterprise plans advertise no model training on your content by default.
 
-Two cautions apply to all three. First, connectors and plugins inherit the data rules of the connected system, not just the assistant. Second, the biggest data risk is usually staff pasting work content into personal, consumer accounts. Under the Privacy Act, your organisation remains responsible for personal information your staff disclose, and the OAIC advises against entering personal information into publicly available AI tools. A licensed business tool plus a clear policy is safer than an unofficial free-for-all.
+Two cautions apply to all three. First, connectors and plugins inherit the data rules of the connected system, not just the assistant. Second, the biggest data risk is usually staff pasting work content into personal, consumer accounts. Under the Privacy Act, your organisation remains responsible for personal information your staff disclose, and the OAIC advises against entering personal information into publicly available AI tools. A licensed business tool plus a clear policy carries less risk than an unofficial free-for-all.
 
 ## Can ChatGPT Enterprise, Claude or Copilot keep data in Australia?
 
@@ -169,6 +169,6 @@ A useful exercise: work out cost per active user per month after a pilot, not co
 
 - The system must serve customers, act in your line-of-business software with strict rules, or process data onshore end to end. That's a custom application on a cloud AI platform, and our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide explains when that's worth building.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We don't resell any of these subscriptions and have no commercial reason to prefer one. When clients ask, we help them run a structured side-by-side pilot, write an AI usage policy, and map which data can go into which tool under the Privacy Act. Where a workload needs onshore processing or deep integration, we build it on an Australian cloud region with the model that tests best on your tasks. See our [LLM integration](/services/llm-integration) service or [AI consulting](/ai-consulting), and read our guide to [using personal information in AI systems](/guides/privacy-act-and-ai).
+We don't resell any of these subscriptions and have no commercial reason to prefer one. When clients ask, we help them run a structured side-by-side pilot, draft an AI usage policy for their own review, and list what data each tool would touch. Whether that use is allowed under the Privacy Act is a question for your lawyers. Where a workload needs onshore processing or deep integration, we build it on an Australian cloud region with the model that tests best on your tasks. See our [LLM integration](/services/llm-integration) service or [AI consulting](/ai-consulting), and read our guide to [using personal information in AI systems](/guides/privacy-act-and-ai).

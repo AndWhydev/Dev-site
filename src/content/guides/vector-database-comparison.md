@@ -147,6 +147,6 @@ At that size, pgvector fits comfortably on a modest managed Postgres instance, P
 - Deletion: when a source document is removed or a person asks for their information to be deleted, can you find and remove every chunk and vector derived from it?
 - Who operates it: if you self-host, name the person or team responsible for upgrades, backups and on-call, before launch rather than after the first outage.
 
-## How All Webbed Labs approaches vector storage
+## How AWLabs approaches vector storage
 
-We default to PostgreSQL with pgvector in an Australian region, because it keeps permissions, audit and backups in one place, and we move to Qdrant, Weaviate or Pinecone when a project's scale or search needs have been measured and justify it. Retrieval sits behind a small interface in your codebase so the store can change later. See our [RAG knowledge base service](/services/rag-knowledge-base) or [database architecture](/services/database-architecture) work.
+We default to PostgreSQL with pgvector, in an Australian region where the services you need are available there, because it keeps permissions, audit and backups in one place, and we move to Qdrant, Weaviate or Pinecone when a project's scale or search needs have been measured and justify it. Retrieval sits behind a small interface in your codebase so the store can change later. See our [RAG knowledge base service](/services/rag-knowledge-base) or [database architecture](/services/database-architecture) work.

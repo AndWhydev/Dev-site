@@ -168,6 +168,6 @@ A claims team wants a model to read incident emails and output a claim category,
 
 The figures here are illustrative, but the logic is the point: fine-tuning was justified by a measured gap, a stable task and high volume, not by a feeling that the model should "know us better".
 
-## How All Webbed Labs approaches fine-tuning
+## How AWLabs approaches fine-tuning
 
 We treat fine-tuning as a late optimisation, not a starting point. We build the evaluation set first, push prompting and retrieval as far as they go, and fine-tune only when the numbers show a gap worth the upkeep. Where a fine-tuned open-weight model needs to run inside your own cloud account in an Australian region, that's part of our [private LLM deployment](/services/private-llm-deployment) work, measured using the approach in our guide to [LLM evaluation](/guides/llm-evaluation).

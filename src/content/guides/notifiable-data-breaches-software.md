@@ -169,6 +169,6 @@ Without per-query logs, step 2 would have had to assume every record in the data
 - [ ] You can generate a list of affected individuals and send notifications in bulk.
 - [ ] A tabletop exercise has been run in the last 12 months.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
 We build access logging, key management, revocation paths, data inventories and least-privilege roles into the software we deliver, and we can review an existing codebase for the gaps that make breach assessments slow. We don't assess or notify breaches on your behalf, and whether a breach is eligible is a decision for you and your legal advisers. See our [cybersecurity](/services/cybersecurity) and [software maintenance and support](/services/software-maintenance-support) services, and how we handle security in our own work on the [trust](/trust) page.

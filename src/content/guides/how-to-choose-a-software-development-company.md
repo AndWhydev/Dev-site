@@ -12,14 +12,14 @@ takeaways:
   - "Run basic business checks before any meeting: ABN, company age, insurance, and who the directors are."
   - "Meet the delivery team, not only the sales lead, and ask them to explain how they test, review and deploy code."
   - "Compare quotes by what's included, the assumptions and the risk each party carries. Totals alone mislead."
-  - "Make sure the contract assigns the IP to you and that the code lives in a repository you control from the start."
+  - "Make sure the contract says the IP becomes yours as each stage is paid for, that you can see the code while it is built, and that the repository and every account move into your name at handover."
 faqs:
   - q: "Is it better to choose a local software company?"
     a: "Local helps with workshops, time zone and legal recourse, but it isn't a guarantee of quality, and remote delivery works well for most projects. Choose on capability and evidence first, then weigh location as one factor. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
   - q: "How do you choose the best offshore software development company?"
     a: "Run the same checks as for a local firm, then add four: how many working hours overlap with AEST, which country's law governs the contract and whether you could enforce it there, how the firm handles personal information given your APP 8 obligations, and who exactly will write the code. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
   - q: "How do I choose a custom software development company rather than a product reseller?"
-    a: "Ask whether the proposal builds software you'll own or configures a product you'll license. A custom software development company should put the code in your repository, assign the IP to you and explain the architecture it will build. If the price depends on an ongoing licence to the firm's own platform, you're buying a product, which can be fine, but compare it against SaaS options rather than custom builds."
+    a: "Ask whether the proposal builds software you'll own or configures a product you'll license. A custom software development company should let you see the code while it is built, assign the IP to you as it is paid for, move the repository into your name at handover and explain the architecture it will build. If the price depends on an ongoing licence to the firm's own platform, you're buying a product, which can be fine, but compare it against SaaS options rather than custom builds."
   - q: "How many quotes should I get for a software project?"
     a: "Three is typical. Give every firm the same brief so the quotes are comparable, and expect the range to be wide on early estimates, because each firm is making different assumptions about scope you haven't defined yet."
   - q: "Should I pay for a discovery or scoping phase?"
@@ -64,7 +64,7 @@ related:
 service:
   title: "Custom enterprise software development"
   href: "/services/enterprise-software"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## What kind of software company do you actually need?
@@ -152,7 +152,7 @@ For typical Australian ranges by project size, see [how much custom software cos
 | Term | What to ask for | Why |
 |---|---|---|
 | IP assignment | All project IP assigned to you on payment for each milestone, with a licence to any pre-existing tools the firm uses | Default copyright sits with the developer |
-| Source code | Code in your repository throughout, not delivered at the end | Protects you if the firm fails or the relationship ends |
+| Source code | Access to see the code while it is built, and a clear point when the repository and every account move into your name | Protects you if the firm fails or the relationship ends |
 | Acceptance | Written acceptance criteria and a testing window per milestone | Prevents disputes about "done" |
 | Warranty | A defect-fix period after go-live at no cost | Bugs surface in real use |
 | Privacy and security | Obligations consistent with the Privacy Act and APP 11, breach notification to you | You remain responsible for personal information |
@@ -175,11 +175,11 @@ The firm that scores best on those checks is the best company for you, whatever 
 
 - A firm fixed price for a large project based on one meeting and no written scope.
 - No mention of testing, deployment, hosting or post-launch support.
-- Hosting, domains or code repositories set up in the vendor's name.
+- Hosting, domains or code repositories that stay in the vendor's name after handover.
 - Pricing that depends on an ongoing licence to the vendor's own framework, with no source code access.
 - "Unlimited revisions" or similar promises that can't be sustainable.
 - The team is described as a headcount, not named people.
-- Pressure to sign quickly, or large deposits before any deliverable.
+- Pressure to sign quickly, or payments that aren't tied to clear stages you accept.
 
 ## A realistic selection timeline
 
@@ -196,8 +196,8 @@ The firm that scores best on those checks is the best company for you, whatever 
 
 If you're a government agency or supplier, the Digital Transformation Agency's Digital Service Standard is worth reading before you write the brief, because it shapes how services are expected to be designed and tested.
 
-## How All Webbed Labs works, so you can compare us
+## How AWLabs works, so you can compare us
 
-We'd encourage you to put us through exactly these checks. All Webbed Labs (AW Labs Pty Ltd, ABN 32 698 684 105) is based in Five Dock, Sydney. Our founder has built software professionally since 2019 and run the agency All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership of developers and founders.
+We'd encourage you to put us through exactly these checks. AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is based in Five Dock, Sydney. Our founder has built software professionally since 2019 and run the agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership of developers and founders.
 
-Our model: paid discovery, then a fixed price for the build. Senior engineers only. Your code is in your repository from day one, and IP transfers on completion. We sign an NDA before you share anything, work AEST hours, and every change passes automated checks and a senior engineer's review before it's deployed. We don't hold ISO or SOC 2 certifications, so if your procurement requires them, we're not the right fit for that contract. See our [enterprise software](/services/enterprise-software) service or [how we work](/methodology).
+Our model: every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers only. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work AEST hours, and every change passes automated checks and a senior engineer's review before it's deployed. We don't hold ISO or SOC 2 certifications, so if your procurement requires them, we're not the right fit for that contract. See our [enterprise software](/services/enterprise-software) service or [how we work](/how-we-work).

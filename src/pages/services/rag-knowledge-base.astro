@@ -2,8 +2,8 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'RAG Development Services Australia | All Webbed Labs',
-  metaDescription: 'RAG development services in Australia: AI knowledge bases that answer from your own documents, with citations, access control and onshore data residency.',
+  metaTitle: 'RAG Development Services Australia | AWLabs',
+  metaDescription: 'RAG development services in Australia: AI knowledge bases that answer from your own documents, with citations, access control and the option of Australian hosting.',
   category: 'AI & Data',
   serviceName: 'RAG Knowledge Base',
   slug: 'rag-knowledge-base',
@@ -12,7 +12,7 @@ const data = {
   summaryStatement: 'A RAG knowledge base is an AI knowledge base that retrieves relevant passages from an organisation\'s own documents and supplies them to a language model at query time, so answers are grounded in source material the user can verify rather than generated from the model\'s general training alone. RAG development services design, build and tune that retrieval pipeline so staff and customers can chat with your documents and get cited answers.',
   description: [
     'A language model on its own knows nothing about your contracts, your policies, your product documentation or your support history. Ask it a question about your business and it will either decline or, worse, invent a plausible-sounding answer. Retrieval-augmented generation solves this by separating knowledge from reasoning: your documents are ingested, broken into passages, converted into vector embeddings and stored in a search index, and at question time the most relevant passages are retrieved and handed to the model as context. The model then answers using that supplied material, and cites where each claim came from. This is the difference between an assistant that guesses and one that reads the right page of the right document before it replies.',
-    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add re-ranking to push the genuinely relevant passages to the top. We enforce access control so the system only ever retrieves documents a given user is permitted to see, a finance policy should not surface in a customer-facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We store and serve all of this within Australian regions where data residency and the Privacy Act 1988 require it, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
+    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add re-ranking to push the genuinely relevant passages to the top. We enforce access control so the system is designed to retrieve only documents a given user is permitted to see, and we test that before launch: a finance policy should not surface in a customer-facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We can host all of this in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
   ],
   benefits: [
     {
@@ -28,7 +28,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
       title: 'Hallucination Held in Check',
-      description: 'Because the model is instructed to answer only from retrieved material and to say so when the answer is not present, fabrication drops sharply. When the knowledge base does not contain an answer, the system says it does not know rather than inventing one.',
+      description: 'Because the model is instructed to answer only from retrieved material and to say so when the answer is not present, fabrication drops sharply. When the knowledge base does not contain an answer, the system is built to say so rather than guess, and we test for that before launch.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
@@ -38,7 +38,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
       title: 'Access Control on Retrieval',
-      description: 'Document-level permissions are enforced at retrieval time, so the system only ever surfaces content a given user is entitled to see. A customer assistant cannot reach internal documents, and confidential material stays scoped to the people authorised for it.',
+      description: 'Document-level permissions are enforced at retrieval time, so the system is designed to surface only content a given user is entitled to see, and we test that before launch. A customer assistant cannot reach internal documents, and confidential material stays scoped to the people authorised for it.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
@@ -51,7 +51,7 @@ const data = {
   useCases: [],
   technologies: [
     'pgvector', 'Pinecone', 'Weaviate', 'Qdrant', 'OpenAI Embeddings',
-    'Cohere Rerank', 'LlamaIndex', 'LangChain', 'Anthropic Claude', 'OpenAI GPT-4o',
+    'Cohere Rerank', 'LlamaIndex', 'LangChain', 'Anthropic Claude', 'OpenAI models',
     'Unstructured', 'Elasticsearch', 'PostgreSQL', 'Python',
   ],
   process: [
@@ -89,7 +89,7 @@ const data = {
       step: '06',
       title: 'Deployment, Monitoring and Handover',
       duration: 'Final week',
-      description: 'We deploy within your environment and Australian region where required, set up monitoring for retrieval quality, freshness and usage, and hand over the pipelines, evaluation suite and runbooks so your team can maintain and extend the knowledge base.',
+      description: 'We deploy within your environment, in an Australian region where your Schedule of Work requires it, set up monitoring for retrieval quality, freshness and usage, and hand over the pipelines, evaluation suite and runbooks so your team can maintain and extend the knowledge base.',
     },
   ],
   industries: [
@@ -117,11 +117,11 @@ const data = {
     },
     {
       question: 'Can the system respect our existing document permissions?',
-      answer: 'Yes. Access control is enforced at retrieval time using metadata captured during ingestion, so the system only ever returns passages from documents a given user is permitted to see. This means a customer-facing assistant cannot reach internal material, and confidential documents remain scoped to authorised staff. We map this to your existing entitlement model during the knowledge audit so permissions stay consistent with the rest of your environment.',
+      answer: 'Yes. Access control is enforced at retrieval time using metadata captured during ingestion, so the system is designed to return passages only from documents a given user is permitted to see, and we test that before launch. This means a customer-facing assistant cannot reach internal material, and confidential documents remain scoped to authorised staff. We map this to your existing entitlement model during the knowledge audit so permissions stay consistent with the rest of your environment.',
     },
     {
-      question: 'Where is our data stored, and does it meet Australian data residency requirements?',
-      answer: 'We can deploy the entire pipeline, vector store, document index and model access, within an Australian cloud region to meet data residency obligations and the Privacy Act 1988. Vector stores such as pgvector, Qdrant and Weaviate can run inside your own environment, and where a hosted model is used we configure zero-retention enterprise terms so your content is never used for training. The full data flow is documented for your compliance and security teams before launch.',
+      question: 'Where is our data stored, and can it stay in Australia?',
+      answer: 'We can host your data in Australian cloud regions, including the pipeline, vector store, document index and model access. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Vector stores such as pgvector, Qdrant and Weaviate can run inside your own environment. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. The full data flow is documented for your compliance and security teams before launch.',
     },
     {
       question: 'What document formats and sources can you ingest?',
@@ -133,7 +133,7 @@ const data = {
     },
     {
       question: 'How much does RAG development cost?',
-      answer: 'It depends mainly on the number and formats of your sources, whether retrieval must respect document permissions, the systems it has to integrate with, and how rigorously answers need to be evaluated. We quote a fixed price after a paid discovery rather than a range out of context, and running costs (model usage, vector store and hosting) are modelled before build. Our guide to RAG knowledge base cost sets out typical Australian market ranges and what drives them.',
+      answer: 'It depends mainly on the number and formats of your sources, whether retrieval must respect document permissions, the systems it has to integrate with, and how rigorously answers need to be evaluated. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Running costs (model usage, vector store and hosting) are modelled before build. Our guide to RAG knowledge base cost sets out typical Australian market ranges and what drives them.',
     },
     {
       question: 'Do we need RAG or fine-tuning?',
@@ -146,7 +146,7 @@ const data = {
       'Users need accurate, verifiable answers with citations back to the source material',
       'Your knowledge changes over time and a static FAQ or hard-coded responses cannot keep up',
       'You have access-control requirements that mean different users should see different content',
-      'You have data residency or Privacy Act 1988 obligations that require content to stay within Australia',
+      'Your contracts, sector rules or internal policy require content to stay within Australia',
     ],
     notRightFor: [
       'Your knowledge fits in a short, stable FAQ, a simple search or static page is cheaper and simpler',

@@ -5,7 +5,7 @@ description: "AI for law firms in Australia: legal AI for document review, prece
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI for law firms in Australia has to protect confidentiality and privilege first and speed second. The Uniform Law regulators in NSW, Victoria and WA say lawyers can't safely put confidential or privileged client information into public AI tools, must verify everything AI produces and should have written AI policies. Courts such as the NSW Supreme Court set further rules on what AI may touch. Within those limits, document review, precedent search and matter knowledge bases are the builds that fit best, typically $60k to $250k (AUD, ex GST)."
+summary: "AI for law firms in Australia has to protect confidentiality and privilege first and speed second. The Uniform Law regulators in NSW, Victoria and WA say lawyers can't safely put confidential or privileged client information into public AI tools, must verify everything AI produces and should have written AI policies. Courts such as the NSW Supreme Court set further rules on what AI may touch. Within those limits, document review, precedent search and matter knowledge bases are the builds that fit best, with market ranges of roughly $45k to $220k (AUD, ex GST)."
 takeaways:
   - "The December 2024 Uniform Law statement ties AI use to existing conduct rules: confidentiality (ASCR r 9.1), independent advice, competence and diligence, and fair costs."
   - "NSW Supreme Court Practice Note SC Gen 23 bars generative AI from generating the content of affidavits and witness statements, and restricts which material can be entered into AI tools at all."
@@ -141,23 +141,24 @@ It's also where access control matters most, covered below. For firms wanting a 
 
 ## Should a firm build or buy?
 
-**Buy if a vendor product covers your need and its data terms satisfy your policy; build when your advantage is your own precedents, matter history or workflows.** Research publishers and legal tech vendors sell AI assistants, and Microsoft 365 Copilot handles general drafting well where permissions are tidy. For many firms that's the right answer, and we'd say so in discovery. Our [Copilot vs custom assistant comparison](/guides/copilot-vs-custom-ai-assistant) sets out the trade-offs.
+**Buy if a vendor product covers your need and its data terms satisfy your policy; build when your advantage is your own precedents, matter history or workflows.** Research publishers and legal tech vendors sell AI assistants, and Microsoft 365 Copilot handles general drafting well where permissions are tidy. For many firms that's the right answer, and we'd say so in the Discovery Audit. Our [Copilot vs custom assistant comparison](/guides/copilot-vs-custom-ai-assistant) sets out the trade-offs.
 
 Custom legal software development makes sense when a firm needs citations at clause level across its own documents, matter walls a general tool can't model, Australian processing with specific providers, or integration with a practice management system the vendors don't support well.
 
 ## What budget and timeline should a firm plan for?
 
-**A first legal AI system typically takes 8 to 20 weeks and costs roughly $60,000 to $250,000 (AUD, ex GST), including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote.
+**A first legal AI system typically takes 6 to 16 weeks and costs roughly $45,000 to $220,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote.
 
 | Scope | Duration | Typical range (AUD, ex GST) |
 |---|---|---|
-| Discovery: policy review, systems, permissions model, sample documents, fixed price | 2 to 4 weeks | $12,000 to $30,000 |
 | Precedent and clause search over an approved precedent bank | 6 to 10 weeks | $45,000 to $110,000 |
 | Document review tool with templates and reviewer screen | 8 to 12 weeks | $70,000 to $150,000 |
 | Matter knowledge base with full permission sync and ethical walls | 10 to 16 weeks | $100,000 to $220,000 |
 
-Worked example: a precedent search build of about 420 hours at a blended $175 an hour is $73,500; with $18,000 of discovery the total is $91,500 ex GST. Running costs are model usage, hosting and the vector index, which we estimate from your document volumes during discovery.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
-## How All Webbed Labs works with law firms
+Running costs are model usage, hosting and the vector index, which we estimate from your document volumes during the Discovery Audit.
 
-We start by reading your AI policy (or helping your risk partner scope one) and mapping your document management permissions, because those decide the architecture. Then we build at a fixed price, with documents, embeddings and, where the model is available onshore, inference in Australian regions. Every change passes automated quality gates and a senior engineer's review, and all code lives in your repository from day one. We work under NDA from the first conversation. See our [RAG knowledge base service](/services/rag-knowledge-base), [LLM integration](/services/llm-integration) and the [AI and automation](/industries/ai-automation) overview.
+## How AWLabs works with law firms
+
+We start by reading your AI policy (or helping your risk partner scope one) and mapping your document management permissions, because those decide the architecture. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We can host your documents, embeddings and, where the model is available onshore, inference in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We work under NDA from the first conversation. See our [RAG knowledge base service](/services/rag-knowledge-base), [LLM integration](/services/llm-integration) and the [AI and automation](/industries/ai-automation) overview.

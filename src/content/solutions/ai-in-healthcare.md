@@ -16,13 +16,13 @@ faqs:
   - q: "Does an AI scribe need TGA approval?"
     a: "It depends on what it does. The TGA's own example says a digital scribe that records and summarises clinician and patient conversations initially doesn't meet the definition of a medical device, but adding a feature that suggests diagnoses or treatments not discussed in the consultation changes its intended purpose and brings it into regulation. Keep the scope to transcription and summarising unless you intend to go through the medical device pathway."
   - q: "Can patient data be processed by an AI model hosted overseas?"
-    a: "For most providers the Privacy Act doesn't ban it, but APP 8 makes you accountable for how the overseas recipient handles the data, state laws may add conditions, and My Health Record data is subject to the section 77 onshore rule for the entities it covers. In practice, health clients and patients expect Australian processing, so we design for Australian regions and only go offshore with a documented, approved reason."
+    a: "For most providers the Privacy Act doesn't ban it, but APP 8 makes you accountable for how the overseas recipient handles the data, state laws may add conditions, and My Health Record data is subject to the section 77 onshore rule for the entities it covers. In practice, health clients and patients expect Australian processing. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work."
   - q: "Do patients need to consent to AI being used in their care?"
     a: "Ahpra's guidance says practitioners should involve patients in decisions to use AI tools that require their personal data, obtain informed consent and ideally record it. It specifically notes that generative AI scribing tools generally require informed consent. The software should make capturing and recording that consent easy."
   - q: "Can you connect to My Health Record?"
     a: "Connecting to the My Health Record system requires registration and conformance processes run by the Australian Digital Health Agency and Services Australia. We can build the software side and support that process, but we don't hold conformance for a product of our own, and passing it is the software owner's responsibility."
   - q: "Which clinical systems can you integrate with?"
-    a: "Integration usually goes through the vendor's published API, an HL7 v2 interface engine, a FHIR endpoint or a secure messaging provider. Access terms vary by vendor and often need a partnership agreement, so we confirm access in discovery before quoting the build."
+    a: "Integration usually goes through the vendor's published API, an HL7 v2 interface engine, a FHIR endpoint or a secure messaging provider. Access terms vary by vendor and often need a partnership agreement, so we confirm access in the Discovery Audit before you get a fixed price."
   - q: "Is custom EHR or practice software regulated by the TGA?"
     a: "Electronic health records and clinical workflow management software are among the TGA's exclusion categories, so a records or practice system is generally not a medical device. The exclusion only holds if every function meets it. Add a feature that flags a likely diagnosis or predicts deterioration and that function needs its own assessment."
   - q: "Can AI help with Medicare billing and claims?"
@@ -144,7 +144,7 @@ For any integration touching national infrastructure, conformance testing belong
 
 ## Where should health data and models live?
 
-**Onshore, by default and in most cases by requirement.** Any component acting for a My Health Record participant covered by section 77 must keep records and processing in Australia, and that includes AI inference and logs, not just the database. Outside that rule, APP 8 and state law make offshore processing possible but accountable, and patients and health services generally expect Australian handling.
+**Onshore in most cases, and for some components by law.** Any component acting for a My Health Record participant covered by section 77 must keep records and processing in Australia, and that includes AI inference and logs, not just the database. Outside that rule, APP 8 and state law make offshore processing possible but accountable, and patients and health services generally expect Australian handling.
 
 At the time of writing (September 2026), some commercial models are offered in Australian regions of the major clouds, but availability varies by model. Where the right model isn't available onshore, an open-weight model in the client's own Australian cloud account is the fallback; our [private LLM deployment service](/services/private-llm-deployment) covers that option. The [data residency explainer](/guides/data-residency-vs-data-sovereignty) explains why residency and sovereignty aren't the same thing.
 
@@ -163,16 +163,17 @@ Our [guide to reducing AI hallucinations](/guides/ai-hallucinations) goes into t
 
 ## What does an engagement look like, and what does it cost?
 
-**A first health AI system on the non-device side typically takes 13 to 23 weeks and costs roughly $90,000 to $350,000 (AUD, ex GST) including discovery.** These are typical Australian market ranges for senior onshore teams, not a quote. Integration access and privacy assessment usually drive the timeline more than the engineering.
+**A first health AI system on the non-device side typically takes 10 to 18 weeks and costs roughly $75,000 to $310,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. Integration access and privacy assessment usually drive the timeline more than the engineering.
 
 | Phase | Duration | Typical range (AUD, ex GST) | Output |
 |---|---|---|---|
-| Discovery | 3 to 5 weeks | $15,000 to $40,000 | Intended purpose statement, TGA boundary analysis for your advisers, privacy impact assessment inputs, integration access plan, fixed price |
 | Pilot | 6 to 10 weeks | $50,000 to $160,000 | Working system with a small clinical or admin group, evaluation on real (approved) data |
 | Production | 4 to 8 weeks | $25,000 to $150,000 | Monitoring, security testing, consent and audit features, handover |
 
-Worked example: a referral processing tool of about 420 hours at a blended $180 an hour is $75,600, plus 250 hours of integration and hardening at the same rate ($45,000) and $25,000 of discovery, for $145,600 ex GST. A product that crosses into medical device territory costs considerably more because of the quality management system, clinical evidence and regulatory work involved.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
-## How All Webbed Labs approaches health projects
+A product that crosses into medical device territory costs considerably more because of the quality management system, clinical evidence and regulatory work involved.
 
-We start every health engagement by writing down the intended purpose and mapping it against the TGA boundary and privacy obligations with your advisers, before choosing architecture. Data, vector indexes and, where possible, model inference stay in Australian regions. Every change passes automated quality gates and a senior engineer's review, and code lives in your repository from day one. We don't hold ADHA conformance, TGA registrations or healthcare-specific certifications; we build to your requirements and provide the evidence your clinical governance, privacy and regulatory teams need. See [LLM integration](/services/llm-integration) and our [healthcare](/industries/healthcare) page.
+## How AWLabs approaches health projects
+
+We start every health engagement by writing down the intended purpose and mapping it against the TGA boundary and privacy obligations with your advisers, before choosing architecture. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data, vector indexes and, where possible, model inference in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We don't hold ADHA conformance, TGA registrations or healthcare-specific certifications; we build to your requirements and provide the evidence your clinical governance, privacy and regulatory teams need. See [LLM integration](/services/llm-integration) and our [healthcare](/industries/healthcare) page.

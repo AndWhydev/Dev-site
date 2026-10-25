@@ -2,9 +2,10 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'UI/UX Design Agency Australia | All Webbed Labs',
+  metaTitle: 'UI/UX Design Agency Australia | AWLabs',
   metaDescription: 'UI and UX design for Australian software and digital products: user research, prototyping, usability testing and accessible interfaces that lift adoption.',
   category: 'Design',
+  serviceName: 'UI/UX Design',
   heroHeadline: 'Interfaces That Convert. Experiences That Retain.',
   heroTagline: 'Data-informed design that reduces friction, increases adoption and builds products people actually want to use.',
   summaryStatement: 'UI/UX design is the practice of researching how people use a product and designing its structure, flows and interface so it is easy to learn, efficient to use and accessible; UX (user experience) covers the journey and interaction, while UI (user interface) covers the visual and interactive layer people touch.',
@@ -25,7 +26,7 @@ const data = {
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-      title: 'WCAG 2.1 AA Accessibility',
+      title: 'WCAG 2.2 AA Accessibility',
       description: 'Accessibility annotations are included in every design deliverable: colour contrast ratios, focus order, touch target sizes, screen reader labels for icon-only buttons, and interaction patterns for keyboard navigation. We test prototypes with NVDA and VoiceOver before handing to development, not after.',
     },
     {
@@ -48,12 +49,12 @@ const data = {
   useCases: [],
   technologies: [
     'Figma', 'Figjam', 'Protopie', 'Maze (usability testing)', 'Hotjar', 'PostHog',
-    'Storybook', 'Tailwind CSS', 'Radix UI', 'WCAG 2.1', 'Lottie', 'Framer Motion',
+    'Storybook', 'Tailwind CSS', 'Radix UI', 'WCAG 2.2', 'Lottie', 'Framer Motion',
   ],
   process: [
     {
       step: '01',
-      title: 'User Research & Discovery',
+      title: 'User Research',
       duration: 'Weeks 1 to 3',
       description: 'Stakeholder interviews to understand business context and success metrics, followed by user research, interviews, contextual observation, or survey analysis depending on access and timeline. We map current user journeys, identify pain points with real severity data, and establish the research-backed design principles that guide all subsequent decisions.',
     },
@@ -67,7 +68,7 @@ const data = {
       step: '03',
       title: 'Wireframes & Interactive Prototypes',
       duration: 'Weeks 3 to 6',
-      description: 'Low-fidelity wireframes are produced and assembled into a clickable prototype in Figma. We run moderated usability testing sessions with users representative of your real audience, 5 to 8 participants per round is sufficient to surface 85% of critical usability issues. Findings are addressed before visual design begins.',
+      description: 'Low-fidelity wireframes are produced and assembled into a clickable prototype in Figma. We run moderated usability testing sessions with users representative of your real audience, usually 5 to 8 participants per round, which is enough to surface most critical usability issues. Findings are addressed before visual design begins.',
     },
     {
       step: '04',
@@ -79,13 +80,13 @@ const data = {
       step: '05',
       title: 'Handover & Developer Collaboration',
       duration: 'Ongoing through build',
-      description: 'Design is handed to development with accessibility annotations, interaction specifications, motion design specs, responsive breakpoint documentation and a Storybook component inventory. We run weekly design/dev syncs during the build phase and provide rapid clarifications, we treat handover as a collaboration, not a hand-off.',
+      description: 'Design is handed to development with accessibility annotations, interaction specifications, motion design specs, responsive breakpoint documentation and a Storybook component inventory. We stay in close contact with the developers through the build and provide rapid clarifications, we treat handover as a collaboration, not a hand-off.',
     },
     {
       step: '06',
       title: 'Post-Launch Measurement & Iteration',
       duration: 'Weeks 4 to 8 post-launch',
-      description: 'We review analytics data, session recordings (Hotjar or FullStory), and support ticket themes to assess whether design hypotheses were validated. A structured iteration sprint addresses findings. Design is not finished at launch, it is the first data point in an ongoing improvement cycle.',
+      description: 'We review analytics data, session recordings (Hotjar or FullStory), and support ticket themes to assess whether design hypotheses were validated. A structured round of iteration addresses findings. Design is not finished at launch, it is the first data point in an ongoing improvement cycle.',
     },
   ],
   industries: [
@@ -109,7 +110,7 @@ const data = {
     },
     {
       question: 'How long does a UX design process take before development can start?',
-      answer: 'For a medium-complexity product, the research, information architecture and wireframing phases can be completed in 4 to 6 weeks, at which point development can begin on the backend and design system in parallel with visual design. We do not require design to be 100% complete before development starts, we design features in priority order and hand them off in sprint-aligned batches. This parallel workstream model is standard practice for our embedded design/development engagements. For organisations that need to minimise pre-build time, we can compress the discovery phase to 2 weeks if you have existing user research or analytics data we can leverage.',
+      answer: 'For a medium-complexity product, the research, information architecture and wireframing phases can be completed in 4 to 6 weeks, at which point development can begin on the backend and design system in parallel with visual design. We do not require design to be 100% complete before development starts, we design features in priority order and hand them off in batches that match the build order, so design and development run in parallel. If you have existing user research or analytics data, the research phase can be shorter.',
     },
     {
       question: 'Can you redesign an existing product without disrupting current users?',
@@ -129,7 +130,7 @@ const data = {
     },
     {
       question: 'How much does UI/UX design cost?',
-      answer: 'It depends on the number of screens and user types, how much user research is needed, and whether you need a full design system. For software we build, design is scoped in the same paid discovery and fixed-price proposal as development, so there is one number for the whole product rather than a separate design invoice that grows.',
+      answer: 'It depends on the number of screens and user types, how much user research is needed, and whether you need a full design system. Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. For software we build, design is part of the same fixed price as development, so there is one number for the whole product rather than a separate design invoice that grows.',
     },
   ],
   relatedServices: [

@@ -19,7 +19,7 @@ faqs:
   - q: "Can discovery be skipped for a small project?"
     a: "For a genuinely small, well-understood job, a few workshops and a written scope may be enough. The risk rises with integrations, regulated data, AI components and multiple user groups, which is where a proper discovery pays for itself."
   - q: "Is the discovery fee credited against the build?"
-    a: "Some suppliers credit it, others don't. Either model is fine as long as it's stated up front. What matters more is that the outputs are useful to you whether or not you proceed with the same supplier."
+    a: "Some suppliers credit it, others don't. Either model is fine as long as it's stated up front. What matters more is that the outputs are useful to you whether or not you proceed with the same supplier. AWLabs credits the Discovery Audit fee of $750 plus GST in full against the build."
   - q: "What do you need from us during discovery?"
     a: "Access to the people who do the work today, a decision maker who can settle scope questions quickly, samples of real data and documents, and access to any systems that need to be integrated. Slow access is the most common reason discovery overruns."
   - q: "Is a discovery phase the same as a scoping phase or product discovery?"
@@ -120,7 +120,7 @@ The arithmetic is simple: discovery is mostly senior time. Re:Sourced's 2026 gui
 | Medium: 3 to 4 weeks, senior engineer and designer or analyst | about 20 to 25 days | $18k to $32k |
 | Large: 6 to 8 weeks, small team including an architect | about 45 to 60 days | $40k to $80k |
 
-Day rates assumed: roughly $900 to $1,300 blended, a mix of contractor and agency rates, multiplied by the days shown. Your supplier's rates and team shape will differ; ask them to show the same breakdown.
+Day rates assumed: roughly $900 to $1,300 blended, a mix of contractor and agency rates, multiplied by the days shown. These are market figures, not our prices; your supplier's rates and team shape will differ, so ask them to show the same breakdown. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 As a share of the total, discovery is usually a small fraction of the build it defines. On a $150k project, a $15k discovery is 10%. The comparison that matters is with the contingency a supplier would otherwise add to a vague brief, and the cost of building the wrong thing. For wider budgeting, see [how much custom software costs in Australia](/guides/custom-software-development-cost-australia).
 
@@ -169,6 +169,6 @@ In government, the next stage has a name. The DTA's service design and delivery 
 
 **Yes, and it's one of the most valuable outcomes.** The UK Service Manual lists stopping as a legitimate end to discovery and notes that it saves resources. Sometimes the research shows an off-the-shelf product fits, a process change solves the problem, or the benefit doesn't justify the cost. Learning that for $15k is far better than learning it after spending $300k. Our [build vs buy guide](/guides/build-vs-buy-software) helps frame that decision.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-Every project we take on starts with a paid discovery at a fixed fee, run by the senior engineers who would do the build, under NDA. It ends with a written scope, designs, an architecture outline in Australian cloud regions by default, a risk register and a fixed-price proposal. You own the outputs whether or not you proceed with us. For AI projects, our [AI readiness assessment](/services/ai-readiness-assessment) is a productised version of the same process. See how the rest of delivery works on our [methodology page](/methodology), or start with [custom software development](/services/custom-app-development).
+At AWLabs, every build starts with a Discovery Audit, a fixed fee of $750 plus GST credited in full against the build. You meet Andy first, then we work through your build in a second session, and we deliver a written audit covering scope, risks, the standards it is assessed against, the order to build in and a recommendation, including not to build if that is the honest answer. We walk you through it on screen, and the fixed price follows in a Schedule of Work. You keep the audit whoever builds it. For AI projects, our [AI readiness assessment](/services/ai-readiness-assessment) is the Discovery Audit for that kind of project. See how the rest of delivery works on our [methodology page](/methodology), or start with [custom software development](/services/custom-app-development).

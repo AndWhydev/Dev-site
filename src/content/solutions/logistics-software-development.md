@@ -24,7 +24,7 @@ faqs:
   - q: "Should we buy a TMS or build custom transport management software?"
     a: "Buy, in most cases. Mature transport management systems cover bookings, allocation and tracking well, and their vendors keep up with carrier and customer integrations. Build custom when your operating model is unusual enough that a TMS forces constant workarounds, or when you are building a freight product to sell, and otherwise put the custom effort into integration and compliance evidence around the TMS."
   - q: "Can you integrate with CargoWise, SAP or our WMS?"
-    a: "Integration is the core of most logistics projects. The approach depends on what each platform exposes: modern REST APIs, EDI messages, file drops or database views. We confirm access, test environments and message formats during discovery, because integration effort varies more than any other cost driver."
+    a: "Integration is the core of most logistics projects. The approach depends on what each platform exposes: modern REST APIs, EDI messages, file drops or database views. We confirm access, test environments and message formats during the Discovery Audit, because integration effort varies more than any other cost driver."
   - q: "Do drivers need a native app, or will a web app do?"
     a: "For drivers, a mobile app that works offline is usually worth it: regional routes lose signal, and proof of delivery, pre-start checks and photos must be captured regardless. Dispatch and office tools are typically web apps. Flutter lets one codebase cover Android and iOS if your fleet uses both."
   - q: "Does software reduce our CoR liability?"
@@ -161,16 +161,17 @@ Use AI with care where it touches safety decisions such as allocation against fa
 
 ## What does a typical engagement look like?
 
-**A realistic first project is a load evidence and integration layer, built in phases over three to six months.** Figures are typical Australian market ranges for an onshore senior team (AUD, ex GST), labelled as ranges, not quotes; the basis is in our [custom software cost guide](/guides/custom-software-development-cost-australia).
+**A realistic first project is a load evidence and integration layer, built in phases over three to six months.** Figures are typical Australian market ranges for an onshore senior team (AUD, ex GST), not AWLabs prices and not a quote; our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Phase | Weeks | Output | Typical range (AUD, ex GST) |
 |---|---|---|---|
-| Discovery | 3 to 4 | System map, data flows, CoR evidence gaps, integration access confirmed, fixed price | $12,000 to $25,000 |
 | Integration core | 6 to 10 | Event pipeline joining TMS, WMS and telematics around one load record | $40,000 to $100,000 |
 | Driver or yard app | 6 to 10 | Offline pre-start checks, load photos, proof of delivery | $40,000 to $90,000 |
 | Dashboards and alerts | 3 to 5 | Fatigue and allocation warnings, exception queues, audit exports | $15,000 to $40,000 |
 
-A business needing only the integration core and dashboards would sit around $67,000 to $165,000 including discovery; adding the app takes it towards $200,000 or beyond. Replacing a legacy TMS is a different scale of project, and our [build vs buy guide](/guides/build-vs-buy-software) is the place to start that decision; see also our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia).
+A business needing only the integration core and dashboards would sit around $55,000 to $140,000 in that market; adding the app takes it towards $200,000 or beyond. Replacing a legacy TMS is a different scale of project, and our [build vs buy guide](/guides/build-vs-buy-software) is the place to start that decision; see also our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia).
+
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
 ### Questions to settle before you commission anything
 
@@ -180,6 +181,6 @@ A business needing only the integration core and dashboards would sit around $67
 4. Where do drivers lose signal, and what must work offline?
 5. Which HVNL transitional rules apply to your operation, and until when?
 
-## How All Webbed Labs approaches logistics projects
+## How AWLabs approaches logistics projects
 
-We start with paid discovery to map your systems and data flows, then quote a fixed price. Regulatory rules are stored as configuration with effective dates, so the next HVNL change is an update, not a rebuild. Source code lives in your repository from day one, data stays in Australian cloud regions by default, and every change passes automated type checks, visual tests and security scans plus a senior engineer's review before it ships. The existing [logistics and transport](/industries/logistics-transport) page covers our wider services for the sector.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps your systems and data flows. After two strategy sessions you receive a fixed price for an agreed scope. Regulatory rules are stored as configuration with effective dates, so the next HVNL change is an update, not a rebuild. Every change passes automated type checks, visual tests and security scans plus a senior engineer's review before it ships. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. The existing [logistics and transport](/industries/logistics-transport) page covers our wider services for the sector.

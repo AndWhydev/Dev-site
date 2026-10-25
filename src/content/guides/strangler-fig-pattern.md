@@ -174,6 +174,6 @@ There's also a cost of running two systems in parallel, sometimes for years. For
 - [ ] Budget and patience to run both systems for a period
 - [ ] Someone accountable for actually retiring each old piece
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We start legacy work with a paid discovery and, where the code is available, an audit, to map capabilities, data flows and seams before committing to an approach. When the strangler fig fits, we propose the first slices as fixed-price stages, each ending with traffic moved and the old path retired, not just new code written. When a rewrite or a SaaS replacement is the better option, we say so. See our [legacy modernisation](/services/legacy-modernisation) and [code audit](/services/code-audit) services, or the [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) for typical ranges, and how a [discovery phase](/guides/software-discovery-phase) sets up a fixed price.
+We start legacy work with our Discovery Audit, $750 plus GST, credited in full against the build, and, where the code is available, a code audit, to map capabilities, data flows and seams before committing to an approach. When the strangler fig fits, we scope the first slices as stages within one fixed price, each ending with traffic moved and the old path retired, not just new code written. When a rewrite or a SaaS replacement is the better option, we say so. See our [legacy modernisation](/services/legacy-modernisation) and [code audit](/services/code-audit) services, or the [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) for typical ranges, and how a [discovery phase](/guides/software-discovery-phase) sets up a fixed price.

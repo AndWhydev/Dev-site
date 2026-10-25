@@ -68,7 +68,7 @@ related:
 service:
   title: "Custom software development"
   href: "/services/custom-app-development"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## Is offshore or onshore development better?
@@ -150,7 +150,7 @@ Daylight saving in the south-eastern states shifts these by an hour for part of 
 
 Some contexts go further. Government contracts, health records and some financial services arrangements can restrict or prohibit offshore access, so check before choosing a delivery model.
 
-**Intellectual property.** In Australia, the developer owns copyright in code it writes unless it's assigned to you in writing. With an offshore vendor, you also want the assignment to be enforceable where the vendor operates, and every individual developer, including subcontractors, bound by it. Keep the code in your own repository from day one so ownership is practical, not just contractual.
+**Intellectual property.** In Australia, the developer owns copyright in code it writes unless it's assigned to you in writing. With an offshore vendor, you also want the assignment to be enforceable where the vendor operates, and every individual developer, including subcontractors, bound by it. Make sure you can see the code while it is built, and that the repository and every account move into your name at handover, so ownership is practical, not just contractual.
 
 **Enforcement.** If something goes wrong, pursuing an Australian company under Australian law is simpler than pursuing a company overseas. That's a risk factor, not a verdict: many offshore firms have Australian entities that sign contracts locally.
 
@@ -190,9 +190,9 @@ Choose hybrid if you want onshore ownership of architecture, security and client
 2. Who can access production systems and personal information, from where?
 3. How many working hours will you overlap with AEST, and who is on call when something breaks?
 4. Will the IP assignment bind every individual who writes code for us?
-5. Is our code in our own repository from the first commit?
+5. Can we see our code while it is built, and when do the repository and accounts move into our name?
 6. Can we speak to an Australian client who has worked with you for more than a year?
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We're an onshore team based in Five Dock, Sydney, working AEST hours with senior engineers only. We use AI coding agents in our delivery pipeline to reduce the hours a project needs, with every change passing automated quality gates and a senior engineer's review before deploy. That's how we narrow the cost gap with offshore rates while keeping your systems and data in Australian cloud regions by default. If your project is well specified, long running and budget-bound, and you have the capacity to manage a vendor, an offshore team may genuinely serve you better, and we'll say so. See [custom software development](/services/custom-app-development) or [staff augmentation](/staff-augmentation).
+We're an onshore team based in Five Dock, Sydney, working AEST hours with senior engineers only. We use AI coding agents in our delivery pipeline to reduce the hours a project needs, with every change passing automated quality gates and a senior engineer's review before deploy. That's how we narrow the cost gap with offshore rates. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. If your project is well specified, long running and budget-bound, and you have the capacity to manage a vendor, an offshore team may genuinely serve you better, and we'll say so. See [custom software development](/services/custom-app-development) or [staff augmentation](/staff-augmentation).

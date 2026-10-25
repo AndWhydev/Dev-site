@@ -7,7 +7,7 @@ city: "Melbourne"
 state: "VIC"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a Sydney-based team that provides AI consulting and custom software development for Melbourne organisations remotely, flying down for workshops when being in the room matters. Victorian projects have their own rules: state agencies buy ICT through the Digital Marketplace and the mandatory eServices register, work under the Privacy and Data Protection Act 2014 and the VPDSS, and handle health data under the Health Records Act 2001. Data can stay in Victoria using AWS, Azure or Google Cloud regions in Melbourne."
+summary: "AWLabs is a Sydney-based team that provides AI consulting and custom software development for Melbourne organisations remotely, flying down for workshops when being in the room matters. Victorian projects have their own rules: state agencies buy ICT through the Digital Marketplace and the mandatory eServices register, work under the Privacy and Data Protection Act 2014 and the VPDSS, and handle health data under the Health Records Act 2001. Data can stay in Victoria using AWS, Azure or Google Cloud regions in Melbourne."
 takeaways:
   - "We're based in Sydney, deliver to Melbourne remotely and travel for workshops and user testing; we have no Melbourne office."
   - "Victorian agencies buy ICT services through the Digital Marketplace, where the eServices register is mandatory for the ICT services it covers; suppliers join via Supplier Hub."
@@ -16,15 +16,15 @@ takeaways:
   - "AWS opened its Melbourne region (ap-southeast-4) in January 2023, so Victorian workloads can stay in-state, with Sydney as a second region."
 faqs:
   - q: "Do you have a Melbourne office?"
-    a: "No. We're in Sydney and work with Melbourne organisations remotely, travelling for discovery workshops, design reviews and user testing. Melbourne is on the same time zone as Sydney all year, including daylight saving, so working hours line up exactly."
+    a: "No. We're in Sydney and work with Melbourne organisations remotely, travelling for strategy sessions, design reviews and user testing. Melbourne is on the same time zone as Sydney all year, including daylight saving, so working hours line up exactly."
   - q: "Are you on the Victorian eServices register?"
     a: "Not at the time of writing. The register is open for applications at any time. If you're a Victorian agency, check a supplier's register status before engaging them for ICT services the register covers."
   - q: "Can our data stay in Victoria?"
-    a: "Yes, for storage and processing on AWS (ap-southeast-4), Azure Australia Southeast or Google Cloud australia-southeast2. AI model availability can differ between the Melbourne and Sydney regions and changes often, so we check the specific model during discovery."
+    a: "Yes, for storage and processing on AWS (ap-southeast-4), Azure Australia Southeast or Google Cloud australia-southeast2. AI model availability can differ between the Melbourne and Sydney regions and changes often, so we check the specific model during the Discovery Audit."
   - q: "Does the PDP Act apply to private companies?"
     a: "Generally not directly. It applies to Victorian public sector organisations. But a private company contracted to a Victorian agency can be bound to the Information Privacy Principles through its contract, so suppliers should expect privacy and security clauses that mirror the Act."
   - q: "Should we hire a Melbourne software development company instead?"
-    a: "If you want a team that can drop into your office any day of the week, a Melbourne firm has a real advantage. If most of the value is in the build and the in-person moments are a few workshops and testing sessions, a remote team on the same time zone works well. Compare how each firm tests, prices and hands over code, and ask for the week-by-week plan."
+    a: "If you want a team that can drop into your office any day of the week, a Melbourne firm has a real advantage. If most of the value is in the build and the in-person moments are a few workshops and testing sessions, a remote team on the same time zone works well. Compare how each firm tests, prices and hands over code, and ask how they report progress during the build."
   - q: "Do you do Microsoft AI consulting, such as Copilot and Azure?"
     a: "We build on Microsoft Azure, including Azure-hosted models in the Australia Southeast region where the model is available, and we help organisations decide whether Microsoft 365 Copilot is enough before building anything custom. We don't hold a Microsoft partner designation, so if a program requires one, you'll need a partner for that part."
   - q: "What do senior developers cost in Melbourne?"
@@ -66,6 +66,7 @@ related:
 service:
   title: "Custom app development"
   href: "/services/custom-app-development"
+disclaimer: legal
 ---
 
 ## Can a Sydney team deliver well for a Melbourne organisation?
@@ -127,18 +128,19 @@ The Health Records Act sets Health Privacy Principles for health information col
 
 For AI features, check model availability region by region. At the time of writing, availability can differ between the Melbourne and Sydney regions for the same provider, and it changes often. For Microsoft-heavy organisations, our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide is the usual starting point. Our comparison of [Bedrock, Azure OpenAI and Vertex AI for Australian residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers how to check.
 
-## What a Melbourne engagement looks like, week by week
+## What a Melbourne engagement looks like, step by step
 
-**The in-person time is front-loaded, and the rest runs on a fixed remote rhythm.** A typical path for a first release:
+**The scoping comes first, and the build runs on a fixed remote rhythm.** A typical path for a first release:
 
-1. **Week 1: discovery workshop in Melbourne.** One or two days at your office with the process owner, the people who do the work, and IT or security.
-2. **Weeks 2 to 3: data, access and architecture.** Remote. We confirm hosting region, integrations and any VPDSS or Health Records Act requirements, and produce a fixed-price proposal.
-3. **Weeks 4 onward: build.** Remote, with a written plan each Monday and a working demo each Friday on a staging environment.
-4. **Before release: user testing in Melbourne.** We sit with real users, watch where they struggle, and fix it before the wider rollout.
-5. **After release: support.** Monitoring, fixes and improvements under an agreed support arrangement.
+1. **Discovery Call.** A short phone call with our team.
+2. **Discovery Audit.** A 60 minute meeting on Zoom with Andy, then a 60 minute session on what you need built. The Discovery Audit is $750 plus GST, credited in full against your build, and your written audit arrives within seven days of your answers. It covers hosting region, integrations and the VPDSS or Health Records Act questions your lawyer should confirm.
+3. **Two strategy sessions.** We walk you through the audit and the build scope, then present your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.
+4. **Build.** Remote. You get an update every Tuesday and Friday, Sydney time, with access to test the latest work, and you accept each stage.
+5. **Before release: user testing in Melbourne.** We sit with real users, watch where they struggle, and fix it before the wider rollout.
+6. **After release: a 30 day warranty from launch.** We fix bugs and anything caused by our work at no cost. After that, you can choose a Care Plan, month to month, priced for your system.
 
-Because Melbourne and Sydney share a time zone, a Friday demo at 3pm is 3pm for everyone, which isn't true for Brisbane or Perth for half the year.
+Because Melbourne and Sydney share a time zone, an update call at 3pm is 3pm for everyone, which isn't true for Brisbane or Perth for half the year.
 
-## How All Webbed Labs works with Melbourne organisations
+## How AWLabs works with Melbourne organisations
 
-Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021, and All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. For Melbourne clients we run discovery as an in-person workshop, then build remotely from Sydney on a fixed price, with weekly demos and code in your repository from day one. We host in Australian regions by default, in Melbourne where you want data kept in Victoria. See our [custom app development](/services/custom-app-development) service, or how remote delivery works [across Australia](/locations/australia-wide).
+Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021, and AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Melbourne clients, every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We then build remotely from Sydney, with updates every Tuesday and Friday. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. That can be Melbourne, where you want data kept in Victoria. See our [custom app development](/services/custom-app-development) service, or how remote delivery works [across Australia](/locations/australia-wide).

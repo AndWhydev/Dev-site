@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'AI Chatbot Development Australia | All Webbed Labs',
-  metaDescription: 'AI chatbot development in Australia: custom chatbots for web, WhatsApp and Teams, grounded in your knowledge, with human handoff and onshore data hosting.',
+  metaTitle: 'AI Chatbot Development Australia | AWLabs',
+  metaDescription: 'AI chatbot development in Australia: custom chatbots for web, WhatsApp and Teams, grounded in your knowledge, with human handoff and Australian hosting options.',
   category: 'AI & Data',
   serviceName: 'AI Chatbot',
   slug: 'ai-chatbot',
   heroHeadline: 'Conversational Assistants That Answer From Your Knowledge and Know When to Hand Off',
-  heroTagline: 'Custom AI chatbot development for Australian organisations: customer-facing and internal chatbots across web, WhatsApp and Teams, grounded in your content, safe by design, and built to escalate to a human when they should.',
+  heroTagline: 'Custom AI chatbot development for Australian organisations: customer-facing and internal chatbots across web, WhatsApp and Teams, grounded in your content, bounded by design, and built to escalate to a human when they should.',
   summaryStatement: 'AI chatbot development is the building of a conversational assistant, powered by a language model, that answers questions, takes defined actions and holds a natural dialogue across channels, grounded in an organisation\'s own knowledge and able to hand off to a human when a request falls outside its remit.',
   description: [
     'There is a wide gap between the no-code chatbot you can stand up in an afternoon and a conversational assistant you can put in front of customers or rely on internally. The cheap version follows rigid decision trees, breaks the moment a user phrases something unexpectedly, and either makes things up or dead-ends them with "I didn\'t understand that". A well-built AI chatbot uses a language model for genuine language understanding, draws its answers from your own knowledge through retrieval so it stays accurate, can call your systems to look up an order or raise a ticket, and recognises the limits of what it should handle so it hands the conversation to a person at the right moment. The difference is not the demo; it is how it behaves on the thousandth real conversation.',
-    'We build assistants for both customer-facing and internal use, and integrate them into the channels your audience already uses, your website, WhatsApp, Microsoft Teams and Slack, so the experience meets people where they are rather than forcing them somewhere new. Answers are grounded in your documentation and policies through a RAG approach, which keeps responses accurate and lets the assistant cite its sources, and tool calling gives it controlled access to your systems for tasks like checking an account, booking an appointment or creating a support case within boundaries you define. Safety is engineered in: input and output filtering, prompt-injection defences, topic boundaries and PII handling, plus a clear, reliable human handoff with full conversation context passed to the agent so the customer never has to repeat themselves. We add analytics so you can see what people are actually asking, where the assistant succeeds and where it escalates, and use that to improve it over time. Where the Privacy Act 1988 or data residency applies to the conversations being handled, we deploy within Australian regions and configure providers for zero data retention. The aim is an assistant that genuinely deflects routine load and gives good answers, while always knowing when a human should take over, not a frustrating wall between your customers and your team.',
+    'We build assistants for both customer-facing and internal use, and integrate them into the channels your audience already uses, your website, WhatsApp, Microsoft Teams and Slack, so the experience meets people where they are rather than forcing them somewhere new. Answers are grounded in your documentation and policies through a RAG approach, which keeps responses accurate and lets the assistant cite its sources, and tool calling gives it controlled access to your systems for tasks like checking an account, booking an appointment or creating a support case within boundaries you define. Safety is engineered in: input and output filtering, prompt-injection defences, topic boundaries and PII handling, plus a clear, reliable human handoff with full conversation context passed to the agent so the customer never has to repeat themselves. We add analytics so you can see what people are actually asking, where the assistant succeeds and where it escalates, and use that to improve it over time. We can host the assistant in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. The aim is an assistant that genuinely deflects routine load and gives good answers, while always knowing when a human should take over, not a frustrating wall between your customers and your team.',
   ],
   benefits: [
     {
@@ -37,7 +37,7 @@ const data = {
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
-      title: 'Safe and Bounded by Design',
+      title: 'Bounded by Design',
       description: 'Input and output filtering, prompt-injection defences, topic boundaries and PII handling keep the assistant within a defined remit. It is built to refuse out-of-scope requests gracefully rather than be steered into saying something it should not.',
     },
     {
@@ -50,7 +50,7 @@ const data = {
 
   useCases: [],
   technologies: [
-    'OpenAI GPT-4o', 'Anthropic Claude', 'Azure OpenAI Service', 'LangGraph',
+    'OpenAI models', 'Anthropic Claude', 'Azure OpenAI Service', 'LangGraph',
     'LangChain', 'pgvector', 'Pinecone', 'Twilio (WhatsApp)', 'Microsoft Bot Framework',
     'Slack API', 'Zendesk', 'Langfuse', 'WebSockets', 'TypeScript / Python',
   ],
@@ -89,7 +89,7 @@ const data = {
       step: '06',
       title: 'Launch, Monitoring and Handover',
       duration: 'Final week',
-      description: 'We launch with a staged rollout and monitoring for quality, cost and escalation rates, hosting within Australian regions where residency requires it. We hand over the evaluation suite, analytics and runbooks so your team can operate and keep improving the assistant.',
+      description: 'We launch with a staged rollout and monitoring for quality, cost and escalation rates, hosting in an Australian cloud region where your Schedule of Work requires it. We hand over the evaluation suite, analytics and runbooks so your team can operate and keep improving the assistant.',
     },
   ],
   industries: [
@@ -117,11 +117,11 @@ const data = {
     },
     {
       question: 'Which channels can you deploy the chatbot to?',
-      answer: 'We commonly deploy to your website as an embedded widget, to WhatsApp via Twilio, and to Microsoft Teams and Slack for internal assistants. The same underlying assistant and knowledge sit behind every channel, so behaviour is consistent rather than maintained as separate disconnected bots. During scoping we confirm which channels match where your audience actually is.',
+      answer: 'We commonly deploy to your website as an embedded widget, to WhatsApp via Twilio, and to Microsoft Teams and Slack for internal assistants. The same underlying assistant and knowledge sit behind every channel, so behaviour is consistent rather than maintained as separate disconnected bots. During the Discovery Audit we confirm which channels match where your audience actually is.',
     },
     {
       question: 'Where is conversation data stored, and does it meet privacy requirements?',
-      answer: 'We design the deployment around your obligations under the Privacy Act 1988. Where data residency requires it, we host the assistant and its knowledge base within an Australian cloud region, and where a hosted model is used we configure zero-retention enterprise terms so conversations are not used for training. PII handling and redaction are built into the safety layer, and the full data flow is documented for your compliance and security teams before launch.',
+      answer: 'We design the deployment with the Australian Privacy Principles in mind, and your lawyer or privacy adviser confirms how the Privacy Act 1988 applies to you. We can host the assistant and its knowledge base in an Australian cloud region; if your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. PII handling and redaction are built into the safety layer, and the full data flow is documented for your compliance and security teams before launch.',
     },
     {
       question: 'How do you measure whether the chatbot is actually working?',
@@ -129,7 +129,7 @@ const data = {
     },
     {
       question: 'How much does it cost to build an AI chatbot in Australia?',
-      answer: 'The build cost depends on the channels, how many systems the chatbot connects to, whether it takes actions or only answers questions, and how much knowledge it has to be grounded in. We quote a fixed price after a paid discovery. Running costs are separate and usage-based, mostly model tokens and hosting, and we model them per conversation before build. Our AI chatbot cost guide covers typical Australian market ranges.',
+      answer: 'The build cost depends on the channels, how many systems the chatbot connects to, whether it takes actions or only answers questions, and how much knowledge it has to be grounded in. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Running costs are separate and usage-based, mostly model tokens and hosting, and we model them per conversation before build. Our AI chatbot cost guide covers typical Australian market ranges, which are market figures, not our prices.',
     },
     {
       question: 'What is the difference between a custom AI chatbot and ChatGPT?',
@@ -146,7 +146,7 @@ const data = {
       'Your answers live in documentation and policies that can ground the assistant through retrieval',
       'You want one consistent assistant across multiple channels such as web, WhatsApp and Teams',
       'Reliable human handoff matters and the assistant must know when to escalate',
-      'You have data residency or Privacy Act 1988 obligations that require an Australian-hosted, carefully scoped deployment',
+      'Your contracts, sector rules or internal policy require content to stay within Australia',
     ],
     notRightFor: [
       'You only need a fixed, simple FAQ flow, a no-code builder or static help page is cheaper and adequate',

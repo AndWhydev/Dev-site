@@ -174,8 +174,8 @@ The practical answer to "CPS 234 vs ISO 27001" is that they overlap in subject m
 
 If an AI vendor supports a critical operation or creates material operational risk, it may be a material service provider under CPS 230, which brings contract, register and notification requirements. See [APRA CPS 230 and AI vendors](/guides/apra-cps-230-ai-vendors).
 
-## How All Webbed Labs works with APRA-regulated clients
+## How AWLabs works with APRA-regulated clients
 
-We don't make anyone compliant with CPS 234, and we hold no certification that would stand in for the entity's own assessment. What we do is build AI systems so the evidence the entity needs exists from the start: data flow diagrams, Australian hosting regions by default, permission-aware retrieval, logged model calls, versioned prompts, and a written list of every third party the system touches. Every change passes automated type checks and security scans and a senior engineer's review before deploy, and we support the entity's independent testers rather than marking our own homework.
+We don't make anyone compliant with CPS 234, and we hold no certification that would stand in for the entity's own assessment. What we do is build AI systems so the evidence the entity needs exists from the start: data flow diagrams, Australian hosting regions where the services are available there (with any residency requirement written into the Schedule of Work), permission-aware retrieval, logged model calls, versioned prompts, and a written list of every third party the system touches. Every change passes automated type checks and security scans and a senior engineer's review before deploy, and we support the entity's independent testers rather than marking our own homework.
 
 For how this applies to banks, insurers and super funds, see [AI development for APRA-regulated financial services](/solutions/ai-for-financial-services), our [cybersecurity](/services/cybersecurity) service, or our [trust and security](/trust) page.

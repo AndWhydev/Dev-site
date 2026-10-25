@@ -1,32 +1,32 @@
 ---
 title: "Software and AI development across Australia: how remote delivery works"
 metaTitle: "Software and AI Development Company Across Australia"
-description: "How a Sydney-based software and AI development company delivers remotely across Australia: time zones, daylight saving, weekly cadence, workshops and hosting."
+description: "How a Sydney-based software and AI development company delivers remotely across Australia: time zones, daylight saving, update cadence, site visits and hosting."
 eyebrow: "Australia-wide"
 city: "Australia"
 state: "National"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a custom software and AI development company based in Sydney that delivers projects remotely to organisations in every Australian capital, travelling for workshops when being in the room matters. Remote delivery works when there's a fixed weekly rhythm, a shared working window across time zones, and in-person sessions at the moments that shape the project: discovery, key design decisions and user testing."
+summary: "AWLabs is a custom software and AI development company based in Sydney that delivers projects remotely to organisations in every Australian capital, travelling for workshops when being in the room matters. Remote delivery works when there's a fixed update rhythm, a shared working window across time zones, and in person sessions at the moments that shape the project: strategy sessions, key design decisions and user testing."
 takeaways:
   - "Our team is in Sydney; we work remotely with organisations elsewhere in Australia and travel for workshops and testing."
   - "Queensland, Western Australia and the Northern Territory don't observe daylight saving, so time gaps with Sydney change between October and April."
   - "Perth is 2 hours behind Sydney in winter and 3 hours behind in summer, which still leaves 6 to 7 shared working hours a day."
-  - "Privacy law differs by state: Queensland, the Northern Territory and Tasmania have public sector privacy laws, and Western Australia and South Australia have no specific privacy legislation."
+  - "Privacy law differs by state: Queensland, the Northern Territory and Tasmania have public sector privacy laws, Western Australia passed the Privacy and Responsible Information Sharing Act 2024, and South Australia has no privacy Act of its own."
   - "Hyperscale cloud regions in Australia are in Sydney, Melbourne and, for Azure, Canberra; that's where data sits regardless of where users are."
 faqs:
   - q: "Do you have offices outside Sydney?"
     a: "No. Our only office is in Five Dock, Sydney. We don't list addresses or phone numbers in other cities because we don't have them. We travel to you for workshops and testing when it's worth it."
   - q: "When is it worth flying someone in?"
-    a: "For the discovery workshop, for any session where several stakeholders need to agree on a design, and for user testing with people who aren't comfortable on video calls. For routine demos and check-ins, video works well and saves you travel costs."
+    a: "For strategy sessions where several stakeholders need to agree on scope or design, and for user testing with people who aren't comfortable on video calls. For routine demos and check-ins, video works well and saves you travel costs."
   - q: "Who pays for travel?"
-    a: "Travel for agreed on-site sessions is scoped and priced into the proposal up front, so there are no surprise invoices. If a project needs no travel, none is charged."
+    a: "Travel for agreed on-site sessions is scoped and priced into your Schedule of Work up front, so there are no surprise invoices. If a project needs no travel, none is charged."
   - q: "How do you handle Perth's time difference?"
     a: "We schedule shared meetings in the middle of the day, when Perth mornings overlap Sydney afternoons, and keep asynchronous updates written so nothing depends on a live call. In summer that overlap is roughly 9am to 3pm Perth time."
   - q: "What is a software development company?"
     a: "A software development company designs, builds and maintains software for other organisations, as opposed to selling one packaged product. The work usually runs from discovery and design through engineering, testing and deployment to ongoing support. An AI development company does the same with AI models at the centre of the system, such as knowledge search, document processing or agents."
   - q: "How do we choose the best software development company in Australia?"
-    a: "There isn't one best firm for every project, whatever the ranking lists say. Shortlist on fit: relevant experience, who actually writes the code, whether you own the code and IP from day one, how they test, and how they price. Directory reviews help, but a paid discovery phase with one or two firms tells you far more about how they work."
+    a: "There isn't one best firm for every project, whatever the ranking lists say. Shortlist on fit: relevant experience, who actually writes the code, when IP is assigned to you and when you get the repository and logins, how they test, and how they price. Directory reviews help, but a paid scoping step, such as our Discovery Audit, tells you far more about how a firm works."
   - q: "Is remote delivery slower?"
     a: "Not if it's run properly. The build itself happens at a desk wherever the team is. Delays in remote projects usually come from unclear decisions, which is why we put decision-heavy sessions in person."
 sources:
@@ -59,11 +59,12 @@ related:
 service:
   title: "Custom app development"
   href: "/services/custom-app-development"
+disclaimer: legal
 ---
 
 ## Do you work with organisations outside Sydney?
 
-**Yes. Our team is based in Sydney and we deliver remotely to organisations in every Australian capital and regional centre, travelling for workshops when being in the room matters.** We don't have offices in other cities and we won't pretend to. What we do have is a delivery model built for distance: a fixed weekly rhythm, written decisions, shared working hours, and in-person time placed where it changes the outcome.
+**Yes. Our team is based in Sydney and we deliver remotely to organisations in every Australian capital and regional centre, travelling for workshops when being in the room matters.** We don't have offices in other cities and we won't pretend to. What we do have is a delivery model built for distance: a fixed update rhythm, written decisions, shared working hours, and in-person time placed where it changes the outcome.
 
 This page explains how that works in practice, including the parts that are genuinely harder across distance and how we handle them.
 
@@ -92,37 +93,36 @@ Shared working hours, assuming both sides work 9am to 6pm local time:
 
 The practical rule: schedule meetings with Perth and Darwin between late morning and mid afternoon Sydney time, and remember that a Brisbane client's 5pm is Sydney's 6pm for half the year. We put the time zone in every calendar invite and state times in both zones in writing.
 
-## What does the weekly rhythm look like?
+## What does the update rhythm look like?
 
-**Remote projects run on a fixed cadence so nobody has to wonder what's happening.** A typical week:
+**Remote projects run on a fixed cadence so nobody has to wonder what's happening.** You get an update every Tuesday and Friday, Sydney time, with access to test the latest work. Sprint length is set for each build.
 
 | When | What | Format |
 |---|---|---|
-| Monday | Written plan for the week: what's being built, open questions, decisions needed | Shared document or project tool |
-| Daily | Short async update in your chat channel; a live stand-up only if you want one | Slack, Teams or email |
-| Mid-week | Working session on anything blocked, with the people who can decide | 30 to 60 minute video call |
-| Friday | Demo of working software on a staging environment, plus a written summary | Video call and recording |
-| Monthly | Budget and scope review against the fixed price | Video call |
+| Tuesday | Progress, open questions and decisions needed, with access to test the latest work | Written update and test link |
+| As needed | Working session on anything blocked, with the people who can decide | 30 to 60 minute video call |
+| Friday | Progress, open questions and decisions needed, with access to test the latest work | Written update and test link |
+| End of each stage | You review the stage and accept it | Video call |
 
-Everything that's decided gets written down in the same place. That habit matters more for remote delivery than any tool, because it means a stakeholder in Perth who missed Friday's call can catch up in five minutes.
+Everything that's decided gets written down in the same place. That habit matters more for remote delivery than any tool, because it means a stakeholder in Perth who missed a call can catch up in five minutes.
 
 ## When do we travel to you?
 
 **We travel when a decision needs several people to see the same thing at the same time, or when we need to watch real users.** These are the sessions that lose most over video:
 
-1. **Discovery workshop.** Mapping the process, the data and the risks with the business owner, subject matter experts and IT. Usually a half day to two days on site.
+1. **Strategy sessions with several stakeholders.** Walking through the audit and the build scope with the business owner, subject matter experts and IT.
 2. **Design sign-off for complex workflows.** Where several teams have to agree how work flows between them.
 3. **User testing.** Sitting beside the people who'll use the system, especially field or operational staff.
 4. **Go-live support for operational systems.** Being present when a system that runs the business switches over.
 
-Everything else, including the build, code review, demos and most workshops after the first, works well remotely. Travel is scoped and priced into the proposal so you know the cost before you sign.
+Everything else, including the build, code review, updates and most meetings, works well remotely. Travel is scoped and priced into your Schedule of Work so you know the cost before you sign.
 
 ## What's genuinely harder when your developer is interstate?
 
 **Three things get harder at a distance, and it's better to plan for them than to pretend they don't exist.** If none of these can be managed, a developer in your own city may be the better choice, and that's a reasonable decision.
 
-- **Informal context.** A local team picks up how your business works over coffee and in corridors. Remotely, that context has to be gathered on purpose, which is why the first on-site discovery session is long and why we interview the people who do the work, not only the managers.
-- **Access to physical sites.** Warehouses, clinics, depots and job sites can't be understood on a video call. If the software is used in the field, we plan at least one site visit into the proposal.
+- **Informal context.** A local team picks up how your business works over coffee and in corridors. Remotely, that context has to be gathered on purpose, which is why the Discovery Audit goes deep and why we interview the people who do the work, not only the managers.
+- **Access to physical sites.** Warehouses, clinics, depots and job sites can't be understood on a video call. If the software is used in the field, we plan at least one site visit into your Schedule of Work.
 - **Stakeholder attention.** It's easier to skip a video call than a meeting in your own boardroom. A fixed calendar of decision points, set up in week one, keeps the right people involved.
 
 What doesn't get harder is the engineering. Code review, testing, deployment and monitoring work the same whether the client is in Parramatta or Perth.
@@ -145,10 +145,11 @@ A Perth or Brisbane system will usually run in one of these regions, with a seco
 |---|---|
 | NSW, Victoria, ACT | Public sector privacy laws, plus health privacy laws that private health providers must also follow |
 | Queensland, Northern Territory, Tasmania | Privacy laws that apply only to their public sectors |
-| Western Australia, South Australia | No specific privacy legislation |
+| Western Australia | The Privacy and Responsible Information Sharing Act 2024, passed for the WA public sector |
+| South Australia | No privacy Act of its own; an administrative instruction covers the public sector |
 
 For a private company this rarely changes the build. For a state agency or a health provider, it changes which principles the system is designed to and how data breaches are reported. The city pages for [Melbourne](/locations/melbourne), [Brisbane](/locations/brisbane) and [Canberra](/locations/canberra) cover those states in detail.
 
-## How All Webbed Labs delivers across Australia
+## How AWLabs delivers across Australia
 
-We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. Every engagement starts with an NDA and paid discovery, then a fixed price. We work AEST hours with the overlap windows above, keep code in your repository from day one, and host in Australian regions by default. If you're comparing firms, our guides on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) and [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) set out the questions to ask. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/how-we-work) or our [custom app development](/services/custom-app-development) service.
+We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every engagement starts with an NDA and our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We work AEST hours with the overlap windows above. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. If you're comparing firms, our guides on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) and [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) set out the questions to ask. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/how-we-work) or our [custom app development](/services/custom-app-development) service.

@@ -69,7 +69,7 @@ const data = {
       step: "03",
       title: "Integration Behind a Flag",
       duration: "Weeks 3 to 6",
-      description: "We build the AI service, wire it into your app behind a feature flag, reuse your existing permission checks, and add fallbacks, timeouts, caching and per-tenant budgets. The code lands in your repository through your normal review and CI process, with tests alongside it.",
+      description: "We build the AI service, wire it into your app behind a feature flag, reuse your existing permission checks, and add fallbacks, timeouts, caching and per-tenant budgets. Every change goes through review and CI with tests alongside it, and you can see and test the work as we build. The code is assigned to you as each stage is paid for in full.",
     },
     {
       step: "04",
@@ -87,7 +87,7 @@ const data = {
       step: "06",
       title: "Handover and Model Change Plan",
       duration: "Final week",
-      description: "We hand over the evaluation suite, dashboards, runbooks and a plan for handling model version changes, so your team can swap or upgrade models by running the evals rather than guessing. Ongoing support is available under a maintenance retainer if you want it.",
+      description: "We hand over the evaluation suite, dashboards, runbooks and a plan for handling model version changes, so your team can swap or upgrade models by running the evals rather than guessing. Ongoing support is available through a Care Plan, month to month, priced for your system.",
     },
   ],
   industries: [
@@ -111,7 +111,7 @@ const data = {
     },
     {
       question: "How much does it cost to add AI to an existing app?",
-      answer: "There are two costs: the build, and the per-use running cost. A single well-scoped feature such as search or summarisation typically falls in the lower build ranges shown on this page, while an in-app assistant that can take actions costs more because it needs more safety work and testing. Running cost depends on volume, model tier and caching, and we estimate it per request during the first week. Our guide on the cost to add AI to an existing app breaks down the drivers in more detail.",
+      answer: "Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Running cost is separate from the build: it depends on volume, model tier and caching, and we estimate it per request during the first week. Our guide on the cost to add AI to an existing app breaks down the drivers in more detail.",
     },
     {
       question: "How do you stop AI running costs from blowing out as usage grows?",
@@ -139,7 +139,7 @@ const data = {
     },
     {
       question: "How long does it take to add an AI feature to an existing app?",
-      answer: "A single well-scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy-to-check output can be quicker; in-app assistants that take actions take longer because they need more safety testing. Paid discovery fixes the timeline and price.",
+      answer: "A single well-scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy-to-check output can be quicker; in-app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.",
     },
   ],
   comparison: {
@@ -158,23 +158,6 @@ const data = {
       "The task needs the same exact, rule-based answer every time, where ordinary rules and code will be cheaper and more predictable than a model",
     ],
   },
-  pricing: [
-    {
-      name: "Single AI feature (typical range)",
-      range: "$10k to $60k",
-      detail: "Typical Australian market range, AUD ex GST, not a quote. One well-scoped feature such as semantic search, summarisation or field extraction, including evaluation set, flagged rollout and handover. Simpler features such as summaries sit at the lower end; semantic search and document extraction usually sit higher. Roughly 7 to 43 senior days at a planning rate of about $1,400 a day. Model usage is billed separately by the provider.",
-    },
-    {
-      name: "In-app assistant (typical range)",
-      range: "$40k to $150k",
-      detail: "Typical range, AUD ex GST. An assistant inside your app that answers questions and can take limited actions through your existing APIs, with permission checks, action confirmation, safety testing and staged rollout. The upper end applies where many actions or several data sources are involved; agents that carry out many tasks can cost more.",
-    },
-    {
-      name: "AI feature program (typical range)",
-      range: "$150k+",
-      detail: "Typical range, AUD ex GST. Several AI features across a product or a group of internal systems, with a shared AI service, cost dashboards, evaluation pipeline in CI and governance documentation. Scoped after a paid discovery and then fixed price.",
-    },
-  ],
   definitions: [
     {
       term: "Feature flag",

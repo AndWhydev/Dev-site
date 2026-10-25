@@ -88,7 +88,7 @@ const solutions = [
   { title: 'AI Consulting', desc: 'Custom AI models, chatbots and automation', href: '/ai-consulting' },
   { title: 'Web3 & Blockchain', desc: 'Smart contracts, DeFi and NFT platforms', href: '/web3-crypto' },
   { title: 'Digital Transformation', desc: 'Modernise your business end to end', href: '/digital-transformation' },
-  { title: 'Startup MVP', desc: 'From idea to launch in 90 days', href: '/startup-mvp' },
+  { title: 'Startup MVP', desc: 'Fixed price first versions for founders', href: '/startup-mvp' },
   { title: 'Staff Augmentation', desc: 'Extend your team with senior engineers', href: '/staff-augmentation' },
   { title: 'Industry Solutions', desc: 'AI and software shaped by your industry\'s rules', href: '/solutions' },
   { title: 'Where We Work', desc: 'Sydney based, delivering across Australia', href: '/locations' },
@@ -96,13 +96,13 @@ const solutions = [
 
 const company = [
   { title: 'About Us', href: '/about', desc: 'Our team, story and values' },
-  { title: 'Our Journey', href: '/our-journey', desc: 'From freelance to AWU to AWLabs, the full timeline' },
+  { title: 'Our Journey', href: '/our-journey', desc: 'Our story since 2019' },
   { title: 'How We Deliver', href: '/methodology', desc: 'The exact process, phases, gates, cadence' },
   { title: 'Trust & Compliance', href: '/trust', desc: 'IP, security, NDA, company on the record' },
-  { title: 'R&D Tax Incentive', href: '/r-and-d', desc: 'AU-built means RDTI-eligible spend' },
+  { title: 'R&D Tax Incentive', href: '/r-and-d', desc: 'How the R&D Tax Incentive may apply to software' },
   { title: 'Technology Radar', href: '/technology-radar', desc: 'Tools and frameworks we use' },
   { title: 'How We Write', href: '/editorial-policy', desc: 'Sources, dates and corrections on our guides' },
-  { title: 'Careers', href: '/careers', desc: 'Join the All Webbed Labs team' },
+  { title: 'Careers', href: '/careers', desc: 'Join the AWLabs team' },
 ];
 
 function isActive(href: string) {
@@ -113,15 +113,14 @@ function isActive(href: string) {
 <header id="site-header" transition:persist>
   <div class="header-inner">
     <!-- Logo -->
-    <a href="/" class="header-logo" aria-label="All Webbed Labs, Home">
+    <a href="/" class="header-logo" aria-label="AWLabs, Home">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="36" height="36" rx="9" fill="#0d9373"/>
         <path d="M8 27L18 9L28 27" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M11.5 21.5H24.5" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
       </svg>
       <div class="logo-text">
-        <span class="logo-main">All Webbed</span>
-        <span class="logo-sub">Labs</span>
+        <span class="logo-main">AWLabs</span>
       </div>
     </a>
 

@@ -170,6 +170,6 @@ We're not tax advisers. Read our guide on [how the R&D Tax Incentive affects the
 
 If the MVP is a subscription software product, our [SaaS development cost guide](/guides/saas-development-cost-australia) covers multi-tenancy, billing and the costs of scaling beyond the first release.
 
-## How All Webbed Labs approaches MVPs
+## How AWLabs approaches MVPs
 
-We start with a short paid discovery that turns the idea into a scoped MVP, including the cuts, and then quote a fixed price. When a landing page test, a prototype or a no-code build will answer your question more cheaply, we'll recommend it. Our MVPs are built by senior engineers on standard stacks (TypeScript, React or Next.js, Flutter where mobile is essential, PostgreSQL), with the code in your repository from day one and IP assigned to your company on completion. See our [startup MVP development service](/startup-mvp).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It turns the idea into a scoped MVP, including the cuts, and you then receive one fixed price for the agreed scope. When a landing page test, a prototype or a no-code build will answer your question more cheaply, we'll recommend it. Our MVPs are built by senior engineers on standard stacks (TypeScript, React or Next.js, Flutter where mobile is essential, PostgreSQL), and you can see and test the code while we build. Each part is assigned to your company as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [startup MVP development service](/startup-mvp).

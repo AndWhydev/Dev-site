@@ -5,7 +5,7 @@ description: "AI for not-for-profits in Australia: where AI helps charities, whe
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI for not-for-profits can save real staff time on grant writing, donor communications, case note summaries and answering the public, but the obligations are easy to misjudge. The Privacy Act's small business exemption does not cover every small charity: an NFP is covered if its annual turnover is over $3 million, and also if it provides a health service, is a contracted service provider for an Australian Government contract, or trades in personal information, among other cases. Charities also have to show their board is overseeing risk under the ACNC Governance Standards. Most NFPs should start with configured tools and small, targeted builds in the $5,000 to $90,000 range (AUD, ex GST), not large custom platforms."
+summary: "AI for not-for-profits can save real staff time on grant writing, donor communications, case note summaries and answering the public, but the obligations are easy to misjudge. The Privacy Act's small business exemption does not cover every small charity: an NFP is covered if its annual turnover is over $3 million, and also if it provides a health service, is a contracted service provider for an Australian Government contract, or trades in personal information, among other cases. Charities also have to show their board is overseeing risk under the ACNC Governance Standards. Most NFPs should start with configured tools and small, targeted builds, which market ranges put at roughly $5,000 to $90,000 (AUD, ex GST), not large custom platforms."
 takeaways:
   - "The Privacy Act applies to an NFP with annual turnover over $3 million, counting income from all sources, and to smaller NFPs in specific cases such as providing a health service or delivering a Commonwealth contract."
   - "The OAIC recommends not entering personal information, particularly sensitive information, into publicly available generative AI tools. For client data, use enterprise services with clear retention terms."
@@ -121,7 +121,7 @@ In practice, a board exercising reasonable care over AI would expect:
 
 ## How can a charity keep the cost down?
 
-**Work up the ladder from cheapest to most expensive, and stop at the first rung that solves the problem.** Figures are typical Australian market ranges (AUD, ex GST), labelled as ranges, not quotes, for an onshore team; basis in our [custom software cost guide](/guides/custom-software-development-cost-australia).
+**Work up the ladder from cheapest to most expensive, and stop at the first rung that solves the problem.** Figures are typical Australian market ranges (AUD, ex GST), not AWLabs prices and not a quote; the published sources are named in our [custom software cost guide](/guides/custom-software-development-cost-australia).
 
 | Rung | What it looks like | Typical cost (AUD, ex GST) |
 |---|---|---|
@@ -141,14 +141,14 @@ Capacity building and digital grants from governments, foundations and corporate
 
 **This is an illustrative scenario, not a past project: a charity with a small intake team that answers the same questions about eligibility, locations and opening hours by phone and email every day.** It shows how the obligations above turn into design decisions.
 
-The charity provides counselling alongside other services, so it provides a health service and is covered by the Privacy Act even though its turnover is under $3 million. That single fact shapes the build.
+The charity provides counselling alongside other services. Under the OAIC's guidance that is likely to be a health service, which would bring it under the Privacy Act even though its turnover is under $3 million; its lawyer confirms the position. That question shapes the build.
 
 1. **Scope the assistant to public information.** It answers from the charity's published service guides, eligibility criteria and locations only. It doesn't look up client records, so no sensitive information enters the model.
 2. **Label it and hand off.** The chat window says it's an AI assistant, and any question about a person's own situation is routed to the intake team with the conversation attached.
 3. **Don't collect what you don't need.** No name or contact details are asked for unless the person requests a callback, and then only the minimum.
 4. **Host in Australia.** The document index, application and logs run in an Australian cloud region; the model provider's retention terms are recorded in the privacy impact assessment.
 5. **Log and review.** A staff member reviews a sample of conversations weekly for wrong answers and gaps in the source documents.
-6. **Budget.** Rung 3 on the ladder above, the kind of [AI chatbot development](/services/ai-chatbot) most charities start with: a build in the $15,000 to $50,000 range depending on channels and integrations, plus monthly usage that scales with conversations.
+6. **Budget.** Rung 3 on the ladder above, the kind of [AI chatbot development](/services/ai-chatbot) most charities start with: a build that market ranges put at $15,000 to $50,000 depending on channels and integrations, plus monthly usage that scales with conversations.
 
 The same charity would treat case note summarisation as a separate, later project, with its own impact assessment, because it moves from public information to sensitive client records.
 
@@ -163,6 +163,6 @@ The same charity would treat case note summarisation as a separate, later projec
 - AI never makes eligibility or safety decisions on its own.
 - Every query and output touching client data is logged.
 
-## How All Webbed Labs approaches not-for-profit projects
+## How AWLabs approaches not-for-profit projects
 
-We start with a short paid discovery that checks your Privacy Act position, maps your existing systems and identifies the cheapest rung that works, then quote a fixed price. We'd rather configure your CRM than sell you a platform. Where custom work is justified, code goes into your own repository from day one, data stays in Australian regions by default, and every change passes automated quality gates and a senior engineer's review. See our [workflow automation](/services/workflow-automation) service for where most charities should start.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It identifies the privacy questions your lawyer should confirm, maps your existing systems and finds the cheapest rung that works. After two strategy sessions you receive a fixed price for an agreed scope. We'd rather configure your CRM than sell you a platform. Where custom work is justified, you own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. See our [workflow automation](/services/workflow-automation) service for where most charities should start.

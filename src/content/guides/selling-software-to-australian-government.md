@@ -24,8 +24,8 @@ faqs:
     a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller or lower-risk purchases won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight."
   - q: "How do I register as a government supplier in Australia?"
     a: "There's no single national register. For federal work, create accounts on BuyICT and AusTender and apply to the relevant panel when it opens. For states, register with each jurisdiction: for example, become a registered NSW Government supplier before applying to the NSW ICT Services Scheme, or register on Victoria's Supplier Hub."
-  - q: "Is All Webbed Labs on BuyICT or a state panel?"
-    a: "No. All Webbed Labs isn't a seller on any BuyICT marketplace panel, the NSW ICT Services Scheme or any other government panel or scheme. This guide is general information for software companies considering the government market."
+  - q: "Is AWLabs on BuyICT or a state panel?"
+    a: "No. AWLabs isn't a seller on any BuyICT marketplace panel, the NSW ICT Services Scheme or any other government panel or scheme. This guide is general information for software companies considering the government market."
   - q: "How long do agencies give suppliers to respond to an open tender?"
     a: "For procurements at or above the threshold, the Commonwealth Procurement Rules generally require at least 25 days from publication of the approach to market to the submission deadline, which can be shortened to no less than 10 days in limited circumstances."
 sources:
@@ -65,7 +65,7 @@ related:
 service:
   title: "SaaS development"
   href: "/services/saas-development"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## How does Australian government buy software?
@@ -170,8 +170,8 @@ A middle path many software companies take is to partner with an established pan
 9. **Respond well.** Answer the evaluation criteria directly, with evidence, and meet every deadline. Late responses may not be considered.
 10. **Report and deliver.** Once contracted, expect reporting, audit rights and performance management.
 
-## How All Webbed Labs fits in
+## How AWLabs fits in
 
-All Webbed Labs isn't on BuyICT, the Digital Marketplace Panel 2, the NSW ICT Services Scheme or any other government panel, and it doesn't hold security clearances or an IRAP assessment. Please don't read this guide as a claim otherwise.
+AWLabs isn't on BuyICT, the Digital Marketplace Panel 2, the NSW ICT Services Scheme or any other government panel, and it doesn't hold security clearances or an IRAP assessment. Please don't read this guide as a claim otherwise.
 
-Where we can help is on the product side: building SaaS and AI products for companies that want to sell to government, with Australian hosting regions by default, documented architecture and data flows, and the engineering the Essential Eight and ISM point to. See our [SaaS development](/services/saas-development) service and [AI and software for government](/solutions/government-ai-and-software).
+Where we can help is on the product side: building SaaS and AI products for companies that want to sell to government, with Australian hosting regions written into the Schedule of Work where your buyers require it, documented architecture and data flows, and the engineering the Essential Eight and ISM point to. See our [SaaS development](/services/saas-development) service and [AI and software for government](/solutions/government-ai-and-software).

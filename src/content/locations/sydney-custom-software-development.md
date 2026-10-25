@@ -13,7 +13,7 @@ takeaways:
   - "Senior software contractors in Sydney typically charge $800 to $1,100 a day ex GST in 2026, which anchors what local agencies charge."
   - "NSW Government agencies must use the ICT Services Scheme on buy.nsw for ICT purchases, under Procurement Board Direction PBD-2021-04, unless another mandated arrangement applies."
   - "NSW agencies are bound by the PPIP Act 1998, including mandatory data breach notification since 28 November 2023; health information is covered by the HRIP Act 2002 in both public and private sectors."
-  - "Insist on source code in your own repository from day one and IP assignment on payment, whoever you hire."
+  - "Check when IP is assigned to you and when you get the repository and logins, whoever you hire."
 faqs:
   - q: "Is custom software worth it for a small or mid-sized Sydney business?"
     a: "Sometimes. It's worth it when a manual or workaround-heavy process costs more each year than building and maintaining a tool, or when the software itself is part of what you sell. If a mainstream SaaS product covers 80% of the need, configuring that product is usually cheaper and faster."
@@ -22,13 +22,13 @@ faqs:
   - q: "Does the NSW PPIP Act apply to my private company?"
     a: "Generally no. The PPIP Act covers NSW public sector agencies, councils, universities and state-owned corporations. Private businesses are usually covered by the Commonwealth Privacy Act 1988 instead. The exception is health information: the NSW HRIP Act 2002 also applies to private sector organisations that provide health services or hold health information, including some businesses with turnover above $3 million."
   - q: "Can you work on site with our team in Sydney?"
-    a: "Yes. We're based in Five Dock in the Inner West, so if you're looking for software developers near you in Sydney, workshops, sprint reviews and user testing at your office are straightforward from the CBD to Parramatta and across Greater Sydney. Most build work happens from our office between those sessions."
+    a: "Yes. We're based in Five Dock in the Inner West, so if you're looking for software developers near you in Sydney, Strategy Sessions and user testing at your office are straightforward from the CBD to Parramatta and across Greater Sydney. Most build work happens from our office between those sessions."
   - q: "Do you build mobile apps as well as business software?"
-    a: "Yes. As well as internal systems and portals, we build web and mobile apps, typically with Flutter for iOS and Android from one codebase or React and Next.js for the web. A Sydney business looking for app developers gets the same process: paid discovery, a fixed price, and code in its own repository."
+    a: "Yes. As well as internal systems and portals, we build web and mobile apps, typically with Flutter for iOS and Android from one codebase or React and Next.js for the web. A Sydney business looking for app developers gets the same process: a Discovery Audit, $750 plus GST and credited in full against the build, then one fixed price, with the code and repository yours once it is paid for."
   - q: "How much does a software developer cost in Sydney?"
     a: "Re:Sourced's 2026 guide puts senior software contractors in Sydney at $800 to $1,100 a day (AUD, ex GST), with principal and specialist profiles reaching about $1,300. A software development company adds design, project management and testing on top of the engineering, which is why project budgets are better compared than hourly rates."
   - q: "What happens to the code if we stop working with you?"
-    a: "It's already yours. Code lives in your repository from the first commit, and IP transfers to you on payment. Any developer can pick it up, which is the point."
+    a: "Each part of the work is assigned to you as it is paid for in full. You can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment. Any developer can pick it up from there, which is the point."
 sources:
   - title: "ICT Services Scheme"
     url: "https://www.info.buy.nsw.gov.au/schemes/ict-services-scheme"
@@ -62,6 +62,7 @@ related:
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"
+disclaimer: legal
 ---
 
 ## When should a Sydney business build custom software?
@@ -139,7 +140,7 @@ Each connection needs error handling, retries and monitoring, and it's usually w
 **Whoever you hire, the contract should leave you able to walk away with a working system.** Sydney has a crowded market of software development companies, agencies and freelancers, and the gap between a good contract and a weak one matters more than the gap between two good developers. Check for these before signing:
 
 1. **IP assignment.** New code and designs created for you are assigned to you, with pre-existing tools listed separately and licensed to you.
-2. **Source code access from day one.** The repository sits in your account, not the developer's, so you never have to ask for it.
+2. **Repository and logins.** Check when IP is assigned to you and when you get the repository and logins, whoever you hire.
 3. **Credentials and accounts in your name.** Cloud hosting, domains and third-party services are owned by you, with the developer as a user.
 4. **Clear acceptance criteria.** What "done" means for each milestone, and how defects found after acceptance are handled.
 5. **Warranty period.** A defined window in which the developer fixes defects at no charge.
@@ -148,6 +149,6 @@ Each connection needs error handling, retries and monitoring, and it's usually w
 
 Our [contract checklist](/guides/software-development-contract-checklist) explains each clause, and you can read our own [MSA](/MSA) to see how we handle them.
 
-## How All Webbed Labs runs a Sydney software project
+## How AWLabs runs a Sydney software project
 
-We're a Sydney company in Five Dock. Founder Andy Taleb has built software professionally since 2019 and run All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. Projects start with an NDA and paid discovery, often run as workshops at your office, then move to a fixed price. Senior engineers write the code, it lives in your repository from day one, and IP transfers to you on completion. We host in Australian cloud regions by default and work AEST hours. See [enterprise software development](/services/enterprise-software) and our [methodology](/methodology).
+We're a Sydney company in Five Dock. Founder Andy Taleb has built software professionally since 2019 and run All Webbed Up since 2021; AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Projects start with an NDA and a Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers write the code. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. We work AEST hours. See [enterprise software development](/services/enterprise-software) and our [methodology](/methodology).

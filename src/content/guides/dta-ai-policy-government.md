@@ -194,6 +194,6 @@ A supplier that arrives with test results on representative correspondence, a da
 
 For the wider picture on selling into federal government, including BuyICT, see [how to sell software to Australian government](/guides/selling-software-to-australian-government).
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
 We're a Sydney team building AI systems with the documentation this policy expects: use case descriptions, test evidence, data flow maps, change logs, incident processes and kill switches, prepared so an agency's accountable officials can use them in their own assessments. We don't hold government panel membership or security clearances, and we can't meet the policy on an agency's behalf; the agency remains responsible for it. See our [government AI and software](/solutions/government-ai-and-software) page and our [AI governance](/services/ai-governance) service.

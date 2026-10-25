@@ -27,7 +27,7 @@ faqs:
   - q: "Can our software developer lodge the claim for us?"
     a: "Not unless they are a registered tax agent. A development company can produce project records that show what was tested and why, but the eligibility assessment, registration and tax claim should be handled with a registered R&D tax agent and your accountant."
   - q: "Does offshore development count?"
-    a: "R&D conducted overseas generally needs an overseas finding from the department before the expenditure can be included. If you want to rely on the program, keep the experimental work in Australia or get specialist advice first."
+    a: "R&D conducted overseas generally needs an overseas finding from the department before the expenditure can be included. R&D done overseas can still count with an overseas finding. Get advice from our accountants at Crescendo or your own registered R&D tax agent before you rely on it."
 sources:
   - title: "Software development sector guide for the R&D Tax Incentive"
     url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/sector-guides-for-r-and-d-tax-incentive-applicants/software-development"
@@ -189,8 +189,8 @@ A practical checklist for each work package you think might be R&D:
 7. Note when the experiment ended and what new knowledge it produced.
 8. Store it all somewhere your R&D tax agent can read it, in English, for at least 5 years after the claim.
 
-## How All Webbed Labs approaches R&D-heavy builds
+## How AWLabs approaches R&D-heavy builds
 
-We are software engineers, not a registered tax agent, so we don't assess eligibility, prepare registrations or lodge claims. What we can do is run the project so the evidence exists. When a client tells us the R&DTI matters to them, we set up a technical uncertainty register at discovery, keep hypotheses, experiment logs and results alongside the code, track time per work package, and split invoices to match. The client's R&D tax agent then works from records made at the time rather than reconstructing them afterwards.
+We are software engineers, not a registered tax agent, so we don't assess eligibility, prepare registrations or lodge claims. What we can do is run the project so the evidence exists. When a client tells us the R&DTI matters to them, our Discovery Audit flags activity that may be eligible, and during the build we keep hypotheses, experiment logs and results alongside the code. We keep build records your tax agent can ask for. Our accountants at Crescendo, or your own registered R&D tax agent, decide what qualifies and what records your claim needs. The client's R&D tax agent then works from records made at the time rather than reconstructing them afterwards.
 
 Most of our builds contain plenty of routine work, and we say so. If an honest read of your project finds no real technical hurdle, that is useful to know before you budget around an offset. See how we document projects on our [R&D Tax Incentive page](/r-and-d), how we scope work in a [discovery phase](/guides/software-discovery-phase), or our [custom software development](/services/custom-app-development) service.

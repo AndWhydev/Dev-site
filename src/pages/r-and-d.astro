@@ -5,30 +5,24 @@ import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 /**
- * R&D Tax Incentive page, structural differentiator vs offshore agencies.
- * The page is careful: every figure cited is a published AusIndustry / ATO
- * rate (not an AWL claim), and the bottom of the page tells the reader to
- * consult a registered R&D tax agent. We are software people, not tax
- * agents. What we *can* truthfully claim is how we structure project
- * documentation so the eventual claim is defensible.
+ * R&D Tax Incentive page. We never state eligibility or an offset rate as our
+ * claim. Rates live on business.gov.au; eligibility and amounts come from a
+ * registered R&D tax agent (our accountants at Crescendo can advise). What we
+ * can truthfully say is that we keep build records a tax agent can ask for.
  */
 
 const docs = [
   {
-    title: 'Technical uncertainty register',
-    body: 'For each work package, we document the technical question we were trying to answer, why the answer was not obvious from existing knowledge or commercial off-the-shelf solutions, and the experimental path we took.',
+    title: 'Flagged in your Discovery Audit',
+    body: 'We flag work that may be eligible in your Discovery Audit, so you can raise it with your tax agent before the build starts.',
   },
   {
-    title: 'Experiment logs',
-    body: 'Branch-level evidence of the hypothesis-test-result loop: what we tried, what happened, what we learnt. Git history is the spine; ADRs (architecture decision records) are the flesh.',
+    title: 'Build records',
+    body: 'We keep build records your tax agent can ask for: the code history, the technical decisions we made and why, and what we tried along the way.',
   },
   {
-    title: 'Time and effort allocation',
-    body: 'Engineer time tracked per work package so the eligible vs ineligible split is computable, not estimated.',
-  },
-  {
-    title: 'Resource and expenditure summary',
-    body: 'Cleanly separated invoices that map onto the eligible activity categories, so your tax agent does not spend $5k reconstructing it from emails.',
+    title: 'Advice from a tax agent',
+    body: 'Our accountants at Crescendo can tell you whether your build may qualify and what it could be worth. They are a separate practice and you engage them directly.',
   },
 ];
 
@@ -37,7 +31,7 @@ const ineligibles = [
   'Integration of well-documented third-party APIs where the path is obvious',
   'Bug fixes, maintenance and routine deployment work',
   'Market research, sales, marketing and routine business analysis',
-  'Work conducted outside Australia (overseas activity needs a separate application)',
+  'Work done overseas, unless it is covered by a separate Overseas Finding application',
 ];
 
 const eligibles = [
@@ -50,8 +44,8 @@ const eligibles = [
 ---
 
 <Layout
-  title="R&D Tax Incentive for Software Builds, All Webbed Labs"
-  description="How the Australian R&D Tax Incentive applies to software builds, what can qualify, and how we document projects to support your R&D tax agent's claim."
+  title="R&D Tax Incentive for Software Builds, AWLabs"
+  description="How the Australian R&D Tax Incentive may apply to software builds, what tends to qualify, and the build records we keep for your R&D tax agent."
 >
   <Header />
   <main>
@@ -62,13 +56,13 @@ const eligibles = [
         <div class="reveal">
           <span class="section-label">R&amp;D Tax Incentive</span>
           <h1 class="rnd-title">
-            A structural reason to build in Australia.
+            How the R&amp;D Tax Incentive may apply to software.
           </h1>
           <p class="rnd-lead">
-            The Australian R&amp;D Tax Incentive (RDTI), administered jointly by AusIndustry and the ATO, can return a meaningful portion of eligible software development expenditure to your business. This is a benefit you do not have when you commission a build offshore.
+            The Australian R&amp;D Tax Incentive (RDTI), administered jointly by AusIndustry and the ATO, can return part of eligible R&amp;D spending to your business. Some software development may qualify. Whether yours does, and what it is worth, is a question for a registered tax agent. Work done overseas can sometimes be claimed through a separate Overseas Finding application.
           </p>
           <p class="rnd-sub">
-            We are software engineers, not tax agents. What follows is a plain-English orientation; the rates and rules below are published by the Australian Government and your eventual claim should be lodged by a registered R&amp;D tax agent.
+            We are software engineers, not tax agents. What follows is a plain English orientation. The rules are published by the Australian Government, and any claim should be lodged by a registered R&amp;D tax agent.
           </p>
         </div>
       </div>
@@ -78,33 +72,12 @@ const eligibles = [
     <section class="rnd-rates">
       <div class="rnd-rates-inner">
         <div class="reveal" style="max-width: 760px;">
-          <span class="section-label">The rates, as published</span>
-          <h2 class="section-heading">What the program currently returns.</h2>
+          <span class="section-label">Offset rates</span>
+          <h2 class="section-heading">Where to find the current rates.</h2>
           <p class="section-subheading">
-            Source: <a href="https://business.gov.au/grants-and-programs/research-and-development-tax-incentive" target="_blank" rel="noopener noreferrer">business.gov.au</a> and the ATO. We cite these, we do not set them.
+            The Australian Government publishes the offset rates on <a href="https://business.gov.au/grants-and-programs/research-and-development-tax-incentive" target="_blank" rel="noopener noreferrer">business.gov.au</a>. The rate that applies to you depends on your turnover and tax position, and only a registered tax agent can tell you what you would get back. Our accountants can look at this with you.
           </p>
         </div>
-
-        <div class="rates-grid">
-          <div class="rate-card reveal">
-            <div class="rate-card-tag">Aggregated turnover &lt; $20M</div>
-            <div class="rate-card-val">43.5%</div>
-            <div class="rate-card-desc">
-              <strong>Refundable</strong> tax offset on eligible R&amp;D expenditure. Refundable means it can be paid as cash where the offset exceeds the company's tax liability, particularly relevant for pre-revenue startups.
-            </div>
-          </div>
-          <div class="rate-card reveal">
-            <div class="rate-card-tag">Aggregated turnover ≥ $20M</div>
-            <div class="rate-card-val">38.5% +</div>
-            <div class="rate-card-desc">
-              <strong>Non-refundable</strong> base rate, with a premium tier for higher R&amp;D intensity. The effective benefit depends on the company's tax rate and the intensity of R&amp;D spend relative to total expenditure.
-            </div>
-          </div>
-        </div>
-
-        <p class="rates-note">
-          Rates current as published by AusIndustry / ATO. Eligibility, registration and claim mechanics change from year to year, always verify with a registered R&amp;D tax agent before relying on a number.
-        </p>
       </div>
     </section>
 
@@ -147,9 +120,9 @@ const eligibles = [
       <div class="rnd-docs-inner">
         <div class="reveal" style="max-width: 760px;">
           <span class="section-label">How we help, the truthful version</span>
-          <h2 class="section-heading">Project artefacts your tax agent can actually use.</h2>
+          <h2 class="section-heading">Records your tax agent can ask for.</h2>
           <p class="section-subheading">
-            We will not file a claim for you, that is your tax agent's job. What we can do is structure the project documentation so the claim is defensible, the contemporaneous evidence is there, and the eligible vs ineligible split is computable rather than estimated.
+            We will not file a claim for you. That is your tax agent's job. We flag work that may be eligible in your Discovery Audit, and we keep build records your tax agent can ask for. Our accountants can then tell you what applies.
           </p>
         </div>
 
@@ -175,11 +148,11 @@ const eligibles = [
         <div class="compare-grid">
           <div class="compare-card compare-card--au reveal-left">
             <div class="compare-card-flag">🇦🇺</div>
-            <div class="compare-card-title">AU-conducted build</div>
+            <div class="compare-card-title">Built with an Australian company</div>
             <ul>
-              <li>R&amp;D Tax Incentive eligibility for the Australian-conducted portion</li>
-              <li>Australian Privacy Principles compliance designed in, not bolted on</li>
-              <li>Data sovereignty by default, Australian hosting region</li>
+              <li>Build records your R&amp;D tax agent can ask for</li>
+              <li>Built as though the Australian Privacy Principles apply</li>
+              <li>Hosting region agreed in your Schedule of Work, including Australian cloud regions</li>
               <li>AEST working hours, no overnight queue</li>
               <li>Australian legal recourse if something goes wrong</li>
             </ul>
@@ -188,7 +161,7 @@ const eligibles = [
             <div class="compare-card-flag">🌐</div>
             <div class="compare-card-title">Pure offshore build</div>
             <ul>
-              <li>No access to the AU R&amp;D Tax Incentive on overseas-conducted work</li>
+              <li>Overseas work needs a separate Overseas Finding application to be claimed under the R&amp;D Tax Incentive</li>
               <li>Privacy / sovereignty obligations harder to evidence and defend</li>
               <li>Cross-border data flow disclosures and contracts required</li>
               <li>Timezone lag, multiple business days per round-trip on tricky questions</li>
@@ -204,7 +177,7 @@ const eligibles = [
       <div class="rnd-disclaimer-inner">
         <div class="reveal">
           <p>
-            <strong>Important.</strong> This page is general information about a public Australian Government program. It is not tax advice. It is not financial advice. Eligibility for the R&amp;D Tax Incentive depends on the specific facts of your business, the activities you conduct and how those activities are documented. Before relying on anything here, speak to a registered R&amp;D tax agent. We can refer you to firms we have worked with, that is the limit of what we, as software engineers, are equipped to do on this topic.
+            <strong>Important.</strong> This page is general information about a public Australian Government program. It is not tax advice. It is not financial advice. Eligibility for the R&amp;D Tax Incentive depends on the specific facts of your business, the activities you conduct and how those activities are documented. Before relying on anything here, speak to a registered R&amp;D tax agent. We are software engineers, not tax agents. Our accountants at Crescendo can tell you whether your build may qualify. They are a separate practice and you engage them directly.
           </p>
         </div>
       </div>

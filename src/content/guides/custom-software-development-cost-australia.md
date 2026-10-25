@@ -11,7 +11,7 @@ takeaways:
   - "Published Australian agency guides cluster around three bands: under $40k, $40k to $150k, and $150k to $500k+ (AUD, ex GST)."
   - "Price is mostly hours multiplied by rate. Most published Australian agency rates fall between about $120 and $250 an hour, with some small and mid-sized firms up to $330; the hours are what you can influence."
   - "Integrations, data migration, permissions and compliance evidence move a project up a band faster than extra screens do."
-  - "A paid discovery phase, typically $10k to $25k, turns a wide estimate into a fixed price and is usually the cheapest risk reduction available."
+  - "A discovery phase, typically $10k to $25k at market pricing, turns a wide estimate into a fixed price and is usually the cheapest risk reduction available."
   - "Ongoing costs are real: allow 15 to 20% of the build cost per year for maintenance, plus hosting and licences, and add 10% GST to every figure."
 faqs:
   - q: "What is the cheapest way to get custom software built in Australia?"
@@ -115,8 +115,8 @@ Conduct's phase split is a useful sanity check on any quote: roughly 10% require
 **Here is how a mid-complexity project turns into a number, using illustrative figures inside the published ranges.** The project: a portal where a services company's customers log in, see job status, approve quotes and pay invoices, with a sync to the company's accounting system.
 
 1. **Estimate the build hours by feature.** Authentication and user management 60 hours; job status views 90; quote approval workflow 80; invoice payments through a payment provider 70; accounting system sync 110; admin screens 90; automated testing and QA 110; deployment pipeline and environments 40; project management and design 75. Total: 725 hours.
-2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at a blended $165 an hour: 725 × $165 = $119,625. (That is about $1,250 a day, below the $1,400 senior-team day rate used in our other cost guides, because the part-time design and QA hours bring the blend down.)
-3. **Add discovery.** Two to three weeks of paid discovery before the fixed price: $12,000.
+2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at an assumed market blended rate of $165 an hour: 725 × $165 = $119,625. (That is about $1,250 a day, below the assumed $1,400 market day rate used in the other cost guides on this site, because the part-time design and QA hours bring the blend down. Neither is our rate.)
+3. **Add discovery.** Two to three weeks of discovery at typical market pricing: $12,000. (Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.)
 4. **Total project cost:** $119,625 + $12,000 = $131,625 ex GST.
 5. **Add GST.** $131,625 × 1.1 = $144,787.50 including GST (claimable as an input tax credit if you're registered).
 
@@ -172,6 +172,6 @@ Three signs the numbers favour building: staff re-keying data between systems ev
 
 What not to cut: automated testing, code review, security basics and documentation. Skipping them lowers the quote and raises the three-year cost.
 
-## How All Webbed Labs prices custom software
+## How AWLabs prices custom software
 
-We run a paid discovery first, then quote a fixed price for the agreed scope, so the number you approve is the number you pay unless you change the scope. Our teams are senior engineers only, working in AEST hours, and your code lives in your own repository from day one, with IP transferring on completion. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. You then receive one fixed price for the agreed scope, so the number you approve is the number you pay unless you change the scope. Our teams are senior engineers only, working in AEST hours, and each part of the build is assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).

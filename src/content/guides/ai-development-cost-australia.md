@@ -75,13 +75,13 @@ disclaimer: financial
 
 | Stage | The question it answers | Typical range (AUD, ex GST) | Typical duration |
 |---|---|---|---|
-| Strategy workshop or readiness assessment | Which use cases are worth doing, and is our data ready? | $5,000 to $25,000 | 1 to 4 weeks |
+| Strategy workshop or readiness assessment (market pricing) | Which use cases are worth doing, and is our data ready? | $5,000 to $25,000 | 1 to 4 weeks |
 | Proof of concept | Can AI do this task well enough on our real data? | $15,000 to $40,000 | 2 to 10 weeks |
 | Structured pilot | Does it work for real users in a limited rollout? | $35,000 to $75,000 | 6 to 12 weeks |
 | Production system (one or two use cases) | Can it run reliably, securely and at volume? | $50,000 to $150,000 | 3 to 6 months |
 | Enterprise AI program | Several use cases, shared platform, governance | $150,000 to $400,000+ | 6 to 12 months+ |
 
-Lanex puts proofs of concept at $15k to $40k, SME AI applications at $40k to $120k and enterprise systems at $120k to $400k+. Quanton AI's June 2026 guide gives $5k to $15k for strategy workshops, $8k to $25k for readiness assessments, $15k to $35k for a lightweight proof of concept, $35k to $75k for a structured pilot, $50k to $150k for a production deployment and $150k to $400k+ for multi-use-case programs. Team 400 quotes $15k to $30k for a two to four week chatbot proof of concept.
+Lanex puts proofs of concept at $15k to $40k, SME AI applications at $40k to $120k and enterprise systems at $120k to $400k+. Quanton AI's June 2026 guide gives $5k to $15k for strategy workshops, $8k to $25k for readiness assessments, $15k to $35k for a lightweight proof of concept, $35k to $75k for a structured pilot, $50k to $150k for a production deployment and $150k to $400k+ for multi-use-case programs. Team 400 quotes $15k to $30k for a two to four week chatbot proof of concept. These are market figures, not our prices. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 The top of the range is where sources diverge. Quanton lists enterprise AI transformation at up to $800k and beyond, which includes organisation-wide change management, not just software.
 
@@ -179,6 +179,6 @@ A proof of concept is the cheapest way to answer this question with real numbers
 
 When comparing suppliers, our guide on [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) lists the evidence to ask for.
 
-## How All Webbed Labs approaches AI projects
+## How AWLabs approaches AI projects
 
-We start with paid discovery, which works as a readiness assessment: we test your data, agree success measures and then quote a fixed price for the build. We use hosted models from Anthropic, OpenAI and open-weight providers, deployed in Australian cloud regions where the model you need is available there. Every system we deliver includes an evaluation set, so you can see how accuracy changes when models or prompts change. The team is senior engineers only, and your code and evaluation data stay in your own accounts. See our [AI consulting and development service](/ai-consulting).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It sets out the scope, the risks and how success will be measured, and after two strategy sessions you receive one fixed price for the agreed scope. We use hosted models from Anthropic, OpenAI and open-weight providers, deployed in Australian cloud regions where the model you need is available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Where it fits the scope, the system includes an evaluation set, so you can see how accuracy changes when models or prompts change. The team is senior engineers only. Each part of the build, including the evaluation data, is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [AI consulting and development service](/ai-consulting).

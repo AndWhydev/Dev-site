@@ -186,6 +186,6 @@ Add to that the risks every agent faces: a tool result or document containing hi
 
 Skip it when a single application needs one or two functions. Plain tool calling inside that app is simpler, and you can wrap it as an MCP server later. And if the underlying system has no usable API, that's the first job: see [API development](/services/api-development).
 
-## How All Webbed Labs builds MCP servers
+## How AWLabs builds MCP servers
 
-We build remote MCP servers over your existing APIs with OAuth, per-user permissions enforced by the underlying system, narrow tools with validated inputs, read-only defaults, and full call logging, hosted in Australian cloud regions. We test them with the AI applications your staff actually use. See [MCP server development](/services/mcp-server-development), and [AI agent development](/services/ai-agent-development) for the agents that use them.
+We build remote MCP servers over your existing APIs with OAuth, per-user permissions enforced by the underlying system, narrow tools with validated inputs, read-only defaults, and full call logging, hosted in an Australian cloud region where the services you need are available there. We test them with the AI applications your staff actually use. See [MCP server development](/services/mcp-server-development), and [AI agent development](/services/ai-agent-development) for the agents that use them.

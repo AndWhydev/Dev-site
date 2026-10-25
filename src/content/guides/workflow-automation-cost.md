@@ -112,10 +112,12 @@ Self-hosting n8n removes the subscription but not the cost. You pay for a server
 
 | Item | Cost |
 |---|---|
-| Build and testing: 8 days at $1,400 | $11,200 |
+| Build and testing: 8 days at an assumed $1,400 market day rate | $11,200 |
 | Platform plan sized for about 12,000 module actions or 1,200 executions a month | tens to low hundreds of dollars a month |
 | AI extraction at an illustrative few cents per invoice | roughly $30 to $100 a month |
 | Upkeep: about 1 day a month | $1,400 a month |
+
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 Payback on the build: $11,200 ÷ ($5,200 − about $1,600 running) ≈ 3 months.
 
@@ -123,7 +125,7 @@ Payback on the build: $11,200 ÷ ($5,200 − about $1,600 running) ≈ 3 months.
 
 | Item | Cost |
 |---|---|
-| Build and testing: 30 days at $1,400 | $42,000 |
+| Build and testing: 30 days at an assumed $1,400 market day rate | $42,000 |
 | Hosting, queue, storage and logging | $50 to $200 a month |
 | AI extraction | roughly $30 to $100 a month |
 | Maintenance: 15 to 20% of build a year | $525 to $700 a month |
@@ -175,6 +177,6 @@ At this volume, Option A wins on payback. Option B starts to make sense when vol
 
 If automation is part of a wider decision about AI assistants, see [AI agents vs chatbots vs workflow automation](/guides/ai-agents-vs-chatbots-vs-automation), which explains where each fits. For maintenance budgeting in general, see our [software maintenance cost guide](/guides/software-maintenance-cost).
 
-## How All Webbed Labs approaches automation
+## How AWLabs approaches automation
 
-We start by measuring the process: volume, time per item and exception rate, so the business case is clear before anything is built. Where a platform such as n8n, Make, Zapier or Power Automate is the better fit, we say so and build on it; where volume, complexity or data rules call for custom code, we build a service in your own Australian cloud account, with the source code in your repository. Every build includes error handling, monitoring and a handover document. Read more about our [workflow automation service](/services/workflow-automation).
+We start by measuring the process: volume, time per item and exception rate, so the business case is clear before anything is built. Where a platform such as n8n, Make, Zapier or Power Automate is the better fit, we say so and build on it; where volume, complexity or data rules call for custom code, we build a service in your own cloud account, in an Australian region where the services you need are available there, with the source code assigned to you as it is paid for in full. Builds include error handling, monitoring and a handover document, as listed in your Schedule of Work. Read more about our [workflow automation service](/services/workflow-automation).

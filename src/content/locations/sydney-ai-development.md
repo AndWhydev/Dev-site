@@ -1,34 +1,34 @@
 ---
 title: "AI development company in Sydney"
 metaTitle: "AI Development Company and AI Consultants in Sydney"
-description: "Sydney-based AI development company and AI consultants in Five Dock: RAG, AI agents and LLM integration for business and NSW Government, hosted onshore."
+description: "Sydney based AI development company in Five Dock: RAG, AI agents and LLM integration for business and NSW Government, with Australian hosting available."
 eyebrow: "Sydney"
 city: "Sydney"
 state: "NSW"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a Sydney-based AI development company and AI consultancy in Five Dock, in Sydney's Inner West. We build production AI systems such as RAG knowledge bases, AI agents, document processing and LLM features inside existing software, hosted in Sydney cloud regions by default. For NSW Government work, we build to the NSW AI Operational Policy and produce the evidence agencies need for the NSW AI Assessment Framework."
+summary: "AWLabs is a Sydney-based AI development company and AI consultancy in Five Dock, in Sydney's Inner West. We build production AI systems such as RAG knowledge bases, AI agents, document processing and LLM features inside existing software, with Sydney cloud hosting available when you need it. For NSW Government work, we build to the NSW AI Operational Policy and produce the evidence agencies need for the NSW AI Assessment Framework."
 takeaways:
   - "Most Sydney AI projects fall into four shapes: knowledge search (RAG), document processing, agents that act in business systems, and AI features added to an existing app."
   - "NSW Government agencies now work under the NSW AI Operational Policy, mandated by Circular DCS-2026-02, which requires every AI use case to be registered and assessed under the AI Assessment Framework."
   - "High and critical risk NSW Government use cases go to the AI Review Committee, so suppliers should expect to provide risk evidence, not just a demo."
   - "Sydney has an AWS region, Azure Australia East and Google Cloud australia-southeast1, but which AI models run there changes often and must be checked per model."
-  - "Being in Sydney matters most for the discovery workshop and user testing; the build itself can run anywhere with good process."
+  - "Being in Sydney matters most for meetings and user testing; the build itself can run anywhere with good process."
 faqs:
   - q: "Do you work on site in Sydney?"
-    a: "Yes. Our team is based in Five Dock in Sydney's inner west, so discovery workshops, stakeholder interviews and user testing sessions can happen in person at your office in the CBD, North Sydney, Parramatta or elsewhere in Greater Sydney. Day to day build work is done from our own office, with regular check-ins."
+    a: "Yes. Our team is based in Five Dock in Sydney's inner west, so stakeholder interviews and user testing sessions can happen in person at your office in the CBD, North Sydney, Parramatta or elsewhere in Greater Sydney. Day to day build work is done from our own office, with regular check-ins."
   - q: "Where is your Sydney office?"
-    a: "At 1 Ramsay Rd, Five Dock NSW 2046, in Sydney's Inner West, between the CBD and Parramatta. If you're searching for AI developers near you in Sydney, that means in-person workshops are practical almost anywhere in Greater Sydney, and the rest of the week runs on video calls and shared boards."
+    a: "At 1 Ramsay Rd, Five Dock NSW 2046, in Sydney's Inner West, between the CBD and Parramatta. If you're searching for AI developers near you in Sydney, that means in person meetings are practical almost anywhere in Greater Sydney, and the rest of the week runs on video calls and shared boards."
   - q: "Do you build AI apps for Sydney startups?"
-    a: "Yes. AI app development for a startup usually means a web or mobile app with one AI feature at its core, such as search, drafting or document reading, built as a minimum viable product and measured with real users. Our startup MVP service covers that path, with the same fixed price after discovery and code in your repository from day one."
+    a: "Yes. AI app development for a startup usually means a web or mobile app with one AI feature at its core, such as search, drafting or document reading, built as a minimum viable product and measured with real users. Our startup MVP service covers that path, with the same Discovery Audit first, then one fixed price. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment."
   - q: "Can you build AI systems for NSW Government agencies?"
     a: "We can build to NSW Government requirements, including the NSW AI Operational Policy and the AI Assessment Framework. We are not currently prequalified on the NSW ICT Services Scheme, which agencies generally use to buy ICT services, so an agency would need to engage us through an appropriate pathway or through a prequalified prime contractor."
   - q: "Will our data stay in Sydney?"
-    a: "Storage, databases and vector indexes can stay in Sydney regions on AWS, Azure or Google Cloud. Model inference depends on whether the specific model you need is offered in an Australian region at the time you build. We check this during discovery and document anything that would leave Australia."
+    a: "Storage, databases and vector indexes can stay in Sydney regions on AWS, Azure or Google Cloud. Model inference depends on whether the specific model you need is offered in an Australian region at the time you build. We check this during the Discovery Audit and document anything that would leave Australia. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work."
   - q: "How long does a first production AI release take?"
-    a: "For a scoped use case such as a knowledge assistant over one document set, a typical path is two to four weeks of discovery and prototyping followed by eight to twelve weeks of build and evaluation. Larger integrations take longer. We give a fixed price after paid discovery."
+    a: "For a scoped use case such as a knowledge assistant over one document set, a typical path is the Discovery Audit and two Strategy Sessions, followed by eight to twelve weeks of build and evaluation. Larger integrations take longer. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build, and you then get one fixed price for the agreed scope."
   - q: "Do we need our own AI policy before starting?"
-    a: "It helps but isn't required. Discovery covers the decisions a policy would make for this use case: what data the AI can see, who reviews its outputs, what gets logged, and how incidents are reported. Those decisions can then feed a broader policy."
+    a: "It helps but isn't required. The Discovery Audit covers the decisions a policy would make for this use case: what data the AI can see, who reviews its outputs, what gets logged, and how incidents are reported. Those decisions can then feed a broader policy."
 sources:
   - title: "NSW AI Operational Policy"
     url: "https://www.digital.nsw.gov.au/policy/artificial-intelligence/ai-strategy-and-operational-policy/nsw-ai-operational-policy"
@@ -66,6 +66,7 @@ related:
 service:
   title: "AI consulting and development"
   href: "/ai-consulting"
+disclaimer: legal
 ---
 
 ## What does an AI development company in Sydney build?
@@ -91,7 +92,7 @@ Here are the four shapes we see most often, and what a sensible first release lo
 | Marketing content, ads or simple no-code automations | AI agency, AI automation agency | Configured tools and workflows, often on a subscription |
 | A production system inside your own software and cloud account | AI development company | Code in your repository, an evaluation set, hosting and a run-cost estimate |
 
-We do the first and the third: an [AI readiness assessment](/services/ai-readiness-assessment) or paid discovery for the advice, then fixed-price development. If a no-code tool will do the job, we'll say so, because it's usually cheaper.
+We do the first and the third: an [AI readiness assessment](/services/ai-readiness-assessment), which is our Discovery Audit for AI projects, for the advice, then fixed price development. If a no-code tool will do the job, we'll say so, because it's usually cheaper.
 
 If you're still deciding between the four project shapes above, our guides on [RAG](/guides/what-is-rag), [AI agents](/guides/what-is-an-ai-agent) and [agents vs chatbots vs automation](/guides/ai-agents-vs-chatbots-vs-automation) cover the trade-offs.
 
@@ -147,15 +148,17 @@ Our longer guide on [how to choose an AI development company](/guides/how-to-cho
 
 **Because we're local, the parts that need people in a room happen in person, and the build happens from our office with frequent check-ins.** A typical sequence:
 
-1. **Discovery workshop at your office.** Half a day to a day with the business owner, a subject matter expert and IT. We map the task, the data and the risk.
-2. **Data and access review.** We sample the real documents or records, check quality, and confirm permissions and hosting.
-3. **Prototype and evaluation set.** A working prototype on your data plus a test set of real questions or documents with agreed correct answers.
-4. **Fixed-price proposal.** Scope, architecture, run-cost estimate and a price, based on what discovery found.
-5. **Build, evaluate, release.** Weekly demos, a staged rollout to a pilot group, then wider release once quality holds.
-6. **User testing in person.** We sit with the people using it, in Sydney, and fix what they trip over.
+1. **Discovery Call.** A short phone call with our team.
+2. **Discovery Audit Meeting.** 60 minutes on Zoom with Andy. The Discovery Audit is $750 plus GST, credited in full against your build.
+3. **Discovery Audit Session.** 60 minutes on what you need built, the data and the risk. Your written audit arrives within seven days of your answers.
+4. **Strategy Session one.** We walk you through the audit and the build scope, including data quality, permissions and hosting.
+5. **Strategy Session two.** Your fixed price Schedule of Work, with three options: The Minimum, The Recommended and The Complete.
+6. **Build, evaluate, release.** You get an update every Tuesday and Friday, Sydney time, with access to test the latest work. An evaluation set of real questions with agreed correct answers is built with you, and you accept each stage before a staged rollout to a pilot group.
+7. **User testing in person.** We sit with the people using it, in Sydney, and fix what they trip over.
+8. **Handover and a 30 day warranty from launch.** We fix bugs and anything caused by our work at no cost, then you can choose a Care Plan, month to month, priced for your system.
 
 Costs vary widely with scope; our [AI development cost guide](/guides/ai-development-cost-australia) gives typical Australian ranges and what drives them.
 
-## How All Webbed Labs approaches AI development
+## How AWLabs approaches AI development
 
-We're a Sydney team in Five Dock led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. We start with paid discovery, then quote a fixed price. Senior engineers do the work, code lives in your repository from day one, and Australian cloud regions are the default. Our internal delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests and security scans and a senior engineer's review before it ships. See our [AI consulting](/ai-consulting) and [LLM integration](/services/llm-integration) services for more.
+We're a Sydney team in Five Dock led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers do the work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Our internal delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests and security scans and a senior engineer's review before it ships. See our [AI consulting](/ai-consulting) and [LLM integration](/services/llm-integration) services for more.

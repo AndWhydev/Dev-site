@@ -167,8 +167,8 @@ Keep the failed runs. A record that only shows the version that worked looks lik
 - Assuming AI-assisted coding makes the work innovative. It has no bearing on eligibility.
 - Forgetting that software built mainly for your own internal administration is excluded from core R&D, AI or not.
 
-## How All Webbed Labs handles AI experiments
+## How AWLabs handles AI experiments
 
-We build AI systems with an evaluation harness from the start, because that is how you know whether a change helped. On projects where the client's R&D tax agent expects a claim, we go further: a technical uncertainty register at discovery, experiment tickets with the hypothesis written before work starts, versioned datasets and run logs, and time tracked per work package. We don't assess eligibility or prepare claims; we are not a registered tax agent, and that work belongs with one.
+We build AI systems with an evaluation harness from the start, because that is how you know whether a change helped. On projects where the client's R&D tax agent expects a claim, we go further. Our Discovery Audit flags activity that may be eligible, and during the build we keep technical notes: experiment tickets with the hypothesis written before work starts, versioned datasets and run logs. We keep build records your tax agent can ask for. Our accountants at Crescendo, or your own registered R&D tax agent, decide what qualifies and what records your claim needs. We don't assess eligibility or prepare claims; we are not a registered tax agent, and that work belongs with one.
 
 We will also tell you when an AI feature is straightforward integration. That is often the right engineering outcome even if it isn't R&D. See our [R&D Tax Incentive page](/r-and-d) for how we document projects, or our [LLM integration](/services/llm-integration) service.

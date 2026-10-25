@@ -2,13 +2,13 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Data Analytics Consulting Australia | All Webbed Labs',
+  metaTitle: 'Data Analytics Consulting Australia | AWLabs',
   metaDescription: 'Data analytics consulting in Australia: data pipelines, warehouses and Power BI or Tableau dashboards, plus predictive models that support real decisions.',
   category: 'Analytics',
   heroHeadline: 'Turn Your Data Into Your Most Valuable Competitive Asset',
   heroTagline: 'Data analytics consulting for Australian organisations: custom dashboards, data pipelines and predictive analytics that drive decisions, not just reports.',
   description: [
-    'Most organisations are sitting on enormous reserves of untapped value. Operational databases, CRM systems, financial platforms, IoT sensors, third-party data feeds, together they contain patterns that could transform pricing strategy, forecast demand, identify churn before it happens or surface operational inefficiencies that cost millions annually. The gap between having data and making decisions with it is an engineering and design problem, and it is the problem this service exists to solve.',
+    'Most organisations are sitting on enormous reserves of untapped value. Operational databases, CRM systems, financial platforms, IoT sensors, third-party data feeds, together they contain patterns that could transform pricing strategy, forecast demand, identify churn before it happens or surface operational inefficiencies that quietly cost money every month. The gap between having data and making decisions with it is an engineering and design problem, and it is the problem this service exists to solve.',
     'We build the full analytics stack: data pipelines that move information from source systems into a central warehouse without losing fidelity, transformation layers that turn raw records into clean, consistent, analysis-ready models, and visualisation and reporting layers that put the right insight in front of the right person at the right time. We do not hand you a generic BI tool licence and walk away. We build bespoke solutions calibrated to your data, your questions and the decisions your leadership team actually needs to make.',
   ],
   benefits: [
@@ -35,7 +35,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>',
       title: 'Data Governance & Lineage',
-      description: 'Knowing where a number came from is as important as the number itself. We implement data catalogues, column-level lineage tracking and governance policies that make your data trustworthy, auditable and ready for the privacy regime your compliance team operates under (APPs, GDPR, sector-specific).',
+      description: 'Knowing where a number came from is as important as the number itself. We implement data catalogues, column-level lineage tracking and governance policies that make your data trustworthy and auditable, designed with the privacy rules your compliance team works under in mind (APPs, GDPR, sector rules).',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
@@ -100,7 +100,7 @@ const data = {
     {
       step: '07',
       title: 'Training & Ongoing Support',
-      description: 'We train your team on the platform, both the analytics tools and the underlying data models, so they can build new reports and answer new questions independently. We offer ongoing support retainers for organisations that want continued access to our data engineering expertise.',
+      description: 'We train your team on the platform, both the analytics tools and the underlying data models, so they can build new reports and answer new questions independently. Ongoing support is available through a Care Plan: month to month, priced for your system.',
       duration: 'Week 7 to 8',
     },
   ],
@@ -121,7 +121,7 @@ const data = {
     },
     {
       question: 'Our data quality is poor. Can you still help?',
-      answer: 'Poor data quality is one of the most common issues we encounter, and it is addressable, but it needs to be confronted honestly. We conduct a data quality assessment early in every engagement to understand the nature and extent of quality issues: missing values, duplicate records, inconsistent formats, referential integrity violations and so on. Some issues can be handled in the transformation layer with imputation, deduplication or normalisation logic. Others require fixes at the source system level. We work with you to prioritise which issues to fix and help you implement data quality monitoring so problems are caught early rather than discovered months later in a dashboard.',
+      answer: 'Yes. Poor data quality is addressable, but it needs to be confronted honestly. We conduct a data quality assessment early in every engagement to understand the nature and extent of quality issues: missing values, duplicate records, inconsistent formats, referential integrity violations and so on. Some issues can be handled in the transformation layer with imputation, deduplication or normalisation logic. Others require fixes at the source system level. We work with you to prioritise which issues to fix and help you implement data quality monitoring so problems are caught early rather than discovered months later in a dashboard.',
     },
     {
       question: 'We already have a BI tool like Tableau or Power BI. Do we need to replace it?',
@@ -132,12 +132,12 @@ const data = {
       answer: 'A data warehouse (Snowflake, Redshift, BigQuery) stores data in a structured, query-optimised format and is ideal for well-understood analytical workloads. A data lake stores data in its raw, native format (often in object storage like S3) and is better suited to unstructured or semi-structured data, or scenarios where the exact analytical questions are not yet known. A data lakehouse (Databricks, Apache Iceberg on S3) attempts to combine both: open-format storage with warehouse-like query performance and ACID transaction support. For most enterprise BI programmes, a cloud data warehouse is the right starting point, lakehouses add value when you have significant unstructured data or machine learning workloads alongside your reporting.',
     },
     {
-      question: 'Can you help us comply with Australian Privacy Act requirements in our analytics platform?',
-      answer: 'Yes. The Australian Privacy Act and the Privacy (Enhancing Privacy Protection) Bill impose obligations around the collection, use, storage and disclosure of personal information that directly affect analytics platforms. We help you implement data minimisation principles (collecting only what you need), purpose limitation controls, appropriate retention and deletion policies, access controls that limit personal data exposure to authorised users, and audit logging that satisfies regulatory scrutiny. We also advise on pseudonymisation and aggregation techniques that preserve analytical value while reducing privacy risk.',
+      question: 'Can you build our analytics platform with the Australian Privacy Act in mind?',
+      answer: 'Yes. The Privacy Act 1988, as amended in 2024, sets rules for how personal information is collected, used, stored and disclosed, and those rules affect analytics platforms directly. We build in the controls they point to: data minimisation (collecting only what you need), purpose limitation, retention and deletion rules, access controls that limit personal data to authorised users, and audit logging. We also use pseudonymisation and aggregation techniques that keep analytical value while reducing privacy risk. Whether the platform meets your obligations is for your own lawyers or compliance advisers to confirm; we do not give legal advice.',
     },
     {
-      question: 'Do you offer ongoing managed analytics services after the initial build?',
-      answer: 'Yes. We offer analytics managed service retainers that include pipeline monitoring and maintenance, data model updates as your source systems change, dashboard evolution as your business questions evolve, and access to our data engineering team for ad hoc analytical projects. Many clients find that a retainer provides better value than maintaining full-time data engineering headcount, particularly for organisations whose analytics needs are significant but not constant. Retainer arrangements are scoped around your specific ongoing needs.',
+      question: 'Do you offer ongoing support after the initial build?',
+      answer: 'Yes. Every build includes a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, ongoing support is available through a Care Plan: month to month, priced for your system. A Care Plan can cover pipeline monitoring and maintenance, data model updates as your source systems change, and dashboard changes as your business questions evolve. Support runs in NSW business hours with agreed response targets.',
     },
     {
       question: 'What does a data analytics consultant do?',
@@ -157,7 +157,7 @@ const data = {
       'Leadership is making material decisions on gut feel because the reporting is slow, inconsistent or untrusted.',
       'You want predictive capability, demand forecasting, churn prediction, anomaly detection, built on your own historical data.',
       'Your existing BI tool underdelivers because the data underneath it is unreliable or poorly modelled.',
-      'You need analytics that comply with the Privacy Act 1988 around personal information.',
+      'You need analytics built with the Privacy Act 1988 in mind because personal information is involved.',
     ],
     notRightFor: [
       'You have a single application database and a handful of reports, a few well-written SQL views or your application\'s built-in reporting will be cheaper and simpler.',

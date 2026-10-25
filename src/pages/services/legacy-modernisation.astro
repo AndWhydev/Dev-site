@@ -2,14 +2,14 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Legacy System Modernisation Australia | All Webbed Labs',
+  metaTitle: 'Legacy System Modernisation Australia | AWLabs',
   metaDescription: 'Legacy system modernisation in Australia: phased migration of ageing applications to modern, supported platforms without a risky big-bang cutover.',
   category: 'Modernisation',
   heroHeadline: 'Modernise Your Legacy Systems Without Disrupting Your Business',
   heroTagline: 'Legacy system modernisation for Australian organisations: phased migration strategies that eliminate technical debt while maintaining business continuity throughout.',
   description: [
-    'Legacy systems are a paradox: they are too important to touch and too costly to leave alone. A system built on end-of-life technology, maintained by an ageing pool of specialists and unable to integrate with the modern tooling your business needs is not just a technical problem, it is a strategic constraint. It slows feature development, accumulates security vulnerabilities, makes recruiting difficult and limits your ability to compete. But rewriting a system that has run your business for fifteen years in a single big-bang project is one of the highest-risk undertakings in enterprise technology. Our practice was built around resolving this dilemma.',
-    'We use the Strangler Fig pattern and other incremental modernisation strategies that replace legacy systems piece by piece, running old and new in parallel at every stage. This approach eliminates the need for a high-risk cutover event, allows you to validate the replacement against real production traffic before decommissioning anything, and delivers business value incrementally throughout the programme rather than at the end. The approach applies whether the system is a COBOL mainframe, a decade-old Java monolith, an unsupported PHP application or a custom-built ERP, always with the same commitment: your business keeps running throughout.',
+    'Legacy systems are a paradox: they are too important to touch and too costly to leave alone. A system built on end-of-life technology, maintained by an ageing pool of specialists and unable to integrate with the modern tooling your business needs is not just a technical problem, it is a strategic constraint. It slows feature development, accumulates security vulnerabilities, makes recruiting difficult and limits your ability to compete. But rewriting a system that has run your business for fifteen years in a single big-bang project is one of the highest-risk undertakings in enterprise technology. Our approach is designed to resolve this dilemma.',
+    'We use the Strangler Fig pattern and other incremental modernisation strategies that replace legacy systems piece by piece, running old and new in parallel at every stage. This approach eliminates the need for a high-risk cutover event, allows you to validate the replacement against real production traffic before decommissioning anything, and delivers business value incrementally throughout the programme rather than at the end. The approach applies whether the system is a COBOL mainframe, a decade-old Java monolith, an unsupported PHP application or a custom-built ERP, always with the same aim: keeping your business running throughout.',
   ],
   benefits: [
     {
@@ -19,7 +19,7 @@ const data = {
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-      title: 'Business Continuity Guaranteed',
+      title: 'Built Around Business Continuity',
       description: 'We design migration programmes around your operational calendar. Critical business periods, year-end, peak trading, regulatory reporting windows, are respected. No cutover is scheduled without your explicit sign-off, and every stage has a tested rollback path.',
     },
     {
@@ -35,7 +35,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
       title: 'Performance & Scalability Improvements',
-      description: 'Legacy systems are often severely constrained in scalability. Modern replacements are designed for horizontal scaling, cloud elasticity and the performance requirements of contemporary user expectations, typically delivering dramatic improvements in response times and throughput.',
+      description: 'Legacy systems are often severely constrained in scalability. Modern replacements are designed for horizontal scaling, cloud elasticity and the performance requirements of contemporary user expectations, which usually brings real improvements in response times and throughput.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>',
@@ -63,15 +63,15 @@ const data = {
   process: [
     {
       step: '01',
-      title: 'Legacy System Assessment',
-      description: 'We perform a technical assessment of the existing system: codebase analysis, architecture documentation, dependency mapping, data model review and interviews with the engineers and business users who know it best. The output is a clear picture of what the system does, what business logic it encodes and what the migration risk profile looks like.',
-      duration: 'Week 1 to 3',
+      title: 'Discovery Audit & Legacy Assessment',
+      description: 'Every build starts with a Discovery Audit ($750 plus GST, credited in full against the build). For a legacy system it includes a technical assessment: codebase analysis, architecture documentation, dependency mapping, data model review and interviews with the engineers and business users who know it best. The output is a clear picture of what the system does, what business logic it encodes and what the migration risk profile looks like.',
+      duration: 'Before the build',
     },
     {
       step: '02',
       title: 'Migration Strategy & Roadmap Design',
-      description: 'Based on the assessment, we design the migration strategy: how the system will be decomposed, in what sequence, using which technical approach (strangler fig, parallel run, lift-and-shift to cloud, or full rewrite of specific modules). We produce a phased roadmap with milestones, dependencies and risk assessments that your leadership team can evaluate and approve.',
-      duration: 'Week 3 to 4',
+      description: 'Based on the assessment, we design the migration strategy: how the system will be decomposed, in what sequence, using which technical approach (strangler fig, parallel run, lift-and-shift to cloud, or full rewrite of specific modules). We walk you through it over two strategy sessions, and you receive a fixed price Schedule of Work for an agreed scope, with milestones, dependencies and risks your leadership team can evaluate and approve.',
+      duration: 'Strategy sessions',
     },
     {
       step: '03',
@@ -83,7 +83,7 @@ const data = {
       step: '04',
       title: 'Iterative Service Extraction',
       description: 'Functionality is migrated slice by slice. For each slice, we write specifications from the legacy code, build and test the replacement, deploy it behind the integration layer, validate it against production traffic and, once validated, cut traffic over. Each slice is an independent deliverable that can be reviewed and approved separately.',
-      duration: 'Ongoing sprints',
+      duration: 'Ongoing stages',
     },
     {
       step: '05',
@@ -121,15 +121,15 @@ const data = {
     },
     {
       question: 'What if the legacy system has no documentation and the original developers are gone?',
-      answer: 'This is the most common situation we encounter, and it is addressable. Our process for undocumented systems starts with systematic code analysis, reading the codebase to reconstruct business logic, tracing data flows, and identifying the actual rules encoded in conditionals and database procedures. We combine this with intensive workshops with the current users and operators who understand what the system does (if not why). The output of this phase is a business requirements specification that becomes the canonical reference for the replacement, and which also has value as standalone documentation regardless of whether the migration proceeds.',
+      answer: 'This situation is common, and it is addressable. Our process for undocumented systems starts with systematic code analysis, reading the codebase to reconstruct business logic, tracing data flows, and identifying the actual rules encoded in conditionals and database procedures. We combine this with intensive workshops with the current users and operators who understand what the system does (if not why). The output of this phase is a business requirements specification that becomes the canonical reference for the replacement, and which also has value as standalone documentation regardless of whether the migration proceeds.',
     },
     {
       question: 'How long does a typical legacy modernisation take?',
-      answer: 'Duration is highly dependent on system complexity, data volume, degree of business criticality and the pace at which your organisation can absorb change. A moderately complex application with a single primary function and a few integrations might be modernised in six to twelve months. A large monolith or mainframe environment that runs core business operations across multiple departments is more typically an eighteen to thirty-six month programme. We phase work to deliver early value, the first migration slices often deliver measurable improvement within the first quarter, so the programme pays for itself progressively rather than requiring full investment before any return.',
+      answer: 'Duration is highly dependent on system complexity, data volume, degree of business criticality and the pace at which your organisation can absorb change. A moderately complex application with a single primary function and a few integrations might be modernised in six to twelve months. A large monolith or mainframe environment that runs core business operations across multiple departments is more typically an eighteen to thirty-six month programme. We stage the work to deliver early value, so the first migration slices can bring improvements well before the whole programme is finished.',
     },
     {
       question: 'We have a system that is partially documented and partially modernised. Can you take over an existing modernisation?',
-      answer: 'Yes. We frequently take over modernisation programmes that have stalled, gone over budget or experienced quality issues. Our first step is an honest assessment of what has been built, what is still outstanding and what, if anything, needs to be rebuilt or redesigned. We document our findings without commercial pressure to tell you what you want to hear, and present options for how to proceed. Sometimes the right answer is to continue from where the programme stopped; sometimes significant rework is required. We will tell you which.',
+      answer: 'Yes, including programmes that have stalled or gone over budget. Our first step is an honest assessment of what has been built, what is still outstanding and what, if anything, needs to be rebuilt or redesigned. We document our findings without commercial pressure to tell you what you want to hear, and present options for how to proceed. Sometimes the right answer is to continue from where the programme stopped; sometimes significant rework is required. We will tell you which.',
     },
     {
       question: 'Should we use microservices for our replacement system?',
@@ -145,7 +145,7 @@ const data = {
     },
     {
       question: 'How much does legacy system modernisation cost?',
-      answer: 'Cost depends on the size and condition of the codebase, how much data has to migrate, the number of integrations, and whether the system is being rehosted, refactored or rebuilt. We start with an assessment, then quote fixed prices for each phase so spending tracks delivered value. Our legacy modernisation cost guide explains typical Australian market ranges.',
+      answer: 'Cost depends on the size and condition of the codebase, how much data has to migrate, the number of integrations, and whether the system is being rehosted, refactored or rebuilt. Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Our legacy modernisation cost guide explains typical Australian market ranges.',
     },
     {
       question: 'Should we rewrite or refactor our legacy application?',

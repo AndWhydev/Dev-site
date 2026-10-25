@@ -6,7 +6,7 @@ eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Legacy system modernisation in Australia typically costs $40k to $200k AUD (ex GST) for a single business application moved with modest changes, and $200k to $700k or more if you re-architect or rebuild it. Core or regulated systems regularly pass $1 million. The approach you choose (rehost, replatform, refactor, rebuild or replace) drives the price more than any other factor, and a paid assessment of $10k to $40k is the usual first step."
+summary: "Legacy system modernisation in Australia typically costs $40k to $200k AUD (ex GST) for a single business application moved with modest changes, and $200k to $700k or more if you re-architect or rebuild it. Core or regulated systems regularly pass $1 million. The approach you choose (rehost, replatform, refactor, rebuild or replace) drives the price more than any other factor, and across the market a paid assessment of $10k to $40k is the usual first step."
 takeaways:
   - "Approach sets the budget: rehosting a system costs a fraction of rebuilding it, and they solve different problems."
   - "Most of the cost in legacy work is discovery and risk: undocumented logic, unknown integrations and data quality."
@@ -87,13 +87,13 @@ Australian providers that publish figures land in a similar place: XpansionIT gi
 
 The Robert Walters 2026 salary guide puts NSW senior backend contractors at $800 to $1,000 a day, and solution architects at $900 to $1,100. Re:Sourced reports senior engineer day rates in Sydney of $800 to $1,100 ex GST. Agencies charge more than a contractor's rate because they carry project management, QA, tooling and warranty; $1,200 to $1,600 a day blended is a reasonable planning figure for a senior Australian team. See [software developer rates in Australia](/guides/software-developer-rates-australia) for the full breakdown.
 
-At $1,400 a day, $100k buys about 71 engineer-days, or roughly one senior engineer for three and a half months. That puts the ranges above in perspective: a $300k refactor is about 214 engineer-days of work.
+At an assumed market rate of $1,400 a day (not our rate), $100k buys about 71 engineer-days, or roughly one senior engineer for three and a half months. That puts the ranges above in perspective: a $300k refactor is about 214 engineer-days of work.
 
 ## A worked example: replatforming a line-of-business app
 
 **Here is how a mid-range estimate adds up for a realistic, illustrative project.** The system: a 12-year-old .NET Framework web application with about 60 screens, a SQL Server database on an office server, nightly file exports to the accounting system, and 80 internal users. The goal is to move it to Azure Australia East, upgrade the runtime to modern .NET, and replace the file export with an API integration.
 
-| Work package | Engineer-days | Cost at $1,400/day |
+| Work package | Engineer-days | Cost at an assumed $1,400/day market rate |
 |---|---|---|
 | Assessment: code review, dependency map, data profiling | 12 | $16,800 |
 | Automated tests around current behaviour (the safety net) | 18 | $25,200 |
@@ -101,7 +101,7 @@ At $1,400 a day, $100k buys about 71 engineer-days, or roughly one senior engine
 | Database move to Azure SQL, with rehearsal migrations | 12 | $16,800 |
 | Accounting API integration to replace the file export | 10 | $14,000 |
 | Infrastructure as code, monitoring, backups | 8 | $11,200 |
-| User acceptance testing support, cutover, hypercare | 10 | $14,000 |
+| User acceptance testing support, cutover, early support | 10 | $14,000 |
 | **Subtotal** | **105** | **$147,000** |
 | Contingency at 20% | | $29,400 |
 | **Planning budget** | | **$176,400 ex GST** |
@@ -139,7 +139,7 @@ The same system rehosted as-is onto a cloud virtual machine might cost $25k to $
 - **Go incremental.** The [strangler fig pattern](/guides/strangler-fig-pattern) replaces one module at a time behind a routing layer. You pay as you go and can stop when the remaining legacy is cheap enough to leave.
 - **Move, then improve.** For a group of systems, rehost or replatform first and refactor later, as AWS recommends. You get off unsupported infrastructure quickly and spread the larger spend.
 - **Buy where the process is standard.** If your legacy app mostly does what a mainstream product does, replacing it can be cheaper than modernising. Our [build vs buy guide](/guides/build-vs-buy-software) covers that decision.
-- **Pay for discovery.** A $10k to $40k assessment that maps code, data and integrations (more than a typical new-build discovery, because the old system has to be understood as well as the new one planned) is the best defence against a mid-project blowout. See [what a discovery phase covers](/guides/software-discovery-phase).
+- **Pay for discovery.** Across the market, a $10k to $40k assessment that maps code, data and integrations (more than a typical new-build discovery, because the old system has to be understood as well as the new one planned) is the best defence against a mid-project blowout. See [what a discovery phase covers](/guides/software-discovery-phase). Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 - **Use AI tools for the reading, not the deciding.** AI-assisted code analysis and test generation can cut engineering days on documentation and repetitive translation. Keep humans on business rules, data checks and cutover.
 
 ## Is legacy modernisation worth the cost? Compare it with keeping the old system
@@ -176,6 +176,6 @@ If a system costs $120k a year to keep and a $180k replatform cuts that to $40k,
 
 If the result surprises you, that's useful information in itself. It's the moment to ask whether part of the system can be retired or replaced instead.
 
-## How All Webbed Labs approaches legacy modernisation
+## How AWLabs approaches legacy modernisation
 
-We start with a paid assessment that maps the code, the data and every integration, then recommend an approach per system, including retiring or buying where that's the better answer. After that we quote a fixed price for the first phase. Work is incremental by default, with automated tests written around current behaviour before anything changes, and the full source code in your repository from day one. Senior engineers do the work, and our delivery pipeline runs AI coding agents under type checks, visual tests, security scans and senior review, which helps most on the documentation and test-writing that legacy projects need. Read more about our [legacy modernisation service](/services/legacy-modernisation), or the trade-offs in [rewrite vs refactor](/guides/rewrite-vs-refactor-legacy-software).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It sets out the systems, the data and every integration, and recommends an approach per system, including retiring or buying where that's the better answer. You then receive one fixed price for the agreed scope, paid in three payments as you accept each stage. Work is incremental by default, with automated tests written around current behaviour before anything changes, and each part assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Senior engineers do the work, and our delivery pipeline runs AI coding agents under type checks, visual tests, security scans and senior review, which helps most on the documentation and test-writing that legacy projects need. Read more about our [legacy modernisation service](/services/legacy-modernisation), or the trade-offs in [rewrite vs refactor](/guides/rewrite-vs-refactor-legacy-software).

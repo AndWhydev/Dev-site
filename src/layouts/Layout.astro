@@ -28,13 +28,13 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 // Canonical brand definition, entity-locking sentence used site-wide for AI search (GEO).
 // Keep this string identical wherever it appears across the site.
 export const BRAND_DEFINITION =
-  'All Webbed Labs is a Sydney based enterprise AI and software development company. Sister company to All Webbed Up, the branding and marketing agency we deliver client work alongside.';
+  'AWLabs is a Sydney based enterprise AI and software development company. Sister company to All Webbed Up, the branding and marketing agency we deliver client work alongside.';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${siteUrl}/#organization`,
-  name: 'All Webbed Labs',
+  name: 'AWLabs',
   legalName: 'AW Labs Pty Ltd',
   alternateName: ['AWL', 'AW Labs', 'AWLabs'],
   taxID: 'ABN 32 698 684 105',
@@ -76,12 +76,9 @@ const schema = {
     postalCode: '2046',
     addressCountry: 'AU',
   },
-  // Sister-company link, All Webbed Up Pty Ltd is a separate legal entity with shared
-  // ownership but no parent/subsidiary relationship. Schema.org has no "sister organisation"
-  // type, so we surface the affiliation via `sameAs` plus a separately-described Organization
-  // on the parent property only if a true subsidiary relationship is established later.
+  // All Webbed Up is a separate business, so it is NOT listed in sameAs
+  // (sameAs tells search engines two profiles are the same entity).
   sameAs: [
-    'https://allwebbedup.com.au',
     'https://www.linkedin.com/in/andytaleb/',
     'https://www.facebook.com/profile.php?id=61556526584232',
     'https://www.instagram.com/andy_awlabs/',
@@ -112,7 +109,7 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
-    <meta property="og:site_name" content="All Webbed Labs" />
+    <meta property="og:site_name" content="AWLabs" />
     <meta property="og:locale" content="en_AU" />
 
     <!-- Twitter Card -->
@@ -193,7 +190,7 @@ const schema = {
           <path d="M12 36L24 12L36 36" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M15.5 28.5H32.5" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
         </svg>
-        <span>All Webbed Labs</span>
+        <span>AWLabs</span>
         <div class="loader-bar"><div class="loader-fill"></div></div>
       </div>
     </div>

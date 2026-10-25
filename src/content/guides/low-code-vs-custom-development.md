@@ -12,7 +12,7 @@ takeaways:
   - "At the time of writing (September 2026), Power Platform environments can be created in an Australian region for Australian tenants; Bubble's standard hosting is Bubble-managed, with region choice on dedicated instances."
   - "Low-code breaks down on complex logic, performance at scale, automated testing, version control across teams, and portability."
   - "Bubble apps can't be exported as source code you can host elsewhere; Bubble offers a JSON export of application logic and CSV or API export of data."
-  - "Custom code costs more up front but you own it outright, can host it anywhere, and aren't exposed to per-user licence changes."
+  - "Custom code costs more up front but you own it once it is paid for and assigned to you, can host it anywhere, and aren't exposed to per-user licence changes."
 faqs:
   - q: "Is low-code cheaper than custom development?"
     a: "Usually for the first version, and often for small internal apps over their whole life. It stops being cheaper when licence costs scale with users, when you hit platform limits and need workarounds, or when a rebuild becomes necessary because the platform can't do what the business now needs. Compare three-year total cost, not build cost."
@@ -164,6 +164,6 @@ Choose **custom development** if:
 
 If automation rather than apps is the question, see [n8n vs Make vs Zapier](/guides/n8n-vs-make-vs-zapier). For founders deciding how to build a first version, the [MVP cost guide](/guides/mvp-development-cost-australia) compares no-code and coded MVPs.
 
-## How All Webbed Labs approaches the choice
+## How AWLabs approaches the choice
 
-We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, we build it with code in your repository from day one, hosted in an Australian region by default, and we can migrate a successful low-code app into code once it has proved its worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).
+We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, you can see and test the code while we build, and each part is assigned to you as it is paid for in full. We usually recommend an Australian region where the services you need are available there, and if your data must stay in Australia, we write it into your Schedule of Work. We can also migrate a successful low-code app into code once it has proved its worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).

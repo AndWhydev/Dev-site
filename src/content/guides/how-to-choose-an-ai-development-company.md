@@ -67,7 +67,7 @@ related:
 service:
   title: "AI consulting and development"
   href: "/ai-consulting"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## Do you need an AI development company at all?
@@ -96,7 +96,7 @@ This scorecard gives you a consistent way to compare a shortlist. Score each fir
 | Evaluation method | A test set of real questions, a measured pass rate, regression checks on every change | A sample evaluation report, redacted if needed |
 | Data handling | Clear map of where prompts, documents, embeddings and logs go | Draft data flow diagram, list of sub-processors and regions |
 | Security | Least-privilege access, secrets management, prompt injection defences | Security approach document, their answers to your security questionnaire |
-| IP and code ownership | Code in your repository, assignment of IP in the contract | Contract clause, repository access plan |
+| IP and code ownership | IP assigned to you as each stage is paid for, code you can see while it is built, repository moved into your name at handover | Contract clause, repository access plan |
 | Running cost honesty | Monthly cost estimate with token volumes and hosting shown | Written estimate with assumptions |
 | Team | Named people who will actually do the work | CVs or profiles for the delivery team, not just the sales lead |
 | Fit with your stack | Experience with your cloud, identity provider and core systems | Integration approach for your top two systems |
@@ -160,7 +160,7 @@ Request this pack from each finalist:
 | Privacy Act 1988 and the APPs | Personal information put into an AI system, and personal information it infers, is covered by the APPs. The OAIC has published specific guidance on AI products and on training models. | How will you minimise personal information in prompts and logs? Will you support a privacy impact assessment? |
 | Cross-border disclosure (APP 8) | Sending personal information to an overseas model endpoint is a disclosure you may remain accountable for. | Which components run offshore, if any, and why? |
 | Data residency | Model availability in Australian cloud regions varies by model and changes often. | Is the proposed model available in Sydney or Melbourne at the time of writing? What's the fallback? |
-| IP ownership | The developer owns copyright in code it writes unless the contract assigns it to you. | Does the contract assign IP on payment or completion? Is the code in our repository throughout? |
+| IP ownership | The developer owns copyright in code it writes unless the contract assigns it to you. | Does the contract assign IP on payment or completion? Can we see the code while it is built, and when do the repository and accounts move into our name? |
 | Responsible AI practice | The National AI Centre's Guidance for AI Adoption sets out six essential practices, including accountability, testing and human oversight. | How does your delivery process support each of the six practices? |
 | Working hours | Incidents and change requests happen in AEST business hours. | Who answers at 10am Sydney time on a Tuesday? |
 
@@ -173,7 +173,7 @@ For deeper background, see our guides on [data residency vs data sovereignty](/g
 - Guarantees of accuracy, or claims the system "won't hallucinate".
 - A price given before anyone has looked at your data or systems.
 - No mention of running costs until you ask.
-- The code stays in the vendor's account, or ownership only transfers if you keep paying a licence.
+- The code and accounts stay in the vendor's name after handover, or ownership only transfers if you keep paying a licence.
 - A demo built on sample data that has never touched a system like yours.
 - Proposals to fine-tune a model before trying retrieval or prompt design, with no reason given. See [RAG vs fine-tuning](/guides/rag-vs-fine-tuning).
 - "Proprietary AI platform" that turns out to be a wrapper you'll pay for indefinitely, with no export path.
@@ -192,8 +192,8 @@ For deeper background, see our guides on [data residency vs data sovereignty](/g
 6. **Commission a paid discovery** from the preferred firm with a fixed deliverable: architecture, evaluation plan, residency design, fixed price for the build and a running cost estimate. If the discovery output is weak, you've lost weeks, not the project budget.
 7. **Contract the build** with IP assignment, acceptance criteria tied to the evaluation plan, and an exit clause.
 
-## How All Webbed Labs fits this process
+## How AWLabs fits this process
 
-We'd rather you ran this process on us than skipped it. Our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership of developers and founders. We don't hold ISO 27001, IRAP or vendor partner tiers, and we don't yet have public AI case studies under the All Webbed Labs name, so ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
+We'd rather you ran this process on us than skipped it. Our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership of developers and founders. We don't hold ISO 27001, IRAP or vendor partner tiers, and our case studies page shows about a third of what we have built, because most clients prefer not to have their product shared online. Ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
 
-What we can commit to in writing: paid discovery followed by a fixed price, code in your repository from day one with IP transferring on completion, an NDA before you share anything, AEST hours, Australian cloud regions by default, and an evaluation plan agreed before build. If discovery shows a licensed tool will do the job, we'll say so. Start with our [AI consulting](/ai-consulting) page or an [AI readiness assessment](/services/ai-readiness-assessment).
+How we work: every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive one fixed price for the agreed scope. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work AEST hours, and agree an evaluation plan before build. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. If our Discovery Audit shows a licensed tool will do the job, we'll say so. Start with our [AI consulting](/ai-consulting) page or an [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects.

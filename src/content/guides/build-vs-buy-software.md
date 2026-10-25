@@ -27,7 +27,7 @@ faqs:
   - q: "Can we start with SaaS and build later?"
     a: "Yes, and it's often the smartest path. Using a product for a year or two teaches you which features matter and where the product fights your process. Make sure you can export all your data in a usable format so migration is possible."
   - q: "Who owns custom software we pay for?"
-    a: "Only you, if the contract says so. In Australia the developer owns copyright in the code it writes unless it's assigned to you in writing. Insist on IP assignment and on the code living in a repository you control."
+    a: "Only you, if the contract says so. In Australia the developer owns copyright in the code it writes unless it's assigned to you in writing. Make sure the contract says the IP becomes yours as each stage is paid for, that you can see the code while it is built, and that the repository and every account move into your name at handover."
   - q: "How long does custom software last?"
     a: "A well-built, maintained system can serve for many years, but it needs ongoing updates for security patches, dependency upgrades and changing business needs. Budget for maintenance every year rather than treating the build as a one-off purchase."
 sources:
@@ -60,7 +60,7 @@ related:
 service:
   title: "Custom enterprise software development"
   href: "/services/enterprise-software"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## Should you build or buy software?
@@ -146,7 +146,7 @@ In this example custom wins, driven by fit, integration and differentiation. Cha
 **Custom software lock-in** comes from dependence on whoever built it. Protect yourself by:
 
 - Owning the IP through a written assignment. In Australia, copyright in code belongs to the developer unless it's assigned to you.
-- Keeping the code in your own repository from day one.
+- Being able to see the code while it is built, and having the repository and every account moved into your name at handover.
 - Using mainstream languages and frameworks that other teams can pick up.
 - Requiring documentation and automated tests as deliverables, not extras.
 
@@ -183,6 +183,6 @@ Custom software lets you choose an Australian cloud region and your own support 
 - You've asked the vendor for the same feature for years.
 - Reporting requires exporting data and rebuilding it elsewhere.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We begin build-or-buy conversations by looking for a product that already does the job, and if one does, we'll say so. Where custom software makes sense, we run a paid discovery that includes a five-year cost comparison against the best off-the-shelf alternatives, then quote a fixed price for the build. Your code lives in your repository from day one and the IP transfers to you on completion, so you're never locked to us. See our [enterprise software](/services/enterprise-software) service.
+We begin build-or-buy conversations by looking for a product that already does the job, and if one does, we'll say so. Where custom software makes sense, every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It looks at the competition and the case for building it, and works through the potential return using your own figures. You then receive one fixed price for the agreed scope. Each part of the build is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment, so you're never locked to us. See our [enterprise software](/services/enterprise-software) service.

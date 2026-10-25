@@ -155,6 +155,6 @@ Other levers worth checking:
 3. **Output caps:** limit answer length where a short answer is the right answer.
 4. **Tighter retrieval:** fewer, better passages beat many loosely related ones.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We measure token usage on your real documents during discovery and put a per-request and per-month cost estimate in the proposal, with the arithmetic shown. In the build, we structure prompts for caching, log token counts per feature, and set alerts so cost growth is visible early rather than on the invoice. See our [LLM integration](/services/llm-integration) service, or the [RAG knowledge base cost guide](/guides/rag-knowledge-base-cost) for a full budget example.
+Early in the build, we measure token usage on your real documents and give you a per request and per month cost estimate, with the arithmetic shown. In the build, we structure prompts for caching, log token counts per feature, and set alerts so cost growth is visible early rather than on the invoice. See our [LLM integration](/services/llm-integration) service, or the [RAG knowledge base cost guide](/guides/rag-knowledge-base-cost) for a full budget example.

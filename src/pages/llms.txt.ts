@@ -15,9 +15,9 @@ export const GET: APIRoute = async () => {
   const byTitle = <T extends { data: { title: string } }>(a: T, b: T) => a.data.title.localeCompare(b.data.title);
 
   const body = [
-    '# All Webbed Labs',
+    '# AWLabs',
     '',
-    '> All Webbed Labs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney based enterprise AI and software development company. Senior engineers, fixed price after a paid discovery, full source code in the client\'s repository, Australian cloud regions by default. Founder Andy Taleb has built software professionally since 2019 and has run sister agency All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership with a group of developers and founders.',
+    '> AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney based enterprise AI and software development company. Every build starts with a Discovery Audit ($750 plus GST, credited in full against the build), then one fixed price for an agreed scope, paid in three payments: a deposit on signing, a second payment on acceptance of the first stage and the final payment before handover. Code is assigned to the client on payment, and the hosting region is agreed in the Schedule of Work. Founder Andy Taleb has built software professionally since 2019 and has run sister agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership with a group of developers and founders.',
     '',
     '## Company',
     line('About', '/about', 'Team, history and how we work'),

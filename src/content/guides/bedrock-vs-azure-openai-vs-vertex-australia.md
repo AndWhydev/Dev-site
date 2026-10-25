@@ -76,7 +76,7 @@ related:
 service:
   title: "Private LLM deployment in Australian regions"
   href: "/services/private-llm-deployment"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## AWS Bedrock vs Azure OpenAI vs Vertex AI: which keeps AI processing in Australia?
@@ -184,6 +184,6 @@ Our [LLM running costs guide](/guides/llm-running-costs) shows how to turn token
 6. Design so the model can be swapped, because availability will change.
 7. Record all of this for your privacy impact assessment.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We work across AWS, Azure and Google Cloud and don't hold partner status with any of them, so our recommendation follows your requirements. By default we build in Australian regions: data, vector indexes and logs onshore, and inference onshore wherever the model you need supports it. Where a requirement can only be met with global processing, we document exactly what leaves Australia and why. We also design model access behind a thin layer so you can move to a better onshore model when one appears. See [private LLM deployment](/services/private-llm-deployment) and [cloud infrastructure](/services/cloud-infrastructure).
+We work across AWS, Azure and Google Cloud and don't hold partner status with any of them, so our recommendation follows your requirements. We usually recommend Australian regions for data, vector indexes and logs, and onshore inference wherever the model you need supports it. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Where a requirement can only be met with global processing, we document what leaves Australia and why. We also design model access behind a thin layer so you can move to a better onshore model when one appears. See [private LLM deployment](/services/private-llm-deployment) and [cloud infrastructure](/services/cloud-infrastructure).

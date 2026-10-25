@@ -54,7 +54,7 @@ related:
     href: "/guides/strangler-fig-pattern"
   - title: "Build vs buy: custom software or off-the-shelf SaaS?"
     href: "/guides/build-vs-buy-software"
-  - title: "Why get a code audit"
+  - title: "Why we start with a Discovery Audit"
     href: "/why-audit"
 service:
   title: "Legacy system modernisation"
@@ -154,7 +154,7 @@ A useful first phase covers:
 5. **Data review.** Quality, ownership, where personal information lives, and any obligations such as onshore storage under your contracts or the Privacy Act.
 6. **Options with costs.** Refactor, incremental rewrite, replace or retain, each with a rough range and risks.
 
-Our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) gives Australian ranges for each approach, and [why a code audit comes first](/why-audit) explains what an audit should deliver.
+Our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) gives Australian ranges for each approach, our [code audit](/services/code-audit) service covers reviewing an existing codebase, and [why we start with a Discovery Audit](/why-audit) explains how every build begins.
 
 ## What changes during a migration for Australian organisations?
 
@@ -168,6 +168,6 @@ Our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australi
 - **Replace with SaaS** if the function is common and your process can adapt.
 - **Retain and stabilise** if it's stable, rarely changes and can be hosted and secured properly.
 
-## How All Webbed Labs approaches legacy decisions
+## How AWLabs approaches legacy decisions
 
-We start with an audit and characterisation tests, then recommend whichever option the evidence supports, including leaving a system alone or buying a product when that's cheaper. Where replacement is justified, we do it incrementally behind a routing layer so the business keeps running and each step can be rolled back. New code lives in your repository from day one. See our [legacy modernisation service](/services/legacy-modernisation).
+We start with an audit and characterisation tests, then recommend whichever option the evidence supports, including leaving a system alone or buying a product when that's cheaper. Where replacement is justified, we do it incrementally behind a routing layer so the business keeps running and each step can be rolled back. You can see and test new code while we build, and each part is assigned to you as it is paid for in full. See our [legacy modernisation service](/services/legacy-modernisation).

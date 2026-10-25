@@ -60,7 +60,7 @@ related:
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"
-disclaimer: none
+disclaimer: legal
 ---
 
 ## What's the difference between an AI agent, a chatbot and automation?
@@ -173,6 +173,6 @@ Two further checks for Australian organisations:
 - **Where does the automation platform run?** Hosted automation tools and model APIs may process data overseas. Check the hosting region before routing personal information through them.
 - **Who's accountable?** Name a person responsible for each automated process and agent, with authority to pause it.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We usually recommend the least autonomous design that solves the problem: a workflow with AI steps where the inputs are messy, and a scoped agent only where the path genuinely varies. We define tools with least privilege, add approval steps for consequential actions, log every step, and build an evaluation set of real tasks before launch. Systems run in Australian cloud regions by default. See [AI agent development](/services/ai-agent-development), [workflow automation](/services/workflow-automation) and [AI chatbot development](/services/ai-chatbot).
+We usually recommend the least autonomous design that solves the problem: a workflow with AI steps where the inputs are messy, and a scoped agent only where the path genuinely varies. We define tools with least privilege, add approval steps for consequential actions, log every step, and build an evaluation set of real tasks before launch. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. See [AI agent development](/services/ai-agent-development), [workflow automation](/services/workflow-automation) and [AI chatbot development](/services/ai-chatbot).

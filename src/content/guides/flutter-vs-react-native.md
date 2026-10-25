@@ -187,6 +187,6 @@ Choose **React Native** if most of these are true:
 
 If it's a genuine tie, pick the one your future maintainers already know. Whoever builds version one, someone else may be maintaining it, which is part of the [freelancer, agency or in-house](/guides/freelancer-vs-agency-vs-in-house) question too.
 
-## How All Webbed Labs approaches the choice
+## How AWLabs approaches the choice
 
-We build most mobile work in Flutter, because it suits the custom interfaces and mobile-plus-desktop tools we focus on. We'll recommend React Native when your team works in React and will own the app afterwards, and we'll say so during discovery rather than after the quote. Either way the code sits in your repository from day one. See our [Flutter development service](/services/flutter-development), or our [React and Next.js work](/services/react-nextjs) for web front ends.
+We build most mobile work in Flutter, because it suits the custom interfaces and mobile-plus-desktop tools we focus on. We'll recommend React Native when your team works in React and will own the app afterwards, and we'll say so in the Discovery Audit rather than after the price. Either way, you can see and test the code while we build, and each part is assigned to you as it is paid for in full. See our [Flutter development service](/services/flutter-development), or our [React and Next.js work](/services/react-nextjs) for web front ends.

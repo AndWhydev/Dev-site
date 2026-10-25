@@ -158,7 +158,7 @@ A middle path is a managed open-weight model on Bedrock in Sydney. The model ven
 | Proposal writer | Firm's own service descriptions, fee templates | Either; onshore by default | Commercially confidential but not personal; onshore costs little extra if the same model is available |
 | Website chatbot | Published service pages, general questions | Global permitted | Public information; visitors may type personal details, so strip or refuse them before the call |
 
-The engineering that makes this safe is small but essential:
+The engineering that keeps this risk under control is small but essential:
 
 1. **One gateway.** All model calls go through a single internal service that holds the routing rules, rather than each feature calling providers directly.
 2. **Classification at the source.** Documents carry a sensitivity label from ingestion, and the gateway refuses to send a labelled document to a global route.
@@ -173,6 +173,6 @@ The fallback rule is where real systems break. Retry libraries and SDK defaults 
 
 For a platform-by-platform comparison of governance features, pricing basis and data use terms, see [Bedrock vs Azure OpenAI vs Vertex AI for Australian data residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We default to Australian regions and pick the model and routing mode together during discovery, then enforce the choice with cloud policy and log it per request, so your security team can check it rather than trust it. Where requirements rule out any third-party model processing, we deploy open-weight models inside your own cloud account. We document what stays onshore, what doesn't and why, as input to your privacy impact assessment; the risk decision stays with you. See our [private LLM deployment](/services/private-llm-deployment) service and [cloud infrastructure](/services/cloud-infrastructure) work.
+We usually recommend Australian regions where the model you need is available there, and we pick the model and routing mode with you before the build. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. We then enforce the choice with cloud policy and log it per request, so your security team can check it rather than trust it. Where requirements rule out any third-party model processing, we deploy open-weight models inside your own cloud account. We document what stays onshore, what doesn't and why, as input to your privacy impact assessment; the risk decision stays with you. See our [private LLM deployment](/services/private-llm-deployment) service and [cloud infrastructure](/services/cloud-infrastructure) work.

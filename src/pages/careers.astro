@@ -28,8 +28,8 @@ const roles = [
 ---
 
 <Layout
-  title="Careers, All Webbed Labs | Join Our Enterprise Engineering Team"
-  description="Join All Webbed Labs, a senior-only enterprise software team based in Australia. Remote-first, competitive pay and genuinely interesting problems to solve."
+  title="Careers, AWLabs | Join Our Enterprise Engineering Team"
+  description="Join AWLabs, a senior-only enterprise software team based in Australia. Remote-first, competitive pay and genuinely interesting problems to solve."
 >
   <Header />
   <main>
@@ -50,6 +50,7 @@ const roles = [
             Send Us Your CV
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <p class="collect-notice">We use your CV only to consider you for work with us. See our <a href="/privacy">privacy policy</a> for how we store it and how to ask us to delete it.</p>
         </div>
       </div>
     </section>
@@ -58,7 +59,7 @@ const roles = [
     <section class="why-section">
       <div class="careers-inner">
         <div class="reveal">
-          <span class="section-label">Why All Webbed Labs</span>
+          <span class="section-label">Why AWLabs</span>
           <h2 class="section-heading">What Makes This Different</h2>
         </div>
         <div class="values-grid">
@@ -89,6 +90,7 @@ const roles = [
             <h3>No Specific Roles Open Right Now</h3>
             <p>We don't always advertise, we hire great people when we find them. If you're a senior engineer who does exceptional work, send us your CV and a note about what you're looking for.</p>
             <a href="mailto:admin@awlabs.com.au" class="btn-primary">Send Your CV Anyway</a>
+            <p class="collect-notice">We use your CV only to consider you for work with us. See our <a href="/privacy">privacy policy</a> for how we store it and how to ask us to delete it.</p>
           </div>
         ) : (
           <div class="roles-list">
@@ -138,6 +140,16 @@ const roles = [
 </Layout>
 
 <style>
+  .collect-notice {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #8aa09a;
+    max-width: 520px;
+    margin: 1rem 0 0;
+  }
+  .no-roles .collect-notice { margin: 0; }
+  .collect-notice a { color: #19b58f; }
   .careers-hero {
     padding: 9rem 0 6rem;
     background: #0a0f0e;

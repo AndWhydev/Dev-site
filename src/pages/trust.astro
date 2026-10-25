@@ -6,41 +6,41 @@ import CTABanner from '../components/CTABanner.astro';
 
 /**
  * Trust page, the page every serious buyer needs before signing. Concrete
- * facts (company registration, address, hours), the security posture we
- * actually hold ourselves to, the IP-transfer language we put in every
- * engagement contract, and a downloadable mutual NDA they can run past
- * their lawyer before the first commercial conversation.
+ * facts (company registration, addresses, hours), how we work on security,
+ * a plain summary of the IP clauses in our Master Services Agreement, and a
+ * downloadable mutual NDA they can run past their lawyer before the first
+ * commercial conversation.
  *
- * Nothing on this page is a claim about who we work with. It is only a
- * claim about how we work, every line of which is provable from the
- * contract or from public record (ASIC, ABR).
+ * Nothing on this page is a claim about who we work with. Where it describes
+ * our obligations, the Master Services Agreement is what binds us.
  */
 
 const facts = [
-  { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Trading as All Webbed Labs. Sister company to All Webbed Up Pty Ltd.' },
+  { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Known as AWLabs. Sister company to All Webbed Up, our marketing business, which is run separately.' },
   { label: 'ABN', value: '32 698 684 105', detail: 'Australian Business Number, verifiable on abr.business.gov.au' },
-  { label: 'Registered office', value: '1 Ramsay Rd, Five Dock NSW 2046', detail: 'Greater Sydney, Australia' },
-  { label: 'Operating hours', value: 'Mon to Fri, 9am to 6pm AEST', detail: 'Real humans on the other end of every message' },
+  { label: 'Registered office', value: 'Floor 1, 43 Ware Street, Fairfield NSW 2165', detail: 'As recorded with ASIC' },
+  { label: 'Business address', value: '1 Ramsay Rd, Five Dock NSW 2046', detail: 'Greater Sydney, Australia' },
+  { label: 'Operating hours', value: 'Monday to Friday, 9am to 6pm Sydney time', detail: 'A real person reads every reply' },
   { label: 'Ownership', value: '100% Australian-owned', detail: 'No offshore parent. Delivery is Australian-led and remains managed and accountable through AW Labs in Sydney.' },
-  { label: 'Insurance', value: 'PI $2M · Public liability $10M · Cyber $1M', detail: 'Underwritten by Lloyd’s via CFC. Certificate of Currency provided to procurement on request.' },
+  { label: 'Insurance', value: 'Professional indemnity $1M per claim ($2M in total each year). Public liability $10M. Cyber $500,000 per claim ($1M in total).', detail: 'Underwritten by Lloyd’s via CFC. Certificate of Currency provided to procurement on request.' },
 ];
 
 const ipClauses = [
   {
-    title: 'Pre-existing IP stays with its owner',
-    body: 'Anything we bring to the engagement that already existed before the project starts, internal libraries, methodology, templates, third-party open source, remains owned by the original owner. We list these explicitly in the contract as Background IP. Open source remains under its existing licence.',
+    title: 'Our own tools stay ours',
+    body: 'Anything we bring to the engagement that already existed before the project starts, such as our internal libraries, methods and templates, stays ours. The contract calls these Background IP. You get a permanent licence to use them inside your product. Open source stays under its existing licence.',
   },
   {
-    title: 'New IP created in the project is yours',
-    body: 'On final payment, all source code, designs, schemas, infrastructure-as-code, runbooks and documentation created specifically for your project transfer to you in full. We retain no licence, no usage rights and no ability to resell.',
+    title: 'What we build for you is yours once it is paid for',
+    body: 'You own what we build for you once it is paid for. Each part is assigned to you as it is paid for in full, and until then you can see and test the code while we build. After launch we may show non confidential screenshots in our portfolio unless you tell us not to.',
   },
   {
     title: 'We do not embed silent dependencies on us',
-    body: 'No phone-home telemetry to our infrastructure. No hard-coded API keys that route through us. No "you can only deploy this if we host it" architecture. You can fire us and run the system on day one without our involvement.',
+    body: 'No phone home telemetry to our infrastructure. No hard coded API keys that route through us. No "you can only deploy this if we host it" architecture. Nothing we build depends on us to keep running. Once your final payment is made, you can run it without us.',
   },
   {
     title: 'You receive the keys',
-    body: 'Source repository, DNS, hosting account, secret store, third-party service accounts, every credential is in your control before final invoice. We are removed from every system within five business days of project closeout.',
+    body: 'Your hosting, domain, app store and payment accounts are set up in your name before launch, once the amounts due are paid. The full repository, final logins, accounts and deployment details are handed over after the final payment.',
   },
 ];
 
@@ -48,41 +48,41 @@ const security = [
   {
     pillar: 'Authentication',
     bullets: [
-      'Multi-factor required on every internal account and every system that touches client data',
-      'Single sign-on (SSO) where the client provides an identity provider',
+      'Multi factor sign in on our internal accounts and the systems that touch client data',
+      'Single sign on (SSO) where the client provides an identity provider',
       'Session tokens rotated; refresh tokens revoked on suspicious activity',
     ],
   },
   {
     pillar: 'Authorisation',
     bullets: [
-      'Least-privilege by default, engineers get access only to the projects they are staffed on',
-      'Audit log on every access to client production data, retained for the contracted period',
-      'Just-in-time elevation for production changes; no standing admin credentials',
+      'Least privilege by default: our people get access only to the projects they work on',
+      'Access to client production data is kept to the people who need it',
+      'Production changes are made deliberately, not from shared admin logins',
     ],
   },
   {
     pillar: 'Data handling',
     bullets: [
-      'Production data does not leave the production environment except via an audited export with client sign-off',
-      'PII redaction layer on any logs that may capture user input',
-      'Encryption at rest (AES-256) and in transit (TLS 1.2+) on every layer',
+      'Production data stays in the production environment unless you agree to an export',
+      'Personal information is redacted from logs that may capture user input',
+      'Encryption at rest and in transit as standard practice',
     ],
   },
   {
-    pillar: 'Code & dependencies',
+    pillar: 'Code and dependencies',
     bullets: [
-      'OWASP Top 10 as the floor of what we test for, not the ceiling',
-      'Dependency vulnerability scanning on every PR; high/critical CVEs block merge',
-      'Secret scanning on every commit; secret leaks rotate the affected credential immediately',
+      'Security is tested during every build, including automated penetration testing before launch',
+      'An independent penetration test by a specialist firm is your choice, and we can help you arrange it',
+      'Dependencies and secrets are checked during the build; leaked credentials are rotated',
     ],
   },
   {
-    pillar: 'Incident response',
+    pillar: 'If something goes wrong',
     bullets: [
-      'Roll back first, investigate second, uptime takes priority over root cause',
-      'Postmortem within five business days; action items tracked to closure',
-      'Client notified of incidents that affect their data or service within the contracted SLA',
+      'Roll back first, investigate second',
+      'We tell you without undue delay if an incident affects your data or service',
+      'We review what happened and track the fixes to closure',
     ],
   },
 ];
@@ -91,25 +91,25 @@ const aiData = [
   {
     pillar: 'Where your data goes',
     bullets: [
-      'Client systems we build default to Australian cloud regions for storage, databases and vector indexes',
-      'Where a model your project needs is available in an Australian region, we use that region for inference',
-      'Anything that must leave Australia is documented for your privacy impact assessment before it is built',
+      'We can host your data in Australian cloud regions',
+      'If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work',
+      'Unless the Schedule of Work says so, our cloud providers, tools and team may store or access data outside Australia',
     ],
   },
   {
     pillar: 'Model providers and training',
     bullets: [
-      'We use commercial API and cloud agreements, not consumer AI apps, for client work',
-      'We choose services whose terms exclude training on customer content, and confirm this during discovery',
-      'Prompts, documents and embeddings are treated with the same classification as the source data',
+      'We use business accounts and settings for AI tools, not consumer AI apps, for client work',
+      'If you need a tool that does not train on your data, tell us before the Schedule of Work and we will agree it in writing',
+      'Prompts, documents and embeddings are treated with the same care as the source data',
     ],
   },
   {
     pillar: 'AI in our delivery pipeline',
     bullets: [
-      'Our engineers use AI coding agents, and every change is reviewed by a senior engineer before it ships',
+      'Our developers use AI coding tools, and they review AI assisted work before it ships',
       'If your contract restricts AI tooling on your codebase, we agree the rules in writing before work starts',
-      'Secrets and production data are never placed in prompts; development uses test or masked data',
+      'We take reasonable care to keep secrets and production data out of prompts, and develop with test or masked data',
     ],
   },
   {
@@ -125,26 +125,26 @@ const aiData = [
 const compliance = [
   {
     label: 'Australian Privacy Principles',
-    body: 'Engagements handling personal information of Australian individuals are designed to the Australian Privacy Principles (APPs) under the Privacy Act 1988. Whether your specific use case triggers APP entity status is a call for your privacy counsel; our architecture holds up either way, so the answer changes obligations rather than build.',
+    body: 'Engagements handling personal information of Australian individuals are designed to the Australian Privacy Principles (APPs) under the Privacy Act 1988. Whether your specific use case triggers APP entity status is a call for your privacy counsel. We build as though the Australian Privacy Principles apply.',
   },
   {
-    label: 'Data sovereignty',
-    body: 'Default hosting region for Australian engagements is Australia (AWS ap-southeast-2 / GCP australia-southeast1). Cross-border data flows are documented and signed off in the architecture phase, not retrofitted later.',
+    label: 'Data residency',
+    body: 'We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work.',
   },
   {
-    label: 'R&D Tax Incentive eligibility',
-    body: 'The portion of a software build conducted in Australia is generally eligible for consideration under the AU R&D Tax Incentive (RDTI). We structure our project documentation, technical uncertainty registers, experiment logs, time tracking, to support your eventual claim. This is a structural advantage of working with an Australian agency, not a claim only we can make.',
+    label: 'R&D Tax Incentive',
+    body: 'Some software development may qualify. Whether yours does, and what it is worth, is a question for a registered R&D tax agent. Our accountants at Crescendo can advise; they are a separate practice and you engage them directly. We keep build records your tax agent can ask for.',
   },
   {
-    label: 'GDPR-adjacent obligations',
-    body: 'For clients with European users, we implement data subject request handling, consent management and the right-to-erasure machinery as standard. Designed to GDPR principles even where the strict legal obligation is local.',
+    label: 'European users',
+    body: 'If you have European users, we can scope GDPR features into your build, such as data subject requests, consent management and deletion requests. Your lawyer confirms what applies to you.',
   },
 ];
 ---
 
 <Layout
-  title="Trust, Compliance & IP, All Webbed Labs"
-  description="Company registration, IP transfer terms, security posture, compliance position and a downloadable mutual NDA. What serious buyers should read before scoping."
+  title="Trust, Compliance & IP, AWLabs"
+  description="Company registration, how IP is assigned to you on payment, how we work on security and AI, and a downloadable mutual NDA. What serious buyers should read before briefing us."
 >
   <Header />
   <main>
@@ -158,16 +158,15 @@ const compliance = [
             Read this before you brief us.
           </h1>
           <p class="trust-lead">
-            Every line on this page is verifiable, from public record, from the engagement contract or from a downloadable document. We have written it down so you do not have to ask, and so your legal and security people can pre-clear us before the first commercial conversation.
+            This page summarises how we work. Where it describes our obligations, the Master Services Agreement is what binds us. We have written it down so you do not have to ask, and so your legal and security people can check us before the first commercial conversation.
           </p>
           <div class="trust-actions">
             <a href="/docs/mutual-nda.pdf" class="btn-primary" download>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download mutual NDA
             </a>
-            <a href="/docs/how-this-works.pdf" class="btn-outline" download>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              How we engage (PDF)
+            <a href="/MSA" class="btn-outline">
+              Read our Master Services Agreement
             </a>
           </div>
         </div>
@@ -181,7 +180,7 @@ const compliance = [
           <span class="section-label">Company on the record</span>
           <h2 class="section-heading">The verifiable facts.</h2>
           <p class="section-subheading">
-            Every item below can be confirmed independently. We are not asking you to take our word for it.
+            The company details below can be checked on public record (ASIC and the ABR). The insurance certificate is available to procurement on request.
           </p>
         </div>
 
@@ -202,9 +201,9 @@ const compliance = [
       <div class="trust-ip-inner">
         <div class="reveal" style="max-width: 760px;">
           <span class="section-label">Intellectual property</span>
-          <h2 class="section-heading">You own everything we build for you.</h2>
+          <h2 class="section-heading">You own what we build for you once it is paid for.</h2>
           <p class="section-subheading">
-            Plain-English summary of the IP clauses we put in every contract. The contract itself is reviewed against your legal team's amendments before signing.
+            A plain English summary of the IP clauses in our Master Services Agreement. Assigned to you on payment. Where this summary and the agreement differ, the agreement applies.
           </p>
         </div>
 
@@ -224,9 +223,9 @@ const compliance = [
       <div class="trust-security-inner">
         <div class="reveal" style="max-width: 760px;">
           <span class="section-label">Security posture</span>
-          <h2 class="section-heading">What our security looks like in practice.</h2>
+          <h2 class="section-heading">How we work on security.</h2>
           <p class="section-subheading">
-            The specific operational practices we hold ourselves to on every engagement. Independent audit and formal certification can be scoped into enterprise engagements on request.
+            This page summarises how we work. Where it describes our obligations, the Master Services Agreement is what binds us. We build security to fit your risk: not gold plated, and not left exposed. An independent penetration test by a specialist firm is your choice, and we can help you arrange it.
           </p>
         </div>
 
@@ -291,7 +290,7 @@ const compliance = [
       <div class="trust-disclaimer-inner">
         <div class="reveal">
           <p>
-            <strong>An honest note.</strong> Our founder has been shipping software since 2019 and running All Webbed Up as a Sydney marketing and development agency since 2021. All Webbed Labs itself launched in mid 2026 as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned, badges we cannot produce on request, or client logos we cannot show under NDA. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>, we will tell you yes, no or "not yet" without dressing it up.
+            <strong>An honest note.</strong> Our founder has been shipping software since 2019 and running All Webbed Up as a Sydney marketing and development agency since 2021. AWLabs itself launched in mid 2026 as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned or badges we cannot produce on request. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>, we will tell you yes, no or "not yet" without dressing it up.
           </p>
         </div>
       </div>

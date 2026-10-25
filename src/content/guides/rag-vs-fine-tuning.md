@@ -184,6 +184,6 @@ Patterns that work:
 
 Patterns to avoid: fine-tuning a model on your documents so it "knows" them, and fine-tuning before you have an evaluation set to prove it helped.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We start with the cheapest approach that could work: a current model, a well-designed prompt and, where knowledge is involved, retrieval over your documents in an Australian region. We build an evaluation set from real questions during discovery, so the decision to fine-tune (or not) rests on measured results rather than preference. When fine-tuning is justified, we check where the training job will run before any data is prepared and document it for your privacy impact assessment. See our [RAG knowledge base](/services/rag-knowledge-base) and [LLM integration](/services/llm-integration) services.
+We start with the cheapest approach that could work: a current model, a well-designed prompt and, where knowledge is involved, retrieval over your documents, in an Australian region where your data needs to stay onshore. We build an evaluation set from real questions at the start of the build, so the decision to fine-tune (or not) rests on measured results rather than preference. When fine-tuning is justified, we check where the training job will run before any data is prepared and document it for your privacy impact assessment. See our [RAG knowledge base](/services/rag-knowledge-base) and [LLM integration](/services/llm-integration) services.

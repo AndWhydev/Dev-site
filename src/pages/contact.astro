@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Contact All Webbed Labs | Book a Strategy Call, Sydney"
-  description="Book a free 30-minute strategy call with All Webbed Labs, a Sydney AI and software development company. Tell us about your project and a senior engineer will reply."
+  title="Contact AWLabs | Book a Strategy Call, Sydney"
+  description="Book a free 30-minute strategy call with AWLabs, a Sydney AI and software development company. Tell us about your project and a senior engineer will reply."
 >
   <Header />
   <main>
@@ -68,22 +68,29 @@ import Footer from '../components/Footer.astro';
             <div class="next-step">
               <div class="ns-num">1</div>
               <div>
-                <strong>We review your submission</strong>
-                <p>A senior team member reviews your enquiry and assigns the right specialist within 2 business hours.</p>
+                <strong>Discovery Call</strong>
+                <p>A short phone call with our team about what you want to build.</p>
               </div>
             </div>
             <div class="next-step">
               <div class="ns-num">2</div>
               <div>
-                <strong>Discovery call (30 min)</strong>
-                <p>We discuss your requirements, timeline and success criteria. No obligation, just an honest conversation.</p>
+                <strong>Discovery Audit Meeting</strong>
+                <p>Sixty minutes on Zoom with Andy. If it is a fit, you book the Discovery Audit: $750 plus GST, credited in full against your build.</p>
               </div>
             </div>
             <div class="next-step">
               <div class="ns-num">3</div>
               <div>
-                <strong>Proposal within 5 business days</strong>
-                <p>A detailed technical and commercial proposal, tailored to your specific situation and goals.</p>
+                <strong>Discovery Audit Session</strong>
+                <p>Sixty minutes on what you need built. Your written audit follows within seven days of your answers.</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">4</div>
+              <div>
+                <strong>Two Strategy Sessions</strong>
+                <p>We walk you through the audit and the build scope, then present your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.</p>
               </div>
             </div>
           </div>
@@ -520,7 +527,7 @@ import Footer from '../components/Footer.astro';
       `Service: ${v('service')}`,
       v('budget') ? `Budget: ${v('budget')}` : null,
       v('hear') ? `Heard via: ${v('hear')}` : null,
-      fd.get('nda') ? 'NDA requested before scoping' : null,
+      fd.get('nda') ? 'NDA requested before discussing details' : null,
       '',
       v('message'),
     ].filter((l) => l !== null).join('\n');

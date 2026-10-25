@@ -186,8 +186,8 @@ ASD's assessment guide notes that for a strategy to count as implemented, every 
 
 **The Essential Eight is a minimum, not a complete security program.** ASD says it won't stop every threat and that organisations should draw on the Information Security Manual for further controls. Application-level risks, such as broken access control, injection and, for AI systems, [prompt injection](/guides/prompt-injection), sit outside the eight strategies altogether. If your buyers are government agencies, the [IRAP guide](/guides/irap-explained) explains how ISM-based assessments work. For APRA-regulated clients, read [CPS 234 and AI systems](/guides/apra-cps-234-ai).
 
-## How All Webbed Labs builds for it
+## How AWLabs builds for it
 
-We don't assess or certify Essential Eight maturity, and we don't claim a maturity level for any client. We build software so that the relevant requirements are achievable: dependency scanning and security checks run as quality gates on every change, a pipeline that can ship a patched build quickly, MFA and role-based admin access designed in, authentication and admin events logged, and backups designed for point-in-time restore in Australian regions. Every change also gets a senior engineer's review before deploy.
+We don't assess or certify Essential Eight maturity, and we don't claim a maturity level for any client. We build software so that the relevant requirements are achievable: dependency scanning and security checks run as quality gates on every change, a pipeline that can ship a patched build quickly, MFA and role-based admin access designed in, authentication and admin events logged, and backups designed for point-in-time restore, kept in Australian regions where that is written into your Schedule of Work. Every change also gets a senior engineer's review before deploy.
 
 Keeping the patching timeline over years is an operations commitment, not a one-off build task. See our [cybersecurity](/services/cybersecurity) and [software maintenance and support](/services/software-maintenance-support) services.

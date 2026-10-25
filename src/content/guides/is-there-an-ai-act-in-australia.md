@@ -140,13 +140,13 @@ Voluntary doesn't mean irrelevant. When a regulator or court asks whether you to
 
 **A single, ordinary AI feature can engage half a dozen laws at once, which is why "there's no AI Act" is not a reason to skip governance.** Take a property management platform that adds an AI tenant screening assistant. It reads rental applications, summarises income and rental history, and produces a suitability score for the property manager.
 
-- **Privacy Act.** Applications contain personal and sometimes sensitive information. APP 3 governs what is collected, APP 6 limits reuse (for example, training a model on past applicants), APP 10 requires accuracy, and APP 11 requires security. From 10 December 2026, the score is likely to be a thing substantially and directly related to a decision affecting access to housing, so the privacy policy must describe it.
+- **Privacy Act.** Applications contain personal and sometimes sensitive information. APP 3 governs what is collected, APP 6 limits reuse (for example, training a model on past applicants), APP 10 requires accuracy, and APP 11 requires security. From 10 December 2026, the Privacy Act's new automated decision rules may require the privacy policy to describe a score like this, if it is substantially and directly related to a decision affecting access to housing. Whether it is, is a question for the platform's lawyers.
 - **Anti-discrimination law.** If the score correlates with age, disability, race or family status, even indirectly through postcode or employment gaps, the platform and its customers are exposed. That means bias testing across groups before release, not after a complaint.
 - **Australian Consumer Law.** Marketing the assistant as "objective" or "unbiased" without evidence risks misleading conduct. The claims have to match the test results.
 - **State residential tenancy laws.** These can limit what information may be requested from applicants and how it is used, and they differ between states. Check each state the platform operates in.
 - **Contract and negligence.** The property manager's customers, the landlords, rely on the output. Clear documentation of limitations and a human decision point reduce the risk of a system failure turning into a liability claim.
 
-The engineering response is the same regardless of which law you worry about most: minimise the data, record where it came from, test for accuracy and bias, log each score with its inputs and model version, keep a human making the final decision, and tell applicants how the process works. Doing those things once satisfies most of the laws above at the same time.
+The engineering response is the same regardless of which law you worry about most: minimise the data, record where it came from, test for accuracy and bias, log each score with its inputs and model version, keep a human making the final decision, and tell applicants how the process works. Doing those things once gives your lawyers and risk team the evidence they need to assess each of the laws above.
 
 ## How does Australia compare with the EU?
 
@@ -165,6 +165,6 @@ The engineering response is the same regardless of which law you worry about mos
 - [ ] If you have EU customers, get advice on the EU AI Act.
 - [ ] Put a date on this review and repeat it at least every six months.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
 We build AI systems so the evidence of responsible design exists as part of the codebase: an inventory of AI features and automated decisions, evaluation results, decision logs, and documentation of data sources and vendors. That evidence supports your legal and risk teams; it doesn't replace their judgement, and we don't certify that any system meets the law. See our [AI governance and responsible AI engineering](/services/ai-governance) service and our guide to [evaluating an LLM application before launch](/guides/llm-evaluation).

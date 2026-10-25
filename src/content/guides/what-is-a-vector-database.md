@@ -178,6 +178,6 @@ That comfortably fits a modest managed PostgreSQL instance with pgvector. It's a
 
 A vector database is one component. In a [RAG system](/guides/what-is-rag) it's the retrieval layer that finds passages for the model to read. In an [AI agent](/guides/what-is-an-ai-agent) it may sit behind a search tool the agent can call. The quality of what comes out still depends on parsing, chunking and the embedding model upstream.
 
-## How All Webbed Labs approaches vector storage
+## How AWLabs approaches vector storage
 
-Our default is PostgreSQL with pgvector in an Australian cloud region, with hybrid keyword and vector search, permission filters applied in the query, and the embedding model version stored against every vector. We move to a dedicated engine only when measured load or filtering needs justify the extra system. See our [database architecture](/services/database-architecture) and [RAG knowledge base](/services/rag-knowledge-base) services.
+Our default is PostgreSQL with pgvector, in an Australian cloud region where the services you need are available there, with hybrid keyword and vector search, permission filters applied in the query, and the embedding model version stored against every vector. We move to a dedicated engine only when measured load or filtering needs justify the extra system. See our [database architecture](/services/database-architecture) and [RAG knowledge base](/services/rag-knowledge-base) services.

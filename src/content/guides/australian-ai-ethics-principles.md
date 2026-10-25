@@ -164,6 +164,6 @@ The National AI Centre's summary of AI and Australian law makes the same point: 
 - [ ] An ownership register naming accountable people per lifecycle phase.
 - [ ] A review date, with the last review's findings.
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We treat the principles as requirements with acceptance tests. On AI projects we build decision logging, evaluation and fairness test suites, disclosure and contest flows, and an ownership record into the delivery, and hand over the evidence with the code. Whether a system is ethical enough for its context is a judgement for your organisation; our job is to make sure you have the facts to make it. See our [AI governance and responsible AI engineering](/services/ai-governance) service, or read how federal agencies apply similar expectations in [the DTA AI policy](/guides/dta-ai-policy-government).
+We treat the principles as requirements with acceptance tests. Where it fits the scope, we build decision logging, evaluation and fairness test suites, disclosure and contest flows, and an ownership record into the delivery, and hand over the evidence with the code. What is in your build is listed in your Schedule of Work. Whether a system is ethical enough for its context is a judgement for your organisation; our job is to make sure you have the facts to make it. See our [AI governance and responsible AI engineering](/services/ai-governance) service, or read how federal agencies apply similar expectations in [the DTA AI policy](/guides/dta-ai-policy-government).

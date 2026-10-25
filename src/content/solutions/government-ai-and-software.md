@@ -5,15 +5,15 @@ description: "AI in government and government software development in Australia:
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI in government, and government software development generally, is shaped less by technology than by the frameworks around them: the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), ASD's Information Security Manual, the Protective Security Policy Framework and, for hosting sensitive data, the Hosting Certification Framework. A supplier's job is to build to those requirements and hand the agency the evidence it needs for its own assessments. All Webbed Labs holds no government panel membership, IRAP assessment or security clearances, so we suit OFFICIAL workloads, subcontracting and state or local government work rather than classified systems."
+summary: "AI in government, and government software development generally, is shaped less by technology than by the frameworks around them: the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), ASD's Information Security Manual, the Protective Security Policy Framework and, for hosting sensitive data, the Hosting Certification Framework. A supplier's job is to build to those requirements and hand the agency the evidence it needs for its own assessments. AWLabs holds no government panel membership, IRAP assessment or security clearances, so we suit OFFICIAL workloads, subcontracting and state or local government work rather than classified systems."
 takeaways:
   - "Version 2.0 of the DTA AI policy took effect on 15 December 2025 for non-corporate Commonwealth entities; its first new mandatory requirement began on 15 June 2026 and the rest apply from December 2026."
   - "Every in-scope AI use case now needs an accountable owner, an entry in an internal register and an AI impact assessment before deployment, so suppliers should design systems that make those assessments easy to complete."
   - "The ISM (updated quarterly, latest September 2026) and PSPF Release 2026 set the security controls; PROTECTED systems need IRAP-assessed infrastructure and suppliers with the right clearances."
   - "PSPF directions can rule out specific products outright, such as Direction 001-2025 on DeepSeek, so model and vendor choice is a compliance question, not only a technical one."
-  - "All Webbed Labs is not on a BuyICT panel, has no IRAP-assessed system and holds no clearances. We say so up front and scope work where that doesn't matter."
+  - "AWLabs is not on a BuyICT panel, has no IRAP-assessed system and holds no clearances. We say so up front and scope work where that doesn't matter."
 faqs:
-  - q: "Is All Webbed Labs on the BuyICT Digital Marketplace Panel?"
+  - q: "Is AWLabs on the BuyICT Digital Marketplace Panel?"
     a: "No. We hold no Commonwealth or state panel membership at the time of writing. Agencies can still engage us through a prime contractor that holds panel membership, through an open approach to market, or, for many state and local government bodies, through their own procurement rules. We'll tell you plainly if a panel is the only route your agency can use."
   - q: "Can you build systems that handle PROTECTED or classified information?"
     a: "Not on our own. PROTECTED systems need infrastructure and services assessed through ASD's IRAP program, and personnel with the relevant security clearances. We have neither. We can build OFFICIAL and OFFICIAL: Sensitive workloads in Australian cloud regions, or work under a cleared prime contractor on components that don't need a clearance."
@@ -22,11 +22,11 @@ faqs:
   - q: "Can government use models like Claude or GPT for OFFICIAL data?"
     a: "It can be possible, through enterprise cloud services hosted in Australian regions, subject to their own risk assessment. Availability of specific models in Australian regions changes often, so check the provider's regional availability page at the time you plan the build. Some products are prohibited outright by PSPF direction, as DeepSeek was in February 2025."
   - q: "How long does a government AI pilot take?"
-    a: "A contained pilot on OFFICIAL data usually takes 8 to 14 weeks after discovery, including the evidence pack for the AI impact assessment. Security assessment, data access approvals and change advisory boards typically add more calendar time than the build itself, so plan the schedule around them."
+    a: "A contained pilot on OFFICIAL data usually takes 8 to 14 weeks after the Discovery Audit, including the evidence pack for the AI impact assessment. Security assessment, data access approvals and change advisory boards typically add more calendar time than the build itself, so plan the schedule around them."
   - q: "Is there an AI Act that applies to Australian government?"
     a: "No. At the time of writing there is no standalone AI Act in Australia. Commonwealth agencies are bound by the DTA AI policy and by existing laws such as the Privacy Act, and the Privacy Act's automated decision-making disclosure rules start on 10 December 2026. Our guide to whether there is an AI Act in Australia covers the wider picture."
   - q: "What AI use cases suit local councils?"
-    a: "The same low-risk pattern as federal agencies: staff search over the council's own policies and procedures, triage of customer requests to the right team, and drafting help for routine correspondence, each with a person reviewing before anything goes out. Councils work under their state's privacy, records and procurement rules rather than the DTA policy, so discovery starts from those."
+    a: "The same low-risk pattern as federal agencies: staff search over the council's own policies and procedures, triage of customer requests to the right team, and drafting help for routine correspondence, each with a person reviewing before anything goes out. Councils work under their state's privacy, records and procurement rules rather than the DTA policy, so the Discovery Audit starts from those."
   - q: "Do state governments follow the DTA AI policy?"
     a: "The DTA policy applies to non-corporate Commonwealth entities; corporate Commonwealth entities are encouraged to apply it. States and territories set their own AI, privacy and records rules, so a council or state agency project is scoped against its own state framework and privacy law instead."
 sources:
@@ -132,7 +132,7 @@ Two details catch teams out. First, PSPF directions can prohibit specific produc
 
 **Start from where the data may go, then pick the model, not the other way round.** For most OFFICIAL workloads the practical pattern is an enterprise model service consumed through an Australian cloud region, with the agency's own tenancy, logging and keys, and no training on prompts or outputs.
 
-Work through these questions in order during discovery:
+Work through these questions in order during the Discovery Audit:
 
 1. **Classification and caveats.** What is the highest classification of any document the system will see, including attachments and scanned records? A single PROTECTED file in the corpus changes every answer below.
 2. **Inference location.** Is the model you want offered in an Australian region at the time of writing? Availability differs by model and by cloud, and changes often, so confirm on the vendor's regional availability page and record the date you checked.
@@ -142,7 +142,7 @@ Work through these questions in order during discovery:
 
 Open-weight models hosted inside the agency's own cloud account are worth considering where retention terms are unacceptable or the workload must avoid third-party model APIs. They cost more to run and maintain, and capability can trail the best hosted models, so they suit narrow, high-volume tasks better than open-ended drafting. Our [private LLM deployment](/services/private-llm-deployment) page explains that trade-off.
 
-## Where All Webbed Labs fits, and where it doesn't
+## Where AWLabs fits, and where it doesn't
 
 **We hold no BuyICT or state panel membership, no IRAP-assessed system, and no security clearances. That rules us out of some government work, and it's better you hear it on this page than in week three of a procurement.** Here is how we think about fit.
 
@@ -159,15 +159,14 @@ BuyICT hosts the DTA's whole of government arrangements, including the Digital M
 
 ## What does a realistic engagement look like?
 
-**A typical government AI engagement runs in three phases over four to seven months, with calendar time dominated by approvals rather than code.** The ranges below are typical Australian market ranges for an onshore senior team at agency rates of roughly $120 to $250 an hour, labelled as ranges, not quotes. The basis is set out in our [custom software cost guide](/guides/custom-software-development-cost-australia).
+**A typical government AI engagement runs over four to seven months, with calendar time dominated by approvals rather than code.** The ranges below are typical Australian market ranges for an onshore senior team, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Phase | Duration | What's produced | Typical range (AUD, ex GST) |
 |---|---|---|---|
-| Discovery and assessment support | 3 to 5 weeks | Use case definition, data and classification review, architecture, draft evidence pack for the AI impact assessment, fixed price for the build | $15,000 to $40,000 |
 | Pilot build | 8 to 14 weeks | Working system on OFFICIAL data in an Australian region, evaluation set and results, system security plan inputs, runbook | $80,000 to $200,000 |
 | Production hardening and handover | 6 to 12 weeks | Integration with agency identity and logging, performance and security testing, training material, incident process | $60,000 to $180,000 |
 
-The arithmetic behind the pilot band: two senior engineers plus part-time design and testing for 8 to 14 weeks is roughly 500 to 1,100 hours; at $150 to $190 an hour blended, that lands between about $75,000 and $210,000. Legacy replacement projects sit well above these ranges and are scoped separately; see [legacy modernisation](/services/legacy-modernisation).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work. Legacy replacement projects sit well above these ranges and are scoped separately; see [legacy modernisation](/services/legacy-modernisation).
 
 ## What goes wrong on government AI projects?
 
@@ -179,6 +178,6 @@ The arithmetic behind the pilot band: two senior engineers plus part-time design
 - **Offshore data flows nobody noticed.** Telemetry, error tracking and support tools can send data overseas. Inventory every service.
 - **Records obligations.** AI outputs used in decisions may be Commonwealth records. Decide retention with the records team early.
 
-## How All Webbed Labs approaches government work
+## How AWLabs approaches government work
 
-We run a paid discovery first, then build at a fixed price, with full source code in the agency's own repository from day one. We deploy to Australian cloud regions by default, document each architectural decision in a form an assessor can use, and put every change through automated quality gates (type checks, visual tests, security scans) and a senior engineer's review before release. Andy Taleb has been building software professionally since 2019 and ran All Webbed Up from 2021; All Webbed Labs launched in mid 2026 as a partnership with a group of developers and founders. If your agency needs help producing the evidence the DTA policy asks for, see our [AI governance](/services/ai-governance) service.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over to the agency after the final payment. We can host in Australian cloud regions, and the hosting requirement is written into your Schedule of Work. We document each architectural decision in a form an assessor can use, and put every change through automated quality gates (type checks, visual tests, security scans) and a senior engineer's review before release. Andy Taleb has been building software professionally since 2019 and has run All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership with a group of developers and founders. If your agency needs help producing the evidence the DTA policy asks for, see our [AI governance](/services/ai-governance) service.

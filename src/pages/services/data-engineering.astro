@@ -2,8 +2,8 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: "Data Engineering Services Australia | All Webbed Labs",
-  metaDescription: "Data engineering services from Sydney: pipelines, warehouses, quality testing and governance that give AI and analytics clean, permissioned, onshore data.",
+  metaTitle: "Data Engineering Services Australia | AWLabs",
+  metaDescription: "Data engineering services from Sydney: pipelines, warehouses, quality testing and governance that give AI and analytics clean, permissioned data, hosted in Australia if you need it.",
   category: "AI & Data",
   serviceName: "Data Engineering",
   slug: "data-engineering",
@@ -12,7 +12,7 @@ const data = {
   summaryStatement: "Data engineering is the discipline of building and operating the pipelines, storage and controls that move data from source systems into a governed platform, tested for quality, documented with lineage and classified for sensitivity, so that analytics, machine learning and AI applications are built on data that is accurate, current and lawfully usable.",
   description: [
     "Most AI projects that stall do not fail on the model. They fail on the data. The customer record exists in three systems with three spellings, the product table was last reconciled two years ago, the documents an assistant should answer from sit in shared drives with no owner and no permissions model, and nobody can say which fields contain personal information. A dashboard built on that data shows confident wrong numbers; an AI feature built on it gives confident wrong answers, faster. Data engineering is the unglamorous work that fixes this at the source: getting data out of operational systems reliably, cleaning and joining it in one place, testing it continuously, and recording where every field came from and who is allowed to use it.",
-    "As data engineering consultants, we design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse in an Australian region, transforming it in version-controlled, tested models (the ELT pattern), and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, owned by you and documented well enough for your team to run.",
+    "As data engineering consultants, we design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse (we can host it in Australian cloud regions), transforming it in version-controlled, tested models (the ELT pattern), and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, assigned to you on payment and documented well enough for your team to run.",
   ],
   benefits: [
     {
@@ -63,7 +63,7 @@ const data = {
       step: "02",
       title: "Platform Architecture",
       duration: "Weeks 2 to 3",
-      description: "We recommend a warehouse or lakehouse, ingestion approach, orchestration and quality tooling that fit your scale, skills and budget, hosted in an Australian cloud region by default. Architecture decisions are written down with the trade-offs, so your team understands why each choice was made.",
+      description: "We recommend a warehouse or lakehouse, ingestion approach, orchestration and quality tooling that fit your scale, skills and budget, with Australian cloud hosting available. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Architecture decisions are written down with the trade-offs, so your team understands why each choice was made.",
     },
     {
       step: "03",
@@ -87,7 +87,7 @@ const data = {
       step: "06",
       title: "Operations and Handover",
       duration: "Final 2 weeks",
-      description: "We set up monitoring for pipeline health, freshness and cost, write runbooks for common failures, and train your team on adding sources and models safely. Ongoing operation is available under a support retainer if you do not have data engineers in-house.",
+      description: "We set up monitoring for pipeline health, freshness and cost, write runbooks for common failures, and train your team on adding sources and models safely. Ongoing support is available through a Care Plan: month to month, priced for your system.",
     },
   ],
   industries: [
@@ -119,11 +119,11 @@ const data = {
     },
     {
       question: "Can our data stay in Australia?",
-      answer: "Yes. The major warehouse and lakehouse platforms and the underlying cloud storage can be deployed in Australian regions, including AWS Sydney and Melbourne, Azure Australia East and Southeast, and Google Cloud Sydney and Melbourne. We confirm the specific services and features available in your chosen region at the start of the project, because availability varies by product.",
+      answer: "It can. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. The major warehouse and lakehouse platforms and the underlying cloud storage can be deployed in Australian regions, including AWS Sydney and Melbourne, Azure Australia East and Southeast, and Google Cloud Sydney and Melbourne. We confirm the specific services and features available in your chosen region at the start of the project, because availability varies by product.",
     },
     {
       question: "How do you handle personal information in a data platform?",
-      answer: "We identify and tag personal and sensitive fields during ingestion, apply masking or tokenisation for analytics users who do not need raw values, restrict access by role, and document retention and deletion rules. This supports your obligations under the Privacy Act 1988 and the Australian Privacy Principles, though your organisation remains responsible for how it uses the data. This is general information, not legal advice.",
+      answer: "We identify and tag personal and sensitive fields during ingestion, apply masking or tokenisation for analytics users who do not need raw values, restrict access by role, and document retention and deletion rules. These controls are designed with the Privacy Act 1988 and the Australian Privacy Principles in mind. Your organisation remains responsible for how it uses the data, and whether the controls meet your obligations is for your own advisers to confirm. This is general information, not legal advice.",
     },
     {
       question: "How long does it take to build a data platform?",
@@ -135,7 +135,7 @@ const data = {
     },
     {
       question: "How much do data engineering services cost?",
-      answer: "Typical Australian market ranges are $15k to $35k for an AI data readiness assessment, $50k to $120k for a data platform foundation with a handful of sources and one production use case, and $150k or more for an enterprise platform (AUD, ex GST). Warehouse, lakehouse and connector subscriptions are billed separately by vendors. After a paid discovery, the build is quoted at a fixed price.",
+      answer: "Every build is priced on its own scope. It starts with a Discovery Audit ($750 plus GST, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Warehouse, lakehouse and connector subscriptions are billed separately by the vendors.",
     },
     {
       question: "What is the difference between ETL and ELT?",
@@ -162,23 +162,6 @@ const data = {
       "You are looking for a one-off data migration between two systems rather than an ongoing platform",
     ],
   },
-  pricing: [
-    {
-      name: "AI data readiness assessment (typical range)",
-      range: "$15k to $35k",
-      detail: "Typical Australian market range, AUD ex GST, not a quote. About 10 to 25 senior days at a planning rate of roughly $1,400 a day: source and document inventory, quality and sensitivity assessment against your AI use cases, and a prioritised remediation plan. This goes deeper into the data than a general AI readiness assessment or paid discovery, which typically runs $10k to $25k.",
-    },
-    {
-      name: "Data platform foundation (typical range)",
-      range: "$50k to $120k",
-      detail: "Typical range, AUD ex GST. Warehouse or lakehouse in an Australian region, pipelines from a handful of priority sources, tested models for core entities, quality checks, basic governance and one production use case. Platform and connector subscriptions are billed separately by vendors.",
-    },
-    {
-      name: "Enterprise data platform (typical range)",
-      range: "$150k+",
-      detail: "Typical range, AUD ex GST. Many sources including legacy systems, change data capture, unstructured document pipelines for AI, a data catalogue with lineage, fine-grained access control and support for several teams. Scoped after a paid discovery and then fixed price.",
-    },
-  ],
   definitions: [
     {
       term: "Data pipeline",

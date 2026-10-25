@@ -1,11 +1,11 @@
 ---
 title: "AI knowledge bases for professional services firms"
 metaTitle: "AI Knowledge Base for Professional Services Firms Australia"
-description: "AI knowledge base software for Australian consulting, engineering and advisory firms: RAG over past work with per-client access control and onshore hosting."
+description: "AI knowledge base software for Australian consulting, engineering and advisory firms: RAG over past work with per-client access control and Australian hosting."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "An AI knowledge base for professional services firms is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a mid-sized firm typically costs $75,000 to $195,000 (AUD, ex GST) including discovery, as a market range, not a quote."
+summary: "An AI knowledge base for professional services firms is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a mid-sized firm typically costs $65,000 to $170,000 (AUD, ex GST) as a market range, not AWLabs pricing and not a quote."
 takeaways:
   - "The hard part isn't the AI. It's making sure every answer respects client confidentiality, ethical walls and engagement-level permissions."
   - "Permissions must be filtered before retrieval, not after generation; otherwise confidential content can leak into an answer even if the source link is hidden."
@@ -18,15 +18,15 @@ faqs:
   - q: "Is our data used to train the AI model?"
     a: "It shouldn't be. Enterprise API terms from the major model providers generally exclude customer data from training by default, but terms differ by provider and product and change over time, so confirm them for the exact service you use and record the date. A RAG system also doesn't need training on your documents at all: it retrieves them at question time."
   - q: "Can the knowledge base run entirely in Australia?"
-    a: "The document store, search index and application can run in Australian cloud regions. Whether the model itself runs onshore depends on which model you choose and its availability in Australian regions at the time, which changes often. We check the provider's regional availability page during discovery and document any processing that leaves Australia."
+    a: "The document store, search index and application can run in Australian cloud regions. Whether the model itself runs onshore depends on which model you choose and its availability in Australian regions at the time, which changes often. We check the provider's regional availability page during the Discovery Audit and document any processing that leaves Australia."
   - q: "How is an AI knowledge base different from traditional knowledge management software?"
     a: "Traditional knowledge management relies on people tagging and filing documents so others can browse or keyword search them, and it decays when nobody maintains it. An AI knowledge base reads the documents themselves, finds relevant passages by meaning rather than exact words, and writes an answer with citations. It still needs curation, but far less manual tagging, and it can sit on top of the document systems you already use."
   - q: "Can it connect to SharePoint, iManage or our project system?"
-    a: "Usually, through each system's API. The connector brings in documents and, just as importantly, their permissions, so search results respect who can open what. Systems without a usable API can sometimes be handled through scheduled exports, but permission sync is harder that way, so we check every source during discovery."
+    a: "Usually, through each system's API. The connector brings in documents and, just as importantly, their permissions, so search results respect who can open what. Systems without a usable API can sometimes be handled through scheduled exports, but permission sync is harder that way, so we check every source during the Discovery Audit."
   - q: "What about superseded documents and old standards?"
     a: "Tag documents with status and date, rank current versions higher, and show the date alongside every citation so a reader can tell a 2016 methodology from the current one. For engineering firms, licensed standards documents should only be indexed if the licence permits it; many don't allow reuse in this way."
   - q: "How long before staff can use it?"
-    a: "A pilot over one practice area's documents typically takes 6 to 10 weeks after discovery, and a firm-wide rollout with document management integration another 6 to 12 weeks. The biggest variable is how clean your existing permissions and folder structures are."
+    a: "A pilot over one practice area's documents typically takes 6 to 10 weeks after the Discovery Audit, and a firm-wide rollout with document management integration another 6 to 12 weeks. The biggest variable is how clean your existing permissions and folder structures are."
   - q: "Does this count as automated decision-making under the Privacy Act?"
     a: "A tool that helps staff find and draft from past work generally doesn't make decisions about individuals. If it's used to screen candidates, assess clients or make other decisions that significantly affect people, the APP 1.7 to 1.9 transparency rules from 10 December 2026 may apply, and that use should be assessed separately."
 sources:
@@ -152,19 +152,20 @@ Some content should usually stay out entirely: personnel files, partner remunera
 
 ## What does a typical engagement look like?
 
-**Most firms should start with one practice area, prove quality and access control, then expand.** Figures below are typical Australian market ranges for an onshore senior team (AUD, ex GST), labelled as ranges, not quotes. Our [RAG knowledge base cost guide](/guides/rag-knowledge-base-cost) explains the drivers, including running costs per query.
+**Most firms should start with one practice area, prove quality and access control, then expand.** Figures below are typical Australian market ranges for an onshore senior team (AUD, ex GST), not AWLabs prices and not a quote. Our [RAG knowledge base cost guide](/guides/rag-knowledge-base-cost) explains the drivers, including running costs per query.
 
 | Phase | Duration | What's delivered | Typical range (AUD, ex GST) |
 |---|---|---|---|
-| Discovery | 2 to 4 weeks | Source inventory, permission audit, contract restrictions, evaluation question set, architecture, fixed price | $10,000 to $25,000 |
 | Pilot | 6 to 10 weeks | One practice area indexed, permission sync with one source, cited answers, evaluation results | $35,000 to $80,000 |
 | Firm-wide rollout | 6 to 12 weeks | Further sources, SSO, audit logs, admin tools, training | $30,000 to $90,000 |
 | Running costs | Monthly | Hosting, vector index, model usage | Varies mainly with query volume and document count; the cost guide shows the arithmetic |
+
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
 ## How should you test it before staff rely on it?
 
 **Build a set of 100 to 200 real questions with known correct answers and sources before launch, and score the system on them after every change.** Include questions whose answer is "we have nothing on that", since a system that invents precedent is worse than useless. Measure whether the right documents were retrieved, whether the answer is faithful to them, and whether citations point to the exact passage. Repeat the permission tests from the checklist above. Our [LLM evaluation](/guides/llm-evaluation) explainer covers the method.
 
-## How All Webbed Labs approaches firm knowledge bases
+## How AWLabs approaches firm knowledge bases
 
-We start with a paid discovery that audits your permissions and contract restrictions before any content is indexed, then quote a fixed price. Our default is filter-before-retrieval access control, Australian cloud regions for the index and application, and an evaluation set agreed with your partners. Code sits in your repository from day one, and every change passes automated quality gates and a senior engineer's review before release. See our [RAG knowledge base](/services/rag-knowledge-base) service for more.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It audits your permissions and contract restrictions before any content is indexed. After two strategy sessions you receive a fixed price for an agreed scope. We build filter before retrieval access control and an evaluation set agreed with your partners. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. Every change passes automated quality gates and a senior engineer's review before release. See our [RAG knowledge base](/services/rag-knowledge-base) service for more.

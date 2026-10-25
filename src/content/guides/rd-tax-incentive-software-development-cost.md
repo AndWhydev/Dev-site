@@ -13,7 +13,7 @@ takeaways:
   - "Cash arrives months after the spend: you register within 10 months of the end of the income year, then claim in your tax return."
   - "Software developed mainly for your own internal administration is excluded from core R&D."
   - "Changes announced in the 2026 to 27 Budget would start from 1 July 2028 and are not yet law. Plan multi-year builds with an agent who tracks them."
-  - "All Webbed Labs is not a tax agent. We structure project records so your registered R&D tax agent can assess them."
+  - "AWLabs is not a tax agent. We structure project records so your registered R&D tax agent can assess them."
 faqs:
   - q: "Will the R&D Tax Incentive pay for part of my software project?"
     a: "It might offset some of the cost of eligible experimental activities, if your company and those activities meet the program's requirements and are registered. It won't apply to the whole project, it doesn't reduce what you pay upfront, and eligibility is self-assessed and can be reviewed by the department and the ATO. A registered R&D tax agent can tell you whether it's likely to apply to your circumstances."
@@ -183,6 +183,6 @@ If your build spans several years, these matter for planning, especially the rem
 
 For build budgets in general, see our guides to [MVP cost](/guides/mvp-development-cost-australia) and [custom software cost](/guides/custom-software-development-cost-australia). AI projects raise their own questions, covered in [R&D Tax Incentive for AI projects](/guides/rd-tax-incentive-ai-projects).
 
-## How All Webbed Labs fits in
+## How AWLabs fits in
 
-We're not a registered tax agent and we don't prepare, lodge or advise on claims. What we do is run projects so the technical record exists if you or your agent need it: a documented hypothesis for experimental work, experiment logs and results kept in your repository as the work happens, and invoices that separate experimental work from routine development. When clients want advice on a claim, Troy Schoenfisch, our [CFO](/team), comes in early enough to set up documentation properly. You're free to use any registered R&D tax agent. More on how we document projects is on our [R&D page](/r-and-d).
+We're not a registered tax agent and we don't prepare, lodge or advise on claims. What we do is run projects so the technical record exists if you or your agent need it: our Discovery Audit flags activity that may be eligible, and during the build we keep technical notes, including a documented hypothesis for experimental work and experiment logs and results kept alongside the code as the work happens. We keep build records your tax agent can ask for. When R&D matters to a client, we introduce our accountants at Crescendo early, so the records are set up properly from the start. They are a separate practice with their own registration, you engage them directly, and they advise you directly. You are also free to use your own registered R&D tax agent. More on how we document projects is on our [R&D page](/r-and-d).

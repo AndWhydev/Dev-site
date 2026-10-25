@@ -102,7 +102,7 @@ Three things stand out. Pure T&M is cheapest if the work goes well, and exposed 
 
 **Most real contracts sit between the two extremes, and the hybrids are often the best choice.** The common ones:
 
-1. **Paid discovery, then fixed price.** A short discovery phase (usually two to six weeks) produces workflows, integration details, acceptance criteria and an architecture. The build is then quoted as a fixed price, often per phase. See [what a discovery phase involves](/guides/software-discovery-phase).
+1. **Paid discovery, then fixed price.** A short discovery phase (across the market, usually two to six weeks) produces workflows, integration details, acceptance criteria and an architecture. The build is then quoted as a fixed price, often per phase. Across the market, discovery is usually priced separately. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope. See [what a discovery phase involves](/guides/software-discovery-phase).
 2. **Fixed price per phase or milestone.** Large projects are split into phases, each priced once the previous one has reduced the unknowns. You can stop after any phase.
 3. **Capped T&M.** Hourly billing with a ceiling. Check whether the cap is a hard limit the vendor absorbs, or a trigger to stop and ask for more budget.
 4. **Fixed budget, flexible scope.** Price and time are fixed; the team delivers the highest-priority features that fit. This is how Fowler describes fixed price working with agile teams, and it suits products where learning changes priorities.
@@ -144,7 +144,7 @@ It fits badly when the brief is a paragraph, when integrations haven't been inve
 3. **Reporting.** Weekly progress and, for T&M, hours by task.
 4. **Payment tied to milestones** for fixed price, and to approved timesheets for T&M. Avoid large up-front payments beyond a reasonable deposit.
 5. **Acceptance testing period** and a warranty period for defects.
-6. **IP assignment and source code access** from day one, so you're never locked in.
+6. **IP assignment and source code access.** The IP becomes yours as each stage is paid for, you can see the code while it is built, and the repository and every account move into your name at handover, so you're never locked in.
 7. **Termination for convenience**, with payment for work done and handover of everything built.
 8. **GST.** Business quotes are usually ex GST; confirm, and add 10%.
 
@@ -161,6 +161,6 @@ Australian law adds a floor. Under the Australian Consumer Law, services costing
 | Research, prototype or AI proof of concept | Capped T&M |
 | Ongoing improvements after launch | Retainer or T&M |
 
-## How All Webbed Labs prices work
+## How AWLabs prices work
 
-We run a paid discovery first, then quote a fixed price for the agreed scope, usually per phase. That's one option among several above, and we use it because it gives you a firm number without paying for contingency on unknowns. Where work is genuinely exploratory, such as an AI proof of concept, we'll suggest capped T&M instead and say why. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and our practice is to keep the code in your repository from day one. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. You then receive one fixed price for the agreed scope, set out in a Schedule of Work and paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover. That's one option among several above, and we use it because it gives you a firm number. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and you can see and test the code while we build. Each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Read more about [how we work](/how-we-work) or our [custom software service](/services/custom-app-development).

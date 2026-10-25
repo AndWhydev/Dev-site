@@ -12,7 +12,7 @@ const data = {
   summaryStatement: "A code audit is an independent review of an existing software system's source code, architecture, dependencies, security, infrastructure and delivery practices, producing a severity-rated findings report and remediation estimate; when it is commissioned by an acquirer, investor or board to inform a transaction or funding decision, it is usually called technical due diligence.",
   description: [
     "Software is often the largest asset in a deal that nobody on the deal team can read. An acquirer sees a product demo, a revenue line and a team slide. What they cannot see is whether the code is maintainable by anyone other than its original author, whether it depends on libraries with licences that conflict with how it is sold, whether customer data is protected, whether it will survive ten times the users, or whether a large part of it was written by contractors who never assigned their rights. The same blind spot applies to a board approving another year of spend on an internal platform, an investor weighing a follow-on round, or a business owner deciding whether to keep the system they have or pay for a rebuild. A code audit replaces assumptions with evidence, in the time frame a decision actually allows.",
-    "Our code audit services combine automated analysis with senior engineers reading the code, so every audit is a genuine source code review, not only an automated scan. Tooling covers what machines do well: dependency vulnerabilities, open source licence inventory, secrets committed to the repository history, static analysis, test coverage and code churn. People cover what tooling cannot: whether the architecture fits the business plan, whether the data model will hold up, how deployments and backups actually work, where knowledge is concentrated in one person, and what it would realistically cost to fix what we find. Every finding is rated by severity and business impact, linked to evidence, and paired with a remediation estimate, so an acquirer can adjust price or conditions, a board can fund the right fixes, and an owner can compare the cost of repair against the cost of replacement. We work under NDA, read-only where possible, and report to whoever commissioned the audit. If you are a founder planning a new product rather than assessing an existing one, our Discovery Audit covers the legal, compliance and IP questions before a build starts; this service is for software that already exists.",
+    "Our code audit services combine automated analysis with senior engineers reading the code, so every audit is a genuine source code review, not only an automated scan. Tooling covers what machines do well: dependency vulnerabilities, open source licence inventory, secrets committed to the repository history, static analysis, test coverage and code churn. People cover what tooling cannot: whether the architecture fits the business plan, whether the data model will hold up, how deployments and backups actually work, where knowledge is concentrated in one person, and what it would realistically cost to fix what we find. Every finding is rated by severity and business impact, linked to evidence, and paired with a remediation estimate, so an acquirer can adjust price or conditions, a board can fund the right fixes, and an owner can compare the cost of repair against the cost of replacement. We work under NDA, read-only where possible, and report to whoever commissioned the audit. If you are a founder planning a new product rather than assessing an existing one, our Discovery Audit ($750 plus GST, credited in full against the build) identifies the legal, compliance and IP questions before a build starts; this service is for software that already exists.",
   ],
   benefits: [
     {
@@ -33,7 +33,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
       title: "Security From the Inside",
-      description: "A code audit reviews authentication, authorisation, input handling, secrets management and data protection by reading the source, which finds issues an external scan cannot. Where a live penetration test is also warranted, we say so and scope it separately.",
+      description: "A code audit reviews authentication, authorisation, input handling, secrets management and data protection by reading the source, which finds issues an external scan cannot. Where a live penetration test is also warranted, we say so. An independent penetration test by a specialist firm is your choice, and we can help you arrange it.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
@@ -56,37 +56,31 @@ const data = {
     {
       step: "01",
       title: "Scope, Questions and NDA",
-      duration: "Days 1 to 2",
       description: "We agree the decision the audit supports, the questions that matter most, the systems in scope, the deadline and who receives the report. NDAs are signed with the commissioning party and, in a transaction, with the target. Scope is fixed before work starts.",
     },
     {
       step: "02",
       title: "Access and Automated Analysis",
-      duration: "Days 2 to 5",
       description: "With read-only access to repositories and, where agreed, cloud consoles, we run dependency, licence, secrets and static analysis scans, generate a software bill of materials, and measure test coverage and code churn. Results are triaged by an engineer; raw scanner output is never passed off as findings.",
     },
     {
       step: "03",
       title: "Senior Engineering Review",
-      duration: "Days 4 to 12",
       description: "Senior engineers read the critical paths: authentication, payments, data access, integrations and the areas with the most change or defects. We review architecture, data model, infrastructure, deployment, backups and observability against the business plan the software needs to support.",
     },
     {
       step: "04",
       title: "Team Interviews",
-      duration: "Days 6 to 12",
       description: "Short structured interviews with the engineers and product owners fill gaps the code cannot: how releases happen, what breaks, what is planned, and who knows what. In a transaction, these are coordinated through the deal team and kept to agreed topics.",
     },
     {
       step: "05",
       title: "Findings, Ratings and Estimates",
-      duration: "Days 10 to 15",
       description: "Each finding is written up with evidence, a severity and business impact rating, and a remediation estimate. We share draft findings with the commissioning party for factual correction before the report is finalised, so nothing in it is a surprise.",
     },
     {
       step: "06",
       title: "Report and Read-Out",
-      duration: "Final 2 to 3 days",
       description: "You receive an executive summary, a detailed technical report, a risk register and a remediation roadmap, followed by a read-out session for decision makers and a separate technical session for engineers. We remain available to answer follow-up questions during the decision period.",
     },
   ],
@@ -115,7 +109,7 @@ const data = {
     },
     {
       question: "Is a code audit the same as a penetration test?",
-      answer: "No. A penetration test attacks the running system from outside to find exploitable weaknesses. A code audit reads the source and configuration from inside, and covers much more than security: architecture, maintainability, licences, delivery practices and team risk. They complement each other. If our review suggests a penetration test is warranted, we recommend it and can scope it through our cybersecurity service.",
+      answer: "No. A penetration test attacks the running system from outside to find exploitable weaknesses. A code audit reads the source and configuration from inside, and covers much more than security: architecture, maintainability, licences, delivery practices and team risk. They complement each other. If our review suggests a penetration test is warranted, we recommend it. An independent penetration test by a specialist firm is your choice, and we can help you arrange it.",
     },
     {
       question: "Does the audit confirm that the target owns its IP?",
@@ -127,7 +121,7 @@ const data = {
     },
     {
       question: "We are planning a new product, not buying one. Is this the right service?",
-      answer: "Probably not. A code audit assesses software that already exists. If you are a founder about to commission a new build, our Discovery Audit covers the legal, compliance, security and IP questions before development starts, and its fee is credited to the build if you proceed.",
+      answer: "Probably not. A code audit assesses software that already exists. If you are a founder about to commission a new build, our Discovery Audit identifies the legal, compliance, security and IP questions before development starts. It costs $750 plus GST, credited in full against the build. Your lawyers confirm the legal answers; we do not give legal advice.",
     },
     {
       question: "Should we audit our current system before deciding to rebuild it?",
@@ -135,7 +129,7 @@ const data = {
     },
     {
       question: "How much does a code audit cost in Australia?",
-      answer: "Typical Australian market ranges are $8k to $18k for a focused audit of a single application, $18k to $40k for technical due diligence on a product and its infrastructure, and $40k or more for several products or a complex regulated target (AUD, ex GST). The size of the codebase, the number of systems and the deal timetable drive the figure, and the scope and fee are fixed before work starts.",
+      answer: "We do not publish fees for code audits. The fee depends on the size of the codebase, the number of systems and the deal timetable, and it is fixed in writing before work starts. If the audit leads to a new build with us, that build starts with a Discovery Audit ($750 plus GST, credited in full against the build) and then a fixed price for an agreed scope. We never publish day rates.",
     },
     {
       question: "Can a code audit tell us whether our agency or developers did a good job?",
@@ -166,23 +160,6 @@ const data = {
       "The decision is already made and the audit would only confirm it, in which case spend the budget on the remediation itself",
     ],
   },
-  pricing: [
-    {
-      name: "Focused audit (typical range)",
-      range: "$8k to $18k",
-      detail: "Typical Australian market range, AUD ex GST, not a quote. A single application of modest size, about 6 to 12 senior days at a planning rate of roughly $1,400 a day: automated scans, targeted code review, short report, risk register and read-out.",
-    },
-    {
-      name: "Technical due diligence (typical range)",
-      range: "$18k to $40k",
-      detail: "Typical range, AUD ex GST. A product and its infrastructure for a transaction or funding decision, about 13 to 28 senior days: full scans and SBOM, architecture and security review, team interviews, remediation estimates, executive summary and data-room-ready report.",
-    },
-    {
-      name: "Multi-system or complex target (typical range)",
-      range: "$40k+",
-      detail: "Typical range, AUD ex GST. Several products, legacy platforms or heavy regulatory exposure, with a red-flag summary early and a full report to a deal timetable. Scoped and fixed before work starts.",
-    },
-  ],
   definitions: [
     {
       term: "Technical due diligence",

@@ -23,7 +23,7 @@ faqs:
   - q: "What is a typical SLA for software support in Australia?"
     a: "Common arrangements respond to critical outages within 1 to 4 business hours, with 24/7 cover available at extra cost, and to minor issues within 1 to 3 business days. Response time is not fix time; check whether the agreement commits to restoration targets as well."
   - q: "How much does a software support retainer cost per month?"
-    a: "Typical Australian retainers for business-critical systems run about $1,500 to $15,000 a month ex GST, depending on the hours included and the response times agreed. A managed service with 24/7 cover commonly costs $8,000 to $30,000 or more a month. At a $1,400 day rate, two days a month is $2,800."
+    a: "Typical Australian retainers for business-critical systems run about $1,500 to $15,000 a month ex GST, depending on the hours included and the response times agreed. A managed service with 24/7 cover commonly costs $8,000 to $30,000 or more a month. At an assumed market rate of $1,400 a day (not our rate), two days a month is $2,800."
   - q: "How much does app maintenance cost per year?"
     a: "Mobile apps sit at the higher end, around 20 to 25% of the build cost a year, because iOS and Android change every year and Google Play raises its target API level requirement annually. For a $300k web and mobile app build, that's $60k to $75k a year, or $5,000 to $6,250 a month."
   - q: "Is hosting included in maintenance?"
@@ -128,7 +128,7 @@ The right-hand column is where the hidden costs of maintenance usually sit, so a
 | Monthly retainer | Fixed monthly fee for a set number of hours, maintenance tasks and business-hours response | $1,500 to $15,000 a month | Most business-critical systems |
 | Managed service with 24/7 SLA | Retainer plus on-call cover, restoration targets and reporting | $8,000 to $30,000+ a month | Revenue-critical or public-facing platforms |
 
-These ranges follow from day rates. At the time of writing, Re:Sourced reports senior engineer contractor day rates in Sydney of $800 to $1,100, and agencies charge more to cover continuity, tooling and cover for leave. A retainer of two days a month at $1,400 is $2,800 a month; five days is $7,000. Round-the-clock on-call cover adds cost because someone has to be available, whether or not anything breaks.
+These ranges follow from day rates. At the time of writing, Re:Sourced reports senior engineer contractor day rates in Sydney of $800 to $1,100, and agencies charge more to cover continuity, tooling and cover for leave. At an assumed market rate of $1,400 a day, which is not our rate, a retainer of two days a month is $2,800 a month; five days is $7,000. Round-the-clock on-call cover adds cost because someone has to be available, whether or not anything breaks.
 
 A typical severity scheme looks like this, though targets vary by agreement:
 
@@ -141,7 +141,7 @@ A typical severity scheme looks like this, though targets vary by agreement:
 
 ## A worked example: maintaining a $200k business application
 
-**Here's how a maintenance budget breaks down for an illustrative system.** The system: a customer portal and internal admin app built for $200k, with a Node.js backend, PostgreSQL database, integrations with Xero and a CRM, hosted in AWS Sydney. At 15 to 20%, the annual budget is $30k to $40k. Here's how a provider might plan a year at $1,400 a day:
+**Here's how a maintenance budget breaks down for an illustrative system.** The system: a customer portal and internal admin app built for $200k, with a Node.js backend, PostgreSQL database, integrations with Xero and a CRM, hosted in AWS Sydney. At 15 to 20%, the annual budget is $30k to $40k. Here's how a provider might plan a year at an assumed market rate of $1,400 a day (not our rate):
 
 | Activity | Days per year | Cost |
 |---|---|---|
@@ -188,6 +188,6 @@ Not sure what state your current system is in? A [code audit](/services/code-aud
 
 **Over five years, maintenance and hosting often cost as much as the original build.** A $200k system at 18% a year costs $36k annually, or $180k over five years, before hosting. That's why build and maintenance should be priced together when you compare options. It's also a key input when weighing custom software against a SaaS subscription; see [how much custom software costs](/guides/custom-software-development-cost-australia) for the build side, and [freelancer vs agency vs in-house](/guides/freelancer-vs-agency-vs-in-house) for who should do the maintaining.
 
-## How All Webbed Labs approaches maintenance
+## How AWLabs approaches maintenance
 
-We offer maintenance as a monthly retainer with a written list of what's included, an agreed response time for each severity level, and a monthly report of work done and upcoming risks such as runtime end-of-life dates. We work in your repository and your cloud accounts, so you keep full ownership and can move providers at any time. For systems we didn't build, we start with a short code audit so the retainer is priced on evidence. Read more about our [software maintenance and support service](/services/software-maintenance-support).
+Every build comes with a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, we offer a Care Plan, month to month with no minimum term, covering hosting, updates and security patches, bug fixes, backups and monitoring. Support runs in NSW business hours, and response times are targets set out in the plan. Once the final payment is made, the repository and accounts are in your name, so you can move providers at any time. For a system we did not build, we start with a Discovery Audit. Read more about our [software maintenance and support service](/services/software-maintenance-support).

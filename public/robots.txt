@@ -1,4 +1,4 @@
-# All Webbed Labs. Everything public is crawlable.
+# AWLabs. Everything public is crawlable.
 # AI search and answer engines are named explicitly: we want to be cited.
 # A crawler follows only its most specific group, so each group repeats the rules.
 

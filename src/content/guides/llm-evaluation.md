@@ -177,6 +177,6 @@ The tool matters less than the test set. A well-built eval set can move between 
 - [ ] Latency and cost per answer measured on realistic load
 - [ ] Live traffic sampling and feedback loop in place for after launch
 
-## How All Webbed Labs approaches this
+## How AWLabs approaches this
 
-We agree success criteria and build the first eval set during discovery, with your subject matter experts, so the target is fixed before we write prompts. The suite then runs inside our delivery pipeline alongside type checks, visual tests and security scans, and a senior engineer reviews results before any release. You keep the eval set in your repository as a lasting asset. See our [LLM integration](/services/llm-integration), [RAG knowledge base](/services/rag-knowledge-base) and [QA and testing](/services/qa-testing) services.
+We agree success criteria with your subject matter experts and build the first eval set at the start of the build, so the target is fixed before we write prompts. The suite then runs inside our delivery pipeline alongside type checks, visual tests and security scans, and a senior engineer reviews results before any release. The eval set is handed over with the repository as a lasting asset. See our [LLM integration](/services/llm-integration), [RAG knowledge base](/services/rag-knowledge-base) and [QA and testing](/services/qa-testing) services.

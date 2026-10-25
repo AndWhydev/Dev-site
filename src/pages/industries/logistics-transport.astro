@@ -2,7 +2,7 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Logistics Software Development Australia | All Webbed Labs',
+  metaTitle: 'Logistics Software Development Australia | AWLabs',
   metaDescription: 'Logistics and transport software development for Australian operators: fleet management, dispatch, driver apps, warehouse systems and AI route tools.',
   industryName: 'Logistics & Transport',
   heroHeadline: 'Technology That Keeps Your Supply Chain Moving',
@@ -64,11 +64,11 @@ const data = {
     },
     {
       question: 'Can your systems integrate with existing TMS and ERP platforms like SAP, Oracle and CargoWise?',
-      answer: "Yes. We integrate with CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and a range of Australian-specific platforms including Microlistics, Paperless and Freight2020. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
+      answer: "We can integrate with platforms that publish APIs, such as CargoWise One (including the CW1 REST and XML API), SAP EWM and TM modules, Oracle Transportation Management, and Australian platforms such as Microlistics, Paperless and Freight2020. We confirm access in the Discovery Audit. Our typical integration approach uses event-driven messaging (via RabbitMQ, AWS SNS/SQS or Azure Service Bus) to decouple systems and avoid tight coupling that breaks on upgrade cycles. For older systems without published APIs we implement EDI-based integration (EDIFACT, X12, or flat-file formats) using industry-standard middleware.",
     },
     {
-      question: 'How do you handle HVNL chain of responsibility compliance in your fleet systems?',
-      answer: "Chain of responsibility (CoR) under the Heavy Vehicle National Law means that every party in the supply chain, not just the driver, can be liable for HVNL breaches. Our fleet systems capture the data needed to demonstrate due diligence: pre-departure safety checks with photo evidence, mass and dimension declarations linked to consignment records, driver fatigue and work diary data cross-referenced against scheduled departure times, and vehicle maintenance records with service due alerts. We can produce CoR compliance reports on demand and integrate with NHVR's Intelligent Access Programme (IAP) transponder data where required.",
+      question: 'How do your fleet systems support HVNL chain of responsibility?',
+      answer: "Chain of responsibility (CoR) under the Heavy Vehicle National Law means that every party in the supply chain, not just the driver, can be liable for HVNL breaches. Our fleet systems capture the data your compliance team uses to show due diligence: pre-departure safety checks with photo evidence, mass and dimension declarations linked to consignment records, driver fatigue and work diary data cross-referenced against scheduled departure times, and vehicle maintenance records with service due alerts. We can produce Chain of Responsibility evidence reports on demand and integrate with NHVR's Intelligent Access Programme (IAP) transponder data where required.",
     },
     {
       question: 'What does a driver mobile app typically include?',
@@ -76,7 +76,7 @@ const data = {
     },
     {
       question: 'Can your tracking platforms provide customer-facing consignment tracking?',
-      answer: "Yes, and it's one of the most impactful features for reducing inbound customer service calls. We build branded tracking portals and SMS/email notification workflows that give consignees live visibility of their freight status, estimated delivery windows, driver ETA based on real-time GPS, and the ability to redirect deliveries or authorise safe drop. These portals integrate with the carrier's internal TMS data via a thin API layer and are typically deployable as a white-labelled subdomain (e.g. track.yourcompany.com.au) within two to three weeks.",
+      answer: "Yes, and it's one of the most impactful features for reducing inbound customer service calls. We build branded tracking portals and SMS/email notification workflows that give consignees live visibility of their freight status, estimated delivery windows, driver ETA based on real-time GPS, and the ability to redirect deliveries or authorise safe drop. These portals integrate with the carrier's internal TMS data via a thin API layer and can be deployed as a white labelled subdomain (e.g. track.yourcompany.com.au). Timing for your build is set in your Schedule of Work.",
     },
     {
       question: 'Can you build last-mile platforms for retail and e-commerce fulfilment?',
@@ -84,7 +84,7 @@ const data = {
     },
   ],
   ctaHeadline: "Ready to Build a Smarter Supply Chain?",
-  ctaDescription: "Whether you're modernising a legacy TMS, building a driver app or deploying a full warehouse management system, our logistics technology team understands the operational realities of Australian freight. Let's talk about your project.",
+  ctaDescription: "Whether you're modernising a legacy TMS, building a driver app or deploying a full warehouse management system, we design around the operational realities of Australian freight. Let's talk about your project.",
 };
 ---
 <IndustryPageLayout {...data} />

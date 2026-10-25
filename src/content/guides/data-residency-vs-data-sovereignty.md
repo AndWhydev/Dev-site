@@ -52,7 +52,7 @@ related:
     href: "/services/rag-knowledge-base"
   - title: "LLM integration services"
     href: "/services/llm-integration"
-  - title: "Trust, security and compliance at All Webbed Labs"
+  - title: "Trust, security and compliance at AWLabs"
     href: "/trust"
   - title: "Cloud infrastructure and DevOps"
     href: "/services/cloud-infrastructure"
@@ -123,8 +123,8 @@ Check these points before choosing a model provider:
 
 Which models can actually run onshore, on AWS Bedrock, Azure OpenAI, Google Cloud and the direct APIs, is covered in our guide to [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia). For the region-by-region view of the three clouds, see [Bedrock vs Azure OpenAI vs Vertex AI in Australia](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
 
-## How we handle it at All Webbed Labs
+## How we handle it at AWLabs
 
-We default to Australian regions for databases, storage, vector indexes and, where the model you need is available onshore, inference. Where a requirement can only be met offshore, we document exactly what leaves Australia and why, so it can go into your privacy impact assessment and APP 8 analysis. We also design for key control: encryption with keys held in your own cloud account, so access requires your permission as well as the provider's.
+We usually recommend Australian regions for databases, storage, vector indexes and, where the model you need is available onshore, inference. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Where a requirement can only be met offshore, we document what leaves Australia and why, so it can go into your privacy impact assessment and APP 8 analysis. We also design for key control: encryption with keys held in your own cloud account, so access requires your permission as well as the provider's.
 
-If your project has strict sovereignty requirements, that decision is made during discovery, before architecture, because it shapes the choice of cloud, model and vendors. See our [cloud infrastructure](/services/cloud-infrastructure) and [LLM integration](/services/llm-integration) services, or read how we approach [trust and security](/trust).
+If your project has strict sovereignty requirements, tell us in your Discovery Audit, before architecture, because it shapes the choice of cloud, model and vendors. See our [cloud infrastructure](/services/cloud-infrastructure) and [LLM integration](/services/llm-integration) services, or read how we approach [trust and security](/trust).

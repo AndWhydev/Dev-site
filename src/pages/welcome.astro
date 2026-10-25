@@ -3,13 +3,14 @@ import Layout from '../layouts/Layout.astro';
 
 const documents = [
   {
-    title: 'How This Works',
-    description: 'Our process from first contact to launch day, six steps, no surprises.',
-    file: '/docs/how-this-works.pdf',
+    title: 'How a Build Runs',
+    description: 'Every step from the Discovery Call to launch, and our Master Services Agreement.',
+    file: '/how-we-work',
+    isLink: true,
   },
   {
     title: 'Case Studies',
-    description: 'A cross-section of past builds across different industries, platforms and technology stacks. Now published as a live page rather than a static PDF.',
+    description: 'A selection of products we have built, grouped by industry. It is about a third of our work, because most clients prefer their product stays private.',
     file: '/case-studies',
     isLink: true,
   },
@@ -22,7 +23,7 @@ const documents = [
 ---
 
 <Layout
-  title="Welcome, All Webbed Labs"
+  title="Welcome, AWLabs"
   description="Private resource page for new leads."
   noindex={true}
 >
@@ -37,7 +38,7 @@ const documents = [
           </svg>
         </div>
         <h1>Welcome, here's everything you need before our call</h1>
-        <p>Please review the following documents before our strategy session so we can make the most of our time together.</p>
+        <p>Please review the following documents before your meeting with Andy so we can make the most of our time together.</p>
       </header>
 
       <ul class="cards">
@@ -87,7 +88,7 @@ const documents = [
       </ul>
 
       <footer class="confidential">
-        All Webbed Labs · Confidential
+        AWLabs · Confidential
       </footer>
     </div>
   </main>

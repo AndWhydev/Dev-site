@@ -7,7 +7,7 @@ city: "Canberra"
 state: "ACT"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "All Webbed Labs is a Sydney-based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
+summary: "AWLabs is a Sydney-based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
 takeaways:
   - "We're based in Sydney, deliver remotely and travel to Canberra for workshops; we have no Canberra office."
   - "We are not on any government panel, including BuyICT's Digital Marketplace Panel 2, and our team holds no security clearances."
@@ -26,7 +26,7 @@ faqs:
   - q: "Do security-cleared developers cost more in Canberra?"
     a: "Yes. Re:Sourced's 2026 guide says security-cleared contractors in defence-adjacent work command 15 to 25 per cent above commercial day rates, with NV1-plus contractors around Canberra pricing at the top of that range. We hold no clearances, so if your work needs them, budget for that premium with a cleared supplier; for unclassified work, the commercial rates apply."
   - q: "How often do you come to Canberra?"
-    a: "As often as the project needs. Canberra is close enough to Sydney for day trips, so discovery workshops, design reviews and user testing can all happen in person. Travel is priced into the proposal."
+    a: "As often as the project needs. Canberra is close enough to Sydney for day trips, so strategy sessions, design reviews and user testing can all happen in person. Travel is priced into your Schedule of Work."
 sources:
   - title: "Policy for the responsible use of AI in government, version 2.0"
     url: "https://www.digital.gov.au/ai/ai-in-government-policy"
@@ -72,6 +72,7 @@ related:
 service:
   title: "AI consulting and development"
   href: "/ai-consulting"
+disclaimer: legal
 ---
 
 ## Who do we build custom software and AI for in Canberra, and how?
@@ -96,7 +97,7 @@ The people we're best placed to help in Canberra are:
 | Do you have an IRAP-assessed system? | No ([IRAP explained](/guides/irap-explained) covers what that involves) |
 | Can you work on classified systems or data? | No |
 | Can you work on OFFICIAL, unclassified systems? | Yes, subject to your agency's requirements |
-| Is delivery onshore, with data in Australian regions? | Yes, by default |
+| Can data be kept in Australian regions? | Yes, when your Schedule of Work requires it |
 | Will you work under a prime contractor that holds the panel arrangement? | Yes |
 | Can you build to the DTA AI policy and PSPF expectations? | Yes, and provide the evidence; the agency remains responsible for its own obligations |
 
@@ -148,8 +149,8 @@ The PSPF binds agencies, not suppliers directly, but its requirements reach supp
 
 ## Hosting for Canberra workloads
 
-At the time of writing, Microsoft runs two Azure regions in Canberra, Australia Central and Australia Central 2, alongside Australia East and Australia Southeast. AWS and Google Cloud serve Canberra from their Sydney and Melbourne regions. Which is right depends on the certification status of the specific services an agency needs, so we check that during discovery. The [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) explainer covers the wider question.
+At the time of writing, Microsoft runs two Azure regions in Canberra, Australia Central and Australia Central 2, alongside Australia East and Australia Southeast. AWS and Google Cloud serve Canberra from their Sydney and Melbourne regions. Which is right depends on the certification status of the specific services an agency needs, so we check that during the Discovery Audit. The [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) explainer covers the wider question.
 
-## How All Webbed Labs approaches Canberra work
+## How AWLabs approaches Canberra work
 
-Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021; All Webbed Labs launched in mid 2026 as a partnership with a group of senior developers and founders. For Canberra work we start with an NDA and paid discovery, scoped to your security and procurement constraints, then quote a fixed price. Senior engineers do the work, code lives in your repository, and data stays in Australian regions by default. See our [government AI and software](/solutions/government-ai-and-software) page and [AI consulting](/ai-consulting) service.
+Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021; AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Canberra work we start with an NDA and our Discovery Audit, $750 plus GST, credited in full against the build, scoped to your security and procurement constraints. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers do the work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. See our [government AI and software](/solutions/government-ai-and-software) page and [AI consulting](/ai-consulting) service.

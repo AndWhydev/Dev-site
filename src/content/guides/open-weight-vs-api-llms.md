@@ -65,6 +65,7 @@ related:
 service:
   title: "Private LLM deployment"
   href: "/services/private-llm-deployment"
+disclaimer: legal
 ---
 
 ## Open-weight vs API LLMs: which should you use?
@@ -170,6 +171,6 @@ The other common pattern is routing by sensitivity: a single internal gateway se
 
 If fine-tuning is the reason you're considering open-weight models, note that some API providers also offer fine-tuning for selected models, though you don't get the weights and the options are narrower. Read [RAG vs fine-tuning](/guides/rag-vs-fine-tuning) first: retrieval often solves the problem more cheaply than either.
 
-## How All Webbed Labs approaches model choice
+## How AWLabs approaches model choice
 
 We test candidate models, API and open-weight, against your own examples before recommending one, and we write down the model, platform, region and date in the architecture decision. Where sovereignty requires it, we deploy open-weight models in your own cloud account in an Australian region, with logging you control. Where it doesn't, we'll usually recommend an API model and say why. See our [private LLM deployment service](/services/private-llm-deployment) and [LLM integration](/services/llm-integration) work.

@@ -2,7 +2,7 @@
 import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 
 const data = {
-  metaTitle: 'Government Software Development Australia | All Webbed Labs',
+  metaTitle: 'Government Software Development Australia | AWLabs',
   metaDescription: 'Government software development and AI for Australian federal, state and local government: citizen portals, grants and case management, built to the ISM.',
   industryName: 'Government & Public Sector',
   heroHeadline: 'Digital Government Solutions That Serve Citizens Better',
@@ -27,7 +27,7 @@ const data = {
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg>',
       title: 'Whole-of-Government Interoperability',
-      description: "Citizens shouldn't need to prove their identity to seven different agencies or re-enter address details every time they interact with a new service. But achieving genuine interoperability requires agencies to adopt common standards (GovPass, myGovID, the National API Design Standard), modernise point-to-point integrations into event-driven architectures, and navigate governance structures that don't naturally incentivise cross-agency collaboration.",
+      description: "Citizens shouldn't need to prove their identity to seven different agencies or re-enter address details every time they interact with a new service. But achieving genuine interoperability requires agencies to adopt common standards (the Australian Government Digital ID System, myID, the National API Design Standard), modernise point-to-point integrations into event-driven architectures, and navigate governance structures that don't naturally incentivise cross-agency collaboration.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
@@ -74,7 +74,7 @@ const data = {
     },
     {
       question: 'What is your approach to myID and Digital ID integration?',
-      answer: "The Australian Government's Digital Identity system (built on the Trusted Digital Identity Framework) provides a federated identity layer that lets citizens authenticate once using a digital ID such as myID (formerly myGovID) and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the published technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms, a significant citizen experience improvement.",
+      answer: "The Australian Government Digital ID System, governed by the Digital ID Act 2024, provides a federated identity layer that lets citizens authenticate once using a digital ID such as myID (formerly myGovID) and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the published technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms, a significant citizen experience improvement.",
     },
     {
       question: 'How do you handle OFFICIAL:Sensitive and PROTECTED data classifications?',
@@ -82,11 +82,11 @@ const data = {
     },
     {
       question: 'Can you work within agile delivery frameworks required by DTA and state digital strategies?',
-      answer: "Yes. The DTA's Digital Service Standard (and equivalent state frameworks like the NSW Digital Design System and the Victorian Digital Service Standard) require a user-centred, iterative delivery approach. We're comfortable operating in the delivery model these frameworks prescribe: discovery phases producing validated problem statements and user research insights; alpha phases producing low-fidelity prototypes tested with real users; beta phases delivering progressively complete services; and live phases with ongoing continuous improvement. We use Jira and Confluence for delivery transparency (standard across most government ICT environments), and our delivery leads are familiar with the reporting cadences and governance artefacts required by government programme management offices.",
+      answer: "Yes. The DTA's Digital Service Standard (and equivalent state frameworks like the NSW Digital Design System and the Victorian Digital Service Standard) require a user-centred, iterative delivery approach. We're comfortable operating in the delivery model these frameworks prescribe: discovery phases producing validated problem statements and user research insights; alpha phases producing low-fidelity prototypes tested with real users; beta phases delivering progressively complete services; and live phases with ongoing continuous improvement. We use Jira and Confluence for delivery transparency (standard across most government ICT environments), and we design around the reporting cadences and governance artefacts that government programme management offices ask for.",
     },
   ],
   ctaHeadline: "Let's Build Digital Government That Citizens Actually Use",
-  ctaDescription: "Whether you're modernising a legacy permit system, launching a new grants management platform or implementing a whole-of-government API gateway, our team understands the compliance, procurement and political realities of Australian government ICT. Book a confidential discovery conversation today.",
+  ctaDescription: "Whether you're modernising a legacy permit system, launching a new grants management platform or implementing a whole-of-government API gateway, we design around the compliance, procurement and political realities of Australian government ICT. Book a confidential discovery conversation today.",
 };
 ---
 <IndustryPageLayout {...data} />

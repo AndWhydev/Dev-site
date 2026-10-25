@@ -119,7 +119,7 @@ Retrofitting isolation into a product that assumed a single shared database can 
 
 **Here is how a mid-range estimate adds up for an illustrative product.** The product: a scheduling and compliance tool for multi-site service businesses, sold per site per month. It needs team accounts with three roles, a web app plus a simple mobile-friendly view for field staff, Stripe subscriptions, Xero integration, and an internal support console. Pooled tenancy, hosted in an Australian region.
 
-| Work package | Engineer-days | Cost at $1,400/day |
+| Work package | Engineer-days | Cost at an assumed $1,400/day market rate |
 |---|---|---|
 | Discovery, UX and interface design | 20 | $28,000 |
 | Core scheduling and compliance features | 45 | $63,000 |
@@ -129,12 +129,12 @@ Retrofitting isolation into a product that assumed a single shared database can 
 | Support console and usage analytics | 9 | $12,600 |
 | Notifications and email | 4 | $5,600 |
 | Security baseline, infrastructure, CI/CD | 8 | $11,200 |
-| Testing, launch and two weeks of hypercare | 12 | $16,800 |
+| Testing, launch and early support | 12 | $16,800 |
 | **Subtotal** | **128** | **$179,200** |
 | Contingency at 15% | | $26,880 |
 | **Planning budget** | | **$206,080 ex GST** |
 
-The $1,400 day rate is a planning figure for a senior Australian agency team. For context, the Robert Walters 2026 guide lists NSW senior full stack contractors at $800 to $1,000 a day before agency overheads such as project management, QA and warranty. Our [developer rates guide](/guides/software-developer-rates-australia) breaks down the difference.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope. For context, the Robert Walters 2026 guide lists NSW senior full stack contractors at $800 to $1,000 a day before agency overheads such as project management, QA and warranty. Our [developer rates guide](/guides/software-developer-rates-australia) breaks down the difference.
 
 Notice that tenancy, billing, the support console and security baseline together account for 39 of the 128 days, about 30%. That's typical.
 
@@ -200,6 +200,6 @@ A simple test uses the numbers on this page. The illustrative commercial v1 has 
 
 **Larger buyers bring a second wave of requirements that can add $50k to $200k or more.** Typical asks include SAML or OIDC single sign-on, SCIM user provisioning, detailed audit logs, data residency in Australia, role-based access at a fine grain, uptime commitments, and evidence for long security questionnaires. Government buyers add their own procurement and assessment steps; our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) explains them. The good news: these are known quantities, so they can be scoped and priced once a real opportunity appears.
 
-## How All Webbed Labs approaches SaaS builds
+## How AWLabs approaches SaaS builds
 
-We run a paid discovery that settles the tenancy model, billing design and the smallest valuable first release, then quote a fixed price. Senior engineers build it in TypeScript with PostgreSQL, hosted in an Australian cloud region by default, and the full source code sits in your repository from day one, with IP transferring to you on completion. Our delivery pipeline runs AI coding agents in parallel, but every change passes type checks, visual tests, security scans and a senior engineer's review before it ships. See our [SaaS development service](/services/saas-development) for how an engagement runs.
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It settles the tenancy model, billing design and the smallest valuable first release, and you then receive one fixed price for the agreed scope. Senior engineers build it in TypeScript with PostgreSQL. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Our delivery pipeline runs AI coding agents in parallel, but every change passes type checks, visual tests, security scans and a senior engineer's review before it ships. See our [SaaS development service](/services/saas-development) for how an engagement runs.
