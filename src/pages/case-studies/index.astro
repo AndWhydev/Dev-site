@@ -6,7 +6,7 @@ import CTABanner from '../../components/CTABanner.astro';
 
 interface ShowcaseItem {
   name: string;
-  year: string;
+  year?: string;
   description: string;
   url?: string;
 }
@@ -33,7 +33,40 @@ const categories: Category[] = [
         year: '2022',
         description: 'A real-time feature and data platform for machine-learning and AI-agent workloads, serving high-throughput feature queries into customer-owned cloud accounts.',
         url: 'https://www.chalk.ai',
-      }
+      },
+      {
+        name: 'ZeroGPT',
+        description: 'An AI content detector that checks text for signs of ChatGPT, Gemini and other model output, used by writers, teachers and editors.',
+        url: 'https://www.zerogpt.com',
+      },
+      {
+        name: 'TranVision',
+        description: 'A suite of AI apps for note taking, transcription and real time translation, built for mobile and the web.',
+        url: 'https://www.tranvision.com',
+      },
+      {
+        name: 'AI Note Taker',
+        year: '2025',
+        description: 'Turns meetings, lectures, audio recordings and PDFs into structured AI notes and minutes on iPhone.',
+        url: 'https://apps.apple.com/us/app/id6741786223',
+      },
+      {
+        name: 'Headify',
+        year: '2023',
+        description: 'An AI headshot generator that turns everyday photos into professional portraits for LinkedIn and profiles.',
+        url: 'https://apps.apple.com/us/app/id6468778415',
+      },
+      {
+        name: 'Headshot Pro AI',
+        year: '2024',
+        description: 'Creates studio style professional headshots from selfies in seconds, on iPhone.',
+        url: 'https://apps.apple.com/us/app/id6478854403',
+      },
+      {
+        name: 'Bithrah',
+        description: 'IoT sensors, AI and real time analytics for livestock monitoring, precision agriculture and farm management.',
+        url: 'https://www.bithrah.com',
+      },
     ],
   },
   {
@@ -54,7 +87,22 @@ const categories: Category[] = [
         year: '2022',
         description: 'Construction payroll, HR, compliance and labour cost tracking for US specialty trade contractors, with same-day pay, geolocation clock-ins and prevailing-wage support built in.',
         url: 'https://www.buildtrayd.com',
-      }
+      },
+      {
+        name: 'traidhand',
+        description: 'Job management for UK tradespeople: enquiries, quotes, invoices, scheduling and payments in one app, with AI help.',
+        url: 'https://www.traidhand.com',
+      },
+      {
+        name: 'JobFlow',
+        description: 'Job management for Irish trades, with online booking, one tap confirmations and a live Sage and Xero sync.',
+        url: 'https://www.jobflow.ie',
+      },
+      {
+        name: 'UpBuoy',
+        description: 'Business software for pool service professionals: routes, service records, invoicing and customer updates.',
+        url: 'https://www.upbuoy.com',
+      },
     ],
   },
   {
@@ -75,7 +123,22 @@ const categories: Category[] = [
         year: '2023',
         description: 'A collaborative writing app for novelists, screenwriters and worldbuilding groups, structured around drafts, feedback threads and long-form fiction workflows.',
         url: 'https://ellipsus.com',
-      }
+      },
+      {
+        name: 'ReportRocket',
+        description: 'AI assisted school report comments aligned with the Australian Curriculum, saving teachers hours at report time.',
+        url: 'https://reportrocket.com.au',
+      },
+      {
+        name: 'My Studio Tracker',
+        description: 'Lesson scheduling, invoicing and payment reminders for music teachers and private tutors, with card payments by link.',
+        url: 'https://www.mystudiotracker.co.uk',
+      },
+      {
+        name: 'Bitepoint',
+        description: 'A diary app for UK driving instructors that tracks lessons, pupils and who has paid, with no account needed.',
+        url: 'https://bitepoint.app',
+      },
     ],
   },
   {
@@ -90,7 +153,17 @@ const categories: Category[] = [
         year: '2022',
         description: 'A billing and revenue recognition platform handling usage metering, contract-to-cash and RevRec automation for SaaS finance teams, positioned for complex enterprise pricing.',
         url: 'https://www.zenskar.com',
-      }
+      },
+      {
+        name: 'Spend Smart',
+        description: 'A family budgeting app for tracking expenses and working towards shared financial goals, on iOS and Android.',
+        url: 'https://www.spendsmartai.app',
+      },
+      {
+        name: 'Sujood',
+        description: 'Digital donations for mosques, surau and tahfiz schools, so communities can give instantly and securely.',
+        url: 'https://sujood.net/',
+      },
     ],
   },
   {
@@ -126,7 +199,36 @@ const categories: Category[] = [
         year: '2023',
         description: 'An AI receptionist for UK private clinics that answers calls, books appointments and syncs with practice management systems like coreplus for psychology and allied health practices.',
         url: 'https://bookedsolid.health',
-      }
+      },
+      {
+        name: 'Flow Forms',
+        description: 'Patient intake forms on phone and reception iPad that update the patient record in Cliniko and file the signed PDF.',
+        url: 'https://flowforms.nz',
+      },
+    ],
+  },
+  {
+    id: 'hospitality',
+    filterLabel: 'Hospitality',
+    label: 'Vertical · Hospitality & Events',
+    title: 'Hospitality & Events',
+    intro: 'Food safety monitoring, table reservations and event booking for venues and the people who visit them.',
+    items: [
+      {
+        name: 'Monitorly',
+        description: 'Continuous temperature monitoring for fridges, freezers and bain maries, with real time alerts and HACCP and FSANZ records.',
+        url: 'https://monitor.ly',
+      },
+      {
+        name: 'BTable',
+        description: 'Restaurant and cafe reservations in Qatar, so diners can book tables in Doha instantly.',
+        url: 'https://btable.qa',
+      },
+      {
+        name: 'Farah',
+        description: 'An event planning platform for finding venues, comparing services and booking everything for a celebration in one place.',
+        url: 'https://web.hostfarah.com/en',
+      },
     ],
   },
   {
@@ -141,7 +243,17 @@ const categories: Category[] = [
         year: '2021',
         description: 'A multi-carrier last-mile delivery orchestration platform that lets merchants and 3PLs plug into a network of couriers, automate dispatch and manage local deliveries from a single API and dashboard.',
         url: 'https://www.nash.ai',
-      }
+      },
+      {
+        name: 'Yeebah',
+        description: 'A delivery network connecting small businesses, home stores and freelance drivers across Bahrain, with booking and live tracking.',
+        url: 'https://yeebah.net/',
+      },
+      {
+        name: 'Carely',
+        description: 'On demand laundry and dry cleaning pickup and delivery in Riyadh, booked from an app.',
+        url: 'https://www.carely.co/',
+      },
     ],
   },
   {
@@ -177,7 +289,22 @@ const categories: Category[] = [
         year: '2022',
         description: 'A unified API and integration layer that connects proptech tools to property-management systems like Yardi, RealPage, Entrata and Buildium. Plaid for commercial and multifamily real-estate operators.',
         url: 'https://www.propexo.com',
-      }
+      },
+      {
+        name: 'Nextkey',
+        description: 'A real estate marketplace built around short form property videos and live streamed inspections.',
+        url: 'https://www.nextkey.app',
+      },
+      {
+        name: 'PropDesc AI',
+        description: 'An API that writes real estate listing descriptions from property attributes, tuned to the audience and location.',
+        url: 'https://oculix.io/docs/propdesc/',
+      },
+      {
+        name: 'Lingkup',
+        description: 'A property management app for apartment living, giving residents and managers one place for daily building needs.',
+        url: 'https://lingkup.co',
+      },
     ],
   },
   {
@@ -192,7 +319,12 @@ const categories: Category[] = [
         year: '2026',
         description: 'A curated marketplace for independent Australian artists and makers, running on a small commission rather than a marketplace ad model.',
         url: 'https://makeshift-au.com/',
-      }
+      },
+      {
+        name: 'AI Stylist',
+        description: 'A Shopify app that recommends complete outfits, powers smart search and answers shopper questions for fashion stores.',
+        url: 'https://apps.shopify.com/elfai',
+      },
     ],
   },
   {
@@ -255,7 +387,27 @@ const categories: Category[] = [
         year: '2022',
         description: 'A dedicated newsletter reader that pulls email newsletters out of the inbox and into a clean feed on iOS, iPad and web, used by hundreds of thousands of readers worldwide.',
         url: 'https://meco.app',
-      }
+      },
+      {
+        name: 'Pawfectly Booked',
+        description: 'Booking and salon management software for dog groomers: calendars, online booking, shared pet records and reporting.',
+        url: 'https://pawfectlybooked.com',
+      },
+      {
+        name: 'BeautyIQ',
+        description: 'Salon software for hair salons, beauty salons and nail studios in the Netherlands.',
+        url: 'https://beautyiq.nl',
+      },
+      {
+        name: 'Gawey!',
+        description: 'Mobile attendance and HR software that brings employee records and HR workflows into one app.',
+        url: 'https://gawey.id',
+      },
+      {
+        name: 'Hami',
+        description: 'A legal platform for Kuwait that connects clients with verified lawyers and tracks each matter from consultation to case.',
+        url: 'https://hamihq.com',
+      },
     ],
   }
 ];
@@ -313,7 +465,7 @@ const categories: Category[] = [
                     {...cardProps}
                   >
                     <div class="cs-card-top">
-                      <span class="cs-year">{item.year}</span>
+                      <span class="cs-year">{item.year ?? ''}</span>
                       {item.url && (
                         <svg class="cs-ext-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M7 17L17 7M17 7H8M17 7v9"/>
