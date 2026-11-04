@@ -105,6 +105,34 @@ const partners: Person[] = [
     accent: 'green',
   },
 ];
+// Consultants: independent businesses we bring in on client work.
+// Shown with their own firm and a link to it; they advise under their own business.
+const consultants: Person[] = [
+  {
+    name: 'Daniel Goncalves',
+    role: 'Founder, Knowledge Foundry',
+    bio: 'Daniel leads Knowledge Foundry, a governed knowledge platform that turns policies, documents and requirements into structured, auditable learning systems for regulated industries. Its approach is to define and approve the structure before any content is written, so every lesson traces back to the requirement behind it. Daniel advises AWLabs on how regulated organisations adopt new technology.',
+    initials: 'DG',
+    accent: 'violet',
+    links: [{ label: 'knowledge-foundry.com', href: 'https://www.knowledge-foundry.com/' }],
+  },
+  {
+    name: 'Alina Caballero',
+    role: 'Founder, AC Communication',
+    bio: 'Alina helps large organisations bring their people with them when new technology arrives, through change and internal communication, executive messaging and campaign leadership. A Prosci Certified Change Practitioner, she has spent a decade across the NSW Government and the private sector, including leading a multilingual digital redesign of account opening at CommBank. Her Fluency Framework shapes every program around the business, the audience and the moment.',
+    initials: 'AC',
+    accent: 'amber',
+    links: [{ label: 'accommunication.com.au', href: 'https://www.accommunication.com.au/' }],
+  },
+  {
+    name: 'Tarek Farhat',
+    role: 'ISO and HSEQ, iHSEQ',
+    bio: 'Tarek and his team at iHSEQ guide businesses through ISO certification, integrated management systems and CM3 and Avetta prequalification, along with health, safety, environment and quality consulting for contractors across Australia. When a build needs to sit inside a certified management system, Tarek makes sure the paperwork and the process line up.',
+    initials: 'TF',
+    accent: 'green',
+    links: [{ label: 'ihseq.com.au', href: 'https://www.ihseq.com.au/' }],
+  },
+];
 ---
 
 <section class="team-section" id="team">
@@ -185,6 +213,46 @@ const partners: Person[] = [
 
       <div class="partners-grid">
         {partners.map((p, i) => (
+          <article class={`partner-card reveal stagger-${i + 1}`}>
+            <div class="partner-card-head">
+              <div class={`partner-photo accent-${p.accent ?? 'green'}`}>
+                {p.photo ? (
+                  <img src={p.photo} alt={`${p.name}, ${p.role}`} loading="lazy" decoding="async" width="400" height="400" />
+                ) : (
+                  <span class="partner-initials" aria-hidden="true">{p.initials}</span>
+                )}
+              </div>
+              <div class="partner-card-text">
+                <h4 class="partner-name">{p.name}</h4>
+                <p class="partner-role">{p.role}</p>
+              </div>
+            </div>
+            <p class="partner-bio">{p.bio}</p>
+            {p.links && p.links.length > 0 && (
+              <div class="partner-links">
+                {p.links.map((l) => (
+                  <a href={l.href} target="_blank" rel="noopener noreferrer">
+                    {l.label}
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10M9 7h8v8"/></svg>
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Consultants -->
+    <div class="partners-block">
+      <div class="partners-head reveal">
+        <span class="section-label small">Consultants</span>
+        <h3 class="partners-heading">The consultants we bring in.</h3>
+        <p class="partners-sub">Independent experts with their own businesses, brought in when a build needs them.</p>
+      </div>
+
+      <div class="partners-grid">
+        {consultants.map((p, i) => (
           <article class={`partner-card reveal stagger-${i + 1}`}>
             <div class="partner-card-head">
               <div class={`partner-photo accent-${p.accent ?? 'green'}`}>
@@ -398,6 +466,13 @@ const partners: Person[] = [
     font-size: 0.625rem;
     letter-spacing: 0.18em;
   }
+  .partners-sub {
+    margin: 0.75rem auto 0;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+  }
+
   .partners-heading {
     font-family: 'Sora', sans-serif;
     font-size: clamp(1.375rem, 2.4vw, 1.75rem);
