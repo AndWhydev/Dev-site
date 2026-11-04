@@ -25,6 +25,10 @@
       <p class="awl-hero__sub">Built by senior engineers, behind explicit quality gates. You can see and test the code while we build, and it is assigned to you as it is paid for.</p>
       <div class="awl-hero__ctas">
         <a href="/methodology" class="btn-fill btn-magnetic" data-hover>How we work</a>
+        <a href="#testimonials" class="awl-hero__watch" data-hover>
+          <span class="awl-hero__watch-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          Watch client stories
+        </a>
         <a href="/contact" class="awl-hero__link" data-hover>Book a call <span class="arrow">&rarr;</span></a>
       </div>
     </div>
@@ -400,6 +404,34 @@
     outline: 2px solid #ffffff;
     outline-offset: 3px;
   }
+
+  .awl-hero__watch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px 12px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.04);
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .awl-hero__watch:hover { border-color: var(--color-accent); background: rgba(13, 147, 115, 0.12); }
+  .awl-hero__watch:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+  .awl-hero__watch-icon {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #0d9373;
+    color: #fff;
+  }
+  .awl-hero__watch-icon svg { margin-left: 2px; }
 
   .awl-hero__link {
     display: inline-flex;
