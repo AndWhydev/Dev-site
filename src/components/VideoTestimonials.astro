@@ -1,4 +1,5 @@
 ---
+import transcripts from '../data/testimonial-transcripts.json';
 /**
  * VideoTestimonials - client video stories on the homepage.
  * Each card shows a poster image; the video only loads when the visitor
@@ -16,15 +17,42 @@ interface Story {
 
 const stories: Story[] = [
   { name: 'Britney', context: 'Founder, fitness', file: 'britney', portrait: true },
-  { name: 'Johnny', context: 'Founder, trades and services', file: 'johnny', portrait: true },
+  { name: 'Dave', context: 'Founder, construction', file: 'dave', portrait: true },
   { name: 'Kawkab', context: 'Founder, wholesale', file: 'kawkab', portrait: true },
-  { name: 'Nat', context: 'Founder, healthcare', file: 'nat', portrait: false },
-  { name: 'Scott', context: 'Founder', file: 'img6966', portrait: false },
-  { name: 'Helen', context: 'Founder', file: 'option2', portrait: true },
+  { name: 'Nat', context: 'Founder, health and fitness', file: 'nat', portrait: false },
+  { name: 'Scott', context: 'Founder, online marketplace', file: 'img6966', portrait: false },
+  { name: 'Helen', context: 'Founder, hairdressing', file: 'option2', portrait: true },
   { name: 'Ebony', context: 'Founder, childcare', file: 'ebony', portrait: false },
-  { name: 'Michael', context: 'Founder, trades and services', file: 'whatsapp', portrait: true },
+  { name: 'Michael', context: 'Founder, flooring', file: 'whatsapp', portrait: true },
 ];
+
+const SITE = 'https://www.awlabs.com.au';
+const iso = (secs: number) => `PT${Math.floor(secs / 60)}M${Math.round(secs % 60)}S`;
+const tx = transcripts as Record<string, { transcript: string | null; duration: number }>;
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'AWLabs client video testimonials',
+  itemListElement: stories.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'VideoObject',
+      name: `${s.name} on working with AWLabs`,
+      description: `${s.name} (${s.context.replace('Founder, ', 'founder, ')}) talks about working with Andy and the AWLabs team.`,
+      thumbnailUrl: `${SITE}/videos/testimonials/${s.file}.webp`,
+      contentUrl: `${SITE}/videos/testimonials/${s.file}.mp4`,
+      uploadDate: '2026-11-04',
+      duration: iso(tx[s.file]?.duration ?? 60),
+      inLanguage: 'en-AU',
+      ...(tx[s.file]?.transcript ? { transcript: tx[s.file].transcript } : {}),
+      publisher: { '@id': `${SITE}/#organization` },
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
 
 <section class="vt-section" id="testimonials" aria-labelledby="vt-heading">
   <div class="vt-inner">
@@ -42,6 +70,7 @@ const stories: Story[] = [
             class="vt-media"
             data-src={`/videos/testimonials/${s.file}.mp4`}
             data-portrait={s.portrait ? '1' : '0'}
+            data-captions={tx[s.file]?.transcript ? `/videos/testimonials/${s.file}.vtt` : ''}
             aria-label={`Play video: ${s.name}, ${s.context}`}
           >
             <img
@@ -160,6 +189,16 @@ const stories: Story[] = [
         video.playsInline = true;
         video.autoplay = true;
         video.preload = 'auto';
+        video.crossOrigin = 'anonymous';
+        if (btn.dataset.captions) {
+          const track = document.createElement('track');
+          track.kind = 'captions';
+          track.srclang = 'en';
+          track.label = 'English';
+          track.src = btn.dataset.captions;
+          track.default = true;
+          video.appendChild(track);
+        }
         wrap.appendChild(video);
         btn.replaceWith(wrap);
         video.focus();
