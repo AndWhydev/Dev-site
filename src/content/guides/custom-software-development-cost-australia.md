@@ -5,7 +5,7 @@ description: "How much does custom software cost in Australia? From $15k to $40k
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Custom software development in Australia typically costs $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a mid-complexity system such as a customer portal or job management platform, and $150,000 to $500,000 or more for multi-system or enterprise platforms. Most of the difference comes from integrations, user roles, data migration and security requirements, not screen count. Budget another 15 to 20% of the build cost each year for maintenance, plus hosting."
 takeaways:
   - "Published Australian agency guides cluster around three bands: under $40k, $40k to $150k, and $150k to $500k+ (AUD, ex GST)."
@@ -21,7 +21,7 @@ faqs:
   - q: "Why do quotes for the same project vary by 3 to 5 times?"
     a: "Vendors are pricing different assumptions: how complete the scope is, which integrations are included, who handles testing and deployment, and how much risk they are absorbing. Ask each vendor for hours by feature and a list of exclusions, then compare like with like."
   - q: "Should I pay fixed price or time and materials?"
-    a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. Many projects use paid discovery, then a fixed price per phase."
+    a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. A common market practice is paid discovery, then a fixed price per phase. Our approach is our Discovery Audit, $750 plus GST, credited in full against the build, then one fixed price for the agreed scope."
   - q: "How long does custom software take to build?"
     a: "Published Australian guides put simple tools at about 4 to 8 weeks, mid-complexity systems at 8 to 16 weeks, and enterprise platforms at 4 to 12 months or more. Integration access and decision speed on the client side often set the pace more than coding does."
   - q: "What is the hourly rate for custom software development in Australia?"

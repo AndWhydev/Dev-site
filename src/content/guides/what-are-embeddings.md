@@ -5,7 +5,7 @@ description: "What are embeddings in AI? Vector embeddings turn text or images i
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "In AI, an embedding (or vector embedding) is a list of numbers, produced by an AI model, that represents the meaning of a piece of content such as a sentence, document or image. Content with similar meaning gets similar numbers, so software can measure how related two things are by comparing their embeddings, which powers semantic search, recommendations, clustering and the retrieval step in RAG."
 takeaways:
   - "An embedding places each piece of content as a point in a space with hundreds or thousands of dimensions; nearby points mean similar things."
@@ -23,7 +23,7 @@ faqs:
   - q: "What is an embedding in RAG?"
     a: "In a RAG system, every chunk of your documents is turned into an embedding and stored in a vector database. Each question is embedded the same way, and the chunks with the closest embeddings are retrieved and given to the language model to answer from."
   - q: "Where can we get an embedding model in Australia?"
-    a: "The major clouds offer embedding models as managed services, including Azure OpenAI in Azure, Amazon Titan and Cohere models on Amazon Bedrock, and Google's models on Vertex AI, and open-weight models can run on your own servers. Which models are offered in which Australian region changes often, so check the provider's regional availability page at the time you plan."
+    a: "The major clouds offer embedding models as managed services, including Azure OpenAI in Azure, Amazon Titan and Cohere models on Amazon Bedrock, and Google's models on Gemini Enterprise Agent Platform (formerly Vertex AI), and open-weight models can run on your own servers. Which models are offered in which Australian region changes often, so check the provider's regional availability page at the time you plan."
   - q: "How many dimensions do we need?"
     a: "Common models output 256 to 3,072 dimensions. More dimensions can capture finer distinctions but cost more storage and memory. Several current models let you shorten vectors with modest quality loss, so measure on your data before paying for the largest size."
   - q: "Can embeddings contain personal information?"

@@ -70,7 +70,7 @@ related:
   - title: "Our Master Services Agreement"
     href: "/MSA"
   - title: "Our mutual NDA"
-    href: "/how-we-work"
+    href: "/NDA"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"
@@ -168,7 +168,7 @@ A privacy and security clause should cover:
 - Where data is stored and accessed from, and which subcontractors are involved, including any AI coding or model providers.
 - Return or destruction of your data at the end.
 
-Confidentiality is usually covered by a mutual NDA signed before discovery. Our [mutual NDA](/how-we-work) is published if you want to see what one looks like.
+Confidentiality is usually covered by a mutual NDA signed before discovery. Our [mutual NDA](/NDA) is published if you want to see what one looks like.
 
 ## Can you leave cleanly?
 

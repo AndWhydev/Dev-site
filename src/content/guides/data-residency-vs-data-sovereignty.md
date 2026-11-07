@@ -5,7 +5,7 @@ description: "Data residency vs data sovereignty: residency is where data is sto
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "The difference between data residency and data sovereignty is location versus law. Data residency is the physical location where data is stored and processed, such as an AWS region in Sydney. Data sovereignty is the question of which country's laws apply to that data and who can legally compel access to it. Keeping data in Australia gives you residency, but if the provider is a foreign company, foreign law can still reach it, so residency alone doesn't guarantee sovereignty."
 takeaways:
   - "Residency is about geography: which data centre, in which country, holds and processes the data."
@@ -121,7 +121,7 @@ Check these points before choosing a model provider:
 4. **Embeddings and vector stores.** Embeddings are derived from your documents. Treat them with the same residency rules as the source data.
 5. **Sub-processors.** Which third parties touch the data, and where are they?
 
-Which models can actually run onshore, on AWS Bedrock, Azure OpenAI, Google Cloud and the direct APIs, is covered in our guide to [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia). For the region-by-region view of the three clouds, see [Bedrock vs Azure OpenAI vs Vertex AI in Australia](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
+Which models can actually run onshore, on AWS Bedrock, Azure OpenAI, Google Cloud and the direct APIs, is covered in our guide to [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia). For the region-by-region view of the three clouds, see [Bedrock vs Azure OpenAI vs Gemini Enterprise Agent Platform (formerly Vertex AI) in Australia](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
 
 ## How we handle it at AWLabs
 

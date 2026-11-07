@@ -12,13 +12,13 @@ const data = {
   summaryStatement: "Data engineering is the discipline of building and operating the pipelines, storage and controls that move data from source systems into a governed platform, tested for quality, documented with lineage and classified for sensitivity, so that analytics, machine learning and AI applications are built on data that is accurate, current and lawfully usable.",
   description: [
     "Most AI projects that stall do not fail on the model. They fail on the data. The customer record exists in three systems with three spellings, the product table was last reconciled two years ago, the documents an assistant should answer from sit in shared drives with no owner and no permissions model, and nobody can say which fields contain personal information. A dashboard built on that data shows confident wrong numbers; an AI feature built on it gives confident wrong answers, faster. Data engineering is the unglamorous work that fixes this at the source: getting data out of operational systems reliably, cleaning and joining it in one place, testing it continuously, and recording where every field came from and who is allowed to use it.",
-    "As data engineering consultants, we design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse (we can host it in Australian cloud regions), transforming it in version-controlled, tested models (the ELT pattern), and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, assigned to you on payment and documented well enough for your team to run.",
+    "As data engineering consultants, we design data platforms around the questions and AI use cases they need to serve, not around a tool. For structured data that usually means extracting from your databases, SaaS applications and files into a cloud warehouse or lakehouse (we can host it in Australian cloud regions), transforming it in version controlled, tested models (the ELT pattern), and orchestrating it on a schedule or from change events. For unstructured data such as documents, emails and tickets, it means inventorying the sources, extracting text and metadata, attaching ownership and access rules, and building the refresh pipelines that a RAG knowledge base or document AI system will depend on. Across both, we add automated data quality tests that stop bad loads before they reach users, lineage that shows how every output was produced, and classification of personal and sensitive information so privacy obligations are designed in rather than discovered later. The result is a foundation your analytics team, your AI projects and your auditors can all rely on, assigned to you on payment and documented well enough for your team to run.",
   ],
   benefits: [
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
       title: "Pipelines That Run Unattended",
-      description: "Ingestion is orchestrated, retried on failure and alerted when something breaks, so data arrives on time without someone running exports by hand. Incremental and change-data-capture loads keep volumes and costs down as history grows.",
+      description: "Ingestion is orchestrated, retried on failure and alerted when something breaks, so data arrives on time without someone running exports by hand. Incremental and change data capture loads keep volumes and costs down as history grows.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
@@ -38,12 +38,12 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>',
       title: "Unstructured Data Made Usable",
-      description: "Documents, emails and tickets are inventoried, extracted, de-duplicated and tagged with owners and access rules, then kept current by refresh pipelines. This is the groundwork a RAG knowledge base or document AI system needs to give reliable answers.",
+      description: "Documents, emails and tickets are inventoried, extracted, deduplicated and tagged with owners and access rules, then kept current by refresh pipelines. This is the groundwork a RAG knowledge base or document AI system needs to give reliable answers.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>',
       title: "One Governed Source of Truth",
-      description: "Shared definitions for customers, products, revenue and other core entities live in version-controlled models, so finance, operations and AI projects work from the same numbers. Changes are reviewed like code, with tests, before they go live.",
+      description: "Shared definitions for customers, products, revenue and other core entities live in version controlled models, so finance, operations and AI projects work from the same numbers. Changes are reviewed like code, with tests, before they go live.",
     },
   ],
   useCases: [],
@@ -63,7 +63,7 @@ const data = {
       step: "02",
       title: "Platform Architecture",
       duration: "Weeks 2 to 3",
-      description: "We recommend a warehouse or lakehouse, ingestion approach, orchestration and quality tooling that fit your scale, skills and budget, with Australian cloud hosting available. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Architecture decisions are written down with the trade-offs, so your team understands why each choice was made.",
+      description: "We recommend a warehouse or lakehouse, ingestion approach, orchestration and quality tooling that fit your scale, skills and budget, with Australian cloud hosting available. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Architecture decisions are written down with the tradeoffs, so your team understands why each choice was made.",
     },
     {
       step: "03",
@@ -75,13 +75,13 @@ const data = {
       step: "04",
       title: "Modelling and Quality Tests",
       duration: "Weeks 5 to 9",
-      description: "Raw data is transformed through staged, version-controlled models into clean, documented tables for core business entities. Quality tests run on every load, and reconciliation checks compare totals against the source systems so trust in the numbers is earned, not assumed.",
+      description: "Raw data is transformed through staged, version controlled models into clean, documented tables for core business entities. Quality tests run on every load, and reconciliation checks compare totals against the source systems so trust in the numbers is earned, not assumed.",
     },
     {
       step: "05",
       title: "Governance and Access",
       duration: "Weeks 8 to 10",
-      description: "We classify personal and sensitive fields, apply masking and role-based access, publish a data catalogue with lineage, and document retention rules. The first use case, whether a dashboard, a model feature or a knowledge base feed, goes live on the governed data.",
+      description: "We classify personal and sensitive fields, apply masking and role based access, publish a data catalogue with lineage, and document retention rules. The first use case, whether a dashboard, a model feature or a knowledge base feed, goes live on the governed data.",
     },
     {
       step: "06",
@@ -94,7 +94,7 @@ const data = {
     "Financial Services",
     "Insurance",
     "Healthcare & Aged Care",
-    "Retail & E-commerce",
+    "Retail & Ecommerce",
     "Logistics & Supply Chain",
     "Utilities & Energy",
     "Professional Services",
@@ -115,7 +115,7 @@ const data = {
     },
     {
       question: "Should we use a data warehouse, a data lake or a lakehouse?",
-      answer: "It depends on your data and your team. A cloud warehouse such as Snowflake or BigQuery suits mostly structured business data and SQL-skilled teams. A lakehouse built on open table formats such as Apache Iceberg suits large volumes, mixed structured and unstructured data, and machine learning workloads. Many mid-sized organisations are well served by PostgreSQL for longer than they think. We recommend the simplest option that meets your needs for the next few years.",
+      answer: "It depends on your data and your team. A cloud warehouse such as Snowflake or BigQuery suits mostly structured business data and SQL skilled teams. A lakehouse built on open table formats such as Apache Iceberg suits large volumes, mixed structured and unstructured data, and machine learning workloads. Many midsized organisations are well served by PostgreSQL for longer than they think. We recommend the simplest option that meets your needs for the next few years.",
     },
     {
       question: "Can our data stay in Australia?",
@@ -131,7 +131,7 @@ const data = {
     },
     {
       question: "What is data engineering, in simple terms?",
-      answer: "Data engineering is the plumbing behind analytics and AI. Data engineers build the pipelines that copy data out of the systems where work happens, clean and combine it in one governed place, test it every time it loads and record where each field came from. Without that layer, every dashboard and AI feature ends up doing its own inconsistent version of the same clean-up.",
+      answer: "Data engineering is the plumbing behind analytics and AI. Data engineers build the pipelines that copy data out of the systems where work happens, clean and combine it in one governed place, test it every time it loads and record where each field came from. Without that layer, every dashboard and AI feature ends up doing its own inconsistent version of the same cleanup.",
     },
     {
       question: "How much do data engineering services cost?",
@@ -152,14 +152,14 @@ const data = {
       "Reports are produced by manual exports and spreadsheet work that breaks when the person who does it is away",
       "You need to show where numbers or AI outputs came from, for a board, a regulator or an auditor",
       "Personal or sensitive information is involved and you need to know where it flows and who can see it",
-      "You want a platform your own team can extend, built on documented, version-controlled code rather than a black box",
+      "You want a platform your own team can extend, built on documented, version controlled code rather than a black box",
     ],
     notRightFor: [
-      "Your reporting needs are met by the built-in reports of one or two SaaS systems, where a data platform would add cost without adding insight",
+      "Your reporting needs are met by the built in reports of one or two SaaS systems, where a data platform would add cost without adding insight",
       "You need a dashboard on data that is already clean and centralised, where our data analytics service is the more direct route",
-      "Your data volumes are small and a well-structured PostgreSQL database with a few scheduled queries will do the job",
+      "Your data volumes are small and a well structured PostgreSQL database with a few scheduled queries will do the job",
       "The real problem is a broken operational process creating bad data, which should be fixed at the source before any pipeline is built",
-      "You are looking for a one-off data migration between two systems rather than an ongoing platform",
+      "You are looking for a one off data migration between two systems rather than an ongoing platform",
     ],
   },
   definitions: [
@@ -169,7 +169,7 @@ const data = {
     },
     {
       term: "Lakehouse",
-      definition: "A data platform that stores data in open file formats on low-cost cloud storage while providing warehouse-style tables, transactions and SQL access, so structured and unstructured data can be managed together.",
+      definition: "A data platform that stores data in open file formats on low cost cloud storage while providing warehouse style tables, transactions and SQL access, so structured and unstructured data can be managed together.",
     },
     {
       term: "Change data capture (CDC)",

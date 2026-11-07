@@ -5,14 +5,14 @@ description: "Fixed price vs time and materials contracts for software: how each
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
-updated: 2026-09-28
-summary: "The difference between fixed price and time and materials is who carries the risk of overruns. A fixed price contract puts that risk on the vendor, so it suits work whose scope can be defined before the build starts. Time and materials puts that risk on you but lets the scope change freely, so it suits work where you'll learn as you go. Most sensible projects mix the two: a short paid discovery on time and materials or a small fixed fee, then a fixed price for each clearly defined phase, with a written change process for anything new."
+updated: 2026-11-07
+summary: "The difference between fixed price and time and materials is who carries the risk of overruns. A fixed price contract puts that risk on the vendor, so it suits work whose scope can be defined before the build starts. Time and materials puts that risk on you but lets the scope change freely, so it suits work where you'll learn as you go. Common market practice is to mix the two: a short paid discovery on time and materials or a small fixed fee, then a fixed price for each clearly defined phase, with a written change process for anything new."
 takeaways:
   - "The difference is who carries the risk of the estimate being wrong: the vendor under fixed price, you under time and materials."
   - "Fixed price costs more per hour of work, because a competent vendor prices in contingency. You're buying certainty."
   - "Fixed price only works when the scope is precise enough that both sides agree what 'done' means. A vague scope turns into padding or disputes over variations."
   - "Time and materials is cheaper when the scope will change, provided you manage it actively: weekly budget reports, a cap, and the right to stop."
-  - "Paid discovery followed by fixed price per phase gets most of the benefits of both, and is the model many Australian agencies now offer."
+  - "A common market approach is paid discovery followed by fixed price per phase, which gets most of the benefits of both and is a model many Australian agencies offer."
 faqs:
   - q: "Is fixed price always more expensive?"
     a: "Per unit of work, usually yes, because the vendor carries the risk and prices it in. In total, not necessarily: fixed price creates pressure on both sides to keep scope tight, and a loosely managed time and materials project can easily cost more than the fixed quote would have."
@@ -100,7 +100,7 @@ Three things stand out. Pure T&M is cheapest if the work goes well, and exposed 
 
 ## What hybrid models exist?
 
-**Most real contracts sit between the two extremes, and the hybrids are often the best choice.** The common ones:
+**In common market practice, most contracts sit between the two extremes, and a hybrid is often a sensible choice.** The common ones:
 
 1. **Paid discovery, then fixed price.** A short discovery phase (across the market, usually two to six weeks) produces workflows, integration details, acceptance criteria and an architecture. The build is then quoted as a fixed price, often per phase. Across the market, discovery is usually priced separately. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope. See [what a discovery phase involves](/guides/software-discovery-phase).
 2. **Fixed price per phase or milestone.** Large projects are split into phases, each priced once the previous one has reduced the unknowns. You can stop after any phase.
@@ -163,4 +163,4 @@ Australian law adds a floor. Under the Australian Consumer Law, services costing
 
 ## How AWLabs prices work
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. You then receive one fixed price for the agreed scope, set out in a Schedule of Work and paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover. That's one option among several above, and we use it because it gives you a firm number. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and you can see and test the code while we build. Each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Read more about [how we work](/how-we-work) or our [custom software service](/services/custom-app-development).
+Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. You then receive one fixed price for the agreed scope, set out in a Schedule of Work and paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover. That's one option among several above, and we use it because it gives you a firm number. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and you can see and test the code while we build. Each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).

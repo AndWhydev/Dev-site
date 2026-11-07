@@ -5,7 +5,7 @@ description: "How much does it cost to build a SaaS product in Australia? A comm
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Building a SaaS product in Australia typically costs $80k to $300k AUD (ex GST) for a commercial first version built by an Australian team. A narrow validation MVP can come in at $40k to $100k, and a B2B platform ready for enterprise buyers, with SSO, audit logs and security review evidence, often runs $250k to $700k or more. The SaaS-specific parts (multi-tenancy, subscription billing, onboarding, admin tooling and security) typically account for 25 to 40% of the build."
 takeaways:
   - "SaaS costs more than a single-customer app of the same size because of tenancy, billing, onboarding, admin and support tooling."
@@ -29,6 +29,9 @@ faqs:
 sources:
   - title: "Stripe pricing, Australia"
     url: "https://stripe.com/au/pricing"
+    publisher: "Stripe"
+  - title: "Updates to card pricing in Australia from October 2026"
+    url: "https://support.stripe.com/questions/updates-to-card-pricing-in-australia-from-october-2026"
     publisher: "Stripe"
   - title: "SaaS Lens: silo, pool and bridge models"
     url: "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/silo-pool-and-bridge-models.html"
@@ -148,13 +151,13 @@ Calendar time depends on more than engineering days. The worked example above is
 
 **Running costs have four parts: hosting, third-party services, payment fees and maintenance, and maintenance is usually the largest.** Early hosting is cheap; people underestimate the rest.
 
-**Payment fees scale with revenue.** Stripe's Australian card pricing is a percentage of each successful charge plus a fixed fee, with separate rates for domestic and international cards, and Stripe Billing adds a percentage of billing volume on the pay-as-you-go plan (0.7% at the time of writing). Stripe has announced lower domestic card pricing from 1 October 2026 and lower international card pricing from 1 April 2027, so take current rates from the [Stripe pricing page](https://stripe.com/au/pricing) before you model it.
+**Payment fees scale with revenue.** Stripe's Australian card pricing is a percentage of each successful charge plus a fixed fee, with separate rates for domestic and international cards, and Stripe Billing adds a percentage of billing volume on the pay-as-you-go plan (0.7% at the time of writing). Stripe cut its domestic online card rate from 1.7% + A$0.30 to 1.65% + A$0.30 on 1 October 2026, and has announced lower international card pricing from 1 April 2027 (2.8% + A$0.30, down from 3.5% + A$0.30), so take current rates from the [Stripe pricing page](https://stripe.com/au/pricing) before you model it.
 
-Illustrative arithmetic, assuming a card fee of 1.7% + A$0.30 per charge (Stripe's listed domestic rate before 1 October 2026, so a conservative assumption after that date) and 0.7% for Billing: 200 customers paying $99 a month on domestic cards is $19,800 in monthly revenue.
+Illustrative arithmetic, assuming a card fee of 1.65% + A$0.30 per charge (Stripe's listed domestic online rate from 1 October 2026) and 0.7% for Billing: 200 customers paying $99 a month on domestic cards is $19,800 in monthly revenue.
 
-- Card fees: $19,800 × 1.7% = $336.60, plus 200 × $0.30 = $60
+- Card fees: $19,800 × 1.65% = $326.70, plus 200 × $0.30 = $60
 - Billing fee: $19,800 × 0.7% = $138.60
-- Total: $535.20 a month, about 2.7% of revenue
+- Total: $525.30 a month, about 2.7% of revenue
 
 **Typical monthly running costs for a commercial v1:**
 

@@ -5,7 +5,7 @@ description: "RAG vs fine-tuning (and prompt engineering): RAG gives a model you
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Choose between RAG and fine-tuning by the problem you have: use retrieval-augmented generation (RAG) when the model needs to answer from your documents and data, especially if they change or need citations and access control. Use fine-tuning when you need the model to behave differently, such as following a strict output format, a house style or a narrow classification task, and prompting alone can't get there. Most business knowledge assistants need RAG, not fine-tuning. Some mature systems use both."
 takeaways:
   - "RAG adds knowledge at question time by retrieving relevant passages; fine-tuning adjusts the model's weights with training examples."
@@ -165,7 +165,7 @@ A simple way to reason about per-request cost: if RAG adds 3,000 tokens of retri
 At the time of writing (September 2026):
 
 - **Azure OpenAI in Microsoft Foundry** lists regional ("Standard") fine-tuning for its OpenAI models only in US and Swedish regions. Australia East offers "Global" training, which Microsoft states is cheaper but doesn't provide data residency.
-- **Google Vertex AI** (now documented by Google as Gemini Enterprise Agent Platform) publishes per-model data residency commitments. Its table lists no Australian residency commitment for Gemini tuning jobs, although some Gemini inference and text embeddings do carry an australia-southeast1 commitment.
+- **Google Gemini Enterprise Agent Platform** (formerly Vertex AI) publishes per-model data residency commitments. Its table lists no Australian residency commitment for Gemini tuning jobs, although some Gemini inference and text embeddings do carry an australia-southeast1 commitment.
 - **OpenAI's own API** has announced it is winding down its fine-tuning platform: it's closed to new users, and existing fine-tuned models remain available until their base models are deprecated. That's a reminder that a fine-tuned model ties you to a vendor's roadmap in a way a RAG index doesn't.
 - **Amazon Bedrock** supports supervised fine-tuning, reinforcement fine-tuning and distillation for selected models, with region support set per model. Check the model card for customisation regions before assuming Sydney or Melbourne.
 

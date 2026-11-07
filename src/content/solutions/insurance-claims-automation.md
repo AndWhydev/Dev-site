@@ -4,7 +4,7 @@ metaTitle: "Insurance Claims Automation with AI for Australian Insurers"
 description: "Insurance claims automation with AI for Australian insurers: claims intake, document automation and triage, built around the Code of Practice and APRA rules."
 eyebrow: "Industry solution"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Insurance claims automation with AI, for an Australian general insurer, reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. Market ranges put a first production workflow at roughly $85k to $265k (AUD, ex GST)."
 takeaways:
   - "The best return is usually in the first ten business days of a claim: intake, missing-information requests and routing, where the Code already sets deadlines."
@@ -87,7 +87,7 @@ Steps 1 to 7 are where most handling time goes, and none of them requires the AI
 
 **The Code's commitments become system requirements: deadlines become timers, customer rights become data you must be able to produce, and vulnerability becomes a routing rule.** The table maps the commitments most relevant to automation. Check the current Code text for exact wording; this is our engineering reading, not legal advice.
 
-| Code commitment (current Code, last updated October 2023; a redrafted Code went to public consultation in mid 2026) | Design implication |
+| Code commitment (current Code, last updated October 2023; a redrafted Code was consulted on in mid 2026 and submitted to ASIC for approval on 22 October 2026, so recheck these timeframes once it is approved) | Design implication |
 |---|---|
 | Where further information or assessment is needed, within 10 business days of receiving a claim, tell the customer what information is needed and give an estimated timeframe | Intake must complete classification and gap detection fast enough for an officer to send the request inside the window; the clock starts at receipt, not at triage |
 | Progress updates at least every 20 business days | A timer per claim that surfaces overdue updates to the handling officer, with a drafted update ready |

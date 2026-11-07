@@ -8,11 +8,11 @@ const data = {
   serviceName: 'RAG Knowledge Base',
   slug: 'rag-knowledge-base',
   heroHeadline: 'Answers Grounded in Your Documents, With Citations You Can Check',
-  heroTagline: 'RAG development services for Australian organisations: retrieval-augmented generation that connects a language model to your own knowledge, so answers are sourced from your content, not invented.',
+  heroTagline: 'RAG development services for Australian organisations: retrieval augmented generation that connects a language model to your own knowledge, so answers are sourced from your content, not invented.',
   summaryStatement: 'A RAG knowledge base is an AI knowledge base that retrieves relevant passages from an organisation\'s own documents and supplies them to a language model at query time, so answers are grounded in source material the user can verify rather than generated from the model\'s general training alone. RAG development services design, build and tune that retrieval pipeline so staff and customers can chat with your documents and get cited answers.',
   description: [
-    'A language model on its own knows nothing about your contracts, your policies, your product documentation or your support history. Ask it a question about your business and it will either decline or, worse, invent a plausible-sounding answer. Retrieval-augmented generation solves this by separating knowledge from reasoning: your documents are ingested, broken into passages, converted into vector embeddings and stored in a search index, and at question time the most relevant passages are retrieved and handed to the model as context. The model then answers using that supplied material, and cites where each claim came from. This is the difference between an assistant that guesses and one that reads the right page of the right document before it replies.',
-    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add re-ranking to push the genuinely relevant passages to the top. We enforce access control so the system is designed to retrieve only documents a given user is permitted to see, and we test that before launch: a finance policy should not surface in a customer-facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We can host all of this in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
+    'A language model on its own knows nothing about your contracts, your policies, your product documentation or your support history. Ask it a question about your business and it will either decline or, worse, invent a plausible sounding answer. Retrieval augmented generation solves this by separating knowledge from reasoning: your documents are ingested, broken into passages, converted into vector embeddings and stored in a search index, and at question time the most relevant passages are retrieved and handed to the model as context. The model then answers using that supplied material, and cites where each claim came from. This is the difference between an assistant that guesses and one that reads the right page of the right document before it replies.',
+    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add reranking to push the genuinely relevant passages to the top. We enforce access control so the system is designed to retrieve only documents a given user is permitted to see, and we test that before launch: a finance policy should not surface in a customer facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We can host all of this in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
   ],
   benefits: [
     {
@@ -33,17 +33,17 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
       title: 'Always Current Ingestion',
-      description: 'Scheduled and event-driven pipelines keep the index in step with your source systems, so when a policy or document changes the knowledge base reflects it. Stale answers are one of the fastest ways to lose user trust, and freshness is engineered in from the start.',
+      description: 'Scheduled and event driven pipelines keep the index in step with your source systems, so when a policy or document changes the knowledge base reflects it. Stale answers are one of the fastest ways to lose user trust, and freshness is engineered in from the start.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
       title: 'Access Control on Retrieval',
-      description: 'Document-level permissions are enforced at retrieval time, so the system is designed to surface only content a given user is entitled to see, and we test that before launch. A customer assistant cannot reach internal documents, and confidential material stays scoped to the people authorised for it.',
+      description: 'Document level permissions are enforced at retrieval time, so the system is designed to surface only content a given user is entitled to see, and we test that before launch. A customer assistant cannot reach internal documents, and confidential material stays scoped to the people authorised for it.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
       title: 'Measured Retrieval Quality',
-      description: 'We evaluate retrieval and answer quality against a curated test set, tuning chunking, embeddings, hybrid search and re-ranking based on evidence. Improvements are measured rather than guessed, so the system gets better in a controlled, repeatable way.',
+      description: 'We evaluate retrieval and answer quality against a curated test set, tuning chunking, embeddings, hybrid search and reranking based on evidence. Improvements are measured rather than guessed, so the system gets better in a controlled, repeatable way.',
     },
   ],
   /* useCases array emptied, previous content was fabricated. Will return once real signed-off project examples can be referenced. */
@@ -59,19 +59,19 @@ const data = {
       step: '01',
       title: 'Knowledge Audit and Source Mapping',
       duration: 'Weeks 1 to 2',
-      description: 'We catalogue where your knowledge lives, file shares, Confluence, SharePoint, ticketing systems, PDFs, assess quality and structure, and define which sources are in scope. We also map the access-control model so retrieval permissions mirror your existing entitlements.',
+      description: 'We catalogue where your knowledge lives, file shares, Confluence, SharePoint, ticketing systems, PDFs, assess quality and structure, and define which sources are in scope. We also map the access control model so retrieval permissions mirror your existing entitlements.',
     },
     {
       step: '02',
       title: 'Ingestion and Chunking Pipeline',
       duration: 'Weeks 2 to 5',
-      description: 'We build pipelines that parse each format reliably, clean and chunk the content so passages stay coherent, and capture metadata for filtering and access control. Scheduled and event-driven refresh keeps the index current as source documents change.',
+      description: 'We build pipelines that parse each format reliably, clean and chunk the content so passages stay coherent, and capture metadata for filtering and access control. Scheduled and event driven refresh keeps the index current as source documents change.',
     },
     {
       step: '03',
       title: 'Embeddings, Vector Store and Retrieval',
       duration: 'Weeks 4 to 7',
-      description: 'We generate vector embeddings, load them into the vector store best suited to your scale and residency needs, pgvector, Pinecone, Weaviate or Qdrant, and implement retrieval, often combining vector and keyword search with a re-ranking step to surface the most relevant passages.',
+      description: 'We generate vector embeddings, load them into the vector store best suited to your scale and residency needs, pgvector, Pinecone, Weaviate or Qdrant, and implement retrieval, often combining vector and keyword search with a reranking step to surface the most relevant passages.',
     },
     {
       step: '04',
@@ -83,7 +83,7 @@ const data = {
       step: '05',
       title: 'Evaluation and Retrieval Tuning',
       duration: 'Weeks 7 to 9',
-      description: 'We assemble a test set of representative questions with expected sources and answers, then measure retrieval and answer quality and tune chunking, embeddings, hybrid search and re-ranking against the evidence. This evaluation set becomes the gate for future changes.',
+      description: 'We assemble a test set of representative questions with expected sources and answers, then measure retrieval and answer quality and tune chunking, embeddings, hybrid search and reranking against the evidence. This evaluation set becomes the gate for future changes.',
     },
     {
       step: '06',
@@ -113,11 +113,11 @@ const data = {
     },
     {
       question: 'How do you keep the knowledge base up to date?',
-      answer: 'The ingestion pipeline is designed for ongoing freshness, not a one-off load. We use scheduled re-indexing and, where your source systems support it, event-driven updates so that when a document changes the index reflects it within a defined window. Documents that are deleted or superseded are removed so the system does not answer from stale material. Freshness is one of the metrics we monitor in production because an out-of-date knowledge base quickly loses user trust.',
+      answer: 'The ingestion pipeline is designed for ongoing freshness, not a one off load. We use scheduled reindexing and, where your source systems support it, event driven updates so that when a document changes the index reflects it within a defined window. Documents that are deleted or superseded are removed so the system does not answer from stale material. Freshness is one of the metrics we monitor in production because an out of date knowledge base quickly loses user trust.',
     },
     {
       question: 'Can the system respect our existing document permissions?',
-      answer: 'Yes. Access control is enforced at retrieval time using metadata captured during ingestion, so the system is designed to return passages only from documents a given user is permitted to see, and we test that before launch. This means a customer-facing assistant cannot reach internal material, and confidential documents remain scoped to authorised staff. We map this to your existing entitlement model during the knowledge audit so permissions stay consistent with the rest of your environment.',
+      answer: 'Yes. Access control is enforced at retrieval time using metadata captured during ingestion, so the system is designed to return passages only from documents a given user is permitted to see, and we test that before launch. This means a customer facing assistant cannot reach internal material, and confidential documents remain scoped to authorised staff. We map this to your existing entitlement model during the knowledge audit so permissions stay consistent with the rest of your environment.',
     },
     {
       question: 'Where is our data stored, and can it stay in Australia?',
@@ -129,23 +129,23 @@ const data = {
     },
     {
       question: 'What is the difference between RAG and a knowledge base?',
-      answer: 'A knowledge base is the content itself: your policies, manuals, articles and records. RAG (retrieval-augmented generation) is the technique that lets a language model search that content and answer from it. A traditional knowledge base relies on people finding and reading the right article; a RAG knowledge base lets them ask a question in plain English and get a direct answer with citations back to the source.',
+      answer: 'A knowledge base is the content itself: your policies, manuals, articles and records. RAG (retrieval augmented generation) is the technique that lets a language model search that content and answer from it. A traditional knowledge base relies on people finding and reading the right article; a RAG knowledge base lets them ask a question in plain English and get a direct answer with citations back to the source.',
     },
     {
       question: 'How much does RAG development cost?',
       answer: 'It depends mainly on the number and formats of your sources, whether retrieval must respect document permissions, the systems it has to integrate with, and how rigorously answers need to be evaluated. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Running costs (model usage, vector store and hosting) are modelled before build. Our guide to RAG knowledge base cost sets out typical Australian market ranges and what drives them.',
     },
     {
-      question: 'Do we need RAG or fine-tuning?',
-      answer: 'For most business knowledge, RAG. It keeps answers tied to documents you can update at any time and cite, whereas fine-tuning changes how a model writes or behaves and does not reliably teach it facts. Fine-tuning can make sense alongside RAG for a specialised tone, format or classification task, and we will say so if your use case needs it.',
+      question: 'Do we need RAG or fine tuning?',
+      answer: 'For most business knowledge, RAG. It keeps answers tied to documents you can update at any time and cite, whereas fine tuning changes how a model writes or behaves and does not reliably teach it facts. Fine tuning can make sense alongside RAG for a specialised tone, format or classification task, and we will say so if your use case needs it.',
     },
   ],
   comparison: {
     rightFor: [
       'Your answers depend on a body of your own documents, policies, manuals, contracts, product or support content',
       'Users need accurate, verifiable answers with citations back to the source material',
-      'Your knowledge changes over time and a static FAQ or hard-coded responses cannot keep up',
-      'You have access-control requirements that mean different users should see different content',
+      'Your knowledge changes over time and a static FAQ or hard coded responses cannot keep up',
+      'You have access control requirements that mean different users should see different content',
       'Your contracts, sector rules or internal policy require content to stay within Australia',
     ],
     notRightFor: [
@@ -153,12 +153,12 @@ const data = {
       'The questions need reasoning over live transactional data rather than documents, that is an analytics or API problem',
       'Your source content is inaccurate or contradictory; RAG faithfully reflects what it retrieves, so it cannot fix bad source material',
       'You only need a conversational interface and have no document corpus to ground it in, an AI chatbot without RAG may suffice',
-      'The underlying need is real-time numeric reporting, which is better served by data analytics than retrieval',
+      'The underlying need is real time numeric reporting, which is better served by data analytics than retrieval',
     ],
   },
   definitions: [
     {
-      term: 'Retrieval-Augmented Generation (RAG)',
+      term: 'Retrieval Augmented Generation (RAG)',
       definition: 'A technique that retrieves relevant passages from your own documents and supplies them to a language model at query time, so answers are grounded in your content and can be cited, rather than generated from the model\'s general training alone.',
     },
     {
@@ -171,11 +171,11 @@ const data = {
     },
     {
       term: 'Chunking',
-      definition: 'The process of splitting documents into passages of a workable size before they are embedded. Good chunking keeps each passage coherent and self-contained, which directly improves whether retrieval returns useful, meaningful context.',
+      definition: 'The process of splitting documents into passages of a workable size before they are embedded. Good chunking keeps each passage coherent and self contained, which directly improves whether retrieval returns useful, meaningful context.',
     },
     {
-      term: 'Re-ranking',
-      definition: 'A second pass that re-orders the passages returned by initial retrieval, using a model that scores relevance more precisely. It pushes the genuinely best passages to the top before they are handed to the language model, improving answer quality.',
+      term: 'Reranking',
+      definition: 'A second pass that reorders the passages returned by initial retrieval, using a model that scores relevance more precisely. It pushes the genuinely best passages to the top before they are handed to the language model, improving answer quality.',
     },
     {
       term: 'Hallucination',

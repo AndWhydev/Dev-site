@@ -3,15 +3,15 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'AI Agent Development Company Australia | AWLabs',
-  metaDescription: "AI agent development company in Sydney. We build AI agents for business that plan, use your tools and finish multi-step work, with approval gates and traces.",
+  metaDescription: "AI agent development company in Sydney. We build AI agents for business that plan, use your tools and finish multistep work, with approval gates and traces.",
   category: 'AI & Data',
   serviceName: 'AI Agent Development',
   slug: 'ai-agent-development',
   heroHeadline: 'AI Agents That Finish the Job, Inside Limits You Set',
-  heroTagline: "AI agent development for Australian businesses: goal-driven software that plans, calls your systems, checks its own work and stops for a human at the points that matter. Designed, built and operated by a senior Australian team.",
+  heroTagline: "AI agent development for Australian businesses: goal driven software that plans, calls your systems, checks its own work and stops for a human at the points that matter. Designed, built and operated by a senior Australian team.",
   summaryStatement: "AI agent development is the engineering of software in which a language model works towards a goal over several steps, choosing which tools to call, reading the results and deciding what to do next, within explicit limits on permissions, cost, time and the decisions it may take without a human.",
   description: [
-    "A chatbot answers a question. An automation follows a fixed path. An AI agent (sometimes called an autonomous agent) is given an objective, such as reconciling a supplier statement, triaging an inbound request or preparing a tender response, and works out the steps itself: it looks things up, calls APIs, drafts, checks the result against the goal and tries again when something fails. That flexibility is what makes agents useful for messy, variable work that rules-based automation cannot handle, and it is also what makes them risky. A model that can choose its own next action can choose a wrong one, loop, spend money or act on instructions hidden in a document it was asked to read. Most of the engineering in a production agent goes into bounding that freedom, not into the prompt.",
+    "A chatbot answers a question. An automation follows a fixed path. An AI agent (sometimes called an autonomous agent) is given an objective, such as reconciling a supplier statement, triaging an inbound request or preparing a tender response, and works out the steps itself: it looks things up, calls APIs, drafts, checks the result against the goal and tries again when something fails. That flexibility is what makes agents useful for messy, variable work that rules based automation cannot handle, and it is also what makes them risky. A model that can choose its own next action can choose a wrong one, loop, spend money or act on instructions hidden in a document it was asked to read. Most of the engineering in a production agent goes into bounding that freedom, not into the prompt.",
     "Our AI agent development services treat agents as ordinary, testable software with a model in the decision seat. Each tool the agent can use is a typed function with its own permission scope, rate limit and audit record. Read actions and write actions are separated, and anything irreversible or high value (a payment, a customer email, a change to a record of truth) passes through an approval step by default. Runs have step, time and spend budgets, execution is durable so a long task survives a restart, and every run produces a full trace of what the agent saw, decided and did. We evaluate trajectories, not only final answers, so we can tell whether an agent got the right result for the right reasons. We also run agents ourselves: our internal delivery pipeline, Overseer, runs multiple AI coding agents in parallel, and every change they produce goes through quality gates (type checks, visual tests, security scans) and a senior engineer's review before it is deployed. That daily experience of where agents drift, stall and overreach shapes how we design the guardrails in yours.",
   ],
   benefits: [
@@ -22,7 +22,7 @@ const data = {
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>',
-      title: 'Least-Privilege Tools',
+      title: 'Least Privilege Tools',
       description: "Every tool runs with its own credentials and the narrowest scope that works. The agent never holds a master key. Write actions are separated from reads, parameters are validated before execution, and content the agent reads from emails or documents is treated as data, never as instructions.",
     },
     {
@@ -48,7 +48,7 @@ const data = {
   ],
   useCases: [],
   technologies: [
-    'Anthropic Claude', 'OpenAI models', 'Open-weight models', 'Claude Agent SDK',
+    'Anthropic Claude', 'OpenAI models', 'Open weight models', 'Claude Agent SDK',
     'OpenAI Agents SDK', 'LangGraph', 'Model Context Protocol', 'Temporal',
     'Amazon Bedrock', 'Microsoft Foundry (formerly Azure AI Foundry)', 'TypeScript', 'Python',
     'PostgreSQL', 'OpenTelemetry', 'Langfuse', 'Docker',
@@ -64,13 +64,13 @@ const data = {
       step: '02',
       title: 'Tool Layer and Permissions',
       duration: 'Weeks 2 to 4',
-      description: "We build the tools the agent will call as typed, validated functions over your APIs and data, each with scoped credentials, rate limits and audit logging. Where tools will be reused by other AI clients, we expose them through an MCP server rather than hard-wiring them into one agent.",
+      description: "We build the tools the agent will call as typed, validated functions over your APIs and data, each with scoped credentials, rate limits and audit logging. Where tools will be reused by other AI clients, we expose them through an MCP server rather than hard wiring them into one agent.",
     },
     {
       step: '03',
       title: 'Agent Loop, Budgets and Approvals',
       duration: 'Weeks 3 to 6',
-      description: "We implement the planning and execution loop, the step, time and spend budgets, checkpointing for long runs, and the approval interface your staff will use. Where a task splits naturally, we use a coordinating agent with specialised sub-agents, but only when that beats a single agent on the evaluation suite.",
+      description: "We implement the planning and execution loop, the step, time and spend budgets, checkpointing for long runs, and the approval interface your staff will use. Where a task splits naturally, we use a coordinating agent with specialised subagents, but only when that beats a single agent on the evaluation suite.",
     },
     {
       step: '04',
@@ -108,15 +108,15 @@ const data = {
     },
     {
       question: "How do you stop an agent from doing something harmful or expensive?",
-      answer: "By design rather than by prompt. The agent can only call tools we have built for it, each with scoped credentials, validated parameters and rate limits. Irreversible or high-value actions require human approval by default. Every run has step, time and spend ceilings. Content the agent reads is treated as untrusted data, which limits prompt injection. And every action is traced, so anything unexpected can be investigated and the rules tightened.",
+      answer: "By design rather than by prompt. The agent can only call tools we have built for it, each with scoped credentials, validated parameters and rate limits. Irreversible or high value actions require human approval by default. Every run has step, time and spend ceilings. Content the agent reads is treated as untrusted data, which limits prompt injection. And every action is traced, so anything unexpected can be investigated and the rules tightened.",
     },
     {
-      question: "Do we need a multi-agent system?",
+      question: "Do we need a multiagent system?",
       answer: "Usually not at first. A single agent with a well designed set of tools handles most business tasks and is easier to test and debug. Multiple agents help when a job splits into parts that need different tools, context or permissions, for example a researcher that can only read and a writer that can only draft. We add agents when the evaluation suite shows a measurable gain, not because the architecture looks impressive.",
     },
     {
       question: "Which model do you use, and can it run in Australia?",
-      answer: "We choose per task after testing candidates on your scenarios. Hosted models from Anthropic and OpenAI are common choices for agent work because tool use and multi-step reasoning are their strengths, and open-weight models can suit narrower tasks or strict sovereignty needs. Model availability in Australian cloud regions changes often, so we confirm the current position at the time of the engagement and document where every call is processed.",
+      answer: "We choose per task after testing candidates on your scenarios. Hosted models from Anthropic and OpenAI are common choices for agent work because tool use and multistep reasoning are their strengths, and open weight models can suit narrower tasks or strict sovereignty needs. Model availability in Australian cloud regions changes often, so we confirm the current position at the time of the engagement and document where every call is processed.",
     },
     {
       question: "What does Overseer have to do with building our agent?",
@@ -128,7 +128,7 @@ const data = {
     },
     {
       question: "What does an agent cost to run?",
-      answer: "Running cost is mostly model usage, which scales with the number of steps per run and the amount of context each step reads, plus hosting and any third-party APIs. Agent runs usually cost more per task than a single model call because they involve several calls. We measure cost per completed run during the shadow period and set per-run spend limits, so you know the unit cost before you widen autonomy.",
+      answer: "Running cost is mostly model usage, which scales with the number of steps per run and the amount of context each step reads, plus hosting and any third party APIs. Agent runs usually cost more per task than a single model call because they involve several calls. We measure cost per completed run during the shadow period and set per run spend limits, so you know the unit cost before you widen autonomy.",
     },
     {
       question: "How much does AI agent development cost in Australia?",
@@ -136,31 +136,31 @@ const data = {
     },
     {
       question: "What can AI agents do for a business?",
-      answer: "AI agents for business are best at variable, multi-step work that currently needs a person to read, look things up and decide, such as reconciling supplier statements, triaging inbound requests or preparing a first draft of a tender response. They are a poor fit where every step is already fixed or where there is no clear definition of done. The useful question is which of your recurring tasks has enough volume and a checkable end state to justify an agent.",
+      answer: "AI agents for business are best at variable, multistep work that currently needs a person to read, look things up and decide, such as reconciling supplier statements, triaging inbound requests or preparing a first draft of a tender response. They are a poor fit where every step is already fixed or where there is no clear definition of done. The useful question is which of your recurring tasks has enough volume and a checkable end state to justify an agent.",
     },
     {
       question: "Which frameworks and tools do you use to build AI agents?",
-      answer: "We choose per project, most often the Claude Agent SDK, the OpenAI Agents SDK or LangGraph for the agent loop, the Model Context Protocol for reusable tools, Temporal for durable execution, and OpenTelemetry or Langfuse for tracing. The framework matters less than the tool design, permissions and evaluation suite around it, so we keep business logic out of framework-specific code where we can, which makes it easier to move later.",
+      answer: "We choose per project, most often the Claude Agent SDK, the OpenAI Agents SDK or LangGraph for the agent loop, the Model Context Protocol for reusable tools, Temporal for durable execution, and OpenTelemetry or Langfuse for tracing. The framework matters less than the tool design, permissions and evaluation suite around it, so we keep business logic out of framework specific code where we can, which makes it easier to move later.",
     },
     {
       question: "Is an AI agent the same as RPA?",
-      answer: "No. Robotic process automation (RPA) replays a scripted sequence of clicks and keystrokes through existing screens, so it breaks when a screen or input changes and cannot handle cases outside the script. An AI agent decides its next step from what it reads, and in our builds it acts through APIs and typed tools rather than a user interface. RPA can still be the better choice for a stable, high-volume process on a system with no API.",
+      answer: "No. Robotic process automation (RPA) replays a scripted sequence of clicks and keystrokes through existing screens, so it breaks when a screen or input changes and cannot handle cases outside the script. An AI agent decides its next step from what it reads, and in our builds it acts through APIs and typed tools rather than a user interface. RPA can still be the better choice for a stable, high volume process on a system with no API.",
     },
   ],
   comparison: {
     rightFor: [
-      "The work is multi-step and variable, so the right next action depends on what the previous step found",
+      "The work is multistep and variable, so the right next action depends on what the previous step found",
       "The task already happens at volume and has a clear, checkable definition of done",
       "The systems involved have APIs, or can be given them, so the agent acts through controlled tools",
       "You are willing to start with human approval on important actions and widen autonomy on evidence",
-      "You want source code, traces and evaluation suites you own, not a black-box agent subscription",
+      "You want source code, traces and evaluation suites you own, not a black box agent subscription",
     ],
     notRightFor: [
       "The steps are fixed and known in advance; a deterministic workflow is cheaper and more reliable",
-      "You need a question-answering assistant over documents; a RAG knowledge base or chatbot fits better",
+      "You need a question answering assistant over documents; a RAG knowledge base or chatbot fits better",
       "The decision is high stakes and no one is available to review what the agent proposes",
       "Success cannot be defined or checked, so there is no way to evaluate whether the agent is right",
-      "An off-the-shelf agent in a tool you already license covers the need well enough",
+      "An off the shelf agent in a tool you already license covers the need well enough",
     ],
   },
   definitions: [

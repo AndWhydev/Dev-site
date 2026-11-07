@@ -5,7 +5,7 @@ description: "The Privacy Act automated decision-making rules start 10 December 
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "From 10 December 2026, the Privacy Act's automated decision-making rules, Australian Privacy Principles 1.7 to 1.9, require an APP entity's privacy policy to describe the kinds of personal information used, and the kinds of decisions made, when a computer program makes or substantially and directly contributes to a decision that could reasonably be expected to significantly affect someone's rights or interests. The law is a transparency duty, not a ban on automation. For software teams, the practical work is finding every such decision in your systems, recording how each one works, and keeping that record accurate as the code changes."
 takeaways:
   - "The obligation was added by Schedule 1, Part 15 of the Privacy and Other Legislation Amendment Act 2024 and commences on 10 December 2026, 24 months after Royal Assent."
@@ -26,13 +26,16 @@ faqs:
   - q: "What happens if our privacy policy doesn't cover our automated decisions?"
     a: "APP 1.7 is listed in section 13K of the Privacy Act, a civil penalty provision with a maximum of 200 penalty units per contravention (up to five times that for a body corporate under the Regulatory Powers Act), and the OAIC can issue infringement notices or compliance notices for it. More serious interferences with privacy can also be pursued under sections 13G and 13H."
   - q: "Has the OAIC published final guidance?"
-    a: "At the time of writing (September 2026), the OAIC has updated its APP 1 guidelines to cover the new subclauses and ran a consultation on detailed ADM guidance that closed on 15 June 2026. Its issues paper said it intended to release that guidance by September 2026, before commencement. Check the OAIC site for the final version."
+    a: "Yes. On 30 September 2026, after a consultation that closed on 15 June 2026, the OAIC published version 2.0 of its APP 1 guidelines covering APP 1.7 to 1.9, together with a transparency obligation fact sheet, a decision flowchart and a supplementary fact sheet for government agencies. Check the OAIC site for any later updates."
 sources:
   - title: "Privacy and Other Legislation Amendment Act 2024 (No. 128, 2024), as made"
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
     publisher: "Federal Register of Legislation"
   - title: "Chapter 1: APP 1 Open and transparent management of personal information"
     url: "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-1-app-1-open-and-transparent-management-of-personal-information"
+    publisher: "Office of the Australian Information Commissioner"
+  - title: "APP 1.7 to 1.9 Transparency Obligation: Fact Sheet, September 2026"
+    url: "https://www.oaic.gov.au/__data/assets/pdf_file/0021/269013/APP-1.7-1.9-Transparency-Obligation-Fact-Sheet.PDF"
     publisher: "Office of the Australian Information Commissioner"
   - title: "Consultation on Guidance for Transparency in Automated Decision Making"
     url: "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
@@ -96,6 +99,7 @@ APP 1.9 widens the net. Refusing or failing to decide counts as deciding. A deci
 | 3 October 2025 | OAIC updates its APP 1 guidelines to cover APP 1.7 to 1.9 | OAIC |
 | 18 May 2026 | OAIC publishes its ADM transparency issues paper | OAIC |
 | 15 June 2026 | Consultation on the OAIC's ADM guidance closes | OAIC |
+| 30 September 2026 | OAIC publishes final ADM guidance: APP 1 guidelines version 2.0, a fact sheet, a flowchart and a supplementary fact sheet for government agencies | OAIC |
 | 10 December 2026 | APP 1.7 to 1.9 commence and apply to decisions made from this date | Act, section 2 and Schedule 1 item 89 |
 
 The application clause matters for existing systems. Item 89 says the rule applies to decisions made after commencement, whether the program was arranged, and the data acquired, before or after that date. A credit rules engine written in 2019 is in scope on 10 December 2026 if it is still making decisions.

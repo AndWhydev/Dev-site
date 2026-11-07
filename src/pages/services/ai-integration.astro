@@ -8,11 +8,11 @@ const data = {
   serviceName: "AI Integration",
   slug: "ai-integration",
   heroHeadline: "Add AI to the Software You Already Run, Without Rebuilding It",
-  heroTagline: "AI integration for the product or internal system you already have: search, summarisation, extraction and in-app assistants, rolled out behind feature flags and measured before everyone gets them.",
-  summaryStatement: "AI integration is the work of adding language model features, such as semantic search, summarisation, data extraction and in-app assistants, to an application that already exists, fitted to its codebase, data model, permissions and users, and released gradually so quality and running cost are measured before the feature reaches everyone.",
+  heroTagline: "AI integration for the product or internal system you already have: search, summarisation, extraction and in app assistants, rolled out behind feature flags and measured before everyone gets them.",
+  summaryStatement: "AI integration is the work of adding language model features, such as semantic search, summarisation, data extraction and in app assistants, to an application that already exists, fitted to its codebase, data model, permissions and users, and released gradually so quality and running cost are measured before the feature reaches everyone.",
   description: [
-    "Most organisations asking about AI do not need a new AI product. They have a product, a portal or an internal system that people already use every day, and they want it to do something it cannot do today: find the right record when someone describes it in plain words, summarise a long case history before a call, pull the fields out of an uploaded invoice, or answer a how-do-I question inside the screen where the question comes up. The value is in putting that capability where the work already happens, inside the existing app, using the data and permissions the app already has. That is a different job from building a chatbot from scratch, and it is usually faster and cheaper, because the hard parts (users, authentication, data, hosting) are already in place.",
-    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per-use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So when we integrate AI into existing software, we treat each feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
+    "Most organisations asking about AI do not need a new AI product. They have a product, a portal or an internal system that people already use every day, and they want it to do something it cannot do today: find the right record when someone describes it in plain words, summarise a long case history before a call, pull the fields out of an uploaded invoice, or answer a quick question about how to do something inside the screen where the question comes up. The value is in putting that capability where the work already happens, inside the existing app, using the data and permissions the app already has. That is a different job from building a chatbot from scratch, and it is usually faster and cheaper, because the hard parts (users, authentication, data, hosting) are already in place.",
+    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So when we integrate AI into existing software, we treat each feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
   ],
   benefits: [
     {
@@ -28,12 +28,12 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
       title: "Running Cost Designed In",
-      description: "Per-request cost is tracked from the first test, not discovered on the first invoice. Model routing sends simple requests to cheaper models, prompt and response caching cut repeat calls, and budgets cap usage per user and per tenant, so cost grows in line with value rather than ahead of it.",
+      description: "Per request cost is tracked from the first test, not discovered on the first invoice. Model routing sends simple requests to cheaper models, prompt and response caching cut repeat calls, and budgets cap usage per user and per tenant, so cost grows in line with value rather than ahead of it.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
       title: "Your Permissions, Respected",
-      description: "The AI feature sees only what the signed-in user could already see in your app. We reuse your existing authorisation checks and tenant boundaries rather than giving the model a privileged back door into the database, so a summary or search result never leaks another customer's records.",
+      description: "The AI feature sees only what the signed in user could already see in your app. We reuse your existing authorisation checks and tenant boundaries rather than giving the model a privileged back door into the database, so a summary or search result never leaks another customer's records.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
@@ -43,13 +43,13 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
       title: "Graceful When the Model Fails",
-      description: "Timeouts, provider outages and low-confidence answers all have a defined fallback: the classic keyword search, the original form, or a clear message. The core workflow of your app never depends on a model responding, so an AI outage degrades one feature instead of taking the product down.",
+      description: "Timeouts, provider outages and low confidence answers all have a defined fallback: the classic keyword search, the original form, or a clear message. The core workflow of your app never depends on a model responding, so an AI outage degrades one feature instead of taking the product down.",
     },
   ],
   useCases: [],
   technologies: [
-    "Anthropic Claude", "OpenAI models", "Open-weight models", "Amazon Bedrock", "Azure OpenAI",
-    "Google Vertex AI", "PostgreSQL + pgvector", "TypeScript / Node.js", "Python",
+    "Anthropic Claude", "OpenAI models", "Open weight models", "Amazon Bedrock", "Azure OpenAI",
+    "Gemini Enterprise Agent Platform (formerly Vertex AI)", "PostgreSQL + pgvector", "TypeScript / Node.js", "Python",
     "Vercel AI SDK", "LaunchDarkly / Unleash / Flags SDK", "OpenTelemetry", "Redis", "Langfuse",
   ],
   process: [
@@ -57,7 +57,7 @@ const data = {
       step: "01",
       title: "Feature Selection and Codebase Review",
       duration: "Week 1",
-      description: "We work with you to pick the one or two AI features with the clearest value, then read the codebase, data model and authorisation logic to find where they should plug in. The output is a short integration plan, a rough per-request cost estimate and a list of risks, before any build starts.",
+      description: "We work with you to pick the one or two AI features with the clearest value, then read the codebase, data model and authorisation logic to find where they should plug in. The output is a short integration plan, a rough per request cost estimate and a list of risks, before any build starts.",
     },
     {
       step: "02",
@@ -69,7 +69,7 @@ const data = {
       step: "03",
       title: "Integration Behind a Flag",
       duration: "Weeks 3 to 6",
-      description: "We build the AI service, wire it into your app behind a feature flag, reuse your existing permission checks, and add fallbacks, timeouts, caching and per-tenant budgets. Every change goes through review and CI with tests alongside it, and you can see and test the work as we build. The code is assigned to you as each stage is paid for in full.",
+      description: "We build the AI service, wire it into your app behind a feature flag, reuse your existing permission checks, and add fallbacks, timeouts, caching and per tenant budgets. Every change goes through review and CI with tests alongside it, and you can see and test the work as we build. The code is assigned to you as each stage is paid for in full.",
     },
     {
       step: "04",
@@ -81,7 +81,7 @@ const data = {
       step: "05",
       title: "General Release and Cost Tuning",
       duration: "Weeks 8 to 9",
-      description: "Once the feature is on for everyone, we tune model routing and caching against real usage patterns, set spend alerts, and confirm the per-user cost matches the business case. Anything that is not earning its cost is simplified or switched off.",
+      description: "Once the feature is on for everyone, we tune model routing and caching against real usage patterns, set spend alerts, and confirm the per user cost matches the business case. Anything that is not earning its cost is simplified or switched off.",
     },
     {
       step: "06",
@@ -103,7 +103,7 @@ const data = {
   faqs: [
     {
       question: "Which AI features are worth adding to an existing app first?",
-      answer: "The best first features remove a task users already do by hand inside your app. Common starting points are semantic search that finds records from a plain-language description, summaries of long histories such as tickets, cases or notes, extraction of fields from uploaded documents into forms, and a help assistant that answers questions about the screen the user is on. We usually recommend starting with one feature where the output is easy to check, measuring it properly, and adding the next one once the first has paid for itself.",
+      answer: "The best first features remove a task users already do by hand inside your app. Common starting points are semantic search that finds records from a plain language description, summaries of long histories such as tickets, cases or notes, extraction of fields from uploaded documents into forms, and a help assistant that answers questions about the screen the user is on. We usually recommend starting with one feature where the output is easy to check, measuring it properly, and adding the next one once the first has paid for itself.",
     },
     {
       question: "Do we need to rebuild our application to add AI?",
@@ -123,7 +123,7 @@ const data = {
     },
     {
       question: "Can the AI feature keep our data in Australia?",
-      answer: "Often, yes. The major cloud AI platforms offer some models in Australian regions, but which models are available where changes frequently, so we check the vendor's current regional availability for your chosen model at the start of the project. Where a required model is not available onshore, we explain the trade-off and the options, including open-weight models hosted in your own Australian cloud account.",
+      answer: "Often, yes. The major cloud AI platforms offer some models in Australian regions, but which models are available where changes frequently, so we check the vendor's current regional availability for your chosen model at the start of the project. Where a required model is not available onshore, we explain the tradeoff and the options, including open weight models hosted in your own Australian cloud account.",
     },
     {
       question: "Will the AI feature affect automated decisions under the Privacy Act?",
@@ -131,7 +131,7 @@ const data = {
     },
     {
       question: "Can you integrate OpenAI or Claude models into our existing app?",
-      answer: "Yes. We integrate models from OpenAI and Anthropic directly or through Amazon Bedrock, Azure OpenAI and Google Vertex AI, and open-weight models where data must stay in your own cloud account. The model sits behind a small AI service your app calls, so switching provider or model later is a configuration change tested against your evaluation set, not a rewrite.",
+      answer: "Yes. We integrate models from OpenAI and Anthropic directly or through Amazon Bedrock, Azure OpenAI and Google's Gemini Enterprise Agent Platform, and open weight models where data must stay in your own cloud account. The model sits behind a small AI service your app calls, so switching provider or model later is a configuration change tested against your evaluation set, not a rewrite.",
     },
     {
       question: "Can you add AI to an app that is not written in Python or JavaScript?",
@@ -139,7 +139,7 @@ const data = {
     },
     {
       question: "How long does it take to add an AI feature to an existing app?",
-      answer: "A single well-scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy-to-check output can be quicker; in-app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.",
+      answer: "A single well scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy to check output can be quicker; in app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit: $750 plus GST, credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.",
     },
   ],
   comparison: {
@@ -151,11 +151,11 @@ const data = {
       "Your team wants to own and maintain the feature afterwards, with evaluations and runbooks to do so safely",
     ],
     notRightFor: [
-      "An off-the-shelf tool already covers the need, such as the AI features built into your existing SaaS platforms or Microsoft 365 Copilot, which will be cheaper than custom work",
+      "An off the shelf tool already covers the need, such as the AI features built into your existing SaaS platforms or Microsoft 365 Copilot, which will be cheaper than custom work",
       "The application itself is due for replacement, in which case modernise first and design AI into the new system",
       "You need a standalone assistant over a large document library with no existing app to host it, where a RAG knowledge base is the better fit",
       "The underlying data is too incomplete or inconsistent for the feature to be reliable, which is a data engineering problem to fix first",
-      "The task needs the same exact, rule-based answer every time, where ordinary rules and code will be cheaper and more predictable than a model",
+      "The task needs the same exact, rule based answer every time, where ordinary rules and code will be cheaper and more predictable than a model",
     ],
   },
   definitions: [

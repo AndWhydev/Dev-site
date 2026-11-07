@@ -4,9 +4,9 @@ Guidance for AI agents working in this repository.
 
 ## Project
 
-Marketing website for **All Webbed Labs** (`awlabs.com.au`) — an Australian enterprise software development consultancy. Static, content-heavy site covering services, industries, case studies, and a blog. Parent org: All Webbed Up (`allwebbedup.com.au`).
+Marketing website for **AWLabs** (`awlabs.com.au`; legal entity AW Labs Pty Ltd), an Australian enterprise software development consultancy. Static, content-heavy site covering services, industries, case studies and guides. AWLabs is a separate company from All Webbed Up (`allwebbedup.com.au`).
 
-Package name in `package.json` is `all-webbed-labs` (the "AWL" in the directory name).
+Package name in `package.json` is `all-webbed-labs` (a legacy name; the brand is always "AWLabs").
 
 ## Tech stack
 
@@ -15,7 +15,7 @@ Package name in `package.json` is `all-webbed-labs` (the "AWL" in the directory 
 - **TypeScript** — `astro/tsconfigs/strict`
 - **Node ≥ 22.12.0** (enforced in `package.json` engines)
 - **`@astrojs/sitemap`** — generates sitemap at build
-- **PHP contact form** — `public/contact.php` handles form POSTs (runs on the production host, not part of the Astro build)
+- **Contact form** — posts client side to Web3Forms (Vercel does not run PHP)
 
 No React/Vue/Svelte. No backend framework. No DB.
 
@@ -31,18 +31,16 @@ npm run preview  # serve the built site
 
 ```
 src/
-  components/   # ~24 .astro components (Hero, Header, Footer, ServicesGrid, ROICalculator, etc.) — composed into pages
-  layouts/      # Layout.astro (root), plus ServicePageLayout, IndustryPageLayout, CaseStudyLayout
+  components/   # ~24 .astro components (Hero, Header, Footer, ServicesGrid, etc.) — composed into pages
+  layouts/      # Layout.astro (root), plus ServicePageLayout, IndustryPageLayout
   pages/        # File-based routing
     index.astro
-    blog/             # 3 posts + index
     case-studies/     # ~15 case studies + index
     industries/       # vertical-specific pages
     services/         # service-specific pages
     demos/
   styles/global.css   # Tailwind v4 theme + base styles + reveal animation utilities
 public/
-  contact.php         # PHP form handler (deployed as-is, not processed by Astro)
   videos/, favicons, robots.txt
 ```
 

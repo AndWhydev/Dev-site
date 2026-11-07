@@ -9,16 +9,16 @@ const data = {
   slug: "backend-development",
   heroHeadline: "Backends That Keep Working When Traffic, Data and Integrations Grow",
   heroTagline: "Backend development in Node.js and Python: services, background jobs, queues and integrations built by senior engineers, with the unglamorous parts done properly: retries, idempotency, observability and upgrades.",
-  summaryStatement: "Backend development is the engineering of the server-side part of an application: the business logic, APIs, background jobs, queues, data access and third-party integrations that run out of sight of users; Node.js and Python are the two most common runtimes for it, Node.js favoured for high-concurrency web services in TypeScript and Python for data-heavy, machine learning and AI workloads.",
+  summaryStatement: "Backend development is the engineering of the server side part of an application: the business logic, APIs, background jobs, queues, data access and third party integrations that run out of sight of users; Node.js and Python are the two most common runtimes for it, Node.js favoured for high concurrency web services in TypeScript and Python for data heavy, machine learning and AI workloads.",
   description: [
     "Users see the screens, but the backend decides whether an application is trustworthy. It is where orders are priced, permissions are checked, payments are reconciled, emails are sent, files are processed and data from other systems is pulled in and pushed out. Most backend failures are not dramatic. A payment webhook is processed twice and a customer is charged twice. A nightly import silently skips rows. A report that took two seconds with a thousand customers takes two minutes with fifty thousand. An integration partner changes a field and nothing alerts anyone for a week. Good backend engineering is mostly about designing for these cases before they happen, and it is the part of a system where senior experience pays for itself most clearly.",
-    "Our backend developers work in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real-time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long-running and failure-prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead-letter queues so a partner outage does not lose data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long-term releases, and deliver the code with tests, documentation and runbooks so your team can run it. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment.",
+    "Our backend developers work in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long running and failure prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead letter queues so a partner outage does not lose data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long term releases, and deliver the code with tests, documentation and runbooks so your team can run it. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment.",
   ],
   benefits: [
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
       title: "The Right Runtime for the Job",
-      description: "Node.js with TypeScript for high-concurrency APIs and real-time services, Python for data processing, machine learning and AI pipelines, or both side by side where that fits. We explain the trade-off in terms of your workload, hiring market and existing skills.",
+      description: "Node.js with TypeScript for high concurrency APIs and real time services, Python for data processing, machine learning and AI pipelines, or both side by side where that fits. We explain the tradeoff in terms of your workload, hiring market and existing skills.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="5" rx="1"/><rect x="2" y="10" width="20" height="5" rx="1"/><rect x="2" y="17" width="20" height="5" rx="1"/></svg>',
@@ -28,12 +28,12 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>',
       title: "Safe to Retry, by Design",
-      description: "Webhook handlers, payment flows and jobs are built to be idempotent, so processing the same event twice has the same effect as processing it once. That single discipline prevents double charges, duplicate records and the manual clean-up that follows.",
+      description: "Webhook handlers, payment flows and jobs are built to be idempotent, so processing the same event twice has the same effect as processing it once. That single discipline prevents double charges, duplicate records and the manual cleanup that follows.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
       title: "Integrations That Fail Gracefully",
-      description: "Every third-party call has a timeout, retries with backoff, and a dead-letter queue for messages that still fail. Partner outages and unexpected payload changes raise an alert and wait for a fix, rather than corrupting data or losing it silently.",
+      description: "Every third party call has a timeout, retries with backoff, and a dead letter queue for messages that still fail. Partner outages and unexpected payload changes raise an alert and wait for a fix, rather than corrupting data or losing it silently.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
@@ -63,7 +63,7 @@ const data = {
       step: "02",
       title: "Architecture and Runtime Decisions",
       duration: "Week 2",
-      description: "We choose the runtime, framework, data store, queue and hosting model, and decide which work is synchronous and which moves to background jobs. Decisions are written up with trade-offs. We default to a well-structured modular service and split into more services only when there is a clear reason.",
+      description: "We choose the runtime, framework, data store, queue and hosting model, and decide which work is synchronous and which moves to background jobs. Decisions are written up with tradeoffs. We default to a well structured modular service and split into more services only when there is a clear reason.",
     },
     {
       step: "03",
@@ -75,7 +75,7 @@ const data = {
       step: "04",
       title: "Jobs, Queues and Integrations",
       duration: "Weeks 5 to 10",
-      description: "We implement background workers, scheduled jobs and third-party integrations with idempotency, retries, timeouts and dead-letter handling. Each integration is tested against the partner's sandbox where one exists, and against recorded failure cases where it does not.",
+      description: "We implement background workers, scheduled jobs and third party integrations with idempotency, retries, timeouts and dead letter handling. Each integration is tested against the partner's sandbox where one exists, and against recorded failure cases where it does not.",
     },
     {
       step: "05",
@@ -93,7 +93,7 @@ const data = {
   industries: [
     "Software & SaaS",
     "Fintech & Payments",
-    "E-commerce & Marketplaces",
+    "Ecommerce & Marketplaces",
     "Logistics & Transport",
     "Healthcare Technology",
     "Media & Content",
@@ -103,7 +103,7 @@ const data = {
   faqs: [
     {
       question: "Should our backend be built in Node.js or Python?",
-      answer: "Choose Node.js when the backend mainly serves APIs and real-time features with many concurrent connections, or when your team already works in TypeScript on the front end. Choose Python when the backend does heavy data processing, uses scientific or machine learning libraries, or runs AI pipelines. Both are mature, well supported and easy to hire for in Australia. Many systems use Node.js for the API layer and Python for data and AI workers, connected by a queue.",
+      answer: "Choose Node.js when the backend mainly serves APIs and real time features with many concurrent connections, or when your team already works in TypeScript on the front end. Choose Python when the backend does heavy data processing, uses scientific or machine learning libraries, or runs AI pipelines. Both are mature, well supported and easy to hire for in Australia. Many systems use Node.js for the API layer and Python for data and AI workers, connected by a queue.",
     },
     {
       question: "How is this different from your API development service?",
@@ -119,11 +119,11 @@ const data = {
     },
     {
       question: "Microservices or a monolith?",
-      answer: "For most new backends, a well-structured modular monolith is the better start: simpler to build, deploy, debug and run. We separate out a service when there is a concrete reason, such as a workload with very different scaling needs, a Python AI worker beside a Node.js API, or a team boundary. Splitting too early adds network calls, deployment complexity and consistency problems without a matching benefit.",
+      answer: "For most new backends, a well structured modular monolith is the better start: simpler to build, deploy, debug and run. We separate out a service when there is a concrete reason, such as a workload with very different scaling needs, a Python AI worker beside a Node.js API, or a team boundary. Splitting too early adds network calls, deployment complexity and consistency problems without a matching benefit.",
     },
     {
       question: "How do you keep Node.js and Python versions supported?",
-      answer: "We run production on supported releases and plan upgrades ahead of end-of-life dates. At the time of writing (September 2026), Node.js says each long-term support release typically receives critical fixes for a total of 30 months, and each Python version receives bugfix and then security releases for about five years, so upgrades are a predictable, scheduled task. We record runtime versions and their end-of-life dates in the handover documentation.",
+      answer: "We run production on supported releases and plan upgrades ahead of end of life dates. At the time of writing (September 2026), Node.js says each long term support release typically receives critical fixes for a total of 30 months, and each Python version receives bugfix and then security releases for about five years, so upgrades are a predictable, scheduled task. We record runtime versions and their end of life dates in the handover documentation.",
     },
     {
       question: "Where will the backend be hosted?",
@@ -135,7 +135,7 @@ const data = {
     },
     {
       question: "Which frameworks do you use for Node.js and Python backends?",
-      answer: "For Node.js we typically use Fastify, NestJS or Express with TypeScript, and BullMQ on Redis for background jobs. For Python we use FastAPI for APIs, Django where an admin interface and batteries-included framework help, and Celery for workers. Temporal handles long-running workflows that must survive restarts, and PostgreSQL is our default database.",
+      answer: "For Node.js we typically use Fastify, NestJS or Express with TypeScript, and BullMQ on Redis for background jobs. For Python we use FastAPI for APIs, Django where an admin interface and batteries included framework help, and Celery for workers. Temporal handles long running workflows that must survive restarts, and PostgreSQL is our default database.",
     },
     {
       question: "Can you take over or extend a backend another team built?",
@@ -145,13 +145,13 @@ const data = {
   comparison: {
     rightFor: [
       "Your application has real business logic, not just forms over a database, such as pricing, scheduling, approvals or reconciliation",
-      "You integrate with several third-party systems, payment providers or partner APIs and need those integrations to be reliable",
+      "You integrate with several third party systems, payment providers or partner APIs and need those integrations to be reliable",
       "Work such as document generation, file processing, syncing or AI calls needs to run in the background at volume",
       "An existing backend has become slow, fragile or hard to change, and you need measured improvements rather than a rewrite",
       "You want a backend your own engineers can maintain, in mainstream languages with tests, documentation and runbooks",
     ],
     notRightFor: [
-      "Your needs are met by a backend-as-a-service such as Supabase or Firebase with little custom logic, which will be faster and cheaper to start",
+      "Your needs are met by a backend as a service such as Supabase or Firebase with little custom logic, which will be faster and cheaper to start",
       "The workflow is simple enough for an automation platform such as n8n, Make or Zapier connecting existing SaaS tools",
       "Your organisation has standardised on another stack, such as Java or .NET, and your team will maintain the code, where matching that stack is wiser",
       "You need a full product including design and front end, where our custom app or SaaS development services cover the whole build",
@@ -172,12 +172,12 @@ const data = {
       definition: "The property that performing the same operation more than once has the same effect as performing it once. It makes retries and duplicate webhook deliveries safe, preventing double charges and duplicate records.",
     },
     {
-      term: "Dead-letter queue",
+      term: "Dead letter queue",
       definition: "A separate queue where messages go after repeated processing failures, so they are kept for investigation and replay instead of blocking the main queue or being lost.",
     },
     {
       term: "Event loop",
-      definition: "The mechanism Node.js uses to handle many concurrent operations on a single thread. It is efficient for input and output, but a long CPU-heavy task on it blocks every other request, which is why such work goes to workers.",
+      definition: "The mechanism Node.js uses to handle many concurrent operations on a single thread. It is efficient for input and output, but a long CPU heavy task on it blocks every other request, which is why such work goes to workers.",
     },
     {
       term: "N+1 query",

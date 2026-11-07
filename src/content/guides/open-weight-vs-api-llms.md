@@ -5,7 +5,7 @@ description: "Open-weight (open source) LLMs like Llama, Mistral, Qwen and gpt-o
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "In the open-weight vs API LLM decision, use a hosted API model by default: the strongest models are API-only, you pay only for what you use, and several can now process data inside Australia through cloud platforms. Choose an open-weight model when you need prompts to never reach a model vendor, when you must run offline or in an isolated environment, when steady high volume makes owning capacity cheaper, or when you need to fine-tune and control the exact model version. Many enterprises end up using both, routed by data sensitivity."
 takeaways:
   - "Open-weight means the trained weights are published so you can run the model on your own infrastructure. It doesn't always mean open source: licences such as Llama's carry conditions."
@@ -60,7 +60,7 @@ related:
     href: "/guides/llm-running-costs"
   - title: "RAG vs fine-tuning"
     href: "/guides/rag-vs-fine-tuning"
-  - title: "AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency"
+  - title: "AWS Bedrock vs Azure OpenAI vs Google Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian data residency"
     href: "/guides/bedrock-vs-azure-openai-vs-vertex-australia"
 service:
   title: "Private LLM deployment"
@@ -80,7 +80,7 @@ The terms first. An **API model** (Claude, GPT, Gemini) runs only on its vendor'
 
 | | Hosted API model | Open-weight, served by a cloud platform | Open-weight, self-hosted |
 |---|---|---|---|
-| Examples | Claude, GPT, Gemini via vendor API or Bedrock, Azure, Vertex AI | gpt-oss, Qwen, Mistral on Amazon Bedrock | Any open-weight model on your own GPUs |
+| Examples | Claude, GPT, Gemini via vendor API or Bedrock, Azure, Gemini Enterprise Agent Platform (formerly Vertex AI) | gpt-oss, Qwen, Mistral on Amazon Bedrock | Any open-weight model on your own GPUs |
 | Capability ceiling | Highest: frontier models are API-only | Good to very good | Good to very good; you pick the exact model |
 | Who sees your prompts | Model vendor or cloud provider | Cloud provider, not the model maker | Only you (and your cloud provider's infrastructure) |
 | Australian processing | Some models, on some platforms, at the time of writing | Some models listed in Sydney | Yes, in any Australian region with GPU capacity |
@@ -94,7 +94,7 @@ The terms first. An **API model** (Claude, GPT, Gemini) runs only on its vendor'
 
 **On raw capability, speed to launch, and low or unpredictable volume.** The best models for complex reasoning, long documents, coding and agentic work are, at the time of writing, available only through APIs. You pay per token, so a pilot costs almost nothing, and you inherit the vendor's scaling, safety work and continuous improvements.
 
-Residency, once the main objection, has narrowed. Several API models can now process data inside Australia through Amazon Bedrock, Azure or Google Vertex AI, though availability varies by model and changes often. Our guide to [which models can run onshore](/guides/ai-data-sovereignty-australia) tracks the detail, and the [Bedrock vs Azure vs Vertex comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the platforms.
+Residency, once the main objection, has narrowed. Several API models can now process data inside Australia through Amazon Bedrock, Azure or Google's Gemini Enterprise Agent Platform, though availability varies by model and changes often. Our guide to [which models can run onshore](/guides/ai-data-sovereignty-australia) tracks the detail, and the [Bedrock vs Azure vs Agent Platform comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the platforms.
 
 Choose an API model if:
 

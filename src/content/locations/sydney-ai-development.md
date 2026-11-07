@@ -6,7 +6,7 @@ eyebrow: "Sydney"
 city: "Sydney"
 state: "NSW"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "AWLabs is a Sydney-based AI development company and AI consultancy in Five Dock, in Sydney's Inner West. We build production AI systems such as RAG knowledge bases, AI agents, document processing and LLM features inside existing software, with Sydney cloud hosting available when you need it. For NSW Government work, we build to the NSW AI Operational Policy and produce the evidence agencies need for the NSW AI Assessment Framework."
 takeaways:
   - "Most Sydney AI projects fall into four shapes: knowledge search (RAG), document processing, agents that act in business systems, and AI features added to an existing app."
@@ -90,7 +90,7 @@ Here are the four shapes we see most often, and what a sensible first release lo
 |---|---|---|
 | A view of which processes are worth automating, and in what order | AI consultants, AI readiness assessment | A ranked list of use cases with rough costs and risks |
 | Marketing content, ads or simple no-code automations | AI agency, AI automation agency | Configured tools and workflows, often on a subscription |
-| A production system inside your own software and cloud account | AI development company | Code in your repository, an evaluation set, hosting and a run-cost estimate |
+| A production system inside your own software and cloud account | AI development company | Code handed over to you on final payment, an evaluation set, hosting and a run-cost estimate |
 
 We do the first and the third: an [AI readiness assessment](/services/ai-readiness-assessment), which is our Discovery Audit for AI projects, for the advice, then fixed price development. If a no-code tool will do the job, we'll say so, because it's usually cheaper.
 

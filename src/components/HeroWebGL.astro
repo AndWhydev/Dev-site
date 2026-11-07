@@ -600,6 +600,8 @@
     awlThreePromise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
       s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      s.integrity = 'sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==';
+      s.crossOrigin = 'anonymous';
       s.async = true;
       s.onload = () => resolve();
       s.onerror = () => reject(new Error('three.js failed to load'));

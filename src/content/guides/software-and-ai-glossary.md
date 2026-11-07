@@ -187,7 +187,7 @@ The definitions describe how the terms are generally used in the Australian mark
 
 **MVP (minimum viable product).** An MVP is the smallest version of a product that real users can use and give feedback on. See [MVP development cost in Australia](/guides/mvp-development-cost-australia) and our [startup MVP service](/startup-mvp).
 
-**Agile and sprints.** Agile is an approach that delivers software in short cycles with regular feedback. A sprint is one of those cycles. Sprint length is set for each build; our clients get an update with access to test every Tuesday and Friday. See [how we work](/how-we-work).
+**Agile and sprints.** Agile is an approach that delivers software in short cycles with regular feedback. A sprint is one of those cycles. Sprint length is set for each build; our clients get an update with access to test every Tuesday and Friday. See [how we work](/methodology).
 
 **Technical debt.** Technical debt is the future cost created by shortcuts or outdated design in existing code, paid back as slower and riskier changes. Some debt is a reasonable trade-off; unmanaged debt compounds.
 

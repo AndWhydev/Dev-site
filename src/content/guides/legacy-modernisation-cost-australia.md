@@ -5,7 +5,7 @@ description: "How much does legacy system modernisation cost in Australia? Typic
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Legacy system modernisation in Australia typically costs $40k to $200k AUD (ex GST) for a single business application moved with modest changes, and $200k to $700k or more if you re-architect or rebuild it. Core or regulated systems regularly pass $1 million. The approach you choose (rehost, replatform, refactor, rebuild or replace) drives the price more than any other factor, and across the market a paid assessment of $10k to $40k is the usual first step."
 takeaways:
   - "Approach sets the budget: rehosting a system costs a fraction of rebuilding it, and they solve different problems."
@@ -23,7 +23,7 @@ faqs:
   - q: "How much does it cost to migrate a legacy application to the cloud?"
     a: "A lift-and-shift rehost of one moderate-sized application typically costs $15k to $80k (AUD, ex GST), and a replatform onto managed cloud services $40k to $200k. The worked example on this page, a .NET app moved to Azure Australia East with a runtime upgrade, comes to a planning budget of $176,400 including contingency."
   - q: "How much does mainframe modernisation cost?"
-    a: "Mainframe, AS/400 and 4GL systems sit at the top of the ranges on this page, because the specialists are scarce and the systems are usually core to the business. Core or regulated systems regularly pass $1 million. A paid assessment is essential before anyone quotes."
+    a: "Mainframe, AS/400 and 4GL systems sit at the top of the ranges on this page, because the specialists are scarce and the systems are usually core to the business. Core or regulated systems regularly pass $1 million. Common market practice is a paid assessment before anyone quotes; ours is the Discovery Audit, $750 plus GST, credited in full against the build."
   - q: "Can AI coding tools reduce the cost of legacy modernisation?"
     a: "They can shorten parts of it, especially reading and documenting old code, writing tests around existing behaviour and translating repetitive code. They don't remove the need for someone to decide what the system should do, verify behaviour against real data, and manage cutover. Treat AI savings as a reduction in engineering days, not in discovery or testing."
   - q: "Should I replace my custom system with off-the-shelf SaaS instead?"

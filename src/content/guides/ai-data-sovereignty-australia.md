@@ -1,12 +1,12 @@
 ---
 title: "AI data sovereignty in Australia: which models can run onshore?"
 metaTitle: "AI Data Sovereignty Australia: Which Models Run Onshore?"
-description: "AI data sovereignty in Australia: which models process prompts onshore on AWS Bedrock, Azure OpenAI, Vertex AI, Claude and OpenAI, and how to prove it."
+description: "AI data sovereignty in Australia: which models process prompts onshore on AWS Bedrock, Azure OpenAI, Google Agent Platform, Claude and OpenAI, and how to check."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
-summary: "At the time of writing (September 2026), AI data sovereignty in Australia is achievable: you can keep AI inference inside Australia, but only for particular models on particular platforms. Amazon Bedrock offers in-region inference in Sydney or Melbourne, or an Australia-only cross-region profile, for several Claude, Amazon Nova and open-weight models. Azure and Google Vertex AI offer Australian processing for a short list of models. The direct Claude API offers US or global inference only, and OpenAI's API offers Australian data storage but not Australian processing. The newest frontier models usually launch on global routing first, so onshore options lag."
+updated: 2026-11-07
+summary: "At the time of writing (September 2026), AI data sovereignty in Australia is achievable: you can keep AI inference inside Australia, but only for particular models on particular platforms. Amazon Bedrock offers in-region inference in Sydney or Melbourne, or an Australia-only cross-region profile, for several Claude, Amazon Nova and open-weight models. Azure and Google's Gemini Enterprise Agent Platform (formerly Vertex AI) offer Australian processing for a short list of models. The direct Claude API offers US or global inference only, and OpenAI's API offers Australian data storage but not Australian processing. The newest frontier models usually launch on global routing first, so onshore options lag."
 takeaways:
   - "Onshore AI means the model's inference runs in Australia, not just that your database does. Check processing location, not only storage."
   - "Every major platform now has three routing modes: single region, a defined geography, or global. Only the first two can keep prompts in Australia."
@@ -56,7 +56,7 @@ sources:
 related:
   - title: "Data residency vs data sovereignty in Australia"
     href: "/guides/data-residency-vs-data-sovereignty"
-  - title: "AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency"
+  - title: "AWS Bedrock vs Azure OpenAI vs Google Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian data residency"
     href: "/guides/bedrock-vs-azure-openai-vs-vertex-australia"
   - title: "Open-weight models vs API models for Australian enterprises"
     href: "/guides/open-weight-vs-api-llms"
@@ -106,7 +106,7 @@ One trap stands out. Azure's data zones are US, EU and Asia Pacific, and Microso
 |---|---|---|
 | Amazon Bedrock | Claude Opus 5.5, Opus 5, Sonnet 5, Opus 4.8, Haiku 4.5 and others in-region in Melbourne; several Claude models through an Australia geographic profile from Sydney and Melbourne; Amazon Nova Pro, Lite and Micro in-region; open-weight models in-region in Sydney including Mistral, Qwen3, OpenAI gpt-oss, DeepSeek and GLM | Claude Fable 5.1 and Mythos 5.1, and OpenAI GPT-5.6 models on Bedrock, listed as global only |
 | Microsoft Azure (Microsoft Foundry, formerly Azure AI Foundry) | Standard and Regional Provisioned deployments keep prompts and responses within the Azure geography. In Australia East, Standard lists gpt-4.1-mini, gpt-4o and OpenAI embedding models; Regional Provisioned adds gpt-5, gpt-5.1, gpt-5.2, gpt-5.4, o3 and o3-mini | GPT-5.6 and GPT-6 models are Global only in Australia East; Microsoft says geography-based types come last with no guaranteed date |
-| Google Cloud (Vertex AI, now part of Gemini Enterprise Agent Platform) | Locational endpoints in australia-southeast1 keep ML processing in Australia only for the models Google lists: Gemini 3.5 Flash, Gemini 2.5 Flash (128k context) and text-embedding-004 | No Australian commitment for newer Gemini models or partner models such as Claude; global endpoints give no residency guarantee |
+| Google Cloud (Gemini Enterprise Agent Platform, formerly Vertex AI) | Locational endpoints in australia-southeast1 keep ML processing in Australia only for the models Google lists: Gemini 3.5 Flash, Gemini 2.5 Flash (128k context) and text-embedding-004 | No Australian commitment for newer Gemini models or partner models such as Claude; global endpoints give no residency guarantee |
 | Claude API (direct) | None: inference geo options are global or US only | No Australian workspace or inference geo |
 | OpenAI API (direct) | Australian regional storage through `au.api.openai.com`, which requires approval for Modified Abuse Monitoring or Zero Data Retention | Regional processing not offered for Australia |
 
@@ -128,7 +128,7 @@ A middle path is a managed open-weight model on Bedrock in Sydney. The model ven
 
 **Don't rely on a sales deck. Verify the routing mode in configuration and in logs.** These checks take an afternoon and belong in every architecture review.
 
-1. **Pin the model ID or deployment type.** On Bedrock, call the in-region model ID or the Australia geographic inference profile, never a global profile. On Azure, deploy with the Standard SKU in an Australian region. On Vertex AI, call a regional hostname, not the global one.
+1. **Pin the model ID or deployment type.** On Bedrock, call the in-region model ID or the Australia geographic inference profile, never a global profile. On Azure, deploy with the Standard SKU in an Australian region. On Gemini Enterprise Agent Platform, call a regional hostname, not the global one.
 2. **Block the alternatives with policy.** Azure Policy can deny the GlobalStandard deployment type. AWS Service Control Policies and IAM conditions can restrict Bedrock to Australian regions and approved inference profiles. Google Cloud organisation policies can block global endpoint traffic.
 3. **Log the response metadata.** Record the region, profile or deployment used on each call. The Claude API, for example, returns the inference geography in its usage object.
 4. **Check the side services.** Embeddings, rerankers, moderation, file storage, vector stores and evaluation tools each have their own availability. A model in Melbourne with an embedding call in the US still sends your documents offshore. See [what embeddings are](/guides/what-are-embeddings) for why they carry your data.
@@ -171,7 +171,7 @@ The fallback rule is where real systems break. Retry libraries and SDK defaults 
 
 **When the data isn't sensitive and the best model for the job is only available globally.** A marketing copy tool working on public product information gains little from Australian processing and may lose a lot of quality. Be deliberate: classify the data, then decide per workload. Many organisations end up with two lanes, an onshore lane for personal and confidential data and a global lane for public content, enforced in code by the gateway that routes requests.
 
-For a platform-by-platform comparison of governance features, pricing basis and data use terms, see [Bedrock vs Azure OpenAI vs Vertex AI for Australian data residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
+For a platform-by-platform comparison of governance features, pricing basis and data use terms, see [Bedrock vs Azure OpenAI vs Gemini Enterprise Agent Platform for Australian data residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
 
 ## How AWLabs approaches this
 

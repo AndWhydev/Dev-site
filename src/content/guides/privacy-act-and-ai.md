@@ -5,7 +5,7 @@ description: "Using personal information in AI under Australia's Privacy Act: ho
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Using personal information in AI systems is governed by the Privacy Act 1988, because Australia has no separate AI privacy law: the 13 Australian Privacy Principles apply to personal information going into an AI system, coming out of it, and used to train it. The OAIC's October 2024 guidance makes three points software teams most often miss: AI-generated or inferred information about an identifiable person is a new collection under APP 3, reusing data you already hold to train or fine-tune a model is usually a secondary use under APP 6, and publicly available data isn't automatically fair game for training."
 takeaways:
   - "Prompts, retrieved documents, outputs, embeddings and logs can all contain personal information, and the APPs apply to each."
@@ -42,6 +42,9 @@ sources:
   - title: "Privacy and Other Legislation Amendment Act 2024 (No. 128, 2024), as made"
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
     publisher: "Federal Register of Legislation"
+  - title: "Children's Online Privacy Code"
+    url: "https://www.oaic.gov.au/privacy/privacy-registers/privacy-codes/childrens-online-privacy-code"
+    publisher: "Office of the Australian Information Commissioner"
   - title: "Staff guidance on public generative AI"
     url: "https://www.digital.gov.au/policy/ai/staff-guidance-public-generative-ai"
     publisher: "Digital Transformation Agency"
@@ -155,7 +158,7 @@ None of these steps needs exotic technology. They need someone to ask the questi
 | 11 December 2024 | APP 11.3: security includes technical and organisational measures | Clearer expectation of engineering controls |
 | 11 December 2024 | New civil penalty tiers and infringement notices (sections 13G, 13H, 13K) | Lower-level breaches now attract penalties |
 | 10 June 2025 | Statutory tort for serious invasions of privacy commences | Individuals can sue directly for serious invasions |
-| By December 2026 | OAIC must develop and register a Children's Online Privacy Code within 24 months of Royal Assent | AI features in services likely to be accessed by children |
+| By 10 December 2026 | OAIC must finalise and register a Children's Online Privacy Code. It consulted on an exposure draft until 5 June 2026; at the time of writing (November 2026) the final Code had not been registered and its commencement date had not been confirmed | AI features in services likely to be accessed by children |
 | 10 December 2026 | APP 1.7 to 1.9 automated decision disclosures commence | AI-driven decisions must be described in privacy policies |
 
 Further reforms proposed in the Privacy Act Review, such as a "fair and reasonable" test for handling personal information, had not been legislated at the time of writing. Designing for them now, through data minimisation and purpose tagging, costs little and avoids rework.

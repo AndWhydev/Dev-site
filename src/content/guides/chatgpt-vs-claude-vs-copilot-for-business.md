@@ -5,7 +5,7 @@ description: "ChatGPT vs Claude vs Copilot for business: ChatGPT Enterprise, Cla
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "For business use, ChatGPT Enterprise, Claude and Microsoft Copilot all commit not to train on your business content by default and offer single sign-on and admin controls on their business tiers. The real differences are where they live and where your data goes. Microsoft 365 Copilot works inside Microsoft 365 and stores interaction content in Australia for Australian tenants. ChatGPT Enterprise and Claude are standalone workspaces with strong general capability, but at the time of writing (September 2026) their published residency options for Australia are narrower. Pick on where your work happens, then check residency for the data you'll put in."
 takeaways:
   - "On business plans, all three vendors say they don't train models on your content by default. Consumer and free plans have different terms, so ban personal accounts for work data."
@@ -62,7 +62,7 @@ sources:
 related:
   - title: "Microsoft 365 Copilot vs a custom AI assistant"
     href: "/guides/copilot-vs-custom-ai-assistant"
-  - title: "AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency"
+  - title: "AWS Bedrock vs Azure OpenAI vs Google Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian data residency"
     href: "/guides/bedrock-vs-azure-openai-vs-vertex-australia"
   - title: "Using personal information in AI systems under the Privacy Act"
     href: "/guides/privacy-act-and-ai"
@@ -125,7 +125,7 @@ Two cautions apply to all three. First, connectors and plugins inherit the data 
 | Processed in Australia | Not committed | OpenAI API: not available for Australia | First-party: not available; via Amazon Bedrock, several Claude models run within an Australian geography |
 | Route to full onshore processing | Azure OpenAI in Australia East for supported models, in a custom build | Azure OpenAI in Australia East for supported models | Claude on Amazon Bedrock, Australian geography or Melbourne in-Region for supported models |
 
-The last row is the key point for regulated organisations. If you need prompts processed onshore, the usual answer isn't a different chat subscription; it's a custom application calling a model through an Australian cloud region. Our [Bedrock vs Azure OpenAI vs Vertex AI](/guides/bedrock-vs-azure-openai-vs-vertex-australia) comparison covers which models are available where, and [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia) explains the legal side.
+The last row is the key point for regulated organisations. If you need prompts processed onshore, the usual answer isn't a different chat subscription; it's a custom application calling a model through an Australian cloud region. Our [Bedrock vs Azure OpenAI vs Gemini Enterprise Agent Platform (formerly Vertex AI)](/guides/bedrock-vs-azure-openai-vs-vertex-australia) comparison covers which models are available where, and [AI data sovereignty in Australia](/guides/ai-data-sovereignty-australia) explains the legal side.
 
 ## How much do ChatGPT Enterprise, Claude and Copilot cost?
 

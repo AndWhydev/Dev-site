@@ -3,32 +3,32 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'LLM Integration Services Australia | AWLabs',
-  metaDescription: 'LLM integration services in Australia: OpenAI, Anthropic Claude and open-weight models embedded in your systems, with guardrails, evaluation and cost control.',
+  metaDescription: 'LLM integration services in Australia: OpenAI, Anthropic Claude and open weight models embedded in your systems, with guardrails, evaluation and cost control.',
   category: 'AI & Data',
   serviceName: 'LLM Integration',
   slug: 'llm-integration',
   heroHeadline: 'Put Foundation Models to Work Inside the Systems You Already Run',
-  heroTagline: 'LLM integration services that put OpenAI, Anthropic Claude and open-weight models to work inside your applications, with guardrails, evaluation and cost control built in.',
+  heroTagline: 'LLM integration services that put OpenAI, Anthropic Claude and open weight models to work inside your applications, with guardrails, evaluation and cost control built in.',
   summaryStatement: 'LLM integration is the practice of embedding large language models into existing business systems through APIs, structured prompts and tool calling, so that an organisation can use language understanding and generation inside its own workflows without training a model from scratch. LLM integration services cover the engineering around the model: data access, guardrails, evaluation, monitoring and cost control.',
   description: [
-    'Most organisations do not need to train a model, they need to connect a capable one to their data and their software in a way that is reliable, measurable and affordable to run. LLM integration is the engineering discipline that sits between a raw model API and a feature your users can depend on. We work with hosted models from OpenAI and Anthropic, and with open-weight models such as Llama and Mistral served on your own infrastructure when data residency or cost at volume makes that the better call. The work is rarely about the prompt alone. It is about designing structured inputs and outputs the rest of your system can parse, giving the model controlled access to your tools and functions, and putting boundaries around what it is allowed to say and do.',
-    'A typical engagement covers prompt design and versioning, function and tool calling so the model can query your databases or trigger actions, structured output enforced with JSON schemas so downstream code never has to parse free text, and a layer of guardrails that validates responses, redacts sensitive data and blocks unsafe outputs before they reach a user. Just as important is the evaluation harness, a repeatable test suite that scores model responses against known-good answers so you can change a prompt or upgrade a model without quietly breaking behaviour in production. We instrument every call for token usage, latency and cost, and we design routing logic that sends simple requests to cheaper, faster models and reserves the strongest model for the cases that genuinely need it. The result is a feature that behaves predictably, costs what you expect it to cost, and can be audited and improved over time rather than a demo that impresses once and then drifts. Where Australian data residency or the Privacy Act 1988 governs the information being processed, we design the integration so that regulated data stays within the jurisdiction and within the boundaries your compliance team has approved.',
+    'Most organisations do not need to train a model, they need to connect a capable one to their data and their software in a way that is reliable, measurable and affordable to run. LLM integration is the engineering discipline that sits between a raw model API and a feature your users can depend on. We work with hosted models from OpenAI and Anthropic, and with open weight models such as Llama and Mistral served on your own infrastructure when data residency or cost at volume makes that the better call. The work is rarely about the prompt alone. It is about designing structured inputs and outputs the rest of your system can parse, giving the model controlled access to your tools and functions, and putting boundaries around what it is allowed to say and do.',
+    'A typical engagement covers prompt design and versioning, function and tool calling so the model can query your databases or trigger actions, structured output enforced with JSON schemas so downstream code never has to parse free text, and a layer of guardrails that validates responses, redacts sensitive data and blocks unsafe outputs before they reach a user. Just as important is the evaluation harness, a repeatable test suite that scores model responses against known good answers so you can change a prompt or upgrade a model without quietly breaking behaviour in production. We instrument every call for token usage, latency and cost, and we design routing logic that sends simple requests to cheaper, faster models and reserves the strongest model for the cases that genuinely need it. The result is a feature that behaves predictably, costs what you expect it to cost, and can be audited and improved over time rather than a demo that impresses once and then drifts. Where Australian data residency or the Privacy Act 1988 governs the information being processed, we design the integration so that regulated data stays within the jurisdiction and within the boundaries your compliance team has approved.',
   ],
   benefits: [
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3v1a3 3 0 0 0 6 0v-1a3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3V5a3 3 0 0 0-3-3z"/></svg>',
-      title: 'Model-Agnostic Architecture',
-      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping an Anthropic model for an OpenAI one, or moving a workload to a self-hosted open-weight model, becomes a configuration change validated against your test suite, not a rewrite. This protects you from pricing changes and model deprecation.',
+      title: 'Model Agnostic Architecture',
+      description: 'We build behind an abstraction layer so you are not locked to one provider. Swapping an Anthropic model for an OpenAI one, or moving a workload to a self hosted open weight model, becomes a configuration change validated against your test suite, not a rewrite. This protects you from pricing changes and model deprecation.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>',
       title: 'Structured Output You Can Trust',
-      description: 'We enforce JSON schemas and constrained generation so the model returns data your code can parse deterministically, not free-form prose your application has to guess at. Invalid outputs are caught, retried and validated before they ever reach the rest of your system.',
+      description: 'We enforce JSON schemas and constrained generation so the model returns data your code can parse deterministically, not freeform prose your application has to guess at. Invalid outputs are caught, retried and validated before they ever reach the rest of your system.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
       title: 'Guardrails Against Unsafe Output',
-      description: 'Input and output filtering, prompt-injection defences, PII redaction and topic boundaries are configured before launch. The model is given a narrow, well-defined remit, and responses that fall outside it are blocked or routed to a human rather than served.',
+      description: 'Input and output filtering, prompt injection defences, PII redaction and topic boundaries are configured before launch. The model is given a narrow, well defined remit, and responses that fall outside it are blocked or routed to a human rather than served.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
@@ -38,12 +38,12 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
       title: 'Cost and Latency Under Control',
-      description: 'We instrument token usage per request, cache repeated calls, and route simple queries to cheaper, faster models while reserving the strongest model for hard cases. You see real cost-per-interaction figures and can set budgets, not discover the bill at the end of the month.',
+      description: 'We instrument token usage per request, cache repeated calls, and route simple queries to cheaper, faster models while reserving the strongest model for hard cases. You see real cost per interaction figures and can set budgets, not discover the bill at the end of the month.',
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
       title: 'Data Residency and Privacy',
-      description: 'For data governed by the Privacy Act 1988 or internal residency rules, we can deploy open-weight models in Australian cloud regions, and where a hosted model is used we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and document the terms that apply. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Those constraints shape the architecture from the start.',
+      description: 'For data governed by the Privacy Act 1988 or internal residency rules, we can deploy open weight models in Australian cloud regions, and where a hosted model is used we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and document the terms that apply. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Those constraints shape the architecture from the start.',
     },
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
@@ -56,7 +56,7 @@ const data = {
   process: [
     {
       step: '01',
-      title: 'Use-Case Definition and Feasibility',
+      title: 'Use Case Definition and Feasibility',
       duration: 'Weeks 1 to 2',
       description: 'We work with you to define exactly what the model should do, what good output looks like, and where the hard boundaries are. We assess whether an LLM is the right tool at all, sometimes a rules engine or a simpler approach is cheaper and more reliable, and we agree the success criteria the evaluation harness will measure against.',
     },
@@ -64,25 +64,25 @@ const data = {
       step: '02',
       title: 'Model Selection and Data Residency Review',
       duration: 'Weeks 2 to 3',
-      description: 'We select candidate models based on capability, cost, latency and residency requirements. Where the Privacy Act 1988 or internal policy applies, we set out whether a hosted API with the provider\'s enterprise data terms or an open-weight model served in an Australian region fits your requirements, and we document that recommendation for your compliance team to confirm.',
+      description: 'We select candidate models based on capability, cost, latency and residency requirements. Where the Privacy Act 1988 or internal policy applies, we set out whether a hosted API with the provider\'s enterprise data terms or an open weight model served in an Australian region fits your requirements, and we document that recommendation for your compliance team to confirm.',
     },
     {
       step: '03',
       title: 'Prompt Engineering and Tool Design',
       duration: 'Weeks 3 to 6',
-      description: 'We design and version the prompts, define the functions and tools the model may call, and enforce structured output with JSON schemas. The integration is built behind a provider-agnostic abstraction so models can be swapped without rewriting application code.',
+      description: 'We design and version the prompts, define the functions and tools the model may call, and enforce structured output with JSON schemas. The integration is built behind a provider agnostic abstraction so models can be swapped without rewriting application code.',
     },
     {
       step: '04',
       title: 'Guardrails and Evaluation Harness',
       duration: 'Weeks 5 to 8',
-      description: 'We build the input/output filtering, PII redaction and prompt-injection defences, and we assemble a scored test suite of representative inputs and expected outputs. This harness becomes the gate that every future prompt or model change must pass before release.',
+      description: 'We build the input/output filtering, PII redaction and prompt injection defences, and we assemble a scored test suite of representative inputs and expected outputs. This harness becomes the gate that every future prompt or model change must pass before release.',
     },
     {
       step: '05',
       title: 'Cost, Latency and Observability Tuning',
       duration: 'Weeks 7 to 9',
-      description: 'We instrument every call for tokens, latency and cost, add caching and model routing, and set budgets and alerts. You get dashboards showing real cost-per-interaction and the data needed to make informed trade-offs between quality and spend.',
+      description: 'We instrument every call for tokens, latency and cost, add caching and model routing, and set budgets and alerts. You get dashboards showing real cost per interaction and the data needed to make informed tradeoffs between quality and spend.',
     },
     {
       step: '06',
@@ -104,38 +104,38 @@ const data = {
   faqs: [
     {
       question: 'Do we need to train our own model, or can we use an existing one?',
-      answer: 'For the large majority of business use cases, you do not need to train a model. Foundation models from OpenAI and Anthropic, or open-weight models such as Llama and Mistral, already handle the language understanding most applications require. The value we add is integration: connecting the model to your data and systems, constraining its behaviour, and making it reliable and affordable in production. Training a model from scratch is rarely justified by the cost, and even fine-tuning is only worth considering once a well-engineered prompt and retrieval approach has been shown to fall short.',
+      answer: 'For the large majority of business use cases, you do not need to train a model. Foundation models from OpenAI and Anthropic, or open weight models such as Llama and Mistral, already handle the language understanding most applications require. The value we add is integration: connecting the model to your data and systems, constraining its behaviour, and making it reliable and affordable in production. Training a model from scratch is rarely justified by the cost, and even fine tuning is only worth considering once a well engineered prompt and retrieval approach has been shown to fall short.',
     },
     {
       question: 'How do you stop the model from making things up?',
-      answer: 'Hallucination, a model stating something false with confidence, is managed in several layers. We constrain the model to a narrow task, enforce structured output so it cannot wander into free-form invention, and where the answer depends on your own data we ground it in retrieved source documents through a RAG approach rather than relying on the model\'s memory. Critically, we build an evaluation harness that scores outputs against known-good answers, so the rate of incorrect responses is measured rather than assumed. For high-stakes decisions, the model prepares work for a human rather than acting autonomously.',
+      answer: 'Hallucination, a model stating something false with confidence, is managed in several layers. We constrain the model to a narrow task, enforce structured output so it cannot wander into freeform invention, and where the answer depends on your own data we ground it in retrieved source documents through a RAG approach rather than relying on the model\'s memory. Critically, we build an evaluation harness that scores outputs against known good answers, so the rate of incorrect responses is measured rather than assumed. For high stakes decisions, the model prepares work for a human rather than acting autonomously.',
     },
     {
       question: 'Where does our data go, and is it used to train the model?',
-      answer: 'This depends on the deployment you choose, and your lawyer or privacy adviser confirms how the Privacy Act 1988 applies to you. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. We can deploy open-weight models in an Australian cloud region; if your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. We document the data flow so your compliance and security teams can review it before launch.',
+      answer: 'This depends on the deployment you choose, and your lawyer or privacy adviser confirms how the Privacy Act 1988 applies to you. Where a hosted model is used, we select the provider\'s enterprise settings that exclude your content from training where the provider offers them, and we document the terms that apply. We can deploy open weight models in an Australian cloud region; if your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. We document the data flow so your compliance and security teams can review it before launch.',
     },
     {
       question: 'How much does it cost to run an LLM feature in production?',
-      answer: 'Running cost is driven by token usage, the volume of text sent to and returned from the model, multiplied by the per-token price of the model you use. We instrument this from the start so you can see real cost-per-interaction, and we reduce it with caching, prompt optimisation and routing logic that sends simple requests to cheaper models. For very high volumes, a self-hosted open-weight model on vLLM can be more economical than a per-token API. We give you the figures to make that trade-off deliberately rather than discovering the bill later.',
+      answer: 'Running cost is driven by token usage, the volume of text sent to and returned from the model, multiplied by the per token price of the model you use. We instrument this from the start so you can see real cost per interaction, and we reduce it with caching, prompt optimisation and routing logic that sends simple requests to cheaper models. For very high volumes, a self hosted open weight model on vLLM can be more economical than a per token API. We give you the figures to make that tradeoff deliberately rather than discovering the bill later.',
     },
     {
       question: 'What happens when the model provider releases a new version or retires an old one?',
-      answer: 'Model deprecation is a real operational risk, which is why we build behind a provider-agnostic abstraction layer and maintain an evaluation harness. When a new model is released or an old one is retired, we run the new model against your existing test suite, see exactly which behaviours change, and make the switch as a measured decision. Because application code talks to our abstraction rather than directly to a provider SDK, the change is typically configuration rather than a rewrite.',
+      answer: 'Model deprecation is a real operational risk, which is why we build behind a provider agnostic abstraction layer and maintain an evaluation harness. When a new model is released or an old one is retired, we run the new model against your existing test suite, see exactly which behaviours change, and make the switch as a measured decision. Because application code talks to our abstraction rather than directly to a provider SDK, the change is typically configuration rather than a rewrite.',
     },
     {
       question: 'Can you integrate an LLM with our existing internal systems and databases?',
-      answer: 'Yes, that is the core of the work. Using function and tool calling, we give the model controlled, read-only or write-scoped access to your APIs and databases, so it can fetch the right information or trigger defined actions within boundaries you set. The model never gets unmediated access to your systems; every tool it can call is defined, validated and logged. This is how an LLM feature becomes genuinely useful against your own data rather than a generic chatbot bolted on the side.',
+      answer: 'Yes, that is the core of the work. Using function and tool calling, we give the model controlled, read only or write scoped access to your APIs and databases, so it can fetch the right information or trigger defined actions within boundaries you set. The model never gets unmediated access to your systems; every tool it can call is defined, validated and logged. This is how an LLM feature becomes genuinely useful against your own data rather than a generic chatbot bolted on the side.',
     },
     {
       question: 'What is LLM API integration?',
-      answer: 'It is connecting your software to a language model through the provider\'s API: your application sends a prompt with the relevant context, the model returns text or structured data, and your code validates the result and acts on it. Production integrations add tool calling so the model can query your systems, schema-checked outputs, retries and fallbacks, logging, and limits on what data is sent.',
+      answer: 'It is connecting your software to a language model through the provider\'s API: your application sends a prompt with the relevant context, the model returns text or structured data, and your code validates the result and acts on it. Production integrations add tool calling so the model can query your systems, schema checked outputs, retries and fallbacks, logging, and limits on what data is sent.',
     },
     {
       question: 'Which LLM is best for business use?',
-      answer: 'There is no single best model; the right choice depends on the task, the accuracy you need, latency, cost per request and where the data may be processed. We are model-agnostic and test candidate models, such as OpenAI, Anthropic Claude and open-weight options, against an evaluation set built from your own examples, then design the integration so the model can be swapped later without a rewrite.',
+      answer: 'There is no single best model; the right choice depends on the task, the accuracy you need, latency, cost per request and where the data may be processed. We are model agnostic and test candidate models, such as OpenAI, Anthropic Claude and open weight options, against an evaluation set built from your own examples, then design the integration so the model can be swapped later without a rewrite.',
     },
     {
-      question: 'Can you integrate models through Azure OpenAI, Amazon Bedrock or Google Vertex AI?',
+      question: 'Can you integrate models through Azure OpenAI, Amazon Bedrock or Google Gemini Enterprise Agent Platform (formerly Vertex AI)?',
       answer: 'Yes. These platforms give access to foundation models under your existing cloud agreement, identity controls and billing, and some models can be run in Australian regions. Which models are available in which region changes often, so we confirm against each vendor\'s regional availability page at the time of design and document the data flow for your security team.',
     },
   ],
@@ -149,8 +149,8 @@ const data = {
     ],
     notRightFor: [
       'A deterministic rules engine or simple lookup would solve the problem more cheaply and reliably, not every problem needs an LLM',
-      'The task requires fully autonomous decisions in a high-stakes domain with no human in the loop',
-      'You only need a one-off experiment or demo, where an off-the-shelf tool like ChatGPT Enterprise is sufficient',
+      'The task requires fully autonomous decisions in a high stakes domain with no human in the loop',
+      'You only need a one off experiment or demo, where an off the shelf tool like ChatGPT Enterprise is sufficient',
       'Your answers depend heavily on your own document corpus, in which case RAG knowledge base work should come first',
       'You genuinely need a model trained on proprietary patterns no foundation model captures, which is a different and much larger undertaking',
     ],
@@ -170,7 +170,7 @@ const data = {
     },
     {
       term: 'Structured Output',
-      definition: 'Forcing a model to return data in a fixed format such as JSON that conforms to a schema, rather than free-form prose. This lets downstream code parse the response deterministically instead of guessing at unstructured text.',
+      definition: 'Forcing a model to return data in a fixed format such as JSON that conforms to a schema, rather than freeform prose. This lets downstream code parse the response deterministically instead of guessing at unstructured text.',
     },
     {
       term: 'Hallucination',
@@ -178,7 +178,7 @@ const data = {
     },
     {
       term: 'Evaluation Harness',
-      definition: 'A repeatable test suite that scores model outputs against known-good answers. It acts as a regression test for AI behaviour, so a prompt change or model upgrade can be assessed with a pass/fail result before it reaches production.',
+      definition: 'A repeatable test suite that scores model outputs against known good answers. It acts as a regression test for AI behaviour, so a prompt change or model upgrade can be assessed with a pass/fail result before it reaches production.',
     },
   ],
   relatedServices: [

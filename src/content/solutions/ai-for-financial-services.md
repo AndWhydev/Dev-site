@@ -4,7 +4,7 @@ metaTitle: "AI in Financial Services Australia: APRA-Regulated Builds"
 description: "AI in financial services for Australian banks, insurers and super funds: use cases, CPS 234 and CPS 230 controls, integrations and typical build costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "AI in Australian financial services, for an APRA-regulated bank, insurer or super fund, is built like any other material system: information security under CPS 234, service provider and operational resilience controls under CPS 230, and data quality discipline from CPG 235. APRA's April 2026 letter to industry adds explicit expectations on AI inventories, human involvement in high-risk decisions and AI supply chain visibility. Start with internal, human-reviewed use cases and decide early where data is hosted. Typical Australian market ranges put a first production system at roughly $120k to $400k (AUD, ex GST); those are market figures, not AWLabs prices."
 takeaways:
   - "CPS 234 applies to AI systems and the third parties that run them, including model providers: you need evidence of their controls, not just a contract."
@@ -123,7 +123,7 @@ Two of these deserve more detail, and they have their own guides: [CPS 234 and A
 - **Core platforms:** core banking, policy administration or member administration systems, usually read-only through an existing API or integration layer.
 - **Data platform:** Snowflake, Databricks or an on-premises warehouse for structured context.
 - **Security tooling:** your SIEM (for example Microsoft Sentinel or Splunk) for AI audit logs, and your secrets manager for credentials.
-- **Model hosting:** Amazon Bedrock, Microsoft Foundry (formerly Azure AI Foundry) or Google Vertex AI in an Australian region, or an open-weight model in your own account. Our [cloud AI platform comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the trade-offs.
+- **Model hosting:** Amazon Bedrock, Microsoft Foundry (formerly Azure AI Foundry) or Google's Gemini Enterprise Agent Platform (formerly Vertex AI) in an Australian region, or an open-weight model in your own account. Our [cloud AI platform comparison](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers the trade-offs.
 
 ## Where should the model and the data live?
 

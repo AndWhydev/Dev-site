@@ -2,17 +2,17 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Private & Self-Hosted LLM Deployment Australia | AWLabs',
-  metaDescription: "Private LLM deployment in Australia: self-hosted open-weight models in your own AWS, Azure or Google Cloud account, with private networking and no retention.",
+  metaTitle: 'Private & Self Hosted LLM Deployment Australia | AWLabs',
+  metaDescription: "Private LLM deployment in Australia: self hosted open weight models in your own AWS, Azure or Google Cloud account, with private networking and no retention.",
   category: 'AI & Data',
   serviceName: 'Private LLM Deployment',
   slug: 'private-llm-deployment',
   heroHeadline: 'Your Model, Your Cloud Account, Your Region',
-  heroTagline: "Private LLM deployment of open-weight language models inside your own cloud tenancy in Sydney or Melbourne, on private networks you control, with the evaluation evidence to show what they can and cannot do.",
-  summaryStatement: "Private LLM deployment is the practice of running a language model (often called a private, self-hosted or on-premise LLM), typically an open-weight model whose weights can be downloaded and self-hosted, inside infrastructure the organisation controls, such as its own cloud account in an Australian region, so prompts, documents and outputs are processed on that infrastructure rather than sent to a model provider's shared service.",
+  heroTagline: "Private LLM deployment of open weight language models inside your own cloud tenancy in Sydney or Melbourne, on private networks you control, with the evaluation evidence to show what they can and cannot do.",
+  summaryStatement: "Private LLM deployment is the practice of running a language model (often called a private, self hosted or on premise LLM), typically an open weight model whose weights can be downloaded and self hosted, inside infrastructure the organisation controls, such as its own cloud account in an Australian region, so prompts, documents and outputs are processed on that infrastructure rather than sent to a model provider's shared service.",
   description: [
-    "Hosted AI APIs are the fastest way to use a capable model, and for many workloads their enterprise terms (no training on your data, limited retention, regional processing options) are enough. Some organisations need more. A health record, a legal matter file, a defence supply chain document or a board paper may be subject to contractual, regulatory or internal rules that say the data must stay in an Australian region, inside infrastructure the organisation controls, with no third-party operator able to see it. Others want predictable cost at high volume, freedom from a provider changing or retiring a model, or the ability to fine-tune on data that cannot leave. Private deployment answers those needs by running an open-weight model, such as models from the Llama, Mistral, Qwen, Gemma or gpt-oss families, in your own cloud account. Licences differ between these families, and some carry use restrictions, so licence review is part of model selection.",
-    "There are two broad ways to do it, and we will recommend whichever suits your constraints. The managed route uses a cloud provider's model service inside your account: Amazon Bedrock's regional availability table, for example, lists open-weight models from providers including DeepSeek, Google, Mistral, Nvidia, OpenAI and Qwen for In-Region use in Asia Pacific (Sydney) at the time of writing. The self-managed route runs the model on GPU instances or a Kubernetes cluster you own (the cloud equivalent of an on-premise LLM), served by an inference engine such as vLLM, with no provider model service in the path at all. Either way, the engineering is similar: choosing and licensing the model, sizing hardware and quantisation to your latency and volume, private networking with no public endpoint, an OpenAI-compatible gateway so your applications do not care which model sits behind it, authentication, rate limits, logging you own, and an evaluation suite comparing the private model against a hosted frontier model on your real tasks. Open-weight models have closed much of the gap, but on some complex reasoning tasks they can still trail the best hosted models, and we measure that on your work rather than assume it. Model and region availability changes often, so everything on this page is stated as at the time of writing (September 2026), and we confirm the current position against each vendor's regional availability page when we scope your deployment.",
+    "Hosted AI APIs are the fastest way to use a capable model, and for many workloads their enterprise terms (no training on your data, limited retention, regional processing options) are enough. Some organisations need more. A health record, a legal matter file, a defence supply chain document or a board paper may be subject to contractual, regulatory or internal rules that say the data must stay in an Australian region, inside infrastructure the organisation controls, with no third party operator able to see it. Others want predictable cost at high volume, freedom from a provider changing or retiring a model, or the ability to fine tune on data that cannot leave. Private deployment answers those needs by running an open weight model, such as models from the Llama, Mistral, Qwen, Gemma or gpt-oss families, in your own cloud account. Licences differ between these families, and some carry use restrictions, so licence review is part of model selection.",
+    "There are two broad ways to do it, and we will recommend whichever suits your constraints. The managed route uses a cloud provider's model service inside your account: Amazon Bedrock's regional availability table, for example, lists open weight models from providers including DeepSeek, Google, Mistral, Nvidia, OpenAI and Qwen for use inside the Asia Pacific (Sydney) region at the time of writing. The self managed route runs the model on GPU instances or a Kubernetes cluster you own (the cloud equivalent of an on premise LLM), served by an inference engine such as vLLM, with no provider model service in the path at all. Either way, the engineering is similar: choosing and licensing the model, sizing hardware and quantisation to your latency and volume, private networking with no public endpoint, an OpenAI compatible gateway so your applications do not care which model sits behind it, authentication, rate limits, logging you own, and an evaluation suite comparing the private model against a hosted frontier model on your real tasks. Open weight models have closed much of the gap, but on some complex reasoning tasks they can still trail the best hosted models, and we measure that on your work rather than assume it. Model and region availability changes often, so everything on this page is stated as at the time of writing (September 2026), and we confirm the current position against each vendor's regional availability page when we scope your deployment.",
   ],
   benefits: [
     {
@@ -23,7 +23,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M9 10h.01"/><path d="M15 10h.01"/></svg>',
       title: 'Inside Your Own Tenancy',
-      description: "The model, gateway, logs and keys live in your cloud account, under your identity controls, encryption keys and billing. There is no shared multi-tenant model endpoint, and your security team can inspect the whole stack.",
+      description: "The model, gateway, logs and keys live in your cloud account, under your identity controls, encryption keys and billing. There is no shared multitenant model endpoint, and your security team can inspect the whole stack.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M4.5 4.5l15 15"/></svg>',
@@ -33,17 +33,17 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>',
       title: 'Models You Can Keep',
-      description: "Open-weight models do not get retired under you. You pin the exact version you validated and upgrade when your evaluation suite says the new one is better, on your timetable rather than a provider's deprecation notice.",
+      description: "Open weight models do not get retired under you. You pin the exact version you validated and upgrade when your evaluation suite says the new one is better, on your timetable rather than a provider's deprecation notice.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>',
-      title: 'Right-Sized, Measured Capacity',
+      title: 'Right Sized, Measured Capacity',
       description: "We size GPUs, quantisation and batching to your real traffic, then load test for throughput and latency. You see the cost per thousand requests at your volume, and whether a smaller model or a managed service would be cheaper.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
       title: 'An Honest Capability Check',
-      description: "Before you commit, we score candidate open-weight models against a hosted frontier model on your own tasks. If the private option is not good enough for a use case, you will see that in the results, along with alternatives such as a hybrid design.",
+      description: "Before you commit, we score candidate open weight models against a hosted frontier model on your own tasks. If the private option is not good enough for a use case, you will see that in the results, along with alternatives such as a hybrid design.",
     },
   ],
   useCases: [],
@@ -51,20 +51,20 @@ const data = {
     'vLLM', 'Hugging Face', 'Meta Llama', 'Mistral',
     'Qwen', 'Gemma', 'gpt-oss', 'Amazon Bedrock',
     'Amazon SageMaker', 'Amazon EKS', 'Microsoft Foundry (formerly Azure AI Foundry)', 'Azure Kubernetes Service',
-    'Google Vertex AI', 'Terraform', 'LiteLLM', 'Prometheus',
+    'Gemini Enterprise Agent Platform (formerly Vertex AI)', 'Terraform', 'LiteLLM', 'Prometheus',
   ],
   process: [
     {
       step: '01',
       title: 'Requirements and Constraint Mapping',
       duration: 'Week 1',
-      description: "We pin down what must be true: which data classes are involved, residency and control requirements, who may operate the stack, target latency, expected volume and budget. This decides between a managed model service in your account and fully self-managed serving.",
+      description: "We pin down what must be true: which data classes are involved, residency and control requirements, who may operate the stack, target latency, expected volume and budget. This decides between a managed model service in your account and fully self managed serving.",
     },
     {
       step: '02',
       title: 'Model Shortlist, Licences and Evaluation',
       duration: 'Weeks 1 to 3',
-      description: "We shortlist open-weight models, review their licences for your intended use, and run them against an evaluation set built from your real tasks, alongside a hosted frontier model as the benchmark. You choose with evidence on quality, speed and cost.",
+      description: "We shortlist open weight models, review their licences for your intended use, and run them against an evaluation set built from your real tasks, alongside a hosted frontier model as the benchmark. You choose with evidence on quality, speed and cost.",
     },
     {
       step: '03',
@@ -76,7 +76,7 @@ const data = {
       step: '04',
       title: 'Serving, Gateway and Security',
       duration: 'Weeks 4 to 6',
-      description: "We deploy the model behind an inference engine tuned for your traffic, add an OpenAI-compatible gateway with authentication, quotas and request logging, and run a security review of the whole path from application to GPU.",
+      description: "We deploy the model behind an inference engine tuned for your traffic, add an OpenAI compatible gateway with authentication, quotas and request logging, and run a security review of the whole path from application to GPU.",
     },
     {
       step: '05',
@@ -88,7 +88,7 @@ const data = {
       step: '06',
       title: 'Handover and Model Lifecycle',
       duration: 'Week 8 and ongoing',
-      description: "You receive the infrastructure code, runbooks and evaluation suite. We set out how new model versions are tested and promoted, and can operate the platform, patch it and run upgrade evaluations as new open-weight releases appear.",
+      description: "You receive the infrastructure code, runbooks and evaluation suite. We set out how new model versions are tested and promoted, and can operate the platform, patch it and run upgrade evaluations as new open weight releases appear.",
     },
   ],
   industries: [
@@ -103,32 +103,32 @@ const data = {
   ],
   faqs: [
     {
-      question: "Is a self-hosted LLM worth it, or are enterprise API terms enough?",
-      answer: "Often the API terms are enough. Enterprise agreements from major providers commonly exclude your data from training and limit retention, and several offer Australian processing options for some models. A private deployment is worth it when a contract, regulation or internal policy requires processing inside infrastructure you control, when you need to pin a model version indefinitely, when volume makes self-hosting cheaper, or when you want to fine-tune on data that cannot leave. We will tell you if the API route meets your requirements.",
+      question: "Is a self hosted LLM worth it, or are enterprise API terms enough?",
+      answer: "Often the API terms are enough. Enterprise agreements from major providers commonly exclude your data from training and limit retention, and several offer Australian processing options for some models. A private deployment is worth it when a contract, regulation or internal policy requires processing inside infrastructure you control, when you need to pin a model version indefinitely, when volume makes self hosting cheaper, or when you want to fine tune on data that cannot leave. We will tell you if the API route meets your requirements.",
     },
     {
-      question: "Which open-weight models can run in Australian regions?",
-      answer: "If you self-host, any open-weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), Amazon Bedrock's regional availability table lists open-weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI, Qwen and others for In-Region use in Sydney. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages during the Discovery Audit, because they change month to month.",
+      question: "Which open weight models can run in Australian regions?",
+      answer: "If you self host, any open weight model you are licensed to use can run on GPU capacity in an Australian region, subject to that region's GPU availability and your quota. For managed services the list is narrower and changes often: at the time of writing (September 2026), Amazon Bedrock's regional availability table lists open weight models from DeepSeek, Google, Mistral, Nvidia, OpenAI, Qwen and others for use inside the Sydney region. We check the current Amazon Bedrock, Azure and Google Cloud regional availability pages during the Discovery Audit, because they change month to month.",
     },
     {
-      question: "Are open-weight models as good as ChatGPT or Claude?",
-      answer: "For many business tasks, such as extraction, classification, summarisation and grounded question answering, current open-weight models perform well. On the hardest reasoning, coding and long multi-step agent tasks, the best hosted models can still be ahead. That is why we run a head-to-head evaluation on your own tasks before recommending a private model, and why some designs use a private model for sensitive data and a hosted model for everything else.",
+      question: "Are open weight models as good as ChatGPT or Claude?",
+      answer: "For many business tasks, such as extraction, classification, summarisation and grounded question answering, current open weight models perform well. On the hardest reasoning, coding and long multistep agent tasks, the best hosted models can still be ahead. That is why we run a head to head evaluation on your own tasks before recommending a private model, and why some designs use a private model for sensitive data and a hosted model for everything else.",
     },
     {
-      question: "What about cross-region inference?",
-      answer: "Some managed model services offer models in Australian regions through cross-region inference, which can route requests to capacity in other regions. Depending on the configuration, that routing may stay within Australia or may not. For workloads with residency requirements we either choose in-region endpoints or self-host, and we record the configuration so it can be audited.",
+      question: "What about cross region inference?",
+      answer: "Some managed model services offer models in Australian regions through cross region inference, which can route requests to capacity in other regions. Depending on the configuration, that routing may stay within Australia or may not. For workloads with residency requirements we either choose in region endpoints or self host, and we record the configuration so it can be audited.",
     },
     {
       question: "How much does it cost to run a private model?",
-      answer: "The main cost is GPU compute, which you pay for while it runs whether or not it is busy. Cost depends on model size, quantisation, traffic pattern, latency target and whether you use a managed service or your own instances. For steady high volume, self-hosting can undercut per-token API pricing; for low or spiky volume it is often more expensive. We model both options with your traffic before you commit, using current pricing pages rather than fixed assumptions.",
+      answer: "The main cost is GPU compute, which you pay for while it runs whether or not it is busy. Cost depends on model size, quantisation, traffic pattern, latency target and whether you use a managed service or your own instances. For steady high volume, self hosting can undercut per token API pricing; for low or spiky volume it is often more expensive. We model both options with your traffic before you commit, using current pricing pages rather than fixed assumptions.",
     },
     {
-      question: "Can we fine-tune the private model on our own data?",
-      answer: "Yes, and a private deployment is often the reason fine-tuning becomes possible, because the training data never leaves your account. That said, fine-tuning is usually not the first step. Good retrieval over your documents and careful prompting solve most problems more cheaply. We recommend fine-tuning when evaluation shows a specific, persistent gap that retrieval cannot close.",
+      question: "Can we fine tune the private model on our own data?",
+      answer: "Yes, and a private deployment is often the reason fine tuning becomes possible, because the training data never leaves your account. That said, fine tuning is usually not the first step. Good retrieval over your documents and careful prompting solve most problems more cheaply. We recommend fine tuning when evaluation shows a specific, persistent gap that retrieval cannot close.",
     },
     {
       question: "Does a private deployment make us compliant with the Privacy Act?",
-      answer: "No deployment makes an organisation compliant on its own. Keeping processing onshore and under your control helps with obligations such as APP 8 on cross-border disclosure and APP 11 on security, but compliance also depends on what data you collect, why, how you use outputs and what you tell individuals. We build to your requirements and provide the architecture evidence; your privacy and legal advisers assess compliance.",
+      answer: "No deployment makes an organisation compliant on its own. Keeping processing onshore and under your control helps with obligations such as APP 8 on cross border disclosure and APP 11 on security, but compliance also depends on what data you collect, why, how you use outputs and what you tell individuals. We build to your requirements and provide the architecture evidence; your privacy and legal advisers assess compliance.",
     },
     {
       question: "How much does private LLM deployment cost in Australia?",
@@ -136,15 +136,15 @@ const data = {
     },
     {
       question: "What is the difference between a private LLM and a public LLM like ChatGPT?",
-      answer: "A public LLM service such as ChatGPT or a provider's API runs on the provider's shared infrastructure, so your prompts are sent to them and processed under their terms. A private LLM runs on infrastructure you control, so prompts and outputs stay in your account and region with no provider operator in the path. The trade-off is that you take on hosting, scaling and model updates, and the most capable hosted models are generally not released as open weights.",
+      answer: "A public LLM service such as ChatGPT or a provider's API runs on the provider's shared infrastructure, so your prompts are sent to them and processed under their terms. A private LLM runs on infrastructure you control, so prompts and outputs stay in your account and region with no provider operator in the path. The tradeoff is that you take on hosting, scaling and model updates, and the most capable hosted models are generally not released as open weights.",
     },
     {
-      question: "Can you deploy an on-premise LLM in our own data centre?",
-      answer: "Our default is your own cloud account in an Australian region, because GPU capacity, scaling and security controls are simpler to manage there. Where a policy genuinely requires your own hardware, the same software stack (an inference engine such as vLLM behind an OpenAI-compatible gateway) runs on on-premise GPU servers. Hardware lead times, power, cooling and ongoing operations make that route slower and usually more expensive, so we weigh it against an in region cloud deployment during the Discovery Audit.",
+      question: "Can you deploy an on premise LLM in our own data centre?",
+      answer: "Our default is your own cloud account in an Australian region, because GPU capacity, scaling and security controls are simpler to manage there. Where a policy genuinely requires your own hardware, the same software stack (an inference engine such as vLLM behind an OpenAI compatible gateway) runs on on premise GPU servers. Hardware lead times, power, cooling and ongoing operations make that route slower and usually more expensive, so we weigh it against an in region cloud deployment during the Discovery Audit.",
     },
     {
-      question: "What GPU do we need to self-host an LLM?",
-      answer: "It depends mainly on model size and quantisation: the model weights, plus working memory for concurrent requests, must fit in GPU memory. Smaller models can run on a single data centre GPU, while large models need several GPUs or a multi-GPU instance. We size hardware from your model choice, latency target and traffic, and confirm GPU availability and quota in the Australian region before committing.",
+      question: "What GPU do we need to self host an LLM?",
+      answer: "It depends mainly on model size and quantisation: the model weights, plus working memory for concurrent requests, must fit in GPU memory. Smaller models can run on a single data centre GPU, while large models need several GPUs or a multi GPU instance. We size hardware from your model choice, latency target and traffic, and confirm GPU availability and quota in the Australian region before committing.",
     },
   ],
   comparison: {
@@ -152,21 +152,21 @@ const data = {
       "A contract, regulation or policy requires AI processing inside infrastructure you control in Australia",
       "You handle highly sensitive material such as health, legal, financial or security information",
       "You need to pin a model version for years, or cannot accept a provider retiring a model",
-      "Your volume is steady and high enough that dedicated GPUs cost less than per-token pricing",
-      "You want to fine-tune on data that must not leave your cloud account",
+      "Your volume is steady and high enough that dedicated GPUs cost less than per token pricing",
+      "You want to fine tune on data that must not leave your cloud account",
     ],
     notRightFor: [
       "Enterprise API terms with Australian processing already satisfy your requirements",
       "Your usage is low or occasional, where idle GPU cost outweighs any saving",
-      "The task needs the strongest available reasoning model and evaluation shows open-weight models fall short",
+      "The task needs the strongest available reasoning model and evaluation shows open weight models fall short",
       "You have no one to own the platform after launch and do not want an ongoing support arrangement",
       "You simply want staff to use an AI assistant; a licensed enterprise product is faster and cheaper",
     ],
   },
   definitions: [
     {
-      term: 'Open-Weight Model',
-      definition: "A language model whose trained weights are published for download, so it can be run on your own infrastructure. Open-weight is not the same as open source: licences vary and some restrict certain uses.",
+      term: 'Open Weight Model',
+      definition: "A language model whose trained weights are published for download, so it can be run on your own infrastructure. Open weight is not the same as open source: licences vary and some restrict certain uses.",
     },
     {
       term: 'Inference',
@@ -174,14 +174,14 @@ const data = {
     },
     {
       term: 'Quantisation',
-      definition: "Storing a model's weights at lower numerical precision so it needs less GPU memory and runs faster, at the cost of some quality. The trade-off is measured with evaluation rather than assumed.",
+      definition: "Storing a model's weights at lower numerical precision so it needs less GPU memory and runs faster, at the cost of some quality. The tradeoff is measured with evaluation rather than assumed.",
     },
     {
       term: 'vLLM',
-      definition: "A widely used open-source inference engine for serving language models efficiently on GPUs, with request batching and an OpenAI-compatible API.",
+      definition: "A widely used open source inference engine for serving language models efficiently on GPUs, with request batching and an OpenAI compatible API.",
     },
     {
-      term: 'Cross-Region Inference',
+      term: 'Cross Region Inference',
       definition: "A cloud feature that routes model requests to capacity in other regions to improve availability. It can move processing outside the region you selected, so it matters for data residency.",
     },
     {

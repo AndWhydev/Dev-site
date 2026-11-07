@@ -5,7 +5,7 @@ description: "What is prompt injection? Text that tricks an AI model into ignori
 eyebrow: "Explainer"
 category: explainer
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Prompt injection is an attack where text given to a large language model, typed by a user or hidden in a document, email or web page it reads, overrides the instructions the system's builders gave it. It ranks first in the OWASP Top 10 for LLM Applications 2026. Because models can't reliably tell instructions from data, there is no complete fix: the defence is to limit what a fooled model can reach and do."
 takeaways:
   - "Prompt injection is ranked LLM01, the top risk, in the OWASP Top 10 for LLM Applications 2026, published in August 2026."
@@ -28,7 +28,7 @@ sources:
   - title: "OWASP GenAI LLM Top 10 2026"
     url: "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
     publisher: "OWASP Gen AI Security Project"
-  - title: "LLM01: Prompt Injection"
+  - title: "LLM01:2025 Prompt Injection"
     url: "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
     publisher: "OWASP Gen AI Security Project"
   - title: "Agentic AI harnesses: the layer above the model"
@@ -62,7 +62,7 @@ disclaimer: none
 
 **Prompt injection is an attack in which text supplied to a large language model overrides the instructions its builders gave it.** OWASP's definition is short: a prompt injection vulnerability "occurs when user prompts alter the LLM's behavior or output in unintended ways." The attacking text might be typed into a chat box, or it might be sitting inside a document, email or web page the model was asked to read.
 
-It is the number one entry, LLM01, in the OWASP Top 10 for LLM Applications 2026, published by the OWASP Gen AI Security Project in August 2026. It also held the top spot in the 2025 edition.
+It is the number one entry, LLM01, in the OWASP Top 10 for LLM Applications 2026, published by the OWASP Gen AI Security Project in August 2026. It also held the top spot, as LLM01:2025, in the 2025 edition, and OWASP's detailed LLM01 guidance page still carries the 2025 label.
 
 ## How does prompt injection work?
 
@@ -128,7 +128,7 @@ This is why OWASP's 2026 list moved Excessive Agency up to third place. Injectio
 
 ## How do you prevent and defend against prompt injection?
 
-**Use several independent layers, and make the strongest ones deterministic controls the model can't argue with.** OWASP's LLM01 guidance lists constraining model behaviour, validating output formats, filtering inputs and outputs, enforcing least privilege, requiring human approval for high-risk actions, segregating external content and adversarial testing. ASD adds logging of prompts, tool calls and configuration changes.
+**Use several independent layers, and make the strongest ones deterministic controls the model can't argue with.** OWASP's LLM01:2025 guidance lists constraining model behaviour, validating output formats, filtering inputs and outputs, enforcing least privilege, requiring human approval for high-risk actions, segregating external content and adversarial testing. ASD adds logging of prompts, tool calls and configuration changes.
 
 Here is how those fit together, from the model outwards:
 

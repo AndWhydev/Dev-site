@@ -5,7 +5,7 @@ description: "Microsoft 365 Copilot vs a custom AI assistant: when Copilot or Co
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "Choosing between Microsoft 365 Copilot and a custom AI assistant comes down to where the work lives and who uses it. If your staff mainly need help with email, documents, meetings and files that already live in Microsoft 365, buy Microsoft 365 Copilot licences and fix your SharePoint permissions before you consider anything custom. Build a custom AI assistant when it has to serve customers, work inside non-Microsoft systems, enforce rules Copilot can't, or produce answers you can audit and test. Copilot Studio sits in between and is often the right next step."
 takeaways:
   - "Microsoft 365 Copilot is the right answer for most internal productivity use: drafting, summarising, meeting notes and searching your own Microsoft 365 content."
@@ -21,7 +21,7 @@ faqs:
   - q: "Can we use Copilot for a customer-facing chatbot?"
     a: "Microsoft 365 Copilot is licensed for your staff, not your customers. Copilot Studio can publish agents to websites and other channels. A fully custom assistant gives you the most control over branding, guardrails, model choice, hosting region and cost per conversation."
   - q: "What is the difference between Microsoft Copilot and Microsoft 365 Copilot?"
-    a: "Mostly naming. At the time of writing, Microsoft's licensing and privacy pages call the paid work assistant Microsoft Copilot, while other documentation, such as the data residency pages, still says Microsoft 365 Copilot. This page means the licensed assistant that works over your Microsoft 365 data. Check which product and licence any quote refers to."
+    a: "Mostly naming. At the time of writing, Microsoft calls the app Microsoft Copilot, while the paid business licence is still sold as Microsoft 365 Copilot. This page means the licensed assistant that works over your Microsoft 365 data. Check which product and licence any quote refers to."
   - q: "Do we need Microsoft Copilot?"
     a: "You need it if staff spend much of their day drafting, summarising and searching in Outlook, Word, Excel, Teams and SharePoint, and you'll fix permissions first. You don't need it to build a customer-facing assistant or one that works mainly in non-Microsoft systems. A six to eight week pilot with measured tasks answers the question for your organisation."
   - q: "Copilot Studio vs a custom GPT or custom agent: what's the difference?"
@@ -129,7 +129,7 @@ At the time of writing (September 2026), Microsoft's documentation states:
 
 The practical risk most Australian organisations hit first isn't Microsoft, it's their own sharing settings. Years of "anyone with the link" sharing and over-broad Teams sites become visible the moment an AI can search everything a user can technically open. Under the Privacy Act, you remain responsible for how personal information in those files is used, and the OAIC's guidance on commercial AI products recommends due diligence and privacy impact assessments before deployment. Budget time for a permissions review and sensitivity labelling before a broad rollout.
 
-A custom assistant gives you more control over residency because you choose the cloud region and model endpoint, but only if it's designed that way. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) and our comparison of [Bedrock, Azure OpenAI and Vertex AI in Australia](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
+A custom assistant gives you more control over residency because you choose the cloud region and model endpoint, but only if it's designed that way. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) and our comparison of [Bedrock, Azure OpenAI and Gemini Enterprise Agent Platform (formerly Vertex AI) in Australia](/guides/bedrock-vs-azure-openai-vs-vertex-australia).
 
 ## How do the costs compare?
 

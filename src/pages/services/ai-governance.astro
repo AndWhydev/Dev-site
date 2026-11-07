@@ -9,7 +9,7 @@ const data = {
   slug: 'ai-governance',
   heroHeadline: 'Responsible AI as Working Controls, Not a Policy PDF',
   heroTagline: "We build the AI governance controls that let you show how your AI systems behave: evaluation gates, logs, review steps, documentation and incident processes, mapped to Australian guidance and privacy law.",
-  summaryStatement: "AI governance engineering is the work of building technical controls into AI systems, such as an inventory of systems and decisions, pre-release evaluation gates, decision logging, human review points, model and system documentation, monitoring and incident handling, so that an organisation can demonstrate how each system behaves and who is accountable for it.",
+  summaryStatement: "AI governance engineering is the work of building technical controls into AI systems, such as an inventory of systems and decisions, prerelease evaluation gates, decision logging, human review points, model and system documentation, monitoring and incident handling, so that an organisation can demonstrate how each system behaves and who is accountable for it.",
   description: [
     "Most organisations now have an AI policy. Far fewer can answer the questions that follow when something goes wrong or an auditor asks: which AI systems are running, which decisions they influence, what each one was tested against before release, what it did on a given day for a given customer, who approved that, and how quickly it can be switched off. Those answers do not come from policy documents. They come from engineering: an inventory that stays current, test suites that gate releases, logs that capture inputs, outputs and approvals, review steps designed into the workflow, and a rehearsed incident process. That engineering side of AI governance and AI risk management is the part we do. We work alongside your risk, privacy and legal people, who own the policy and the judgements, and we build the controls that make their policy real and produce the evidence they need.",
     "Two Australian reference points shape most of this work. The first is the Guidance for AI Adoption, published by the National AI Centre on 21 October 2025 as updated, simplified guidance that evolves the Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. We map each control we build to those practices so you can show coverage and gaps. The second is the Privacy Act 1988: from 10 December 2026, APP entities must describe in their privacy policies the kinds of decisions made by computer programs using personal information, or where a program does something substantially and directly related to making such a decision, when the decision could reasonably be expected to significantly affect an individual's rights or interests. Meeting that obligation starts with knowing where those decisions happen, which is an engineering inventory problem. To be plain about scope: we do not offer ISO/IEC 42001 certification, we are not a certification body, and we do not hold that certification ourselves. Certification against ISO/IEC 42001 is issued by accredited certification bodies. The controls and records we build can support an organisation preparing for it, but they are not a substitute for the audit. This is general information, not legal advice; your legal and privacy advisers remain responsible for compliance assessments.",
@@ -33,12 +33,12 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
       title: 'Human Review That Works',
-      description: "We design review steps people can realistically perform: clear evidence, sensible queues, sampling of automated decisions, and override tracking. Oversight that reviewers rubber-stamp is not oversight, so we measure it.",
+      description: "We design review steps people can realistically perform: clear evidence, sensible queues, sampling of automated decisions, and override tracking. Oversight that reviewers rubber stamp is not oversight, so we measure it.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="12" cy="14" r="2"/><path d="M8 20a4 4 0 0 1 8 0"/></svg>',
       title: 'Model and System Cards',
-      description: "Plain-language documentation for each system: purpose, users, data, model, known limitations, evaluation results, oversight arrangements and owner. It gives staff, auditors and, where appropriate, customers the essential information.",
+      description: "Plain language documentation for each system: purpose, users, data, model, known limitations, evaluation results, oversight arrangements and owner. It gives staff, auditors and, where appropriate, customers the essential information.",
     },
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>',
@@ -58,7 +58,7 @@ const data = {
       step: '01',
       title: 'AI System and Decision Inventory',
       duration: 'Weeks 1 to 2',
-      description: "We find the AI in use across the organisation, including features inside SaaS products and staff-built tools, and record each system, its data, its models and vendors, the decisions it influences and an accountable owner. We flag decisions that may fall within the Privacy Act automated decision-making disclosure for your privacy team to assess.",
+      description: "We find the AI in use across the organisation, including features inside SaaS products and staff built tools, and record each system, its data, its models and vendors, the decisions it influences and an accountable owner. We flag decisions that may fall within the Privacy Act automated decision making disclosure for your privacy team to assess.",
     },
     {
       step: '02',
@@ -70,7 +70,7 @@ const data = {
       step: '03',
       title: 'Evaluation and Release Gates',
       duration: 'Weeks 3 to 6',
-      description: "For higher-tier systems we build evaluation suites and wire them into CI so changes cannot ship without passing. We include adversarial tests for prompt injection and data leakage, and bias testing where decisions affect people.",
+      description: "For higher tier systems we build evaluation suites and wire them into CI so changes cannot ship without passing. We include adversarial tests for prompt injection and data leakage, and bias testing where decisions affect people.",
     },
     {
       step: '04',
@@ -82,13 +82,13 @@ const data = {
       step: '05',
       title: 'Documentation and Incident Readiness',
       duration: 'Weeks 7 to 9',
-      description: "We produce model and system cards, an incident runbook linked to your existing incident and Notifiable Data Breaches processes, and a working kill switch or fallback for each high-tier system. We then run a tabletop exercise to test it.",
+      description: "We produce model and system cards, an incident runbook linked to your existing incident and Notifiable Data Breaches processes, and a working kill switch or fallback for each high tier system. We then run a tabletop exercise to test it.",
     },
     {
       step: '06',
       title: 'Handover and Periodic Review',
       duration: 'Week 10 and ongoing',
-      description: "You receive the register, controls, evaluation suites, documentation and runbooks. We can run quarterly reviews to re-test systems, update the register and report against the practices as models and obligations change.",
+      description: "You receive the register, controls, evaluation suites, documentation and runbooks. We can run quarterly reviews to retest systems, update the register and report against the practices as models and obligations change.",
     },
   ],
   industries: [
@@ -111,7 +111,7 @@ const data = {
       answer: "It is voluntary guidance published by the National AI Centre on 21 October 2025 as updated, simplified guidance that evolves the 2024 Voluntary AI Safety Standard. It sets out six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a shorter Foundations version and a more detailed Implementation guidance version for technical and governance professionals.",
     },
     {
-      question: "What do the Privacy Act automated decision-making rules require?",
+      question: "What do the Privacy Act automated decision making rules require?",
       answer: "From 10 December 2026, APP 1 requires APP entities to include information in their privacy policies about decisions made by computer programs using personal information, or where a program does something substantially and directly related to making the decision, if the decision could reasonably be expected to significantly affect an individual's rights or interests. It is a transparency obligation. The engineering challenge is knowing where such decisions occur, which is why we start with an inventory. Your privacy and legal advisers decide what must be disclosed.",
     },
     {
@@ -120,7 +120,7 @@ const data = {
     },
     {
       question: "Can you add governance controls to AI systems we did not build?",
-      answer: "Often, yes. Logging, evaluation and monitoring can usually be added around an existing system at its interfaces. For AI features inside third-party SaaS products, controls are more limited, so the work shifts to vendor due diligence, configuration review, usage monitoring and documenting what the vendor does and does not provide.",
+      answer: "Often, yes. Logging, evaluation and monitoring can usually be added around an existing system at its interfaces. For AI features inside third party SaaS products, controls are more limited, so the work shifts to vendor due diligence, configuration review, usage monitoring and documenting what the vendor does and does not provide.",
     },
     {
       question: "How do you evaluate an AI system for bias or unfair outcomes?",
@@ -157,9 +157,9 @@ const data = {
     ],
     notRightFor: [
       "You want ISO/IEC 42001 certification; that requires an accredited certification body, not us",
-      "You need a legal opinion or compliance sign-off; engage legal and privacy advisers",
+      "You need a legal opinion or compliance sign off; engage legal and privacy advisers",
       "You need a policy or ethics framework written from scratch with no systems yet in use",
-      "Your only AI use is a licensed assistant with vendor-managed controls; an acceptable use policy and vendor review may suffice",
+      "Your only AI use is a licensed assistant with vendor managed controls; an acceptable use policy and vendor review may suffice",
       "You want a badge or certificate rather than working controls",
     ],
   },
@@ -173,7 +173,7 @@ const data = {
       definition: "Voluntary Australian Government guidance from the National AI Centre, released on 21 October 2025, setting out six essential practices for responsible AI use. It evolves and simplifies the Voluntary AI Safety Standard.",
     },
     {
-      term: 'Automated Decision-Making (ADM)',
+      term: 'Automated Decision Making (ADM)',
       definition: "Decisions made by a computer program, or substantially assisted by one. Under the Privacy Act changes commencing 10 December 2026, certain ADM using personal information must be described in privacy policies.",
     },
     {

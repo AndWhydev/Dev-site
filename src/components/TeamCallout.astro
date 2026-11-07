@@ -34,7 +34,7 @@ const avatars: Avatar[] = [
       {avatars.map((a, i) => (
         <div class={`tc-avatar accent-${a.accent}`} style={`--i: ${i}`}>
           {a.photo ? (
-            <img src={a.photo} alt="" loading="lazy" />
+            <img src={a.photo} alt="" width="78" height="78" loading="lazy" />
           ) : a.silhouette ? (
             <svg viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true">
               <defs>

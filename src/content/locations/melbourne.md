@@ -6,7 +6,7 @@ eyebrow: "Melbourne"
 city: "Melbourne"
 state: "VIC"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-07
 summary: "AWLabs is a Sydney-based team that provides AI consulting and custom software development for Melbourne organisations remotely, flying down for workshops when being in the room matters. Victorian projects have their own rules: state agencies buy ICT through the Digital Marketplace and the mandatory eServices register, work under the Privacy and Data Protection Act 2014 and the VPDSS, and handle health data under the Health Records Act 2001. Data can stay in Victoria using AWS, Azure or Google Cloud regions in Melbourne."
 takeaways:
   - "We're based in Sydney, deliver to Melbourne remotely and travel for workshops and user testing; we have no Melbourne office."
@@ -61,7 +61,7 @@ related:
     href: "/solutions/ai-in-healthcare"
   - title: "AI development for APRA-regulated financial services"
     href: "/solutions/ai-for-financial-services"
-  - title: "AWS Bedrock vs Azure OpenAI vs Google Vertex AI for Australian data residency"
+  - title: "AWS Bedrock vs Azure OpenAI vs Google Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian data residency"
     href: "/guides/bedrock-vs-azure-openai-vs-vertex-australia"
 service:
   title: "Custom app development"
@@ -126,7 +126,7 @@ The Health Records Act sets Health Privacy Principles for health information col
 
 **Victorian workloads can stay in Victoria: AWS opened its Asia Pacific (Melbourne) region, ap-southeast-4, in January 2023, joining Azure Australia Southeast and Google Cloud australia-southeast2.** Having full regions in both Melbourne and Sydney means a Victorian system can run in Melbourne with backups and failover in Sydney, keeping all data in Australia.
 
-For AI features, check model availability region by region. At the time of writing, availability can differ between the Melbourne and Sydney regions for the same provider, and it changes often. For Microsoft-heavy organisations, our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide is the usual starting point. Our comparison of [Bedrock, Azure OpenAI and Vertex AI for Australian residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers how to check.
+For AI features, check model availability region by region. At the time of writing, availability can differ between the Melbourne and Sydney regions for the same provider, and it changes often. For Microsoft-heavy organisations, our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide is the usual starting point. Our comparison of [Bedrock, Azure OpenAI and Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers how to check.
 
 ## What a Melbourne engagement looks like, step by step
 
