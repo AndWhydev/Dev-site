@@ -68,11 +68,11 @@ const stories: Story[] = [
     portrait: false,
   },
   {
-    name: 'Helen',
-    role: 'Hairdresser on the Central Coast',
-    quote: 'Spending way less time on admin and much more time with my clients.',
-    outcome: 'One place for client history and previous appointments',
-    file: 'option2',
+    name: 'Michael',
+    role: 'Commercial Floorcoverings Australia, supplies and installs commercial flooring',
+    quote: "We've gone from a Sydney business to quoting and winning flooring jobs all around Australia.",
+    outcome: 'A quoting system built around how they price jobs, usable from anywhere',
+    file: 'whatsapp',
     portrait: true,
   },
   {
@@ -84,11 +84,11 @@ const stories: Story[] = [
     portrait: false,
   },
   {
-    name: 'Michael',
-    role: 'Commercial Floorcoverings Australia, supplies and installs commercial flooring',
-    quote: "We've gone from a Sydney business to quoting and winning flooring jobs all around Australia.",
-    outcome: 'A quoting system built around how they price jobs, usable from anywhere',
-    file: 'whatsapp',
+    name: 'Helen',
+    role: 'Hairdresser on the Central Coast',
+    quote: 'Spending way less time on admin and much more time with my clients.',
+    outcome: 'One place for client history and previous appointments',
+    file: 'option2',
     portrait: true,
   },
 ];
@@ -196,7 +196,7 @@ const videoSchema = {
 
 <style>
   .vt-section {
-    padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+    padding: clamp(1rem, 3vw, 2rem) 1.5rem clamp(4rem, 8vw, 7rem);
     scroll-margin-top: 80px;
   }
   .vt-inner { max-width: 1216px; margin: 0 auto; }
@@ -246,7 +246,10 @@ const videoSchema = {
   }
   .is-portrait .vt-poster { object-fit: cover; object-position: 50% 30%; }
   .is-portrait .vt-backdrop { display: none; }
-  .is-landscape .vt-poster { object-fit: contain; }
+  /* Landscape posters are cropped around the speaker so every card looks the
+     same; the full frame is shown once the video plays. */
+  .is-landscape .vt-poster { object-fit: cover; object-position: 50% 35%; }
+  .is-landscape:not(.is-playing) .vt-backdrop { display: none; }
 
   .vt-frame :global(video) {
     position: absolute;
