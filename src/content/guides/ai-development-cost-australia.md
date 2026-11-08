@@ -63,6 +63,8 @@ related:
     href: "/guides/how-to-choose-an-ai-development-company"
   - title: "AI readiness assessment"
     href: "/services/ai-readiness-assessment"
+  - title: "AI for small business in Australia"
+    href: "/guides/ai-for-small-business-australia"
 service:
   title: "AI consulting and development"
   href: "/ai-consulting"
@@ -97,7 +99,7 @@ The top of the range is where sources diverge. Quanton lists enterprise AI trans
 | AI agent | Takes actions across systems: updates records, books, escalates | Tool design, permissions, testing of failure paths, audit logging | $80,000 to $250,000+ |
 | Custom machine learning | Forecasting, fraud scoring, computer vision | Data engineering, feature work, training, retraining pipelines | $100,000 to $400,000+ |
 
-These are indicative bands built from the published stage ranges above, not quotes. Specific guides cover [chatbots](/guides/ai-chatbot-cost-australia) and [RAG knowledge bases](/guides/rag-knowledge-base-cost) in more detail.
+These are indicative bands built from the published stage ranges above, not quotes. Specific guides cover [chatbots](/guides/ai-chatbot-cost-australia), [RAG knowledge bases](/guides/rag-knowledge-base-cost) and [AI agent build and running costs](/guides/ai-agent-cost-australia) in more detail.
 
 ## Build, buy or call an API?
 

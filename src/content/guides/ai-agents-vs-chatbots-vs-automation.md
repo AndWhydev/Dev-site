@@ -57,6 +57,10 @@ related:
     href: "/guides/ai-chatbot-cost-australia"
   - title: "AI agent development"
     href: "/services/ai-agent-development"
+  - title: "AI agent costs in Australia"
+    href: "/guides/ai-agent-cost-australia"
+  - title: "AI voice agents and receptionists"
+    href: "/services/ai-voice-agents"
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"

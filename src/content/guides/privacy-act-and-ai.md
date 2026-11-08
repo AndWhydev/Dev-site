@@ -60,6 +60,8 @@ related:
     href: "/guides/prompt-injection"
   - title: "RAG vs fine-tuning: which does your business need?"
     href: "/guides/rag-vs-fine-tuning"
+  - title: "Does the Privacy Act apply to small business?"
+    href: "/guides/privacy-act-small-business-software"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

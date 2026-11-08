@@ -71,6 +71,8 @@ related:
     href: "/services/react-nextjs"
   - title: "Freelancer vs agency vs in-house developers"
     href: "/guides/freelancer-vs-agency-vs-in-house"
+  - title: "Web app vs mobile app vs PWA"
+    href: "/guides/web-app-vs-mobile-app"
 service:
   title: "Flutter app development"
   href: "/services/flutter-development"

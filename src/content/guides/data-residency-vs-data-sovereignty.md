@@ -56,6 +56,8 @@ related:
     href: "/trust"
   - title: "Cloud infrastructure and DevOps"
     href: "/services/cloud-infrastructure"
+  - title: "SOC 2 vs ISO 27001"
+    href: "/guides/soc-2-vs-iso-27001-australia"
 service:
   title: "Cloud infrastructure in Australian regions"
   href: "/services/cloud-infrastructure"

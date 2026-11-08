@@ -54,6 +54,8 @@ related:
     href: "/solutions/insurance-claims-automation"
   - title: "Finance and fintech software"
     href: "/industries/finance-fintech"
+  - title: "Consumer Data Right for software builders"
+    href: "/guides/consumer-data-right-software"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

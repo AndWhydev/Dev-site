@@ -70,6 +70,8 @@ related:
     href: "/guides/ai-data-sovereignty-australia"
   - title: "AI consulting"
     href: "/ai-consulting"
+  - title: "Where AI helps a small business, and what it costs"
+    href: "/guides/ai-for-small-business-australia"
 service:
   title: "AI consulting and LLM integration"
   href: "/services/llm-integration"

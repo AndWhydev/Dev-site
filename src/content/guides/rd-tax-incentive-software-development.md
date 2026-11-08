@@ -65,6 +65,10 @@ related:
     href: "/guides/rd-tax-incentive-ai-projects"
   - title: "How the R&D Tax Incentive affects the cost of building software"
     href: "/guides/rd-tax-incentive-software-development-cost"
+  - title: "Claiming software development as a tax deduction"
+    href: "/guides/software-development-tax-deductions"
+  - title: "Government grants for software development"
+    href: "/guides/government-grants-for-software-development"
 service:
   title: "Custom software development"
   href: "/services/custom-app-development"

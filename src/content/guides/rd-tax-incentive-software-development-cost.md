@@ -70,6 +70,8 @@ related:
     href: "/guides/rd-tax-incentive-ai-projects"
   - title: "How much does an MVP cost in Australia?"
     href: "/guides/mvp-development-cost-australia"
+  - title: "Other tax deductions for software spend"
+    href: "/guides/software-development-tax-deductions"
 service:
   title: "R&D Tax Incentive documentation support"
   href: "/r-and-d"

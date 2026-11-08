@@ -54,6 +54,8 @@ related:
     href: "/solutions/government-ai-and-software"
   - title: "Data residency vs data sovereignty in Australia"
     href: "/guides/data-residency-vs-data-sovereignty"
+  - title: "SOC 2 vs ISO 27001 for Australian SaaS"
+    href: "/guides/soc-2-vs-iso-27001-australia"
 service:
   title: "Cybersecurity and secure development"
   href: "/services/cybersecurity"

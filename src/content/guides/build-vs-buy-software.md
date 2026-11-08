@@ -67,7 +67,7 @@ disclaimer: legal
 
 **Buy, unless you have a specific reason to build.** Off-the-shelf software is cheaper to start, faster to roll out, and maintained by someone else. The reasons to build are narrower but real: the process is how you win, nothing on the market fits without contortions, you need deep integration across systems, or subscription fees at your scale cost more than ownership.
 
-A software developer telling you to buy might sound odd. It's the honest starting point. For accounting, payroll, email, HR, standard CRM and project management, well-established products exist and a custom build almost never makes sense.
+A software developer telling you to buy might sound odd. It's the honest starting point. For accounting, payroll, email, HR, standard CRM and project management, well-established products exist and a custom build almost never makes sense. When a CRM is the edge case, our guide to [custom CRM costs](/guides/custom-crm-development-cost-australia) shows where the line sits.
 
 ## What's the difference between custom software and off-the-shelf software?
 

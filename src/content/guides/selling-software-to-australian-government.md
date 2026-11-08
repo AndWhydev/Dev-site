@@ -62,6 +62,8 @@ related:
     href: "/solutions/government-ai-and-software"
   - title: "AI and software development for Canberra and federal agencies"
     href: "/locations/canberra"
+  - title: "WCAG and the DDA for apps and software"
+    href: "/guides/app-accessibility-australia"
 service:
   title: "SaaS development"
   href: "/services/saas-development"

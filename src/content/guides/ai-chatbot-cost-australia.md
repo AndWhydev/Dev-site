@@ -60,6 +60,8 @@ related:
     href: "/guides/ai-development-cost-australia"
   - title: "AI agent development"
     href: "/services/ai-agent-development"
+  - title: "What an AI receptionist costs"
+    href: "/guides/ai-receptionist-cost-australia"
 service:
   title: "AI chatbot development"
   href: "/services/ai-chatbot"

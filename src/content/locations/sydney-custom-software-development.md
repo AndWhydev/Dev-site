@@ -59,6 +59,8 @@ related:
     href: "/guides/selling-software-to-australian-government"
   - title: "What to check before signing a software development contract"
     href: "/guides/software-development-contract-checklist"
+  - title: "Mobile app developers in Sydney"
+    href: "/locations/sydney-app-development"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

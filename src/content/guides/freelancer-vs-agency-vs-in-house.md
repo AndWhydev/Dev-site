@@ -72,6 +72,8 @@ related:
     href: "/guides/software-development-contract-checklist"
   - title: "Staff augmentation"
     href: "/staff-augmentation"
+  - title: "Do I need a technical cofounder?"
+    href: "/guides/technical-cofounder-vs-agency"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

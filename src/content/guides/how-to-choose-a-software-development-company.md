@@ -61,6 +61,8 @@ related:
     href: "/guides/freelancer-vs-agency-vs-in-house"
   - title: "How to choose an AI development company in Australia"
     href: "/guides/how-to-choose-an-ai-development-company"
+  - title: "Writing a brief vendors can quote on"
+    href: "/guides/how-to-write-a-software-brief"
 service:
   title: "Custom enterprise software development"
   href: "/services/enterprise-software"
@@ -141,7 +143,7 @@ To normalise your own quotes:
 2. Ask each firm to price the gaps, or estimate them yourself.
 3. Note who carries the risk of overruns under each pricing model. Our [fixed price vs time and materials](/guides/fixed-price-vs-time-and-materials) guide explains how each model shifts risk.
 4. Add 12 months of running and support costs to each.
-5. Only then compare totals.
+5. Only then compare totals. Our checklist on [whether an app quote is reasonable](/guides/how-to-compare-software-quotes) goes line by line.
 
 For typical Australian ranges by project size, see [how much custom software costs in Australia](/guides/custom-software-development-cost-australia).
 

@@ -56,6 +56,8 @@ related:
     href: "/guides/prompt-injection"
   - title: "MCP server development"
     href: "/services/mcp-server-development"
+  - title: "What an AI agent costs to build and run"
+    href: "/guides/ai-agent-cost-australia"
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"

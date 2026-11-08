@@ -61,6 +61,8 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "How much does custom software cost in Australia?"
     href: "/guides/custom-software-development-cost-australia"
+  - title: "Software for trades businesses"
+    href: "/solutions/trades-business-software"
 industry:
   title: "Construction"
   href: "/industries/construction-trades"

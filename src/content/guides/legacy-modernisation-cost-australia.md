@@ -58,6 +58,10 @@ related:
     href: "/guides/software-maintenance-cost"
   - title: "Build vs buy: custom software or off-the-shelf SaaS?"
     href: "/guides/build-vs-buy-software"
+  - title: "Replacing Excel or Access with a web app"
+    href: "/guides/replace-excel-or-access-with-a-web-app"
+  - title: "What cloud migration costs"
+    href: "/guides/cloud-migration-cost-australia"
 service:
   title: "Legacy system modernisation"
   href: "/services/legacy-modernisation"

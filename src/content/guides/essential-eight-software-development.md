@@ -64,6 +64,8 @@ related:
     href: "/services/software-maintenance-support"
   - title: "What is prompt injection and how do you defend against it?"
     href: "/guides/prompt-injection"
+  - title: "Penetration testing costs in Australia"
+    href: "/guides/penetration-testing-cost-australia"
 service:
   title: "Cybersecurity and secure development"
   href: "/services/cybersecurity"

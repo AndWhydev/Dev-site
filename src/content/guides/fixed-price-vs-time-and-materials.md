@@ -55,6 +55,8 @@ related:
     href: "/guides/custom-software-development-cost-australia"
   - title: "How we work"
     href: "/methodology"
+  - title: "Is my app quote reasonable?"
+    href: "/guides/how-to-compare-software-quotes"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

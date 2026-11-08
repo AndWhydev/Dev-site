@@ -60,6 +60,10 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "How much does software maintenance cost per year?"
     href: "/guides/software-maintenance-cost"
+  - title: "Customer portal development and costs"
+    href: "/guides/customer-portal-development"
+  - title: "API integration costs"
+    href: "/guides/api-integration-cost-australia"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

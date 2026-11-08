@@ -73,7 +73,7 @@ service:
 
 In practice the lines blur. Bubble is often described as no-code, yet developers extend it with plugins and API calls. Power Apps is marketed as low-code and used by staff who never write a formula more complex than a spreadsheet's. Enterprise low-code platforms such as OutSystems and Mendix are aimed at professional developers who want to build faster.
 
-A newer category, AI app builders that generate code from prompts, sits between the two: you get real code, but it still needs review, testing and maintenance like any other code. The useful question isn't the label but where the software will run, who can change it safely, and whether you can take it with you.
+A newer category, AI app builders that generate code from prompts, sits between the two: you get real code, but it still needs review, testing and maintenance like any other code (our guide to [getting an AI built app production ready](/guides/make-ai-built-app-production-ready) covers what that involves). The useful question isn't the label but where the software will run, who can change it safely, and whether you can take it with you.
 
 ## How do they compare side by side?
 
@@ -97,7 +97,7 @@ A newer category, AI app builders that generate code from prompts, sits between 
 
 - **Internal tools in a Microsoft organisation.** An equipment register, leave approvals, site inspection forms or an asset tracker for 30 staff. If your people already sign in with Microsoft 365, Power Apps gives you identity, permissions and SharePoint or Dataverse data with little setup, often under licences you already hold for basic scenarios.
 - **Testing a product idea.** A founder validating demand with a marketplace or booking concept can build it in Bubble in weeks. If nobody wants it, you've spent little. If they do, you've learned what to build properly.
-- **Replacing spreadsheets and email chains.** A simple form, a list and an approval flow are exactly what low-code does best.
+- **Replacing spreadsheets and email chains.** A simple form, a list and an approval flow are exactly what low-code does best. For bigger workbooks or an Access database, see [replacing Excel or Access with a web app](/guides/replace-excel-or-access-with-a-web-app).
 - **Citizen developers with guardrails.** Letting capable staff solve their own small problems, under IT governance, clears a backlog developers would never reach.
 
 ## Where does low-code break down?

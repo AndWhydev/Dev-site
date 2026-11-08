@@ -58,6 +58,10 @@ related:
     href: "/guides/low-code-vs-custom-development"
   - title: "How much does it cost to build an app in Australia?"
     href: "/guides/app-development-cost-australia"
+  - title: "How to protect an app idea in Australia"
+    href: "/guides/how-to-protect-an-app-idea"
+  - title: "What an app like Uber or Airtasker costs"
+    href: "/guides/booking-marketplace-app-cost-australia"
 service:
   title: "Startup MVP development"
   href: "/startup-mvp"

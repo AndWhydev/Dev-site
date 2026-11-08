@@ -58,6 +58,8 @@ related:
     href: "/guides/cost-to-add-ai-to-an-existing-app"
   - title: "Flutter app development"
     href: "/services/flutter-development"
+  - title: "How to compare software development quotes"
+    href: "/guides/how-to-compare-software-quotes"
 service:
   title: "Web and mobile app development"
   href: "/services/web-mobile-apps"
@@ -140,7 +142,7 @@ The saving applies to the app, not the whole project. The backend, admin portal 
 **The hidden costs are the ones left out of the quote. Quotes usually cover design, build and launch, and leave out store fees, running costs and the yearly platform update cycle.** Check for these:
 
 - **GST** at 10% on top of ex GST quotes.
-- **Developer accounts.** At the time of writing, Apple charges US$99 per membership year, billed in local currency, and Google Play a one-time US$25 registration fee.
+- **Developer accounts.** At the time of writing, Apple charges US$99 per membership year, billed in local currency, and Google Play a one-time US$25 registration fee. Our guide to [publishing on the App Store and Google Play](/guides/app-store-publishing-australia) walks through the setup.
 - **Store commissions.** Apple takes 15% of paid app and in-app purchase revenue under its Small Business Program (for developers with up to US$1 million in proceeds) and a higher standard rate above that. Most B2B apps avoid this because customers pay by invoice or on the web, but check the store rules for your model.
 - **Hosting and backend services.** AppGurus puts hosting at $50 to $500+ a month depending on traffic. Push notifications, maps, SMS and analytics may add per-use charges.
 - **Private distribution.** Staff apps are often distributed through Apple Business Manager or managed Google Play with a device management tool, which has its own licence cost.
@@ -158,13 +160,13 @@ What pushes a platform like this towards the top of the range:
 - **Trust features.** Ratings, identity checks, dispute handling and support tools are easy to underestimate.
 - **Scale.** The first version needs to work for your launch market, not for millions of users. Designing for Uber's scale on day one is the most common way these budgets blow out.
 
-The cost to copy the look of a famous app is modest. The cost to copy its operations is not, which is why an MVP that proves demand in one city or niche is the usual starting point.
+The cost to copy the look of a famous app is modest. The cost to copy its operations is not, which is why an MVP that proves demand in one city or niche is the usual starting point. For a fuller breakdown by feature, see [what a booking or marketplace app costs](/guides/booking-marketplace-app-cost-australia).
 
 ## Is building an app worth the cost?
 
 **An app is worth building when people will use it repeatedly on a phone, away from a desk, and when it replaces work that costs more than the app does.** Field staff, frequent customers and anyone who needs the camera, location or offline access are the strongest cases.
 
-It is often not worth it when users are at a desk, visit once a year, or when a mobile-friendly web app would do the same job. In the worked example above, the field service app costs $129,000 to build and about $22,000 a year to run. For 60 technicians that is roughly $2,150 each up front, which pays back quickly if it saves each technician a few hours of paperwork and re-keying every month. Run the same arithmetic on your own numbers before you commit.
+It is often not worth it when users are at a desk, visit once a year, or when [a mobile-friendly web app](/guides/web-app-vs-mobile-app) would do the same job. In the worked example above, the field service app costs $129,000 to build and about $22,000 a year to run. For 60 technicians that is roughly $2,150 each up front, which pays back quickly if it saves each technician a few hours of paperwork and re-keying every month. Run the same arithmetic on your own numbers before you commit.
 
 ## How can you lower the cost of an app?
 

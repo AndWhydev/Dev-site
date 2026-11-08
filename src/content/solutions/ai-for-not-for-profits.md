@@ -57,6 +57,8 @@ related:
     href: "/guides/n8n-vs-make-vs-zapier"
   - title: "How much does an AI chatbot cost in Australia?"
     href: "/guides/ai-chatbot-cost-australia"
+  - title: "NDIS provider software"
+    href: "/solutions/ndis-provider-software"
 industry:
   title: "AI & Automation"
   href: "/industries/ai-automation"

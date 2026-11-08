@@ -73,7 +73,7 @@ It is not a niche obligation. In calendar year 2024 the OAIC received 1,113 noti
 
 **The NDB scheme applies to every organisation and agency the Privacy Act 1988 covers: APP entities, credit reporting bodies, credit providers and tax file number recipients.** APP entities include Australian Government agencies and most private sector organisations with annual turnover above $3 million.
 
-Most businesses with turnover of $3 million or less are exempt from the Privacy Act, but some are covered regardless of size, such as health service providers. Any entity that holds tax file number information is covered in relation to that information. If you build software for clients, check which of them are covered: a small business client may be outside the scheme while a clinic or a government agency using the same product is inside it.
+Most businesses with turnover of $3 million or less are exempt from the Privacy Act, but some are covered regardless of size, such as health service providers (see [does the Privacy Act apply to small business](/guides/privacy-act-small-business-software) for the full list). Any entity that holds tax file number information is covered in relation to that information. If you build software for clients, check which of them are covered: a small business client may be outside the scheme while a clinic or a government agency using the same product is inside it.
 
 ## What counts as an eligible data breach?
 

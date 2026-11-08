@@ -51,6 +51,8 @@ related:
     href: "/services/ai-readiness-assessment"
   - title: "How we deliver: our methodology"
     href: "/methodology"
+  - title: "How to write a software brief"
+    href: "/guides/how-to-write-a-software-brief"
 service:
   title: "Custom software development"
   href: "/services/custom-app-development"
