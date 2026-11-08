@@ -92,6 +92,8 @@ interface Props {
   whoHeading?: string;
   fitHeading?: string;
   faqHeading?: string;
+  /** Optional numbered list of primary sources for facts stated on the page. */
+  sources?: { title: string; url: string; publisher?: string }[];
 }
 
 const {
@@ -124,6 +126,7 @@ const {
   whoHeading,
   fitHeading,
   faqHeading,
+  sources,
 } = Astro.props;
 
 const siteUrl = 'https://www.awlabs.com.au';
@@ -459,6 +462,23 @@ const entitySentence = BRAND_DEFINITION;
         </div>
       </div>
     </section>
+
+    <!-- Sources (only on pages that cite regulators, legislation or vendor documentation) -->
+    {sources && sources.length > 0 && (
+      <section class="svc-sources" aria-labelledby="svc-sources-heading">
+        <div class="svc-inner">
+          <span class="section-label">Sources</span>
+          <h2 id="svc-sources-heading" class="section-heading">Where these facts come from</h2>
+          <ol class="svc-sources-list">
+            {sources.map((src) => (
+              <li>
+                <a href={src.url} rel="noopener" target="_blank">{src.title}</a>{src.publisher && <span>, {src.publisher}</span>}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )}
 
     <!-- Related Services -->
     <section class="svc-related">
@@ -1132,6 +1152,27 @@ const entitySentence = BRAND_DEFINITION;
     line-height: 1.7;
     margin: 0;
   }
+
+  /* Sources */
+  .svc-sources {
+    padding: 4rem 0;
+    background: #0a0f0e;
+    border-top: 1px solid #1e2d28;
+  }
+
+  .svc-sources .section-heading { margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+  .svc-sources-list {
+    max-width: 900px;
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #7f978d;
+    line-height: 1.7;
+  }
+
+  .svc-sources-list a { color: #0d9373; text-decoration: underline; text-underline-offset: 2px; }
 
   /* Related */
   .svc-related {

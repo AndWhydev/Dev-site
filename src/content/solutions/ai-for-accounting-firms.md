@@ -116,7 +116,7 @@ For the wider Privacy Act picture, our guide to [using personal information in A
 
 ## How does it work with Xero, MYOB and practice software?
 
-**Most practices run a ledger platform, a practice management system and a document portal, and the AI layer has to respect all three.**
+**Most practices run a ledger platform, a practice management system and a document portal, and the AI layer has to respect all three.** Our [Xero and MYOB integration](/services/xero-myob-integration) page covers the integration side in more depth.
 
 | System | What the AI layer reads or writes | Watch for |
 |---|---|---|

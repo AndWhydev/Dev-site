@@ -1,0 +1,198 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Fractional CTO Sydney & Australia | AWLabs",
+  metaDescription: "Fractional CTO services for Australian startups and growing businesses: technology strategy, build and vendor decisions, team leadership, investor readiness.",
+  category: "Technology Leadership",
+  serviceName: "Fractional CTO",
+  nounPhrase: "a fractional CTO",
+  involveHeading: "What does a fractional CTO actually do?",
+  whyHeading: "What do you get from a fractional CTO engagement with AWLabs?",
+  techHeading: "Which technology areas does our fractional CTO cover?",
+  processHeading: "How does a fractional CTO engagement run?",
+  whoHeading: "Which businesses need a fractional CTO?",
+  fitHeading: "Do you need a fractional CTO, an agency lead or a full time hire?",
+  faqHeading: "Common questions about fractional CTO services",
+  slug: "fractional-cto",
+  heroHeadline: "Senior Technology Leadership, a Day or Two a Week",
+  heroTagline: "A fractional CTO gives your business an experienced technology leader on a part time retainer: someone to own the technology strategy, make build or buy calls, manage developers and vendors, and answer the hard questions from your board and investors, without a full time executive salary.",
+  summaryStatement: "A fractional CTO is an experienced technology executive who works part time for a business, usually one or two days a week on a monthly retainer, taking responsibility for technology strategy, architecture and vendor decisions, engineering leadership, security and risk, and the technology side of conversations with the board, investors and customers.",
+  description: [
+    "Many businesses reach a point where technology decisions are too important to leave to whoever is closest, but the company is not ready for a full time Chief Technology Officer. The founder is approving architecture they cannot evaluate, the development agency is setting its own priorities, quotes for the next phase vary by a factor of five, a large customer has sent a security questionnaire nobody can answer, or investors are asking about scalability and technical debt. A fractional CTO fills that gap with senior judgement for a fraction of the time and cost of a permanent executive.",
+    "The value is leadership, not lines of code. In a typical month our fractional CTO sets and maintains a technology roadmap tied to the business plan; makes or reviews build, buy and integrate decisions; reviews architecture, code quality and security posture; runs or joins technical hiring; manages development partners and holds them to scope and quality; prepares the technology sections of board papers, due diligence packs and tenders; and is the person your customers' IT teams can talk to. The work is grounded in the same practices we use on our own builds: written decisions, clear ownership, automated quality gates and senior review.",
+    "There is an obvious conflict of interest when a development company supplies your CTO, and we handle it in the open. A fractional CTO engagement with AWLabs does not oblige you to use AWLabs for development. If we recommend that work be built, the recommendation is written down with the alternatives considered, and you can take the specification to other suppliers; where we do quote, we suggest you get a comparison quote, and our CTO will help you compare them on equal terms. If you already have an in house team or another agency, our role is to make them more effective, not to replace them.",
+    "For context on market rates, third party figures give a guide. At the time of writing, Expert360 states that fractional CTO engagements in Australia cost from A$6,000 to A$25,000 a month depending on scope, against A$350,000 or more a year for a full time CTO, and Fractionus lists A$9,000 to A$18,000 a month for a fractional CTO in its 2026 Australian cost comparison. These are market ranges published by others, not our prices. Engagements are led by a senior member of our leadership team, run in Sydney business hours with written updates every Tuesday and Friday, and start with a Development Consult.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>',
+      title: 'A Roadmap Tied to the Business',
+      description: 'A written technology roadmap that follows the business plan, with priorities, costs and risks your board can read. It is revisited monthly, so the plan changes when the business does instead of drifting.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Build, Buy and Vendor Calls You Can Defend',
+      description: 'Every significant decision is written up with the options considered, costs, risks and the reasoning, so you understand it, your investors can review it, and the next CTO inherits the context instead of guessing.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'Developers and Agencies Held to Account',
+      description: 'Clear scopes, acceptance criteria, code review and delivery reporting for whoever builds your software, whether that is your own team, a freelancer, an offshore partner or another agency.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+      title: 'Security and Risk Owned',
+      description: 'Someone senior owns security questionnaires, access control, backups, incident response and privacy obligations, and can explain to a large customer or insurer what controls exist and what is planned.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+      title: 'Ready for Investors and Due Diligence',
+      description: 'Architecture summaries, technical debt registers, IP and code ownership checks, and answers to the technology questions investors and acquirers ask, prepared before the data room opens.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M19 8h4"/><path d="M21 6v4"/></svg>',
+      title: 'Hiring the Team That Replaces Us',
+      description: 'Role definitions, technical interviews and onboarding for your first engineering hires, and, when the time comes, help recruiting a full time CTO and a clean handover. A good fractional engagement plans its own end.',
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Technology roadmaps', 'Architecture review', 'Build vs buy analysis', 'Vendor and agency management',
+    'Cloud cost review (AWS, Azure, Google Cloud)', 'Security questionnaires', 'Essential Eight awareness',
+    'Privacy Act and APP obligations', 'AI adoption strategy', 'Technical due diligence',
+    'Engineering hiring', 'Delivery and quality metrics',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Development Consult',
+      duration: 'Week 0',
+      description: 'A 15 minute phone call or a Zoom with Andy to understand where the business is, what is worrying you about technology, and whether a fractional CTO is the right answer or something smaller would do.',
+    },
+    {
+      step: '02',
+      title: 'Technology Assessment',
+      duration: 'Weeks 1 to 3',
+      description: 'We review your systems, code, vendors, contracts, costs, security posture and team, and interview the people involved. You receive a written assessment with the risks, the quick wins and a draft roadmap.',
+    },
+    {
+      step: '03',
+      title: 'Agree the Retainer',
+      duration: 'Week 3',
+      description: 'We agree the days per month, the responsibilities the fractional CTO owns, the decisions that stay with you, reporting cadence and the measures of success, all written into the engagement.',
+    },
+    {
+      step: '04',
+      title: 'Ongoing Leadership',
+      duration: 'Monthly',
+      description: 'Regular sessions with the founders or leadership team, vendor and team management, decision records, board and investor material as needed, and written updates every Tuesday and Friday, Sydney time.',
+    },
+    {
+      step: '05',
+      title: 'Quarterly Review',
+      duration: 'Every 3 months',
+      description: 'We review the roadmap, spend and results against the agreed measures, and adjust the time commitment up or down. If you no longer need us at the same level, we say so.',
+    },
+    {
+      step: '06',
+      title: 'Transition',
+      duration: 'When ready',
+      description: 'When the business is ready for a full time technology leader, we help define the role, recruit, and hand over decision records, documentation, credentials and context in an orderly way.',
+    },
+  ],
+  industries: [
+    'Startups & Scaleups',
+    'Professional Services',
+    'Financial Services',
+    'Healthcare & Allied Health',
+    'Not for Profits',
+    'Trades & Construction',
+    'Retail & Ecommerce',
+    'Education & Training',
+  ],
+  faqs: [
+    {
+      question: 'What is a fractional CTO?',
+      answer: 'A fractional CTO is a senior technology executive who works for your business part time, typically one or two days a week on a monthly retainer. They own technology strategy, architecture and vendor decisions, engineering leadership, security and risk, and represent technology to your board, investors and customers. Fractional means ongoing and part time; an interim CTO is usually full time for a fixed period, such as covering a vacancy.',
+    },
+    {
+      question: 'How much does a fractional CTO cost in Australia?',
+      answer: 'Third party market figures give a guide. At the time of writing, Expert360 states A$6,000 to A$25,000 a month depending on scope, and Fractionus lists A$9,000 to A$18,000 a month for a fractional CTO in its 2026 Australian comparison. The main drivers are days per month, the size of the team and vendor base being managed, and how much hands on review is involved. These are market ranges, not our prices; we agree a fixed monthly retainer after the assessment.',
+    },
+    {
+      question: 'When does a business need a fractional CTO?',
+      answer: 'Common triggers are: a non technical founder is making architecture or vendor decisions they cannot evaluate; development spend is significant but nobody senior is accountable for it; a key developer or agency has left; a large customer, insurer or regulator is asking security questions; or a capital raise or sale is coming and investors will look at the technology. It is usually too early if you are still testing an idea on a no code prototype with no paying customers.',
+    },
+    {
+      question: 'Who would be our fractional CTO?',
+      answer: 'A senior member of the AWLabs leadership team, named in your engagement before you sign, with our wider senior engineering team behind them for specialist questions such as cloud, security or AI. You meet the person in the assessment phase, and if the fit is wrong you can say so before the retainer starts.',
+    },
+    {
+      question: 'Do we have to use AWLabs to build our software?',
+      answer: 'No. The fractional CTO engagement stands on its own. If our CTO recommends a build, the specification is yours and you can take it to any supplier. If you ask us to quote, we encourage a comparison quote and our CTO will help you assess both on the same terms. Many businesses that engage a fractional CTO already have their own team or another agency, and that is fine.',
+    },
+    {
+      question: 'Fractional CTO, full time CTO or a senior developer: which do we need?',
+      answer: 'If you need hands on coding capacity, hire or contract a senior developer. If you need someone to own technology decisions, vendors, security and the roadmap, but not five days a week, a fractional CTO fits. If technology is the core of the product, you have an engineering team of several people, and decisions are needed daily, it is time for a full time CTO, and a fractional CTO can help you hire one.',
+    },
+    {
+      question: 'Can a fractional CTO help with AI strategy?',
+      answer: 'Yes. Deciding where AI is worth using, which models and vendors suit your data and privacy obligations, what to build versus buy, and how to govern it are typical fractional CTO questions. For a defined, one off piece of work, our AI readiness assessment or AI consulting may be a better starting point than an ongoing retainer.',
+    },
+    {
+      question: 'How long does a fractional CTO engagement last?',
+      answer: 'Most run for months rather than weeks, because the value comes from continuity: decisions, vendors and the roadmap need an owner over time. We review the arrangement every quarter and adjust the days up or down, and the aim is always that the business eventually either needs less of us or hires a full time leader.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'A non technical founder or leadership team is making significant technology decisions',
+      'Development spend is material and nobody senior is accountable for it',
+      'You rely on agencies or contractors and need someone to hold them to scope and quality',
+      'Customers, insurers or investors are asking technology and security questions you cannot answer',
+      'You will need a full time CTO eventually but not yet, and want help hiring one when the time comes',
+    ],
+    notRightFor: [
+      'You need coding capacity, not leadership; a senior developer or staff augmentation fits better',
+      'Technology is your core product, the team is large and decisions are needed daily; hire full time',
+      'You want a one off review rather than ongoing ownership; a code audit or AI readiness assessment is cheaper',
+      'You are still validating an idea with no customers and no development budget',
+      'You want someone to sign off decisions without the access or authority to change them',
+    ],
+  },
+  definitions: [
+    {
+      term: 'Fractional CTO',
+      definition: 'A senior technology executive working part time for a business on an ongoing retainer, owning technology strategy, decisions and leadership.',
+    },
+    {
+      term: 'Interim CTO',
+      definition: 'A technology executive working full time for a fixed period, usually to cover a vacancy or lead a specific transition.',
+    },
+    {
+      term: 'Technology Roadmap',
+      definition: 'A written, prioritised plan of technology work, costs and risks over the coming quarters, tied to the business plan.',
+    },
+    {
+      term: 'Decision Record',
+      definition: 'A short written note of a significant technical decision, the options considered and the reasons, kept so future teams understand why things are the way they are.',
+    },
+    {
+      term: 'Technical Due Diligence',
+      definition: 'A structured review of a company\'s technology, code, security, IP ownership and team, usually for investors or acquirers.',
+    },
+  ],
+  sources: [
+    { title: 'What Is a Fractional CTO, and When Does Your Business Need One?', url: 'https://expert360.com/articles/what-is-a-fractional-cto', publisher: 'Expert360' },
+    { title: 'How Much Does a Fractional Executive Cost in Australia? (2026)', url: 'https://fractionus.com/fractional-executive-cost-australia', publisher: 'Fractionus' },
+  ],
+  relatedServices: [
+    { title: 'Code Audit & Due Diligence', href: '/services/code-audit' },
+    { title: 'AI Readiness Assessment', href: '/services/ai-readiness-assessment' },
+    { title: 'Staff Augmentation', href: '/staff-augmentation' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10H12z"/><path d="M12 12 6.5 17.5"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

@@ -1,0 +1,203 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "AI Voice Agents & AI Receptionists Australia | AWLabs",
+  metaDescription: "AI voice agents and AI receptionists for Australian businesses: answer calls, book jobs and hand over to staff, built around state call recording laws.",
+  category: "AI & Data",
+  serviceName: "AI Voice Agents",
+  nounPhrase: "AI voice agents",
+  involveHeading: "What does an AI voice agent actually do on a phone call?",
+  whyHeading: "What makes a voice agent worth putting on your phone line?",
+  techHeading: "What technology sits behind an AI receptionist?",
+  processHeading: "How do we build and launch a voice agent?",
+  whoHeading: "Which businesses get the most from an AI receptionist?",
+  fitHeading: "Should you buy an AI receptionist or build a custom voice agent?",
+  faqHeading: "Questions about AI receptionists and voice agents",
+  slug: "ai-voice-agents",
+  heroHeadline: "AI Receptionists That Answer Every Call, Book the Job and Know When to Put a Person On",
+  heroTagline: "We build AI voice agents for Australian businesses: phone agents that answer on your Australian number, take bookings in your calendar or job system, capture the details your team needs, and transfer to a person when a caller needs one. Recording, consent and privacy are designed in from the first call.",
+  summaryStatement: "An AI voice agent, often called an AI receptionist, is software that answers or makes phone calls in natural spoken language: it listens to the caller, works out what they need, looks up or updates your systems, books appointments or jobs, and hands the call or a written summary to a person when the request is outside what it should handle.",
+  description: [
+    "Most small and medium businesses lose calls in the same places: after hours, at lunch, when the only person who can answer is on a roof, in a consult or driving. A voicemail box catches some of them, and the rest ring a competitor. An AI voice agent answers every call on the first ring, at any hour, and handles the routine parts of the conversation the way a well trained receptionist would: it greets the caller in your business name, asks the right questions, checks availability, books the appointment or job, and sends the caller and your team a confirmation. When a call needs a human, it says so and transfers the caller, or takes a message with enough detail that your team can call back prepared.",
+    "The technology is the same agent design we use for AI chatbots and AI agents, with a telephony layer in front. A phone number from an Australian carrier or a voice platform routes the call to speech recognition, which turns the caller's words into text; a language model decides what to say and which tools to use; and a speech synthesis voice replies. The hard part is not getting a demo to talk. It is latency, interruptions, Australian accents and background noise on a mobile in a ute, and making the agent reliable when it books into a real calendar, ServiceM8, simPRO, a CRM such as HubSpot or GoHighLevel, or practice management software.",
+    "Phone calls carry legal obligations that a chat widget does not. Under the federal Telecommunications (Interception and Access) Act 1979, interception means listening to or recording a communication passing over a telecommunications system without the knowledge of the person making it, so the agent tells every caller at the start that the call is recorded and why. State and territory surveillance and listening device laws differ: the Australian Law Reform Commission noted that Queensland, Victoria and the Northern Territory allow a party to a conversation to record it, while the other jurisdictions do not have that general exception. Because callers can ring from any state, we design for the strictest rule: announce recording up front, give the caller a way to continue without it, and record the disclosure in the call log. Your lawyer confirms how the rules apply to your business; this page is general information, not legal advice.",
+    "Privacy comes next. Recordings and transcripts are personal information, and for health businesses they are often health information. We design to the Australian Privacy Principles, collect only what the call needs, set retention periods, and can host transcripts and recordings in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Senior engineers lead every build and review every change, and you receive updates every Tuesday and Friday, Sydney time, so you can hear the agent improving week by week.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
+      title: 'Every Call Answered',
+      description: 'The agent answers on the first ring, after hours, on weekends and when every line is busy. Callers get a real conversation instead of a voicemail box, and you get a record of every enquiry, including the ones that used to hang up.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>',
+      title: 'Bookings in Your Real Systems',
+      description: 'The agent checks availability and books directly into your calendar, job management or practice software through their APIs, using your rules for job types, durations, service areas and travel buffers. No double handling, and no message for someone to retype.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>',
+      title: 'Clean Handover to a Person',
+      description: 'Warm transfer to the right person, a callback request with a written summary, or an SMS to the person on call. Escalation rules are explicit: emergencies, complaints, upset callers, anything clinical or legal, and any caller who asks for a human.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+      title: 'Consent and Privacy by Design',
+      description: 'Recording disclosure at the start of every call, an option to continue without recording, retention rules for audio and transcripts, and redaction of card numbers and other sensitive details. The design is documented for your lawyer and privacy adviser to review.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
+      title: 'Tuned for Australian Callers',
+      description: 'We test against Australian accents, local place names, suburb spellings, mobile reception and noisy job sites, and tune the speech recognition vocabulary for your products, brands and suburbs. Response time is measured on every call, because a pause of more than a second or two feels broken on the phone.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="14" y="6" width="3" height="11"/></svg>',
+      title: 'Measured, Not Guessed',
+      description: 'Every call is logged with its outcome: booked, transferred, message taken or abandoned. You see which questions the agent handles well, where it hands over, and what each call costs to run, so improvements are driven by real calls.',
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Twilio Voice', 'SIP trunking', 'Retell AI', 'Vapi', 'LiveKit', 'OpenAI Realtime API',
+    'Anthropic Claude', 'Deepgram', 'ElevenLabs', 'Google Calendar', 'Microsoft 365 calendars',
+    'ServiceM8', 'simPRO', 'HubSpot', 'GoHighLevel', 'TypeScript / Python',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Call Audit and Scope',
+      duration: 'Weeks 1 to 2',
+      description: 'We listen to how your calls really go: the common reasons people ring, the questions your staff answer, and the calls that must always reach a person. We agree what the agent may book, quote or say, the systems it needs, and the escalation rules, and we map the recording and privacy requirements with your advisers.',
+    },
+    {
+      step: '02',
+      title: 'Conversation Design and Voice',
+      duration: 'Weeks 2 to 4',
+      description: 'We write the call flows, the recording disclosure, the fallback lines and the transfer scripts, and choose a voice that suits your brand. Everything the agent says about prices, policies and services is grounded in content you approve.',
+    },
+    {
+      step: '03',
+      title: 'System Integration',
+      duration: 'Weeks 3 to 6',
+      description: 'We connect the agent to your calendar, job system, CRM or practice software through their APIs, with validation on every booking so it cannot create a job outside your hours, service area or job types. Call summaries and transcripts flow to wherever your team already works.',
+    },
+    {
+      step: '04',
+      title: 'Testing With Real Voices',
+      duration: 'Weeks 5 to 7',
+      description: 'We run scripted and unscripted test calls across accents, mobiles, background noise, interruptions and difficult callers, and measure response time, booking accuracy and handover behaviour. Your team rings it too, and tries to break it.',
+    },
+    {
+      step: '05',
+      title: 'Staged Go Live',
+      duration: 'Weeks 7 to 8',
+      description: 'We usually start with after hours and overflow calls, then widen the hours once the numbers support it. Number forwarding, carrier setup and failover to a person or voicemail are tested before the agent takes live calls.',
+    },
+    {
+      step: '06',
+      title: 'Monitoring and Care Plan',
+      duration: 'Ongoing',
+      description: 'We review call outcomes, costs and transcripts with you, tune prompts and vocabulary, and update the agent as your services and prices change. After the 30 day warranty, a Care Plan covers monitoring and improvements.',
+    },
+  ],
+  industries: [
+    'Trades & Home Services',
+    'Healthcare & Allied Health Clinics',
+    'Real Estate & Property Management',
+    'Professional & Legal Services',
+    'Hospitality & Venues',
+    'Automotive Services',
+    'Education & Training',
+    'Not for Profits',
+  ],
+  faqs: [
+    {
+      question: 'Is it legal to record calls with an AI receptionist in Australia?',
+      answer: 'Generally yes, if callers know. The Telecommunications (Interception and Access) Act 1979 defines interception as listening to or recording a call without the knowledge of the person making it, and state and territory surveillance or listening device laws add their own rules. The ALRC noted that Queensland, Victoria and the Northern Territory allow a party to a conversation to record it, while NSW, South Australia, Western Australia, Tasmania and the ACT do not have that general exception. Since callers can be anywhere, we build for the strictest rule: the agent announces recording at the start, explains why, and offers a way to continue without it. Your lawyer should confirm the position for your business. This is general information, not legal advice.',
+    },
+    {
+      question: 'Should I buy an off the shelf AI receptionist instead?',
+      answer: 'Often, yes. If you are a sole trader or small team that mostly needs messages taken and simple bookings in a mainstream calendar, a subscription AI receptionist service is cheaper and faster than a custom build. A custom voice agent makes sense when calls need to read or write your own systems, follow complex booking rules, handle several locations or brands, meet specific privacy or hosting requirements, or when per seat subscription costs grow beyond what a build would cost to run.',
+    },
+    {
+      question: 'Can it keep my existing phone number?',
+      answer: 'Usually. The simplest path is to keep your number with your current provider and forward calls to the agent, either all the time, after hours, or when nobody answers within a set number of rings. You can also use a new Australian local, 1300 or 1800 number from a voice carrier. We test forwarding and failover before go live, so if the agent is ever unavailable calls fall back to a person or voicemail.',
+    },
+    {
+      question: 'What does an AI voice agent cost to run?',
+      answer: 'Running costs are mostly per minute: telephony, speech recognition, the language model and the synthetic voice. At the time of writing (November 2026), Retell AI lists voice agent pricing of US$0.07 to US$0.31 per minute depending on the models chosen, and Twilio lists receiving calls on an Australian local number at US$0.01 per minute plus US$3.00 a month for the number. As an illustration only, 1,000 calls a month averaging 3 minutes is 3,000 minutes, so at US$0.08 to US$0.32 per minute all in, that is roughly US$240 to US$960 a month before hosting and support. These are vendor list prices, not our prices; we model your actual call volumes before you commit.',
+    },
+    {
+      question: 'How much does it cost to build?',
+      answer: 'It depends on how many call types the agent handles, how many systems it connects to, and how strict the booking and escalation rules are. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The first step is a Development Consult, a 15 minute phone call or a Zoom with Andy.',
+    },
+    {
+      question: 'Can the voice agent make outbound calls?',
+      answer: 'Yes, for reminders, confirmations and callbacks the customer has asked for. Outbound marketing calls are a different matter: the Do Not Call Register Act 2006 and the Telecommunications (Telemarketing and Research Calls) Industry Standard 2017 apply, and ACMA lists permitted telemarketing hours of 9am to 8pm on weekdays and 9am to 5pm on Saturdays, with no calls on Sundays or national public holidays. Follow up SMS messages that promote anything need consent, sender identification and an unsubscribe option under the Spam Act 2003. We design outbound flows to those rules and keep the evidence of consent.',
+    },
+    {
+      question: 'Can an AI receptionist work for a medical or allied health clinic?',
+      answer: 'For administration, yes: bookings, cancellations, reminders, directions, fees and preparation instructions. It must not give clinical advice or triage symptoms. The agent is designed to tell anyone describing an emergency to hang up and call 000, and to transfer clinical questions to staff. Health information is sensitive information under the Privacy Act, and health service providers are covered whatever their turnover, so hosting, retention and access controls are set accordingly.',
+    },
+    {
+      question: 'Will callers know they are talking to AI?',
+      answer: 'They should, and our agents say so. We recommend the greeting makes clear the caller is speaking with an automated assistant for your business, alongside the recording notice. Being upfront avoids complaints, sets expectations for the conversation, and makes it natural for callers to ask for a person when they want one.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'You miss calls after hours, at peak times or while your team is on the tools',
+      'A large share of calls are routine: bookings, rescheduling, opening hours, quotes for standard jobs',
+      'Bookings need to land in your own job, calendar, CRM or practice system with your rules applied',
+      'You need control over where recordings and transcripts are stored and for how long',
+      'You run several locations, brands or call types that a generic subscription handles poorly',
+    ],
+    notRightFor: [
+      'You take a handful of calls a week, where a subscription AI receptionist or answering service is cheaper',
+      'Most calls are complex, emotional or high stakes and genuinely need a person from the first word',
+      'You want the agent to give clinical, legal or financial advice, which we will not build',
+      'You plan cold outbound marketing calls at scale, which carries legal and reputational risk we advise against',
+      'Your booking rules live only in someone\'s head and nobody can write them down yet',
+    ],
+  },
+  definitions: [
+    {
+      term: 'AI Voice Agent',
+      definition: 'Software that holds a spoken phone conversation using speech recognition, a language model and a synthetic voice, and can take actions such as booking an appointment or updating a record.',
+    },
+    {
+      term: 'AI Receptionist',
+      definition: 'A voice agent set up to answer a business\'s inbound calls: greeting callers, answering common questions, taking bookings and messages, and transferring calls to staff.',
+    },
+    {
+      term: 'Warm Transfer',
+      definition: 'A handover where the agent passes the call to a person along with a short summary, so the caller does not have to start again.',
+    },
+    {
+      term: 'Latency',
+      definition: 'The delay between a caller finishing a sentence and the agent starting to reply. On the phone, delays beyond a second or two feel unnatural, so it is measured on every call.',
+    },
+    {
+      term: 'Interception',
+      definition: 'Under the Telecommunications (Interception and Access) Act 1979, listening to or recording a call passing over a telecommunications system without the knowledge of the person making it. Announcing recording is how a business avoids it.',
+    },
+  ],
+  sources: [
+    { title: 'Telecommunications (Interception and Access) Act 1979, section 6', url: 'https://www.legislation.gov.au/C2004A02124/latest/text', publisher: 'Federal Register of Legislation' },
+    { title: 'Serious Invasions of Privacy in the Digital Era (Report 123), participant monitoring', url: 'https://www.alrc.gov.au/publication/serious-invasions-of-privacy-in-the-digital-era-alrc-report-123/14-surveillance-devices/participant-monitoring/', publisher: 'Australian Law Reform Commission' },
+    { title: 'Small business and the Privacy Act', url: 'https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/organisations/small-business', publisher: 'Office of the Australian Information Commissioner' },
+    { title: 'APP Guidelines, Chapter B: Key concepts (health information and health services)', url: 'https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-b-key-concepts', publisher: 'Office of the Australian Information Commissioner' },
+    { title: 'Dealing with telemarketing (calling hours)', url: 'https://www.acma.gov.au/protect-yourself-unwanted-calls-and-faxes', publisher: 'Australian Communications and Media Authority' },
+    { title: 'Avoid sending spam', url: 'https://www.acma.gov.au/avoid-sending-spam', publisher: 'Australian Communications and Media Authority' },
+    { title: 'Retell AI pricing', url: 'https://www.retellai.com/pricing', publisher: 'Retell AI' },
+    { title: 'Twilio Voice pricing for Australia', url: 'https://www.twilio.com/en-us/voice/pricing/au', publisher: 'Twilio' },
+  ],
+  relatedServices: [
+    { title: 'AI Agent Development', href: '/services/ai-agent-development' },
+    { title: 'AI Chatbot', href: '/services/ai-chatbot' },
+    { title: 'CRM Integration', href: '/services/crm-integration' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M15 3a6 6 0 0 1 6 6"/><path d="M15 7a2 2 0 0 1 2 2"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

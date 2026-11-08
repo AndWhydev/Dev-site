@@ -1,0 +1,200 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "CRM Integration: HubSpot, Salesforce, GoHighLevel | AWLabs",
+  metaDescription: "CRM integration for Australian businesses: connect HubSpot, Salesforce, GoHighLevel or Zoho to Xero, job systems, forms and your own apps, with clean data.",
+  category: "Integration",
+  serviceName: "CRM Integration",
+  nounPhrase: "CRM integration",
+  involveHeading: "What does integrating your CRM actually involve?",
+  whyHeading: "Why bring engineers in to connect your CRM?",
+  techHeading: "Which CRMs and APIs do we work with?",
+  processHeading: "How do we run a CRM integration project?",
+  whoHeading: "Which teams get the most from a connected CRM?",
+  fitHeading: "Should you integrate around your CRM, customise it, or replace it?",
+  faqHeading: "Questions about HubSpot, Salesforce, GoHighLevel and Zoho integration",
+  slug: "crm-integration",
+  heroHeadline: "Connect Your CRM to the Rest of the Business, Without Duplicates or Dead Leads",
+  heroTagline: "We integrate HubSpot, Salesforce, GoHighLevel and Zoho CRM with your accounting, job management, forms, telephony, ad platforms and custom software, so leads route correctly, records stay clean and nobody retypes a customer twice.",
+  summaryStatement: "CRM integration is the work of connecting a customer relationship management platform, such as HubSpot, Salesforce, GoHighLevel or Zoho CRM, to the other systems a business runs, through their APIs and webhooks, so contacts, deals, activities and invoices stay consistent across them and automations act on accurate data.",
+  description: [
+    "A CRM is only as useful as the data in it. Most of the CRM problems we are asked about are not CRM problems at all: leads from the website form arrive without the campaign that produced them, the same customer exists three times with different spellings, a won deal still has to be typed into Xero or MYOB by hand, the job system and the CRM disagree about whether a customer is active, and the sales team stops trusting the reports. Integration fixes the plumbing so the CRM reflects what is really happening in the business.",
+    "Typical integrations for Australian businesses connect the CRM to accounting (a won deal or signed quote becomes an invoice, and payment status flows back), to job or project management such as ServiceM8 or simPRO, to web forms, booking tools and live chat, to telephony and SMS so calls and messages are logged against the contact, to ad platforms so offline conversions are reported back, and to a company's own app or customer portal. Each one is a decision about which system owns which field, what happens when they disagree, and who is told when something fails.",
+    "Each platform sets limits that shape the design, and they change, so treat these as at the time of writing (November 2026). HubSpot's usage guidelines give privately distributed apps a burst limit of 100 requests per 10 seconds on Free and Starter and 190 on Professional and Enterprise, with daily limits of 250,000, 625,000 and 1,000,000 requests per account respectively. GoHighLevel's API documentation lists a burst limit of 100 requests per 10 seconds and 200,000 requests per day, counted per app per sub account or company. Zoho CRM uses API credits in a 24 hour window that scale with edition and user licences, from 5,000 on the Free edition upward. Salesforce allocates API requests by edition and licence count, visible in your org's setup. A good integration batches, uses webhooks instead of polling, and queues work so a busy campaign does not hit a limit and drop leads.",
+    "We use GoHighLevel in our own business, so we know its strengths and its quirks first hand, and we will tell you when a native feature or an existing marketplace app does the job better than custom code. We hold no HubSpot, Salesforce, GoHighLevel or Zoho partner tier; we build against each vendor's published APIs. Senior engineers lead every build and review every change, and you receive updates every Tuesday and Friday, Sydney time.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      title: 'One Customer, One Record',
+      description: 'Matching rules on email, phone and ABN, with normalised formats for Australian mobile numbers and addresses, stop duplicates at the door. Existing duplicates are merged with a reviewed plan, not a blind bulk action.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+      title: 'Leads Routed the Right Way',
+      description: 'Ownership, territory, round robin and service area rules are applied the moment a lead arrives, with a fallback owner so nothing sits unassigned. Source and campaign data is captured so you can see which spend actually produced revenue.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>',
+      title: 'Sales and Accounts in Step',
+      description: 'Won deals become invoices in Xero or MYOB with the right accounts and tax codes, and payment status flows back to the CRM, so sales sees who has paid and finance stops chasing the sales team for details.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+      title: 'Consent Travels With the Contact',
+      description: 'Marketing consent, its source and date, and unsubscribe status sync with the contact everywhere it goes, so automations respect the Spam Act and the Privacy Act and you can show where consent came from.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+      title: 'Failures Caught, Not Lost',
+      description: 'Every webhook and sync job is logged, retried where it is safe, and alerted to a named person when it fails. Dropped leads are the most expensive integration bug, so they are the first thing we monitor.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+      title: 'Migrations Without Lost History',
+      description: 'Moving from one CRM to another, or out of spreadsheets, with contacts, companies, deals, notes and activity history mapped, tested on a sample, reconciled by count and value, and cut over on a date that suits your sales cycle.',
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'HubSpot CRM API', 'Salesforce REST and Bulk APIs', 'GoHighLevel API', 'Zoho CRM API',
+    'Webhooks', 'OAuth 2.0', 'Xero Accounting API', 'MYOB Business API', 'ServiceM8 API', 'simPRO API',
+    'Twilio', 'Google Ads and Meta conversions APIs', 'n8n', 'Node.js / TypeScript', 'PostgreSQL',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Map the Customer Journey',
+      duration: 'Week 1',
+      description: 'We trace a lead from first contact to paid invoice across every system it touches, and list where data is retyped, lost or duplicated. We check native features and marketplace apps before proposing custom work.',
+    },
+    {
+      step: '02',
+      title: 'Define Ownership and Rules',
+      duration: 'Weeks 1 to 2',
+      description: 'We agree which system owns each object and field, the matching and deduplication rules, lead routing, consent handling, and what happens on conflicts and failures. This becomes the specification we test against.',
+    },
+    {
+      step: '03',
+      title: 'Build in a Sandbox',
+      duration: 'Weeks 2 to 5',
+      description: 'We build against sandbox or test accounts wherever the platform offers them, never your live pipeline, with automated tests for routing, matching, limits and error cases. You review records exactly as your team will see them.',
+    },
+    {
+      step: '04',
+      title: 'Clean and Migrate Data',
+      duration: 'Weeks 4 to 6',
+      description: 'Where existing data needs cleaning or moving, we run the merge and migration on a sample first, reconcile counts and values, and agree a cutover plan with your sales and finance leads.',
+    },
+    {
+      step: '05',
+      title: 'Go Live and Monitor',
+      duration: 'Week 6 onwards',
+      description: 'The integration goes live with logging, retries, alerts and a weekly data quality report, and we watch the first weeks closely with the people who use the CRM every day.',
+    },
+    {
+      step: '06',
+      title: 'Care Plan',
+      duration: 'Ongoing',
+      description: 'CRM vendors release API versions and change limits regularly. After the 30 day warranty, a Care Plan keeps integrations current, adds new sources and handles changes to your pipeline and routing.',
+    },
+  ],
+  industries: [
+    'Trades & Home Services',
+    'Real Estate & Property',
+    'Professional Services',
+    'Financial Services & Broking',
+    'Education & Training',
+    'Health & Allied Health Clinics',
+    'SaaS & Software Products',
+    'Marketing Agencies',
+  ],
+  faqs: [
+    {
+      question: 'Should we customise our CRM or integrate around it?',
+      answer: 'Customise inside the CRM when the change is about how your team works in it: fields, pipelines, views, simple automations. Integrate around it when data has to move to or from another system, when logic is too complex for the CRM\'s automation tools, or when you need guarantees about failures and audit trails. And replace the CRM only when it fundamentally cannot model your business; that is rarer than vendors suggest.',
+    },
+    {
+      question: 'Can you connect our CRM to Xero or MYOB?',
+      answer: 'Yes, and it is one of the commonest requests. Typically a won deal or accepted quote creates a contact and invoice in Xero or MYOB with the right accounts and tax codes, and payment status is written back to the CRM. Some CRMs have marketplace apps for this that are good enough; we check those first. Our Xero and MYOB integration page covers the accounting side in detail.',
+    },
+    {
+      question: 'Do you work with GoHighLevel?',
+      answer: 'Yes. We use GoHighLevel in our own business and build integrations with its API and webhooks. At the time of writing its documentation lists a burst limit of 100 requests per 10 seconds and 200,000 requests per day per app per sub account, which matters for agencies running many sub accounts and for high volume campaigns. We design with queues and webhooks so those limits are not a problem.',
+    },
+    {
+      question: 'Can you migrate us from one CRM to another?',
+      answer: 'Yes. We map objects and fields between the two platforms, decide what history is worth bringing (contacts, companies, deals, notes, emails, files), run a test migration on a sample, reconcile counts and pipeline values, and plan the cutover around your sales cycle. Automations and integrations are rebuilt and tested on the new platform before the old one is switched off.',
+    },
+    {
+      question: 'What privacy and spam rules apply to CRM automations?',
+      answer: 'Commercial emails and SMS need consent, must identify the sender and must include a working unsubscribe under the Spam Act 2003, which ACMA enforces. For organisations covered by the Privacy Act, APP 7 requires a simple way for people to opt out of direct marketing. The integration should carry consent and unsubscribe status with the contact into every system that sends messages. Your lawyer confirms how the rules apply to you; this is general information, not legal advice.',
+    },
+    {
+      question: 'Are you a HubSpot or Salesforce partner?',
+      answer: 'No. We hold no HubSpot Solutions Partner, Salesforce Consulting Partner, GoHighLevel or Zoho partner status. We build against the vendors\' published APIs, and partner status is not needed for integration work. If you need a certified partner for licensing, implementation of the platform itself or a vendor requirement, we can work alongside one.',
+    },
+    {
+      question: 'How much does a CRM integration cost?',
+      answer: 'It depends on the number of systems, the objects and fields involved, the direction of sync, data cleaning and any migration. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The first step is a Development Consult, a 15 minute phone call or a Zoom with Andy.',
+    },
+    {
+      question: 'Would a tool like Zapier or Make be enough?',
+      answer: 'Sometimes. For a few simple flows at modest volume, an automation platform is quick and cheap, and we will say so. Custom integration code makes sense when flows need complex matching or routing logic, high volumes, strict error handling and audit trails, or access to APIs those tools do not cover well. Our comparison of n8n, Make and Zapier explains the trade offs.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'Leads, customers or deals are retyped between your CRM and other systems',
+      'Duplicates and missing source data make your CRM reports untrustworthy',
+      'You need lead routing, ownership or territory rules applied automatically',
+      'Won deals should become invoices in Xero or MYOB without manual entry',
+      'You are moving between CRMs and cannot afford to lose history',
+    ],
+    notRightFor: [
+      'A native feature or an existing marketplace app already does what you need',
+      'You have a small team and low volumes, where a few Zapier or Make flows are enough',
+      'Nobody owns the CRM process yet; agree how the team should work before automating it',
+      'You want to bulk message contacts without consent, which we will not build',
+      'The real problem is CRM adoption or training rather than data flow',
+    ],
+  },
+  definitions: [
+    {
+      term: 'CRM Integration',
+      definition: 'Connecting a CRM to other systems through APIs and webhooks so contacts, deals, activities and related records stay consistent across them.',
+    },
+    {
+      term: 'Deduplication',
+      definition: 'Detecting and merging records that represent the same person or company, using matching rules such as email, phone or ABN.',
+    },
+    {
+      term: 'Lead Routing',
+      definition: 'Rules that assign a new lead to the right owner or team automatically, based on territory, service, source or workload.',
+    },
+    {
+      term: 'Webhook',
+      definition: 'A message one system sends to another the moment something happens, such as a new lead, so the receiving system does not have to keep asking.',
+    },
+    {
+      term: 'API Rate Limit',
+      definition: 'The maximum number of requests a platform accepts in a time window. Integrations are designed to stay under it with batching, caching and queues.',
+    },
+  ],
+  sources: [
+    { title: 'HubSpot API usage guidelines and limits', url: 'https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines', publisher: 'HubSpot' },
+    { title: 'HighLevel API FAQs (rate limits)', url: 'https://marketplace.gohighlevel.com/docs/oauth/Faqs/index.html', publisher: 'HighLevel' },
+    { title: 'Zoho CRM API limits (V8)', url: 'https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html', publisher: 'Zoho' },
+    { title: 'Avoid sending spam', url: 'https://www.acma.gov.au/avoid-sending-spam', publisher: 'Australian Communications and Media Authority' },
+    { title: 'APP Guidelines, Chapter 7: APP 7 Direct marketing', url: 'https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-7-app-7-direct-marketing', publisher: 'Office of the Australian Information Commissioner' },
+  ],
+  relatedServices: [
+    { title: 'Xero and MYOB Integration', href: '/services/xero-myob-integration' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'API Development', href: '/services/api-development' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><path d="M5.6 6.4 9.8 10"/><path d="M18.4 6.4 14.2 10"/><path d="M5.6 17.6 9.8 14"/><path d="M18.4 17.6 14.2 14"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

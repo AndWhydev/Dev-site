@@ -1,0 +1,198 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Xero & MYOB Integration Developers Australia | AWLabs",
+  metaDescription: "Custom Xero and MYOB integrations for Australian businesses: connect your CRM, job system, store or platform with GST, tracking and reconciliation done right.",
+  category: "Integration",
+  serviceName: "Xero and MYOB Integration",
+  nounPhrase: "Xero and MYOB integration",
+  involveHeading: "What does a custom Xero or MYOB integration involve?",
+  whyHeading: "Why have engineers build your accounting integration?",
+  techHeading: "Which APIs and tools do we build Xero and MYOB integrations with?",
+  processHeading: "How do we deliver an accounting integration?",
+  whoHeading: "Which businesses need a custom Xero or MYOB integration?",
+  fitHeading: "Do you need a custom integration, or will an app do?",
+  faqHeading: "Common questions about Xero and MYOB integrations",
+  slug: "xero-myob-integration",
+  heroHeadline: "Xero and MYOB Integrations That Your Bookkeeper Can Actually Reconcile",
+  heroTagline: "We build custom integrations between Xero or MYOB and the rest of your business: CRMs, job management, ecommerce, payroll, inventory and your own platforms. Invoices, payments and contacts flow automatically, with GST, tracking categories and failures handled properly.",
+  summaryStatement: "A custom Xero or MYOB integration is software that connects an accounting file to another system through the vendor's API, so that invoices, bills, payments, contacts and items move between them automatically, with the accounting rules, error handling and audit trail that a bookkeeper and an auditor need.",
+  description: [
+    "Most businesses reach for an app first, and they should. The Xero App Store and the MYOB App Marketplace list a wide range of ready made connectors, and for a common pairing, such as a popular ecommerce platform or payroll product, an existing app is usually the cheapest and quickest answer. A custom integration earns its place when the app does not exist, when it does not support the way you work, or when it gets the accounting wrong: the wrong GST code on mixed supplies, sales landing in one lump account instead of by tracking category, duplicate contacts, or a sync that silently stops and is only noticed at BAS time.",
+    "The commonest requests we see are connecting Xero or MYOB to a CRM so a won deal becomes an invoice; to job management software such as ServiceM8 or simPRO where the standard sync does not fit; to a custom portal or SaaS product so customers are invoiced automatically; to inventory and purchasing systems; and to several entities at once for consolidated reporting. The design question that matters most is direction. A one way push, where your system creates invoices in Xero, is far simpler and safer than a two way sync where both systems can change the same record, because a two way sync needs rules for which side wins, how deletions and voids are handled, and how to stop records bouncing back and forth.",
+    "Each platform sets limits that shape the design. At the time of writing (November 2026), Xero's developer pricing page lists a Starter plan of up to 5 connections at no charge with an API limit of 1,000 calls per day per organisation, and paid plans from $35 AUD a month (Core, up to 50 connections) to $1,445 AUD a month (Advanced, up to 10,000 connections), each with 5,000 calls per day per organisation and a monthly data allowance, with higher tiers requiring app certification and a security assessment. A private integration for one business usually fits comfortably in the Starter limits if it is designed to batch and cache; a product that many businesses will connect needs the plan and certification costs in its business case. MYOB's Business API serves both MYOB Business and AccountRight files, with separate APIs for MYOB Acumatica and EXO, and an AccountRight file stored locally is reached differently from one in the cloud.",
+    "The accounting has to be right, not just the data transfer. That means mapping each product or service to the correct account, tax rate and tracking category; handling GST for businesses registered for it (the ATO requires registration once GST turnover reaches $75,000, or $150,000 for non profits); rounding the way the accounting file expects; and dealing with multiple currencies and entities where they apply. We agree the mapping with your accountant or bookkeeper before we write code, and every sync writes a log they can read. Senior engineers lead every build and review every change, and you receive updates every Tuesday and Friday, Sydney time.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
+      title: 'Right Direction, Right Rules',
+      description: 'We decide with you which system owns each record. One way pushes where possible, two way sync only where it is genuinely needed, with explicit rules for conflicts, voids, credit notes and deletions, so nothing is overwritten by surprise.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>',
+      title: 'Accounting Your Bookkeeper Signs Off',
+      description: 'Accounts, tax rates, tracking categories, items and rounding are mapped with your accountant before build. Invoices land coded the way they would be entered by hand, so reconciliation and BAS preparation get easier, not harder.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+      title: 'Failures That Get Noticed',
+      description: 'Expired connections, rejected invoices, locked periods and API limits are caught, retried where safe and reported to a named person straight away. A sync that stops quietly for three weeks is the most expensive kind of integration bug.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+      title: 'Reconciliation Reports',
+      description: 'A daily or weekly report compares totals in both systems and lists anything that did not match, with a link to the record. Your bookkeeper sees the gap before month end instead of hunting for it.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+      title: 'Designed Around API Limits',
+      description: 'Batching, caching, webhooks and queueing keep the integration well inside Xero and MYOB limits, including during busy periods and the first bulk import, so a sales spike does not stall your invoicing.',
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: 'Secure Access to Financial Data',
+      description: 'OAuth connections with the narrowest scopes the job needs, tokens stored encrypted, no shared logins, and a clear record of who connected which file. Financial data is hosted in Australian cloud regions where your Schedule of Work requires it.',
+    },
+  ],
+  useCases: [],
+  technologies: [
+    'Xero Accounting API', 'Xero webhooks', 'MYOB Business API', 'MYOB AccountRight API', 'MYOB Acumatica API',
+    'OAuth 2.0', 'Node.js / TypeScript', 'Python', 'PostgreSQL', 'Queues and scheduled jobs',
+    'n8n', 'AWS / Azure', 'ServiceM8 API', 'simPRO API', 'Shopify API', 'HubSpot and GoHighLevel APIs',
+  ],
+  process: [
+    {
+      step: '01',
+      title: 'Map the Money Flow',
+      duration: 'Week 1',
+      description: 'We trace how a sale, purchase or payment moves through your business today, who enters what, and where errors creep in. We check whether an existing app already does the job before recommending a build.',
+    },
+    {
+      step: '02',
+      title: 'Agree the Accounting Mapping',
+      duration: 'Weeks 1 to 2',
+      description: 'With your accountant or bookkeeper we agree accounts, tax rates, tracking categories, items, contacts and the rules for credit notes, refunds and voids. This mapping becomes the specification the code is tested against.',
+    },
+    {
+      step: '03',
+      title: 'Build Against a Demo File',
+      duration: 'Weeks 2 to 5',
+      description: 'We build and test against a Xero demo company or a copy of your MYOB file, never your live books, covering normal transactions, edge cases, failures and limits. You review sample invoices exactly as they will appear.',
+    },
+    {
+      step: '04',
+      title: 'Historical Data and Cutover',
+      duration: 'Weeks 5 to 6',
+      description: 'We decide with you whether to backfill history or start from a clean date, match existing contacts to avoid duplicates, and pick a cutover point that suits your reporting periods.',
+    },
+    {
+      step: '05',
+      title: 'Go Live With Monitoring',
+      duration: 'Week 6 onwards',
+      description: 'The integration goes live with alerts, retry handling and reconciliation reports switched on, and we watch the first full month end closely with your bookkeeper.',
+    },
+    {
+      step: '06',
+      title: 'Care Plan',
+      duration: 'Ongoing',
+      description: 'Vendors change their APIs, plans and limits. After the 30 day warranty, a Care Plan keeps the integration current, renews certifications where your plan needs them, and handles new account or tax mappings as your business changes.',
+    },
+  ],
+  industries: [
+    'Trades & Construction',
+    'Retail & Ecommerce',
+    'Manufacturing & Wholesale',
+    'Accounting & Bookkeeping Firms',
+    'Professional Services',
+    'SaaS & Software Products',
+    'Not for Profits',
+    'Property & Real Estate',
+  ],
+  faqs: [
+    {
+      question: 'Is there already an app that connects my system to Xero or MYOB?',
+      answer: 'Check first; often there is. Search the Xero App Store or the MYOB App Marketplace for your other system, and ask that vendor whether they have a native integration. If an app exists and codes transactions the way your accountant wants, use it. We recommend a custom build when no app exists, when the app cannot handle your accounts, tracking or multiple entities, or when you need the integration inside your own product.',
+    },
+    {
+      question: 'What does Xero charge developers to use its API?',
+      answer: 'At the time of writing (November 2026), Xero\'s developer pricing page lists five plans. Starter is at no charge for up to 5 connections with 1,000 API calls per day per organisation. Core is $35 AUD a month for up to 50 connections, Plus $245 AUD for up to 1,000, Advanced $1,445 AUD for up to 10,000, and Enterprise is priced on application. Paid plans allow 5,000 calls per day per organisation and include a monthly data egress allowance, with overage at $2.40 AUD per GB. Prices are tax exclusive and change, so check developer.xero.com before you budget.',
+    },
+    {
+      question: 'Can you integrate with MYOB AccountRight on a desktop?',
+      answer: 'Yes, with some extra work. MYOB\'s Business API serves both cloud files and AccountRight files, but a file stored locally is reached through a local API on the network where it lives, not through MYOB\'s cloud endpoint. In practice most businesses we would advise are moving to cloud files, which makes the integration simpler and more reliable. MYOB Acumatica and MYOB EXO have their own APIs.',
+    },
+    {
+      question: 'Should the integration sync both ways?',
+      answer: 'Only where it must. A one way flow, for example invoices created in your job system and pushed to Xero, with payment status read back, covers most needs and is much easier to keep correct. A full two way sync of the same records needs rules for which side wins every conflict, and is where most integration problems come from. We will tell you plainly when one way is enough.',
+    },
+    {
+      question: 'How do you make sure GST is right?',
+      answer: 'We map every product, service and fee to the tax rate your accountant specifies, test mixed supplies, GST free items, discounts and rounding against a demo file, and compare totals before go live. Under ATO rules a business must register for GST once its GST turnover reaches $75,000, or $150,000 for a non profit, and the integration follows your registration status. Your accountant remains responsible for the tax treatment; we make sure the software applies it consistently.',
+    },
+    {
+      question: 'Can you connect several Xero organisations or entities?',
+      answer: 'Yes. Each organisation is a separate connection with its own API limits, accounts and tax settings, so the integration routes each transaction to the right entity and keeps the mappings separate. For groups we can also build consolidated reporting that reads from every entity in one place.',
+    },
+    {
+      question: 'Are you a Xero or MYOB partner?',
+      answer: 'We do not hold a Xero or MYOB partner status, and we do not need one to build a private integration for your business. We build against the vendors\' published APIs under their developer terms. If you are building a product to list on the Xero App Store, Xero\'s certification and plan requirements apply to your app, and we build to them with you.',
+    },
+    {
+      question: 'How much does a custom Xero integration cost?',
+      answer: 'It depends on the number of record types, the direction of sync, the systems on the other side and the volume of transactions. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. Our workflow automation cost guide covers typical Australian market ranges for integration work; those are market figures, not our prices.',
+    },
+  ],
+  comparison: {
+    rightFor: [
+      'No app connects your system to Xero or MYOB, or the app codes transactions wrongly',
+      'Staff retype invoices, bills or payments between systems every week',
+      'You need tracking categories, several entities or multiple currencies handled automatically',
+      'Your own software product needs to invoice customers through their own or your Xero file',
+      'You want reconciliation reports and alerts instead of finding sync problems at BAS time',
+    ],
+    notRightFor: [
+      'A well reviewed app already does exactly what you need at a modest monthly fee',
+      'You have a few dozen transactions a month, where manual entry costs less than any build',
+      'Your chart of accounts and coding rules are still in flux; settle those with your accountant first',
+      'You are about to change accounting platform, in which case integrate after the move',
+      'You want the integration to make tax decisions, which belong with your accountant',
+    ],
+  },
+  definitions: [
+    {
+      term: 'Accounting Integration',
+      definition: 'Software that moves transactions and records between an accounting file, such as Xero or MYOB, and another system through the vendor\'s API, applying the agreed accounting rules.',
+    },
+    {
+      term: 'One Way Push',
+      definition: 'An integration where one system creates or updates records in the other, but not the reverse. Simpler and safer than a two way sync.',
+    },
+    {
+      term: 'Two Way Sync',
+      definition: 'An integration where both systems can change the same records and keep each other up to date. It needs explicit rules for conflicts and deletions.',
+    },
+    {
+      term: 'Tracking Category',
+      definition: 'A Xero feature for tagging transactions by department, location, job or other dimension, so reports can be split without extra accounts.',
+    },
+    {
+      term: 'Reconciliation Report',
+      definition: 'A scheduled comparison of totals and records between the two systems that lists anything that does not match, so errors are found early.',
+    },
+  ],
+  sources: [
+    { title: 'Xero Developer pricing and policies', url: 'https://developer.xero.com/pricing', publisher: 'Xero' },
+    { title: 'MYOB Business API: getting started', url: 'https://developer.myob.com/api/myob-business-api/api-overview/getting-started/', publisher: 'MYOB' },
+    { title: 'Registering for GST', url: 'https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst', publisher: 'Australian Taxation Office' },
+  ],
+  relatedServices: [
+    { title: 'API Development', href: '/services/api-development' },
+    { title: 'Workflow Automation', href: '/services/workflow-automation' },
+    { title: 'CRM Integration', href: '/services/crm-integration' },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="8" rx="1.5"/><rect x="14" y="13" width="8" height="8" rx="1.5"/><path d="M10 7h4a3 3 0 0 1 3 3v3"/><path d="m15 11 2 2 2-2"/><path d="M6 11v3a3 3 0 0 0 3 3h5"/></svg>',
+};
+---
+<ServicePageLayout {...data} />
