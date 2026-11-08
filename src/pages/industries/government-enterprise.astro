@@ -5,11 +5,12 @@ const data = {
   metaTitle: 'Government Software Development Australia | AWLabs',
   metaDescription: 'Government software development and AI for Australian federal, state and local government: citizen portals, grants and case management, built to the ISM.',
   industryName: 'Government & Public Sector',
-  heroHeadline: 'Digital Government Solutions That Serve Citizens Better',
+  heroHeadline: 'Government software development for Australian agencies and councils',
+  heroSecondary: { label: 'Government AI guide', href: '/solutions/government-ai-and-software' },
   heroTagline: 'Government software development and AI in government for Australian federal, state and local government: citizen portals, case management and open data platforms for OFFICIAL workloads.',
   stats: [
     { value: 'OFFICIAL', label: 'and OFFICIAL: Sensitive workloads' },
-    { value: 'ISM', label: 'control-mapped delivery' },
+    { value: 'ISM', label: 'controls mapped through delivery' },
     { value: 'Essential Eight', label: 'mitigations designed in' },
     { value: 'DTA DSS', label: 'Digital Service Standard aligned' },
   ],
@@ -17,17 +18,17 @@ const data = {
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h2v2H7zM11 7h6M7 11h4M13 11h4"/></svg>',
       title: 'Legacy Monolithic Systems',
-      description: "Federal and state government agencies are burdened by decades of technology debt: COBOL mainframes handling welfare payments, Oracle Forms applications managing licences and permits, and PeopleSoft installations running on unsupported versions. These systems are expensive to maintain, impossible to modernise incrementally and create single points of failure that have already caused high-profile service outages affecting millions of Australians.",
+      description: "Federal and state government agencies are burdened by decades of technology debt: COBOL mainframes handling welfare payments, Oracle Forms applications managing licences and permits, and PeopleSoft installations running on unsupported versions. These systems are expensive to maintain, impossible to modernise incrementally and create single points of failure that can take essential services offline.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>',
       title: 'Citizen Experience Expectations',
-      description: "Citizens benchmark their interactions with government against consumer digital services, banking apps, e-commerce platforms, streaming services. The contrast with most government digital channels is stark: forms that timeout, 10-step processes requiring physical documents, no status visibility after submission and contact centres with hour-long wait times. The pressure to meet community expectations while navigating procurement rules and policy constraints is intense.",
+      description: "Citizens benchmark their interactions with government against consumer digital services such as banking apps, online shopping and streaming. The contrast with most government digital channels is stark: forms that time out, processes of ten steps requiring physical documents, no status visibility after submission and contact centres with waits of an hour. The pressure to meet community expectations while navigating procurement rules and policy constraints is intense.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg>',
-      title: 'Whole-of-Government Interoperability',
-      description: "Citizens shouldn't need to prove their identity to seven different agencies or re-enter address details every time they interact with a new service. But achieving genuine interoperability requires agencies to adopt common standards (the Australian Government Digital ID System, myID, the National API Design Standard), modernise point-to-point integrations into event-driven architectures, and navigate governance structures that don't naturally incentivise cross-agency collaboration.",
+      title: 'Interoperability Across Government',
+      description: "Citizens shouldn't need to prove their identity to seven different agencies or enter address details again every time they interact with a new service. But achieving genuine interoperability requires agencies to adopt common standards (the Australian Government Digital ID System, myID, the National API Design Standard), move point to point integrations onto event driven architectures, and navigate governance structures that don't naturally reward collaboration between agencies.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
@@ -36,7 +37,7 @@ const data = {
     },
   ],
   solutions: [
-    'Citizen self-service portals',
+    'Citizen portals for self service',
     'Grants management systems',
     'Regulatory compliance platforms',
     'Freedom of Information (FOI/GIPA) request management',
@@ -51,7 +52,7 @@ const data = {
 
   useCases: [],
   relevantServices: [
-    { title: 'AI and Software Development for Government', href: '/solutions/government-ai-and-software' },
+    { title: 'AI for Government: DTA Policy, ISM and PSPF', href: '/solutions/government-ai-and-software' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'Cybersecurity', href: '/services/cybersecurity' },
     { title: 'API Development', href: '/services/api-development' },
@@ -62,11 +63,11 @@ const data = {
   faqs: [
     {
       question: 'How is AI being used in Australian government?',
-      answer: "Common uses of AI in government include drafting and summarising correspondence and briefs, searching policy and legislation, triaging service requests and FOI applications, and assisting case officers with document-heavy work. Commonwealth agencies build under the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), alongside the ISM and PSPF. Decisions about people need human accountability and a clear record, and our guide to AI and software development for Australian government covers the requirements in detail.",
+      answer: "Common uses of AI in government include drafting and summarising correspondence and briefs, searching policy and legislation, triaging service requests and FOI applications, and assisting case officers with large volumes of documents. Commonwealth agencies build under the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), alongside the ISM and PSPF. Decisions about people need human accountability and a clear record, and our guide to AI and software development for Australian government covers the requirements in detail.",
     },
     {
       question: 'How do you approach IRAP assessment and Essential Eight compliance for government systems?',
-      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an ASD-certified assessor, that's not us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We hold no IRAP-assessed system ourselves and say so up front.",
+      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an assessor certified by ASD. That isn't us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We hold no IRAP-assessed system ourselves and say so up front.",
     },
     {
       question: 'Are you on any government ICT procurement panels?',
@@ -74,7 +75,7 @@ const data = {
     },
     {
       question: 'What is your approach to myID and Digital ID integration?',
-      answer: "The Australian Government Digital ID System, governed by the Digital ID Act 2024, provides a federated identity layer that lets citizens authenticate once using a digital ID such as myID (formerly myGovID) and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the published technical specifications. For state government services, we also integrate with state-level identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve pre-verified identity information (name, DOB, address) to pre-populate forms, a significant citizen experience improvement.",
+      answer: "The Australian Government Digital ID System, governed by the Digital ID Act 2024, provides a federated identity layer that lets citizens authenticate once using a digital ID such as myID (formerly myGovID) and access multiple government services. We implement OIDC/OAuth 2.0 integration with the identity exchange (currently administered by Services Australia) following the published technical specifications. For state government services, we also integrate with state identity providers including the NSW Digital ID (Service NSW account), the Victorian Digital Identity and similar schemes. Beyond authentication, we implement the claims and attributes API to retrieve verified identity information (name, DOB, address) and fill in forms ahead of time, which makes a real difference to the citizen experience.",
     },
     {
       question: 'How do you handle OFFICIAL:Sensitive and PROTECTED data classifications?',
@@ -82,7 +83,7 @@ const data = {
     },
     {
       question: 'Can you work within agile delivery frameworks required by DTA and state digital strategies?',
-      answer: "Yes. The DTA's Digital Service Standard (and equivalent state frameworks like the NSW Digital Design System and the Victorian Digital Service Standard) require a user-centred, iterative delivery approach. We're comfortable operating in the delivery model these frameworks prescribe: discovery phases producing validated problem statements and user research insights; alpha phases producing low-fidelity prototypes tested with real users; beta phases delivering progressively complete services; and live phases with ongoing continuous improvement. We use Jira and Confluence for delivery transparency (standard across most government ICT environments), and we design around the reporting cadences and governance artefacts that government programme management offices ask for.",
+      answer: "Yes. The DTA's Digital Service Standard (and equivalent state frameworks like the NSW Digital Design System and the Victorian Digital Service Standard) require an iterative delivery approach centred on users. We're comfortable operating in the delivery model these frameworks prescribe: discovery phases producing validated problem statements and user research insights; alpha phases producing rough prototypes tested with real users; beta phases delivering progressively complete services; and live phases with ongoing continuous improvement. We use Jira and Confluence for delivery transparency (standard across most government ICT environments), and we design around the reporting cadences and governance artefacts that government programme management offices ask for.",
     },
   ],
   ctaHeadline: "Let's Build Digital Government That Citizens Actually Use",

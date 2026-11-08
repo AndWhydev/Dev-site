@@ -6,7 +6,8 @@ const data = {
   metaDescription: 'Sports software and app development for Australian clubs, associations and venues: club management software, facility booking, analytics and fan apps.',
 
   industryName: 'Sports & Recreation',
-  heroHeadline: 'Sports Technology That Connects Athletes, Clubs and Fans',
+  heroHeadline: 'Sports software development for clubs, associations and venues',
+  heroSecondary: { label: 'App development cost guide', href: '/guides/app-development-cost-australia' },
   heroTagline: 'Sports software and app development for Australian sporting organisations, fitness venues and recreation providers: club management software, performance analytics and fan engagement platforms.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
@@ -16,23 +17,23 @@ const data = {
   painPoints: [
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>`,
-      title: 'Paper-Based Membership Management',
-      description: "Spreadsheets, paper registration forms and manual renewal reminders are still common across community sport clubs and fitness venues in Australia. Registration season creates administrative chaos, membership data is inconsistently captured and renewal rates suffer when there's no automated follow-up system.",
+      title: 'Membership Management Still on Paper',
+      description: "Spreadsheets, paper registration forms and manual renewal reminders are still common across community sport clubs and fitness venues in Australia. Registration season creates administrative chaos, membership data is inconsistently captured and renewal rates suffer when there's no automated reminders.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
       title: 'Fragmented Player Data',
-      description: "Athlete performance data, medical records, training loads, injury history and squad selection information are scattered across coach notebooks, separate apps and spreadsheets with no single source of truth. High-performance programs can't make evidence-based decisions without consolidated, longitudinal athlete data.",
+      description: "Athlete performance data, medical records, training loads, injury history and squad selection information are scattered across coach notebooks, separate apps and spreadsheets with no single source of truth. Elite performance programs can't make decisions based on evidence without consolidated, longitudinal athlete data.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
       title: 'Low Digital Fan Engagement',
-      description: "Sports organisations investing heavily in elite performance see minimal return on that investment in fan engagement, merchandise revenue and broadcast value. Without a digital touchpoint, a club app, live scoring, social content integration, fans consume their sport through third-party platforms rather than the club's own channels.",
+      description: "Sports organisations investing heavily in elite performance see minimal return on that investment in fan engagement, merchandise revenue and broadcast value. Without a digital touchpoint such as a club app, live scoring or social content integration, fans consume their sport through other platforms rather than the club's own channels.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
       title: 'Facility Booking Friction',
-      description: "Council leisure centres, club facilities and commercial gyms relying on phone bookings or basic online forms create unnecessary friction for members. Double-bookings, peak-time overloads and no-shows cost revenue and damage member satisfaction. Modern members expect instant, real-time booking from their phone.",
+      description: "Council leisure centres, club facilities and commercial gyms relying on phone bookings or basic online forms create unnecessary friction for members. Double bookings, overloads at peak times and no shows cost revenue and damage member satisfaction. Modern members expect instant booking from their phone.",
     },
   ],
 
@@ -64,7 +65,7 @@ const data = {
   faqs: [
     {
       question: 'How much does sports app development cost?',
-      answer: "A club or association app that wraps existing registration, fixtures and news feeds costs far less than a platform with its own membership database, payments, live scoring and performance analytics. The main drivers are integrations (PlayHQ, payment gateways, wearables), real-time features and whether you need separate apps for members, coaches and admins. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost guide gives typical Australian market ranges.",
+      answer: "A club or association app that wraps existing registration, fixtures and news feeds costs far less than a platform with its own membership database, payments, live scoring and performance analytics. The main drivers are integrations (PlayHQ, payment gateways, wearables), live features and whether you need separate apps for members, coaches and admins. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost guide gives typical Australian market ranges.",
     },
     {
       question: 'How is AI used in sports analytics?',
@@ -72,11 +73,11 @@ const data = {
     },
     {
       question: 'Can you integrate with national sporting body registration systems like PlayHQ or Dribl?',
-      answer: "Yes where APIs exist. PlayHQ (Cricket Australia, Football Australia) has published APIs that allow us to sync registration data, results and ladder standings with custom club or association platforms. Other national body systems vary in API maturity, we assess this in the Discovery Audit and design integration architecture accordingly, including middleware approaches where direct API access is limited.",
+      answer: "Yes where APIs exist. PlayHQ (Cricket Australia, Football Australia) has published APIs that allow us to sync registration data, results and ladder standings with custom club or association platforms. Other national body systems vary in API maturity. We assess this in the Discovery Audit and design integration architecture accordingly, including middleware approaches where direct API access is limited.",
     },
     {
-      question: 'We\'re a community club with limited budget, is custom software realistic for us?',
-      answer: "Possibly, depending on what you need. For a community club with 500 members, a purpose-built platform is likely overkill, we'd recommend off-the-shelf tools like TeamApp, SportsTG or ClubRunner. But if you're a state body, a large fitness group, a professional club or an organisation with specific workflows that packaged software can't address, custom development can pay for itself by replacing licences and manual admin; we'll work through that case with you in the Discovery Audit. We're happy to give you an honest assessment before you commit to anything.",
+      question: 'We\'re a community club with a limited budget. Is custom software realistic for us?',
+      answer: "Possibly, depending on what you need. For a community club with 500 members, a custom platform is likely overkill; we'd recommend packaged tools like TeamApp, SportsTG or ClubRunner. But if you're a state body, a large fitness group, a professional club or an organisation with specific workflows that packaged software can't address, custom development can pay for itself by replacing licences and manual admin; we'll work through that case with you in the Discovery Audit. We're happy to give you an honest assessment before you commit to anything.",
     },
     {
       question: 'How do you handle athlete data privacy, particularly for junior members?',
@@ -88,12 +89,12 @@ const data = {
     },
     {
       question: 'How do fan engagement apps generate revenue for the club?',
-      answer: "Several ways. In-app merchandise sales with Shopify integration. Digital membership and ticketing with Stripe. Sponsored content placements. Premium membership tiers with exclusive content access. Push notification campaigns for events and merchandise drops. The more engaged your fans are in your owned channels, the more revenue you capture directly rather than through third-party platforms taking a margin.",
+      answer: "Several ways. Merchandise sales in the app with Shopify integration. Digital membership and ticketing with Stripe. Sponsored content placements. Premium membership tiers with exclusive content access. Push notification campaigns for events and merchandise drops. The more engaged your fans are in your owned channels, the more revenue you capture directly rather than through other platforms taking a margin.",
     },
   ],
 
   ctaHeadline: 'Build Technology That Brings Your Sport to Life',
-  ctaDescription: "From grassroots membership management to elite performance analytics, we build sports technology that understands the game, the community relationships, the data demands and the mobile-first expectations of modern athletes and fans. Let's talk about what you're trying to achieve.",
+  ctaDescription: "From grassroots membership management to elite performance analytics, we build sports technology that understands the game, the community relationships, the data demands and the phone habits of modern athletes and fans. Let's talk about what you're trying to achieve.",
 };
 ---
 <IndustryPageLayout {...data} />

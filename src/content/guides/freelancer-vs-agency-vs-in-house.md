@@ -6,7 +6,7 @@ eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "The freelancer vs agency vs in-house decision comes down to how long the work lasts and who on your side can lead it. Hire in-house when software is core to your business and you need it built and changed continuously for years. Use a freelancer or contractor for a well-defined piece of work you can manage yourself. Use an agency when you need a complete team for a project with a start and an end, without the cost and delay of hiring. In Sydney, a senior employee costs roughly $120 to $135 per productive hour once on-costs are counted, a senior contractor $100 to $140, and an agency $120 to $250 (AUD, ex GST)."
+summary: "The freelancer vs agency vs in-house decision comes down to how long the work lasts and who on your side can lead it. Hire in-house when software is core to your business and you need it built and changed continuously for years. Use a freelancer or contractor for a clearly defined piece of work you can manage yourself. Use an agency when you need a complete team for a project with a start and an end, without the cost and delay of hiring. In Sydney, a senior employee costs roughly $120 to $135 per productive hour once on-costs are counted, a senior contractor $100 to $140, and an agency $120 to $250 (AUD, ex GST)."
 takeaways:
   - "A $165,000 senior salary costs an employer about $203,000 a year once super, payroll tax, insurance and equipment are added, or roughly $120 per productive hour after leave."
   - "Senior contractors in Sydney bill about $800 to $1,100 a day ex GST; Sydney freelancers often quote $80 to $150 an hour; Australian agencies commonly bill $120 to $250 an hour."
@@ -15,17 +15,17 @@ takeaways:
   - "Many businesses end up with a hybrid: an agency builds the first version, then an in-house engineer takes over with the agency on call."
 faqs:
   - q: "Is it cheaper to hire a developer or use an agency?"
-    a: "For continuous, long-term work, an employee is usually cheaper per productive hour. For a project of three to nine months, an agency is often cheaper overall because you avoid recruitment time, a mismatch of skills, and paying for people between projects. The comparison only works when you count the full employer cost and the management time you'll spend."
+    a: "For continuous work that lasts years, an employee is usually cheaper per productive hour. For a project of three to nine months, an agency is often cheaper overall because you avoid recruitment time, a mismatch of skills, and paying for people between projects. The comparison only works when you count the full employer cost and the management time you'll spend."
   - q: "Should I outsource software development or keep it in-house?"
     a: "Keep it in-house when software is a permanent competitive advantage and there's continuous work for at least two engineers. Outsource to an agency or contractors when the work is a project with an end date, when you need skills you can't hire quickly, or when nobody internally can lead engineering. Many businesses outsource the first version and bring the ongoing work in-house later."
   - q: "What are the pros and cons of hiring a freelance developer?"
-    a: "The pros are a lower hourly rate than most agencies, a fast start, specialist skills on demand and no long-term commitment. The cons are that you manage the work yourself, you get one person's skills rather than a team, nobody reviews their code unless you arrange it, and the project stalls if they get sick or move on. Freelancers work best when someone technical on your side can direct and check the work."
+    a: "The pros are a lower hourly rate than most agencies, a fast start, specialist skills on demand and no commitment beyond the work. The cons are that you manage the work yourself, you get one person's skills rather than a team, nobody reviews their code unless you arrange it, and the project stalls if they get sick or move on. Freelancers work best when someone technical on your side can direct and check the work."
   - q: "Is a contractor cheaper than an employee?"
-    a: "Per productive hour, a senior Sydney contractor at $800 to $1,100 a day (about $100 to $140 an hour) costs roughly the same as a fully loaded senior employee at about $120 to $135. The difference is flexibility: you pay a contractor only for the days you use, with no leave, super or recruitment cost, but you also lose the long-term knowledge an employee builds."
+    a: "Per productive hour, a senior Sydney contractor at $800 to $1,100 a day (about $100 to $140 an hour) costs roughly the same as a fully loaded senior employee at about $120 to $135. The difference is flexibility: you pay a contractor only for the days you use, with no leave, super or recruitment cost, but you also lose the knowledge an employee builds over years."
   - q: "Who owns the code a freelancer writes for me?"
     a: "Unless there's a written assignment, the freelancer generally does. Section 196(3) of the Copyright Act 1968 says an assignment of copyright has no effect unless it is in writing and signed by or on behalf of the assignor. Make sure the contract assigns IP to you and includes moral rights consents; our contract checklist explains what to look for."
-  - q: "Can I treat a long-term contractor like an employee?"
-    a: "Be careful. Since 26 August 2024 the Fair Work Act uses a whole of relationship test, looking at how the arrangement works in practice, not just the contract wording. A contractor working fixed hours under your direction for years may legally be an employee. Get advice before setting up long-running contractor arrangements."
+  - q: "Can I treat a contractor of several years like an employee?"
+    a: "Be careful. Since 26 August 2024 the Fair Work Act uses a whole of relationship test, looking at how the arrangement works in practice, not just the contract wording. A contractor working fixed hours under your direction for years may legally be an employee. Get advice before setting up contractor arrangements that run for years."
   - q: "How long does it take to hire a senior developer in Australia?"
     a: "Plan for several months from job ad to productive work once you include sourcing, interviews, notice periods (often four weeks or more for senior people) and onboarding. An agency or contractor can usually start within weeks."
   - q: "What about offshore freelancers?"
@@ -128,16 +128,16 @@ The common failure mode is the sole in-house developer. One person carries every
 
 ## When is a freelancer or contractor the better choice?
 
-**Use a freelancer or contractor when you know exactly what needs doing and can direct the work yourself.** You pay only for the hours used, you can get specialist skills quickly, and there's no long-term commitment.
+**Use a freelancer or contractor when you know exactly what needs doing and can direct the work yourself.** You pay only for the hours used, you can get specialist skills quickly, and there's no commitment beyond the work.
 
 Good fits:
 
 1. Adding capacity to an existing team that already has technical leadership.
 2. A specialist job: a performance fix, a security review, a specific integration.
-3. A small, well-specified build, such as a Shopify customisation or a single integration.
+3. A small, clearly specified build, such as a Shopify customisation or a single integration.
 4. Covering parental leave or a gap while you hire.
 
-Where it goes wrong: a single freelancer building a whole business system with nobody technical on your side checking the work. You carry the project management, the design decisions, the testing and the continuity risk. Also watch the legal edges. Since 26 August 2024, whether someone is a contractor or employee is decided by the whole of the relationship in practice, so a long-running "contractor" working fixed hours under your direction may legally be an employee.
+Where it goes wrong: a single freelancer building a whole business system with nobody technical on your side checking the work. You carry the project management, the design decisions, the testing and the continuity risk. Also watch the legal edges. Since 26 August 2024, whether someone is a contractor or employee is decided by the whole of the relationship in practice, so a "contractor" kept on for years working fixed hours under your direction may legally be an employee.
 
 ## When is an agency the better choice?
 
@@ -169,9 +169,9 @@ Moral rights are separate. Under the Act they can't be assigned at all, so good 
 | Continuous product development for 3+ years, can hire 2+ engineers | In-house, possibly with an agency for peaks |
 | One-off project, 3 to 12 months, no engineering lead | Agency |
 | Existing tech team needs an extra pair of hands or a specialist | Contractor or staff augmentation |
-| Small, well-specified task, you can check the work | Freelancer |
+| Small, clearly specified task, you can check the work | Freelancer |
 | First version of a new product, future team size unknown | Agency to build, then hire and hand over |
-| Only one developer affordable, system is business-critical | One hire plus an external partner for review and cover |
+| Only one developer affordable, system is critical to the business | One hire plus an external partner for review and cover |
 
 ## How AWLabs fits in
 

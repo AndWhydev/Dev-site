@@ -9,7 +9,7 @@ updated: 2026-11-07
 summary: "Custom software development in Australia typically costs $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a mid-complexity system such as a customer portal or job management platform, and $150,000 to $500,000 or more for multi-system or enterprise platforms. Most of the difference comes from integrations, user roles, data migration and security requirements, not screen count. Budget another 15 to 20% of the build cost each year for maintenance, plus hosting."
 takeaways:
   - "Published Australian agency guides cluster around three bands: under $40k, $40k to $150k, and $150k to $500k+ (AUD, ex GST)."
-  - "Price is mostly hours multiplied by rate. Most published Australian agency rates fall between about $120 and $250 an hour, with some small and mid-sized firms up to $330; the hours are what you can influence."
+  - "Price is mostly hours multiplied by rate. Most published Australian agency rates fall between about $120 and $250 an hour, with some small and medium firms up to $330; the hours are what you can influence."
   - "Integrations, data migration, permissions and compliance evidence move a project up a band faster than extra screens do."
   - "A discovery phase, typically $10k to $25k at market pricing, turns a wide estimate into a fixed price and is usually the cheapest risk reduction available."
   - "Ongoing costs are real: allow 15 to 20% of the build cost per year for maintenance, plus hosting and licences, and add 10% GST to every figure."
@@ -21,11 +21,11 @@ faqs:
   - q: "Why do quotes for the same project vary by 3 to 5 times?"
     a: "Vendors are pricing different assumptions: how complete the scope is, which integrations are included, who handles testing and deployment, and how much risk they are absorbing. Ask each vendor for hours by feature and a list of exclusions, then compare like with like."
   - q: "Should I pay fixed price or time and materials?"
-    a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. A common market practice is paid discovery, then a fixed price per phase. Our approach is our Discovery Audit, a fixed fee credited in full against the build, then one fixed price for the agreed scope."
+    a: "Fixed price suits a clearly defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. A common market practice is paid discovery, then a fixed price per phase. Our approach is a Discovery Audit first, then a fixed price Schedule of Work with three options to choose from."
   - q: "How long does custom software take to build?"
     a: "Published Australian guides put simple tools at about 4 to 8 weeks, mid-complexity systems at 8 to 16 weeks, and enterprise platforms at 4 to 12 months or more. Integration access and decision speed on the client side often set the pace more than coding does."
   - q: "What is the hourly rate for custom software development in Australia?"
-    a: "Most published Australian agency rates fall between about $120 and $250 an hour (AUD, ex GST). Conduct reports small and mid-sized agencies at $123 to $330 an hour and large firms at $330 to $495. The hours a vendor estimates usually matter more to the total than the rate."
+    a: "Most published Australian agency rates fall between about $120 and $250 an hour (AUD, ex GST). Conduct reports small and medium agencies at $123 to $330 an hour and large firms at $330 to $495. The hours a vendor estimates usually matter more to the total than the rate."
   - q: "How much does custom software cost per month once it is live?"
     a: "In the worked example on this page, a $119,625 customer portal costs about $23,944 a year to keep running, or roughly $2,000 a month ex GST, covering maintenance at 15% of the build, hosting and third-party services. Payment processing fees come on top and scale with transactions."
   - q: "Does AI-assisted coding make custom software cheaper?"
@@ -85,14 +85,14 @@ The ranges are market ranges, not quotes. A specific project gets a specific num
 
 **A software price is hours multiplied by rate, and vendors disagree far more about the hours than the rate.** Australian agency rates sit in a fairly tight band. The number of hours depends on how each vendor reads your scope and how much risk they build in.
 
-On rate, Expeed puts Australian developers at $100 to $250 an hour and VT Digital at $120 to $200. Conduct reports small and mid-sized agencies at $123 to $330 an hour and large firms at $330 to $495, with enterprise consultancies higher again. Our [software developer rates guide](/guides/software-developer-rates-australia) breaks this down by role and engagement type, including what an in-house hire actually costs once super and on-costs are added.
+On rate, Expeed puts Australian developers at $100 to $250 an hour and VT Digital at $120 to $200. Conduct reports small and medium agencies at $123 to $330 an hour and large firms at $330 to $495, with enterprise consultancies higher again. Our [software developer rates guide](/guides/software-developer-rates-australia) breaks this down by role and engagement type, including what an in-house hire actually costs once super and on-costs are added.
 
 On hours, three quotes for the same brief can easily range from 400 to 1,500 hours. The gap usually comes from:
 
 - **Unstated assumptions.** One vendor includes automated tests, deployment pipelines and documentation; another treats them as extras.
 - **Integration depth.** "Connects to Xero" can mean a one-way invoice push or a two-way sync with error handling and reconciliation.
 - **Risk padding.** An unclear brief attracts contingency. A vendor quoting fixed price on a vague scope will either pad heavily or plan to charge variations.
-- **Team shape.** A senior-only team bills more per hour but often needs fewer hours and less rework.
+- **Team shape.** A team made up only of senior engineers bills more per hour but often needs fewer hours and less rework.
 
 ## What drives the cost up or down?
 
@@ -100,7 +100,7 @@ On hours, three quotes for the same brief can easily range from 400 to 1,500 hou
 
 | Driver | Lower cost | Higher cost | Typical effect on hours |
 |---|---|---|---|
-| Integrations | None, or one well-documented API | Several systems, legacy or undocumented APIs, two-way sync | Each serious integration can add 40 to 200 hours |
+| Integrations | None, or one clearly documented API | Several systems, legacy or undocumented APIs, two-way sync | Each serious integration can add 40 to 200 hours |
 | Data migration | Starting fresh | Years of records from spreadsheets or an old database, needing cleansing | Often underestimated; can rival a feature module |
 | Users and roles | One internal role | Staff, customers, partners and admins with different permissions | Adds design, testing and security work to every feature |
 | Platforms | Web app only | Web plus iOS and Android, offline mode | Mobile adds a second front end; see the [app cost guide](/guides/app-development-cost-australia) |
@@ -116,7 +116,7 @@ Conduct's phase split is a useful sanity check on any quote: roughly 10% require
 
 1. **Estimate the build hours by feature.** Authentication and user management 60 hours; job status views 90; quote approval workflow 80; invoice payments through a payment provider 70; accounting system sync 110; admin screens 90; automated testing and QA 110; deployment pipeline and environments 40; project management and design 75. Total: 725 hours.
 2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at an assumed market blended rate of $165 an hour: 725 × $165 = $119,625. (That is about $1,250 a day, below the assumed $1,400 market day rate used in the other cost guides on this site, because the part-time design and QA hours bring the blend down. Neither is our rate.)
-3. **Add discovery.** Two to three weeks of discovery at typical market pricing: $12,000. (Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.)
+3. **Add discovery.** Two to three weeks of discovery at typical market pricing: $12,000.
 4. **Total project cost:** $119,625 + $12,000 = $131,625 ex GST.
 5. **Add GST.** $131,625 × 1.1 = $144,787.50 including GST (claimable as an input tax credit if you're registered).
 
@@ -130,7 +130,7 @@ Then the ongoing costs for the first year after launch:
 | Payment processing | A percentage plus a fixed fee per transaction, set by the provider; check its current pricing page | Variable, usually passed through |
 | **Total fixed ongoing** | | **$23,944** |
 
-Over three years, the portal costs roughly $131,625 + (3 × $23,944) = $203,457 ex GST before any new features. That three-year figure is the right one to compare against a SaaS subscription, which our [build vs buy guide](/guides/build-vs-buy-software) walks through.
+Over three years, the portal costs roughly $131,625 + (3 × $23,944) = $203,457 ex GST before any new features. That figure over three years is the right one to compare against a SaaS subscription, which our [build vs buy guide](/guides/build-vs-buy-software) walks through.
 
 ## What are the hidden costs of custom software?
 
@@ -148,7 +148,7 @@ Over three years, the portal costs roughly $131,625 + (3 × $23,944) = $203,457 
 
 **Offshore rates are much lower per hour, but the total gap is smaller than the rate gap once coordination, rework and time zone overhead are counted.** Accelerance's 2026 survey puts senior developers in Asia at about USD $31 to $41 an hour and in Central and Eastern Europe at USD $64 to $76, against the $120 to $250 AUD range for Australian agencies.
 
-Offshore delivery works well for well-specified work with a strong local product owner. It tends to cost more than expected when requirements are still moving, when the work needs daily access to Australian stakeholders, or when data must stay onshore for privacy or contractual reasons. Our [onshore vs offshore comparison](/guides/onshore-vs-offshore-software-development) sets out when each is the better choice.
+Offshore delivery works well for clearly specified work with a strong local product owner. It tends to cost more than expected when requirements are still moving, when the work needs daily access to Australian stakeholders, or when data must stay onshore for privacy or contractual reasons. Our [onshore vs offshore comparison](/guides/onshore-vs-offshore-software-development) sets out when each is the better choice.
 
 ## Is custom software worth the cost?
 
@@ -170,8 +170,8 @@ Three signs the numbers favour building: staff re-keying data between systems ev
 6. **Keep one decision-maker.** A single empowered product owner prevents rework.
 7. **Check the R&D Tax Incentive.** If the project involves genuine technical uncertainty, some costs may be eligible. Eligibility is narrow and needs advice from a registered R&D tax agent; our [R&D Tax Incentive cost guide](/guides/rd-tax-incentive-software-development-cost) explains how it works.
 
-What not to cut: automated testing, code review, security basics and documentation. Skipping them lowers the quote and raises the three-year cost.
+What not to cut: automated testing, code review, security basics and documentation. Skipping them lowers the quote and raises the cost over three years.
 
 ## How AWLabs prices custom software
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. You then receive one fixed price for the agreed scope, so the number you approve is the number you pay unless you change the scope. Our teams are senior engineers only, working in AEST hours, and each part of the build is assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. Your Schedule of Work then sets out three options at fixed prices, The Minimum, The Recommended and The Complete, so the number you approve is the number you pay unless you change the scope. Senior engineers lead every build, we work Sydney business hours, and each part of the build is assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).

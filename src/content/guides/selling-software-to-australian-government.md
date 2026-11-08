@@ -21,7 +21,7 @@ faqs:
   - q: "What is an SME for government procurement?"
     a: "Under the Commonwealth Procurement Rules, an SME is an Australian or New Zealand business with fewer than 200 full-time equivalent employees, counting employees of associated entities such as parent companies and subsidiaries."
   - q: "Do I need an IRAP assessment to sell to government?"
-    a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller or lower-risk purchases won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight."
+    a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller purchases, or those with lower risk, won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight."
   - q: "How do I register as a government supplier in Australia?"
     a: "There's no single national register. For federal work, create accounts on BuyICT and AusTender and apply to the relevant panel when it opens. For states, register with each jurisdiction: for example, become a registered NSW Government supplier before applying to the NSW ICT Services Scheme, or register on Victoria's Supplier Hub."
   - q: "Is AWLabs on BuyICT or a state panel?"
@@ -128,7 +128,7 @@ Two definitions decide eligibility. An Australian business has 50% or more Austr
 
 | Jurisdiction | Main route for ICT suppliers | Notes |
 |---|---|---|
-| New South Wales | ICT Services Scheme (SCM0020) | A whole-of-government mandated scheme for ICT goods and services under Procurement Board Direction PBD-2021-04. Always open: suppliers can apply at any time after becoming a registered NSW Government supplier. Two lists: registered and advanced suppliers. Contracts use the Core& framework for low-risk ICT work up to $1 million (ex GST) and MICTA/ICTA for higher risk or larger work |
+| New South Wales | ICT Services Scheme (SCM0020) | A whole-of-government mandated scheme for ICT goods and services under Procurement Board Direction PBD-2021-04. Always open: suppliers can apply at any time after becoming a registered NSW Government supplier. Two lists: registered and advanced suppliers. Contracts use the Core& framework for ICT work assessed as low risk up to $1 million (ex GST) and MICTA/ICTA for higher risk or larger work |
 | Victoria | Supplier Hub and Digital Marketplace | Businesses register on Supplier Hub. The Digital Marketplace brings together state purchase contracts and registers, and only government buyers can create accounts on it |
 | Queensland | QTenders | The state's portal for published tender opportunities |
 | Western Australia | Tenders WA | The state's portal for published tender opportunities |
@@ -147,7 +147,7 @@ If you are targeting one state, start there rather than federally. The NSW schem
 
 ## Is the government market right for your product?
 
-**Government can be a stable, long-term customer, but it suits some software companies far better than others.** Be honest about the fit before you invest in panel applications and security assessments.
+**Government can be a stable customer for years, but it suits some software companies far better than others.** Be honest about the fit before you invest in panel applications and security assessments.
 
 It tends to suit products that solve a problem many agencies share, that can meet ISM-based security expectations without a rebuild, and that come from companies able to wait. Procurement cycles are often long, budgets follow the financial year, and a contract can take months to finalise after a successful bid. The 2025 changes to the Commonwealth Procurement Rules help Australian SMEs at the smaller end, but they don't remove the paperwork.
 

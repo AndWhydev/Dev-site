@@ -5,29 +5,30 @@ const data = {
   metaTitle: 'Healthcare Software Development Australia | AWLabs',
   metaDescription: 'Healthcare software development for Australian clinics, hospitals and telehealth: medical software, healthcare apps, HL7 FHIR integration and AI tools.',
   industryName: 'Healthcare',
-  heroHeadline: 'Healthcare Technology That Improves Patient Outcomes',
-  heroTagline: 'Healthcare software development for Australian hospitals, telehealth providers and allied health: HL7 FHIR-integrated clinical platforms, medical software and healthcare apps designed around Australian health data standards.',
+  heroHeadline: 'Healthcare software development for Australian providers',
+  heroSecondary: { label: 'AI in healthcare guide', href: '/solutions/ai-in-healthcare' },
+  heroTagline: 'Healthcare software development for Australian hospitals, telehealth providers and allied health: clinical platforms integrated through HL7 FHIR, medical software and healthcare apps designed around Australian health data standards.',
   stats: [
     { value: 'HL7 FHIR R4', label: 'native integration, no translation layer' },
     { value: 'My Health Record', label: 'integration planned for ADHA conformance testing' },
     { value: 'AU Core', label: 'FHIR Implementation Guide aware' },
-    { value: 'Privacy by Design', label: 'OAIC-aligned architecture' },
+    { value: 'Privacy by Design', label: 'architecture aligned with OAIC guidance' },
   ],
   painPoints: [
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/><path d="M2 20h20"/></svg>',
       title: 'Clinical Interoperability Gaps',
-      description: "Patient data is siloed across incompatible PMS platforms, hospital information systems, pathology providers and specialist EMRs. Without HL7 FHIR-based integration, clinicians make decisions with incomplete records, a patient safety risk and a workflow bottleneck that adds friction to every consultation.",
+      description: "Patient data is siloed across incompatible PMS platforms, hospital information systems, pathology providers and specialist EMRs. Without integration based on HL7 FHIR, clinicians make decisions with incomplete records. That is a patient safety risk and a workflow bottleneck that adds friction to every consultation.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
       title: 'Patient Data Privacy and Compliance',
-      description: "Health information is among the most sensitive personal data under the Australian Privacy Act and the My Health Records Act 2012. AHPRA-registered practitioners and healthcare organisations face serious consequences for data breaches. Security must be built into the architecture, not audited in after the fact, and that means role-based access, audit logging and encryption at rest and in transit from day one.",
+      description: "Health information is among the most sensitive personal data under the Australian Privacy Act and the My Health Records Act 2012. Practitioners registered with AHPRA and healthcare organisations face serious consequences for data breaches. Security must be built into the architecture, not audited in after the fact, and that means role-based access, audit logging and encryption at rest and in transit from day one.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4v4H7z"/></svg>',
       title: 'Outdated Practice Management Systems',
-      description: "Many clinics and hospital departments are still running PMS platforms built in the early 2000s, thick-client Windows applications with no mobile access, no patient-facing portals and expensive per-seat licensing. These systems can't integrate with Medicare DVA bulk billing APIs, telehealth platforms or modern pathology ordering systems without costly middleware.",
+      description: "Many clinics and hospital departments are still running PMS platforms built in the early 2000s: thick client Windows applications with no mobile access, no patient portals and expensive licensing per seat. These systems can't integrate with Medicare DVA bulk billing APIs, telehealth platforms or modern pathology ordering systems without costly middleware.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',
@@ -49,7 +50,7 @@ const data = {
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
   relevantServices: [
-    { title: 'AI and Software Development for Healthcare', href: '/solutions/ai-in-healthcare' },
+    { title: 'AI in Healthcare: Privacy, TGA and My Health Record', href: '/solutions/ai-in-healthcare' },
     { title: 'Custom App Development', href: '/services/custom-app-development' },
     { title: 'API Development', href: '/services/api-development' },
     { title: 'Web & Mobile Apps', href: '/services/web-mobile-apps' },
@@ -64,11 +65,11 @@ const data = {
     },
     {
       question: 'How much does healthcare app development cost in Australia?',
-      answer: "Healthcare app development costs more than a comparable consumer app because of privacy engineering, audit logging, clinical integrations (HL7, FHIR, practice management systems) and any conformance work with national infrastructure. A booking or patient-intake app with one integration sits at the lower end; a telehealth or clinical platform with My Health Record and Medicare claiming sits well above it. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost guide gives typical Australian market ranges.",
+      answer: "Healthcare app development costs more than a comparable consumer app because of privacy engineering, audit logging, clinical integrations (HL7, FHIR, practice management systems) and any conformance work with national infrastructure. A booking or patient intake app with one integration sits at the lower end; a telehealth or clinical platform with My Health Record and Medicare claiming sits well above it. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost guide gives typical Australian market ranges.",
     },
     {
       question: 'How do you handle My Health Record integration and ADHA conformance?',
-      answer: "My Health Record (MHR) integration requires conformance testing through the Australian Digital Health Agency (ADHA) and adherence to the National Clinical Terminology Service (NCTS) standards including SNOMED CT-AU and ICD-10-AM. We plan the software around the ADHA's Vendor Trial Environment (VTE) testing process, the NASH PKI certificate requirements for system authentication, and the correct handling of access controls including healthcare provider access and emergency access flags. Integrations produce CDA clinical documents using Australian-localised templates for discharge summaries, event summaries, specialist letters and prescription records. Conformance itself belongs to the software owner: we build to the specifications and support the process, but we don't hold conformance for a product of our own.",
+      answer: "My Health Record (MHR) integration requires conformance testing through the Australian Digital Health Agency (ADHA) and adherence to the National Clinical Terminology Service (NCTS) standards including SNOMED CT-AU and ICD-10-AM. We plan the software around the ADHA's Vendor Trial Environment (VTE) testing process, the NASH PKI certificate requirements for system authentication, and the correct handling of access controls including healthcare provider access and emergency access flags. Integrations produce CDA clinical documents using templates localised for Australia for discharge summaries, event summaries, specialist letters and prescription records. Conformance itself belongs to the software owner: we build to the specifications and support the process, but we don't hold conformance for a product of our own.",
     },
     {
       question: 'What HL7 standards do you work with?',
@@ -83,8 +84,8 @@ const data = {
       answer: "We design healthcare applications with a Privacy by Design framework: data minimisation (collect only what is clinically necessary), purpose limitation (data used only for the consented purpose), and strong access controls enforced at the API layer, not just the UI. All health information is encrypted in transit (TLS 1.3) and at rest (AES-256). Role-based access controls map to clinical roles defined in the Australian healthcare system. We produce a technical Privacy Impact input for new platforms, covering data flows, retention and access model, that your privacy officer or counsel signs the formal PIA off from. On breach response, we handle the technical containment and evidence side, and support your appointed breach officer with the facts they need for notifications under the Notifiable Data Breaches scheme.",
     },
     {
-      question: 'Do you build for AHPRA-regulated practitioners specifically?',
-      answer: "Yes. We understand that AHPRA-registered practitioners across medicine, nursing, psychology, physiotherapy and other professions have distinct digital health obligations, including professional indemnity considerations, clinical documentation requirements for record-keeping, and the need for systems that support telehealth delivery built to the Medicare telehealth item number rules. Clinical workflows are worked out with your practitioners during the Discovery Audit so the software supports, rather than disrupts, safe clinical practice.",
+      question: 'Do you build for practitioners regulated by AHPRA?',
+      answer: "Yes. We understand that practitioners registered with AHPRA across medicine, nursing, psychology, physiotherapy and other professions have distinct digital health obligations, including professional indemnity considerations, clinical documentation requirements for keeping records, and the need for systems that support telehealth delivery built to the Medicare telehealth item number rules. Clinical workflows are worked out with your practitioners during the Discovery Audit so the software supports, rather than disrupts, safe clinical practice.",
     },
   ],
   ctaHeadline: "Let's Build Healthcare Technology That Puts Patients First",

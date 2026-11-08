@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Header, { serviceGroups } from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
 interface ServiceDetail {
   id: string;
+  href: string;
   icon: string;
   title: string;
   headline: string;
@@ -18,70 +19,104 @@ interface ServiceDetail {
 const serviceDetails: ServiceDetail[] = [
   {
     id: 'custom-app-development',
+    href: '/services/custom-app-development',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
     category: 'Core Development',
     title: 'Custom App Development',
     headline: 'Software built for your exact requirements, not retrofitted from a template.',
-    description: 'Enterprise applications are complex. Generic SaaS solutions can\'t handle your unique workflows, compliance requirements or integration landscape. We design and build software from the ground up, web apps, mobile apps and backend systems that fit your business precisely.',
-    useCases: ['Internal workflow and operations platforms', 'Customer-facing portals and self-service tools', 'Industry-specific compliance management systems', 'Multi-tenant enterprise SaaS products', 'Data-heavy reporting and analytics platforms'],
+    description: 'Business software is complex. Generic SaaS products can\'t handle your unique workflows, compliance requirements or integration landscape. We design and build software from the ground up: web apps, mobile apps and backend systems that fit your business precisely.',
+    useCases: ['Internal workflow and operations platforms', 'Customer portals and account tools', 'Compliance management systems built for your industry', 'Multitenant SaaS products', 'Reporting and analytics platforms for large data sets'],
     deliverables: ['Technical architecture document', 'UI/UX prototypes in Figma', 'Fully tested production application', 'API documentation', 'Deployment runbook', 'Source code, assigned to you on payment'],
   },
   {
     id: 'flutter-development',
+    href: '/services/flutter-development',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg>`,
     category: 'Mobile',
     title: 'Flutter Development',
     headline: 'One codebase. Two platforms. Native performance on iOS and Android.',
-    description: 'Flutter is Google\'s cross-platform framework, and our mobile development platform of choice for enterprise. Write once, deploy to both iOS and Android from a single codebase with near-native performance, native UI bindings and a meaningfully smaller maintenance surface than running two separate native apps.',
-    useCases: ['Field service and workforce management apps', 'Customer-facing mobile applications', 'Internal operations and reporting apps', 'IoT device management interfaces', 'Secure enterprise mobile portals'],
-    deliverables: ['iOS App Store and Google Play deployments', 'Push notification infrastructure', 'Offline-capable data synchronisation', 'Biometric authentication integration', 'CI/CD pipeline for mobile builds'],
+    description: 'Flutter is Google\'s framework for building one app that runs on both iOS and Android, and our mobile platform of choice. We build once and ship to both app stores from a single codebase, with performance close to native, native UI integrations and a much smaller maintenance burden than running two separate native apps.',
+    useCases: ['Field service and workforce management apps', 'Mobile apps for your customers', 'Internal operations and reporting apps', 'Apps for managing IoT devices', 'Secure mobile portals for staff'],
+    deliverables: ['iOS App Store and Google Play releases', 'Push notification infrastructure', 'Data sync that keeps working offline', 'Biometric authentication', 'CI/CD pipeline for mobile builds'],
   },
   {
     id: 'ai-automation',
+    href: '/services/ai-chatbot',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
     category: 'AI & Automation',
     title: 'AI Tools & Custom Chatbots',
-    headline: 'Your own AI, trained on your data, integrated into your systems.',
-    description: 'Off-the-shelf AI tools give generic answers from generic data. Your enterprise needs AI that understands your processes, terminology, compliance context and customer base. We build proprietary AI tools and chatbots that deliver genuine operational value from day one.',
+    headline: 'Your own AI, grounded in your data, integrated into your systems.',
+    description: 'Off the shelf AI tools give generic answers from generic data. Your business needs AI that understands your processes, terminology, compliance context and customers. We build AI tools and chatbots that answer from your own content, connect to your systems and take real work off your team.',
     useCases: ['Customer support automation', 'Internal HR and IT helpdesks', 'Document analysis and data extraction', 'Sales enablement and lead qualification', 'Compliance checking and policy Q&A'],
-    deliverables: ['Custom LLM integration or fine-tuned model', 'RAG pipeline for document knowledge base', 'Web and API integration', 'Admin dashboard for content management', 'Usage analytics and conversation monitoring'],
+    deliverables: ['LLM integration with the model provider that suits your data', 'RAG pipeline over your own documents', 'Web and API integration', 'Admin dashboard for managing content', 'Usage analytics and conversation monitoring'],
   },
   {
     id: 'enterprise-solutions',
+    href: '/services/enterprise-software',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
     category: 'Enterprise',
     title: 'Enterprise Software Solutions',
-    headline: 'Large-scale platforms that operate at the complexity your business demands.',
-    description: 'Enterprise software isn\'t just bigger software, it requires different architecture, different security models and different delivery approaches. Our enterprise practice handles the full lifecycle of large-scale platform builds, from the Discovery Audit through to post-launch operations.',
-    useCases: ['ERP and CRM implementations and customisations', 'Multi-region, multi-currency platforms', 'Complex approval workflow systems', 'Regulatory reporting and compliance platforms', 'High-availability transaction processing systems'],
+    headline: 'Platforms that hold up at the scale and complexity your business demands.',
+    description: 'Enterprise software isn\'t just bigger software. It needs different architecture, different security models and different delivery approaches. Our enterprise practice covers the full lifecycle of large platform builds, from the Discovery Audit through to operations after launch.',
+    useCases: ['ERP and CRM implementations and customisations', 'Platforms that span regions and currencies', 'Complex approval workflow systems', 'Regulatory reporting and compliance platforms', 'Transaction processing systems that must stay available'],
     deliverables: ['Enterprise architecture design', 'Security and compliance documentation', 'Disaster recovery and BCP planning', 'Load testing and performance validation', 'Runbook and operational procedures'],
   },
   {
     id: 'cloud-devops',
+    href: '/services/cloud-infrastructure',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
     category: 'Infrastructure',
     title: 'Cloud Infrastructure & DevOps',
     headline: 'Your infrastructure, fully automated, resilient and optimised for cost.',
-    description: 'Cloud infrastructure is only as good as the engineering behind it. We architect, build and manage cloud environments on AWS, GCP and Azure that are secure, auto-scaling, cost-optimised and fully automated. Infrastructure-as-code means every change is tracked, tested and repeatable.',
-    useCases: ['Cloud migration from on-premise', 'Multi-cloud and hybrid architectures', 'Kubernetes orchestration at scale', 'CI/CD pipeline implementation', 'Cost optimisation and FinOps'],
-    deliverables: ['Infrastructure-as-code (Terraform/CDK)', 'CI/CD pipeline with automated testing', 'Security hardening and compliance baseline', 'Monitoring and alerting stack', 'Runbook documentation'],
+    description: 'Cloud infrastructure is only as good as the engineering behind it. We design, build and manage cloud environments on AWS, GCP and Azure that are secure, scale automatically, keep costs in check and run without manual steps. With infrastructure as code, every change is tracked, tested and repeatable.',
+    useCases: ['Migrating from your own servers to the cloud', 'Hybrid setups and setups across several clouds', 'Kubernetes orchestration at scale', 'CI/CD pipeline implementation', 'Cost optimisation and FinOps'],
+    deliverables: ['Infrastructure as code (Terraform or CDK)', 'CI/CD pipeline with automated testing', 'Security hardening and a compliance baseline', 'Monitoring and alerting stack', 'Runbook documentation'],
   },
   {
     id: 'digital-transformation',
+    href: '/digital-transformation',
     icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
     category: 'Strategy',
     title: 'Digital Transformation Consulting',
-    headline: 'A roadmap that translates technology investment into measurable business outcomes.',
-    description: 'Digital transformation fails when it\'s treated as a technology project rather than a business change programme. We provide end-to-end transformation consulting, from opportunity assessment and business case development through to delivery governance and change management.',
+    headline: 'A roadmap that turns technology spending into measurable business outcomes.',
+    description: 'Digital transformation fails when it\'s treated as a technology project rather than a business change programme. We provide transformation consulting from start to finish, from opportunity assessment and business case development through to delivery governance and change management.',
     useCases: ['Legacy modernisation strategy and roadmap', 'Technology stack assessment and rationalisation', 'Digital product strategy and prioritisation', 'Vendor evaluation and selection support', 'Agile and DevOps transformation coaching'],
-    deliverables: ['Current state technology assessment', 'Future state architecture vision', 'Phased transformation roadmap', 'Business case built on your own figures', 'Governance framework and KPIs'],
+    deliverables: ['Assessment of your current technology', 'Target architecture vision', 'Phased transformation roadmap', 'Business case built on your own figures', 'Governance framework and KPIs'],
+  },
+];
+
+const siteUrl = 'https://www.awlabs.com.au';
+const allServices = serviceGroups.flatMap((g) => g.items);
+
+const extraSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${siteUrl}/services#services`,
+    name: 'AWLabs services',
+    numberOfItems: allServices.length,
+    itemListElement: allServices.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.title,
+      url: `${siteUrl}${item.href}`,
+    })),
   },
 ];
 ---
 
 <Layout
   title="Services, AWLabs | Enterprise Software Development"
-  description="Enterprise software from an Australian agency: custom apps, AI tools, Flutter, React, cloud, cybersecurity and digital transformation. Assigned to you on payment."
+  description="Custom software and AI development from Sydney for SMBs and enterprise: apps, AI agents, Flutter, React, cloud and security. Code assigned to you on payment."
+  extraSchema={extraSchema}
 >
   <Header />
 
@@ -92,7 +127,7 @@ const serviceDetails: ServiceDetail[] = [
         <div class="reveal">
           <span class="section-label">Our Services</span>
           <h1 class="page-hero-title">
-            Everything Your Enterprise<br />
+            Everything Your Business<br />
             <span class="gradient-text">Needs to Scale.</span>
           </h1>
           <p class="page-hero-sub">
@@ -108,7 +143,7 @@ const serviceDetails: ServiceDetail[] = [
       <div class="service-details-inner">
         <div class="details-header reveal">
           <span class="section-label">Featured Services</span>
-          <h2 class="section-heading">Deep-Dive: Our Core Capabilities</h2>
+          <h2 class="section-heading">A Closer Look at Our Core Capabilities</h2>
         </div>
 
         <div class="service-details-list">
@@ -118,7 +153,7 @@ const serviceDetails: ServiceDetail[] = [
                 <div class="sd-icon" set:html={service.icon} />
                 <div>
                   <div class="sd-category">{service.category}</div>
-                  <h3 class="sd-title">{service.title}</h3>
+                  <h3 class="sd-title"><a href={service.href}>{service.title}</a></h3>
                 </div>
               </div>
 
@@ -150,39 +185,41 @@ const serviceDetails: ServiceDetail[] = [
                 </div>
               </div>
 
-              <a href="/contact" class="btn-primary sd-cta">
-                Discuss This Service
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+              <div class="sd-ctas">
+                <a href={service.href} class="btn-primary sd-cta">
+                  Explore {service.title}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/contact" class="btn-outline sd-cta">Discuss This Service</a>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- All services compact list -->
-    <section class="all-services-section">
+    <!-- All services, grouped as in the header menu -->
+    <section class="all-services-section" id="all-services">
       <div class="all-services-inner">
         <div class="reveal">
           <span class="section-label">Full Capability List</span>
           <h2 class="section-heading">All Services</h2>
         </div>
-        <div class="all-services-grid reveal stagger-1">
-          {[
-            'Custom App Development', 'Web & Mobile Applications', 'Flutter Development',
-            'React & Next.js Development', 'Node.js & Python Backends', 'AI Tools & Custom Chatbots',
-            'LLM Integration & Fine-Tuning', 'Workflow Automation', 'API Development & Integrations',
-            'Custom SaaS Development', 'UI & UX Design', 'Cloud Infrastructure & DevOps',
-            'Database Architecture', 'Web3 & Blockchain', 'Digital Transformation Consulting',
-            'Enterprise Software Solutions', 'Staff Augmentation', 'Legacy Modernisation',
-            'Cybersecurity Consulting', 'Data Analytics & BI'
-          ].map((s) => (
-            <div class="all-service-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>{s}</span>
-            </div>
-          ))}
-        </div>
+        {serviceGroups.map((group) => (
+          <div class="all-services-group reveal stagger-1">
+            <h3 class="all-services-group-label">{group.label}</h3>
+            <ul class="all-services-grid">
+              {group.items.map((item) => (
+                <li>
+                  <a href={item.href} class="all-service-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span>{item.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
 
@@ -409,6 +446,50 @@ const serviceDetails: ServiceDetail[] = [
   .all-service-item:hover {
     border-color: rgba(13,147,115,0.3);
     color: white;
+  }
+
+
+  .sd-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .sd-title a:hover { color: #0d9373; }
+
+  .sd-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sd-cta svg,
+  .all-service-item svg {
+    flex-shrink: 0;
+  }
+
+  .all-services-group + .all-services-group {
+    margin-top: 2.5rem;
+  }
+
+  .all-services-group-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0d9373;
+    margin: 0 0 1rem;
+  }
+
+  ul.all-services-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a.all-service-item {
+    text-decoration: none;
+    height: 100%;
   }
 
   @media (max-width: 900px) {

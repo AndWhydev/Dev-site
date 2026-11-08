@@ -101,7 +101,7 @@ For AI projects, add an evaluation plan and often a small technical spike to tes
 | Project type | Typical discovery length | Main driver of time |
 |---|---|---|
 | Internal tool replacing a spreadsheet process | 1 to 2 weeks | Mapping the current process |
-| Customer-facing app or portal with 1 to 2 integrations | 2 to 4 weeks | User journeys and integration detail |
+| App or portal for customers with 1 to 2 integrations | 2 to 4 weeks | User journeys and integration detail |
 | AI assistant or RAG knowledge base on company documents | 2 to 4 weeks | Data audit, access rules and a feasibility spike |
 | Legacy system replacement | 4 to 8 weeks | Understanding what the old system actually does |
 | Government digital service | 6 to 8 weeks (per DTA guidance) | User research across all user groups |
@@ -120,7 +120,7 @@ The arithmetic is simple: discovery is mostly senior time. Re:Sourced's 2026 gui
 | Medium: 3 to 4 weeks, senior engineer and designer or analyst | about 20 to 25 days | $18k to $32k |
 | Large: 6 to 8 weeks, small team including an architect | about 45 to 60 days | $40k to $80k |
 
-Day rates assumed: roughly $900 to $1,300 blended, a mix of contractor and agency rates, multiplied by the days shown. These are market figures, not our prices; your supplier's rates and team shape will differ, so ask them to show the same breakdown. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+Day rates assumed: roughly $900 to $1,300 blended, a mix of contractor and agency rates, multiplied by the days shown. These are market figures, not our prices; your supplier's rates and team shape will differ, so ask them to show the same breakdown.
 
 As a share of the total, discovery is usually a small fraction of the build it defines. On a $150k project, a $15k discovery is 10%. The comparison that matters is with the contingency a supplier would otherwise add to a vague brief, and the cost of building the wrong thing. For wider budgeting, see [how much custom software costs in Australia](/guides/custom-software-development-cost-australia).
 
@@ -171,4 +171,4 @@ In government, the next stage has a name. The DTA's service design and delivery 
 
 ## How AWLabs approaches this
 
-At AWLabs, every build starts with a Discovery Audit, a fixed fee credited in full against the build. You meet Andy first, then we work through your build in a second session, and we deliver a written audit covering scope, risks, the standards it is assessed against, the order to build in and a recommendation, including not to build if that is the honest answer. We walk you through it on screen, and the fixed price follows in a Schedule of Work. You keep the audit whoever builds it. For AI projects, our [AI readiness assessment](/services/ai-readiness-assessment) is the Discovery Audit for that kind of project. See how the rest of delivery works on our [methodology page](/methodology), or start with [custom software development](/services/custom-app-development).
+At AWLabs, every build starts with a Discovery Audit, a fixed fee credited in full against the build. You meet Andy first, then we work through your build in a second session, and we deliver a written audit covering scope, risks, the standards it is assessed against, the order to build in and a recommendation, including not to build if that is the honest answer. We walk you through it on screen, and the Schedule of Work follows, with three fixed price options: The Minimum, The Recommended and The Complete. You keep the audit whoever builds it. For AI projects, our [AI readiness assessment](/services/ai-readiness-assessment) is the Discovery Audit for that kind of project. See how the rest of delivery works on our [methodology page](/methodology), or start with [custom software development](/services/custom-app-development).

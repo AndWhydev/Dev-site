@@ -73,7 +73,7 @@ The name comes from Martin Fowler. On a holiday in the rainforests of Queensland
 - **Wasted effort.** Much of the old behaviour is no longer wanted, but a like-for-like rebuild recreates it anyway.
 - **Frozen business.** While the rebuild runs, the old system still needs changes, so teams either maintain two systems or refuse new work.
 
-The strangler fig approach avoids a single high-stakes switch-over. Each slice is small enough to test properly, release on its own and roll back if something goes wrong. Our comparison of [rewriting vs refactoring legacy software](/guides/rewrite-vs-refactor-legacy-software) covers when a clean rewrite is still the better call.
+The strangler fig approach avoids a single risky switchover. Each slice is small enough to test properly, release on its own and roll back if something goes wrong. Our comparison of [rewriting vs refactoring legacy software](/guides/rewrite-vs-refactor-legacy-software) covers when a clean rewrite is still the better call.
 
 ## How does it work, step by step?
 
@@ -136,7 +136,7 @@ Microsoft's guidance is explicit that removing legacy tables should be a deliber
 
 **The strangler fig is the most common way to move from a monolith to microservices, because it lets you extract one service at a time.** Each slice carved off the old system becomes a service with its own code, deployment and, eventually, its own data. The facade becomes the API gateway that fronts the services.
 
-Two cautions. First, microservices aren't the goal in themselves: a well-structured modular application is often easier to run for a mid-sized business. Second, AWS's warning about premature decomposition applies strongly here, because service boundaries drawn before the domain is understood are expensive to redraw. The same pattern works in Java, .NET, PHP or any other stack; it depends on routing, not language.
+Two cautions. First, microservices aren't the goal in themselves: a cleanly structured modular application is often easier to run for a midsize business. Second, AWS's warning about premature decomposition applies strongly here, because service boundaries drawn before the domain is understood are expensive to redraw. The same pattern works in Java, .NET, PHP or any other stack; it depends on routing, not language.
 
 ## Strangler fig vs big bang, branch by abstraction and blue-green
 
@@ -176,4 +176,4 @@ There's also a cost of running two systems in parallel, sometimes for years. For
 
 ## How AWLabs approaches this
 
-We start legacy work with our Discovery Audit, a fixed fee credited in full against the build, and, where the code is available, a code audit, to map capabilities, data flows and seams before committing to an approach. When the strangler fig fits, we scope the first slices as stages within one fixed price, each ending with traffic moved and the old path retired, not just new code written. When a rewrite or a SaaS replacement is the better option, we say so. See our [legacy modernisation](/services/legacy-modernisation) and [code audit](/services/code-audit) services, or the [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) for typical ranges, and how a [discovery phase](/guides/software-discovery-phase) sets up a fixed price.
+We start legacy work with our Discovery Audit, a fixed fee credited in full against the build, and, where the code is available, a code audit, to map capabilities, data flows and seams before committing to an approach. When the strangler fig fits, we scope the first slices as fixed price stages in your Schedule of Work, across its three options (The Minimum, The Recommended and The Complete), each slice ending with traffic moved and the old path retired, not just new code written. When a rewrite or a SaaS replacement is the better option, we say so. See our [legacy modernisation](/services/legacy-modernisation) and [code audit](/services/code-audit) services, or the [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia) for typical ranges, and how a [discovery phase](/guides/software-discovery-phase) sets up a fixed price.

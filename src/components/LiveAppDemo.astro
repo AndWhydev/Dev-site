@@ -5,11 +5,11 @@ const liveUrl = 'https://golf-app-demo.vercel.app';
 <section class="ship-section" id="we-ship">
   <div class="ship-inner">
     <div class="ship-header reveal">
-      <span class="section-label">What we actually ship</span>
+      <span class="section-label">How we build</span>
       <h2 class="section-heading">Real interfaces, not decks.</h2>
       <p class="section-subheading">
-        On the left, an animated in-code finance mockup, every pixel is HTML and CSS,
-        no screenshots. On the right, a real app we built and deployed. Open it in a
+        On the left, an animated finance mockup built in code: every pixel is HTML and CSS,
+        with no screenshots. On the right, a working demo build of a golf app. Open it in a
         new tab and have a play.
       </p>
     </div>
@@ -141,14 +141,14 @@ const liveUrl = 'https://golf-app-demo.vercel.app';
           <div class="phone-caption">
             <div class="phone-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="#0d9373"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-              <span>In-code finance mockup</span>
+              <span>Finance mockup, built in code</span>
             </div>
-            <p>Animated entirely in HTML/CSS, no screenshot, no embed</p>
+            <p>Animated entirely in HTML and CSS, with no screenshot and no embed</p>
           </div>
         </div>
       </div>
 
-      {/* ── RIGHT: real shipped app preview ─────────────────────────── */}
+      {/* ── RIGHT: working demo build (not a client product) ────────── */}
       <div class="ship-app-col reveal-right stagger-2">
         <div class="app-frame">
           <div class="app-frame-chrome">
@@ -167,18 +167,18 @@ const liveUrl = 'https://golf-app-demo.vercel.app';
             </a>
           </div>
           <div class="app-frame-stage">
-            {/* Live embed of a shipped client-grade app. Sandboxed and lazy
+            {/* Live embed of a demo build. Sandboxed and lazy
                 so it never blocks the main thread; if it fails to load,
                 the fallback poster underneath is what the visitor sees. */}
             <div class="app-frame-poster" aria-hidden="true">
-              <div class="poster-eyebrow">Live preview</div>
+              <div class="poster-eyebrow">Live demo build</div>
               <div class="poster-title">Golf scoring app</div>
-              <div class="poster-meta">React · Vercel · production</div>
+              <div class="poster-meta">React · Vercel · demo</div>
             </div>
             <iframe
               class="app-frame-iframe"
               src={liveUrl}
-              title="Golf app, a real product we shipped"
+              title="Golf scoring app, a working demo build"
               loading="lazy"
               referrerpolicy="no-referrer"
               sandbox="allow-scripts allow-same-origin allow-popups"
@@ -187,17 +187,17 @@ const liveUrl = 'https://golf-app-demo.vercel.app';
         </div>
 
         <div class="ship-text">
-          <span class="ship-tag">Shipped · live in production</span>
-          <h3 class="ship-h3">A real app, embedded right here.</h3>
+          <span class="ship-tag">Live demo build</span>
+          <h3 class="ship-h3">A working demo you can click through.</h3>
           <p class="ship-p">
-            We designed, built and deployed this golf scoring app end-to-end, every
-            screen, every interaction, every line of code. Click through the embed
+            This golf scoring app is a demo build we designed and built end to end:
+            every screen, every interaction, every line of code. Click through the embed
             above, or open the full thing in a new tab.
           </p>
           <ul class="ship-bullets">
-            <li>Designed and built end-to-end by our team</li>
-            <li>Deployed to production on Vercel</li>
-            <li>Shown here as a live preview of the real app</li>
+            <li>Designed and built end to end by our team</li>
+            <li>Hosted on Vercel as a demo build</li>
+            <li>Not a client product; a working example of how we build</li>
           </ul>
           <a class="ship-cta" href={liveUrl} target="_blank" rel="noopener noreferrer">
             <span>Open in new tab</span>

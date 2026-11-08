@@ -6,7 +6,8 @@ const data = {
   metaDescription: 'Custom manufacturing software for Australian manufacturers: ERP integration, batch traceability, quality workflows and AI document processing, from Sydney.',
 
   industryName: 'Manufacturing',
-  heroHeadline: 'Software That Connects the Factory Floor to the ERP',
+  heroHeadline: 'Manufacturing software that connects the factory floor to your ERP',
+  heroSecondary: { label: 'AI document processing', href: '/services/ai-document-processing' },
   heroTagline: 'Custom manufacturing software for Australian manufacturers running lean teams on mixed systems: ERP integration, production and quality data, and AI that reads supplier paperwork.',
 
   /* stats array deliberately empty: no verified, attributable figures to show. Do not add invented statistics. */
@@ -17,7 +18,7 @@ const data = {
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="8" rx="1"/><rect x="14" y="13" width="8" height="8" rx="1"/><path d="M10 7h4a2 2 0 012 2v4"/><path d="M14 17h-4a2 2 0 01-2-2v-4"/></svg>',
       title: 'An ERP That Doesn\'t Talk to Anything Else',
-      description: 'Orders, stock and costing live in SAP Business One, MYOB Acumatica, NetSuite or Microsoft Dynamics, while production scheduling, quality checks and machine data sit in spreadsheets, standalone apps or paper. Staff re-key the same numbers between systems every shift, and month-end reconciliation becomes a hunt for which version is right.',
+      description: 'Orders, stock and costing live in SAP Business One, MYOB Acumatica, NetSuite or Microsoft Dynamics, while production scheduling, quality checks and machine data sit in spreadsheets, standalone apps or paper. Staff retype the same numbers between systems every shift, and reconciliation at month end becomes a hunt for which version is right.',
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>',
@@ -38,8 +39,8 @@ const data = {
 
   solutions: [
     'ERP integration for SAP Business One, MYOB Acumatica, NetSuite and Microsoft Dynamics',
-    'Production scheduling and shop-floor data capture apps',
-    'Quality management, inspection and non-conformance workflows',
+    'Production scheduling and shop floor data capture apps',
+    'Quality management, inspection and nonconformance workflows',
     'Batch and lot traceability from raw material to dispatch',
     'AI document processing for supplier certificates, dockets and invoices',
     'Production and quality dashboards on a single data layer',
@@ -63,11 +64,11 @@ const data = {
   faqs: [
     {
       question: 'Which ERP systems can you integrate with?',
-      answer: "We work through each ERP's supported integration path: the Service Layer and DI API for SAP Business One, the contract-based REST API and OData interface for MYOB Acumatica, SuiteTalk and RESTlets for NetSuite, and the published APIs for Microsoft Dynamics 365 Business Central and Finance and Operations. Older on-premises ERPs without a usable API can often be integrated through their database views, scheduled exports or an existing middleware layer. We confirm the exact route, licence requirements and any partner involvement during the Discovery Audit, before you get a fixed price.",
+      answer: "We work through each ERP's supported integration path: the Service Layer and DI API for SAP Business One, the contract based REST API and OData interface for MYOB Acumatica, SuiteTalk and RESTlets for NetSuite, and the published APIs for Microsoft Dynamics 365 Business Central and Finance and Operations. Older on-premises ERPs without a usable API can often be integrated through their database views, scheduled exports or an existing middleware layer. We confirm the exact route, licence requirements and any partner involvement during the Discovery Audit, before you get a fixed price.",
     },
     {
       question: 'Should we replace our ERP or build around it?',
-      answer: "Usually build around it. An ERP is expensive and disruptive to replace, and most of the pain manufacturers describe comes from the gaps between the ERP and everything else, not the ERP itself. We keep the ERP as the system of record for orders, stock and costing and build the missing pieces beside it: shop-floor capture, quality workflows, traceability and reporting. If your ERP genuinely can't support where the business is going, we'll say so and help you scope a replacement with an ERP partner rather than rebuild it ourselves.",
+      answer: "Usually build around it. An ERP is expensive and disruptive to replace, and most of the pain manufacturers describe comes from the gaps between the ERP and everything else, not the ERP itself. We keep the ERP as the system of record for orders, stock and costing and build the missing pieces beside it: shop floor capture, quality workflows, traceability and reporting. If your ERP genuinely can't support where the business is going, we'll say so and help you scope a replacement with an ERP partner rather than rebuild it ourselves.",
     },
     {
       question: 'Can AI read our supplier certificates and delivery dockets?',
@@ -78,12 +79,12 @@ const data = {
       answer: "We build the data foundation that predictive maintenance depends on: collecting machine and sensor data, linking it to assets, jobs and maintenance history, and making it queryable. On top of that we can build condition alerts and anomaly detection. Whether prediction is worth it depends on having enough history, including failures, for the machines that matter. We assess that honestly in the Discovery Audit, and often recommend starting with condition monitoring and better maintenance records before any prediction model.",
     },
     {
-      question: 'We are a mid-sized Australian manufacturer with a small IT team. Is custom software realistic for us?',
-      answer: "Often, if it is scoped tightly. We start with our Discovery Audit, a fixed fee credited in full against the build, to find the one or two workflows where connecting systems or removing re-keying saves the most time, then build those at a fixed price. You own what we build for you once it is paid for, and the full repository and logins are handed over after the final payment. We can host the system in Australian cloud regions or on your own infrastructure, and we document it so your team or another provider can support it. Some manufacturing R&D may be eligible for the R&D Tax Incentive; speak to a registered R&D tax agent, as we are not one.",
+      question: 'We are a midsize Australian manufacturer with a small IT team. Is custom software realistic for us?',
+      answer: "Often, if it is scoped tightly. We start with our Discovery Audit, a fixed fee credited in full against the build, to find the one or two workflows where connecting systems or removing retyping saves the most time, then build those at a fixed price. You own what we build for you once it is paid for, and the full repository and logins are handed over after the final payment. We can host the system in Australian cloud regions or on your own infrastructure, and we document it so your team or another provider can support it. Some manufacturing R&D may be eligible for the R&D Tax Incentive; speak to a registered R&D tax agent, as we are not one.",
     },
     {
       question: 'Can the system work on the factory floor with patchy Wi-Fi and shared devices?',
-      answer: "Yes, if it is designed for it from the start. Shop-floor apps should work offline and sync when the connection returns, support shared tablets with quick badge or PIN sign-in, use large touch targets that work with gloves, and scan barcodes or QR codes rather than relying on typing. We test on the actual devices and in the actual environment before rollout.",
+      answer: "Yes, if it is designed for it from the start. Shop floor apps should work offline and sync when the connection returns, support shared tablets with quick badge or PIN sign-in, use large touch targets that work with gloves, and scan barcodes or QR codes rather than relying on typing. We test on the actual devices and in the actual environment before rollout.",
     },
     {
       question: "How much does custom manufacturing software cost?",
@@ -91,7 +92,7 @@ const data = {
     },
     {
       question: "Do we need an MES, or can we build around our ERP?",
-      answer: "A manufacturing execution system (MES) manages and records work on the shop floor: scheduling, work orders, data capture, quality and traceability. Large or highly regulated plants often justify a full MES. Many mid-sized manufacturers get most of the value from a few targeted apps connected to the ERP, covering scheduling, shop-floor capture and batch traceability, at lower cost and disruption. We compare both routes honestly in the Discovery Audit.",
+      answer: "A manufacturing execution system (MES) manages and records work on the shop floor: scheduling, work orders, data capture, quality and traceability. Large or highly regulated plants often justify a full MES. Many midsize manufacturers get most of the value from a few targeted apps connected to the ERP, covering scheduling, shop floor capture and batch traceability, at lower cost and disruption. We compare both routes honestly in the Discovery Audit.",
     },
     {
       question: "Can you connect our machines and PLCs to the rest of our systems?",
@@ -100,7 +101,7 @@ const data = {
   ],
 
   ctaHeadline: 'Ready to Connect Your Systems?',
-  ctaDescription: "Whether you need your ERP talking to the shop floor, supplier paperwork processed automatically or a single view of production and quality, we start with a Discovery Audit and a fixed price. Tell us which systems you run and where the re-keying hurts most.",
+  ctaDescription: "Whether you need your ERP talking to the shop floor, supplier paperwork processed automatically or a single view of production and quality, we start with a Discovery Audit and a fixed price. Tell us which systems you run and where the retyping hurts most.",
 };
 ---
 <IndustryPageLayout {...data} />

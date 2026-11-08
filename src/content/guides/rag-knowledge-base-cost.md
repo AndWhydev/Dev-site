@@ -21,7 +21,7 @@ faqs:
   - q: "How long does a RAG knowledge base take to build?"
     a: "A pilot on one clean document collection takes about 4 to 8 weeks. A production system for a department, with integrations and permissions, usually takes 3 to 5 months. Enterprise systems with many sources take longer, mostly because of access control and content governance."
   - q: "How much does a RAG chatbot for customer support cost?"
-    a: "A customer-facing chatbot that answers from your help content is the same technology pointed at a public audience. Team 400 prices a chatbot with knowledge base integration at $30,000 to $80,000 (AUD, ex GST). Customer support adds handover to staff, tone controls and more testing; our AI chatbot cost guide covers those tiers."
+    a: "A chatbot for customers that answers from your help content is the same technology pointed at a public audience. Team 400 prices a chatbot with knowledge base integration at $30,000 to $80,000 (AUD, ex GST). Customer support adds handover to staff, tone controls and more testing; our AI chatbot cost guide covers those tiers."
   - q: "Can Microsoft 365 Copilot or ChatGPT Enterprise do this instead?"
     a: "Often, for documents already in SharePoint or connected sources, and that's the cheaper route if it meets your accuracy and data requirements. A custom RAG system is worth it when you need specific sources those tools can't reach, stricter control over where data is processed, cited answers tuned to your domain, or integration into your own product."
   - q: "What does it cost to keep a knowledge base up to date?"
@@ -136,7 +136,7 @@ AUD conversions use the Reserve Bank's 25 September 2026 rate of about US$0.70 p
 
 ## How much does a RAG knowledge base cost per month? A 300-person firm
 
-**For a typical mid-sized organisation, the model bill is the smallest part of running a knowledge base.** Illustrative figures, AUD ex GST:
+**For a typical midsize organisation, the model bill is the smallest part of running a knowledge base.** Illustrative figures, AUD ex GST:
 
 | Monthly item | Assumption | Cost |
 |---|---|---|
@@ -171,7 +171,7 @@ The break-even arithmetic is simple. In the example above, the system costs $4,3
 
 **Spend on retrieval quality and evaluation, save on everything else.**
 
-1. **Start with one high-value collection** where people waste time searching today.
+1. **Start with one valuable collection** where people waste time searching today.
 2. **Remove duplicates and superseded versions** before indexing. Fewer, better documents improve answers and reduce cost.
 3. **Use pgvector in your existing Postgres** unless scale demands otherwise.
 4. **Route by difficulty.** A low-cost model can handle simple lookups; reserve premium models for complex questions.
@@ -181,4 +181,4 @@ The break-even arithmetic is simple. In the example above, the system costs $4,3
 
 ## How AWLabs builds RAG knowledge bases
 
-We build RAG systems on PostgreSQL with pgvector by default, in an Australian cloud region where the services you need are available there, with document-level permissions carried over from your source systems. Every build starts with a test set of real questions and expected answers written with your subject experts, and we report accuracy against it before launch and after significant changes made during the build. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After that you receive one fixed price for the agreed scope. The code, indexes and test set are assigned to you as they are paid for in full and handed over after the final payment. See our [RAG knowledge base development service](/services/rag-knowledge-base).
+We build RAG systems on PostgreSQL with pgvector by default, in an Australian cloud region wherever the services you need are offered onshore, with document-level permissions carried over from your source systems. Each build includes a test set of real questions and expected answers written with your subject experts, and we report accuracy against it before launch and after significant changes made during the build. A requirement to keep data in Australia needs to be raised before you sign, so we can write it into your Schedule of Work. First comes our Discovery Audit, a fixed fee that is credited in full against the build, and then a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The code, indexes and test set are assigned to you as they are paid for in full and handed over after the final payment. See our [RAG knowledge base development service](/services/rag-knowledge-base).

@@ -76,7 +76,7 @@ Every software estimate is a guess about the future. Under fixed price the vendo
 | Budget certainty | High, if scope holds | Low, unless capped |
 | Management effort for you | Front-loaded: specify carefully, then accept deliverables | Ongoing: review progress and spend weekly |
 | Main failure mode | Padding, disputes over what's "in scope", corner-cutting | Drifting scope, slow burn of budget |
-| Best for | Well-understood, well-specified work | Exploratory work, evolving products, ongoing development |
+| Best for | Well-understood, clearly specified work | Exploratory work, evolving products, ongoing development |
 
 ## Why does fixed price cost more per hour?
 
@@ -102,7 +102,7 @@ Three things stand out. Pure T&M is cheapest if the work goes well, and exposed 
 
 **In common market practice, most contracts sit between the two extremes, and a hybrid is often a sensible choice.** The common ones:
 
-1. **Paid discovery, then fixed price.** A short discovery phase (across the market, usually two to six weeks) produces workflows, integration details, acceptance criteria and an architecture. The build is then quoted as a fixed price, often per phase. Across the market, discovery is usually priced separately. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope. See [what a discovery phase involves](/guides/software-discovery-phase).
+1. **Paid discovery, then fixed price.** A short discovery phase (across the market, usually two to six weeks) produces workflows, integration details, acceptance criteria and an architecture. The build is then quoted as a fixed price, often per phase. Across the market, discovery is usually priced separately. See [what a discovery phase involves](/guides/software-discovery-phase).
 2. **Fixed price per phase or milestone.** Large projects are split into phases, each priced once the previous one has reduced the unknowns. You can stop after any phase.
 3. **Capped T&M.** Hourly billing with a ceiling. Check whether the cap is a hard limit the vendor absorbs, or a trigger to stop and ask for more budget.
 4. **Fixed budget, flexible scope.** Price and time are fixed; the team delivers the highest-priority features that fit. This is how Fowler describes fixed price working with agile teams, and it suits products where learning changes priorities.
@@ -163,4 +163,4 @@ Australian law adds a floor. Under the Australian Consumer Law, services costing
 
 ## How AWLabs prices work
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. You then receive one fixed price for the agreed scope, set out in a Schedule of Work and paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover. That's one option among several above, and we use it because it gives you a firm number. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and you can see and test the code while we build. Each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. Your Schedule of Work then gives three fixed price options, The Minimum, The Recommended and The Complete, and the one you choose is paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover. That's one of the models above, and we use it because it gives you a firm number. Under our MSA, scope changes are written variations that both parties approve before the work starts (the only exception is urgent temporary action to protect systems or data), and you can see and test the code while we build. Each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Read more about [how we work](/methodology) or our [custom software service](/services/custom-app-development).

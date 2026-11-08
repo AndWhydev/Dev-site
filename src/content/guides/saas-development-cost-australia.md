@@ -99,7 +99,7 @@ Add those up and a commercial v1 carries roughly $60k to $210k of SaaS-specific 
 **Within any stage, the spread between the low and high end comes from a handful of predictable drivers.** When two quotes for the same idea differ by a factor of two, it's usually because the suppliers have assumed different answers to these questions.
 
 - **Number of user roles.** A product with one kind of user is far simpler than one with account owners, managers, staff, external clients and your own support team, each seeing different data.
-- **Integrations.** Every connection to accounting, CRM, calendar or industry systems adds build time and ongoing maintenance, because the other system changes too. Well-documented APIs such as Xero's are cheaper than legacy file exchanges.
+- **Integrations.** Every connection to accounting, CRM, calendar or industry systems adds build time and ongoing maintenance, because the other system changes too. Clearly documented APIs such as Xero's are cheaper than legacy file exchanges.
 - **Pricing model.** Flat monthly plans are simple. Per-seat, per-site, usage-based or hybrid pricing needs metering, proration and careful invoice logic.
 - **Real-time and offline behaviour.** Live collaboration, instant notifications and offline mobile use each add architecture work.
 - **Reporting.** Customers always want reports. A few fixed dashboards are cheap; a flexible report builder is a product in itself.
@@ -137,7 +137,7 @@ Retrofitting isolation into a product that assumed a single shared database can 
 | Contingency at 15% | | $26,880 |
 | **Planning budget** | | **$206,080 ex GST** |
 
-The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope. For context, the Robert Walters 2026 guide lists NSW senior full stack contractors at $800 to $1,000 a day before agency overheads such as project management, QA and warranty. Our [developer rates guide](/guides/software-developer-rates-australia) breaks down the difference.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. For context, the Robert Walters 2026 guide lists NSW senior full stack contractors at $800 to $1,000 a day before agency overheads such as project management, QA and warranty. Our [developer rates guide](/guides/software-developer-rates-australia) breaks down the difference.
 
 Notice that tenancy, billing, the support console and security baseline together account for 39 of the 128 days, about 30%. That's typical.
 
@@ -205,4 +205,4 @@ A simple test uses the numbers on this page. The illustrative commercial v1 has 
 
 ## How AWLabs approaches SaaS builds
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It settles the tenancy model, billing design and the smallest valuable first release, and you then receive one fixed price for the agreed scope. Senior engineers build it in TypeScript with PostgreSQL. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Our delivery pipeline runs AI coding agents in parallel, but every change passes type checks, visual tests, security scans and a senior engineer's review before it ships. See our [SaaS development service](/services/saas-development) for how an engagement runs.
+Our Discovery Audit comes first, at a fixed fee credited in full against the build. It settles the tenancy model, billing design and the smallest valuable first release, and your Schedule of Work then offers three fixed price options: The Minimum, The Recommended and The Complete. Senior engineers lead the build, in TypeScript with PostgreSQL. We normally host in an Australian cloud region wherever the services you need are offered onshore. Where tenant data must stay in Australia, say so before signing and we write that into your Schedule of Work. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. Our delivery pipeline runs AI coding agents in parallel, but every change passes type checks, visual tests, security scans and a senior engineer's review before it ships. See our [SaaS development service](/services/saas-development) for how an engagement runs.

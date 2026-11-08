@@ -1,7 +1,7 @@
 ---
 title: "Build vs buy: custom software or off-the-shelf SaaS?"
 metaTitle: "Build vs Buy Software: Custom or Off-the-Shelf SaaS?"
-description: "Build vs buy software: when off-the-shelf SaaS wins and when custom (bespoke) software pays off, with five-year cost examples and a weighted decision matrix."
+description: "Build vs buy software: when off-the-shelf SaaS wins and when custom (bespoke) software pays off, with costs over five years and a weighted decision matrix."
 eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
@@ -10,7 +10,7 @@ summary: "In the build vs buy software decision, buy off-the-shelf software when
 takeaways:
   - "Buying should be the default. A mature SaaS product spreads its development cost across thousands of customers, so you rarely beat it on price for a standard process."
   - "Build when the process is your differentiator, when you'd need extensive workarounds to fit a product, or when user numbers make subscriptions more expensive than ownership."
-  - "Compare five-year total cost of ownership, not year-one cost: subscription growth and price rises on one side, maintenance and hosting on the other."
+  - "Compare total cost of ownership over five years, not the cost in year one: subscription growth and price rises on one side, maintenance and hosting on the other."
   - "Both options carry lock-in. SaaS locks in your data and process; custom software locks you to whoever understands the code unless you own it and it's documented."
   - "For Australian organisations, check where a SaaS vendor stores personal information and whether prices are in USD."
 faqs:
@@ -21,7 +21,7 @@ faqs:
   - q: "What are the advantages and disadvantages of bespoke software?"
     a: "Bespoke (custom) software fits your process exactly, integrates with your systems, can be hosted in an Australian region of your choice, and becomes an asset you own. The disadvantages are a higher upfront cost, months rather than days to go live, and ongoing responsibility for maintenance and security. It only pays off when fit, scale or differentiation justify it."
   - q: "What is a build vs buy analysis?"
-    a: "It's a structured comparison of building software against buying a product, usually covering five-year total cost of ownership, fit to your process, integration, time to value, lock-in and data location. The two tools on this page, a five-year cost model and a weighted decision matrix, are the core of one. Agree the weights before anyone argues for an answer."
+    a: "It's a structured comparison of building software against buying a product, usually covering total cost of ownership over five years, fit to your process, integration, time to value, lock-in and data location. The two tools on this page, a cost model over five years and a weighted decision matrix, are the core of one. Agree the weights before anyone argues for an answer."
   - q: "What about low-code platforms?"
     a: "Low-code tools such as Power Apps sit between the two. They're good for internal tools with modest complexity and a small user base, especially if you already pay for the platform. They get harder to manage as logic, integrations and user numbers grow. Our low-code vs custom development guide goes into the detail."
   - q: "Can we start with SaaS and build later?"
@@ -29,7 +29,7 @@ faqs:
   - q: "Who owns custom software we pay for?"
     a: "Only you, if the contract says so. In Australia the developer owns copyright in the code it writes unless it's assigned to you in writing. Make sure the contract says the IP becomes yours as each stage is paid for, that you can see the code while it is built, and that the repository and every account move into your name at handover."
   - q: "How long does custom software last?"
-    a: "A well-built, maintained system can serve for many years, but it needs ongoing updates for security patches, dependency upgrades and changing business needs. Budget for maintenance every year rather than treating the build as a one-off purchase."
+    a: "A soundly built, maintained system can serve for many years, but it needs ongoing updates for security patches, dependency upgrades and changing business needs. Budget for maintenance every year rather than treating the build as a one-off purchase."
 sources:
   - title: "Chapter 8: APP 8 Cross-border disclosure of personal information"
     url: "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-8-app-8-cross-border-disclosure-of-personal-information"
@@ -86,7 +86,7 @@ A software developer telling you to buy might sound odd. It's the honest startin
 | Maintenance burden | Vendor's | Yours, or your developer's |
 | Exit | Depends on the vendor's export tools | You own the code and data, if the contract says so |
 
-## How do the five-year costs compare?
+## How do the costs compare over five years?
 
 **Compare total cost of ownership over at least five years, because year one flatters SaaS and hides the build's long tail.** The two examples below use illustrative figures to show the method. They're not quotes; replace them with your real numbers.
 
@@ -94,7 +94,7 @@ A software developer telling you to buy might sound odd. It's the honest startin
 
 ### Example A: 80 users
 
-| | Year 1 | Years 2 to 5 | Five-year total |
+| | Year 1 | Years 2 to 5 | Total over five years |
 |---|---|---|---|
 | SaaS subscription | $57,600 | $260,700 | $318,300 |
 | SaaS implementation | $20,000 | | $20,000 |
@@ -109,7 +109,7 @@ Subscription arithmetic: 80 users × $60 × 12 = $57,600 in year one, rising 5% 
 
 Same assumptions, five times the users. Year-one subscription is 400 × $60 × 12 = $288,000; over five years with 5% rises it's about $1.59m, plus implementation. The custom total is unchanged at about $505k, because hosting a few hundred more users rarely changes costs much for a business application.
 
-At this scale, owning the software costs roughly a third of renting it over five years, and the gap widens every year after. This is the pattern behind most build decisions for core operational systems in mid-sized and large organisations.
+At this scale, owning the software costs roughly a third of renting it over five years, and the gap widens every year after. This is the pattern behind most build decisions for core operational systems in medium and large organisations.
 
 Two caveats keep this honest. Custom software also needs change requests and new features, which the maintenance budget may not cover. And SaaS often includes things you'd otherwise have to build, such as mobile apps, reporting and compliance certifications. Count those on both sides. For typical build ranges, see [how much custom software costs in Australia](/guides/custom-software-development-cost-australia) and [software maintenance costs](/guides/software-maintenance-cost).
 
@@ -122,7 +122,7 @@ Score each option 1 to 5 on each factor, multiply by the weight, and total the c
 | Factor | Weight | SaaS score | SaaS weighted | Custom score | Custom weighted |
 |---|---|---|---|---|---|
 | Fit to how we actually work | 5 | 2 | 10 | 5 | 25 |
-| Five-year cost at our scale | 4 | 3 | 12 | 4 | 16 |
+| Cost over five years at our scale | 4 | 3 | 12 | 4 | 16 |
 | Time to go live | 3 | 5 | 15 | 2 | 6 |
 | Integration with our systems | 4 | 2 | 8 | 5 | 20 |
 | Is this process a competitive advantage? | 4 | 1 | 4 | 5 | 20 |
@@ -168,7 +168,7 @@ Common hybrid patterns:
 - **Data location.** Many SaaS products are hosted overseas. Disclosing personal information to an overseas vendor engages APP 8, and you can remain accountable for how that vendor handles it. Ask for the hosting region and the list of sub-processors.
 - **Security obligations.** APP 11 requires reasonable steps to protect personal information, which includes choosing vendors with appropriate security. If a vendor has a breach involving your customers' data, you may still have obligations under the Notifiable Data Breaches scheme.
 - **Currency exposure.** Subscriptions priced in USD move with the exchange rate, which can add or remove a noticeable percentage from your annual cost with no change in usage.
-- **Support hours.** A vendor supporting in US hours may answer your urgent ticket overnight. Check support hours in AEST and response commitments.
+- **Support hours.** A vendor supporting in US hours may answer your urgent ticket overnight. Check support hours in Sydney time and response commitments.
 - **Sector rules.** Health, financial services and government buyers may face onshore hosting or specific security requirements that narrow the SaaS field.
 
 Custom software lets you choose an Australian cloud region and your own support arrangement, which can simplify these questions. It doesn't remove them: you're then responsible for the security of the system. If you're building something new, the [R&D Tax Incentive](/guides/rd-tax-incentive-software-development) may be relevant in some circumstances; speak to a registered R&D tax agent before assuming it applies.
@@ -185,4 +185,4 @@ Custom software lets you choose an Australian cloud region and your own support 
 
 ## How AWLabs approaches this
 
-We begin build-or-buy conversations by looking for a product that already does the job, and if one does, we'll say so. Where custom software makes sense, every build starts with our Discovery Audit, a fixed fee credited in full against the build. It looks at the competition and the case for building it, and works through the potential return using your own figures. You then receive one fixed price for the agreed scope. Each part of the build is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment, so you're never locked to us. See our [enterprise software](/services/enterprise-software) service.
+We begin build-or-buy conversations by looking for a product that already does the job, and if one does, we'll say so. Where custom software makes sense, the first step is our Discovery Audit, charged as a fixed fee and credited in full against the build. It looks at the competition and the case for building it, and works through the potential return using your own figures. Your Schedule of Work then prices three versions of the build, The Minimum, The Recommended and The Complete, each at a fixed price. Each part of the build is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment, so you're never locked to us. See our [enterprise software](/services/enterprise-software) service.

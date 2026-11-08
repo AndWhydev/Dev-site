@@ -1,19 +1,19 @@
 ---
 title: "AI and software development for Melbourne businesses"
 metaTitle: "AI and Custom Software Development for Melbourne"
-description: "Sydney-based AI consultants and custom software developers for Melbourne: the eServices register, PDP Act and VPDSS, health records and Melbourne hosting."
+description: "Sydney based AI consultants and custom software developers for Melbourne: the eServices register, PDP Act and VPDSS, health records and Melbourne hosting."
 eyebrow: "Melbourne"
 city: "Melbourne"
 state: "VIC"
 published: 2026-09-28
 updated: 2026-11-07
-summary: "AWLabs is a Sydney-based team that provides AI consulting and custom software development for Melbourne organisations remotely, flying down for workshops when being in the room matters. Victorian projects have their own rules: state agencies buy ICT through the Digital Marketplace and the mandatory eServices register, work under the Privacy and Data Protection Act 2014 and the VPDSS, and handle health data under the Health Records Act 2001. Data can stay in Victoria using AWS, Azure or Google Cloud regions in Melbourne."
+summary: "AWLabs is a Sydney based team that provides AI consulting and custom software development for Melbourne organisations remotely, flying down for workshops when being in the room matters. Victorian projects have their own rules: state agencies buy ICT through the Digital Marketplace and the mandatory eServices register, work under the Privacy and Data Protection Act 2014 and the VPDSS, and handle health data under the Health Records Act 2001. Data can stay in Victoria using AWS, Azure or Google Cloud regions in Melbourne."
 takeaways:
   - "We're based in Sydney, deliver to Melbourne remotely and travel for workshops and user testing; we have no Melbourne office."
   - "Victorian agencies buy ICT services through the Digital Marketplace, where the eServices register is mandatory for the ICT services it covers; suppliers join via Supplier Hub."
   - "Victorian public sector bodies must meet the 10 Information Privacy Principles in the PDP Act, and many must also meet the 12 mandatory VPDSS standards."
   - "The Health Records Act 2001 applies Health Privacy Principles to health information in both the Victorian public and private sectors."
-  - "AWS opened its Melbourne region (ap-southeast-4) in January 2023, so Victorian workloads can stay in-state, with Sydney as a second region."
+  - "AWS opened its Melbourne region (ap-southeast-4) in January 2023, so Victorian workloads can stay in Victoria, with Sydney as a second region."
 faqs:
   - q: "Do you have a Melbourne office?"
     a: "No. We're in Sydney and work with Melbourne organisations remotely, travelling for strategy sessions, design reviews and user testing. Melbourne is on the same time zone as Sydney all year, including daylight saving, so working hours line up exactly."
@@ -24,9 +24,9 @@ faqs:
   - q: "Does the PDP Act apply to private companies?"
     a: "Generally not directly. It applies to Victorian public sector organisations. But a private company contracted to a Victorian agency can be bound to the Information Privacy Principles through its contract, so suppliers should expect privacy and security clauses that mirror the Act."
   - q: "Should we hire a Melbourne software development company instead?"
-    a: "If you want a team that can drop into your office any day of the week, a Melbourne firm has a real advantage. If most of the value is in the build and the in-person moments are a few workshops and testing sessions, a remote team on the same time zone works well. Compare how each firm tests, prices and hands over code, and ask how they report progress during the build."
+    a: "If you want a team that can drop into your office any day of the week, a Melbourne firm has a real advantage. If most of the value is in the build and the moments in person are a few workshops and testing sessions, a remote team on the same time zone works well. Compare how each firm tests, prices and hands over code, and ask how they report progress during the build."
   - q: "Do you do Microsoft AI consulting, such as Copilot and Azure?"
-    a: "We build on Microsoft Azure, including Azure-hosted models in the Australia Southeast region where the model is available, and we help organisations decide whether Microsoft 365 Copilot is enough before building anything custom. We don't hold a Microsoft partner designation, so if a program requires one, you'll need a partner for that part."
+    a: "We build on Microsoft Azure, including models hosted on Azure in the Australia Southeast region where the model is available, and we help organisations decide whether Microsoft 365 Copilot is enough before building anything custom. We don't hold a Microsoft partner designation, so if a program requires one, you'll need a partner for that part."
   - q: "What do senior developers cost in Melbourne?"
     a: "Re:Sourced's 2026 guide puts senior software contractor day rates in Melbourne at $750 to $1,050 (AUD, ex GST), slightly below Sydney. Agency rates build on that with design, testing and project management."
 sources:
@@ -104,7 +104,7 @@ The Digital Marketplace also holds state purchase contracts with vendors such as
 
 ### The PDP Act and VPDSS
 
-The VPDSS set 12 high-level mandatory standards covering governance, information, personnel, ICT and physical security, overseen by the Office of the Victorian Information Commissioner (OVIC). Agencies submit a Protective Data Security Plan every two years with an annual attestation from the agency head, and are encouraged to notify OVIC of information security incidents with a "limited" business impact or higher.
+The VPDSS set 12 broad mandatory standards covering governance, information, personnel, ICT and physical security, overseen by the Office of the Victorian Information Commissioner (OVIC). Agencies submit a Protective Data Security Plan every two years with an annual attestation from the agency head, and are encouraged to notify OVIC of information security incidents with a "limited" business impact or higher.
 
 For a supplier, that shows up as contract requirements: access controls, audit logging, security classification handling and incident notification that feed the agency's plan.
 
@@ -126,7 +126,7 @@ The Health Records Act sets Health Privacy Principles for health information col
 
 **Victorian workloads can stay in Victoria: AWS opened its Asia Pacific (Melbourne) region, ap-southeast-4, in January 2023, joining Azure Australia Southeast and Google Cloud australia-southeast2.** Having full regions in both Melbourne and Sydney means a Victorian system can run in Melbourne with backups and failover in Sydney, keeping all data in Australia.
 
-For AI features, check model availability region by region. At the time of writing, availability can differ between the Melbourne and Sydney regions for the same provider, and it changes often. For Microsoft-heavy organisations, our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide is the usual starting point. Our comparison of [Bedrock, Azure OpenAI and Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers how to check.
+For AI features, check model availability region by region. At the time of writing, availability can differ between the Melbourne and Sydney regions for the same provider, and it changes often. For organisations that run mostly on Microsoft, our [Copilot vs custom AI assistant](/guides/copilot-vs-custom-ai-assistant) guide is the usual starting point. Our comparison of [Bedrock, Azure OpenAI and Gemini Enterprise Agent Platform (formerly Vertex AI) for Australian residency](/guides/bedrock-vs-azure-openai-vs-vertex-australia) covers how to check.
 
 ## What a Melbourne engagement looks like, step by step
 

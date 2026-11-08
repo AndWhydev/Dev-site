@@ -1,7 +1,7 @@
 ---
 title: "Software and AI development across Australia: how remote delivery works"
 metaTitle: "Software and AI Development Company Across Australia"
-description: "How a Sydney-based software and AI development company delivers remotely across Australia: time zones, daylight saving, update cadence, site visits and hosting."
+description: "How a Sydney software and AI development company delivers remotely across Australia: time zones, daylight saving, update cadence, site visits and hosting."
 eyebrow: "Australia-wide"
 city: "Australia"
 state: "National"
@@ -20,7 +20,7 @@ faqs:
   - q: "When is it worth flying someone in?"
     a: "For strategy sessions where several stakeholders need to agree on scope or design, and for user testing with people who aren't comfortable on video calls. For routine demos and check-ins, video works well and saves you travel costs."
   - q: "Who pays for travel?"
-    a: "Travel for agreed on-site sessions is scoped and priced into your Schedule of Work up front, so there are no surprise invoices. If a project needs no travel, none is charged."
+    a: "Travel for agreed sessions on site is scoped and priced into your Schedule of Work up front, so there are no surprise invoices. If a project needs no travel, none is charged."
   - q: "How do you handle Perth's time difference?"
     a: "We schedule shared meetings in the middle of the day, when Perth mornings overlap Sydney afternoons, and keep asynchronous updates written so nothing depends on a live call. In summer that overlap is roughly 9am to 3pm Perth time."
   - q: "What is a software development company?"
@@ -28,7 +28,7 @@ faqs:
   - q: "How do we choose the best software development company in Australia?"
     a: "There isn't one best firm for every project, whatever the ranking lists say. Shortlist on fit: relevant experience, who actually writes the code, when IP is assigned to you and when you get the repository and logins, how they test, and how they price. Directory reviews help, but a paid scoping step, such as our Discovery Audit, tells you far more about how a firm works."
   - q: "Is remote delivery slower?"
-    a: "Not if it's run properly. The build itself happens at a desk wherever the team is. Delays in remote projects usually come from unclear decisions, which is why we put decision-heavy sessions in person."
+    a: "Not if it's run properly. The build itself happens at a desk wherever the team is. Delays in remote projects usually come from unclear decisions, which is why we hold the sessions where big decisions get made in person."
 sources:
   - title: "Daylight saving in NSW"
     url: "https://www.nsw.gov.au/about-nsw/daylight-saving"
@@ -64,13 +64,13 @@ disclaimer: legal
 
 ## Do you work with organisations outside Sydney?
 
-**Yes. Our team is based in Sydney and we deliver remotely to organisations in every Australian capital and regional centre, travelling for workshops when being in the room matters.** We don't have offices in other cities and we won't pretend to. What we do have is a delivery model built for distance: a fixed update rhythm, written decisions, shared working hours, and in-person time placed where it changes the outcome.
+**Yes. Our team is based in Sydney and we deliver remotely to organisations in every Australian capital and regional centre, travelling for workshops when being in the room matters.** We don't have offices in other cities and we won't pretend to. What we do have is a delivery model built for distance: a fixed update rhythm, written decisions, shared working hours, and time in person placed where it changes the outcome.
 
 This page explains how that works in practice, including the parts that are genuinely harder across distance and how we handle them.
 
 ## How do time zones and daylight saving affect a project?
 
-**Australia runs three standard time zones, and because Queensland, Western Australia and the Northern Territory don't observe daylight saving, the gaps between cities change twice a year.** New South Wales, Victoria, South Australia, Tasmania and the ACT move their clocks forward. In 2026, daylight saving starts on Sunday 4 October and ends on Sunday 4 April 2027.
+**Australia runs three standard time zones, and because Queensland, Western Australia and the Northern Territory don't observe daylight saving, the gaps between cities change twice a year.** New South Wales, Victoria, South Australia, Tasmania and the ACT move their clocks forward. Daylight saving started on Sunday 4 October 2026 and ends on Sunday 4 April 2027.
 
 What 10am in Sydney looks like elsewhere:
 
@@ -152,4 +152,4 @@ For a private company this rarely changes the build. For a state agency or a hea
 
 ## How AWLabs delivers across Australia
 
-We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every engagement starts with an NDA and our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We work AEST hours with the overlap windows above. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. If you're comparing firms, our guides on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) and [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) set out the questions to ask. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/methodology) or our [custom app development](/services/custom-app-development) service.
+We're a Sydney team led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every engagement starts with an NDA and our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We work Sydney business hours, with the overlap windows above. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. If you're comparing firms, our guides on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) and [how to choose an AI development company](/guides/how-to-choose-an-ai-development-company) set out the questions to ask. If you're weighing a local team against offshore delivery, our [onshore vs offshore guide](/guides/onshore-vs-offshore-software-development) is a fair comparison. See [how we work](/methodology) or our [custom app development](/services/custom-app-development) service.

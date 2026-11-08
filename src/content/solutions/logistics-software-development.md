@@ -1,6 +1,6 @@
 ---
-title: "Logistics and transport software in Australia"
-metaTitle: "Logistics and Transport Software Development in Australia"
+title: "Logistics software for Chain of Responsibility and the HVNL"
+metaTitle: "Logistics Software for Chain of Responsibility and the HVNL"
 description: "Transport and logistics software development in Australia: TMS, WMS and telematics integration, Chain of Responsibility, HVNL changes and AI in logistics."
 eyebrow: "Industry solution"
 published: 2026-09-28
@@ -20,7 +20,7 @@ faqs:
   - q: "What changed on 1 August 2026?"
     a: "The Heavy Vehicle National Law Amendment Act 2025 commenced. The NHVR lists changes including the new Heavy Vehicle Accreditation scheme and safety management system audits, unfit to drive provisions, simplified work diary record keeping, and mass, dimension and loading changes. Transitional arrangements mean some old and new rules run side by side for a period, so check each rule's effective date."
   - q: "What is the difference between logistics software and transport software?"
-    a: "Transport software, usually a transport management system, handles the movement of freight: bookings, rating, allocation to vehicles, tracking and proof of delivery. Logistics software is the wider set, adding warehousing, inventory, packing, customs and customer visibility. Most businesses run several of each, which is why the joining layer between them is where custom work pays off."
+    a: "Transport software (usually a transport management system) handles the movement of freight: bookings, rating, allocation to vehicles, tracking and proof of delivery. Logistics software is the wider set, adding warehousing, inventory, packing, customs and customer visibility. Most businesses run several of each, which is why the joining layer between them is where custom work pays off."
   - q: "Should we buy a TMS or build custom transport management software?"
     a: "Buy, in most cases. Mature transport management systems cover bookings, allocation and tracking well, and their vendors keep up with carrier and customer integrations. Build custom when your operating model is unusual enough that a TMS forces constant workarounds, or when you are building a freight product to sell, and otherwise put the custom effort into integration and compliance evidence around the TMS."
   - q: "Can you integrate with CargoWise, SAP or our WMS?"
@@ -132,7 +132,7 @@ For most businesses the valuable custom piece is what happens with the data: war
 | ERP and accounting | Invoicing, costing | API or integration platform | Turns proof of delivery into an invoice without rekeying |
 | Customer portal | Track and trace, documents | Your own API | Gives customers self-service visibility |
 
-Designing this layer well means event-driven messaging so one system's outage doesn't block the others, idempotent processing so a duplicated message doesn't create a duplicated load, and a single load identifier that every system can map to. Our [API development](/services/api-development) service covers that approach, and our [workflow automation](/services/workflow-automation) service covers lighter integrations where an off-the-shelf connector is enough.
+Designing this layer well means event-driven messaging so one system's outage doesn't block the others, idempotent processing so a duplicated message doesn't create a duplicated load, and a single load identifier that every system can map to. Our [API development](/services/api-development) service covers that approach, and our [workflow automation](/services/workflow-automation) service covers lighter integrations where a standard connector is enough.
 
 ## What about driver tracking data and privacy?
 

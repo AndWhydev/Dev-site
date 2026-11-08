@@ -100,7 +100,7 @@ The National AI Plan, launched by the Department of Industry, Science and Resour
 |---|---|---|
 | Insecure AI systems, data leakage | Privacy Act (APP 11), directors' duties, Security of Critical Infrastructure Act, sector rules, negligence | Access control, prompt injection defences, logging, secrets handling |
 | Misleading outputs | Australian Consumer Law (misleading and deceptive conduct) | Grounding, citations, disclaimers, honest claims about what the AI can do |
-| Harmful or defective outputs | Product liability, WHS laws, online safety laws, defamation, negligence | Evaluation, content filters, human review for high-impact outputs |
+| Harmful or defective outputs | Product liability, WHS laws, online safety laws, defamation, negligence | Evaluation, content filters, human review for consequential outputs |
 | Misuse of data | Privacy Act, copyright, confidentiality, contract | Data provenance records, consent flags, licensing checks on training data |
 | Inaccurate outputs | Privacy Act (APP 10), ACL statutory guarantees | Accuracy testing, monitoring, correction workflows |
 | Bias and exclusion | Federal and state anti-discrimination law, Fair Work Act | Bias testing across groups, accessible design, contestability |
@@ -128,7 +128,7 @@ Sector regulators add their own layers. APRA's prudential standards on informati
 
 ## What is voluntary but expected?
 
-**The Guidance for AI Adoption is the government's recommended baseline, and it is what customers, boards and auditors increasingly ask about.** It sets out 6 essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a foundations version for early or low-risk use and an implementation version for complex or higher-risk use. Our explainer on the [Guidance for AI Adoption](/guides/guidance-for-ai-adoption) turns each practice into engineering tasks, and the older [AI Ethics Principles](/guides/australian-ai-ethics-principles) remain the values underneath.
+**The Guidance for AI Adoption is the government's recommended baseline, and it is what customers, boards and auditors increasingly ask about.** It sets out 6 essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in a foundations version for early use or use with little risk, and an implementation version for complex use or use with higher risk. Our explainer on the [Guidance for AI Adoption](/guides/guidance-for-ai-adoption) turns each practice into engineering tasks, and the older [AI Ethics Principles](/guides/australian-ai-ethics-principles) remain the values underneath.
 
 Voluntary doesn't mean irrelevant. When a regulator or court asks whether you took reasonable steps, published government guidance is an obvious benchmark.
 

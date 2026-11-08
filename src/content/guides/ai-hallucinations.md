@@ -108,7 +108,7 @@ The "invented capability" row deserves attention in [AI agents](/guides/what-is-
 |---|---|---|---|
 | Brainstorming, first drafts for staff | Low | High: a person edits it | Light |
 | Internal knowledge assistant | Medium | Medium | Citations, refusals, feedback button |
-| Customer-facing answers | High | Low: the customer trusts it | Grounding, strict scope, escalation, monitoring |
+| Answers shown to customers | High | Low: the customer trusts it | Grounding, strict scope, escalation, monitoring |
 | Extracting data into systems of record | High | Low once stored | Validation rules, confidence thresholds, sampling review |
 | Decisions affecting individuals (credit, claims, eligibility) | Very high | Low | Human decision-maker, full audit trail, legal review |
 

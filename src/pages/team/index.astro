@@ -5,9 +5,56 @@ import Footer from '../../components/Footer.astro';
 import CTABanner from '../../components/CTABanner.astro';
 import TeamSection from '../../components/TeamSection.astro';
 
-const pageTitle = 'Our Team | AWLabs';
+const pageTitle = 'Our Team: Engineers and Specialists | AWLabs';
 const pageDescription =
   'Meet the AWLabs team: the developers who build your product, and the lawyers and accountants we work with on every build.';
+
+const siteUrl = 'https://www.awlabs.com.au';
+const org = { '@id': `${siteUrl}/#organization` };
+
+// Our own staff. Outside firms and consultants are not marked up as
+// employees. Facts here must match TeamSection.astro.
+const people = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/team/andy-taleb#person`,
+    name: 'Andy Taleb',
+    jobTitle: 'Director',
+    url: `${siteUrl}/team/andy-taleb`,
+    image: `${siteUrl}/team/andy-taleb.webp`,
+    worksFor: org,
+    sameAs: ['https://www.linkedin.com/in/andytaleb/'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/team#sam-trinder`,
+    name: 'Sam Trinder',
+    jobTitle: 'Lead Developer',
+    image: `${siteUrl}/team/sam-trinder.webp`,
+    worksFor: org,
+    sameAs: ['https://www.linkedin.com/in/sam-trinder-4b5680377/'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/team#nicole-jones`,
+    name: 'Nicole Jones',
+    jobTitle: 'Junior Developer & Admin',
+    image: `${siteUrl}/team/nicole-jones.webp`,
+    worksFor: org,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/team#lucy-cassidy`,
+    name: 'Lucy Cassidy',
+    jobTitle: 'Developer in Training',
+    image: `${siteUrl}/team/lucy.webp`,
+    worksFor: org,
+  },
+];
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -19,7 +66,7 @@ const breadcrumb = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription} extraSchema={[breadcrumb]}>
+<Layout title={pageTitle} description={pageDescription} extraSchema={[breadcrumb, ...people]}>
   <Header />
   <main>
     <section class="team-hero">

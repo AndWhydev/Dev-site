@@ -1,6 +1,6 @@
 ---
-title: "AI and software development for Australian government"
-metaTitle: "AI in Government Australia: Government Software Development"
+title: "AI for Australian government: DTA policy, ISM, PSPF and hosting"
+metaTitle: "AI in Government: DTA Policy, ISM, PSPF and Hosting Rules"
 description: "AI in government and government software development in Australia: how the DTA AI policy, ISM, PSPF and hosting rules shape a build, with phases and costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
@@ -8,7 +8,7 @@ updated: 2026-09-28
 summary: "AI in government, and government software development generally, is shaped less by technology than by the frameworks around them: the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), ASD's Information Security Manual, the Protective Security Policy Framework and, for hosting sensitive data, the Hosting Certification Framework. A supplier's job is to build to those requirements and hand the agency the evidence it needs for its own assessments. AWLabs holds no government panel membership, IRAP assessment or security clearances, so we suit OFFICIAL workloads, subcontracting and state or local government work rather than classified systems."
 takeaways:
   - "Version 2.0 of the DTA AI policy took effect on 15 December 2025 for non-corporate Commonwealth entities; its first new mandatory requirement began on 15 June 2026 and the rest apply from December 2026."
-  - "Every in-scope AI use case now needs an accountable owner, an entry in an internal register and an AI impact assessment before deployment, so suppliers should design systems that make those assessments easy to complete."
+  - "Every AI use case in scope now needs an accountable owner, an entry in an internal register and an AI impact assessment before deployment, so suppliers should design systems that make those assessments easy to complete."
   - "The ISM (updated quarterly, latest September 2026) and PSPF Release 2026 set the security controls; PROTECTED systems need IRAP-assessed infrastructure and suppliers with the right clearances."
   - "PSPF directions can rule out specific products outright, such as Direction 001-2025 on DeepSeek, so model and vendor choice is a compliance question, not only a technical one."
   - "AWLabs is not on a BuyICT panel, has no IRAP-assessed system and holds no clearances. We say so up front and scope work where that doesn't matter."
@@ -26,7 +26,7 @@ faqs:
   - q: "Is there an AI Act that applies to Australian government?"
     a: "No. At the time of writing there is no standalone AI Act in Australia. Commonwealth agencies are bound by the DTA AI policy and by existing laws such as the Privacy Act, and the Privacy Act's automated decision-making disclosure rules start on 10 December 2026. Our guide to whether there is an AI Act in Australia covers the wider picture."
   - q: "What AI use cases suit local councils?"
-    a: "The same low-risk pattern as federal agencies: staff search over the council's own policies and procedures, triage of customer requests to the right team, and drafting help for routine correspondence, each with a person reviewing before anything goes out. Councils work under their state's privacy, records and procurement rules rather than the DTA policy, so the Discovery Audit starts from those."
+    a: "The same low risk pattern as federal agencies: staff search over the council's own policies and procedures, triage of customer requests to the right team, and drafting help for routine correspondence, each with a person reviewing before anything goes out. Councils work under their state's privacy, records and procurement rules rather than the DTA policy, so the Discovery Audit starts from those."
   - q: "Do state governments follow the DTA AI policy?"
     a: "The DTA policy applies to non-corporate Commonwealth entities; corporate Commonwealth entities are encouraged to apply it. States and territories set their own AI, privacy and records rules, so a council or state agency project is scoped against its own state framework and privacy law instead."
 sources:
@@ -98,7 +98,7 @@ A useful rule when choosing a first project: pick a use case where a wrong answe
 
 The requirements that matter most to anyone building an AI system for an agency:
 
-1. **Internal register.** Agencies must keep an internal register of all in-scope AI use cases.
+1. **Internal register.** Agencies must keep an internal register of all AI use cases in scope.
 2. **Accountable owner.** Each use case needs a named accountable owner.
 3. **AI impact assessment before deployment.** Assessments consider impacts on fairness, safety, privacy, transparency, security and human-centred values, supported by the DTA's AI impact assessment tool.
 4. **Lifecycle oversight and incidents.** Agencies need processes to assess, approve and oversee AI use cases across their lifecycle, handle AI incidents, and give staff and the public a way to report safety concerns.
@@ -140,7 +140,7 @@ Work through these questions in order during the Discovery Audit:
 4. **Prohibited products.** Check current PSPF directions and your agency's own list before any library, model or tool is adopted.
 5. **Exit.** Could you move to a different model within weeks if policy or pricing changed? Keeping prompts, evaluation sets and retrieval logic independent of any one vendor makes the answer yes.
 
-Open-weight models hosted inside the agency's own cloud account are worth considering where retention terms are unacceptable or the workload must avoid third-party model APIs. They cost more to run and maintain, and capability can trail the best hosted models, so they suit narrow, high-volume tasks better than open-ended drafting. Our [private LLM deployment](/services/private-llm-deployment) page explains that trade-off.
+Open-weight models hosted inside the agency's own cloud account are worth considering where retention terms are unacceptable or the workload must avoid model APIs run by third parties. They cost more to run and maintain, and capability can trail the best hosted models, so they suit narrow, repetitive tasks better than general drafting. Our [private LLM deployment](/services/private-llm-deployment) page explains that trade-off.
 
 ## Where AWLabs fits, and where it doesn't
 

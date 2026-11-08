@@ -72,7 +72,7 @@ disclaimer: financial
 |---|---|---|---|
 | Simple validation build | One core workflow, basic accounts, minimal integrations | $20,000 to $50,000 | AppGurus 2026 |
 | Basic MVP | Simple validation app with minimal integrations, production quality | $50,000 to $70,000 | Appinventiv, August 2026 |
-| Moderate MVP | Customer-facing app with APIs, dashboards and payments | $70,000 to $120,000 | Appinventiv, August 2026 |
+| Moderate MVP | App for customers with APIs, dashboards and payments | $70,000 to $120,000 | Appinventiv, August 2026 |
 | Advanced MVP | AI features, workflow automation, multi-user environments | $120,000 to $200,000+ | Appinventiv, August 2026 |
 | Production-ready MVP from a full-service product studio | Product strategy, research, bespoke design, web and mobile | $125,000 to $250,000+ | Wave Digital, July 2026 |
 
@@ -172,4 +172,4 @@ If the MVP is a subscription software product, our [SaaS development cost guide]
 
 ## How AWLabs approaches MVPs
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It turns the idea into a scoped MVP, including the cuts, and you then receive one fixed price for the agreed scope. When a landing page test, a prototype or a no-code build will answer your question more cheaply, we'll recommend it. Our MVPs are built by senior engineers on standard stacks (TypeScript, React or Next.js, Flutter where mobile is essential, PostgreSQL), and you can see and test the code while we build. Each part is assigned to your company as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [startup MVP development service](/startup-mvp).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It turns the idea into a scoped MVP, including the cuts, and your Schedule of Work then prices three versions of it at fixed prices: The Minimum, The Recommended and The Complete. When a landing page test, a prototype or a no-code build will answer your question more cheaply, we'll recommend it. Senior engineers lead every MVP build, on standard stacks (TypeScript, React or Next.js, Flutter where mobile is essential, PostgreSQL), and you can see and test the code while we build. Each part is assigned to your company as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [startup MVP development service](/startup-mvp).

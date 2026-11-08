@@ -17,13 +17,13 @@ faqs:
   - q: "Is it better to choose a local software company?"
     a: "Local helps with workshops, time zone and legal recourse, but it isn't a guarantee of quality, and remote delivery works well for most projects. Choose on capability and evidence first, then weigh location as one factor. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
   - q: "How do you choose the best offshore software development company?"
-    a: "Run the same checks as for a local firm, then add four: how many working hours overlap with AEST, which country's law governs the contract and whether you could enforce it there, how the firm handles personal information given your APP 8 obligations, and who exactly will write the code. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
+    a: "Run the same checks as for a local firm, then add four: how many working hours overlap with Sydney time, which country's law governs the contract and whether you could enforce it there, how the firm handles personal information given your APP 8 obligations, and who exactly will write the code. Our onshore vs offshore guide covers the trade-offs, including when offshore is the better choice."
   - q: "How do I choose a custom software development company rather than a product reseller?"
     a: "Ask whether the proposal builds software you'll own or configures a product you'll license. A custom software development company should let you see the code while it is built, assign the IP to you as it is paid for, move the repository into your name at handover and explain the architecture it will build. If the price depends on an ongoing licence to the firm's own platform, you're buying a product, which can be fine, but compare it against SaaS options rather than custom builds."
   - q: "How many quotes should I get for a software project?"
     a: "Three is typical. Give every firm the same brief so the quotes are comparable, and expect the range to be wide on early estimates, because each firm is making different assumptions about scope you haven't defined yet."
   - q: "Should I pay for a discovery or scoping phase?"
-    a: "For anything beyond a small, well-defined job, yes. A paid discovery produces a scope, architecture and firm price you own, and you can take it to another firm if you choose. It also lets you see how the company works before committing to the full budget."
+    a: "For anything beyond a small, clearly defined job, yes. A paid discovery produces a scope, architecture and firm price you own, and you can take it to another firm if you choose. It also lets you see how the company works before committing to the full budget."
   - q: "What insurance should a software development company have?"
     a: "At minimum, professional indemnity and public liability. Many enterprise and government buyers also require cyber insurance. Ask for certificates of currency and check the cover amounts against your procurement policy."
   - q: "What if the company goes out of business mid-project?"
@@ -77,7 +77,7 @@ disclaimer: legal
 | Enterprise integrator | Large programs, ERP and CRM work, multi-vendor environments | Higher rates and overheads; small projects can get junior staff |
 | Specialist boutique | One domain done deeply: AI, payments, data, legacy modernisation | Narrow; you may need another firm for adjacent work |
 | Staff augmentation provider | Adding developers to a team you already manage | You carry the delivery risk and the management load |
-| Freelancer | Small, well-defined jobs with a clear owner on your side | Single point of failure; limited cover for leave or illness |
+| Freelancer | Small, clearly defined jobs with a clear owner on your side | Single point of failure; limited cover for leave or illness |
 
 If you have a capable internal product owner and tech lead, augmentation or a freelancer can be the most efficient choice. If you don't, you need a firm that takes responsibility for delivery, not just hours. Our [freelancer vs agency vs in-house](/guides/freelancer-vs-agency-vs-in-house) comparison covers that choice.
 
@@ -104,12 +104,12 @@ If you have a capable internal product owner and tech lead, augmentation or a fr
 
 **On delivery and communication**
 6. How often will we see working software, not status reports?
-7. Who is our day-to-day contact, and what hours do they work in AEST?
+7. Who is our day-to-day contact, and what hours do they work in Sydney time?
 8. How do you handle a change in scope halfway through?
 9. What was the last project that went over time or budget, and why?
 
 **On ownership and exit**
-10. Is the code in our repository from the first commit?
+10. Can we see the code while it's built, and when does the repository move into our name?
 11. When does IP transfer to us?
 12. If we part ways, what do we get and how long does handover take?
 
@@ -119,7 +119,7 @@ Question 9 matters most. Every firm has had a project go wrong. The useful signa
 
 **Normalise the quotes before you compare totals.** Different firms price different scope, carry different risks and make different assumptions, so the headline number is the least informative part of a proposal.
 
-Here is an illustrative comparison for a mid-sized internal operations platform. The firms and numbers are made up to show the method, not market quotes.
+Here is an illustrative comparison for a midsize internal operations platform. The firms and numbers are made up to show the method, not market quotes.
 
 | | Firm A | Firm B | Firm C |
 |---|---|---|---|
@@ -130,10 +130,10 @@ Here is an illustrative comparison for a mid-sized internal operations platform.
 | Automated testing | Unit and end-to-end | Unit only | Not mentioned |
 | Deployment and hosting setup | Included | Included | Excluded |
 | Warranty period | 60 days | 90 days | 30 days |
-| Code in client repository | From day one | At handover | Not stated |
+| Code access and repository | Your repository from the first commit | Their repository, visible to you throughout; moved to you after final payment | Not stated |
 | Who carries overrun risk | Firm | Firm | Client |
 
-On paper Firm C is cheapest. Once you add the missing integration, hosting setup, testing and the overrun risk that sits with you, it may well be the most expensive. Firm A and Firm B cover comparable scope. Once Firm A's discovery is added it is still about $55k cheaper ($155k against $210k), so the choice between them comes down to price and code access against Firm B's longer warranty, and to which team you trusted in the technical session.
+On paper Firm C is cheapest. Once you add the missing integration, hosting setup, testing and the overrun risk that sits with you, it may well be the most expensive. Firm A and Firm B cover comparable scope. Once Firm A's discovery is added it is still about $55k cheaper ($155k against $210k), so the choice between them comes down to price against Firm B's longer warranty, and to which team you trusted in the technical session. Their repository models differ, but that alone shouldn't decide it: some vendors work in your repository from the first commit; others hand over the repository after final payment. Either works if the contract says so clearly and you can see the code while it is built. Firm C's silence on the point is the real problem.
 
 To normalise your own quotes:
 
@@ -183,7 +183,7 @@ The firm that scores best on those checks is the best company for you, whatever 
 
 ## A realistic selection timeline
 
-**Most mid-sized projects take four to eight weeks from brief to signed contract.** Rushing this stage is the most common way to lose far more time later.
+**Most midsize projects take four to eight weeks from brief to signed contract.** Rushing this stage is the most common way to lose far more time later.
 
 | Week | Activity |
 |---|---|
@@ -200,4 +200,4 @@ If you're a government agency or supplier, the Digital Transformation Agency's D
 
 We'd encourage you to put us through exactly these checks. AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is based in Five Dock, Sydney. Our founder has built software professionally since 2019 and run the agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership of developers and founders.
 
-Our model: every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers lead every build and review every change. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work Sydney business hours, and every change passes automated checks and a senior engineer's review before it's deployed. We don't hold ISO or SOC 2 certifications, so if your procurement requires them, we're not the right fit for that contract. See our [enterprise software](/services/enterprise-software) service or [how we work](/methodology).
+Our model: a Discovery Audit comes first, at a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options to choose from: The Minimum, The Recommended and The Complete. Senior engineers lead every build and review every change. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work Sydney business hours, and every change passes automated checks and a senior engineer's review before it's deployed. We don't hold ISO or SOC 2 certifications, so if your procurement requires them, we're not the right fit for that contract. See our [enterprise software](/services/enterprise-software) service or [how we work](/methodology).

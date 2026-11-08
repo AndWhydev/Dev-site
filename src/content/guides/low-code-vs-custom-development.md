@@ -6,7 +6,7 @@ eyebrow: "Comparison"
 category: compare
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Low-code beats custom development for internal tools, simple workflows and early product experiments: Power Apps if you already run Microsoft 365 and your users are staff, Bubble if you're testing a customer-facing web product quickly. Custom development wins when the software is core to how you compete, serves many external users, needs complex logic or integrations, or must be portable and fully under your control. Many organisations should use both: low-code for the long tail of internal apps, code for the few systems that matter most."
+summary: "Low-code beats custom development for internal tools, simple workflows and early product experiments: Power Apps if you already run Microsoft 365 and your users are staff, Bubble if you're testing a web product for customers quickly. Custom development wins when the software is core to how you compete, serves many external users, needs complex logic or integrations, or must be portable and fully under your control. Many organisations should use both: low-code for the long tail of internal apps, code for the few systems that matter most."
 takeaways:
   - "Power Apps is licensed per user, so it's cost-effective for a few dozen staff and expensive for thousands of external users; Bubble bills on workload units tied to server usage."
   - "At the time of writing (September 2026), Power Platform environments can be created in an Australian region for Australian tenants; Bubble's standard hosting is Bubble-managed, with region choice on dedicated instances."
@@ -15,13 +15,13 @@ takeaways:
   - "Custom code costs more up front but you own it once it is paid for and assigned to you, can host it anywhere, and aren't exposed to per-user licence changes."
 faqs:
   - q: "Is low-code cheaper than custom development?"
-    a: "Usually for the first version, and often for small internal apps over their whole life. It stops being cheaper when licence costs scale with users, when you hit platform limits and need workarounds, or when a rebuild becomes necessary because the platform can't do what the business now needs. Compare three-year total cost, not build cost."
+    a: "Usually for the first version, and often for small internal apps over their whole life. It stops being cheaper when licence costs scale with users, when you hit platform limits and need workarounds, or when a rebuild becomes necessary because the platform can't do what the business now needs. Compare total cost over three years, not build cost."
   - q: "What are the pros and cons of low-code?"
     a: "The pros are speed, a low first-version cost, and the ability for trained staff to build simple apps without waiting for developers. The cons are licence costs that grow with users, weaker testing and version control, platform limits on logic and performance, and lock-in: you can't take a low-code app to another platform without rebuilding it. It's a strong choice for simple internal apps and a weak one for core, complex systems."
   - q: "What are the alternatives to Power Apps?"
-    a: "Other low-code platforms, such as OutSystems, Mendix and Appian, target larger enterprise applications. No-code builders like Bubble suit customer-facing prototypes. Sometimes the better alternative is an off-the-shelf SaaS product that already does the job, or a SharePoint list with Power Automate for very simple cases. For core systems with complex rules or many external users, the alternative is custom development."
+    a: "Other low-code platforms, such as OutSystems, Mendix and Appian, target larger enterprise applications. No-code builders like Bubble suit prototypes that customers will try. Sometimes the better alternative is an off-the-shelf SaaS product that already does the job, or a SharePoint list with Power Automate for very simple cases. For core systems with complex rules or many external users, the alternative is custom development."
   - q: "Can Power Apps handle external customers?"
-    a: "Power Apps is designed mainly for internal staff apps. Microsoft offers Power Pages for external-facing sites, licensed differently. For a customer-facing product with thousands of users, custom development or a product-focused platform usually fits better."
+    a: "Power Apps is designed mainly for internal staff apps. Microsoft offers Power Pages for external-facing sites, licensed differently. For a product used by thousands of customers, custom development or a product-focused platform usually fits better."
   - q: "Can we move off Bubble later?"
     a: "Yes, but it's a rebuild, not a migration. You can export your data and a JSON description of your app's logic, which helps developers understand what to rebuild, but there's no code to take with you. Plan for that if the product succeeds."
   - q: "Is low-code secure enough for business data?"
@@ -63,7 +63,7 @@ service:
 
 ## Low-code vs custom development: which should you choose?
 
-**Choose low-code when speed matters more than control and the app is simple, internal or experimental; choose custom development when the software is core, complex, customer-facing at scale, or must be fully yours.** Neither is a compromise version of the other. They're tools for different jobs, and plenty of organisations are best served by using both.
+**Choose low-code when speed matters more than control and the app is simple, internal or experimental; choose custom development when the software is core, complex, used by customers at scale, or must be fully yours.** Neither is a compromise version of the other. They're tools for different jobs, and plenty of organisations are best served by using both.
 
 "Low-code" covers a wide range. **Power Apps** is Microsoft's platform for business apps, tightly tied to Microsoft 365, Dataverse and Power Automate. **Bubble** is a visual builder for full web applications, popular with founders building a first product. Both let non-developers build working software, and both let developers go further with code extensions.
 
@@ -81,7 +81,7 @@ A newer category, AI app builders that generate code from prompts, sits between 
 
 | | Power Apps | Bubble | Custom development |
 |---|---|---|---|
-| Best for | Internal staff apps in Microsoft 365 organisations | Customer-facing web apps and MVPs, built fast | Core systems, products, complex or high-scale software |
+| Best for | Internal staff apps in Microsoft 365 organisations | Web apps and MVPs for customers, built fast | Core systems, products, complex or high-scale software |
 | Pricing basis | Per licensed user per month (shown in AUD ex GST for Australia); free Developer plan for building and testing | Plans with monthly workload units (server usage), overages or add-ons | Build cost plus hosting and maintenance |
 | How cost scales | With number of users | With usage and app complexity | Mostly with features; hosting grows slowly with users |
 | Who can build | Trained business users, plus developers for complex work | Non-developers with some technical aptitude | Software engineers |
@@ -108,7 +108,7 @@ A newer category, AI app builders that generate code from prompts, sits between 
 2. **Licence cost at scale.** Per-user licensing is cheap for 20 staff and expensive for 2,000. External users on Power Apps need separate products such as Power Pages.
 3. **Performance.** Heavy data processing and large lists slow down, and on Bubble they consume workload units, which raises cost.
 4. **Engineering discipline.** Automated tests, code review, staging environments and rollback exist on these platforms in varying forms, but they're weaker than in a normal software workflow.
-5. **Integration depth.** Standard connectors are excellent; unusual systems, high-volume sync and complex error handling are not.
+5. **Integration depth.** Standard connectors are excellent; unusual systems, syncing large volumes and complex error handling are not.
 6. **Platform limits.** Power Platform enforces request limits per user per day, alongside connector and Dataverse service limits. Most apps never notice; busy automations do.
 7. **Lock-in.** A Bubble app can't be exported as code. Microsoft can change licence terms. The more critical the app, the more that matters.
 
@@ -127,7 +127,7 @@ Bubble's standard plans run on Bubble-managed hosting. Its enterprise documentat
 | 40 internal users | 40 × $30 × 36 months = $43,200, plus perhaps $20,000 to build | $60,000 to $100,000 build, plus about 15% a year maintenance and hosting |
 | 400 internal users | 400 × $30 × 36 = $432,000, plus build | Much the same as above; hosting grows modestly |
 
-At 40 users, low-code wins comfortably. At 400, the licence bill exceeds the cost of a custom build with three years of maintenance. That's before counting whether the app outgrows the platform. Bubble's economics differ, because it charges by usage rather than seat, but the same principle applies: model the three-year cost at your expected scale. Our [build vs buy guide](/guides/build-vs-buy-software) walks through total cost of ownership in more depth.
+At 40 users, low-code wins comfortably. At 400, the licence bill exceeds the cost of a custom build with three years of maintenance. That's before counting whether the app outgrows the platform. Bubble's economics differ, because it charges by usage rather than seat, but the same principle applies: model the cost over three years at your expected scale. Our [build vs buy guide](/guides/build-vs-buy-software) walks through total cost of ownership in more depth.
 
 ## How do you keep low-code from becoming a mess?
 
@@ -150,7 +150,7 @@ Choose **Power Apps** if:
 
 Choose **Bubble** if:
 
-1. You're testing a customer-facing product idea and speed is everything.
+1. You're testing a product idea with customers and speed is everything.
 2. You accept a rebuild later if the product succeeds.
 3. The data involved isn't highly sensitive, or you've sorted hosting location.
 
@@ -166,4 +166,4 @@ If automation rather than apps is the question, see [n8n vs Make vs Zapier](/gui
 
 ## How AWLabs approaches the choice
 
-We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, you can see and test the code while we build, and each part is assigned to you as it is paid for in full. We usually recommend an Australian region where the services you need are available there, and if your data must stay in Australia, we write it into your Schedule of Work. We can also migrate a successful low-code app into code once it has proved its worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).
+We'll tell you when a Power Apps form or a Bubble prototype is the right answer, because paying engineers for a simple internal tool is poor value. Where custom development is justified, you can see and test the code while we build, and each part is assigned to you as it is paid for in full. We usually recommend an Australian cloud region wherever the services you need are offered onshore, and if your data must stay in Australia, we write it into your Schedule of Work. We can also migrate a successful low-code app into code once it has proved its worth. See our [custom software service](/services/custom-app-development) or [startup MVP development](/startup-mvp).

@@ -6,7 +6,7 @@ eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
 updated: 2026-09-28
-summary: "The Guidance for AI Adoption is the Australian Government's voluntary framework for responsible AI, published by the National AI Centre on 21 October 2025. It condenses the 10 guardrails of the 2024 Voluntary AI Safety Standard into six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in two versions: foundations, for organisations starting out or using AI in low-risk ways, and implementation guidance, for teams building AI or running higher-risk use cases."
+summary: "The Guidance for AI Adoption is the Australian Government's voluntary framework for responsible AI, published by the National AI Centre on 21 October 2025. It condenses the 10 guardrails of the 2024 Voluntary AI Safety Standard into six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in two versions: foundations, for organisations starting out or using AI in ways that carry little risk, and implementation guidance, for teams building AI or running use cases with higher risk."
 takeaways:
   - "Published 21 October 2025 by the National AI Centre; it evolves the Voluntary AI Safety Standard and the AI Ethics Principles rather than adding to them."
   - "It is voluntary, but the National AI Plan says its six practices will underpin the government's new responsible AI tools and resources, so customers and auditors use it as a benchmark."
@@ -25,7 +25,7 @@ faqs:
   - q: "What are the six essential practices?"
     a: "1. Decide who is accountable. 2. Understand impacts and plan accordingly. 3. Measure and manage risks. 4. Share essential information. 5. Test and monitor. 6. Maintain human control."
   - q: "Should we use the foundations or the implementation guidance?"
-    a: "Use foundations if you are starting to use AI, using it in low-risk ways or new to AI governance. Use the implementation guidance if you build or customise AI systems, use AI in complex ways, or manage higher-risk use cases such as hiring or customer decisions."
+    a: "Use foundations if you are starting to use AI, using it in ways that carry little risk or new to AI governance. Use the implementation guidance if you build or customise AI systems, use AI in complex ways, or manage use cases with higher risk such as hiring or customer decisions."
   - q: "Does following the guidance mean we comply with the law?"
     a: "No. The guidance sits alongside existing law, such as the Privacy Act, consumer law and anti-discrimination law. It helps you show you took reasonable steps, but it doesn't replace legal advice or satisfy specific legal duties on its own."
   - q: "Is there an AI register template?"
@@ -74,7 +74,7 @@ It didn't appear from nowhere. The Department of Industry, Science and Resources
 
 **The Voluntary AI Safety Standard (VAISS), published in September 2024 with 10 voluntary AI guardrails, is still available but is no longer the recommended starting point; the Guidance for AI Adoption evolves it into six practices.** The timeline below shows how the Australian Government's AI guidance has changed.
 
-| Date | Publication | Status in September 2026 |
+| Date | Publication | Status (November 2026) |
 |---|---|---|
 | 7 November 2019 | Australia's AI Ethics Principles (8 principles) | Still published; the values the practices align with |
 | 5 September 2024 | Voluntary AI Safety Standard (10 guardrails) | Still published for reference; superseded as the starting point |
@@ -90,7 +90,7 @@ If you built a governance process around the 10 guardrails, you haven't wasted t
 
 | | Foundations | Implementation guidance |
 |---|---|---|
-| Written for | Organisations starting out, low-risk use, new to AI governance | Teams that build or customise AI, complex use, higher-risk use cases |
+| Written for | Organisations starting out, use with little risk, new to AI governance | Teams that build or customise AI, complex use, use cases with higher risk |
 | Structure | "Getting started" and "next steps" actions per practice | Numbered, detailed actions (for example 4.1.1), some tagged by role |
 | Role tags | None | DEV (developers), DEP (deployers), GPAI (general-purpose AI) |
 | Typical user | A firm rolling out Microsoft Copilot or a chatbot tool | A company building an AI product or using AI in hiring, lending or claims |

@@ -15,11 +15,11 @@ takeaways:
   - "Allow 15 to 25% of the build cost per year for maintenance, plus cloud and model usage."
 faqs:
   - q: "What is the cheapest way to start with AI?"
-    a: "A readiness assessment or strategy workshop, which Australian consultancies price at roughly $5k to $25k, followed by a narrow proof of concept on one well-defined task. If the task is generic, such as drafting emails or summarising meetings, an off-the-shelf AI tool may be cheaper than any custom build."
+    a: "A readiness assessment or strategy workshop, which Australian consultancies price at roughly $5k to $25k, followed by a narrow proof of concept on one clearly defined task. If the task is generic, such as drafting emails or summarising meetings, an off-the-shelf AI tool may be cheaper than any custom build."
   - q: "Do we need to train our own AI model?"
-    a: "Usually not. Most business use cases work well with a hosted model plus your own data supplied at query time (retrieval-augmented generation) and good prompting. Fine-tuning or training makes sense for narrow, high-volume tasks, specialist language, or where a smaller model must match a larger one's quality to cut running costs."
+    a: "Usually not. Most business use cases work well with a hosted model plus your own data supplied at query time (retrieval-augmented generation) and good prompting. Fine-tuning or training makes sense for narrow tasks run at high volume, specialist language, or where a smaller model must match a larger one's quality to cut running costs."
   - q: "How much does it cost to run AI each month?"
-    a: "It depends on volume and model choice. Model usage for a focused internal tool can be tens of dollars a month; a high-volume customer-facing system can reach thousands. Add cloud hosting, monitoring and maintenance, which usually exceed the model bill for small and mid-sized deployments."
+    a: "It depends on volume and model choice. Model usage for a focused internal tool can be tens of dollars a month; a customer system handling heavy traffic can reach thousands. Add cloud hosting, monitoring and maintenance, which usually exceed the model bill for small and medium deployments."
   - q: "How much does it cost to build an AI agent?"
     a: "In the pattern table on this page, a production AI agent that takes actions across systems sits at about $80,000 to $250,000 or more (AUD, ex GST). Agents cost more than assistants because every action needs permissions, failure handling and audit logging, and every failure path needs testing."
   - q: "What do AI developers charge per hour or per day in Australia?"
@@ -81,7 +81,7 @@ disclaimer: financial
 | Production system (one or two use cases) | Can it run reliably, securely and at volume? | $50,000 to $150,000 | 3 to 6 months |
 | Enterprise AI program | Several use cases, shared platform, governance | $150,000 to $400,000+ | 6 to 12 months+ |
 
-Lanex puts proofs of concept at $15k to $40k, SME AI applications at $40k to $120k and enterprise systems at $120k to $400k+. Quanton AI's June 2026 guide gives $5k to $15k for strategy workshops, $8k to $25k for readiness assessments, $15k to $35k for a lightweight proof of concept, $35k to $75k for a structured pilot, $50k to $150k for a production deployment and $150k to $400k+ for multi-use-case programs. Team 400 quotes $15k to $30k for a two to four week chatbot proof of concept. These are market figures, not our prices. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+Lanex puts proofs of concept at $15k to $40k, SME AI applications at $40k to $120k and enterprise systems at $120k to $400k+. Quanton AI's June 2026 guide gives $5k to $15k for strategy workshops, $8k to $25k for readiness assessments, $15k to $35k for a lightweight proof of concept, $35k to $75k for a structured pilot, $50k to $150k for a production deployment and $150k to $400k+ for multi-use-case programs. Team 400 quotes $15k to $30k for a two to four week chatbot proof of concept. These are market figures, not our prices.
 
 The top of the range is where sources diverge. Quanton lists enterprise AI transformation at up to $800k and beyond, which includes organisation-wide change management, not just software.
 
@@ -106,7 +106,7 @@ These are indicative bands built from the published stage ranges above, not quot
 1. **Buy an AI product.** Microsoft 365 Copilot, ChatGPT Enterprise, Claude Enterprise and industry tools. Cost is per seat per month. Best when the task is generic and your data already lives in the vendor's ecosystem. See [Copilot vs a custom AI assistant](/guides/copilot-vs-custom-ai-assistant).
 2. **Configure a platform.** Chatbot builders and workflow tools with AI steps. Low build cost, subscription fees, limited control over data flow and behaviour.
 3. **Build on a model API.** Your own application calling a hosted model (Claude, GPT, Gemini or open-weight models through AWS, Azure or Google Cloud), with your data retrieved at query time. This is where most custom AI projects sit.
-4. **Fine-tune a model.** Adapt a model on your examples for a narrow, high-volume task. Adds data labelling, training runs and evaluation.
+4. **Fine-tune a model.** Adapt a model on your examples for a narrow task you run at high volume. Adds data labelling, training runs and evaluation.
 5. **Self-host or train.** Run open-weight models on your own GPUs, or train from scratch. Justified by strict sovereignty needs, very high volume, or genuinely novel problems.
 
 The honest default is to start at the lowest rung that solves the problem. Buying is often the right answer when the task isn't specific to your business.
@@ -160,7 +160,7 @@ A proof of concept is partly a data audit. If it finds the data isn't ready, tha
 
 ## Is AI development worth the cost?
 
-**AI development is worth it when it takes over a repetitive, high-volume task with a clear measure of success, and the saving in staff time or errors exceeds the build and running costs within a year or two.** It is rarely worth it for occasional tasks, for problems that are really about messy processes, or where an off-the-shelf tool already does the job.
+**AI development is worth it when it takes over a repetitive task done in large volumes with a clear measure of success, and the saving in staff time or errors exceeds the build and running costs within a year or two.** It is rarely worth it for occasional tasks, for problems that are really about messy processes, or where an off-the-shelf tool already does the job.
 
 Use the invoice example above to test the logic. Suppose, purely for illustration, that keying each invoice by hand takes three minutes. At 4,000 invoices a month that is 200 hours of staff time every month. If the system handles most invoices and staff only review exceptions, most of those hours come back. Against that sits a $110,000 build and running costs of roughly $1,850 a month (hosting, maintenance and model usage). Put your own volumes, times and wage costs into the same sum; if the payback period is longer than the likely life of the process, don't build it.
 
@@ -181,4 +181,4 @@ When comparing suppliers, our guide on [how to choose an AI development company]
 
 ## How AWLabs approaches AI projects
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It sets out the scope, the risks and how success will be measured, and after two strategy sessions you receive one fixed price for the agreed scope. We use hosted models from Anthropic, OpenAI and open-weight providers, deployed in Australian cloud regions where the model you need is available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. Where it fits the scope, the system includes an evaluation set, so you can see how accuracy changes when models or prompts change. The team is senior engineers only. Each part of the build, including the evaluation data, is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [AI consulting and development service](/ai-consulting).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It sets out the scope, the risks and how success will be measured, and after two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. We use hosted models from Anthropic, OpenAI and open-weight providers, deployed in an Australian cloud region wherever the model you need is offered onshore. Where data has to stay onshore, raise it before signing and we record it in your Schedule of Work. Where it fits the scope, the system includes an evaluation set, so you can see how accuracy changes when models or prompts change. Senior engineers lead every build. Each part of the build, including the evaluation data, is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. See our [AI consulting and development service](/ai-consulting).

@@ -6,6 +6,9 @@ const data = {
   metaDescription: 'Blockchain and Web3 development in Australia: smart contracts, tokenisation and permissioned networks, built only where blockchain beats a normal database.',
   category: 'Web3',
   serviceName: 'Web3 and Blockchain Development',
+  nounPhrase: "Web3 and blockchain development",
+  whyHeading: "Why choose AWLabs for blockchain work?",
+  whoHeading: "Which sectors is blockchain development for?",
   heroHeadline: 'Enterprise Blockchain Solutions Built on Proven Technology',
   heroTagline: 'Smart contracts, tokenisation and enterprise blockchain integration, engineered with the security discipline immutable code demands.',
   summaryStatement: 'Blockchain development is the design and engineering of software that records transactions or runs logic on a distributed ledger, either a public chain such as Ethereum or a permissioned network such as Hyperledger Fabric, where a shared, tamper evident record removes the need for a single trusted intermediary.',
@@ -16,7 +19,7 @@ const data = {
   benefits: [
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
-      title: 'Security First Smart Contract Development',
+      title: 'Smart Contracts Built Security First',
       description: 'Smart contract bugs are not just bugs, they are immutable vulnerabilities on a public chain with real economic consequences. We follow formal verification principles, use industry standard testing frameworks and prepare every contract for third party audit before mainnet deployment.',
     },
     {
@@ -41,7 +44,7 @@ const data = {
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
-      title: 'Audit Ready Code & Documentation',
+      title: 'Code & Documentation Ready for Audit',
       description: 'Enterprise blockchain deployments typically require third party security audits. We write contracts with auditability as a design goal: clear NatSpec documentation, high test coverage, upgrade patterns that follow established standards and formal invariant specifications.',
     },
   ],
@@ -74,37 +77,37 @@ const data = {
       step: '02',
       title: 'Protocol & Token Economics Design',
       description: 'For protocols with economic mechanisms, token incentives, liquidity pools, fee structures, governance, we model the economics before implementation. This includes identifying potential attack vectors: economic exploits, governance attacks, oracle manipulation and flash loan scenarios. Sound economics must be designed, not discovered through incident.',
-      duration: 'Week 1 to 2',
+      duration: 'Weeks 1 to 2',
     },
     {
       step: '03',
       title: 'Smart Contract Architecture',
       description: 'We design the contract architecture: which contracts exist, how they interact, what state they hold, what events they emit and how upgradeability (if required) is handled. We use established patterns (proxy contracts, diamond standard, access control standards) rather than novel designs that introduce unnecessary audit risk.',
-      duration: 'Week 2 to 3',
+      duration: 'Weeks 2 to 3',
     },
     {
       step: '04',
       title: 'Development & Test Suite',
       description: 'Contracts are developed with a test first discipline. We write unit tests, integration tests and invariant based property tests using Foundry. The branch coverage target for each contract is set in your Schedule of Work. Economic attack scenarios are tested explicitly. The test suite is a deliverable in its own right, it documents the intended behaviour of every function.',
-      duration: 'Week 3 to 7',
+      duration: 'Weeks 3 to 7',
     },
     {
       step: '05',
       title: 'Off Chain Integration Development',
       description: 'The off chain components, indexers, APIs, frontend, oracle integrations, enterprise system connectors, are built in parallel with contract development. We use The Graph for indexed querying of on chain events and build backend services that abstract blockchain interaction from applications that should not need to know the difference.',
-      duration: 'Week 4 to 8',
+      duration: 'Weeks 4 to 8',
     },
     {
       step: '06',
       title: 'Security Review & Audit Preparation',
       description: 'Prior to third party audit, we conduct an internal security review: reexamining every function for known vulnerability patterns (reentrancy, integer overflow, access control bypass, oracle manipulation), reviewing economic assumptions and ensuring NatSpec documentation is complete and accurate. We address all internal findings before engaging the external auditor.',
-      duration: 'Week 8 to 9',
+      duration: 'Weeks 8 to 9',
     },
     {
       step: '07',
       title: 'Third Party Audit & Mainnet Deployment',
-      description: 'We coordinate with your chosen audit firm, provide full context for their review, and address all findings in the audit report before mainnet deployment. Deployment is executed via a production deployment checklist that covers constructor arguments, initial configuration, access control setup and post deployment verification of all critical state variables.',
-      duration: 'Week 9 to 12',
+      description: 'We coordinate with your chosen audit firm, provide full context for their review, and address all findings in the audit report before mainnet deployment. Deployment is executed via a production deployment checklist that covers constructor arguments, initial configuration, access control setup and verification after deployment of all critical state variables.',
+      duration: 'Weeks 9 to 12',
     },
   ],
   industries: [
@@ -124,7 +127,7 @@ const data = {
     },
     {
       question: 'What is involved in a smart contract security audit, and do we need one?',
-      answer: 'A smart contract security audit is a systematic review of your contract code by security specialists who look for known vulnerability patterns, logic errors, economic attack vectors and deviations from specification. For any contract handling real economic value on a public chain, an audit is not optional, it is table stakes. Unaudited contracts have been exploited for hundreds of millions of dollars in aggregate across the ecosystem. We prepare your contracts for audit by ensuring high test coverage, complete NatSpec documentation and resolution of all internal review findings before the external audit begins. Audit cost varies with contract complexity and should be budgeted as part of any mainnet deployment project.',
+      answer: 'A smart contract security audit is a systematic review of your contract code by security specialists who look for known vulnerability patterns, logic errors, economic attack vectors and deviations from specification. For any contract handling real economic value on a public chain, an audit is not optional, it is table stakes. Unaudited contracts are a common source of large, unrecoverable losses. We prepare your contracts for audit by ensuring high test coverage, complete NatSpec documentation and resolution of all internal review findings before the external audit begins. Audit cost varies with contract complexity and should be budgeted as part of any mainnet deployment project.',
     },
     {
       question: 'What is the difference between a public blockchain and a permissioned network?',
@@ -140,7 +143,7 @@ const data = {
     },
     {
       question: 'What ongoing support do you provide after a blockchain product launches?',
-      answer: 'Post launch support for blockchain products has unique characteristics compared to conventional software. Smart contracts cannot be patched, they can only be upgraded via governance procedures, which should be used sparingly. The primary post launch support activities are: monitoring on chain activity for anomalous behaviour or potential exploits; maintaining and updating off chain infrastructure (indexers, APIs, frontends) which can be patched normally; managing oracle configurations and price feed monitoring; and supporting governance processes for protocol parameter changes. After the 30 day warranty, a Care Plan can cover these: month to month, priced for your protocol.',
+      answer: 'Support after launch for blockchain products has unique characteristics compared to conventional software. Smart contracts cannot be patched, they can only be upgraded via governance procedures, which should be used sparingly. The main support activities after launch are: monitoring on chain activity for anomalous behaviour or potential exploits; maintaining and updating off chain infrastructure (indexers, APIs, frontends) which can be patched normally; managing oracle configurations and price feed monitoring; and supporting governance processes for protocol parameter changes. After the 30 day warranty, a Care Plan can cover these: month to month, priced for your protocol.',
     },
     {
       question: 'What is Web3 development?',

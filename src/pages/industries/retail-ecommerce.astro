@@ -4,44 +4,45 @@ import IndustryPageLayout from '../../layouts/IndustryPageLayout.astro';
 const data = {
   metaTitle: 'Retail & Ecommerce Software Development Australia | AWLabs',
   metaDescription: "Ecommerce and retail software development for Australian retailers: custom ecommerce apps, POS and ERP integrations, loyalty platforms and AI tools.",
-  industryName: 'Retail & E-Commerce',
-  heroHeadline: 'Retail Technology That Drives Revenue and Loyalty',
-  heroTagline: "Ecommerce and custom retail software development for Australian retailers: omnichannel commerce platforms, ecommerce app development, POS integrations, inventory management and AI-powered personalisation.",
+  industryName: 'Retail & Ecommerce',
+  heroHeadline: 'Retail and ecommerce software development for Australian retailers',
+  heroSecondary: { label: 'App development cost guide', href: '/guides/app-development-cost-australia' },
+  heroTagline: "Ecommerce and custom retail software development for Australian retailers: omnichannel commerce platforms, ecommerce app development, POS integrations, inventory management and AI personalisation.",
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
   stats: [],
   painPoints: [
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9M17 13l2 9M9 22h6"/></svg>',
       title: 'Disconnected Online and Offline Channels',
-      description: "Australian retail customers switch between website, app, social commerce and physical store without a second thought. When your inventory, loyalty points, pricing and order history don't follow them across channels, you lose sales to competitors who've invested in genuine omnichannel infrastructure, not just a bolt-on click-and-collect feature.",
+      description: "Australian retail customers switch between website, app, social commerce and physical store without a second thought. When your inventory, loyalty points, pricing and order history don't follow them across channels, you lose sales to competitors who've invested in genuine omnichannel infrastructure, not just click and collect bolted onto the side.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
       title: 'Inventory Visibility and Accuracy',
-      description: "Stock discrepancies between ERP, e-commerce platform and physical stores are a revenue and customer experience killer. Overselling drives refunds and negative reviews; underselling leaves money on the table. The root cause is almost always inventory data being updated in batch cycles rather than in real time, with no single system of record.",
+      description: "Stock discrepancies between ERP, ecommerce platform and physical stores are a revenue and customer experience killer. Overselling drives refunds and negative reviews; underselling leaves money on the table. The root cause is almost always inventory data being updated in batch cycles rather than in real time, with no single system of record.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
       title: 'Rising Customer Acquisition Costs',
-      description: "Meta and Google advertising CPMs in Australia have climbed steadily since iOS 14 decimated third-party tracking. Retailers dependent on paid acquisition with no strong owned-channel strategy, email, SMS, loyalty, personalisation, are watching CAC erode their unit economics quarter by quarter. Retention and lifetime value engineering is now a technology problem as much as a marketing one.",
+      description: "Meta and Google advertising CPMs in Australia have climbed steadily since iOS 14 limited tracking by third parties. Retailers dependent on paid acquisition with no strong strategy for owned channels (email, SMS, loyalty, personalisation) are watching CAC erode their unit economics quarter by quarter. Retention and lifetime value engineering is now a technology problem as much as a marketing one.",
     },
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15L3 9l6-6"/><path d="M3 9h12a6 6 0 010 12h-3"/></svg>',
       title: 'Returns Management Complexity',
-      description: "Australia's consumer law (ACL) gives customers broad rights to refund, repair or replace, and Australian shoppers exercise them. Return rates in categories like fashion and electronics are high. Without an automated, self-service returns platform integrated with your WMS and carrier network, returns processing becomes a manual, expensive operation that also destroys customer satisfaction.",
+      description: "Australia's consumer law (ACL) gives customers broad rights to refund, repair or replace, and Australian shoppers exercise them. Return rates in categories like fashion and electronics are high. Without an automated returns platform that customers can use themselves, integrated with your WMS and carrier network, returns processing becomes a manual, expensive operation that also destroys customer satisfaction.",
     },
   ],
   solutions: [
-    'Custom e-commerce platform development',
-    'POS and in-store system integrations',
-    'Real-time inventory management',
+    'Custom ecommerce platform development',
+    'POS and store system integrations',
+    'Live inventory management',
     'Customer loyalty programme platforms',
-    'AI-powered personalisation engines',
+    'AI personalisation engines',
     'Marketplace integrations (eBay, Amazon AU, Catch)',
     'Subscription and recurring commerce',
     'Warehouse and fulfilment automation',
     'Ecommerce automation for orders, returns and customer service',
-    'Custom retail POS extensions and in-store apps',
+    'Custom retail POS extensions and store apps',
   ],
   /* useCases array emptied, previous content was fabricated; specific metrics (% improvements, throughput figures, deflection rates, NPS deltas) were not verifiable. Will return as honest capability statements once real, signed-off project examples can be referenced. */
   useCases: [],
@@ -56,31 +57,31 @@ const data = {
   faqs: [
     {
       question: 'How much does ecommerce app development cost in Australia?',
-      answer: "It depends mostly on whether you extend a platform like Shopify or BigCommerce or build a custom ecommerce platform, and on how many systems (ERP, POS, WMS, carriers, loyalty) need real-time integration. Extending a platform with custom apps and integrations costs a fraction of a ground-up build. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost and custom software development cost guides give typical Australian market ranges.",
+      answer: "It depends mostly on whether you extend a platform like Shopify or BigCommerce or build a custom ecommerce platform, and on how many systems (ERP, POS, WMS, carriers, loyalty) need live integration. Extending a platform with custom apps and integrations costs a fraction of building from scratch. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope. Our app development cost and custom software development cost guides give typical Australian market ranges.",
     },
     {
       question: 'How is AI used in retail and ecommerce?',
       answer: "Practical uses of AI in retail and ecommerce include product search and recommendations, writing and enriching product descriptions at catalogue scale, customer service assistants that can check order status, demand forecasting for inventory, and triaging returns. The biggest wins usually come from clean product and order data, so we often start with the integration layer before adding AI on top. Anything that changes prices or refunds money should keep a person in the loop.",
     },
     {
-      question: 'Should we build a custom e-commerce platform or extend a platform like Shopify or BigCommerce?',
-      answer: "For the vast majority of Australian retailers, starting with Shopify Plus or BigCommerce Enterprise and building custom extensions is faster, cheaper and lower-risk than a ground-up build. The decision to go fully custom usually only makes sense when you have highly differentiated requirements that are genuinely incompatible with SaaS platform architectures, for example, complex B2B pricing matrix logic, industry-specific compliance needs, or a need to own the entire data model for machine learning at scale. We're happy to have an honest conversation about which path is right for your situation rather than defaulting to a custom build because it's more billable.",
+      question: 'Should we build a custom ecommerce platform or extend a platform like Shopify or BigCommerce?',
+      answer: "For the vast majority of Australian retailers, starting with Shopify Plus or BigCommerce Enterprise and building custom extensions is faster, cheaper and less risky than building from scratch. The decision to go fully custom usually only makes sense when you have highly differentiated requirements that are genuinely incompatible with SaaS platform architectures: for example, complex B2B pricing matrix logic, compliance needs specific to your industry, or a need to own the entire data model for machine learning at scale. We're happy to have an honest conversation about which path is right for your situation rather than defaulting to a custom build because it's more billable.",
     },
     {
       question: 'How do you handle the complexity of integrating with Australian carriers like Australia Post and StarTrack?',
-      answer: "We build against the Australia Post eParcel, MyPost Business and StarTrack APIs and plan for the details that aren't well documented, such as the service availability matrix for different product codes, the manifest and lodgement workflows, and the handling of signature on delivery and authority to leave options. We build carrier integrations with graceful fallback logic, rate-shopping rules, and automatic label regeneration for address correction scenarios. We also integrate with aggregator platforms like Shippit and Transdirect where multi-carrier rate shopping is a priority.",
+      answer: "We build against the Australia Post eParcel, MyPost Business and StarTrack APIs and plan for the details that aren't well documented, such as the service availability matrix for different product codes, the manifest and lodgement workflows, and the handling of signature on delivery and authority to leave options. We build carrier integrations with graceful fallback logic, rate shopping rules, and automatic label regeneration for address correction scenarios. We also integrate with aggregator platforms like Shippit and Transdirect where rate shopping across carriers is a priority.",
     },
     {
-      question: 'How do you handle Australian Consumer Law in e-commerce builds?',
-      answer: "The ACL adds a layer on top of what most global e-commerce platforms ship by default, including around refunds, statutory guarantees, gift-card expiry and unsolicited selling. Your commercial lawyer will map exactly which ones apply to your product; we build the checkout, returns and terms surfaces to reflect their spec, and we flag common defaults from US-centric themes that founders often want reviewed before launch.",
+      question: 'How do you handle Australian Consumer Law in ecommerce builds?',
+      answer: "The ACL adds a layer on top of what most global ecommerce platforms ship by default, including around refunds, statutory guarantees, gift card expiry and unsolicited selling. Your commercial lawyer will map exactly which ones apply to your product; we build the checkout, returns and terms surfaces to reflect their spec, and we flag common defaults from themes designed for the US that founders often want reviewed before launch.",
     },
     {
       question: 'Can you integrate with our existing ERP like MYOB, Netsuite or SAP?',
-      answer: "We can integrate with platforms that publish APIs, such as MYOB AccountRight and Advanced, Netsuite (via SuiteScript and REST API), SAP Business One and Microsoft Dynamics 365 Business Central. We confirm access in the Discovery Audit. Our integration approach prioritises real-time or near-real-time data flows for inventory and order status, with batch reconciliation for financial data where real-time isn't warranted. We build idempotent integration layers that handle the inevitable duplicate events and out-of-order messages gracefully.",
+      answer: "We can integrate with platforms that publish APIs, such as MYOB AccountRight and Advanced, Netsuite (via SuiteScript and REST API), SAP Business One and Microsoft Dynamics 365 Business Central. We confirm access in the Discovery Audit. Our integration approach prioritises live or near live data flows for inventory and order status, with batch reconciliation for financial data where live sync isn't warranted. We build idempotent integration layers that handle the inevitable duplicate events and messages that arrive out of order gracefully.",
     },
     {
-      question: 'How do you approach performance optimisation for high-traffic retail events like Click Frenzy or EOFY sales?',
-      answer: "Peak traffic events require both architectural preparation and operational readiness. On the architecture side, we design for horizontal scalability using managed container platforms (ECS, GKE) with auto-scaling policies, CDN-heavy static asset delivery, aggressive edge caching strategies for product catalogue data, and queue-based order processing to absorb traffic spikes without overwhelming downstream systems. Operationally, we run load tests simulating two to three times the expected peak traffic before major events, implement feature flags to disable non-essential features under load, and set up real-time monitoring dashboards so your team can see what's happening during the event window.",
+      question: 'How do you prepare for peak retail events like Click Frenzy or EOFY sales?',
+      answer: "Peak traffic events require both architectural preparation and operational readiness. On the architecture side, we design for horizontal scalability using managed container platforms (ECS, GKE) with autoscaling policies, static assets served largely from a CDN, aggressive edge caching strategies for product catalogue data, and order processing through queues to absorb traffic spikes without overwhelming downstream systems. Operationally, we run load tests simulating two to three times the expected peak traffic before major events, implement feature flags to disable nonessential features under load, and set up live monitoring dashboards so your team can see what's happening during the event window.",
     },
   ],
   ctaHeadline: "Ready to Build Retail Technology That Scales With Your Ambitions?",

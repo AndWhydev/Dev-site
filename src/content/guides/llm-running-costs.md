@@ -15,7 +15,7 @@ takeaways:
   - "Self-hosting a model on a GPU server costs thousands of dollars a month before engineering time, so it pays off only at high volume or when sovereignty requires it."
 faqs:
   - q: "How much does it cost to run ChatGPT or Claude for my business?"
-    a: "It depends on how you use it. Seat-based products such as ChatGPT Enterprise or Claude Enterprise are priced per user per month. Custom applications using the API are priced per token. A focused internal tool may cost under $100 a month in model usage; a high-volume customer-facing system can cost thousands. Hosting, monitoring and maintenance are extra."
+    a: "It depends on how you use it. Seat-based products such as ChatGPT Enterprise or Claude Enterprise are priced per user per month. Custom applications using the API are priced per token. A focused internal tool may cost under $100 a month in model usage; a customer system handling heavy traffic can cost thousands. Hosting, monitoring and maintenance are extra."
   - q: "How much does 1 token cost?"
     a: "A fraction of a cent. Prices are quoted per million tokens, so at the time of writing an input token costs from US$0.0000001 on the cheapest model in our table (US$0.10 per million) to US$0.00001 on frontier models (US$10 per million), and output tokens cost about five times more. Cost per task, not per token, is the number to budget with."
   - q: "Is a ChatGPT or Claude subscription cheaper than the API?"
@@ -201,4 +201,4 @@ Our comparison of [open-weight vs API models](/guides/open-weight-vs-api-llms) c
 
 ## How AWLabs manages LLM running costs
 
-Our Discovery Audit looks at the case for building it and works through the potential return using your own figures, so running costs are part of the decision before you commit to a build. Systems we deliver log token usage per feature, use caching and model routing where testing shows no loss of quality, and include spend alerts. We usually recommend Australian regions where the model you need is available there, and show you what the regional premium costs. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. See our [LLM integration services](/services/llm-integration).
+Our Discovery Audit looks at the case for building it and works through the potential return using your own figures, so running costs are part of the decision before you commit to a build. Systems we deliver log token usage per feature, use caching and model routing where testing shows no loss of quality, and include spend alerts. We usually recommend Australian regions wherever the model you need is offered onshore, and show you what the regional premium costs. Any need to keep your data in Australia should be raised before you sign; we then write it into the Schedule of Work. See our [LLM integration services](/services/llm-integration).

@@ -1,13 +1,13 @@
 ---
 title: "AI and software development for Canberra and federal agencies"
 metaTitle: "Custom Software and AI Consulting for Canberra Agencies"
-description: "Sydney-based custom software development and AI consulting for Canberra agencies and suppliers: the DTA AI policy, BuyICT, PSPF 2026 and what we can't offer."
+description: "Sydney based custom software development and AI consulting for Canberra agencies and suppliers: the DTA AI policy, BuyICT, PSPF 2026 and what we can't offer."
 eyebrow: "Canberra"
 city: "Canberra"
 state: "ACT"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AWLabs is a Sydney-based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
+summary: "AWLabs is a Sydney based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
 takeaways:
   - "We're based in Sydney, deliver remotely and travel to Canberra for workshops; we have no Canberra office."
   - "We are not on any government panel, including BuyICT's Digital Marketplace Panel 2, and our team holds no security clearances."
@@ -23,8 +23,8 @@ faqs:
     a: "Yes, from an engineering angle. The policy applies to agencies, but agencies pass many of its expectations to suppliers through procurement. We help vendors build the logging, evaluation evidence, transparency information and controls that agencies will ask for. We don't provide legal advice on the policy."
   - q: "Are you IRAP assessed?"
     a: "No. We have no IRAP-assessed system and we're not IRAP assessors. We can build on cloud services that have been assessed, and structure documentation to support an assessment you commission. Our guide to IRAP explains how the program works."
-  - q: "Do security-cleared developers cost more in Canberra?"
-    a: "Yes. Re:Sourced's 2026 guide says security-cleared contractors in defence-adjacent work command 15 to 25 per cent above commercial day rates, with NV1-plus contractors around Canberra pricing at the top of that range. We hold no clearances, so if your work needs them, budget for that premium with a cleared supplier; for unclassified work, the commercial rates apply."
+  - q: "Do developers with security clearances cost more in Canberra?"
+    a: "Yes. Re:Sourced's 2026 guide says contractors with security clearances working close to defence command 15 to 25 per cent above commercial day rates, with NV1-plus contractors around Canberra pricing at the top of that range. We hold no clearances, so if your work needs them, budget for that premium with a cleared supplier; for unclassified work, the commercial rates apply."
   - q: "How often do you come to Canberra?"
     a: "As often as the project needs. Canberra is close enough to Sydney for day trips, so strategy sessions, design reviews and user testing can all happen in person. Travel is priced into your Schedule of Work."
 sources:
@@ -77,7 +77,7 @@ disclaimer: legal
 
 ## Who do we build custom software and AI for in Canberra, and how?
 
-**Our team is based in Sydney. We work remotely with Canberra organisations and travel down for workshops, design reviews and user testing when being in the room matters.** Canberra shares Sydney's time zone and is close enough for day trips, so on-site time is easy to arrange. We don't have a Canberra office, and we don't list one.
+**Our team is based in Sydney. We work remotely with Canberra organisations and travel down for workshops, design reviews and user testing when being in the room matters.** Canberra shares Sydney's time zone and is close enough for day trips, so time on site is easy to arrange. We don't have a Canberra office, and we don't list one.
 
 The people we're best placed to help in Canberra are:
 
@@ -107,7 +107,7 @@ The people we're best placed to help in Canberra are:
 
 For custom software and AI work, the arrangement that matters most is the Digital Marketplace Panel 2. At the time of writing it has two modules, ICT labour hire and professional and consultancy services, and it's opt-in for non-corporate and corporate Commonwealth entities and for state and territory government entities. Some other BuyICT arrangements, such as the Data Centre Panel, are mandated for non-corporate Commonwealth entities.
 
-If you are comparing software companies in Canberra, panel membership and clearances are usually the first filter, before price or portfolio. Because we aren't on a panel, the realistic routes to working with an agency are as a subcontractor to a panel seller, or through an approach to market that permits non-panel suppliers. Our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) walks through these pathways for vendors.
+If you are comparing software companies in Canberra, panel membership and clearances are usually the first filter, before price or portfolio. Because we aren't on a panel, the realistic routes to working with an agency are as a subcontractor to a panel seller, or through an approach to market that permits suppliers who aren't on the panel. Our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) walks through these pathways for vendors.
 
 ## What does the DTA AI policy require, and when?
 
@@ -120,7 +120,7 @@ If you are comparing software companies in Canberra, panel membership and cleara
 | 15 June 2026 | First new mandatory requirement under version 2.0 begins |
 | December 2026 | All remaining version 2.0 requirements in effect |
 
-Version 2.0 adds requirements for agencies to take a strategic approach to AI adoption, operationalise responsible use, assign accountability for each AI use case, and carry out risk-based actions at the use case level, including impact assessments. The policy also points agencies to the DTA's guidance on AI procurement and its AI model clauses for contracts.
+Version 2.0 adds requirements for agencies to take a strategic approach to AI adoption, operationalise responsible use, assign accountability for each AI use case, and carry out risk based actions at the use case level, including impact assessments. The policy also points agencies to the DTA's guidance on AI procurement and its AI model clauses for contracts.
 
 For suppliers, the effect is that agencies will ask for more evidence about any AI in what they buy: what the model is, where it runs, how it was tested, how outputs are reviewed, and how incidents are reported. Our guide to the [DTA AI policy](/guides/dta-ai-policy-government) covers each requirement in detail.
 
@@ -153,4 +153,4 @@ At the time of writing, Microsoft runs two Azure regions in Canberra, Australia 
 
 ## How AWLabs approaches Canberra work
 
-Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021; AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Canberra work we start with an NDA and our Discovery Audit, a fixed fee credited in full against the build, scoped to your security and procurement constraints. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers do the work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. See our [government AI and software](/solutions/government-ai-and-software) page and [AI consulting](/ai-consulting) service.
+Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021; AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Canberra work we start with an NDA and our Discovery Audit, a fixed fee credited in full against the build, scoped to your security and procurement constraints. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers lead every build. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. See our [government AI and software](/solutions/government-ai-and-software) page and [AI consulting](/ai-consulting) service.

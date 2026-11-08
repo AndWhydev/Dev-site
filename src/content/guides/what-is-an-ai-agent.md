@@ -158,7 +158,7 @@ Signs you don't need one yet:
 
 ## What are the risks of AI agents?
 
-**The distinctive risk is an agent doing the wrong thing with real permissions, whether through a mistake, a manipulated input, or simply too much freedom.** OWASP's Top 10 for LLM applications names this "excessive agency" (LLM06 in the 2025 edition; it climbed to third in the August 2026 edition), and the 2025 entry traces it to three causes: excessive functionality (tools that can do more than needed), excessive permissions (tools running with broad access instead of the user's own), and excessive autonomy (high-impact actions without human confirmation).
+**The distinctive risk is an agent doing the wrong thing with real permissions, whether through a mistake, a manipulated input, or simply too much freedom.** OWASP's Top 10 for LLM applications names this "excessive agency" (LLM06 in the 2025 edition; it climbed to third in the August 2026 edition), and the 2025 entry traces it to three causes: excessive functionality (tools that can do more than needed), excessive permissions (tools running with broad access instead of the user's own), and excessive autonomy (consequential actions without human confirmation).
 
 Other pitfalls to plan for:
 

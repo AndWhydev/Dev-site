@@ -50,8 +50,8 @@ sources:
   - title: "Staff guidance on public generative AI"
     url: "https://www.digital.gov.au/policy/ai/staff-guidance-public-generative-ai"
     publisher: "Digital Transformation Agency"
-  - title: "Appendices: in-scope AI use cases"
-    url: "https://www.digital.gov.au/ai/ai-in-government-policy/appendices"
+  - title: "Policy for the responsible use of AI in government, including its appendices"
+    url: "https://www.digital.gov.au/ai/ai-in-government-policy"
     publisher: "Digital Transformation Agency"
 related:
   - title: "AI and software development for Australian government"

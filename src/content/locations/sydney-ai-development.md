@@ -7,7 +7,7 @@ city: "Sydney"
 state: "NSW"
 published: 2026-09-28
 updated: 2026-11-07
-summary: "AWLabs is a Sydney-based AI development company and AI consultancy in Five Dock, in Sydney's Inner West. We build production AI systems such as RAG knowledge bases, AI agents, document processing and LLM features inside existing software, with Sydney cloud hosting available when you need it. For NSW Government work, we build to the NSW AI Operational Policy and produce the evidence agencies need for the NSW AI Assessment Framework."
+summary: "AWLabs is a Sydney based AI development company and AI consultancy in Five Dock, in Sydney's Inner West. We build production AI systems such as RAG knowledge bases, AI agents, document processing and LLM features inside existing software, with Sydney cloud hosting available when you need it. For NSW Government work, we build to the NSW AI Operational Policy and produce the evidence agencies need for the NSW AI Assessment Framework."
 takeaways:
   - "Most Sydney AI projects fall into four shapes: knowledge search (RAG), document processing, agents that act in business systems, and AI features added to an existing app."
   - "NSW Government agencies now work under the NSW AI Operational Policy, mandated by Circular DCS-2026-02, which requires every AI use case to be registered and assessed under the AI Assessment Framework."
@@ -71,7 +71,7 @@ disclaimer: legal
 
 ## What does an AI development company in Sydney build?
 
-**An AI development company designs, builds and runs software that uses machine learning models, usually large language models, to do work that previously needed a person to read, search, write or decide.** Sydney is home to many of Australia's banks, insurers, law and accounting firms and state government agencies, and buyers like these usually want AI inside the systems they already run rather than a standalone chatbot.
+**An AI development company designs, builds and runs software that uses machine learning models (usually large language models) to do work that previously needed a person to read, search, write or decide.** Sydney is home to many of Australia's banks, insurers, law and accounting firms and state government agencies, and buyers like these usually want AI inside the systems they already run rather than a standalone chatbot.
 
 Here are the four shapes we see most often, and what a sensible first release looks like for each.
 
@@ -79,7 +79,7 @@ Here are the four shapes we see most often, and what a sensible first release lo
 |---|---|---|---|
 | Knowledge search (RAG) | Answers questions from your policies, contracts, manuals or matter files, with citations | One document collection, one team, answers with sources | Wrong or stale answers; staff seeing documents they shouldn't |
 | Document processing | Reads invoices, claims, forms or emails and extracts structured data | One document type into one downstream system, human review on low confidence | Silent extraction errors flowing into records |
-| AI agents | Takes actions in business systems: raises tickets, drafts replies, updates the CRM | Read-only or draft-only actions with a person approving | An agent doing the wrong thing at scale |
+| AI agents | Takes actions in business systems: raises tickets, drafts replies, updates the CRM | Read only or draft only actions with a person approving | An agent doing the wrong thing at scale |
 | AI inside an existing app | Summaries, search, drafting or classification added to software you already own | One feature behind a flag, measured against a baseline | Cost per use and latency |
 
 ## AI consultants, AI agency or AI development company: which do you need?
@@ -90,7 +90,7 @@ Here are the four shapes we see most often, and what a sensible first release lo
 |---|---|---|
 | A view of which processes are worth automating, and in what order | AI consultants, AI readiness assessment | A ranked list of use cases with rough costs and risks |
 | Marketing content, ads or simple no-code automations | AI agency, AI automation agency | Configured tools and workflows, often on a subscription |
-| A production system inside your own software and cloud account | AI development company | Code handed over to you on final payment, an evaluation set, hosting and a run-cost estimate |
+| A production system inside your own software and cloud account | AI development company | Code handed over to you on final payment, an evaluation set, hosting and an estimate of running costs |
 
 We do the first and the third: an [AI readiness assessment](/services/ai-readiness-assessment), which is our Discovery Audit for AI projects, for the advice, then fixed price development. If a no-code tool will do the job, we'll say so, because it's usually cheaper.
 
@@ -108,9 +108,9 @@ The policy replaced the earlier NSW AI Ethics Policy with Australia's national A
 | Apply the NSW AI Assessment Framework (AIAF) where registration says an assessment is needed | Evidence for the risk questions: data provenance, testing results, human oversight design, fallback behaviour |
 | Refer high and critical risk use cases to the AI Review Committee | Documented mitigations and evaluation results that a committee can review |
 | Appoint an accountable official and set up AI governance | Named contacts, incident reporting paths and a way to switch the feature off |
-| Align acceptable use and train staff | Plain-language guidance on what the system does and doesn't do |
+| Align acceptable use and train staff | Plain English guidance on what the system does and doesn't do |
 
-Two more details matter for larger projects. Digital NSW says projects with a budget over $5 million, or funded by the Digital Restart Fund, get additional central oversight through the NSW Digital Assurance Framework. And while agencies move to the new AIAF Platform, they must keep using the Excel-based AIAF assessment for all AI use cases.
+Two more details matter for larger projects. Digital NSW says projects with a budget over $5 million, or funded by the Digital Restart Fund, get additional central oversight through the NSW Digital Assurance Framework. And while agencies move to the new AIAF Platform, they must keep using the AIAF assessment in Excel for all AI use cases.
 
 For a private company in Sydney, none of this is binding. It's still a useful model: the AIAF questions are the same questions a board or risk committee will ask about any AI system that affects customers. The Commonwealth equivalent is covered in our guide to the [DTA AI policy](/guides/dta-ai-policy-government).
 
@@ -161,4 +161,4 @@ Costs vary widely with scope; our [AI development cost guide](/guides/ai-develop
 
 ## How AWLabs approaches AI development
 
-We're a Sydney team in Five Dock led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers do the work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Our internal delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests and security scans and a senior engineer's review before it ships. See our [AI consulting](/ai-consulting) and [LLM integration](/services/llm-integration) services for more.
+We're a Sydney team in Five Dock led by founder Andy Taleb, who has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Senior engineers lead every build. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Our internal delivery pipeline runs AI coding agents in parallel, with every change passing type checks, visual tests and security scans and a senior engineer's review before it ships. See our [AI consulting](/ai-consulting) and [LLM integration](/services/llm-integration) services for more.

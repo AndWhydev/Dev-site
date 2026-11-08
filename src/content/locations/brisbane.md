@@ -1,13 +1,13 @@
 ---
 title: "AI and software development for Brisbane and Queensland"
 metaTitle: "Software Developers and AI Consultants for Brisbane"
-description: "Sydney-based software developers and AI consultants for Brisbane and Queensland: QTenders and QITC, Queensland Privacy Principles, time zones and industry."
+description: "Sydney based software developers and AI consultants for Brisbane and Queensland: QTenders and QITC, Queensland Privacy Principles, time zones and industry."
 eyebrow: "Brisbane"
 city: "Brisbane"
 state: "QLD"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AWLabs is a Sydney-based team of software developers and AI consultants that builds custom software and AI for Brisbane and Queensland organisations remotely, travelling to Brisbane for workshops when being in the room matters. Queensland differs from the southern states in three practical ways: no daylight saving, its own procurement system built on QTenders and the QITC contracting framework, and new Queensland Privacy Principles and data breach rules for state agencies that commenced on 1 July 2025."
+summary: "AWLabs is a Sydney based team of software developers and AI consultants that builds custom software and AI for Brisbane and Queensland organisations remotely, travelling to Brisbane for workshops when being in the room matters. Queensland differs from the southern states in three practical ways: no daylight saving, its own procurement system built on QTenders and the QITC contracting framework, and new Queensland Privacy Principles and data breach rules for state agencies that commenced on 1 July 2025."
 takeaways:
   - "We're based in Sydney, deliver to Brisbane remotely and travel for workshops and user testing; we have no Queensland office."
   - "Queensland doesn't observe daylight saving, so Brisbane is one hour behind Sydney from October to April and level with it the rest of the year."
@@ -22,7 +22,7 @@ faqs:
   - q: "Can a Queensland agency engage you directly?"
     a: "Agencies must first check for a common-use supply arrangement for what they're buying. We're not on a Queensland Government standing offer arrangement at the time of writing, so an agency would need a pathway that allows that, such as an open approach to market on QTenders or engaging us through an arrangement holder."
   - q: "Does the lack of a Queensland cloud region matter?"
-    a: "For most business systems, no. Data hosted in Sydney or Melbourne is still in Australia, and latency from Brisbane is low. It matters only where a contract specifically requires in-state hosting, which you'd identify during the Discovery Audit."
+    a: "For most business systems, no. Data hosted in Sydney or Melbourne is still in Australia, and latency from Brisbane is low. It matters only where a contract specifically requires hosting inside Queensland, which you'd identify during the Discovery Audit."
   - q: "What do AI consultants charge in Brisbane?"
     a: "There is no settled market rate yet. Re:Sourced's 2026 guide says AI and machine learning contract rates are still forming as a distinct market, with specialist AI implementation work pricing above the general software band, which sits at $700 to $950 a day in Brisbane (AUD, ex GST). A fixed price after a Discovery Audit is easier to compare than day rates, because it prices the outcome rather than the hours."
   - q: "What do senior developers cost in Brisbane?"
@@ -69,7 +69,7 @@ disclaimer: legal
 
 ## How does a Sydney team work with Brisbane organisations?
 
-**Our team is based in Sydney. We build for Brisbane and Queensland organisations remotely and travel north for workshops, site visits and user testing when being in the room matters.** We don't have a Queensland office and don't pretend to. What we do is run a remote delivery rhythm that respects Queensland's clock and put in-person time where it changes the outcome.
+**Our team is based in Sydney. We build for Brisbane and Queensland organisations remotely and travel north for workshops, site visits and user testing when being in the room matters.** We don't have a Queensland office and don't pretend to. What we do is run a remote delivery rhythm that respects Queensland's clock and put time in person where it changes the outcome.
 
 The clock matters more than people expect. Queensland doesn't observe daylight saving. From the first Sunday in October to the first Sunday in April, Brisbane runs an hour behind Sydney: in 2026 to 2027 that's 4 October 2026 to 4 April 2027. The rest of the year, the two cities match.
 
@@ -106,13 +106,13 @@ The key pieces for a supplier:
 1. **QTenders** is where the Queensland Government publishes tendering opportunities, including new standing offer arrangements when agencies set them up.
 2. **Common-use supply arrangements**, listed in the Queensland Government Arrangements Directory, must be used where relevant, and buying outside one has to be reported under the Queensland Procurement Policy.
 3. **ICT Category Council** endorsement is needed before an agency establishes, varies or extends a common-use arrangement.
-4. **QITC** offers four contract types: a general contract for lower-risk work, a comprehensive contract with modules, the supplier's terms and conditions, and bespoke contracts.
+4. **QITC** offers four contract types: a general contract for lower risk work, a comprehensive contract with modules, the supplier's terms and conditions, and bespoke contracts.
 
 One naming trap: "QPP" can mean the Queensland Procurement Policy or, in plural, the Queensland Privacy Principles. Procurement documents usually mean the first. For vendors weighing state and federal markets, our guide to [selling software to Australian government](/guides/selling-software-to-australian-government) compares the pathways.
 
 ## What changed in Queensland privacy law on 1 July 2025?
 
-**The Information Privacy and Other Legislation Amendment Act 2023 amended the Information Privacy Act 2009 (Qld), replacing the old Information Privacy Principles and National Privacy Principles with a single set of Queensland Privacy Principles (QPPs), modelled on the Australian Privacy Principles, from 1 July 2025.** It also introduced a mandatory notification of data breach scheme for Queensland agencies. Local government obligations under the scheme start on 1 July 2026.
+**The Information Privacy and Other Legislation Amendment Act 2023 amended the Information Privacy Act 2009 (Qld), replacing the old Information Privacy Principles and National Privacy Principles with a single set of Queensland Privacy Principles (QPPs), modelled on the Australian Privacy Principles, from 1 July 2025.** It also introduced a mandatory notification of data breach scheme for Queensland agencies. Local government obligations under the scheme started on 1 July 2026.
 
 What agencies now have to do, and what that means for the software they buy:
 
@@ -129,7 +129,7 @@ The QPPs apply to Queensland public sector agencies. Private businesses in Queen
 
 **At the time of writing, AWS, Azure and Google Cloud run their Australian regions in Sydney, Melbourne and, for Azure, Canberra, so Queensland systems usually run in one of those.** For almost all business applications that's fine: the data stays in Australia and latency from Brisbane is low. We normally pair a primary region with a second Australian region for backups. The [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) explainer covers what that does and doesn't protect.
 
-## When is a Brisbane-based developer the better choice?
+## When is a developer based in Brisbane the better choice?
 
 **If your project depends on frequent, unplanned time on site, a developer based in Queensland will usually serve you better than any interstate team, including us.** That's worth saying plainly. Examples:
 
@@ -138,8 +138,8 @@ The QPPs apply to Queensland public sector agencies. Private businesses in Queen
 - Work that must be done by a supplier on a Queensland standing offer arrangement we're not part of.
 - Teams that strongly prefer to meet in person every week rather than on video.
 
-Remote delivery from Sydney makes sense when the in-person needs are predictable (strategy sessions, key design decisions, user testing) and the bulk of the work is engineering that can happen anywhere. In that case what you're really choosing is the quality of the engineering and the process, and location matters much less. Whether you are shortlisting a software development company in Brisbane or an AI consulting company from anywhere in Australia, there is no single best consultancy; our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) lists the questions that tell the difference.
+Remote delivery from Sydney makes sense when the need for time in person is predictable (strategy sessions, key design decisions, user testing) and the bulk of the work is engineering that can happen anywhere. In that case what you're really choosing is the quality of the engineering and the process, and location matters much less. Whether you are shortlisting a software development company in Brisbane or an AI consulting company from anywhere in Australia, there is no single best consultancy; our guide on [how to choose a software development company](/guides/how-to-choose-a-software-development-company) lists the questions that tell the difference.
 
 ## How AWLabs works with Queensland organisations
 
-Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Brisbane and Queensland clients, every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We then build from Sydney, and you get an update every Tuesday and Friday, Sydney time, with access to test the latest work. Senior engineers write the code. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. See our [custom app development](/services/custom-app-development) service, or how we deliver [across Australia](/locations/australia-wide).
+Founder Andy Taleb has been building software professionally since 2019 and running All Webbed Up since 2021. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders. For Brisbane and Queensland clients, every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We then build from Sydney, and you get an update every Tuesday and Friday, Sydney time, with access to test the latest work. Senior engineers lead every build. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. See our [custom app development](/services/custom-app-development) service, or how we deliver [across Australia](/locations/australia-wide).

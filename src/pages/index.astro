@@ -13,11 +13,24 @@ import AutonomousAISection from '../components/sections/AutonomousAISection.astr
 import FeaturedGuides from '../components/FeaturedGuides.astro';
 import VideoTestimonials from '../components/VideoTestimonials.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import FactBlock from '../components/FactBlock.astro';
+
+const siteUrl = 'https://www.awlabs.com.au';
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  name: 'AWLabs',
+  url: siteUrl,
+  publisher: { '@id': `${siteUrl}/#organization` },
+  inLanguage: 'en-AU',
+};
 ---
 
 <Layout
-  title="AWLabs | AI and Software Development, Sydney"
+  title="AI and Software Development, Sydney | AWLabs"
   description="Sydney AI and software development for growing businesses and enterprise. AI agents, RAG, LLM integration and custom software, led by senior engineers."
+  extraSchema={[websiteSchema]}
 >
   <Header />
   <main>
@@ -35,7 +48,7 @@ import GoogleReviews from '../components/GoogleReviews.astro';
         <p>
           <strong>AWLabs</strong> is a Sydney based AI and software development company for growing businesses and enterprise.
           Sister company to <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a>,
-          the branding and marketing agency we deliver client work alongside.
+          a separate websites and marketing company.
         </p>
         <p class="home-entity-timeline">
           Our founder has been shipping software since 2019, and All Webbed Up has been delivering for clients since 2021. AWLabs launched in mid 2026 as a new, separate company: a partnership with exceptional developers and founders. <a href="/our-journey">Our full journey</a>.
@@ -64,12 +77,25 @@ import GoogleReviews from '../components/GoogleReviews.astro';
       </a>
     </p>
     <GoogleReviews />
+    <section class="home-facts" aria-label="AWLabs at a glance">
+      <div class="home-facts-inner reveal">
+        <FactBlock />
+      </div>
+    </section>
     <CTABanner />
   </main>
   <Footer />
 </Layout>
 
 <style>
+  .home-facts {
+    background: #0a0f0e;
+    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  }
+  .home-facts-inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
   /* Sits under the video section, pulled up into its bottom padding */
   .home-stories-link {
     margin: clamp(-3.5rem, -5vw, -2rem) 0 0;

@@ -140,7 +140,7 @@ Work through these questions in order:
 
 - Tasks involve judgement across several systems and the path varies.
 - The volume or complexity makes a human-only process slow or expensive.
-- You can give it narrow, well-defined tools and a clear boundary on what it may do without approval.
+- You can give it narrow, clearly defined tools and a clear boundary on what it may do without approval.
 
 ## What are the risks, and how do you manage them?
 
@@ -157,7 +157,7 @@ Work through these questions in order:
 Practical controls for any agent:
 
 - Give each tool the minimum permission it needs. An agent that drafts refunds shouldn't also be able to issue them.
-- Require human approval for irreversible or high-value actions.
+- Require human approval for irreversible actions or actions worth a lot.
 - Log every tool call with inputs and outputs so you can reconstruct what happened.
 - Cap the number of steps and the spend per task.
 - Test with adversarial inputs, including emails and documents that contain instructions. See [prompt injection](/guides/prompt-injection).
@@ -175,4 +175,4 @@ Two further checks for Australian organisations:
 
 ## How AWLabs approaches this
 
-We usually recommend the least autonomous design that solves the problem: a workflow with AI steps where the inputs are messy, and a scoped agent only where the path genuinely varies. We define tools with least privilege, add approval steps for consequential actions, log every step, and build an evaluation set of real tasks before launch. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. See [AI agent development](/services/ai-agent-development), [workflow automation](/services/workflow-automation) and [AI chatbot development](/services/ai-chatbot).
+We usually recommend the least autonomous design that solves the problem: a workflow with AI steps where the inputs are messy, and a scoped agent only where the path genuinely varies. We define tools with least privilege, add approval steps for consequential actions, log every step, and build an evaluation set of real tasks before launch. Our default is to host in an Australian cloud region wherever the services you need are offered onshore. Tell us before you sign if your data has to stay in Australia, and that requirement goes into your Schedule of Work. See [AI agent development](/services/ai-agent-development), [workflow automation](/services/workflow-automation) and [AI chatbot development](/services/ai-chatbot).

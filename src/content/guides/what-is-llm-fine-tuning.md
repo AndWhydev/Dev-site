@@ -17,11 +17,11 @@ faqs:
   - q: "Can I fine-tune a model on our company documents so it knows our business?"
     a: "You can, but it's usually the wrong tool. Models absorb new facts poorly through fine-tuning, can't cite where an answer came from, and go stale the moment a document changes. For question answering over company knowledge, use RAG, and consider fine-tuning later only if you need a particular answer style."
   - q: "What is the difference between fine-tuning and prompt engineering?"
-    a: "Prompt engineering changes the instructions you send with each request and leaves the model as it is. Fine-tuning changes the model's weights so the behaviour is built in. Prompting is faster, cheaper and easier to change, so it comes first; fine-tuning is worth considering when a well-engineered prompt still fails too often on a stable, high-volume task."
+    a: "Prompt engineering changes the instructions you send with each request and leaves the model as it is. Fine-tuning changes the model's weights so the behaviour is built in. Prompting is faster, cheaper and easier to change, so it comes first; fine-tuning is worth considering when a well-engineered prompt still fails too often on a stable task run at high volume."
   - q: "What is LoRA fine-tuning?"
     a: "LoRA (low-rank adaptation) is a parameter-efficient fine-tuning method. Instead of retraining all of a model's weights, it freezes them and trains small add-on matrices, which cuts memory and cost sharply and lets one base model host many small task-specific adapters."
   - q: "How much training data does fine-tuning need?"
-    a: "It depends on the task and method. Narrow formatting or classification tasks can show results with a few hundred high-quality examples; harder tasks need thousands. Quality and consistency matter more than volume: a few hundred carefully reviewed examples usually beat thousands of noisy ones."
+    a: "It depends on the task and method. Narrow formatting or classification tasks can show results with a few hundred good examples; harder tasks need thousands. Quality and consistency matter more than volume: a few hundred carefully reviewed examples usually beat thousands of noisy ones."
   - q: "What does fine-tuning cost?"
     a: "On managed platforms you typically pay for training by tokens processed (training data tokens multiplied by the number of passes, called epochs), a monthly storage fee per custom model, and inference, which may require dedicated capacity. Self-hosting an open-weight model adds GPU costs. The ongoing costs usually outweigh the one-off training run."
   - q: "Can we fine-tune Claude or GPT models?"
@@ -129,7 +129,7 @@ What these have in common is that they change *how* the model responds. None of 
 
 ## When does a business need fine-tuning?
 
-**When you have a stable, well-defined task, a measured gap that prompting and retrieval can't close, and enough good examples.** Signals that it may be worth it:
+**When you have a stable, clearly defined task, a measured gap that prompting and retrieval can't close, and enough good examples.** Signals that it may be worth it:
 
 - A very high volume of one task, where a fine-tuned small model would cut inference cost or latency substantially.
 - Output must follow a strict structure or classification scheme every time, and prompting still fails on too many cases.
@@ -161,7 +161,7 @@ For a full side-by-side decision, read [RAG vs fine-tuning](/guides/rag-vs-fine-
 
 A claims team wants a model to read incident emails and output a claim category, urgency and five extracted fields.
 
-1. **Baseline:** a well-written prompt with 10 examples on a mid-sized hosted model scores 91% on 300 held-back emails.
+1. **Baseline:** a well-written prompt with 10 examples on a midsize hosted model scores 91% on 300 held-back emails.
 2. **Target:** 97%, and volume is 40,000 emails a month.
 3. **Option A:** move to a larger model. Accuracy rises to 95%, but cost per email roughly triples.
 4. **Option B:** fine-tune a small model on 2,000 reviewed examples. If it reaches 97% at a fraction of the per-email cost, the training and upkeep pay for themselves.

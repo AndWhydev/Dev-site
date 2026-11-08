@@ -5,7 +5,7 @@
   <div class="bento-inner">
     <div class="bento-header reveal">
       <span class="section-label">Our Capabilities</span>
-      <h2 class="section-heading">Everything Your Enterprise Needs</h2>
+      <h2 class="section-heading">Everything Your Business Needs</h2>
       <p class="section-subheading">Our specialisations. One team. We cover the full technology spectrum.</p>
     </div>
 
@@ -18,9 +18,17 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <h3>Custom App Development</h3>
-          <p>End-to-end web and mobile applications built to enterprise specifications. We own every layer of the stack from architecture to deployment.</p>
+          <p>Web and mobile applications built end to end, to the standard your business needs. We own every layer of the stack, from architecture to deployment.</p>
+          <ul class="bento-includes" aria-label="What a custom build includes">
+            <li>Architecture and data model</li>
+            <li>Web and mobile front ends</li>
+            <li>APIs and integrations</li>
+            <li>Testing before every release</li>
+            <li>Hosting and deployment</li>
+            <li>30 day warranty</li>
+          </ul>
           <div class="bento-tags">
-            <span>Web</span><span>Mobile</span><span>Full-Stack</span>
+            <span>Web</span><span>Mobile</span><span>Full stack</span>
           </div>
           <a href="/services/custom-app-development" class="bento-link">
             Explore
@@ -78,7 +86,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Cloud & DevOps</h3>
-          <p>AWS, GCP and Azure infrastructure. Fully automated, resilient and cost-optimised.</p>
+          <p>AWS, GCP and Azure infrastructure. Fully automated, resilient and tuned for cost.</p>
           <div class="bento-tags"><span>AWS</span><span>K8s</span><span>Terraform</span></div>
           <a href="/services/cloud-infrastructure" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
@@ -91,7 +99,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
           <h3>React & Next.js</h3>
-          <p>Server-side rendering, edge deployment and TypeScript-first development.</p>
+          <p>Server rendering, edge deployment and TypeScript throughout.</p>
           <div class="bento-tags"><span>React</span><span>Next.js</span></div>
           <a href="/services/react-nextjs" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
@@ -111,8 +119,8 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
           </div>
           <h3>Enterprise Software Solutions</h3>
-          <p>Large-scale platforms, ERP integrations and mission-critical systems built for complexity and compliance. From the Discovery Audit to launch and our 30 day warranty.</p>
-          <div class="bento-tags"><span>ERP</span><span>CRM</span><span>Compliance</span><span>Multi-region</span></div>
+          <p>Platforms at scale, ERP integrations and the systems your business depends on, built for complexity and compliance. From the Discovery Audit to launch and our 30 day warranty.</p>
+          <div class="bento-tags"><span>ERP</span><span>CRM</span><span>Compliance</span><span>Multiple regions</span></div>
           <a href="/services/enterprise-software" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
@@ -136,7 +144,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Custom SaaS</h3>
-          <p>Multi-tenant, subscription-ready products.</p>
+          <p>Subscription products built for many customers.</p>
           <a href="/services/saas-development" class="bento-link">Explore <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
@@ -335,6 +343,46 @@
   }
 
   .bento-hero h3 { font-size: 1.375rem; }
+  .bento-card.bento-hero p { flex: 0 0 auto; max-width: 34rem; }
+
+  /* What a custom build includes: quiet tiles anchored to the card's base */
+  .bento-includes {
+    list-style: none;
+    margin: auto 0 0;
+    padding: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  .bento-includes li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.875rem 0.75rem 2.4rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid #1e2d28;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: #b4c7c0;
+  }
+  .bento-includes li::before {
+    content: '';
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d9373' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 0.6rem no-repeat;
+  }
+  .bento-hero .bento-tags { margin-top: 0.75rem; }
+  @media (max-width: 480px) {
+    .bento-includes { grid-template-columns: 1fr; gap: 0.45rem; }
+    .bento-includes li { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+  }
 
   .bento-card p {
     font-family: 'DM Sans', sans-serif;

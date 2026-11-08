@@ -44,7 +44,7 @@ const eligibles = [
 ---
 
 <Layout
-  title="R&D Tax Incentive for Software Builds, AWLabs"
+  title="R&D Tax Incentive for Software Builds | AWLabs"
   description="How the Australian R&D Tax Incentive may apply to software builds, what tends to qualify, and the build records we keep for your R&D tax agent."
 >
   <Header />
@@ -147,7 +147,7 @@ const eligibles = [
 
         <div class="compare-grid">
           <div class="compare-card compare-card--au reveal-left">
-            <div class="compare-card-flag">🇦🇺</div>
+            <div class="compare-card-flag" aria-hidden="true">AU</div>
             <div class="compare-card-title">Built with an Australian company</div>
             <ul>
               <li>Build records your R&amp;D tax agent can ask for</li>
@@ -410,7 +410,10 @@ const eligibles = [
   }
   .compare-card--au { border-color: rgba(13,147,115,0.3); background: linear-gradient(180deg, rgba(13,147,115,0.04), #0f1614 60%); }
   .compare-card-flag {
-    font-size: 2rem;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(13, 147, 115, 0.12); color: #0d9373;
+    font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em;
     margin-bottom: 0.875rem;
   }
   .compare-card-title {

@@ -1,13 +1,13 @@
 ---
 title: "AI knowledge bases for professional services firms"
 metaTitle: "AI Knowledge Base for Professional Services Firms Australia"
-description: "AI knowledge base software for Australian consulting, engineering and advisory firms: RAG over past work with per-client access control and Australian hosting."
+description: "AI knowledge bases for Australian consulting, engineering and advisory firms: RAG over past work with per client access control and Australian hosting."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "An AI knowledge base for professional services firms is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a mid-sized firm typically costs $65,000 to $170,000 (AUD, ex GST) as a market range, not AWLabs pricing and not a quote."
+summary: "An AI knowledge base for professional services firms is a retrieval-augmented generation (RAG) system that answers staff questions from the firm's own reports, proposals, methodologies and correspondence, with a citation to every source. What makes it different from a generic chatbot is access control: a consultant must only ever retrieve documents from engagements they're entitled to see, so permissions from the document management system have to be enforced at retrieval time. A production system for a midsize firm typically costs $65,000 to $170,000 (AUD, ex GST) as a market range, not AWLabs pricing and not a quote."
 takeaways:
-  - "The hard part isn't the AI. It's making sure every answer respects client confidentiality, ethical walls and engagement-level permissions."
+  - "The hard part isn't the AI. It's making sure every answer respects client confidentiality, ethical walls and permissions set per engagement."
   - "Permissions must be filtered before retrieval, not after generation; otherwise confidential content can leak into an answer even if the source link is hidden."
   - "The OAIC says privacy obligations apply to personal information put into an AI system and to AI outputs that contain it, including incorrect or inferred information."
   - "Check client contracts before indexing: some engagement terms restrict AI processing, offshore processing or reuse of deliverables."
@@ -26,7 +26,7 @@ faqs:
   - q: "What about superseded documents and old standards?"
     a: "Tag documents with status and date, rank current versions higher, and show the date alongside every citation so a reader can tell a 2016 methodology from the current one. For engineering firms, licensed standards documents should only be indexed if the licence permits it; many don't allow reuse in this way."
   - q: "How long before staff can use it?"
-    a: "A pilot over one practice area's documents typically takes 6 to 10 weeks after the Discovery Audit, and a firm-wide rollout with document management integration another 6 to 12 weeks. The biggest variable is how clean your existing permissions and folder structures are."
+    a: "A pilot over one practice area's documents typically takes 6 to 10 weeks after the Discovery Audit, and a rollout across the firm with document management integration another 6 to 12 weeks. The biggest variable is how clean your existing permissions and folder structures are."
   - q: "Does this count as automated decision-making under the Privacy Act?"
     a: "A tool that helps staff find and draft from past work generally doesn't make decisions about individuals. If it's used to screen candidates, assess clients or make other decisions that significantly affect people, the APP 1.7 to 1.9 transparency rules from 10 December 2026 may apply, and that use should be assessed separately."
 sources:
@@ -76,9 +76,9 @@ disclaimer: legal
 
 This is knowledge management for professional services with a search box that answers in sentences rather than returning a list of files. Consulting, engineering, architecture, planning and advisory firms share the same pattern: valuable knowledge locked in thousands of engagement documents, filed by client and project, with access that should stay restricted. Law and accounting firms add their own regulatory layers, covered on our [law firm](/solutions/ai-for-law-firms) and [accounting firm](/solutions/ai-for-accounting-firms) pages.
 
-## Why does per-client access control shape the whole architecture?
+## Why does per client access control shape the whole architecture?
 
-**Because in a professional services firm, the worst failure isn't a wrong answer, it's a right answer drawn from an engagement the asker should never have seen.** Client confidentiality, conflict checks and ethical walls all depend on the knowledge base inheriting and enforcing the same permissions as the document system.
+**Because in a professional services firm, the worst failure isn't a wrong answer. It's a right answer drawn from an engagement the asker should never have seen.** Client confidentiality, conflict checks and ethical walls all depend on the knowledge base inheriting and enforcing the same permissions as the document system.
 
 There are three common ways to enforce access, and only one is safe for confidential engagement content:
 
@@ -88,7 +88,7 @@ There are three common ways to enforce access, and only one is safe for confiden
 | Separate index per group | One index per practice or team | Moderate. Coarse, hard to maintain as people move between engagements. |
 | Filter before retrieval | Every chunk carries the permissions of its source; search only runs over what the asker can see | Low, if permissions are synced reliably. This is the pattern to use. |
 
-Getting filter-before-retrieval right involves several details that generic tools often miss:
+Getting filtering before retrieval right involves several details that generic tools often miss:
 
 1. **Sync permissions, not just documents.** When someone is removed from an engagement or a wall goes up, the index must reflect it quickly, ideally within minutes.
 2. **Map identities.** The user signed into the knowledge base must map to the same identity in SharePoint, iManage, NetDocuments or whatever system holds the documents.
@@ -122,7 +122,7 @@ A sensible loading order for most firms:
 
 1. **Methodologies, templates and internal guidance.** Low confidentiality risk, high value to junior staff, and a good first test of answer quality.
 2. **Credentials and project summaries.** Already written for reuse in proposals; they make the expertise and proposal questions work.
-3. **Final deliverables from completed engagements.** Indexed with engagement-level permissions and any contract restrictions applied.
+3. **Final deliverables from completed engagements.** Indexed with permissions set per engagement and any contract restrictions applied.
 4. **Working papers and correspondence.** Only once the permission model has proven itself, and often only for the engagement team while the job is live.
 
 Some content should usually stay out entirely: personnel files, partner remuneration and board papers, walled engagements until the wall is lifted, and anything a client contract says can't be reused. Drafts are a judgement call. They're often wrong, and a knowledge base that confidently quotes a draft recommendation the client later rejected causes real harm. If drafts go in, label them clearly and rank final versions above them.
@@ -137,7 +137,7 @@ Some content should usually stay out entirely: personnel files, partner remunera
 - **Permission drift.** Permission sync that runs nightly is too slow when an ethical wall goes up at 10am.
 - **Measuring usage instead of quality.** Query counts say nothing about whether answers were right. Keep scoring the evaluation set.
 
-## Copilot, an off-the-shelf tool or a custom build?
+## Copilot, a packaged tool or a custom build?
 
 **If your documents live in Microsoft 365 with clean permissions and you mainly want search and drafting inside Office, try Microsoft 365 Copilot first.** A custom build makes sense when the requirements go beyond that. Our [Copilot vs custom assistant guide](/guides/copilot-vs-custom-ai-assistant) goes into detail.
 
@@ -157,7 +157,7 @@ Some content should usually stay out entirely: personnel files, partner remunera
 | Phase | Duration | What's delivered | Typical range (AUD, ex GST) |
 |---|---|---|---|
 | Pilot | 6 to 10 weeks | One practice area indexed, permission sync with one source, cited answers, evaluation results | $35,000 to $80,000 |
-| Firm-wide rollout | 6 to 12 weeks | Further sources, SSO, audit logs, admin tools, training | $30,000 to $90,000 |
+| Rollout across the firm | 6 to 12 weeks | Further sources, SSO, audit logs, admin tools, training | $30,000 to $90,000 |
 | Running costs | Monthly | Hosting, vector index, model usage | Varies mainly with query volume and document count; the cost guide shows the arithmetic |
 
 Every build starts with our Discovery Audit, a fixed fee credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.

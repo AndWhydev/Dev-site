@@ -15,7 +15,7 @@ takeaways:
   - "A middle path exists: open-weight models served by a cloud platform such as Amazon Bedrock in Sydney, where the model maker never sees your data and you don't run GPUs."
 faqs:
   - q: "Are open-weight models as good as GPT, Claude or Gemini?"
-    a: "For the hardest tasks, generally not at the time of writing: the frontier models are API-only. For well-defined tasks such as extraction, classification, routing, summarisation and retrieval-augmented answers over your own documents, a good open-weight model is often good enough. Test on your own data rather than relying on public benchmarks."
+    a: "For the hardest tasks, generally not at the time of writing: the frontier models are API-only. For clearly defined tasks such as extraction, classification, routing, summarisation and retrieval-augmented answers over your own documents, a good open-weight model is often good enough. Test on your own data rather than relying on public benchmarks."
   - q: "Is it legal to use open-weight models commercially in Australia?"
     a: "Usually yes, but read the licence. gpt-oss, the Qwen3 models and many Mistral models are released under Apache 2.0, which permits commercial use. Meta's Llama 4 Community License allows commercial use but requires attribution, compliance with Meta's acceptable use policy, and a separate licence above 700 million monthly active users."
   - q: "What is the best open source LLM for business?"

@@ -132,7 +132,7 @@ Retention exceptions are model-specific and change, so check each model's page b
 **Governance is broadly comparable; the deciding factor is usually which cloud your organisation already runs on.** Your identity, network, logging and key management controls should extend to the AI platform rather than sit beside it.
 
 - **Amazon Bedrock** fits organisations on AWS: IAM for access, CloudTrail for API logging (including cross-Region inference requests, logged in your source Region), PrivateLink for private connectivity, and optional encryption with your own keys. It also offers agent tooling through AgentCore.
-- **Azure OpenAI in Foundry** fits Microsoft-centric organisations: Entra ID identity, Azure networking and monitoring, configurable guardrails (content filters), and the same commercial relationship as Microsoft 365. Provisioned throughput gives predictable capacity for high-volume onshore workloads.
+- **Azure OpenAI in Foundry** fits Microsoft-centric organisations: Entra ID identity, Azure networking and monitoring, configurable guardrails (content filters), and the same commercial relationship as Microsoft 365. Provisioned throughput gives predictable capacity for onshore workloads at high volume.
 - **Gemini Enterprise Agent Platform** fits Google Cloud organisations: Google Cloud IAM and networking, BigQuery integration, and explicit controls for zero data retention.
 
 ## How should you compare costs?

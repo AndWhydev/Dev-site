@@ -2,11 +2,14 @@
 import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
-  metaTitle: 'Web & Mobile App Development Australia | AWLabs',
-  metaDescription: 'Web and mobile app development for Australian organisations: customer portals, internal tools and digital products that perform well on every device.',
+  metaTitle: 'Mobile App Development Australia: iOS & Android | AWLabs',
+  metaDescription: 'Mobile app development in Australia: iOS and Android apps, plus the web portals behind them, built in Flutter and React by a Sydney team. IP assigned as paid.',
   category: 'Development',
   serviceName: 'Web and Mobile App Development',
-  heroHeadline: 'Web and Mobile Applications That Scale With Your Business',
+  nounPhrase: "web and mobile app development",
+  whyHeading: "Why build your web or mobile app with AWLabs?",
+  whoHeading: "Which businesses need a web or mobile app built?",
+  heroHeadline: 'Mobile App Development for iOS, Android and the Web',
   heroTagline: 'From customer portals to internal tools, performant, accessible and production grade from launch day.',
   summaryStatement: 'Web and mobile app development is the building of applications that run in a browser, on iOS and Android, or both, such as customer portals, internal tools and digital products, usually sharing one backend and designed to perform on the devices people actually use.',
   description: [
@@ -17,7 +20,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
       title: 'Subsecond Performance Targets',
-      description: 'Core Web Vitals are a first class engineering requirement, not a post launch audit. We implement server side rendering, incremental static regeneration, code splitting and aggressive caching strategies to achieve LCP under 2.5s and CLS below 0.1 on real devices, not just Lighthouse.',
+      description: 'Core Web Vitals are a first class engineering requirement, not an audit after launch. We implement server side rendering, incremental static regeneration, code splitting and aggressive caching strategies to achieve LCP under 2.5s and CLS below 0.1 on real devices, not just Lighthouse.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
@@ -56,7 +59,7 @@ const data = {
       step: '01',
       title: 'Discovery Audit & Strategy Sessions',
       duration: 'Before the build',
-      description: 'Every build starts with a Discovery Audit (a fixed fee, credited in full against the build). We map user journeys, define performance benchmarks, look at any existing systems being replaced and set out the integrations. After two strategy sessions you receive a technology recommendation with reasons and a fixed price for an agreed scope.',
+      description: 'Every build starts with a Discovery Audit (a fixed fee, credited in full against the build). We map user journeys, define performance benchmarks, look at any existing systems being replaced and set out the integrations. After two strategy sessions you receive a technology recommendation with reasons and a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.',
     },
     {
       step: '02',
@@ -79,7 +82,7 @@ const data = {
     {
       step: '05',
       title: 'Performance & Accessibility Audit',
-      duration: '1 week prelaunch',
+      duration: '1 week before launch',
       description: 'Dedicated time for performance profiling, accessibility testing with assistive technologies, cross browser validation on the target browser matrix, and load testing against the projected user concurrency. Issues are remediated before any launch date is committed to.',
     },
     {
@@ -96,7 +99,7 @@ const data = {
     'Healthcare',
     'Logistics & Supply Chain',
     'Professional Services',
-    'Retail & eCommerce',
+    'Retail & Ecommerce',
     'Education & Training',
   ],
   faqs: [
@@ -130,7 +133,7 @@ const data = {
     },
     {
       question: 'How much does web and mobile app development cost?',
-      answer: 'The main drivers are the number of screens and user roles, integrations with your existing systems, whether you need web, mobile or both, and security requirements. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Our app development cost guide sets out typical Australian market ranges.',
+      answer: 'The main drivers are the number of screens and user roles, integrations with your existing systems, whether you need web, mobile or both, and security requirements. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. Our app development cost guide sets out typical Australian market ranges.',
     },
   ],
   relatedServices: [
@@ -138,6 +141,7 @@ const data = {
     { title: 'Flutter Development', href: '/services/flutter-development' },
     { title: 'UI & UX Design', href: '/services/ui-ux-design' },
     { title: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure' },
+    { title: 'App Developers in Sydney', href: '/locations/sydney-app-development' },
   ],
   heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><rect x="5" y="7" width="5" height="4" rx="1"/><line x1="14" y1="9" x2="17" y2="9"/><line x1="14" y1="12" x2="17" y2="12"/></svg>',
 };

@@ -3,16 +3,24 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'AI Readiness Assessment & AI Consulting Australia | AWLabs',
-  metaDescription: "AI readiness assessment from Sydney AI consultants who also build: a Discovery Audit that tests your AI use cases, data and risks before you commit to a build.",
+  metaDescription: "AI readiness assessment from Sydney AI consultants who also build: a Discovery Audit that tests your AI use cases, data and risks before you commit.",
   category: 'AI & Data',
   serviceName: 'AI Readiness Assessment',
+  nounPhrase: "an AI readiness assessment",
+  whyHeading: "Why have builders run your assessment?",
+  whoHeading: "Who should commission an AI readiness assessment?",
+  fitHeading: "Is an AI readiness assessment right for you?",
+  processHeading: "How does the assessment run?",
+  faqHeading: "Common questions about the AI readiness assessment",
   slug: 'ai-readiness-assessment',
   heroHeadline: 'Find Out Where AI Will Pay Off Before You Build Anything',
   heroTagline: "Our AI readiness assessment is the Discovery Audit for AI projects. It tests your AI ideas against your real data, systems and obligations before you commit to a build. It is a fixed fee, credited in full against the build.",
   summaryStatement: "An AI readiness assessment evaluates an organisation's candidate AI use cases against its data, systems, security and privacy obligations, and delivery capacity, and states which use cases to pursue, in what order, and which to drop. At AWLabs it is delivered as the Discovery Audit for AI projects.",
   description: [
     "Most organisations have more AI ideas than they can fund, and little evidence about which ones will work. The ideas that sound best in a workshop are often the ones whose data is scattered across spreadsheets, locked in a system with no API, or too sensitive to send to a hosted model. The quiet, unglamorous ideas, such as extracting fields from a form the business processes thousands of times a month, often have the clearest return. An AI readiness assessment sorts one from the other with evidence rather than enthusiasm. Every AI build starts with a Discovery Audit. It is a fixed fee, credited in full against the build. We map the scope, the risks and the standards that apply, then walk you through it in a strategy session. You keep the audit whoever builds it.",
-    "This is AI consulting done by the people who build. We work through your candidate use cases with the people who own the processes. For each one we look at the value at stake, the data it depends on (where it lives, its quality, who can access it and whether it can lawfully be used for the purpose), the systems it must connect to, the risk if the AI gets it wrong, and whether an existing product already solves it. We sample real data under NDA rather than relying on descriptions, and where the top use case has a genuine technical question, such as whether a model can read your particular documents, we scope a small, time boxed spike to answer it as the first stage of the build. We also note your obligations that shape the design, including the Privacy Act 1988 and the automated decision making transparency requirements in APP 1 that commence on 10 December 2026, and set a baseline against the six practices in Australia's Guidance for AI Adoption. You receive a written audit within seven days of your answers: the scope, the risks, the data each use case depends on, the standards it was assessed against and a recommended build order. In two strategy sessions we walk you through it, then give you a fixed price Schedule of Work for the agreed scope. You keep the audit, and you are free to take it to another supplier or build in house.",
+    "This is AI consulting done by the people who build. We work through your candidate use cases with the people who own the processes. For each one we look at the value at stake, the data it depends on (where it lives, its quality, who can access it and whether it can lawfully be used for the purpose), the systems it must connect to, the risk if the AI gets it wrong, and whether an existing product already solves it.",
+    "We sample real data under NDA rather than relying on descriptions, and where the top use case has a genuine technical question, such as whether a model can read your particular documents, we scope a small, time boxed spike to answer it as the first stage of the build. We also note your obligations that shape the design, including the Privacy Act 1988 and the automated decision making transparency requirements in APP 1 that commence on 10 December 2026, and set a baseline against the six practices in Australia's Guidance for AI Adoption.",
+    "You receive a written audit within seven days of your answers: the scope, the risks, the data each use case depends on, the standards it was assessed against and a recommended build order. In two strategy sessions we walk you through it, then give you a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. You keep the audit, and you can take it to another supplier or build in house.",
   ],
   benefits: [
     {
@@ -43,7 +51,7 @@ const data = {
     {
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>',
       title: 'An Audit You Keep',
-      description: "The audit is yours to keep whoever builds. It is written so a board can approve funding from it and so another supplier or your own team could build from it. After two strategy sessions you receive a fixed price Schedule of Work for the first build, with no obligation to accept it.",
+      description: "The audit is yours to keep whoever builds. It is written so a board can approve funding from it and so another supplier or your own team could build from it. After two strategy sessions you receive a fixed price Schedule of Work for the first build, with three options: The Minimum, The Recommended and The Complete. The decision to go ahead is yours.",
     },
   ],
   useCases: [],
@@ -88,7 +96,7 @@ const data = {
       step: '06',
       title: 'Strategy Session Two',
       duration: 'Your fixed price',
-      description: "You receive your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. There is no obligation to accept it.",
+      description: "You receive your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. You decide whether to go ahead.",
     },
   ],
   industries: [
@@ -108,7 +116,7 @@ const data = {
     },
     {
       question: "How much does an AI readiness assessment cost?",
-      answer: "Our AI readiness assessment is the Discovery Audit for AI projects. It is a fixed fee, credited in full against the build. After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates.",
+      answer: "Our AI readiness assessment is the Discovery Audit for AI projects. It is a fixed fee, credited in full against the build. After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates.",
     },
     {
       question: "How long does it take?",
@@ -116,7 +124,7 @@ const data = {
     },
     {
       question: "Are we obliged to use you for the build?",
-      answer: "No. The audit is yours to keep whoever builds, and it is written so another supplier or your own team could build from it. We offer a fixed price Schedule of Work for the first build because it is the natural next step, but there is no obligation to accept it.",
+      answer: "No. The audit is yours to keep whoever builds, and it is written so another supplier or your own team could build from it. We offer a fixed price Schedule of Work for the first build because it is the natural next step, but the decision to go ahead is yours.",
     },
     {
       question: "How is this different from an AI strategy workshop?",
@@ -132,7 +140,7 @@ const data = {
     },
     {
       question: "How much do AI consultants charge, and how do you charge?",
-      answer: "Rates across the Australian AI consulting market vary widely with firm size and seniority, so compare what you hold at the end, not only the rate. We do not charge by the hour or the day. Our AI readiness assessment is the Discovery Audit, a fixed fee credited in full against the build. After it you get one fixed price for the agreed scope.",
+      answer: "Rates across the Australian AI consulting market vary widely with firm size and seniority, so compare what you hold at the end, not only the rate. We do not charge by the hour or the day. Our AI readiness assessment is the Discovery Audit, a fixed fee credited in full against the build. After it you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.",
     },
     {
       question: "What does your AI readiness assessment framework cover?",
@@ -143,7 +151,7 @@ const data = {
       answer: "Often, yes, focused on one or two use cases. The Discovery Audit is a fixed fee, credited in full against the build. For a small business with a single clear idea, an initial call may be enough to establish that an off the shelf tool already does the job, and if so we will say that rather than sell an assessment.",
     },
     {
-      question: "Can we use a free AI readiness questionnaire or template instead?",
+      question: "Can we use an online AI readiness questionnaire or template instead?",
       answer: "A self assessment questionnaire, such as those published by cloud vendors, is a useful way to start the conversation internally. It tells you how ready you feel in general; it cannot tell you whether your particular data supports a particular use case, what the work will cost or what could go wrong. Our assessment samples your real data under NDA and ends with a scoped, buildable plan.",
     },
   ],
@@ -170,7 +178,7 @@ const data = {
     },
     {
       term: 'Discovery Audit',
-      definition: "The first paid step of every AWLabs build, a fixed fee credited in full against the build. It maps scope, risks, standards and build order, and is followed by two strategy sessions and a fixed price for the agreed scope.",
+      definition: "The first paid step of every AWLabs build, a fixed fee credited in full against the build. It maps scope, risks, standards and build order, and is followed by two strategy sessions and a fixed price Schedule of Work with three options.",
     },
     {
       term: 'Opportunity Register',

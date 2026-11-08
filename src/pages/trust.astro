@@ -16,12 +16,12 @@ import CTABanner from '../components/CTABanner.astro';
  */
 
 const facts = [
-  { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Known as AWLabs. Sister company to All Webbed Up, our marketing business, which is run separately.' },
+  { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Known as AWLabs. Sister company to All Webbed Up, a separate marketing company.' },
   { label: 'ABN', value: '32 698 684 105', detail: 'Australian Business Number, verifiable on abr.business.gov.au' },
   { label: 'Registered office', value: 'Floor 1, 43 Ware Street, Fairfield NSW 2165', detail: 'As recorded with ASIC' },
   { label: 'Business address', value: '1 Ramsay Rd, Five Dock NSW 2046', detail: 'Greater Sydney, Australia' },
-  { label: 'Operating hours', value: 'Monday to Friday, 9am to 6pm Sydney time', detail: 'A real person reads every reply' },
-  { label: 'Ownership', value: '100% Australian-owned', detail: 'No offshore parent. Delivery is Australian-led and remains managed and accountable through AW Labs in Sydney.' },
+  { label: 'Operating hours', value: 'Monday to Friday, 9am to 6pm Sydney time', detail: 'A real person reads every enquiry' },
+  { label: 'Ownership', value: '100% Australian owned', detail: 'No offshore parent. Delivery is led from Australia and remains managed and accountable through AW Labs in Sydney.' },
   { label: 'Insurance', value: 'Professional indemnity $1M per claim ($2M in total each year). Public liability $10M. Cyber $500,000 per claim ($1M in total).', detail: 'Underwritten by Lloyd’s via CFC. Certificate of Currency provided to procurement on request.' },
 ];
 
@@ -36,7 +36,7 @@ const ipClauses = [
   },
   {
     title: 'We do not embed silent dependencies on us',
-    body: 'No phone home telemetry to our infrastructure. No hard coded API keys that route through us. No "you can only deploy this if we host it" architecture. Nothing we build depends on us to keep running. Once your final payment is made, you can run it without us.',
+    body: 'No telemetry that phones home to our infrastructure. No API keys hard coded that route through us. No "you can only deploy this if we host it" architecture. Nothing we build depends on us to keep running. Once your final payment is made, you can run it without us.',
   },
   {
     title: 'You receive the keys',
@@ -117,7 +117,7 @@ const aiData = [
     bullets: [
       'Access control enforced at retrieval, so AI features only see what the user is allowed to see',
       'Logging of prompts, sources and outputs where your policy allows, for audit and incident review',
-      'Evaluation sets and human review paths for high-stakes outputs, aligned with Australia\'s Guidance for AI Adoption',
+      'Evaluation sets and human review paths for outputs where the stakes are high, aligned with Australia\'s Guidance for AI Adoption',
     ],
   },
 ];
@@ -143,7 +143,7 @@ const compliance = [
 ---
 
 <Layout
-  title="Trust, Compliance & IP, AWLabs"
+  title="Trust, Compliance and IP | AWLabs"
   description="Company details, how IP is assigned to you on payment, how we work on security and AI, and our mutual NDA. What to read before briefing us."
 >
   <Header />
@@ -225,7 +225,7 @@ const compliance = [
           <span class="section-label">Security posture</span>
           <h2 class="section-heading">How we work on security.</h2>
           <p class="section-subheading">
-            This page summarises how we work. Where it describes our obligations, the Master Services Agreement is what binds us. We build security to fit your risk: not gold plated, and not left exposed. An independent penetration test by a specialist firm is your choice, and we can help you arrange it.
+            We build security to fit your risk: not gold plated, and not left exposed. An independent penetration test by a specialist firm is your choice, and we can help you arrange it.
           </p>
         </div>
 
@@ -290,7 +290,7 @@ const compliance = [
       <div class="trust-disclaimer-inner">
         <div class="reveal">
           <p>
-            <strong>An honest note.</strong> Our founder has been shipping software since 2019 and running All Webbed Up as a Sydney marketing and development agency since 2021. AWLabs itself launched in mid 2026 as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned or badges we cannot produce on request. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>, we will tell you yes, no or "not yet" without dressing it up.
+            <strong>An honest note.</strong> Our founder has been shipping software since 2019 and running All Webbed Up as a Sydney marketing and development agency since 2021. AWLabs itself launched in mid 2026 as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned or badges we cannot produce on request. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>. We will tell you yes, no or "not yet" without dressing it up.
           </p>
         </div>
       </div>

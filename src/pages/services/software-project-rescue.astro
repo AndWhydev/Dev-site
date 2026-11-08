@@ -1,0 +1,207 @@
+---
+import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
+
+const data = {
+  metaTitle: "Software Project Rescue & App Takeover Australia | AWLabs",
+  metaDescription: "Developer gone or app half finished? We take over stalled and failed software projects in Australia: secure your accounts, audit the code, then fix or finish.",
+  category: "Project Rescue",
+  serviceName: "Software Project Rescue",
+  nounPhrase: "a software project rescue",
+  involveHeading: "What happens when we take over a stalled or failed project?",
+  whyHeading: "How do we rescue software we didn't write?",
+  techHeading: "Which stacks can we take over?",
+  processHeading: "How does a project takeover run, step by step?",
+  whoHeading: "Which businesses ask us to take over their software?",
+  fitHeading: "Is a rescue the right move for your project?",
+  faqHeading: "Questions people ask when a developer has left",
+  slug: "software-project-rescue",
+  heroHeadline: "Developer Gone, App Half Finished? Find Out What Is Worth Saving",
+  heroTagline: "We take over software projects that have stalled, failed or been abandoned: we help you secure your accounts, tell you plainly what state the code is in, then fix it, finish it or rebuild only the parts that need it.",
+  summaryStatement: "A software project rescue is the takeover of an app or system that another developer or agency left unfinished, unstable or unsupported: the new team secures the code, hosting and accounts, assesses what exists, and then stabilises, finishes or partly rebuilds it under a fixed scope, rather than starting again by default.",
+  description: [
+    "Projects stall for ordinary reasons. A freelancer takes a full time job, an agency closes or loses the developer who knew the system, the budget runs out at 80% done, or the app works in a demo but falls over with real users. Whatever the cause, the owner is left with the same questions: what do we actually have, can anyone else work on it, and how much more will it cost to get it working? A rescue answers those questions in order, and the first answer can be better news than people expect. Code that feels like a write off is sometimes sound underneath, with the real problems concentrated in a few places: deployment, integrations, missing tests or one badly built feature.",
+    "The first job is not code at all. It is making sure you control the things your software depends on. In the first 48 hours we help you check who holds each of these, and in whose name: the code repository; the hosting or cloud account; the domain registrar and DNS; the Apple Developer and Google Play developer accounts; the production database and its backups; API keys and the billing accounts for third party services such as payments, email, SMS and maps; and the design files. Anything held only in a departed developer's personal account is a risk to fix before any development starts, because a lapsed card or a closed account can take a live app offline.",
+    "Then we assess the codebase the way we would assess any system we did not write: senior engineers read the critical paths, automated scans check dependencies and committed secrets, and we try to build and deploy it from scratch, which is the quickest test of whether a project can be handed over at all. The result is a written assessment with three things you can act on: what works and can be kept, what is broken or risky and what it would cost to fix, and a recommendation to fix, finish or rebuild for each part of the system. Sometimes the honest recommendation is a rebuild. More often it is a short stabilisation phase followed by finishing the features that were never completed.",
+    "Getting code and accounts back from a previous developer depends on what was agreed and on that developer's cooperation, so we never promise it. What we can do is tell you exactly what is missing, prepare a precise list of what to request, and work from whatever you do own. Under the Copyright Act 1968, copyright in work made by an employee in the course of employment generally belongs to the employer, while copyright in commissioned work usually stays with the author unless it has been assigned, which is why the contract with your previous developer matters. This is general information, not legal advice; for a dispute, speak to a lawyer, and we can supply the technical facts they need.",
+    "One of our video testimonials is a rescue. Dave runs a construction company and had paid another provider to build a platform for his bookings, invoicing and client follow ups. In his words, \"That platform was a mess.\" We dug into the existing platform rather than starting again, and fixed his invoicing and lead chasing. Dave put it this way: \"I'd written the whole thing off in my head and Andy and the team brought it back to life for me.\" His advice to anyone in the same spot: \"There might be a lot more worth saving than what you think.\" His full story is on our client stories page.",
+  ],
+  benefits: [
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+      title: "Your Accounts Secured First",
+      description: "Before we change a line of code, we map every account your software depends on and who holds it, then help you move each one into your organisation's name with us added as a user. That protects the live app from a lapsed subscription or a former developer closing their account.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
+      title: "A Plain Account of the Code",
+      description: "You get a written assessment a non technical owner can follow and an engineer can verify: what works, what is broken, what is risky, and what each fix would cost. Findings link to the files and scan results behind them, so nothing rests on our opinion alone.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.17-2.83L3 3"/><path d="m15 9 6-6"/></svg>',
+      title: "Fix, Finish or Rebuild, Part by Part",
+      description: "We decide module by module, not all or nothing. Sound parts are kept, fragile parts are stabilised, and only the parts that cost more to repair than to replace are rebuilt. A full rebuild is recommended when the foundations, such as the data model or security, cannot carry the product.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6l-5 3.6 1.9-5.8L4 8.8h6.1z"/></svg>',
+      title: "Apps Built With AI Tools Welcome",
+      description: "Many stalled projects today began in an AI app builder or a no code platform and hit a wall at logins, payments, data or scale. We assess them the same way: keep what is sound, fix insecure defaults and committed secrets, and move the parts that outgrew the tool onto a maintainable stack.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>',
+      title: "A Handover Pack You Keep",
+      description: "Every takeover produces documents that stay with you whoever works on the software next: an inventory of the system and its services, an access map showing who holds what, a risk register, and a run book explaining how to build, deploy, back up and restore it.",
+    },
+    {
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+      title: "No Blame, Straight Answers",
+      description: "Rescue work goes faster without a post mortem on the last team. We describe the code as it is, tell you what we would do and why, and say so when the cheaper option is the right one, including when that means keeping more of the existing work than you expected.",
+    },
+  ],
+  useCases: [],
+  technologies: [
+    "TypeScript / JavaScript", "React / Next.js", "Node.js", "Python", "Flutter / Dart", "PHP",
+    "PostgreSQL / MySQL", "AWS / Azure / Google Cloud", "Vercel", "App Store Connect / Google Play Console",
+    "Gitleaks / TruffleHog", "OWASP Dependency-Check / Snyk", "Syft / CycloneDX (SBOM)",
+  ],
+  process: [
+    {
+      step: "01",
+      title: "Development Consult",
+      description: "A 15 minute phone call, or a Zoom with Andy, to hear what happened, what the software is meant to do and what is at stake. We tell you on the call whether a takeover looks feasible and what we would need to see next. An NDA can be signed before you share anything sensitive.",
+    },
+    {
+      step: "02",
+      title: "Secure Access and Accounts",
+      description: "We work through the account checklist with you: repository, hosting, domains and DNS, app store accounts, database and backups, API keys and third party billing. We list what you hold, what the previous developer holds, and the exact wording of what to request from them.",
+    },
+    {
+      step: "03",
+      title: "Discovery Audit of the Codebase",
+      description: "Senior engineers read the code, scan it, and attempt a clean build and deployment in an environment you control. The Discovery Audit is a paid, fixed fee step, credited in full against the work that follows, and it ends with a written assessment and a fix, finish or rebuild recommendation for each part.",
+    },
+    {
+      step: "04",
+      title: "Schedule of Work",
+      description: "You receive a fixed price Schedule of Work with three options: The Minimum, which stabilises the system and makes it safe to run; The Recommended, which also finishes the features that matter most; and The Complete, which finishes the full original scope with the fragile parts rebuilt. You choose.",
+    },
+    {
+      step: "05",
+      title: "Stabilise, Then Finish",
+      description: "Stabilisation comes first: backups, monitoring, security fixes and a deployment anyone can repeat. Then the agreed features are fixed or finished. Senior engineers lead the work and review every change, and you get progress updates every Tuesday and Friday, Sydney time.",
+    },
+    {
+      step: "06",
+      title: "Launch, Warranty and Care Plan",
+      description: "We release to production or the app stores, hand over the updated documentation and assign the code to you as each part is paid for. A 30 day warranty covers defects in our work after launch, and a month to month Care Plan can keep the system patched and supported from there.",
+    },
+  ],
+  industries: [
+    "Construction & Trades",
+    "Startups & Founders",
+    "Professional Services",
+    "Healthcare & Allied Health",
+    "Retail & Ecommerce",
+    "Logistics & Field Service",
+    "Education & Training",
+    "Enterprise Internal Systems",
+  ],
+  faqs: [
+    {
+      question: "Our developer has stopped responding. What should we do first?",
+      answer: "Secure the accounts before anything else. Check who holds the code repository, the hosting or cloud account, the domain and DNS, the Apple and Google developer accounts, the database and backups, and the billing for paid services. Send the developer a written request for anything held in their name, keep it polite and specific, and keep paying for any service the live app depends on until it is in your name. Then get the code assessed before agreeing to more work with anyone.",
+    },
+    {
+      question: "Can you finish an app that is half built?",
+      answer: "Usually, yes, provided we can get the source code and build it. The Discovery Audit tells us whether the existing work is a sound base to finish on. If it is, finishing is normally faster and cheaper than starting again. If parts of it are not, we say which parts, why, and what replacing them would cost, so you are choosing between real options rather than guesses.",
+    },
+    {
+      question: "Should we fix the existing code or rebuild from scratch?",
+      answer: "Fix it when the foundations are sound and the problems are local: a broken feature, missing tests, a fragile deployment or an outdated library. Rebuild a part when it costs more to repair than to replace, or when the foundations, such as the data model, security model or chosen platform, cannot support what the product needs. A full rebuild is the exception, not the default, and our rewrite vs refactor guide explains how that call is made.",
+    },
+    {
+      question: "Our agency won't hand over the source code. Can you get it for us?",
+      answer: "We can't compel anyone to hand anything over, and whether you are entitled to the code depends on your contract and on who owns the copyright. What we can do is list exactly what to request, explain technically why each item is needed, and supply facts for your lawyer if it becomes a dispute. If the code cannot be recovered, we assess what can be rebuilt from the live app, the database and your designs. This is general information, not legal advice.",
+    },
+    {
+      question: "Can our app be moved to our own Apple and Google accounts?",
+      answer: "Generally, yes. Apple and Google both support transferring an app between developer accounts, and the app keeps its listing, ratings and reviews. On Apple's side, the account holder of the sending account starts the transfer and the receiving account holder accepts it, and TestFlight testing must be turned off first. On Google Play, the current owner submits a transfer request in Play Console and the receiving owner approves it. Both require the current account holder to take part, so it helps to keep that relationship civil.",
+    },
+    {
+      question: "Can you take over an app built with Lovable, Bolt, Replit or another AI builder?",
+      answer: "Yes, as long as the code can be exported or accessed. AI built apps often get a long way quickly and then stall at authentication, payments, permissions, data integrity or hosting. We review them like any other codebase, keep what is sound, fix insecure defaults and exposed keys, and move parts onto a maintainable setup where the original tool is the limit.",
+    },
+    {
+      question: "How much does a software project rescue cost?",
+      answer: "It depends on the size and state of the system, which is why we price it after the Discovery Audit rather than before. The Discovery Audit is a fixed fee, credited in full against the work that follows. You then receive a fixed price Schedule of Work with three options, The Minimum, The Recommended and The Complete, so you can choose between stabilising the system, finishing the most important features, or completing the full scope. We don't publish rates.",
+    },
+    {
+      question: "How long does a takeover take?",
+      answer: "Securing accounts and getting access usually moves as fast as the previous developer responds. The assessment of a single app typically takes one to two weeks once we have the code. Stabilisation and finishing work is timed in your Schedule of Work, because it depends entirely on what the assessment finds.",
+    },
+    {
+      question: "Will you blame the previous developer?",
+      answer: "No. Our job is to describe the code as it is and fix it, not to assign fault. If you need an independent view for a dispute, a separate code audit can document what was delivered against a professional standard, but whether anyone breached an agreement is a question for your lawyer.",
+    },
+    {
+      question: "What if the project turns out not to be worth saving?",
+      answer: "Then we say so in the assessment, with the reasons, and the options are clear: rebuild on a sound base, switch to an off the shelf product that now covers the need, or stop. Even then, the existing work is rarely wasted. The data, designs, business rules and lessons from the first attempt make a second build faster and better scoped.",
+    },
+    {
+      question: "Do you only take over projects you can see in person in Sydney?",
+      answer: "No. We are based in Five Dock, Sydney, and take over projects from anywhere in Australia, working remotely during Sydney business hours. In person sessions in Sydney are easy to arrange when they help, for example to walk through how your team actually uses the system.",
+    },
+  ],
+  comparison: {
+    rightFor: [
+      "Your developer or agency has gone quiet, left or closed, and you need someone to own the software from here",
+      "The app is partly built and the remaining work keeps slipping, with no reliable date in sight",
+      "The software is live but unstable, and nobody can safely deploy a fix",
+      "An app started in an AI builder or no code tool has reached the limit of what that tool can do",
+      "You want a second opinion before paying a final invoice or agreeing to more spend with the current team",
+    ],
+    notRightFor: [
+      "You need an independent report for a dispute, sale or investment and no further development, where a standalone code audit fits better",
+      "The current team is responsive and capable and the issue is scope or budget, which is better solved by talking to them first",
+      "An off the shelf product now does what the custom build was meant to do, in which case switching may be cheaper than rescuing",
+      "You need us to pursue the previous developer for code or money, which is a legal matter for a lawyer, not a developer",
+      "The software is built on a stack we don't work in, which we will tell you at the Development Consult or during the audit",
+    ],
+  },
+  definitions: [
+    {
+      term: "Project takeover",
+      definition: "Transferring responsibility for an existing software system from one developer or agency to another, including the code, the accounts it runs on and the knowledge of how it is built and deployed.",
+    },
+    {
+      term: "Stabilisation",
+      definition: "The first phase of a rescue, which makes the system safe to run and change before new features are added: backups that restore, monitoring, urgent security fixes and a deployment process anyone can repeat.",
+    },
+    {
+      term: "Access map",
+      definition: "A list of every account and service the software depends on, who owns each one, who can log in, and where the billing sits. It shows at a glance which accounts are still held by a former developer.",
+    },
+    {
+      term: "Run book",
+      definition: "Step by step instructions for building, deploying, backing up, restoring and troubleshooting a system, written so that a new engineer can operate it without the original author.",
+    },
+    {
+      term: "App transfer",
+      definition: "Moving an app from one Apple or Google developer account to another. The app keeps its store listing, ratings and reviews, but the current account holder must start or approve the transfer.",
+    },
+    {
+      term: "Copyright assignment",
+      definition: "A written transfer of ownership of copyright, for example in source code, from its author to another party. Without one, a contractor who wrote commissioned code may still own the copyright.",
+    },
+  ],
+  relatedServices: [
+    { title: "Dave's story: a platform brought back to life", href: "/client-stories#story-dave" },
+    { title: "Code Audit & Due Diligence", href: "/services/code-audit" },
+    { title: "Software Maintenance & Support", href: "/services/software-maintenance-support" },
+    { title: "Rewrite vs Refactor Legacy Software", href: "/guides/rewrite-vs-refactor-legacy-software" },
+    { title: "Software Development Contract Checklist", href: "/guides/software-development-contract-checklist" },
+    { title: "How the Discovery Audit Works", href: "/why-audit" },
+  ],
+  heroIcon: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>',
+};
+---
+<ServicePageLayout {...data} />

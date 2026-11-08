@@ -27,7 +27,7 @@ faqs:
   - q: "Does sending personal information through Zapier breach the Privacy Act?"
     a: "Not automatically. The Privacy Act 1988 doesn't ban overseas disclosure, but APP 8 requires reasonable steps to make sure the overseas recipient handles the information consistently with the APPs, and you generally stay accountable. Record which fields flow through the platform, check the vendor's data processing terms, and mention overseas disclosure in your privacy policy."
   - q: "Which is best for AI workflows?"
-    a: "All three now include AI steps and agent features. n8n is popular for AI agents because you can self-host it next to your data and call models in your own cloud account. For anything customer-facing or high-volume, a coded service gives you better evaluation, logging and cost control."
+    a: "All three now include AI steps and agent features. n8n is popular for AI agents because you can self-host it next to your data and call models in your own cloud account. For anything customers see, or anything that runs at high volume, a coded service gives you better evaluation, logging and cost control."
 sources:
   - title: "n8n plans and pricing"
     url: "https://n8n.io/pricing/"
@@ -154,13 +154,13 @@ Zapier edges it for breadth and ease; with 9,000+ apps, it probably has a connec
 | Signal | Why it points to custom |
 |---|---|
 | Monthly platform bill grows faster than revenue | Unit pricing on per-step models scales linearly with volume; compute for a coded service barely moves |
-| The workflow is customer-facing or revenue-critical | You need automated tests, staged releases and rollback |
+| The workflow faces customers or is critical to revenue | You need automated tests, staged releases and rollback |
 | Several people edit workflows and things break | Code gets version control, review and a history of who changed what |
 | Data must stay in Australia under a contract or regulation | Runs wherever you deploy it, with logging you control |
-| Complex logic, long-running jobs or heavy data processing | Platforms impose timeouts and step limits; code doesn't |
+| Complex logic, jobs that run for a long time or heavy data processing | Platforms impose timeouts and step limits; code doesn't |
 | AI steps that need evaluation and cost tracking | A coded service can log prompts, score outputs and cap spend |
 
-Common triggers for moving off a no-code platform are a monthly bill that keeps climbing with volume, workflows nobody can safely change, failures that go unnoticed, and a compliance review asking where data goes. Custom doesn't have to mean all or nothing. A common pattern is to move the two or three critical, high-volume flows to a small coded service in your own cloud account and leave the long tail of internal automations on Zapier or Make, where non-technical staff can keep maintaining them. If you're weighing AI steps, our comparison of [AI agents, chatbots and workflow automation](/guides/ai-agents-vs-chatbots-vs-automation) explains which problems need which tool.
+Common triggers for moving off a no-code platform are a monthly bill that keeps climbing with volume, workflows nobody can safely change, failures that go unnoticed, and a compliance review asking where data goes. Custom doesn't have to mean all or nothing. A common pattern is to move the two or three critical flows with the most volume to a small coded service in your own cloud account and leave the long tail of internal automations on Zapier or Make, where non-technical staff can keep maintaining them. If you're weighing AI steps, our comparison of [AI agents, chatbots and workflow automation](/guides/ai-agents-vs-chatbots-vs-automation) explains which problems need which tool.
 
 ## A quick decision guide
 
@@ -172,4 +172,4 @@ Common triggers for moving off a no-code platform are a monthly bill that keeps 
 
 ## How AWLabs approaches automation
 
-We start by listing every workflow, its volume, the data it touches and what happens when it fails. That inventory usually shows that most flows belong on an off-the-shelf platform and only a few justify code. Where they do, we build them as small services in your own cloud account, in an Australian region where the services you need are available there, with tests and monitoring. The source is assigned to you as it is paid for and handed over with the repository after the final payment. We also deploy and harden self-hosted n8n when that's the better fit. See our [workflow automation service](/services/workflow-automation), or compare the broader trade-off in [low-code vs custom development](/guides/low-code-vs-custom-development).
+We start by listing every workflow, its volume, the data it touches and what happens when it fails. That inventory usually shows that most flows belong on an off-the-shelf platform and only a few justify code. Where they do, we build them as small services in your own cloud account, in an Australian cloud region wherever the services you need are offered onshore, with tests and monitoring. The source is assigned to you as it is paid for and handed over with the repository after the final payment. We also deploy and harden self-hosted n8n when that's the better fit. See our [workflow automation service](/services/workflow-automation), or compare the broader trade-off in [low-code vs custom development](/guides/low-code-vs-custom-development).

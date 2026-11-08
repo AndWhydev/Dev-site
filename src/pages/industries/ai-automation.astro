@@ -6,7 +6,8 @@ const data = {
   metaDescription: 'AI automation services for Australian businesses: custom LLM apps, RAG knowledge bases, AI agents and workflow automation, taken from pilot to production.',
 
   industryName: 'AI & Automation',
-  heroHeadline: 'AI Automation Services That Reach Production',
+  heroHeadline: 'AI automation services that make it to production',
+  heroSecondary: { label: 'AI development cost guide', href: '/guides/ai-development-cost-australia' },
   heroTagline: 'AI automation for Australian businesses: custom AI tools, AI agents, business process automation and ML pipelines for organisations ready to move beyond experimentation into production.',
 
   /* stats array emptied, values were fabricated specific claims ($500M+ TVL, 60% improvements, $2M+ savings, etc.) with no verifiable basis. */
@@ -17,7 +18,7 @@ const data = {
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
       title: 'Stuck in AI Pilot Purgatory',
-      description: "Most Australian enterprises have run an AI pilot. Very few have taken it to production. The gap between a promising proof-of-concept and a reliable, scalable system that colleagues actually use daily is wider than expected, requiring proper data pipelines, evaluation frameworks, guardrails, integrations and change management that pilot projects rarely address.",
+      description: "Many organisations have run an AI pilot; far fewer have taken one to production. The gap between a promising proof of concept and a reliable system that scales and that colleagues actually use daily is wider than expected, requiring proper data pipelines, evaluation frameworks, guardrails, integrations and change management that pilot projects rarely address.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
@@ -26,13 +27,13 @@ const data = {
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-      title: 'Off-the-Shelf AI Limitations',
-      description: "Generic AI tools like Copilot and ChatGPT are broad but shallow. They have no knowledge of your specific products, internal processes, compliance requirements or institutional knowledge. Organisations that need AI to answer questions specific to their business, apply their own policies or reason over their own data quickly hit the ceiling of what general-purpose tools can do.",
+      title: 'Where Generic AI Tools Stop',
+      description: "Generic AI tools like Copilot and ChatGPT are broad but shallow. They have no knowledge of your specific products, internal processes, compliance requirements or institutional knowledge. Organisations that need AI to answer questions specific to their business, apply their own policies or reason over their own data quickly hit the ceiling of what general tools can do.",
     },
     {
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
       title: 'AI Safety and Compliance Concerns',
-      description: "Australian privacy law (Privacy Act 1988), sector-specific regulation in financial services (ASIC), healthcare (My Health Records Act, TGA) and government (ISM) creates real compliance obligations around how AI systems handle personal and sensitive data. Sending data to US-hosted AI APIs raises data residency questions that can block procurement and deployment entirely.",
+      description: "Australian privacy law (Privacy Act 1988) and the rules for each sector, in financial services (ASIC), healthcare (My Health Records Act, TGA) and government (ISM), create real compliance obligations around how AI systems handle personal and sensitive data. Sending data to AI APIs hosted in the US raises data residency questions that can block procurement and deployment entirely.",
     },
   ],
 
@@ -68,7 +69,7 @@ const data = {
   faqs: [
     {
       question: 'What business processes can AI automation handle?',
-      answer: "AI automation works best on repetitive, text-heavy work where a person currently reads, decides and re-keys: triaging inboxes and support tickets, extracting data from invoices, forms and contracts, answering staff questions from policy documents, drafting routine correspondence, and moving information between systems such as your CRM, finance platform and document store. Rules-based steps are usually cheaper to automate with a plain workflow; an AI model earns its place where the input is unstructured or needs judgement. High-stakes decisions should keep a human approval step.",
+      answer: "AI automation works best on repetitive work, heavy on text, where a person currently reads, decides and types the result into another system: triaging inboxes and support tickets, extracting data from invoices, forms and contracts, answering staff questions from policy documents, drafting routine correspondence, and moving information between systems such as your CRM, finance platform and document store. Steps that follow fixed rules are usually cheaper to automate with a plain workflow; an AI model earns its place where the input is unstructured or needs judgement. Decisions with high stakes should keep a human approval step.",
     },
     {
       question: 'How much do AI automation services cost in Australia?',
@@ -76,7 +77,7 @@ const data = {
     },
     {
       question: 'Should we use n8n, Make or Zapier, or build custom AI automation?',
-      answer: "If the process is simple, low volume and the data can leave Australia, a no-code tool like Zapier, Make or n8n is often the right answer, and we will say so. Custom AI automation makes sense when you need Australian data residency, complex logic, integrations those tools don't support well, proper evaluation of AI outputs, or when per-task pricing becomes expensive at volume. n8n can also be self-hosted in an Australian region, which is a useful middle path. Our n8n vs Make vs Zapier comparison guide covers the trade-offs.",
+      answer: "If the process is simple, low volume and the data can leave Australia, a no-code tool like Zapier, Make or n8n is often the right answer, and we will say so. Custom AI automation makes sense when you need Australian data residency, complex logic, integrations those tools don't support well, proper evaluation of AI outputs, or when pricing per task becomes expensive at volume. n8n can also be self-hosted in an Australian region, which is a useful middle path. Our n8n vs Make vs Zapier comparison guide covers the trade-offs.",
     },
     {
       question: 'Can you build AI systems that keep our data in Australia?',
@@ -84,19 +85,19 @@ const data = {
     },
     {
       question: 'What\'s the difference between a RAG system and fine-tuning a model?',
-      answer: "RAG (Retrieval-Augmented Generation) retrieves relevant documents from your knowledge base at query time and passes them to the model as context. It's fast to deploy, keeps knowledge current without retraining, and provides source attribution. Fine-tuning trains a model on your data to change its behaviour or encode domain-specific knowledge into the weights. RAG is usually the right starting point for knowledge-base and Q&A use cases. Fine-tuning makes sense for specialised generation tasks, consistent tone/format requirements or where latency and cost from large context windows is a concern. Often the best systems use both.",
+      answer: "RAG (Retrieval-Augmented Generation) retrieves relevant documents from your knowledge base at query time and passes them to the model as context. It's fast to deploy, keeps knowledge current without retraining, and provides source attribution. Fine-tuning trains a model on your data to change its behaviour or encode knowledge specific to your domain into the weights. RAG is usually the right starting point for knowledge base and Q&A use cases. Fine-tuning makes sense for specialised generation tasks, consistent tone/format requirements or where latency and cost from large context windows is a concern. Often the best systems use both.",
     },
     {
       question: 'How do you evaluate AI system quality before production?',
-      answer: "We build evaluation frameworks as part of every AI project, not as an afterthought. This means defining ground-truth test sets before building, running automated evaluation across key quality dimensions (accuracy, groundedness, safety, helpfulness), and establishing human review workflows for ongoing quality monitoring. For RAG systems we specifically measure retrieval precision and recall, answer faithfulness and citation accuracy. We set quality gates that must be met before production deployment and instrument production systems to catch degradation.",
+      answer: "We build evaluation frameworks as part of every AI project, not as an afterthought. This means defining test sets with known correct answers before building, running automated evaluation across key quality dimensions (accuracy, groundedness, safety, helpfulness), and establishing human review workflows for ongoing quality monitoring. For RAG systems we specifically measure retrieval precision and recall, answer faithfulness and citation accuracy. We set quality gates that must be met before production deployment and instrument production systems to catch degradation.",
     },
     {
-      question: 'We\'ve already run an AI pilot that didn\'t go to production, can you help rescue it?',
-      answer: "Yes. We start with a candid assessment of why the pilot stalled, usually it's one of: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
+      question: 'We\'ve already run an AI pilot that didn\'t go to production. Can you help rescue it?',
+      answer: "Yes. We start with a candid assessment of why the pilot stalled. Usually it's one of these: data quality issues, lack of evaluation framework making it impossible to know if the system is good enough, missing integrations with production systems, or governance/approval blockers. We document what the pilot got right, diagnose the blockers and propose the minimum viable path to production. We're direct about whether the existing work is salvageable or needs to be rebuilt.",
     },
     {
       question: 'How do you handle hallucinations in production AI systems?',
-      answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface low-confidence or user-rejected responses for review and improvement. No AI system is hallucination-free, the goal is catching and containing errors before they cause downstream harm.",
+      answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface responses with low confidence or that users rejected for review and improvement. No AI system is free of hallucinations. The goal is catching and containing errors before they cause downstream harm.",
     },
   ],
 

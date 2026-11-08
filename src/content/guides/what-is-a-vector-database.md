@@ -180,4 +180,4 @@ A vector database is one component. In a [RAG system](/guides/what-is-rag) it's 
 
 ## How AWLabs approaches vector storage
 
-Our default is PostgreSQL with pgvector, in an Australian cloud region where the services you need are available there, with hybrid keyword and vector search, permission filters applied in the query, and the embedding model version stored against every vector. We move to a dedicated engine only when measured load or filtering needs justify the extra system. See our [database architecture](/services/database-architecture) and [RAG knowledge base](/services/rag-knowledge-base) services.
+Our default is PostgreSQL with pgvector, in an Australian cloud region wherever the services you need are offered onshore, with hybrid keyword and vector search, permission filters applied in the query, and the embedding model version stored against every vector. We move to a dedicated engine only when measured load or filtering needs justify the extra system. See our [database architecture](/services/database-architecture) and [RAG knowledge base](/services/rag-knowledge-base) services.

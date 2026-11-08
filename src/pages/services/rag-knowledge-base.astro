@@ -3,16 +3,25 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: 'RAG Development Services Australia | AWLabs',
-  metaDescription: 'RAG development services in Australia: AI knowledge bases that answer from your own documents, with citations, access control and the option of Australian hosting.',
+  metaDescription: "RAG development in Australia: AI knowledge bases that answer from your own documents, with citations, access control and the option of Australian hosting.",
   category: 'AI & Data',
   serviceName: 'RAG Knowledge Base',
+  nounPhrase: "a RAG knowledge base",
+  involveHeading: "What does building a RAG knowledge base involve?",
+  whyHeading: "Why build your knowledge base with AWLabs?",
+  whoHeading: "Who gets the most from a RAG knowledge base?",
+  fitHeading: "Is a RAG knowledge base right for you?",
+  techHeading: "What technologies do we use for RAG?",
+  faqHeading: "Common questions about RAG knowledge bases",
   slug: 'rag-knowledge-base',
   heroHeadline: 'Answers Grounded in Your Documents, With Citations You Can Check',
   heroTagline: 'RAG development services for Australian organisations: retrieval augmented generation that connects a language model to your own knowledge, so answers are sourced from your content, not invented.',
   summaryStatement: 'A RAG knowledge base is an AI knowledge base that retrieves relevant passages from an organisation\'s own documents and supplies them to a language model at query time, so answers are grounded in source material the user can verify rather than generated from the model\'s general training alone. RAG development services design, build and tune that retrieval pipeline so staff and customers can chat with your documents and get cited answers.',
   description: [
     'A language model on its own knows nothing about your contracts, your policies, your product documentation or your support history. Ask it a question about your business and it will either decline or, worse, invent a plausible sounding answer. Retrieval augmented generation solves this by separating knowledge from reasoning: your documents are ingested, broken into passages, converted into vector embeddings and stored in a search index, and at question time the most relevant passages are retrieved and handed to the model as context. The model then answers using that supplied material, and cites where each claim came from. This is the difference between an assistant that guesses and one that reads the right page of the right document before it replies.',
-    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning. Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add reranking to push the genuinely relevant passages to the top. We enforce access control so the system is designed to retrieve only documents a given user is permitted to see, and we test that before launch: a finance policy should not surface in a customer facing assistant. Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We can host all of this in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
+    'Building a RAG system that works in production is mostly about the parts people do not see in a demo. The ingestion pipeline has to handle the formats your knowledge actually lives in, PDFs, Word documents, Confluence and SharePoint pages, intranet content, support tickets, and keep them current as they change, because a knowledge base that answers from last quarter\'s policy is a liability. Chunking strategy determines whether retrieval surfaces a coherent passage or a fragment that loses its meaning.',
+    'Retrieval quality is the single biggest driver of answer quality, so we tune embeddings, combine vector search with keyword search where it helps, and add reranking to push the genuinely relevant passages to the top. We enforce access control so the system is designed to retrieve only documents a given user is permitted to see, and we test that before launch: a finance policy should not surface in a customer facing assistant.',
+    'Every answer is returned with citations linking back to the source, which lets users verify claims and sharply reduces the impact of hallucination because the model is constrained to the material in front of it. We can host all of this in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work, and we measure retrieval and answer quality with an evaluation set so the system can be improved deliberately rather than tweaked on instinct.',
   ],
   benefits: [
     {
@@ -133,7 +142,7 @@ const data = {
     },
     {
       question: 'How much does RAG development cost?',
-      answer: 'It depends mainly on the number and formats of your sources, whether retrieval must respect document permissions, the systems it has to integrate with, and how rigorously answers need to be evaluated. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. Running costs (model usage, vector store and hosting) are modelled before build. Our guide to RAG knowledge base cost sets out typical Australian market ranges and what drives them.',
+      answer: 'It depends mainly on the number and formats of your sources, whether retrieval must respect document permissions, the systems it has to integrate with, and how rigorously answers need to be evaluated. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. Running costs (model usage, vector store and hosting) are modelled before build. Our guide to RAG knowledge base cost sets out typical Australian market ranges and what drives them.',
     },
     {
       question: 'Do we need RAG or fine tuning?',

@@ -18,7 +18,7 @@ faqs:
   - q: "How many AI development companies should I shortlist?"
     a: "Three is usually enough. Fewer and you have nothing to compare against; more and you spend weeks in meetings. Send all three the same written brief and the same list of questions so the answers are comparable."
   - q: "Which is the best AI development company in Australia?"
-    a: "There isn't one answer, because the best firm for a customer-facing chatbot may be the wrong one for document processing in a regulated industry. Use rankings and directories to build a longlist, then score each firm on the evidence in this guide: shipped systems, an evaluation method, a data flow you understand, named engineers and honest running costs. The firm that scores highest on evidence is the best one for you."
+    a: "There isn't one answer, because the best firm for a chatbot for customers may be the wrong one for document processing in a regulated industry. Use rankings and directories to build a longlist, then score each firm on the evidence in this guide: shipped systems, an evaluation method, a data flow you understand, named engineers and honest running costs. The firm that scores highest on evidence is the best one for you."
   - q: "Do I need an AI consultant or an AI development company?"
     a: "An AI consultant helps you decide what to do: which use cases are worth it, whether your data is ready and what the risks are. An AI development company builds and runs the system. Some firms do both. If you don't yet know which problem to solve first, start with a readiness assessment or short discovery, then hire for the build."
   - q: "Should I choose a firm with a Microsoft, AWS or Google partner badge?"
@@ -162,7 +162,7 @@ Request this pack from each finalist:
 | Data residency | Model availability in Australian cloud regions varies by model and changes often. | Is the proposed model available in Sydney or Melbourne at the time of writing? What's the fallback? |
 | IP ownership | The developer owns copyright in code it writes unless the contract assigns it to you. | Does the contract assign IP on payment or completion? Can we see the code while it is built, and when do the repository and accounts move into our name? |
 | Responsible AI practice | The National AI Centre's Guidance for AI Adoption sets out six essential practices, including accountability, testing and human oversight. | How does your delivery process support each of the six practices? |
-| Working hours | Incidents and change requests happen in AEST business hours. | Who answers at 10am Sydney time on a Tuesday? |
+| Working hours | Incidents and change requests happen during business hours in Sydney time. | Who answers at 10am Sydney time on a Tuesday? |
 
 For deeper background, see our guides on [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) and [using personal information in AI systems](/guides/privacy-act-and-ai).
 
@@ -182,7 +182,7 @@ For deeper background, see our guides on [data residency vs data sovereignty](/g
 
 ## How should you run the selection?
 
-**Treat it as a short, structured process, and let a paid discovery phase be the final test.** It takes four to eight weeks for most mid-sized organisations.
+**Treat it as a short, structured process, and let a paid discovery phase be the final test.** It takes four to eight weeks for most midsize organisations.
 
 1. **Write a two-page brief.** The problem, who uses the system, the systems it must connect to, data sensitivity, constraints and budget range.
 2. **Build a shortlist of three.** Referrals from peers, industry associations and directories such as the National AI Centre's AI Directory are reasonable starting points. A directory listing is not a vetting process.
@@ -194,6 +194,6 @@ For deeper background, see our guides on [data residency vs data sovereignty](/g
 
 ## How AWLabs fits this process
 
-We'd rather you ran this process on us than skipped it. Our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership of developers and founders. We don't hold ISO 27001, IRAP or vendor partner tiers, and our case studies page shows about a third of what we have built, because most clients prefer not to have their product shared online. Ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
+We'd rather you ran this process on us than skipped it. Our founder Andy Taleb has been building software professionally since 2019 and running the Sydney agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership of developers and founders. We don't hold ISO 27001, IRAP or vendor partner tiers, and our case studies page shows only part of what we have built, because most clients prefer not to have their product shared online. Ask us for the same walkthroughs, code samples and references you'd ask anyone else, and weigh what we can show.
 
-How we work: every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive one fixed price for the agreed scope. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work AEST hours, and agree an evaluation plan before build. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. If our Discovery Audit shows a licensed tool will do the job, we'll say so. Start with our [AI consulting](/ai-consulting) page or an [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects.
+How we work: the first step is a Discovery Audit, at a fixed fee that is credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. You can see and test the code while we build, each part is assigned to you as it is paid for in full, and the repository, logins and accounts are handed over after the final payment. We sign an NDA before you share anything, work Sydney business hours, and agree an evaluation plan before build. Our default is an Australian cloud region wherever the services you need are offered onshore. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. If our Discovery Audit shows a licensed tool will do the job, we'll say so. Start with our [AI consulting](/ai-consulting) page or an [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects.

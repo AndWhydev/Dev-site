@@ -6,13 +6,20 @@ const data = {
   metaDescription: 'CI/CD and deployment automation services: pipelines, containers, infrastructure as code and zero downtime releases that make shipping to production routine.',
   category: 'Delivery',
   serviceName: 'Deployment',
+  nounPhrase: "deployment work",
+  whyHeading: "Why let AWLabs set up your deployments?",
+  whoHeading: "Which teams need help with deployment?",
+  fitHeading: "Is deployment work right for you now?",
+  techHeading: "What technologies do we use for deployment?",
   slug: 'deployment',
   heroHeadline: 'Make Shipping to Production Boring',
   heroTagline: 'CI/CD pipelines, containerisation, infrastructure as code and zero downtime release strategies that turn deployments from high stakes events into routine, reversible operations.',
   summaryStatement: 'Deployment and release engineering is the practice of automating how software moves from a code change into production safely, repeatably and with the ability to roll back if something goes wrong.',
   description: [
     'The most dangerous moment in a software product is the deploy. When releases are manual, infrequent and poorly understood, every one becomes a tense event performed by the one person who knows the runbook, usually late at night to minimise the blast radius. The irony is that this caution makes things worse: large, infrequent releases bundle dozens of changes together, so when something breaks it is hard to tell which change caused it and harder still to undo. Good release engineering inverts this. By automating the entire path from commit to production and making deploys small, frequent and reversible, we make shipping so routine that it stops being an event at all, which is exactly the point.',
-    'Our deployment practice builds the full delivery chain. We containerise applications with Docker so they run identically on a developer laptop and in production, and orchestrate them on Kubernetes or AWS ECS depending on your scale and operational appetite. Infrastructure is defined as code in Terraform, so your entire environment is version controlled, reviewable and reproducible rather than a hand assembled configuration nobody fully understands. CI/CD pipelines in GitHub Actions or GitLab CI build, test and deploy automatically, with progressive rollout strategies, blue green and canary releases, that expose new versions to a fraction of traffic before committing fully, and automated rollback when health checks fail. We integrate observability through Sentry, Datadog and structured logging so you see the impact of a release in real time, and manage secrets properly so credentials never live in code or chat. The result is a delivery system your team can operate with confidence, where deploying ten times a day is safer than deploying once a month. We also right size the architecture to your actual needs rather than reaching for the most fashionable tooling: not every team needs Kubernetes, and a simpler platform that your engineers can confidently operate often beats a sophisticated one they cannot. This work pairs naturally with our cloud infrastructure practice, which provisions and hardens the platforms these pipelines deploy onto, and with our QA and testing practice, which supplies the automated quality gates these pipelines depend on to deploy safely.',
+    'Our deployment practice builds the full delivery chain. We containerise applications with Docker so they run identically on a developer laptop and in production, and orchestrate them on Kubernetes or AWS ECS depending on your scale and operational appetite. Infrastructure is defined as code in Terraform, so your entire environment is version controlled, reviewable and reproducible rather than a hand assembled configuration nobody fully understands.',
+    'CI/CD pipelines in GitHub Actions or GitLab CI build, test and deploy automatically, with progressive rollout strategies, blue green and canary releases, that expose new versions to a fraction of traffic before committing fully, and automated rollback when health checks fail. We integrate observability through Sentry, Datadog and structured logging so you see the impact of a release in real time, and manage secrets properly so credentials never live in code or chat. The result is a delivery system your team can operate with confidence, where deploying ten times a day is safer than deploying once a month.',
+    'We also right size the architecture to your actual needs rather than reaching for the most fashionable tooling: not every team needs Kubernetes, and a simpler platform that your engineers can confidently operate often beats a sophisticated one they cannot. This work pairs naturally with our cloud infrastructure practice, which provisions and hardens the platforms these pipelines deploy onto, and with our QA and testing practice, which supplies the automated quality gates these pipelines depend on to deploy safely.',
   ],
   benefits: [
     {
@@ -80,7 +87,7 @@ const data = {
     {
       step: '05',
       title: 'Observability & Alerting',
-      duration: 'Week 7 to 9',
+      duration: 'Weeks 7 to 9',
       description: 'We integrate error tracking, metrics, distributed tracing and structured logging through Sentry and Datadog, with deploy markers and alert thresholds. You gain real time visibility into the effect of each release and early warning before users feel a problem.',
     },
     {
@@ -93,7 +100,7 @@ const data = {
   industries: [
     'SaaS & Technology',
     'Financial Services & Fintech',
-    'eCommerce & Retail',
+    'Ecommerce & Retail',
     'Government & Public Sector',
     'Healthcare & Health Tech',
     'Media & Streaming',

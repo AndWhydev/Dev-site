@@ -33,11 +33,11 @@ const phases = [
     duration: 'scoped per build',
     purpose: 'Decide every technical question that would cost more to undo than to debate.',
     deliverables: [
-      'C4-model system diagrams (context, container, component)',
+      'C4 model system diagrams (context, container, component)',
       'Data model and migration strategy',
       'API contracts and integration sequence diagrams',
-      'Authentication, authorisation and audit-log design',
-      'Hosting and infrastructure-as-code plan (Terraform or Pulumi)',
+      'Authentication, authorisation and audit log design',
+      'Hosting and infrastructure as code plan (Terraform or Pulumi)',
     ],
   },
   {
@@ -47,7 +47,7 @@ const phases = [
     purpose: 'Ship working software in vertical slices, behind quality gates, in stages you test and accept.',
     deliverables: [
       'Sprint length is set for each build',
-      'Trunk-based development with preview deploys per branch',
+      'Trunk based development with a preview deploy for every branch',
       'An update every Tuesday and Friday, Sydney time, with access to test the latest work',
       'A working build at the end of every sprint, never a "wait until launch" gap',
       'You can see and test the code while we build; each part is assigned to you as it is paid for in full',
@@ -59,10 +59,10 @@ const phases = [
     duration: 'every deploy',
     purpose: 'Refuse to release anything that has not passed an explicit, automated check.',
     deliverables: [
-      'TypeScript strict + lint must pass, non-negotiable',
+      'TypeScript strict and lint must pass. Not negotiable.',
       'Unit + integration tests must pass at coverage thresholds set at architecture',
       'Playwright visual regression suite must be green',
-      'Hallmark design gate, no AI-slop layouts, no placeholder copy reaches prod',
+      'Hallmark design gate: no AI slop layouts, and no placeholder copy reaches prod',
       'Human review on every release, no matter how small',
       'Security scan (dependency audit + SAST) on every PR',
     ],
@@ -74,8 +74,8 @@ const phases = [
     purpose: 'Get changes to your users frequently and reversibly.',
     deliverables: [
       'Staging environment that mirrors production exactly',
-      'Feature flags for any change that affects user-visible behaviour',
-      'One-click rollback to the previous deploy',
+      'Feature flags for any change to behaviour users can see',
+      'Rollback to the previous deploy in one click',
       'Release notes generated from PRs, sent to your team',
       'Synthetic monitoring on the critical user journey',
     ],
@@ -86,9 +86,9 @@ const phases = [
     duration: 'after the final payment',
     purpose: 'Make sure the project survives our involvement.',
     deliverables: [
-      'Architecture decision records, every non-obvious choice documented',
+      'Architecture decision records: every choice that is not obvious is documented',
       'Runbook for every operational scenario (incident, scale, backup, restore)',
-      'Knowledge-transfer sessions recorded and indexed',
+      'Knowledge transfer sessions recorded and indexed',
       'Full repository, logins and accounts handed over after the final payment',
       'A 30 day warranty from launch: we fix bugs and anything caused by our work at no cost',
       'After that, an optional Care Plan, month to month, priced for your system',
@@ -99,7 +99,7 @@ const phases = [
 const gates = [
   {
     name: 'Type safety',
-    check: 'TypeScript strict mode, no `any`, no implicit-any escapes',
+    check: 'TypeScript strict mode, no `any`, no implicit `any` escapes',
     why: 'Catches a class of runtime bugs at edit time. Cheaper than tests for what it covers.',
   },
   {
@@ -109,12 +109,12 @@ const gates = [
   },
   {
     name: 'Unit + integration',
-    check: 'Vitest / Jest on logic; real-database integration tests on the data layer',
+    check: 'Vitest / Jest on logic; integration tests against a real database on the data layer',
     why: 'Mocked database tests passed and prod broke. We learnt. Integration tests hit a real DB.',
   },
   {
     name: 'Playwright visual',
-    check: 'Per-route screenshot diff against a baseline approved by a human',
+    check: 'Screenshot diff for every route against a baseline approved by a human',
     why: 'Catches the regression that "the test passes but the page is broken" can hide.',
   },
   {
@@ -129,12 +129,12 @@ const gates = [
   },
   {
     name: 'Static analysis',
-    check: 'Semgrep + project-specific rules; secret scanning on every commit',
-    why: 'A leaked API key in commit history is a Friday-night incident. Stop it at the gate.',
+    check: 'Semgrep plus rules specific to the project; secret scanning on every commit',
+    why: 'A leaked API key in commit history is a Friday night incident. Stop it at the gate.',
   },
   {
     name: 'Human review',
-    check: 'A named engineer approves every PR. No auto-merge on any branch that touches prod.',
+    check: 'A named engineer approves every PR. No automatic merge on any branch that touches prod.',
     why: 'Automation accelerates engineering; it does not replace accountability.',
   },
 ];
@@ -148,7 +148,7 @@ const weekly = [
 ---
 
 <Layout
-  title="How We Deliver, Methodology | AWLabs"
+  title="How We Deliver: Our Methodology | AWLabs"
   description="How AWLabs delivers software: discovery, architecture, build, quality gates, release and handover. No slogans, just the artefacts, gates and cadence."
 >
   <Header />
@@ -264,7 +264,7 @@ const weekly = [
             <span class="section-label">Autonomous tooling</span>
             <h2 class="section-heading">Where the speed comes from.</h2>
             <p>
-              We build with the same Claude-powered orchestration system, internally called <strong>Overseer</strong>, that runs our own infrastructure. Multi-worker dispatch, automated governance (rate limiting, anomaly detection, PII redaction), and Telegram escalation for decisions that need a human.
+              We build with the same orchestration system, powered by Claude and internally called <strong>Overseer</strong>, that runs our own infrastructure. Dispatch across many workers, automated governance (rate limiting, anomaly detection, PII redaction), and Telegram escalation for decisions that need a human.
             </p>
             <p>
               The honest version of what it does: it compresses the parts of software delivery that are pattern work, scaffolding, integration wiring, asset generation, test authoring, so the senior engineering hours go into judgement, architecture and review. Every gate still runs. Every release still has a named human approver.
@@ -277,7 +277,7 @@ const weekly = [
             <div class="meth-stack-label">Pipeline composition</div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Dispatch</div>
-              <div class="meth-stack-val">Overseer · multi-worker Claude Code</div>
+              <div class="meth-stack-val">Overseer · Claude Code across many workers</div>
             </div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Governance</div>
@@ -285,22 +285,22 @@ const weekly = [
             </div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Build</div>
-              <div class="meth-stack-val">Trunk-based · preview deploy per branch</div>
+              <div class="meth-stack-val">Trunk based · preview deploy per branch</div>
             </div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Visual QA</div>
-              <div class="meth-stack-val">Playwright · per-route screenshot diff</div>
+              <div class="meth-stack-val">Playwright · screenshot diff per route</div>
             </div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Design gate</div>
-              <div class="meth-stack-val">Hallmark · rubric-graded layout review</div>
+              <div class="meth-stack-val">Hallmark · layout review graded on a rubric</div>
             </div>
             <div class="meth-stack-row">
               <div class="meth-stack-key">Escalation</div>
-              <div class="meth-stack-val">Telegram · CTO-level decisions surfaced live</div>
+              <div class="meth-stack-val">Telegram · CTO level decisions surfaced live</div>
             </div>
             <div class="meth-stack-row">
-              <div class="meth-stack-key">Final sign-off</div>
+              <div class="meth-stack-key">Final sign off</div>
               <div class="meth-stack-val">Named human engineer · on every release</div>
             </div>
           </div>
@@ -320,7 +320,7 @@ const weekly = [
           <div class="esc-row reveal">
             <div class="esc-row-tier">Tier 1</div>
             <div class="esc-row-body">
-              <strong>Sprint risk surfaced.</strong> Engineer-to-engineer. Logged and raised in the next update. Mitigation drafted same day.
+              <strong>Sprint risk surfaced.</strong> Engineer to engineer. Logged and raised in the next update. Mitigation drafted same day.
             </div>
           </div>
           <div class="esc-row reveal">
@@ -332,7 +332,7 @@ const weekly = [
           <div class="esc-row reveal">
             <div class="esc-row-tier">Tier 3</div>
             <div class="esc-row-body">
-              <strong>Material scope, cost or timeline change.</strong> Founder-to-founder. Written change order with revised cost and date before we touch the work.
+              <strong>Material scope, cost or timeline change.</strong> Founder to founder. Written change order with revised cost and date before we touch the work.
             </div>
           </div>
           <div class="esc-row reveal">

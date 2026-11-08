@@ -23,7 +23,7 @@ faqs:
   - q: "Is MCP secure?"
     a: "The protocol includes an authorisation model based on OAuth and publishes security best practices, but a connection is only as safe as the server and the permissions behind it. A malicious or careless server can leak data or take harmful actions. Use servers from trusted sources, give each the narrowest access, require approval for consequential tool calls, and log everything."
   - q: "How much does MCP cost?"
-    a: "The protocol itself is free: the specification and official SDKs are open source. The costs are in building, hosting and securing an MCP server for your system, plus the usage costs of the AI application calling it. A thin server over a well-documented API is a small job; one that needs new APIs, per-user permissions and audit logging is a larger one."
+    a: "The protocol itself is free: the specification and official SDKs are open source. The costs are in building, hosting and securing an MCP server for your system, plus the usage costs of the AI application calling it. A thin server over a clearly documented API is a small job; one that needs new APIs, per-user permissions and audit logging is a larger one."
   - q: "What is the difference between an MCP server and an MCP client?"
     a: "The server exposes a system, such as a CRM or file store, as tools, resources and prompts. The client lives inside the AI application (the host) and holds the connection to one server, discovering what it offers and sending the model's requests to it. One host usually runs several clients, one per server."
   - q: "Should we build an MCP server for our product or internal systems?"
@@ -188,4 +188,4 @@ Skip it when a single application needs one or two functions. Plain tool calling
 
 ## How AWLabs builds MCP servers
 
-We build remote MCP servers over your existing APIs with OAuth, per-user permissions enforced by the underlying system, narrow tools with validated inputs, read-only defaults, and full call logging, hosted in an Australian cloud region where the services you need are available there. We test them with the AI applications your staff actually use. See [MCP server development](/services/mcp-server-development), and [AI agent development](/services/ai-agent-development) for the agents that use them.
+We build remote MCP servers over your existing APIs with OAuth, per-user permissions enforced by the underlying system, narrow tools with validated inputs, read-only defaults, and full call logging, hosted in an Australian cloud region wherever the services you need are offered onshore. We test them with the AI applications your staff actually use. See [MCP server development](/services/mcp-server-development), and [AI agent development](/services/ai-agent-development) for the agents that use them.

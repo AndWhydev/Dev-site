@@ -1,7 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const serviceGroups = [
+export const serviceGroups = [
   {
     label: 'AI & Data',
     items: [
@@ -54,6 +54,7 @@ const serviceGroups = [
     items: [
       { title: 'Code Audit & Due Diligence', href: '/services/code-audit' },
       { title: 'Maintenance & Support', href: '/services/software-maintenance-support' },
+      { title: 'Project Rescue & Takeover', href: '/services/software-project-rescue' },
       { title: 'QA & Testing', href: '/services/qa-testing' },
       { title: 'Deployment', href: '/services/deployment' },
     ],
@@ -72,7 +73,7 @@ const industries = [
   { title: 'Financial Services', href: '/industries/finance-fintech' },
   { title: 'Healthcare', href: '/industries/healthcare' },
   { title: 'Logistics & Transport', href: '/industries/logistics-transport' },
-  { title: 'Retail & E-Commerce', href: '/industries/retail-ecommerce' },
+  { title: 'Retail & Ecommerce', href: '/industries/retail-ecommerce' },
   { title: 'Education', href: '/industries/education' },
   { title: 'Government', href: '/industries/government-enterprise' },
   { title: 'Construction', href: '/industries/construction-trades' },

@@ -3,16 +3,23 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: "Node.js & Python Backend Development Australia | AWLabs",
-  metaDescription: "Backend development services from Sydney: Node.js and Python developers building APIs, background jobs, queues and integrations, with Australian hosting available.",
+  metaDescription: "Backend development from Sydney: Node.js and Python developers building APIs, background jobs, queues and integrations, with Australian hosting available.",
   category: "Backend",
   serviceName: "Node.js & Python Backends",
+  nounPhrase: "Node.js and Python backends",
+  involveHeading: "What does a Node.js or Python backend build involve?",
+  whyHeading: "Why have AWLabs build your backend?",
+  whoHeading: "Who are Node.js and Python backends for?",
+  fitHeading: "Is a custom backend right for you?",
+  techHeading: "What technologies do we use for backend work?",
   slug: "backend-development",
   heroHeadline: "Backends That Keep Working When Traffic, Data and Integrations Grow",
   heroTagline: "Backend development in Node.js and Python: services, background jobs, queues and integrations built by senior engineers, with the unglamorous parts done properly: retries, idempotency, observability and upgrades.",
   summaryStatement: "Backend development is the engineering of the server side part of an application: the business logic, APIs, background jobs, queues, data access and third party integrations that run out of sight of users; Node.js and Python are the two most common runtimes for it, Node.js favoured for high concurrency web services in TypeScript and Python for data heavy, machine learning and AI workloads.",
   description: [
     "Users see the screens, but the backend decides whether an application is trustworthy. It is where orders are priced, permissions are checked, payments are reconciled, emails are sent, files are processed and data from other systems is pulled in and pushed out. Most backend failures are not dramatic. A payment webhook is processed twice and a customer is charged twice. A nightly import silently skips rows. A report that took two seconds with a thousand customers takes two minutes with fifty thousand. An integration partner changes a field and nothing alerts anyone for a week. Good backend engineering is mostly about designing for these cases before they happen, and it is the part of a system where senior experience pays for itself most clearly.",
-    "Our backend developers work in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both. Around the language choice, we apply the same engineering discipline: long running and failure prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead letter queues so a partner outage does not lose data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long term releases, and deliver the code with tests, documentation and runbooks so your team can run it. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment.",
+    "Our backend developers work in Node.js with TypeScript and in Python, and we choose between them on the merits of your workload and team, not habit. Node.js suits APIs and real time services handling many concurrent connections, and lets a TypeScript team share types and skills across front end and back end. Python suits data processing, scientific and machine learning libraries, and AI pipelines, and many systems sensibly use both.",
+    "Around the language choice, we apply the same engineering discipline: long running and failure prone work is moved off the request path into background jobs and queues; every job and webhook handler is idempotent so retries are safe; integrations are wrapped with timeouts, retries with backoff and dead letter queues so a partner outage does not lose data; database access is designed with indexes and query plans in mind; and structured logs, metrics and traces are in place from the first deploy. We profile before optimising, keep runtimes on supported long term releases, and deliver the code with tests, documentation and runbooks so your team can run it. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment.",
   ],
   benefits: [
     {
@@ -131,7 +138,7 @@ const data = {
     },
     {
       question: "How much does backend development cost?",
-      answer: "Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Hosting and third party service fees are separate.",
+      answer: "Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. Hosting and third party service fees are separate.",
     },
     {
       question: "Which frameworks do you use for Node.js and Python backends?",

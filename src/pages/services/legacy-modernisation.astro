@@ -70,14 +70,14 @@ const data = {
     {
       step: '02',
       title: 'Migration Strategy & Roadmap Design',
-      description: 'Based on the assessment, we design the migration strategy: how the system will be decomposed, in what sequence, using which technical approach (strangler fig, parallel run, lift and shift to cloud, or full rewrite of specific modules). We walk you through it over two strategy sessions, and you receive a fixed price Schedule of Work for an agreed scope, with milestones, dependencies and risks your leadership team can evaluate and approve.',
+      description: 'Based on the assessment, we design the migration strategy: how the system will be decomposed, in what sequence, using which technical approach (strangler fig, parallel run, lift and shift to cloud, or full rewrite of specific modules). We walk you through it over two strategy sessions, and you receive a fixed price Schedule of Work with three options (The Minimum, The Recommended and The Complete), each with milestones, dependencies and risks your leadership team can evaluate and approve.',
       duration: 'Strategy sessions',
     },
     {
       step: '03',
       title: 'Foundation & Infrastructure Setup',
       description: 'Before migrating any functionality, we set up the target infrastructure: cloud environments, CI/CD pipelines, monitoring and observability tooling, and the integration layer (typically an API gateway or event bus) that allows the legacy system and new services to coexist and communicate during the transition period.',
-      duration: 'Week 4 to 6',
+      duration: 'Weeks 4 to 6',
     },
     {
       step: '04',
@@ -145,7 +145,7 @@ const data = {
     },
     {
       question: 'How much does legacy system modernisation cost?',
-      answer: 'Cost depends on the size and condition of the codebase, how much data has to migrate, the number of integrations, and whether the system is being rehosted, refactored or rebuilt. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Our legacy modernisation cost guide explains typical Australian market ranges.',
+      answer: 'Cost depends on the size and condition of the codebase, how much data has to migrate, the number of integrations, and whether the system is being rehosted, refactored or rebuilt. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. Our legacy modernisation cost guide explains typical Australian market ranges.',
     },
     {
       question: 'Should we rewrite or refactor our legacy application?',
@@ -153,6 +153,10 @@ const data = {
     },
   ],
   serviceName: 'Legacy Modernisation',
+  nounPhrase: "legacy modernisation",
+  whyHeading: "Why modernise your legacy systems with AWLabs?",
+  whoHeading: "Which organisations need legacy modernisation?",
+  fitHeading: "Is modernisation the right call for your system?",
   slug: 'legacy-modernisation',
   summaryStatement: 'Legacy system modernisation (legacy application modernization, in US spelling) is the phased replacement of ageing business critical systems using incremental patterns such as the Strangler Fig, running old and new in parallel so technical debt is eliminated and capabilities are unlocked without a high risk big bang cutover.',
   comparison: {
@@ -184,6 +188,7 @@ const data = {
     { title: 'Database Architecture & Optimisation', href: '/services/database-architecture' },
     { title: 'Workflow Automation & Integration', href: '/services/workflow-automation' },
     { title: 'Cybersecurity Consulting', href: '/services/cybersecurity' },
+    { title: 'Software Project Rescue & Takeover', href: '/services/software-project-rescue' },
   ],
 };
 ---

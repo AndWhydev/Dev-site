@@ -3,16 +3,21 @@ import ServicePageLayout from '../../layouts/ServicePageLayout.astro';
 
 const data = {
   metaTitle: "Software Maintenance & Support Services Australia | AWLabs",
-  metaDescription: "Software maintenance and support services from Sydney: month to month Care Plans with response targets, security patching, upgrades, monitoring and vendor handover.",
+  metaDescription: "Software maintenance and support from Sydney: month to month Care Plans with response targets, security patching, upgrades, monitoring and vendor handover.",
   category: "Support",
   serviceName: "Software Maintenance & Support",
+  nounPhrase: "software maintenance and support",
+  whyHeading: "Why choose AWLabs to look after your software?",
+  whoHeading: "Which businesses need maintenance and support?",
+  fitHeading: "Is a Care Plan right for you?",
   slug: "software-maintenance-support",
   heroHeadline: "Keep Your Software Patched, Monitored and Moving Forward",
   heroTagline: "Software maintenance and support through month to month Care Plans with written response targets, security patching, dependency upgrades and monitoring, for software we built or software another vendor left behind.",
   summaryStatement: "Software maintenance and support is the ongoing work of keeping a live application secure, working and current after launch: applying security patches, upgrading dependencies and runtimes before they reach end of life, monitoring for errors and outages, fixing defects and making small improvements, under an agreement that sets out response targets, covered hours and what happens outside business hours.",
   description: [
     "Software does not stay finished. The day an application goes live, its dependencies start ageing. Open source libraries publish security fixes, cloud providers deprecate services, browsers and mobile operating systems change behaviour, and the runtime underneath the code has a published end of life date. At the time of writing (September 2026), for example, Node.js says each long term support release typically receives critical fixes for a total of 30 months, and each Python version receives bugfix and then security releases for about five years. An application nobody touches for two years is not stable; it is quietly accumulating vulnerabilities and upgrade work that gets harder the longer it waits. A widely used industry rule of thumb is that maintenance costs around 15 to 20% of the original build each year, and most of that is not new features. It is the work of standing still safely.",
-    "Our Care Plans make that work predictable. A Care Plan is month to month and priced for each client after we have looked at the system. It sets a written response target for each severity level, a regular patch and upgrade cycle, and monitoring designed to tell us about errors and outages before your users do. Software we build comes with a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. A Care Plan picks up from there. We track your dependencies for published vulnerabilities, apply urgent security fixes out of cycle, and plan runtime and framework upgrades well ahead of their end of life dates rather than in a rush afterwards. Where the plan allows, time not needed for incidents and patching goes to the backlog of small improvements you actually want. We also take over software built by other vendors or by a departed developer: we start with a structured handover and a health check, so you know what you have, what is at risk and what it will take to keep running, before you commit to anything ongoing. The code, repository and cloud accounts stay in your name, so you are not locked in to us either.",
+    "Our Care Plans make that work predictable. A Care Plan is month to month and priced for each client after we have looked at the system. It sets a written response target for each severity level, a regular patch and upgrade cycle, and monitoring designed to tell us about errors and outages before your users do. Software we build comes with a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. A Care Plan picks up from there. We track your dependencies for published vulnerabilities, apply urgent security fixes out of cycle, and plan runtime and framework upgrades well ahead of their end of life dates rather than in a rush afterwards.",
+    "Where the plan allows, time not needed for incidents and patching goes to the backlog of small improvements you actually want. We also take over software built by other vendors or by a departed developer: we start with a structured handover and a health check, so you know what you have, what is at risk and what it will take to keep running, before you commit to anything ongoing. The code, repository and cloud accounts stay in your name, so you are not locked in to us either.",
   ],
   benefits: [
     {
@@ -191,6 +196,7 @@ const data = {
   relatedServices: [
     { title: "Software Maintenance Cost Guide", href: "/guides/software-maintenance-cost" },
     { title: "Code Audit & Due Diligence", href: "/services/code-audit" },
+    { title: "Taking Over a Stalled Project", href: "/services/software-project-rescue" },
     { title: "Cloud Infrastructure & DevOps", href: "/services/cloud-infrastructure" },
     { title: "Deployment & Release Engineering", href: "/services/deployment" },
     { title: "Cybersecurity", href: "/services/cybersecurity" },

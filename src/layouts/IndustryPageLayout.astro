@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import RelatedReading from '../components/RelatedReading.astro';
+import { industryIcon } from '../pages/industries/_icons';
 
 export interface PainPoint {
   icon: string;
@@ -48,6 +49,8 @@ interface Props {
   faqs: FAQ[];
   ctaHeadline: string;
   ctaDescription: string;
+  /** Secondary hero link, e.g. the matching solution guide. */
+  heroSecondary?: { label: string; href: string };
 }
 
 const {
@@ -64,46 +67,101 @@ const {
   faqs,
   ctaHeadline,
   ctaDescription,
+  heroSecondary,
 } = Astro.props;
+
+const siteUrl = 'https://www.awlabs.com.au';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const slug = Astro.url.pathname.replace(/\/$/, '').split('/').pop() ?? '';
+const icon = industryIcon(slug, 22);
+const secondary = heroSecondary ?? { label: 'View our services', href: '/services' };
+const keyBuilds = solutions.slice(0, 5);
+
+const crumbs = [
+  { name: 'Home', item: `${siteUrl}/` },
+  { name: 'Industries', item: `${siteUrl}/industries` },
+  { name: industryName, item: pageUrl },
+];
+
+const extraSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.item })),
+  },
+  ...(faqs.length
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: { '@type': 'Answer', text: f.answer },
+          })),
+        },
+      ]
+    : []),
+];
 ---
 
-<Layout title={metaTitle} description={metaDescription}>
+<Layout title={metaTitle} description={metaDescription} extraSchema={extraSchema}>
   <Header />
   <main>
     <!-- Hero -->
     <section class="ind-hero">
       <div class="ind-hero-bg" aria-hidden="true"></div>
       <div class="ind-hero-inner">
-        <div class="reveal">
-          <div class="ind-breadcrumb">
+        <div class="ind-hero-copy reveal">
+          <nav class="ind-breadcrumb" aria-label="Breadcrumb">
             <a href="/">Home</a>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <a href="/industries">Industries</a>
-            <span>/</span>
-            <span>{industryName}</span>
-          </div>
-          <div class="ind-pill">{industryName}</div>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{industryName}</span>
+          </nav>
+          <div class="ind-pill">{icon && <span class="ind-pill-icon" set:html={icon} />}{industryName}</div>
           <h1 class="ind-hero-title">{heroHeadline}</h1>
           <p class="ind-hero-tagline">{heroTagline}</p>
           <div class="ind-hero-ctas">
             <a href="/contact" class="btn-primary">
-              Talk to an Expert
+              Book a Development Consult
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/services" class="btn-outline">View Our Services</a>
+            <a href={secondary.href} class="btn-outline">{secondary.label}</a>
           </div>
         </div>
-      </div>
-      <!-- Industry stats bar -->
-      <div class="ind-stats-bar">
-        <div class="ind-stats-inner">
-          {stats.map((s) => (
-            <div class="ind-stat">
-              <span class="ind-stat-val">{s.value}</span>
-              <span class="ind-stat-lbl">{s.label}</span>
-            </div>
-          ))}
-        </div>
+
+        <aside class="ind-facts reveal-right stagger-2" aria-label={`What we build for ${industryName}`}>
+          <p class="ind-facts-label">What we build</p>
+          <ul class="ind-facts-list">
+            {keyBuilds.map((s) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+          {stats.length > 0 && (
+            <>
+              <p class="ind-facts-label ind-facts-label--sub">Standards we design to</p>
+              <dl class="ind-facts-standards">
+                {stats.map((s) => (
+                  <div>
+                    <dt>{s.value}</dt>
+                    <dd>{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
+          {solutions.length > keyBuilds.length && (
+            <a href="#what-we-build" class="ind-facts-more">
+              See all {solutions.length} areas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          )}
+        </aside>
       </div>
     </section>
 
@@ -130,17 +188,17 @@ const {
     </section>
 
     <!-- Solutions -->
-    <section class="ind-solutions">
+    <section class="ind-solutions" id="what-we-build">
       <div class="ind-inner">
         <div class="ind-solutions-grid">
           <div class="reveal-left">
             <span class="section-label">Our Solutions</span>
             <h2 class="section-heading">What We Build For {industryName}</h2>
             <p class="section-subheading" style="max-width: 480px;">
-              Purpose-built software and technology solutions designed around the specific needs, compliance requirements and workflows of organisations in {industryName}.
+              Software built around the needs, compliance requirements and workflows of organisations in {industryName}.
             </p>
             <a href="/contact" class="btn-primary" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-              Discuss Your Project
+              Book a Development Consult
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -203,7 +261,7 @@ const {
       <div class="ind-inner">
         <div class="reveal">
           <span class="section-label">Common Questions</span>
-          <h2 class="section-heading">FAQ, {industryName}</h2>
+          <h2 class="section-heading">{industryName} FAQs</h2>
         </div>
         <div class="faq-list">
           {faqs.map((faq, i) => (
@@ -267,7 +325,13 @@ const {
     padding: 0 2rem 5rem;
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: center;
   }
+
+  .ind-hero-copy { min-width: 0; }
 
   .ind-breadcrumb {
     display: flex;
@@ -303,13 +367,15 @@ const {
     letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
   }
+  .ind-pill-icon { display: inline-flex; }
 
   .ind-hero-title {
     font-family: 'Sora', sans-serif;
-    font-size: clamp(1.75rem, 5.5vw, 4rem);
+    font-size: clamp(1.75rem, 4.6vw, 3.5rem);
     font-weight: 800;
     color: white;
     line-height: 1.08;
+    text-wrap: balance;
     letter-spacing: -0.03em;
     margin-bottom: 1.25rem;
     max-width: 780px;
@@ -330,49 +396,76 @@ const {
     flex-wrap: wrap;
   }
 
-  .ind-stats-bar {
-    background: rgba(255,255,255,0.02);
-    border-top: 1px solid #1e2d28;
+  /* Hero key facts card, built from the page's own solutions and standards */
+  .ind-facts {
+    background: rgba(15,22,20,0.85);
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 24px 60px -30px rgba(0,0,0,0.6);
   }
 
-  .ind-stats-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .ind-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.75rem 1rem;
-    border-right: 1px solid #1e2d28;
-  }
-
-  .ind-stat:last-child {
-    border-right: none;
-  }
-
-  .ind-stat-val {
-    font-family: 'Sora', sans-serif;
-    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
-    font-weight: 800;
+  .ind-facts-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #0d9373;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-    text-align: center;
-    text-wrap: balance;
+    margin: 0 0 1rem;
   }
+  .ind-facts-label--sub { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #1e2d28; }
 
-  .ind-stat-lbl {
+  .ind-facts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .ind-facts-list li {
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: #c9d6d1;
+  }
+  .ind-facts-list svg { flex: none; margin-top: 0.2rem; color: #0d9373; }
+
+  .ind-facts-standards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem 1rem;
+    margin: 0;
+  }
+  .ind-facts-standards dt {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: white;
+  }
+  .ind-facts-standards dd {
+    margin: 0.125rem 0 0;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
+    line-height: 1.4;
     color: #8aa09a;
-    text-align: center;
-    margin-top: 0.25rem;
   }
+
+  .ind-facts-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-top: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0d9373;
+    text-decoration: none;
+  }
+  .ind-facts-more:hover { color: #12b38c; }
 
   /* Inner container */
   .ind-inner {
@@ -717,14 +810,6 @@ const {
 
   /* Responsive */
   @media (max-width: 1024px) {
-    .ind-stats-inner {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .ind-stat:nth-child(2) { border-right: none; }
-    .ind-stat:nth-child(1),
-    .ind-stat:nth-child(2) {
-      border-bottom: 1px solid #1e2d28;
-    }
     .pain-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -742,14 +827,17 @@ const {
 
   @media (max-width: 640px) {
     .ind-hero { padding-top: 7rem; }
+    .ind-facts { padding: 1.375rem; }
+    .ind-facts-standards { grid-template-columns: 1fr; }
     .pain-grid { grid-template-columns: 1fr; }
     .ind-services-grid { grid-template-columns: 1fr; }
   }
 
   /* Tablet and phone: centre the hero and section intros (see ServicePageLayout). */
   @media (max-width: 1024px) {
-    .ind-hero-inner { text-align: center; }
+    .ind-hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
     .ind-hero-inner > * { margin-left: auto; margin-right: auto; }
+    .ind-facts { width: 100%; max-width: 560px; text-align: left; }
     .ind-breadcrumb, .ind-hero-ctas, .ind-cta-actions { justify-content: center; }
     .ind-pill { display: inline-flex; }
     .ind-hero-title, .ind-hero-tagline { margin-left: auto; margin-right: auto; }

@@ -3,27 +3,53 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTABanner from '../../components/CTABanner.astro';
+import { industryIcon } from './_icons';
 
 const industries = [
-  { icon: '💰', name: 'Financial Services', desc: 'Banks, insurers, super funds and fintech companies', href: '/industries/finance-fintech', tags: ['APRA CPS 234', 'Open Banking', 'AML/KYC'] },
-  { icon: '🏥', name: 'Healthcare', desc: 'Hospitals, telehealth providers and allied health', href: '/industries/healthcare', tags: ['ADHA', 'HL7 FHIR', 'My Health Record'] },
-  { icon: '🚚', name: 'Logistics & Transport', desc: 'Fleet management, warehousing and last-mile delivery', href: '/industries/logistics-transport', tags: ['Fleet Tracking', 'HVNL', 'WMS'] },
-  { icon: '🛒', name: 'Retail & E-Commerce', desc: 'Omnichannel retail, marketplace and D2C brands', href: '/industries/retail-ecommerce', tags: ['Omnichannel', 'POS', 'Loyalty'] },
-  { icon: '📚', name: 'Education', desc: 'Universities, RTOs and EdTech companies', href: '/industries/education', tags: ['AVETMISS', 'LMS', 'Student Portals'] },
-  { icon: '🏛️', name: 'Government', desc: 'Federal, state and local government agencies', href: '/industries/government-enterprise', tags: ['ISM', 'PSPF', 'Citizen Services'] },
-  { icon: '🏗️', name: 'Construction & Trades', desc: 'Builders, subcontractors and project managers', href: '/industries/construction-trades', tags: ['Job Mgmt', 'SOPA', 'Safety'] },
-  { icon: '🏠', name: 'Real Estate', desc: 'Agencies, property managers and developers', href: '/industries/real-estate', tags: ['PMS', 'Tenant Portals', 'PropTech'] },
-  { icon: '🏨', name: 'Hospitality & Tourism', desc: 'Hotels, restaurants and tourism operators', href: '/industries/hospitality', tags: ['Booking Engine', 'PMS', 'Guest Apps'] },
-  { icon: '⚽', name: 'Sports & Recreation', desc: 'Sporting organisations, clubs and venues', href: '/industries/sports-recreation', tags: ['Member Mgmt', 'PlayHQ', 'Fan Engagement'] },
-  { icon: '₿', name: 'Web3 & Crypto', desc: 'Exchanges, DeFi protocols and NFT platforms', href: '/industries/web3-crypto', tags: ['Smart Contracts', 'AUSTRAC', 'DeFi'] },
-  { icon: '🤖', name: 'AI & Automation', desc: 'Organisations deploying AI in production', href: '/industries/ai-automation', tags: ['Custom LLMs', 'RAG', 'ML Ops'] },
-  { icon: '🏭', name: 'Manufacturing', desc: 'Manufacturers, fabricators and industrial suppliers', href: '/industries/manufacturing', tags: ['ERP Integration', 'Quality Data', 'Traceability'] },
+  { name: 'Financial Services', desc: 'Banks, insurers, super funds and fintech companies', href: '/industries/finance-fintech', tags: ['APRA CPS 234', 'Open Banking', 'AML/KYC'] },
+  { name: 'Healthcare', desc: 'Hospitals, telehealth providers and allied health', href: '/industries/healthcare', tags: ['ADHA', 'HL7 FHIR', 'My Health Record'] },
+  { name: 'Logistics & Transport', desc: 'Fleet management, warehousing and last mile delivery', href: '/industries/logistics-transport', tags: ['Fleet Tracking', 'HVNL', 'WMS'] },
+  { name: 'Retail & Ecommerce', desc: 'Omnichannel retail, marketplace and D2C brands', href: '/industries/retail-ecommerce', tags: ['Omnichannel', 'POS', 'Loyalty'] },
+  { name: 'Education', desc: 'Universities, RTOs and EdTech companies', href: '/industries/education', tags: ['AVETMISS', 'LMS', 'Student Portals'] },
+  { name: 'Government', desc: 'Federal, state and local government agencies', href: '/industries/government-enterprise', tags: ['ISM', 'PSPF', 'Citizen Services'] },
+  { name: 'Construction & Trades', desc: 'Builders, subcontractors and project managers', href: '/industries/construction-trades', tags: ['Job Mgmt', 'SOPA', 'Safety'] },
+  { name: 'Real Estate', desc: 'Agencies, property managers and developers', href: '/industries/real-estate', tags: ['PMS', 'Tenant Portals', 'PropTech'] },
+  { name: 'Hospitality & Tourism', desc: 'Hotels, restaurants and tourism operators', href: '/industries/hospitality', tags: ['Booking Engine', 'PMS', 'Guest Apps'] },
+  { name: 'Sports & Recreation', desc: 'Sporting organisations, clubs and venues', href: '/industries/sports-recreation', tags: ['Member Mgmt', 'PlayHQ', 'Fan Engagement'] },
+  { name: 'Web3 & Crypto', desc: 'Exchanges, DeFi protocols and NFT platforms', href: '/industries/web3-crypto', tags: ['Smart Contracts', 'AUSTRAC', 'DeFi'] },
+  { name: 'AI & Automation', desc: 'Organisations deploying AI in production', href: '/industries/ai-automation', tags: ['Custom LLMs', 'RAG', 'ML Ops'] },
+  { name: 'Manufacturing', desc: 'Manufacturers, fabricators and industrial suppliers', href: '/industries/manufacturing', tags: ['ERP Integration', 'Quality Data', 'Traceability'] },
+];
+
+const metaTitle = 'Software Development by Industry in Australia | AWLabs';
+const metaDescription = "Software and AI development shaped by each industry's rules, for Australian organisations in healthcare, fintech, construction, logistics and government.";
+const siteUrl = 'https://www.awlabs.com.au';
+const pageUrl = `${siteUrl}/industries`;
+const extraSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Software development by industry',
+    description: metaDescription,
+    url: pageUrl,
+    publisher: { '@id': `${siteUrl}/#organization` },
+    hasPart: industries.map((i) => ({ '@type': 'WebPage', name: i.name, url: `${siteUrl}${i.href}` })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industries', item: pageUrl },
+    ],
+  },
 ];
 ---
 
 <Layout
-  title="Industry-Specific Software Development Australia | AWLabs"
-  description="Industry-specific software and AI development for Australian organisations, from healthcare and fintech to construction, logistics, retail and government."
+  title={metaTitle}
+  description={metaDescription}
+  extraSchema={extraSchema}
 >
   <Header />
   <main>
@@ -36,8 +62,8 @@ const industries = [
             <span class="gradient-text">We Understand Your Industry.</span>
           </h1>
           <p class="ind-sub">
-            Industry-specific software development for Australian organisations: custom software and AI shaped by the rules, systems and workflows of each sector, so fewer assumptions make it into the build.
-            We speak your language, regulatory requirements, industry workflows and all.
+            Software development for Australian organisations, shaped by the rules, systems and workflows of each sector, so fewer assumptions make it into the build.
+            We speak your language, from regulatory requirements to the way your teams actually work.
           </p>
         </div>
       </div>
@@ -49,7 +75,7 @@ const industries = [
           {industries.map((ind, i) => (
             <a href={ind.href} class={`ind-card card-hover reveal stagger-${Math.min((i % 4) + 1, 4)}`}>
               <div class="ind-card-top">
-                <div class="ind-card-icon">{ind.icon}</div>
+                <div class="ind-card-icon" set:html={industryIcon(ind.href.split('/').pop() ?? '', 24)} />
                 <svg class="ind-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <h2 class="ind-card-name">{ind.name}</h2>
@@ -68,11 +94,11 @@ const industries = [
       <div class="ind-inner">
         <div class="expertise-narrative reveal-left">
           <span class="section-label">Why It Matters</span>
-          <h2 class="section-heading">Why Industry-Specific Software Development Matters</h2>
-          <p>A healthcare platform has fundamentally different requirements to a logistics system. Compliance obligations, data sensitivity, integration landscape, user personas, workflow patterns, all different. Generic software development produces generic outcomes.</p>
+          <h2 class="section-heading">Why Industry Knowledge Changes the Build</h2>
+          <p>A healthcare platform has fundamentally different requirements to a logistics system. Compliance obligations, data sensitivity, integration landscape, user personas and workflow patterns all differ. Generic software development produces generic outcomes.</p>
           <p>We brief the AI workers in our build pipeline with the constraints of each industry before they touch a line of code: APRA and CDR for financial services, the ACSC ISM and Essential Eight for government, AVETMISS for vocational education, AHPRA and My Health Record interoperability for healthcare. The framing shapes every architectural choice that follows.</p>
           <p>For a deeper look at how the rules change the build in specific sectors, including healthcare, financial services, government, education, construction and logistics, see our <a href="/solutions">industry solutions</a>.</p>
-          <p>That domain depth translates into faster scoping, fewer back-and-forth cycles, fewer incorrect assumptions, and ultimately, software that works the way your people work.</p>
+          <p>That domain depth translates into faster scoping, fewer rounds of revisions, fewer incorrect assumptions, and ultimately, software that works the way your people work.</p>
         </div>
       </div>
     </section>
@@ -137,7 +163,17 @@ const industries = [
     align-items: center;
     justify-content: space-between;
   }
-  .ind-card-icon { font-size: 1.75rem; }
+  .ind-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d9373;
+    background: rgba(13,147,115,0.08);
+    border: 1px solid rgba(13,147,115,0.2);
+  }
   .ind-card-arrow { color: #7f978d; transition: color 0.2s ease, transform 0.2s ease; }
   .ind-card:hover .ind-card-arrow { color: #0d9373; transform: translateX(3px); }
   .ind-card-name {

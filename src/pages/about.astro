@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
-import TechStack from '../components/TechStack.astro';
+import FactBlock from '../components/FactBlock.astro';
 import TeamCallout from '../components/TeamCallout.astro';
 
 const values = [
@@ -15,12 +15,12 @@ const values = [
   {
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     title: 'Partners, Not Vendors',
-    description: 'We invest in understanding your business as deeply as your own team. Long-term relationships built on radical transparency, honest advice and genuine care for your success, even when that means telling you what you don\'t want to hear.',
+    description: 'We invest in understanding your business as deeply as your own team. Relationships that last, built on radical transparency, honest advice and genuine care for your success, even when that means telling you what you don\'t want to hear.',
   },
   {
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
     title: 'Engineering Excellence',
-    description: 'We hold ourselves to the highest engineering standards. Clean, well-tested, documented code that your team can own, maintain and evolve long after the engagement ends. No cowboy code, no shortcuts.',
+    description: 'We hold ourselves to the highest engineering standards. Clean, tested and documented code that your team can own, maintain and evolve long after the engagement ends. No cowboy code, no shortcuts.',
   },
   {
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
@@ -32,8 +32,8 @@ const values = [
 ---
 
 <Layout
-  title="About AWLabs | Australian AI Software Agency"
-  description="AWLabs is a Sydney AI and software company for growing businesses and enterprise, sister to branding agency All Webbed Up. Read our story, team and values."
+  title="About Us: Australian AI and Software Company | AWLabs"
+  description="AWLabs is a Sydney AI and software company for growing businesses and enterprise, and sister company to All Webbed Up. Read our story, team and values."
 >
   <Header />
   <main>
@@ -47,11 +47,11 @@ const values = [
           <span class="gradient-text">AWLabs.</span>
         </h1>
         <p class="about-lead">
-          AWLabs is a Sydney based AI and software development company for growing businesses and enterprise. Sister to All Webbed Up, the branding and marketing agency we deliver client work alongside.
+          AWLabs is a Sydney based AI and software development company for growing businesses and enterprise. Sister company to All Webbed Up, a separate websites and marketing company.
         </p>
         <p class="about-sub">
           Software engineers, AI specialists and technology strategists, built around a single belief:
-          that Australian businesses deserve technology partners who understand enterprise as deeply as they understand code.
+          that Australian businesses deserve technology partners who understand business as deeply as they understand code.
         </p>
       </div>
     </section>
@@ -67,7 +67,7 @@ const values = [
           <h2 class="section-heading">Why We Built AWLabs</h2>
           <p>Our founder has been building software professionally since 2019, and has run <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> as a Sydney marketing and development agency since 2021. That is five years of client delivery, and seven years of shipping code, behind every engagement Labs takes on.</p>
           <p>Labs exists to focus on a single question: what happens when an agency runs itself on autonomous AI workers instead of selling them by the hour. AW Labs Pty Ltd launched in mid 2026 as a new, separate company: a partnership between our founder and a group of exceptional developers and founders. All Webbed Up handles marketing. AWLabs builds the software.</p>
-          <p>The product you see across this site, Overseer, the multi-agent build pipeline, and the internal apps that triage briefs, plan projects and ship code, is the same software we use every day to deliver client work. For the full milestone timeline, see <a href="/our-journey">our journey</a>. See a selection of our work on our <a href="/case-studies">case studies page</a>.</p>
+          <p>The product you see across this site (Overseer, our build pipeline of many agents, and the internal apps that triage briefs, plan projects and ship code) is the same software we use every day to deliver client work. For the full milestone timeline, see <a href="/our-journey">our journey</a>. See a selection of our work in <a href="/case-studies">our showcase</a>.</p>
         </div>
       </div>
     </section>
@@ -78,7 +78,7 @@ const values = [
         <div class="reveal">
           <span class="section-label">Our Values</span>
           <h2 class="section-heading">What Drives Everything We Do</h2>
-          <p class="section-subheading">Not wall decorations, these are the criteria by which we hire, the standards by which we deliver and the promises we keep to every client.</p>
+          <p class="section-subheading">These are not wall decorations. They are the criteria by which we hire, the standards by which we deliver and the promises we keep to every client.</p>
         </div>
         <div class="values-grid">
           {values.map((v, i) => (
@@ -99,30 +99,30 @@ const values = [
           <div class="reveal-left">
             <span class="section-label">Our Culture</span>
             <h2 class="section-heading">How We Work</h2>
-            <p>AWLabs operates as a flat, senior-heavy team. We don't have account managers who sit between you and the engineers. You talk directly to the people building your product, because we believe that directness produces better outcomes.</p>
-            <p>You get an update every Tuesday and Friday, Sydney time, with access to test the latest work, in a shared project space. Honest status reports. If something's off-track, we tell you before you need to ask.</p>
+            <p>AWLabs is a flat team led by senior engineers. We don't have account managers who sit between you and the engineers. You talk directly to the people building your product, because we believe that directness produces better outcomes.</p>
+            <p>You get an update every Tuesday and Friday, Sydney time, with access to test the latest work, in a shared project space. Honest status reports. If something's off track, we tell you before you need to ask.</p>
             <p>We work remotely but communicate like we're in the same room. Async by default, synchronous when it matters. We respect your timezone and expect the same in return.</p>
           </div>
           <div class="culture-cards reveal-right stagger-2">
             <div class="culture-card">
-              <div class="cc-icon">🧑‍💻</div>
+              <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
               <div class="cc-label">Senior led delivery</div>
               <div class="cc-desc">Senior engineers lead every build and review every change before it ships.</div>
             </div>
             <div class="culture-card">
-              <div class="cc-icon">🔍</div>
+              <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
               <div class="cc-label">Transparent delivery</div>
               <div class="cc-desc">Updates every Tuesday and Friday, test access to the latest work, no hidden scope.</div>
             </div>
             <div class="culture-card">
-              <div class="cc-icon">🇦🇺</div>
+              <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
               <div class="cc-label">Australian entity</div>
-              <div class="cc-desc">Sydney-registered Pty Ltd, Sydney business hours, local compliance knowledge.</div>
+              <div class="cc-desc">Pty Ltd registered in Sydney, Sydney business hours, local compliance knowledge.</div>
             </div>
             <div class="culture-card">
-              <div class="cc-icon">📖</div>
+              <div class="cc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 014 4v13a3 3 0 00-3-3H2z"/><path d="M22 4h-6a4 4 0 00-4 4v13a3 3 0 013-3h7z"/></svg></div>
               <div class="cc-label">Continuous learning</div>
-              <div class="cc-desc">Structured R&D time every week, when something transformative arrives, we're already using it.</div>
+              <div class="cc-desc">Structured R&D time every week. When something transformative arrives, we're already using it.</div>
             </div>
           </div>
         </div>
@@ -136,13 +136,13 @@ const values = [
           <div class="reveal-left">
             <span class="section-label">Technology Philosophy</span>
             <h2 class="section-heading">We Choose Tools, Not Trends</h2>
-            <p>Enterprise software outlives the frameworks it's built with. We choose technology based on stability, community longevity, performance at scale and the ease with which your internal team can take ownership after we deliver.</p>
-            <p>We're pragmatic engineers. A proven, slightly boring technology stack beats a flashy new framework for anything business-critical. That said, we stay at the cutting edge, when something genuinely transformative arrives, we deploy it for clients quickly, with the rigour enterprise demands.</p>
+            <p>Business software outlives the frameworks it's built with. We choose technology based on stability, community longevity, performance at scale and the ease with which your internal team can take ownership after we deliver.</p>
+            <p>We're pragmatic engineers. A proven, slightly boring technology stack beats a flashy new framework for anything your business depends on. That said, we stay close to the frontier. When something genuinely transformative arrives, we deploy it for clients quickly, with the rigour serious systems demand.</p>
             <div class="phil-principles">
               <div class="phil-p"><span>01</span> Boring technology for critical infrastructure</div>
               <div class="phil-p"><span>02</span> Modern tooling where it accelerates delivery</div>
               <div class="phil-p"><span>03</span> AI augmentation for everything repetitive</div>
-              <div class="phil-p"><span>04</span> Open source first, where enterprise-grade options exist</div>
+              <div class="phil-p"><span>04</span> Open source first, where mature options exist</div>
             </div>
           </div>
           <div class="phil-layers reveal-right stagger-2">
@@ -202,18 +202,12 @@ const values = [
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <div class="location-mark reveal-right stagger-2" aria-hidden="true">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div class="location-mark-text">
-              <strong>Sydney · New South Wales</strong>
-              <span>Working with clients across Australia from Sydney.</span>
-            </div>
+          <div class="reveal-right stagger-2">
+            <FactBlock disambiguation />
           </div>
         </div>
       </div>
     </section>
-
-    <TechStack />
 
     <!-- CTA -->
     <section class="about-cta">
@@ -223,13 +217,13 @@ const values = [
           <h2 class="section-heading">Two Ways to Engage</h2>
           <div class="engage-grid">
             <div class="engage-card">
-              <div class="engage-icon">🤝</div>
+              <div class="engage-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
               <h3>Work With Us On a Project</h3>
               <p>Bring us a brief, defined or exploratory, and let's build something exceptional together.</p>
               <a href="/contact" class="btn-primary">Book a Call</a>
             </div>
             <div class="engage-card">
-              <div class="engage-icon">💼</div>
+              <div class="engage-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M2 13h20"/></svg></div>
               <h3>Join Our Team</h3>
               <p>We're always looking for senior engineers who care deeply about quality and client outcomes.</p>
               <a href="/careers" class="btn-outline">See Open Roles</a>
@@ -341,7 +335,7 @@ const values = [
   .culture-section p { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #7f978d; line-height: 1.75; margin: 0 0 1.25rem; }
   .culture-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4.5rem; }
   .culture-card { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 14px; padding: 1.5rem; }
-  .cc-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .cc-icon { width: 40px; height: 40px; border-radius: 11px; background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.15); display: flex; align-items: center; justify-content: center; color: #0d9373; margin-bottom: 0.875rem; }
   .cc-label { font-family: 'Sora', sans-serif; font-size: 0.9375rem; font-weight: 600; color: white; margin-bottom: 0.375rem; }
   .cc-desc { font-family: 'DM Sans', sans-serif; font-size: 0.8125rem; color: #7f978d; line-height: 1.5; }
 
@@ -379,17 +373,13 @@ const values = [
   .location-details { display: flex; flex-direction: column; gap: 0.875rem; }
   .loc-item { display: flex; align-items: flex-start; gap: 0.625rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #8aa09a; line-height: 1.5; }
   .loc-item svg { flex-shrink: 0; margin-top: 2px; }
-  .location-mark { background: #0a0f0e; border: 1px solid #1e2d28; border-radius: 20px; padding: 3rem 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-  .location-mark-text { display: flex; flex-direction: column; gap: 0.375rem; }
-  .location-mark-text strong { font-family: 'Sora', sans-serif; font-size: 1.125rem; font-weight: 700; color: white; }
-  .location-mark-text span { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #8aa09a; line-height: 1.55; }
 
   /* About CTA */
   .about-cta { padding: 7rem 0; background: #0a0f0e; }
   .about-cta-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
   .engage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
   .engage-card { background: #0f1614; border: 1px solid #1e2d28; border-radius: 20px; padding: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; text-align: left; }
-  .engage-icon { font-size: 2rem; }
+  .engage-icon { width: 48px; height: 48px; border-radius: 13px; background: rgba(13,147,115,0.08); border: 1px solid rgba(13,147,115,0.15); display: flex; align-items: center; justify-content: center; color: #0d9373; }
   .engage-card h3 { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: white; margin: 0; }
   .engage-card p { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; color: #7f978d; line-height: 1.6; margin: 0; }
 

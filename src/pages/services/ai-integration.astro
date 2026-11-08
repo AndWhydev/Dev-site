@@ -6,13 +6,20 @@ const data = {
   metaDescription: "AI integration services from Sydney: add AI search, summarisation, extraction and assistants to software you already run, with feature flags and spend caps.",
   category: "AI & Data",
   serviceName: "AI Integration",
+  nounPhrase: "adding AI to existing software",
+  involveHeading: "What does adding AI to your existing software involve?",
+  whyHeading: "Why bring AWLabs in to add AI to your product?",
+  whoHeading: "Which products and teams is this for?",
+  fitHeading: "Is adding AI to your software the right move?",
+  processHeading: "How do we add AI to your software?",
   slug: "ai-integration",
   heroHeadline: "Add AI to the Software You Already Run, Without Rebuilding It",
   heroTagline: "AI integration for the product or internal system you already have: search, summarisation, extraction and in app assistants, rolled out behind feature flags and measured before everyone gets them.",
   summaryStatement: "AI integration is the work of adding language model features, such as semantic search, summarisation, data extraction and in app assistants, to an application that already exists, fitted to its codebase, data model, permissions and users, and released gradually so quality and running cost are measured before the feature reaches everyone.",
   description: [
     "Most organisations asking about AI do not need a new AI product. They have a product, a portal or an internal system that people already use every day, and they want it to do something it cannot do today: find the right record when someone describes it in plain words, summarise a long case history before a call, pull the fields out of an uploaded invoice, or answer a quick question about how to do something inside the screen where the question comes up. The value is in putting that capability where the work already happens, inside the existing app, using the data and permissions the app already has. That is a different job from building a chatbot from scratch, and it is usually faster and cheaper, because the hard parts (users, authentication, data, hosting) are already in place.",
-    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So when we integrate AI into existing software, we treat each feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly. We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
+    "The difficulty is that an AI feature behaves differently from the rest of your code. Its output varies, it can be wrong in convincing ways, it has a per use cost that grows with adoption, and it depends on a model provider that releases and retires versions on its own schedule. So when we integrate AI into existing software, we treat each feature as a production change with its own safety rails. We start by reading your codebase and data model to find the least invasive integration point, usually a small service or module behind an internal interface so the rest of the app never talks to a model provider directly.",
+    "We build an evaluation set from real examples before we tune anything, so quality is measured, not judged by a demo. The feature ships behind a feature flag to internal users first, then a small percentage of real users, with usage, latency, cost per request and user feedback on a dashboard. Budgets and rate limits cap spend per user and per tenant, cheaper models handle the easy cases, caching removes repeat calls, and every AI path has a fallback so the app still works if the model is slow or unavailable. When the numbers hold, the flag opens to everyone. If they do not, you have spent a fraction of a rebuild to find out.",
   ],
   benefits: [
     {
@@ -111,7 +118,7 @@ const data = {
     },
     {
       question: "How much does it cost to add AI to an existing app?",
-      answer: "Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. Running cost is separate from the build: it depends on volume, model tier and caching, and we estimate it per request during the first week. Our guide on the cost to add AI to an existing app breaks down the drivers in more detail.",
+      answer: "Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. Running cost is separate from the build: it depends on volume, model tier and caching, and we estimate it per request during the first week. Our guide on the cost to add AI to an existing app breaks down the drivers in more detail.",
     },
     {
       question: "How do you stop AI running costs from blowing out as usage grows?",
@@ -139,7 +146,7 @@ const data = {
     },
     {
       question: "How long does it take to add an AI feature to an existing app?",
-      answer: "A single well scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy to check output can be quicker; in app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope.",
+      answer: "A single well scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy to check output can be quicker; in app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.",
     },
   ],
   comparison: {

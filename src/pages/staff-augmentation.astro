@@ -4,11 +4,75 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 
+// Visible FAQs below, also emitted as FAQPage JSON-LD so the two never drift.
+const faqs = [
+    {
+      q: 'How is staff augmentation priced?',
+      a: 'Experienced developers join your team on agreed terms. Pricing depends on the role, the skills and how long you need them, so it is set after a conversation with Andy, and the terms are written down before anyone starts. For a defined project, we start with the Discovery Audit (a fixed fee, credited in full against your build) and you receive one fixed price for the agreed scope.'
+    },
+    {
+      q: 'Are your engineers genuinely senior, not just billed at senior rates?',
+      a: 'This is the most important question to ask any augmentation provider and most cannot answer it honestly. Our benchmark is clear: real commercial experience shipping production software, genuine technical ownership (not junior tasks), able to independently design and implement features end to end, and capable of reviewing code and mentoring others. If we recommend an engineer, it is because we would put them on our own internal projects.'
+    },
+    {
+      q: 'What is the minimum engagement length?',
+      a: 'It is agreed with you before anyone starts. We usually suggest a period long enough to get past the ramp up, because learning your codebase, team conventions and domain context means the first weeks of any placement are below peak contribution. That protects both sides: it gives the developer time to add genuine value and gives you enough of a run to assess fit and performance fairly.'
+    },
+    {
+      q: 'What happens if the engineer is not a good fit?',
+      a: 'We have a 30-day performance review built into every new placement. If, after a reasonable period, the engineer is not working out, we will replace them at no additional placement cost. We ask for honest, documented feedback so we can brief the replacement correctly. Our vetting process and the matching conversation before placement are designed to prevent mismatches in the first place.'
+    },
+    {
+      q: 'How quickly can you place someone?',
+      a: 'It depends on the role. Common roles (frontend, backend, React, Flutter) are usually quicker to match. Specialist roles (AI/ML engineering, solutions architects, highly specific tech stacks) take longer to find the right person. We will tell you honestly when we cannot move fast enough for your timeline rather than rushing a poor placement.'
+    },
+    {
+      q: 'Do your engineers work exclusively for us during the engagement?',
+      a: 'Yes. Full time placements are dedicated to a single client. Part time placements may have one other client engagement, but their committed hours are yours and we ensure there is no capacity conflict. We do not run engineers across multiple concurrent clients. It degrades performance and focus, and we would rather have fewer, more effective placements.'
+    },
+    {
+      q: 'What is your IP and confidentiality position?',
+      a: 'Work our developers create for you is assigned to you once the fees for it are paid. We also provide mutual NDAs for all engagements as standard, with no additional negotiation required. Confidentiality extends to any proprietary code, business logic, data or product information the engineer encounters.'
+    },
+    {
+      q: 'Can you provide a team rather than individual engineers?',
+      a: 'Yes. Project based engagements typically involve teams of two to four engineers, a tech lead and optionally a QA engineer, working together on a defined deliverable. For larger programmes we can scope an embedded squad with a lead, engineers and an architect working together. Brief us on the team shape you need and we will scope accordingly.'
+    },
+    {
+      q: 'What is staff augmentation?',
+      a: 'Staff augmentation is adding external engineers to your own team for a period, where they work under your direction, in your tools and processes, alongside your employees. You get the skills and capacity you need without a permanent hire, and you keep control of the product and the roadmap.'
+    },
+    {
+      q: 'What is the difference between staff augmentation and outsourcing?',
+      a: 'With staff augmentation you manage the work and the augmented engineers are part of your team. With outsourcing, or a project based engagement, the provider takes responsibility for delivering an agreed outcome and manages the team itself. Augmentation suits teams with strong internal leadership that need capacity; outsourcing suits a defined project you want delivered end to end. We offer both.'
+    },
+  ];
+
+const pageUrl = 'https://www.awlabs.com.au/staff-augmentation';
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${pageUrl}#faq`,
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.awlabs.com.au' },
+    { '@type': 'ListItem', position: 2, name: 'Staff Augmentation', item: pageUrl },
+  ],
+};
 ---
 
 <Layout
+  extraSchema={[faqSchema, breadcrumbSchema]}
   title="IT Staff Augmentation Australia | AWLabs"
-  description="Staff augmentation in Australia: senior software engineers embedded in your team on AEST hours, across React, Flutter, Node.js, AI and DevOps, no lock-in."
+  description="Staff augmentation in Australia: experienced engineers embedded in your team in Sydney business hours, across React, Flutter, Node.js, AI and DevOps."
 >
   <Header />
   <main>
@@ -33,9 +97,9 @@ import CTABanner from '../components/CTABanner.astro';
             <span class="gradient-text">Experienced Developers</span>
           </h1>
           <p class="sa-hero-sub">
-            Staff augmentation for Australian teams: senior engineers embedded into your team, working in your timezone, using your tools, aligned to your
+            Staff augmentation for Australian teams: experienced engineers embedded into your team, working in your timezone, using your tools, aligned to your
             engineering culture. No agency overhead. No offshore communication delays. Every engineer is matched honestly to the seniority you need.
-            Engineers who show up on day one and deliver.
+            Engineers who show up ready and deliver.
           </p>
           <div class="sa-hero-ctas">
             <a href="/contact" class="btn-primary">
@@ -47,9 +111,9 @@ import CTABanner from '../components/CTABanner.astro';
           <div class="hero-trust-row">
             <div class="trust-item"><span class="trust-num">Agreed</span><span class="trust-label">Terms Before Anyone Starts</span></div>
             <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">Senior</span><span class="trust-label">Engineers Only</span></div>
+            <div class="trust-item"><span class="trust-num">Senior</span><span class="trust-label">Engineers Lead Every Placement</span></div>
             <div class="trust-divider"></div>
-            <div class="trust-item"><span class="trust-num">AEST</span><span class="trust-label">Timezone Aligned</span></div>
+            <div class="trust-item"><span class="trust-num">Sydney</span><span class="trust-label">Business Hours</span></div>
           </div>
         </div>
         <div class="sa-hero-visual reveal-right stagger-2" aria-hidden="true">
@@ -114,7 +178,7 @@ import CTABanner from '../components/CTABanner.astro';
               <p>
                 Your new engineer joins your Slack, your GitHub, your sprint ceremonies and your team calls. They
                 operate as a member of your team, not a contractor who disappears after a ticket is closed. We stay
-                in the background: monthly check-ins, performance oversight and rapid replacement if something is not working.
+                in the background: monthly check ins, performance oversight and rapid replacement if something is not working.
               </p>
             </div>
           </div>
@@ -228,8 +292,8 @@ import CTABanner from '../components/CTABanner.astro';
             { dim: 'Flexibility', aug: 'Scale up, down or out with notice', hire: 'Fixed headcount, complex to unwind' },
             { dim: 'Commitment risk', aug: 'Low, terms agreed upfront', hire: 'High, cultural misfit is expensive' },
             { dim: 'Deep team integration', aug: 'Good, works within your team fully', hire: 'Strongest, permanent member' },
-            { dim: 'Long-term cost', aug: 'Usually higher than a salary over a long period', hire: 'Lower total cost over several years' },
-            { dim: 'Best suited for', aug: 'Surge capacity, skill gap, time-sensitive projects', hire: 'Core long-term roles, culture carriers' },
+            { dim: 'Cost over the long term', aug: 'Usually higher than a salary over a long period', hire: 'Lower total cost over several years' },
+            { dim: 'Best suited for', aug: 'Surge capacity, skill gaps, projects with tight deadlines', hire: 'Core roles for the long term, culture carriers' },
           ].map((row, i) => (
             <div class={`comp-row ${i % 2 === 0 ? 'comp-row-alt' : ''}`}>
               <div class="comp-dim">{row.dim}</div>
@@ -248,10 +312,10 @@ import CTABanner from '../components/CTABanner.astro';
       <div class="sa-inner">
         <div class="section-header reveal">
           <span class="section-label">Quality Assurance</span>
-          <h2 class="section-heading">Our 5-Step Engineer Vetting Process</h2>
+          <h2 class="section-heading">Our Five Step Engineer Vetting Process</h2>
           <p class="section-subheading">
             Every developer we put forward has been through this process.
-            You should never receive a candidate who is not genuinely senior.
+            Every candidate is matched honestly to the seniority you asked for.
           </p>
         </div>
         <div class="vetting-steps">
@@ -264,12 +328,12 @@ import CTABanner from '../components/CTABanner.astro';
             {
               step: '02',
               title: 'Technical Assessment',
-              desc: 'A take-home assessment calibrated to the role, not a whiteboard algorithm test. Frontend engineers build a real component. Backend engineers design a system. We assess code quality, decisions made and what was asked about edge cases.'
+              desc: 'A take home assessment calibrated to the role, not a whiteboard algorithm test. Frontend engineers build a real component. Backend engineers design a system. We assess code quality, decisions made and what was asked about edge cases.'
             },
             {
               step: '03',
               title: 'Live Code Review',
-              desc: 'A 60-minute live session: reviewing real production code they have written, discussing the decisions made and what they would change. This reveals far more about engineering judgment than any prepared exercise.'
+              desc: 'A live session of about an hour: reviewing real production code they have written, discussing the decisions made and what they would change. This reveals far more about engineering judgment than any prepared exercise.'
             },
             {
               step: '04',
@@ -279,7 +343,7 @@ import CTABanner from '../components/CTABanner.astro';
             {
               step: '05',
               title: 'Trial Project',
-              desc: 'For placement, a short paid trial project with our team before client placement. This validates performance under real conditions, not interview conditions, and ensures the engineer is ready to contribute from day one of your engagement.'
+              desc: 'For placement, a short paid trial project with our team before client placement. This validates performance under real conditions, not interview conditions, and helps the engineer contribute early in your engagement.'
             },
           ].map((v, i) => (
             <div class={`vetting-item reveal stagger-${Math.min(i + 1, 5)}`}>
@@ -309,16 +373,16 @@ import CTABanner from '../components/CTABanner.astro';
         <div class="models-grid">
           <div class="model-card reveal stagger-1">
             <div class="model-header">
-              <div class="model-name">Part-Time</div>
+              <div class="model-name">Part Time</div>
               <div class="model-hours">Part of the week</div>
             </div>
             <p class="model-desc">
-              Ideal for augmenting your team with specialised expertise you need consistently but not full-time.
-              Common for: DevOps support, QA oversight, UI/UX design or AI/ML capability that doesn't warrant a full-time placement.
+              Ideal for augmenting your team with specialised expertise you need consistently but not full time.
+              Common for: DevOps support, QA oversight, UI/UX design or AI/ML capability that doesn't warrant a full time placement.
             </p>
             <ul class="model-features">
               <li>Consistent weekly availability, not ad hoc</li>
-              <li>Participates in stand-ups and sprint ceremonies</li>
+              <li>Joins standups and sprint ceremonies</li>
               <li>Terms agreed before anyone starts</li>
             </ul>
             <div class="model-price">Priced after a conversation with Andy</div>
@@ -327,7 +391,7 @@ import CTABanner from '../components/CTABanner.astro';
 
           <div class="model-card model-featured reveal stagger-2">
             <div class="model-header">
-              <div class="model-name">Full-Time</div>
+              <div class="model-name">Full Time</div>
               <div class="model-hours">Full time</div>
             </div>
             <p class="model-desc">
@@ -337,7 +401,7 @@ import CTABanner from '../components/CTABanner.astro';
             </p>
             <ul class="model-features">
               <li>Full time, your core hours</li>
-              <li>AEST timezone, same-day response</li>
+              <li>Sydney business hours, reply within 1 business day</li>
               <li>Full sprint participation + ownership</li>
               <li>Dedicated to one client only</li>
               <li>Terms agreed upfront, extend as needed</li>
@@ -351,11 +415,11 @@ import CTABanner from '../components/CTABanner.astro';
 
           <div class="model-card reveal stagger-3">
             <div class="model-header">
-              <div class="model-name">Project-Based</div>
+              <div class="model-name">Project Based</div>
               <div class="model-hours">Fixed scope</div>
             </div>
             <p class="model-desc">
-              When you have a well-defined deliverable with a clear scope and timeline. We assemble a small, focused
+              When you have a clearly defined deliverable with a clear scope and timeline. We assemble a small, focused
               team, typically two to four engineers, and deliver to the agreed spec. Best for migrations,
               specific feature builds or legacy system replacements.
             </p>
@@ -380,9 +444,9 @@ import CTABanner from '../components/CTABanner.astro';
         <div class="tz-grid">
           <div class="reveal-left">
             <span class="section-label">Timezone and Communication</span>
-            <h2 class="section-heading">Australian-Based, Globally Connected</h2>
+            <h2 class="section-heading">Based in Australia, Connected Globally</h2>
             <p class="tz-para">
-              AWLabs engineers operate on AEST (UTC+10) or AEDT (UTC+11). This places us in full overlap
+              AWLabs engineers work Sydney business hours, on Sydney time. This places us in full overlap
               with teams on the east coast, and a shared working day with Perth (two to three hours behind).
             </p>
             <p class="tz-para">
@@ -399,10 +463,10 @@ import CTABanner from '../components/CTABanner.astro';
             <div class="tz-card">
               <div class="tz-heading">Timezone Overlap</div>
               {[
-                { region: 'Australia (AEST)', hours: 'Full overlap, same timezone', bar: 100 },
+                { region: 'Australia (Sydney time)', hours: 'Full overlap, same timezone', bar: 100 },
                 { region: 'Singapore / SEA', hours: '3 hrs difference, good overlap', bar: 88 },
-                { region: 'United Kingdom (GMT)', hours: '9 to 11 hrs ahead', bar: 55 },
-                { region: 'US East (EST)', hours: '14 to 15 hrs difference, async-first', bar: 28 },
+                { region: 'United Kingdom (GMT)', hours: '9 to 11 hrs behind Sydney', bar: 55 },
+                { region: 'US East (EST)', hours: '14 to 15 hrs difference, mostly async', bar: 28 },
                 { region: 'US West (PST)', hours: '17 to 18 hrs, daily sync possible', bar: 20 },
               ].map((tz) => (
                 <div class="tz-row">
@@ -437,48 +501,7 @@ import CTABanner from '../components/CTABanner.astro';
           <h2 class="section-heading">Staff Augmentation, Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
-          {[
-            {
-              q: 'How is staff augmentation priced?',
-              a: 'Experienced developers join your team on agreed terms. Pricing depends on the role, the skills and how long you need them, so it is set after a conversation with Andy, and the terms are written down before anyone starts. For a defined project, we start with the Discovery Audit (a fixed fee, credited in full against your build) and you receive one fixed price for the agreed scope.'
-            },
-            {
-              q: 'Are your engineers genuinely senior, not just billed at senior rates?',
-              a: 'This is the most important question to ask any augmentation provider and most cannot answer it honestly. Our benchmark is clear: real commercial experience shipping production software, genuine technical ownership (not junior tasks), able to independently design and implement features end-to-end, and capable of reviewing code and mentoring others. If we recommend an engineer, it is because we would put them on our own internal projects.'
-            },
-            {
-              q: 'What is the minimum engagement length?',
-              a: 'It is agreed with you before anyone starts. We usually suggest a period long enough to get past the ramp up, because learning your codebase, team conventions and domain context means the first weeks of any placement are below peak contribution. That protects both sides: it gives the developer time to add genuine value and gives you enough of a run to assess fit and performance fairly.'
-            },
-            {
-              q: 'What happens if the engineer is not a good fit?',
-              a: 'We have a 30-day performance review built into every new placement. If, after a reasonable period, the engineer is not working out, we will replace them at no additional placement cost. We ask for honest, documented feedback so we can brief the replacement correctly. Our vetting process and the matching conversation before placement are designed to prevent mismatches in the first place.'
-            },
-            {
-              q: 'How quickly can you place someone?',
-              a: 'It depends on the role. Common roles (frontend, backend, React, Flutter) are usually quicker to match. Specialist roles (AI/ML engineering, solutions architects, highly specific tech stacks) take longer to find the right person. We will tell you honestly when we cannot move fast enough for your timeline rather than rushing a poor placement.'
-            },
-            {
-              q: 'Do your engineers work exclusively for us during the engagement?',
-              a: 'Yes. Full-time placements are dedicated to a single client. Part-time placements may have one other client engagement, but their committed hours are yours and we ensure there is no capacity conflict. We do not run engineers across multiple concurrent clients, it degrades performance and focus, and we would rather have fewer, more effective placements.'
-            },
-            {
-              q: 'What is your IP and confidentiality position?',
-              a: 'Work our developers create for you is assigned to you once the fees for it are paid. We also provide mutual NDAs for all engagements as standard, there is no additional negotiation required. Confidentiality extends to any proprietary code, business logic, data or product information the engineer encounters.'
-            },
-            {
-              q: 'Can you provide a team rather than individual engineers?',
-              a: 'Yes. Project-based engagements typically involve teams of two to four engineers, a tech lead and optionally a QA engineer, working together on a defined deliverable. For larger programmes we can scope an embedded squad with a lead, engineers and an architect working together. Brief us on the team shape you need and we will scope accordingly.'
-            },
-            {
-              q: 'What is staff augmentation?',
-              a: 'Staff augmentation is adding external engineers to your own team for a period, where they work under your direction, in your tools and processes, alongside your employees. You get the skills and capacity you need without a permanent hire, and you keep control of the product and the roadmap.'
-            },
-            {
-              q: 'What is the difference between staff augmentation and outsourcing?',
-              a: 'With staff augmentation you manage the work and the augmented engineers are part of your team. With outsourcing, or a project-based engagement, the provider takes responsibility for delivering an agreed outcome and manages the team itself. Augmentation suits teams with strong internal leadership that need capacity; outsourcing suits a defined project you want delivered end to end. We offer both.'
-            },
-          ].map((faq, i) => (
+          {faqs.map((faq, i) => (
             <div class={`faq-item reveal stagger-${Math.min(i + 1, 6)}`}>
               <button class="faq-q" data-faq={`sa-${i}`} aria-expanded="false">
                 <span>{faq.q}</span>

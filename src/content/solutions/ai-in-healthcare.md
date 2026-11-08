@@ -1,11 +1,11 @@
 ---
-title: "AI and software development for Australian healthcare"
-metaTitle: "AI in Healthcare Australia: Healthcare Software Development"
+title: "AI in healthcare: privacy, TGA rules and My Health Record"
+metaTitle: "AI in Healthcare: Privacy, TGA Rules and My Health Record"
 description: "AI in healthcare in Australia: use cases and healthcare software development under the Privacy Act, state health records laws, My Health Record and TGA rules."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "AI in healthcare, and healthcare software development generally, is shaped in Australia by five overlapping sets of rules: health information is sensitive information under the Privacy Act, several states add their own health records laws, the My Health Records Act bars certain participants from holding or processing records offshore, the TGA regulates software whose intended purpose is diagnosis, monitoring or treatment, and Ahpra expects practitioners to stay accountable for AI-assisted care. Administrative and documentation tools sit outside TGA regulation; tools that suggest diagnoses or treatments may not. Interoperability runs on HL7 v2 today and FHIR AU increasingly."
+summary: "AI in healthcare, and healthcare software development generally, is shaped in Australia by five overlapping sets of rules: health information is sensitive information under the Privacy Act, several states add their own health records laws, the My Health Records Act bars certain participants from holding or processing records offshore, the TGA regulates software whose intended purpose is diagnosis, monitoring or treatment, and Ahpra expects practitioners to stay accountable for care assisted by AI. Administrative and documentation tools sit outside TGA regulation; tools that suggest diagnoses or treatments may not. Interoperability runs on HL7 v2 today and FHIR AU increasingly."
 takeaways:
   - "All health information is sensitive information under the Privacy Act, and any business providing a health service is covered regardless of turnover."
   - "Whether software is a medical device depends on its intended purpose, not its technology. An AI scribe that only summarises is generally outside TGA regulation; add diagnosis suggestions and it can become a device."
@@ -74,7 +74,7 @@ disclaimer: legal
 
 ## Why is healthcare software built differently?
 
-**Because the data is among the most sensitive a business can hold, the rules come from several directions at once, and a small change in what the software claims to do can turn it into a regulated medical device.** A booking app, an AI scribe and a deterioration-prediction model can share most of their code and sit under completely different regulatory treatment.
+**Because the data is among the most sensitive a business can hold, the rules come from several directions at once, and a small change in what the software claims to do can turn it into a regulated medical device.** A booking app, an AI scribe and a model that predicts deterioration can share most of their code and sit under completely different regulatory treatment.
 
 That makes scoping the most important engineering decision on a health project. Before any architecture, we would want the intended purpose written down in one or two sentences, because the TGA, privacy regulators and clinicians will all read the product through that statement.
 
@@ -85,10 +85,10 @@ That makes scoping the most important engineering decision on a health project. 
 | Rule | What it says in short | What it changes in the build |
 |---|---|---|
 | Privacy Act 1988 | Health information is sensitive information, with stricter collection, use and disclosure rules. Businesses that provide a health service and hold health information are covered regardless of turnover | Consent capture, purpose limits on reuse (including for model improvement), APP 8 assessment for any offshore processing, breach response under the Notifiable Data Breaches scheme |
-| State health records laws | NSW's Health Records and Information Privacy Act 2002 and Victoria's Health Records Act 2001 cover public and private health providers in those states; the ACT has its own health records law | Access and correction workflows, retention rules, state-specific principles in the privacy design |
+| State health records laws | NSW's Health Records and Information Privacy Act 2002 and Victoria's Health Records Act 2001 cover public and private health providers in those states; the ACT has its own health records law | Access and correction workflows, retention rules, principles specific to each state in the privacy design |
 | My Health Records Act 2012, section 77 | The System Operator, registered repository operators, registered portal operators and registered contracted service providers must not hold records, or process information relating to them, outside Australia | Hard onshore requirement for any component in that role, including model inference and logs |
 | Therapeutic Goods Act 1989 (TGA) | Software intended for diagnosis, prevention, monitoring, prediction, prognosis or treatment is a medical device, unless excluded or exempt | Scope boundary: features that cross it trigger the medical device pathway |
-| Ahpra professional obligations | Practitioners remain accountable for care, must apply human judgement to AI output, and should obtain informed consent for AI tools that use patient data | Clinician review before anything enters the record, consent recording, clear labelling of AI-generated content |
+| Ahpra professional obligations | Practitioners remain accountable for care, must apply human judgement to AI output, and should obtain informed consent for AI tools that use patient data | Clinician review before anything enters the record, consent recording, clear labelling of content generated by AI |
 
 The penalties are serious enough to design around. A contravention of section 77 carries a civil penalty of up to 1,500 penalty units, and the fault-based offence up to 5 years' imprisonment.
 
@@ -103,7 +103,7 @@ A practical way to test a feature:
 1. **Write the intended purpose** as it would appear in marketing, instructions and the user interface. The TGA reads all three.
 2. **Ask whether it informs a clinical decision about a specific patient.** Scheduling, billing and transcription generally don't; flagging a likely diagnosis does.
 3. **Check the 15 exclusion categories** in the Therapeutic Goods (Excluded Goods) Determination 2018. They include electronic health records, clinical workflow management, communications, middleware, and health facility management software. Every function must meet the exclusion for the product to be excluded.
-4. **Check the clinical decision support system (CDSS) exemption.** Some lower-risk decision support is exempt from ARTG inclusion if it meets all the criteria. The TGA has amended the exemption's wording for clarity from 1 November 2026, without changing its scope.
+4. **Check the clinical decision support system (CDSS) exemption.** Some lower risk decision support is exempt from ARTG inclusion if it meets all the criteria. The TGA has amended the exemption's wording for clarity from 1 November 2026, without changing its scope.
 5. **Plan for scope creep.** The TGA gives the example of a scribe that becomes a device once it suggests diagnoses or treatments not discussed in the consultation. Features added later need the same test.
 
 | Feature | Likely treatment | Why |
@@ -119,13 +119,13 @@ We don't act as a TGA sponsor or manufacturer's regulatory representative. Where
 
 ## Which AI use cases in healthcare are realistic without crossing that line?
 
-**Most of the near-term value of AI in healthcare is administrative and documentary, which is also where healthcare automation has always paid off first, and it stays on the non-device side when designed carefully.**
+**Most of the value of AI in healthcare in the near term is administrative and documentary, which is also where healthcare automation has always paid off first, and it stays outside the medical device rules when designed carefully.**
 
 - **Clinical documentation support:** transcription and draft notes that the clinician edits and approves, with consent captured first.
 - **Referral and correspondence processing:** reading incoming referrals, extracting patient and referrer details, and matching them to the patient record for staff to confirm, a standard [AI document processing](/services/ai-document-processing) pattern.
 - **Staff policy assistant:** answering questions from the organisation's own procedures, infection control manuals and HR policies, with citations. Our [RAG knowledge base service](/services/rag-knowledge-base) covers the retrieval design.
 - **Revenue cycle and claims:** checking item numbers and documentation completeness before claims are submitted, for billing staff to review.
-- **Patient communications:** appointment reminders, preparation instructions and plain-language versions of approved information, never individual clinical advice.
+- **Patient communications:** appointment reminders, preparation instructions and plain English versions of approved information, never individual clinical advice.
 
 ## How does it exchange data with clinical systems?
 
@@ -150,7 +150,7 @@ At the time of writing (September 2026), some commercial models are offered in A
 
 ## What are the clinical risks, and how are they controlled?
 
-**The biggest risk in health AI isn't a data breach, it's plausible but wrong content entering a patient record.** A drafted note that records a medication the patient never mentioned, or a summary that drops an allergy, can cause harm long after the consultation ends. The controls below are what we would expect before go-live.
+**The biggest risk in health AI isn't a data breach. It's plausible but wrong content entering a patient record.** A drafted note that records a medication the patient never mentioned, or a summary that drops an allergy, can cause harm long after the consultation ends. The controls below are what we would expect before go-live.
 
 - **Clinician sign-off before anything enters the record.** AI drafts are labelled as drafts, and the approving clinician is recorded.
 - **Source linking.** Every statement in a summary links back to the transcript segment or document it came from, so the reviewer can check quickly.
@@ -163,7 +163,7 @@ Our [guide to reducing AI hallucinations](/guides/ai-hallucinations) goes into t
 
 ## What does an engagement look like, and what does it cost?
 
-**A first health AI system on the non-device side typically takes 10 to 18 weeks and costs roughly $75,000 to $310,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. Integration access and privacy assessment usually drive the timeline more than the engineering.
+**A first health AI system that stays outside the medical device rules typically takes 10 to 18 weeks and costs roughly $75,000 to $310,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources. Integration access and privacy assessment usually drive the timeline more than the engineering.
 
 | Phase | Duration | Typical range (AUD, ex GST) | Output |
 |---|---|---|---|
@@ -176,4 +176,4 @@ A product that crosses into medical device territory costs considerably more bec
 
 ## How AWLabs approaches health projects
 
-We start every health engagement by writing down the intended purpose and mapping it against the TGA boundary and privacy obligations with your advisers, before choosing architecture. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data, vector indexes and, where possible, model inference in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We don't hold ADHA conformance, TGA registrations or healthcare-specific certifications; we build to your requirements and provide the evidence your clinical governance, privacy and regulatory teams need. See [LLM integration](/services/llm-integration) and our [healthcare](/industries/healthcare) page.
+We start every health engagement by writing down the intended purpose and mapping it against the TGA boundary and privacy obligations with your advisers, before choosing architecture. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data, vector indexes and, where possible, model inference in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We don't hold ADHA conformance, TGA registrations or certifications specific to healthcare; we build to your requirements and provide the evidence your clinical governance, privacy and regulatory teams need. See [LLM integration](/services/llm-integration) and our [healthcare](/industries/healthcare) page.

@@ -75,7 +75,7 @@ disclaimer: financial
 | Assistant over your content (RAG) | Answers questions from your documents and app data, with citations | $40k to $150k | 6 to 16 weeks |
 | Agent that takes actions | Carries out tasks in the app (create, update, schedule) with user approval | $60k to $200k | 8 to 20 weeks |
 
-The lower half of each range assumes clean APIs, a mainstream stack and a narrow scope. The upper half assumes messy data, strict permissions, multiple languages or regulated information. For a standalone AI product rather than a feature, see [AI development cost in Australia](/guides/ai-development-cost-australia); for a question-answering system in detail, see [RAG knowledge base cost](/guides/rag-knowledge-base-cost); and for a customer-facing assistant, see the [AI chatbot cost guide](/guides/ai-chatbot-cost-australia).
+The lower half of each range assumes clean APIs, a mainstream stack and a narrow scope. The upper half assumes messy data, strict permissions, multiple languages or regulated information. For a standalone AI product rather than a feature, see [AI development cost in Australia](/guides/ai-development-cost-australia); for a question-answering system in detail, see [RAG knowledge base cost](/guides/rag-knowledge-base-cost); and for an assistant your customers use, see the [AI chatbot cost guide](/guides/ai-chatbot-cost-australia).
 
 ## Why does the first AI feature cost more than the rest?
 
@@ -109,7 +109,7 @@ Skipping these makes the first feature cheaper and every later one more expensiv
 | Contingency at 15% | | $9,030 |
 | **Planning budget** | | **$69,230 ex GST** |
 
-The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope. For comparison, the Robert Walters 2026 guide lists NSW senior backend contractors at $800 to $1,000 a day, and Talent International reports top-end averages of about $1,450 a day for AI principal engineers; agencies add project management, testing and warranty on top of contractor rates.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. For comparison, the Robert Walters 2026 guide lists NSW senior backend contractors at $800 to $1,000 a day, and Talent International reports top-end averages of about $1,450 a day for AI principal engineers; agencies add project management, testing and warranty on top of contractor rates.
 
 About 19 of the 43 days are foundations (gateway, permissions, evaluation and monitoring). A third AI feature added later, such as suggested replies, might need 10 to 15 days rather than the 25 or so a first feature needs once the 19 days of foundations are counted.
 
@@ -125,7 +125,7 @@ Using a smaller model for classification would cut that further; Anthropic lists
 
 **Your existing app and data drive the cost more than the model does.** These questions decide where you land in the ranges:
 
-1. **Is there a clean backend API?** Apps with a well-structured API layer are far cheaper to extend than ones with logic spread through the interface or database.
+1. **Is there a clean backend API?** Apps with a cleanly structured API layer are far cheaper to extend than ones with logic spread through the interface or database.
 2. **Is the data accessible and tidy?** AI features are only as good as the context they receive. Scattered, duplicated or unstructured data needs preparation first.
 3. **How complex are permissions?** Multi-tenant apps, role hierarchies and record-level access all need careful handling so the AI never sees more than the user.
 4. **How accurate must it be?** A draft a person edits can tolerate imperfection. An automated decision or an extraction feeding a payment can't, and needs more evaluation, review queues and fallbacks.
@@ -157,7 +157,7 @@ In the helpdesk example above, the build is a $69,230 planning budget and model 
 
 ## How can you reduce the cost?
 
-**Start with one narrow, high-value feature and prove it on real data before you build more.** Specific levers:
+**Start with one narrow, valuable feature and prove it on real data before you build more.** Specific levers:
 
 - **Run a proof of concept first.** Two to four weeks on real examples tells you whether a feature is feasible and what accuracy to expect, before a full build.
 - **Pick features where a person stays in the loop.** Drafts and suggestions need less evaluation than automated decisions and deliver value sooner.
@@ -171,4 +171,4 @@ In the helpdesk example above, the build is a $69,230 planning budget and model 
 
 ## How AWLabs approaches adding AI
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive one fixed price for the agreed scope. The AI runs as a separate service behind your existing permissions, with evaluation tests, logging, cost limits and a feature flag so it can be rolled out gradually. You can see and test the code while we build, and each part is assigned to you as it is paid for in full. We usually recommend an Australian cloud region where the services you need are available there. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. We choose models (Anthropic Claude, OpenAI or open-weight) on fit, cost and data location. Read more about our [AI integration service](/services/ai-integration).
+Our work starts with a Discovery Audit at a fixed fee, which is credited in full against the build. After two strategy sessions you choose from three fixed price options in your Schedule of Work: The Minimum, The Recommended and The Complete. The AI runs as a separate service behind your existing permissions, with evaluation tests, logging, cost limits and a feature flag so it can be rolled out gradually. You can see and test the code while we build, and each part is assigned to you as it is paid for in full. Hosting usually goes in an Australian cloud region wherever the services you need are offered onshore, and any need to keep your data in Australia should be raised before you sign so we can write it into the Schedule of Work. We choose models (Anthropic Claude, OpenAI or open-weight) on fit, cost and data location. Read more about our [AI integration service](/services/ai-integration).

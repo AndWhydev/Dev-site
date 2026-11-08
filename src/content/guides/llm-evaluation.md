@@ -12,10 +12,10 @@ takeaways:
   - "Score retrieval and generation separately: a wrong answer from a RAG system is either a search failure or a writing failure, and the fix differs."
   - "LLM-as-judge grading scales well but has known biases (position, verbosity, self-preference), so calibrate it against human labels before trusting it."
   - "Run the eval suite on every change to prompts, models, chunking or data, and block releases that regress."
-  - "Human review stays essential for high-stakes answers, for calibrating judges and for reading samples of live traffic after launch."
+  - "Human review stays essential for answers where the stakes are high, for calibrating judges and for reading samples of live traffic after launch."
 faqs:
   - q: "How many test cases do we need?"
-    a: "Start with 50 to 100 well-chosen cases covering your main question types and known edge cases, then grow toward several hundred as real traffic shows you what users ask. Anthropic's guidance favours more cases with automated grading over a handful of hand-graded ones."
+    a: "Start with 50 to 100 well-chosen cases covering your main question types and known edge cases, then grow towards several hundred as real traffic shows you what users ask. Anthropic's guidance favours more cases with automated grading over a handful of hand-graded ones."
   - q: "Can we use public benchmarks instead?"
     a: "Public benchmarks tell you how capable a model is in general. They say little about whether it answers your policy questions correctly from your documents. Use them to shortlist models, then decide with your own eval set."
   - q: "How is LLM evaluation different from normal software testing?"
@@ -25,7 +25,7 @@ faqs:
   - q: "Who should write the expected answers?"
     a: "Subject matter experts from the business, not the developers. Engineers can build the harness and automated checks, but only the people who own the content know what a correct and complete answer looks like."
   - q: "What score is good enough to launch?"
-    a: "There's no universal number. Set thresholds per risk: a customer-facing answer about fees might need near-perfect faithfulness, while an internal search helper can tolerate more misses. Agree those thresholds with the business owner before testing, not after."
+    a: "There's no universal number. Set thresholds per risk: an answer to a customer about fees might need near-perfect faithfulness, while an internal search helper can tolerate more misses. Agree those thresholds with the business owner before testing, not after."
   - q: "Do evals stop after launch?"
     a: "No. Models are updated, documents change and users ask new things. Keep sampling live conversations, add failures to the eval set, and rerun the suite on a schedule and before any change."
 sources:
@@ -139,7 +139,7 @@ Because outputs vary between runs, run borderline cases more than once and watch
 **People set the standard, calibrate the automated graders and review what the system does in production.** Automation provides scale; humans provide judgement.
 
 - **Before launch:** experts write reference answers and grade a sample of outputs directly.
-- **High-stakes outputs:** answers about money, health, legal rights or safety get human review before release to users, or a human stays in the loop permanently.
+- **Outputs with high stakes:** answers about money, health, legal rights or safety get human review before release to users, or a human stays in the loop permanently.
 - **After launch:** reviewers read a regular sample of live conversations, especially ones users rated poorly, and turn failures into new test cases.
 
 NIST's Generative AI Profile (AI 600-1) frames this as ongoing measurement and management across the system's life, not a one-off gate.
@@ -163,7 +163,7 @@ NIST's Generative AI Profile (AI 600-1) frames this as ongoing measurement and m
 - **Model provider tooling**, such as the evaluation features in OpenAI's platform, can run graders over datasets.
 - **Tracing and observability platforms** such as Langfuse and LangSmith record prompts, retrieved context and outputs in production so failures can be turned into new test cases.
 
-The tool matters less than the test set. A well-built eval set can move between tools; a clever tool with poor test cases measures the wrong thing.
+The tool matters less than the test set. A good eval set can move between tools; a clever tool with poor test cases measures the wrong thing.
 
 ## Pre-launch evaluation checklist
 

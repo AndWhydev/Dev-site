@@ -11,7 +11,7 @@ takeaways:
   - "The 15 to 20% rule of thumb is widely used by Australian providers; treat it as a planning figure, not a law."
   - "Most maintenance is not bug fixing: it's keeping up with changing platforms, dependencies, security fixes and business needs."
   - "Platforms force change on a schedule: Node.js LTS releases get about 30 months of support, and Google Play raises its target API requirement every year."
-  - "Retainers with a defined response time suit business-critical systems; ad hoc support suits low-risk internal tools."
+  - "Retainers with a defined response time suit critical business systems; ad hoc support suits internal tools where little is at stake."
   - "Skipping maintenance doesn't save money. It moves the cost to a larger, riskier upgrade or rebuild later."
 faqs:
   - q: "Is 15 to 20% a year really normal for software maintenance?"
@@ -23,7 +23,7 @@ faqs:
   - q: "What is a typical SLA for software support in Australia?"
     a: "Common arrangements respond to critical outages within 1 to 4 business hours, with 24/7 cover available at extra cost, and to minor issues within 1 to 3 business days. Response time is not fix time; check whether the agreement commits to restoration targets as well."
   - q: "How much does a software support retainer cost per month?"
-    a: "Typical Australian retainers for business-critical systems run about $1,500 to $15,000 a month ex GST, depending on the hours included and the response times agreed. A managed service with 24/7 cover commonly costs $8,000 to $30,000 or more a month. At an assumed market rate of $1,400 a day (not our rate), two days a month is $2,800."
+    a: "Typical Australian retainers for critical business systems run about $1,500 to $15,000 a month ex GST, depending on the hours included and the response times agreed. A managed service with 24/7 cover commonly costs $8,000 to $30,000 or more a month. At an assumed market rate of $1,400 a day (not our rate), two days a month is $2,800."
   - q: "How much does app maintenance cost per year?"
     a: "Mobile apps sit at the higher end, around 20 to 25% of the build cost a year, because iOS and Android change every year and Google Play raises its target API level requirement annually. For a $300k web and mobile app build, that's $60k to $75k a year, or $5,000 to $6,250 a month."
   - q: "Is hosting included in maintenance?"
@@ -119,14 +119,14 @@ The right-hand column is where the hidden costs of maintenance usually sit, so a
 
 ## Which support model suits you, and what does it cost?
 
-**Match the model to the cost of the system being down.** An internal tool used weekly doesn't need the same arrangement as a customer-facing platform that takes payments.
+**Match the model to the cost of the system being down.** An internal tool used weekly doesn't need the same arrangement as a platform customers use to make payments.
 
 | Model | How it works | Typical cost (AUD, ex GST) | Suits |
 |---|---|---|---|
-| Ad hoc, time and materials | Pay per request at an hourly or daily rate, no commitment | Hourly or daily rates, no minimum | Low-risk internal tools |
+| Ad hoc, time and materials | Pay per request at an hourly or daily rate, no commitment | Hourly or daily rates, no minimum | Internal tools where little is at stake |
 | Prepaid block of hours | Buy hours in advance at a discount; draw down as needed | $5k to $20k blocks | Systems with irregular change |
-| Monthly retainer | Fixed monthly fee for a set number of hours, maintenance tasks and business-hours response | $1,500 to $15,000 a month | Most business-critical systems |
-| Managed service with 24/7 SLA | Retainer plus on-call cover, restoration targets and reporting | $8,000 to $30,000+ a month | Revenue-critical or public-facing platforms |
+| Monthly retainer | Fixed monthly fee for a set number of hours, maintenance tasks and business-hours response | $1,500 to $15,000 a month | Most critical business systems |
+| Managed service with 24/7 SLA | Retainer plus on-call cover, restoration targets and reporting | $8,000 to $30,000+ a month | Platforms that earn revenue or face the public |
 
 These ranges follow from day rates. At the time of writing, Re:Sourced reports senior engineer contractor day rates in Sydney of $800 to $1,100, and agencies charge more to cover continuity, tooling and cover for leave. At an assumed market rate of $1,400 a day, which is not our rate, a retainer of two days a month is $2,800 a month; five days is $7,000. Round-the-clock on-call cover adds cost because someone has to be available, whether or not anything breaks.
 
@@ -190,4 +190,4 @@ Not sure what state your current system is in? A [code audit](/services/code-aud
 
 ## How AWLabs approaches maintenance
 
-Every build comes with a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, we offer a Care Plan, month to month with no minimum term, covering hosting, updates and security patches, bug fixes, backups and monitoring. Support runs in NSW business hours, and response times are targets set out in the plan. Once the final payment is made, the repository and accounts are in your name, so you can move providers at any time. For a system we did not build, we start with a Discovery Audit. Read more about our [software maintenance and support service](/services/software-maintenance-support).
+Every build comes with a 30 day warranty from launch: we fix bugs and anything caused by our work at no cost. After that, we offer a Care Plan, month to month with no minimum term, covering hosting, updates and security patches, bug fixes, backups and monitoring. Support runs in Sydney business hours, and response times are targets set out in the plan. Once the final payment is made, the repository and accounts are in your name, so you can move providers at any time. For a system we did not build, we start with a Discovery Audit. Read more about our [software maintenance and support service](/services/software-maintenance-support).

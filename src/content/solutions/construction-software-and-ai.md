@@ -1,11 +1,11 @@
 ---
-title: "Construction software and AI in Australia"
-metaTitle: "Construction Software Development and AI in Australia"
+title: "Construction software and AI: security of payment and WHS"
+metaTitle: "Construction Software and AI: Security of Payment and WHS"
 description: "Construction software development and AI in construction for Australian builders: security of payment, WHS site records, Procore, Xero and MYOB, and costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "Custom construction software development earns its cost where off-the-shelf tools don't fit how a builder or trade business actually runs: payment claims that follow each state's security of payment timeframes, site records that stand up under WHS law, and job costing that flows into Xero or MYOB without rekeying. AI is useful on the document side, such as searching specifications, drafting RFIs and checking claims against contracts, but it doesn't replace an estimator's judgement or a site supervisor's sign-off. A focused module typically costs $40,000 to $150,000 (AUD, ex GST) as a market range, not a quote."
+summary: "Custom construction software development earns its cost where packaged tools don't fit how a builder or trade business actually runs: payment claims that follow each state's security of payment timeframes, site records that stand up under WHS law, and job costing that flows into Xero or MYOB without rekeying. AI is useful on the document side, such as searching specifications, drafting RFIs and checking claims against contracts, but it doesn't replace an estimator's judgement or a site supervisor's sign-off. A focused module typically costs $40,000 to $150,000 (AUD, ex GST) as a market range, not a quote."
 takeaways:
   - "Security of payment law differs by state: in NSW a payment schedule is due within 10 business days of a claim, while Queensland allows 15 business days, so claims software must calculate deadlines per contract and state."
   - "NSW head contractors must hold subcontractor retention money in a trust account on projects over $20 million, and Queensland requires project and retention trust accounts on eligible contracts."
@@ -80,16 +80,16 @@ disclaimer: legal
 | Subcontractor onboarding and compliance | Insurance certificates and licences chased by email | Expiry tracking, automated reminders, blocks on engaging subbies with lapsed insurance or licences | Project managers, WHS |
 | Site diaries, SWMS and inductions | Paper forms photographed and filed | Offline mobile forms with photos, GPS and sign-off, searchable later | Supervisors, WHS managers |
 | Variations and RFIs | Email threads, disputed later | Structured register tied to drawings, costs and approvals | Project managers, clients |
-| Estimating | Spreadsheets with historical rates | Rate library from actual job costs, tender comparison, AI-assisted scope review | Estimators |
+| Estimating | Spreadsheets with historical rates | Rate library from actual job costs, tender comparison, scope review assisted by AI | Estimators |
 | Document control | Shared drives with confusing revisions | Drawing register with current revision, transmittals, search across specs | Everyone on site |
 
 The existing [construction and trades](/industries/construction-trades) page covers the wider set of services. This page is about how the industry's rules change what gets built.
 
 ## What software do construction companies use?
 
-**Most Australian builders run a stack rather than one product: a construction management platform for projects, an accounting package for money, and a handful of point tools for estimating, site forms and document control.** Construction management software is the project layer: it holds drawings and revisions, RFIs, variations, site diaries, defects and subcontractor communication in one place. Procore is one example of this kind of platform. Money usually sits in Xero or MYOB for small and mid-sized businesses, while larger contractors often run a fuller ERP system.
+**Most Australian builders run a stack rather than one product: a construction management platform for projects, an accounting package for money, and a handful of point tools for estimating, site forms and document control.** Construction management software is the project layer: it holds drawings and revisions, RFIs, variations, site diaries, defects and subcontractor communication in one place. Procore is one example of this kind of platform. Money usually sits in Xero or MYOB for small and midsize businesses, while larger contractors often run a fuller ERP system.
 
-Around those sit the tools that cause the rekeying problems in the table above: estimating spreadsheets or dedicated estimating software, a separate app for SWMS and inductions, a shared drive for documents, and email for claims. Custom construction software rarely replaces the platform or the ledger. It fills the gaps between them, which is why the rest of this page is about claims, site records and integrations rather than a new all-in-one system.
+Around those sit the tools that cause the rekeying problems in the table above: estimating spreadsheets or dedicated estimating software, a separate app for SWMS and inductions, a shared drive for documents, and email for claims. Custom construction software rarely replaces the platform or the ledger. It fills the gaps between them, which is why the rest of this page is about claims, site records and integrations rather than a new system that tries to do everything.
 
 ## How does security of payment law shape a payment claims system?
 
@@ -121,7 +121,7 @@ The dates above were checked against regulator guidance in September 2026. Legis
 
 - **SWMS for high risk construction work.** A PCBU carrying out high risk construction work (such as work with a risk of falling more than 2 metres, or demolition of load-bearing elements) must prepare, keep, comply with and review a SWMS, and give it to the principal contractor.
 - **Construction induction.** Workers need a general construction induction (White Card) before starting on site. Software can check the card is recorded before a worker is added to a daily sign-in.
-- **Site-specific inductions, toolbox talks and sign-ins.** Who was on site, when, and what they were briefed on.
+- **Inductions for each site, toolbox talks and sign-ins.** Who was on site, when, and what they were briefed on.
 - **Incidents and hazards.** Captured on the spot with photos, then routed to whoever must decide whether it's notifiable.
 - **Plant and equipment checks.** Pre-start checklists linked to the specific item of plant.
 
@@ -137,7 +137,7 @@ The engineering challenge is less the forms than the conditions: gloves, glare, 
 | Xero or MYOB holds the ledger; job costs are rekeyed from site | Build job costing that pushes bills and claims into the ledger, which stays the source of truth |
 | Several small tools that don't talk to each other, with no central platform | Consider a custom job management system, or a platform plus integrations; compare total cost over three years |
 | Your process is your competitive advantage (a specialised trade, prefab, maintenance contracts) | A custom core system is more likely to pay back |
-| You're a small trade business with standard workflows | Buy an off-the-shelf job management product; custom software is probably overkill |
+| You're a small trade business with standard workflows | Buy a packaged job management product; custom software is probably overkill |
 
 Every vendor API has rate limits, webhooks of varying reliability and data model quirks, so integrations are designed in the Discovery Audit. Our [API development](/services/api-development) and [build vs buy](/guides/build-vs-buy-software) pages go further.
 
@@ -163,13 +163,13 @@ Uses to be careful with: automated takeoff without checking (including in estima
 - **Treating subcontractors as an afterthought.** Subbies submit claims, insurance certificates and SWMS. If their side is awkward, they'll email PDFs and someone will rekey them. A simple portal or a well structured email intake often matters more than the internal screens.
 - **Hard-coding one jurisdiction.** A NSW builder that wins work in Queensland suddenly needs trust accounts and different schedule timeframes. Rules stored as configuration avoid a rebuild.
 - **No owner after launch.** Legislation, platform APIs and phone operating systems all change. Someone needs to own updates, whether that's an internal person or a maintenance and support arrangement.
-- **Over-trusting AI outputs.** A plausible but wrong clause summary can end up in a variation dispute. Keep citations visible and require a human to confirm before anything leaves the business.
+- **Trusting AI outputs too much.** A plausible but wrong clause summary can end up in a variation dispute. Keep citations visible and require a human to confirm before anything leaves the business.
 
 A useful test before starting: name the person who will be accountable for the system in two years. If nobody comes to mind, fix that first.
 
 ## What does a typical engagement look like?
 
-**A worked example: a payment claims and retention module for a mid-sized commercial builder working in NSW and Queensland, integrating with an existing project platform and Xero.** Figures are typical Australian market ranges (AUD, ex GST) for an onshore senior team, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
+**A worked example: a payment claims and retention module for a midsize commercial builder working in NSW and Queensland, integrating with an existing project platform and Xero.** Figures are typical Australian market ranges (AUD, ex GST) for an onshore senior team, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Phase | Weeks | Scope | Typical range (AUD, ex GST) |
 |---|---|---|---|

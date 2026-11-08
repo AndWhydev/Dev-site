@@ -33,6 +33,18 @@ export const PLACES = {
   awu: { id: 'ChIJ96B65vboZyYRPzvUa2u-ZvI', query: 'All Webbed Up Georges Hall' },
 } as const;
 
+// Reviews that Google shows on our profile but that are about a different
+// business (for example a review of PraharX left on the All Webbed Up
+// profile). Matched case insensitively as a substring of the review text.
+// This is a relevance filter only: never add entries to hide a review for
+// its rating or sentiment.
+export const EXCLUDED_REVIEW_TERMS: readonly string[] = ['praharx'];
+
+function namesAnotherBusiness(text: string): boolean {
+  const t = text.toLowerCase();
+  return EXCLUDED_REVIEW_TERMS.some((term) => t.includes(term.toLowerCase()));
+}
+
 // One fetch per place per build, shared by every page and component, so the
 // numbers and the reviews section can never disagree within a build.
 const cache = new Map<string, Promise<ReviewsData | null>>();
@@ -78,7 +90,8 @@ async function fetchReviews(place: { id: string; query: string }): Promise<Revie
     }
 
     // Google returns up to 5 reviews it selects. Show them all (no rating
-    // filter), skipping only star-only reviews with no text.
+    // filter), skipping only star-only reviews with no text and reviews that
+    // name a different business (EXCLUDED_REVIEW_TERMS).
     const reviews: Review[] = ((data.reviews as unknown[]) ?? [])
       .map((raw) => raw as {
         authorAttribution?: { displayName?: string; uri?: string; photoUri?: string };
@@ -95,7 +108,7 @@ async function fetchReviews(place: { id: string; query: string }): Promise<Revie
         timeDescription: r.relativePublishTimeDescription ?? '',
         profileUrl: r.authorAttribution?.uri,
       }))
-      .filter((r) => r.text.length > 0);
+      .filter((r) => r.text.length > 0 && !namesAnotherBusiness(r.text));
 
     if (!data.rating) return null;
     return {

@@ -115,7 +115,7 @@ If your team isn't already invested in Kotlin or .NET, Flutter vs React Native r
 
 ## Where does Flutter win?
 
-**Flutter wins when the interface is the product: custom, branded, animated, and meant to look identical on every device.** Because it controls every pixel, a design system built in Flutter renders the same on a three-year-old Android phone and the latest iPhone, and complex animations stay smooth.
+**Flutter wins when the interface is the product: custom, branded, animated, and meant to look identical on every device.** Because it controls every pixel, a design system built in Flutter renders the same on an Android phone from three years ago and the latest iPhone, and complex animations stay smooth.
 
 Other strengths:
 
@@ -183,7 +183,7 @@ Choose **React Native** if most of these are true:
 2. You have, or plan, a React web app and want to share code.
 3. You want native platform controls with minimal effort.
 4. You'll rely on over-the-air updates and want Expo's tooling.
-5. Long-term hiring for maintenance is a bigger worry than interface polish.
+5. Hiring for maintenance over the years is a bigger worry than interface polish.
 
 If it's a genuine tie, pick the one your future maintainers already know. Whoever builds version one, someone else may be maintaining it, which is part of the [freelancer, agency or in-house](/guides/freelancer-vs-agency-vs-in-house) question too.
 

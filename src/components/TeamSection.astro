@@ -2,6 +2,10 @@
 /**
  * Team + specialists.
  *
+ * Layout: `team` is the core row (our own staff, plus Hyacinth from our
+ * sister company). `partners` are outside firms we work with on every
+ * engagement; `consultants` are independent businesses brought in as needed.
+ *
  * Honesty constraint (load-bearing for the /trust page promise):
  *   - Every bio states only what is independently verifiable or what the
  *     person has personally signed off on. No invented years of experience,
@@ -29,7 +33,7 @@ const team: Person[] = [
   {
     name: 'Andy Taleb',
     role: 'Founder & Director',
-    bio: 'Andy has been building software professionally since 2019 and has run All Webbed Up since 2021. He founded AWLabs in partnership with a group of senior developers and founders to focus purely on enterprise software and AI, working alongside All Webbed Up on client engagements. He runs every client meeting, sets every price and stays across each build with Sam, our lead developer.',
+    bio: 'Andy has been building software professionally since 2019 and has run All Webbed Up since 2021. He founded AWLabs in partnership with a group of senior developers and founders to focus on software and AI for growing businesses and enterprise, working alongside All Webbed Up on client engagements. He runs every client meeting, sets every price and stays across each build with Sam, our lead developer.',
     photo: '/team/andy-taleb.webp',
     initials: 'AT',
     accent: 'green',
@@ -43,6 +47,22 @@ const team: Person[] = [
     initials: 'ST',
     accent: 'violet',
     links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/sam-trinder-4b5680377/' }],
+  },
+  {
+    name: 'Nicole Jones',
+    role: 'Junior Developer & Admin',
+    bio: 'Nicole is a junior developer at the Labs and also runs admin. She works on builds under senior review, manages client onboarding and keeps every Discovery Audit and project moving to its next step.',
+    photo: '/team/nicole-jones.webp',
+    initials: 'NJ',
+    accent: 'amber',
+  },
+  {
+    name: 'Lucy Cassidy',
+    role: 'Developer in Training',
+    bio: 'Lucy is a developer in training at the Labs. She is learning our stack on real builds, with every change she makes reviewed by a senior engineer.',
+    photo: '/team/lucy.webp',
+    initials: 'LC',
+    accent: 'green',
   },
   {
     name: 'Hyacinth Soriano',
@@ -87,22 +107,6 @@ const partners: Person[] = [
     photo: '/team/mirage-sohail.webp',
     initials: 'MS',
     accent: 'violet',
-  },
-  {
-    name: 'Nicole Jones',
-    role: 'Junior Developer & Admin',
-    bio: 'Nicole is a junior developer at the Labs and also runs admin. She works on builds under senior review, manages client onboarding and keeps every Discovery Audit and project moving to its next step.',
-    photo: '/team/nicole-jones.webp',
-    initials: 'NJ',
-    accent: 'amber',
-  },
-  {
-    name: 'Lucy Cassidy',
-    role: 'Developer in Training',
-    bio: 'Lucy is a developer in training at the Labs. She is learning our stack on real builds, with every change she makes reviewed by a senior engineer.',
-    photo: '/team/lucy.webp',
-    initials: 'LC',
-    accent: 'green',
   },
 ];
 // Consultants: independent businesses we bring in on client work.
@@ -328,11 +332,15 @@ const consultants: Person[] = [
   .team-header .section-subheading { margin-left: auto; margin-right: auto; }
 
   /* ── Core team grid ─────────────────────── */
+  /* Six track grid, three cards per row; a short last row is centred. */
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1.5rem;
   }
+  .team-grid > * { grid-column: span 2; }
+  .team-grid > :nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .team-grid > :nth-child(3n+1):last-child { grid-column: 3 / span 2; }
 
   .team-card {
     display: flex;
@@ -608,6 +616,9 @@ const consultants: Person[] = [
   /* ── Responsive ─────────────────────────── */
   @media (max-width: 1024px) {
     .team-grid, .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .team-grid > *,
+    .team-grid > :nth-child(3n+1):nth-last-child(2),
+    .team-grid > :nth-child(3n+1):last-child,
     .partners-grid > *,
     .partners-grid > :nth-child(3n+1):nth-last-child(2),
     .partners-grid > :nth-child(3n+1):last-child { grid-column: auto; }

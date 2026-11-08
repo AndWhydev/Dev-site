@@ -30,7 +30,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
       title: 'Scale Without Headcount',
-      description: 'Automated processes scale with volume without a linear increase in headcount. A finance team that processes 1,000 invoices per month can process 10,000 with the same staff once the process is automated, a direct impact on operating leverage.',
+      description: 'Automated processes scale with volume without a linear increase in headcount. A finance team can absorb a large rise in invoice volume without adding staff once the process is automated.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
@@ -70,7 +70,7 @@ const data = {
       step: '02',
       title: 'Automation Opportunity Assessment',
       description: 'Not every step in a process is worth automating. We score each step on automation feasibility, business impact and implementation risk, and present a prioritised automation roadmap. High volume, rule based, error prone steps are always the first candidates.',
-      duration: 'Week 1 to 2',
+      duration: 'Weeks 1 to 2',
     },
     {
       step: '03',
@@ -82,25 +82,25 @@ const data = {
       step: '04',
       title: 'Development & Unit Testing',
       description: 'Automation is built iteratively, starting with the highest priority workflows. Every component is unit tested with edge cases and error scenarios, not just the happy path. We use version control, code review and CI/CD pipelines for automation development just as we would for any production software.',
-      duration: 'Week 2 to 5',
+      duration: 'Weeks 2 to 5',
     },
     {
       step: '05',
       title: 'Integration & End to End Testing',
       description: 'We test the full workflow end to end in a staging environment that mirrors production, including failure scenarios: what happens when a downstream API is unavailable, when data arrives in an unexpected format, when an approval is not received within the SLA window.',
-      duration: 'Week 5 to 6',
+      duration: 'Weeks 5 to 6',
     },
     {
       step: '06',
       title: 'Parallel Running & Go Live',
       description: 'For business critical processes, we run automated and manual processes in parallel for a period to validate that automated outputs match manual ones before cutting over. This builds team confidence and catches edge cases that testing missed.',
-      duration: 'Week 6 to 7',
+      duration: 'Weeks 6 to 7',
     },
     {
       step: '07',
       title: 'Monitoring Setup & Handover',
       description: 'We configure monitoring, alerting and dashboards for every automation in production, hand over operational runbooks and train your team on how to manage, troubleshoot and extend the automations. Automation should be a durable business asset, not a black box.',
-      duration: 'Week 7 to 8',
+      duration: 'Weeks 7 to 8',
     },
   ],
   industries: [
@@ -148,10 +148,14 @@ const data = {
     },
     {
       question: 'How much does workflow automation cost?',
-      answer: 'A single workflow on an automation platform can be a small, quick project; an end to end process spanning ERP, CRM and legacy systems with human review steps is larger. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price for an agreed scope, paid in three stages against work you have accepted. We never publish day rates. We also estimate the time saved so you can see the payback before committing. Our workflow automation cost guide covers typical market ranges.',
+      answer: 'A single workflow on an automation platform can be a small, quick project; an end to end process spanning ERP, CRM and legacy systems with human review steps is larger. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. We also estimate the time saved so you can see the payback before committing. Our workflow automation cost guide covers typical market ranges.',
     },
   ],
   serviceName: 'Workflow Automation',
+  nounPhrase: "workflow automation",
+  whyHeading: "Why automate your workflows with AWLabs?",
+  whoHeading: "Which teams benefit most from workflow automation?",
+  fitHeading: "Is workflow automation right for this process?",
   slug: 'workflow-automation',
   summaryStatement: 'Workflow automation is the practice of replacing manual, repetitive business processes with reliable, auditable software that connects systems via stable APIs and event driven integration, routing only genuine edge cases to human reviewers.',
   comparison: {

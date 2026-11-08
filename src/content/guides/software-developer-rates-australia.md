@@ -87,7 +87,7 @@ disclaimer: financial
 | Permanent employee | $150,000 to $180,000 a year, excluding super | Salary only | Robert Walters 2026 |
 | Employee, fully loaded | About $115 per productive hour (worked example below) | Salary, super, payroll tax, workers comp, leave, equipment | Our calculation |
 | Contractor | $800 to $1,100 a day ex GST | One person's time on days worked | Robert Walters 2026, Re:Sourced 2026 |
-| Australian agency | $120 to $330 an hour ex GST (small and mid-sized firms) | A delivery team: engineering, management, QA, tools, continuity | Conduct 2026, other agency guides |
+| Australian agency | $120 to $330 an hour ex GST (small and medium firms) | A delivery team: engineering, management, QA, tools, continuity | Conduct 2026, other agency guides |
 | Offshore outsourcing firm (Asia) | US$31 to US$41 an hour | One developer through a vendor, management overhead varies | Accelerance 2026 |
 
 ## What do software developers earn in Australia? Sydney and Melbourne salaries
@@ -151,7 +151,7 @@ Canberra government work pays more. Hays figures reported by Hyperion IT in May 
 
 ## What do Australian agencies charge?
 
-**Small and mid-sized Australian software agencies commonly bill about $123 to $330 an hour, and large firms $330 to $495.** Conduct's 2026 guide gives those bands and puts enterprise consultancies higher again. Other 2026 agency guides cluster lower in the range, at about $120 to $200 an hour for a local team, with tech leads and architects above $200.
+**Small and midsize Australian software agencies commonly bill about $123 to $330 an hour, and large firms $330 to $495.** Conduct's 2026 guide gives those bands and puts enterprise consultancies higher again. Other 2026 agency guides cluster lower in the range, at about $120 to $200 an hour for a local team, with tech leads and architects above $200.
 
 The rate looks high next to a contractor's, but an agency hour usually buys more than one person's time:
 
@@ -165,7 +165,7 @@ An agency is usually poor value when you have strong in-house technical leadersh
 
 ## What do offshore developers cost?
 
-**Offshore developers cost substantially less per hour, and for well-specified work with strong local oversight they can be the right choice.** Accelerance's 2026 survey of outsourcing firms, one of the more rigorous sources, gives these US dollar ranges, converted at the Reserve Bank's rate of about US$0.70 per A$1 in late September 2026:
+**Offshore developers cost substantially less per hour, and for clearly specified work with strong local oversight they can be the right choice.** Accelerance's 2026 survey of outsourcing firms, one of the more rigorous sources, gives these US dollar ranges, converted at the Reserve Bank's rate of about US$0.70 per A$1 in late September 2026:
 
 | Region | Senior developer (USD an hour) | Approx. AUD an hour |
 |---|---|---|
@@ -178,7 +178,7 @@ Accelerance puts junior developers in Asia at US$24 to US$31. Other providers qu
 What the hourly rate doesn't show:
 
 - **Management time.** Someone onshore must write specifications, answer questions and review work. That person's time belongs in the comparison.
-- **Time zones.** South and Southeast Asia overlap reasonably with AEST; Latin America and Europe much less.
+- **Time zones.** South and Southeast Asia overlap reasonably with Sydney time; Latin America and Europe much less.
 - **Data and contracts.** Privacy obligations, customer contracts or government requirements can limit what data offshore teams can access.
 - **Rework.** Unclear requirements are more expensive to fix across distance and language.
 
@@ -193,11 +193,11 @@ Offshore works well for maintenance of stable systems, clearly specified feature
 | Ongoing product work for years, strong technical leadership in house | Employees |
 | A specific skill for 3 to 12 months, managed by your team | Contractor |
 | A defined project with no in-house engineering team | Agency, ideally fixed price after discovery |
-| Stable, well-documented system needing ongoing maintenance, with a local lead | Offshore team or offshore-onshore mix |
+| Stable, clearly documented system needing ongoing maintenance, with a local lead | Offshore team or offshore-onshore mix |
 | Uncertain scope, need to test feasibility first | Short agency discovery, then decide |
 
 To turn rates into a project budget, see our [custom software cost guide](/guides/custom-software-development-cost-australia).
 
 ## How AWLabs prices engineering time
 
-We work as an onshore team of senior engineers in AEST hours. For projects, every build starts with our Discovery Audit, a fixed fee credited in full against the build. After that you receive one fixed price, so you're buying an outcome rather than hours. For teams that need extra capacity under their own leadership, we provide senior engineers through [staff augmentation](/staff-augmentation). On projects, each part of the build is assigned to you as it is paid for in full. If your work suits a contractor, an employee or an offshore team better, we'll say so.
+We're an onshore team working Sydney business hours, with senior engineers leading every build. For projects, the first step is our Discovery Audit, charged as a fixed fee and credited in full against the build. Your Schedule of Work then sets out three options at fixed prices, The Minimum, The Recommended and The Complete, so you're buying an outcome rather than hours. For teams that need extra capacity under their own leadership, we provide senior engineers through [staff augmentation](/staff-augmentation). On projects, each part of the build is assigned to you as it is paid for in full. If your work suits a contractor, an employee or an offshore team better, we'll say so.

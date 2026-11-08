@@ -10,7 +10,7 @@ summary: "The Essential Eight (often written Essential 8 or E8) is ASD's baselin
 takeaways:
   - "At the time of writing, the current Essential Eight maturity model is ASD's November 2023 release."
   - "Maturity is assessed for an organisation's systems, not certified for a product; ASD says there's no requirement for independent certification unless a directive, regulator or contract requires assessment."
-  - "At Maturity Level One, customer-facing services that hold sensitive customer data must use MFA for customers, and at Level Two they must offer a phishing-resistant option."
+  - "At Maturity Level One, online customer services that hold sensitive customer data must use MFA for customers, and at Level Two they must offer a phishing-resistant option."
   - "Critical vulnerabilities in online services must be patched within 48 hours of release at every maturity level from One upwards."
   - "Patching, MFA, admin privileges and backups map most directly to custom software; application control and Office macros mostly concern workstations."
 faqs:

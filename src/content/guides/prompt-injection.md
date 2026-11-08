@@ -11,7 +11,7 @@ takeaways:
   - "Prompt injection is ranked LLM01, the top risk, in the OWASP Top 10 for LLM Applications 2026, published in August 2026."
   - "Direct injection comes from the person typing; indirect injection hides in content the model reads, such as a web page, PDF, email or ticket."
   - "The UK NCSC and Australia's ASD both say there is currently no fully reliable technical fix, because models treat instructions and data as the same stream of text."
-  - "Effective defence is layered: least-privilege tool access, human approval for high-impact actions, output checks, logging and adversarial testing."
+  - "Effective defence is layered: least-privilege tool access, human approval for consequential actions, output checks, logging and adversarial testing."
   - "The risk grows with capability. A chatbot that can only answer questions is far less exposed than an agent that can send email or move money."
 faqs:
   - q: "Is prompt injection the same as jailbreaking?"
@@ -23,7 +23,7 @@ faqs:
   - q: "Are guardrail products enough on their own?"
     a: "No. Classifiers that detect injection attempts catch many known patterns and are worth running, but they are probabilistic. Pair them with deterministic controls the model can't talk its way past, such as scoped credentials, allow-listed tools and approval steps."
   - q: "How do we test for prompt injection before launch?"
-    a: "Build a set of attack cases covering direct attempts, poisoned documents, hidden text and tool misuse, run it on every release, and add a manual red-team session for high-risk systems. Record which layer stopped each attack so you know what you're relying on."
+    a: "Build a set of attack cases covering direct attempts, poisoned documents, hidden text and tool misuse, run it on every release, and add a manual red-team session for systems where the stakes are high. Record which layer stopped each attack so you know what you're relying on."
 sources:
   - title: "OWASP GenAI LLM Top 10 2026"
     url: "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
@@ -128,7 +128,7 @@ This is why OWASP's 2026 list moved Excessive Agency up to third place. Injectio
 
 ## How do you prevent and defend against prompt injection?
 
-**Use several independent layers, and make the strongest ones deterministic controls the model can't argue with.** OWASP's LLM01:2025 guidance lists constraining model behaviour, validating output formats, filtering inputs and outputs, enforcing least privilege, requiring human approval for high-risk actions, segregating external content and adversarial testing. ASD adds logging of prompts, tool calls and configuration changes.
+**Use several independent layers, and make the strongest ones deterministic controls the model can't argue with.** OWASP's LLM01:2025 guidance lists constraining model behaviour, validating output formats, filtering inputs and outputs, enforcing least privilege, requiring human approval for risky actions, segregating external content and adversarial testing. ASD adds logging of prompts, tool calls and configuration changes.
 
 Here is how those fit together, from the model outwards:
 
@@ -162,4 +162,4 @@ Use this before any LLM feature goes live:
 
 ## How AWLabs approaches this
 
-We design on the assumption that the model will be fooled at some point. In practice that means tool permissions are scoped per user, retrieval enforces access in code, high-impact actions go to a human, and, where it fits the scope, the build carries an injection test suite that runs in the same quality gates as type checks and security scans, before a senior engineer reviews the change. We document which layer is responsible for each risk so your security team can assess it. See our [cybersecurity](/services/cybersecurity) and [AI agent development](/services/ai-agent-development) services.
+We design on the assumption that the model will be fooled at some point. In practice that means tool permissions are scoped per user, retrieval enforces access in code, consequential actions go to a human, and, where it fits the scope, the build carries an injection test suite that runs in the same quality gates as type checks and security scans, before a senior engineer reviews the change. We document which layer is responsible for each risk so your security team can assess it. See our [cybersecurity](/services/cybersecurity) and [AI agent development](/services/ai-agent-development) services.

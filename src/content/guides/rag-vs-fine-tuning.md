@@ -124,7 +124,7 @@ So the practical order is: prompt engineering, then RAG if the gap is knowledge,
 
 - The task is narrow and repetitive: classifying emails, extracting fields into a fixed schema, tagging claims or tickets.
 - You need a very consistent output style or format that prompting doesn't achieve reliably.
-- You have, or can create, several hundred high-quality labelled examples.
+- You have, or can create, several hundred carefully labelled examples.
 - You want a smaller, faster, cheaper model to match a larger model's quality on one task at high volume.
 - The underlying knowledge is stable, or isn't what the task depends on.
 
@@ -135,7 +135,7 @@ So the practical order is: prompt engineering, then RAG if the gap is knowledge,
 
 ## Worked example: one firm, two problems
 
-**Here's how the choice plays out for a single business.** Picture a mid-sized Australian insurer with two AI projects on the table.
+**Here's how the choice plays out for a single business.** Picture a midsize Australian insurer with two AI projects on the table.
 
 **Problem 1: claims staff need answers from 3,000 pages of policy wordings, product disclosure statements and internal procedures.** Documents are updated each quarter, answers must quote the relevant clause, and some procedures are restricted to senior assessors. This is RAG. Fine-tuning would bake quarterly content into weights that go stale, couldn't cite clauses and couldn't hide restricted procedures from junior staff.
 

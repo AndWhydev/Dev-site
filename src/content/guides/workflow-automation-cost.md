@@ -8,7 +8,7 @@ published: 2026-09-28
 updated: 2026-09-28
 summary: "Business process automation costs anything from a monthly platform fee to a six-figure custom system. A single workflow built on Zapier, Make, n8n or Power Automate typically costs $1k to $15k AUD (ex GST) to have built professionally, plus a platform subscription from tens to hundreds of dollars a month. Multi-system automations with error handling and AI document extraction usually cost $15k to $50k, and custom-coded automation services $30k to $150k. Whichever route you take, budget for upkeep: automations break when the systems they connect change."
 takeaways:
-  - "Most small and mid-sized businesses should start on an automation platform; custom code earns its place at high volume, complex logic or strict data rules."
+  - "Most small and medium businesses should start on an automation platform; custom code earns its place at high volume, complex logic or strict data rules."
   - "Platform pricing is usage-based. Model your real monthly volume before you choose, because the entry plan rarely fits a busy process."
   - "The build is often the smaller cost over three years. Monitoring, fixes and changes add up."
   - "Work out the value of the time saved first. If a process takes two hours a week, a $20k automation won't pay back."
@@ -77,7 +77,7 @@ disclaimer: financial
 | Simple professionally built workflow | New deal in CRM creates a project, folder and invoice draft | $1k to $5k | Platform fees |
 | Multi-step, multi-system workflow | Onboarding across HR, payroll, IT accounts and training systems, with approvals | $5k to $15k | Platform fees plus upkeep |
 | Integration with AI steps and error handling | Email invoices read by AI, matched to purchase orders, routed for approval, posted to accounting | $15k to $50k | Platform or hosting, AI usage, upkeep |
-| Custom-coded automation service | High-volume order or claims processing in your own cloud account, with queues, retries, audit logs and dashboards | $30k to $150k | Hosting, AI usage, maintenance |
+| Custom-coded automation service | Order or claims processing at high volume in your own cloud account, with queues, retries, audit logs and dashboards | $30k to $150k | Hosting, AI usage, maintenance |
 
 The build ranges come from engineering days. A simple workflow is one to three days of work; a multi-system one is often five to ten; custom services run from about 20 days to 100 or more. At the time of writing, Re:Sourced reports senior engineer day rates in Sydney of $800 to $1,100 for contractors, and agencies typically charge more to cover project management, testing and support. See our [developer rates guide](/guides/software-developer-rates-australia) for the full picture.
 
@@ -117,7 +117,7 @@ Self-hosting n8n removes the subscription but not the cost. You pay for a server
 | AI extraction at an illustrative few cents per invoice | roughly $30 to $100 a month |
 | Upkeep: about 1 day a month | $1,400 a month |
 
-The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is a fixed fee, credited in full against the build, and the build is then priced in a Schedule of Work with three fixed price options.
 
 Payback on the build: $11,200 ÷ ($5,200 − about $1,600 running) ≈ 3 months.
 
@@ -158,7 +158,7 @@ At this volume, Option A wins on payback. Option B starts to make sense when vol
 
 ## How can you reduce the cost?
 
-**Simplify the process before you automate it, and automate the high-volume path first.** Practical levers:
+**Simplify the process before you automate it, and automate the path with the most volume first.** Practical levers:
 
 1. **Fix the process on paper first.** Automating a messy process gives you a fast messy process. Remove unnecessary approvals and duplicate data entry before building.
 2. **Automate the 80% case.** Route unusual cases to a person rather than automating every exception on day one.
@@ -168,7 +168,7 @@ At this volume, Option A wins on payback. Option B starts to make sense when vol
 
 ## What does automation cost to keep running?
 
-**Budget for upkeep from the start: automations are software, and they break when the systems around them change.** APIs are versioned and retired, fields get renamed, passwords expire and vendors change rate limits. A portfolio of business-critical automations needs:
+**Budget for upkeep from the start: automations are software, and they break when the systems around them change.** APIs are versioned and retired, fields get renamed, passwords expire and vendors change rate limits. A portfolio of critical business automations needs:
 
 - **Monitoring and alerts** so failures are noticed the same day, not at month end
 - **Error queues** where failed items wait for a fix instead of disappearing
@@ -179,4 +179,4 @@ If automation is part of a wider decision about AI assistants, see [AI agents vs
 
 ## How AWLabs approaches automation
 
-We start by measuring the process: volume, time per item and exception rate, so the business case is clear before anything is built. Where a platform such as n8n, Make, Zapier or Power Automate is the better fit, we say so and build on it; where volume, complexity or data rules call for custom code, we build a service in your own cloud account, in an Australian region where the services you need are available there, with the source code assigned to you as it is paid for in full. Builds include error handling, monitoring and a handover document, as listed in your Schedule of Work. Read more about our [workflow automation service](/services/workflow-automation).
+We start by measuring the process: volume, time per item and exception rate, so the business case is clear before anything is built. Where a platform such as n8n, Make, Zapier or Power Automate is the better fit, we say so and build on it; where volume, complexity or data rules call for custom code, we build a service in your own cloud account, in an Australian cloud region wherever the services you need are offered onshore, with the source code assigned to you as it is paid for in full. Builds include error handling, monitoring and a handover document, as listed in your Schedule of Work. Read more about our [workflow automation service](/services/workflow-automation).

@@ -30,7 +30,7 @@ const data = {
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
       title: 'Replication & High Availability',
-      description: 'We design and implement replication topologies, failover strategies and read replica configurations that deliver the uptime your business requires, including multi region and multicloud setups.',
+      description: 'We design and implement replication topologies, failover strategies and read replica configurations that deliver the uptime your business requires, including setups across several regions and clouds.',
     },
     {
       icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
@@ -71,13 +71,13 @@ const data = {
       step: '02',
       title: 'Architecture Audit & Root Cause Analysis',
       description: 'We review your schema, index catalogue, execution plans, configuration settings and replication topology. We produce a ranked findings register that categorises issues by severity and estimated effort to remediate, giving you a clear picture of where to invest first.',
-      duration: 'Week 1 to 2',
+      duration: 'Weeks 1 to 2',
     },
     {
       step: '03',
       title: 'Redesign & Proof of Concept',
       description: 'For each significant finding, we develop and test a remediation in an isolated environment against a production scale data clone. We measure before and after, document our approach and validate that changes do not introduce regressions before proposing them for production.',
-      duration: 'Week 2 to 3',
+      duration: 'Weeks 2 to 3',
     },
     {
       step: '04',
@@ -89,7 +89,7 @@ const data = {
       step: '05',
       title: 'Staged Production Rollout',
       description: 'Changes are applied in stages, starting with the lowest risk changes and advancing only when each stage meets its success criteria. For schema migrations, we use online migration tools (pg_repack, pt-online-schema-change) to avoid table locks on live systems.',
-      duration: 'Week 4 to 5',
+      duration: 'Weeks 4 to 5',
     },
     {
       step: '06',
@@ -129,7 +129,7 @@ const data = {
     },
     {
       question: 'How long does a typical database architecture engagement take?',
-      answer: 'A focused optimisation engagement, auditing an existing system and implementing a set of improvements, typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price for an agreed scope, with a timeline and milestones.',
+      answer: 'A focused optimisation engagement, auditing an existing system and implementing a set of improvements, typically runs four to six weeks. A full architecture redesign or engine migration for a complex production system is more typically eight to sixteen weeks, depending on data volume, the complexity of the existing schema and the risk tolerance of your business for change. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete, each with a timeline and milestones.',
     },
     {
       question: 'Do you work with cloud managed database services such as AWS RDS or Google Cloud SQL?',
@@ -149,6 +149,10 @@ const data = {
     },
   ],
   serviceName: 'Database Architecture',
+  nounPhrase: "database architecture",
+  whyHeading: "Why have AWLabs design your database?",
+  whoHeading: "Who needs database architecture work?",
+  fitHeading: "Is database architecture work what you need?",
   slug: 'database-architecture',
   summaryStatement: 'Database architecture is the engineering discipline of designing schemas, indexing and storage topologies, and optimising queries and migrations, so that a database performs reliably at enterprise scale and remains maintainable as data volumes grow into the billions of records.',
   comparison: {

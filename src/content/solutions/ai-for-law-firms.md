@@ -9,7 +9,7 @@ summary: "AI for law firms in Australia has to protect confidentiality and privi
 takeaways:
   - "The December 2024 Uniform Law statement ties AI use to existing conduct rules: confidentiality (ASCR r 9.1), independent advice, competence and diligence, and fair costs."
   - "NSW Supreme Court Practice Note SC Gen 23 bars generative AI from generating the content of affidavits and witness statements, and restricts which material can be entered into AI tools at all."
-  - "Matter-level access control and ethical walls must be enforced inside retrieval, not just in the user interface."
+  - "Access control at matter level and ethical walls must be enforced inside retrieval, not just in the user interface."
   - "Every AI answer in legal work needs a pinpoint citation to the source document so a lawyer can verify it quickly."
   - "Legal AI products from research and practice management vendors are the right answer for many firms; custom builds fit firms whose value is in their own precedents and matter history."
 faqs:
@@ -74,12 +74,12 @@ The table turns the key points into software requirements. It's our engineering 
 | Source and requirement | What the software needs to do |
 |---|---|
 | Uniform Law statement: lawyers can't safely enter confidential or privileged information into public AI tools; commercial tools need their contract terms reviewed (ASCR r 9.1) | Private deployment or enterprise terms with no training, controlled retention and Australian processing; record the terms per tool |
-| Uniform Law statement: AI can't substitute for the lawyer's own judgement or expertise, and lawyers must personally verify AI-prepared documents | Every answer carries pinpoint citations to source documents; drafts are clearly marked until a lawyer settles them |
-| Uniform Law statement: written, risk-based AI policies covering which tools, who, for what and with what information, plus supervision of junior staff | Tool access by role, usage logs per user and matter, reports supervisors can review |
+| Uniform Law statement: AI can't substitute for the lawyer's own judgement or expertise, and lawyers must personally verify documents prepared with AI | Every answer carries pinpoint citations to source documents; drafts are clearly marked until a lawyer settles them |
+| Uniform Law statement: written, risk based AI policies covering which tools, who, for what and with what information, plus supervision of junior staff | Tool access by role, usage logs per user and matter, reports supervisors can review |
 | Uniform Law statement: billing must reflect the work actually done (Uniform Law ss 172 to 173, ASCR r 12.2) | AI use recorded against the matter, available if the client asks |
-| SC Gen 23 para 9A: suppressed material, subpoenaed documents and Harman undertaking material may only go into a Gen AI tool that keeps data in a controlled environment, uses it only for that proceeding and never trains on it | Matter-scoped storage, per-matter deletion, contractual no-training, and a flag on restricted documents that blocks them from any tool not meeting those conditions |
+| SC Gen 23 para 9A: suppressed material, subpoenaed documents and Harman undertaking material may only go into a Gen AI tool that keeps data in a controlled environment, uses it only for that proceeding and never trains on it | Storage scoped to each matter, deletion per matter, a contractual bar on training, and a flag on restricted documents that blocks them from any tool not meeting those conditions |
 | SC Gen 23 paras 10 to 13: no Gen AI in generating affidavit, witness statement or character reference content | Block or warn on those document types; keep preparatory work (chronologies, indexes) separate |
-| SC Gen 23 paras 16 to 17: citations in AI-assisted submissions must be verified, and not solely with AI | Citation extraction with links to the authority, and a checklist a person completes |
+| SC Gen 23 paras 16 to 17: citations in submissions prepared with AI must be verified, and not solely with AI | Citation extraction with links to the authority, and a checklist a person completes |
 
 Queensland, South Australia and other jurisdictions sit outside the Uniform Law but have similar confidentiality and competence rules and their own guidance, and other courts publish their own practice notes. A firm practising across several should design to the strictest.
 
@@ -95,22 +95,22 @@ Design points we would insist on:
 
 - A structured review template agreed with the supervising lawyer, so outputs are comparable across documents
 - Confidence flags and "not found" as an explicit answer, never a guess
-- A reviewer screen that shows the source clause beside the extraction for one-click accept or correct
+- A reviewer screen that shows the source clause beside the extraction so a reviewer can accept or correct it in one click
 - Sampling: a lawyer checks a random share of accepted answers, and the error rate is reported
 
 This is preparatory and summarising work of the kind SC Gen 23 permits, provided the material entered meets its paragraph 9A conditions. It is also different from legal document automation in the older sense, which assembles a contract from a template and a questionnaire using fixed rules. Many firms already run that; AI review works in the other direction, reading documents that already exist.
 
 ### Precedent and clause search
 
-Most firms have a precedent bank and years of executed documents that nobody can search well. A search layer lets a lawyer ask for "a landlord-friendly make good clause for a NSW retail lease, post 2020" and get the firm's own clauses ranked, with the matter, date and author.
+Most firms have a precedent bank and years of executed documents that nobody can search well. A search layer lets a lawyer ask for "a make good clause that favours the landlord for a NSW retail lease, post 2020" and get the firm's own clauses ranked, with the matter, date and author.
 
-The traps are version control and currency. The system needs to know which precedents are approved and current, which were client-specific negotiated positions, and which are superseded. Tagging those at ingestion, and showing them in results, matters more than model choice.
+The traps are version control and currency. The system needs to know which precedents are approved and current, which were positions negotiated for one client, and which are superseded. Tagging those at ingestion, and showing them in results, matters more than model choice.
 
 ### Matter knowledge base
 
-A matter knowledge base answers questions about one matter from its own documents, correspondence and file notes: "when did the other side first raise the limitation point?" It's most useful on long-running litigation and large transactions where the team changes over time.
+A matter knowledge base answers questions about one matter from its own documents, correspondence and file notes: "when did the other side first raise the limitation point?" It's most useful on litigation that runs for years and large transactions where the team changes over time.
 
-It's also where access control matters most, covered below. For firms wanting a broader knowledge base across practice groups, our page on [AI knowledge bases for professional services](/solutions/professional-services-knowledge-base) covers the firm-wide version.
+It's also where access control matters most, covered below. For firms wanting a broader knowledge base across practice groups, our page on [AI knowledge bases for professional services](/solutions/professional-services-knowledge-base) covers the version for the whole firm.
 
 ## How are ethical walls and matter access enforced?
 
@@ -120,7 +120,7 @@ It's also where access control matters most, covered below. For firms wanting a 
 - [ ] Permissions are synchronised from the document management system, and removals take effect within minutes
 - [ ] Retrieval filters by the user's permissions before any text reaches the model
 - [ ] Information barriers (ethical walls) are modelled explicitly and tested with users on each side
-- [ ] Cross-matter search is off by default and limited to approved precedent content
+- [ ] Search across matters is off by default and limited to approved precedent content
 - [ ] Every query, retrieved document and answer is logged against the user and matter
 - [ ] Deleting or archiving a matter removes its documents and embeddings from the index
 - [ ] Documents flagged as suppressed, subpoenaed or subject to undertakings are excluded from tools that don't meet the court's conditions
@@ -147,7 +147,7 @@ Custom legal software development makes sense when a firm needs citations at cla
 
 ## What budget and timeline should a firm plan for?
 
-**A first legal AI system typically takes 6 to 16 weeks and costs roughly $45,000 to $220,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote.
+**A first legal AI system typically takes 6 to 16 weeks and costs roughly $45,000 to $220,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Scope | Duration | Typical range (AUD, ex GST) |
 |---|---|---|

@@ -171,13 +171,13 @@ The definitions describe how the terms are generally used in the Australian mark
 
 ## Delivery and contracts
 
-**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects.
 
 **Scope.** Scope is the agreed list of what will be built, and just as importantly what won't. Vague scope is the most common cause of disputes and overruns.
 
 **Acceptance criteria.** Acceptance criteria are the specific conditions a feature must meet to be considered done. They turn "it should work well" into something both sides can test.
 
-**Fixed price.** A fixed-price contract is one where the supplier agrees to deliver a defined scope for a set price. It needs a well-defined scope to be fair to both sides; see [fixed price vs time and materials](/guides/fixed-price-vs-time-and-materials).
+**Fixed price.** A fixed-price contract is one where the supplier agrees to deliver a defined scope for a set price. It needs a clearly defined scope to be fair to both sides; see [fixed price vs time and materials](/guides/fixed-price-vs-time-and-materials).
 
 **Time and materials (T&M).** A time and materials contract is one where you pay for the hours actually worked at agreed rates. It suits work where requirements are expected to change as you learn.
 
@@ -256,4 +256,4 @@ The definitions describe how the terms are generally used in the Australian mark
 
 ## How AWLabs uses these terms
 
-We write our Discovery Audit and Schedule of Work in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After that you receive one fixed price for the agreed scope, and each part of the build is assigned to you as it is paid for in full. If a term in a document from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).
+We write our Discovery Audit and Schedule of Work in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Each build begins with that audit, at a fixed fee credited in full against the build, followed by a fixed price Schedule of Work with three options (The Minimum, The Recommended and The Complete); each part of the build is assigned to you as it is paid for in full. If a term in a document from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).

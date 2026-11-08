@@ -23,7 +23,7 @@ faqs:
   - q: "Is a token limit the same as a context window?"
     a: "Often, but not always. Context window, context length and context size all mean the maximum tokens a model can consider in one request. Token limit can also mean the maximum output a model will write in one reply, or a rate limit such as tokens per minute on your account. Check which one an error message or pricing page refers to."
   - q: "What happens if I go over the context window?"
-    a: "The model can't consider more than its window, so the request has to be shortened: an API call that's too long is refused, and chat applications typically drop or summarise older turns to fit. Well-built systems manage this deliberately, by retrieving only relevant passages and summarising long histories, rather than letting content fall off the end."
+    a: "The model can't consider more than its window, so the request has to be shortened: an API call that's too long is refused, and chat applications typically drop or summarise older turns to fit. Good systems manage this deliberately, by retrieving only relevant passages and summarising long histories, rather than letting content fall off the end."
   - q: "Does a large context window mean the model remembers my conversations?"
     a: "No. The context window is working memory for a single request. Models don't remember earlier requests; a chat application resends the conversation each turn, which is why long chats cost more. Any longer-term memory is a feature the application builds, by storing and re-inserting information."
   - q: "Do images and PDFs use tokens?"
@@ -67,7 +67,7 @@ disclaimer: none
 
 ## What is a token in AI?
 
-**In AI, a token is the unit of text a language model (LLM) processes: often a whole short word, sometimes part of a longer word, a number or a punctuation mark.** Models never see letters or words directly. A tokenizer splits text into tokens from a fixed vocabulary, and the model reads and writes those. OpenAI's documentation gives the example that " tokenization" becomes two tokens, " token" and "ization", while " the" is one.
+**In AI, a token is the unit of text a language model (LLM) processes: often a whole short word, sometimes part of a longer word, a number or a punctuation mark.** Models never see letters or words directly. A tokenizer splits text into tokens from a fixed vocabulary, and the model reads and writes those. OpenAI's documentation gives the example that `tokenization`, with its leading space, becomes two tokens, `token` and `ization`, while `the` is one.
 
 So when people ask what "tokens" mean in ChatGPT, Claude or Gemini, the answer is the same: the pieces of text the model counts. Tokens matter to buyers for one reason: providers measure and bill model usage in tokens, and rate limits are set in tokens too.
 
@@ -89,7 +89,7 @@ Real counts vary. Anthropic states the ratio "varies by language and content typ
 
 **The context window, sometimes called context length, is the maximum number of tokens a model can take into account in a single request, including the response it writes.** Anthropic describes it as the model's "working memory", distinct from the much larger body of data the model was trained on.
 
-Everything in the request counts toward it:
+Everything in the request counts towards it:
 
 - the system prompt (your standing instructions)
 - the conversation so far, including earlier answers
@@ -133,7 +133,7 @@ At 10,000 questions a month that's about $190 USD in model fees, before hosting,
 | 5 | 900 | 11,600 |
 | 10 | 900 | 16,100 |
 
-By turn 10, one message costs about twice as much in input as the first. Long-running agents that call tools repeatedly show the same pattern, faster. Common controls are summarising older turns, dropping stale tool results and capping conversation length.
+By turn 10, one message costs about twice as much in input as the first. Agents that run for many steps that call tools repeatedly show the same pattern, faster. Common controls are summarising older turns, dropping stale tool results and capping conversation length.
 
 ## Why do tokens affect speed?
 

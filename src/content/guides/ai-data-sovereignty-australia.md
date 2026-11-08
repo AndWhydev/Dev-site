@@ -1,7 +1,7 @@
 ---
 title: "AI data sovereignty in Australia: which models can run onshore?"
 metaTitle: "AI Data Sovereignty Australia: Which Models Run Onshore?"
-description: "AI data sovereignty in Australia: which models process prompts onshore on AWS Bedrock, Azure OpenAI, Google Agent Platform, Claude and OpenAI, and how to check."
+description: "AI data sovereignty in Australia: which models process prompts onshore on Bedrock, Azure OpenAI, Google Agent Platform, Claude and OpenAI, and how to check."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
@@ -175,4 +175,4 @@ For a platform-by-platform comparison of governance features, pricing basis and 
 
 ## How AWLabs approaches this
 
-We usually recommend Australian regions where the model you need is available there, and we pick the model and routing mode with you before the build. If your data must stay in Australia, tell us before you sign, and we write it into your Schedule of Work. We then enforce the choice with cloud policy and log it per request, so your security team can check it rather than trust it. Where requirements rule out any third-party model processing, we deploy open-weight models inside your own cloud account. We document what stays onshore, what doesn't and why, as input to your privacy impact assessment; the risk decision stays with you. See our [private LLM deployment](/services/private-llm-deployment) service and [cloud infrastructure](/services/cloud-infrastructure) work.
+We usually recommend Australian regions wherever the model you need is offered onshore, and we pick the model and routing mode with you before the build. A requirement to keep data in Australia needs to be raised before you sign, so we can write it into your Schedule of Work. We then enforce the choice with cloud policy and log it per request, so your security team can check it rather than trust it. Where requirements rule out any third-party model processing, we deploy open-weight models inside your own cloud account. We document what stays onshore, what doesn't and why, as input to your privacy impact assessment; the risk decision stays with you. See our [private LLM deployment](/services/private-llm-deployment) service and [cloud infrastructure](/services/cloud-infrastructure) work.

@@ -1,13 +1,13 @@
 ---
-title: "Software for Australian RTOs and education providers"
-metaTitle: "RTO Software and Education Software Development Australia"
+title: "RTO software and the VET Information Standard"
+metaTitle: "RTO Software and the VET Information Standard"
 description: "RTO software and education software development in Australia: the move from AVETMISS to the VET Information Standard, USI, LMS integration, CRICOS and AI."
 eyebrow: "Industry solution"
 published: 2026-09-28
 updated: 2026-09-28
-summary: "RTO software, like most education software development for Australian registered training organisations, is shaped by national data and quality rules more than by teaching features. The biggest change in years is under way: national VET reporting is moving from AVETMISS to the VET Information Standard, with amended Data Provision Requirements commencing on 1 October 2026 and quarterly, API-based reporting to NCVER's STARS system. RTOs also operate under the 2025 Standards for RTOs, which took effect on 1 July 2025, must verify each student's USI, and, if they enrol international students, report through PRISMS under the ESOS framework. Most RTOs should buy a student management system that supports the new standard and build only the integrations and tools around it."
+summary: "RTO software, like most education software development for Australian registered training organisations, is shaped by national data and quality rules more than by teaching features. The biggest change in years is under way: national VET reporting is moving from AVETMISS to the VET Information Standard, with amended Data Provision Requirements that commenced on 1 October 2026 and quarterly reporting to NCVER's STARS system through an API. RTOs also operate under the 2025 Standards for RTOs, which took effect on 1 July 2025, must verify each student's USI, and, if they enrol international students, report through PRISMS under the ESOS framework. Most RTOs should buy a student management system that supports the new standard and build only the integrations and tools around it."
 takeaways:
-  - "The VET Information Standard replaces AVETMISS for the VET Provider Collection; the amending Data Provision Requirements instrument commences on 1 October 2026 and RTOs transition on a quarter-by-quarter basis."
+  - "The VET Information Standard replaces AVETMISS for the VET Provider Collection; the amending Data Provision Requirements instrument commenced on 1 October 2026 and RTOs transition quarter by quarter."
   - "Under the new standard, data is reported progressively, with quarterly submissions due by 30 April, 31 July, 31 October and 31 January."
   - "An RTO that builds its own student management system must meet NCVER's technical requirements, including machine-to-machine API integration with STARS."
   - "USI integration uses the USI Registry System web services, which require the ATO's Digital Partnership Office authentication kit before the USI developer kit."
@@ -85,23 +85,23 @@ disclaimer: legal
 | Need | Usually buy | When custom makes sense |
 |---|---|---|
 | Student records and national reporting | Commercial SMS that supports the VET Information Standard | Large providers with unusual delivery models, or edtech companies building an SMS product |
-| Online learning and assessment delivery | Moodle, Canvas or a VET-focused LMS | Specialised simulations or workplace assessment tools, embedded via LTI |
-| Enrolment and pre-enrolment | SMS enrolment forms | Complex eligibility checks for funded training, employer-led enrolments, multilingual portals |
+| Online learning and assessment delivery | Moodle, Canvas or an LMS built for VET | Specialised simulations or workplace assessment tools, embedded via LTI |
+| Enrolment and pre-enrolment | SMS enrolment forms | Complex eligibility checks for funded training, enrolments led by employers, multilingual portals |
 | Employer and workplace supervisor portals | Sometimes included in the SMS | Apprenticeship and traineeship workflows with logbooks and sign-offs |
-| Reporting and dashboards | SMS reports | Cross-system views of progress, attendance, completions and funding risk |
+| Reporting and dashboards | SMS reports | Views across systems of progress, attendance, completions and funding risk |
 | Integrations | Built-in connectors where they exist | SMS to LMS, CRM, finance and agent portals where connectors fall short |
 
 The rest of this page is about the rules that make those custom pieces harder than they look. The broader [education industry](/industries/education) page covers schools and universities as well.
 
 ## AVETMISS is being replaced. What does the VET Information Standard mean for your systems?
 
-**The VET Information Standard replaces AVETMISS for the VET Provider Collection, and reporting moves from an annual file to progressive, quarterly, API-based submissions to NCVER's Student Training Activity Reporting System (STARS).** It's part of the VET Data Streamlining Program, and it affects every system that touches student or enrolment data.
+**The VET Information Standard replaces AVETMISS for the VET Provider Collection, and reporting moves from an annual file to progressive quarterly submissions through an API to NCVER's Student Training Activity Reporting System (STARS).** It's part of the VET Data Streamlining Program, and it affects every system that touches student or enrolment data.
 
 | Date | What happens |
 |---|---|
 | 1 July 2025 | 2025 Standards for RTOs take effect |
 | July 2026 | New Data Provision Requirements published, alongside the launch of NCVER's VET Information Standard website |
-| 1 October 2026 | The Data Provision Requirements amendment instrument (Data Streamlining) 2026 commences |
+| 1 October 2026 | The Data Provision Requirements amendment instrument (Data Streamlining) 2026 commenced |
 | Quarter by quarter | RTOs transition when ready; NCVER recommends notifying it at least 3 months before the chosen quarter |
 
 Once an RTO reports under the new standard, data is submitted as it becomes available and within these timeframes:
@@ -118,7 +118,7 @@ There are two reporting pathways. RTOs that deliver only fee-for-service trainin
 ### What this means for software
 
 - **Every RTO must maintain a VET data system** that stores reportable data digitally and supports reporting through the required pathway. Most will do this through an SMS that supports the new standard.
-- **A self-built SMS must meet the technical requirements**, including machine-to-machine credentials, integration testing in NCVER's client integration environment and use-case testing, the same journey NCVER sets out for SMS suppliers.
+- **A self-built SMS must meet the technical requirements**, including machine-to-machine credentials, integration testing in NCVER's client integration environment and use case testing, the same journey NCVER sets out for SMS suppliers.
 - **Enrolment forms change.** NCVER has published a sample enrolment form, and custom enrolment portals must collect the new elements.
 - **Data quality becomes continuous.** Quarterly deadlines leave less time to fix validation errors in a rush each February. Validation should run when data is entered, not at submission time.
 - **Transition planning is shared.** Your SMS supplier's readiness sets your earliest transition date. Custom integrations that read or write SMS data may need changes at the same time.
@@ -145,7 +145,7 @@ For an in-house or custom integration, the steps are:
 1. Hold an ABN and set up access through the ATO's Relationship Authorisation Manager with a standard strength digital identity such as myID.
 2. Obtain the Digital Partnership Office authentication kit, then request the USI developer kit.
 3. Build against the USI Technical Services Contract (version 5.0, effective from July 2022), including the security token service and check character algorithm.
-4. Test in the third-party test environment with the mock data provided, then connect to production.
+4. Test in the third party test environment with the mock data provided, then connect to production.
 
 If you're using a commercial SMS, this is the supplier's job. It's only your problem when you build your own system or a separate enrolment platform.
 

@@ -7,28 +7,28 @@ published: 2026-09-28
 updated: 2026-11-07
 summary: "Insurance claims automation with AI, for an Australian general insurer, reads incoming claims, extracts the facts from forms, invoices, quotes and reports, routes each claim to the right team and drafts correspondence, while a claims officer keeps every decision to accept or deny. The General Insurance Code of Practice shapes the design: its timeframes become system clocks, vulnerability indicators become routing rules, and denial letters need reasons a person has checked. Market ranges put a first production workflow at roughly $85k to $265k (AUD, ex GST)."
 takeaways:
-  - "The best return is usually in the first ten business days of a claim: intake, missing-information requests and routing, where the Code already sets deadlines."
+  - "The best return is usually in the first ten business days of a claim: intake, requests for missing information and routing, where the Code already sets deadlines."
   - "Extraction should return a confidence score per field, so officers check the uncertain values instead of retyping everything."
-  - "Keep the accept, deny and fraud-referral decisions human; use AI to assemble evidence and draft, not to decide."
+  - "Keep decisions to accept, deny or refer for fraud with people; use AI to assemble evidence and draft, not to decide."
   - "Vulnerability indicators, such as mentions of family violence, illness or hardship, should route a claim to a person, never trigger an automated response."
   - "APRA's CPS 234 and CPS 230 apply to the AI platform like any other claims system, including the model provider."
 faqs:
   - q: "What is AI document automation in insurance?"
     a: "It means using AI models to read unstructured documents, such as claim forms, quotes, invoices and reports, and turn them into structured fields, routed tasks and draft correspondence. Older document automation relied on fixed templates and rules, which break when a repairer changes its quote layout. AI handles that variation, provided every extracted field carries a confidence score and uncertain values go to a person."
-  - q: "Can AI approve low-value claims automatically?"
-    a: "Technically yes, and some insurers use straight-through processing for simple claims. We recommend starting with AI that prepares the claim and a person who approves it, then automating approval only for a narrow, well-tested category once you have months of evidence that the system's recommendation matches officer decisions. Automated decisions also bring Privacy Act transparency obligations from 10 December 2026."
+  - q: "Can AI approve small claims automatically?"
+    a: "Technically yes, and some insurers use straight-through processing for simple claims. We recommend starting with AI that prepares the claim and a person who approves it, then automating approval only for a narrow category that has been well tested once you have months of evidence that the system's recommendation matches officer decisions. Automated decisions also bring Privacy Act transparency obligations from 10 December 2026."
   - q: "Does this replace our claims platform?"
     a: "No. The AI layer sits beside your claims system of record, such as Guidewire ClaimCenter, Duck Creek or an in-house platform, reading from it and writing structured results back through its APIs. The claim, the decision and the audit trail stay in the system your teams and auditors already rely on."
   - q: "How does it handle photos of damage?"
     a: "Current vision models can describe damage, read text in images and flag photos that don't match the claim description, but they are not a substitute for an assessor. We use them to summarise and sort images and to flag missing photos, and leave the assessment of damage and cost to qualified people."
   - q: "What about health information in injury and travel claims?"
-    a: "Medical certificates and reports are sensitive information under the Privacy Act. They should be processed in Australian regions, access-restricted to officers who need them, excluded from any model training, and retained only as long as your records policy requires."
+    a: "Medical certificates and reports are sensitive information under the Privacy Act. They should be processed in Australian regions, with access restricted to officers who need them, excluded from any model training, and retained only as long as your records policy requires."
   - q: "Could AI help detect fraud?"
     a: "It can flag inconsistencies, such as dates that don't line up or duplicated invoices, for a person to review. It should not label a customer as fraudulent or stall a claim on its own. Investigations carry their own commitments under the Code, and those stay with your investigations team."
   - q: "What are other AI automation use cases in insurance?"
     a: "The same intake pattern works outside claims: sorting broker submissions for underwriters, answering staff questions from policy wordings with citations, and triaging complaints for the internal dispute resolution team. In each case the AI reads, extracts and drafts while a person makes the underwriting, coverage or complaint decision."
   - q: "How do we know the extraction is accurate enough?"
-    a: "By measuring it before launch on a sample of your own historical documents with known correct values. We agree a field-level accuracy threshold with the claims owner, and fields below it go to human review by default."
+    a: "By measuring it before launch on a sample of your own historical documents with known correct values. We agree an accuracy threshold for each field with the claims owner, and fields below it go to human review by default."
 sources:
   - title: "General Insurance Code of Practice"
     url: "https://insurancecouncil.com.au/cop/"
@@ -70,14 +70,14 @@ disclaimer: legal
 
 **In insurance claims processing, AI is good at turning unstructured claim material into structured, routed work: reading emails and attachments, extracting the facts, spotting what's missing and drafting the next message.** It is not good at, and shouldn't be trusted with, deciding whether a claim is covered.
 
-Here is how a claim moves through an AI-assisted intake flow we would design, step by step:
+Here is how a claim moves through an intake flow assisted by AI we would design, step by step:
 
 1. **Receive.** Claims arrive by web form, email, broker portal or phone transcript. Everything lands in one intake queue with the original preserved.
 2. **Classify.** The system identifies the product line (home, motor, travel, commercial property), the claim type and the documents attached.
 3. **Extract.** Fields are pulled from each document: policy number, date and place of loss, amounts, repairer or provider details. Each field carries a confidence score and a link back to where it was found.
 4. **Match.** The claim is linked to the policy in your system of record and checked for obvious gaps, such as a missing police event number for a theft claim.
 5. **Flag.** Vulnerability indicators, urgency (a household without a working roof) and possible inconsistencies are flagged for a person.
-6. **Route.** The claim goes to the right team and priority, with a one-paragraph summary.
+6. **Route.** The claim goes to the right team and priority, with a summary of one paragraph.
 7. **Draft.** The system drafts the acknowledgement and any request for further information, which an officer edits and sends.
 8. **Decide.** A claims officer makes the decision. The AI can assemble the relevant policy wording and evidence, but the decision and its reasons belong to a person.
 
@@ -102,13 +102,13 @@ Complaints and disputes continue to run through your internal dispute resolution
 
 **Because the Code, your duty of utmost good faith and the Privacy Act's coming automated decision rules all expect a reasoned, reviewable decision, and large language models don't produce reliable reasons.** A model can write a fluent denial letter that cites the wrong exclusion. Keeping a human on the decision contains that failure to a draft that gets corrected.
 
-There is also a supervisory reason. APRA's April 2026 letter to industry expects human involvement for high-risk decisions and continuous monitoring of AI systems. A decline recommendation affecting a customer's home or car is squarely a high-risk decision. From 10 December 2026, if a computer program makes, or substantially helps make, a decision that significantly affects someone, your privacy policy must say so. Our [automated decision-making guide](/guides/privacy-act-automated-decision-making) covers what that involves.
+There is also a supervisory reason. APRA's April 2026 letter to industry expects human involvement for high risk decisions and continuous monitoring of AI systems. A decline recommendation affecting a customer's home or car is squarely a high risk decision. From 10 December 2026, if a computer program makes, or substantially helps make, a decision that significantly affects someone, your privacy policy must say so. Our [automated decision-making guide](/guides/privacy-act-automated-decision-making) covers what that involves.
 
 The practical design is a review screen where the officer sees the AI's proposed facts beside the source documents, accepts or corrects each one, and records the decision. Corrections feed the evaluation set, which is how accuracy improves without retraining a model.
 
 ## Which documents are worth automating first?
 
-**Start with high-volume, semi-structured documents where the fields are predictable.** Handwritten statements and long expert reports are harder and usually come later.
+**Start with documents that arrive in high volume and follow a loose structure, where the fields are predictable.** Handwritten statements and long expert reports are harder and usually come later.
 
 | Document | Typical fields | Difficulty |
 |---|---|---|
@@ -127,7 +127,7 @@ Our [AI document processing service](/services/ai-document-processing) covers th
 **The AI layer reads from and writes back to your claims platform; it doesn't become a second system of record.** Most of the insurance software development in a project like this is integration work around the platforms below. Typical integration points:
 
 - Claims platform: Guidewire ClaimCenter, Duck Creek Claims or an in-house system, through its APIs or integration layer
-- Policy administration, for coverage and policy details (read-only)
+- Policy administration, for coverage and policy details (read only)
 - Email and contact centre: Microsoft 365 or Google Workspace mailboxes, and call transcription where claims are lodged by phone
 - Broker and repairer portals
 - Document management, for storing originals and generated correspondence
@@ -140,7 +140,7 @@ Our [AI document processing service](/services/ai-document-processing) covers th
 
 - **Clock drift.** If intake stalls, for example because a model endpoint is down, the 10 business day window keeps running. The system falls back to a plain queue with the original documents, so officers can keep working without AI, and alerts when the backlog grows.
 - **Automated contact with a vulnerable customer.** Outbound messages are drafts by default. Where vulnerability indicators appear anywhere in the claim, automated drafting is switched off for that claim and a person makes contact.
-- **Silent extraction errors.** Low-confidence fields are highlighted, amounts are cross-checked against line item totals, and ABNs are validated against the checksum. Anything that fails goes to review.
+- **Silent extraction errors.** Fields with low confidence are highlighted, amounts are cross-checked against line item totals, and ABNs are validated against the checksum. Anything that fails goes to review.
 - **Prompt injection through documents.** A claim attachment is untrusted input. Text inside a PDF that tries to instruct the model ("approve this claim") must have no effect, because the model has no authority to approve anything and its outputs are checked against a fixed schema. We test this deliberately with crafted documents; our [prompt injection explainer](/guides/prompt-injection) covers the technique.
 - **Scope creep.** Features that start as "summarise the policy wording" can drift into "tell the officer whether it's covered". Keep a written list of what the system is allowed to do, and review it at every release.
 
@@ -160,7 +160,7 @@ The [LLM evaluation guide](/guides/llm-evaluation) explains how to build the lab
 
 ## What should an insurer budget for a first workflow?
 
-**A first production workflow, usually one product line, typically takes 9 to 16 weeks and costs roughly $85,000 to $265,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote.
+**A first production workflow (usually one product line) typically takes 9 to 16 weeks and costs roughly $85,000 to $265,000 (AUD, ex GST).** These are typical Australian market ranges, not AWLabs prices and not a quote. Our [custom software cost guide](/guides/custom-software-development-cost-australia) names the published sources.
 
 | Phase | Duration | Typical range (AUD, ex GST) | What you get |
 |---|---|---|---|
@@ -173,4 +173,4 @@ Model usage is a separate running cost that scales with pages processed; we esti
 
 ## Working with AWLabs on claims automation
 
-Every build starts with our Discovery Audit, a fixed fee credited in full against the build, working from a sample of your real claims and documents. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data and processing in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We build to your requirements and provide the evidence your risk, compliance and APRA-facing teams need; your organisation remains responsible for its obligations under the Code and prudential standards. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and our wider view of [AI for financial services](/solutions/ai-for-financial-services).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build, working from a sample of your real claims and documents. After two strategy sessions you receive a fixed price for an agreed scope. We can host your data and processing in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. Every change passes automated quality gates and a senior engineer's review. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. We build to your requirements and provide the evidence your risk, compliance and APRA liaison teams need; your organisation remains responsible for its obligations under the Code and prudential standards. See [AI document processing](/services/ai-document-processing), [workflow automation](/services/workflow-automation) and our wider view of [AI for financial services](/solutions/ai-for-financial-services).

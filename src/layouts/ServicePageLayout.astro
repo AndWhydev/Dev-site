@@ -77,6 +77,21 @@ interface Props {
   comparison?: Comparison;
   /** Definition blocks for technical terms used on this page. */
   definitions?: Definition[];
+  /**
+   * Natural noun phrase for headings, written as it would sit mid sentence,
+   * e.g. "AI chatbot development" or "Node.js and Python backends".
+   * Falls back to serviceName.
+   */
+  nounPhrase?: string;
+  /** Optional per page overrides for the section headings. */
+  involveHeading?: string;
+  whyHeading?: string;
+  useCasesHeading?: string;
+  techHeading?: string;
+  processHeading?: string;
+  whoHeading?: string;
+  fitHeading?: string;
+  faqHeading?: string;
 }
 
 const {
@@ -100,12 +115,36 @@ const {
   pricing,
   comparison,
   definitions,
+  nounPhrase,
+  involveHeading,
+  whyHeading,
+  useCasesHeading,
+  techHeading,
+  processHeading,
+  whoHeading,
+  fitHeading,
+  faqHeading,
 } = Astro.props;
 
 const siteUrl = 'https://www.awlabs.com.au';
 const name = serviceName ?? category;
 const pageSlug = slug ?? Astro.url.pathname.replace(/\/+$/, '').split('/').pop() ?? '';
 const canonicalUrl = `${siteUrl}/services/${pageSlug}`;
+
+// Headings read as written sentences, not templates. Pages set nounPhrase and,
+// where the default still reads awkwardly, override individual headings.
+const noun = nounPhrase ?? name;
+const headings = {
+  involve: involveHeading ?? `What does ${noun} involve?`,
+  why: whyHeading ?? `Why choose AWLabs for ${noun}?`,
+  useCases: useCasesHeading ?? `How do Australian businesses use ${noun}?`,
+  tech: techHeading ?? `What technologies do we use for ${noun}?`,
+  process: processHeading ?? `How do we deliver ${noun}?`,
+  who: whoHeading ?? `Who is ${noun} for?`,
+  fit: fitHeading ?? `Is ${noun} right for you?`,
+  faq: faqHeading ?? `Common questions about ${noun}`,
+};
+const hasDurations = process.some((step) => step.duration);
 
 // ── Semantic schema for AI search (GEO): Service + FAQPage + BreadcrumbList ──
 const serviceSchema = {
@@ -185,7 +224,7 @@ const entitySentence = BRAND_DEFINITION;
         <div class="svc-what-grid">
           <div class="reveal-left">
             <span class="section-label">Overview</span>
-            <h2 class="section-heading">What does {name} involve?</h2>
+            <h2 class="section-heading">{headings.involve}</h2>
             {summaryStatement && <p class="svc-liftable">{summaryStatement}</p>}
             {description.map((para) => <p class="svc-para">{para}</p>)}
             <p class="svc-entity-note">{entitySentence}</p>
@@ -225,7 +264,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Key Benefits</span>
-          <h2 class="section-heading">Why choose AWLabs for {name}?</h2>
+          <h2 class="section-heading">{headings.why}</h2>
         </div>
         <div class="benefits-grid">
           {benefits.map((b, i) => (
@@ -245,7 +284,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Real World Applications</span>
-          <h2 class="section-heading">How do Australian businesses use {name}?</h2>
+          <h2 class="section-heading">{headings.useCases}</h2>
         </div>
         <div class="usecases-grid">
           {useCases.map((uc, i) => (
@@ -265,7 +304,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Technology Stack</span>
-          <h2 class="section-heading">What technologies does AWLabs use for {name}?</h2>
+          <h2 class="section-heading">{headings.tech}</h2>
         </div>
         <div class="tech-tags reveal stagger-1">
           {technologies.map((tech) => (
@@ -280,7 +319,8 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Our Process</span>
-          <h2 class="section-heading">What does the {name} process look like?</h2>
+          <h2 class="section-heading">{headings.process}</h2>
+          {hasDurations && <p class="svc-process-note">Typical timings; your Schedule of Work sets the real ones.</p>}
         </div>
         <div class="svc-process-list">
           {process.map((step, i) => (
@@ -307,7 +347,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Industries Served</span>
-          <h2 class="section-heading">Who is {name} for?</h2>
+          <h2 class="section-heading">{headings.who}</h2>
         </div>
         <div class="svc-industry-tags reveal stagger-1">
           {industries.map((ind) => (
@@ -323,13 +363,13 @@ const entitySentence = BRAND_DEFINITION;
         <div class="svc-inner">
           <div class="reveal">
             <span class="section-label">Honest Fit Assessment</span>
-            <h2 class="section-heading">Is {name} the right solution for you?</h2>
+            <h2 class="section-heading">{headings.fit}</h2>
           </div>
           <div class="fit-grid">
             <div class="fit-col fit-yes reveal stagger-1">
               <div class="fit-col-head">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <h3>When {name} is the right fit</h3>
+                <h3>When it is the right fit</h3>
               </div>
               <ul>
                 {comparison.rightFor.map((item) => <li>{item}</li>)}
@@ -355,7 +395,7 @@ const entitySentence = BRAND_DEFINITION;
         <div class="svc-inner">
           <div class="reveal">
             <span class="section-label">Pricing</span>
-            <h2 class="section-heading">How much does {name} cost?</h2>
+            <h2 class="section-heading">What does it cost?</h2>
             <p class="svc-pricing-note">Every build is scoped and priced individually after a Discovery Audit.</p>
           </div>
           <div class="pricing-grid">
@@ -402,7 +442,7 @@ const entitySentence = BRAND_DEFINITION;
       <div class="svc-inner">
         <div class="reveal">
           <span class="section-label">Common Questions</span>
-          <h2 class="section-heading">Common questions about {name}</h2>
+          <h2 class="section-heading">{headings.faq}</h2>
         </div>
         <div class="faq-list">
           {faqs.map((faq, i) => (
@@ -515,6 +555,19 @@ const entitySentence = BRAND_DEFINITION;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .svc-hero-ctas .btn-primary svg,
+  .pricing-cta .btn-primary svg,
+  .related-card svg {
+    flex-shrink: 0;
+  }
+
+  .svc-process-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #7f978d;
+    margin: 0 0 1.75rem;
   }
 
   .svc-hero-icon {
