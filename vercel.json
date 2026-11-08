@@ -147,7 +147,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-src 'self' https://golf-app-demo.vercel.app;"
+          "value": "frame-src 'self' https://golf-app-demo.vercel.app https://links.awlabs.com.au https://*.leadconnectorhq.com https://*.msgsndr.com;"
         }
       ]
     }

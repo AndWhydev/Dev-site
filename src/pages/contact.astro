@@ -96,8 +96,26 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <!-- Right: form + Calendly -->
+        <!-- Right: booking + form -->
         <div class="contact-form-col reveal-right stagger-1">
+
+          <!-- Booking -->
+          <div class="form-card booking-card" id="book">
+            <h2>Book a Time</h2>
+            <p class="form-sub">Pick whichever suits you. Times are shown in your local time zone.</p>
+            <div class="booking-tabs" role="tablist" aria-label="Booking type">
+              <button type="button" role="tab" class="booking-tab" id="tab-phone" aria-selected="true" aria-controls="panel-phone" data-panel="panel-phone">Phone call</button>
+              <button type="button" role="tab" class="booking-tab" id="tab-zoom" aria-selected="false" aria-controls="panel-zoom" data-panel="panel-zoom" tabindex="-1">Zoom with Andy</button>
+            </div>
+            <div class="booking-panel" id="panel-phone" role="tabpanel" aria-labelledby="tab-phone">
+              <p class="booking-note">A 15 minute phone call. We'll ring you at the time you choose.</p>
+              <iframe id="discovery-call-awu" class="booking-frame" title="Book a phone Discovery Call" data-src="https://links.awlabs.com.au/widget/bookings/discovery-call-awu" scrolling="no" loading="lazy"></iframe>
+            </div>
+            <div class="booking-panel" id="panel-zoom" role="tabpanel" aria-labelledby="tab-zoom" hidden>
+              <p class="booking-note">A 55 minute Zoom meeting with Andy. The link is in your confirmation email.</p>
+              <iframe id="dam-call-awlabs" class="booking-frame" title="Book a Zoom meeting with Andy" data-src="https://links.awlabs.com.au/widget/bookings/dam-call-awlabs" scrolling="no" loading="lazy"></iframe>
+            </div>
+          </div>
 
           <!-- Contact Form -->
           <div class="form-card">
@@ -487,6 +505,46 @@ import Footer from '../components/Footer.astro';
     line-height: 1.6;
   }
 
+
+  /* Booking */
+  .booking-card { margin-bottom: 1.5rem; }
+  .booking-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .booking-tab {
+    flex: 1;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #1e2d28;
+    background: transparent;
+    color: #8aa69b;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .booking-tab:hover { color: white; border-color: #0d9373; }
+  .booking-tab[aria-selected="true"] { background: #0d9373; border-color: #0d9373; color: white; }
+  .booking-tab:focus-visible { outline: 2px solid #0d9373; outline-offset: 2px; }
+  .booking-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa69b;
+    margin: 0 0 1rem;
+  }
+  .booking-panel[hidden] { display: none; }
+  .booking-frame {
+    width: 100%;
+    min-height: 640px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    display: block;
+  }
+
   @media (max-width: 1024px) {
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
@@ -494,8 +552,48 @@ import Footer from '../components/Footer.astro';
     .contact-section { padding: 6rem 0; }
     .form-card { padding: 1.75rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
+    .booking-frame { min-height: 1000px; }
+    .booking-tab { font-size: 0.8125rem; padding: 0.75rem 0.5rem; }
   }
 </style>
+
+<script>
+  // Booking tabs: load each GoHighLevel calendar only when its tab is first shown.
+  const loadFrame = (panel: HTMLElement | null) => {
+    const f = panel?.querySelector<HTMLIFrameElement>('iframe[data-src]');
+    if (f && !f.src) f.src = f.dataset.src!;
+  };
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.booking-tab'));
+  const select = (tab: HTMLButtonElement) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.dataset.panel!);
+      if (panel) panel.hidden = !on;
+      if (on) loadFrame(panel);
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      select(next); next.focus();
+    });
+  });
+  const bookingCard = document.querySelector<HTMLElement>('.booking-card');
+  if (bookingCard) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        loadFrame(document.querySelector('.booking-panel:not([hidden])'));
+        io.disconnect();
+      }
+    }, { rootMargin: '400px' });
+    io.observe(bookingCard);
+  }
+</script>
+<script is:inline src="https://links.awlabs.com.au/js/form_embed.js" defer></script>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
