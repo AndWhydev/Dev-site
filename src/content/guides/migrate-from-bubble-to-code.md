@@ -54,6 +54,10 @@ related:
     href: "/guides/make-ai-built-app-production-ready"
   - title: "Startup MVP development"
     href: "/startup-mvp"
+  - title: "Bubble vs custom code"
+    href: "/guides/bubble-vs-custom-development"
+  - title: "How to plan a data migration"
+    href: "/guides/data-migration-plan"
 service:
   title: "SaaS development"
   href: "/services/saas-development"

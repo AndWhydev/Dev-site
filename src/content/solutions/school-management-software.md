@@ -62,6 +62,10 @@ related:
     href: "/guides/privacy-act-and-ai"
   - title: "App accessibility in Australia"
     href: "/guides/app-accessibility-australia"
+  - title: "Childcare software in Australia"
+    href: "/solutions/childcare-centre-software"
+  - title: "University software and AI in Australia"
+    href: "/solutions/university-software"
 service:
   title: "Data analytics"
   href: "/services/data-analytics"

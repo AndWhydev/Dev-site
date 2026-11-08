@@ -62,6 +62,10 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "How much does a rostering and workforce management system cost?"
+    href: "/guides/workforce-management-system-cost"
+  - title: "Award interpretation software"
+    href: "/guides/award-interpretation-software"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

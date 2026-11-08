@@ -77,6 +77,10 @@ related:
     href: "/NDA"
   - title: "Protecting an app idea: NDAs, patents and trade marks"
     href: "/guides/how-to-protect-an-app-idea"
+  - title: "Are electronic signatures legal in Australia?"
+    href: "/guides/electronic-signatures-australia"
+  - title: "Technical due diligence checklist for Australian software companies"
+    href: "/guides/technical-due-diligence"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

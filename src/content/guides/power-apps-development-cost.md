@@ -57,6 +57,8 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "Internal tools development"
     href: "/guides/internal-tools-development"
+  - title: "Power Apps vs a custom app"
+    href: "/guides/power-apps-vs-custom-app"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

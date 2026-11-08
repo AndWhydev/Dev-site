@@ -68,6 +68,8 @@ related:
     href: "/solutions/trades-business-software"
   - title: "Replace Excel or Access with a web app"
     href: "/guides/replace-excel-or-access-with-a-web-app"
+  - title: "Waste management and skip bin software in Australia"
+    href: "/solutions/waste-management-software"
 service:
   title: "Data analytics and reporting"
   href: "/services/data-analytics"

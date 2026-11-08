@@ -49,6 +49,10 @@ related:
     href: "/guides/ai-development-cost-australia"
   - title: "Guidance for AI Adoption: the six essential practices"
     href: "/guides/guidance-for-ai-adoption"
+  - title: "How to measure the ROI of an AI project"
+    href: "/guides/measure-ai-roi"
+  - title: "How to prepare your data for AI"
+    href: "/guides/data-readiness-for-ai"
 service:
   title: "AI consulting"
   href: "/ai-consulting"

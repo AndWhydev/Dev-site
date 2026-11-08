@@ -74,6 +74,10 @@ related:
     href: "/guides/ai-receptionist-cost-australia"
   - title: "Privacy Act obligations for small business software"
     href: "/guides/privacy-act-small-business-software"
+  - title: "Winery, brewery and distillery software in Australia"
+    href: "/solutions/brewery-winery-software"
+  - title: "How much does a loyalty app cost in Australia?"
+    href: "/guides/loyalty-app-cost"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

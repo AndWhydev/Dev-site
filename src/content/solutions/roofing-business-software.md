@@ -54,6 +54,8 @@ related:
     href: "/solutions/construction-software-and-ai"
   - title: "How to compare software quotes"
     href: "/guides/how-to-compare-software-quotes"
+  - title: "Plumbing software in Australia"
+    href: "/solutions/plumbing-business-software"
 service:
   title: "AI integration"
   href: "/services/ai-integration"

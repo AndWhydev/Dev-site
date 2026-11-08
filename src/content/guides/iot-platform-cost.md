@@ -58,6 +58,8 @@ related:
     href: "/solutions/food-manufacturer-software"
   - title: "How to reduce cloud costs"
     href: "/guides/reduce-cloud-costs"
+  - title: "How much does computer vision development cost?"
+    href: "/guides/computer-vision-cost"
 service:
   title: "Data engineering"
   href: "/services/data-engineering"

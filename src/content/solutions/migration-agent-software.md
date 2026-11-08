@@ -62,6 +62,10 @@ related:
     href: "/guides/privacy-act-and-ai"
   - title: "Notifiable data breaches and software"
     href: "/guides/notifiable-data-breaches-software"
+  - title: "How to automate client onboarding in Australia"
+    href: "/guides/how-to-automate-customer-onboarding"
+  - title: "Are electronic signatures legal in Australia?"
+    href: "/guides/electronic-signatures-australia"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

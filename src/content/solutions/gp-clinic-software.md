@@ -59,6 +59,10 @@ related:
     href: "/industries/healthcare"
   - title: "Using personal information in AI systems under the Privacy Act"
     href: "/guides/privacy-act-and-ai"
+  - title: "How much does a telehealth app cost to build in Australia?"
+    href: "/guides/telehealth-app-cost"
+  - title: "Pharmacy software and apps in Australia"
+    href: "/solutions/pharmacy-software"
 service:
   title: "Data analytics"
   href: "/services/data-analytics"

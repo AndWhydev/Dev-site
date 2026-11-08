@@ -53,6 +53,10 @@ related:
     href: "/solutions/ai-in-healthcare"
   - title: "Private LLM deployment"
     href: "/services/private-llm-deployment"
+  - title: "How much does a telehealth app cost to build in Australia?"
+    href: "/guides/telehealth-app-cost"
+  - title: "Physiotherapy practice management software in Australia"
+    href: "/solutions/physiotherapy-clinic-software"
 service:
   title: "Private LLM deployment"
   href: "/services/private-llm-deployment"

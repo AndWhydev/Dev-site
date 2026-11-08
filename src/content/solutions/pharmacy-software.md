@@ -65,6 +65,8 @@ related:
     href: "/industries/retail-ecommerce"
   - title: "Data analytics"
     href: "/services/data-analytics"
+  - title: "Aged care software under the new Aged Care Act"
+    href: "/solutions/aged-care-software"
 service:
   title: "Web and mobile apps"
   href: "/services/web-mobile-apps"

@@ -62,6 +62,8 @@ related:
     href: "/solutions/specialist-medical-practice-software"
   - title: "Data engineering"
     href: "/services/data-engineering"
+  - title: "Private hospital and day surgery software"
+    href: "/solutions/private-hospital-software"
 service:
   title: "Data engineering"
   href: "/services/data-engineering"

@@ -65,6 +65,8 @@ related:
     href: "/services/qa-testing"
   - title: "Web and mobile app development"
     href: "/services/web-mobile-apps"
+  - title: "How much does an app redesign or UX design cost?"
+    href: "/guides/app-redesign-cost"
 service:
   title: "UI and UX design"
   href: "/services/ui-ux-design"

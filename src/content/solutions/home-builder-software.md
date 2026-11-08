@@ -56,6 +56,8 @@ related:
     href: "/guides/customer-portal-development"
   - title: "Building and pest inspection report software"
     href: "/solutions/building-inspection-software"
+  - title: "Software for Australian property developers"
+    href: "/solutions/property-developer-software"
 service:
   title: "Web and mobile apps"
   href: "/services/web-mobile-apps"

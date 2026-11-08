@@ -65,6 +65,8 @@ related:
     href: "/industries/real-estate"
   - title: "Workflow automation cost"
     href: "/guides/workflow-automation-cost"
+  - title: "Facility management software in Australia"
+    href: "/solutions/facility-management-software"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

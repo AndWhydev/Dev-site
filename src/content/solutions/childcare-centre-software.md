@@ -62,6 +62,8 @@ related:
     href: "/industries/education"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "School management software in Australia"
+    href: "/solutions/school-management-software"
 service:
   title: "CRM integration"
   href: "/services/crm-integration"

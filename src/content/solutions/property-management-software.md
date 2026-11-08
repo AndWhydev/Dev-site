@@ -62,6 +62,10 @@ related:
     href: "/industries/real-estate"
   - title: "API integration cost in Australia"
     href: "/guides/api-integration-cost-australia"
+  - title: "Strata management software for Australian strata managers"
+    href: "/solutions/strata-management-software"
+  - title: "Short term rental management software"
+    href: "/solutions/short-term-rental-software"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

@@ -51,6 +51,12 @@ related:
     href: "/guides/privacy-act-and-ai"
   - title: "Data engineering"
     href: "/services/data-engineering"
+  - title: "From AI pilot to production"
+    href: "/guides/ai-pilot-to-production"
+  - title: "How to measure the ROI of an AI project"
+    href: "/guides/measure-ai-roi"
+  - title: "How much does a data warehouse cost in Australia?"
+    href: "/guides/data-warehouse-cost"
 service:
   title: "AI readiness assessment"
   href: "/services/ai-readiness-assessment"

@@ -54,6 +54,8 @@ related:
     href: "/guides/llm-evaluation"
   - title: "R&D Tax Incentive for AI projects"
     href: "/guides/rd-tax-incentive-ai-projects"
+  - title: "From AI pilot to production"
+    href: "/guides/ai-pilot-to-production"
 service:
   title: "AI readiness assessment"
   href: "/services/ai-readiness-assessment"

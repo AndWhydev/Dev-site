@@ -56,6 +56,10 @@ related:
     href: "/guides/ai-chatbot-cost-australia"
   - title: "Privacy Act rules for small business software"
     href: "/guides/privacy-act-small-business-software"
+  - title: "How much does LMS development cost in Australia?"
+    href: "/guides/lms-development-cost"
+  - title: "Childcare software in Australia"
+    href: "/solutions/childcare-centre-software"
 service:
   title: "Web and mobile apps"
   href: "/services/web-mobile-apps"

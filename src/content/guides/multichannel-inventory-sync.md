@@ -56,6 +56,10 @@ related:
     href: "/solutions/retail-chain-software"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "Cin7 vs Unleashed vs custom inventory software"
+    href: "/guides/cin7-vs-unleashed-vs-custom"
+  - title: "How much does a custom inventory management system cost?"
+    href: "/guides/inventory-management-system-cost"
 service:
   title: "API development and integration"
   href: "/services/api-development"

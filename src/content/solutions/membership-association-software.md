@@ -60,6 +60,8 @@ related:
     href: "/solutions/ai-for-not-for-profits"
   - title: "RAG knowledge base cost"
     href: "/guides/rag-knowledge-base-cost"
+  - title: "How much does a membership platform cost to build?"
+    href: "/guides/membership-platform-cost"
 service:
   title: "RAG knowledge base"
   href: "/services/rag-knowledge-base"

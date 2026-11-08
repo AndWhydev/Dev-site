@@ -65,6 +65,8 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "How much does a booking system cost in Australia?"
+    href: "/guides/booking-system-cost"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

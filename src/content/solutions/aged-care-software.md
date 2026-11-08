@@ -67,6 +67,8 @@ related:
     href: "/guides/data-residency-vs-data-sovereignty"
   - title: "Healthcare software"
     href: "/industries/healthcare"
+  - title: "Pharmacy software and apps in Australia"
+    href: "/solutions/pharmacy-software"
 service:
   title: "Data analytics"
   href: "/services/data-analytics"

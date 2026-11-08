@@ -76,6 +76,10 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "n8n vs Make vs Zapier"
     href: "/guides/n8n-vs-make-vs-zapier"
+  - title: "HubSpot vs Salesforce for Australian businesses"
+    href: "/guides/hubspot-vs-salesforce-australia"
+  - title: "GoHighLevel vs HubSpot for Australian service businesses and agencies"
+    href: "/guides/gohighlevel-vs-hubspot"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

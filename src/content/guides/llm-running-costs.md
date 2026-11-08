@@ -58,6 +58,10 @@ related:
     href: "/guides/rag-knowledge-base-cost"
   - title: "Private LLM deployment"
     href: "/services/private-llm-deployment"
+  - title: "How to reduce your AWS or Azure bill"
+    href: "/guides/reduce-cloud-costs"
+  - title: "How much does AI document processing cost?"
+    href: "/guides/document-processing-cost"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

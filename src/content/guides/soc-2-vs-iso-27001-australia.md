@@ -65,6 +65,8 @@ related:
     href: "/guides/apra-cps-234-ai"
   - title: "SaaS development cost in Australia"
     href: "/guides/saas-development-cost-australia"
+  - title: "How much does an Essential Eight uplift cost?"
+    href: "/guides/essential-eight-uplift-cost"
 service:
   title: "SaaS development"
   href: "/services/saas-development"

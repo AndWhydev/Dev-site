@@ -74,6 +74,10 @@ related:
     href: "/startup-mvp"
   - title: "Essential Eight for software development"
     href: "/guides/essential-eight-software-development"
+  - title: "Loan origination and servicing software for Australian lenders"
+    href: "/solutions/lending-software"
+  - title: "How to integrate PayTo into your app or billing system"
+    href: "/guides/payto-integration"
 service:
   title: "Custom app development"
   href: "/services/custom-app-development"

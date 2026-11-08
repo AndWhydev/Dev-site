@@ -62,6 +62,10 @@ related:
     href: "/guides/customer-portal-development"
   - title: "What is RAG?"
     href: "/guides/what-is-rag"
+  - title: "Financial planning software in Australia"
+    href: "/solutions/financial-planner-software"
+  - title: "Mortgage broker software in Australia"
+    href: "/solutions/mortgage-broker-software"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

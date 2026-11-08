@@ -81,6 +81,8 @@ related:
     href: "/guides/privacy-act-small-business-software"
   - title: "AI data sovereignty in Australia"
     href: "/guides/ai-data-sovereignty-australia"
+  - title: "AI acceptable use policy template for Australian businesses"
+    href: "/guides/ai-acceptable-use-policy"
 service:
   title: "AI integration"
   href: "/services/ai-integration"

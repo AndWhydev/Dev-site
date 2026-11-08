@@ -64,6 +64,10 @@ related:
     href: "/guides/rag-vs-fine-tuning"
   - title: "Does the Privacy Act apply to small business?"
     href: "/guides/privacy-act-small-business-software"
+  - title: "Is it legal to record meetings with an AI notetaker in Australia?"
+    href: "/guides/ai-meeting-transcription-recording-laws"
+  - title: "Psychology practice management software"
+    href: "/solutions/psychology-practice-software"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

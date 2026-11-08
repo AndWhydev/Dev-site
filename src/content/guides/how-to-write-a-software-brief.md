@@ -53,6 +53,8 @@ related:
     href: "/guides/software-development-contract-checklist"
   - title: "Startup MVP development"
     href: "/startup-mvp"
+  - title: "Is my app quote reasonable? How to compare software development quotes"
+    href: "/guides/how-to-compare-software-quotes"
 service:
   title: "Custom software development"
   href: "/services/custom-app-development"

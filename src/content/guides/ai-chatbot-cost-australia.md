@@ -68,6 +68,8 @@ related:
     href: "/services/ai-agent-development"
   - title: "What an AI receptionist costs"
     href: "/guides/ai-receptionist-cost-australia"
+  - title: "Tutoring management software for Australian tutoring centres"
+    href: "/solutions/tutoring-centre-software"
 service:
   title: "AI chatbot development"
   href: "/services/ai-chatbot"

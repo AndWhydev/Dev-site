@@ -62,6 +62,10 @@ related:
     href: "/locations/canberra"
   - title: "Government and enterprise"
     href: "/industries/government-enterprise"
+  - title: "Software for local government in Australia"
+    href: "/solutions/local-council-software"
+  - title: "Building software for NSW Government"
+    href: "/solutions/nsw-government-software"
 industry:
   title: "Government"
   href: "/industries/government-enterprise"

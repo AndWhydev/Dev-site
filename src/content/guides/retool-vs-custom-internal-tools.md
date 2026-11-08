@@ -52,6 +52,10 @@ related:
     href: "/services/backend-development"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "How to build internal tools and admin panels for your business"
+    href: "/guides/internal-tools-development"
+  - title: "Power Apps vs a custom app"
+    href: "/guides/power-apps-vs-custom-app"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

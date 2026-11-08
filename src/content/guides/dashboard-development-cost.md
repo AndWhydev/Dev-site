@@ -59,6 +59,10 @@ related:
     href: "/guides/software-developer-rates-australia"
   - title: "Internal tools development"
     href: "/guides/internal-tools-development"
+  - title: "Power BI vs Tableau vs Looker Studio for Australian businesses"
+    href: "/guides/power-bi-vs-tableau-vs-looker"
+  - title: "How much does a data warehouse cost in Australia?"
+    href: "/guides/data-warehouse-cost"
 service:
   title: "Data analytics"
   href: "/services/data-analytics"

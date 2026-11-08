@@ -61,6 +61,10 @@ related:
     href: "/guides/how-to-write-a-software-brief"
   - title: "Flutter vs React Native"
     href: "/guides/flutter-vs-react-native"
+  - title: "How much does a booking system cost in Australia?"
+    href: "/guides/booking-system-cost"
+  - title: "How to build a marketplace platform in Australia"
+    href: "/guides/how-to-build-a-marketplace"
 service:
   title: "Web and mobile app development"
   href: "/services/web-mobile-apps"

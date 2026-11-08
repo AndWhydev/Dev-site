@@ -62,6 +62,8 @@ related:
     href: "/guides/rag-knowledge-base-cost"
   - title: "Database architecture"
     href: "/services/database-architecture"
+  - title: "PostgreSQL vs MongoDB for business applications"
+    href: "/guides/postgresql-vs-mongodb"
 service:
   title: "RAG knowledge base development"
   href: "/services/rag-knowledge-base"

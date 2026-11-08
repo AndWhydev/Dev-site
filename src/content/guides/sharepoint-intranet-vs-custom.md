@@ -51,6 +51,10 @@ related:
     href: "/guides/award-interpretation-software"
   - title: "RAG knowledge base development"
     href: "/services/rag-knowledge-base"
+  - title: "How much does an intranet cost in Australia?"
+    href: "/guides/intranet-cost"
+  - title: "Power Apps vs a custom app"
+    href: "/guides/power-apps-vs-custom-app"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

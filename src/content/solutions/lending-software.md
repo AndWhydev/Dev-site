@@ -77,6 +77,12 @@ related:
     href: "/guides/consumer-data-right-software"
   - title: "Build vs buy: custom software or off the shelf?"
     href: "/guides/build-vs-buy-software"
+  - title: "Mortgage broker software in Australia"
+    href: "/solutions/mortgage-broker-software"
+  - title: "Debt collection software for Australian agencies and creditors"
+    href: "/solutions/debt-collection-software"
+  - title: "Fintech app development in Australia"
+    href: "/solutions/fintech-startup-development"
 service:
   title: "Enterprise software"
   href: "/services/enterprise-software"

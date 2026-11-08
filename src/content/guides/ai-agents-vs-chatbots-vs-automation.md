@@ -61,6 +61,8 @@ related:
     href: "/guides/ai-agent-cost-australia"
   - title: "AI voice agents and receptionists"
     href: "/services/ai-voice-agents"
+  - title: "How to automate a business inbox with AI"
+    href: "/guides/ai-email-inbox-automation"
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"

@@ -60,6 +60,10 @@ related:
     href: "/guides/subscription-app-development"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "University software and AI in Australia"
+    href: "/solutions/university-software"
+  - title: "Tutoring management software for Australian tutoring centres"
+    href: "/solutions/tutoring-centre-software"
 service:
   title: "SaaS development"
   href: "/services/saas-development"

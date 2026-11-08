@@ -62,6 +62,10 @@ related:
     href: "/guides/selling-software-to-australian-government"
   - title: "Data residency vs data sovereignty"
     href: "/guides/data-residency-vs-data-sovereignty"
+  - title: "How much does LMS development cost in Australia?"
+    href: "/guides/lms-development-cost"
+  - title: "School management software in Australia"
+    href: "/solutions/school-management-software"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

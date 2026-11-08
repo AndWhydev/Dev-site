@@ -63,6 +63,10 @@ related:
     href: "/guides/australian-ai-ethics-principles"
   - title: "ChatGPT vs Claude vs Copilot for business"
     href: "/guides/chatgpt-vs-claude-vs-copilot-for-business"
+  - title: "Is it legal to record meetings with an AI notetaker in Australia?"
+    href: "/guides/ai-meeting-transcription-recording-laws"
+  - title: "AI for small business in Australia"
+    href: "/guides/ai-for-small-business-australia"
 service:
   title: "AI governance and responsible AI engineering"
   href: "/services/ai-governance"

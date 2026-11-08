@@ -68,6 +68,10 @@ related:
     href: "/guides/ai-hallucinations"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "Mortgage broker software in Australia"
+    href: "/solutions/mortgage-broker-software"
+  - title: "Insurance broker software in Australia"
+    href: "/solutions/insurance-broker-software"
 service:
   title: "AI governance"
   href: "/services/ai-governance"

@@ -60,6 +60,8 @@ related:
     href: "/guides/app-development-cost-australia"
   - title: "How to digitise paper forms"
     href: "/guides/how-to-digitise-paper-forms"
+  - title: "ServiceM8 vs simPRO vs AroFlo"
+    href: "/guides/servicem8-vs-simpro-vs-aroflo"
 service:
   title: "Web and mobile app development"
   href: "/services/web-mobile-apps"

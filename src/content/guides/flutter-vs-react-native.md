@@ -73,6 +73,12 @@ related:
     href: "/guides/freelancer-vs-agency-vs-in-house"
   - title: "Web app vs mobile app vs PWA"
     href: "/guides/web-app-vs-mobile-app"
+  - title: "How to choose a tech stack for your app or software project"
+    href: "/guides/how-to-choose-a-tech-stack"
+  - title: "Native vs cross platform app development"
+    href: "/guides/native-vs-cross-platform-apps"
+  - title: "Offline first apps for remote and regional Australia"
+    href: "/guides/offline-first-field-apps"
 service:
   title: "Flutter app development"
   href: "/services/flutter-development"

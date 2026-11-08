@@ -64,6 +64,10 @@ related:
     href: "/locations/canberra"
   - title: "WCAG and the DDA for apps and software"
     href: "/guides/app-accessibility-australia"
+  - title: "ABN Lookup, address validation and other Australian business data APIs"
+    href: "/guides/australian-business-data-apis"
+  - title: "Peppol electronic invoicing in Australia"
+    href: "/guides/peppol-e-invoicing-australia"
 service:
   title: "SaaS development"
   href: "/services/saas-development"

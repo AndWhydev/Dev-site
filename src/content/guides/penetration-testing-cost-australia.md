@@ -62,6 +62,8 @@ related:
     href: "/services/code-audit"
   - title: "QA and testing"
     href: "/services/qa-testing"
+  - title: "How much does an Essential Eight uplift cost?"
+    href: "/guides/essential-eight-uplift-cost"
 service:
   title: "Cybersecurity and secure software development"
   href: "/services/cybersecurity"

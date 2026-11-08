@@ -60,6 +60,8 @@ related:
     href: "/guides/shipping-carrier-integration"
   - title: "Retail and ecommerce software"
     href: "/industries/retail-ecommerce"
+  - title: "How much does a Shopify custom app cost in Australia?"
+    href: "/guides/shopify-custom-app-cost"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

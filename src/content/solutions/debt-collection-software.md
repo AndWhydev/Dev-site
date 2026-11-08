@@ -74,6 +74,10 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "How to integrate PayTo into your app or billing system"
+    href: "/guides/payto-integration"
+  - title: "Sending business SMS in Australia"
+    href: "/guides/business-sms-rules-australia"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

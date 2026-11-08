@@ -58,6 +58,8 @@ related:
     href: "/guides/llm-evaluation"
   - title: "AI readiness assessment"
     href: "/services/ai-readiness-assessment"
+  - title: "AI acceptable use policy template for Australian businesses"
+    href: "/guides/ai-acceptable-use-policy"
 service:
   title: "AI governance and responsible AI engineering"
   href: "/services/ai-governance"

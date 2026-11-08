@@ -66,6 +66,10 @@ related:
     href: "/guides/apra-cps-234-ai"
   - title: "How much does legacy system modernisation cost in Australia?"
     href: "/guides/legacy-modernisation-cost-australia"
+  - title: "How much does ERP implementation and customisation cost in Australia?"
+    href: "/guides/erp-customisation-cost"
+  - title: "Odoo vs a custom ERP for Australian SMBs"
+    href: "/guides/odoo-vs-custom-erp"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

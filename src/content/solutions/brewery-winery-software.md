@@ -65,6 +65,8 @@ related:
     href: "/guides/api-integration-cost-australia"
   - title: "Software development tax deductions in Australia"
     href: "/guides/software-development-tax-deductions"
+  - title: "Tour operator software in Australia"
+    href: "/solutions/tour-operator-software"
 service:
   title: "API development and integrations"
   href: "/services/api-development"

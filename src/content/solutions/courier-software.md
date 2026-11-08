@@ -62,6 +62,10 @@ related:
     href: "/solutions/labour-hire-software"
   - title: "Web app vs mobile app"
     href: "/guides/web-app-vs-mobile-app"
+  - title: "Australia Post and StarTrack API integration"
+    href: "/guides/shipping-carrier-integration"
+  - title: "Freight forwarding software in Australia"
+    href: "/solutions/freight-forwarder-software"
 service:
   title: "Web and mobile apps"
   href: "/services/web-mobile-apps"

@@ -60,6 +60,8 @@ related:
     href: "/solutions/restaurant-software"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "How much does a rostering and workforce management system cost?"
+    href: "/guides/workforce-management-system-cost"
 service:
   title: "Custom app development"
   href: "/services/custom-app-development"

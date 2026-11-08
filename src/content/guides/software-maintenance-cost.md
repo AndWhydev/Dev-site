@@ -67,6 +67,10 @@ related:
     href: "/services/code-audit"
   - title: "Freelancer vs agency vs in-house developers"
     href: "/guides/freelancer-vs-agency-vs-in-house"
+  - title: "HVAC software in Australia"
+    href: "/solutions/hvac-business-software"
+  - title: "How much does a code audit cost in Australia?"
+    href: "/guides/code-audit-cost"
 service:
   title: "Software maintenance and support"
   href: "/services/software-maintenance-support"

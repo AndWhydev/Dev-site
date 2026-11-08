@@ -69,6 +69,8 @@ related:
     href: "/guides/how-to-choose-an-ai-development-company"
   - title: "Writing a brief vendors can quote on"
     href: "/guides/how-to-write-a-software-brief"
+  - title: "How to choose a tech stack for your app or software project"
+    href: "/guides/how-to-choose-a-tech-stack"
 service:
   title: "Custom enterprise software development"
   href: "/services/enterprise-software"

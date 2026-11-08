@@ -75,6 +75,12 @@ related:
     href: "/guides/government-grants-for-software-development"
   - title: "How much does custom software cost in Australia?"
     href: "/guides/custom-software-development-cost-australia"
+  - title: "ServiceM8 vs simPRO vs AroFlo"
+    href: "/guides/servicem8-vs-simpro-vs-aroflo"
+  - title: "How much does a field service app cost to build?"
+    href: "/guides/field-service-app-cost"
+  - title: "Software for electricians in Australia"
+    href: "/solutions/electrician-software"
 service:
   title: "API development and integrations"
   href: "/services/api-development"

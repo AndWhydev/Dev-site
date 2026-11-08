@@ -70,6 +70,10 @@ related:
     href: "/guides/privacy-act-and-ai"
   - title: "Guidance for AI Adoption explained"
     href: "/guides/guidance-for-ai-adoption"
+  - title: "AI acceptable use policy template for Australian businesses"
+    href: "/guides/ai-acceptable-use-policy"
+  - title: "How to measure the ROI of an AI project"
+    href: "/guides/measure-ai-roi"
 service:
   title: "AI readiness assessment"
   href: "/services/ai-readiness-assessment"

@@ -57,6 +57,8 @@ related:
     href: "/guides/n8n-vs-make-vs-zapier"
   - title: "Software for marketing agencies"
     href: "/solutions/marketing-agency-software"
+  - title: "HubSpot vs Salesforce for Australian businesses"
+    href: "/guides/hubspot-vs-salesforce-australia"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

@@ -54,6 +54,10 @@ related:
     href: "/guides/irap-explained"
   - title: "SOC 2 vs ISO 27001 in Australia"
     href: "/guides/soc-2-vs-iso-27001-australia"
+  - title: "How much does an intranet cost in Australia?"
+    href: "/guides/intranet-cost"
+  - title: "SharePoint intranet vs a custom intranet or staff portal"
+    href: "/guides/sharepoint-intranet-vs-custom"
 service:
   title: "Cybersecurity"
   href: "/services/cybersecurity"

@@ -83,6 +83,10 @@ related:
     href: "/guides/software-development-contract-checklist"
   - title: "Software project rescue and takeover"
     href: "/services/software-project-rescue"
+  - title: "Native vs cross platform app development"
+    href: "/guides/native-vs-cross-platform-apps"
+  - title: "Web app vs mobile app vs PWA"
+    href: "/guides/web-app-vs-mobile-app"
 service:
   title: "Flutter app development"
   href: "/services/flutter-development"

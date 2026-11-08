@@ -53,6 +53,8 @@ related:
     href: "/services/code-audit"
   - title: "What is a discovery phase in software development?"
     href: "/guides/software-discovery-phase"
+  - title: "Monolith vs microservices"
+    href: "/guides/monolith-vs-microservices"
 service:
   title: "Legacy system modernisation"
   href: "/services/legacy-modernisation"

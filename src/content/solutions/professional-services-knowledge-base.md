@@ -53,6 +53,12 @@ related:
     href: "/solutions/ai-for-law-firms"
   - title: "AI for accounting and advisory firms in Australia"
     href: "/solutions/ai-for-accounting-firms"
+  - title: "SharePoint intranet vs a custom intranet or staff portal"
+    href: "/guides/sharepoint-intranet-vs-custom"
+  - title: "Practice management software for Australian architects"
+    href: "/solutions/architecture-practice-software"
+  - title: "Software and AI for Australian engineering consultancies"
+    href: "/solutions/engineering-consultancy-software"
 industry:
   title: "AI & Automation"
   href: "/industries/ai-automation"

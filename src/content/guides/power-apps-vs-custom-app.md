@@ -60,6 +60,12 @@ related:
     href: "/guides/sso-entra-id-business-apps"
   - title: "Replacing Excel or Access with a web app"
     href: "/guides/replace-excel-or-access-with-a-web-app"
+  - title: "How much does Power Apps development cost in Australia?"
+    href: "/guides/power-apps-development-cost"
+  - title: "SharePoint intranet vs a custom intranet or staff portal"
+    href: "/guides/sharepoint-intranet-vs-custom"
+  - title: "Retool vs custom internal tools"
+    href: "/guides/retool-vs-custom-internal-tools"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

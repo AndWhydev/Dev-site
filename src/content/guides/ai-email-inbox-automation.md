@@ -56,6 +56,8 @@ related:
     href: "/guides/how-to-automate-invoice-processing"
   - title: "Privacy Act automated decision making rules"
     href: "/guides/privacy-act-automated-decision-making"
+  - title: "How to automate quoting"
+    href: "/guides/how-to-automate-quoting"
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"

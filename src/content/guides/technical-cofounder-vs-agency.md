@@ -50,6 +50,8 @@ related:
     href: "/guides/how-to-protect-an-app-idea"
   - title: "How to choose a software development company"
     href: "/guides/how-to-choose-a-software-development-company"
+  - title: "How to write a software or app brief"
+    href: "/guides/how-to-write-a-software-brief"
 service:
   title: "Startup MVP development"
   href: "/startup-mvp"

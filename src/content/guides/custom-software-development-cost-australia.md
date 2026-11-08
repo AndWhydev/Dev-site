@@ -70,6 +70,12 @@ related:
     href: "/guides/customer-portal-development"
   - title: "API integration costs"
     href: "/guides/api-integration-cost-australia"
+  - title: "How to automate quoting"
+    href: "/guides/how-to-automate-quoting"
+  - title: "How much does a rostering and workforce management system cost?"
+    href: "/guides/workforce-management-system-cost"
+  - title: "Funeral home management software in Australia"
+    href: "/solutions/funeral-home-software"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

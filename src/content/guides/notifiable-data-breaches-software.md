@@ -57,6 +57,8 @@ related:
     href: "/guides/apra-cps-234-ai"
   - title: "Using personal information in AI systems under the Privacy Act"
     href: "/guides/privacy-act-and-ai"
+  - title: "Tracking pixels, analytics and the Privacy Act"
+    href: "/guides/privacy-safe-product-analytics"
 service:
   title: "Cybersecurity services"
   href: "/services/cybersecurity"

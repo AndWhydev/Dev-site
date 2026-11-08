@@ -57,6 +57,10 @@ related:
     href: "/guides/api-integration-cost-australia"
   - title: "Software development tax deductions"
     href: "/guides/software-development-tax-deductions"
+  - title: "Cin7 vs Unleashed vs custom inventory software"
+    href: "/guides/cin7-vs-unleashed-vs-custom"
+  - title: "How much does a B2B ordering portal cost?"
+    href: "/guides/b2b-ordering-portal-cost"
 service:
   title: "Xero and MYOB integration"
   href: "/services/xero-myob-integration"

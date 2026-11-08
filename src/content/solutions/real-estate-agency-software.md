@@ -59,6 +59,8 @@ related:
     href: "/guides/custom-crm-development-cost-australia"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "Conveyancing software: PEXA, identity and fraud controls"
+    href: "/solutions/conveyancing-software"
 service:
   title: "CRM integration"
   href: "/services/crm-integration"

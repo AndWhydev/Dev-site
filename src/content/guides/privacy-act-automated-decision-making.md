@@ -55,6 +55,12 @@ related:
     href: "/guides/is-there-an-ai-act-in-australia"
   - title: "How to evaluate an LLM application before launch"
     href: "/guides/llm-evaluation"
+  - title: "Debt collection software for Australian agencies and creditors"
+    href: "/solutions/debt-collection-software"
+  - title: "Software for Australian energy retailers"
+    href: "/solutions/energy-retailer-software"
+  - title: "Recruitment agency software in Australia"
+    href: "/solutions/recruitment-agency-software"
 service:
   title: "AI governance and responsible AI engineering"
   href: "/services/ai-governance"

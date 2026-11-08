@@ -56,6 +56,8 @@ related:
     href: "/guides/prompt-injection"
   - title: "Data residency vs data sovereignty in Australia"
     href: "/guides/data-residency-vs-data-sovereignty"
+  - title: "How to answer an enterprise security questionnaire"
+    href: "/guides/security-questionnaire-for-saas"
 service:
   title: "Cybersecurity and secure development"
   href: "/services/cybersecurity"

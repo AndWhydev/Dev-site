@@ -60,6 +60,8 @@ related:
     href: "/guides/rd-tax-incentive-software-development"
   - title: "Why start with an audit"
     href: "/why-audit"
+  - title: "How much does a code audit cost in Australia?"
+    href: "/guides/code-audit-cost"
 service:
   title: "Code audit"
   href: "/services/code-audit"

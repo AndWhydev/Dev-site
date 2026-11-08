@@ -56,6 +56,8 @@ related:
     href: "/solutions/real-estate-agency-software"
   - title: "Privacy Act obligations for small business software"
     href: "/guides/privacy-act-small-business-software"
+  - title: "How to automate document generation"
+    href: "/guides/how-to-automate-document-generation"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

@@ -71,6 +71,10 @@ related:
     href: "/guides/customer-portal-development"
   - title: "Custom CRM development cost in Australia"
     href: "/guides/custom-crm-development-cost-australia"
+  - title: "Loan origination and servicing software for Australian lenders"
+    href: "/solutions/lending-software"
+  - title: "Financial planning software in Australia"
+    href: "/solutions/financial-planner-software"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

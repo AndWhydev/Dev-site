@@ -65,6 +65,10 @@ related:
     href: "/solutions/ai-for-accounting-firms"
   - title: "Xero and MYOB integration"
     href: "/services/xero-myob-integration"
+  - title: "Software and automation for BAS agents and bookkeeping practices"
+    href: "/solutions/bookkeeping-software-automation"
+  - title: "ABN Lookup, address validation and other Australian business data APIs"
+    href: "/guides/australian-business-data-apis"
 service:
   title: "API development and integration"
   href: "/services/api-development"

@@ -68,6 +68,8 @@ related:
     href: "/guides/notifiable-data-breaches-software"
   - title: "How much does API integration cost in Australia?"
     href: "/guides/api-integration-cost-australia"
+  - title: "Tour operator software in Australia"
+    href: "/solutions/tour-operator-software"
 service:
   title: "API development and integrations"
   href: "/services/api-development"

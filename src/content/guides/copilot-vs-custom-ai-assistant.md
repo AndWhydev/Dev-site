@@ -61,6 +61,12 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "AI chatbot development"
     href: "/services/ai-chatbot"
+  - title: "How much does an intranet cost in Australia?"
+    href: "/guides/intranet-cost"
+  - title: "Power Apps vs a custom app"
+    href: "/guides/power-apps-vs-custom-app"
+  - title: "SharePoint intranet vs a custom intranet or staff portal"
+    href: "/guides/sharepoint-intranet-vs-custom"
 service:
   title: "Custom AI assistant and chatbot development"
   href: "/services/ai-chatbot"

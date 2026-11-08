@@ -59,6 +59,10 @@ related:
     href: "/industries/healthcare"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "Cosmetic and medispa clinic software"
+    href: "/solutions/cosmetic-clinic-software"
+  - title: "Optometry and audiology practice software"
+    href: "/solutions/optometry-audiology-practice-software"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

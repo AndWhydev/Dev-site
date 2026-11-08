@@ -53,6 +53,8 @@ related:
     href: "/guides/prompt-injection"
   - title: "QA and testing services"
     href: "/services/qa-testing"
+  - title: "From AI pilot to production"
+    href: "/guides/ai-pilot-to-production"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

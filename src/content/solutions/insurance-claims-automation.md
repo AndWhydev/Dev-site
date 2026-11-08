@@ -57,6 +57,12 @@ related:
     href: "/guides/privacy-act-automated-decision-making"
   - title: "How to evaluate an LLM application before launch"
     href: "/guides/llm-evaluation"
+  - title: "Insurance broker software in Australia"
+    href: "/solutions/insurance-broker-software"
+  - title: "Roof estimating software in Australia"
+    href: "/solutions/roofing-business-software"
+  - title: "Veterinary clinic software"
+    href: "/solutions/veterinary-clinic-software"
 service:
   title: "AI document processing and data extraction"
   href: "/services/ai-document-processing"

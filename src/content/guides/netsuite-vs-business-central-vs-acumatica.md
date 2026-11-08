@@ -66,6 +66,12 @@ related:
     href: "/solutions/wholesale-distribution-software"
   - title: "Enterprise software development cost in Australia"
     href: "/guides/enterprise-software-development-cost-australia"
+  - title: "How much does ERP implementation and customisation cost in Australia?"
+    href: "/guides/erp-customisation-cost"
+  - title: "How to migrate off a legacy ERP"
+    href: "/guides/how-to-migrate-off-legacy-erp"
+  - title: "Odoo vs a custom ERP for Australian SMBs"
+    href: "/guides/odoo-vs-custom-erp"
 service:
   title: "Enterprise software"
   href: "/services/enterprise-software"

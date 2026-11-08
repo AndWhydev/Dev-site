@@ -68,6 +68,8 @@ related:
     href: "/guides/cloud-migration-cost-australia"
   - title: "Data residency vs data sovereignty"
     href: "/guides/data-residency-vs-data-sovereignty"
+  - title: "Vercel vs AWS for hosting Next.js apps in Australia"
+    href: "/guides/vercel-vs-aws-hosting"
 service:
   title: "Cloud infrastructure"
   href: "/services/cloud-infrastructure"

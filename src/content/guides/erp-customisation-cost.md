@@ -60,6 +60,10 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "R&D Tax Incentive for software development"
     href: "/guides/rd-tax-incentive-software-development"
+  - title: "NetSuite vs Business Central vs MYOB Acumatica"
+    href: "/guides/netsuite-vs-business-central-vs-acumatica"
+  - title: "Odoo vs a custom ERP for Australian SMBs"
+    href: "/guides/odoo-vs-custom-erp"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

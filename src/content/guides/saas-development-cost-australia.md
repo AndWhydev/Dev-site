@@ -63,6 +63,12 @@ related:
     href: "/guides/selling-software-to-australian-government"
   - title: "What does it cost to run an LLM in production?"
     href: "/guides/llm-running-costs"
+  - title: "Expanding an Australian SaaS product to New Zealand"
+    href: "/guides/expand-saas-to-new-zealand"
+  - title: "Multi tenant SaaS architecture"
+    href: "/guides/multi-tenant-saas-architecture"
+  - title: "How much does a white label app cost?"
+    href: "/guides/white-label-app-cost"
 service:
   title: "SaaS product development"
   href: "/services/saas-development"

@@ -66,6 +66,12 @@ related:
     href: "/guides/prompt-injection"
   - title: "Penetration testing costs in Australia"
     href: "/guides/penetration-testing-cost-australia"
+  - title: "Backup and disaster recovery for business software"
+    href: "/guides/saas-backup-disaster-recovery"
+  - title: "How to add single sign on to a business app"
+    href: "/guides/sso-entra-id-business-apps"
+  - title: "How much does an Essential Eight uplift cost?"
+    href: "/guides/essential-eight-uplift-cost"
 service:
   title: "Cybersecurity and secure development"
   href: "/services/cybersecurity"

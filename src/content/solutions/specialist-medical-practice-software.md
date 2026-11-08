@@ -56,6 +56,10 @@ related:
     href: "/services/ai-document-processing"
   - title: "Healthcare software"
     href: "/industries/healthcare"
+  - title: "Private hospital and day surgery software"
+    href: "/solutions/private-hospital-software"
+  - title: "Radiology software in Australia"
+    href: "/solutions/radiology-software"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

@@ -59,6 +59,10 @@ related:
     href: "/industries/healthcare"
   - title: "API integration cost in Australia"
     href: "/guides/api-integration-cost-australia"
+  - title: "Dental practice management software in Australia"
+    href: "/solutions/dental-practice-software"
+  - title: "Pharmacy software and apps in Australia"
+    href: "/solutions/pharmacy-software"
 service:
   title: "API development"
   href: "/services/api-development"

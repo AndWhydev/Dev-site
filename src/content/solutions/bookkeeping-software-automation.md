@@ -68,6 +68,10 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "Privacy Act and AI"
     href: "/guides/privacy-act-and-ai"
+  - title: "How to automate accounts payable invoice processing in Australia"
+    href: "/guides/how-to-automate-invoice-processing"
+  - title: "Peppol electronic invoicing in Australia"
+    href: "/guides/peppol-e-invoicing-australia"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

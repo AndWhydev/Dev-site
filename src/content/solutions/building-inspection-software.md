@@ -47,6 +47,8 @@ related:
     href: "/guides/web-app-vs-mobile-app"
   - title: "App development cost in Australia"
     href: "/guides/app-development-cost-australia"
+  - title: "Conveyancing software: PEXA, identity and fraud controls"
+    href: "/solutions/conveyancing-software"
 service:
   title: "Flutter app development"
   href: "/services/flutter-development"

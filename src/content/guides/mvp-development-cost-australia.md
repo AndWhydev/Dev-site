@@ -68,6 +68,12 @@ related:
     href: "/guides/how-to-protect-an-app-idea"
   - title: "What an app like Uber or Airtasker costs"
     href: "/guides/booking-marketplace-app-cost-australia"
+  - title: "Bubble vs custom code"
+    href: "/guides/bubble-vs-custom-development"
+  - title: "How to build a marketplace platform in Australia"
+    href: "/guides/how-to-build-a-marketplace"
+  - title: "Fintech app development in Australia"
+    href: "/solutions/fintech-startup-development"
 service:
   title: "Startup MVP development"
   href: "/startup-mvp"

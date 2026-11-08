@@ -57,6 +57,10 @@ related:
     href: "/guides/strangler-fig-pattern"
   - title: "Manufacturing software"
     href: "/industries/manufacturing"
+  - title: "NetSuite vs Business Central vs MYOB Acumatica"
+    href: "/guides/netsuite-vs-business-central-vs-acumatica"
+  - title: "How much does ERP implementation and customisation cost in Australia?"
+    href: "/guides/erp-customisation-cost"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

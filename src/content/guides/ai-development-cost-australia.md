@@ -71,6 +71,10 @@ related:
     href: "/services/ai-readiness-assessment"
   - title: "AI for small business in Australia"
     href: "/guides/ai-for-small-business-australia"
+  - title: "How to measure the ROI of an AI project"
+    href: "/guides/measure-ai-roi"
+  - title: "How much does computer vision development cost?"
+    href: "/guides/computer-vision-cost"
 service:
   title: "AI consulting and development"
   href: "/ai-consulting"

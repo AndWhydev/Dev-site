@@ -54,6 +54,10 @@ related:
     href: "/guides/rewrite-vs-refactor-legacy-software"
   - title: "Build vs buy software"
     href: "/guides/build-vs-buy-software"
+  - title: "How to plan a data migration"
+    href: "/guides/data-migration-plan"
+  - title: "NetSuite vs Business Central vs MYOB Acumatica"
+    href: "/guides/netsuite-vs-business-central-vs-acumatica"
 service:
   title: "Legacy modernisation"
   href: "/services/legacy-modernisation"

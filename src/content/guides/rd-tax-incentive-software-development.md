@@ -69,6 +69,8 @@ related:
     href: "/guides/software-development-tax-deductions"
   - title: "Government grants for software development"
     href: "/guides/government-grants-for-software-development"
+  - title: "Clinical trial software in Australia"
+    href: "/solutions/clinical-trials-software"
 service:
   title: "Custom software development"
   href: "/services/custom-app-development"

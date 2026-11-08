@@ -56,6 +56,10 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "Why we start with a Discovery Audit"
     href: "/why-audit"
+  - title: "How to migrate from Bubble to custom code"
+    href: "/guides/migrate-from-bubble-to-code"
+  - title: "How much does an app redesign or UX design cost?"
+    href: "/guides/app-redesign-cost"
 service:
   title: "Legacy system modernisation"
   href: "/services/legacy-modernisation"

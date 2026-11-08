@@ -60,6 +60,8 @@ related:
     href: "/guides/sso-entra-id-business-apps"
   - title: "Internal tools development"
     href: "/guides/internal-tools-development"
+  - title: "SharePoint intranet vs a custom intranet or staff portal"
+    href: "/guides/sharepoint-intranet-vs-custom"
 service:
   title: "Enterprise software development"
   href: "/services/enterprise-software"

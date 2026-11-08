@@ -68,6 +68,8 @@ related:
     href: "/solutions/event-management-software"
   - title: "Client stories"
     href: "/client-stories"
+  - title: "How much does a membership platform cost to build?"
+    href: "/guides/membership-platform-cost"
 service:
   title: "Web and mobile apps"
   href: "/services/web-mobile-apps"

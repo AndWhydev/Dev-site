@@ -65,6 +65,8 @@ related:
     href: "/guides/ai-agents-vs-chatbots-vs-automation"
   - title: "How much does API integration cost in Australia?"
     href: "/guides/api-integration-cost-australia"
+  - title: "How much does a rostering and workforce management system cost?"
+    href: "/guides/workforce-management-system-cost"
 service:
   title: "AI agent development"
   href: "/services/ai-agent-development"

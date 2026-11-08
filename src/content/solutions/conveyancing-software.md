@@ -59,6 +59,8 @@ related:
     href: "/solutions/real-estate-agency-software"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "Software for Australian property developers"
+    href: "/solutions/property-developer-software"
 service:
   title: "Cybersecurity"
   href: "/services/cybersecurity"

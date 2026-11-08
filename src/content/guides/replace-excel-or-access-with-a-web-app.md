@@ -44,6 +44,12 @@ sources:
   - title: "Airtable pricing"
     url: "https://airtable.com/pricing"
     publisher: "Airtable"
+  - title: "Airtable plans"
+    url: "https://support.airtable.com/docs/airtable-plans"
+    publisher: "Airtable Support"
+  - title: "Airtable Web API rate limits"
+    url: "https://airtable.com/developers/web/api/rate-limits"
+    publisher: "Airtable"
   - title: "How Much Does Custom Software Development Cost in Australia in 2026?"
     url: "https://expeed.com.au/articles/custom-software-cost-australia-2026"
     publisher: "Expeed Technology"
@@ -61,6 +67,10 @@ related:
     href: "/guides/custom-crm-development-cost-australia"
   - title: "Rewrite vs refactor legacy software"
     href: "/guides/rewrite-vs-refactor-legacy-software"
+  - title: "How to plan a data migration"
+    href: "/guides/data-migration-plan"
+  - title: "Power Apps vs a custom app"
+    href: "/guides/power-apps-vs-custom-app"
 service:
   title: "Legacy modernisation"
   href: "/services/legacy-modernisation"
@@ -112,6 +122,12 @@ If you run Access 2016, 2019 or 2021, you are already on an unsupported version.
 | You want to own and move the software freely | No | Tied to the platform | Yes, once paid for |
 
 At the time of writing, Power Apps Premium is listed at AU$29.90 per user per month (ex GST, paid yearly), and Airtable at US$20 a seat per month for Team and US$45 for Business on annual billing, with charges only for users who can edit. Those fees are low for a handful of users and add up as headcount grows. Our [low-code vs custom guide](/guides/low-code-vs-custom-development) compares the platforms in more depth, and the [build vs buy guide](/guides/build-vs-buy-software) covers the SaaS question.
+
+## Is Airtable enough, or do you need a custom database?
+
+**Airtable suits a shared table of records that a small team edits, and a custom database suits data that is large, busy or exposed to customers.** Airtable feels like a spreadsheet but stores linked records, so it is a natural first step off Excel. Its plan limits set the ceiling. Airtable lists 1,000 records per base on Free, 50,000 on Team and 125,000 on Business, with 25,000 automation runs a month on Team and 100,000 on Business. Monthly billing costs more than annual: US$24 a collaborator on Team and US$54 on Business. The API allows 5 requests per second per base, which is fine for a nightly sync and tight for a customer portal reading live data.
+
+A custom database such as PostgreSQL (see our [PostgreSQL vs MongoDB guide](/guides/postgresql-vs-mongodb)) has no record cap beyond the hardware, takes complex queries and reports, and enforces your rules in one place for every screen and integration. You pay for the build and hosting instead of seats. If the base is nearing its record limit, or customers need to log in, that is usually the point to move.
 
 ## What does a replacement cost in Australia?
 

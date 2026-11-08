@@ -70,6 +70,10 @@ related:
     href: "/guides/rewrite-vs-refactor-legacy-software"
   - title: "Web app vs mobile app vs PWA"
     href: "/guides/web-app-vs-mobile-app"
+  - title: "Lovable vs Bolt vs Replit"
+    href: "/guides/lovable-vs-bolt-vs-replit"
+  - title: "Bubble vs custom code"
+    href: "/guides/bubble-vs-custom-development"
 service:
   title: "Code audit"
   href: "/services/code-audit"

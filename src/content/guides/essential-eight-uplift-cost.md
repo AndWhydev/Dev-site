@@ -74,6 +74,8 @@ related:
     href: "/guides/sso-entra-id-business-apps"
   - title: "Trust and security at AWLabs"
     href: "/trust"
+  - title: "How to answer an enterprise security questionnaire"
+    href: "/guides/security-questionnaire-for-saas"
 service:
   title: "Cybersecurity and secure software development"
   href: "/services/cybersecurity"

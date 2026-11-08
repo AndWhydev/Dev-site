@@ -56,6 +56,8 @@ related:
     href: "/guides/privacy-act-small-business-software"
   - title: "API integration cost in Australia"
     href: "/guides/api-integration-cost-australia"
+  - title: "Strata management software for Australian strata managers"
+    href: "/solutions/strata-management-software"
 service:
   title: "API development and integrations"
   href: "/services/api-development"

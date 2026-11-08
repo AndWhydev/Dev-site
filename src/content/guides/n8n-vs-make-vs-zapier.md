@@ -65,6 +65,12 @@ related:
     href: "/guides/data-residency-vs-data-sovereignty"
   - title: "Low-code vs custom development"
     href: "/guides/low-code-vs-custom-development"
+  - title: "Sending business SMS in Australia"
+    href: "/guides/business-sms-rules-australia"
+  - title: "GoHighLevel vs HubSpot for Australian service businesses and agencies"
+    href: "/guides/gohighlevel-vs-hubspot"
+  - title: "monday.com vs custom software"
+    href: "/guides/monday-vs-custom-software"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

@@ -70,6 +70,10 @@ related:
     href: "/guides/make-ai-built-app-production-ready"
   - title: "How to compare software quotes"
     href: "/guides/how-to-compare-software-quotes"
+  - title: "Native vs cross platform app development"
+    href: "/guides/native-vs-cross-platform-apps"
+  - title: "Offline first apps for remote and regional Australia"
+    href: "/guides/offline-first-field-apps"
 service:
   title: "Web and mobile app development"
   href: "/services/web-mobile-apps"

@@ -72,6 +72,10 @@ related:
     href: "/guides/build-vs-buy-software"
   - title: "Healthcare software"
     href: "/industries/healthcare"
+  - title: "NDIS plan management software"
+    href: "/solutions/ndis-plan-management-software"
+  - title: "Paediatric speech and occupational therapy clinic software"
+    href: "/solutions/paediatric-therapy-clinic-software"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

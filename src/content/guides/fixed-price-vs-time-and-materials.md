@@ -57,6 +57,10 @@ related:
     href: "/methodology"
   - title: "Is my app quote reasonable?"
     href: "/guides/how-to-compare-software-quotes"
+  - title: "How to build internal tools and admin panels for your business"
+    href: "/guides/internal-tools-development"
+  - title: "How to do user acceptance testing"
+    href: "/guides/user-acceptance-testing"
 service:
   title: "Custom software and app development"
   href: "/services/custom-app-development"

@@ -59,6 +59,8 @@ related:
     href: "/guides/web-app-vs-mobile-app"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "How much does a ticketing system cost to build in Australia?"
+    href: "/guides/event-ticketing-app-cost"
 service:
   title: "Custom app development"
   href: "/services/custom-app-development"

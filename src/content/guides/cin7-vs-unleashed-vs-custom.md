@@ -51,6 +51,8 @@ related:
     href: "/solutions/food-manufacturer-software"
   - title: "How much does custom software cost in Australia?"
     href: "/guides/custom-software-development-cost-australia"
+  - title: "How much does a custom inventory management system cost?"
+    href: "/guides/inventory-management-system-cost"
 service:
   title: "API development"
   href: "/services/api-development"

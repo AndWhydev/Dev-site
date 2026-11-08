@@ -66,6 +66,10 @@ related:
     href: "/guides/consumer-data-right-software"
   - title: "Fintech startup development"
     href: "/solutions/fintech-startup-development"
+  - title: "Stripe vs Square vs Tyro vs Adyen for Australian apps and platforms"
+    href: "/guides/stripe-vs-square-vs-tyro"
+  - title: "How to build a subscription app in Australia"
+    href: "/guides/subscription-app-development"
 service:
   title: "API development and integration"
   href: "/services/api-development"

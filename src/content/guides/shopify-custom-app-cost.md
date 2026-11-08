@@ -58,6 +58,8 @@ related:
     href: "/guides/api-integration-cost-australia"
   - title: "Retail and ecommerce software"
     href: "/industries/retail-ecommerce"
+  - title: "Shopify vs custom ecommerce in Australia"
+    href: "/guides/shopify-vs-custom-ecommerce"
 service:
   title: "API development"
   href: "/services/api-development"

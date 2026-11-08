@@ -63,6 +63,8 @@ related:
     href: "/guides/why-is-my-app-slow"
   - title: "React and Next.js development"
     href: "/services/react-nextjs"
+  - title: "AWS vs Azure vs Google Cloud in Australia"
+    href: "/guides/aws-vs-azure-vs-google-cloud-australia"
 service:
   title: "Deployment and DevOps"
   href: "/services/deployment"

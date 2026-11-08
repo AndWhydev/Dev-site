@@ -74,6 +74,10 @@ related:
     href: "/guides/rewrite-vs-refactor-legacy-software"
   - title: "Digital transformation"
     href: "/digital-transformation"
+  - title: "AWS vs Azure vs Google Cloud in Australia"
+    href: "/guides/aws-vs-azure-vs-google-cloud-australia"
+  - title: "How to plan a data migration"
+    href: "/guides/data-migration-plan"
 service:
   title: "Cloud infrastructure"
   href: "/services/cloud-infrastructure"

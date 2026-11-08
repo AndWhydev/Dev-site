@@ -68,6 +68,8 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "What cloud migration costs"
     href: "/guides/cloud-migration-cost-australia"
+  - title: "How to migrate off a legacy ERP"
+    href: "/guides/how-to-migrate-off-legacy-erp"
 service:
   title: "Legacy system modernisation"
   href: "/services/legacy-modernisation"

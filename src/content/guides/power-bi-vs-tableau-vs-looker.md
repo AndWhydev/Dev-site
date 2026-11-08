@@ -63,6 +63,8 @@ related:
     href: "/guides/internal-tools-development"
   - title: "Xero and MYOB integration"
     href: "/services/xero-myob-integration"
+  - title: "How much does dashboard development cost in Australia?"
+    href: "/guides/dashboard-development-cost"
 service:
   title: "Data analytics and dashboards"
   href: "/services/data-analytics"

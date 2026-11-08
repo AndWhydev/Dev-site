@@ -76,6 +76,8 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "n8n vs Make vs Zapier"
     href: "/guides/n8n-vs-make-vs-zapier"
+  - title: "How much does a booking system cost in Australia?"
+    href: "/guides/booking-system-cost"
 service:
   title: "API development and integration"
   href: "/services/api-development"

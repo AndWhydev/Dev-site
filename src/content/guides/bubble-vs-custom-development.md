@@ -63,6 +63,10 @@ related:
     href: "/guides/make-ai-built-app-production-ready"
   - title: "Who owns the source code?"
     href: "/guides/who-owns-the-source-code-australia"
+  - title: "How to migrate from Bubble to custom code"
+    href: "/guides/migrate-from-bubble-to-code"
+  - title: "Lovable vs Bolt vs Replit"
+    href: "/guides/lovable-vs-bolt-vs-replit"
 service:
   title: "Startup MVP development"
   href: "/startup-mvp"

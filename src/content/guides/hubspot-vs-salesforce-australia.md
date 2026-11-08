@@ -57,6 +57,8 @@ related:
     href: "/guides/data-residency-vs-data-sovereignty"
   - title: "CRM integration"
     href: "/services/crm-integration"
+  - title: "GoHighLevel vs HubSpot for Australian service businesses and agencies"
+    href: "/guides/gohighlevel-vs-hubspot"
 service:
   title: "CRM integration"
   href: "/services/crm-integration"

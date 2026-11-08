@@ -57,6 +57,12 @@ related:
     href: "/guides/saas-development-cost-australia"
   - title: "Custom enterprise software development"
     href: "/services/enterprise-software"
+  - title: "HubSpot vs Salesforce for Australian businesses"
+    href: "/guides/hubspot-vs-salesforce-australia"
+  - title: "Odoo vs a custom ERP for Australian SMBs"
+    href: "/guides/odoo-vs-custom-erp"
+  - title: "Shopify vs custom ecommerce in Australia"
+    href: "/guides/shopify-vs-custom-ecommerce"
 service:
   title: "Custom enterprise software development"
   href: "/services/enterprise-software"

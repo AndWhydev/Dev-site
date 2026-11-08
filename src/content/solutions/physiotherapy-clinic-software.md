@@ -59,6 +59,8 @@ related:
     href: "/guides/api-integration-cost-australia"
   - title: "Healthcare software"
     href: "/industries/healthcare"
+  - title: "Psychology practice management software"
+    href: "/solutions/psychology-practice-software"
 service:
   title: "API development"
   href: "/services/api-development"

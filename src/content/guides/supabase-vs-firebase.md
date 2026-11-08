@@ -72,6 +72,8 @@ related:
     href: "/guides/offline-first-field-apps"
   - title: "Making an AI built app production ready"
     href: "/guides/make-ai-built-app-production-ready"
+  - title: "PostgreSQL vs MongoDB for business applications"
+    href: "/guides/postgresql-vs-mongodb"
 service:
   title: "Backend development"
   href: "/services/backend-development"

@@ -54,6 +54,10 @@ related:
     href: "/guides/notifiable-data-breaches-software"
   - title: "Custom software development cost in Australia"
     href: "/guides/custom-software-development-cost-australia"
+  - title: "How much does a B2B ordering portal cost?"
+    href: "/guides/b2b-ordering-portal-cost"
+  - title: "How to automate client onboarding in Australia"
+    href: "/guides/how-to-automate-customer-onboarding"
 service:
   title: "Web and mobile app development"
   href: "/services/web-mobile-apps"

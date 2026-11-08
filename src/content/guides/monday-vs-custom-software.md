@@ -49,6 +49,10 @@ related:
     href: "/guides/custom-crm-development-cost-australia"
   - title: "Xero and MYOB integration"
     href: "/services/xero-myob-integration"
+  - title: "Retool vs custom internal tools"
+    href: "/guides/retool-vs-custom-internal-tools"
+  - title: "Replacing Excel or Microsoft Access with a web app"
+    href: "/guides/replace-excel-or-access-with-a-web-app"
 service:
   title: "Workflow automation"
   href: "/services/workflow-automation"

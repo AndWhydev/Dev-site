@@ -62,6 +62,8 @@ related:
     href: "/services/ai-document-processing"
   - title: "Workflow automation"
     href: "/services/workflow-automation"
+  - title: "Paediatric speech and occupational therapy clinic software"
+    href: "/solutions/paediatric-therapy-clinic-software"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

@@ -56,6 +56,12 @@ related:
     href: "/industries/finance-fintech"
   - title: "Consumer Data Right for software builders"
     href: "/guides/consumer-data-right-software"
+  - title: "How to verify identity in an Australian app"
+    href: "/guides/identity-verification-australia"
+  - title: "Financial planning software in Australia"
+    href: "/solutions/financial-planner-software"
+  - title: "Loan origination and servicing software for Australian lenders"
+    href: "/solutions/lending-software"
 service:
   title: "LLM integration services"
   href: "/services/llm-integration"

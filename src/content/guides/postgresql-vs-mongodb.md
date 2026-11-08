@@ -69,6 +69,8 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "Data migration plan"
     href: "/guides/data-migration-plan"
+  - title: "Supabase vs Firebase for Australian apps"
+    href: "/guides/supabase-vs-firebase"
 service:
   title: "Database architecture"
   href: "/services/database-architecture"

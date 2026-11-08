@@ -48,6 +48,8 @@ related:
     href: "/guides/rewrite-vs-refactor-legacy-software"
   - title: "Why a Discovery Audit"
     href: "/why-audit"
+  - title: "How much does a code audit cost in Australia?"
+    href: "/guides/code-audit-cost"
 service:
   title: "Code audit"
   href: "/services/code-audit"

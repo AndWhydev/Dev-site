@@ -65,6 +65,8 @@ related:
     href: "/guides/workflow-automation-cost"
   - title: "How to automate email with AI"
     href: "/guides/ai-email-inbox-automation"
+  - title: "How much does AI document processing cost?"
+    href: "/guides/document-processing-cost"
 service:
   title: "AI document processing"
   href: "/services/ai-document-processing"

@@ -68,6 +68,8 @@ related:
     href: "/guides/data-readiness-for-ai"
   - title: "How to reduce cloud costs"
     href: "/guides/reduce-cloud-costs"
+  - title: "How much does dashboard development cost in Australia?"
+    href: "/guides/dashboard-development-cost"
 service:
   title: "Data engineering"
   href: "/services/data-engineering"

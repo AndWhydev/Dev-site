@@ -72,6 +72,8 @@ related:
     href: "/services/code-audit"
   - title: "Web app vs mobile app"
     href: "/guides/web-app-vs-mobile-app"
+  - title: "Bubble vs custom code"
+    href: "/guides/bubble-vs-custom-development"
 service:
   title: "Startup MVP development"
   href: "/startup-mvp"

@@ -67,6 +67,10 @@ related:
     href: "/guides/business-sms-rules-australia"
   - title: "Lending software"
     href: "/solutions/lending-software"
+  - title: "How to automate client onboarding in Australia"
+    href: "/guides/how-to-automate-customer-onboarding"
+  - title: "Conveyancing software: PEXA, identity and fraud controls"
+    href: "/solutions/conveyancing-software"
 service:
   title: "Cybersecurity"
   href: "/services/cybersecurity"

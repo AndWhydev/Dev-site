@@ -50,6 +50,8 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
+  - title: "Real estate CRM and AI for Australian sales agencies"
+    href: "/solutions/real-estate-agency-software"
 service:
   title: "Data analytics"
   href: "/services/data-analytics"
