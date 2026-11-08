@@ -9,7 +9,7 @@ const data = {
   heroTagline: "We build security to fit your risk: not gold plated, and not left exposed. Security is tested during every build, including automated penetration testing before launch.",
   description: [
     "Most breaches do not need an exotic exploit. They use misconfigured cloud services, unpatched libraries, weak access controls and predictable human behaviour. That is why we treat security as part of how software is designed and built, not a test bolted on at the end. We look at your system the way an attacker would, and design the controls before the code is written.",
-    "Security is tested during every build, including automated penetration testing before launch. An independent penetration test by a specialist firm is your choice, and we will help you scope it, arrange it and fix what it finds. Our methodology is aligned with SOC 2 and ISO 27001 controls; we do not certify against any standard. Where your product needs a framework such as the Essential Eight, APRA CPS 234 or PCI DSS, we identify the controls it points to and build them in, and your auditor or compliance adviser confirms the result.",
+    "Security is tested during every build, including automated penetration testing before launch. An independent penetration test by a specialist firm is your choice, and we will help you scope it, arrange it and fix what it finds. Our methodology is aligned with SOC 2 and ISO 27001 controls; we do not certify against any standard. Where your product needs a framework such as ASD Essentials, the Essential Eight, APRA CPS 234 or PCI DSS, we identify the controls it points to and build them in, and your auditor or compliance adviser confirms the result.",
   ],
   benefits: [
     {
@@ -157,7 +157,7 @@ const data = {
     },
     {
       question: "Does our business need to meet the Essential Eight?",
-      answer: "It is mandatory for non corporate Commonwealth entities and voluntary for most private businesses, but it is a sensible baseline for anyone. The Essential Eight is the ASD's set of eight mitigation strategies, including patching, multifactor authentication, restricting admin privileges and regular backups, measured against maturity levels. Government clients, insurers or contracts may ask for a target level. Our Essential Eight guide explains what it means for software you build or buy.",
+      answer: "Only if something still requires it. On 15 October 2026 ASD published ASD Essentials, which evolves the Essential Eight into principles, actions and domains, with chapters for enterprise IT, cloud and operational technology. ASD says organisations should keep meeting any regulatory, contractual or other obligations that require Essential Eight implementation or reporting, and PSPF Release 2026 still names Maturity Level Two for each strategy for the entities it covers. Government clients, insurers or contracts may still ask for a target level. Otherwise, ASD advises against starting work solely to reach a superseded Essential Eight target. Our Essential Eight guide explains what changed for software you build or buy.",
     },
   ],
   serviceName: 'Cybersecurity',
@@ -171,7 +171,7 @@ const data = {
   comparison: {
     rightFor: [
       "You are about to launch a system that handles sensitive or regulated data and want security built in and tested before it goes live.",
-      "A client, auditor or framework (SOC 2, PCI DSS, ISO 27001, the ACSC Essential Eight or APRA CPS 234) expects controls you need built into your software.",
+      "A client, auditor or framework (SOC 2, PCI DSS, ISO 27001, ASD Essentials, the Essential Eight or APRA CPS 234) expects controls you need built into your software.",
       "Your cloud environment has grown beyond what your internal team can review confidently.",
       "You want security sized to your real risk: not gold plated, and not left exposed.",
     ],
@@ -185,8 +185,12 @@ const data = {
   },
   definitions: [
     {
+      term: 'ASD Essentials',
+      definition: 'The Australian Signals Directorate\'s threat informed cyber security framework, published on 15 October 2026 to evolve the Essential Eight. Principles describe security outcomes, actions describe what to do, and domains describe where the actions apply, with chapters for enterprise IT, cloud and operational technology.',
+    },
+    {
       term: 'Essential Eight',
-      definition: 'A set of eight baseline mitigation strategies published by the Australian Cyber Security Centre (ACSC), covering patching, application control, multifactor authentication, backups and more, used to measure and improve an organisation\'s cyber resilience.',
+      definition: 'ASD\'s earlier baseline of eight mitigation strategies, covering patching, application control, multifactor authentication, backups and more, measured against maturity levels. ASD Essentials now supersedes it as ASD\'s baseline guidance, but contracts and PSPF Release 2026 still refer to its maturity levels.',
     },
     {
       term: 'Penetration test',

@@ -5,7 +5,7 @@ description: "How to sell software to the Australian government: BuyICT panels, 
 eyebrow: "Australian procurement"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "To sell software to the Australian government at federal level, you usually go through BuyICT, the Digital Transformation Agency's platform for whole-of-government panels such as the Digital Marketplace Panel 2, the Software and ERP Marketplace Panel and the Cloud Marketplace Panel, or respond to open tenders on AusTender. The Commonwealth Procurement Rules that took effect on 17 November 2025 raised the non-corporate entity threshold to $125,000 and require agencies to invite only Australian businesses for many smaller procurements. States run their own arrangements, such as the NSW ICT Services Scheme and Victoria's Supplier Hub. Expect security questions based on ASD's Information Security Manual, especially for cloud and AI products."
 takeaways:
   - "BuyICT hosts six DTA whole-of-government marketplaces; some are mandated for non-corporate Commonwealth entities in specific categories, others are opt-in."
@@ -21,7 +21,7 @@ faqs:
   - q: "What is an SME for government procurement?"
     a: "Under the Commonwealth Procurement Rules, an SME is an Australian or New Zealand business with fewer than 200 full-time equivalent employees, counting employees of associated entities such as parent companies and subsidiaries."
   - q: "Do I need an IRAP assessment to sell to government?"
-    a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller purchases, or those with lower risk, won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight."
+    a: "It depends on the data your product will handle and the agency's requirements. Agencies are most likely to ask for an IRAP assessment where a cloud service will hold sensitive or classified information. Many smaller purchases, or those with lower risk, won't require one, but you should expect questions about ASD's Information Security Manual and the Essential Eight, or ASD Essentials, which ASD published on 15 October 2026 to evolve it."
   - q: "How do I register as a government supplier in Australia?"
     a: "There's no single national register. For federal work, create accounts on BuyICT and AusTender and apply to the relevant panel when it opens. For states, register with each jurisdiction: for example, become a registered NSW Government supplier before applying to the NSW ICT Services Scheme, or register on Victoria's Supplier Hub."
   - q: "Is AWLabs on BuyICT or a state panel?"
@@ -29,6 +29,9 @@ faqs:
   - q: "How long do agencies give suppliers to respond to an open tender?"
     a: "For procurements at or above the threshold, the Commonwealth Procurement Rules generally require at least 25 days from publication of the approach to market to the submission deadline, which can be shortened to no less than 10 days in limited circumstances."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "BuyICT"
     url: "https://www.dta.gov.au/our-initiatives/buyict"
     publisher: "Digital Transformation Agency"
@@ -88,7 +91,7 @@ The practical question for a software company is which route its buyers use for 
 |---|---|---|
 | A route to the buyer | Membership of the relevant panel or scheme, or a response to a published tender | BuyICT, AusTender, state schemes such as the NSW ICT Services Scheme |
 | Supplier status | Evidence that you meet the definitions of an Australian business or an SME, if you want the benefit of the preferences | Commonwealth Procurement Rules 2025 |
-| Security evidence | An ISM-informed control summary, your Essential Eight position and, for sensitive cloud data, possibly an IRAP assessment | Agency requirements based on ASD guidance |
+| Security evidence | An ISM informed control summary, your Essential Eight or ASD Essentials position and, for sensitive cloud data, possibly an IRAP assessment | Agency requirements based on ASD guidance |
 | AI information | Descriptions, test results and change notices agencies need for their own assessments | DTA policy for the responsible use of AI in government |
 | Contract terms | Acceptance of the panel head agreement or state contracting framework, including liability, IP and data clauses | The panel or scheme's terms |
 
@@ -147,7 +150,7 @@ If you are targeting one state, start there rather than federally. The NSW schem
 **Expect questions framed around ASD's Information Security Manual (ISM), the Essential Eight and, for cloud products handling sensitive data, an IRAP assessment.** The level of scrutiny rises with the sensitivity of the data your product will hold.
 
 - **IRAP.** An independent assessment against the ISM by an ASD-endorsed assessor. It isn't a certification, but agencies are most likely to ask for one where a cloud service will hold sensitive or classified information. See [IRAP explained](/guides/irap-explained).
-- **Essential Eight.** ASD's baseline mitigation strategies. Agencies may ask how your product supports MFA, patching and restricted admin access. See [the Essential Eight for custom software](/guides/essential-eight-software-development).
+- **Essential Eight and ASD Essentials.** The Essential Eight is ASD's set of eight mitigation strategies, and on 15 October 2026 ASD published ASD Essentials to evolve it. PSPF Release 2026 still requires covered entities to implement each strategy to Maturity Level Two, and ASD says obligations that require the Essential Eight continue, so agencies may use either framework for now. Either way, expect questions on how your product supports MFA, patching and restricted admin access. See [the Essential Eight and ASD Essentials for custom software](/guides/essential-eight-software-development).
 - **Data location.** Many agencies expect data, backups and logs to stay in Australia, and federal hosting for sensitive data involves the Hosting Certification Framework. See [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty).
 - **AI.** If your product uses AI, agencies have their own obligations under the DTA's policy for responsible use of AI in government, which flows into what they ask suppliers. See [the DTA AI policy guide](/guides/dta-ai-policy-government).
 
@@ -170,7 +173,7 @@ A middle path many software companies take is to partner with an established pan
 3. **Confirm your status.** Check whether you meet the CPR definitions of an Australian business and an SME, and gather the evidence.
 4. **Register.** Create supplier accounts on BuyICT, AusTender and the relevant state portal, and set alerts for your categories.
 5. **Apply to the panel or scheme** when it's open, following its rules exactly.
-6. **Prepare security documentation.** Architecture and data flow diagrams, hosting regions, an ISM-informed control summary, and your Essential Eight position.
+6. **Prepare security documentation.** Architecture and data flow diagrams, hosting regions, an ISM informed control summary, and your Essential Eight or ASD Essentials position.
 7. **Decide on IRAP.** If your target buyers will put sensitive data in your product, plan and budget for an assessment.
 8. **Get your contracts ready.** Read the panel's head agreement or the state contracting framework before you bid, especially liability, IP and data clauses. Our [software development contract checklist](/guides/software-development-contract-checklist) covers the common issues.
 9. **Respond well.** Answer the evaluation criteria directly, with evidence, and meet every deadline. Late responses may not be considered.
@@ -180,4 +183,4 @@ A middle path many software companies take is to partner with an established pan
 
 AWLabs isn't on BuyICT, the Digital Marketplace Panel 2, the NSW ICT Services Scheme or any other government panel, and it doesn't hold security clearances or an IRAP assessment. Please don't read this guide as a claim otherwise.
 
-Where we can help is on the product side: building SaaS and AI products for companies that want to sell to government, with Australian hosting regions written into the Schedule of Work where your buyers require it, documented architecture and data flows, and the engineering the Essential Eight and ISM point to. See our [SaaS development](/services/saas-development) service and [AI and software for government](/solutions/government-ai-and-software).
+Where we can help is on the product side: building SaaS and AI products for companies that want to sell to government, with Australian hosting regions written into the Schedule of Work where your buyers require it, documented architecture and data flows, and the engineering the Essential Eight, ASD Essentials and ISM point to. See our [SaaS development](/services/saas-development) service and [AI and software for government](/solutions/government-ai-and-software).

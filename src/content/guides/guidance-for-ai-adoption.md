@@ -5,7 +5,7 @@ description: "Australia's Guidance for AI Adoption replaced the Voluntary AI Saf
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "The Guidance for AI Adoption is the Australian Government's voluntary framework for responsible AI, published by the National AI Centre on 21 October 2025. It condenses the 10 guardrails of the 2024 Voluntary AI Safety Standard into six essential practices: decide who is accountable, understand impacts and plan accordingly, measure and manage risks, share essential information, test and monitor, and maintain human control. It comes in two versions: foundations, for organisations starting out or using AI in ways that carry little risk, and implementation guidance, for teams building AI or running use cases with higher risk."
 takeaways:
   - "Published 21 October 2025 by the National AI Centre; it evolves the Voluntary AI Safety Standard and the AI Ethics Principles rather than adding to them."
@@ -49,6 +49,9 @@ sources:
   - title: "Australia's AI Ethics Principles"
     url: "https://www.industry.gov.au/publications/australias-ai-ethics-principles"
     publisher: "Department of Industry, Science and Resources"
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
 related:
   - title: "Is there an AI Act in Australia?"
     href: "/guides/is-there-an-ai-act-in-australia"
@@ -121,7 +124,7 @@ Keep an AI register, tell people when they are dealing with AI, and be transpare
 
 ### 5. Test and monitor
 
-Define acceptance criteria, test before deployment, obtain documented deployment authorisation from the accountable person (action 5.1.5), monitor performance in production, and apply data governance and cybersecurity controls, including the Essential Eight. This is where an [LLM evaluation](/guides/llm-evaluation) suite, regression tests on every model or prompt change, and production dashboards for accuracy, drift and complaints belong.
+Define acceptance criteria, test before deployment, obtain documented deployment authorisation from the accountable person (action 5.1.5), monitor performance in production, and apply data governance and cybersecurity controls, such as ASD Essentials, which ASD published on 15 October 2026 to evolve the Essential Eight, or the Essential Eight itself where a contract still requires it. This is where an [LLM evaluation](/guides/llm-evaluation) suite, regression tests on every model or prompt change, and production dashboards for accuracy, drift and complaints belong.
 
 ### 6. Maintain human control
 

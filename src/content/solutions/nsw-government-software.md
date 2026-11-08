@@ -26,6 +26,9 @@ faqs:
   - q: "Do we have to use the NSW Design System?"
     a: "The NSW Design System marks its core styles, such as logo, colour, typography and iconography, as required for NSW Government Masterbrand products. Whether your product is on the Masterbrand depends on the agency's brand arrangements, so ask early. Accessibility to WCAG 2.2 level AA is expected either way."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "NSW AI Assessment Framework"
     url: "https://www.digital.nsw.gov.au/policy/artificial-intelligence/nsw-artificial-intelligence-assessment-framework"
     publisher: "Digital NSW"
@@ -74,7 +77,7 @@ related:
     href: "/guides/dta-ai-policy-government"
   - title: "Software for local government in Australia"
     href: "/solutions/local-council-software"
-  - title: "The Essential Eight for custom software projects"
+  - title: "The Essential Eight and ASD Essentials for custom software"
     href: "/guides/essential-eight-software-development"
 service:
   title: "AI governance"
@@ -135,7 +138,7 @@ The AIAF page notes that AI projects over $5 million, or funded by the Digital R
 
 **The 2026 to 2027 NSW Cyber Security Policy applies to NSW departments, agencies and statutory authorities, and requires them to manage cyber risk from third party service providers through contracts, monitoring and ongoing reviews.** Under section 8.4.2, agencies must set clear security requirements in contracts and enforce them, review third party compliance on a risk basis, keep a complete list of providers, and define in the contract how they will respond if a provider falls short, such as break clauses or offboarding.
 
-The policy embeds Essential Eight Maturity Level One controls as mandatory requirements 3.3 to 3.10, and requires agencies to report all cyber incidents to Cyber Security NSW through the Cyber Portal within 24 hours of detection and classification. Agencies report their assessment against the mandatory requirements, and an attestation, by 31 October each year.
+The policy embeds Essential Eight Maturity Level One controls as mandatory requirements 3.3 to 3.10, and requires agencies to report all cyber incidents to Cyber Security NSW through the Cyber Portal within 24 hours of detection and classification. Agencies report their assessment against the mandatory requirements, and an attestation, by 31 October each year. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, but ASD says organisations should keep meeting obligations that require Essential Eight implementation or reporting, so the NSW mandatory requirements apply as written until the policy changes.
 
 What a vendor should expect and prepare:
 
@@ -144,7 +147,7 @@ What a vendor should expect and prepare:
 - evidence of the Essential Eight controls on any environment you operate for the agency
 - support for the agency's annual assessment, including details of any requirement you manage on its behalf
 
-Our [Essential Eight guide](/guides/essential-eight-software-development) explains the controls for custom software.
+Our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development) explains the controls for custom software, and how they map to the new framework.
 
 ## How do the PPIP Act, HRIP Act and MNDB scheme affect your build?
 

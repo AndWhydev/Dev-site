@@ -6,7 +6,7 @@ eyebrow: "Canberra"
 city: "Canberra"
 state: "ACT"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "AWLabs is a Sydney based team that works remotely with Canberra organisations on custom software development and AI consulting, and travels to Canberra for workshops. For federal agencies, AI work now sits under the DTA's Policy for the responsible use of AI in government version 2.0, with remaining requirements due in December 2026, and security under the PSPF. We are not on a BuyICT panel and hold no security clearances, so we suit unclassified work, suppliers to government, and engagements through a prime contractor."
 takeaways:
   - "We're based in Sydney, deliver remotely and travel to Canberra for workshops; we have no Canberra office."
@@ -32,8 +32,11 @@ faqs:
   - q: "Do you work on ACT Government projects?"
     a: "Yes, for unclassified work engaged through a pathway the agency's procurement rules allow. ACT Government agencies fall under the Information Privacy Act 2014 (ACT), administered by the ACT Privacy Commissioner since 1 July 2024, so agency systems are designed to the territory's privacy principles rather than only the federal ones. Health information held by private providers in the ACT is handled under both federal and territory law."
   - q: "What evidence should a software supplier have ready for a federal agency?"
-    a: "Eight documents cover most of what procurement and security teams ask for: a system description with data flows, a hosting statement, an AI use description, evaluation results, a human oversight design, security controls mapped to the Essential Eight, an incident and data breach response plan, and transparency text for the agency's AI statement. We build most of these during delivery, though the agency stays responsible for its own obligations."
+    a: "Eight documents cover most of what procurement and security teams ask for: a system description with data flows, a hosting statement, an AI use description, evaluation results, a human oversight design, security controls mapped to the Essential Eight or ASD Essentials, an incident and data breach response plan, and transparency text for the agency's AI statement. We build most of these during delivery, though the agency stays responsible for its own obligations."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Policy for the responsible use of AI in government, version 2.0"
     url: "https://www.digital.gov.au/ai/ai-in-government-policy"
     publisher: "Digital Transformation Agency"
@@ -73,7 +76,7 @@ related:
     href: "/guides/irap-explained"
   - title: "AI and software development for Australian government"
     href: "/solutions/government-ai-and-software"
-  - title: "The Essential Eight for custom software projects"
+  - title: "The Essential Eight and ASD Essentials for custom software"
     href: "/guides/essential-eight-software-development"
 service:
   title: "AI consulting and development"
@@ -134,7 +137,7 @@ For suppliers, the effect is that agencies will ask for more evidence about any 
 
 **The Protective Security Policy Framework sets the Australian Government's protective security requirements and is mandatory for non-corporate Commonwealth entities; Home Affairs updates it every year.** PSPF Release 2026 was issued on 1 July 2026. The 2025 release introduced changes to personnel and information security and to the handling of technologies such as artificial intelligence and quantum computing, and gave authority to new security standards for gateway security and systems of government significance. Release 2026 adds post-quantum cryptography transition planning, AI training and bring-your-own-device obligations.
 
-The PSPF binds agencies, not suppliers directly, but its requirements reach suppliers through contracts: personnel security, where data is hosted, who can access it and how incidents are reported. Federal agencies handling sensitive or security classified data also look for hosting providers certified under the Hosting Certification Framework, which the Department of Home Affairs runs (new certifications have been paused since 3 November 2025 while the framework is reformed). A useful companion is the ASD's Essential Eight, covered in our guide to the [Essential Eight for software projects](/guides/essential-eight-software-development).
+The PSPF binds agencies, not suppliers directly, but its requirements reach suppliers through contracts: personnel security, where data is hosted, who can access it and how incidents are reported. Federal agencies handling sensitive or security classified data also look for hosting providers certified under the Hosting Certification Framework, which the Department of Home Affairs runs (new certifications have been paused since 3 November 2025 while the framework is reformed). A useful companion is ASD's baseline guidance. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, while PSPF Release 2026 still requires each Essential Eight strategy at Maturity Level Two, and ASD says obligations that require the Essential Eight continue. Our guide to the [Essential Eight and ASD Essentials for software projects](/guides/essential-eight-software-development) covers both.
 
 ## A supplier evidence pack for Canberra buyers
 
@@ -145,7 +148,7 @@ The PSPF binds agencies, not suppliers directly, but its requirements reach supp
 3. AI use description: model, version, provider, where inference runs, and what's logged
 4. Evaluation results: test sets, accuracy measures and known limitations
 5. Human oversight design: who reviews what, and how a person can override the system
-6. Security controls mapped to the Essential Eight and your contract's requirements
+6. Security controls mapped to the Essential Eight or ASD Essentials, as your contract requires
 7. Incident and data breach response plan with named contacts
 8. Transparency text an agency could adapt for its AI transparency statement
 

@@ -5,7 +5,7 @@ description: "The Notifiable Data Breaches (NDB) scheme in Australia for softwar
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "The Notifiable Data Breaches (NDB) scheme, in Part IIIC of the Privacy Act 1988, has applied since 22 February 2018. If an entity covered by the Privacy Act has reasonable grounds to believe an eligible data breach has occurred, meaning unauthorised access, disclosure or loss of personal information that is likely to cause serious harm and can't be prevented by remedial action, it must notify affected individuals and the OAIC as soon as practicable. If it only suspects a breach, it must take all reasonable steps to assess it within 30 days. Software determines how fast and how accurately you can answer the questions the scheme asks."
 takeaways:
   - "The NDB scheme applies to breaches on or after 22 February 2018 and covers APP entities, credit reporting bodies, credit providers and TFN recipients."
@@ -30,6 +30,9 @@ faqs:
   - q: "What are the penalties under the NDB scheme?"
     a: "The OAIC enforces the scheme by handling complaints, investigating and taking other regulatory action. Since 11 December 2024 it can also issue infringement notices where a breach statement doesn't include the content required by section 26WK(3), under section 13K. This page doesn't cover the wider Privacy Act penalty regime; get legal advice on your exposure."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "About the Notifiable Data Breaches scheme"
     url: "https://www.oaic.gov.au/privacy/notifiable-data-breaches/about-the-notifiable-data-breaches-scheme"
     publisher: "Office of the Australian Information Commissioner"
@@ -51,7 +54,7 @@ sources:
 related:
   - title: "Cybersecurity services"
     href: "/services/cybersecurity"
-  - title: "The Essential Eight for custom software projects"
+  - title: "The Essential Eight and ASD Essentials for custom software"
     href: "/guides/essential-eight-software-development"
   - title: "APRA CPS 234 and AI systems: what vendors need to provide"
     href: "/guides/apra-cps-234-ai"
@@ -140,7 +143,7 @@ AI systems widen the surface. Prompts, retrieved documents, conversation histori
 - **Tokenise or pseudonymise.** Replace direct identifiers in analytics, test and AI pipelines with tokens that are useless without a separately protected lookup.
 - **Never use production data in test.** Test environments are routinely less protected.
 - **Encrypt with keys you control, and log key use.** It turns "was it readable?" into a question with an evidence-based answer.
-- **Least privilege for people and services.** Most breaches involve credentials. Short-lived tokens, MFA and scoped service accounts limit the blast radius. The ASD's [Essential Eight](/guides/essential-eight-software-development) is the practical baseline.
+- **Least privilege for people and services.** Most breaches involve credentials. Short lived tokens, MFA and scoped service accounts limit the blast radius. ASD's baseline is now ASD Essentials, published on 15 October 2026 to evolve the [Essential Eight](/guides/essential-eight-software-development), and it asks for unique credentials per system or account and secrets kept in approved secure repositories.
 - **Alert on unusual access.** Bulk exports, access from new locations and queries outside normal patterns should page someone.
 
 ## Worked example: a leaked API key

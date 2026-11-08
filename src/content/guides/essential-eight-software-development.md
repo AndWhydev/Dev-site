@@ -1,61 +1,69 @@
 ---
-title: "The Essential Eight maturity model for custom software projects"
-metaTitle: "Essential Eight Maturity Model for Custom Software"
-description: "How ASD's Essential Eight (Essential 8) maturity model applies to custom software: maturity levels 1 to 3, patching and MFA rules, and a build checklist."
+title: "The Essential Eight and ASD Essentials for custom software projects"
+metaTitle: "Essential Eight and ASD Essentials for Custom Software"
+description: "What ASD Essentials changes for custom software, how the Essential Eight maps to it, and what to build when a contract or PSPF still names a maturity level."
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
-summary: "The Essential Eight (often written Essential 8 or E8) is ASD's baseline of eight mitigation strategies, measured against a maturity model with levels zero to three. It was designed to protect organisations' internet-connected IT networks, not to certify individual applications, so there's no such thing as \"Essential Eight compliant software\". But a custom application becomes one of the client's online services, and several strategies apply to it directly: patching the application and its dependencies on set timelines, multi-factor authentication for staff and customers, restricted administrative privileges, and backups that can be restored. Building those in from the start is far cheaper than retrofitting them."
+updated: 2026-11-08
+summary: "On 15 October 2026 the Australian Signals Directorate (ASD) published ASD Essentials, which evolves the Essential Eight into a framework of principles, actions and domains, with chapters for enterprise IT, cloud and operational technology. Every Essential Eight strategy maps to at least one ASD Essentials principle, but maturity levels don't convert into the new effectiveness ratings. The Essential Eight still matters where something requires it: PSPF Release 2026 names Maturity Level Two for each strategy, and many contracts name a level. For a custom application, the engineering work is mostly the same either way: fast patching, strong MFA, controlled admin access, logging and restorable backups. ASD Essentials adds secrets handling, supply chain security and evidence that controls keep working."
 takeaways:
-  - "At the time of writing, the current Essential Eight maturity model is ASD's November 2023 release."
-  - "Maturity is assessed for an organisation's systems, not certified for a product; ASD says there's no requirement for independent certification unless a directive, regulator or contract requires assessment."
-  - "At Maturity Level One, online customer services that hold sensitive customer data must use MFA for customers, and at Level Two they must offer a phishing-resistant option."
-  - "Critical vulnerabilities in online services must be patched within 48 hours of release at every maturity level from One upwards."
-  - "Patching, MFA, admin privileges and backups map most directly to custom software; application control and Office macros mostly concern workstations."
+  - "ASD published ASD Essentials on 15 October 2026. ASD says it will advise on transition timeframes in due course."
+  - "Every Essential Eight strategy maps to at least one ASD Essentials principle, and existing controls often satisfy or contribute to its actions, but maturity levels don't translate into the new ratings."
+  - "If a contract, regulator or PSPF still names an Essential Eight maturity level, keep meeting it. ASD says those obligations continue."
+  - "For software, the new framework reaches further: secrets kept out of code, legacy authentication removed, time bound admin access and every admin change recorded."
+  - "Maturity and effectiveness belong to an organisation's systems, not a product, so there's no such thing as Essential Eight or ASD Essentials compliant software."
 faqs:
-  - q: "Is the Essential Eight mandatory?"
-    a: "For Australian Government entities, yes. The Protective Security Policy Framework (PSPF Release 2026) requires each of the eight mitigation strategies to be implemented to Maturity Level Two, and it also reaches service providers where a deed or agreement requires it. For private organisations it's voluntary unless a regulator, directive or contract requires it, which is common in government supply chains."
-  - q: "How is an Essential Eight assessment done?"
-    a: "ASD's assessment process guide sets four stages: planning and preparation, agreeing the scope and approach, assessing the controls for each strategy, and writing a security assessment report. Assessors rate the quality of evidence, with testing a control by simulated activity rated highest, and a target level can't be claimed if any strategy isn't implemented."
-  - q: "What is the difference between the Essential Eight and ISO 27001?"
-    a: "The Essential Eight is a set of eight specific technical mitigation strategies from ASD, measured by maturity level. ISO/IEC 27001 is an international standard for an information security management system that an organisation can be certified against. They complement each other: one prescribes particular controls, the other governs how security is managed overall, and holding one doesn't demonstrate the other."
-  - q: "Can a software developer make our application Essential Eight compliant?"
-    a: "Not on its own. Essential Eight maturity is a property of an organisation's systems and how they're run, including patching, access and backups over time. A developer can build the application so it supports the controls, such as MFA, least privilege, logging and restorable backups, but the organisation's operations determine the maturity level achieved."
-  - q: "Which maturity level should we target?"
-    a: "ASD says organisations should pick a target maturity level suited to their environment, based on how attractive they are to attackers and the consequences of an incident, and reach the same level across all eight strategies before moving higher. Many organisations start with Maturity Level One across the board, then move to Level Two."
-  - q: "Does the Essential Eight apply to SaaS products we use?"
-    a: "Partly. The MFA strategy explicitly covers third-party online services that process, store or communicate your sensitive data. Other strategies, such as patching the provider's servers, are the provider's job, which is why you should ask SaaS vendors how they patch and how they protect administrative access."
-  - q: "Is the Essential Eight enough on its own?"
-    a: "No. ASD describes it as a minimum set of preventative measures that won't mitigate all threats, and says organisations should add further controls from its Strategies to mitigate cyber security incidents and the Information Security Manual where their environment warrants it. For AI and web applications, application-level risks such as injection and broken access control need their own controls."
-  - q: "What does ASD mean by a phishing-resistant option for customers?"
-    a: "It means offering an MFA method that resists real-time phishing, such as FIDO2 or WebAuthn passkeys and security keys. ASD's November 2023 changes cite FIDO2 and WebAuthn as standards that are becoming business as usual."
+  - q: "Has the Essential Eight been replaced?"
+    a: "ASD published ASD Essentials on 15 October 2026 and describes it as an evolution of the Essential Eight into ASD Essentials for enterprise IT. The Essential Eight pages remain on cyber.gov.au, and ASD's FAQ says it will advise on expectations for the transition in due course. Its transition guidance says organisations should keep meeting any obligations that require Essential Eight implementation or reporting."
+  - q: "Is the Essential Eight still mandatory for government?"
+    a: "For entities covered by the Protective Security Policy Framework, PSPF Release 2026 still requires each of the eight mitigation strategies to be implemented to Maturity Level Two, and it reaches service providers where a deed or agreement requires it. ASD's transition guidance says organisations with reporting obligations that use Essential Eight terminology should keep meeting them as directed by the relevant authority."
+  - q: "Our contract says Essential Eight Maturity Level Two. What do we do?"
+    a: "Meet the contract as written, and plan the work so it also counts under ASD Essentials. ASD says not to start work solely to reach a superseded Essential Eight target unless a regulator or other obligation still requires it. A contract that names a level is that kind of obligation. Ask the buyer whether they intend to move the clause to ASD Essentials, and keep evidence that shows the controls working over time, which both frameworks value."
+  - q: "How does the Essential Eight map to ASD Essentials?"
+    a: "ASD's transition guidance maps each strategy to one or more principles. For example, patching maps to vulnerability management, asset identification and legacy system management; MFA maps to identity, credential and access management; and regular backups maps to regular and proven backups and least privilege access."
+  - q: "Do Essential Eight maturity levels carry over?"
+    a: "No. ASD says maturity level ratings don't automatically convert into ASD Essentials ratings, because the two measure different things. Each ASD Essentials action is rated not assessed, not effective, partially effective or fully effective for each domain. Existing evidence is the starting point for a gap analysis."
+  - q: "Should we stop an Essential Eight uplift that is under way?"
+    a: "ASD's FAQ says it doesn't recommend slowing or stopping approved initiatives that will improve security, and that organisations should continue current uplift programs while assessing alignment with the new framework. Map planned work to ASD Essentials before deciding whether it continues unchanged."
+  - q: "Can a software developer make our application compliant?"
+    a: "Not on its own. Essential Eight maturity and ASD Essentials effectiveness are properties of an organisation's systems and how they're run over time. A developer can build the application so it supports the controls, such as MFA, least privilege, logging and restorable backups, but the organisation's operations decide the result."
+  - q: "Which ASD Essentials chapter covers a SaaS or cloud application?"
+    a: "ASD says the cloud chapter is the appropriate starting point for organisations that operate mostly platform or software as a service, and the enterprise IT chapter suits on premises, hybrid and infrastructure as a service. It expects most organisations to need both chapters over time."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
+  - title: "Transitioning from the Essential Eight"
+    url: "https://www.cyber.gov.au/publication/transitioning-from-the-essential-eight"
+    publisher: "Australian Signals Directorate"
+  - title: "ASD Essentials: frequently asked questions"
+    url: "https://www.cyber.gov.au/publication/frequently-asked-questions"
+    publisher: "Australian Signals Directorate"
+  - title: "What is the Essentials?"
+    url: "https://www.cyber.gov.au/publication/what-is-the-essentials"
+    publisher: "Australian Signals Directorate"
+  - title: "ASD Essentials for enterprise IT"
+    url: "https://www.cyber.gov.au/essentials/essentials-for-enterprise-it"
+    publisher: "Australian Signals Directorate"
+  - title: "Which chapter should I start with?"
+    url: "https://www.cyber.gov.au/publication/which-chapter-should-i-start-with"
+    publisher: "Australian Signals Directorate"
   - title: "Essential Eight"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight"
+    url: "https://www.cyber.gov.au/essential-eight"
     publisher: "Australian Signals Directorate"
   - title: "Essential Eight maturity model (November 2023)"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model"
-    publisher: "Australian Signals Directorate"
-  - title: "Essential Eight maturity model changes (November 2023)"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-changes"
+    url: "https://www.cyber.gov.au/publication/essential-eight-maturity-model"
     publisher: "Australian Signals Directorate"
   - title: "Essential Eight assessment process guide"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-assessment-process-guide"
-    publisher: "Australian Signals Directorate"
-  - title: "Essential Eight explained"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-explained"
+    url: "https://www.cyber.gov.au/publication/essential-eight-assessment-process-guide"
     publisher: "Australian Signals Directorate"
   - title: "PSPF Release 2026: list of requirements"
     url: "https://www.protectivesecurity.gov.au/publications-library/pspf-release-2026-list-requirements"
     publisher: "Department of Home Affairs (Protective Security Policy Framework)"
-  - title: "About the PSPF"
-    url: "https://www.protectivesecurity.gov.au/about"
-    publisher: "Department of Home Affairs (Protective Security Policy Framework)"
-  - title: "Information Security Manual (ISM)"
-    url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/ism"
-    publisher: "Australian Signals Directorate"
 related:
+  - title: "How much does an Essential Eight uplift cost?"
+    href: "/guides/essential-eight-uplift-cost"
   - title: "IRAP explained for software buyers and SaaS vendors"
     href: "/guides/irap-explained"
   - title: "APRA CPS 234 and AI systems"
@@ -70,132 +78,145 @@ related:
     href: "/guides/saas-backup-disaster-recovery"
   - title: "How to add single sign on to a business app"
     href: "/guides/sso-entra-id-business-apps"
-  - title: "How much does an Essential Eight uplift cost?"
-    href: "/guides/essential-eight-uplift-cost"
 service:
   title: "Cybersecurity and secure development"
   href: "/services/cybersecurity"
 disclaimer: legal
 ---
 
-## What is the Essential Eight (Essential 8)?
+## What changed in October 2026?
 
-**The Essential Eight is the Australian Signals Directorate's recommended baseline of eight mitigation strategies, drawn from its broader Strategies to mitigate cyber security incidents.** ASD says the baseline "makes it much harder for adversaries to compromise systems". The eight strategies are:
+**ASD published ASD Essentials on 15 October 2026, evolving the Essential Eight into a framework built on principles, actions and domains.** Principles describe the security outcome, actions describe what to do to achieve it, and domains describe the business functions and assets the actions apply to. There are chapters for enterprise IT, cloud and operational technology, plus guides for implementation planning, assessment and moving across from the Essential Eight.
+
+The Essential Eight itself was eight mitigation strategies measured against a maturity model. ASD first published that model in June 2017 and last revised it in November 2023. The eight strategies were:
 
 1. Patch applications
 2. Patch operating systems
-3. Multi-factor authentication
+3. Multi factor authentication
 4. Restrict administrative privileges
 5. Application control
 6. Restrict Microsoft Office macros
 7. User application hardening
 8. Regular backups
 
-That list is what people usually mean by "the Essential 8 list". ASD's Australian Cyber Security Centre (ACSC) publishes the framework on cyber.gov.au, so it's also called the ACSC Essential Eight.
+ASD's FAQ explains the shift in three parts: maturity levels give way to priority phases, a list of prescriptive requirements gives way to principles and actions that test whether outcomes are achieved, and domains let organisations focus on their critical business functions and systems. ASD says ASD Essentials is written mainly for Commonwealth entities, critical infrastructure and large organisations, while smaller businesses can still use it where relevant.
 
-ASD publishes a maturity model that defines four levels, from Maturity Level Zero (weaknesses present) to Maturity Level Three, each aimed at a higher level of attacker tradecraft and targeting. The model was first published in June 2017 and is updated regularly. At the time of writing (September 2026), the current release is November 2023, and ASD's assessment process guide is written against that release.
+On timing, ASD says it has been talking to regulators and will advise on transition expectations in due course. Until it does, both frameworks are in play.
 
-## What are Essential Eight maturity levels 1, 2 and 3?
+## How do the old strategies map to ASD Essentials?
 
-**Each maturity level is defined by the attacker it's meant to stop: Maturity Level One (ML1) targets opportunistic attackers using commodity tools, Maturity Level Two (ML2) targets attackers willing to invest more time and effort, and Maturity Level Three (ML3) targets adaptive attackers who move quickly on new exploits.** Maturity Level Zero means there are weaknesses in the organisation's overall posture.
+**ASD's transition guidance says every Essential Eight strategy maps to at least one ASD Essentials principle, and existing controls will often satisfy or contribute to its actions.** The differences are scope, the broader outcomes some controls now feed, and the evidence needed to show an action works.
 
-| Level | Attacker ASD describes | What that means for an application |
+| Essential Eight strategy | ASD Essentials principles it maps to | What it means for a custom application |
 |---|---|---|
-| ML1 | Uses widely available commodity tradecraft and looks for any victim | Basic patching timelines, MFA where sensitive data is held, backups |
-| ML2 | Invests more time in a target, goes after credentials with phishing and tries to get around weak MFA | Phishing-resistant MFA for staff, customer passkey option, logging of authentication events, tighter admin access |
-| ML3 | Adapts to the target's specific controls and uses new exploits as soon as they are public | Phishing-resistant MFA for customers too, just-in-time admin, backups even admins can't delete |
+| Patch applications and patch operating systems | Vulnerability management, asset identification, legacy system management | Scan and patch the app, its libraries and runtime; keep an inventory; manage anything you can't yet replace |
+| Multi factor authentication | Identity, credential and access management | Phishing resistant MFA, plus secrets storage, unique credentials and removing legacy sign in protocols |
+| Restrict administrative privileges | Identity, credential and access management; least privilege access; secure administration; network segmentation and segregation | Separate admin roles, time bound elevation, every admin change recorded, service accounts held to least privilege |
+| Application control | Trustworthy software; secure configuration management | Mainly servers and devices, but administrative tooling must also be approved and controlled |
+| Restrict Microsoft Office macros | Trustworthy software; secure configuration management | Rarely relevant unless the app produces or handles Office documents |
+| User application hardening | Secure configuration management; content filtering | Configuration baselines for the environments you run, and limits on outbound connections |
+| Regular backups | Regular and proven backups; least privilege access | Encrypted, isolated backups and restore tests that prove your recovery time and recovery point objectives |
 
-ASD says organisations should choose a target level based on their desirability to attackers and the consequences of an incident, and reach that level across all eight strategies before moving up. **Essential Eight Maturity Level Two** carries extra weight because the Protective Security Policy Framework (PSPF) requires Australian Government entities to implement every strategy to ML2. Suppliers into government should expect to be asked how their software supports ML2, even though the obligation sits with the agency.
+ASD also lists principles with no direct Essential Eight equivalent, including content filtering, cyber security awareness training and cyber supply chain security, and a Governance and culture domain covering areas such as supplier assurance, artificial intelligence accountability and legacy system management.
 
-## Why is the Essential Eight awkward for custom software?
+## Do maturity levels still count?
 
-**Because it was designed for organisations' internet-connected IT networks, not for individual applications.** Several strategies are written for Windows workstations and servers: application control, Office macros and PowerShell settings, for example. A custom web or cloud application has none of those, so asking whether an app "meets the Essential Eight" is the wrong question.
+**Not as a rating under the new framework.** ASD says Essential Eight maturity levels don't automatically convert, because the old model measured implementation of specific controls against increasing attacker tradecraft, while ASD Essentials measures whether each action achieves its outcome for the assets in each domain.
 
-The better question is: when this application goes live, it becomes one of the organisation's online services, so which Essential Eight requirements will apply to it, and what must the software do to support them? That shifts the conversation from a badge to engineering requirements, which is where it belongs.
+Each action is rated not assessed, not effective, partially effective or fully effective, and a principle takes the lowest rating of its applicable actions in that domain. Priority phases set the order of work, not a level of assurance:
 
-## Which strategies apply to a custom application?
-
-**Patching, multi-factor authentication, restricted administrative privileges and backups apply most directly; the other four mostly concern the devices your developers and users work on.**
-
-| Strategy | Applies to the application itself? | What it means in a custom software project |
+| Priority phase | Domains | Where a custom application usually sits |
 |---|---|---|
-| Patch applications | Yes | The app, its libraries and its runtime are an online service that needs scanning and patching on ASD's timelines |
-| Patch operating systems | Yes, if you run servers or containers | Base images, virtual machines and managed runtimes must be kept current; managed platforms shift some of this to the provider |
-| Multi-factor authentication | Yes | Staff and customer sign-in, admin consoles, and the cloud, source control and CI/CD accounts behind the app |
-| Restrict administrative privileges | Yes | Separate admin roles, time-limited elevated access, and tight control of production, database and cloud console access |
-| Application control | Mostly no | Applies to workstations and servers; relevant to developer machines and any servers you manage |
-| Restrict Microsoft Office macros | No | Unless the application generates or processes Office documents with macros |
-| User application hardening | Indirectly | Browser hardening is the organisation's job; the app should work without legacy browser features |
-| Regular backups | Yes | Data, application and settings backups, restorable to a common point in time, protected from deletion |
+| Phase 1 | Boundary services, identity services | An internet facing customer app and its sign in |
+| Phase 2 | Critical processes and services, privileged environments | Core systems the business depends on, and admin access to them |
+| Phase 3 | Business systems, user devices | Internal line of business apps and staff endpoints |
+| All phases | Governance and culture, visibility and response | Ownership, risk decisions, logging and incident response |
+
+ASD's FAQ gives a direct example: an internet facing customer application in an enterprise IT environment may be addressed under boundary services in phase 1 and critical processes and services in phase 2. The same controls are still implemented only once.
+
+For organisations that reached Maturity Level Two, ASD expects many controls to feed the early phases, naming phishing resistant MFA, patching internet facing services, privileged access, application control and central logging. It also warns that Level Two doesn't mean an action will be fully effective in every domain.
+
+## What if a contract or PSPF still names a maturity level?
+
+**Keep meeting it, and build the evidence so the same work counts under ASD Essentials.** ASD's transition guidance says organisations should continue to meet regulatory, contractual or other obligations that require Essential Eight implementation or reporting, and should report as directed by the relevant authority where Essential Eight terminology is still required.
+
+PSPF Release 2026 still requires covered Commonwealth entities to implement each of the eight strategies to Maturity Level Two, and that requirement reaches suppliers where a deed or agreement says so. Insurers, government panels and enterprise security schedules may also still ask for a level.
+
+In practice:
+
+1. **Read the clause.** Note the level, the scope and whether self assessment is accepted. That is your obligation until the clause changes.
+2. **Don't start work only to hit a superseded target.** ASD advises against it unless a regulator or other obligation still requires it, or the work still addresses material cyber security risk.
+3. **Map planned work to ASD Essentials first.** ASD recommends this before deciding whether planned work continues unchanged.
+4. **Keep evidence of operation, not just deployment.** ASD says configuration records show what was deployed, but ratings under the new framework draw on validation results, monitoring records, restore tests and similar proof over time.
+5. **Ask the buyer about the transition.** Whether a panel or contract will move to ASD Essentials is the buyer's decision, and ASD hasn't yet set the timeframes.
 
 ## What patching timelines apply?
 
-**For online services, critical vulnerabilities must be patched within 48 hours of release, or when working exploits exist, from Maturity Level One upwards.** Non-critical vulnerabilities in online services get two weeks. The model also sets how often you must scan.
+**Under the Essential Eight maturity model, critical vulnerabilities in online services must be patched within 48 hours of release, or when working exploits exist, from Maturity Level One upwards.** These are still the numbers a contract naming a level will test.
 
-| Requirement (from the November 2023 model) | Level One | Level Two | Level Three |
+| Requirement (November 2023 model) | Level One | Level Two | Level Three |
 |---|---|---|---|
 | Vulnerability scan of online services | At least daily | At least daily | At least daily |
 | Patch online services: critical or working exploit | 48 hours | 48 hours | 48 hours |
-| Patch online services: non-critical, no exploit | 2 weeks | 2 weeks | 2 weeks |
+| Patch online services: other vulnerabilities | 2 weeks | 2 weeks | 2 weeks |
 | Scan other applications | Not specified | At least fortnightly | At least fortnightly |
 | Patch other applications | Not specified | Within one month | Within one month |
 | Remove unsupported online services | Required | Required | Required |
-| Automated asset discovery | At least fortnightly | At least fortnightly | At least fortnightly |
 
-For a custom application, "patching" includes upgrading vulnerable open-source packages, not just applying vendor updates. That has design consequences. A 48-hour window is only achievable if the application has automated dependency scanning, a test suite you trust, and a deployment pipeline that can ship a patched build the same day. Software without those can't meet the timeline, however willing the team is.
+ASD Essentials phrases this differently: apply patches within defined risk based timeframes, or automatically where operational impact is low, and remediate vulnerabilities above a risk threshold based on exploitation, exposure, criticality, impact and compensating controls. ASD notes that ISM, regulatory and other mandatory timeframes continue to apply, and that a suitable timeframe can differ between domains.
 
-## What must the application do for multi-factor authentication?
+For a custom application, patching includes upgrading vulnerable open source packages. A two day turnaround is only realistic with automated dependency scanning, a test suite you trust and a pipeline that can ship a patched build the same day.
 
-**At Maturity Level One, MFA is required for customers of online customer services that process, store or communicate sensitive customer data, and for the organisation's staff using services that hold sensitive data.** ASD's November 2023 changes removed the easy opt-out that let customers fall back to passwords alone, citing ongoing attacks on citizens who rely on passwords.
+## What must the application do for MFA and credentials?
 
-The model sets out a progression:
+**Under the Essential Eight, online customer services holding sensitive customer data need MFA for customers from Maturity Level One, with a phishing resistant option at Level Two and phishing resistant MFA required at Level Three.** Staff using online services need phishing resistant MFA from Level Two, which also requires successful and failed MFA events to be centrally logged.
 
-| MFA requirement | Level One | Level Two | Level Three |
-|---|---|---|---|
-| Staff MFA on services holding the organisation's sensitive data | Required | Required | Required |
-| Customer MFA on services holding sensitive customer data | Required | Required | Required |
-| Factors must include something users have | Required | Required | Required |
-| Phishing-resistant MFA for staff using online services | Not required | Required | Required |
-| Phishing-resistant MFA for customers | Not required | Must be offered as an option | Must be phishing resistant |
-| Successful and failed MFA events centrally logged, logs protected | Not required | Required | Required |
+ASD Essentials keeps phishing resistant MFA and widens the principle. Its identity actions also ask organisations to:
 
-In engineering terms, a customer portal handling personal, health or identity data needs MFA built in from the first release, with passkeys or security keys available as an option if the organisation is aiming for Level Two, and required for customers at Level Three. The app also needs to emit authentication events in a form the organisation's logging platform can collect and protect.
+- store keys, secrets and tokens in approved secure repositories with access controls, including MFA
+- regularly scan codebases, configuration files, file shares and collaboration platforms for unsecured secrets
+- disable legacy authentication protocols, or restrict, monitor and plan to retire them
+- keep user, machine, system and service account credentials unique per system or account
+- remove default and unused accounts on a regular basis
 
-## How should admin access and backups be built?
+Most of that is engineering work inside the product and its pipeline, so it belongs in the first release, not a later uplift.
 
-**Build separate privileged roles into the application, make elevated access auditable and time-limited, and design data so it can be restored to a consistent point in time.** The Level Two requirements include disabling privileged access after 12 months unless revalidated and after 45 days of inactivity. Level Three adds just-in-time administration, and requires that even backup administrators can't modify or delete backups during their retention period.
+## How should admin access, logging and backups be built?
 
-For a custom system, that usually means:
+**Build separate privileged roles, grant elevated access for a set time, record every change, and make backups that can be restored and can't be quietly deleted.** The Essential Eight's Level Two disables privileged access after 12 months unless revalidated and after 45 days of inactivity; Level Three adds just in time administration and backups even backup administrators can't change during retention.
 
-- An admin role model in the app itself, separate from ordinary user accounts, with every admin action logged.
-- No shared production credentials; service account and break glass credentials that are long, unique and managed in a secrets store.
-- Cloud console, database and CI/CD access granted per person, reviewed, and removed when no longer needed.
-- Backups of the database, file storage and configuration taken together so they restore to a common point, with restore tests as part of disaster recovery exercises.
-- Backup storage the application's own accounts can't delete, such as immutable or locked object storage.
+ASD Essentials adds actions that land directly on a custom system:
 
-## An Essential Eight checklist for your next software project
+- explicit session controls before privileged actions, including time bound privilege grants
+- a record of every administrative change to systems, configuration or controls, with the user, time and target
+- least privilege for service and other non person accounts, not just people
+- backups on a defined schedule to encrypted storage protected by immutable, offline or logically isolated controls, kept apart from production
+- restore tests that show recovery time and recovery point objectives can be met
+- security relevant logs forwarded to a central capability that can correlate events across systems
 
-**Put these in the requirements before development starts, because each one is cheap early and expensive later.**
+## A checklist for your next software project
 
-1. Agree the client's target Essential Eight maturity level and which requirements the application must support.
-2. Automated dependency and container scanning on every build, with alerts routed to a named owner.
-3. A deployment pipeline that can release a tested patch within 48 hours.
-4. A register of every component, library and runtime with its support end date.
-5. MFA for all staff and customer accounts where sensitive data is involved, with a phishing-resistant option if the target is Level Two or above.
-6. Central logging of authentication events, admin actions and security events, protected from change and deletion.
-7. Separate privileged roles, time-limited elevation and access reviews.
-8. MFA and least privilege on the cloud, source control and CI/CD accounts behind the application.
-9. Backups that restore data, application and settings to a common point in time, tested, and protected from deletion.
-10. Written exceptions with compensating controls, approved and reviewed, wherever a requirement can't be met.
+**Put these into the requirements before development starts; each is cheap early and expensive later.**
 
-ASD's assessment guide notes that for a strategy to count as implemented, every control in it must be effective or covered by an alternate control. One ineffective control means the level isn't met. That is why exceptions need to be deliberate and documented rather than discovered in an assessment.
+1. Record any obligation that names an Essential Eight level, and agree which ASD Essentials chapter and domains the system falls under.
+2. Automated dependency and container scanning on every build, routed to a named owner.
+3. A pipeline that can release a tested patch within 48 hours.
+4. A register of components, libraries, runtimes, identities and data stores, with support end dates.
+5. Phishing resistant MFA for staff and admins, and for customers where sensitive data is held or the contract asks for it.
+6. Secrets in a managed store, secret scanning on the codebase, and no legacy sign in protocols.
+7. Separate admin roles with time bound elevation, and a log of every admin change.
+8. Central, protected logging of authentication, admin and security events.
+9. Encrypted, isolated backups with scheduled restore tests against agreed recovery objectives.
+10. Written exceptions with compensating controls, approved, time bound and reviewed.
 
-## Beyond the Essential Eight
+## Beyond either framework
 
-**The Essential Eight is a minimum, not a complete security program.** ASD says it won't stop every threat and that organisations should draw on the Information Security Manual for further controls. Application-level risks, such as broken access control, injection and, for AI systems, [prompt injection](/guides/prompt-injection), sit outside the eight strategies altogether. If your buyers are government agencies, the [IRAP guide](/guides/irap-explained) explains how ISM-based assessments work. For APRA-regulated clients, read [CPS 234 and AI systems](/guides/apra-cps-234-ai).
+**Both frameworks set a floor for an organisation, not a full application security program.** Application risks such as broken access control, injection and, for AI systems, [prompt injection](/guides/prompt-injection) need their own controls. ASD's FAQ says ASD Essentials treats AI as another asset to include in scoping. If your buyers are agencies, the [IRAP guide](/guides/irap-explained) explains assessments against the ISM. For APRA regulated clients, read [CPS 234 and AI systems](/guides/apra-cps-234-ai). For budgets, see [what an Essential Eight uplift costs](/guides/essential-eight-uplift-cost).
+
+One point matters for suppliers. ASD says outsourcing a service doesn't transfer accountability for its security outcomes, and a domain shouldn't be treated as effective just because a third party is responsible for it. Expect buyers to ask you for current evidence, not a one off assurance.
 
 ## How AWLabs builds for it
 
-We don't assess or certify Essential Eight maturity, and we don't claim a maturity level for any client. We build software so that the relevant requirements are achievable: dependency scanning and security checks run as quality gates on every change, a pipeline that can ship a patched build quickly, MFA and role-based admin access designed in, authentication and admin events logged, and backups designed for point-in-time restore, kept in Australian regions where that is written into your Schedule of Work. Every change also gets a senior engineer's review before deploy.
+We don't assess or certify Essential Eight maturity or ASD Essentials effectiveness, we don't claim a level or rating for any client, and AWLabs is not CREST accredited and holds no certification. We build software so the relevant controls are achievable and the evidence exists: dependency and secret scanning as quality gates on every change, a pipeline that can ship a patched build quickly, MFA and role based admin access designed in, admin and authentication events logged, and backups designed for restore, in Australian regions where that is written into your Schedule of Work. Senior engineers lead every build.
 
-Keeping the patching timeline over years is an operations commitment, not a one-off build task. See our [cybersecurity](/services/cybersecurity) and [software maintenance and support](/services/software-maintenance-support) services.
+The first call is a Development Consult, held in Sydney business hours, where we look at what your contract or buyer actually asks for. Scoped work then comes as a fixed price Schedule of Work with three options. Keeping patch timelines over years is an operations commitment, so see our [cybersecurity](/services/cybersecurity) and [software maintenance and support](/services/software-maintenance-support) services.

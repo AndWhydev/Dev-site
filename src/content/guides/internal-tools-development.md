@@ -12,7 +12,7 @@ takeaways:
   - "Low code licences are priced per user. At the time of writing Power Apps Premium is AU$29.90 per user a month (paid yearly, ex GST), and Retool lists its Business plan at $50 per builder and $15 per internal user a month (confirm the currency at checkout)."
   - "Retool's Free and Team plans don't include audit logs at the time of writing, which matters for any tool that changes customer or financial records."
   - "Never give an internal tool the production database's admin password. Use an API or a restricted role, and a read replica for reporting."
-  - "Restricting administrative privileges is one of ASD's Essential Eight. Internal tools are where that principle is easiest to break."
+  - "Restricting administrative privileges was one of ASD's Essential Eight strategies, and ASD Essentials keeps it under least privilege and secure administration. Internal tools are where that principle is easiest to break."
 faqs:
   - q: "What is an internal tool?"
     a: "It is software built for a business's own staff rather than its customers. Examples are an approvals queue for finance, an operations dashboard that lets staff fix orders, a support console that looks up customers, or an admin panel for a SaaS product."
@@ -27,6 +27,9 @@ faqs:
   - q: "Can we add AI to an internal tool?"
     a: "Yes. Common uses are summarising a customer's history, drafting replies, classifying incoming requests and answering questions over internal documents. Keep a person approving anything that changes records or goes to a customer, and check where the model processes your data."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Power Apps pricing"
     url: "https://www.microsoft.com/en-au/power-platform/products/power-apps/pricing"
     publisher: "Microsoft"
@@ -54,7 +57,7 @@ related:
     href: "/guides/replace-excel-or-access-with-a-web-app"
   - title: "Customer portal development"
     href: "/guides/customer-portal-development"
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
 service:
   title: "Custom app development"
@@ -128,13 +131,13 @@ Under APP 11, an organisation holding personal information must take reasonable 
 
 **Every action in an internal tool should be tied to a named person, allowed by their role and recorded.** That is good security and it is what makes the tool trustworthy when something goes wrong.
 
-- **Roles.** Define a small set (viewer, operator, approver, admin) and map people to them. Restricting administrative privileges is one of the mitigation strategies in ASD's Essential Eight; give admin only to people who need it, and review it regularly.
+- **Roles.** Define a small set (viewer, operator, approver, admin) and map people to them. Restricting administrative privileges is one of the mitigation strategies in ASD's Essential Eight, and ASD Essentials, published on 15 October 2026 to evolve it, asks for access privileges to be reviewed periodically against current roles; give admin only to people who need it, and review it regularly.
 - **Single sign on.** Staff log in with their work account (often Microsoft Entra ID or Google Workspace), so leavers lose access when their account is disabled. Check which plan includes SSO; on Retool, for example, it sits in the Enterprise plan at the time of writing.
 - **Audit logs.** Record who did what, to which record, when, and the before and after values for sensitive fields. Make the log read only to everyone except a security role.
 - **Approvals.** For refunds, credit notes, price overrides and bulk changes, require a second person above a threshold. Build the approval into the tool rather than relying on an email.
 - **Safe bulk actions.** Preview what will change, require confirmation, and keep an undo or a reversal record.
 
-Our [Essential Eight guide](/guides/essential-eight-software-development) covers how the other strategies apply to software you build.
+Our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development) covers how the other controls apply to software you build.
 
 ## How can AI assistants help in internal tools?
 

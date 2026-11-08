@@ -39,6 +39,9 @@ sources:
   - title: "Penetration testing cost in Australia"
     url: "https://compliancecouncil.com.au/penetration-testing-cost-australia/"
     publisher: "Compliance Council"
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Essential Eight maturity model"
     url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model"
     publisher: "Australian Signals Directorate"
@@ -96,7 +99,7 @@ Specialist security firms may bill above that range. Compliance Council's Austra
 - **Documentation.** An architecture diagram and a working local setup save a day or more.
 - **Access.** Read only access to repositories, cloud and staging on day one is the biggest saving you control.
 - **Audience.** A report for a board or investor takes longer to write than notes for a development team.
-- **Compliance mapping.** Mapping findings to a framework, such as the Essential Eight's patching and application control strategies or an enterprise customer's security questionnaire, adds days.
+- **Compliance mapping.** Mapping findings to a framework adds days. That might be ASD Essentials, which ASD published on 15 October 2026 to evolve the Essential Eight, the Essential Eight's patching and application control strategies where a contract still names them, or an enterprise customer's security questionnaire.
 
 ## Worked example: an inherited SaaS application
 

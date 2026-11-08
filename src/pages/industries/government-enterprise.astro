@@ -11,7 +11,7 @@ const data = {
   stats: [
     { value: 'OFFICIAL', label: 'and OFFICIAL: Sensitive workloads' },
     { value: 'ISM', label: 'controls mapped through delivery' },
-    { value: 'Essential Eight', label: 'mitigations designed in' },
+    { value: 'ASD Essentials', label: 'and Essential Eight controls designed in' },
     { value: 'DTA DSS', label: 'Digital Service Standard aligned' },
   ],
   painPoints: [
@@ -33,7 +33,7 @@ const data = {
     {
       icon: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>',
       title: 'Procurement and Compliance Complexity',
-      description: "Government ICT procurement through BuyICT panels, state government standing offer arrangements and council tender processes adds significant lead time and administrative overhead. Mandatory security requirements including IRAP assessment, Essential Eight compliance and ISM control mapping create real complexity, but agencies that shortcut these controls face the prospect of a data breach affecting citizens' most sensitive personal information.",
+      description: "Government ICT procurement through BuyICT panels, state government standing offer arrangements and council tender processes adds significant lead time and administrative overhead. Mandatory security requirements including IRAP assessment, Essential Eight maturity levels and ISM control mapping create real complexity, and ASD's move to ASD Essentials in October 2026 adds a transition to plan for, but agencies that shortcut these controls face the prospect of a data breach affecting citizens' most sensitive personal information.",
     },
   ],
   solutions: [
@@ -70,8 +70,8 @@ const data = {
       answer: "Common uses of AI in government include drafting and summarising correspondence and briefs, searching policy and legislation, triaging service requests and FOI applications, and assisting case officers with large volumes of documents. Commonwealth agencies build under the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), alongside the ISM and PSPF. Decisions about people need human accountability and a clear record, and our guide to AI and software development for Australian government covers the requirements in detail.",
     },
     {
-      question: 'How do you approach IRAP assessment and Essential Eight compliance for government systems?',
-      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an assessor certified by ASD. That isn't us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the appropriate maturity level for your system's risk profile, and produce the security documentation artefacts that an IRAP assessor will request. We hold no IRAP-assessed system ourselves and say so up front.",
+      question: 'How do you approach IRAP assessment, the Essential Eight and ASD Essentials for government systems?',
+      answer: "An Information Security Registered Assessors Program (IRAP) assessment is conducted by an assessor certified by ASD. That isn't us, and you should be wary of any vendor claiming to do their own IRAP assessment. What we do is design and build systems that are genuinely ready for IRAP assessment: we map system controls to the ACSC's Information Security Manual (ISM) from the architecture phase, implement the Essential Eight mitigation strategies (application control, patching applications and OS, restricting Microsoft Office macros, user application hardening, restricting admin privileges, patching OS, MFA and regular backups) at the maturity level your contract or PSPF Release 2026 requires, and produce the security documentation artefacts that an IRAP assessor will request. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, and says obligations that still require the Essential Eight continue, so we map the same controls to ASD Essentials principles and keep evidence that they keep working. We hold no IRAP assessed system ourselves, hold no certification, and say so up front.",
     },
     {
       question: 'Are you on any government ICT procurement panels?',

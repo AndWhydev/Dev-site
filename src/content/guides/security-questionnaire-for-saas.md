@@ -9,7 +9,7 @@ updated: 2026-11-08
 summary: "Enterprise buyers send security questionnaires because they remain responsible for their data when a vendor holds it: APRA's CPS 234, for example, requires regulated entities to assess the information security capability of third parties that manage their information assets. Answer from evidence, not aspiration. Say yes only where the control exists today, say partial or no with a dated plan where it doesn't, and attach proof. Keep a maintained answer library and a security pack, and fix the controls that appear in nearly every questionnaire first: multi factor authentication everywhere, single sign on for customers, encryption, backups that have been tested, logging, a penetration test and a written incident response plan."
 takeaways:
   - "Questionnaires exist because the buyer stays accountable. CPS 234 requires APRA regulated entities to assess the security capability of third parties managing their information assets."
-  - "Common formats include the CSA's CAIQ (version 4.1 at the time of writing), the Shared Assessments SIG, and the buyer's own template, often mapped to ISO 27001 or the Essential Eight."
+  - "Common formats include the CSA's CAIQ (version 4.1 at the time of writing), the Shared Assessments SIG, and the buyer's own template, often mapped to ISO 27001 or the Essential Eight, which ASD evolved into ASD Essentials in October 2026."
   - "A truthful 'partial, with a remediation date' beats an optimistic 'yes' that fails in the contract or an audit."
   - "A trust page and a security pack answer most questions before they are asked and shorten the review."
   - "The fixes that pay back first are cheap and visible: MFA, SSO, encryption, tested backups, logging, a recent penetration test and an incident plan."
@@ -23,10 +23,13 @@ faqs:
   - q: "Can we answer 'not applicable' to questions?"
     a: "Only when the control genuinely doesn't apply, with a one line reason, for example no physical data centre because hosting is on AWS. Reviewers treat unexplained 'not applicable' answers as a sign the question was dodged."
   - q: "What do government buyers ask for?"
-    a: "Federal buyers commonly ask about the Information Security Manual, the Essential Eight, IRAP assessment and hosting arrangements. The Hosting Certification Framework is under reform, and new registrations were paused from 3 November 2025 until the reform is complete, so check the current position with the buying agency."
+    a: "Federal buyers commonly ask about the Information Security Manual, the Essential Eight, IRAP assessment and hosting arrangements. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, but says obligations that require Essential Eight continue, and PSPF Release 2026 still names Maturity Level Two, so questionnaires may use either framework during the transition. The Hosting Certification Framework is under reform, and new registrations were paused from 3 November 2025 until the reform is complete, so check the current position with the buying agency."
   - q: "Should AI features change our answers?"
     a: "Yes. Expect questions on which model providers you use, where prompts and outputs are processed, whether customer data is used for training, and how you defend against prompt injection. Answer them in a short AI section of your security pack."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Prudential Standard CPS 234 Information Security"
     url: "https://www.apra.gov.au/standards/cps-234"
     publisher: "APRA"
@@ -56,7 +59,7 @@ related:
     href: "/guides/apra-cps-234-ai"
   - title: "SOC 2 vs ISO 27001 in Australia"
     href: "/guides/soc-2-vs-iso-27001-australia"
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "Trust and security at AWLabs"
     href: "/trust"
@@ -93,11 +96,11 @@ Publishing a completed CAIQ can head off some custom questionnaires, because man
 
 A complete answer names the cloud provider and region for production data, backups, logs and disaster recovery, lists every subprocessor (email, support desk, error monitoring, analytics, AI model providers) with its processing location, and says who can access production and from where. If any support or engineering staff work offshore, say so. Our guide to [data residency and data sovereignty](/guides/data-residency-vs-data-sovereignty) explains the distinction buyers are probing.
 
-## Identity, MFA and Essential Eight questions
+## Identity, MFA, Essential Eight and ASD Essentials questions
 
 **Identity questions are the ones most often failed, and the easiest to fix.** Buyers ask whether every staff account uses multi factor authentication, whether admin access is separate and limited, whether customers can sign in with their own identity provider, and how quickly access is removed when someone leaves.
 
-Australian buyers frequently ask you to state a maturity level against the Essential Eight, ASD's eight mitigation strategies. The maturity model, last updated in November 2023, defines levels from basic to stronger protection against advanced threats, and ASD recommends reaching the same level across all eight strategies. ASD says the Essential Eight was designed to protect organisations' internet connected IT networks, so a cloud SaaS product only partly maps to it; describe your equivalent controls and the gaps honestly. Our guide to the [Essential Eight in software development](/guides/essential-eight-software-development) shows how to map a cloud product to it.
+Australian buyers frequently ask you to state a maturity level against the Essential Eight, ASD's eight mitigation strategies. The maturity model, last updated in November 2023, defines levels from basic to stronger protection against advanced threats, and ASD recommends reaching the same level across all eight strategies. On 15 October 2026 ASD published ASD Essentials to evolve it: actions are rated not assessed, not effective, partially effective or fully effective for each domain, and ASD says old maturity levels don't automatically convert. If a questionnaire asks for a level, answer it, and say how you would evidence the same controls under ASD Essentials. ASD says the Essential Eight was designed to protect organisations' internet connected IT networks, so a cloud SaaS product only partly maps to it; describe your equivalent controls and the gaps honestly. Our guide to the [Essential Eight and ASD Essentials in software development](/guides/essential-eight-software-development) shows how to map a cloud product to both.
 
 ## CPS 234 and CPS 230 flow down clauses for APRA regulated buyers
 

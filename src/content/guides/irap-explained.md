@@ -5,7 +5,7 @@ description: "What an IRAP assessment is, why there's no IRAP certification, how
 eyebrow: "Australian regulation"
 category: australia
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "An IRAP assessment is an independent security assessment of a system or cloud service by an assessor endorsed under IRAP, the Infosec Registered Assessors Program run by the Australian Signals Directorate (ASD). Assessors test controls, generally from ASD's Information Security Manual, for systems up to SECRET. The assessment produces a report and control matrix; it isn't a certification, and IRAP assessors don't accredit or approve systems. The buying organisation's authorising officer reads the report and decides whether to accept the risk. There's no such thing as being \"IRAP certified\"."
 takeaways:
   - "IRAP endorses assessors, not products: ASD says assessors don't accredit, certify, endorse or register systems."
@@ -27,6 +27,9 @@ faqs:
   - q: "Is AWLabs an IRAP assessor?"
     a: "No. AWLabs is not an IRAP assessor, isn't endorsed by ASD, and doesn't operate any IRAP-assessed system. We can build software to ISM-informed requirements and prepare documentation, but an assessment must be done by an independent, endorsed assessor."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Infosec Registered Assessors Program (IRAP)"
     url: "https://www.cyber.gov.au/business-government/protecting-devices-systems/assessment-evaluation-programs/irap"
     publisher: "Australian Signals Directorate"
@@ -46,7 +49,7 @@ sources:
     url: "https://www.hostingcertification.gov.au/framework"
     publisher: "Australian Government"
 related:
-  - title: "The Essential Eight for custom software projects"
+  - title: "The Essential Eight and ASD Essentials for custom software"
     href: "/guides/essential-eight-software-development"
   - title: "How to sell software to Australian government"
     href: "/guides/selling-software-to-australian-government"
@@ -142,7 +145,7 @@ A readiness checklist for a SaaS product aiming at government buyers:
 2. Host on a cloud platform with its own IRAP assessment at that level, and use its cloud controls matrix to map which controls you inherit.
 3. Draw a clear system boundary: every component, region, third party and administrative path.
 4. Write the system security plan, using ASD's system security plan annex template for the current ISM.
-5. Implement the ISM controls that apply, starting with the Essential Eight mitigations that apply to your environment, such as multi-factor authentication, patching and restricted admin privileges.
+5. Implement the ISM controls that apply, starting with the baseline ones such as multi factor authentication, patching and restricted admin privileges. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight; where an agency still asks for Essential Eight maturity levels, meet those as well.
 6. Build in logging and monitoring that meets ISM event logging expectations, with retention and protection of logs.
 7. Keep data in Australia where your buyers need it, including backups, logs and any AI model inference.
 8. Document incident response, business continuity and personnel security arrangements.
@@ -150,7 +153,7 @@ A readiness checklist for a SaaS product aiming at government buyers:
 10. Get at least three quotes from endorsed assessors, as ASD recommends, and agree scope and deliverables in writing. Don't try to define favourable outcomes; ASD warns this jeopardises the assessment's integrity.
 11. Plan re-assessment. The consumer guide advises allowing enough time to complete a re-assessment before the current assessment expires.
 
-The [Essential Eight guide](/guides/essential-eight-software-development) covers the baseline controls in engineering terms, and [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) covers the location questions.
+The [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development) covers the baseline controls in engineering terms, and [data residency vs data sovereignty](/guides/data-residency-vs-data-sovereignty) covers the location questions.
 
 ## Where does AI fit into an IRAP assessment?
 

@@ -4,7 +4,7 @@ metaTitle: "AI in Government: DTA Policy, ISM, PSPF and Hosting Rules"
 description: "AI in government and government software development in Australia: how the DTA AI policy, ISM, PSPF and hosting rules shape a build, with phases and costs."
 eyebrow: "Industry solution"
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "AI in government, and government software development generally, is shaped less by technology than by the frameworks around them: the DTA Policy for the responsible use of AI in government (version 2.0, with its remaining requirements in force from December 2026), ASD's Information Security Manual, the Protective Security Policy Framework and, for hosting sensitive data, the Hosting Certification Framework. A supplier's job is to build to those requirements and hand the agency the evidence it needs for its own assessments. AWLabs holds no government panel membership, IRAP assessment or security clearances, so we suit OFFICIAL workloads, subcontracting and state or local government work rather than classified systems."
 takeaways:
   - "Version 2.0 of the DTA AI policy took effect on 15 December 2025 for non-corporate Commonwealth entities; its first new mandatory requirement began on 15 June 2026 and the rest apply from December 2026."
@@ -30,6 +30,9 @@ faqs:
   - q: "Do state governments follow the DTA AI policy?"
     a: "The DTA policy applies to non-corporate Commonwealth entities; corporate Commonwealth entities are encouraged to apply it. States and territories set their own AI, privacy and records rules, so a council or state agency project is scoped against its own state framework and privacy law instead."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "AI Policy Update: Strengthening responsible use across government"
     url: "https://www.dta.gov.au/articles/ai-policy-update-strengthening-responsible-use-across-government"
     publisher: "Digital Transformation Agency"
@@ -121,13 +124,13 @@ None of this is addressed to suppliers directly. But an agency can't complete an
 
 ## Which security frameworks shape the build?
 
-**Four frameworks set the security bar for most federal work: ASD's Information Security Manual, the Protective Security Policy Framework, the Essential Eight, and the Hosting Certification Framework for where sensitive data lives.** Which controls apply depends on the system's classification and the agency's own risk assessment.
+**Four frameworks set the security bar for most federal work: ASD's Information Security Manual, the Protective Security Policy Framework, the Essential Eight and its successor ASD Essentials, and the Hosting Certification Framework for where sensitive data lives.** Which controls apply depends on the system's classification and the agency's own risk assessment.
 
 | Framework | Owner | What it means for the build |
 |---|---|---|
 | Information Security Manual (ISM) | Australian Signals Directorate | The control catalogue. Updated regularly; the current release at the time of writing is September 2026, with a cloud security controls matrix template. Your system security plan maps to it. |
 | Protective Security Policy Framework (PSPF) | Department of Home Affairs | What entities must do to protect people, information and resources. PSPF Release 2026 is current. Directions issued under it are binding on accountable authorities. |
-| Essential Eight | Australian Signals Directorate | Baseline mitigation strategies such as patching, application control and multi-factor authentication. Shapes how systems are deployed and administered; see our [Essential Eight guide](/guides/essential-eight-software-development). |
+| Essential Eight and ASD Essentials | Australian Signals Directorate | Baseline mitigation strategies such as patching, application control and multi factor authentication. ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, but PSPF Release 2026 still names Maturity Level Two for each strategy and ASD says those obligations continue. Shapes how systems are deployed and administered; see our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development). |
 | Hosting Certification Framework (HCF) | Department of Home Affairs | Applies when procuring hosting for sensitive government data, whole of government systems and PROTECTED systems. Certification levels include Strategic and Assured. |
 
 Two details catch teams out. First, PSPF directions can prohibit specific products: Direction 001-2025 (February 2025) requires entities to prevent the use of DeepSeek products, applications and web services, and Direction 001-2024 requires entities to identify and manage foreign ownership, control or influence risk in technology assets. Your model and library choices need to survive that review. Second, the HCF is under reform: new certification registrations were paused from 3 November 2025 until reforms are complete, though existing certified providers are unaffected. Check its status before assuming a hosting provider can be certified in time for your project.

@@ -5,13 +5,13 @@ description: "A software and AI glossary for buyers: plain-English meanings of o
 eyebrow: "Glossary"
 category: explainer
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "This software and AI glossary defines more than 60 terms that non-technical buyers meet when commissioning software and AI in Australia, each in one to three plain sentences. Terms are grouped into AI and machine learning, data, architecture and infrastructure, delivery and contracts, security and compliance, and Australian terms, with links to fuller explainers and guides where they exist."
 takeaways:
   - "Most confusion in software proposals comes from a handful of pairs: RAG vs fine-tuning, residency vs sovereignty, proof of concept vs MVP, fixed price vs time and materials."
   - "AI costs are measured in tokens, and what fits in a request is limited by the context window, so both terms appear in any serious AI proposal."
   - "Contract terms such as IP assignment, acceptance criteria and change requests matter as much to project outcomes as technical ones."
-  - "Australian terms such as the APPs, the NDB scheme, the Essential Eight and IRAP describe obligations and frameworks; a supplier can explain them without holding any certification."
+  - "Australian terms such as the APPs, the NDB scheme, ASD Essentials, the Essential Eight and IRAP describe obligations and frameworks; a supplier can explain them without holding any certification."
 faqs:
   - q: "Why does a glossary matter when buying software?"
     a: "Because proposals from different suppliers use the same words to mean different things. Knowing what a term should mean lets you ask whether a quote includes it, for example whether \"testing\" means automated tests, an LLM evaluation suite, or a quick check before launch."
@@ -24,6 +24,9 @@ faqs:
   - q: "Do I need to understand these terms in depth?"
     a: "No. You need enough to ask good questions and to notice when a proposal is vague. The linked explainers go deeper on the terms that most affect cost and risk."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "OWASP GenAI LLM Top 10 2026"
     url: "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
     publisher: "OWASP Gen AI Security Project"
@@ -229,7 +232,9 @@ The definitions describe how the terms are generally used in the Australian mark
 
 **Automated decision-making (ADM) transparency.** ADM transparency is the Privacy Act requirement that, from 10 December 2026, privacy policies describe the kinds of decisions made by computer programs that could significantly affect individuals' rights or interests. See [Privacy Act automated decision-making rules](/guides/privacy-act-automated-decision-making).
 
-**Essential Eight.** The Essential Eight is ASD's set of eight prioritised mitigation strategies: patching applications and operating systems, MFA, restricting admin privileges, application control, restricting Office macros, user application hardening and regular backups. See [the Essential Eight for software projects](/guides/essential-eight-software-development).
+**ASD Essentials.** ASD Essentials is ASD's threat informed cyber security framework, published on 15 October 2026 to evolve the Essential Eight. Principles describe security outcomes, actions describe what to do, and domains describe where the actions apply, with chapters for enterprise IT, cloud and operational technology. Actions are rated not assessed, not effective, partially effective or fully effective.
+
+**Essential Eight.** The Essential Eight is ASD's set of eight prioritised mitigation strategies: patching applications and operating systems, MFA, restricting admin privileges, application control, restricting Office macros, user application hardening and regular backups, measured against maturity levels. ASD Essentials now evolves it, but contracts and PSPF Release 2026 still name its maturity levels. See [the Essential Eight and ASD Essentials for software projects](/guides/essential-eight-software-development).
 
 **IRAP.** IRAP, the Infosec Registered Assessors Program, is how ASD endorses assessors to evaluate systems against the Information Security Manual, commonly required for government work. See [IRAP explained](/guides/irap-explained).
 

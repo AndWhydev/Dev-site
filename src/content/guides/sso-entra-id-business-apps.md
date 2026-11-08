@@ -6,7 +6,7 @@ eyebrow: "Explainer"
 category: explainer
 published: 2026-11-08
 updated: 2026-11-08
-summary: "To add single sign on, you make your app trust an identity provider such as Microsoft Entra ID, Google Workspace or Okta, using OpenID Connect for modern web and mobile apps or SAML 2.0 where the customer requires it, and you map the identity provider's users and groups to your app's accounts and roles. For a SaaS product, each customer organisation is its own connection. Add SCIM provisioning so accounts are created and removed automatically, and offer phishing resistant MFA, which the Essential Eight expects at Maturity Level Two and above."
+summary: "To add single sign on, you make your app trust an identity provider such as Microsoft Entra ID, Google Workspace or Okta, using OpenID Connect for modern web and mobile apps or SAML 2.0 where the customer requires it, and you map the identity provider's users and groups to your app's accounts and roles. For a SaaS product, each customer organisation is its own connection. Add SCIM provisioning so accounts are created and removed automatically, and offer phishing resistant MFA, which the Essential Eight expects at Maturity Level Two and above and ASD Essentials, published in October 2026, also calls for."
 takeaways:
   - "SSO moves sign in and MFA to the customer's identity provider. Your app still owns accounts, roles and sessions."
   - "Use OpenID Connect by default; support SAML because many enterprise identity teams still prefer it."
@@ -21,12 +21,15 @@ faqs:
   - q: "Do I need SCIM as well as SSO?"
     a: "For enterprise customers, usually yes. SSO controls sign in; SCIM is the standard API that lets the customer's identity provider create, update and deactivate users and groups in your app automatically. Microsoft Entra ID provisions to apps that expose a SCIM 2.0 endpoint."
   - q: "What does the Essential Eight say about MFA?"
-    a: "At Maturity Level Two, MFA for users of online services and systems must be phishing resistant, and online customer services must provide a phishing resistant option. At Maturity Level Three, customer MFA must also be phishing resistant, and so must MFA for users of data repositories. These requirements are in ASD's November 2023 maturity model."
+    a: "At Maturity Level Two, MFA for users of online services and systems must be phishing resistant, and online customer services must provide a phishing resistant option. At Maturity Level Three, customer MFA must also be phishing resistant, and so must MFA for users of data repositories. These requirements are in ASD's November 2023 maturity model, which contracts still cite. ASD Essentials, published on 15 October 2026 to evolve the Essential Eight, also calls for phishing resistant MFA for users authenticating to systems."
   - q: "How much does it cost to add SSO to an existing app?"
     a: "Indicative build effort for a single identity provider in an internal app is about $5k to $12k (AUD ex GST). Multi tenant SSO with SAML and OIDC, role mapping and SCIM for a SaaS product is typically $20k to $55k. Identity platform subscriptions are extra; Auth0's free plan, for example, now includes one enterprise connection, self service SSO and SCIM, with paid B2B tiers beyond that."
   - q: "Should we build our own login or use an identity platform?"
     a: "Use a platform or a well maintained library. Password storage, MFA, account recovery and federation are security critical and easy to get subtly wrong. Your engineering effort is better spent on account linking, role mapping and session handling inside your own app."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Essential Eight maturity model (November 2023)"
     url: "https://www.cyber.gov.au/publication/essential-eight-maturity-model"
     publisher: "Australian Signals Directorate"
@@ -46,7 +49,7 @@ sources:
     url: "https://auth0.com/pricing"
     publisher: "Auth0 by Okta"
 related:
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "SaaS development cost in Australia"
     href: "/guides/saas-development-cost-australia"
@@ -67,7 +70,7 @@ service:
 
 **Because SSO lets their IT team control who can reach your app, enforce their own MFA, and cut access the day someone leaves, without touching your system.** For the buyer, an app without SSO is another set of passwords to manage and another account to forget when an employee departs. It often shows up as a hard requirement in procurement and security questionnaires.
 
-There is also an Australian assurance angle. Government agencies and many enterprises measure themselves against ASD's Essential Eight, and the MFA strategy in the maturity model explicitly covers online services, including third party services that hold the organisation's data. If your app is one of those services, the buyer needs to know how your sign in meets their maturity target. Our [Essential Eight guide](/guides/essential-eight-software-development) covers the wider framework.
+There is also an Australian assurance angle. Government agencies and many enterprises have measured themselves against ASD's Essential Eight, which ASD evolved into ASD Essentials on 15 October 2026, and the MFA strategy in the maturity model explicitly covers online services, including third party services that hold the organisation's data. If your app is one of those services, the buyer needs to know how your sign in meets their target. Our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development) covers the wider framework.
 
 What SSO does not do is remove your responsibilities. Your app still creates accounts, assigns roles, manages sessions and protects its own API keys. SSO replaces the password check, not the access model.
 
@@ -138,6 +141,8 @@ What to build:
 
 Phishing resistant generally means methods bound to the real site, such as passkeys, FIDO2 security keys or platform authenticators, rather than SMS codes or push approvals. With SSO, staff MFA is enforced by the customer's identity provider, which is usually what they want. For customer sign in on your own platform, offer passkeys so customers who need Maturity Level Two or Three can use them.
 
+ASD Essentials widens this. Its identity, credential and access management principle keeps phishing resistant MFA and adds actions to disable or restrict legacy authentication protocols, store keys, secrets and tokens in approved secure repositories, and keep credentials unique per system or account. Contracts and PSPF Release 2026 still name Essential Eight maturity levels, so the table above remains the one to meet when a clause names a level.
+
 ## What mistakes cause SSO problems after launch?
 
 **Most incidents come from sessions, mappings and recovery paths rather than the protocol itself.**
@@ -163,4 +168,4 @@ The biggest variable is the existing user model. If your app already separates o
 
 ## How AWLabs approaches SSO projects
 
-We start with your user and role model, then pick the identity platform and protocols that fit your customers, rather than the other way round. Senior engineers lead every build, and we test sign in, provisioning and deprovisioning against real Entra ID and Okta tenants before launch. We do not certify your app against the Essential Eight; we build so you can show assessors how sign in works. See our [cybersecurity](/services/cybersecurity) and [SaaS development](/services/saas-development) pages to start a Development Consult.
+We start with your user and role model, then pick the identity platform and protocols that fit your customers, rather than the other way round. Senior engineers lead every build, and we test sign in, provisioning and deprovisioning against real Entra ID and Okta tenants before launch. We do not certify your app against the Essential Eight or ASD Essentials; we build so you can show assessors how sign in works. See our [cybersecurity](/services/cybersecurity) and [SaaS development](/services/saas-development) pages to start a Development Consult.

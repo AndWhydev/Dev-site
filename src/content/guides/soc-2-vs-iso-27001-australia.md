@@ -6,7 +6,7 @@ eyebrow: "Comparison"
 category: compare
 published: 2026-11-08
 updated: 2026-11-08
-summary: "ISO/IEC 27001 is an international standard: an accredited certification body certifies that your information security management system meets it, and the certificate is public. SOC 2 is an American attestation: a licensed CPA firm examines your controls against the AICPA Trust Services Criteria and issues a report you share under NDA. For an Australian SaaS business selling mainly to Australian, European or Asian enterprises, ISO 27001 is usually the first to get. Choose SOC 2 first when US customers or US headquartered buyers are your pipeline. Government work adds IRAP and Essential Eight on top."
+summary: "ISO/IEC 27001 is an international standard: an accredited certification body certifies that your information security management system meets it, and the certificate is public. SOC 2 is an American attestation: a licensed CPA firm examines your controls against the AICPA Trust Services Criteria and issues a report you share under NDA. For an Australian SaaS business selling mainly to Australian, European or Asian enterprises, ISO 27001 is usually the first to get. Choose SOC 2 first when US customers or US headquartered buyers are your pipeline. Government work adds IRAP and the Essential Eight, or its successor ASD Essentials, on top."
 takeaways:
   - "ISO 27001 certifies a management system; SOC 2 reports on whether specific controls were designed and, in a Type 2, operated effectively over a period."
   - "SOC 2 reports can only be issued by licensed CPA firms under AICPA standards. ISO 27001 certificates carry more weight from a certification body accredited by JAS-ANZ or another IAF recognised accreditation body."
@@ -29,6 +29,9 @@ faqs:
   - q: "Is AWLabs SOC 2 or ISO 27001 certified?"
     a: "No. AWLabs holds neither a SOC 2 report nor an ISO 27001 certificate. We build software and delivery pipelines that produce the evidence your auditor will ask for, and we can work within your ISMS or control set."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "ISO/IEC 27001:2022 Information security management systems: Requirements"
     url: "https://www.iso.org/standard/27001"
     publisher: "International Organization for Standardization"
@@ -59,7 +62,7 @@ sources:
 related:
   - title: "IRAP explained"
     href: "/guides/irap-explained"
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "APRA CPS 234 and AI"
     href: "/guides/apra-cps-234-ai"
@@ -187,18 +190,19 @@ The overlap is real. Most controls an ISO 27001 auditor checks are the same ones
 
 If your product is still being built, these cost very little to include now and a lot to retrofit. Our [SaaS development](/services/saas-development) work bakes them in, and the [SaaS development cost guide](/guides/saas-development-cost-australia) shows where they sit in a budget.
 
-## Where do Essential Eight and IRAP fit?
+## Where do the Essential Eight, ASD Essentials and IRAP fit?
 
-**Essential Eight and IRAP are Australian Government frameworks from the Australian Signals Directorate, and they answer different questions from SOC 2 and ISO 27001.** They are complementary, not alternatives.
+**The Essential Eight, ASD Essentials and IRAP are Australian Government frameworks from the Australian Signals Directorate, and they answer different questions from SOC 2 and ISO 27001.** They are complementary, not alternatives.
 
 | Framework | Owner | What it is | When you'll meet it |
 |---|---|---|---|
-| Essential Eight | ASD | Eight mitigation strategies with a maturity model | Required of many federal entities under government policy; sometimes asked of their suppliers |
+| Essential Eight | ASD | Eight mitigation strategies with a maturity model | PSPF Release 2026 still requires Maturity Level Two for covered federal entities; sometimes asked of their suppliers |
+| ASD Essentials | ASD | Principles, actions and domains, published on 15 October 2026 to evolve the Essential Eight | Written mainly for Commonwealth entities, critical infrastructure and large organisations; ASD will advise on transition timeframes |
 | IRAP | ASD | Independent assessment by an ASD endorsed assessor, typically against the Information Security Manual | Selling cloud or software that handles government information |
 | ISO/IEC 27001 | ISO and IEC | Certified management system | Enterprise and international procurement |
 | SOC 2 | AICPA | CPA attestation on controls | US and US style procurement |
 
-An ISO 27001 ISMS is a good home for Essential Eight controls: your risk assessment can adopt the strategies and maturity targets, and your auditors will see them as part of the system. IRAP is a separate assessment with its own scope and assessors. Read [IRAP explained](/guides/irap-explained) and our [Essential Eight guide for software development](/guides/essential-eight-software-development) before you commit to a government roadmap.
+An ISO 27001 ISMS is a good home for Essential Eight or ASD Essentials controls: your risk assessment can adopt them, and your auditors will see them as part of the system. ASD says its assessment evidence guide for ASD Essentials references controls from other frameworks that may count as evidence where you have implemented them. IRAP is a separate assessment with its own scope and assessors. Read [IRAP explained](/guides/irap-explained) and our [Essential Eight and ASD Essentials guide for software development](/guides/essential-eight-software-development) before you commit to a government roadmap.
 
 ## When is neither worth it yet?
 

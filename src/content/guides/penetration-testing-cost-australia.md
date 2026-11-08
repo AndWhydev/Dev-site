@@ -54,7 +54,7 @@ sources:
     url: "https://asvs.owasp.org/"
     publisher: "OWASP Foundation"
 related:
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "Notifiable data breaches: what software teams need to know"
     href: "/guides/notifiable-data-breaches-software"
@@ -198,7 +198,7 @@ A preparation checklist:
 7. Agree testing windows, a contact during testing and what happens if something critical is found mid test.
 8. Book time after the report to fix findings, then schedule the retest.
 
-If you're building to a recognised standard, the OWASP Application Security Verification Standard (version 5.0.0 at the time of writing) is a useful checklist of controls to have in place before testing starts. For government facing software, our [Essential Eight guide](/guides/essential-eight-software-development) explains how those controls relate to the software you build.
+If you're building to a recognised standard, the OWASP Application Security Verification Standard (version 5.0.0 at the time of writing) is a useful checklist of controls to have in place before testing starts. For government facing software, note that ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight. Its transition guidance says evidence of deployment alone doesn't show a control is effective, and lists control validation and testing among the evidence that can, so a current test report is useful evidence under the new framework. Contracts and PSPF Release 2026 can still name Essential Eight maturity levels; our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development) explains both for the software you build.
 
 ## What do the findings cost to fix?
 

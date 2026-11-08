@@ -1,7 +1,7 @@
 ---
 title: "Backup and disaster recovery for business software: RPO, RTO and a one page plan"
 metaTitle: "Disaster Recovery Plan for Business Software (RPO and RTO)"
-description: "Set RPO and RTO for custom apps and SaaS like Microsoft 365 and Xero, test restores, resist ransomware and meet Essential Eight backup controls and CPS 230."
+description: "Set RPO and RTO for custom apps and SaaS like Xero, test restores, resist ransomware, and meet Essential Eight, ASD Essentials and CPS 230 backup rules."
 eyebrow: "How to guide"
 category: explainer
 published: 2026-11-08
@@ -11,7 +11,7 @@ takeaways:
   - "Set an RPO and RTO for each system based on what an outage or data loss would cost, not on what the technology happens to offer."
   - "SaaS vendors build resilience into their platforms, but their terms often limit what they owe you if your data is lost. Back up what you can't afford to lose."
   - "Ransomware targets backups. Use immutable or offline copies that even an administrator can't delete during the retention period."
-  - "The Essential Eight requires restores to be tested as part of disaster recovery exercises at every maturity level."
+  - "The Essential Eight requires restores to be tested at every maturity level, and ASD Essentials, published in October 2026, asks that restore tests show recovery objectives can be met."
   - "APRA regulated entities must set tolerance levels for disruption time and data loss for critical operations under CPS 230, in force since 1 July 2025."
 faqs:
   - q: "What is the difference between RPO and RTO?"
@@ -27,6 +27,9 @@ faqs:
   - q: "How much does disaster recovery cost?"
     a: "Costs rise as RPO and RTO shrink. Daily backups with a restore within a day are cheap. Near zero data loss with recovery in minutes needs a running standby environment, which can approach the cost of production. Match the investment to the business impact."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Essential Eight Maturity Model"
     url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model"
     publisher: "Australian Signals Directorate"
@@ -58,7 +61,7 @@ sources:
     url: "https://www.oaic.gov.au/privacy/notifiable-data-breaches/when-to-report-a-data-breach"
     publisher: "OAIC"
 related:
-  - title: "The Essential Eight for custom software"
+  - title: "The Essential Eight and ASD Essentials for custom software"
     href: "/guides/essential-eight-software-development"
   - title: "APRA CPS 230 and AI vendors"
     href: "/guides/apra-cps-230-ai-vendors"
@@ -152,7 +155,17 @@ Where a vendor offers no backup option, a scheduled export to storage you contro
 | Unprivileged and privileged users can't access their own backups | | | Yes |
 | Backup administrators can't modify or delete backups during their retention period | | | Yes |
 
-Level 3 effectively requires immutable backups. For how the other strategies apply to custom software, see our [Essential Eight guide](/guides/essential-eight-software-development).
+Level 3 effectively requires immutable backups. Contracts and PSPF Release 2026 still refer to these maturity levels, so this table is still the one to meet when a clause names a level.
+
+## What changes for backups under ASD Essentials?
+
+**ASD published ASD Essentials on 15 October 2026 to evolve the Essential Eight, and it maps regular backups to two principles: regular and proven backups, and least privilege access.** ASD's transition guidance says existing backup arrangements remain highly relevant, and points to three areas that may need strengthening:
+
+- **Storage protection.** Backups on a defined schedule to secure, resilient storage protected by encryption and immutable, offline, logically isolated or equivalent controls.
+- **Repository isolation.** Backup repositories kept apart from primary systems, general user environments and production workloads, so an attacker can't reach both.
+- **Recovery objectives.** Restore testing that shows your defined RTO and RPO can actually be achieved, which is the reason to set them first.
+
+ASD also says maturity levels don't convert into the new effectiveness ratings, so current restore test results are better evidence than a past level. For how the other strategies map to custom software, see our [Essential Eight and ASD Essentials guide](/guides/essential-eight-software-development).
 
 ## What do CPS 230 and the NDB scheme add?
 

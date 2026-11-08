@@ -11,7 +11,7 @@ takeaways:
   - "Internal tool builders are developer tools: they save engineering time on screens, not on understanding your data."
   - "At the time of writing, Retool lists Business at $50 per builder and $15 per internal user per month, billed annually. Audit logs start on Business; custom SSO, Git source control and self hosting are Enterprise features."
   - "Appsmith and Budibase both offer open source, self hosted editions, which makes Australian hosting cheaper to achieve."
-  - "A tool with write access to your production database is a privileged system. Treat it like one under the Essential Eight."
+  - "A tool with write access to your production database is a privileged system. Treat it like one under ASD Essentials or the Essential Eight."
   - "The tools that outgrow a builder are the ones with complex workflows, heavy business rules or large numbers of external users."
 faqs:
   - q: "What is an internal tool builder?"
@@ -25,6 +25,9 @@ faqs:
   - q: "Is it safe to connect an internal tool builder to our production database?"
     a: "It can be, with care. Use a database account with only the permissions the tool needs, separate read and write resources, require multi factor sign in, keep audit logs, and review who can edit apps as well as who can use them. A builder that can run any query against production is as powerful as a database administrator."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Retool pricing"
     url: "https://retool.com/pricing"
     publisher: "Retool"
@@ -46,7 +49,7 @@ sources:
 related:
   - title: "Low-code vs custom development"
     href: "/guides/low-code-vs-custom-development"
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "Backend development"
     href: "/services/backend-development"
@@ -116,7 +119,7 @@ A custom internal tool built in your existing stack, such as a React front end o
 
 ## Security: credentials, audit logs and SSO
 
-**An internal tool that can write to production is a privileged system and deserves the controls you would put on database administrator access.** The Australian Signals Directorate's Essential Eight lists restricting administrative privileges and multi factor authentication among its eight mitigation strategies, and both apply directly here.
+**An internal tool that can write to production is a privileged system and deserves the controls you would put on database administrator access.** The Australian Signals Directorate's Essential Eight lists restricting administrative privileges and multi factor authentication among its eight mitigation strategies, and ASD Essentials, published on 15 October 2026 to evolve it, carries both into its identity, least privilege and secure administration principles. Both apply directly here.
 
 Checklist for any builder or custom admin tool:
 
@@ -126,7 +129,7 @@ Checklist for any builder or custom admin tool:
 - **Change control** for the apps themselves. Who can edit a refund tool matters as much as who can use it. Retool's Git source control is Enterprise only.
 - **Secrets management**, so database passwords and API keys aren't visible to app builders.
 
-Our guide to the [Essential Eight in software development](/guides/essential-eight-software-development) covers the wider controls.
+Our guide to the [Essential Eight and ASD Essentials in software development](/guides/essential-eight-software-development) covers the wider controls.
 
 ## Which internal tools outgrow a builder?
 

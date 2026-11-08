@@ -5,7 +5,7 @@ description: "How much does enterprise software development cost in Australia? T
 eyebrow: "Cost guide"
 category: cost
 published: 2026-09-28
-updated: 2026-09-28
+updated: 2026-11-08
 summary: "Custom enterprise software development in Australia typically costs $150k to $350k AUD (ex GST) for a single departmental system, $350k to $1M for an integrated platform used across several teams, and well over $1M for core system replacements. The same features cost more in an enterprise than in a small business because of integrations, identity and security requirements, security reviews, data migration, governance and training, which together commonly add 30 to 60% to the engineering effort."
 takeaways:
   - "Enterprise overheads are real work: integration, single sign-on, audit logging, security testing, change control and training."
@@ -46,6 +46,9 @@ sources:
   - title: "Prudential Standard CPS 234 Information Security"
     url: "https://www.apra.gov.au/standards/cps-234"
     publisher: "Australian Prudential Regulation Authority"
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Essential Eight"
     url: "https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight"
     publisher: "Australian Signals Directorate"
@@ -139,7 +142,7 @@ The $1,400 day rate is an assumed market day rate for a senior Australian agency
 
 1. **Poorly documented or legacy integrations.** A modern REST API with a sandbox is cheap to integrate. A batch file export from a 20-year-old system with no test environment is not.
 2. **Regulated data.** APRA-regulated entities must, under CPS 234, assess the information security capability of third parties that manage their information assets. Expect detailed questionnaires, evidence requests and contract clauses. Health and government data bring their own rules.
-3. **Security maturity targets.** Many Australian organisations align to the ASD Essential Eight. Building to a stated maturity level (patching, application control, MFA, backups) shapes hosting and admin design.
+3. **Security targets.** Many Australian organisations have aligned to ASD's Essential Eight, and contracts and PSPF Release 2026 still name its maturity levels. On 15 October 2026 ASD published ASD Essentials to evolve it, rating whether each action is effective in each domain instead of using maturity levels. Either way, building to a stated target (patching, application control, MFA, backups) shapes hosting and admin design.
 4. **Availability requirements.** Moving from business-hours availability to 24/7 with defined recovery objectives adds redundancy, monitoring and on-call support.
 5. **Many stakeholders.** Every additional division, approver and review board adds meetings, feedback cycles and change requests.
 6. **Unclear ownership.** Projects without a single empowered product owner on the client side drift, and drift costs money.

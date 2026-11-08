@@ -26,6 +26,9 @@ faqs:
   - q: "Have you built fintech products before?"
     a: "AWLabs has not delivered a regulated fintech product for a client, so we won't claim one. We bring payments, identity, data and AI integration engineering, and we work alongside your lawyers and compliance advisers on the regulatory side. We hold no AFSL, credit licence or CDR accreditation."
 sources:
+  - title: "ASD Essentials"
+    url: "https://www.cyber.gov.au/essentials"
+    publisher: "Australian Signals Directorate"
   - title: "Enhanced regulatory sandbox (ERS)"
     url: "https://asic.gov.au/for-business/innovation-hub/enhanced-regulatory-sandbox/"
     publisher: "ASIC"
@@ -72,7 +75,7 @@ related:
     href: "/guides/consumer-data-right-software"
   - title: "Startup MVP development"
     href: "/startup-mvp"
-  - title: "Essential Eight for software development"
+  - title: "Essential Eight and ASD Essentials for software development"
     href: "/guides/essential-eight-software-development"
   - title: "Loan origination and servicing software for Australian lenders"
     href: "/solutions/lending-software"
@@ -158,7 +161,7 @@ Expect to answer:
 - How are changes reviewed, tested and deployed?
 - What penetration testing has been done, and by whom?
 
-Australian cloud regions such as AWS ap-southeast-2 (Sydney) make data location straightforward. Our guide to [Essential Eight in software development](/guides/essential-eight-software-development) covers the controls partners often map to.
+Australian cloud regions such as AWS ap-southeast-2 (Sydney) make data location straightforward. Our guide to the [Essential Eight and ASD Essentials in software development](/guides/essential-eight-software-development) covers the controls partners often map to, and what changed when ASD published ASD Essentials on 15 October 2026.
 
 ## Which architecture choices matter most early?
 
