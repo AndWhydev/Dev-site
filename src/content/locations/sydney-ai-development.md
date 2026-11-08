@@ -148,7 +148,7 @@ Our longer guide on [how to choose an AI development company](/guides/how-to-cho
 
 **Because we're local, the parts that need people in a room happen in person, and the build happens from our office with frequent check-ins.** A typical sequence:
 
-1. **Discovery Call.** A short phone call with our team.
+1. **Development Consult.** A short phone call with our team.
 2. **Discovery Audit Meeting.** 60 minutes on Zoom with Andy. The Discovery Audit is $750 plus GST, credited in full against your build.
 3. **Discovery Audit Session.** 60 minutes on what you need built, the data and the risk. Your written audit arrives within seven days of your answers.
 4. **Strategy Session one.** We walk you through the audit and the build scope, including data quality, permissions and hosting.

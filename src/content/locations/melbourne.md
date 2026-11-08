@@ -132,7 +132,7 @@ For AI features, check model availability region by region. At the time of writi
 
 **The scoping comes first, and the build runs on a fixed remote rhythm.** A typical path for a first release:
 
-1. **Discovery Call.** A short phone call with our team.
+1. **Development Consult.** A short phone call with our team.
 2. **Discovery Audit.** A 60 minute meeting on Zoom with Andy, then a 60 minute session on what you need built. The Discovery Audit is $750 plus GST, credited in full against your build, and your written audit arrives within seven days of your answers. It covers hosting region, integrations and the VPDSS or Health Records Act questions your lawyer should confirm.
 3. **Two strategy sessions.** We walk you through the audit and the build scope, then present your fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.
 4. **Build.** Remote. You get an update every Tuesday and Friday, Sydney time, with access to test the latest work, and you accept each stage.
