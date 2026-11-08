@@ -1,10 +1,12 @@
 ---
 /**
  * Google reviews for AWLabs and for All Webbed Up, our sister agency, shown in
- * two tabs. AWU reviews are always labelled as AWU so they are never presented
+ * two tabs, or stacked with both visible (layout="stacked"). AWU reviews are always labelled as AWU so they are never presented
  * as AWLabs reviews. Data is fetched at build time (src/lib/reviews.ts).
  */
 import { getReviews, PLACES } from '../lib/reviews';
+
+const { layout = 'tabs' } = Astro.props as { layout?: 'tabs' | 'stacked' };
 
 const [awlabs, awu] = await Promise.all([getReviews(PLACES.awlabs), getReviews(PLACES.awu)]);
 
@@ -16,6 +18,7 @@ const groups = [
 function initials(name: string): string {
   return name.split(/\s+/).map((p) => p[0]).filter(Boolean).slice(0, 2).join('').toUpperCase();
 }
+const tabbed = layout === 'tabs' && groups.length > 1;
 const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z';
 ---
 
@@ -27,7 +30,7 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
       <h2 class="section-heading" id="gr-heading">What clients say on Google.</h2>
     </div>
 
-    {groups.length > 1 && (
+    {layout === 'tabs' && groups.length > 1 && (
       <div class="gr-tabs" role="tablist" aria-label="Choose business">
         {groups.map((g, i) => (
           <button type="button" role="tab" class="gr-tab" id={`gr-tab-${g.id}`} aria-controls={`gr-panel-${g.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
@@ -39,7 +42,8 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
     )}
 
     {groups.map((g, i) => (
-      <div class="gr-panel" id={`gr-panel-${g.id}`} role={groups.length > 1 ? 'tabpanel' : undefined} aria-labelledby={groups.length > 1 ? `gr-tab-${g.id}` : undefined} hidden={i !== 0}>
+      <div class="gr-panel" id={`gr-panel-${g.id}`} role={tabbed ? 'tabpanel' : undefined} aria-labelledby={tabbed ? `gr-tab-${g.id}` : undefined} hidden={tabbed && i !== 0}>
+        {!tabbed && <h3 class="gr-group-title">{g.name}</h3>}
         <div class="gr-summary">
           <div class="gr-stars-lg" aria-hidden="true">
             {[1, 2, 3, 4, 5].map((n) => (
@@ -147,6 +151,15 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
   .gr-tab-meta { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.8rem; opacity: 0.85; }
 
   .gr-panel[hidden] { display: none; }
+  .gr-panel + .gr-panel { margin-top: 4rem; }
+  .gr-group-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin: 0 0 0.75rem;
+  }
 
   .gr-summary {
     display: flex;
