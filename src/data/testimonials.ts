@@ -68,7 +68,7 @@ export const stories: Story[] = [
   },
   {
     name: 'Ebony',
-    role: 'Founder of an early childhood compliance platform',
+    role: 'Founder of Master Blueprint, an early childhood compliance platform',
     quote: 'They treated my project like it was their own.',
     outcome: 'An MVP to validate the idea and seek investment, now a working product',
     file: 'ebony',
