@@ -34,6 +34,9 @@ interface Written {
   problem: string;
   did: string;
   result: string;
+  headline?: string;
+  pains?: string[];
+  journey?: string[];
 }
 
 // Keyed by the story's file name. Paraphrased from each transcript only.
@@ -79,6 +82,123 @@ const written: Record<string, Written> = {
     result: 'Everything runs more smoothly. She spends far less time on admin and much more time with her clients.',
   },
 };
+
+// Headline, pain points and build steps, drawn only from each transcript.
+const more: Record<string, Pick<Written, 'headline' | 'pains' | 'journey'>> = {
+  "whatsapp": {
+    "headline": "From a Sydney flooring contractor to quoting and winning jobs right across Australia.",
+    "pains": [
+      "Every quote took real time and effort.",
+      "Quoting kept the business tied to the Sydney area, because they could not easily price jobs they could not visit."
+    ],
+    "journey": [
+      "We took the time to understand how they actually quote a flooring job.",
+      "We designed the system around how they work, so it was tailor made for the business.",
+      "We built a quoting system that is far faster than what they used before.",
+      "Andy stayed involved at every step of the way."
+    ]
+  },
+  "img6966": {
+    "headline": "The payments audit that saved a marketplace before it launched.",
+    "pains": [
+      "Everything seemed to be working, so the payment side had not been given much thought.",
+      "How the platform handled other people's money could have led the payment provider to freeze the account.",
+      "There was a licensing and classification issue the business did not know existed."
+    ],
+    "journey": [
+      "We insisted on properly auditing the setup before building anything further.",
+      "We found the money handling issue and the licensing and classification issue.",
+      "We restructured how the money moves through the platform.",
+      "It was all caught before the marketplace properly launched."
+    ]
+  },
+  "ebony": {
+    "headline": "From a founder's vision to a working early childhood compliance platform.",
+    "pains": [
+      "A clear vision, but no technical background to build it.",
+      "She needed an MVP to validate the problem and hopefully seek investment.",
+      "Meetings had to fit around a busy schedule."
+    ],
+    "journey": [
+      "We gave advice beyond software: direction, and what was realistic, so the project could become real.",
+      "We explained everything in ways she could understand.",
+      "We told her things she did not want to hear, but needed to.",
+      "We made time for meetings and calls after hours, around her schedule.",
+      "We built the MVP and treated the project like our own."
+    ]
+  },
+  "dave": {
+    "headline": "Rescuing a bookings and invoicing platform another provider left in a mess.",
+    "pains": [
+      "Days of 15 to 16 hours, with admin done at night after site work.",
+      "A platform he had paid another company to build was clunky and made his job longer.",
+      "Worry that clients were going missing and that he would not get paid on time."
+    ],
+    "journey": [
+      "Straight conversations, with no sales pitch and no pushing.",
+      "We came in with no blame and dug into the existing platform.",
+      "We told him straight how it was and how it could be fixed.",
+      "We fixed his invoicing and lead chasing and smoothed out his processes."
+    ]
+  },
+  "nat": {
+    "headline": "We broke in before someone else could.",
+    "pains": [
+      "The business manages a lot of sensitive client information.",
+      "Hearing about companies getting hacked kept security in the back of Nat's mind."
+    ],
+    "journey": [
+      "We tried to break into the systems the way a real attacker would.",
+      "We found a security hole.",
+      "We fixed it.",
+      "We put monitoring in place to keep watch from here on."
+    ]
+  },
+  "britney": {
+    "headline": "Payments that run themselves, set up so they are legally sound.",
+    "pains": [
+      "Processing client payments by hand.",
+      "Horror stories from other trainers about payments and payment plans going wrong on their websites.",
+      "It had to be legally sound."
+    ],
+    "journey": [
+      "We built a website that processes most of her payments automatically.",
+      "We set it up so the payments are legally sound.",
+      "We automated some of the services she provides."
+    ]
+  },
+  "kawkab": {
+    "headline": "A national supplier's website, rebuilt so products and orders are easy to manage.",
+    "pains": [
+      "An outdated website.",
+      "Managing products and online orders was difficult and time consuming."
+    ],
+    "journey": [
+      "We listened to what the business needed and explained everything clearly.",
+      "We organised the website properly.",
+      "We improved things they had not even considered.",
+      "We kept making changes until they were happy with the result."
+    ]
+  },
+  "option2": {
+    "headline": "Less admin, more time with clients.",
+    "pains": [
+      "Client bookings and information tracked by hand.",
+      "Admin was becoming very time consuming.",
+      "Not techy, so software needed to be explained simply."
+    ],
+    "journey": [
+      "We listened to what she needed.",
+      "We explained everything in plain language, with no tech talk.",
+      "We set up one place for all her client information, including client history and previous appointments."
+    ]
+  }
+};
+for (const k of Object.keys(more)) Object.assign(written[k], more[k]);
+
+// Strongest commercial stories first on this page.
+const storyOrder = ['whatsapp', 'img6966', 'ebony', 'dave', 'nat', 'britney', 'kawkab', 'option2'];
+const orderedStories = [...stories].sort((a, b) => storyOrder.indexOf(a.file) - storyOrder.indexOf(b.file));
 
 const showcaseCategories = [
   'AI & Automation',
@@ -194,7 +314,7 @@ const references: { name: string; business?: string }[] = [
         </div>
 
         <div class="cst-grid">
-          {stories.map((s) => {
+          {orderedStories.map((s) => {
             const w = written[s.file];
             const transcript = tx[s.file]?.transcript;
             return (
@@ -202,6 +322,7 @@ const references: { name: string; business?: string }[] = [
                 <header class="cst-card-head">
                   <h3 id={`story-${s.file}-h`} class="cst-name">{s.name}</h3>
                   <p class="cst-role">{s.role}</p>
+                  {w.headline && <p class="cst-headline">{w.headline}</p>}
                 </header>
 
                 <dl class="cst-steps">
@@ -209,9 +330,15 @@ const references: { name: string; business?: string }[] = [
                     <dt>The problem</dt>
                     <dd>{w.problem}</dd>
                   </div>
+                  {w.pains && (
+                    <div class="cst-step">
+                      <dt>Pain points</dt>
+                      <dd><ul class="cst-list">{w.pains.map((x) => <li>{x}</li>)}</ul></dd>
+                    </div>
+                  )}
                   <div class="cst-step">
-                    <dt>What we did</dt>
-                    <dd>{w.did}</dd>
+                    <dt>How we got there</dt>
+                    <dd>{w.journey ? <ol class="cst-list cst-list-num">{w.journey.map((x) => <li>{x}</li>)}</ol> : w.did}</dd>
                   </div>
                   <div class="cst-step">
                     <dt>The result</dt>
@@ -600,4 +727,9 @@ const references: { name: string; business?: string }[] = [
   @media (prefers-reduced-motion: reduce) {
     .cst-transcript summary svg, .cst-card, .cst-jump a { transition: none; }
   }
+  .cst-headline { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 600; color: #e6f2ee; line-height: 1.4; margin: 0.6rem 0 0; }
+  .cst-list { margin: 0.25rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.35rem; }
+  .cst-list li { padding-left: 0.15rem; }
+  .cst-list li::marker { color: #0d9373; }
+  .cst-list-num { list-style: decimal; }
 </style>
