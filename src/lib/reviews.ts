@@ -1,16 +1,13 @@
 /**
  * Google Places (New) API reviews loader. Runs at build time, so the reviews
- * bake into static HTML. No client JS. Env vars set on Vercel:
- *   GOOGLE_PLACES_API_KEY  — API key with Places API (New) enabled
- *   GOOGLE_PLACE_ID        — the place id for AWLabs Pty Ltd
+ * bake into static HTML (readable by search engines and AI assistants) with
+ * no client JS. Refreshes on every deploy.
  *
- * When either env var is missing, we fall back to a static "verified on
- * Google" state so the site still renders cleanly. To wire the live feed:
- *   1. Google Cloud Console → enable Places API (New), create an API key
- *      restricted to Places API and to the awlabs.com.au HTTP referrer.
- *   2. Grab your Place ID via the Place ID Finder tool (developers.google.com
- *      /maps/documentation/places/web-service/place-id).
- *   3. Add both as Vercel Production env vars, redeploy.
+ * Env var on Vercel (Production + Preview, server only, never PUBLIC_):
+ *   GOOGLE_PLACES_API_KEY  key restricted to Places API (New)
+ *
+ * Without the key, or if Google errors, getReviews returns null and the
+ * section hides that business rather than showing an empty state.
  */
 
 export interface Review {
@@ -27,64 +24,88 @@ export interface ReviewsData {
   totalReviews: number;
   reviews: Review[];
   reviewsUrl: string;
-  source: 'google-api' | 'fallback';
 }
 
-const FALLBACK_REVIEWS_URL = 'https://share.google/8WiXOthGKyQ4eH1Kx';
+// Looked up by Text Search and matched on place id. (Place Details returns
+// 403 for this key, while Text Search works and returns the same fields.)
+export const PLACES = {
+  awlabs: { id: 'ChIJ7SB3xTa7EmsRecxLdpkCzIQ', query: 'AWLabs Software Development Agency Five Dock' },
+  awu: { id: 'ChIJ96B65vboZyYRPzvUa2u-ZvI', query: 'All Webbed Up Georges Hall' },
+} as const;
 
-const FALLBACK: ReviewsData = {
-  aggregateRating: 5.0,
-  totalReviews: 0,
-  reviews: [],
-  reviewsUrl: FALLBACK_REVIEWS_URL,
-  source: 'fallback',
-};
+// One fetch per place per build, shared by every page and component, so the
+// numbers and the reviews section can never disagree within a build.
+const cache = new Map<string, Promise<ReviewsData | null>>();
 
-export async function getReviews(): Promise<ReviewsData> {
-  const apiKey = import.meta.env.GOOGLE_PLACES_API_KEY;
-  const placeId = import.meta.env.GOOGLE_PLACE_ID;
+export function getReviews(place: { id: string; query: string }): Promise<ReviewsData | null> {
+  if (!cache.has(place.id)) cache.set(place.id, fetchWithRetry(place));
+  return cache.get(place.id)!;
+}
 
-  if (!apiKey || !placeId) return FALLBACK;
+async function fetchWithRetry(place: { id: string; query: string }): Promise<ReviewsData | null> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const data = await fetchReviews(place);
+    if (data) return data;
+    await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+  }
+  return null;
+}
+
+async function fetchReviews(place: { id: string; query: string }): Promise<ReviewsData | null> {
+  const placeId = place.id;
+  const apiKey = import.meta.env.GOOGLE_PLACES_API_KEY ?? process.env.GOOGLE_PLACES_API_KEY;
+  if (!apiKey) return null;
 
   try {
-    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews,googleMapsUri`;
-    const res = await fetch(url, {
+    const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
       headers: {
-        'X-Goog-Api-Key': apiKey,
         'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': 'places.id,places.rating,places.userRatingCount,places.reviews,places.googleMapsUri',
       },
+      body: JSON.stringify({ textQuery: place.query, regionCode: 'AU', languageCode: 'en' }),
     });
-    if (!res.ok) return FALLBACK;
-    const data = await res.json();
+    if (!res.ok) {
+      console.warn(`[reviews] Google Places ${res.status} for ${placeId}`);
+      return null;
+    }
+    const json = await res.json();
+    const data = ((json.places as { id: string }[]) ?? []).find((p) => p.id === placeId) as Record<string, any> | undefined;
+    if (!data) {
+      console.warn(`[reviews] ${placeId} not in search results`);
+      return null;
+    }
 
+    // Google returns up to 5 reviews it selects. Show them all (no rating
+    // filter), skipping only star-only reviews with no text.
     const reviews: Review[] = ((data.reviews as unknown[]) ?? [])
       .map((raw) => raw as {
         authorAttribution?: { displayName?: string; uri?: string; photoUri?: string };
         rating?: number;
         text?: { text?: string };
+        originalText?: { text?: string };
         relativePublishTimeDescription?: string;
       })
-      .filter((r) => (r.rating ?? 0) >= 4 && (r.text?.text?.length ?? 0) > 50)
-      .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0)
-        || (b.text?.text?.length ?? 0) - (a.text?.text?.length ?? 0))
-      .slice(0, 6)
       .map((r) => ({
         author: r.authorAttribution?.displayName ?? 'Google user',
         photoUrl: r.authorAttribution?.photoUri,
         rating: r.rating ?? 5,
-        text: r.text?.text ?? '',
+        text: (r.originalText?.text ?? r.text?.text ?? '').trim(),
         timeDescription: r.relativePublishTimeDescription ?? '',
         profileUrl: r.authorAttribution?.uri,
-      }));
+      }))
+      .filter((r) => r.text.length > 0);
 
+    if (!data.rating) return null;
     return {
-      aggregateRating: data.rating ?? 5.0,
+      aggregateRating: data.rating,
       totalReviews: data.userRatingCount ?? 0,
       reviews,
-      reviewsUrl: data.googleMapsUri ?? FALLBACK_REVIEWS_URL,
-      source: 'google-api',
+      reviewsUrl: data.googleMapsUri,
     };
-  } catch {
-    return FALLBACK;
+  } catch (e) {
+    console.warn('[reviews] fetch failed', e);
+    return null;
   }
 }

@@ -1,0 +1,583 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import VideoTestimonials from '../components/VideoTestimonials.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+import transcripts from '../data/testimonial-transcripts.json';
+import { stories } from '../data/testimonials';
+import { getReviews, PLACES } from '../lib/reviews';
+
+/**
+ * Client Stories: the proof page. Videos, a written story for each video,
+ * Google reviews, a pointer to the product showcase and the references offer.
+ *
+ * Copy rules for the written stories: "The problem", "What we did" and
+ * "The result" paraphrase the person's own transcript in
+ * src/data/testimonial-transcripts.json and nothing else. No numbers,
+ * results or business names they did not give. Only Michael's story names
+ * his business, matching the video cards.
+ *
+ * Stats only show numbers that are real: the video count comes from the
+ * data, and the Google ratings only render when the Places API returns data
+ * at build time. No AggregateRating schema on this page.
+ */
+
+const SITE = 'https://www.awlabs.com.au';
+const tx = transcripts as Record<string, { transcript: string | null; duration: number }>;
+
+const [awlabsReviews, awuReviews] = await Promise.all([getReviews(PLACES.awlabs), getReviews(PLACES.awu)]);
+const hasReviews = Boolean(awlabsReviews || awuReviews);
+
+interface Written {
+  problem: string;
+  did: string;
+  result: string;
+}
+
+// Keyed by the story's file name. Paraphrased from each transcript only.
+const written: Record<string, Written> = {
+  britney: {
+    problem: 'Britney was processing client payments herself and wanted a website to handle them. She had heard horror stories from other personal trainers about payments and continuous payment plans going wrong on their own websites.',
+    did: 'We automated some of the services she provides and built a website that processes most of her payments, set up so it is legally sound.',
+    result: 'She no longer processes payments by hand. The website does it automatically, which frees up time for her clients and her business, and she says she no longer needs to do half the things she used to.',
+  },
+  dave: {
+    problem: 'After a full day on the tools, Dave was doing his own bookings, invoicing and chasing work at night, which turned his days into 15 to 16 hours of work. A platform he had paid another company to build made things messier and slower, not easier.',
+    did: 'We came in with no blame, dug into the existing platform, told him straight how it was and how it could be fixed, then fixed his invoicing and lead chasing and smoothed out the processes.',
+    result: 'His platform finally works and he can book his clients. He trusts it now, and is confident clients are not going missing and that he will get paid on time.',
+  },
+  kawkab: {
+    problem: 'Their website was outdated, and managing products and online orders had become difficult and time consuming.',
+    did: 'We listened to what the business needed, explained everything clearly, organised the website properly, improved things they had not considered and kept making changes until they were happy.',
+    result: 'The website is more professional, easier for customers to use and much easier to manage. Kawkab says it has saved them a lot of time and improved the online side of the business.',
+  },
+  nat: {
+    problem: 'Nat runs an online health and fitness coaching business that holds a lot of client information. Nat would hear about companies getting hacked, so security was always in the back of Nat\'s mind.',
+    did: 'We tried to break into the business\'s systems the way a real attacker would, found a security hole, fixed it and put monitoring in place to keep watch from here on.',
+    result: 'Peace of mind, knowing a team that understands security is looking after the business and its client data.',
+  },
+  img6966: {
+    problem: 'Scott\'s marketplace takes payments from customers and passes the money on to the people providing the service. Everything seemed to be working, so he had not given the payment side much thought.',
+    did: 'We insisted on properly auditing the setup first. We found an issue with how the business handled other people\'s money that could have led its payment provider to freeze the account, plus a licensing and classification issue he did not know existed, and restructured how the money moves.',
+    result: 'The problems were caught before the marketplace properly launched, and everything is now set up the way it should be.',
+  },
+  whatsapp: {
+    problem: 'At Commercial Floorcoverings Australia, every quote took real time and effort, and quoting kept the business tied to the Sydney area.',
+    did: 'We took the time to understand how they actually quote a flooring job and built a tailor made quoting system around how they work. It is much faster than what they used before.',
+    result: 'They can now put together an accurate quote from anywhere and have gone from a Sydney business to winning flooring jobs around Australia. Michael says it has saved him a lot of time and a lot of money.',
+  },
+  ebony: {
+    problem: 'Ebony had a clear vision for her early childhood compliance platform and wanted an MVP to validate the problem and hopefully seek investment. She came from a background outside tech.',
+    did: 'We worked on the project as if it were our own, explained things in ways she could understand, gave advice beyond software on direction and what was realistic, and made time for meetings and calls after hours around her schedule.',
+    result: 'She now has a working product. She says her experience and her product would not have been the same with another team.',
+  },
+  option2: {
+    problem: 'Helen was keeping track of client bookings and client information by hand, and it was becoming very time consuming.',
+    did: 'We listened to what she needed, explained everything without the tech talk, and set up one place to store all her client information, including client history and previous appointments.',
+    result: 'Everything runs more smoothly. She spends far less time on admin and much more time with her clients.',
+  },
+};
+
+const showcaseCategories = [
+  'AI & Automation',
+  'Construction',
+  'Education',
+  'Finance & Fintech',
+  'Gov & Enterprise',
+  'Healthcare',
+  'Hospitality',
+  'Logistics',
+  'Manufacturing',
+  'Real Estate',
+  'Retail & E-commerce',
+  'Travel',
+  'Web3 & Crypto',
+  'SaaS & Productivity',
+];
+
+const jumps = [
+  { href: '#testimonials', label: 'Videos' },
+  { href: '#success-stories', label: 'Success stories' },
+  ...(hasReviews ? [{ href: '#reviews', label: 'Google reviews' }] : []),
+  { href: '#showcase', label: 'Showcase' },
+  { href: '#references', label: 'References' },
+];
+
+const pageTitle = 'Client Stories and Reviews | AWLabs';
+const pageDescription =
+  'Videos, written stories and Google reviews from AWLabs clients, in their own words. See what we built, what changed for them and how to talk to a past client.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Client Stories', item: `${SITE}/client-stories` },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} extraSchema={[breadcrumb]}>
+  <Header />
+  <main>
+
+    <!-- Hero -->
+    <section class="cst-hero">
+      <div class="cst-wrap">
+        <div class="reveal">
+          <nav class="cst-crumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Client Stories</span>
+          </nav>
+          <span class="section-label">Client stories</span>
+          <h1 class="cst-title">Proof, in our clients&rsquo; own words.</h1>
+          <p class="cst-lead">
+            Business owners and founders talking about what they needed, what we built and what changed. Watch the videos, read each story with the full transcript, and see what people say about us on Google.
+          </p>
+
+          <ul class="cst-stats" role="list">
+            <li class="cst-stat">
+              <strong>{stories.length}</strong>
+              <span>video stories</span>
+            </li>
+            {awlabsReviews && (
+              <li class="cst-stat">
+                <strong>{awlabsReviews.aggregateRating.toFixed(1)}</strong>
+                <span>AWLabs on Google ({awlabsReviews.totalReviews} reviews)</span>
+              </li>
+            )}
+            {awuReviews && (
+              <li class="cst-stat">
+                <strong>{awuReviews.aggregateRating.toFixed(1)}</strong>
+                <span>All Webbed Up on Google ({awuReviews.totalReviews} reviews)</span>
+              </li>
+            )}
+            <li class="cst-stat cst-stat-link">
+              <a href="/case-studies">
+                <span class="cst-stat-link-title">Product showcase</span>
+                <span>Products we&rsquo;ve built or helped build
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <nav class="cst-jump" id="cst-jump" aria-label="On this page">
+            {jumps.map((j) => <a href={j.href}>{j.label}</a>)}
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <VideoTestimonials label="Video stories" />
+
+    <!-- Success stories: written from each person's transcript only -->
+    <section class="cst-stories" id="success-stories" aria-labelledby="cst-stories-h">
+      <div class="cst-wrap">
+        <div class="cst-intro reveal">
+          <span class="section-label">Success stories</span>
+          <h2 id="cst-stories-h" class="section-heading">The story behind each video.</h2>
+          <p class="section-subheading">
+            Each story is drawn only from what the person said on camera. Open the full transcript to read it in their words.
+          </p>
+        </div>
+
+        <div class="cst-grid">
+          {stories.map((s) => {
+            const w = written[s.file];
+            const transcript = tx[s.file]?.transcript;
+            return (
+              <article class="cst-card reveal" id={`story-${s.name.toLowerCase()}`} aria-labelledby={`story-${s.file}-h`}>
+                <header class="cst-card-head">
+                  <h3 id={`story-${s.file}-h`} class="cst-name">{s.name}</h3>
+                  <p class="cst-role">{s.role}</p>
+                </header>
+
+                <dl class="cst-steps">
+                  <div class="cst-step">
+                    <dt>The problem</dt>
+                    <dd>{w.problem}</dd>
+                  </div>
+                  <div class="cst-step">
+                    <dt>What we did</dt>
+                    <dd>{w.did}</dd>
+                  </div>
+                  <div class="cst-step">
+                    <dt>The result</dt>
+                    <dd>{w.result}</dd>
+                  </div>
+                </dl>
+
+                <blockquote class="cst-quote">
+                  <p>{s.quote}</p>
+                  <footer>{s.name}</footer>
+                </blockquote>
+
+                {transcript && (
+                  <details class="cst-transcript">
+                    <summary>
+                      Read the full transcript
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <p>{transcript}</p>
+                  </details>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <GoogleReviews />
+
+    <!-- Showcase teaser -->
+    <section class="cst-showcase" id="showcase" aria-labelledby="cst-showcase-h">
+      <div class="cst-wrap">
+        <div class="cst-showcase-card reveal">
+          <div class="cst-showcase-copy">
+            <span class="section-label">Showcase</span>
+            <h2 id="cst-showcase-h" class="cst-h2">Products we&rsquo;ve built or helped build</h2>
+            <p>
+              Beyond these stories, our showcase groups products we built end to end, or built part of, by industry. Most of our work stays private, so it is only a small part of it.
+            </p>
+            <a href="/case-studies" class="btn-primary cst-btn">
+              See the showcase
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <ul class="cst-chips" role="list" aria-label="Showcase categories">
+            {showcaseCategories.map((c) => <li>{c}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/*
+      PENDING ANDY'S CONFIRMATION THAT REFERENCES ARE OFFERED.
+      "Talk to a past client" section below. Do not deploy until Andy confirms
+      we offer client references during the Discovery Audit. Remove this
+      section (and the "References" jump link above) if not.
+    */}
+    <section class="cst-refs" id="references" aria-labelledby="cst-refs-h">
+      <div class="cst-wrap">
+        <div class="cst-refs-card reveal">
+          <div>
+            <span class="section-label">References</span>
+            <h2 id="cst-refs-h" class="cst-h2">Talk to a past client.</h2>
+            <p>
+              Serious about working with us? During the Discovery Audit, ask us and we can put you in touch with a past client from a similar project, where that client has agreed to it. You hear about working with us from someone who has done it, not from us.
+            </p>
+          </div>
+          <a href="/contact" class="btn-primary cst-btn">
+            Start with a Discovery Audit
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  // GoogleReviews fetches its own data, so in a rare build where Google
+  // answers this page's call but not the component's, drop the dead link.
+  function tidyJumpLinks() {
+    if (!document.getElementById('reviews')) {
+      document.querySelector('#cst-jump a[href="#reviews"]')?.remove();
+    }
+  }
+  tidyJumpLinks();
+  document.addEventListener('astro:after-swap', tidyJumpLinks);
+</script>
+
+<style>
+  .cst-wrap {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero */
+  .cst-hero {
+    padding: 9.5rem 0 3.5rem;
+    background: #0a0f0e;
+    position: relative;
+    overflow: hidden;
+  }
+  .cst-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(13,147,115,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cst-hero .cst-wrap { position: relative; z-index: 1; }
+  .cst-crumbs { display: flex; gap: 0.5rem; font-size: 0.8125rem; color: #718b81; margin-bottom: 1.5rem; }
+  .cst-crumbs a { color: #718b81; text-decoration: none; }
+  .cst-crumbs a:hover { color: #0d9373; }
+  .cst-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 6vw, 4.25rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+    max-width: 16ch;
+    overflow-wrap: break-word;
+  }
+  .cst-lead {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #8aa09a;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 0 2.5rem;
+  }
+
+  .cst-stats {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    max-width: 960px;
+  }
+  .cst-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.1rem 1.25rem;
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 14px;
+  }
+  .cst-stat strong {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .cst-stat span { color: #8aa09a; font-size: 0.875rem; line-height: 1.45; }
+  .cst-stat-link { padding: 0; }
+  .cst-stat-link a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1.1rem 1.25rem;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .cst-stat-link a:hover { background: rgba(13,147,115,0.08); }
+  .cst-stat-link .cst-stat-link-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .cst-stat-link a span:last-child { color: #10b88a; }
+  .cst-stat-link svg { display: inline-block; vertical-align: -1px; margin-left: 0.3rem; }
+
+  .cst-jump { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .cst-jump a {
+    padding: 0.5rem 1rem;
+    border: 1px solid #1e2d28;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: #d5e0dc;
+    text-decoration: none;
+    background: #0f1614;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .cst-jump a:hover, .cst-jump a:focus-visible { border-color: #0d9373; color: #fff; }
+
+  /* Success stories */
+  .cst-stories {
+    padding: clamp(4rem, 8vw, 6.5rem) 0;
+    background: #0f1614;
+    scroll-margin-top: 80px;
+  }
+  .cst-intro { max-width: 720px; margin-bottom: 3rem; }
+  .cst-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .cst-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 18px;
+    scroll-margin-top: 90px;
+    transition: border-color 0.3s ease;
+  }
+  .cst-card:hover { border-color: rgba(13,147,115,0.3); }
+  .cst-card-head { display: flex; flex-direction: column; gap: 0.25rem; }
+  .cst-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .cst-role { margin: 0; color: #8aa09a; font-size: 0.9375rem; line-height: 1.45; }
+
+  .cst-steps { margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .cst-step dt {
+    margin-bottom: 0.3rem;
+    color: #10b88a;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .cst-step dd { margin: 0; color: rgba(255,255,255,0.82); font-size: 0.9375rem; line-height: 1.65; }
+
+  .cst-quote {
+    margin: 0;
+    padding: 1rem 1.15rem;
+    border-left: 3px solid #0d9373;
+    background: rgba(13,147,115,0.06);
+    border-radius: 0 12px 12px 0;
+  }
+  .cst-quote p {
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff;
+  }
+  .cst-quote p::before { content: '\201C'; }
+  .cst-quote p::after { content: '\201D'; }
+  .cst-quote footer { margin-top: 0.5rem; color: #8aa09a; font-size: 0.8125rem; }
+
+  .cst-transcript { border-top: 1px solid #1e2d28; padding-top: 1rem; }
+  .cst-transcript summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    cursor: pointer;
+    list-style: none;
+    color: #10b88a;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .cst-transcript summary::-webkit-details-marker { display: none; }
+  .cst-transcript summary svg { transition: transform 0.2s ease; }
+  .cst-transcript[open] summary svg { transform: rotate(180deg); }
+  .cst-transcript summary:hover { color: #fff; }
+  .cst-transcript summary:focus-visible { outline: 2px solid #10b981; outline-offset: 4px; border-radius: 6px; }
+  .cst-transcript p {
+    margin: 0.5rem 0 0;
+    color: #b4c4be;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+
+  /* Shared h2 for the two card sections */
+  .cst-h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+  }
+  .cst-btn { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .cst-btn svg { flex-shrink: 0; }
+
+  /* Showcase teaser */
+  .cst-showcase { padding: clamp(4rem, 8vw, 6rem) 0 2rem; background: #0a0f0e; scroll-margin-top: 80px; }
+  .cst-showcase-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+  }
+  .cst-showcase-copy p,
+  .cst-refs-card p {
+    color: #8aa09a;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 1.75rem;
+    max-width: 560px;
+  }
+  .cst-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .cst-chips li {
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #1e2d28;
+    border-radius: 999px;
+    background: #0a0f0e;
+    color: #b4c4be;
+    font-size: 0.8125rem;
+  }
+
+  /* References */
+  .cst-refs { padding: 1.25rem 0 clamp(4rem, 8vw, 6rem); background: #0a0f0e; scroll-margin-top: 80px; }
+  .cst-refs-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: end;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    background: linear-gradient(135deg, rgba(13,147,115,0.10) 0%, rgba(15,22,20,1) 60%);
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+  }
+  .cst-refs-card p { margin-bottom: 0; }
+
+  @media (max-width: 900px) {
+    .cst-grid { grid-template-columns: minmax(0, 1fr); }
+    .cst-showcase-card,
+    .cst-refs-card { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; align-items: start; }
+  }
+
+  @media (max-width: 1024px) {
+    /* The sitewide rule centres section intros below 1024px; keep the hero's
+       breadcrumb, stats and jump links in line with it. */
+    .cst-crumbs, .cst-jump { justify-content: center; }
+    .cst-title, .cst-lead { margin-left: auto; margin-right: auto; text-align: center; }
+    .cst-stats { margin-left: auto; margin-right: auto; }
+    .cst-chips { justify-content: center; }
+    .cst-refs-card { text-align: center; }
+    .cst-refs-card p { margin-left: auto; margin-right: auto; }
+    .cst-refs-card > .cst-btn { justify-self: center; }
+  }
+
+  @media (max-width: 600px) {
+    .cst-hero { padding-top: 7.5rem; }
+    .cst-card { padding: 1.35rem; }
+    /* Compact rows on phones so an odd number of stats never leaves a gap */
+    .cst-stats { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+    .cst-stat { flex-direction: row; align-items: center; gap: 0.9rem; padding: 0.85rem 1.1rem; }
+    .cst-stat strong { font-size: 1.5rem; min-width: 2.6rem; }
+    .cst-stat-link { padding: 0; }
+    .cst-stat-link a { padding: 0.85rem 1.1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cst-transcript summary svg, .cst-card, .cst-jump a { transition: none; }
+  }
+</style>

@@ -33,3 +33,5 @@ kite-export.mp4
 
 # README (not needed in repo)
 README.md
+.vercel
+.env*

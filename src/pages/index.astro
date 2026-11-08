@@ -12,6 +12,7 @@ import CTABanner from '../components/CTABanner.astro';
 import AutonomousAISection from '../components/sections/AutonomousAISection.astro';
 import FeaturedGuides from '../components/FeaturedGuides.astro';
 import VideoTestimonials from '../components/VideoTestimonials.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 ---
 
 <Layout
@@ -56,12 +57,42 @@ import VideoTestimonials from '../components/VideoTestimonials.astro';
     <FeaturedGuides />
     <Process />
     <VideoTestimonials />
+    <p class="home-stories-link">
+      <a href="/client-stories">
+        See all client stories
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </p>
+    <GoogleReviews />
     <CTABanner />
   </main>
   <Footer />
 </Layout>
 
 <style>
+  /* Sits under the video section, pulled up into its bottom padding */
+  .home-stories-link {
+    margin: clamp(-3.5rem, -5vw, -2rem) 0 0;
+    padding: 0 1.5rem clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+  }
+  .home-stories-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.6rem 1.25rem;
+    border: 1px solid #1e2d28;
+    border-radius: 999px;
+    background: #0f1614;
+    color: #d5e0dc;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .home-stories-link a:hover,
+  .home-stories-link a:focus-visible { border-color: #0d9373; color: #fff; }
   .home-entity {
     background: #0a0f0e;
     padding: 3.5rem 2rem;
