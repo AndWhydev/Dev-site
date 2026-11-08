@@ -148,6 +148,18 @@ const data = {
       question: "How long does it take to add an AI feature to an existing app?",
       answer: "A single well scoped feature typically takes around nine to ten weeks from codebase review to general release, including the evaluation set, integration behind a feature flag, staged rollout and handover. Simple features with easy to check output can be quicker; in app assistants that take actions take longer because they need more safety testing. Every build starts with a Discovery Audit, a fixed fee credited in full against the build. After two strategy sessions you receive a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete.",
     },
+    {
+      question: "What does the OpenAI or Claude API cost to run inside our app?",
+      answer: "It depends on request volume, model tier and how much text each request sends, so we measure it rather than guess. Providers charge per token and change prices often, so we estimate your cost per request in the first week of the project using realistic prompts from your app. Routing simple requests to smaller models and caching repeated ones are the main levers. Our guide to LLM running costs has worked examples.",
+    },
+    {
+      question: "Can you add AI to Xero, ServiceM8 or simPRO?",
+      answer: "Yes, through their APIs rather than inside the products themselves. We build a small AI service that reads and writes through the platform's API, for example drafting job notes from a ServiceM8 or simPRO job, or suggesting categories for transactions before they reach Xero. Each vendor controls what its API exposes and any connection fees, so we check those limits before scoping. If the product's own AI feature already does the job, use that first.",
+    },
+    {
+      question: "Will our customer data be used to train the AI model?",
+      answer: "Not if the integration is set up correctly. We call models through enterprise APIs or cloud platforms such as Amazon Bedrock and Azure OpenAI, select the settings that exclude your content from training where the provider offers them, and document the terms that apply. Where data must not leave your environment at all, an open weight model can run in your own cloud account instead, at the cost of more hosting work.",
+    },
   ],
   comparison: {
     rightFor: [

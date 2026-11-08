@@ -28,6 +28,12 @@ faqs:
     a: "Usually not for most of the estate. AWS's own guidance says refactoring is the most complex strategy and recommends rehosting, relocating or replatforming first, then modernising after the move. Refactor during migration only where the application can't move otherwise or the business case is strong."
   - q: "Can cloud migration costs be capitalised?"
     a: "Some may be, depending on what the spend creates and the accounting and tax rules that apply. Configuration of a cloud service you don't control is often expensed for accounting purposes. Ask your accountant, and see our guide to software development tax deductions for the tax side."
+  - q: "How much does it cost to migrate one application to AWS or Azure?"
+    a: "Typically $3k to $15k to rehost an application as it is, $11k to $45k to replatform it onto managed services such as a managed database, and $45k to $225k or more to refactor it for the cloud (AUD, ex GST). If it is your first workload, add a landing zone of $12k to $30k. These are market ranges built from typical effort, not quotes."
+  - q: "What is a cloud landing zone and do we need one?"
+    a: "A landing zone is the secure foundation you set up once before workloads move: accounts, networking, identity, logging, security baselines and backup. Most mid sized migrations need one, and it typically takes 10 to 20 days and costs $12k to $30k (AUD, ex GST). The worked example on this page allows 15 days for a landing zone in an Australian region, so every later workload inherits the same controls."
+  - q: "Can our data stay in Australia after a cloud migration?"
+    a: "Yes, for most workloads. At the time of writing (November 2026), AWS has Sydney and Melbourne regions, Microsoft Azure has Australia East, Australia Southeast, Australia Central and Australia Central 2, and Google Cloud has Sydney and Melbourne. Check that each service you plan to use, including backup, monitoring and AI services, is offered in your chosen Australian region before you commit."
 sources:
   - title: "Migration strategies (the 7 Rs)"
     url: "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"

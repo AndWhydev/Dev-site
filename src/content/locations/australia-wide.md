@@ -29,6 +29,12 @@ faqs:
     a: "There isn't one best firm for every project, whatever the ranking lists say. Shortlist on fit: relevant experience, who actually writes the code, when IP is assigned to you and when you get the repository and logins, how they test, and how they price. Directory reviews help, but a paid scoping step, such as our Discovery Audit, tells you far more about how a firm works."
   - q: "Is remote delivery slower?"
     a: "Not if it's run properly. The build itself happens at a desk wherever the team is. Delays in remote projects usually come from unclear decisions, which is why we hold the sessions where big decisions get made in person."
+  - q: "Do you work with businesses in Perth, Adelaide, Darwin, Hobart and regional Australia?"
+    a: "Yes. We deliver remotely from Sydney to every Australian capital and to regional centres, and travel for workshops, site visits and user testing when being there changes the outcome. Hobart keeps Sydney time, Adelaide is 30 minutes behind all year, and Darwin and Perth run further behind. Even Perth in summer leaves about 6 shared working hours a day, so we book live sessions inside that window and keep every decision in writing."
+  - q: "How will we get progress updates if we're interstate?"
+    a: "Twice a week, every Tuesday and Friday, Sydney time. Each update is written, covers progress, open questions and the decisions we need from you, and comes with access to test the latest work. Video working sessions are booked whenever something is blocked, and you review and accept each stage on a call, so a stakeholder in another state can catch up in minutes rather than waiting for the next meeting."
+  - q: "Can our data be hosted in our own state?"
+    a: "Only if your state has a major cloud region. At the time of writing, AWS, Azure and Google Cloud run Australian regions in Sydney and Melbourne, and Azure also runs two in Canberra. A system for a Perth, Brisbane, Adelaide, Darwin or Hobart organisation usually sits in one of those regions, with a second region for backups. The data still stays in Australia, and latency is rarely a problem for business software."
 sources:
   - title: "Daylight saving in NSW"
     url: "https://www.nsw.gov.au/about-nsw/daylight-saving"

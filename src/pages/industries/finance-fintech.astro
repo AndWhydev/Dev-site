@@ -92,6 +92,18 @@ const data = {
       question: 'Do you work with fintech startups as well as established banks?',
       answer: "Absolutely, and the needs are quite different. With startups we tend to focus on building a scalable foundation quickly: robust identity verification, a clean API contract, data models built on event sourcing that don't paint you into a corner, and an architecture that can absorb a Series A growth event without a rewrite. With established ADIs and insurers the focus is usually modernisation, compliance uplift or building new digital products alongside existing infrastructure. Where a fintech's AFSL or ACL position is still being determined by specialist counsel, we design the system so whatever obligations their lawyers land on can be implemented cleanly. We do not provide the licensing advice ourselves; we will refer you if you need it.",
     },
+    {
+      question: "Do you hold an AFSL or an Australian credit licence?",
+      answer: "No. AWLabs holds no Australian financial services licence or credit licence and gives no licensing advice. We build software for licensees and for fintechs whose licensing position is being worked out with specialist counsel, and we design the system so whatever obligations their lawyers confirm can be implemented cleanly. Licensing questions belong with your lawyers and ASIC's guidance, not your developer.",
+    },
+    {
+      question: "Do we need Consumer Data Right accreditation to build a fintech app?",
+      answer: "Not necessarily. You can operate as a CDR representative of an unrestricted accredited person, take sponsored accreditation, receive CDR insights for limited verification purposes, or use only public product reference data. Full ACCC accreditation suits businesses that want direct control and can carry the ongoing compliance. AWLabs is not an accredited data recipient; we build the app and integrate it with your chosen accredited principal or intermediary.",
+    },
+    {
+      question: "Can mortgage brokers and financial planners use AI without giving personal advice?",
+      answer: "Yes, if the tool is scoped and tested for it. Customer facing assistants get a defined topic boundary, retrieval limited to approved content, refusal behaviour for personal advice questions and an evaluation set that tries to push them over the line. Internal uses such as drafting file notes or summarising documents carry less risk. Whether an output amounts to personal advice is a question for your licensee's compliance and legal advisers.",
+    },
   ],
   ctaHeadline: "Ready to Build Financial Software That Stands Up to Regulatory Scrutiny Alongside Your Compliance Team?",
   ctaDescription: "Whether you're modernising a legacy core, building an API layer to the CDR standards or launching a new fintech product, we design around the technical and regulatory landscape of Australian financial services. Let's start with a Development Consult.",

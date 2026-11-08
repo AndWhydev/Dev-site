@@ -26,6 +26,12 @@ faqs:
     a: "Early on, hosting and tools are often a few hundred dollars a month. The bigger ongoing costs are maintenance (15 to 25% of build cost per year), payment fees that scale with revenue, and customer support. AI features add usage-based model costs that need their own budget."
   - q: "Can SaaS development qualify for the R&D Tax Incentive?"
     a: "Parts of some SaaS builds may, where there is genuine technical uncertainty and a systematic experimental approach. Most standard SaaS features, such as billing and login, won't. Speak to a registered R&D tax agent before development starts."
+  - q: "How much does multi tenancy add to the cost of a SaaS build?"
+    a: "Typically $10k to $40k (AUD, ex GST) for multi tenancy on a shared database, and more if each customer gets its own database. Choose the model early: retrofitting isolation into a product that assumed one shared database can cost several times the original tenancy work, because every query, report and background job has to be revisited."
+  - q: "How much extra does it cost to sell SaaS to enterprise or government buyers?"
+    a: "Usually $50k to $200k or more on top of a commercial first version. Larger buyers ask for SAML or OIDC single sign on, SCIM user provisioning, detailed audit logs, fine grained roles, data residency in Australia, uptime commitments and evidence for long security questionnaires. An enterprise ready platform typically costs $250k to $700k or more in total and takes 8 to 18 months."
+  - q: "How much does it cost to add Stripe subscription billing to a SaaS product?"
+    a: "Building subscription billing typically adds $10k to $35k (AUD, ex GST), covering plans, trials, upgrades, proration, invoices and failed payment handling. Then come running fees: Stripe charges a percentage plus a fixed fee per successful card charge, and Stripe Billing adds 0.7% of billing volume on its pay as you go plan at the time of writing. Check the live pricing page before modelling it."
 sources:
   - title: "Stripe pricing, Australia"
     url: "https://stripe.com/au/pricing"

@@ -31,6 +31,12 @@ faqs:
     a: "No honest firm will guarantee a model is always right. What they can commit to is a defined evaluation set, a measured pass rate before launch, and a process for monitoring and improving quality after it. Treat a promise of 100% accuracy as a warning sign."
   - q: "Do I need an Australian company to keep data in Australia?"
     a: "No. Data residency comes from the architecture and cloud regions chosen, not the developer's address. An offshore team can build a system that runs entirely in Sydney. What an Australian firm adds is Australian contracts, Australian business hours and easier recourse if something goes wrong."
+  - q: "Where can I find AI developers in Australia?"
+    a: "Build a longlist from peer referrals, industry associations and directories such as the National AI Centre's AI Directory, then cut it to three using evidence. A directory listing tells you a firm exists, not that it can ship. Ask each one for a walkthrough of a system running with real users, a sample evaluation report and the named engineers who would do your work, and verify any certification or partner claim yourself."
+  - q: "How do I choose an AI agent development company?"
+    a: "Judge it on how it limits what the agent can do. Ask which tools the agent gets and the narrowest permission each needs, which actions need a person to approve them, whether every tool call is logged, what step and spend caps stop a runaway agent, and how it tests against documents that try to give the agent instructions. A strong firm answers without hesitation and often suggests a simpler workflow."
+  - q: "What are the red flags when hiring an AI development company?"
+    a: "The first red flag is a promise that the system won't hallucinate, and the second is a price given before anyone has looked at your data. Others include no mention of monthly running costs until you ask, a demo that has never touched systems like yours, a plan to fine tune before trying retrieval, a proprietary platform with no export path, and partner tiers missing from the vendor's own register."
 sources:
   - title: "Guidance for AI adoption: foundations"
     url: "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-foundations"

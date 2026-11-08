@@ -140,6 +140,18 @@ const data = {
       question: 'What does a deployment or release engineer do?',
       answer: 'A release engineer builds and maintains the automation that gets code into production safely: CI/CD pipelines, container builds, infrastructure as code, secrets management, release strategies such as blue green and canary, and the monitoring that tells you a release is healthy. The goal is for any engineer on the team to ship a change without ceremony.',
     },
+    {
+      question: "How long does it take to set up a proper CI/CD pipeline?",
+      answer: "About 9 to 10 weeks for a full delivery chain in our typical engagement, from assessing your current release process to handover. That covers containerising the application, infrastructure as code, automated build and test, progressive rollout with automated rollback, observability and secrets management. A basic pipeline that builds, tests and deploys on every merge arrives early in that period, so your team benefits before the rest is finished.",
+    },
+    {
+      question: "Do we need Docker to deploy our app?",
+      answer: "Not always, but it usually helps. Docker packages an application with its runtime and dependencies, so it runs the same way on a laptop, in testing and in production, which removes a common cause of failed releases. A small app on a managed or serverless platform may not need it. Self hosted tools such as n8n are typically run in a container, which makes upgrades and rollbacks simpler.",
+    },
+    {
+      question: "Can you set up deployments for government or regulated environments?",
+      answer: "Yes, within what we hold. Pipelines can enforce approvals, separation of duties, secrets management through a vault and an audit trail of who deployed what and when, which supports frameworks such as the ISM and the Essential Eight. We are not IRAP assessed and hold no security clearances, so where a contract requires those, we work alongside your assessed providers or your own cleared staff.",
+    },
   ],
   comparison: {
     rightFor: [

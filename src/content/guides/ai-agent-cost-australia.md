@@ -26,6 +26,12 @@ faqs:
     a: "Sometimes, for narrow and repetitive work. Compare the fully loaded cost of the hours the agent would save with the build cost spread over its useful life plus monthly running costs, and include the time people still spend reviewing its work. Agents rarely replace a role outright; they usually take the repetitive part of several roles."
   - q: "How long does it take to build an AI agent?"
     a: "A focused pilot on one workflow can take a few weeks. Sandlabs puts a single agent at 2 to 4 weeks and enterprise deployments at 2 to 4 months; Appinventiv's tiers run from 4 to 6 months for basic agents to over 12 months for enterprise systems. Integration access and agreeing what counts as a correct result usually set the pace."
+  - q: "How much does a Salesforce Agentforce agent cost?"
+    a: "At the time of writing (November 2026), Salesforce lists Agentforce at AU$700 per 100,000 Flex Credits, with a standard action using 20 credits, about AU$0.14, or AU$2.80 per conversation. An agent taking 5 actions per task, 3,000 times a month, would use about AU$2,100 a month in credits. Underlying Salesforce licences and per user add ons come on top, so it suits teams already on Salesforce."
+  - q: "How much does an OpenAI agent cost to run?"
+    a: "It's billed the same way as any model API: per million input and output tokens, usually in US dollars, so the arithmetic on this page works with OpenAI's current prices. Multiply tasks by model calls per task, tokens per call and price per token, then add hosting and monitoring. Agents loop through several calls per task, so they use far more tokens than a single chatbot reply. Check OpenAI's pricing page for live rates."
+  - q: "Can prompt caching reduce AI agent costs?"
+    a: "Yes, often by around half. In this guide's worked example, an agent handling 3,000 emails a month drops from about US$396 to about US$205 in model costs when 70% of input tokens are repeated instructions served from cache. Anthropic also lists a 50% discount for batch processing on work that doesn't need an instant answer, and routing simple steps to a cheaper model cuts the bill further."
 sources:
   - title: "AI Agent Pricing in Australia (2026)"
     url: "https://flowtivity.ai/blog/ai-agent-cost-pricing-guide-australia-2026/"

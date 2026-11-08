@@ -150,6 +150,18 @@ const data = {
       question: "Which data engineering tools do you use?",
       answer: "We choose per project from mature, widely supported tools: Fivetran or Airbyte for ingestion, dbt for transformation, Apache Airflow or Dagster for orchestration, Snowflake, Google BigQuery, Databricks or PostgreSQL for storage, Debezium for change data capture, and Great Expectations or Soda for quality tests. We prefer the simplest combination your team can run after handover over the longest feature list.",
     },
+    {
+      question: "What is the difference between data engineering and data science?",
+      answer: "Data engineers build and run the pipelines and platforms that collect, clean and store data; data scientists use that data to build models, forecasts and analysis. Data science depends on data engineering, because a model trained on duplicated or stale records gives confident wrong answers. Most organisations need reliable data engineering before they get value from a data scientist or an AI project, which is why we usually start there.",
+    },
+    {
+      question: "How do we get our data out of a SaaS platform we are leaving?",
+      answer: "Start with the platform's export tools and API, well before your subscription ends. We inventory what the platform holds, including attachments, history and audit logs that standard exports often miss, extract it through the API or bulk export, and load it into your own database or warehouse with tests that reconcile record counts against the source. Check your contract for export rights and notice periods first.",
+    },
+    {
+      question: "Can you build data pipelines that update in real time?",
+      answer: "Yes, where the use case needs it. Change data capture with tools such as Debezium streams inserts and updates from your operational database as they happen, so a dashboard or AI feature sees changes within moments rather than after an overnight load. Real time pipelines cost more to build and run than scheduled batches, so we use them only where a decision depends on fresh data; most reporting is fine with hourly or daily refreshes.",
+    },
   ],
   comparison: {
     rightFor: [

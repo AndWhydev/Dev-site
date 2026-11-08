@@ -108,7 +108,7 @@ const data = {
     },
     {
       question: 'What does app store submission and maintenance involve on an ongoing basis?',
-      answer: 'Apple and Google both release SDK updates and policy changes periodically that require application updates. Apple\'s annual requirement to update to the latest iOS SDK typically means one or two maintenance releases per year purely for compliance. Google Play\'s target API level policy similarly requires annual updates. We recommend budgeting for at least two maintenance releases per year beyond feature development. A Care Plan can cover this: month to month, priced for your app, with agreed response targets in New South Wales business hours. Where your Care Plan includes it, we can also manage your App Store and Play Store listings.',
+      answer: 'Apple and Google both release SDK updates and policy changes periodically that require application updates. Apple\'s annual requirement to update to the latest iOS SDK typically means one or two maintenance releases per year purely for compliance. Google Play\'s target API level policy similarly requires annual updates. We recommend budgeting for at least two maintenance releases per year beyond feature development. A Care Plan can cover this: month to month, priced for your app, with agreed response targets in Sydney business hours. Where your Care Plan includes it, we can also manage your App Store and Play Store listings.',
     },
     {
       question: 'Can Flutter access the hardware features we need, like camera, Bluetooth, and biometrics?',
@@ -129,6 +129,18 @@ const data = {
     {
       question: 'Can Flutter also build web and desktop apps?',
       answer: 'Yes. Flutter supports web, Windows, macOS and Linux as well as iOS and Android. It is strongest for app like experiences such as dashboards and internal tools; for content heavy public websites where search ranking matters, a web framework like Next.js is usually the better fit.',
+    },
+    {
+      question: "Will the app be published under our own Apple and Google accounts?",
+      answer: "Yes, and we recommend it from the first release. Your organisation enrols as the Account Holder in the Apple Developer Program (US$99 a year) and opens a Google Play organisation account (US$25 one time), each with a D-U-N-S number for your legal entity. We are invited as team members to build and submit. The store listing, reviews and customer relationship then sit with you, so there is nothing to transfer when we hand over.",
+    },
+    {
+      question: "What happens if Apple rejects the app?",
+      answer: "We fix the cause and resubmit, and a first release should plan for at least one rejection. Apple says over 40% of unresolved review issues relate to guideline 2.1, App Completeness: crashes, placeholder content and missing demo logins. Our store compliance step checks privacy manifests, tracking declarations, reviewer access and the review guidelines before submission, and we work through any reviewer notes with you until the build is approved.",
+    },
+    {
+      question: "Is a progressive web app good enough instead of a Flutter app?",
+      answer: "Sometimes, yes. If the product is mainly forms, content or dashboards and needs no store listing, a responsive web app or PWA costs less and skips app store review. Flutter earns its place when the app relies on the phone itself: offline use in the field, Bluetooth devices, biometrics, camera processing or native payment flows. We recommend the cheaper option when it meets the brief.",
     },
   ],
   serviceName: 'Flutter Mobile Apps',

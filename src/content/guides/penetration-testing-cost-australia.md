@@ -28,6 +28,12 @@ faqs:
     a: "Only if someone requires it or you want that assurance. CREST accredits companies against its standards and lists them on the CREST Marketplace. If an enterprise customer, government buyer or insurer asks for CREST, check the contract wording and verify the provider there. If nobody requires it, choose on the tester's experience with your type of system."
   - q: "Is a retest included in the price?"
     a: "Often, but not always. Some Australian providers include a retest within a set window, such as 90 days, after you fix the findings. Ask whether the retest is included, what it covers and how long you have."
+  - q: "Is AWLabs CREST accredited, and do you do penetration testing?"
+    a: "No, AWLabs is not CREST accredited, and we don't sell manual penetration tests. We build security testing into the software we build: static analysis and dependency and container scanning on every change, code review before release, and automated penetration testing before launch. For an independent manual test, a red team or anything requiring CREST, we help you scope it with a specialist firm and fix the findings in our code."
+  - q: "How much does a pen test cost per day in Australia?"
+    a: "Roughly $2,000 to $2,300 per tester day ex GST, based on the bands in Compliance Council's 2026 Australian pricing guide: $8,000 over 4 days and $30,000 over 14 days both work out near that rate. Multiply your estimated tester days by that figure to sanity check a quote. Anything that adds days, such as extra roles, APIs, hosts or a mobile app, adds roughly that much."
+  - q: "How much does a red team engagement cost compared with a pen test?"
+    a: "A full red team engagement typically costs $60,000 to $200,000 or more and runs 6 to 12 weeks, against $8,000 to $55,000 for most penetration tests (AUD, ex GST). A red team answers a different question: whether your organisation would detect and stop a determined attacker, including weaknesses in people and process. It suits mature organisations with a security team, not a first test."
 sources:
   - title: "Penetration testing cost in Australia"
     url: "https://compliancecouncil.com.au/penetration-testing-cost/"

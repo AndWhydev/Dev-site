@@ -99,6 +99,18 @@ const data = {
       question: 'How do you handle hallucinations in production AI systems?',
       answer: "We treat hallucination as a risk to be managed architecturally, not a reason to avoid AI. For factual systems we use RAG with source attribution and confidence thresholds, so the system declines to answer or escalates to human review when it lacks sufficient grounding. We implement output validation layers that check responses against business rules and flag anomalies. We instrument production systems to log and surface responses with low confidence or that users rejected for review and improvement. No AI system is free of hallucinations. The goal is catching and containing errors before they cause downstream harm.",
     },
+    {
+      question: "Do we need an AI agent or just workflow automation?",
+      answer: "Most businesses need workflow automation first. The difference is who decides the steps: automation runs a fixed sequence when something happens, while an AI agent is given a goal and tools and chooses its own steps. Use automation for predictable, repeatable processes, and an agent only where the path changes case by case, with narrow permissions and a person approving consequential actions. Our guide to AI agents, chatbots and automation compares them.",
+    },
+    {
+      question: "Is AI automation worth it for a small business?",
+      answer: "Often yes, if you start small. For most Australian small businesses, AI pays off first in everyday admin such as answering enquiries, drafting quotes and emails, summarising documents and preparing bookkeeping, using the AI already in tools you pay for. A developer earns their fee once you want AI connected to your own systems, a custom tool for a specific workflow, or a reviewed setup for sensitive data.",
+    },
+    {
+      question: "How do we measure the ROI of an AI automation project?",
+      answer: "Measure the process before and after, in dollars. Record how long the task takes and how often it goes wrong before AI touches it, run the AI version on the same work for four to eight weeks of real volume, and compare. Count build, licences, model usage, hosting, staff review time and maintenance as costs, and count saved time as money only when those hours are actually redeployed.",
+    },
   ],
 
   ctaHeadline: 'Move Your AI From Experiment to Production',

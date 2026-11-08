@@ -147,6 +147,18 @@ const data = {
       question: 'When should we bring in a database architect?',
       answer: 'Early in a new system, when schema decisions are cheap to change, and whenever the database becomes the bottleneck: slow queries under load, rising cloud database bills, a planned engine migration, or a move to multitenancy. A short health check is usually enough to tell whether you need a redesign or a set of targeted fixes.',
     },
+    {
+      question: "Should we use AWS Database Migration Service to move our database?",
+      answer: "Often, yes, as one part of the migration. AWS Database Migration Service and Azure's equivalent copy data and keep it in sync through change data capture, which supports a cutover with minimal downtime. They do not redesign the schema, rewrite stored procedures or test application queries against the new engine, and that is where most migration effort sits. We plan the schema conversion, rehearse the cutover and validate data before and after the switch.",
+    },
+    {
+      question: "PostgreSQL or MongoDB for a new product?",
+      answer: "PostgreSQL is the safer default for most business applications, because customers, orders, invoices and permissions are relational data that benefit from joins, constraints and transactions. MongoDB suits data whose shape varies a lot between records or that is read and written as whole documents. PostgreSQL also stores JSON well, so many teams get document flexibility without running a second database. We choose from your access patterns, not preference.",
+    },
+    {
+      question: "Can a slow database be fixed without a rebuild?",
+      answer: "Usually, yes. Most slow databases suffer from missing or bloated indexes, inefficient queries, poor connection handling or a few tables that have outgrown their design, all of which can be fixed in place. We instrument first, find the queries that consume the most time and fix what the numbers show, measuring before and after each change. A redesign is recommended only when the schema itself is the bottleneck.",
+    },
   ],
   serviceName: 'Database Architecture',
   nounPhrase: "database architecture",

@@ -142,12 +142,24 @@ const data = {
       answer: "It can tell you, with evidence, whether the code is secure, tested, documented and maintainable to a reasonable professional standard, and where it falls short. It cannot settle who was at fault in a dispute, because that depends on what was agreed. An audit is a sensible step if you are unsure about software an agency or freelancer delivered, before paying a final invoice or briefing a new team.",
     },
     {
-      question: "Do you audit codebases written with AI coding tools?",
-      answer: "Yes, and they are audited the same way as any other code. Code produced quickly with AI assistants can carry the usual problems at higher volume: duplicated logic, thin tests, insecure defaults, committed secrets and outdated or unnecessary dependencies. The report shows where those issues sit and what it would cost to bring the codebase up to a maintainable standard.",
+      question: "Can you audit an app built with Lovable, Bolt, Replit or other AI coding tools?",
+      answer: "Yes, and they are audited the same way as any other code. Apps generated with Lovable, Bolt, Replit, Cursor or similar assistants can carry the usual problems at higher volume: duplicated logic, thin tests, insecure defaults, exposed API keys or open database rules, committed secrets and outdated dependencies. The report shows where those issues sit and what it would cost to bring the app up to a standard you can safely launch and maintain.",
     },
     {
       question: "Which languages and stacks can you audit?",
       answer: "Our manual review covers TypeScript and JavaScript (including React and Next.js), Python, PHP, Java and C# with .NET, on PostgreSQL or MySQL, hosted on AWS, Azure or Google Cloud. Automated scanning for vulnerabilities, secrets and licences covers most mainstream languages. If a target uses a stack outside that range, we say so at scoping rather than review it thinly.",
+    },
+    {
+      question: "Our developer left. Can you tell us what state the code is in?",
+      answer: "Yes. With access to the repository and hosting, we read the code, run it, check how it is deployed and backed up, and list who holds which accounts and credentials. You get a plain English report rating each finding by severity and business impact, with remediation estimates, so you can decide whether to continue, fix or replace. If access is missing, the report starts there. Our software project rescue service covers the takeover itself.",
+    },
+    {
+      question: "Can you check whether our app is secure enough to launch?",
+      answer: "We can check the code side. A code audit looks for committed secrets, insecure defaults, missing access controls, vulnerable dependencies and how customer data is stored, and rates each finding so you know what must be fixed before launch. It is not a penetration test, which attacks the running system from outside. If the audit suggests one is warranted, we recommend it and can help you arrange an independent tester.",
+    },
+    {
+      question: "Do you sign an NDA before a code audit?",
+      answer: "Yes. We work under NDA, read only wherever possible, and report only to whoever commissioned the audit. In a transaction that is usually the acquirer or investor, and the target's team sees the findings only if you choose to share them. Our mutual NDA is published on the site, so you or your lawyer can review the terms before any code changes hands.",
     },
   ],
   comparison: {

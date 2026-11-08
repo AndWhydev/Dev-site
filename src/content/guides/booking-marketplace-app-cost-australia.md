@@ -28,6 +28,12 @@ faqs:
     a: "Most use a platform payments product such as Stripe Connect, which collects from the customer, takes the platform's commission and pays the provider. Stripe says Connect is included at no additional charge for businesses on its standard payments pricing. This avoids your business holding other people's money directly, but get legal and accounting advice on your model."
   - q: "How long does it take to build an on-demand app?"
     a: "A focused first version of a booking app can take a few months. An on-demand app with two mobile apps, live tracking and an admin panel usually takes longer, often six months or more including testing and app store review. Phasing the launch, as described below, is the most reliable way to shorten it."
+  - q: "How much does a taxi or rideshare booking app cost to build?"
+    a: "Expect roughly $130,000 to $250,000 AUD for a first version, because a taxi app is an on demand app: a passenger app, a driver app, an admin panel, live GPS tracking, payments and ratings. Maps and GPS tracking alone are indicatively $4,000 to $18,000. Starting in one city with manual dispatch and a web app for drivers costs a fraction of that while you prove both sides will turn up."
+  - q: "Should a salon or clinic build its own booking app?"
+    a: "Usually not. A custom booking system with payments typically sits in the $40,000 to $150,000 band, while salons and clinics already have mature, subscription priced booking tools. Build custom only when booking is the business itself, when your scheduling or pricing rules are what sets you apart and the platforms can't express them, or when platform fees at your volume outweigh the cost of a build."
+  - q: "What does a marketplace app cost to run each month?"
+    a: "Card fees alone are roughly $950 a month on $50,000 of monthly bookings, at Stripe's listed 1.65% plus A$0.30 per domestic card payment. On top of that come maps usage (Google Maps Platform subscriptions start from US$100 a month), SMS confirmations and reminders, hosting, and maintenance of commonly 15% to 20% of the build each year. All of these grow as bookings grow."
 sources:
   - title: "How much does an app cost in Australia?"
     url: "https://www.appgurus.com.au/how-much-does-an-app-cost-in-australia/"

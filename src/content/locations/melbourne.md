@@ -29,6 +29,12 @@ faqs:
     a: "We build on Microsoft Azure, including models hosted on Azure in the Australia Southeast region where the model is available, and we help organisations decide whether Microsoft 365 Copilot is enough before building anything custom. We don't hold a Microsoft partner designation, so if a program requires one, you'll need a partner for that part."
   - q: "What do senior developers cost in Melbourne?"
     a: "Re:Sourced's 2026 guide puts senior software contractor day rates in Melbourne at $750 to $1,050 (AUD, ex GST), slightly below Sydney. Agency rates build on that with design, testing and project management."
+  - q: "How much does app development cost in Melbourne?"
+    a: "Published Australian guides put a standard business app for iOS and Android at $50,000 to $120,000 (AUD, ex GST), a feature rich platform at $120,000 to $250,000, and enterprise apps from $200,000. Melbourne contractor rates sit slightly below Sydney, but integrations, offline use and security change the price far more than location does. After the Discovery Audit you get fixed prices for three options in your Schedule of Work."
+  - q: "How does a project with a Melbourne organisation start?"
+    a: "With a Development Consult, a short phone call with our team. If there's a fit, the paid Discovery Audit follows: a 60 minute Zoom with Andy and a 60 minute session on what you need built, with the written audit arriving within seven days of your answers. Two strategy sessions then walk through the scope and present your Schedule of Work with three fixed price options: The Minimum, The Recommended and The Complete."
+  - q: "Do you build software for Melbourne health and medical research organisations?"
+    a: "Yes. Clinical document processing, referral and intake systems and research data platforms are common Melbourne projects. Victoria's Health Records Act 2001 applies to health information alongside the Commonwealth Privacy Act, including for private health providers, so we map both during the Discovery Audit and design access controls, logging and hosting to suit. Your lawyer confirms the legal position; we build to the requirements and provide the evidence."
 sources:
   - title: "Access Digital Marketplace"
     url: "https://www.buyingfor.vic.gov.au/access-digital-marketplace"

@@ -30,6 +30,12 @@ faqs:
     a: "It can absorb a share of routine enquiries, which may delay or reduce hiring. It rarely replaces people entirely: someone still handles escalations, reviews conversations and keeps the knowledge base current. Plan for that time in the running cost."
   - q: "Do I need to worry about privacy with an AI chatbot?"
     a: "Yes, if it collects or looks up personal information. The Privacy Act 1988 applies to how you collect, use and disclose that information, including when it is sent to a model provider overseas. Check where the provider processes data and document it in your privacy policy."
+  - q: "How much does a real estate AI chatbot cost?"
+    a: "The same tiers apply as for any business: a DIY website bot can run under $300 a month, while a custom chatbot connected to your listings and property management system typically costs $30,000 to $80,000 (AUD, ex GST) to build. Each extra integration adds an estimated $5,000 to $20,000 depending on the API. Bots that book inspections or handle tenant requests need human handover and more testing, which moves them up a tier."
+  - q: "Is an AI chatbot worth it for a small business?"
+    a: "It's worth it when the bot can resolve a meaningful volume of repetitive questions that would otherwise take staff time. Count the conversations it could handle each month, multiply by the staff time each one takes, and compare that with the monthly cost of the right tier. At thousands of resolutions a month the case is usually strong; at 50 enquiries a month even a DIY tool may not pay for itself."
+  - q: "Can an AI chatbot take bookings or process refunds?"
+    a: "Yes, but writing to your systems is what moves a chatbot up a cost tier. Taking a booking or raising a refund needs permission rules, confirmation steps, limits, rollback and an audit log of every action, plus an integration for each system at an estimated $5,000 to $20,000 each. Most businesses launch read only, letting the bot answer and look things up, then allow actions once its answers prove reliable."
 sources:
   - title: "How Much Does a Custom Chatbot Cost in Australia"
     url: "https://team400.ai/blog/2026-04-03-custom-chatbot-cost-australia"

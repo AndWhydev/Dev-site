@@ -151,6 +151,18 @@ const data = {
       question: 'Should we rewrite or refactor our legacy application?',
       answer: 'Refactor when the core design is sound and the problems are local, such as outdated libraries, missing tests or a slow module. Rewrite, usually piece by piece, when the architecture itself blocks what the business needs. A full big bang rewrite is rarely the right call, because it freezes change for months and concentrates all the risk in one cutover.',
     },
+    {
+      question: "What replaced Microsoft Access?",
+      answer: "There is no single successor. Microsoft's own path is Power Apps with Dataverse or SQL Server, which suits simple internal forms inside Microsoft 365. Many businesses instead move to a custom web app on a cloud database such as PostgreSQL, which handles many users, remote access and integrations without file locking or corruption. We assess the Access tables, queries, forms and VBA first, then recommend the replacement that fits how the database is used.",
+    },
+    {
+      question: "Can you migrate the data out of our old system without losing history?",
+      answer: "Yes, history is migrated and checked rather than left behind. We write migration scripts from the legacy schema to the new one, rehearse them on copies of production data to catch transformation issues, and reconcile the result against source records at a record and statistical level before cutover. Records that cannot be mapped cleanly are reported to you for a decision, not dropped silently.",
+    },
+    {
+      question: "Our old system runs on an unsupported server. Is it a security risk?",
+      answer: "Usually, yes. Software on an operating system, database or language version that no longer receives security patches accumulates known vulnerabilities that cannot be fixed in place. The Discovery Audit for a legacy system maps those dependencies and rates the exposure, so you can decide whether to isolate the system, rehost it on a supported platform as a first step, or prioritise it in the migration sequence.",
+    },
   ],
   serviceName: 'Legacy Modernisation',
   nounPhrase: "legacy modernisation",

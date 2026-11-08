@@ -30,6 +30,12 @@ faqs:
     a: "If a mainstream product covers most of your process, replacing is often the cheapest option over the long run, even after data migration and integration. Custom modernisation is worth it when the system encodes how you compete, or when no product fits without heavy customisation."
   - q: "Can legacy modernisation qualify for the R&D Tax Incentive?"
     a: "Routine migration and rewriting usually doesn't, because the outcome can be known in advance by a competent professional. Some projects include genuinely experimental work that might. Ask a registered R&D tax agent before you start, not after."
+  - q: "How much does it cost to retire a legacy system and archive its data?"
+    a: "Typically $5k to $40k (AUD, ex GST) over 2 to 8 weeks. The system is switched off and its data exported to a searchable archive, so records stay available for audits and enquiries. Retiring what nobody uses is often the cheapest saving in a modernisation program, and it shrinks the scope before you pay to move or rebuild anything."
+  - q: "Should a legacy modernisation budget include a contingency?"
+    a: "Yes, 15 to 25% is a sensible allowance, and the worked example on this page uses 20%, or $29,400 on $147,000 of work. Legacy estimates run over more often than new builds because the unknowns sit in old code: undocumented business rules, hidden integrations and poor data quality. A paid assessment before anyone quotes shrinks those unknowns."
+  - q: "How much does it cost to replace a legacy system with SaaS?"
+    a: "Typically $30k to $300k (AUD, ex GST) plus subscriptions, over 3 to 9 months. You buy the product, so the money goes on migrating data, integrating the SaaS with your other systems and changing how staff work. Compare the subscriptions over five years against the cost of modernising your own system, including the cost of keeping it as it is."
 sources:
   - title: "About the migration strategies (the 7 Rs)"
     url: "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"

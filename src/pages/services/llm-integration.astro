@@ -143,6 +143,18 @@ const data = {
       question: 'Can you integrate models through Azure OpenAI, Amazon Bedrock or Google Gemini Enterprise Agent Platform (formerly Vertex AI)?',
       answer: 'Yes. These platforms give access to foundation models under your existing cloud agreement, identity controls and billing, and some models can be run in Australian regions. Which models are available in which region changes often, so we confirm against each vendor\'s regional availability page at the time of design and document the data flow for your security team.',
     },
+    {
+      question: "Should we use n8n or call Claude or OpenAI directly?",
+      answer: "Use n8n when the job is a workflow with a model step in it, such as classifying an email and routing it. Call the model API from your own code when the feature lives inside your product and needs tight control over prompts, structured output, evaluation and cost. Many systems use both: n8n for back office automations and a direct integration for anything customers touch.",
+    },
+    {
+      question: "Whose API account and billing does the integration use?",
+      answer: "Yours, in most cases. We recommend the model provider account, API keys and billing sit in your organisation's name, with our access granted and revoked like any other supplier. That keeps the usage terms, invoices and data processing settings under your control, and nothing has to be transferred at handover. During the build we may test on our own accounts, but production runs on yours.",
+    },
+    {
+      question: "Can an LLM work with data from Xero or our other business software?",
+      answer: "Yes, through tool calling against that software's API. The model asks for, say, unpaid invoices or a customer's job history, our code fetches it with scoped credentials and returns only what the task needs. Writes such as creating a draft invoice are separate tools with validation and, where it matters, human approval. Each platform's API terms and limits shape what is practical.",
+    },
   ],
   comparison: {
     rightFor: [

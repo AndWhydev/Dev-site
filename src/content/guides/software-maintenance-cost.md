@@ -30,6 +30,12 @@ faqs:
     a: "Usually not. Hosting, domains, email services and software licences are normally billed separately, often directly to your own accounts. Some providers bundle them into a managed service fee."
   - q: "Can we maintain the software in-house instead?"
     a: "Yes, if you have developers with the right skills and enough time. One developer can maintain several small systems, but a single person is a continuity risk. Make sure you hold the source code, documentation and all account access, whichever way you go."
+  - q: "Does software maintenance cost more than development over time?"
+    a: "Over five years it often costs about as much as the original build. A $200k system maintained at 18% a year costs $36k annually, or $180k over five years, before hosting. That is why build and maintenance should be priced together when you compare quotes, and when you weigh custom software against a SaaS subscription."
+  - q: "How much does it cost to maintain a small internal tool?"
+    a: "Often 12 to 15% of the build a year, below the usual 15 to 20% rule. For an $80k internal tool with few integrations, that is about $9.6k to $12k a year, or $800 to $1,000 a month ex GST. Ad hoc support at an hourly or daily rate can also suit tools where little is at stake if they are down for a day."
+  - q: "What is a prepaid block of support hours?"
+    a: "It is support bought in advance, typically in blocks of $5k to $20k (AUD, ex GST) at a discount, then drawn down as requests come in. It suits systems with irregular change, where a monthly retainer would leave hours unused. Check how long the hours last, what response times apply, and whether security patching is included or billed from the block."
 sources:
   - title: "Enterprise software development cost in Australia: 2026 guide (12 February 2026)"
     url: "https://vtdigital.com.au/enterprise-software-development-cost-in-australia-2026-guide/"

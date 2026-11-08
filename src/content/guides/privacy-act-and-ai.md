@@ -29,6 +29,8 @@ faqs:
     a: "For private sector organisations it isn't generally mandatory, but the OAIC recommends one for AI systems as part of privacy by design. Australian Government agencies must do one for high privacy risk projects under the Australian Government Agencies Privacy Code."
   - q: "Are embeddings personal information?"
     a: "Treat them as if they are. An embedding derived from a document about a person can often be linked back to that person through the vector store's metadata or the source chunk. Apply the same access controls, retention and residency rules as the source data."
+  - q: "Does the Privacy Act apply to a small business under $3 million turnover?"
+    a: "Usually not, but plenty of small businesses are covered anyway. A business whose turnover has stayed at $3 million or less every year since 2002 is generally exempt, unless an exception applies: health service providers, businesses that trade in personal information, Commonwealth contractors and AML/CTF reporting entities are covered whatever their size. Even if you're exempt, handling customer data in AI tools as if you were covered costs little."
 sources:
   - title: "Guidance on privacy and the use of commercially available AI products"
     url: "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/guidance-on-privacy-and-the-use-of-commercially-available-ai-products"

@@ -154,6 +154,18 @@ const data = {
       question: "What GPU do we need to host our own LLM?",
       answer: "It depends mainly on model size and quantisation: the model weights, plus working memory for concurrent requests, must fit in GPU memory. Smaller models can run on a single data centre GPU, while large models need several GPUs or a multi GPU instance. We size hardware from your model choice, latency target and traffic, and confirm GPU availability and quota in the Australian region before committing.",
     },
+    {
+      question: "Which private LLM is best for a company?",
+      answer: "There is no single best private model; the right one is the smallest model that passes your own evaluation at the latency and cost you need. Families such as Llama, Mistral, Qwen, Gemma and gpt-oss differ in licence terms, language strengths and hardware needs. We shortlist candidates, test them head to head on examples from your work, and check each licence before you commit.",
+    },
+    {
+      question: "Amazon Bedrock, Azure or Google Cloud: which is best for a private model in Australia?",
+      answer: "At the time of writing (September 2026), Amazon Bedrock offers the widest choice of models that can process prompts inside Australia, including many open weight models in Sydney. Azure and Google commit to Australian processing for a narrower set. The best choice often follows your existing cloud agreement, identity setup and team skills. We confirm current regional availability with each vendor during the Discovery Audit.",
+    },
+    {
+      question: "Can staff use our private model through a ChatGPT style chat interface?",
+      answer: "Yes. Because the model sits behind an OpenAI compatible gateway, a chat interface for staff can connect to it the same way it would connect to a hosted model, with sign in through your identity provider. Your own applications use the same gateway. Conversations and logs then stay in your account, under retention rules you set, rather than with a third party chat service.",
+    },
   ],
   comparison: {
     rightFor: [

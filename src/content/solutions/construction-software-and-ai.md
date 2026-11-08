@@ -27,6 +27,8 @@ faqs:
     a: "Through their official APIs. Typically job costs, supplier bills, progress claims and payments sync between the job system and the ledger, with the accounting package remaining the source of truth for money. Each API has rate limits and data model quirks, so the integration design is settled in the Discovery Audit rather than assumed."
   - q: "What happens with Victoria, since it didn't adopt the model WHS laws?"
     a: "Victoria has its own occupational health and safety legislation, regulated by WorkSafe Victoria. The site records you need are broadly similar in practice, but the terminology, forms and some duties differ, so a multi-state builder's software needs configurable forms per jurisdiction rather than one hard-coded set."
+  - q: "Can you integrate ServiceM8, simPRO or Tradify with Xero?"
+    a: "Yes, though check the built in sync first. Tradify lists Xero, MYOB and QuickBooks Online sync on every plan, and the major trade platforms all offer accounting connectors. Custom work is needed when you want data the standard sync doesn't move, such as job costing split the way your estimators work. ServiceM8 publishes a REST API and webhooks and simPRO publishes API documentation, so we confirm the exact endpoints in the Discovery Audit."
 sources:
   - title: "About security of payment: key deadlines and due dates"
     url: "https://www.nsw.gov.au/housing-and-construction/compliance-and-regulation/security-of-payment/about"

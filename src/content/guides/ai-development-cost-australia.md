@@ -30,6 +30,12 @@ faqs:
     a: "Some can, if the project involves genuine technical uncertainty resolved through systematic experimentation. Applying a known model to a routine task usually won't qualify. Speak to a registered R&D tax agent before you start, as registration and record-keeping rules apply."
   - q: "Is Australian data residency more expensive?"
     a: "Slightly. At the time of writing, several model providers charge about 10% more for regional or data residency endpoints than for global routing, and Australian cloud regions can price differently from US regions. Check the provider's current pricing and regional availability pages."
+  - q: "What does an AI agent cost to run each month?"
+    a: "Often a few hundred dollars a month in model usage for a moderate workload, plus hosting, monitoring and upkeep. Our AI agent cost guide works through 3,000 support emails a month: about A$566 in tokens without optimisation and about A$292 with prompt caching, at prices current at the time of writing. Add hosting and monitoring on top, and budget 15 to 25% of the build cost a year for maintenance."
+  - q: "How do AI development companies price their work?"
+    a: "Most price in stages, and the published 2026 ranges line up: $5,000 to $25,000 for a strategy workshop or readiness assessment, $15,000 to $40,000 for a proof of concept, and $50,000 to $150,000 for a production system covering one or two use cases (AUD, ex GST). Some firms bill day rates, others fix a price per stage. Either way, ask for the build cost and the monthly running cost separately."
+  - q: "Should we buy an AI tool or build a custom one?"
+    a: "Buy first if the task is generic and your data already lives in one vendor's ecosystem: Microsoft 365 Copilot, ChatGPT Enterprise and Claude Enterprise charge a monthly fee per seat and need no build. Build on a model API when the AI must act inside your own systems, serve customers under your guardrails, enforce your access rules, or keep data in a specific Australian region under your own account."
 sources:
   - title: "AI Development Cost in 2026: Australia Budget Guide"
     url: "https://lanex.au/blog/ai-development-cost-in-2026-au-businesses-budget"

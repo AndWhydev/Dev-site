@@ -148,6 +148,18 @@ const data = {
       question: 'Do we need RAG or fine tuning?',
       answer: 'For most business knowledge, RAG. It keeps answers tied to documents you can update at any time and cite, whereas fine tuning changes how a model writes or behaves and does not reliably teach it facts. Fine tuning can make sense alongside RAG for a specialised tone, format or classification task, and we will say so if your use case needs it.',
     },
+    {
+      question: "What is the difference between RAG and an AI agent?",
+      answer: "RAG answers questions from your documents; an agent plans steps and takes actions. A RAG assistant retrieves the right passages and writes a cited answer. An agent might use that same retrieval as one tool, then also look up a record, draft an email or update a system. Agentic RAG is the middle ground, where the model decides what to search for and searches again if the first results are weak.",
+    },
+    {
+      question: "Can we put all our documents into the model's context window instead of building RAG?",
+      answer: "For a small, stable document set, sometimes yes. Long context models can read a lot of text in one request, and caching that context (sometimes called CAG) can work for a single manual or policy pack. It breaks down as content grows: every question pays to process all of it, permissions can't be filtered per user, and updates mean reloading everything. RAG retrieves only what each user is allowed and needs.",
+    },
+    {
+      question: "Do we need GraphRAG?",
+      answer: "Probably not to start. GraphRAG builds a map of entities and relationships across your documents, which helps with questions that span many sources, such as which suppliers are affected by every contract clause of a certain kind. It costs more to build and maintain than standard retrieval. We start with well tuned hybrid search and reranking, and add a graph only when the evaluation set shows questions it can't answer.",
+    },
   ],
   comparison: {
     rightFor: [

@@ -30,6 +30,12 @@ faqs:
     a: "In the worked example on this page, a $119,625 customer portal costs about $23,944 a year to keep running, or roughly $2,000 a month ex GST, covering maintenance at 15% of the build, hosting and third-party services. Payment processing fees come on top and scale with transactions."
   - q: "Does AI-assisted coding make custom software cheaper?"
     a: "It reduces time on routine coding, and some Australian agencies now quote a 30 to 40% reduction on those tasks. It does less for requirements, integration testing, security review and data migration, which is where much of the budget goes on larger projects."
+  - q: "How much does a customer portal cost to build in Australia?"
+    a: "A customer portal is a mid complexity system, typically $40,000 to $150,000 (AUD, ex GST). This guide's worked example, a portal where customers see job status, approve quotes and pay invoices with a sync to accounting, comes to $119,625. Keeping it running costs about $23,944 a year for maintenance, hosting and third party services, with payment fees on top."
+  - q: "How much does a simple internal tool cost?"
+    a: "Typically $15,000 to $40,000 (AUD, ex GST) over 4 to 8 weeks, for tools such as a scheduling system, an inventory tracker, an approvals workflow or a basic CRM for one team. The price climbs quickly once the tool needs integrations, data migrated from old spreadsheets or several user roles. Each serious integration can add 40 to 200 hours."
+  - q: "Is offshore custom software development cheaper overall?"
+    a: "Per hour, much cheaper; in total, by less than the rate gap suggests. Accelerance's 2026 survey puts senior developers in Asia at about USD $31 to $41 an hour, against roughly $120 to $250 AUD for Australian agencies. Coordination, rework and time zone overhead narrow the difference, and rules about where data and system access must sit can rule offshore teams out."
 sources:
   - title: "How Much Does Custom Software Development Cost in Australia in 2026?"
     url: "https://expeed.com.au/articles/custom-software-cost-australia-2026"

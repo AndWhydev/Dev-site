@@ -147,6 +147,18 @@ const data = {
       question: 'Do you work as Power BI consultants?',
       answer: 'Yes. We build Power BI data models, dashboards and row level security, and we fix slow or unreliable reports, which usually means fixing the data model or pipeline underneath. We work with Tableau and Looker in the same way, and we will recommend keeping your existing BI tool if it is not the problem.',
     },
+    {
+      question: "What is dashboard development?",
+      answer: "Dashboard development is designing and building the reports people use to make decisions, plus the data pipeline behind them so the numbers are correct and current. The visual layer is the small part. Most of the work is agreeing metric definitions, moving data from source systems into a warehouse and transforming it into clean, tested models, so every dashboard shows the same figure for revenue or churn, whether in Power BI, Tableau or another tool.",
+    },
+    {
+      question: "What is the difference between a data warehouse and a database?",
+      answer: "A database runs your application, handling many small reads and writes as customers and staff work. A data warehouse is built for analysis: it combines data from several systems, keeps history and answers large questions across millions of rows. Running heavy reports directly on a production database is a common cause of slow apps, which is one reason to move reporting into a warehouse such as Snowflake or Google BigQuery.",
+    },
+    {
+      question: "Can you combine data from Xero, our CRM and our app into one report?",
+      answer: "Yes, and it is one of the most common starting points. Pipelines pull data from accounting platforms such as Xero or MYOB, CRMs such as HubSpot or Salesforce, and your own databases into one warehouse, where records are matched and transformed so a customer or job means the same thing in every report. The pipelines run on a schedule with quality checks, so a failed load is caught before anyone sees stale numbers.",
+    },
   ],
   serviceName: 'Data Analytics',
   nounPhrase: "data analytics",

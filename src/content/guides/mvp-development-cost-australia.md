@@ -28,6 +28,12 @@ faqs:
     a: "Only the parts that are genuine experimental R&D: work to resolve a technical uncertainty that a competent professional couldn't answer in advance. Building standard features with known technology generally won't qualify. Eligible companies must spend at least $20,000 on eligible R&D in the year (with limited exceptions) and register their activities. Speak to a registered R&D tax agent early."
   - q: "Should I give equity to a developer instead of paying for my MVP?"
     a: "It's an option, but treat it as hiring a co-founder, not buying a service. Paying for a well-scoped MVP keeps your equity and gives you clear ownership of the code. Whichever route you take, make sure the IP is assigned to your company in writing."
+  - q: "Is $50k enough to build an MVP in Australia?"
+    a: "Often, yes, if the scope is tight. Published 2026 ranges put a simple validation build at $20,000 to $50,000 and a basic MVP of production quality at $50,000 to $70,000 (AUD, ex GST). At $50k, plan on one core workflow, a responsive web app or a single cross platform app, standard design and few integrations. Native apps, split marketplace payouts or AI features usually push the budget past it."
+  - q: "Is $80k reasonable for an MVP built by a Sydney team?"
+    a: "Yes, for a moderate MVP. $80,000 sits inside the $70,000 to $120,000 band Appinventiv gives for a customer app with APIs, dashboards and payments, and the marketplace example on this page lands at $73,000 ex GST, or $80,300 including GST. Sydney rates sit at the top of the Australian range, so check whether a quote is ex GST and whether it includes testing, hosting setup and launch."
+  - q: "What does MVP mean in software development?"
+    a: "MVP stands for minimum viable product: the smallest version of a product that lets real users get real value, so you can learn whether it's worth building further. It isn't a cheap copy of the full product. A good MVP does one core job reliably, handles money and data properly, and leaves out anything that doesn't test your main assumption about demand."
 sources:
   - title: "MVP App Development in Australia"
     url: "https://appinventiv.com/blog/mvp-app-development-in-australia/"

@@ -121,7 +121,7 @@ const data = {
     },
     {
       question: 'Do we need a dedicated SRE team, or can you manage the infrastructure for us?',
-      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. Systems that must run around the clock need someone responsible for operating them, inside or outside your business. After the 30 day warranty, we can support the infrastructure we build through a Care Plan: month to month, priced for your system. It can cover monitoring, incident handling, capacity planning, security patching and regular architecture reviews. Support runs in New South Wales business hours with agreed response targets, and after hours cover can be added where your system needs it. If you are building internal capability, we can operate the infrastructure while mentoring your team, then hand over operations when they are ready.',
+      answer: 'Whether you need an internal SRE team depends on the criticality of your workloads and the pace of infrastructure change. Systems that must run around the clock need someone responsible for operating them, inside or outside your business. After the 30 day warranty, we can support the infrastructure we build through a Care Plan: month to month, priced for your system. It can cover monitoring, incident handling, capacity planning, security patching and regular architecture reviews. Support runs in Sydney business hours with agreed response targets, and after hours cover can be added where your system needs it. If you are building internal capability, we can operate the infrastructure while mentoring your team, then hand over operations when they are ready.',
     },
     {
       question: 'What does a cloud consultant do?',
@@ -130,6 +130,18 @@ const data = {
     {
       question: 'What is the difference between cloud consulting and DevOps consulting?',
       answer: 'Cloud consulting is about where and how your systems run: architecture, security, resilience and cost. DevOps consulting is about how changes get there: CI/CD pipelines, automated testing, release strategies and monitoring. They overlap heavily, which is why we deliver them together.',
+    },
+    {
+      question: "How much does a cloud migration cost?",
+      answer: "Typically $6k to $30k (AUD, ex GST) for a small business moving a few servers or applications, based on typical effort at Australian day rates. Larger estates are priced per application: roughly $3k to $15k to rehost, $11k to $45k to replatform and $45k to $225k or more to refactor, plus $12k to $30k for a secure landing zone. These are market ranges, not our quote. Budget too for dual running while both environments overlap.",
+    },
+    {
+      question: "Should our application run on serverless or containers?",
+      answer: "Serverless suits spiky or low traffic workloads, event processing and scheduled jobs, because you pay per execution and there are no servers to patch. Steady high traffic services, long running processes and workloads that need fine control of the runtime are often cheaper and simpler on containers using ECS or Kubernetes. Many systems mix both. We model the cost of each option against your traffic during architecture design before choosing.",
+    },
+    {
+      question: "Do you set up and test disaster recovery?",
+      answer: "Yes, and testing is the part most setups skip. Disaster recovery planning covers backups, the data loss and downtime you can accept, and a documented procedure to restore service in another availability zone or region. We run the recovery procedure before handover rather than assuming it works, and the runbook goes to your team. How far you go, from nightly backups to a warm standby, is a cost decision set out in your Schedule of Work options.",
     },
   ],
   serviceName: 'Cloud & DevOps',

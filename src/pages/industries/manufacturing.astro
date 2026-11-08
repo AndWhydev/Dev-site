@@ -100,6 +100,18 @@ const data = {
       question: "Can you connect our machines and PLCs to the rest of our systems?",
       answer: "For equipment that exposes data, yes. Many modern machines and PLCs publish data over industrial protocols such as OPC UA or MQTT, often through an edge gateway, and older machines can be retrofitted with sensors. We build the software side: collecting that data, timestamping it, linking it to jobs and assets, and making it available to dashboards and maintenance workflows. Any controls or electrical work on the machines themselves stays with your automation integrator or electrician.",
     },
+    {
+      question: "What software does a food manufacturer need for traceability and recalls?",
+      answer: "Software that answers one question fast: which batches contain this ingredient, and where did they go? FSANZ Standard 3.2.2 requires a written recall plan, which needs batch codes, distribution lists and a record of food unaccounted for. Most makers run an ERP or MRP such as Unleashed, Katana, MRPeasy or Business Central, and a practical goal is a one up, one down trace for any lot within an hour. Custom work fills the tracing gaps.",
+    },
+    {
+      question: "Can you replace the Excel spreadsheets or Access database that run our production?",
+      answer: "Yes, and the right replacement depends on what the file does. If a SaaS product fits, use it; low code tools such as Power Apps suit small internal tools for teams on Microsoft 365; a custom web app fits when the file holds rules that set you apart or must connect to your ERP. A custom replacement typically costs $15,000 to $40,000 (AUD, ex GST) for a simple tool and $40,000 to $150,000 for a system with several users and integrations.",
+    },
+    {
+      question: "Can software check our allergen labels before printing?",
+      answer: "Yes, as a check rather than a sign off. Software can compare draft label artwork with the recipe and ingredient specifications, confirm every allergen appears with its required name in bold in the ingredients list and in a summary statement starting with Contains, and flag anything missing. Recipe changes and new ingredient lots should trigger a label review. A qualified person still approves the final artwork against the FSANZ allergen labelling rules.",
+    },
   ],
 
   ctaHeadline: 'Ready to Connect Your Systems?',

@@ -32,6 +32,8 @@ faqs:
     a: "Day rates are usually quoted ex GST. Contractors working through their own company generally handle their own super. Contractors engaged through a recruiter or on a payroll arrangement may have super added on top; check how each rate is quoted."
   - q: "How many billable hours does a full-time developer work in a year?"
     a: "A full-time year is about 1,976 hours at 38 hours a week. After four weeks of annual leave, public holidays and some sick leave, about 1,700 hours remain, and not all of those are spent writing code."
+  - q: "How much does a freelance app developer cost per hour in Australia?"
+    a: "A senior freelance or contract developer in Sydney typically charges $800 to $1,100 a day, or roughly $105 to $145 an hour (AUD, ex GST), based on 2026 recruiter figures. Brisbane and Melbourne rates sit a little lower. A freelancer's rate covers one person's time, so you take on project management, testing, design and cover for leave yourself, which is why agency rates per hour are higher."
 sources:
   - title: "Salary Guide 2026 (Australia, mid-year edition)"
     url: "https://www.robertwalters.com.au/content/dam/robert-walters-redesign/country/australia/files/salary-survey/Salary-Guide-2026-AU-V10-mid-year.pdf"

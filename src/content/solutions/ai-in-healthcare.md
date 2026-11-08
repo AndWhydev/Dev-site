@@ -29,6 +29,8 @@ faqs:
     a: "Yes, on the preparation side. A model can check that the documentation supports the item numbers selected and flag incomplete notes before claims go out, for billing staff to review. The practice and the treating practitioner stay responsible for what is claimed, so the tool should suggest and flag rather than submit on its own."
   - q: "Is de-identified data outside the Privacy Act?"
     a: "Information that is genuinely de-identified is no longer personal information, but free-text clinical notes are hard to de-identify reliably and re-identification risk rises when datasets are combined. Treat de-identification as a risk assessment, not a checkbox, and keep the original data under full protection."
+  - q: "Can we use an AI scribe in our practice?"
+    a: "Generally yes, within three boundaries. Scope: a scribe that only records and summarises the consultation is generally outside TGA regulation, but suggesting diagnoses or treatments can make it a medical device. Consent: Ahpra's guidance says generative AI scribing tools generally require informed consent, ideally recorded. Privacy: notes are health information, so check where audio and transcripts are processed and stored. The clinician reviews every note before it enters the record. We don't resell or endorse any scribe product."
 sources:
   - title: "Artificial intelligence (AI) and medical device software regulation"
     url: "https://www.tga.gov.au/products/medical-devices/software-and-artificial-intelligence-ai/manufacturing/artificial-intelligence-ai-and-medical-device-software-regulation"

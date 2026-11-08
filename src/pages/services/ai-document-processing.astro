@@ -152,6 +152,18 @@ const data = {
       question: "Is intelligent document processing the same as OCR?",
       answer: "No. OCR turns an image of text into characters, but it does not know which number is the invoice total or whether it is right. Intelligent document processing uses OCR as its first step, then adds classification, extraction based on what each field means, validation against rules and systems, and human review of uncertain results. That is what lets it cope with many layouts instead of one fixed template.",
     },
+    {
+      question: "How long does it take to automate invoice or document processing?",
+      answer: "About 10 weeks for a typical first document type, from inventory and sample labelling to a parallel run and go live. Labelling, schema and rules take the first three weeks, the extraction pipeline, review screen and integration are built through week 8, and accuracy thresholds are set in weeks 7 to 9. A second document type on the same pipeline is usually quicker, because classification, review and integration already exist.",
+    },
+    {
+      question: "Do we still need people to check documents after automation?",
+      answer: "Yes, but only for the fields the system is unsure about. Every field carries a confidence score, and anything below the threshold you set, or failing a business rule, goes to a review screen that shows the value beside the highlighted source. Clean documents pass straight through. You set the thresholds with us from measured accuracy on your own files, and reviewer corrections feed the evaluation set, so thresholds can be revisited as evidence builds.",
+    },
+    {
+      question: "Can AI check ABNs and GST on supplier invoices automatically?",
+      answer: "Yes. Validation rules check that line items sum to the total, that GST is consistent with the amounts and that the ABN passes the ATO's check digit algorithm, and they can confirm a purchase order number exists in your ERP. An invoice that fails any rule is held for review instead of being posted to your ledger. Rules are agreed per document type, so credit notes and statements follow their own path.",
+    },
   ],
   comparison: {
     rightFor: [

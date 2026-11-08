@@ -148,6 +148,18 @@ const data = {
       question: "Can you take over or extend a backend another team built?",
       answer: "Yes. We start by reading the code, running it locally, checking how it is deployed and monitored, and listing the risks before changing anything significant. Where the state of the system is unclear, a short code audit comes first so you know what you are inheriting. After that, new features, performance work and upgrades follow the same engineering practices as a new build.",
     },
+    {
+      question: "Should we use Supabase, Firebase or our own backend on AWS?",
+      answer: "For an early product, a managed backend such as Supabase or Firebase is often the fastest start; a custom backend in your own AWS, Azure or Google Cloud account suits complex business logic, heavy integrations or strict data controls. Supabase is built on PostgreSQL, which makes a later move to your own database easier than leaving Firebase's document store. We recommend from your workload and data obligations, and document the trade off.",
+    },
+    {
+      question: "Who owns the backend code you write for us?",
+      answer: "You do, once it is paid for. Code and IP are assigned to you as the work is paid, you can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment. The backend runs in your own cloud account and comes with tests, documentation and runbooks, so your team or another supplier can run and extend it without us.",
+    },
+    {
+      question: "How long does a backend build take?",
+      answer: "About 11 to 12 weeks in a typical engagement. Workload and integration mapping takes weeks 1 to 2, architecture and runtime decisions are settled in week 2, core services and the data layer are built across weeks 3 to 8, and jobs, queues and integrations overlap in weeks 5 to 10. Load testing and hardening run in weeks 9 to 11, then launch and handover in the final week.",
+    },
   ],
   comparison: {
     rightFor: [

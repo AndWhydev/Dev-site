@@ -29,6 +29,12 @@ faqs:
     a: "For a scoped use case such as a knowledge assistant over one document set, a typical path is the Discovery Audit and two Strategy Sessions, followed by eight to twelve weeks of build and evaluation. Larger integrations take longer. Every build starts with our Discovery Audit, a fixed fee credited in full against the build, and you then get one fixed price for the agreed scope."
   - q: "Do we need our own AI policy before starting?"
     a: "It helps but isn't required. The Discovery Audit covers the decisions a policy would make for this use case: what data the AI can see, who reviews its outputs, what gets logged, and how incidents are reported. Those decisions can then feed a broader policy."
+  - q: "How much does AI development cost for a Sydney business?"
+    a: "Australian market ranges put a proof of concept at about $15,000 to $40,000 (AUD, ex GST), a production AI system covering one or two use cases at $50,000 to $150,000, and enterprise programs at $150,000 or more. Most of the budget goes on data preparation, integration and evaluation rather than the model itself. Model usage and hosting recur every month, so we estimate the running cost alongside the build price."
+  - q: "Can you build an AI receptionist for a Sydney business?"
+    a: "Yes. We build AI voice agents that answer after hours and overflow calls, book jobs into your calendar, job management or practice software, and hand over to staff with a written summary. State call recording rules shape the design, so every call opens with a recording disclosure and the setup is documented for your lawyer to review. Most Sydney businesses start with after hours calls, then widen the hours once the numbers support it."
+  - q: "Do you do AI automation for small businesses in Sydney?"
+    a: "Yes, when the numbers work. Good first projects are repetitive tasks done in volume with a clear measure of success, such as triaging an inbox, extracting data from supplier invoices or drafting replies for a person to approve. If a licensed tool such as Microsoft 365 Copilot or an off the shelf workflow tool will do the job, we recommend it, because it is usually cheaper than a custom build. The first step is a Development Consult."
 sources:
   - title: "NSW AI Operational Policy"
     url: "https://www.digital.nsw.gov.au/policy/artificial-intelligence/ai-strategy-and-operational-policy/nsw-ai-operational-policy"

@@ -27,6 +27,12 @@ faqs:
     a: "There is no settled market rate yet. Re:Sourced's 2026 guide says AI and machine learning contract rates are still forming as a distinct market, with specialist AI implementation work pricing above the general software band, which sits at $700 to $950 a day in Brisbane (AUD, ex GST). A fixed price after a Discovery Audit is easier to compare than day rates, because it prices the outcome rather than the hours."
   - q: "What do senior developers cost in Brisbane?"
     a: "Re:Sourced's 2026 guide puts senior software contractor day rates in Brisbane at $700 to $950 (AUD, ex GST), below Sydney and Melbourne. Re:Sourced puts Brisbane roughly 10 to 15 per cent below Sydney overall. Agencies charge more because they add design, testing and project management."
+  - q: "Are there Queensland grants for software or digital tools?"
+    a: "Yes, but they are narrow, and none funds a general custom build at the time of writing. Business Queensland's Construction Business Advancement Grant pays a rebate of up to $5,000 ex GST for business management software and training chosen from a catalogue, open until 7 May 2027 unless funding runs out. The Small Business Digital Grants program isn't on the current grants schedule. Check business.qld.gov.au before you budget around any grant."
+  - q: "How much does custom software development cost in Brisbane?"
+    a: "Australian market ranges run from about $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a system such as a customer portal or job management platform, and $150,000 or more for platforms spanning several systems. Brisbane day rates sit below Sydney, but integrations, user roles, data migration and security move the price far more than your postcode. We quote a fixed price after the Discovery Audit."
+  - q: "Where can Brisbane businesses check your reviews?"
+    a: "On Google, where AWLabs holds a 5.0 rating from 37 reviews at the time of writing (November 2026). Our sister company All Webbed Up, which builds websites and runs marketing, has its own separate reviews, so read those as AWU's rather than ours. For a software project the more useful check is a reference call: ask us to connect you with a past client whose project resembles yours, and ask how we handled changes in scope."
 sources:
   - title: "Information Privacy and Other Legislation Amendment Act 2023 (as made)"
     url: "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2023-032"

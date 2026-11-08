@@ -27,6 +27,12 @@ faqs:
     a: "Yes. Re:Sourced's 2026 guide says contractors with security clearances working close to defence command 15 to 25 per cent above commercial day rates, with NV1-plus contractors around Canberra pricing at the top of that range. We hold no clearances, so if your work needs them, budget for that premium with a cleared supplier; for unclassified work, the commercial rates apply."
   - q: "How often do you come to Canberra?"
     a: "As often as the project needs. Canberra is close enough to Sydney for day trips, so strategy sessions, design reviews and user testing can all happen in person. Travel is priced into your Schedule of Work."
+  - q: "Can our system be hosted in a Canberra cloud region?"
+    a: "Yes, on Microsoft Azure, which runs two Canberra regions, Australia Central and Australia Central 2, at the time of writing. AWS and Google Cloud serve Canberra from their Sydney and Melbourne regions. The right choice depends on the certification status of the specific cloud services an agency needs, not only where the region sits, so we check each service against your requirements during the Discovery Audit."
+  - q: "Do you work on ACT Government projects?"
+    a: "Yes, for unclassified work engaged through a pathway the agency's procurement rules allow. ACT Government agencies fall under the Information Privacy Act 2014 (ACT), administered by the ACT Privacy Commissioner since 1 July 2024, so agency systems are designed to the territory's privacy principles rather than only the federal ones. Health information held by private providers in the ACT is handled under both federal and territory law."
+  - q: "What evidence should a software supplier have ready for a federal agency?"
+    a: "Eight documents cover most of what procurement and security teams ask for: a system description with data flows, a hosting statement, an AI use description, evaluation results, a human oversight design, security controls mapped to the Essential Eight, an incident and data breach response plan, and transparency text for the agency's AI statement. We build most of these during delivery, though the agency stays responsible for its own obligations."
 sources:
   - title: "Policy for the responsible use of AI in government, version 2.0"
     url: "https://www.digital.gov.au/ai/ai-in-government-policy"

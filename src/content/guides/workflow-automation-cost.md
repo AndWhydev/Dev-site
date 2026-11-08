@@ -30,6 +30,12 @@ faqs:
     a: "Not usually. AI models are good at reading documents, classifying requests and drafting responses. Deterministic steps such as moving data between systems, applying rules and posting transactions are still best done by conventional automation. Most useful systems combine the two."
   - q: "Does the Microsoft 365 licence include Power Automate?"
     a: "Many Microsoft 365 plans include Power Automate for standard connectors. Premium connectors, desktop automation and unattended bots need paid plans. At the time of writing, Microsoft's Australian pricing lists Power Automate Premium at AU$22.40 per user per month, paid yearly, ex GST."
+  - q: "How quickly does an automation pay for itself?"
+    a: "In this guide's invoice example, about 3 months for a platform build and about 10 months for a custom service. Automating 1,200 supplier invoices a month saves about 80 staff hours, worth roughly $5,200 a month. The $11,200 platform build pays back fastest; the $42,000 custom build makes sense at several times the volume or under stricter data rules."
+  - q: "How much does it cost to have one workflow built professionally?"
+    a: "Typically $1k to $5k (AUD, ex GST) for a simple workflow, such as a new CRM deal creating a project, folder and draft invoice, plus the platform subscription. A multi step workflow across several systems with approvals, such as staff onboarding across HR, payroll and IT, typically costs $5k to $15k. Adding AI document reading and proper error handling moves it to $15k to $50k."
+  - q: "How much does n8n cost?"
+    a: "At the time of writing, n8n's hosted Starter plan is 20 euros a month billed annually for 2,500 workflow executions, and Pro is 50 euros for 10,000. The Community Edition can be self hosted with no licence fee, but you then pay for the server and the time to patch, back up and monitor it. Because n8n counts executions rather than steps, long workflows can cost less than on task based pricing."
 sources:
   - title: "Zapier pricing"
     url: "https://zapier.com/pricing"

@@ -145,6 +145,18 @@ const data = {
       question: 'What is the difference between an AI chatbot and an AI agent?',
       answer: 'A chatbot mainly answers questions in a conversation. An AI agent plans and carries out multistep tasks, calling tools and systems to get work done, such as updating a record or lodging a request. Many chatbots include a few agent style actions; a full agent needs tighter permissions, approval steps and monitoring, which we cover under AI agent development.',
     },
+    {
+      question: "Can an AI chatbot answer phone calls?",
+      answer: "Not a text chatbot on its own, but the same assistant can be given a voice. A phone agent adds telephony, speech recognition and a synthetic voice, plus Australian rules on call recording and telemarketing. We build these as AI voice agents, which can share the chatbot's knowledge base and escalation rules so web chat and the phone give consistent answers. Calls can be forwarded from your existing number after hours or when nobody picks up.",
+    },
+    {
+      question: "How much does an AI chatbot cost per month to run?",
+      answer: "Published Australian figures range from under $100 to over $15,000 a month, depending on conversation volume, the model and how the vendor charges. For a custom chatbot, the running cost is mostly model tokens and hosting, so it scales with usage rather than seats. We model cost per conversation before the build and report it after launch alongside deflection and escalation rates, so you can see whether the chatbot pays its way.",
+    },
+    {
+      question: "Which model is best for a business chatbot: ChatGPT, Claude or Gemini?",
+      answer: "There is no single best model; the right one depends on your conversations. We test candidate models from OpenAI, Anthropic and Google against an evaluation set built from your real customer questions, then compare answer quality, speed and cost per conversation. The chatbot calls the model through our own service layer, so a newer or cheaper model can be swapped in later after it passes the same evaluation set, without rebuilding the chatbot.",
+    },
   ],
   comparison: {
     rightFor: [

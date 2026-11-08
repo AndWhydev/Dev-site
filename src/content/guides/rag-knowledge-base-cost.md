@@ -26,6 +26,12 @@ faqs:
     a: "Often, for documents already in SharePoint or connected sources, and that's the cheaper route if it meets your accuracy and data requirements. A custom RAG system is worth it when you need specific sources those tools can't reach, stricter control over where data is processed, cited answers tuned to your domain, or integration into your own product."
   - q: "What does it cost to keep a knowledge base up to date?"
     a: "Automated re-indexing keeps technical upkeep low. The larger cost is content governance: retiring outdated documents, fixing contradictions and reviewing questions the system answered poorly. Budget a few hours a week of a subject expert's time plus 15 to 25% of the build cost a year for maintenance."
+  - q: "How much does a RAG knowledge base cost per month to run?"
+    a: "For a 300 person firm, this guide's illustration comes to about $4,339 a month (AUD, ex GST). Model usage is only $655 of that; hosting in an Australian region is $600, monitoring $150, maintenance $1,375 and a subject expert's content governance time $1,559. Smaller teams pay less for usage, but maintenance and content upkeep stay the biggest lines."
+  - q: "Is it expensive to embed thousands of documents?"
+    a: "No. Embedding 20,000 documents of about five pages each, roughly 50 million tokens, costs about US$1 to US$6.50 at OpenAI's listed embedding prices at the time of writing. The vectors take about 1.2 GB, which PostgreSQL with pgvector handles comfortably. The real cost is the engineering around it: clean text extraction, sensible chunking, metadata and reindexing only what changed."
+  - q: "Will an AI knowledge base respect our existing document permissions?"
+    a: "Only if it is built to. Mirroring permissions from SharePoint, document systems and wikis, so each user retrieves only what they're allowed to see, is careful engineering and the line most often missing from cheap quotes. Enterprise systems with document level permissions, audit logging and several user groups typically cost $150,000 to $350,000 or more (AUD, ex GST)."
 sources:
   - title: "Claude API pricing"
     url: "https://platform.claude.com/docs/en/about-claude/pricing"

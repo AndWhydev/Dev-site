@@ -83,6 +83,18 @@ const data = {
       question: 'How do you prepare for peak retail events like Click Frenzy or EOFY sales?',
       answer: "Peak traffic events require both architectural preparation and operational readiness. On the architecture side, we design for horizontal scalability using managed container platforms (ECS, GKE) with autoscaling policies, static assets served largely from a CDN, aggressive edge caching strategies for product catalogue data, and order processing through queues to absorb traffic spikes without overwhelming downstream systems. Operationally, we run load tests simulating two to three times the expected peak traffic before major events, implement feature flags to disable nonessential features under load, and set up live monitoring dashboards so your team can see what's happening during the event window.",
     },
+    {
+      question: "Should prices in our online store or app include GST?",
+      answer: "Yes, for prices shown to consumers. Australian Consumer Law requires a single total price that includes GST and any other compulsory charges, so a store built on US defaults that adds tax at checkout needs changing. From 1 July 2027, per transaction charges such as an online ordering or booking fee must also be shown next to the base price. Your lawyer confirms what applies to you; we build the product pages, cart and checkout to match.",
+    },
+    {
+      question: "Should a retail chain build its own POS system?",
+      answer: "Almost never. POS platforms such as Lightspeed Retail, Shopify POS, Square and Retail Express carry payments certification, hardware support and tax handling that a chain doesn't want to own. The custom work that pays sits between the POS, your ERP or inventory platform and your rostering tool: replenishment and stock transfer logic, a store operations app head office controls, and reporting across every store.",
+    },
+    {
+      question: "Can we use facial recognition in our stores for loss prevention?",
+      answer: "Possibly, but the legal bar is high. The OAIC treats facial images as sensitive information, says each deployment must be assessed against the Privacy Act and expects a detailed risk assessment first. The Privacy Commissioner found Bunnings breached the Act, and while the Tribunal later accepted a limited consent exception for serious repeat crime, it upheld the notice and governance failures. Get legal advice before buying any system.",
+    },
   ],
   ctaHeadline: "Ready to Build Retail Technology That Scales With Your Ambitions?",
   ctaDescription: "From headless commerce rebuilds and loyalty platforms to inventory automation and personalisation engines, we build for the complexity that comes with scale. Let's talk about where you want to take your retail business.",

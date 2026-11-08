@@ -28,6 +28,12 @@ faqs:
     a: "Published Australian guides put standard business apps at 8 to 16 weeks and feature-rich platforms at 3 to 6 months. Access to the systems you need to integrate with is the most common cause of delay."
   - q: "What ongoing costs does an app have?"
     a: "Maintenance (commonly 15 to 20% of the build cost per year), cloud hosting ($50 to $500+ a month for most business apps), developer program fees, and paid services such as push notifications, maps, SMS or analytics."
+  - q: "How much does it cost to build an app like Uber or Airtasker?"
+    a: "A first version usually costs $130,000 to $300,000 (AUD, ex GST), because it's a platform with two sides rather than a single app. You need a customer experience, a provider experience, a backend that matches them and an admin portal to run the marketplace. Live tracking, payments between parties and trust features such as ratings and identity checks push it towards the top. Launching in one city or niche first keeps it lower."
+  - q: "How much does a booking app cost to build?"
+    a: "Published Australian ranges put a booking system with payments at about $40,000 to $150,000 (AUD, ex GST). The low end covers online booking, a payment gateway, an admin calendar and reminders for one business. Costs rise with native apps, memberships, deposits and integrations with practice or job software. Taxi and tradie booking apps with live GPS are on demand platforms, which start nearer $130,000."
+  - q: "Can I build my app with Lovable or another AI app builder instead of hiring a developer?"
+    a: "For a prototype or an early product, often yes. Lovable, Bolt and Replit can produce a working web app in days, with entry paid plans around US$25 a month for Lovable and Bolt at the time of writing, before extra usage. Before real customers, money or personal information go through it, have someone check the data access rules, authentication, secrets, payments and backups, which are the gaps these tools commonly leave."
 sources:
   - title: "How Much Does an App Cost in Australia? (2026)"
     url: "https://www.appgurus.com.au/how-much-does-an-app-cost-in-australia/"

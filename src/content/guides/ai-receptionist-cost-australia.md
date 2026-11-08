@@ -26,6 +26,12 @@ faqs:
     a: "Usually, if the system has an API that allows creating bookings and reading availability. ServiceM8 publishes a REST API, for example. Some subscription receptionists integrate with popular calendars and job systems out of the box; a custom build is needed when your system or booking rules aren't supported."
   - q: "Is it legal for an AI receptionist to record calls in Australia?"
     a: "Call recording is governed by federal telecommunications law and state and territory surveillance or listening device laws, which differ. The safe design is to tell every caller at the start that the call is recorded and why. Get legal advice for your situation; our AI voice agents page explains how we design for it."
+  - q: "What is the best AI receptionist for a small business in Australia?"
+    a: "For most small businesses using a few hundred minutes a month, a subscription AI receptionist in the $150 to $400 a month range is the best value. There is no single best product, so compare plans on included minutes, overage, GST and whether they book into your calendar or job system. A custom voice agent becomes the better choice when your booking rules or software aren't supported."
+  - q: "How much does an AI receptionist cost for a busy business taking 3,000 minutes of calls a month?"
+    a: "On the example plans in this guide, about $1,259 a month on a $299 plan with 40 cent overage, or roughly $825 on pure per minute pricing at 27.5 cents. A custom voice agent handling the same 3,000 minutes costs about $526 a month in platform and phone charges, but needs a build first. Over three years the subscription still edges ahead at this volume; at around 6,000 minutes, custom wins."
+  - q: "What does a custom AI receptionist cost to run after it is built?"
+    a: "Plan for platform and phone charges of roughly 15 to 20 cents a minute, plus maintenance of about 15% to 20% of the build each year. On a $25,000 build that maintenance is $3,750 to $5,000 a year, or about $310 to $420 a month. Add hosting for the integration code, monitoring, recording storage if you keep audio, and staff time to review a sample of calls each week."
 sources:
   - title: "What an AI receptionist actually costs in Australia (updated 4 November 2026)"
     url: "https://www.binaryelements.com/ai-receptionist-cost-australia"

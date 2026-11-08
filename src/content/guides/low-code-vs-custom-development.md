@@ -28,6 +28,10 @@ faqs:
     a: "It can be. Power Platform inherits Microsoft 365 identity and admin controls, and Bubble offers privacy rules and enterprise options. The common risks are configuration: over-shared data, apps built by staff without review, and connectors that move data to places nobody tracked. Governance matters more than the platform."
   - q: "What about AI app builders?"
     a: "AI tools that generate code from prompts sit between low-code and custom: fast to start, and you get real code, but someone still has to review, test, secure and maintain it. For anything handling personal information or money, treat generated code like any other code and have a senior engineer review it."
+  - q: "Is Power Apps a good replacement for a Microsoft Access database?"
+    a: "Often, for internal tools used by staff who already sign in with Microsoft 365. Power Apps with Dataverse handles forms, approvals and simple records well, and environments can be created in Australian regions. It's a poorer fit when customers need access, the database holds complex rules, or you want software that can move off Microsoft's platform. In those cases a custom web app with a proper database is usually the better choice."
+  - q: "Are AI app builders like Lovable and Bolt low-code?"
+    a: "Not quite. Lovable, Bolt, Replit and v0 generate real source code from prompts, whereas platforms such as Power Apps and Bubble run your app inside their own environment and don't hand you maintainable code. That makes AI builders more portable, but the generated code still needs review, testing, security checks and maintenance like any other code, ideally by a senior engineer before customers or money go through it."
 sources:
   - title: "Power Apps pricing"
     url: "https://www.microsoft.com/en-au/power-platform/products/power-apps/pricing"

@@ -28,6 +28,12 @@ faqs:
     a: "At minimum, professional indemnity and public liability. Many enterprise and government buyers also require cyber insurance. Ask for certificates of currency and check the cover amounts against your procurement policy."
   - q: "What if the company goes out of business mid-project?"
     a: "If the code is in your own repository, the documentation is current and the IP is assigned as work is paid for, another team can pick it up. That's why repository control and IP assignment matter more than any promise about the company's longevity."
+  - q: "What are the red flags in a software or app quote?"
+    a: "The biggest red flags are a firm fixed price for a large project after one meeting with no written scope, and silence on testing, deployment, hosting and support. Also watch for code, hosting or domains that stay in the vendor's name, pricing tied to an ongoing licence for the vendor's own framework, a team described only as a headcount, and pressure to sign before payments are tied to stages you accept."
+  - q: "Where can I find an app developer in Australia?"
+    a: "Start with referrals from businesses that have shipped a similar app, then use directories with verified reviews, such as Clutch, and Google reviews to build a longlist. Download apps each developer has built and ask who actually writes the code. Shortlist three, send each the same brief, and run the public checks on this page: ABN, insurance, named engineers and claims you can verify on the issuing body's register."
+  - q: "How long does it take to choose a software development company?"
+    a: "Four to eight weeks for most midsize projects, from writing the brief to signing the build contract. The first week goes on the brief and public checks, weeks two to four on technical sessions and comparing written proposals, then reference calls and claim checks, and finally a paid discovery with the preferred firm. Rushing this stage is the most common way to lose far more time later."
 sources:
   - title: "Does my business own the software it is having developed?"
     url: "https://legalvision.com.au/own-the-software/"

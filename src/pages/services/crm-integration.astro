@@ -143,6 +143,18 @@ const data = {
       question: 'Would a tool like Zapier or Make be enough?',
       answer: 'Sometimes. For a few simple flows at modest volume, an automation platform is quick and cheap, and we will say so. Custom integration code makes sense when flows need complex matching or routing logic, high volumes, strict error handling and audit trails, or access to APIs those tools do not cover well. Our comparison of n8n, Make and Zapier explains the trade offs.',
     },
+    {
+      question: "What can HubSpot integrate with?",
+      answer: "Almost anything with an API. HubSpot has a large marketplace of ready made integrations, and custom integrations connect it to Xero or MYOB, ServiceM8 or simPRO, web forms, telephony and SMS, ad platforms and your own app or portal. Check the marketplace first; we build custom only where no existing app handles your fields, rules or volumes. HubSpot's daily API limits run from 250,000 to 1,000,000 requests depending on your tier.",
+    },
+    {
+      question: "Does a Salesforce integration need its own user licence?",
+      answer: "It should run under a dedicated integration user, not a staff member's login. That keeps permissions narrow, keeps the audit trail clear and stops the integration breaking when someone leaves. Salesforce offers a licence type intended for system to system access, and how many are available depends on your edition and contract, so we check your org's setup before the build. API request allocations also vary by edition and licence count.",
+    },
+    {
+      question: "Should we choose HubSpot, Salesforce or a custom CRM?",
+      answer: "For most Australian small and mid sized businesses, start with an established CRM such as HubSpot, Salesforce, Zoho or GoHighLevel and integrate it, because it is usually cheaper over five years. A custom CRM earns its cost when your sales or service process is unusual, when seat licences add up across many users, or when the CRM has to run core operations rather than track leads. Our HubSpot versus Salesforce guide compares the two.",
+    },
   ],
   comparison: {
     rightFor: [

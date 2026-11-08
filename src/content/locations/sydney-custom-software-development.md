@@ -29,6 +29,12 @@ faqs:
     a: "Re:Sourced's 2026 guide puts senior software contractors in Sydney at $800 to $1,100 a day (AUD, ex GST), with principal and specialist profiles reaching about $1,300. A software development company adds design, project management and testing on top of the engineering, which is why project budgets are better compared than hourly rates."
   - q: "What happens to the code if we stop working with you?"
     a: "Each part of the work is assigned to you as it is paid for in full. You can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment. Any developer can pick it up from there, which is the point."
+  - q: "Can you build a custom CRM for a Sydney business?"
+    a: "Yes, when custom is the better buy. Australian market ranges run from about $20,000 to $40,000 (AUD, ex GST) for a simple CRM used by one team to $100,000 or more for systems used by several teams with portals and multiple integrations. For most small businesses, HubSpot, Salesforce, Zoho or GoHighLevel is cheaper over five years, so try those first. Custom earns its cost when your process is unusual or seat fees add up."
+  - q: "Which systems can you connect our custom software to?"
+    a: "Most Sydney projects connect to Microsoft 365 and Entra ID for sign in, Xero, MYOB or NetSuite for finance, Salesforce or HubSpot for CRM and Stripe for payments, plus industry systems such as practice management software. Each connection gets error handling, retries and monitoring, because integrations are where estimates usually go wrong. If a system offers an API we can usually connect to it, and if it doesn't, we explain the alternatives."
+  - q: "Do you support the software after it goes live?"
+    a: "Yes. Every build comes with a 30 day warranty from launch, during which we fix bugs and anything caused by our work at no cost. After that you can choose a Care Plan, month to month and priced for your system, covering monitoring, updates and improvements. Support runs in Sydney business hours and we reply within one business day, so a Sydney team always knows when to expect an answer."
 sources:
   - title: "ICT Services Scheme"
     url: "https://www.info.buy.nsw.gov.au/schemes/ict-services-scheme"

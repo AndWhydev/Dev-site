@@ -153,6 +153,18 @@ const data = {
       question: "How do staff connect our MCP server to Claude, ChatGPT or Visual Studio Code?",
       answer: "For a remote server, users add its URL in the client's connector or MCP settings and sign in through your identity provider, so they only see what their own account allows. A local server is configured with the command that launches it. We supply setup instructions for each client you approve and work with your administrators on how the server is approved and rolled out across the organisation.",
     },
+    {
+      question: "What is the difference between MCP and RAG?",
+      answer: "RAG retrieves relevant passages from your documents so a model can answer from them. MCP is a standard way for an AI client to call tools and read data in your systems. They work together: a RAG search over your policy library can be exposed as one tool on an MCP server, alongside tools that look up a customer record or create a ticket. RAG is about grounding answers; MCP is about access.",
+    },
+    {
+      question: "Is an MCP server the same as an AI agent?",
+      answer: "No. An agent is the part that plans and decides what to do next; an MCP server is a set of tools and data it can use. The same MCP server can serve Claude, ChatGPT, Copilot and your own custom agents, each deciding when to call it. Building the server first gives every agent you add later the same governed access to your systems.",
+    },
+    {
+      question: "What does it cost to host an MCP server?",
+      answer: "It depends on traffic and where it runs. A remote MCP server runs like any other small web service in your cloud account, so your cloud provider bills the hosting directly, separately from AI model usage, which the model provider bills. We size the hosting during design and show the expected running costs alongside the build options in your Schedule of Work.",
+    },
   ],
   comparison: {
     rightFor: [

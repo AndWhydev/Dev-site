@@ -30,6 +30,12 @@ faqs:
     a: "Day rates are lower offshore, and for clearly specified work that can reduce cost. For enterprise work, weigh the extra coordination, time zone overlap, security review of the supplier, and any requirement to keep data or access in Australia. Some organisations use a blend, with an onshore lead and offshore delivery."
   - q: "Who owns the code on an enterprise software project?"
     a: "It depends on the contract. Many Australian enterprises require IP assignment on payment and source code in their own repositories. Check the IP, licensing and exit clauses before signing."
+  - q: "How much does single sign on with Microsoft Entra ID add to an enterprise project?"
+    a: "Typically $5k to $25k (AUD, ex GST) for single sign on with Microsoft Entra ID or Okta, including role mapping and least privilege permissions. The spread depends on how many roles you have, whether roles flow from the HR system, and how many applications share the setup. Fine grained permissions then add design and testing to every feature built after them."
+  - q: "How much does enterprise software cost to run each year after launch?"
+    a: "In this guide's worked example, roughly $108k to $160k a year: maintenance and support at 15 to 20% of a $573,670 build ($86k to $115k), Azure hosting of $12k to $30k, and an annual penetration test of $10k to $15k. Over five years the running costs can approach or exceed the original build, which is normal for enterprise software."
+  - q: "How much contingency should an enterprise software budget include?"
+    a: "About 15% of engineering cost is a reasonable starting point; the worked example here carries $72,870 on a $485,800 engineering subtotal. Integrations are the biggest source of estimate risk, so projects touching many systems or poorly documented APIs justify more. A paid discovery as the first contract narrows the unknowns before the build is priced, which reduces how much contingency you need."
 sources:
   - title: "Enterprise software development cost in Australia: 2026 guide (12 February 2026)"
     url: "https://vtdigital.com.au/enterprise-software-development-cost-in-australia-2026-guide/"

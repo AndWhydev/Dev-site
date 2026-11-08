@@ -29,6 +29,12 @@ faqs:
     a: "Not at the time of writing. NSW Government agencies must generally buy ICT through the scheme, so an agency would need to engage us through a supplier that is on it. We say this up front so procurement teams can plan the right pathway."
   - q: "Can you take over an app another Sydney developer started?"
     a: "Yes. We start by securing the code, hosting and app store accounts, then assess what exists before recommending whether to fix, finish or rebuild each part. Our software project rescue page explains how a takeover runs."
+  - q: "How long does it take to build an app in Sydney?"
+    a: "Published Australian guides put a standard business app at 8 to 16 weeks and a feature rich platform at 3 to 6 months, once the scope is agreed. Waiting on access to the systems the app connects to is the most common cause of delay, and app store review adds time at launch. On a Sydney build you get an update every Tuesday and Friday with access to test the latest version, so any slippage shows early."
+  - q: "Do you build MVP apps for Sydney startups?"
+    a: "Yes. For a founder, the usual first release is a scoped MVP: one core workflow, often as a responsive web app or a Flutter app for iOS and Android, built to prove people will use it and pay for it. Published Australian ranges put most coded MVPs at $50,000 to $120,000 (AUD, ex GST). The Discovery Audit turns the idea into a scope, including what to cut, before you commit to a build."
+  - q: "Can our staff app stay private instead of being listed on the App Store?"
+    a: "Yes. An app for your own team doesn't need a public listing. Apple distributes custom apps to an organisation through Apple Business Manager, and managed Google Play supports private apps distributed only to your staff, usually alongside a device management tool with its own licence cost. The app still sits under your organisation's developer accounts, with our team added as members while we build and support it."
 sources:
   - title: "How Much Does an App Cost in Australia? (2026)"
     url: "https://www.appgurus.com.au/how-much-does-an-app-cost-in-australia/"

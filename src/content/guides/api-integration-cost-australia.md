@@ -26,6 +26,12 @@ faqs:
     a: "Plan on roughly 15 to 20% of the build cost a year for a custom integration, plus hosting and any API fees. Integrations need attention when either side changes its API, data model or authentication, and some vendors give only months of notice before retiring an API version."
   - q: "Can you integrate with a system that has no API?"
     a: "Often, yes, through a database connection, scheduled file exchange, email parsing or screen automation. These routes are slower to build and more fragile than a proper API, so budget 20 to 50% more and more upkeep."
+  - q: "How much does it cost to connect ServiceM8 or simPRO to Xero?"
+    a: "Typically $5k to $18k (AUD, ex GST) for a scheduled one way sync, such as pushing completed jobs to Xero as invoices, and $16k to $60k for a reliable two way sync of customers, jobs and invoices. A two way sync usually takes 15 to 40 days of engineering. Check whether an existing connector already covers your workflow before paying for custom work, and use custom code for the gaps."
+  - q: "Does Xero charge for API access if we only connect our own organisation?"
+    a: "No, not at that scale. Under Xero's tiered developer pricing from 2 March 2026, the Starter tier covers up to 5 connected organisations with no monthly fee. Core is $35 a month for up to 50 connections with 10 GB of egress, and Plus is $245 a month for up to 1,000. Fees are per app and tax exclusive, so they matter most for products that connect to many customers' Xero files."
+  - q: "Why do quotes for the same integration vary so much?"
+    a: "Because the other system's API, your data and your tolerance for failure change the effort far more than the integration's one line description does. Sparse documentation, no sandbox, tight rate limits and OAuth across many customer accounts all add days. So do mismatched customer, product or tax records, and a rule that every failure must retry and alert. Ask each supplier which directions, volumes and failure handling they priced."
 sources:
   - title: "Xero Developer pricing"
     url: "https://developer.xero.com/pricing"

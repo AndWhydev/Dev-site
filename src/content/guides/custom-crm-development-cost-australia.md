@@ -28,6 +28,12 @@ faqs:
     a: "Published Australian guides put mid complexity business systems at about 8 to 16 weeks, while Appinventiv puts custom CRMs at 10 to 12 months for more complex builds. A first release that covers contacts, pipeline, quoting and one integration can often go live in a few months, with further features added in stages."
   - q: "Can you build a custom CRM on top of HubSpot or Salesforce?"
     a: "Yes. Both platforms have APIs and support custom objects and apps, so a common approach is to keep the platform for contacts and email and build custom screens, integrations or automations around it. It costs less than a full build, but you keep paying the subscription and stay within the platform's limits."
+  - q: "How much does a custom CRM cost to run each year?"
+    a: "In this guide's worked example, about $23,610 a year ex GST for a $125,400 build: maintenance at 15% of the build ($18,810) plus an assumed $400 a month for hosting, email and SMS services. SMS usage is extra. As a planning rule, allow 15 to 20% of the build cost a year for maintenance, then add hosting and messaging on top."
+  - q: "Is a custom CRM cheaper than HubSpot or Salesforce for a large team?"
+    a: "Often, yes, once the team is large. In this guide's five year arithmetic at 60 users, HubSpot Sales Hub Professional comes to about $465,000 and Salesforce Pro Suite about $504,000, against roughly $243,450 for the worked example custom CRM. At 20 users the subscriptions are cheaper. Custom software doesn't charge per user, so the gap widens as headcount grows."
+  - q: "Can a custom CRM include a customer portal and job management?"
+    a: "Yes, and that is where a custom CRM most often earns its cost. An operations CRM with several teams on different permissions, job or case management, a customer portal, several integrations and audit trails typically costs $100,000 to $250,000 or more (AUD, ex GST). A CRM with automation and one or two integrations sits at $40,000 to $100,000."
 sources:
   - title: "How Much Does It Cost to Build CRM Software in Australia?"
     url: "https://appinventiv.com/blog/cost-to-build-crm-software-in-australia"

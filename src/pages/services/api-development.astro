@@ -134,6 +134,18 @@ const data = {
       question: 'What is the difference between API development and API integration?',
       answer: 'API development is building a new API that exposes your own data or services. API integration is connecting your systems to APIs that already exist, such as Xero, Salesforce or a payment gateway. Most projects involve both: an API of your own, plus integrations to the platforms around it.',
     },
+    {
+      question: "Can you integrate Xero, MYOB, HubSpot, GoHighLevel or ServiceM8?",
+      answer: "Yes. These are among the systems we connect most often, using each platform's published API and webhooks. Typical jobs push invoices from a job management tool into Xero or MYOB, sync contacts between HubSpot or GoHighLevel and your app, or create ServiceM8 jobs from web bookings. Each vendor sets its own rate limits and fees, such as Xero's connection based API tiers from 2 March 2026, so we check those before scoping.",
+    },
+    {
+      question: "Do you build two way sync between systems?",
+      answer: "Yes, and it is the hardest kind of integration to get right. A reliable two way sync needs a rule for which system wins when the same record changes in both, matching keys so records are not duplicated, a queue and retries for when one side is down, and a log of every change for reconciliation. Published Australian ranges put a reliable two way sync at about $16k to $60k (AUD, ex GST), against $5k to $18k for a one way sync.",
+    },
+    {
+      question: "How do we get API access to ServiceM8, simPRO or another platform?",
+      answer: "Through the vendor's developer program, with your account owner's approval. Each platform runs its own process: typically the integration is registered with the vendor and your business then authorises it to access your account, often through OAuth. We handle the registration and setup, use your account's authorisation, and keep credentials in a secrets store you control rather than in code. Some vendors charge for API access, so we confirm current terms before scoping.",
+    },
   ],
   serviceName: 'API Development',
   nounPhrase: "API development",

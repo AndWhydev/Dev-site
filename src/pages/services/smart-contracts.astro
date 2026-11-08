@@ -148,6 +148,18 @@ const data = {
       question: 'How much does it cost to build a smart contract?',
       answer: 'A simple token contract built on audited OpenZeppelin libraries is a small job; a protocol that holds user funds, with complex economic logic, is a major engineering project, and the independent audit is often a significant share of the budget. Every build is priced on its own scope. It starts with a Discovery Audit (a fixed fee, credited in full against the build). After the audit you get a fixed price Schedule of Work with three options: The Minimum, The Recommended and The Complete. The option you choose is paid in three stages against work you have accepted. We never publish day rates. We help you scope and budget for the independent audit separately.',
     },
+    {
+      question: "Do you audit smart contracts yourselves?",
+      answer: "We test and review our own contracts thoroughly, but we don't present that as the independent audit. Internally we run exhaustive Foundry and Hardhat tests, static analysis with Slither and Mythril, and senior code review. For any contract that holds real value, we then coordinate a third party security audit by specialists before mainnet deployment, and fix and retest whatever they find. Independence is the point of an audit.",
+    },
+    {
+      question: "Can AI tools audit a smart contract?",
+      answer: "They can help, but they can't replace a specialist audit. AI assistants and automated analysers are useful for spotting known vulnerability patterns and explaining unfamiliar code. They miss flaws in economic logic, permission design and how a contract interacts with others, which is where many costly exploits happen. Treat AI review as one more check alongside testing, static analysis and an independent audit.",
+    },
+    {
+      question: "Can you build smart contracts for tokenising real world assets?",
+      answer: "Yes, the contract and platform engineering, with the legal structure set by your lawyers. Tokenising property, funds or other assets usually needs transfer restrictions, investor whitelisting, upgrade controls under multisignature and timelocks, and off chain records that match the on chain state. A token linked to a real asset can be a financial product under Australian law, so get legal advice on licensing before you build. This is general information, not legal advice.",
+    },
   ],
   comparison: {
     rightFor: [

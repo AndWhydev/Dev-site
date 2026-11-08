@@ -33,6 +33,8 @@ faqs:
     a: "Records made at the time, showing what you were uncertain about, what you tried, what happened and what you concluded, plus records that tie costs to the registered activities. The ATO says backdated records or records with non-specific details of the work aren't appropriate, and that records must be kept for 5 years after you make a claim."
   - q: "Is the program changing?"
     a: "The Government announced reforms in the 2026 to 27 Budget, to apply from 1 July 2028. As announced, they include removing supporting activities from the offset, raising the minimum spend from $20,000 to $50,000, and limiting the refundable offset to a company's first 10 years. The ATO notes the measure is not yet law."
+  - q: "If my project doesn't qualify for R&D, how is software normally deducted?"
+    a: "Usually over several years. The ATO treats software you build or commission for use in your own business as a depreciating asset with a 5 year effective life. You can instead put development spend into a software development pool, deducted at nil in year one, then 30%, 30%, 30% and 10%, and eligible small businesses may write off items under $20,000 immediately. A registered tax agent should confirm your treatment."
 sources:
   - title: "Overview of the R&D Tax Incentive"
     url: "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/overview-of-rd-tax-incentive"

@@ -139,6 +139,18 @@ const data = {
       question: 'What is the difference between quality assurance and software testing?',
       answer: 'Software testing is the activity of running checks and finding defects. Quality assurance is the wider practice that prevents defects in the first place: clear acceptance criteria, code review, a test strategy and quality gates in the delivery pipeline. Testing is one part of QA.',
     },
+    {
+      question: "Can you test software that another company built?",
+      answer: "Yes. We can test an application we did not write, either as a one off assessment before a launch or as an ongoing testing role alongside your developers. We start by mapping the critical user journeys and existing test coverage, then add automated end to end and regression tests where the risk is highest. Findings come back as reproducible defects your current team can fix, rather than a vague quality score.",
+    },
+    {
+      question: "How do you test whether our product is easy to use?",
+      answer: "With usability testing, which watches real people try real tasks, alongside the functional checks. Automated suites confirm a feature works; they can't tell you a customer can't find it. We run structured manual exploratory sessions, and our UI and UX design team can run task based sessions with a handful of representative users and report where people hesitate, misread or give up, with recommended fixes.",
+    },
+    {
+      question: "Can you test AI features where the output changes each time?",
+      answer: "Yes, but not with ordinary pass or fail assertions alone. For features built on a language model we build an evaluation set of real examples with known good answers and score each response for accuracy, format and safety, then run it whenever a prompt or model changes. The surrounding code, such as tool calls, validation and permissions, is tested conventionally like any other feature.",
+    },
   ],
   comparison: {
     rightFor: [

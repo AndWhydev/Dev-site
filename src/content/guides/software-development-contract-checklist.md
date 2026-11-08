@@ -32,6 +32,10 @@ faqs:
     a: "A template is a reasonable starting point for understanding what a software development agreement should cover, and the checklist on this page shows what to look for in one. But templates are written for a generic situation. Have your lawyer adapt it, or review the vendor's version, against your project's IP, privacy and exit needs."
   - q: "Do I need a lawyer to review the contract?"
     a: "For anything significant, yes. A checklist helps you ask the right questions, but only a lawyer advising you can weigh the whole document against your situation. The vendor's lawyer acts for the vendor."
+  - q: "If my developer's company closes, can I still get my code?"
+    a: "Yes, if the code was assigned to you in writing and you already hold the repository, hosting and app store accounts; another team can then take over. If the agency kept the repository and never signed an assignment, recovering the code can be slow and expensive. For a platform the vendor licenses to you, a source code escrow agreement is the protection to negotiate before signing. This is general information, not legal advice."
+  - q: "My agency won't hand over the source code. What can I do?"
+    a: "Start with the contract. If it assigns the IP to you on payment and you've paid in full, ask in writing for the repository, credentials and accounts it promises. Without a signed assignment, the agency usually keeps the copyright and you may have only an implied licence to use the software. Either way, get a lawyer's advice before escalating. This is general information, not legal advice."
 sources:
   - title: "Copyright Act 1968 (ss 35, 195AWA, 196, 197)"
     url: "https://www.legislation.gov.au/C1968A00063/latest/text"

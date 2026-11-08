@@ -10,7 +10,7 @@ summary: "If every staff member already has a Microsoft 365 licence, SharePoint 
 takeaways:
   - "SharePoint is an intranet platform, not a finished intranet. Someone still has to design it, own the content and keep permissions tidy."
   - "Viva Connections is now called the SharePoint app in Teams. One experience comes with Microsoft 365 E, F and A licences; more than one needs a Viva licence for every user."
-  - "Frontline licences are cheap but limited: at the time of writing, Microsoft lists Microsoft 365 F1 at AU$3.40 and F3 at AU$12.00 per user per month (ex GST, paid yearly)."
+  - "Frontline licences are cheap but limited: at the time of writing, Microsoft lists Microsoft 365 F1 at AU$4.50 and F3 at AU$15.00 per user per month (ex GST, paid yearly)."
   - "Microsoft 365 Copilot shows users anything they have permission to view, so overshared SharePoint sites become an AI problem as well as a security one."
   - "A custom portal wins when staff need roster, pay, leave and training data in one place, or when many workers have no Microsoft 365 licence."
 faqs:
@@ -30,9 +30,9 @@ sources:
   - title: "Overview: SharePoint app in Teams"
     url: "https://learn.microsoft.com/en-us/SharePoint/homesites/sharepoint-app-in-teams-overview"
     publisher: "Microsoft Learn"
-  - title: "Microsoft 365 F1 and F3 plans and pricing (Australia), archived 6 June 2026"
-    url: "https://web.archive.org/web/20260606103749/https://www.microsoft.com/en-au/microsoft-365/enterprise/frontline-plans-and-pricing"
-    publisher: "Microsoft, via Internet Archive"
+  - title: "Microsoft 365 F1 and F3 plans and pricing (Australia)"
+    url: "https://www.microsoft.com/en-au/microsoft-365/enterprise/frontline-plans-and-pricing"
+    publisher: "Microsoft"
   - title: "Microsoft 365 Copilot privacy and protections"
     url: "https://learn.microsoft.com/en-us/copilot/plan/microsoft-365-copilot-privacy"
     publisher: "Microsoft Learn"
@@ -78,13 +78,13 @@ The licence detail matters. Microsoft says users with a Microsoft 365 E, F or A 
 
 **Every person who signs in to a SharePoint intranet needs a Microsoft 365 licence, and that's the single biggest issue for employers with large casual or deskless workforces.**
 
-Microsoft's frontline plans exist for this. On Microsoft's Australian plans page, as archived on 6 June 2026 (the live page blocked automated access when we checked in November 2026), F1 was listed at AU$3.40 and F3 at AU$12.00 per user per month, paid yearly, excluding GST. Both include SharePoint and Teams, with web and mobile Office apps and 2 GB of OneDrive storage. F1 has read only Office apps.
+Microsoft's frontline plans exist for this. On Microsoft's Australian frontline plans page, after the price rise from 1 July 2026, F1 is listed at AU$4.50 and F3 at AU$15.00 per user per month, paid yearly, excluding GST. Both include SharePoint and Teams, with web and mobile Office apps and 2 GB of OneDrive storage. F1 has read only Office apps.
 
 | Workforce | Staff | F1 per year | F3 per year |
 |---|---|---|---|
-| Small team | 50 | AU$2,040 | AU$7,200 |
-| Hospitality or retail group | 400 | AU$16,320 | AU$57,600 |
-| Large casual workforce | 2,000 | AU$81,600 | AU$288,000 |
+| Small team | 50 | AU$2,700 | AU$9,000 |
+| Hospitality or retail group | 400 | AU$21,600 | AU$72,000 |
+| Large casual workforce | 2,000 | AU$108,000 | AU$360,000 |
 
 Those prices are low per person, and for many employers F1 is the right answer, because it also gives frontline staff Teams chat and calling. The calculation changes when:
 
