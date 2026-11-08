@@ -212,7 +212,7 @@ Against a subscription at 20 seats, that is more expensive, so the build only ma
 
 - **Spam Act 2003.** The ACMA says you need consent before sending marketing emails or SMS, you must identify yourself as the sender, and every message must make it easy to unsubscribe. It also says it is up to you to prove consent, so record who gave it, when and how.
 - **Privacy Act 1988, APP 11.** If your business is covered by the Act, you must take reasonable steps to protect personal information from misuse, interference, loss and unauthorised access, and destroy or de-identify it when it is no longer needed. In a CRM that means sensible roles, audit logs, backups and a retention rule.
-- **Where the data is stored.** Check which region a subscription CRM hosts your data in. A custom CRM can be hosted in an Australian cloud region by default.
+- **Where the data is stored.** Check which region a subscription CRM hosts your data in. A custom CRM can be hosted in an Australian cloud region, which matters when your customer data needs to stay onshore.
 
 ## How AWLabs approaches CRM projects
 

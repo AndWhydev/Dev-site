@@ -27,7 +27,7 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   integrations: [
     sitemap({
-      filter: (page) => !/\/(welcome|how-we-work|MSA|terms)(\/|$)/.test(new URL(page).pathname),
+      filter: (page) => !/\/(welcome|how-we-work|MSA|terms|NDA)(\/|$)/.test(new URL(page).pathname),
       serialize: (item) => {
         const d = lastmod.get(item.url.replace(/\/$/, ''));
         return d ? { ...item, lastmod: d } : item;

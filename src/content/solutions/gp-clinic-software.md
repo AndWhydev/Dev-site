@@ -22,7 +22,7 @@ faqs:
   - q: "Can we replace HotDoc or HealthEngine with our own booking system?"
     a: "You can, but compare the subscription cost against building, hosting and maintaining it, plus the patient traffic a marketplace brings. Most clinics are better keeping the booking product and building around it, for example a recall campaign that books into the same appointment book. A group with its own patient app may justify a branded booking flow."
   - q: "Is patient data allowed to leave Australia?"
-    a: "The Privacy Act doesn't ban it outright, but you stay accountable for an overseas recipient's handling of health information, some states add their own health records laws, and RACGP tells GPs to check whether an AI scribe processes or stores data overseas. We host in Australian cloud regions by default."
+    a: "The Privacy Act doesn't ban it outright, but you stay accountable for an overseas recipient's handling of health information, some states add their own health records laws, and RACGP tells GPs to check whether an AI scribe processes or stores data overseas. Where patient data needs to stay onshore, we host in Australian cloud regions and write that into the Schedule of Work."
   - q: "What does a GP group dashboard cost?"
     a: "As an indicative market range, a group dashboard built on clinical and billing extracts runs about $25,000 to $70,000 (AUD, ex GST), depending on the number of sites, data sources and how clean the data is. That is a range for planning, not a quote."
 sources:

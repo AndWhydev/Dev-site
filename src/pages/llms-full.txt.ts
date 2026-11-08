@@ -11,6 +11,10 @@ const site = 'https://www.awlabs.com.au';
 
 export const GET: APIRoute = async () => {
   const guides = await getCollection('guides');
+  const solutions = (await getCollection('solutions')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+  const locations = (await getCollection('locations')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+  const topIds = new Set(TOP_GUIDES);
+  const otherGuides = guides.filter((g) => !topIds.has(g.id)).sort((a, b) => a.data.title.localeCompare(b.data.title));
   const topGuides = TOP_GUIDES.map((id) => guides.find((g) => g.id === id)).filter(
     (g): g is NonNullable<typeof g> => Boolean(g),
   );
@@ -58,6 +62,15 @@ export const GET: APIRoute = async () => {
     ...services.flatMap((s) => [`### ${s.name}`, `${site}/services/${s.slug}`, s.summary, '']),
     '## Guides',
     ...topGuides.flatMap((g) => [`### ${g.data.title}`, `${site}/guides/${g.id}`, g.data.summary, '']),
+    '## More guides',
+    ...otherGuides.map((g) => `- [${g.data.title}](${site}/guides/${g.id}): ${g.data.description}`),
+    '',
+    '## Industry solutions',
+    ...solutions.map((g) => `- [${g.data.title}](${site}/solutions/${g.id}): ${g.data.description}`),
+    '',
+    '## Locations',
+    ...locations.map((g) => `- [${g.data.title}](${site}/locations/${g.id}): ${g.data.description}`),
+    '',
     '## Proof',
     `- Client stories: ${site}/client-stories`,
     `- Our showcase: ${site}/case-studies`,
