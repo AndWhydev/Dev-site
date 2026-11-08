@@ -171,7 +171,7 @@ Use AI with care where it touches safety decisions such as allocation against fa
 
 A business needing only the integration core and dashboards would sit around $55,000 to $140,000 in that market; adding the app takes it towards $200,000 or beyond. Replacing a legacy TMS is a different scale of project, and our [build vs buy guide](/guides/build-vs-buy-software) is the place to start that decision; see also our [legacy modernisation cost guide](/guides/legacy-modernisation-cost-australia).
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
 ### Questions to settle before you commission anything
 
@@ -183,4 +183,4 @@ Every build starts with our Discovery Audit, $750 plus GST, credited in full aga
 
 ## How AWLabs approaches logistics projects
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps your systems and data flows. After two strategy sessions you receive a fixed price for an agreed scope. Regulatory rules are stored as configuration with effective dates, so the next HVNL change is an update, not a rebuild. Every change passes automated type checks, visual tests and security scans plus a senior engineer's review before it ships. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. The existing [logistics and transport](/industries/logistics-transport) page covers our wider services for the sector.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It maps your systems and data flows. After two strategy sessions you receive a fixed price for an agreed scope. Regulatory rules are stored as configuration with effective dates, so the next HVNL change is an update, not a rebuild. Every change passes automated type checks, visual tests and security scans plus a senior engineer's review before it ships. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. The existing [logistics and transport](/industries/logistics-transport) page covers our wider services for the sector.

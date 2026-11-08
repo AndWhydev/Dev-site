@@ -21,7 +21,7 @@ faqs:
   - q: "Why do quotes for the same project vary by 3 to 5 times?"
     a: "Vendors are pricing different assumptions: how complete the scope is, which integrations are included, who handles testing and deployment, and how much risk they are absorbing. Ask each vendor for hours by feature and a list of exclusions, then compare like with like."
   - q: "Should I pay fixed price or time and materials?"
-    a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. A common market practice is paid discovery, then a fixed price per phase. Our approach is our Discovery Audit, $750 plus GST, credited in full against the build, then one fixed price for the agreed scope."
+    a: "Fixed price suits a well-defined scope, usually after discovery. Time and materials suits work where requirements will change as you learn. A common market practice is paid discovery, then a fixed price per phase. Our approach is our Discovery Audit, a fixed fee credited in full against the build, then one fixed price for the agreed scope."
   - q: "How long does custom software take to build?"
     a: "Published Australian guides put simple tools at about 4 to 8 weeks, mid-complexity systems at 8 to 16 weeks, and enterprise platforms at 4 to 12 months or more. Integration access and decision speed on the client side often set the pace more than coding does."
   - q: "What is the hourly rate for custom software development in Australia?"
@@ -116,7 +116,7 @@ Conduct's phase split is a useful sanity check on any quote: roughly 10% require
 
 1. **Estimate the build hours by feature.** Authentication and user management 60 hours; job status views 90; quote approval workflow 80; invoice payments through a payment provider 70; accounting system sync 110; admin screens 90; automated testing and QA 110; deployment pipeline and environments 40; project management and design 75. Total: 725 hours.
 2. **Apply a blended rate.** A team mixing a senior engineer, a lead and part-time design and QA at an assumed market blended rate of $165 an hour: 725 × $165 = $119,625. (That is about $1,250 a day, below the assumed $1,400 market day rate used in the other cost guides on this site, because the part-time design and QA hours bring the blend down. Neither is our rate.)
-3. **Add discovery.** Two to three weeks of discovery at typical market pricing: $12,000. (Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.)
+3. **Add discovery.** Two to three weeks of discovery at typical market pricing: $12,000. (Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.)
 4. **Total project cost:** $119,625 + $12,000 = $131,625 ex GST.
 5. **Add GST.** $131,625 × 1.1 = $144,787.50 including GST (claimable as an input tax credit if you're registered).
 
@@ -174,4 +174,4 @@ What not to cut: automated testing, code review, security basics and documentati
 
 ## How AWLabs prices custom software
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. You then receive one fixed price for the agreed scope, so the number you approve is the number you pay unless you change the scope. Our teams are senior engineers only, working in AEST hours, and each part of the build is assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. You then receive one fixed price for the agreed scope, so the number you approve is the number you pay unless you change the scope. Our teams are senior engineers only, working in AEST hours, and each part of the build is assigned to you as it is paid for in full, with the repository, logins and accounts handed over after the final payment. Our internal delivery pipeline runs several AI coding agents in parallel, and every change passes type checks, visual tests and security scans and a senior engineer's review before it ships. That speeds up routine work, while the judgement calls stay with people. See our [custom software development service](/services/custom-app-development).

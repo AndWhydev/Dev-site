@@ -182,10 +182,10 @@ Reasonable uses include drafting learning materials for trainer review, summaris
 | Trainer credential and compliance evidence dashboard | 6 to 10 weeks | $30,000 to $70,000 |
 | Custom SMS with STARS, USI and PRISMS integration | 9 to 18 months | Scoped individually, typically well above $300,000 |
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
 If you're an edtech company building an SMS or LMS product for the sector, our [SaaS development](/services/saas-development) service and [SaaS cost guide](/guides/saas-development-cost-australia) are the better starting points.
 
 ## How AWLabs approaches RTO software
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It maps your SMS, LMS and reporting pathway and checks your transition timing before we recommend anything. After two strategy sessions you receive a fixed price for an agreed scope. We'll tell you if your SMS supplier already covers what you need. Where we build, every change passes automated type checks, visual tests and security scans plus a senior engineer's review before release. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It maps your SMS, LMS and reporting pathway and checks your transition timing before we recommend anything. After two strategy sessions you receive a fixed price for an agreed scope. We'll tell you if your SMS supplier already covers what you need. Where we build, every change passes automated type checks, visual tests and security scans plus a senior engineer's review before release. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment.

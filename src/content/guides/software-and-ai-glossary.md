@@ -171,7 +171,7 @@ The definitions describe how the terms are generally used in the Australian mark
 
 ## Delivery and contracts
 
-**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+**Discovery phase.** The discovery phase in software development is a short, paid piece of work before a build that defines scope, approach, risks and cost. See [what is a discovery phase](/guides/software-discovery-phase) and our [AI readiness assessment](/services/ai-readiness-assessment), the Discovery Audit for AI projects. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 **Scope.** Scope is the agreed list of what will be built, and just as importantly what won't. Vague scope is the most common cause of disputes and overruns.
 
@@ -256,4 +256,4 @@ The definitions describe how the terms are generally used in the Australian mark
 
 ## How AWLabs uses these terms
 
-We write our Discovery Audit and Schedule of Work in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. After that you receive one fixed price for the agreed scope, and each part of the build is assigned to you as it is paid for in full. If a term in a document from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).
+We write our Discovery Audit and Schedule of Work in plain language and define any technical term the first time it appears, so the scope you approve is the scope you understand. Every build starts with our Discovery Audit, a fixed fee credited in full against the build. After that you receive one fixed price for the agreed scope, and each part of the build is assigned to you as it is paid for in full. If a term in a document from us, or anyone else, isn't clear, ask; see our [AI consulting](/ai-consulting) service or browse all [guides](/guides).

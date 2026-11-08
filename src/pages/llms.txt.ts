@@ -17,7 +17,7 @@ export const GET: APIRoute = async () => {
   const body = [
     '# AWLabs',
     '',
-    '> AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney based AI and software development company for growing businesses and enterprise. Every build starts with a Discovery Audit ($750 plus GST, credited in full against the build), then one fixed price for an agreed scope, paid in three payments: a deposit on signing, a second payment on acceptance of the first stage and the final payment before handover. Code is assigned to the client on payment, and the hosting region is agreed in the Schedule of Work. Founder Andy Taleb has built software professionally since 2019 and has run sister agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership with a group of developers and founders.',
+    '> AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney based AI and software development company for growing businesses and enterprise. Every build starts with a Discovery Audit (a fixed fee, credited in full against the build), then one fixed price for an agreed scope, paid in three payments: a deposit on signing, a second payment on acceptance of the first stage and the final payment before handover. Code is assigned to the client on payment, and the hosting region is agreed in the Schedule of Work. Founder Andy Taleb has built software professionally since 2019 and has run sister agency All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership with a group of developers and founders.',
     '',
     '## Company',
     line('About', '/about', 'Team, history and how we work'),

@@ -160,7 +160,7 @@ Some content should usually stay out entirely: personnel files, partner remunera
 | Firm-wide rollout | 6 to 12 weeks | Further sources, SSO, audit logs, admin tools, training | $30,000 to $90,000 |
 | Running costs | Monthly | Hosting, vector index, model usage | Varies mainly with query volume and document count; the cost guide shows the arithmetic |
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. The build price is fixed after the audit and set out in your Schedule of Work.
 
 ## How should you test it before staff rely on it?
 
@@ -168,4 +168,4 @@ Every build starts with our Discovery Audit, $750 plus GST, credited in full aga
 
 ## How AWLabs approaches firm knowledge bases
 
-Every build starts with our Discovery Audit, $750 plus GST, credited in full against the build. It audits your permissions and contract restrictions before any content is indexed. After two strategy sessions you receive a fixed price for an agreed scope. We build filter before retrieval access control and an evaluation set agreed with your partners. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. Every change passes automated quality gates and a senior engineer's review before release. See our [RAG knowledge base](/services/rag-knowledge-base) service for more.
+Every build starts with our Discovery Audit, a fixed fee credited in full against the build. It audits your permissions and contract restrictions before any content is indexed. After two strategy sessions you receive a fixed price for an agreed scope. We build filter before retrieval access control and an evaluation set agreed with your partners. We can host your data in Australian cloud regions. If your data must stay in Australia, tell us before you sign and we write it into your Schedule of Work. You own what we build for you once it is paid for: you can see and test the code while we build, and the full repository and logins are handed over after the final payment. Every change passes automated quality gates and a senior engineer's review before release. See our [RAG knowledge base](/services/rag-knowledge-base) service for more.

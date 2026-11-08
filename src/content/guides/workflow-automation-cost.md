@@ -117,7 +117,7 @@ Self-hosting n8n removes the subscription but not the cost. You pay for a server
 | AI extraction at an illustrative few cents per invoice | roughly $30 to $100 a month |
 | Upkeep: about 1 day a month | $1,400 a month |
 
-The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is $750 plus GST, credited in full against the build. Every build after that is one fixed price for the agreed scope.
+The $1,400 day rate is an assumed market day rate for a senior Australian agency team, not our rate. Our Discovery Audit is a fixed fee, credited in full against the build. Every build after that is one fixed price for the agreed scope.
 
 Payback on the build: $11,200 ÷ ($5,200 − about $1,600 running) ≈ 3 months.
 
