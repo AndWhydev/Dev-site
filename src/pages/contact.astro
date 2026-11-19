@@ -128,15 +128,15 @@ import Footer from '../components/Footer.astro';
               </div>
               <div class="form-group">
                 <label for="email">Work Email *</label>
-                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" />
+                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" />
               </div>
               <div class="form-group">
                 <label for="company">Company / Organisation *</label>
                 <input type="text" id="company" name="company" required placeholder="Acme Corporation" autocomplete="organization" />
               </div>
               <div class="form-group">
-                <label for="phone">Phone (Optional)</label>
-                <input type="tel" id="phone" name="phone" placeholder="+61 4XX XXX XXX" autocomplete="tel" />
+                <label for="phone">Australian Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required inputmode="tel" placeholder="04XX XXX XXX" autocomplete="tel" />
               </div>
               <div class="form-group">
                 <label for="service">Service Interested In *</label>
@@ -595,8 +595,40 @@ import Footer from '../components/Footer.astro';
   const success = document.getElementById('form-success') as HTMLElement | null;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
 
+  const phoneInput = document.getElementById('phone') as HTMLInputElement | null;
+  const emailInput = document.getElementById('email') as HTMLInputElement | null;
+
+  // Accepts AU mobiles and landlines (04, 02, 03, 07, 08), 1300/1800 and 13
+  // numbers, with or without +61, spaces, dashes, dots or brackets.
+  // Returns the number in local 0X format, or null if it isn't Australian.
+  const auPhone = (raw: string): string | null => {
+    let d = raw.replace(/[\s\-().]/g, '');
+    if (/^\+?61/.test(d)) d = '0' + d.replace(/^\+?61/, '').replace(/^0/, '');
+    return /^0[2-478]\d{8}$|^1[38]00\d{6}$|^13\d{4}$/.test(d) ? d : null;
+  };
+
+  const checkPhone = () => {
+    if (!phoneInput) return;
+    const val = phoneInput.value.trim();
+    phoneInput.setCustomValidity(
+      !val ? 'Please enter your phone number.'
+      : auPhone(val) ? ''
+      : 'Please enter an Australian phone number, e.g. 0412 345 678 or 02 9123 4567.'
+    );
+  };
+  const checkEmail = () => {
+    if (!emailInput) return;
+    emailInput.setCustomValidity('');
+    if (!emailInput.value.trim()) emailInput.setCustomValidity('Please enter your email address.');
+    else if (!emailInput.validity.valid) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@yourcompany.com.au');
+  };
+  phoneInput?.addEventListener('input', checkPhone);
+  emailInput?.addEventListener('input', checkEmail);
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    checkPhone();
+    checkEmail();
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
     if (btn) {
@@ -615,7 +647,7 @@ import Footer from '../components/Footer.astro';
     const body = [
       `${name} · ${v('company')}`,
       `Email: ${v('email')}`,
-      v('phone') ? `Phone: ${v('phone')}` : null,
+      `Phone: ${auPhone(v('phone')) ?? v('phone')}`,
       `Service: ${v('service')}`,
       v('budget') ? `Budget: ${v('budget')}` : null,
       v('hear') ? `Heard via: ${v('hear')}` : null,
