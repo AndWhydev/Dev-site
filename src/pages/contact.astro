@@ -127,47 +127,12 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <div class="form-group">
-                <label for="email">Work Email *</label>
-                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" />
-              </div>
-              <div class="form-group">
-                <label for="company">Company / Organisation *</label>
-                <input type="text" id="company" name="company" required placeholder="Acme Corporation" autocomplete="organization" />
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" />
               </div>
               <div class="form-group">
                 <label for="phone">Australian Phone Number *</label>
                 <input type="tel" id="phone" name="phone" required inputmode="tel" placeholder="04XX XXX XXX" autocomplete="tel" />
-              </div>
-              <div class="form-group">
-                <label for="service">Service Interested In *</label>
-                <select id="service" name="service" required>
-                  <option value="">Select a service...</option>
-                  <option>AI Agent Development</option>
-                  <option>AI Readiness Assessment</option>
-                  <option>Private LLM Deployment</option>
-                  <option>MCP Server Development</option>
-                  <option>AI Document Processing</option>
-                  <option>Custom App Development</option>
-                  <option>React and Next.js</option>
-                  <option>Flutter Mobile Apps</option>
-                  <option>API Development</option>
-                  <option>Custom SaaS</option>
-                  <option>Legacy Modernisation</option>
-                  <option>LLM Integration</option>
-                  <option>RAG Knowledge Base</option>
-                  <option>AI Chatbot</option>
-                  <option>Data Analytics</option>
-                  <option>Workflow Automation</option>
-                  <option>Cloud and DevOps</option>
-                  <option>Cybersecurity</option>
-                  <option>Database Architecture</option>
-                  <option>Smart Contracts</option>
-                  <option>QA and Testing</option>
-                  <option>Deployment</option>
-                  <option>SEO and Backlinks</option>
-                  <option>Not Sure, Need Advice</option>
-                  <option>Other</option>
-                </select>
               </div>
               <div class="form-group">
                 <label for="budget">Approximate Budget</label>
@@ -206,6 +171,11 @@ import Footer from '../components/Footer.astro';
                   <span>I'd like to request an NDA before discussing details</span>
                 </label>
               </div>
+              <div class="hp" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <p id="form-error" class="form-error" role="alert" hidden></p>
               <button type="submit" class="btn-primary form-submit" id="submit-btn">
                 <span class="submit-label">Send Message</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
@@ -213,12 +183,13 @@ import Footer from '../components/Footer.astro';
               <p class="form-privacy">Your data is kept strictly confidential. <a href="/privacy">Privacy Policy.</a></p>
             </form>
 
-            <div id="form-success" class="form-success" hidden>
+            <div id="form-success" class="form-success" tabindex="-1" aria-live="polite" hidden>
               <div class="success-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <h3>Message Received!</h3>
               <p>Thank you. A member of our team will reply within 1 business day.</p>
+              <p>Want to lock in a time now? <a href="#book" class="success-book">Book a Development Consult</a></p>
             </div>
           </div>
         </div>
@@ -472,6 +443,19 @@ import Footer from '../components/Footer.astro';
     text-align: center;
   }
   .form-success[hidden] { display: none; }
+  .form-success a { color: #0d9373; font-weight: 600; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-error {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    color: #fca5a5;
+    font-size: 0.875rem;
+  }
+  .form-error[hidden] { display: none; }
+  .form-error a { color: inherit; text-decoration: underline; }
   .success-icon {
     width: 64px;
     height: 64px;
@@ -620,16 +604,54 @@ import Footer from '../components/Footer.astro';
     if (!emailInput) return;
     emailInput.setCustomValidity('');
     if (!emailInput.value.trim()) emailInput.setCustomValidity('Please enter your email address.');
-    else if (!emailInput.validity.valid || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(emailInput.value.trim())) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@yourcompany.com.au');
+    else if (!emailInput.validity.valid || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(emailInput.value.trim())) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@example.com');
   };
   phoneInput?.addEventListener('input', checkPhone);
   emailInput?.addEventListener('input', checkEmail);
+
+  const errorBox = document.getElementById('form-error') as HTMLElement | null;
+  const showError = (html: string) => {
+    if (!errorBox) return;
+    errorBox.innerHTML = html;
+    errorBox.hidden = false;
+  };
+  const resetButton = () => {
+    if (!btn) return;
+    btn.disabled = false;
+    const l = btn.querySelector('.submit-label');
+    if (l) l.textContent = 'Send Message';
+  };
+
+  // Package and engagement buttons elsewhere on the site link here with
+  // ?pkg= or ?model=, so carry that choice into the enquiry.
+  const interestLabels: Record<string, string> = {
+    validation: 'Startup MVP: Validation package',
+    launch: 'Startup MVP: Launch package',
+    scale: 'Startup MVP: Scale package',
+    'part-time': 'Staff augmentation: Part Time',
+    'full-time': 'Staff augmentation: Full Time',
+    project: 'Staff augmentation: Project Based',
+  };
+  const params = new URLSearchParams(window.location.search);
+  const interest = interestLabels[params.get('pkg') || params.get('model') || ''] || '';
+  const messageInput = document.getElementById('message') as HTMLTextAreaElement | null;
+  if (interest && messageInput && !messageInput.value) {
+    messageInput.value = `I'm interested in ${interest}.\n\n`;
+  }
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     checkPhone();
     checkEmail();
     if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (errorBox) errorBox.hidden = true;
+
+    // Honeypot: people never see this field, bots fill it in. Pretend it
+    // worked so the bot moves on, but send nothing.
+    if ((document.getElementById('website') as HTMLInputElement | null)?.value) {
+      if (form && success) { form.hidden = true; success.hidden = false; }
+      return;
+    }
 
     if (btn) {
       btn.disabled = true;
@@ -640,17 +662,17 @@ import Footer from '../components/Footer.astro';
     const fd = new FormData(form);
     const v = (k: string) => String(fd.get(k) || '').trim();
     const name = `${v('firstName')} ${v('lastName')}`.trim();
-    const subject = `Enquiry: ${v('service') || 'General'} · ${v('company') || name}`;
+    const subject = `Website enquiry · ${name}`;
     // Body leads with the highest-signal fields so the inbox preview is useful.
     // Deliberately no individual field keys in the payload: Web3Forms switches
     // to its summary template when it sees them and buries this body.
     const body = [
-      `${name} · ${v('company')}`,
+      name,
       `Email: ${v('email')}`,
       `Phone: ${auPhone(v('phone')) ?? v('phone')}`,
-      `Service: ${v('service')}`,
       v('budget') ? `Budget: ${v('budget')}` : null,
       v('hear') ? `Heard via: ${v('hear')}` : null,
+      interest ? `Interested in: ${interest}` : null,
       fd.get('nda') ? 'NDA requested before discussing details' : null,
       '',
       v('message'),
@@ -663,7 +685,7 @@ import Footer from '../components/Footer.astro';
       // No form backend configured: hand off to the visitor's mail client
       // rather than failing silently.
       window.location.href = `mailto:admin@awlabs.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+      resetButton();
       return;
     }
 
@@ -676,14 +698,20 @@ import Footer from '../components/Footer.astro';
       const json = await res.json();
 
       if (json.success) {
-        if (form && success) { form.hidden = true; success.hidden = false; }
+        if (form && success) {
+          form.hidden = true;
+          success.hidden = false;
+          success.focus({ preventScroll: true });
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       } else {
-        alert('Something went wrong. Please email us directly at admin@awlabs.com.au');
-        if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+        throw new Error('send failed');
       }
     } catch {
-      alert('Unable to send. Please email us directly at admin@awlabs.com.au');
-      if (btn) { btn.disabled = false; const l = btn.querySelector('.submit-label'); if (l) l.textContent = 'Send Message'; }
+      // Keep what they typed and give them a one tap fallback.
+      const mail = `mailto:admin@awlabs.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      showError(`Sorry, your message didn't send. Please try again, <a href="${mail}">email it to us instead</a>, or call <a href="tel:1800714148">1800 714 148</a>.`);
+      resetButton();
     }
   });
 </script>
