@@ -128,7 +128,7 @@ import Footer from '../components/Footer.astro';
               </div>
               <div class="form-group">
                 <label for="email">Work Email *</label>
-                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" />
+                <input type="email" id="email" name="email" required placeholder="jane@yourcompany.com.au" autocomplete="email" />
               </div>
               <div class="form-group">
                 <label for="company">Company / Organisation *</label>
@@ -620,7 +620,7 @@ import Footer from '../components/Footer.astro';
     if (!emailInput) return;
     emailInput.setCustomValidity('');
     if (!emailInput.value.trim()) emailInput.setCustomValidity('Please enter your email address.');
-    else if (!emailInput.validity.valid) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@yourcompany.com.au');
+    else if (!emailInput.validity.valid || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(emailInput.value.trim())) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@yourcompany.com.au');
   };
   phoneInput?.addEventListener('input', checkPhone);
   emailInput?.addEventListener('input', checkEmail);
