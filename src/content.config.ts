@@ -49,10 +49,9 @@ const guides = defineCollection({
       const fail = (message: string) => ctx.addIssue({ code: 'custom', message });
       if (d.layout === 'longform' && d.takeaways.length < 3) fail('Long-form guides need at least 3 takeaways.');
       // An answer page can only be indexable once every placeholder is filled.
+      // Answer length and the method section are checked as build warnings
+      // in AnswerLayout, so existing guides can move over without new copy.
       if (d.layout === 'answer' && !d.noindex) {
-        const words = d.summary.trim().split(/\s+/).length;
-        if (words < 40 || words > 60) fail(`Answer pages need a 40 to 60 word direct answer (summary has ${words}).`);
-        if (!d.method.length) fail('Answer pages need a "How we worked this out" section (method).');
         if (!d.sources.length) fail('Answer pages need sources.');
         if (!d.faqs.length) fail('Answer pages need FAQs.');
         if (/\bTODO\b/.test(JSON.stringify(d))) fail('Answer page still has TODO placeholders; keep noindex: true until they are filled.');

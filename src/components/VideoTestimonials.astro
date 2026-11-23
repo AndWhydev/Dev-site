@@ -2,7 +2,7 @@
 import transcripts from '../data/testimonial-transcripts.json';
 import { stories, type Story } from '../data/testimonials';
 
-const { label = 'Client stories' } = Astro.props as { label?: string };
+const { label = 'Client stories', heading = 'Hear it from the people we build with.' } = Astro.props as { label?: string; heading?: string };
 /**
  * VideoTestimonials - client video stories on the homepage.
  * Each card shows a poster image; the video only loads when the visitor
@@ -61,7 +61,7 @@ const videoSchema = {
   <div class="vt-inner">
     <div class="vt-header reveal">
       <span class="section-label">{label}</span>
-      <h2 id="vt-heading" class="section-heading">Hear it from the people we build with.</h2>
+      <h2 id="vt-heading" class="section-heading">{heading}</h2>
       <p class="section-subheading">Founders and business owners talking about their build, in their own words.</p>
     </div>
 

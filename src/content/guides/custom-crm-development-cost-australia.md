@@ -1,4 +1,5 @@
 ---
+layout: answer
 title: "How much does a custom CRM cost in Australia? (and when HubSpot or GoHighLevel is enough)"
 metaTitle: "Custom CRM Development Cost in Australia (2026)"
 description: "Custom CRM development in Australia costs about $20k to $250k+. Five year costs against HubSpot, Salesforce, Zoho and GoHighLevel, and when to build or buy."

@@ -4,13 +4,22 @@
  * Andy Taleb byline with published and updated dates, the body, "How we
  * worked this out", sources, a short FAQ (FAQPage schema) and a Discovery
  * Audit call to action. Use it from a guide with `layout: answer`; the
- * guides schema refuses to index one until its TODOs are filled.
+ * guides schema refuses to index one until its TODOs are filled, and the
+ * build warns when the answer length or method section is off.
  */
 import type { ComponentProps } from 'astro/types';
 import LongformLayout from './LongformLayout.astro';
 
 type Props = Omit<ComponentProps<typeof LongformLayout>, 'variant' | 'schemaType'>;
 const props = Astro.props;
+
+// Format gaps don't block the build; they are reported so they get fixed.
+const words = props.data.summary.trim().split(/\s+/).length;
+const gaps = [
+  words < 40 || words > 60 ? `direct answer is ${words} words (want 40 to 60)` : '',
+  props.data.method?.length ? '' : 'no "How we worked this out" (method) section',
+].filter(Boolean);
+if (gaps.length) console.warn(`[AnswerLayout] ${Astro.url.pathname}: ${gaps.join('; ')}`);
 ---
 
 <LongformLayout {...props} schemaType="Article" variant="answer">

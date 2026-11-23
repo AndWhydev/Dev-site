@@ -8,8 +8,8 @@ interface ShowcaseItem {
   name: string;
   /**
    * What AWLabs or its engineers built on this product, and the year, e.g.
-   * "Built the iOS app and payments backend, 2024". Shown under the name.
-   * Products with an empty role are hidden, so only confirmed work shows.
+   * "Built the iOS app and payments backend, 2024". Shown under the name
+   * once filled in; products with an empty role still show, without it.
    */
   role: string;
   year?: string;
@@ -466,10 +466,8 @@ const categories: Category[] = [
   }
 ];
 
-// Only products with a confirmed role are shown; empty categories drop out.
-const visibleCategories = categories
-  .map((cat) => ({ ...cat, items: cat.items.filter((item) => item.role.trim()) }))
-  .filter((cat) => cat.items.length > 0);
+// Every product shows; the role line appears once its role is filled in.
+const visibleCategories = categories.filter((cat) => cat.items.length > 0);
 ---
 
 <Layout
@@ -532,7 +530,7 @@ const visibleCategories = categories
                       )}
                     </div>
                     <h3>{item.name}</h3>
-                    <p class="cs-role">{item.role}</p>
+                    {item.role.trim() && <p class="cs-role">{item.role}</p>}
                     <p>{item.description}</p>
                     {item.url && (
                       <span class="cs-card-arrow" aria-hidden="true">

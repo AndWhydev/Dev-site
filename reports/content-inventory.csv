@@ -1,14 +1,14 @@
 URL,Title,H1,Word count,Last updated,Author,Internal links pointing to it,In sitemap,Indexable
-https://www.awlabs.com.au,"AI and Software Development, Sydney | AWLabs","Custom platforms, integrations and AI systems for growing Australian businesses and enterprise.",3031,2026-11-23,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/about,About Us: Australian AI and Software Company | AWLabs,We Are AWLabs.,1006,2026-11-23,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/ai-consulting,AI Consulting Sydney & AI Development | AWLabs,Transform Your Business With Artificial Intelligence,2221,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/careers,Careers: Join Our Engineering Team | AWLabs,Build Software That Actually Matters.,501,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/case-studies,Our Work: Products We Built or Helped Build | AWLabs,Products we've built or helped build,188,2026-11-23,AWLabs (Organization),354,yes,yes
-https://www.awlabs.com.au/client-stories,Client Stories and Reviews | AWLabs,"Proof, in our clients' own words.",3982,2026-11-23,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/contact,"Contact Us: Book a Development Consult, Sydney | AWLabs",Tell us what you need built.,433,2026-11-23,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/digital-transformation,Digital Transformation Services Australia | AWLabs,Modernise Your Business For the Digital Age,1867,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/editorial-policy,How We Research and Write: Editorial Policy | AWLabs,How we research and write.,754,2026-09-28,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/guides,Software and AI Guides for Australian Buyers | AWLabs,Guides for planning a software or AI project in Australia,6457,2026-11-23,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au,"AI and Software Development, Sydney | AWLabs","Custom platforms, integrations and AI systems for growing Australian businesses and enterprise.",3046,2026-11-23,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/about,About Us: Australian AI and Software Company | AWLabs,We Are AWLabs.,1006,2026-11-23,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/ai-consulting,AI Consulting Sydney & AI Development | AWLabs,Transform Your Business With Artificial Intelligence,2221,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/careers,Careers: Join Our Engineering Team | AWLabs,Build Software That Actually Matters.,501,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/case-studies,Our Work: Products We Built or Helped Build | AWLabs,Products we've built or helped build,1547,2026-11-23,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au/client-stories,Client Stories and Reviews | AWLabs,"Proof, in our clients' own words.",3982,2026-11-23,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/contact,"Contact Us: Book a Development Consult, Sydney | AWLabs",Tell us what you need built.,433,2026-11-23,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/digital-transformation,Digital Transformation Services Australia | AWLabs,Modernise Your Business For the Digital Age,1867,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/editorial-policy,How We Research and Write: Editorial Policy | AWLabs,How we research and write.,754,2026-09-28,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/guides,Software and AI Guides for Australian Buyers | AWLabs,Guides for planning a software or AI project in Australia,6457,2026-11-23,AWLabs (Organization),352,yes,yes
 https://www.awlabs.com.au/guides/ai-acceptable-use-policy,AI Acceptable Use Policy Template for Australian Business,AI acceptable use policy template for Australian businesses,2500,2026-11-08,Andy Taleb (Person),5,yes,yes
 https://www.awlabs.com.au/guides/ai-agent-cost-australia,AI Agent Development Cost in Australia (2026 Guide),How much does an AI agent cost in Australia? Build and monthly running costs (2026),2823,2026-11-08,Andy Taleb (Person),7,yes,yes
 https://www.awlabs.com.au/guides/ai-agents-vs-chatbots-vs-automation,AI Agent vs Chatbot vs Automation: The Difference,AI agents vs chatbots vs workflow automation: what's the difference?,2745,2026-09-28,Andy Taleb (Person),16,yes,yes
@@ -47,9 +47,8 @@ https://www.awlabs.com.au/guides/computer-vision-cost,Computer Vision Developmen
 https://www.awlabs.com.au/guides/consumer-data-right-software,Consumer Data Right (CDR) Australia: A Guide for Builders,Consumer Data Right in Australia: what software builders need to know,3038,2026-11-08,Andy Taleb (Person),10,yes,yes
 https://www.awlabs.com.au/guides/copilot-vs-custom-ai-assistant,Microsoft Copilot vs a Custom AI Assistant (Australia),Microsoft 365 Copilot vs a custom AI assistant,2558,2026-11-07,Andy Taleb (Person),15,yes,yes
 https://www.awlabs.com.au/guides/cost-to-add-ai-to-an-existing-app,How Much Does It Cost to Add AI to an App? (Australia 2026),How much does it cost to add AI to an existing app?,2844,2026-09-28,Andy Taleb (Person),4,yes,yes
-https://www.awlabs.com.au/guides/custom-crm-cost-australia,Custom CRM Cost in Australia (TODO: year) | AWLabs,How much does a custom CRM cost in Australia?,422,2026-11-23,Andy Taleb (Person),0,no,no
-https://www.awlabs.com.au/guides/custom-crm-development-cost-australia,Custom CRM Development Cost in Australia (2026),How much does a custom CRM cost in Australia? (and when HubSpot or GoHighLevel is enough),3420,2026-11-08,Andy Taleb (Person),14,yes,yes
-https://www.awlabs.com.au/guides/custom-software-development-cost-australia,Custom Software Development Cost in Australia (2026),How much does custom software cost in Australia? (2026 guide),3192,2026-11-07,Andy Taleb (Person),40,yes,yes
+https://www.awlabs.com.au/guides/custom-crm-development-cost-australia,Custom CRM Development Cost in Australia (2026),How much does a custom CRM cost in Australia? (and when HubSpot or GoHighLevel is enough),3469,2026-11-08,Andy Taleb (Person),14,yes,yes
+https://www.awlabs.com.au/guides/custom-software-development-cost-australia,Custom Software Development Cost in Australia (2026),How much does custom software cost in Australia? (2026 guide),3192,2026-11-07,Andy Taleb (Person),39,yes,yes
 https://www.awlabs.com.au/guides/customer-portal-development,Customer Portal Development in Australia: Features and Cost,Customer portal development: what it involves and what it costs,2934,2026-11-08,Andy Taleb (Person),35,yes,yes
 https://www.awlabs.com.au/guides/dashboard-development-cost,Dashboard Development Cost in Australia (2026 Guide),How much does dashboard development cost in Australia? (2026),2464,2026-11-08,Andy Taleb (Person),5,yes,yes
 https://www.awlabs.com.au/guides/data-migration-plan,How to Plan a Data Migration: Steps and a Template,"How to plan a data migration: steps, template and sign off",2225,2026-11-08,Andy Taleb (Person),11,yes,yes
@@ -181,20 +180,20 @@ https://www.awlabs.com.au/guides/workflow-automation-cost,Business Process Autom
 https://www.awlabs.com.au/guides/workforce-management-system-cost,Rostering Software Development Cost in Australia,How much does a rostering and workforce management system cost?,2345,2026-11-08,Andy Taleb (Person),6,yes,yes
 https://www.awlabs.com.au/how-we-work,How We Work: Process and NDA | AWLabs,Our NDA and how a build runs.,556,2026-11-08,AWLabs (Organization),4,no,no
 https://www.awlabs.com.au/industries,Software Development by Industry in Australia | AWLabs,We Don't Just Write Code. We Understand Your Industry.,410,2026-11-08,AWLabs (Organization),14,yes,yes
-https://www.awlabs.com.au/industries/ai-automation,AI Automation Services Australia | AWLabs,AI automation services that make it to production,1751,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/construction-trades,Construction Software Development Australia | AWLabs,Construction software development for Australian builders and trades,1538,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/education,Education Software Development Australia | AWLabs,"Education software development for RTOs, schools and universities",1764,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/finance-fintech,Fintech Software Development Australia | AWLabs,Fintech software development built for APRA and ASIC scrutiny,1725,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/government-enterprise,Government Software Development Australia | AWLabs,Government software development for Australian agencies and councils,1663,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/healthcare,Healthcare Software Development Australia | AWLabs,Healthcare software development for Australian providers,1832,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/hospitality,Hospitality Software Development Australia | AWLabs,Hospitality software development for hotels and venues,1496,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/logistics-transport,Logistics Software Development Australia | AWLabs,Logistics software development for freight and fleet operators,1588,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/manufacturing,Manufacturing Software & ERP Integration Australia | AWLabs,Manufacturing software that connects the factory floor to your ERP,1826,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/real-estate,Real Estate Software Development Australia | AWLabs,Real estate software development for agencies and property managers,1480,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/retail-ecommerce,Retail & Ecommerce Software Development Australia | AWLabs,Retail and ecommerce software development for Australian retailers,1646,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/sports-recreation,Sports Software Development Australia | AWLabs,"Sports software development for clubs, associations and venues",1397,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/industries/web3-crypto,Blockchain & Web3 Development Australia | AWLabs,Blockchain and Web3 development for Australian founders,1310,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/locations,Where We Work: Sydney and Across Australia | AWLabs,"Based in Sydney, delivering across Australia",337,2026-11-08,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au/industries/ai-automation,AI Automation Services Australia | AWLabs,AI automation services that make it to production,1751,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/construction-trades,Construction Software Development Australia | AWLabs,Construction software development for Australian builders and trades,1538,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/education,Education Software Development Australia | AWLabs,"Education software development for RTOs, schools and universities",1764,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/finance-fintech,Fintech Software Development Australia | AWLabs,Fintech software development built for APRA and ASIC scrutiny,1725,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/government-enterprise,Government Software Development Australia | AWLabs,Government software development for Australian agencies and councils,1663,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/healthcare,Healthcare Software Development Australia | AWLabs,Healthcare software development for Australian providers,1832,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/hospitality,Hospitality Software Development Australia | AWLabs,Hospitality software development for hotels and venues,1496,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/logistics-transport,Logistics Software Development Australia | AWLabs,Logistics software development for freight and fleet operators,1588,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/manufacturing,Manufacturing Software & ERP Integration Australia | AWLabs,Manufacturing software that connects the factory floor to your ERP,1826,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/real-estate,Real Estate Software Development Australia | AWLabs,Real estate software development for agencies and property managers,1480,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/retail-ecommerce,Retail & Ecommerce Software Development Australia | AWLabs,Retail and ecommerce software development for Australian retailers,1646,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/sports-recreation,Sports Software Development Australia | AWLabs,"Sports software development for clubs, associations and venues",1397,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/industries/web3-crypto,Blockchain & Web3 Development Australia | AWLabs,Blockchain and Web3 development for Australian founders,1310,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/locations,Where We Work: Sydney and Across Australia | AWLabs,"Based in Sydney, delivering across Australia",337,2026-11-08,AWLabs (Organization),352,yes,yes
 https://www.awlabs.com.au/locations/australia-wide,Software and AI Development Company Across Australia,Software and AI development across Australia: how remote delivery works,2337,2026-09-28,Andy Taleb (byline; Service schema),5,yes,yes
 https://www.awlabs.com.au/locations/brisbane,Software Developers and AI Consultants for Brisbane,AI and software development for Brisbane and Queensland,2396,2026-09-28,Andy Taleb (byline; Service schema),4,yes,yes
 https://www.awlabs.com.au/locations/canberra,Custom Software and AI Consulting for Canberra Agencies,AI and software development for Canberra and federal agencies,2505,2026-11-08,Andy Taleb (byline; Service schema),5,yes,yes
@@ -202,52 +201,52 @@ https://www.awlabs.com.au/locations/melbourne,AI and Custom Software Development
 https://www.awlabs.com.au/locations/sydney-ai-development,AI Development Company and AI Consultants in Sydney,AI development company in Sydney,2903,2026-11-07,Andy Taleb (byline; Service schema),2,yes,yes
 https://www.awlabs.com.au/locations/sydney-app-development,App Development Sydney: Choosing the Best App Developers,"App developers in Sydney: how to choose one, what apps cost and what we build",2943,2026-11-08,Andy Taleb (byline; Service schema),5,yes,yes
 https://www.awlabs.com.au/locations/sydney-custom-software-development,Custom Software Development Company in Sydney,Custom software development in Sydney,2557,2026-09-28,Andy Taleb (byline; Service schema),4,yes,yes
-https://www.awlabs.com.au/methodology,How We Deliver: Our Methodology | AWLabs,How we actually deliver.,1269,2026-11-08,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au/methodology,How We Deliver: Our Methodology | AWLabs,How we actually deliver.,1269,2026-11-08,AWLabs (Organization),352,yes,yes
 https://www.awlabs.com.au/MSA,Master Services Agreement | AWLabs,Master Services Agreement,15612,2026-11-08,AWLabs (Organization),4,no,no
 https://www.awlabs.com.au/NDA,Mutual Non-Disclosure Agreement | AWLabs,Mutual Non-Disclosure Agreement,1400,2026-11-08,AWLabs (Organization),3,no,no
-https://www.awlabs.com.au/our-journey,Our Journey: From Freelance to AWLabs | AWLabs,"Seven years of shipping, one company at a time.",501,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/privacy,Privacy Policy | AWLabs,Privacy Policy,1761,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/r-and-d,R&D Tax Incentive for Software Builds | AWLabs,How the R&D Tax Incentive may apply to software.,734,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services,"Services, AWLabs | Enterprise Software Development",Everything Your Business Needs to Scale.,925,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-agent-development,AI Agent Development Company Australia | AWLabs,"AI Agents That Finish the Job, Inside Limits You Set",3056,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-chatbot,AI Chatbot Development Australia | AWLabs,Conversational Assistants That Answer From Your Knowledge and Know When to Hand Off,2867,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-document-processing,AI Document Processing Services Australia | AWLabs,"From Inbox PDF to Validated Record, Without the Rekeying",2866,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-governance,AI Governance & Responsible AI Services Australia | AWLabs,"Responsible AI as Working Controls, Not a Policy PDF",2902,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-integration,AI Integration Services: Add AI to Existing Apps | AWLabs,"Add AI to the Software You Already Run, Without Rebuilding It",3093,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-readiness-assessment,AI Readiness Assessment & AI Consulting Australia | AWLabs,Find Out Where AI Will Pay Off Before You Build Anything,2791,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ai-voice-agents,AI Voice Agents & AI Receptionists Australia | AWLabs,"AI Receptionists That Answer Every Call, Book the Job and Know When to Put a Person On",2957,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/api-development,API Development Services Australia | AWLabs,APIs That Connect Your Business to Everything It Needs,2800,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/backend-development,Node.js & Python Backend Development Australia | AWLabs,"Backends That Keep Working When Traffic, Data and Integrations Grow",2798,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/blockchain-development,Blockchain Development Company Australia | AWLabs,Enterprise Blockchain Solutions Built on Proven Technology,2249,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/cloud-infrastructure,Cloud & DevOps Consulting Australia | AWLabs,"Cloud Architecture That's Secure, Resilient and Cost Efficient",2820,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/code-audit,Code Audit & Technical Due Diligence Australia | AWLabs,"Know What You Are Buying, Funding or Rebuilding Before You Commit",3027,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/crm-integration,"CRM Integration: HubSpot, Salesforce, GoHighLevel | AWLabs","Connect Your CRM to the Rest of the Business, Without Duplicates or Dead Leads",2516,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/custom-app-development,Custom Software Development Australia | AWLabs,Custom Software Built to Your Exact Specifications,2705,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/cybersecurity,Cybersecurity and Secure Software Development | AWLabs,Security Built Into the Software We Build,2708,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/data-analytics,Data Analytics Consulting Australia | AWLabs,Turn Your Data Into Your Most Valuable Competitive Asset,2627,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/data-engineering,Data Engineering Services Australia | AWLabs,The Data Foundation Your AI and Analytics Depend On,2977,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/database-architecture,Database Architecture & Design Services | AWLabs,Database Architecture That Performs at Enterprise Scale,2380,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/deployment,CI/CD & Deployment Automation Services | AWLabs,Make Shipping to Production Boring,2450,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/enterprise-software,Enterprise Software Development Australia | AWLabs,Enterprise Software That Operates at the Scale You Need,2525,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/flutter-development,Flutter App Developers Sydney | AWLabs,"One App for iOS and Android, With Native Performance",2695,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/fractional-cto,Fractional CTO Sydney & Australia | AWLabs,"Senior Technology Leadership, a Day or Two a Week",2397,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/legacy-modernisation,Legacy System Modernisation Australia | AWLabs,Modernise Your Legacy Systems Without Disrupting Your Business,2818,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/llm-integration,LLM Integration Services Australia | AWLabs,Put Foundation Models to Work Inside the Systems You Already Run,2996,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/mcp-server-development,MCP Server Development Services Australia | AWLabs,"Connect Your Systems to Any AI Client, Once",2779,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/private-llm-deployment,Private & Self Hosted LLM Deployment Australia | AWLabs,"Your Model, Your Cloud Account, Your Region",2984,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/qa-testing,Software Testing & QA Services Australia | AWLabs,"Ship to Production With Confidence, Not Crossed Fingers",2539,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/rag-knowledge-base,RAG Development Services Australia | AWLabs,"Answers Grounded in Your Documents, With Citations You Can Check",2922,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/react-nextjs,Next.js Development Agency Australia | AWLabs,Enterprise Web Applications Powered by React & Next.js,1966,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/saas-development,SaaS Development Company Australia | AWLabs,Launch Your SaaS Product With the Architecture to Scale,2873,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/seo-backlinks,Technical SEO & Link Building Australia | AWLabs,"Sustainable Search Visibility, Built on Real Authority",2504,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/smart-contracts,Smart Contract Development Australia | AWLabs,Smart Contracts Engineered for Audit and Built to Last,2956,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/software-maintenance-support,Software Maintenance & Support Services Australia | AWLabs,"Keep Your Software Patched, Monitored and Moving Forward",2883,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/software-project-rescue,Software Project Rescue & App Takeover Australia | AWLabs,"Developer Gone, App Half Finished? Find Out What Is Worth Saving",3234,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/ui-ux-design,UI/UX Design Agency Australia | AWLabs,Interfaces That Convert. Experiences That Retain.,2360,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/web-mobile-apps,Mobile App Development Australia: iOS & Android | AWLabs,"Mobile App Development for iOS, Android and the Web",2352,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/workflow-automation,Workflow Automation Services Australia | AWLabs,Automate the Work That Shouldn't Need Humans,2732,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/services/xero-myob-integration,Xero & MYOB Integration Developers Australia | AWLabs,Xero and MYOB Integrations That Your Bookkeeper Can Actually Reconcile,2711,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/solutions,AI and Software Solutions by Industry | AWLabs,AI and software solutions shaped by your industry's rules,3326,2026-11-08,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au/our-journey,Our Journey: From Freelance to AWLabs | AWLabs,"Seven years of shipping, one company at a time.",501,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/privacy,Privacy Policy | AWLabs,Privacy Policy,1761,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/r-and-d,R&D Tax Incentive for Software Builds | AWLabs,How the R&D Tax Incentive may apply to software.,734,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services,"Services, AWLabs | Enterprise Software Development",Everything Your Business Needs to Scale.,925,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-agent-development,AI Agent Development Company Australia | AWLabs,"AI Agents That Finish the Job, Inside Limits You Set",3056,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-chatbot,AI Chatbot Development Australia | AWLabs,Conversational Assistants That Answer From Your Knowledge and Know When to Hand Off,2867,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-document-processing,AI Document Processing Services Australia | AWLabs,"From Inbox PDF to Validated Record, Without the Rekeying",2866,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-governance,AI Governance & Responsible AI Services Australia | AWLabs,"Responsible AI as Working Controls, Not a Policy PDF",2902,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-integration,AI Integration Services: Add AI to Existing Apps | AWLabs,"Add AI to the Software You Already Run, Without Rebuilding It",3093,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-readiness-assessment,AI Readiness Assessment & AI Consulting Australia | AWLabs,Find Out Where AI Will Pay Off Before You Build Anything,2791,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ai-voice-agents,AI Voice Agents & AI Receptionists Australia | AWLabs,"AI Receptionists That Answer Every Call, Book the Job and Know When to Put a Person On",2957,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/api-development,API Development Services Australia | AWLabs,APIs That Connect Your Business to Everything It Needs,2800,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/backend-development,Node.js & Python Backend Development Australia | AWLabs,"Backends That Keep Working When Traffic, Data and Integrations Grow",2798,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/blockchain-development,Blockchain Development Company Australia | AWLabs,Enterprise Blockchain Solutions Built on Proven Technology,2249,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/cloud-infrastructure,Cloud & DevOps Consulting Australia | AWLabs,"Cloud Architecture That's Secure, Resilient and Cost Efficient",2820,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/code-audit,Code Audit & Technical Due Diligence Australia | AWLabs,"Know What You Are Buying, Funding or Rebuilding Before You Commit",3027,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/crm-integration,"CRM Integration: HubSpot, Salesforce, GoHighLevel | AWLabs","Connect Your CRM to the Rest of the Business, Without Duplicates or Dead Leads",2516,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/custom-app-development,Custom Software Development Australia | AWLabs,Custom Software Built to Your Exact Specifications,2705,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/cybersecurity,Cybersecurity and Secure Software Development | AWLabs,Security Built Into the Software We Build,2708,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/data-analytics,Data Analytics Consulting Australia | AWLabs,Turn Your Data Into Your Most Valuable Competitive Asset,2627,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/data-engineering,Data Engineering Services Australia | AWLabs,The Data Foundation Your AI and Analytics Depend On,2977,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/database-architecture,Database Architecture & Design Services | AWLabs,Database Architecture That Performs at Enterprise Scale,2380,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/deployment,CI/CD & Deployment Automation Services | AWLabs,Make Shipping to Production Boring,2450,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/enterprise-software,Enterprise Software Development Australia | AWLabs,Enterprise Software That Operates at the Scale You Need,2525,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/flutter-development,Flutter App Developers Sydney | AWLabs,"One App for iOS and Android, With Native Performance",2695,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/fractional-cto,Fractional CTO Sydney & Australia | AWLabs,"Senior Technology Leadership, a Day or Two a Week",2397,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/legacy-modernisation,Legacy System Modernisation Australia | AWLabs,Modernise Your Legacy Systems Without Disrupting Your Business,2818,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/llm-integration,LLM Integration Services Australia | AWLabs,Put Foundation Models to Work Inside the Systems You Already Run,2996,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/mcp-server-development,MCP Server Development Services Australia | AWLabs,"Connect Your Systems to Any AI Client, Once",2779,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/private-llm-deployment,Private & Self Hosted LLM Deployment Australia | AWLabs,"Your Model, Your Cloud Account, Your Region",2984,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/qa-testing,Software Testing & QA Services Australia | AWLabs,"Ship to Production With Confidence, Not Crossed Fingers",2539,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/rag-knowledge-base,RAG Development Services Australia | AWLabs,"Answers Grounded in Your Documents, With Citations You Can Check",2922,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/react-nextjs,Next.js Development Agency Australia | AWLabs,Enterprise Web Applications Powered by React & Next.js,1966,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/saas-development,SaaS Development Company Australia | AWLabs,Launch Your SaaS Product With the Architecture to Scale,2873,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/seo-backlinks,Technical SEO & Link Building Australia | AWLabs,"Sustainable Search Visibility, Built on Real Authority",2504,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/smart-contracts,Smart Contract Development Australia | AWLabs,Smart Contracts Engineered for Audit and Built to Last,2956,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/software-maintenance-support,Software Maintenance & Support Services Australia | AWLabs,"Keep Your Software Patched, Monitored and Moving Forward",2883,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/software-project-rescue,Software Project Rescue & App Takeover Australia | AWLabs,"Developer Gone, App Half Finished? Find Out What Is Worth Saving",3234,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/ui-ux-design,UI/UX Design Agency Australia | AWLabs,Interfaces That Convert. Experiences That Retain.,2360,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/web-mobile-apps,Mobile App Development Australia: iOS & Android | AWLabs,"Mobile App Development for iOS, Android and the Web",2352,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/workflow-automation,Workflow Automation Services Australia | AWLabs,Automate the Work That Shouldn't Need Humans,2732,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/services/xero-myob-integration,Xero & MYOB Integration Developers Australia | AWLabs,Xero and MYOB Integrations That Your Bookkeeper Can Actually Reconcile,2711,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/solutions,AI and Software Solutions by Industry | AWLabs,AI and software solutions shaped by your industry's rules,3326,2026-11-08,AWLabs (Organization),352,yes,yes
 https://www.awlabs.com.au/solutions/3pl-warehouse-software,3PL Warehouse Software in Australia: Billing and Portals,"3PL warehouse software in Australia: billing, retailer labels and client portals",2366,2026-11-08,Andy Taleb (byline; Service schema),8,yes,yes
 https://www.awlabs.com.au/solutions/aged-care-software,Aged Care Software Under the New Aged Care Act,Aged care software under the new Aged Care Act,2728,2026-11-08,Andy Taleb (byline; Service schema),6,yes,yes
 https://www.awlabs.com.au/solutions/ai-for-accounting-firms,AI for Accounting Firms in Australia: Uses and Costs,AI for accounting and advisory firms in Australia,2867,2026-09-28,Andy Taleb (byline; Service schema),10,yes,yes
@@ -343,14 +342,14 @@ https://www.awlabs.com.au/solutions/university-software,"University Software and
 https://www.awlabs.com.au/solutions/veterinary-clinic-software,Veterinary Practice Management Software in Australia,"Veterinary clinic software: wellness plans, pet insurance claiming and group reporting",2295,2026-11-08,Andy Taleb (byline; Service schema),3,yes,yes
 https://www.awlabs.com.au/solutions/waste-management-software,Waste Management Software in Australia: Levy and Tracking,"Waste management and skip bin software in Australia: bookings, weighbridges and state reporting",2496,2026-11-08,Andy Taleb (byline; Service schema),4,yes,yes
 https://www.awlabs.com.au/solutions/wholesale-distribution-software,Wholesale Distribution Software in Australia: EDI and B2B,"Wholesale distribution software in Australia: EDI, product data, rebates and B2B ordering",2492,2026-11-08,Andy Taleb (byline; Service schema),9,yes,yes
-https://www.awlabs.com.au/staff-augmentation,IT Staff Augmentation Australia | AWLabs,Extend Your Team With Experienced Developers,2006,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/startup-mvp,MVP Development Sydney for Startups | AWLabs,From Idea to Launch at One Fixed Price,2312,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/team,Our Team: Engineers and Specialists | AWLabs,The people behind your build.,879,2026-11-23,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/team/andy-taleb,"Andy Taleb, Founder and Director | AWLabs",Andy Taleb,292,2026-11-08,AWLabs (Organization),273,yes,yes
-https://www.awlabs.com.au/technology-radar,Technology Radar: Our Tech Stack | AWLabs,The Tools We Build With,614,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/terms,Terms of Service | AWLabs,Terms of Service,767,2026-11-08,AWLabs (Organization),353,no,no
+https://www.awlabs.com.au/staff-augmentation,IT Staff Augmentation Australia | AWLabs,Extend Your Team With Experienced Developers,2006,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/startup-mvp,MVP Development Sydney for Startups | AWLabs,From Idea to Launch at One Fixed Price,2312,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/team,Our Team: Engineers and Specialists | AWLabs,The people behind your build.,879,2026-11-23,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/team/andy-taleb,"Andy Taleb, Founder and Director | AWLabs",Andy Taleb,292,2026-11-08,AWLabs (Organization),272,yes,yes
+https://www.awlabs.com.au/technology-radar,Technology Radar: Our Tech Stack | AWLabs,The Tools We Build With,614,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/terms,Terms of Service | AWLabs,Terms of Service,767,2026-11-08,AWLabs (Organization),352,no,no
 https://www.awlabs.com.au/thank-you,Thank You | AWLabs,We have your details.,41,2026-11-23,AWLabs (Organization),0,no,no
-https://www.awlabs.com.au/trust,"Trust, Compliance and IP | AWLabs",Read this before you brief us.,1331,2026-11-08,AWLabs (Organization),353,yes,yes
-https://www.awlabs.com.au/web3-crypto,Web3 & Blockchain Development Australia | AWLabs,Build The Future of Decentralised Technology,1758,2026-11-08,AWLabs (Organization),353,yes,yes
+https://www.awlabs.com.au/trust,"Trust, Compliance and IP | AWLabs",Read this before you brief us.,1331,2026-11-08,AWLabs (Organization),352,yes,yes
+https://www.awlabs.com.au/web3-crypto,Web3 & Blockchain Development Australia | AWLabs,Build The Future of Decentralised Technology,1758,2026-11-08,AWLabs (Organization),352,yes,yes
 https://www.awlabs.com.au/welcome,Welcome | AWLabs,"Welcome, here's everything you need before our call",96,2026-11-08,AWLabs (Organization),0,no,no
-https://www.awlabs.com.au/why-audit,Discovery Audit: Before We Build Anything | AWLabs,Most founders don't find out until it's too late.,3240,2026-11-23,AWLabs (Organization),42,yes,yes
+https://www.awlabs.com.au/why-audit,Discovery Audit: Before We Build Anything | AWLabs,Know what you're building before you pay to build it.,3282,2026-11-23,AWLabs (Organization),42,yes,yes
