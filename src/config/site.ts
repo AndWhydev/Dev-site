@@ -4,6 +4,17 @@
  */
 
 export const SITE_URL = 'https://www.awlabs.com.au';
+
+/**
+ * Google Ads. Both are empty until the account gives you the values.
+ * GOOGLE_TAG_ID: the tag ID, e.g. 'AW-123456789' (or a GA4 'G-...' ID).
+ *   When set, the Google tag loads on every page (src/layouts/Layout.astro).
+ * GOOGLE_ADS_SEND_TO: the conversion action's send_to, e.g.
+ *   'AW-123456789/AbCdEfGhIjk'. When set, /thank-you reports one conversion
+ *   per lead (form or booking).
+ */
+export const GOOGLE_TAG_ID = 'AW-000TEST';
+export const GOOGLE_ADS_SEND_TO = 'AW-000TEST/label';
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const LOCAL_ID = `${SITE_URL}/#localbusiness`;
 export const FOUNDER_ID = `${SITE_URL}/team/andy-taleb#person`;

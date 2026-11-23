@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import PremiumEffects from '../components/PremiumEffects.astro';
-import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS } from '../config/site';
+import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS, GOOGLE_TAG_ID } from '../config/site';
 
 interface Props {
   title: string;
@@ -129,6 +129,20 @@ const schema = {
     <!-- Theme color -->
     <meta name="theme-color" content="#0a0f0e" />
     <meta name="msapplication-TileColor" content="#0a0f0e" />
+
+    {GOOGLE_TAG_ID && (
+      <>
+        <!-- Google tag (set GOOGLE_TAG_ID in src/config/site.ts) -->
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}></script>
+        <script is:inline define:vars={{ id: GOOGLE_TAG_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', id);
+        </script>
+      </>
+    )}
 
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
+import { PHONE_DISPLAY, PHONE_TEL, GOOGLE_ADS_SEND_TO } from '../config/site';
 
 /**
  * Lead confirmation page. Every contact form and booking sends people here
@@ -45,9 +45,17 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
   <Footer />
 </Layout>
 
-<script is:inline>
+<script is:inline define:vars={{ sendTo: GOOGLE_ADS_SEND_TO }}>
   (function () {
     var source = new URLSearchParams(location.search).get('source') || '';
+    // One Google Ads conversion per lead, once the send_to value is set.
+    var key = 'awl_conv_' + source;
+    var counted = false;
+    try { counted = sessionStorage.getItem(key) === '1'; } catch (e) {}
+    if (sendTo && source && !counted && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: sendTo });
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+    }
     if (source.indexOf('booking') === 0) {
       var title = document.getElementById('ty-title');
       var lead = document.getElementById('ty-lead');
