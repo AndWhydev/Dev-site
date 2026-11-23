@@ -12,9 +12,9 @@ const { match, heading = 'Guides and related reading', limit = 9 } = Astro.props
 const norm = (h: string) => h.replace(/\/+$/, '');
 const target = norm(match);
 const [guides, solutions, locations] = await Promise.all([
-  getCollection('guides'),
-  getCollection('solutions'),
-  getCollection('locations'),
+  getCollection('guides', (e) => !e.data.noindex),
+  getCollection('solutions', (e) => !e.data.noindex),
+  getCollection('locations', (e) => !e.data.noindex),
 ]);
 
 type Item = { title: string; href: string; kind: string; score: number };

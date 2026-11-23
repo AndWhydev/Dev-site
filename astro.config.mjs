@@ -2,24 +2,11 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import fs from 'node:fs';
-import path from 'node:path';
+import { buildLastmod } from './scripts/lastmod.mjs';
 
-// Map long-form page URLs to their frontmatter `updated` date for <lastmod>.
-// Only pages with a real, maintained date get one (Google ignores unreliable lastmod).
-const lastmod = new Map();
-const noindexed = new Set();
-for (const dir of ['guides', 'solutions', 'locations']) {
-  const base = path.join('src/content', dir);
-  if (!fs.existsSync(base)) continue;
-  for (const f of fs.readdirSync(base).filter((n) => n.endsWith('.md'))) {
-    const m = fs.readFileSync(path.join(base, f), 'utf8').match(/^updated:\s*"?(\d{4}-\d{2}-\d{2})/m);
-    const src = fs.readFileSync(path.join(base, f), 'utf8');
-    const url = `https://www.awlabs.com.au/${dir}/${f.replace(/\.md$/, '')}`;
-    if (m) lastmod.set(url, m[1]);
-    if (/^noindex:\s*true\s*$/m.test(src.split(/^---\s*$/m)[1] ?? '')) noindexed.add(url);
-  }
-}
+// <lastmod> comes from each page's real updated date (frontmatter or last
+// git commit), never the build date. See scripts/lastmod.mjs.
+const { lastmod, noindexed } = buildLastmod();
 
 export default defineConfig({
   site: 'https://www.awlabs.com.au',
@@ -32,7 +19,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        !/\/(welcome|how-we-work|MSA|terms|NDA|thank-you)(\/|$)/.test(new URL(page).pathname) &&
+        !/\/(welcome|how-we-work|MSA|terms|NDA|thank-you|client-pack)(\/|$)/.test(new URL(page).pathname) &&
         !noindexed.has(page.replace(/\/$/, '')),
       serialize: (item) => {
         const d = lastmod.get(item.url.replace(/\/$/, ''));

@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import HubPage from '../../components/HubPage.astro';
 import { guideCategories, type GuideCategory } from '../../data/guide-categories';
 
-const guides = (await getCollection('guides')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const guides = (await getCollection('guides', (g) => !g.data.noindex)).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const order: GuideCategory[] = ['cost', 'compare', 'australia', 'explainer'];
 const groups = order
   .map((id) => ({

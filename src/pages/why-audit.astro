@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LeadForms from '../components/LeadForms.astro';
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../config/site';
 
 const riskCategories = [
@@ -390,7 +391,7 @@ const pillars = [
           </div>
 
           <div class="close-actions">
-            <a href="mailto:andy@awlabs.com.au" class="btn-primary">
+            <a href="#book" class="btn-primary">
               Book Your Discovery Audit
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>
@@ -399,6 +400,16 @@ const pillars = [
           </div>
           <p class="close-note">Or call 1800 714 148</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Booking: same calendars and form as /contact, so this page works as an ads landing page -->
+    <section class="audit-book" aria-labelledby="audit-book-heading">
+      <div class="audit-book-inner">
+        <span class="section-label">Start Here</span>
+        <h2 id="audit-book-heading" class="section-heading">Book a time with us.</h2>
+        <p class="audit-book-sub">Start with a short Development Consult by phone, or book a Zoom with Andy. If the Discovery Audit is right for you, we take you through it on that call.</p>
+        <LeadForms />
       </div>
     </section>
 
@@ -1002,4 +1013,9 @@ const pillars = [
     .close-actions .btn-primary,
     .close-actions .btn-outline { justify-content: center; width: 100%; }
   }
+  .audit-book { padding: 6rem 0; background: #0a0f0e; border-top: 1px solid #1a2620; }
+  .audit-book-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; text-align: center; }
+  .audit-book-inner :global(.form-card) { text-align: left; }
+  .audit-book-sub { color: #8aa09a; font-size: 1rem; line-height: 1.65; margin: 0 auto 2.5rem; max-width: 560px; }
+  @media (max-width: 640px) { .audit-book { padding: 4rem 0; } }
 </style>

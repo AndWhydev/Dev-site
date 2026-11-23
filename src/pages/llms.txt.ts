@@ -10,9 +10,9 @@ const site = 'https://www.awlabs.com.au';
 
 export const GET: APIRoute = async () => {
   const [guides, solutions, locations] = await Promise.all([
-    getCollection('guides'),
-    getCollection('solutions'),
-    getCollection('locations'),
+    getCollection('guides', (e) => !e.data.noindex),
+    getCollection('solutions', (e) => !e.data.noindex),
+    getCollection('locations', (e) => !e.data.noindex),
   ]);
   const line = (title: string, href: string, desc: string) => `- [${title}](${site}${href}): ${desc}`;
   const byTitle = <T extends { data: { title: string } }>(a: T, b: T) => a.data.title.localeCompare(b.data.title);

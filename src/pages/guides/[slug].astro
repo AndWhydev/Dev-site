@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import LongformLayout from '../../layouts/LongformLayout.astro';
+import AnswerLayout from '../../layouts/AnswerLayout.astro';
 import { guideCategories } from '../../data/guide-categories';
 
 export async function getStaticPaths() {
@@ -19,6 +20,12 @@ const crumbs = [
 ];
 ---
 
-<LongformLayout data={entry.data} crumbs={crumbs} headings={headings} schemaType="Article">
-  <Content />
-</LongformLayout>
+{entry.data.layout === 'answer' ? (
+  <AnswerLayout data={entry.data} crumbs={crumbs} headings={headings}>
+    <Content />
+  </AnswerLayout>
+) : (
+  <LongformLayout data={entry.data} crumbs={crumbs} headings={headings} schemaType="Article">
+    <Content />
+  </LongformLayout>
+)}

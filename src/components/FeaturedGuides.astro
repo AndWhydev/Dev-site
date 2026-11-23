@@ -10,7 +10,7 @@ const featured = [
   'bedrock-vs-azure-openai-vs-vertex-australia',
   'custom-software-development-cost-australia',
 ];
-const all = await getCollection('guides');
+const all = await getCollection('guides', (g) => !g.data.noindex);
 const items = featured
   .map((slug) => all.find((g) => g.id === slug))
   .filter((g): g is NonNullable<typeof g> => Boolean(g));

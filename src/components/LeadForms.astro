@@ -1,0 +1,532 @@
+---
+/**
+ * Lead capture used on /contact and /why-audit: GoHighLevel booking calendars
+ * plus the Web3Forms enquiry form. A successful form submit pushes the
+ * dataLayer event awl_lead_submitted and sends the visitor to /thank-you.
+ * The booking calendars redirect to /thank-you from their GHL settings.
+ */
+import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
+---
+
+<!-- Booking -->
+<div class="form-card booking-card" id="book">
+  <h2>Book a Time</h2>
+  <p class="form-sub">Pick whichever suits you. Times are shown in your local time zone.</p>
+  <div class="booking-tabs" role="tablist" aria-label="Booking type">
+    <button type="button" role="tab" class="booking-tab" id="tab-phone" aria-selected="true" aria-controls="panel-phone" data-panel="panel-phone">Phone call</button>
+    <button type="button" role="tab" class="booking-tab" id="tab-zoom" aria-selected="false" aria-controls="panel-zoom" data-panel="panel-zoom" tabindex="-1">Zoom with Andy</button>
+  </div>
+  <div class="booking-panel" id="panel-phone" role="tabpanel" aria-labelledby="tab-phone">
+    <p class="booking-note">A 15 minute Development Consult by phone. We'll ring you at the time you choose.</p>
+    <iframe id="discovery-call-awu" class="booking-frame" title="Book a phone Development Consult" data-src="https://links.awlabs.com.au/widget/bookings/discovery-call-awu" scrolling="no" loading="lazy"></iframe>
+  </div>
+  <div class="booking-panel" id="panel-zoom" role="tabpanel" aria-labelledby="tab-zoom" hidden>
+    <p class="booking-note">A Zoom meeting with Andy, about an hour. The link is in your confirmation email.</p>
+    <iframe id="dam-call-awlabs" class="booking-frame" title="Book a Zoom meeting with Andy" data-src="https://links.awlabs.com.au/widget/bookings/dam-call-awlabs" scrolling="no" loading="lazy"></iframe>
+  </div>
+  <div class="after-book">
+    <h3>What happens after you book</h3>
+    <ol>
+      <li>You get a confirmation email with your time. For Zoom, the meeting link is in it.</li>
+      <li>At that time we ring you, or Andy meets you on Zoom.</li>
+      <li>We talk through what you want to build and tell you honestly whether we are the right fit.</li>
+      <li>If we are, we explain the next step, the Discovery Audit, and send you the details in writing.</li>
+    </ol>
+    <p>Need to move your time? Reply to your confirmation email or call <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
+  </div>
+</div>
+
+<!-- Contact Form -->
+<div class="form-card">
+  <h2>Send a Message</h2>
+  <p class="form-sub">Prefer to write it out? We'll reply within 1 business day.</p>
+
+  <form id="contact-form" class="contact-form" novalidate>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="firstName" required placeholder="Jane" autocomplete="given-name" />
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="lastName" required placeholder="Smith" autocomplete="family-name" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" />
+    </div>
+    <div class="form-group">
+      <label for="phone">Australian Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required inputmode="tel" placeholder="04XX XXX XXX" autocomplete="tel" />
+    </div>
+    <div class="form-group">
+      <label for="budget">Approximate Budget</label>
+      <select id="budget" name="budget">
+        <option value="">Select range...</option>
+        <option>Under $50K</option>
+        <option>$50K to $150K</option>
+        <option>$150K to $500K</option>
+        <option>$500K to $1M</option>
+        <option>$1M+</option>
+        <option>Ongoing / Staff Augmentation</option>
+        <option>Not Sure Yet</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="hear">How did you hear about us?</label>
+      <select id="hear" name="hear">
+        <option value="">Select...</option>
+        <option>Google Search</option>
+        <option>AI assistant (ChatGPT, Claude, Perplexity, Gemini)</option>
+        <option>LinkedIn</option>
+        <option>Referral from another business</option>
+        <option>All Webbed Up (sister company)</option>
+        <option>Industry event</option>
+        <option>Social media</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Tell Us About Your Project *</label>
+      <textarea id="message" name="message" required rows="5" placeholder="Describe what you're trying to build or the problem you need to solve. The more context you give, the better prepared we'll be for our call."></textarea>
+    </div>
+    <div class="form-check">
+      <label>
+        <input type="checkbox" name="nda" id="nda" />
+        <span>I'd like to request an NDA before discussing details</span>
+      </label>
+    </div>
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <p id="form-error" class="form-error" role="alert" hidden></p>
+    <button type="submit" class="btn-primary form-submit" id="submit-btn">
+      <span class="submit-label">Send Message</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
+    <p class="form-privacy">Your data is kept strictly confidential. <a href="/privacy">Privacy Policy.</a></p>
+  </form>
+
+  <div id="form-success" class="form-success" tabindex="-1" aria-live="polite" hidden>
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3>Message Received!</h3>
+    <p>Thank you. A member of our team will reply within 1 business day.</p>
+    <p>Want to lock in a time now? <a href="#book" class="success-book">Book a Development Consult</a></p>
+  </div>
+</div>
+
+<style>
+  .after-book {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .after-book h3 {
+    margin: 0 0 0.75rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .after-book ol {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    color: #a9bcb5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .after-book li + li { margin-top: 0.35rem; }
+  .after-book p { margin: 0; color: #8aa09a; font-size: 0.85rem; }
+  .after-book a { color: #0d9373; }
+  .form-card {
+    background: #0f1614;
+    border: 1px solid #1e2d28;
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+  .form-card h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.375rem;
+  }
+  .form-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #7f978d;
+    margin: 0 0 2rem;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .form-group label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #8aa09a;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: #0a0f0e;
+    border: 1px solid #1e2d28;
+    border-radius: 9px;
+    padding: 0.6875rem 0.875rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: white;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6359' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem;
+  }
+  .form-group select option { background: #0f1614; color: white; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #7f978d; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #0d9373;
+    box-shadow: 0 0 0 3px rgba(13,147,115,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-check label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa09a;
+    cursor: pointer;
+  }
+  .form-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    accent-color: #0d9373;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9375rem;
+    font-size: 1rem;
+  }
+  .form-privacy {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #7f978d;
+    text-align: center;
+    margin: 0;
+  }
+  .form-privacy a { color: #0d9373; text-decoration: none; }
+  .form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  .form-success[hidden] { display: none; }
+  .form-success a { color: #0d9373; font-weight: 600; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-error {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    color: #fca5a5;
+    font-size: 0.875rem;
+  }
+  .form-error[hidden] { display: none; }
+  .form-error a { color: inherit; text-decoration: underline; }
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(13,147,115,0.1);
+    border: 2px solid rgba(13,147,115,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-success h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+  .form-success p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: #8aa09a;
+    margin: 0;
+    max-width: 340px;
+    line-height: 1.6;
+  }
+
+
+  /* Booking */
+  .booking-card { margin-bottom: 1.5rem; }
+  .booking-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .booking-tab {
+    flex: 1;
+    font-family: 'Sora', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #1e2d28;
+    background: transparent;
+    color: #8aa69b;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .booking-tab:hover { color: white; border-color: #0d9373; }
+  .booking-tab[aria-selected="true"] { background: #0d9373; border-color: #0d9373; color: white; }
+  .booking-tab:focus-visible { outline: 2px solid #0d9373; outline-offset: 2px; }
+  .booking-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #8aa69b;
+    margin: 0 0 1rem;
+  }
+  .booking-panel[hidden] { display: none; }
+  .booking-frame {
+    width: 100%;
+    min-height: 640px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .form-card { padding: 1.75rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .booking-card { padding: 1.5rem 0.75rem; }
+    .booking-card h2, .booking-card .form-sub, .booking-card .booking-note { padding: 0 0.75rem; }
+    .booking-frame { min-height: 1000px; border-radius: 10px; }
+    .booking-tab { font-size: 0.8125rem; padding: 0.75rem 0.5rem; }
+  }
+</style>
+
+<script>
+  // Booking tabs: load each GoHighLevel calendar only when its tab is first shown.
+  const loadFrame = (panel: HTMLElement | null) => {
+    const f = panel?.querySelector<HTMLIFrameElement>('iframe[data-src]');
+    if (f && !f.src) f.src = f.dataset.src!;
+  };
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.booking-tab'));
+  const select = (tab: HTMLButtonElement) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.dataset.panel!);
+      if (panel) panel.hidden = !on;
+      if (on) loadFrame(panel);
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      select(next); next.focus();
+    });
+  });
+  const bookingCard = document.querySelector<HTMLElement>('.booking-card');
+  if (bookingCard) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        loadFrame(document.querySelector('.booking-panel:not([hidden])'));
+        io.disconnect();
+      }
+    }, { rootMargin: '400px' });
+    io.observe(bookingCard);
+  }
+</script>
+<script is:inline src="https://links.awlabs.com.au/js/form_embed.js" defer></script>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success') as HTMLElement | null;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+  const phoneInput = document.getElementById('phone') as HTMLInputElement | null;
+  const emailInput = document.getElementById('email') as HTMLInputElement | null;
+
+  // Accepts AU mobiles and landlines (04, 02, 03, 07, 08), 1300/1800 and 13
+  // numbers, with or without +61, spaces, dashes, dots or brackets.
+  // Returns the number in local 0X format, or null if it isn't Australian.
+  const auPhone = (raw: string): string | null => {
+    let d = raw.replace(/[\s\-().]/g, '');
+    if (/^\+?61/.test(d)) d = '0' + d.replace(/^\+?61/, '').replace(/^0/, '');
+    return /^0[2-478]\d{8}$|^1[38]00\d{6}$|^13\d{4}$/.test(d) ? d : null;
+  };
+
+  const checkPhone = () => {
+    if (!phoneInput) return;
+    const val = phoneInput.value.trim();
+    phoneInput.setCustomValidity(
+      !val ? 'Please enter your phone number.'
+      : auPhone(val) ? ''
+      : 'Please enter an Australian phone number, e.g. 0412 345 678 or 02 9123 4567.'
+    );
+  };
+  const checkEmail = () => {
+    if (!emailInput) return;
+    emailInput.setCustomValidity('');
+    if (!emailInput.value.trim()) emailInput.setCustomValidity('Please enter your email address.');
+    else if (!emailInput.validity.valid || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(emailInput.value.trim())) emailInput.setCustomValidity('Please enter a valid email address, e.g. jane@example.com');
+  };
+  phoneInput?.addEventListener('input', checkPhone);
+  emailInput?.addEventListener('input', checkEmail);
+
+  const errorBox = document.getElementById('form-error') as HTMLElement | null;
+  const showError = (html: string) => {
+    if (!errorBox) return;
+    errorBox.innerHTML = html;
+    errorBox.hidden = false;
+  };
+  const resetButton = () => {
+    if (!btn) return;
+    btn.disabled = false;
+    const l = btn.querySelector('.submit-label');
+    if (l) l.textContent = 'Send Message';
+  };
+
+  // Package and engagement buttons elsewhere on the site link here with
+  // ?pkg= or ?model=, so carry that choice into the enquiry.
+  const interestLabels: Record<string, string> = {
+    validation: 'Startup MVP: Validation package',
+    launch: 'Startup MVP: Launch package',
+    scale: 'Startup MVP: Scale package',
+    'part-time': 'Staff augmentation: Part Time',
+    'full-time': 'Staff augmentation: Full Time',
+    project: 'Staff augmentation: Project Based',
+  };
+  const params = new URLSearchParams(window.location.search);
+  const interest = interestLabels[params.get('pkg') || params.get('model') || ''] || '';
+  const messageInput = document.getElementById('message') as HTMLTextAreaElement | null;
+  if (interest && messageInput && !messageInput.value) {
+    messageInput.value = `I'm interested in ${interest}.\n\n`;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    checkPhone();
+    checkEmail();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (errorBox) errorBox.hidden = true;
+
+    // Honeypot: people never see this field, bots fill it in. Pretend it
+    // worked so the bot moves on, but send nothing.
+    if ((document.getElementById('website') as HTMLInputElement | null)?.value) {
+      if (form && success) { form.hidden = true; success.hidden = false; }
+      return;
+    }
+
+    if (btn) {
+      btn.disabled = true;
+      const l = btn.querySelector('.submit-label');
+      if (l) l.textContent = 'Sending…';
+    }
+
+    const fd = new FormData(form);
+    const v = (k: string) => String(fd.get(k) || '').trim();
+    const name = `${v('firstName')} ${v('lastName')}`.trim();
+    const subject = `Website enquiry · ${name}`;
+    // Body leads with the highest-signal fields so the inbox preview is useful.
+    // Deliberately no individual field keys in the payload: Web3Forms switches
+    // to its summary template when it sees them and buries this body.
+    const body = [
+      name,
+      `Email: ${v('email')}`,
+      `Phone: ${auPhone(v('phone')) ?? v('phone')}`,
+      v('budget') ? `Budget: ${v('budget')}` : null,
+      v('hear') ? `Heard via: ${v('hear')}` : null,
+      interest ? `Interested in: ${interest}` : null,
+      `Sent from: ${window.location.pathname}`,
+      fd.get('nda') ? 'NDA requested before discussing details' : null,
+      '',
+      v('message'),
+    ].filter((l) => l !== null).join('\n');
+
+    // Web3Forms access keys are public by design (they only allow sending to
+    // the inbox registered against the key, admin@awlabs.com.au).
+    const key = import.meta.env.PUBLIC_WEB3FORMS_KEY || '1fb248ed-c46d-4ba0-bdb6-6b18cbb7e07c';
+    if (!key) {
+      // No form backend configured: hand off to the visitor's mail client
+      // rather than failing silently.
+      window.location.href = `mailto:admin@awlabs.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      resetButton();
+      return;
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ access_key: key, subject, from_name: name, replyto: v('email'), message: body }),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        // Google Ads lead tracking: push the event, then send them to the
+        // thank-you page (the conversion page). The inline success message
+        // only shows if that navigation is blocked.
+        const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        w.dataLayer = w.dataLayer || [];
+        if (form && success) {
+          form.hidden = true;
+          success.hidden = false;
+        }
+        // Wait for Google Tag Manager to send its tags (eventCallback) before
+        // leaving the page; without GTM the callback never fires, so the
+        // timeout moves on after a moment.
+        let gone = false;
+        const go = () => { if (!gone) { gone = true; window.location.assign('/thank-you?source=form'); } };
+        w.dataLayer.push({ event: 'awl_lead_submitted', lead_source: 'form', lead_page: window.location.pathname, lead_interest: interest || undefined, eventCallback: go, eventTimeout: 1500 });
+        setTimeout(go, 1600);
+      } else {
+        throw new Error('send failed');
+      }
+    } catch {
+      // Keep what they typed and give them a one tap fallback.
+      const mail = `mailto:admin@awlabs.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      showError(`Sorry, your message didn't send. Please try again, <a href="${mail}">email it to us instead</a>, or call <a href="tel:1800714148">1800 714 148</a>.`);
+      resetButton();
+    }
+  });
+</script>

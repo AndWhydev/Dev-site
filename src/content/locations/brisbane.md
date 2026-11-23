@@ -32,7 +32,7 @@ faqs:
   - q: "How much does custom software development cost in Brisbane?"
     a: "Australian market ranges run from about $15,000 to $40,000 (AUD, ex GST) for a simple internal tool, $40,000 to $150,000 for a system such as a customer portal or job management platform, and $150,000 or more for platforms spanning several systems. Brisbane day rates sit below Sydney, but integrations, user roles, data migration and security move the price far more than your postcode. We quote a fixed price after the Discovery Audit."
   - q: "Where can Brisbane businesses check your reviews?"
-    a: "On Google, where AWLabs holds a 5.0 rating from 37 reviews at the time of writing (November 2026). Our sister company All Webbed Up, which builds websites and runs marketing, has its own separate reviews, so read those as AWU's rather than ours. For a software project the more useful check is a reference call: ask us to connect you with a past client whose project resembles yours, and ask how we handled changes in scope."
+    a: "On Google, where AWLabs holds a 5.0 rating. Our sister company All Webbed Up, which builds websites and runs marketing, has its own separate reviews, so read those as AWU's rather than ours. For a software project the more useful check is a reference call: ask us to connect you with a past client whose project resembles yours, and ask how we handled changes in scope."
 sources:
   - title: "Information Privacy and Other Legislation Amendment Act 2023 (as made)"
     url: "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2023-032"

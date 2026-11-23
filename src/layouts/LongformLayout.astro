@@ -3,6 +3,7 @@
  * Long-form search page: guides, solutions and location pages.
  * Structure follows SEO-SOP.md section 5: answer first, takeaways, body,
  * FAQs, sources, related links, visible "last updated" date.
+ * variant="answer" is the question page format (see AnswerLayout.astro).
  */
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
@@ -25,6 +26,7 @@ interface Props {
     noindex?: boolean;
     summary: string;
     takeaways: string[];
+    method?: string[];
     faqs: { q: string; a: string }[];
     sources: { title: string; url: string; publisher?: string }[];
     related: LinkItem[];
@@ -36,9 +38,14 @@ interface Props {
   /** 'Article' for guides, 'Service' for solution and location pages. */
   schemaType: 'Article' | 'Service';
   areaServed?: string;
+  /** 'answer': question H1, direct answer, how we worked it out, sources,
+      FAQ, Discovery Audit call to action. */
+  variant?: 'longform' | 'answer';
 }
 
-const { data, crumbs, headings, schemaType, areaServed } = Astro.props;
+const { data, crumbs, headings, schemaType, areaServed, variant = 'longform' } = Astro.props;
+const isAnswer = variant === 'answer';
+const method = data.method ?? [];
 const siteUrl = 'https://www.awlabs.com.au';
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
 const orgRef = { '@id': ORG_ID };
@@ -143,25 +150,17 @@ const disclaimers: Record<string, string> = {
         </nav>
         <span class="section-label">{data.eyebrow}</span>
         <h1 class="lf-title">{data.title}</h1>
-        {schemaType === 'Article' ? (
-          <div class="lf-byline">
-            <img src={author.photo} alt={`${author.name}, ${author.role}`} width="48" height="48" class="lf-byline-photo" />
-            <div class="lf-byline-text">
-              <p class="lf-byline-name">By <a href={author.url} rel="author">{author.name}</a>, {author.role}</p>
-              <p class="lf-meta">
-                <span>Published <time datetime={iso(data.published)}>{fmt(data.published)}</time></span>
-                <span class="lf-meta-sep">Updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
-                <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
-              </p>
-            </div>
+        <div class="lf-byline">
+          <img src={author.photo} alt={`${author.name}, ${author.role}`} width="48" height="48" class="lf-byline-photo" />
+          <div class="lf-byline-text">
+            <p class="lf-byline-name">By <a href={author.url} rel="author">{author.name}</a>, {author.role}</p>
+            <p class="lf-meta">
+              <span>Published <time datetime={iso(data.published)}>{fmt(data.published)}</time></span>
+              <span class="lf-meta-sep">Updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
+              <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
+            </p>
           </div>
-        ) : (
-          <p class="lf-meta">
-            <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
-            <span class="lf-meta-sep">Published by <a href="/about">AWLabs</a></span>
-            <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
-          </p>
-        )}
+        </div>
       </div>
     </header>
 
@@ -172,16 +171,40 @@ const disclaimers: Record<string, string> = {
           <p>{data.summary}</p>
         </section>
 
-        <section class="lf-takeaways" aria-labelledby="lf-takeaways">
-          <h2 id="lf-takeaways" class="lf-small-heading">Key takeaways</h2>
-          <ul>
-            {data.takeaways.map((t) => <li>{t}</li>)}
-          </ul>
-        </section>
+        {data.takeaways.length > 0 && (
+          <section class="lf-takeaways" aria-labelledby="lf-takeaways">
+            <h2 id="lf-takeaways" class="lf-small-heading">Key takeaways</h2>
+            <ul>
+              {data.takeaways.map((t) => <li>{t}</li>)}
+            </ul>
+          </section>
+        )}
 
         <div class="lf-prose">
           <slot />
         </div>
+
+        {isAnswer && method.length > 0 && (
+          <section class="lf-method" aria-labelledby="lf-method-heading">
+            <h2 id="lf-method-heading">How we worked this out</h2>
+            <ol>
+              {method.map((m) => <li>{m}</li>)}
+            </ol>
+          </section>
+        )}
+
+        {isAnswer && data.sources.length > 0 && (
+          <section class="lf-sources" aria-labelledby="lf-sources-heading">
+            <h2 id="lf-sources-heading" class="lf-small-heading">Sources</h2>
+            <ol>
+              {data.sources.map((s) => (
+                <li>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>{s.publisher && <span class="lf-src-pub">, {s.publisher}</span>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         {data.faqs.length > 0 && (
           <section class="lf-faqs" aria-labelledby="lf-faq-heading">
@@ -197,7 +220,7 @@ const disclaimers: Record<string, string> = {
 
         {data.disclaimer !== 'none' && <p class="lf-disclaimer">{disclaimers[data.disclaimer]}</p>}
 
-        {data.sources.length > 0 && (
+        {!isAnswer && data.sources.length > 0 && (
           <section class="lf-sources" aria-labelledby="lf-sources-heading">
             <h2 id="lf-sources-heading" class="lf-small-heading">Sources</h2>
             <ol>
@@ -207,6 +230,15 @@ const disclaimers: Record<string, string> = {
                 </li>
               ))}
             </ol>
+          </section>
+        )}
+
+        {isAnswer && (
+          <section class="lf-audit" aria-labelledby="lf-audit-heading">
+            <h2 id="lf-audit-heading">Want a figure for your build, not a range?</h2>
+            <p>Every AWLabs build starts with a Discovery Audit. We work through what you need built, your data and the risks, then give you one fixed price Schedule of Work.</p>
+            <a href="/why-audit" class="btn-primary">About the Discovery Audit</a>
+            <a href="/contact#book" class="lf-cta-link">Or book a Development Consult &rarr;</a>
           </section>
         )}
       </article>
@@ -221,9 +253,9 @@ const disclaimers: Record<string, string> = {
           </nav>
         )}
         <div class="lf-cta-card">
-          <p class="lf-cta-title">Talk to us about your idea</p>
+          <p class="lf-cta-title">{isAnswer ? 'Get a fixed price for your build' : 'Talk to us about your idea'}</p>
           <p class="lf-cta-copy">Sydney based. Every build starts with a Discovery Audit, a fixed fee credited in full against a fixed price build.</p>
-          <a href="/contact" class="btn-primary lf-cta-btn">Book a call</a>
+          <a href={isAnswer ? '/why-audit' : '/contact'} class="btn-primary lf-cta-btn">{isAnswer ? 'About the Discovery Audit' : 'Book a call'}</a>
           {data.service && <a href={data.service.href} class="lf-cta-link">{data.service.title} &rarr;</a>}
         </div>
       </aside>
@@ -318,6 +350,14 @@ const disclaimers: Record<string, string> = {
   .lf-faq summary::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: #0d9373; font-size: 1.4rem; font-weight: 400; }
   .lf-faq[open] summary::after { content: '\2212'; }
   .lf-faq p { margin: 0; padding: 0 1.25rem 1.2rem; color: #c9d6d1; line-height: 1.7; }
+
+  .lf-method { margin-top: 3rem; }
+  .lf-method h2, .lf-audit h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.4rem, 2.6vw, 1.75rem); font-weight: 700; margin: 0 0 1rem; }
+  .lf-method ol { list-style: decimal; margin: 0; padding-left: 1.35rem; color: #c9d6d1; line-height: 1.7; }
+  .lf-method li { margin-bottom: 0.5rem; }
+  .lf-method li::marker { color: #0d9373; }
+  .lf-audit { margin-top: 3.5rem; padding: 1.75rem; border: 1px solid rgba(13,147,115,0.35); border-radius: 16px; background: linear-gradient(180deg, rgba(13,147,115,0.10), rgba(13,147,115,0.03)); }
+  .lf-audit p { color: #c9d6d1; line-height: 1.7; margin: 0 0 1.25rem; }
 
   .lf-disclaimer { margin: 2.5rem 0 0; padding: 1rem 1.25rem; border: 1px dashed #2a3d35; border-radius: 10px; font-size: 0.875rem; color: #8aa09a; line-height: 1.6; }
 

@@ -29,21 +29,41 @@ const base = z.object({
   service: link.optional(),
   /** Adds a general-information disclaimer. */
   disclaimer: z.enum(['none', 'legal', 'tax', 'financial']).default('none'),
+  /** true = robots noindex, and left out of the sitemap, listings and llms.txt. */
+  noindex: z.boolean().default(false),
 });
 
 const guides = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/guides' }),
-  schema: base.extend({
-    category: z.enum(['cost', 'compare', 'explainer', 'australia']),
-  }),
+  schema: base
+    .extend({
+      category: z.enum(['cost', 'compare', 'explainer', 'australia']),
+      /** 'answer' = question page (AnswerLayout): the H1 is the question and
+          `summary` is the 40 to 60 word direct answer. */
+      layout: z.enum(['longform', 'answer']).default('longform'),
+      /** Answer pages: the "How we worked this out" steps. */
+      method: z.array(z.string()).default([]),
+      takeaways: z.array(z.string()).max(6).default([]),
+    })
+    .superRefine((d, ctx) => {
+      const fail = (message: string) => ctx.addIssue({ code: 'custom', message });
+      if (d.layout === 'longform' && d.takeaways.length < 3) fail('Long-form guides need at least 3 takeaways.');
+      // An answer page can only be indexable once every placeholder is filled.
+      if (d.layout === 'answer' && !d.noindex) {
+        const words = d.summary.trim().split(/\s+/).length;
+        if (words < 40 || words > 60) fail(`Answer pages need a 40 to 60 word direct answer (summary has ${words}).`);
+        if (!d.method.length) fail('Answer pages need a "How we worked this out" section (method).');
+        if (!d.sources.length) fail('Answer pages need sources.');
+        if (!d.faqs.length) fail('Answer pages need FAQs.');
+        if (/\bTODO\b/.test(JSON.stringify(d))) fail('Answer page still has TODO placeholders; keep noindex: true until they are filled.');
+      }
+    }),
 });
 
 const solutions = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/solutions' }),
   schema: base.extend({
     industry: link,
-    /** true = robots noindex, and left out of the sitemap and llms.txt. */
-    noindex: z.boolean().default(false),
   }),
 });
 

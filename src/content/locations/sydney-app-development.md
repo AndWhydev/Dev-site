@@ -173,4 +173,4 @@ AWLabs is a Sydney company based in Five Dock. Our founder, Andy Taleb, has been
 4. **Build.** Senior engineers lead the build, with updates every Tuesday and Friday, Sydney time, and test builds on your own devices.
 5. **Launch and support.** Store submission under your accounts, a 30 day warranty, then an optional Care Plan. The code and IP are assigned to you as each part is paid for.
 
-At the time of writing (November 2026), AWLabs holds a 5.0 Google rating from 37 reviews. See [web and mobile app development](/services/web-mobile-apps) for what we build, or [startup MVP development](/startup-mvp) if you're a founder planning a first release.
+AWLabs holds a 5.0 Google rating; [read our Google reviews](https://search.google.com/local/reviews?placeid=ChIJ7SB3xTa7EmsRecxLdpkCzIQ). See [web and mobile app development](/services/web-mobile-apps) for what we build, or [startup MVP development](/startup-mvp) if you're a founder planning a first release.

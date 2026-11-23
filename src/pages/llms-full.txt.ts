@@ -10,7 +10,7 @@ import { DISAMBIGUATION, FACT_TEXT, HOURS_LINE, REVIEWS_LINE } from '../lib/fact
 const site = 'https://www.awlabs.com.au';
 
 export const GET: APIRoute = async () => {
-  const guides = await getCollection('guides');
+  const guides = await getCollection('guides', (g) => !g.data.noindex);
   const solutions = (await getCollection('solutions')).sort((a, b) => a.data.title.localeCompare(b.data.title));
   const locations = (await getCollection('locations')).sort((a, b) => a.data.title.localeCompare(b.data.title));
   const topIds = new Set(TOP_GUIDES);
