@@ -6,6 +6,12 @@ import CTABanner from '../../components/CTABanner.astro';
 
 interface ShowcaseItem {
   name: string;
+  /**
+   * What AWLabs or its engineers built on this product, and the year, e.g.
+   * "Built the iOS app and payments backend, 2024". Shown under the name.
+   * Products with an empty role are hidden, so only confirmed work shows.
+   */
+  role: string;
   year?: string;
   description: string;
   url?: string;
@@ -30,40 +36,47 @@ const categories: Category[] = [
     items: [
       {
         name: 'Chalk',
+        role: '',
         year: '2022',
         description: 'A real-time feature and data platform for machine-learning and AI-agent workloads, serving high-throughput feature queries into customer-owned cloud accounts.',
         url: 'https://www.chalk.ai',
       },
       {
         name: 'ZeroGPT',
+        role: '',
         description: 'An AI content detector that checks text for signs of ChatGPT, Gemini and other model output, used by writers, teachers and editors.',
         url: 'https://www.zerogpt.com',
       },
       {
         name: 'TranVision',
+        role: '',
         description: 'A suite of AI apps for note taking, transcription and real time translation, built for mobile and the web.',
         url: 'https://www.tranvision.com',
       },
       {
         name: 'AI Note Taker',
+        role: '',
         year: '2025',
         description: 'Turns meetings, lectures, audio recordings and PDFs into structured AI notes and minutes on iPhone.',
         url: 'https://apps.apple.com/us/app/id6741786223',
       },
       {
         name: 'Headify',
+        role: '',
         year: '2023',
         description: 'An AI headshot generator that turns everyday photos into professional portraits for LinkedIn and profiles.',
         url: 'https://apps.apple.com/us/app/id6468778415',
       },
       {
         name: 'Headshot Pro AI',
+        role: '',
         year: '2024',
         description: 'Creates studio style professional headshots from selfies in seconds, on iPhone.',
         url: 'https://apps.apple.com/us/app/id6478854403',
       },
       {
         name: 'Bithrah',
+        role: '',
         description: 'IoT sensors, AI and real time analytics for livestock monitoring, precision agriculture and farm management.',
         url: 'https://www.bithrah.com',
       },
@@ -78,28 +91,33 @@ const categories: Category[] = [
     items: [
       {
         name: 'BuildPass',
+        role: '',
         year: '2021',
         description: 'AI-powered construction site management combining safety, compliance, asset management, QA and site coordination for Australian and US builders in a single mobile-first workflow.',
         url: 'https://www.buildpass.ai',
       },
       {
         name: 'Trayd',
+        role: '',
         year: '2022',
         description: 'Construction payroll, HR, compliance and labour cost tracking for specialty trade contractors, with same day pay and geolocation clock ins.',
         url: 'https://www.buildtrayd.com',
       },
       {
         name: 'traidhand',
+        role: '',
         description: 'Job management for UK tradespeople: enquiries, quotes, invoices, scheduling and payments in one app, with AI help.',
         url: 'https://www.traidhand.com',
       },
       {
         name: 'JobFlow',
+        role: '',
         description: 'Job management for Irish trades, with online booking, one tap confirmations and a live Sage and Xero sync.',
         url: 'https://www.jobflow.ie',
       },
       {
         name: 'UpBuoy',
+        role: '',
         description: 'Business software for pool service professionals: routes, service records, invoicing and customer updates.',
         url: 'https://www.upbuoy.com',
       },
@@ -114,28 +132,33 @@ const categories: Category[] = [
     items: [
       {
         name: 'Teacherbot',
+        role: '',
         year: '2022',
         description: 'An AI classroom and quiz tool for teachers, pitched as a free, classroom-safe alternative to the general-purpose LLMs.',
         url: 'https://www.teacherbot.io',
       },
       {
         name: 'Ellipsus',
+        role: '',
         year: '2023',
         description: 'A collaborative writing app for novelists, screenwriters and worldbuilding groups, structured around drafts, feedback threads and long-form fiction workflows.',
         url: 'https://ellipsus.com',
       },
       {
         name: 'ReportRocket',
+        role: '',
         description: 'AI assisted school report comments aligned with the Australian Curriculum, saving teachers hours at report time.',
         url: 'https://reportrocket.com.au',
       },
       {
         name: 'My Studio Tracker',
+        role: '',
         description: 'Lesson scheduling, invoicing and payment reminders for music teachers and private tutors, with card payments by link.',
         url: 'https://www.mystudiotracker.co.uk',
       },
       {
         name: 'Bitepoint',
+        role: '',
         description: 'A diary app for UK driving instructors that tracks lessons, pupils and who has paid, with no account needed.',
         url: 'https://bitepoint.app',
       },
@@ -150,17 +173,20 @@ const categories: Category[] = [
     items: [
       {
         name: 'Zenskar',
+        role: '',
         year: '2022',
         description: 'A billing and revenue recognition platform handling usage metering, contract-to-cash and RevRec automation for SaaS finance teams, positioned for complex enterprise pricing.',
         url: 'https://www.zenskar.com',
       },
       {
         name: 'Spend Smart',
+        role: '',
         description: 'A family budgeting app for tracking expenses and working towards shared financial goals, on iOS and Android.',
         url: 'https://www.spendsmartai.app',
       },
       {
         name: 'Sujood',
+        role: '',
         description: 'Digital donations for mosques, surau and tahfiz schools, so communities can give instantly and securely.',
         url: 'https://sujood.net/',
       },
@@ -175,6 +201,7 @@ const categories: Category[] = [
     items: [
       {
         name: 'Epsilon3',
+        role: '',
         year: '2021',
         description: 'Procedure, ERP, MES and test management software for complex engineering and mission operations.',
         url: 'https://www.epsilon3.io',
@@ -190,18 +217,21 @@ const categories: Category[] = [
     items: [
       {
         name: 'Carepatron',
+        role: '',
         year: '2021',
         description: 'Practice management, electronic health records, scheduling and billing for solo practitioners and small allied health, psychology and coaching clinics across NZ, Australia, the US and UK.',
         url: 'https://www.carepatron.com',
       },
       {
         name: 'BookedSolid',
+        role: '',
         year: '2023',
         description: 'An AI receptionist for private clinics that answers calls, books appointments and syncs with practice management systems.',
         url: 'https://bookedsolid.health',
       },
       {
         name: 'Flow Forms',
+        role: '',
         description: 'Patient intake forms on phone and reception iPad that update the patient record in Cliniko and file the signed PDF.',
         url: 'https://flowforms.nz',
       },
@@ -216,16 +246,19 @@ const categories: Category[] = [
     items: [
       {
         name: 'Monitorly',
+        role: '',
         description: 'Continuous temperature monitoring for fridges, freezers and bain maries, with real time alerts and HACCP and FSANZ records.',
         url: 'https://monitor.ly',
       },
       {
         name: 'BTable',
+        role: '',
         description: 'Restaurant and cafe reservations in Qatar, so diners can book tables in Doha instantly.',
         url: 'https://btable.qa',
       },
       {
         name: 'Farah',
+        role: '',
         description: 'An event planning platform for finding venues, comparing services and booking everything for a celebration in one place.',
         url: 'https://web.hostfarah.com/en',
       },
@@ -240,17 +273,20 @@ const categories: Category[] = [
     items: [
       {
         name: 'Nash',
+        role: '',
         year: '2021',
         description: 'A multi-carrier last-mile delivery orchestration platform that lets merchants and 3PLs plug into a network of couriers, automate dispatch and manage local deliveries from a single API and dashboard.',
         url: 'https://www.nash.ai',
       },
       {
         name: 'Yeebah',
+        role: '',
         description: 'A delivery network connecting small businesses, home stores and freelance drivers across Bahrain, with booking and live tracking.',
         url: 'https://yeebah.net/',
       },
       {
         name: 'Carely',
+        role: '',
         description: 'On demand laundry and dry cleaning pickup and delivery in Riyadh, booked from an app.',
         url: 'https://www.carely.co/',
       },
@@ -265,12 +301,14 @@ const categories: Category[] = [
     items: [
       {
         name: 'Hz Watches',
+        role: '',
         year: '2023',
         description: 'A Melbourne watch microbrand producing titanium quartz timepieces across three collections, aimed at design-led collectors after a modern Australian alternative to the mainstream Japanese microbrand pack.',
         url: 'https://hzwatches.com',
       },
       {
         name: 'Paloceras',
+        role: '',
         year: '2022',
         description: 'An independent eyewear label producing sculptural sunglasses and optical frames in short handmade runs.',
         url: 'https://paloceras.com',
@@ -286,22 +324,26 @@ const categories: Category[] = [
     items: [
       {
         name: 'Propexo',
+        role: '',
         year: '2022',
         description: 'A unified API and integration layer that connects proptech tools to the property management systems operators already use.',
         url: 'https://www.propexo.com',
       },
       {
         name: 'Nextkey',
+        role: '',
         description: 'A real estate marketplace built around short form property videos and live streamed inspections.',
         url: 'https://www.nextkey.app',
       },
       {
         name: 'PropDesc AI',
+        role: '',
         description: 'An API that writes real estate listing descriptions from property attributes, tuned to the audience and location.',
         url: 'https://oculix.io/docs/propdesc/',
       },
       {
         name: 'Lingkup',
+        role: '',
         description: 'A property management app for apartment living, giving residents and managers one place for daily building needs.',
         url: 'https://lingkup.co',
       },
@@ -316,12 +358,14 @@ const categories: Category[] = [
     items: [
       {
         name: 'Makeshift',
+        role: '',
         year: '2026',
         description: 'A curated marketplace for independent Australian artists and makers, running on a small commission rather than a marketplace ad model.',
         url: 'https://makeshift-au.com/',
       },
       {
         name: 'AI Stylist',
+        role: '',
         description: 'A Shopify app that recommends complete outfits, powers smart search and answers shopper questions for fashion stores.',
         url: 'https://apps.shopify.com/elfai',
       },
@@ -336,6 +380,7 @@ const categories: Category[] = [
     items: [
       {
         name: 'TripMemo',
+        role: '',
         year: '2026',
         description: 'A travel journal app that turns trips into shareable books with map pins, photos and notes, offline and collaborative for groups.',
         url: 'https://tripmemo.app',
@@ -351,6 +396,7 @@ const categories: Category[] = [
     items: [
       {
         name: 'Paragraph',
+        role: '',
         year: '2021',
         description: 'A Web3-native newsletter and publishing platform that lets writers gate posts by NFT ownership, monetise via token collects and build on-chain communities.',
         url: 'https://paragraph.com',
@@ -366,45 +412,53 @@ const categories: Category[] = [
     items: [
       {
         name: 'Loops',
+        role: '',
         year: '2022',
         description: 'A modern email platform for SaaS teams that unifies marketing and transactional email in a single editor and delivery log, replacing the usual Mailchimp plus SendGrid stack.',
         url: 'https://loops.so',
       },
       {
         name: 'Basedash',
+        role: '',
         year: '2021',
         description: 'A team-shareable admin panel that turns any Postgres, MySQL or Snowflake database into an internal tool without an engineering team building forms and tables from scratch.',
         url: 'https://www.basedash.com',
       },
       {
         name: 'BeforeSunset',
+        role: '',
         year: '2023',
         description: 'A daily planner that turns to-do lists, calendars and email into a time-blocked plan for the day, aimed at operators optimising individual focus.',
         url: 'https://beforesunset.ai',
       },
       {
         name: 'Meco',
+        role: '',
         year: '2022',
         description: 'A dedicated newsletter reader that pulls email newsletters out of the inbox and into a clean feed on iOS, iPad and web.',
         url: 'https://meco.app',
       },
       {
         name: 'Pawfectly Booked',
+        role: '',
         description: 'Booking and salon management software for dog groomers: calendars, online booking, shared pet records and reporting.',
         url: 'https://pawfectlybooked.com',
       },
       {
         name: 'BeautyIQ',
+        role: '',
         description: 'Salon software for hair salons, beauty salons and nail studios in the Netherlands.',
         url: 'https://beautyiq.nl',
       },
       {
         name: 'Gawey!',
+        role: '',
         description: 'Mobile attendance and HR software that brings employee records and HR workflows into one app.',
         url: 'https://gawey.id',
       },
       {
         name: 'Hami',
+        role: '',
         description: 'A legal platform for Kuwait that connects clients with verified lawyers and tracks each matter from consultation to case.',
         url: 'https://hamihq.com',
       },
@@ -412,6 +466,10 @@ const categories: Category[] = [
   }
 ];
 
+// Only products with a confirmed role are shown; empty categories drop out.
+const visibleCategories = categories
+  .map((cat) => ({ ...cat, items: cat.items.filter((item) => item.role.trim()) }))
+  .filter((cat) => cat.items.length > 0);
 ---
 
 <Layout
@@ -437,16 +495,17 @@ const categories: Category[] = [
 
     <section class="cs-list-section">
       <div class="cs-inner">
+        {visibleCategories.length > 0 && (<>
         <div class="cs-filter-wrap reveal">
           <div class="cs-filter" role="tablist" aria-label="Filter by category">
             <button class="cs-chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-            {categories.map((cat) => (
+            {visibleCategories.map((cat) => (
               <button class="cs-chip" data-filter={cat.id} role="tab" aria-selected="false">{cat.filterLabel}</button>
             ))}
           </div>
         </div>
 
-        {categories.map((cat) => (
+        {visibleCategories.map((cat) => (
           <div class="cs-category" id={cat.id} data-cat={cat.id}>
             <div class="cs-cat-head reveal">
               <span class="cs-cat-label">{cat.label}</span>
@@ -473,6 +532,7 @@ const categories: Category[] = [
                       )}
                     </div>
                     <h3>{item.name}</h3>
+                    <p class="cs-role">{item.role}</p>
                     <p>{item.description}</p>
                     {item.url && (
                       <span class="cs-card-arrow" aria-hidden="true">
@@ -486,6 +546,7 @@ const categories: Category[] = [
             </div>
           </div>
         ))}
+        </>)}
 
         <div class="cs-more reveal">
           <div class="cs-more-inner">
@@ -783,6 +844,13 @@ const categories: Category[] = [
     line-height: 1.25;
     margin: 0;
     letter-spacing: -0.01em;
+  }
+  .cs-card p.cs-role {
+    margin: -0.25rem 0 0.6rem;
+    color: #0d9373;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.5;
   }
   .cs-card p {
     font-family: 'DM Sans', sans-serif;

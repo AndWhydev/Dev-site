@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../config/site';
 
 const riskCategories = [
   {
@@ -385,7 +386,7 @@ const pillars = [
 
           <div class="close-social" aria-label="Client credentials">
             <span class="close-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <p>AWLabs and All Webbed Up have served over 150 Australian clients. All Webbed Up is rated 5.0 on Google across 122 reviews.</p>
+            <p>AWLabs and our sister company All Webbed Up have served over 150 Australian clients. AWLabs is rated {GOOGLE_RATING.toFixed(1)} on Google across {GOOGLE_REVIEW_COUNT} reviews.</p>
           </div>
 
           <div class="close-actions">

@@ -66,7 +66,7 @@ export const GET: APIRoute = async () => {
     ...otherGuides.map((g) => `- [${g.data.title}](${site}/guides/${g.id}): ${g.data.description}`),
     '',
     '## Industry solutions',
-    ...solutions.map((g) => `- [${g.data.title}](${site}/solutions/${g.id}): ${g.data.description}`),
+    ...solutions.filter((g) => !g.data.noindex).map((g) => `- [${g.data.title}](${site}/solutions/${g.id}): ${g.data.description}`),
     '',
     '## Locations',
     ...locations.map((g) => `- [${g.data.title}](${site}/locations/${g.id}): ${g.data.description}`),

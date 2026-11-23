@@ -8,6 +8,7 @@ import GoogleReviews from '../components/GoogleReviews.astro';
 import transcripts from '../data/testimonial-transcripts.json';
 import { stories } from '../data/testimonials';
 import { getReviews, PLACES } from '../lib/reviews';
+import { GOOGLE_REVIEW_COUNT } from '../config/site';
 
 /**
  * Client Stories: the proof page. Videos, a written story for each video,
@@ -274,13 +275,7 @@ const references: { name: string; business?: string }[] = [
             {awlabsReviews && (
               <li class="cst-stat">
                 <strong>{awlabsReviews.aggregateRating.toFixed(1)}</strong>
-                <span>AWLabs on Google ({awlabsReviews.totalReviews} reviews)</span>
-              </li>
-            )}
-            {awuReviews && (
-              <li class="cst-stat">
-                <strong>{awuReviews.aggregateRating.toFixed(1)}</strong>
-                <span>All Webbed Up on Google ({awuReviews.totalReviews} reviews)</span>
+                <span>AWLabs on Google ({GOOGLE_REVIEW_COUNT} reviews)</span>
               </li>
             )}
             <li class="cst-stat cst-stat-link">

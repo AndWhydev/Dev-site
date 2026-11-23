@@ -42,6 +42,8 @@ const solutions = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/solutions' }),
   schema: base.extend({
     industry: link,
+    /** true = robots noindex, and left out of the sitemap and llms.txt. */
+    noindex: z.boolean().default(false),
   }),
 });
 

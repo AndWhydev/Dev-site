@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import PremiumEffects from '../components/PremiumEffects.astro';
+import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS } from '../config/site';
 
 interface Props {
   title: string;
@@ -10,6 +11,8 @@ interface Props {
   canonical?: string;
   noCanonical?: boolean;
   noindex?: boolean;
+  /** Custom robots meta, e.g. 'noindex, follow'. Overrides noindex. */
+  robots?: string;
   /** Additional JSON-LD objects to emit alongside the Organization schema (Service, FAQPage, BreadcrumbList, etc.) */
   extraSchema?: Record<string, unknown>[];
 }
@@ -21,6 +24,7 @@ const {
   canonical,
   noCanonical = false,
   noindex = false,
+  robots,
   extraSchema = [],
 } = Astro.props;
 
@@ -35,24 +39,24 @@ export const BRAND_DEFINITION =
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': `${siteUrl}/#organization`,
+  '@id': ORG_ID,
   name: 'AWLabs',
   legalName: 'AW Labs Pty Ltd',
-  alternateName: ['AWL', 'AW Labs', 'AWLabs'],
+  alternateName: ['AWL', 'AW Labs', 'AWLabs', 'All Webbed Labs'],
   taxID: 'ABN 32 698 684 105',
   foundingDate: '2026',
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description: BRAND_DEFINITION,
   email: 'admin@awlabs.com.au',
-  telephone: '1800714148',
+  telephone: PHONE_E164,
   founder: {
     '@type': 'Person',
-    '@id': `${siteUrl}/team/andy-taleb#person`,
+    '@id': FOUNDER_ID,
     name: 'Andy Taleb',
     jobTitle: 'Director',
     url: `${siteUrl}/team/andy-taleb`,
-    sameAs: ['https://www.linkedin.com/in/andytaleb/'],
+    sameAs: [FOUNDER_LINKEDIN],
   },
   areaServed: { '@type': 'Country', name: 'Australia' },
   knowsAbout: [
@@ -70,21 +74,10 @@ const schema = {
     'Model Context Protocol',
     'Data residency and sovereignty',
   ],
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '1 Ramsay Rd',
-    addressLocality: 'Five Dock',
-    addressRegion: 'NSW',
-    postalCode: '2046',
-    addressCountry: 'AU',
-  },
-  // All Webbed Up is a separate business, so it is NOT listed in sameAs
-  // (sameAs tells search engines two profiles are the same entity).
-  sameAs: [
-    'https://www.linkedin.com/in/andytaleb/',
-    'https://www.facebook.com/profile.php?id=61556526584232',
-    'https://www.instagram.com/andy_awlabs/',
-  ],
+  address: { '@type': 'PostalAddress', ...ADDRESS },
+  // Only profiles that ARE AWLabs (see src/config/site.ts). Personal profiles
+  // belong on the founder Person node; All Webbed Up is a separate business.
+  sameAs: SAME_AS,
 };
 ---
 
@@ -103,7 +96,7 @@ const schema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     {!noCanonical && <link rel="canonical" href={canonicalUrl} />}
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {robots ? <meta name="robots" content={robots} /> : noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

@@ -8,6 +8,7 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN } from '../config/site';
 
 interface Crumb { title: string; href?: string }
 interface Heading { depth: number; slug: string; text: string }
@@ -21,6 +22,7 @@ interface Props {
     eyebrow: string;
     published: Date;
     updated: Date;
+    noindex?: boolean;
     summary: string;
     takeaways: string[];
     faqs: { q: string; a: string }[];
@@ -39,7 +41,24 @@ interface Props {
 const { data, crumbs, headings, schemaType, areaServed } = Astro.props;
 const siteUrl = 'https://www.awlabs.com.au';
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
-const orgRef = { '@id': `${siteUrl}/#organization` };
+const orgRef = { '@id': ORG_ID };
+// Guides are written by Andy, so the Article author is a Person, not the company.
+const author = {
+  name: 'Andy Taleb',
+  role: 'Founder and Director, AWLabs',
+  url: '/team/andy-taleb',
+  photo: '/team/andy-taleb.webp',
+};
+const authorSchema = {
+  '@type': 'Person',
+  '@id': FOUNDER_ID,
+  name: author.name,
+  jobTitle: 'Founder and Director',
+  url: `${siteUrl}${author.url}`,
+  image: `${siteUrl}${author.photo}`,
+  sameAs: [FOUNDER_LINKEDIN],
+  worksFor: orgRef,
+};
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Australia/Sydney' });
@@ -56,7 +75,7 @@ const mainSchema =
         description: data.description,
         datePublished: iso(data.published),
         dateModified: iso(data.updated),
-        author: orgRef,
+        author: authorSchema,
         publisher: orgRef,
         mainEntityOfPage: pageUrl,
         inLanguage: 'en-AU',
@@ -108,7 +127,7 @@ const disclaimers: Record<string, string> = {
 };
 ---
 
-<Layout title={data.metaTitle} description={data.description} extraSchema={extraSchema}>
+<Layout title={data.metaTitle} description={data.description} extraSchema={extraSchema} robots={data.noindex ? 'noindex, follow' : undefined}>
   <Header />
   <main class="lf">
     <header class="lf-hero">
@@ -124,11 +143,25 @@ const disclaimers: Record<string, string> = {
         </nav>
         <span class="section-label">{data.eyebrow}</span>
         <h1 class="lf-title">{data.title}</h1>
-        <p class="lf-meta">
-          <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
-          <span class="lf-meta-sep">Published by <a href="/about">AWLabs</a></span>
-          <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
-        </p>
+        {schemaType === 'Article' ? (
+          <div class="lf-byline">
+            <img src={author.photo} alt={`${author.name}, ${author.role}`} width="48" height="48" class="lf-byline-photo" />
+            <div class="lf-byline-text">
+              <p class="lf-byline-name">By <a href={author.url} rel="author">{author.name}</a>, {author.role}</p>
+              <p class="lf-meta">
+                <span>Published <time datetime={iso(data.published)}>{fmt(data.published)}</time></span>
+                <span class="lf-meta-sep">Updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
+                <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
+              </p>
+            </div>
+          </div>
+        ) : (
+          <p class="lf-meta">
+            <span>Last updated <time datetime={iso(data.updated)}>{fmt(data.updated)}</time></span>
+            <span class="lf-meta-sep">Published by <a href="/about">AWLabs</a></span>
+            <span class="lf-meta-sep"><a href="/editorial-policy">How we write</a></span>
+          </p>
+        )}
       </div>
     </header>
 
@@ -229,6 +262,12 @@ const disclaimers: Record<string, string> = {
   .lf-meta a:hover { color: #0d9373; }
   .lf-meta { column-gap: 0; }
   .lf-meta-sep::before { content: '·'; margin: 0 0.5rem; color: #3a5048; }
+  .lf-byline { display: flex; align-items: center; gap: 0.85rem; }
+  .lf-byline-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid #1e2d28; flex-shrink: 0; }
+  .lf-byline-text { display: flex; flex-direction: column; gap: 0.2rem; }
+  .lf-byline-name { margin: 0; font-size: 0.9375rem; color: #cde0da; }
+  .lf-byline-name a { color: #fff; font-weight: 600; text-decoration: none; }
+  .lf-byline-name a:hover { color: #0d9373; }
 
   .lf-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 4rem; padding-top: 3rem; padding-bottom: 4rem; }
   .lf-article { min-width: 0; max-width: 760px; }
@@ -314,6 +353,7 @@ const disclaimers: Record<string, string> = {
     .lf-cta-card { position: static; }
     .lf-aside { max-width: 760px; }
     .lf-crumbs ol, .lf-meta { justify-content: center; text-align: center; }
+    .lf-byline { flex-direction: column; text-align: center; }
   }
   @media (max-width: 640px) {
     .lf-hero { padding: 7rem 0 2rem; }

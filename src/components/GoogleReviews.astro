@@ -5,14 +5,17 @@
  * as AWLabs reviews. Data is fetched at build time (src/lib/reviews.ts).
  */
 import { getReviews, PLACES } from '../lib/reviews';
+import { GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from '../config/site';
 
 const { layout = 'tabs' } = Astro.props as { layout?: 'tabs' | 'stacked' };
 
 const [awlabs, awu] = await Promise.all([getReviews(PLACES.awlabs), getReviews(PLACES.awu)]);
 
 const groups = [
-  { id: 'awlabs', tab: 'AWLabs', name: 'AWLabs', note: 'Reviews of AWLabs on Google.', data: awlabs },
-  { id: 'awu', tab: 'All Webbed Up', name: 'All Webbed Up', note: 'Reviews of All Webbed Up, our sister agency for websites and marketing, on Google.', data: awu },
+  // AWLabs count comes from src/config/site.ts so it matches every other page.
+  // All Webbed Up's count is never shown on AWLabs pages.
+  { id: 'awlabs', tab: 'AWLabs', name: 'AWLabs', note: 'Reviews of AWLabs on Google.', count: GOOGLE_REVIEW_COUNT, url: GOOGLE_REVIEWS_URL, data: awlabs },
+  { id: 'awu', tab: 'Our sister company All Webbed Up', name: 'our sister company All Webbed Up', note: 'Reviews of our sister company All Webbed Up, a separate websites and marketing business, on Google.', count: null, url: null, data: awu },
 ].filter((g) => g.data);
 
 function initials(name: string): string {
@@ -37,7 +40,7 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
         {groups.map((g, i) => (
           <button type="button" role="tab" class="gr-tab" id={`gr-tab-${g.id}`} aria-controls={`gr-panel-${g.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
             {g.tab}
-            <span class="gr-tab-meta">{g.data!.aggregateRating.toFixed(1)} ★ · {g.data!.totalReviews}</span>
+            <span class="gr-tab-meta">{g.data!.aggregateRating.toFixed(1)} ★{g.count ? ` · ${g.count}` : ''}</span>
           </button>
         ))}
       </div>
@@ -53,7 +56,7 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
             ))}
           </div>
           <p class="gr-summary-text">
-            <strong>{g.data!.aggregateRating.toFixed(1)}</strong> from {g.data!.totalReviews} reviews on Google. <span class="gr-note">{g.note}</span> <span class="gr-updated">Updated {updated}</span>
+            <strong>{g.data!.aggregateRating.toFixed(1)}</strong>{g.count ? ` from ${g.count} reviews` : ''} on Google. <span class="gr-note">{g.note}</span> <span class="gr-updated">Updated {updated}</span>
           </p>
         </div>
 
@@ -63,7 +66,7 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
               <div class="gr-top">
                 <div class="gr-author">
                   {r.photoUrl
-                    ? <img src={r.photoUrl} alt="" class="gr-avatar" width="40" height="40" loading="lazy" referrerpolicy="no-referrer" />
+                    ? <img src={r.photoUrl} alt={`Google profile photo of ${r.author}`} class="gr-avatar" width="40" height="40" loading="lazy" referrerpolicy="no-referrer" />
                     : <div class="gr-avatar gr-avatar-fallback" aria-hidden="true">{initials(r.author)}</div>}
                   <div class="gr-author-meta">
                     {r.profileUrl
@@ -90,7 +93,7 @@ const star = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14
         </div>
 
         <p class="gr-more">
-          <a href={g.data!.reviewsUrl} target="_blank" rel="noopener">{`See all ${g.data!.totalReviews} ${g.name} reviews on Google`}</a>
+          <a href={g.url ?? g.data!.reviewsUrl} target="_blank" rel="noopener">{g.count ? `See all ${g.count} ${g.name} reviews on Google` : `See ${g.name} on Google`}</a>
         </p>
       </div>
     ))}

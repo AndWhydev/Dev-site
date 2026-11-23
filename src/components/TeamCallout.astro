@@ -34,7 +34,7 @@ const avatars: Avatar[] = [
       {avatars.map((a, i) => (
         <div class={`tc-avatar accent-${a.accent}`} style={`--i: ${i}`}>
           {a.photo ? (
-            <img src={a.photo} alt="" width="78" height="78" loading="lazy" />
+            <img src={a.photo} alt={`${a.name}, ${a.role}`} width="78" height="78" loading="lazy" />
           ) : a.silhouette ? (
             <svg viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true">
               <defs>
@@ -59,7 +59,7 @@ const avatars: Avatar[] = [
       <span class="section-label">The team</span>
       <h2 class="tc-heading">The people behind every build.</h2>
       <p class="tc-sub">
-        Andy runs every client meeting, Sam leads the developers, Nicole and Lucy build under senior review, and Nicole keeps every project moving. Our lawyers and accountants are separate practices that work with us on every build. We bring in extra specialists when a build needs them.
+        Andy runs every client meeting, Sam leads the developers, Nicole and Lucy build under senior review, and Nicole keeps every project moving. Our lawyers and accountants are separate practices that work with us on our builds. We bring in extra specialists when a build needs them.
       </p>
       <a href="/team" class="tc-cta">
         Meet the team

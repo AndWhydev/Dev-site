@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
+
+/**
+ * Lead confirmation page. Every contact form and booking sends people here
+ * after a successful submit, so Google Ads can count a conversion on this
+ * page (noindex, and excluded from the sitemap in astro.config.mjs).
+ *
+ *   /thank-you?source=form           contact form (event already pushed on submit)
+ *   /thank-you?source=booking-phone  GoHighLevel phone Development Consult
+ *   /thank-you?source=booking-zoom   GoHighLevel Zoom with Andy
+ *
+ * Bookings happen inside the GoHighLevel iframe, so this page pushes the
+ * awl_lead_submitted event for them on arrival.
+ */
+---
+
+<Layout
+  title="Thank You | AWLabs"
+  description="Thanks for getting in touch with AWLabs. We have your details and will be in touch within 1 business day."
+  noindex
+  noCanonical
+>
+  <Header />
+  <main>
+    <section class="ty-section">
+      <div class="ty-inner">
+        <div class="ty-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="section-label">Thank you</span>
+        <h1 class="ty-title" id="ty-title">We have your details.</h1>
+        <p class="ty-lead" id="ty-lead">A member of our team will be in touch within 1 business day, Monday to Friday, 9am to 6pm Sydney time.</p>
+        <p class="ty-sub">Anything urgent? Call us on <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
+        <div class="ty-actions">
+          <a href="/client-stories" class="btn-primary">Read client stories</a>
+          <a href="/guides" class="ty-secondary">Browse our guides</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script is:inline>
+  (function () {
+    var source = new URLSearchParams(location.search).get('source') || '';
+    if (source.indexOf('booking') === 0) {
+      var title = document.getElementById('ty-title');
+      var lead = document.getElementById('ty-lead');
+      if (title) title.textContent = 'Your call is booked.';
+      if (lead) lead.textContent = 'Your confirmation email has the time and details. Need to move it? Reply to that email.';
+      // Push once per visit, even if the page is reloaded.
+      try {
+        if (sessionStorage.getItem('awl_lead_pushed') === source) return;
+        sessionStorage.setItem('awl_lead_pushed', source);
+      } catch (e) {}
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'awl_lead_submitted', lead_source: source });
+    }
+  })();
+</script>
+
+<style>
+  .ty-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 9rem 1.5rem 5rem;
+    background: #0a0f0e;
+  }
+  .ty-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .ty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(13, 147, 115, 0.12);
+    border: 1px solid rgba(13, 147, 115, 0.35);
+  }
+  .ty-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0.75rem 0 1rem;
+  }
+  .ty-lead { color: #cde0da; font-size: 1.0625rem; line-height: 1.7; margin: 0 0 0.75rem; }
+  .ty-sub { color: #8aa09a; margin: 0 0 2rem; }
+  .ty-sub a { color: #0d9373; }
+  .ty-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; }
+  .ty-secondary { color: #cde0da; text-decoration: underline; text-underline-offset: 3px; }
+</style>

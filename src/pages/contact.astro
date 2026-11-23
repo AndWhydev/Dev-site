@@ -2,11 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import {
+  LOCAL_BUSINESS_SCHEMA, ADDRESS_LINE, PHONE_DISPLAY, PHONE_TEL, GOOGLE_MAPS_URL,
+  GOOGLE_MAP_EMBED_URL, GOOGLE_REVIEWS_URL, GOOGLE_REVIEW_COUNT, GOOGLE_RATING,
+} from '../config/site';
 ---
 
 <Layout
   title="Contact Us: Book a Development Consult, Sydney | AWLabs"
   description="Book a Development Consult with AWLabs, a Sydney AI and software development company. Tell us what you want to build and we will be in touch to book a time."
+  extraSchema={[LOCAL_BUSINESS_SCHEMA]}
 >
   <Header />
   <main>
@@ -32,13 +37,13 @@ import Footer from '../components/Footer.astro';
                 <div class="ci-val">admin@awlabs.com.au</div>
               </div>
             </a>
-            <a href="tel:1800714148" class="contact-item">
+            <a href={`tel:${PHONE_TEL}`} class="contact-item">
               <div class="ci-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.16v.76z"/></svg>
               </div>
               <div>
                 <div class="ci-label">Phone</div>
-                <div class="ci-val">1800 714 148</div>
+                <div class="ci-val">{PHONE_DISPLAY}</div>
               </div>
             </a>
             <div class="contact-item">
@@ -46,20 +51,43 @@ import Footer from '../components/Footer.astro';
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
-                <div class="ci-label">Response Time</div>
-                <div class="ci-val">Within 1 business day</div>
-                <div class="ci-sub">Mon to Fri, 9am to 6pm Sydney time</div>
+                <div class="ci-label">Hours</div>
+                <div class="ci-val">Monday to Friday, 9am to 6pm</div>
+                <div class="ci-sub">Sydney time. We reply within 1 business day.</div>
               </div>
             </div>
-            <div class="contact-item">
+            <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener" class="contact-item">
               <div class="ci-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
                 <div class="ci-label">Office</div>
-                <div class="ci-val">1 Ramsay Rd, Five Dock NSW 2046</div>
+                <div class="ci-val">AWLabs, {ADDRESS_LINE}</div>
+                <div class="ci-sub">Open in Google Maps</div>
               </div>
-            </div>
+            </a>
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener" class="contact-item">
+              <div class="ci-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div>
+                <div class="ci-label">Google reviews</div>
+                <div class="ci-val">{GOOGLE_RATING.toFixed(1)} from {GOOGLE_REVIEW_COUNT} reviews</div>
+                <div class="ci-sub">Read our reviews on Google</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="contact-map">
+            <iframe
+              src={GOOGLE_MAP_EMBED_URL}
+              title={`Map showing AWLabs at ${ADDRESS_LINE}`}
+              width="600"
+              height="300"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
           </div>
 
           <!-- What happens next -->
@@ -107,6 +135,16 @@ import Footer from '../components/Footer.astro';
             <div class="booking-panel" id="panel-zoom" role="tabpanel" aria-labelledby="tab-zoom" hidden>
               <p class="booking-note">A Zoom meeting with Andy, about an hour. The link is in your confirmation email.</p>
               <iframe id="dam-call-awlabs" class="booking-frame" title="Book a Zoom meeting with Andy" data-src="https://links.awlabs.com.au/widget/bookings/dam-call-awlabs" scrolling="no" loading="lazy"></iframe>
+            </div>
+            <div class="after-book">
+              <h3>What happens after you book</h3>
+              <ol>
+                <li>You get a confirmation email with your time. For Zoom, the meeting link is in it.</li>
+                <li>At that time we ring you, or Andy meets you on Zoom.</li>
+                <li>We talk through what you want to build and tell you honestly whether we are the right fit.</li>
+                <li>If we are, we explain the next step, the Discovery Audit, and send you the details in writing.</li>
+              </ol>
+              <p>Need to move your time? Reply to your confirmation email or call <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
             </div>
           </div>
 
@@ -241,6 +279,42 @@ import Footer from '../components/Footer.astro';
     line-height: 1.7;
     margin-bottom: 2.5rem;
   }
+  .contact-map {
+    margin: 0 0 2rem;
+    border: 1px solid #1e2d28;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f1614;
+  }
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 260px;
+    border: 0;
+    filter: grayscale(0.3) contrast(1.05);
+  }
+  .after-book {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #1e2d28;
+  }
+  .after-book h3 {
+    margin: 0 0 0.75rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .after-book ol {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    color: #a9bcb5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .after-book li + li { margin-top: 0.35rem; }
+  .after-book p { margin: 0; color: #8aa09a; font-size: 0.85rem; }
+  .after-book a { color: #0d9373; }
   .contact-details {
     background: #0f1614;
     border: 1px solid #1e2d28;
@@ -698,12 +772,22 @@ import Footer from '../components/Footer.astro';
       const json = await res.json();
 
       if (json.success) {
+        // Google Ads lead tracking: push the event, then send them to the
+        // thank-you page (the conversion page). The inline success message
+        // only shows if that navigation is blocked.
+        const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        w.dataLayer = w.dataLayer || [];
         if (form && success) {
           form.hidden = true;
           success.hidden = false;
-          success.focus({ preventScroll: true });
-          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        // Wait for Google Tag Manager to send its tags (eventCallback) before
+        // leaving the page; without GTM the callback never fires, so the
+        // timeout moves on after a moment.
+        let gone = false;
+        const go = () => { if (!gone) { gone = true; window.location.assign('/thank-you?source=form'); } };
+        w.dataLayer.push({ event: 'awl_lead_submitted', lead_source: 'form', lead_interest: interest || undefined, eventCallback: go, eventTimeout: 1500 });
+        setTimeout(go, 1600);
       } else {
         throw new Error('send failed');
       }

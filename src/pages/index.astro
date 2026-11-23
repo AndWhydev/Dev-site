@@ -14,6 +14,7 @@ import FeaturedGuides from '../components/FeaturedGuides.astro';
 import VideoTestimonials from '../components/VideoTestimonials.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import FactBlock from '../components/FactBlock.astro';
+import { LOCAL_BUSINESS_SCHEMA, ORG_ID } from '../config/site';
 
 const siteUrl = 'https://www.awlabs.com.au';
 const websiteSchema = {
@@ -22,15 +23,47 @@ const websiteSchema = {
   '@id': `${siteUrl}/#website`,
   name: 'AWLabs',
   url: siteUrl,
-  publisher: { '@id': `${siteUrl}/#organization` },
+  publisher: { '@id': ORG_ID },
   inLanguage: 'en-AU',
+};
+
+// Visible FAQ, also emitted as FAQPage JSON-LD so the two never drift.
+// Answers reuse wording already on the site (ai-consulting, startup-mvp,
+// about, trust) so every claim matches its source page.
+const faqs = [
+  {
+    q: 'How much does it cost to build software with AWLabs?',
+    a: 'It depends on scope, so rather than quote ranges out of context, we start with a 15 minute Development Consult, then the Discovery Audit (a fixed fee, credited in full against your build). You then get a fixed price Schedule of Work covering development, integration, testing and a 30 day warranty, paid in three payments: a deposit on signing, a second payment when you accept the first stage, and the final payment before handover.',
+  },
+  {
+    q: 'How long does a build take?',
+    a: 'Your developer estimates the build in weeks once the scope is clear. A smaller build can be faster, and one with complex integrations or compliance requirements can take longer. The biggest factor is scope discipline: a first version that tries to be the full product takes as long as the full product. You see progress every Tuesday and Friday.',
+  },
+  {
+    q: 'Who owns the code?',
+    a: 'You own what we build for you once it is paid for. Each part is assigned to you as it is paid for in full. You can see and test the code while we build, and the full repository, logins and accounts are handed over after the final payment. Our own reusable tools stay ours, with a permanent licence for you to use them inside your product.',
+  },
+  {
+    q: 'Is your team in Australia?',
+    a: 'Yes. Our team is based in Sydney, NSW, operating across Australia and internationally, with clients supported during Sydney business hours. AWLabs is 100% Australian owned with no offshore parent, and delivery is led from Australia and remains managed and accountable through AW Labs in Sydney.',
+  },
+  {
+    q: 'What AI work do you do?',
+    a: 'We build AI agents, RAG knowledge bases, LLM integrations, AI chatbots, AI document processing, MCP servers and private LLM deployments. We start by identifying where AI will genuinely pay off, test whether it works on your own data, and design how it fits your systems, security and compliance obligations. The same team that assesses the opportunity builds, evaluates and deploys the system.',
+  },
+];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${siteUrl}/#faq`,
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 ---
 
 <Layout
   title="AI and Software Development, Sydney | AWLabs"
   description="Sydney AI and software development for growing businesses and enterprise. AI agents, RAG, LLM integration and custom software, led by senior engineers."
-  extraSchema={[websiteSchema]}
+  extraSchema={[websiteSchema, LOCAL_BUSINESS_SCHEMA, faqSchema]}
 >
   <Header />
   <main>
@@ -77,6 +110,20 @@ const websiteSchema = {
       </a>
     </p>
     <GoogleReviews />
+    <section class="home-faq" aria-labelledby="home-faq-heading">
+      <div class="home-faq-inner reveal">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-heading" id="home-faq-heading">Common questions.</h2>
+        <div class="home-faq-list">
+          {faqs.map((f) => (
+            <details class="home-faq-item">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
     <section class="home-facts" aria-label="AWLabs at a glance">
       <div class="home-facts-inner reveal">
         <FactBlock />
@@ -88,6 +135,44 @@ const websiteSchema = {
 </Layout>
 
 <style>
+  .home-faq {
+    background: #0a0f0e;
+    padding: clamp(3rem, 6vw, 5rem) 1.5rem 0;
+  }
+  .home-faq-inner { max-width: 880px; margin: 0 auto; }
+  .home-faq-list { margin-top: 1.75rem; border-top: 1px solid #1e2d28; }
+  .home-faq-item { border-bottom: 1px solid #1e2d28; }
+  .home-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-height: 44px;
+    padding: 1.1rem 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+  }
+  .home-faq-item summary::-webkit-details-marker { display: none; }
+  .home-faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    color: #0d9373;
+    font-size: 1.4rem;
+    font-weight: 400;
+    transition: transform 0.2s ease;
+  }
+  .home-faq-item[open] summary::after { transform: rotate(45deg); }
+  .home-faq-item summary:focus-visible { outline: 2px solid #0d9373; outline-offset: 4px; }
+  .home-faq-item p {
+    margin: 0 0 1.25rem;
+    color: #a9bcb5;
+    line-height: 1.7;
+    max-width: 72ch;
+  }
   .home-facts {
     background: #0a0f0e;
     padding: clamp(3rem, 6vw, 5rem) 1.5rem;
