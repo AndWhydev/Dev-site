@@ -13,8 +13,8 @@ export const SITE_URL = 'https://www.awlabs.com.au';
  *   'AW-123456789/AbCdEfGhIjk'. When set, /thank-you reports one conversion
  *   per lead (form or booking).
  */
-export const GOOGLE_TAG_ID = 'AW-000TEST';
-export const GOOGLE_ADS_SEND_TO = 'AW-000TEST/label';
+export const GOOGLE_TAG_ID = '';
+export const GOOGLE_ADS_SEND_TO = '';
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const LOCAL_ID = `${SITE_URL}/#localbusiness`;
 export const FOUNDER_ID = `${SITE_URL}/team/andy-taleb#person`;
