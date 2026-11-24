@@ -6,8 +6,16 @@ description: "Custom CRM development in Australia costs about $20k to $250k+. Fi
 eyebrow: "Cost guide"
 category: cost
 published: 2026-11-08
-updated: 2026-11-08
-summary: "A custom CRM built by an Australian team typically costs $20,000 to $40,000 (AUD, ex GST) for a simple CRM used by one team, $40,000 to $100,000 for a CRM with automation and a few integrations, and $100,000 to $250,000 or more for a multi team or industry specific system with portals and several integrations. Those are market ranges, not quotes. For most small businesses, HubSpot, Salesforce, Zoho or GoHighLevel is cheaper over five years and should be tried first. A custom CRM earns its cost when your sales or service process is unusual, when you would otherwise pay for many seats, or when the CRM has to run core operations, not just track leads."
+updated: 2026-11-24
+summary: "A custom CRM built by an Australian team costs $20,000 to $40,000 (AUD, ex GST) for a simple CRM, $40,000 to $100,000 with automation and a few integrations, and $100,000 to $250,000 or more for a multi team system. These are market ranges, not quotes. For most small businesses, an off the shelf CRM is cheaper over five years."
+method:
+  - "The three cost bands combine published sources on Australian costs: PerfectionGeeks' CRM tiers, Appinventiv's 2026 Australian CRM range of $40,000 to $250,000, and Expeed's general custom software bands."
+  - "Subscription costs use each vendor's published list prices at the time of writing (November 2026) for HubSpot, Salesforce, Zoho and HighLevel. US dollar prices are converted to AUD at the Reserve Bank of Australia rate of about US$0.70 at the time of writing."
+  - "The five year comparison multiplies those list prices by seats and months, and sets them against the worked example's build and running costs."
+  - "The worked example is a hypothetical 20 person service business: hours estimated feature by feature, an assumed market blended rate of $165 an hour (not our rate), maintenance at 15% of the build each year and hosting at an assumed $400 a month."
+  - "The Australian rules come from ACMA's guidance on the Spam Act and the OAIC's guidelines on APP 11, the security of personal information."
+  # TODO (Andy): whether AWLabs' own project figures informed the ranges; the page only cites published sources, so this isn't claimed.
+  # TODO (Andy): how often these figures are rechecked (a review cadence line).
 takeaways:
   - "Published Australian ranges for a custom CRM run from about $20k for a basic single team system to $250k or more for a complex one (AUD, ex GST)."
   - "Over five years, a subscription CRM is usually cheaper for teams of around 20 or fewer users. The gap closes as seat numbers grow, because custom software doesn't charge per user."
