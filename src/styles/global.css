@@ -364,3 +364,9 @@ h1, h2, h3, h1 *, h2 *, h3 * { text-wrap: balance; }
 @media (max-width: 640px) {
   :is(h1, h2) br { display: none; }
 }
+
+/* Cross-page fade on same-origin navigations (browsers that support it). */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

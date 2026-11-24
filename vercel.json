@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -15,27 +20,27 @@
     {
       "source": "/mutual-NDA",
       "destination": "/NDA",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/mutual-nda",
       "destination": "/NDA",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/nda",
       "destination": "/NDA",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/msa",
       "destination": "/MSA",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/master-services-agreement",
       "destination": "/MSA",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog",

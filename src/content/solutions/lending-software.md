@@ -51,7 +51,7 @@ sources:
     url: "https://www.legislation.gov.au/C2024A00128/asmade/text"
     publisher: "Federal Register of Legislation"
   - title: "AFCA's final Lending to Small Business Approach (archived copy)"
-    url: "http://web.archive.org/web/20251206005426/https://www.afca.org.au/members/news/afcas-final-lending-to-small-business-approach-and-consultation-feedback-report"
+    url: "https://web.archive.org/web/20251206005426/https://www.afca.org.au/members/news/afcas-final-lending-to-small-business-approach-and-consultation-feedback-report"
     publisher: "AFCA via Wayback Machine"
   - title: "Helping your clients stay scam aware"
     url: "https://www.mfaa.com.au/news/helping-your-clients-stay-scam-aware"

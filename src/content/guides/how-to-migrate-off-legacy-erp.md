@@ -31,7 +31,7 @@ sources:
     url: "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/overview-of-record-keeping-rules-for-business"
     publisher: "Australian Taxation Office"
   - title: "Changing your payroll solution or employees' Payroll IDs"
-    url: "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/in-detail/single-touch-payroll-phase-2-employer-reporting-guidelines/changing-your-payroll-solution-or-employees-payroll-ids"
+    url: "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/changing-your-payroll-solution-or-employees-payroll-ids"
     publisher: "Australian Taxation Office"
   - title: "MYOB Exo Business"
     url: "https://www.myob.com/au/erp-software/products/myob-exo"

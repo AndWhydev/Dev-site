@@ -27,7 +27,7 @@ faqs:
     a: "Not for an engineering consultancy yet, so we won't claim a track record. Our team brings software, integration and AI engineering; your registered engineers keep responsibility for the engineering and for interpreting registration rules."
 sources:
   - title: "Become a RPEQ (Wayback Machine copy, 17 September 2026)"
-    url: "http://web.archive.org/web/20260917153952/https://bpeq.qld.gov.au/for-engineers/become-a-rpeq"
+    url: "https://web.archive.org/web/20260917153952/https://bpeq.qld.gov.au/for-engineers/become-a-rpeq"
     publisher: "Board of Professional Engineers of Queensland"
   - title: "Who needs to be registered"
     url: "https://www.consumer.vic.gov.au/licensing-and-registration/professional-engineers/who-needs-to-be-registered"

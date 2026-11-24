@@ -48,6 +48,9 @@ import { PHONE_DISPLAY, PHONE_TEL, GOOGLE_ADS_SEND_TO } from '../config/site';
 <script is:inline define:vars={{ sendTo: GOOGLE_ADS_SEND_TO }}>
   (function () {
     var source = new URLSearchParams(location.search).get('source') || '';
+    // GHL calendars send their own names; treat them as bookings.
+    var ghl = { 'discovery-call': 'booking-phone', 'dam-call': 'booking-zoom' };
+    if (ghl[source]) source = ghl[source];
     // One Google Ads conversion per lead, once the send_to value is set.
     var key = 'awl_conv_' + source;
     var counted = false;

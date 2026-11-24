@@ -14,7 +14,7 @@ takeaways:
   - "NSW funeral directors register deaths through eRegistry and can order a death certificate for the family only within 30 days of registration."
 faqs:
   - q: "Is there Australian funeral home software, or do we have to use a US product?"
-    a: "You can choose between North American platforms such as Passare, Gather and FrontRunner (now part of Tribute Technology) and any local products you find. Shortlist on how well each handles your state's price list and quote rules, death registration paperwork and prepaid contracts, not on features you will not use. If a product covers 90 percent of what you need, buying it and adding small custom pieces is usually cheaper than a full build."
+    a: "You can choose between North American platforms such as Passare, Gather and FrontRunner (now part of Tribute Technology) and any local products you find. Shortlist on how well each handles your state's price list and quote rules, death registration paperwork and prepaid contracts, not on features you will not use. If a product covers 90 per cent of what you need, buying it and adding small custom pieces is usually cheaper than a full build."
   - q: "Can our software generate the NSW price list automatically?"
     a: "Yes, and it is one of the most useful things it can do. If your goods, services and packages live in one catalogue, the same data can produce the website price list, the printed list for the arrangement room and each itemised quote. That keeps the three consistent, which matters because the standard requires the quote and displayed prices to line up with what you actually offer."
   - q: "Can software register deaths with BDM directly?"

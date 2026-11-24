@@ -27,7 +27,7 @@ faqs:
     a: "No. We haven't delivered a project for a strata management business, so we won't claim one. We bring software, integration and AI engineering; you and your advisers own the regulatory interpretation for each state."
 sources:
   - title: "Strata laws"
-    url: "https://www.nsw.gov.au/housing-and-construction/strata/serving-on-a-committee/strata-laws"
+    url: "https://www.nsw.gov.au/housing-and-construction/strata/strata-laws"
     publisher: "NSW Fair Trading"
   - title: "Strata annual reporting"
     url: "https://www.nsw.gov.au/housing-and-construction/strata/strata-annual-reporting"

@@ -216,7 +216,7 @@ function isActive(href: string) {
     </nav>
 
     <div class="header-cta">
-      <a href="/contact" class="btn-primary header-btn">
+      <a href="/contact#book" class="btn-primary header-btn">
         Book a Call
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -283,7 +283,7 @@ function isActive(href: string) {
       <a href="/case-studies" class="mob-link mob-direct">Showcase</a>
       <a href="/team" class="mob-link mob-direct">Team</a>
       <div class="mob-cta">
-        <a href="/contact" class="btn-primary">Book a Call</a>
+        <a href="/contact#book" class="btn-primary">Book a Call</a>
       </div>
     </div>
   </div>
@@ -419,16 +419,21 @@ function isActive(href: string) {
     border-bottom: 1px solid #1e2d28;
     /* padding-top pushes content below the fixed header */
     padding: 5rem 2rem 2.5rem;
-    z-index: 999; /* above page, below header-inner */
+    /* -1 within .header-inner's stacking context: paints under the logo,
+       nav and button (which stay usable) but over the page. 999 here put
+       the panel on top of the whole header. */
+    z-index: -1;
     opacity: 0;
+    visibility: hidden; /* closed panels can't take keyboard focus */
     transform: translateY(-6px);
     pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
     box-shadow: 0 24px 60px rgba(0,0,0,0.5);
   }
 
   .nav-mega-item.is-open .mega-panel {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
   }
@@ -744,6 +749,21 @@ function isActive(href: string) {
     item.addEventListener('mouseenter', open);
     item.addEventListener('mouseleave', scheduleClose);
 
+    // Click, tap or Enter/Space on the trigger. Keyboard toggles; a mouse
+    // click on an already hovered-open panel keeps it open.
+    trigger?.addEventListener('click', (e) => {
+      if (item.classList.contains('is-open') && (e as MouseEvent).detail === 0) {
+        item.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        open();
+        if ((e as MouseEvent).detail === 0) panel?.querySelector<HTMLElement>('a')?.focus();
+      }
+    });
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains((e as FocusEvent).relatedTarget as Node)) scheduleClose();
+    });
+
     // Track the panel itself, cancel close when mouse enters panel
     panel?.addEventListener('mouseenter', () => clearTimeout(closeTimer));
     panel?.addEventListener('mouseleave', scheduleClose);
@@ -765,6 +785,7 @@ function isActive(href: string) {
         item.classList.remove('is-open');
         item.querySelector<HTMLButtonElement>('.nav-trigger')?.setAttribute('aria-expanded', 'false');
       });
+      if (hamburger.classList.contains('open')) { hamburger.click(); hamburger.focus(); }
     }
   });
 

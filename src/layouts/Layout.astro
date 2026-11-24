@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
 import PremiumEffects from '../components/PremiumEffects.astro';
 import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS, GOOGLE_TAG_ID } from '../config/site';
 
@@ -124,8 +123,6 @@ const schema = {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" />
-      <!-- Scroll reveals start hidden and need JS to show; without JS show them. -->
-      <style>.reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; }</style>
     </noscript>
 
     <!-- Theme color -->
@@ -152,8 +149,10 @@ const schema = {
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
 
-    <!-- View Transitions -->
-    <ClientRouter />
+    {/* No ClientRouter: its in-page navigation left bundled scripts (the
+        enquiry form, FAQ accordions) unbound on swapped pages and skipped
+        Google page views. Full page loads, with a CSS cross-page fade in
+        global.css. */}
 
     {/* Suppress benign InvalidStateError that the View Transitions API throws
         when a navigation is superseded by another (fast click, back button,
@@ -173,6 +172,10 @@ const schema = {
   </head>
 
   <body>
+    {/* Scroll reveals start hidden and need JS to show; without JS show them.
+        Kept in the body: a style block inside the head noscript made Astro
+        end the head early, pushing JSON-LD and the Google tag out of it. */}
+    <noscript><style>#page-loader { display: none !important; } .reveal, .reveal-left, .reveal-right, .reveal-scale, [data-anim] { opacity: 1 !important; transform: none !important; }</style></noscript>
     <style is:global>
       /* View transition animations */
       ::view-transition-old(root) {
@@ -218,11 +221,14 @@ const schema = {
         justify-content: center;
         z-index: 9999;
         transition: opacity 0.5s ease, visibility 0.5s ease;
+        /* Failsafe: fades out on its own even if the page script never runs. */
+        animation: awl-loader-out 0.5s ease 2s forwards;
       }
       #page-loader.hidden {
         opacity: 0;
         visibility: hidden;
       }
+      @keyframes awl-loader-out { to { opacity: 0; visibility: hidden; } }
       .loader-inner {
         display: flex;
         flex-direction: column;
@@ -281,8 +287,13 @@ const schema = {
       //
       // Returning sessions skip the splash entirely (display:none, no animation).
       const noAnim = /[?&]noanim=1\b/.test(location.search);
-      const isFirstVisit = !sessionStorage.getItem('awl_visited');
-      sessionStorage.setItem('awl_visited', '1');
+      // sessionStorage throws when cookies are blocked; treat that as a
+      // returning visit so the loader is skipped rather than stuck.
+      let isFirstVisit = false;
+      try {
+        isFirstVisit = !sessionStorage.getItem('awl_visited');
+        sessionStorage.setItem('awl_visited', '1');
+      } catch {}
 
       // Screenshot/debugging escape hatch: when ?noanim=1 is on the URL, also
       // shrink any 100vh hero blocks so a full-page capture can show what is
@@ -297,14 +308,12 @@ const schema = {
         const loader = document.getElementById('page-loader');
         if (loader) loader.style.display = 'none';
       } else {
-        const closeLoader = () => {
-          setTimeout(() => {
-            const loader = document.getElementById('page-loader');
-            if (loader) loader.classList.add('hidden');
-          }, 600);
-        };
-        if (document.readyState === 'complete') closeLoader();
-        else window.addEventListener('load', closeLoader, { once: true });
+        // Close once the page is parsed (this module script runs then), not
+        // after every image and iframe has loaded: first visits are ad clicks.
+        setTimeout(() => {
+          const loader = document.getElementById('page-loader');
+          if (loader) loader.classList.add('hidden');
+        }, 400);
       }
 
       // ClientRouter navigations swap a fresh layout (including a fresh

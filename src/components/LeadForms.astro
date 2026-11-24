@@ -134,6 +134,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
     color: #fff;
   }
   .after-book ol {
+    list-style: decimal;
     margin: 0 0 0.75rem;
     padding-left: 1.25rem;
     color: #a9bcb5;
@@ -293,7 +294,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
 
 
   /* Booking */
-  .booking-card { margin-bottom: 1.5rem; }
+  .booking-card { margin-bottom: 1.5rem; scroll-margin-top: 96px; }
   .booking-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.5rem; }
   .booking-option {
     display: flex; flex-direction: column; gap: 0.5rem;
@@ -360,6 +361,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
     if (!errorBox) return;
     errorBox.innerHTML = html;
     errorBox.hidden = false;
+    errorBox.scrollIntoView({ block: 'center', behavior: 'smooth' });
   };
   const resetButton = () => {
     if (!btn) return;
