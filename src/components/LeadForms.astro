@@ -1,7 +1,8 @@
 ---
 /**
- * Lead capture used on /contact and /why-audit: GoHighLevel booking calendars
- * plus the Web3Forms enquiry form. A successful form submit pushes the
+ * Lead capture used on /contact and /why-audit: buttons that open the
+ * GoHighLevel booking calendars in a new tab (embedded, the calendar was cut
+ * off at the slots and confirm button), plus the Web3Forms enquiry form. A successful form submit pushes the
  * dataLayer event awl_lead_submitted and sends the visitor to /thank-you.
  * The booking calendars redirect to /thank-you from their GHL settings.
  */
@@ -11,18 +12,18 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
 <!-- Booking -->
 <div class="form-card booking-card" id="book">
   <h2>Book a Time</h2>
-  <p class="form-sub">Pick whichever suits you. Times are shown in your local time zone.</p>
-  <div class="booking-tabs" role="tablist" aria-label="Booking type">
-    <button type="button" role="tab" class="booking-tab" id="tab-phone" aria-selected="true" aria-controls="panel-phone" data-panel="panel-phone">Phone call</button>
-    <button type="button" role="tab" class="booking-tab" id="tab-zoom" aria-selected="false" aria-controls="panel-zoom" data-panel="panel-zoom" tabindex="-1">Zoom with Andy</button>
-  </div>
-  <div class="booking-panel" id="panel-phone" role="tabpanel" aria-labelledby="tab-phone">
-    <p class="booking-note">A 15 minute Development Consult by phone. We'll ring you at the time you choose.</p>
-    <iframe id="discovery-call-awu" class="booking-frame" title="Book a phone Development Consult" data-src="https://links.awlabs.com.au/widget/bookings/discovery-call-awu" scrolling="no" loading="lazy"></iframe>
-  </div>
-  <div class="booking-panel" id="panel-zoom" role="tabpanel" aria-labelledby="tab-zoom" hidden>
-    <p class="booking-note">A Zoom meeting with Andy, about an hour. The link is in your confirmation email.</p>
-    <iframe id="dam-call-awlabs" class="booking-frame" title="Book a Zoom meeting with Andy" data-src="https://links.awlabs.com.au/widget/bookings/dam-call-awlabs" scrolling="no" loading="lazy"></iframe>
+  <p class="form-sub">Pick whichever suits you. The calendar opens in a new tab, with times in your local time zone.</p>
+  <div class="booking-options">
+    <a class="booking-option" href="https://links.awlabs.com.au/widget/bookings/discovery-call-awu" target="_blank" rel="noopener">
+      <span class="booking-option-title">Phone call</span>
+      <span class="booking-option-note">A 15 minute Development Consult by phone. We'll ring you at the time you choose.</span>
+      <span class="booking-option-cta">Choose a time <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></span>
+    </a>
+    <a class="booking-option" href="https://links.awlabs.com.au/widget/bookings/dam-call-awlabs" target="_blank" rel="noopener">
+      <span class="booking-option-title">Zoom with Andy</span>
+      <span class="booking-option-note">A Zoom meeting with Andy, about an hour. The link is in your confirmation email.</span>
+      <span class="booking-option-cta">Choose a time <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></span>
+    </a>
   </div>
   <div class="after-book">
     <h3>What happens after you book</h3>
@@ -293,90 +294,31 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
 
   /* Booking */
   .booking-card { margin-bottom: 1.5rem; }
-  .booking-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+  .booking-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .booking-option {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.25rem; border: 1px solid #1e2d28; border-radius: 12px;
+    background: #0a0f0e; text-decoration: none; color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
   }
-  .booking-tab {
-    flex: 1;
-    font-family: 'Sora', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    border: 1px solid #1e2d28;
-    background: transparent;
-    color: #8aa69b;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  .booking-option:hover { border-color: #0d9373; transform: translateY(-2px); }
+  .booking-option:focus-visible { outline: 2px solid #0d9373; outline-offset: 2px; }
+  .booking-option-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; color: white; }
+  .booking-option-note { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; line-height: 1.5; color: #8aa69b; flex: 1; }
+  .booking-option-cta {
+    display: inline-flex; justify-content: center; align-items: center; gap: 0.4rem;
+    margin-top: 0.5rem; padding: 0.75rem 1rem; border-radius: 10px;
+    background: #0d9373; color: white; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.875rem;
   }
-  .booking-tab:hover { color: white; border-color: #0d9373; }
-  .booking-tab[aria-selected="true"] { background: #0d9373; border-color: #0d9373; color: white; }
-  .booking-tab:focus-visible { outline: 2px solid #0d9373; outline-offset: 2px; }
-  .booking-note {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    color: #8aa69b;
-    margin: 0 0 1rem;
-  }
-  .booking-panel[hidden] { display: none; }
-  .booking-frame {
-    width: 100%;
-    min-height: 640px;
-    border: none;
-    border-radius: 12px;
-    background: white;
-    display: block;
-  }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   @media (max-width: 640px) {
     .form-card { padding: 1.75rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
-    .booking-card { padding: 1.5rem 0.75rem; }
-    .booking-card h2, .booking-card .form-sub, .booking-card .booking-note { padding: 0 0.75rem; }
-    .booking-frame { min-height: 1000px; border-radius: 10px; }
-    .booking-tab { font-size: 0.8125rem; padding: 0.75rem 0.5rem; }
+    .booking-options { grid-template-columns: 1fr; }
   }
 </style>
 
-<script>
-  // Booking tabs: load each GoHighLevel calendar only when its tab is first shown.
-  const loadFrame = (panel: HTMLElement | null) => {
-    const f = panel?.querySelector<HTMLIFrameElement>('iframe[data-src]');
-    if (f && !f.src) f.src = f.dataset.src!;
-  };
-  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.booking-tab'));
-  const select = (tab: HTMLButtonElement) => {
-    tabs.forEach((t) => {
-      const on = t === tab;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-      const panel = document.getElementById(t.dataset.panel!);
-      if (panel) panel.hidden = !on;
-      if (on) loadFrame(panel);
-    });
-  };
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
-    t.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-      select(next); next.focus();
-    });
-  });
-  const bookingCard = document.querySelector<HTMLElement>('.booking-card');
-  if (bookingCard) {
-    const io = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) {
-        loadFrame(document.querySelector('.booking-panel:not([hidden])'));
-        io.disconnect();
-      }
-    }, { rootMargin: '400px' });
-    io.observe(bookingCard);
-  }
-</script>
-<script is:inline src="https://links.awlabs.com.au/js/form_embed.js" defer></script>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
