@@ -75,16 +75,17 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
       </select>
     </div>
     <div class="form-group">
-      <label for="hear">How did you hear about us?</label>
-      <select id="hear" name="hear">
+      <label for="found">How did you find us? *</label>
+      <select id="found" name="found" required>
         <option value="">Select...</option>
-        <option>Google Search</option>
-        <option>AI assistant (ChatGPT, Claude, Perplexity, Gemini)</option>
+        <option>Google search</option>
+        <option>Google Maps</option>
+        <option>ChatGPT or another AI assistant</option>
+        <option>Referral</option>
         <option>LinkedIn</option>
-        <option>Referral from another business</option>
-        <option>All Webbed Up (sister company)</option>
-        <option>Industry event</option>
-        <option>Social media</option>
+        <option>YouTube</option>
+        <option>Reddit</option>
+        <option>Instagram or Facebook</option>
         <option>Other</option>
       </select>
     </div>
@@ -322,6 +323,21 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
 
 
 <script>
+  import { getFirstTouch, leadFields } from '../lib/first-touch';
+  import { GHL_LEAD_WEBHOOK_URL } from '../config/site';
+
+  // Booking links carry the first touch to GHL: UTMs for its attribution,
+  // and lead_* values that fill matching hidden fields on the calendar form.
+  document.querySelectorAll<HTMLAnchorElement>('.booking-option').forEach((a) => {
+    a.addEventListener('click', () => {
+      const ft = getFirstTouch();
+      const u = new URL(a.href);
+      Object.entries({ ...leadFields(ft), utm_source: ft.utm_source, utm_medium: ft.utm_medium, utm_campaign: ft.utm_campaign })
+        .forEach(([k, val]) => (val ? u.searchParams.set(k, val) : u.searchParams.delete(k)));
+      a.href = u.toString();
+    });
+  });
+
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const success = document.getElementById('form-success') as HTMLElement | null;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
@@ -409,6 +425,34 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
 
     const fd = new FormData(form);
     const v = (k: string) => String(fd.get(k) || '').trim();
+    const ft = getFirstTouch();
+
+    // GoHighLevel: post the lead with its tracking fields to the inbound
+    // webhook (keepalive survives the redirect to /thank-you). Independent of
+    // the email below, so a failure in one doesn't lose the other.
+    if (GHL_LEAD_WEBHOOK_URL) {
+      fetch(GHL_LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: v('firstName'),
+          last_name: v('lastName'),
+          email: v('email'),
+          phone: auPhone(v('phone')) ?? v('phone'),
+          budget: v('budget'),
+          message: v('message'),
+          nda_requested: fd.get('nda') ? 'yes' : 'no',
+          interest,
+          page: window.location.pathname,
+          how_did_you_find_us: v('found'),
+          ...leadFields(ft),
+          utm_source: ft.utm_source,
+          utm_medium: ft.utm_medium,
+          utm_campaign: ft.utm_campaign,
+        }),
+      }).catch(() => {});
+    }
     const name = `${v('firstName')} ${v('lastName')}`.trim();
     const subject = `Website enquiry · ${name}`;
     // Body leads with the highest-signal fields so the inbox preview is useful.
@@ -419,9 +463,11 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../config/site';
       `Email: ${v('email')}`,
       `Phone: ${auPhone(v('phone')) ?? v('phone')}`,
       v('budget') ? `Budget: ${v('budget')}` : null,
-      v('hear') ? `Heard via: ${v('hear')}` : null,
+      `Found us via: ${v('found')}`,
       interest ? `Interested in: ${interest}` : null,
       `Sent from: ${window.location.pathname}`,
+      `First visit: ${ft.source}${ft.referrer ? ` (referrer ${ft.referrer})` : ''}, landed on ${ft.landing_page}`,
+      ft.utm_campaign || ft.utm_medium ? `Campaign: ${[ft.utm_source, ft.utm_medium, ft.utm_campaign].filter(Boolean).join(' / ')}` : null,
       fd.get('nda') ? 'NDA requested before discussing details' : null,
       '',
       v('message'),

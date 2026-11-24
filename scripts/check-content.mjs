@@ -88,7 +88,13 @@ for (const f of targets) {
   const body = m[2];
   const kind = rel.split(path.sep).includes('guides') ? 'guides' : rel.split(path.sep).includes('solutions') ? 'solutions' : 'locations';
 
-  for (const k of ['title', 'metaTitle', 'description', 'eyebrow', 'published', 'updated', 'summary', 'takeaways']) if (!fm[k]) report(f, `missing ${k}`);
+  const answer = fm.layout === 'answer';
+  // Answer pages (AnswerLayout) have no takeaways: the direct answer replaces them.
+  for (const k of ['title', 'metaTitle', 'description', 'eyebrow', 'published', 'updated', 'summary', ...(answer ? ['method'] : ['takeaways'])]) if (!fm[k]) report(f, `missing ${k}`);
+  if (answer) {
+    const n = String(fm.summary || '').trim().split(/\s+/).length;
+    if (n < 40 || n > 60) report(f, `direct answer is ${n} words (40 to 60)`);
+  }
   if (kind === 'guides' && !['cost', 'compare', 'explainer', 'australia'].includes(fm.category)) report(f, 'bad/missing category');
   if (kind === 'solutions' && !(fm.industry && fm.industry.title && fm.industry.href)) report(f, 'solutions need industry {title, href}');
   if (kind === 'locations' && !(fm.city && fm.state)) report(f, 'locations need city and state');
@@ -107,7 +113,7 @@ for (const f of targets) {
   for (const l of links) if (!known.has(l)) report(f, `unknown internal link ${l}`);
 
   const words = bodyText(body).length;
-  const min = kind === 'guides' && fm.category === 'explainer' ? 700 : kind === 'locations' ? 850 : 1000;
+  const min = answer ? 600 : kind === 'guides' && fm.category === 'explainer' ? 700 : kind === 'locations' ? 850 : 1000;
   if (words < min) report(f, `body only ${words} words (min ${min})`);
   const risky = [...new Set((all.match(RISKY) || []).map((w) => w.toLowerCase()))];
   if (risky.length) console.log(`  ! review claim words: ${risky.join(', ')}`);

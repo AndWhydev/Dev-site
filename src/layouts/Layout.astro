@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import PremiumEffects from '../components/PremiumEffects.astro';
-import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS, GOOGLE_TAG_ID } from '../config/site';
+import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS, GOOGLE_TAG_ID, BING_SITE_VERIFICATION } from '../config/site';
 
 interface Props {
   title: string;
@@ -94,6 +94,7 @@ const schema = {
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    {BING_SITE_VERIFICATION && <meta name="msvalidate.01" content={BING_SITE_VERIFICATION} />}
     {!noCanonical && <link rel="canonical" href={canonicalUrl} />}
     {robots ? <meta name="robots" content={robots} /> : noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -175,6 +176,11 @@ const schema = {
     {/* Scroll reveals start hidden and need JS to show; without JS show them.
         Kept in the body: a style block inside the head noscript made Astro
         end the head early, pushing JSON-LD and the Google tag out of it. */}
+    <script>
+      // First-touch attribution for GHL lead fields (see src/lib/first-touch.ts).
+      import { recordFirstTouch } from '../lib/first-touch';
+      recordFirstTouch();
+    </script>
     <noscript><style>#page-loader { display: none !important; } .reveal, .reveal-left, .reveal-right, .reveal-scale, [data-anim] { opacity: 1 !important; transform: none !important; }</style></noscript>
     <style is:global>
       /* View transition animations */
