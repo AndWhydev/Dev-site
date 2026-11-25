@@ -1,0 +1,21 @@
+---
+/* Site wide "general information" note, shown under every guide, answer,
+   solution, location and industry page. Andy asked for it on 25 Nov 2026:
+   information can go out of date or be wrong, so readers should check with
+   us (or an independent adviser) before acting. */
+interface Props { updated?: Date }
+const { updated } = Astro.props;
+const asOf = updated
+  ? updated.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Australia/Sydney' })
+  : null;
+---
+<aside class="info-disclaimer" aria-label="General information disclaimer">
+  <p><strong>General information only.</strong> AWLabs writes this content in good faith{asOf ? `, and it was current as at ${asOf}` : ''}. Laws, prices, products and platforms change often, so some details may be out of date or incorrect by the time you read them. It is not legal, tax, financial or professional advice, and it does not take your circumstances into account. Please don't rely on it alone to make a decision. Before you act, <a href="/contact">talk to AWLabs</a> about your situation, or get independent professional advice. To the extent the law allows, AWLabs is not liable for any loss arising from reliance on this content.</p>
+</aside>
+
+<style>
+  .info-disclaimer { margin: 2.5rem 0 0; padding: 1rem 1.25rem; border: 1px solid #1e2d28; border-radius: 10px; background: rgba(255,255,255,0.02); }
+  .info-disclaimer p { margin: 0; font-size: 0.85rem; line-height: 1.6; color: #8aa09a; }
+  .info-disclaimer strong { color: #b4c4be; font-weight: 600; }
+  .info-disclaimer a { color: #0d9373; text-decoration: underline; text-underline-offset: 3px; }
+</style>
