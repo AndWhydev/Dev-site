@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lastmod": "node scripts/lastmod.mjs"
+    "lastmod": "node scripts/lastmod.mjs",
+    "health": "node scripts/site-health.mjs"
   },
   "dependencies": {
     "astro": "^6.3.6",
