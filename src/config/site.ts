@@ -15,6 +15,16 @@ export const SITE_URL = 'https://www.awlabs.com.au';
  */
 export const GOOGLE_TAG_ID = 'AW-18585307986';
 export const GOOGLE_ADS_SEND_TO = 'AW-18585307986/onkSCJuGpr0dENKWlZ5F';
+/**
+ * GoHighLevel Inbound Webhook (Automation > Workflow > trigger "Inbound
+ * Webhook"). Every enquiry form submit is also posted here with the lead
+ * tracking fields; the workflow maps them onto the contact. Empty = off.
+ */
+export const GHL_LEAD_WEBHOOK_URL = '';
+
+/** Bing Webmaster Tools verification (the content of the msvalidate.01 meta tag). Empty = no tag. */
+export const BING_SITE_VERIFICATION = '';
+
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const LOCAL_ID = `${SITE_URL}/#localbusiness`;
 export const FOUNDER_ID = `${SITE_URL}/team/andy-taleb#person`;
@@ -46,18 +56,25 @@ export const HOURS_TEXT = 'Monday to Friday, 9am to 6pm Sydney time';
 export const FOUNDER_LINKEDIN = 'https://www.linkedin.com/in/andytaleb/';
 
 /**
- * Organization sameAs: profiles that ARE AWLabs. Never add All Webbed Up or
- * personal profiles here. Empty strings are skipped in the JSON-LD.
+ * AWLabs company profiles. Paste each URL as the profile goes live; empty
+ * ones are skipped. Never add All Webbed Up or personal profiles here.
  */
-export const SAME_AS = [
-  'https://www.instagram.com/andy_awlabs/',
-  GOOGLE_MAPS_URL,
-  '', // TODO: LinkedIn company page URL
-  '', // TODO: Facebook business page URL
-  '', // TODO: YouTube channel URL
-  '', // TODO: Clutch profile URL
-  '', // TODO: Crunchbase profile URL
-].filter(Boolean);
+export const PROFILES = {
+  instagram: 'https://www.instagram.com/andy_awlabs/',
+  googleMaps: GOOGLE_MAPS_URL,
+  linkedin: '', // TODO: LinkedIn company page URL
+  youtube: '', // TODO: YouTube channel URL
+  clutch: '', // TODO: Clutch profile URL
+  goodfirms: '', // TODO: GoodFirms profile URL
+  designrush: '', // TODO: DesignRush profile URL
+  yelp: '', // TODO: Yelp business page URL
+  bingPlaces: '', // TODO: Bing Places listing URL
+  facebook: '', // TODO: Facebook business page URL
+  crunchbase: '', // TODO: Crunchbase profile URL
+};
+
+/** Organization sameAs: the profiles above that are filled in. */
+export const SAME_AS = Object.values(PROFILES).filter(Boolean);
 
 /** ProfessionalService node for the homepage and /contact, linked to the Organization. */
 export const LOCAL_BUSINESS_SCHEMA = {
