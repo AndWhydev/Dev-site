@@ -5,6 +5,7 @@
  * FAQs, sources, related links, visible "last updated" date.
  * variant="answer" is the question page format (see AnswerLayout.astro).
  */
+import InfoDisclaimer from '../components/InfoDisclaimer.astro';
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -241,6 +242,8 @@ const disclaimers: Record<string, string> = {
             <a href="/contact#book" class="lf-cta-link">Or book a Development Consult &rarr;</a>
           </section>
         )}
+
+        <InfoDisclaimer updated={data.updated} />
       </article>
 
       <aside class="lf-aside">
