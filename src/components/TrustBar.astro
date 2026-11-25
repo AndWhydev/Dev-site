@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 /**
  * Credibility strip, concrete provable facts, not client logos.
  * Lives directly under the hero. Every item here is verifiable from public
@@ -14,22 +15,22 @@
 const items = [
   {
     label: 'ABN',
-    value: '32 698 684 105',
-    detail: 'AW Labs Pty Ltd · known as AWLabs',
-    href: 'https://abr.business.gov.au/ABN/View?id=32698684105',
+    value: BRAND.abn,
+    detail: `${BRAND.legalName} · known as ${BRAND.name}`,
+    href: `https://abr.business.gov.au/ABN/View?id=${BRAND.abn.replace(/\s/g, '')}`,
     hrefLabel: 'Verify on the Australian Business Register',
   },
   {
     label: 'Office',
     value: 'Sydney, NSW',
-    detail: '1 Ramsay Rd, Five Dock 2046',
-    href: 'https://www.google.com/maps/search/?api=1&query=1+Ramsay+Rd+Five+Dock+NSW+2046',
+    detail: BRAND.addressLine,
+    href: BRAND.profiles.googleMaps,
     hrefLabel: 'Open our office on Google Maps',
   },
   {
     label: 'Track record',
-    value: 'Andy has shipped software since 2019',
-    detail: 'AWLabs founded mid 2026 · All Webbed Up since 2021',
+    value: `Andy has shipped software since ${BRAND.founder.buildingSince}`,
+    detail: `${BRAND.name} founded ${BRAND.founded} · ${BRAND.sisterCompany.name} since ${BRAND.sisterCompany.since}`,
   },
   {
     label: 'Your IP',

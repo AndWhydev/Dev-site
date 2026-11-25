@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { services } from '../lib/site-index';
 import { DISAMBIGUATION, HOURS_LINE, REVIEWS_LINE } from '../lib/facts';
+import { BRAND } from '../config/brand';
 
 /* Plain text site summary for LLM tools (llmstxt.org). Low impact per our
    research (SEO-SOP.md section 1.8) but cheap to keep current. The longer
@@ -20,11 +21,11 @@ export const GET: APIRoute = async () => {
   const body = [
     '# AWLabs',
     '',
-    '> AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney based AI and software development company for SMBs and enterprise across Australia. Every engagement starts with a 15 minute Development Consult, then a Discovery Audit (a paid step, credited in full against the build), then one fixed price Schedule of Work for an agreed scope with three options (The Minimum, The Recommended, The Complete). Updates every Tuesday and Friday, Sydney time. Code is assigned to the client as it is paid for, with a 30 day warranty and then a Care Plan. Founder Andy Taleb has built software professionally since 2019 and has run sister company All Webbed Up since 2021; AWLabs launched in mid 2026 as a partnership with a group of developers and founders.',
+    `> ${BRAND.name} (${BRAND.legalName}, ABN ${BRAND.abn}) is a Sydney based AI and software development company for SMBs and enterprise across Australia. Every engagement starts with a 15 minute Development Consult, then a Discovery Audit (a paid step, credited in full against the build), then one fixed price Schedule of Work for an agreed scope with three options (The Minimum, The Recommended, The Complete). Updates every Tuesday and Friday, Sydney time. Code is assigned to the client as it is paid for, with a 30 day warranty and then a Care Plan. Founder ${BRAND.founder.name} has built software professionally since ${BRAND.founder.buildingSince} and has run sister company ${BRAND.sisterCompany.name} since ${BRAND.sisterCompany.since}; ${BRAND.name} launched in ${BRAND.founded} as a partnership with a group of developers and founders.`,
     '',
     `- Reviews: ${REVIEWS_LINE}`,
     `- Hours: ${HOURS_LINE}`,
-    '- Contact: admin@awlabs.com.au, 1800 714 148, 1 Ramsay Rd, Five Dock NSW 2046',
+    `- Contact: ${BRAND.email}, ${BRAND.phone.display}, ${BRAND.addressLine}`,
     `- ${DISAMBIGUATION}`,
     `- Full text version: ${site}/llms-full.txt`,
     '',
@@ -42,7 +43,7 @@ export const GET: APIRoute = async () => {
     line('Staff augmentation', '/staff-augmentation', 'Experienced engineers embedded in your team'),
     line('Digital transformation', '/digital-transformation', 'Legacy modernisation, cloud migration and process automation'),
     line('Industries', '/industries', 'The industries we build for'),
-    line('Contact', '/contact', 'Book a Development Consult: admin@awlabs.com.au, 1800 714 148'),
+    line('Contact', '/contact', `Book a Development Consult: ${BRAND.email}, ${BRAND.phone.display}`),
     '',
     '## Services',
     ...services.map((s) => line(s.name, `/services/${s.slug}`, s.description)),

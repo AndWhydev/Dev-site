@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -31,7 +32,7 @@ const lastReviewed = '25 October 2026';
 
           <h2>1. Who we are</h2>
           <p>
-            <strong>AW Labs Pty Ltd</strong> (ABN: <strong>32 698 684 105</strong>), known as
+            <strong>{BRAND.legalName}</strong> (ABN: <strong>{BRAND.abn}</strong>), known as
             AWLabs ("we", "us", "our"). We are an Australian
             company based in Sydney, NSW, providing custom software, AI, automation, cloud
             infrastructure and digital transformation services to Australian businesses.
@@ -216,9 +217,9 @@ const lastReviewed = '25 October 2026';
           <h2>12. Contact us &amp; complaints</h2>
           <p>
             <strong>Privacy Officer</strong><br />
-            AW Labs Pty Ltd (known as AWLabs)<br />
-            Email: <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a><br />
-            1 Ramsay Rd, Five Dock NSW 2046
+            {BRAND.legalName} (known as AWLabs)<br />
+            Email: <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a><br />
+            {BRAND.addressLine}
           </p>
           <p>
             If you have a complaint about how we have handled your personal information, please

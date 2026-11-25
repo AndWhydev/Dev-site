@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -6,7 +7,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout
   title="Terms of Service | AWLabs"
-  description="Terms of service and conditions of use for the AWLabs website, operated by AW Labs Pty Ltd (ABN 32 698 684 105), Sydney, Australia."
+  description={`Terms of service and conditions of use for the AWLabs website, operated by ${BRAND.legalName} (ABN ${BRAND.abn}), Sydney, Australia.`}
   noindex={true}
 >
   <Header />
@@ -28,7 +29,7 @@ import Footer from '../components/Footer.astro';
 
           <h2>1. About Us</h2>
           <p>
-            <strong>AW Labs Pty Ltd</strong> (ABN 32 698 684 105), known as AWLabs (the "Company", "we", "us", "our"),
+            <strong>{BRAND.legalName}</strong> (ABN {BRAND.abn}), known as AWLabs (the "Company", "we", "us", "our"),
             an Australian proprietary limited company. All engagements are contracted with the Company and are subject
             to Australian law.
           </p>
@@ -45,7 +46,7 @@ import Footer from '../components/Footer.astro';
           <h2>3. Intellectual Property in Website Content</h2>
           <p>
             All content on this website, including copy, code, design, imagery, logos, video, and case-study material,
-            is owned by AW Labs Pty Ltd or licensed to us. You may view and share the content for personal,
+            is owned by {BRAND.legalName} or licensed to us. You may view and share the content for personal,
             non-commercial reference. Any other use, including reproduction, republication, framing, scraping,
             training of machine-learning models, or commercial use of any kind, requires our prior written consent.
           </p>
@@ -115,8 +116,8 @@ import Footer from '../components/Footer.astro';
 
           <h2>12. Contact</h2>
           <p>
-            Legal enquiries: <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a><br />
-            AW Labs Pty Ltd, 1 Ramsay Rd, Five Dock NSW 2046, Australia.<br />
+            Legal enquiries: <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a><br />
+            {BRAND.legalName}, {BRAND.addressLine}, Australia.<br />
             Registered office: Floor 1, 43 Ware Street, Fairfield NSW 2165.
           </p>
         </div>

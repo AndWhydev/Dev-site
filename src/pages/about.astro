@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -50,7 +51,7 @@ const values = [
           AWLabs is a Sydney based AI and software development company for growing businesses and enterprise. Sister company to All Webbed Up, a separate websites and marketing company.
         </p>
         <p class="about-sub">
-          AWLabs (sometimes called All Webbed Labs) is a Sydney software and AI development company in Five Dock, founded in mid 2026 by Andy Taleb, who has been building software since 2019.
+          AWLabs (sometimes called All Webbed Labs) is a Sydney software and AI development company in Five Dock, founded in {BRAND.founded} by Andy Taleb, who has been building software since {BRAND.founder.buildingSince}.
         </p>
         <p class="about-sub">
           Software engineers, AI specialists and technology strategists, built around a single belief:
@@ -68,8 +69,8 @@ const values = [
         <div class="story-narrative reveal-left">
           <span class="section-label">Our Story</span>
           <h2 class="section-heading">Why We Built AWLabs</h2>
-          <p>Our founder has been building software professionally since 2019, and has run <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> as a Sydney marketing and development agency since 2021. That is five years of client delivery, and seven years of shipping code, behind every engagement AWLabs takes on.</p>
-          <p>AWLabs exists to focus on a single question: what happens when an agency runs itself on autonomous AI workers instead of selling them by the hour. AW Labs Pty Ltd launched in mid 2026 as a new, separate company: a partnership between our founder and a group of exceptional developers and founders. All Webbed Up handles marketing. AWLabs builds the software.</p>
+          <p>Our founder has been building software professionally since {BRAND.founder.buildingSince}, and has run <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> as a Sydney marketing and development agency since {BRAND.sisterCompany.since}. That is five years of client delivery, and seven years of shipping code, behind every engagement AWLabs takes on.</p>
+          <p>AWLabs exists to focus on a single question: what happens when an agency runs itself on autonomous AI workers instead of selling them by the hour. {BRAND.legalName} launched in {BRAND.founded} as a new, separate company: a partnership between our founder and a group of exceptional developers and founders. All Webbed Up handles marketing. AWLabs builds the software.</p>
           <p>The product you see across this site (Overseer, our build pipeline of many agents, and the internal apps that triage briefs, plan projects and ship code) is the same software we use every day to deliver client work. For the full milestone timeline, see <a href="/our-journey">our journey</a>. See a selection of our work in <a href="/case-studies">our showcase</a>.</p>
         </div>
       </div>
@@ -185,19 +186,19 @@ const values = [
             <div class="location-details">
               <div class="loc-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>1 Ramsay Rd, Five Dock NSW 2046</span>
+                <span>{BRAND.addressLine}</span>
               </div>
               <div class="loc-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.16v.76z"/></svg>
-                <span>1800 714 148</span>
+                <span>{BRAND.phone.display}</span>
               </div>
               <div class="loc-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Mon to Fri, 9am to 6pm Sydney time</span>
+                <span>{BRAND.hours.short}</span>
               </div>
               <div class="loc-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span>admin@awlabs.com.au</span>
+                <span>{BRAND.email}</span>
               </div>
             </div>
             <a href="/contact" class="btn-primary" style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;">

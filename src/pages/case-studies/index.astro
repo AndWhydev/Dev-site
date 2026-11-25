@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../../config/brand';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -482,7 +483,7 @@ const visibleCategories = categories.filter((cat) => cat.items.length > 0);
         <span class="section-label">Our work</span>
         <h1 class="cs-title">Products we&rsquo;ve built or helped build</h1>
         <p>
-          <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> has been delivering for clients since 2021, and our founder has been shipping software since 2019. AWLabs launched in mid 2026 as a new, separate company, a partnership with exceptional developers and founders.
+          <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer">All Webbed Up</a> has been delivering for clients since {BRAND.sisterCompany.since}, and our founder has been shipping software since {BRAND.founder.buildingSince}. AWLabs launched in {BRAND.founded} as a new, separate company, a partnership with exceptional developers and founders.
         </p>
         <p>
           Some of these products we built end to end. On others we built part of the product, such as a feature, an integration or the backend. Most of what we do stays private, so this is only a small part of it.

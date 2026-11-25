@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../../config/brand';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -24,7 +25,7 @@ const people = [
     url: `${siteUrl}/team/andy-taleb`,
     image: `${siteUrl}/team/andy-taleb.webp`,
     worksFor: org,
-    sameAs: ['https://www.linkedin.com/in/andytaleb/'],
+    sameAs: [BRAND.founder.linkedin],
   },
   {
     '@context': 'https://schema.org',

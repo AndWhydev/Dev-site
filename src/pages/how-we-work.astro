@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,7 +8,7 @@ const documents = [
   {
     title: 'Mutual NDA',
     description: 'Our mutual non-disclosure agreement. We send it before you share your idea so you can speak freely about your business, roadmap and competitive position.',
-    notice: 'Our NDA is signed by AW Labs Pty Ltd. You accept it by replying to our email to say you agree. No wet signature needed.',
+    notice: `Our NDA is signed by ${BRAND.legalName}. You accept it by replying to our email to say you agree. No wet signature needed.`,
     filename: 'mutual-nda.pdf',
     href: '/client-pack/mutual-nda.pdf',
     size: '12 KB',
@@ -180,7 +181,7 @@ const documents = [
           <p class="ask-copy">If you want the engineering decisions behind a particular project, a reference from a past client, or to talk to the lead engineer who delivered it, just ask. We would rather walk you through it directly than dress it up in marketing copy.</p>
           <div class="ask-actions">
             <a href="/contact" class="btn-primary">Book a Call</a>
-            <a href="mailto:admin@awlabs.com.au" class="btn-outline">Email Us Directly</a>
+            <a href={`mailto:${BRAND.email}`} class="btn-outline">Email Us Directly</a>
           </div>
         </div>
       </div>

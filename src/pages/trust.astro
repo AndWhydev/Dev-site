@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -16,11 +17,11 @@ import CTABanner from '../components/CTABanner.astro';
  */
 
 const facts = [
-  { label: 'Legal entity', value: 'AW Labs Pty Ltd', detail: 'Known as AWLabs. Sister company to All Webbed Up, a separate marketing company.' },
-  { label: 'ABN', value: '32 698 684 105', detail: 'Australian Business Number, verifiable on abr.business.gov.au' },
+  { label: 'Legal entity', value: BRAND.legalName, detail: `Known as ${BRAND.name}. Sister company to ${BRAND.sisterCompany.name}, a separate marketing company.` },
+  { label: 'ABN', value: BRAND.abn, detail: 'Australian Business Number, verifiable on abr.business.gov.au' },
   { label: 'Registered office', value: 'Floor 1, 43 Ware Street, Fairfield NSW 2165', detail: 'As recorded with ASIC' },
-  { label: 'Business address', value: '1 Ramsay Rd, Five Dock NSW 2046', detail: 'Greater Sydney, Australia' },
-  { label: 'Operating hours', value: 'Monday to Friday, 9am to 6pm Sydney time', detail: 'A real person reads every enquiry' },
+  { label: 'Business address', value: BRAND.addressLine, detail: 'Greater Sydney, Australia' },
+  { label: 'Operating hours', value: BRAND.hours.text, detail: 'A real person reads every enquiry' },
   { label: 'Ownership', value: '100% Australian owned', detail: 'No offshore parent. Delivery is led from Australia and remains managed and accountable through AWLabs in Sydney.' },
   { label: 'Insurance', value: 'Professional indemnity $1M per claim ($2M in total each year). Public liability $10M. Cyber $500,000 per claim ($1M in total).', detail: 'Underwritten by Lloyd’s via CFC. Certificate of Currency provided to procurement on request.' },
 ];
@@ -290,7 +291,7 @@ const compliance = [
       <div class="trust-disclaimer-inner">
         <div class="reveal">
           <p>
-            <strong>An honest note.</strong> Our founder has been shipping software since 2019 and running All Webbed Up as a Sydney marketing and development agency since 2021. AWLabs itself launched in mid 2026 as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned or badges we cannot produce on request. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>. We will tell you yes, no or "not yet" without dressing it up.
+            <strong>An honest note.</strong> Our founder has been shipping software since {BRAND.founder.buildingSince} and running All Webbed Up as a Sydney marketing and development agency since {BRAND.sisterCompany.since}. AWLabs itself launched in {BRAND.founded} as a new company, a partnership with a group of exceptional developers and founders. We have deliberately not stamped this site with certifications we have not earned or badges we cannot produce on request. If something on this page matters to your procurement process and we have not addressed it, ask us directly at <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>. We will tell you yes, no or "not yet" without dressing it up.
           </p>
         </div>
       </div>

@@ -1,7 +1,10 @@
 /**
- * Shared business facts for AWLabs. Change a value here and every page,
- * the JSON-LD and /llms.txt pick it up on the next build.
+ * Site configuration: tracking, Google Business Profile and the schema nodes
+ * built from the brand facts. The facts themselves (name, phone, address,
+ * hours, profiles) live in src/config/brand.ts; the names below re-export
+ * them so existing imports keep working.
  */
+import { BRAND, BRAND_SAME_AS } from './brand';
 
 export const SITE_URL = 'https://www.awlabs.com.au';
 
@@ -33,55 +36,28 @@ export const FOUNDER_ID = `${SITE_URL}/team/andy-taleb#person`;
 export const GOOGLE_REVIEW_COUNT = 40;
 export const GOOGLE_RATING = 5.0;
 export const GOOGLE_PLACE_ID = 'ChIJ7SB3xTa7EmsRecxLdpkCzIQ';
-export const GOOGLE_MAPS_URL = 'https://maps.google.com/?cid=9569026166393392249';
+export const GOOGLE_MAPS_URL = BRAND.profiles.googleMaps;
 export const GOOGLE_REVIEWS_URL = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
-export const GOOGLE_MAP_EMBED_URL =
-  'https://maps.google.com/maps?q=AWLabs%2C%201%20Ramsay%20Rd%2C%20Five%20Dock%20NSW%202046&z=16&output=embed';
+export const GOOGLE_MAP_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(`${BRAND.name}, ${BRAND.addressLine}`)}&z=16&output=embed`;
 
-export const PHONE_DISPLAY = '1800 714 148';
-export const PHONE_TEL = '1800714148';
-export const PHONE_E164 = '+61 1800 714 148';
+export const PHONE_DISPLAY = BRAND.phone.display;
+export const PHONE_TEL = BRAND.phone.tel;
+export const PHONE_E164 = BRAND.phone.e164;
+export const ADDRESS = BRAND.address;
+export const ADDRESS_LINE = BRAND.addressLine;
+export const GEO = BRAND.geo;
+export const HOURS_TEXT = BRAND.hours.text;
+export const FOUNDER_LINKEDIN = BRAND.founder.linkedin;
 
-export const ADDRESS = {
-  streetAddress: '1 Ramsay Rd',
-  addressLocality: 'Five Dock',
-  addressRegion: 'NSW',
-  postalCode: '2046',
-  addressCountry: 'AU',
-};
-export const ADDRESS_LINE = '1 Ramsay Rd, Five Dock NSW 2046';
-export const GEO = { latitude: -33.8728717, longitude: 151.1321369 };
-export const HOURS_TEXT = 'Monday to Friday, 9am to 6pm Sydney time';
-
-export const FOUNDER_LINKEDIN = 'https://www.linkedin.com/in/andytaleb/';
-
-/**
- * AWLabs company profiles. Paste each URL as the profile goes live; empty
- * ones are skipped. Never add All Webbed Up or personal profiles here.
- */
-export const PROFILES = {
-  instagram: 'https://www.instagram.com/andy_awlabs/',
-  googleMaps: GOOGLE_MAPS_URL,
-  linkedin: '', // TODO: LinkedIn company page URL
-  youtube: '', // TODO: YouTube channel URL
-  clutch: '', // TODO: Clutch profile URL
-  goodfirms: '', // TODO: GoodFirms profile URL
-  designrush: '', // TODO: DesignRush profile URL
-  yelp: '', // TODO: Yelp business page URL
-  bingPlaces: '', // TODO: Bing Places listing URL
-  facebook: '', // TODO: Facebook business page URL
-  crunchbase: '', // TODO: Crunchbase profile URL
-};
-
-/** Organization sameAs: the profiles above that are filled in. */
-export const SAME_AS = Object.values(PROFILES).filter(Boolean);
+/** Organization sameAs: the company profiles in brand.ts that are filled in. */
+export const SAME_AS = BRAND_SAME_AS;
 
 /** ProfessionalService node for the homepage and /contact, linked to the Organization. */
 export const LOCAL_BUSINESS_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': LOCAL_ID,
-  name: 'AWLabs',
+  name: BRAND.name,
   url: SITE_URL,
   image: `${SITE_URL}/logo.png`,
   parentOrganization: { '@id': ORG_ID },
@@ -91,14 +67,11 @@ export const LOCAL_BUSINESS_SCHEMA = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '18:00',
+      dayOfWeek: [...BRAND.hours.days],
+      opens: BRAND.hours.opens,
+      closes: BRAND.hours.closes,
     },
   ],
   hasMap: GOOGLE_MAPS_URL,
-  areaServed: [
-    { '@type': 'City', name: 'Sydney' },
-    { '@type': 'Country', name: 'Australia' },
-  ],
+  areaServed: BRAND.areasServed.map((name) => ({ '@type': name === 'Australia' ? 'Country' : 'City', name })),
 };

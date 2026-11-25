@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -399,7 +400,7 @@ const pillars = [
             <a href="/case-studies" class="btn-outline">See our showcase</a>
             <a href="/how-we-work" class="btn-outline">Read our NDA</a>
           </div>
-          <p class="close-note">Or call 1800 714 148</p>
+          <p class="close-note">Or call {BRAND.phone.display}</p>
         </div>
       </div>
     </section>

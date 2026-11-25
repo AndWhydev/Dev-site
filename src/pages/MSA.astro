@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -40,7 +41,7 @@ const clauses = [
 
 <Layout
   title="Master Services Agreement | AWLabs"
-  description="AW Labs Pty Ltd's Master Services Agreement: the standing terms for every Schedule of Work and Care Plan."
+  description={`${BRAND.legalName}'s Master Services Agreement: the standing terms for every Schedule of Work and Care Plan.`}
   noindex={true}
 >
   <Header />
@@ -50,7 +51,7 @@ const clauses = [
         <div class="policy-header reveal">
           <span class="section-label">Legal</span>
           <h1>Master Services Agreement</h1>
-          <p class="policy-meta">Version dated {lastReviewed} · AW Labs Pty Ltd · ABN 32 698 684 105</p>
+          <p class="policy-meta">Version dated {lastReviewed} · {BRAND.legalName} · ABN {BRAND.abn}</p>
 
           <div class="policy-actions">
             <a
@@ -71,7 +72,7 @@ const clauses = [
             Opening this page does not commit you to anything. The MSA is signed only when you are
             ready to go ahead with a project, alongside a Schedule of Work for the specific work.
             Take as long as you need, share it with your advisers, and email
-            <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a> if you would like to
+            <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a> if you would like to
             walk through any clause with us.
           </p>
 

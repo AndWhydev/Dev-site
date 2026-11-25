@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import PremiumEffects from '../components/PremiumEffects.astro';
-import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN, SAME_AS, PHONE_E164, ADDRESS, GOOGLE_TAG_ID, BING_SITE_VERIFICATION } from '../config/site';
+import { ORG_ID, FOUNDER_ID, SAME_AS, GOOGLE_TAG_ID, BING_SITE_VERIFICATION } from '../config/site';
+import { BRAND, FOUNDER_SAME_AS } from '../config/brand';
 
 interface Props {
   title: string;
@@ -39,25 +40,25 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': ORG_ID,
-  name: 'AWLabs',
-  legalName: 'AW Labs Pty Ltd',
-  alternateName: ['AWL', 'AW Labs', 'AWLabs', 'All Webbed Labs'],
-  taxID: 'ABN 32 698 684 105',
-  foundingDate: '2026',
+  name: BRAND.name,
+  legalName: BRAND.legalName,
+  alternateName: [...BRAND.alternateNames],
+  taxID: `ABN ${BRAND.abn}`,
+  foundingDate: BRAND.foundingDate,
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description: BRAND_DEFINITION,
-  email: 'admin@awlabs.com.au',
-  telephone: PHONE_E164,
+  email: BRAND.email,
+  telephone: BRAND.phone.e164,
   founder: {
     '@type': 'Person',
     '@id': FOUNDER_ID,
-    name: 'Andy Taleb',
-    jobTitle: 'Director',
-    url: `${siteUrl}/team/andy-taleb`,
-    sameAs: [FOUNDER_LINKEDIN],
+    name: BRAND.founder.name,
+    jobTitle: BRAND.founder.jobTitle,
+    url: `${siteUrl}${BRAND.founder.url}`,
+    sameAs: FOUNDER_SAME_AS,
   },
-  areaServed: { '@type': 'Country', name: 'Australia' },
+  areaServed: BRAND.areasServed.map((name) => ({ '@type': name === 'Australia' ? 'Country' : 'City', name })),
   knowsAbout: [
     'Custom software development',
     'Enterprise application development',
@@ -73,8 +74,8 @@ const schema = {
     'Model Context Protocol',
     'Data residency and sovereignty',
   ],
-  address: { '@type': 'PostalAddress', ...ADDRESS },
-  // Only profiles that ARE AWLabs (see src/config/site.ts). Personal profiles
+  address: { '@type': 'PostalAddress', ...BRAND.address },
+  // Only profiles that ARE AWLabs (see src/config/brand.ts). Personal profiles
   // belong on the founder Person node; All Webbed Up is a separate business.
   sameAs: SAME_AS,
 };

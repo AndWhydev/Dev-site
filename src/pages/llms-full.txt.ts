@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { services, TOP_GUIDES } from '../lib/site-index';
 import { DISAMBIGUATION, FACT_TEXT, HOURS_LINE, REVIEWS_LINE } from '../lib/facts';
+import { BRAND } from '../config/brand';
 
 /* Long form companion to /llms.txt: the facts, process, team, every service
    with a paragraph and the top guide summaries, in one plain text file an
@@ -25,17 +26,21 @@ export const GET: APIRoute = async () => {
     `> ${FACT_TEXT}`,
     '',
     '## Facts',
-    '- Brand: AWLabs',
-    '- Legal entity: AW Labs Pty Ltd',
-    '- ABN: 32 698 684 105',
+    `- Brand: ${BRAND.name}`,
+    `- Also known as: ${BRAND.alternateNames.join(', ')}`,
+    `- Legal entity: ${BRAND.legalName}`,
+    `- ABN: ${BRAND.abn}`,
     '- What we are: a Sydney software and AI development company',
-    '- Address: 1 Ramsay Rd, Five Dock NSW 2046, Australia',
-    '- Phone: 1800 714 148',
-    '- Email: admin@awlabs.com.au',
+    `- Founded: ${BRAND.founded} by ${BRAND.founder.name}`,
+    `- Address: ${BRAND.addressLine}, Australia`,
+    `- Phone: ${BRAND.phone.display}`,
+    `- Email: ${BRAND.email}`,
+    `- Areas served: ${BRAND.areasServed.join(' and ')}`,
+    `- Services: ${BRAND.services.map((s) => s.name).join('; ')}`,
     `- Hours: ${HOURS_LINE}`,
     `- Reviews: ${REVIEWS_LINE}`,
-    '- Sister company: All Webbed Up, a separate websites and marketing company',
-    '- History: our founder has built software professionally since 2019 and has run All Webbed Up since 2021. AWLabs launched in mid 2026 as a partnership with exceptional developers and founders.',
+    `- Sister company: ${BRAND.sisterCompany.name}, a separate websites and marketing company`,
+    `- History: our founder has built software professionally since ${BRAND.founder.buildingSince} and has run ${BRAND.sisterCompany.name} since ${BRAND.sisterCompany.since}. ${BRAND.name} launched in ${BRAND.founded} as a partnership with exceptional developers and founders.`,
     `- ${DISAMBIGUATION}`,
     '',
     '## Who we serve',
@@ -76,7 +81,7 @@ export const GET: APIRoute = async () => {
     `- Our showcase: ${site}/case-studies`,
     '',
     '## Contact',
-    `Book a Development Consult at ${site}/contact, email admin@awlabs.com.au or call 1800 714 148. ${HOURS_LINE}`,
+    `Book a Development Consult at ${site}/contact, email ${BRAND.email} or call ${BRAND.phone.display}. ${HOURS_LINE}`,
     '',
   ].join('\n');
 

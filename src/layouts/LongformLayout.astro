@@ -10,7 +10,8 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
-import { ORG_ID, FOUNDER_ID, FOUNDER_LINKEDIN } from '../config/site';
+import { ORG_ID, FOUNDER_ID } from '../config/site';
+import { BRAND, FOUNDER_SAME_AS } from '../config/brand';
 
 interface Crumb { title: string; href?: string }
 interface Heading { depth: number; slug: string; text: string }
@@ -52,19 +53,19 @@ const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
 const orgRef = { '@id': ORG_ID };
 // Guides are written by Andy, so the Article author is a Person, not the company.
 const author = {
-  name: 'Andy Taleb',
-  role: 'Founder and Director, AWLabs',
-  url: '/team/andy-taleb',
-  photo: '/team/andy-taleb.webp',
+  name: BRAND.founder.name,
+  role: `${BRAND.founder.jobTitle}, ${BRAND.name}`,
+  url: BRAND.founder.url,
+  photo: BRAND.founder.photo,
 };
 const authorSchema = {
   '@type': 'Person',
   '@id': FOUNDER_ID,
   name: author.name,
-  jobTitle: 'Founder and Director',
+  jobTitle: BRAND.founder.jobTitle,
   url: `${siteUrl}${author.url}`,
   image: `${siteUrl}${author.photo}`,
-  sameAs: [FOUNDER_LINKEDIN],
+  sameAs: FOUNDER_SAME_AS,
   worksFor: orgRef,
 };
 

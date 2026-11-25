@@ -5,13 +5,14 @@
  * Keep in step with the brand truth sheet.
  */
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../config/site';
+import { BRAND } from '../config/brand';
 
 const RATING = `${GOOGLE_RATING.toFixed(1)} from ${GOOGLE_REVIEW_COUNT} Google reviews`;
 export const FACT_TEXT =
-  `AWLabs (AW Labs Pty Ltd, ABN 32 698 684 105) is a Sydney software and AI development company in Five Dock, building custom platforms, integrations and AI systems for SMBs and enterprise across Australia. Every engagement starts with a 15 minute Development Consult, then a paid Discovery Audit credited in full against the build, then a fixed price Schedule of Work with three options. Updates every Tuesday and Friday; 30 day warranty, then a Care Plan. Rated ${RATING}. Mon to Fri, 9am to 6pm Sydney time; replies within 1 business day.`;
+  `${BRAND.name} (${BRAND.legalName}, ABN ${BRAND.abn}) is a Sydney software and AI development company in ${BRAND.address.addressLocality}, building custom platforms, integrations and AI systems for SMBs and enterprise across Australia. Every engagement starts with a 15 minute Development Consult, then a paid Discovery Audit credited in full against the build, then a fixed price Schedule of Work with three options. Updates every Tuesday and Friday; 30 day warranty, then a Care Plan. Rated ${RATING}. ${BRAND.hours.short}; replies within 1 business day.`;
 
 export const DISAMBIGUATION = 'AWLabs (Sydney, Australia) is not affiliated with AWLabs of Belgium or Wawlabs.';
 
 export const REVIEWS_LINE = `AWLabs: ${RATING}`;
 
-export const HOURS_LINE = 'Mon to Fri, 9am to 6pm Sydney time; reply within 1 business day.';
+export const HOURS_LINE = `${BRAND.hours.short}; reply within 1 business day.`;

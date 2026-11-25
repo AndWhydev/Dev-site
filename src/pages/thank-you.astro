@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -33,7 +34,7 @@ import { PHONE_DISPLAY, PHONE_TEL, GOOGLE_ADS_SEND_TO } from '../config/site';
         </div>
         <span class="section-label">Thank you</span>
         <h1 class="ty-title" id="ty-title">We have your details.</h1>
-        <p class="ty-lead" id="ty-lead">A member of our team will be in touch within 1 business day, Monday to Friday, 9am to 6pm Sydney time.</p>
+        <p class="ty-lead" id="ty-lead">A member of our team will be in touch within 1 business day, {BRAND.hours.text}.</p>
         <p class="ty-sub">Anything urgent? Call us on <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.</p>
         <div class="ty-actions">
           <a href="/client-stories" class="btn-primary">Read client stories</a>

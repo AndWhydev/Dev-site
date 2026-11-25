@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 const currentPath = Astro.url.pathname;
 
 export const serviceGroups = [
@@ -101,7 +102,7 @@ const solutions = [
 
 const company = [
   { title: 'About Us', href: '/about', desc: 'Our team, story and values' },
-  { title: 'Our Journey', href: '/our-journey', desc: 'Founded mid 2026. Andy has shipped software since 2019' },
+  { title: 'Our Journey', href: '/our-journey', desc: `Founded ${BRAND.founded}. Andy has shipped software since ${BRAND.founder.buildingSince}` },
   { title: 'How We Deliver', href: '/methodology', desc: 'The exact process, phases, gates, cadence' },
   { title: 'Trust & Compliance', href: '/trust', desc: 'IP, security, NDA, company on the record' },
   { title: 'Client Stories', href: '/client-stories', desc: 'Videos, reviews and results' },

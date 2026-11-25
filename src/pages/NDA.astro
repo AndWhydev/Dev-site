@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -8,7 +9,7 @@ const lastReviewed = '21 July 2026';
 
 <Layout
   title="Mutual Non-Disclosure Agreement | AWLabs"
-  description="The mutual NDA from AW Labs Pty Ltd, setting out how we protect the ideas, code, business information and materials you share with us during an engagement."
+  description={`The mutual NDA from ${BRAND.legalName}, setting out how we protect the ideas, code, business information and materials you share with us during an engagement.`}
   noindex={true}
 >
   <Header />
@@ -18,7 +19,7 @@ const lastReviewed = '21 July 2026';
         <div class="policy-header reveal">
           <span class="section-label">Legal</span>
           <h1>Mutual Non-Disclosure Agreement</h1>
-          <p class="policy-meta">Last reviewed: {lastReviewed} · Signed by AW Labs Pty Ltd</p>
+          <p class="policy-meta">Last reviewed: {lastReviewed} · Signed by {BRAND.legalName}</p>
 
           <div class="policy-actions">
             <a href="/client-pack/mutual-nda.pdf" class="btn-download" target="_blank" rel="noopener">
@@ -32,10 +33,10 @@ const lastReviewed = '21 July 2026';
 
           <p class="policy-lead">
             We keep your ideas confidential. This Mutual Non-Disclosure Agreement (NDA) sets out the
-            terms under which AW Labs Pty Ltd (known as AWLabs) protects the
+            terms under which {BRAND.legalName} (known as AWLabs) protects the
             confidential information you share with us during a Development Consult and throughout an
             engagement. It applies from the day we send it to you, for three years. It is signed on our side; the Client accepts
-            by written email reply to <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a>
+            by written email reply to <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
             confirming their agreement to these terms.
           </p>
 
@@ -51,10 +52,10 @@ const lastReviewed = '21 July 2026';
             </div>
             <div class="party-card">
               <span class="party-label">Receiving Party</span>
-              <strong>AW Labs Pty Ltd</strong>
+              <strong>{BRAND.legalName}</strong>
               <p>
-                ABN: 32 698 684 105<br />
-                <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a><br />
+                ABN: {BRAND.abn}<br />
+                <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a><br />
                 awlabs.com.au
               </p>
             </div>
@@ -63,14 +64,14 @@ const lastReviewed = '21 July 2026';
           <h2>Background</h2>
           <p>
             The Client ("Disclosing Party") intends to share confidential and proprietary
-            information with AW Labs Pty Ltd ("Receiving Party") in connection with a potential
+            information with {BRAND.legalName} ("Receiving Party") in connection with a potential
             business relationship involving the development of apps, software, digital products
-            and marketing strategies. AW Labs Pty Ltd may also share information with the Client
+            and marketing strategies. {BRAND.legalName} may also share information with the Client
             in the course of that engagement.
           </p>
           <p>
             This Agreement governs the use, protection and non-disclosure of all such information
-            by both Parties. It becomes binding upon signature by AW Labs Pty Ltd and written
+            by both Parties. It becomes binding upon signature by {BRAND.legalName} and written
             acceptance by the Client via email reply.
           </p>
 
@@ -94,7 +95,7 @@ const lastReviewed = '21 July 2026';
           </ul>
 
           <h2>2. Obligations of the Receiving Party</h2>
-          <p>AW Labs Pty Ltd, as the Receiving Party, agrees to:</p>
+          <p>{BRAND.legalName}, as the Receiving Party, agrees to:</p>
           <ul>
             <li>hold all Confidential Information of the Client in strict confidence;</li>
             <li>not disclose Confidential Information to any third party without the prior written consent of the Client;</li>
@@ -112,22 +113,22 @@ const lastReviewed = '21 July 2026';
             solely for the purposes of internal business development, team coordination or
             capacity planning. Such reference must not include any identifying information,
             proprietary details, project specifics, or any other Confidential Information of the
-            Client. This carve-out does not permit AW Labs Pty Ltd to name the Client, describe
+            Client. This carve-out does not permit {BRAND.legalName} to name the Client, describe
             the nature of the Client's product, or disclose any information that could reasonably
             identify the Client or their engagement.
           </p>
 
           <h2>3. Protection of Apps, Software and IP</h2>
           <p>
-            AW Labs Pty Ltd acknowledges that any app concepts, software products, platforms,
+            {BRAND.legalName} acknowledges that any app concepts, software products, platforms,
             tools, digital systems or business ideas shared by the Client under this Agreement
             are the sole intellectual property of the Client. Similarly, any methods, processes,
-            tools or materials shared by AW Labs Pty Ltd remain the sole intellectual property of
-            AW Labs Pty Ltd. Nothing in this Agreement transfers, licences or assigns any
+            tools or materials shared by {BRAND.legalName} remain the sole intellectual property of
+            {BRAND.legalName}. Nothing in this Agreement transfers, licences or assigns any
             intellectual property rights to either Party.
           </p>
           <p class="callout">
-            AW Labs Pty Ltd shall not copy, replicate, reverse engineer, repurpose or build upon
+            {BRAND.legalName} shall not copy, replicate, reverse engineer, repurpose or build upon
             the Client's apps, software or intellectual property without explicit written
             authorisation. The Client shall afford the same protection to any of AW Labs Pty
             Ltd's disclosed materials.
@@ -150,7 +151,7 @@ const lastReviewed = '21 July 2026';
 
           <h2>5. Term and Duration</h2>
           <p>
-            This Agreement commences on the date this document is sent by AW Labs Pty Ltd to the
+            This Agreement commences on the date this document is sent by {BRAND.legalName} to the
             Client and continues for a period of <strong>three (3) years</strong> from that date,
             unless terminated earlier by mutual written agreement.
           </p>
@@ -211,29 +212,29 @@ const lastReviewed = '21 July 2026';
 
           <h2>Execution</h2>
           <p>
-            Signed by AW Labs Pty Ltd as the Receiving Party. The Client accepts the terms of
+            Signed by {BRAND.legalName} as the Receiving Party. The Client accepts the terms of
             this Agreement by providing written confirmation via email reply to
-            <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a> stating their agreement
-            to the terms of the Mutual Non-Disclosure Agreement provided by AW Labs Pty Ltd. The
-            date this document is sent by AW Labs Pty Ltd constitutes the commencement date of
+            <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a> stating their agreement
+            to the terms of the Mutual Non-Disclosure Agreement provided by {BRAND.legalName}. The
+            date this document is sent by {BRAND.legalName} constitutes the commencement date of
             this Agreement. No physical signature is required from the Client; the date of the
             Client's reply email constitutes their acceptance date.
           </p>
 
           <div class="signature-block">
             <div class="signature-side">
-              <span class="signature-label">Signed for AW Labs Pty Ltd</span>
+              <span class="signature-label">Signed for {BRAND.legalName}</span>
               <span class="signature-mark">Andy Taleb</span>
               <span class="signature-sub">Signature</span>
               <span class="signature-name">Andy Taleb</span>
-              <span class="signature-meta">Director · AW Labs Pty Ltd · ABN 32 698 684 105</span>
+              <span class="signature-meta">Director · {BRAND.legalName} · ABN {BRAND.abn}</span>
               <span class="signature-date">Date: date this document is sent</span>
             </div>
             <div class="signature-side signature-side-alt">
               <span class="signature-label">Client Acceptance</span>
               <p class="signature-note">
                 The Client confirms acceptance by replying to
-                <a href="mailto:admin@awlabs.com.au">admin@awlabs.com.au</a> with written
+                <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a> with written
                 confirmation that they agree to the terms of this Mutual Non-Disclosure
                 Agreement. The date of the Client's reply email constitutes their acceptance
                 date.

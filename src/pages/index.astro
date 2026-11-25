@@ -1,4 +1,5 @@
 ---
+import { BRAND } from '../config/brand';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -84,7 +85,7 @@ const faqSchema = {
           a separate websites and marketing company.
         </p>
         <p class="home-entity-timeline">
-          Our founder has been shipping software since 2019, and All Webbed Up has been delivering for clients since 2021. AWLabs launched in mid 2026 as a new, separate company: a partnership with exceptional developers and founders. <a href="/our-journey">Our full journey</a>.
+          Our founder has been shipping software since {BRAND.founder.buildingSince}, and All Webbed Up has been delivering for clients since {BRAND.sisterCompany.since}. AWLabs launched in {BRAND.founded} as a new, separate company: a partnership with exceptional developers and founders. <a href="/our-journey">Our full journey</a>.
         </p>
         <div class="home-entity-sister">
           <a href="https://allwebbedup.com.au" target="_blank" rel="noopener noreferrer" class="sister-pill">
