@@ -1,5 +1,6 @@
 ---
-import { BRAND } from '../../config/brand';
+import { BRAND, FOUNDER_SAME_AS } from '../../config/brand';
+import { ORG_ID, FOUNDER_ID } from '../../config/site';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -20,9 +21,9 @@ const pageDescription =
   `${BRAND.founder.name} founded ${BRAND.name}, a Sydney software and AI company. Building software since ${BRAND.founder.buildingSince} and running ${BRAND.sisterCompany.name} since ${BRAND.sisterCompany.since}.`;
 
 const timeline = [
-  { year: '2019', text: 'Starts building software professionally.' },
-  { year: '2021', text: 'Begins running All Webbed Up, a Sydney marketing and development agency, which he still runs today.' },
-  { year: 'Mid 2026', text: 'Founds AWLabs as a partnership with a group of senior developers and founders, building software and applied AI for growing businesses and enterprise.' },
+  { year: BRAND.founder.buildingSince, text: 'Starts building software professionally.' },
+  { year: BRAND.sisterCompany.since, text: 'Begins running All Webbed Up, a Sydney marketing and development agency, which he still runs today.' },
+  { year: `${BRAND.founded[0].toUpperCase()}${BRAND.founded.slice(1)}`, text: 'Founds AWLabs as a partnership with a group of senior developers and founders, building software and applied AI for growing businesses and enterprise.' },
 ];
 
 const role = [
@@ -49,15 +50,19 @@ const schema = {
   inLanguage: 'en-AU',
   mainEntity: {
     '@type': 'Person',
-    '@id': `${siteUrl}/team/andy-taleb#person`,
-    name: 'Andy Taleb',
-    jobTitle: 'Founder and Director',
-    url: `${siteUrl}/team/andy-taleb`,
-    image: `${siteUrl}/team/andy-taleb.webp`,
-    worksFor: { '@id': `${siteUrl}/#organization` },
-    sameAs: [linkedIn],
+    '@id': FOUNDER_ID,
+    name: BRAND.founder.name,
+    jobTitle: BRAND.founder.jobTitle,
+    url: `${siteUrl}${BRAND.founder.url}`,
+    image: `${siteUrl}${BRAND.founder.photo}`,
+    worksFor: { '@type': 'Organization', '@id': ORG_ID, name: BRAND.name, url: siteUrl },
+    // LinkedIn, plus YouTube once BRAND.founder.youtube is set.
+    sameAs: FOUNDER_SAME_AS,
     knowsAbout: [
       'Custom software development',
+      'AI agents',
+      'CRM development',
+      'App development',
       'Software architecture',
       'Artificial intelligence integration',
       'Large language model applications',

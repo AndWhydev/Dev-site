@@ -37,6 +37,7 @@ export const GET: APIRoute = async () => {
     line('Discovery Audit', '/why-audit', 'What the Discovery Audit covers and why every build starts with it'),
     line('Trust and compliance', '/trust', 'IP ownership, security, data handling, company details'),
     line('Editorial policy', '/editorial-policy', 'How we research, write and correct our guides'),
+    line('Press kit', '/press', 'Company descriptions, key facts, founder bio, logos and media contact'),
     line('Services', '/services', 'All software and AI services'),
     line('AI consulting', '/ai-consulting', 'AI strategy, development and deployment'),
     line('Startup MVP', '/startup-mvp', 'MVP development for Australian founders'),

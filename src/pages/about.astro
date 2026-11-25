@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import FactBlock from '../components/FactBlock.astro';
+import BrandFacts from '../components/BrandFacts.astro';
 import TeamCallout from '../components/TeamCallout.astro';
 
 const values = [
@@ -59,6 +60,11 @@ const values = [
         </p>
       </div>
     </section>
+
+    <!-- Brand facts from src/config/brand.ts -->
+    <div class="about-facts">
+      <BrandFacts />
+    </div>
 
     <!-- Team teaser; the full grid lives on /team. -->
     <TeamCallout />
@@ -394,4 +400,5 @@ const values = [
     .values-grid { grid-template-columns: 1fr; }
     .engage-grid { grid-template-columns: 1fr; }
   }
+  .about-facts { background: #0a0f0e; padding: 0 24px 4rem; }
 </style>

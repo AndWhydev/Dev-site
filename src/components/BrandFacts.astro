@@ -1,0 +1,70 @@
+---
+/**
+ * "AWLabs at a glance": the brand facts from src/config/brand.ts as a plain
+ * list, so people, search engines and AI assistants read the same facts the
+ * schema states. Used on /about and /press.
+ */
+import { BRAND } from '../config/brand';
+
+interface Props {
+  heading?: string;
+  id?: string;
+}
+const { heading = `${BRAND.name} at a glance`, id = 'at-a-glance' } = Astro.props;
+
+const rows: [string, string | { text: string; href: string }[]][] = [
+  ['Name', BRAND.name],
+  ['Legal name', BRAND.legalName],
+  ['ABN', BRAND.abn],
+  ['Also known as', BRAND.alternateNames.join(', ')],
+  ['What we do', 'Custom software, apps and AI development'],
+  ['Founded', `${BRAND.founded[0].toUpperCase()}${BRAND.founded.slice(1)}, by ${BRAND.founder.name}`],
+  ['Address', BRAND.addressLine],
+  ['Phone', BRAND.phone.display],
+  ['Email', BRAND.email],
+  ['Hours', BRAND.hours.text],
+  ['Areas served', BRAND.areasServed.join(' and ')],
+  ['Services', BRAND.services.map((s) => ({ text: s.name, href: s.href }))],
+];
+---
+
+<section class="brand-facts" aria-labelledby={`${id}-heading`} id={id}>
+  <h2 id={`${id}-heading`} class="brand-facts-heading">{heading}</h2>
+  <dl class="brand-facts-list">
+    {rows.map(([label, value]) => (
+      <div class="brand-facts-row">
+        <dt>{label}</dt>
+        <dd>
+          {typeof value === 'string' ? (
+            label === 'Phone' ? <a href={`tel:${BRAND.phone.tel}`}>{value}</a>
+            : label === 'Email' ? <a href={`mailto:${BRAND.email}`}>{value}</a>
+            : label === 'Address' ? <a href={BRAND.profiles.googleMaps} target="_blank" rel="noopener">{value}</a>
+            : value
+          ) : (
+            <ul class="brand-facts-services">
+              {value.map((s) => <li><a href={s.href}>{s.text}</a></li>)}
+            </ul>
+          )}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>
+
+<style>
+  .brand-facts { max-width: 860px; margin: 0 auto; padding: 1.75rem 2rem; border: 1px solid #1e2d28; border-radius: 18px; background: #0a0f0e; text-align: left; }
+  .brand-facts-heading { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; margin: 0 0 1.25rem; }
+  .brand-facts-list { margin: 0; display: grid; gap: 0; }
+  .brand-facts-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; border-top: 1px solid #16211d; }
+  .brand-facts-row:first-child { border-top: 0; padding-top: 0; }
+  .brand-facts dt { font-size: 0.8125rem; letter-spacing: 0.04em; text-transform: uppercase; color: #7f978d; font-weight: 600; padding-top: 0.1rem; }
+  .brand-facts dd { margin: 0; color: #d5e0dc; font-size: 0.975rem; line-height: 1.55; }
+  .brand-facts a { color: #19b58f; text-decoration: none; }
+  .brand-facts a:hover { text-decoration: underline; }
+  .brand-facts-services { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 0.5rem; }
+  .brand-facts-services li:not(:last-child)::after { content: '·'; margin-left: 0.5rem; color: #3a5048; }
+  @media (max-width: 640px) {
+    .brand-facts { padding: 1.5rem 1.25rem; }
+    .brand-facts-row { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+  }
+</style>

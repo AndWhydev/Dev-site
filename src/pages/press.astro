@@ -1,0 +1,144 @@
+---
+import { BRAND } from '../config/brand';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BrandFacts from '../components/BrandFacts.astro';
+
+/**
+ * Press and media kit. Every fact comes from src/config/brand.ts; the
+ * descriptions only restate what the rest of the site says. Journalists,
+ * directories and AI assistants can quote any of it as is.
+ */
+
+const siteUrl = 'https://www.awlabs.com.au';
+const B = BRAND;
+
+const short = `${B.name} is a Sydney software and AI development company based in ${B.address.addressLocality}. It builds custom platforms, apps, integrations and AI systems for SMBs and enterprise across Australia. Founded in ${B.founded} by ${B.founder.name}, ${B.name} is a sister company to ${B.sisterCompany.name}, a separate websites and marketing company.`;
+
+const long = `${B.name} is a Sydney software and AI development company based in ${B.address.addressLocality}, New South Wales. It builds custom platforms, web and mobile apps, integrations, workflow automation and AI systems, including AI agents, chatbots and voice agents, for SMBs and enterprise across Australia. Every engagement starts with a 15 minute Development Consult, then a paid Discovery Audit credited in full against the build, then one fixed price Schedule of Work with three options. Clients get updates every Tuesday and Friday, the code is assigned to them as it is paid for, and every build carries a 30 day warranty, then a Care Plan. ${B.name} was founded in ${B.founded} by ${B.founder.name}, who has built software professionally since ${B.founder.buildingSince} and has run sister company ${B.sisterCompany.name} since ${B.sisterCompany.since}. It launched as a partnership with a group of senior developers and founders to build software and applied AI for growing businesses.`;
+
+const bio = `${B.founder.name} is the ${B.founder.jobTitle.toLowerCase()} of ${B.name}. He has been building software professionally since ${B.founder.buildingSince} and has run ${B.sisterCompany.name}, a Sydney marketing and development agency, since ${B.sisterCompany.since}. In ${B.founded} he founded ${B.name} as a partnership with a group of senior developers and founders, building software and applied AI for growing businesses and enterprise. He runs every client meeting and sets every price.`;
+
+const logos = [
+  { label: 'Logo for light backgrounds', note: 'Mark and wordmark, dark text', svg: '/press/awlabs-logo-light.svg', png: '/press/awlabs-logo-light.png', bg: '#ffffff' },
+  { label: 'Logo for dark backgrounds', note: 'Mark and wordmark, white text', svg: '/press/awlabs-logo-dark.svg', png: '/press/awlabs-logo-dark.png', bg: '#0a0f0e' },
+  { label: 'Mark only', note: 'Square icon, works on any background', svg: '/press/awlabs-mark.svg', png: '/press/awlabs-mark.png', bg: '#16211d' },
+];
+
+/** Coverage of AWLabs: { title, publication, date, url }. Empty until there is some. */
+const coverage: { title: string; publication: string; date: string; url: string }[] = [];
+
+const pageTitle = `Press and Media Kit | ${B.name}`;
+const pageDescription = `${B.name} press kit: company descriptions, founder bio, key facts, logo downloads and media contact for the Sydney software and AI development company.`;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main class="press">
+    <section class="press-hero">
+      <div class="press-wrap">
+        <span class="section-label">Press</span>
+        <h1 class="press-title">Press and media kit</h1>
+        <p class="press-lead">Descriptions, facts, a founder bio and logos you can use when writing about {B.name}. Everything on this page is approved to quote as is.</p>
+      </div>
+    </section>
+
+    <section class="press-section">
+      <div class="press-wrap">
+        <h2>About {B.name} in 50 words</h2>
+        <p class="press-copy">{short}</p>
+        <h2>About {B.name} in 150 words</h2>
+        <p class="press-copy">{long}</p>
+      </div>
+    </section>
+
+    <section class="press-section press-alt">
+      <div class="press-wrap">
+        <BrandFacts id="press-facts" />
+      </div>
+    </section>
+
+    <section class="press-section">
+      <div class="press-wrap press-founder">
+        <div class="press-headshot">
+          {/* TODO: high resolution press headshot of Andy (at least 1600px square). */}
+          <div class="press-headshot-todo" role="img" aria-label="Press headshot coming soon">Press headshot<br />coming soon</div>
+        </div>
+        <div>
+          <h2>Founder: {B.founder.name}</h2>
+          <p class="press-role">{B.founder.jobTitle}, {B.name}</p>
+          <p class="press-copy">{bio}</p>
+          <p class="press-links"><a href={B.founder.url}>Full profile</a> · <a href={B.founder.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="press-section press-alt">
+      <div class="press-wrap">
+        <h2>Logos</h2>
+        <p class="press-copy">Please don't recolour, stretch or redraw the logo. Leave clear space around it at least the height of the "A".</p>
+        <ul class="press-logos">
+          {logos.map((l) => (
+            <li>
+              <div class="press-logo-preview" style={`background:${l.bg}`}><img src={l.svg} alt={`${B.name} ${l.label.toLowerCase()}`} loading="lazy" /></div>
+              <p class="press-logo-label">{l.label}</p>
+              <p class="press-logo-note">{l.note}</p>
+              <p class="press-logo-dl"><a href={l.svg} download>SVG</a> · <a href={l.png} download>PNG</a></p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="press-section">
+      <div class="press-wrap">
+        <h2>Media contact</h2>
+        <p class="press-copy">
+          {B.founder.name}, {B.founder.jobTitle}<br />
+          Email <a href={`mailto:${B.email}`}>{B.email}</a> · Phone <a href={`tel:${B.phone.tel}`}>{B.phone.display}</a><br />
+          {B.hours.text}
+        </p>
+        <h2>Coverage</h2>
+        {coverage.length ? (
+          <ul class="press-coverage">
+            {coverage.map((c) => <li><a href={c.url} target="_blank" rel="noopener noreferrer">{c.title}</a>, {c.publication}, {c.date}</li>)}
+          </ul>
+        ) : (
+          <p class="press-copy">No coverage listed yet.</p>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .press { background: #0a0f0e; color: #fff; }
+  .press-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .press-hero { padding: 9rem 0 3rem; border-bottom: 1px solid #1a2620; background: radial-gradient(ellipse 60% 80% at 20% 0%, rgba(13,147,115,0.10), transparent 70%); }
+  .press-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4.6vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin: 0.75rem 0 1rem; }
+  .press-lead { color: #a9bdb6; font-size: 1.0625rem; line-height: 1.7; max-width: 640px; margin: 0; }
+  .press-section { padding: 3.5rem 0; }
+  .press-alt { background: #0f1614; border-top: 1px solid #1a2620; border-bottom: 1px solid #1a2620; }
+  .press-section h2 { font-family: 'Sora', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 0 0 0.85rem; }
+  .press-section h2:not(:first-child) { margin-top: 2.25rem; }
+  .press-copy { color: #c9d6d1; line-height: 1.75; margin: 0; }
+  .press-copy a, .press-links a, .press-logo-dl a, .press-coverage a { color: #19b58f; }
+  .press-role { color: #7f978d; margin: -0.4rem 0 0.9rem; font-size: 0.9375rem; }
+  .press-links { margin: 1rem 0 0; font-size: 0.9375rem; color: #7f978d; }
+  .press-founder { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 2rem; align-items: start; }
+  .press-headshot-todo { aspect-ratio: 1; border: 1px dashed #2a3d35; border-radius: 16px; display: flex; align-items: center; justify-content: center; text-align: center; color: #5f7a70; font-size: 0.875rem; line-height: 1.5; }
+  .press-logos { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .press-logo-preview { border: 1px solid #1e2d28; border-radius: 12px; height: 120px; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .press-logo-preview img { max-width: 100%; max-height: 64px; }
+  .press-logo-label { margin: 0.75rem 0 0.15rem; font-weight: 600; font-size: 0.9375rem; }
+  .press-logo-note { margin: 0; color: #7f978d; font-size: 0.8125rem; }
+  .press-logo-dl { margin: 0.4rem 0 0; font-size: 0.875rem; color: #5f7a70; }
+  .press-coverage { margin: 0; padding-left: 1.2rem; color: #c9d6d1; line-height: 1.7; }
+  @media (max-width: 760px) {
+    .press-founder { grid-template-columns: minmax(0, 1fr); }
+    .press-headshot { max-width: 180px; }
+    .press-logos { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
